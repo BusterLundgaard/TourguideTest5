@@ -2404,13 +2404,13 @@
             let parseResumeData = async function() {
 
                 let rs;
-                console.log("starting loading resumeData at" + ((new Date()).getSeconds).toString());
+                console.log("starting loading resumeData at" + ((new Date()).getMilliseconds()).toString());
                 await $.get("/Chapters/resumeData.txt", (data)=>{
                     rs = data;
-                    console.log("finished loading it at" + ((new Date()).getSeconds).toString());
+                    console.log("finished loading it at" + ((new Date()).getMilliseconds()).toString());
                     console.log(data);
                 });
-                console.log("Continued on with the proces at: " + ((new Date()).getSeconds).toString());
+                console.log("Continued on with the proces at: " + ((new Date()).getMilliseconds()).toString());
 
                 let hn = [-1, -1, -1, -1, -1];
                 let param = "";
@@ -2438,7 +2438,8 @@
                             hn[i]=-1;
                         }
 
-                        i+=4;
+                        console.log(rD);
+                        i+=3; //THIS IS NORMALLY 4, 3 IS A TEST!
                     }
                     else if(c == "#") { //Push parameters
                         num = parseInt(rs[i+1]);
@@ -2447,6 +2448,7 @@
                         for(let i = 0; i < num; i++) {
                             listEl = listEl[hn[i]][0];
                         }
+                        console.log("param = " + param);
                         listEl[hn[num]].push(param);
                         param="";
 
