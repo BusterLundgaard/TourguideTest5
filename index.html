@@ -724,7 +724,6 @@
                         document.getElementById("tagline").style.opacity=0;
                         document.getElementById("trailerVid").style.opacity=0;
 
-                        console.log(document.cookie);
                         if(document.cookie != ""){document.getElementById("startOffImg").src = "Assets/Forside/SecThumbnails/Final/" + document.cookie.substring(9, 11) + ".png";
                         } else {document.getElementById("startOff").style.display="none";}
 
@@ -1882,7 +1881,7 @@
                     setupScene();
                 });
 
-                fabric.Image.fromURL('Assets/Forside/Chapters/Chapter5/poofGone.svg', (oImg)=> {
+                fabric.Image.fromURL('Assets/Forside/Chapters/Chapter5/PoofGone.svg', (oImg)=> {
                     this.poof=oImg; setupScene();
                 });
 
@@ -2333,7 +2332,6 @@
             document.getElementById("sec44").addEventListener("click", (e)=>{openBrowser("4","3","1");});
 
             //Expanders:
-            console.log(document.getElementById("chap2E"));
             document.getElementById("chap1E").addEventListener("click", (e)=>{showResume([0,-1,-1,-1,-1]);});
             document.getElementById("chap2E").addEventListener("click", (e)=>{showResume([1,-1,-1,-1,-1]);});
             document.getElementById("chap25E").addEventListener("click", (e)=>{showResume([2,-1,-1,-1,-1]);});
@@ -2404,13 +2402,9 @@
             let parseResumeData = async function() {
 
                 let rs;
-                console.log("starting loading resumeData at" + ((new Date()).getMilliseconds()).toString());
                 await $.get("/Chapters/resumeData.txt", (data)=>{
                     rs = data;
-                    console.log("finished loading it at" + ((new Date()).getMilliseconds()).toString());
-                    console.log(data);
                 });
-                console.log("Continued on with the proces at: " + ((new Date()).getMilliseconds()).toString());
 
                 let hn = [-1, -1, -1, -1, -1];
                 let param = "";
@@ -2438,7 +2432,6 @@
                             hn[i]=-1;
                         }
 
-                        console.log(rD);
                         i+=3; //THIS IS NORMALLY 4, 3 IS A TEST!
                     }
                     else if(c == "#") { //Push parameters
@@ -2448,7 +2441,6 @@
                         for(let i = 0; i < num; i++) {
                             listEl = listEl[hn[i]][0];
                         }
-                        console.log("param = " + param);
                         listEl[hn[num]].push(param);
                         param="";
 
@@ -2470,8 +2462,6 @@
 
                 }
 
-                console.log("rD = ");
-                console.log(rD);
             }
 
             let createChildren = function(par) {
@@ -2675,8 +2665,6 @@
                     let searchDepth = depth-1;
                     for(let i = depth-1; i > 1; i--){
                         searchTP[searchDepth]+=1;
-                        console.log("searching for: ");
-                        console.log(searchTP);
                         let searchPage=getPageAtTreePath(searchTP);
                         if(searchPage!=null){
                             secPageCount = searchPage-parseInt(latestElement[4]);
