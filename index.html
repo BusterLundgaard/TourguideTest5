@@ -794,7 +794,7 @@
                 else if(presentationMode && scrollStep==2){
                     if(newScroll > 400){
 
-                        if(!chaptersPrepared){prepareChapters(); chaptersPrepared=true; prepareToc(); TocPrepared();}
+                        if(!chaptersPrepared){prepareChapters(); chaptersPrepared=true; prepareToc(); TocPrepared=true;}
 
                         let t = 0;
                         let step=function(){
@@ -2404,9 +2404,13 @@
             let parseResumeData = async function() {
 
                 let rs;
+                console.log("starting loading resumeData at" + ((new Date()).getSeconds).toString());
                 await $.get("/Chapters/resumeData.txt", (data)=>{
                     rs = data;
+                    console.log("finished loading it at" + ((new Date()).getSeconds).toString());
+                    console.log(data);
                 });
+                console.log("Continued on with the proces at: " + ((new Date()).getSeconds).toString());
 
                 let hn = [-1, -1, -1, -1, -1];
                 let param = "";
@@ -2463,6 +2467,9 @@
                     }
 
                 }
+
+                console.log("rD = ");
+                console.log(rD);
             }
 
             let createChildren = function(par) {
