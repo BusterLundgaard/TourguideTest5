@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+
+
+    <h4>Træning i vores vinkel-additionsformel</h4>
+    <p class="t">
+    Vi mangler selvfølgelig stadig at finde _(Sin(A+B)_), men lad os lige lave nogle opgaver først:
+    </p>
+
+    <q-stion 1="25" 2="1">
+    _(\underline{\textbf{A}}_): <br> Man kan beregne, at
+    _($\begin{align}
+    Cos(1.3) & = 0.27, & \text{   } Cos(2.1) & = - 0.50 \\
+    Sin(1.3) & = 0.96, & \text{   } Sin(2.1) & =  0.86
+    \end{align}_)
+    Find nu _(Cos(3.4)_). 
+    <p class="t"> 
+    _(\underline{\textbf{B}}_): <br> Det kan beregnes, at
+    _($\begin{align}
+    Cos(1.2) & = 0.36, & \text{   } Cos(-1.7) & = -0.13 \\
+    Sin(1.2) & = 0.93, & \text{   } Sin(-1.7) & = -0.99
+    \end{align}_)
+    Find nu _(Cos(-0.5)_).
+    _($Cos(-0.5)_)
+    </p>
+    <p class="t">
+    _(\underline{\textbf{C}}_): <br> Det kan beregnes, at
+    _($\begin{align}
+    Cos(2.3) & = - 0.66, & \text{   } Cos(2.6) & = - 0.85 \\
+    Sin(2.3) & =  0.74, & \text{   } Sin(2.6) & =  0.51
+    \end{align}_)
+    Find nu _(Cos(0.3)_).
+    </p>
+    <p class="t">
+    I alle de her opgaver må du gerne bruge din lommeregner, bare ikke _(Sin_) og _(Cos_) funktionerne på den. 
+    </p>
+    <br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    Man kan se, at 
+    _($3.4=2.1+1.3_)
+    Så:
+    _($Cos(3.4)=Cos(2.1+1.3)_)
+    Nu bruger vi reglen vi kom frem til, og får:
+    _($\begin{alignat}{2}
+    Cos(2.1) *& Cos(1.3) &&\, \,- \, \, Sin(2.1) &&* Sin(1.3) = \\ 
+    (-0.50) *& (0.27) &&\, \, - \, \, (0.86) &&* (0.96) =  \\ 
+    -0.960
+    \end{alignat}_)
+    Bum!
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    _(-0.5_) svarer til _(1.2+(-1.7)_), så:
+    _($Cos(-0.5)=Cos \left(1.2+(-1.7)\right)_)
+    Vi bruger nu reglen, og får: 
+    _($\begin{alignat}{2}
+    Cos(1.2) *& Cos(-1.7) && \, \, - \, \, \text{ } Sin(1.2) &&*Sin(-1.7) & = \\
+    0.36  *& (-0.13) && \, \, - \, \, \text{ } 0.93 &&*(-0.99) = \\
+    0.873
+    \end{alignat}_)
+    Voila!
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{C}}_)#" tabColour="rgb(171,96,147)">
+    Man kan se, at _(0.3_) er lig _(2.6-2.3_). Så:
+    _($Cos(0.3)=Cos(2.6-2.3)=Cos \left(2.6+(-2.3)\right)_)
+    Nu bruger vi reglen, og får:
+    _($Cos(2.6)*Cos(-2.3)-Sin(2.6)*Sin(-2.3)_)
+    Vi ved, at _(Cos(-v)=Cos(v)_) og _(Sin(-v)=-Sin(v)_), så:
+    _($\begin{alignat}{2}
+    Cos(2.6) & *Cos(2.3) && \, \, - \, \, \text{ } Sin(2.6) &&*\left(-Sin(2.3) \right) = \\
+    Cos(2.6) & *Cos(2.3) && \, \, + \, \, \text{ } Sin(2.6) &&*Sin(2.3) = \\
+    (-0.85) & *(-0.66) && \, \, + \, \, \text{ } 0.74 &&*0.51 = \\
+    0.938
+    \end{alignat}_)
+    Sådan!
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <!-- <q-stion 1="2" 2="1" 3="5">
+    Hvis _(Sin(0.6)=0.56_), hvad er så:
+    _($Cos \left(0.2+\frac{\pi}{2} \right)*Cos(0.4) - Sin \left(0.2+\frac{\pi}{2} \right)*Sin(0.4)_)
+    I know, i know, det ligner ikke at dette kæmpe udtryk kan regnes
+    eksklusivt ud fra _(Sin(0.6)_), men det er muligt!
+    <br><br></q-stion>
+    <answer-box>
+    Udtrykket 
+    _($Cos \left(0.2+\frac{\pi}{2} \right)*Cos(0.4) - Sin \left(0.2+\frac{\pi}{2} \right)*Sin(0.4)_)
+    Ligner rigtig meget _(Cos(A+B)_) på en eller anden måde.
+    Det ville i hvert fald passe hvis vi satte _(A_) til _(0.2+\pi/2_)
+    og _(B_) til _(0.4_). Vi skal nu regne:
+    _($Cos\left((0.2+\frac{\pi}{2}) + 0.4 \right) = Cos \left(0.6+\frac{\pi}{2} \right)_)
+    Vi ved at _(Cos(\pi/2+v)=-Sin(v)_), så vi får:
+    _($-Sin(0.6) = -0.56_)
+    Og det er så svaret!
+    <br><br></answer-box> -->
+
+    <!--  -->
+    
+    <q-stion 1="25" 2="2">
+    Find en formel for _(Sin(a+b)_), ligesom vi har en for _(Cos(a+b)_)
+    <p class="t">
+    <i>Hint</i>: Kan man på nogen smart måde omskrive _(Sin_) i forhold til _(Cos_)? 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Vi ved at:
+    _($Sin(v) = Cos(\pi/2 - v)_)
+    Så:
+    _($Sin(a+b)=Cos\left(\pi/2-(a+b)\right) = Cos\left((\pi/2-a) + b \right)_)
+    Vi kan nu bruge formlen, som vi plejer:
+    _($Cos\left(\frac{\pi}{2} - a \right) Cos(-b) - Sin(\frac{\pi}{2} - a) Sin(-b) = _)
+    _($Sin(a) Cos(b) - Cos(a)*(-Sin(b))_)
+    Minus går ud med minus, og vi får endeligt:
+    _($Sin(a+b)=Sin(a) Cos(b) + Cos(a) Sin(b)_)
+    Boom! Nu har vi formler for både _(Cos(a+b)_), 
+    _(Cos(a-b)_) og _(Sin(a+b)_). Man kan også nemt
+    finde _(Sin(a-b)_), og se at
+    _($Sin(a-b)=Sin(a) Cos(b) - Cos(a) Sin(b)_)
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="25" 2="3">
+    Man kan beregne, at
+    _($\begin{align}
+    Cos(4.6) & = -0.11 & \text{   } Cos(9.7) & = -0.96 \\
+    Sin(4.6) & = -0.99 & \text{   } Sin(9.7) & = -0.27
+    \end{align}_)
+    Find nu:
+    <div style="margin-left:-76%; margin-top:25px; margin-bottom: -10px;">
+    _($\begin{eqnarray}
+        && \underline{\textbf{A}}: \, \, \, \, \, \, Sin(14.3 ) \\  \\
+        && \underline{\textbf{B}}: \, \, \, \, \, \, Sin(18.9) \\  \\
+    \end{eqnarray}_)
+    </div>
+    <br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    Man kan se, at _(14.3=4.6+9.7_), så vi regner:
+    _($\begin{alignat}{2}
+    Sin(4.6) &* Cos(9.7) && \, \, + \, \, Sin(9.7) &&* Cos(4.6) = \\ \\
+    (-0.99) &* (-0.96) && \, \, + \, \, (-0.27) &&* (-0.11) = \\ \\
+    0.983
+    \end{alignat}_)
+    Bum!
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Man kan se, at _(18.9=14.3+4.6_), så:
+    _($Sin(14.3)*Cos(4.6)+Cos(14.3)*Sin(4.6)_)
+    Vi kender _(Sin(14.3)_) fra sidste opgave, og vi kender også
+    _(Cos(4.6)_) og _(Sin(4.6)_) fra de givne informationer. _(Cos(14.3)_) kender vi dog 
+    ikke, så den er vi lige nødt til at regne:
+    _($\begin{alignat}{2}
+    Cos(4.6) &*Cos(9.7) && \, \, - \, \, Sin(4.6) &&*Sin(9.7) = \\ \\
+    (-0.11) &*(-0.96)  && \, \, - \, \, (-0.99) &&*(-0.27) = \\ \\
+    -0.16
+    \end{alignat}_)
+    Så nu kan vi sige:
+    _($0.983*(-0.11) + (-0.16)*(-0.99) = 0.050_)
+    Voila! 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="25" 2="4">
+    Find _(v_), hvis du ved at:
+    _($Cos(v) + Cos(v + 0.65) = 0_)
+    Måske/måske ikke er der flere svar!  
+    <p class="t">
+    Du må <i>gerne</i> bruge din lommeregner i den her.
+    Også til trig-funktioner. Det må du i alle opgaver, medmindre det explicit bliver
+    sagt som i den sidste.
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Først af alt omskriver vi _(Cos(v+0.65)_) og får:
+    _($Cos(v)+Cos(v)*Cos(0.65)-Sin(v)*Sin(0.65) = 0_)
+    Både _(Cos(0.65)_) og _(Sin(0.65)_) kan vi godt faktisk regne:
+    _($Cos(v)+0.796*Cos(v) - 0.605*Sin(v)=0_)
+    Jeg har en ide: Hvis vi kan få samlet alle _(Cos, Sin_) 
+    funktioner til bare èn _(Tan_) funktion for sig selv, 
+    burde vi kunne bruge _(Arctan_) og få svaret:
+    _($Cos(v)*(1+0.796) - Sin(v)*0.605 = 0 \to_)
+    _($1.796*Cos(v) = 0.605*Sin(v) \to_)
+    _($\frac{1.796}{0.605}=\frac{Sin(v)}{Cos(v)} \to_)
+    _($2.96 = Tan(v)_)
+    Herfra får vi:
+    _($v = Arctan(2.96) = 1.24_)
+    Perfekt! Der er faktisk uendeligt mange løsninger, siden _(Cos_) går op og ned.
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="25" 2="5">
+    Find _(v_) hvis:
+    _($Cos(v)+Cos(2v)=0_)
+    Måske/måske ikke er der flere mulige svar!
+    <br><br></q-stion>
+    <answer-box t="h">
+    Idéen er, at _(2v_) jo faktisk bare svarer til _(v+v_), så:
+    _($Cos(2v)=Cos(v+v)=Cos(v)*Cos(v)-Sin(v)*Sin(v)_)
+    Som et ekstra hint kan jeg sige, at du højest sandsynligt får brug 
+    for et trick, vi lærte på sidste side. 
+    <br><br></answer-box>
+    <answer-box>
+    Her bruger du det faktum, at _(2v=v+v_), så:
+    _($\begin{eqnarray}
+    Cos(2v) & = Cos(v+v) \\
+    & = Cos(v)*Cos(v)-Sin(v)*Sin(v) \\
+    & = Cos(v)^2 - Sin(v)^2
+    \end{eqnarray}_)
+    Så vi får: 
+    _($Cos(v)+Cos(v)^2-Sin(v)^2 = 0_)
+    Det kunne være dejligt, hvis alt her var beskrevet i forhold til _(Cos(v)_). 
+    Så ville vi nemlig stå med et krav, der i sin essens følger formen 
+    _(a*A^2+b*A+c_), nu med _(A=Cos(v)_). For at opnå dette mål, omskriver vi 
+    _(Sin(v)^2_) til _(Cos_) ved at bruge _(Sin(v)^2 = 1 - Cos(v)^2_), så:
+    _($Cos(v)+Cos(v)^2 - (1 - Cos(v)^2) = 0 \to_)
+    _($Cos(v)+Cos(v)^2 - 1 + Cos(v)^2 = 0 \to_)
+    _($2Cos(v)^2 + Cos(v) - 1 = 0_)
+    Voila!
+    _($2A^2 + A - 1 = 0 \to_)
+    _($A = \frac{-(1) \pm \sqrt{1^2 - 4*2*(-1)}}{2*2} = 0.5, -1_)
+    Vi har to muligheder:
+    _($Cos(v)=0.5, \qquad Cos(v)=-1_)
+    De to mulige vinkler er altså _(Arccos(0.5)=1.04719_) og 
+    _(Arccos(-1)_) som bare er _(\pi_). 
+    <br><br></answer-box>
+

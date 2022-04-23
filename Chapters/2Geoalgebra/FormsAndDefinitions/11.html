@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+
+
+<h3>Den ret seje "kryds-ratio": 2D til 3D</h3>
+
+<p class="t"> 
+Lad os nu se på en transformation der er virkelig interessant. Indtil videre 
+har vi kun brugt 
+transformationer på 2D former og punkter, men vi kan gøre det på
+hvad end vi har lyst: Det er et meget bredt ord! 
+Lad os derfor tænke over en transformation der laver _(3D_) om til _(2D_):</p>
+<img class='SpicXL' style='width:80%' src='../../../Assets/Chapter2\Section2\Symmetri\CentralProjection1.png'> 
+<p class="t">
+Tænk over hvordan du ser verdenen omkring dig (hvis du var en cyclops).
+Lys reflekteres på objekterne og fladerne omkring dig, og skyder lysbølger (som vi her
+kan se som linjer) ind i dit øje.
+For hvert punkt i dine omgivelser tegner vi et linje ind mod dit øje, og 
+det sted linjen rammer dit retina, er hvor punktet vil vise sig på 
+billedet din hjerne producerer
+(meget forsimplet set).
+</p>
+<p class="t">
+Vi siger, at vi laver en <i>central projection</i> transformation. Vi tager et sæt _(3D_) punkter og laver
+dem om til _(2D_) punkter på et plan. Nu kan vi også stille et interessant spørgsmål: er der
+nogen som helst kvantitet - nogen som helst egenskab på en eller anden måde - der er invariant gennem en central projection?
+<i>Hvis</i> disse egenskaber findes, kan de hjælpe os med at udvinde ekstra info om
+en 3D scene gennem et 2D billede! 
+Der er tonsvis information der går tabt på billedet, 
+men måske er det alligevel muligt at måle bestemte kvantiteter? </p>
+
+<p class="t">Central projection har en dejlig invariant egenskab kaldt "the cross-ratio". Hvis du har fire punkter på en 
+linje - enten i 2D eller 3D:</p>
+<img class="SpicBXL" style="width:100%" src='../../../Assets/Chapter2\Section2\Symmetri\GadePunkter.png'> 
+<p class="t"> Så er 
+_($\frac{AC*BD}{AD*BC}_) 
+... defineret som den såkaldte "cross ratio". 
+Den er vigtig og speciel, fordi dens værdi forbliver det samme når vi 
+bruger _(AC, \, BD, \, AD, \, BC_) som <i>de virkelige distancer</i> 
+og _(AC, \, BD, \, AD, \, BC_) som vi har målt dem 2-dimensionelt på billedet:
+</p>
+<img class="SpicBXL" style="width:80%" src='../../../Assets/Chapter2\Section2\Symmetri\GadePunkterPixels.png'> 
+<p class="t">
+Jeg ved fra rigtige virkelige mål, at _(AB=9.9m_), _(BC=10.17m_) og _(CD=1.09m_). 
+Ud fra det kan jeg let regne, at _(AC=20.07m_), _(BD=11.26m_) og _(AD=21.16m_). 
+Med pixels'ne ved jeg, at _(AC=671.8 \text{px}_), _(BD=200.92 \text{px}_) og _(AD=687.52 \text{px}_).
+Cross-rationen ved de rigtige mål er altså
+_($\frac{20.07*11.26}{10.17*21.16}=1.034_) 
+... og Cross-ratioen ved pixels-mål er 
+_($\frac{671.8*200.92}{185.2*687.52}=1.06_)
+Næsten det samme! Dette <i>er</i> et eksempel fra virkeligheden, så det kommer 
+selvfølgelig ikke til at passe helt perfekt, men stadig:
+Vi kan nu relatere fire punkter på en linje i virkeligheden med fire punkter
+på en linje fra et billede. Det kan vi bl.a. bruge til at måle distancer på billeder som i næste opgave.
+</p>
+
+<q-stion 1="11" 2="1">
+Se følgende gade:
+<img class="SpicBXL" style="width:90%" src='../../../Assets/Chapter2\Section2\Symmetri\Gade2.png'> 
+<p class="t"> Jeg vil gerne måle hvor bred gaden mellem _(B_) og _(C_) er. Via nogle internet søgninger omkring
+den gennemsnitlige bredde af et skur og længde af en terrasse, har jeg kommet
+frem til _(AB=3.8m, \, CD=3m_). 
+Jeg har også målt pixels på fotografiet: mellem _(A, \, B_) er der _(94.9px_),
+mellem _(B, \, C_) er der _(71.5px_), og mellem _(C, \, D_) er der _(36.9px_). </p>
+<p class="t">
+Hvor bred er gaden?
+</p>
+<br></q-stion>
+<answer-box>
+Først måler jeg cross-ratioen på pixelsne: 
+_($\frac{(94.9+71.5)*(71.5+36.9)}{71.5*(94.9+71.5+36.9)}=1.24_)
+Det her ved jeg er lig cross-ratioen på de rigtige længder: 
+_($\frac{(3.8+BC)*(BC+3)}{BC*(3.8+3+BC)} = 1.24_)
+Lad mig for nemheden og forkortelsens skyld bare kalde _(BC_) for "_(x_)". Jeg kan først
+og fremmest starte med at udvide tælleren og nævneren:
+_($\frac{x^2+6.8x+11.4}{x^2+6.8x}=1.24_)
+Nu skal jeg isolere _(x_). Jeg ganger begge sider med _(x^2+6.8x_), så jeg ikke længere
+skal arbejde med brøker. Det giver:
+_($x^2+6.8x+11.4=1.24x^2 + 8.432x_)
+Hvilket vi med lidt arbejde kan omskrive til:
+_($(-0.24)x^2+(-1.632)x+11.4=0 \to_)
+Dette ved vi kan løses som: 
+_($x = \frac{-(-1.632) \pm \sqrt{(-1.632)^2 - 4*(-0.24)*11.4}}{2*(-0.24)}_)
+Hvilket giver _(x=-7.683_) og _(x=4.282_). En negativ længde giver ikke mening, så 
+det rigtige svar er _(4.282m_). Bam!
+<br><br></answer-box>
+
+
+<p class="t">
+Så hvorfor præcist virker det her? Hvorfor er tallet _(AC*BD/AD*BC_) 
+invariant med central projection?
+</p>
+<img class="SpicXL" style="width:80%" src='../../../Assets/Chapter2\Section2\Symmetri\CentralProjection2.png'> 
+<body class="t">Lad os sige vi har de fire punkter _(A,B,C,D_) på en eller anden linje _(L_0_) i den
+rigtige 3D virkelige verden. For at projektere dem til _(2D_), tegner vi som altid en direkte linje hen til
+vores kamera/synspunkt. Kald punkterne hvor de skærer planet for henholdsvis _(A',B',C',D'_).
+<img class="SpicXL" style="width:80%" src='../../../Assets/Chapter2\Section2\Symmetri\CentralProjection3.png'> 
+<p class="t">
+<i>Fordi</i> _(A,B,C,D_) ligger i en linje, 
+kan vi også tegne linjer der går igennem
+og skærer både _(R_A, \, R_B, \, R_C, \, R_D_) (linjerne). 
+F.eks. en linje som _(L_1_). Kald skæringen mellem 
+_(L_1_) og _(R_A_) for _(a_), mellem _(L_1_) og _(R_B_) for _(b_) osv:
+</p>
+<img class="SpicXL" style="width:60%" src='../../../Assets/Chapter2\Section2\Symmetri\CentralProjection4.png'> 
+<p class="t">
+Èn af de her linjer vi kan lave er uendelig tæt på og parallel med planet. Det er
+der, hvor projektionerne af _(A,B,C,D_) ligger. _(A'B'_) er det vi ville måle
+i pixels <i>på</i> fotografiet. Hvad jeg nu gerne vil vise er, at cross-ratioet af 
+_(a,b,c,d_) er lig cross-ratioet af _(A,B,C,D_), hvilke så også betyder, at cross
+ratioet af _(A,B,C,D_) er lig cross ratioet af _(A',B',C',D'_). Mere generelt:
+Man kan kigge på _(A,B,C,D_) fra noget som helst plan, og den projekterede cross-ratio
+man oplever er altid identisk</p> 
+<p class="t">
+Vi skal vise at:
+_($\frac{ac*bd}{bc*ad} = \frac{AC*BD}{BC*AD}_)
+For at gøre det, prøver vi at omskrive _(AC, \, BD, \, BC, \, AD_) i 
+forhold til de andre længer. Her kan vi bruge følgende trick:
+</p>
+<p class="t">
+Arealet af f.eks. _(\triangle ABV_) kan både regnes som _(\frac{1}{2}*AB*h_) <i>og</i> _(\frac{1}{2}*AV*BV*Sin(\angle AVB)_).
+Det bruger vi til at opsætte nogle krav: 
+_($\begin{eqnarray}
+&& \frac{1}{2}*AC & *h & =\frac{1}{2}*AV & *CV & *Sin(\angle AVC) \\ \\
+&& \frac{1}{2}*BD & *h & =\frac{1}{2}*BV & *DV & *Sin(\angle BVD) \\ \\
+&& \frac{1}{2}*BC & *h & =\frac{1}{2}*BV & *CV & *Sin(\angle BVC) \\ \\
+&& \frac{1}{2}*AD & *h & =\frac{1}{2}*AV & *DV & *Sin(\angle AVD) 
+\end{eqnarray}_)
+De her krav kan alle omskrives til:
+_($\begin{eqnarray}
+&& AC & =\frac{AV*CV*Sin(\angle AVC)}{h} \\ \\
+&& BD & =\frac{BV*DV*Sin(\angle BVD)}{h} \\ \\
+&& BC & =\frac{BV*CV*Sin(\angle BVC)}{h} \\ \\
+&& AD & =\frac{AV*DV*Sin(\angle AVD)}{h}
+\end{eqnarray}_)
+Vi har nu nogle andre, alternative udtryk for _(AC_), _(BD_), _(BC_), og _(AD_). Det kan vi bruge til
+at omskrive cross-ratioen:
+_($\begin{eqnarray}
+&& \frac{AC*BD}{BC*AD} = 
+\frac{ \frac{AV*CV*Sin(\angle AVC)}{h}*\frac{BV*DV*Sin(\angle BVD)}{h}}{ \frac{BV*CV*Sin(\angle BVC)}{h} * \frac{AV*DV*Sin(\angle AVD)}{h}} = \\ \\
+&& \frac{Sin(\angle AVC)*Sin(\angle BVD)}{Sin(\angle BVC)*Sin(\angle AVD)}
+\end{eqnarray}_)
+Lad os nu prøve at gøre præcist det samme med _(ac, \, bd, \, bc, \, ad_):
+_($\begin{eqnarray}
+&& \frac{1}{2}*ac & *h & =\frac{1}{2}*av & *cv & *Sin(\angle aVc) \\ \\
+&& \frac{1}{2}*bd & *h & =\frac{1}{2}*bv & *dv & *Sin(\angle bVd) \\ \\
+&& \frac{1}{2}*bc & *h & =\frac{1}{2}*bv & *cv & *Sin(\angle bVc) \\ \\
+&& \frac{1}{2}*ad & *h & =\frac{1}{2}*av & *dv & *Sin(\angle aVd) 
+\end{eqnarray}_)
+_($\to_)
+_($\begin{eqnarray}
+&& ac & = \frac{av*cv*Sin(\angle aVc)}{h} \\ \\
+&& bd & = \frac{bv*cv*Sin(\angle bVd)}{h} \\ \\
+&& bc & = \frac{bv*cv*Sin(\angle bVc)}{h} \\ \\
+&& ad & = \frac{av*dv*Sin(\angle aVd)}{h} 
+\end{eqnarray}_)
+_($\to_)
+_($\frac{ac*bd}{bc*ad} = \frac{Sin(\angle aVc)*Sin(\angle bVd)}{Sin(\angle bVc)*Sin(\angle aVd)}_)
+Men vinkel _(\angle aVC _) er jo lig _(\angle AVC_), og samme gælder alle de andre! 
+_($\frac{ac*bd}{bc*ad} = \frac{Sin(\angle AVC)*Sin(\angle BVD)}{Sin(\angle BVC)*Sin(\angle AVD)} = \frac{AC*BD}{BC*AD}_)
+Bam! Done!
+</p> 
+

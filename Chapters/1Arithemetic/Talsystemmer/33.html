@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <p class="t">
+    For vi går videre med nogle flere opgaver, så vil jeg gerne give lidt tips og tricks til mere avancerede gangestykker. 
+    Hvordan ville vi f.eks. gå til at regne:
+    </p>
+
+    <p class="cent">
+        <p-m m=" B1 A2 1h*B1"></p-m>
+    </p>
+
+    <p class="t">
+    Vi <i>kunne</i> lave <p-m m=" B1"></p-m> kopier af <p-m m=" B1 A2 1h"></p-m>
+    og lægge dem alle sammen. Det ville være lidt af et langsomt og svært helvede. 
+    I stedet så kunne vi være smarte og omskrive <p-m m=" B1"></p-m> som <p-m m=" A1*4"></p-m>
+    (altså <p-m m=" A1*A1"></p-m>). Vi kan O.K nemt gange med <p-m m=" A1"></p-m> og finde
+    resultatet. Vi kan også nemt gange det resultat med <p-m m=" A1"></p-m> én gang til. 
+    Altså, vi siger: 
+    </p>
+
+    <p class="t">
+        <p-m m=" B1 A2 1h*B1 =B1 A2 1h*A1*A1="></p-m> <br>
+        <p-m m=" (B1 A2 1h+B1 A2 1h+B1 A2 1h+B1 A2 1h)*A1="></p-m> <br>
+        <p-m m=" (C1 B2 A1 2)*A1="></p-m> <br>
+        <p-m m=" D1 C2 B1 A2"></p-m>
+    </p>
+
+    <p class="t"></p>
+    Færdig! Det er generelt - og det gælder også 
+    når vi opdatere vores talsystem senere - at det er en super god ide at dele 
+    et tal op i mindre tal der er ganget med hinanden. Især når division også er involveret. 
+    </p>
+
+    <p class="t">
+    Prøv nu at lave de næste, <i>markant sværere</i> opgaver. Det er vigtigt at du kigger på svaret og ser videon efter du er færdig! Du lærer rigtig
+    meget fra det. 
+    </p>
+
+
+</html>

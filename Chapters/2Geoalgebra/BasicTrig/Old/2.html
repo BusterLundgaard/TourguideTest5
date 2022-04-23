@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <p class="t">Første stop: at finde den "tredje side" af trekanten når vi har de to rette. Det er faktisk super nemt:</p>
+    <video class="picB" controls>
+        <source src="../../../Assets/Chapter2\Section1\Pythagoras.mp4" type="video/mp4">
+    </video>
+
+    <p class="t">
+    Prøv det!
+    </p>
+
+    <q-stion 1="2" 2="1" 3="1">
+    Du går _(9_) øst og _(12_) nord. Hvor langt skal du gå hvis du bare tager den mest direkte rute?
+    <br><br></q-stion>
+    <answer-box>
+    Vi kan jo bare se på det som en trekant:
+    <img class="Spic" style="width:60%" src="../../../Assets/Chapter2\Section1\PythaExercise1.png">
+    <p class="t">Den ene side er _(9_), den anden er _(12_), ergo så er den tredje _(\sqrt{9^2+12^2}=\sqrt{81+144}=\sqrt{225}=\sqrt{15*15}=15_).</p>
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="2">
+    Vi kiggede før på et ræb der sad fast på et hus:
+    <img class="SpicB" style="width:80%" src="../../../Assets/Chapter2\Section1\Rope.png">
+    <p class="t">Hvor langt er ræbet?</p>
+    <br><br></q-stion>
+    <answer-box customWidth="600">
+    Når vi tænker lidt over det, så prøver vi konkret at finde længden af den blå trekant på det her billede:
+    <img class="SpicB" style="width:50%" src="../../../Assets/Chapter2\Section1\PythaExercise2.png">
+    <p class="t">Den ene side er _(11 favn_) og den anden er _(\sqrt{2^2+10^2} favn_). Vi skal derfor 
+    regne 
+    _($\sqrt{11^2+\sqrt{2^2+10^2}^2}=\sqrt{121+(2^2+10^2)}=\sqrt{121+4+100}=\sqrt{225}=15_)
+    Bemærk at vi slet ikke behøvede at regne længden _(\sqrt{2^2+10^2}_). Den skulle jo alligevel
+    i anden potens senere, så det ville være spildt arbejde. </p>
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Er _(\sqrt{a*b}=\sqrt{a}*\sqrt{b}_), eller? Altså, kan du bare dele en kvadratrod op i de 
+    tal der bliver ganget med hinanden?
+    <br><br></q-stion>
+    <answer-box>
+    Ja! Det er sandt!
+    <p class="t">
+    Hvad sker der når vi ganger _(\sqrt{a}*\sqrt{b}_) med sig selv? 
+    _($(\sqrt{a}*\sqrt{b})*(\sqrt{a}*\sqrt{b})=\sqrt{a}*\sqrt{a}*\sqrt{b}*\sqrt{b}=a*b_)
+    Ergo, _(\sqrt{a}*\sqrt{b}_) er kvadratroden af _(a*b_), så det er sandt!
+    </p>
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="3">
+    Lidt før så vi også på en simpel landmåling:
+    <img class="SpicB" style="width:60%" src="../../../Assets/Chapter2\Section1\LandOpdeling2.png">
+    <p class="t">Find arealet. </p>
+    <br><br></q-stion>
+    <answer-box>
+    For at måle rektanglets areal, har vi først brug for trekantens længde: 
+    _($\sqrt{40^2+30^2}=\sqrt{2500}=\sqrt{25*100}_)
+    Nu kan vi bruge det vi fandt ud af i sidste opgave:
+    _($\sqrt{25*100}=\sqrt{25}*\sqrt{100}=5*10=50_)
+    Nu med længden regnet kan vi nemt bare sige 
+    _($90*50+\frac{1}{2}*30*40=5100m^2_)
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="4">
+    Der skal til at være fest på den gade i bor, og i vil derfor pynte gadelamperne:
+    <img class="SpicB" style="width:80%" src="../../../Assets/Chapter2\Section1\lygtepælOpgave.png">
+    <p class="t">Hvor meget fest-snor får i brug for hvis der er _(12m_) mellem hver
+    lampe?</p>
+    <br><br></q-stion>
+    <answer-box customWidth="600">
+    Intet specielt svært ved den her opgave. Vi kan bare se på det som:
+    <img class="SpicB" style="width:60%" src="../../../Assets/Chapter2\Section1\PythaExercise3.png">
+    <p class="t">Hver trekant er altså _(12m_) bred, og er ligeså høj som højdeforskellen til 
+    den næste lygtepæl. Vi får: </p>
+    <p class="cent">
+        _(\sqrt{12^2+(19-10)^2}+\sqrt{12^2+(19-14)^2}+\sqrt{12^2+(14-9)^2}+\sqrt{12^2+(25-9)^2}=_)<br>
+        _(\sqrt{144+9^2}+\sqrt{144+5^2}+\sqrt{144+5^2}+\sqrt{144+16^2}=_)<br>
+        _(\sqrt{225}+2*\sqrt{169}+\sqrt{400}=_)<br>
+        _(15+2*13+20=61_)
+    </p>
+    <p class="t">
+    Hvis du er i tvivl omkring hvordan jeg kom frem til at _(\sqrt{169}=13_), så vidste jeg jo at 
+    _(\sqrt{169}=13_) skulle være højere end _(10_) da _(10^2=100_). Så gættede jeg egentlig bare
+    _(13_) da det virkede realistisk. 
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Din skole er _(600m_) nord _(800m_) øst fra hvor du bord, og springvandet i bycenteret
+    er _(300m_) syd _(400_) vest. Hvor lang er turen til skole, byen, og så hjem igen?
+    <br><br></q-stion>
+    <answer-box customWidth="620">
+    Lad os lige prøve at tegne din rute:
+    <img class="SpicB" style="width:80%" src="../../../Assets/Chapter2\Section1\PythaExercise4.png">
+    <p class="t">Vi skal altså bare finde afstanden fra hjem til skole, skole til springvand, og så springvand til hus.
+    Derefter lægger vi dem bare sammen og får vores svar. Springvandets position har jeg skrevet 
+    med <i>negative</i> tal, da _(300m_) syd jo er _(-300m_) nord, og _(400_) vest er _(-400_) øst. </p>
+    <p class="t">
+    Hjem til skole bliver bare 
+    _($\sqrt{600^2+800^2}=\sqrt{(6^2+8^2)*100^2}=\sqrt{6^2+8^2}*\sqrt{100^2}=\sqrt{100}*100=10*100=_)
+    _($1000m_)
+    Springvand til hjem er nemt _(\sqrt{300^2+400^2}=\sqrt{25}*100=500m_). Afstanden fra skole til springvand
+    på øst-aksen er _(600-(-300)=900m_) og _(800-(-400)=1200m_) på nord. Ergo er den direkte afstand så 
+    _(\sqrt{900^2+1200^2}=\sqrt{9^2+12^2}*100=\sqrt{225}*100=15*100=1500m_). Alt i alt 
+    bliver turen _(1000+500+1500=3000m_).
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="6">
+    Hvor langt går du mod øst i de to følgende billeder?
+    <p class="t"><u> 1</u>:
+    <img class="SpicB" style="width:80%" src="../../../Assets/Chapter2\Section1\WalkPathExercise1.png">
+    </p>
+    <p class="t"><u> 2</u>:
+    <img class="SpicB" style="width:80%" src="../../../Assets/Chapter2\Section1\WalkPathExercise2.png">
+    <p class="t">Du må gerne bruge lommeregner - og kun lommeregner, aldrig noget CAS-værktøj (f.eks. TI-inspire eller maple) - 
+    i lige opgave nummer 2 her.</p>
+    </p>
+    <br></q-stion>
+    <answer-box>
+    <u> 1</u>: Her <i>har</i> vi trekantens længde, og skal så finde én af de to rette sider. 
+    Det er meget nemt: _(15^2+?^2=17^2_), altså når man har gået _(15^2m_), så er der _(17^2-15^2=64m_) tilbage.
+    _(?^2_) er derfor lig _(64m_) og _(?_) må være _(\sqrt{64}=8_). 
+    <p class="t">
+    <u> 2</u>: Her i denne har vi kun den direkte længde, og trekantens <i>hældning</i> ; Hvor meget går vi 
+    mod øst i forhold til nord? Lad os <i>antage</i> at vi vidste hvor langt vi gik mod øst - bare 
+    en eller anden distance _(a_). Det ville nu skulle gælde at _(\sqrt{a^2+(a*3)^2}=25_) siden vi 
+    går _(3_) gange så langt nord som øst. Denne kvadratrod kan omskrives til _(\sqrt{a^2+a^2*3^2}=\sqrt{10a^2}=a*\sqrt{10}=3.16*a_)
+    så _(3.16*a=25_) ergo _(a=25/3.16=7.911m_). 
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="7">
+    Find det blå areal på følgende landmåling:
+    <img class="SpicB" style="width:70%" src="../../../Assets/Chapter2\Section1\LandOpdeling3.png">
+    <p class="t">Du må godt bruge lommeregner i den her opgave. Du må også gerne runde tal ned til 
+    mindre cifre hvis du vil. Bare gør hvad du tror der ville give 
+    dig et semi-realistisk svar i virkeligheden. </p>
+    <br><br></q-stion>
+    <answer-box>
+    Svaret er noget omkring _(50.2665_). Du kan (og skal!) se hvordan jeg gjorde det her:
+    <video class="picB" controls>
+        <source src="../../../Assets/Chapter2\Section1\PythaExercise5.mp4" type="video/mp4">
+    </video>
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="8">
+    Du var nødt til at bruge lommeregner i de to sidste opgaver, fordi langt
+    de fleste kvadratroder faktisk giver svar med sindsyg mange - faktisk ofte uendelig mange - kommaer.
+    Jeg har lidt givet dig et forkert indtryk i de andre opgaver, ved exlusivt at vælge
+    trekanter hvor det lige passede. Hvis man kan finde to hele tal _(a,b_) hvor _(c=\sqrt{a^2+b^2}_) også er et helt,
+    så kalder man _(a,b,c_) for "<i>pythagorean triples</i>". Det er ret praktisk at kende de her,
+    da man ofte gerne vil lave trekanter hvor alle sider er hele, nemme tal.
+    <p class="t">
+    Hvad er det mindste sæt pythagorean triples? Bare ren og skær gæt-og-fejl indtil det virker i den her!
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Det mindste sæt er to rette sider på _(3m,4m_), og en lang side på _(\sqrt{3^2+4^2}=\sqrt{25}=5m_).
+    <br><br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+        DER SKAL VÆRE EN OPGAVE HER HVOR AT DE BEVISER AT _(\sqrt{a*b}=\sqrt{a}*\sqrt{b}_) og også det med brøkker!
+        Du begynder at bruge det i opgaver uden du nogensinde har lært dem det, trods at det ikke er obvious!
+    <br><br></q-stion>
+    <answer-box>
+        
+    <br><br></answer-box>
+
+    <p class="t">Lad os sige du er en håndværker, der er ved at bygge en væg.
+    For at tilføje styrke skal der bl.a. en planke hen over diagonalen:</p>
+    <img class="SpicB" style="width:80%" src="../../../Assets/Chapter2\Section1\WallPlank.png">
+    <p class="t">Bygningens højde er _(5 favn_).  Du har fået at vide at bredden er omkring _(2.4_) gange så stor som højden.
+    Hvor lang skal planken være?
+    Det er egentlig meget simpelt: Bredden må være _(5*2.4=12 favn_). Nu bruger
+    du bare pythagoras og får _(\sqrt{5^2+12^2}=13_).</p>
+
+    <p class="t">Kunne vi godt få det her til at gå lidt hurtigere? Hvis du laver tonsvis af beregnigner hver dag,
+    virker det så ikke lidt fjollet at du <i>først</i> skal regne bredden, <i>så</i> længden?
+    Du har jo konkret kun brug for én sides længde, og så forholdet på den anden.
+    Samme gælder hvis du måske havde længden af den tredje side, dens forhold til højden, og du
+    gerne gad have bredden. Vi er dovne, og gider ikke spilde den tid vi mister på det her ékstra lille
+    trin. Ideelt kunne vi bare lave en lille håndbog hvor der f.eks. stod hvordan vi fandt
+    den tredje sides forhold til den første, når vi havde dens forhold til den anden, osv:</p>
+    <img class="Spic" style="width:130%; margin-left:-80px;" src="../../../Assets/Chapter2\Section1\RatioSkema.png">
+    <p class="t">Det er ikke nogen speciel grund til at vi kun går _(0.1_) opad i _(b/a_). Bare lige
+    for at give en ide, uden at være alt for præcis. Grunden til at vi kun går op til _(1_),
+    er fordi at det derefter ville blive meget mere praktisk at
+    se <i>opad</i> som _(a_), og <i>fremad</i> som _(b_). Så kunne vi bl.a. bare sige _(0_) for
+    at gå direkte opad, hvor vi på den anden ville skulle give et uendeligt stort tal. Det gør
+    også at der er færre ratioer vi er nødt til at huske.
+    Det ville nok være praktisk at give
+    de forhold nogle navne. Babylonianerne kaldte _(b/a_) for "ukúllu", så lad os bare kalde
+    _(b/c, a/c_) for henholdsvis "akálla" og "ykýlly".</p>
+
+    <p class="t">
+    Med úkullu kan vi beskrive <i>retninger</i> lidt mere
+    præcist. I starten af det her afsnit kiggede vi på følgende situation:
+    </p>
+    <div style="display:flex; width:120%; text-align: center; margin-left:-50px; margin-top:15px; margin-bottom: 15px;">
+        <img style="outline: solid; width:50%;" src="../../../Assets/Chapter2\Section1\WalkPath1.png">  
+        <img style="outline: solid; width:50%;" src="../../../Assets/Chapter2\Section1\WalkPath2.png">  
+    </div>
+    <p class="t">
+    Metoden til højre er tydeligvis forfærdelig. Over <i>små</i> distancer er metoden til venstre nok
+    fin, men skal man gå langt så spilder man en del tid på ikke at gå den mest direkte rute. 
+    I eksemplet her har vi en ukúllu på _(3.75_). En trejde løsning kunne nu være at markere et punkt hvor vi stod,
+    gå _(1_) mod øst, _(3.75_) mod nord, markere et nyt punkt, gå tilbage til det tidligere,
+    og så vende os om mod det nye punkt vi lige lavede:
+    </p>
+    <img class="SpicB" style="width:70%" src="../../../Assets/Chapter2\Section1\WalkPath3.png">
+    <p class="t">
+        Nu vender vi den rigtige retning ukúllu _(3.5_), og kan herfra bare gå ligeud.
+        Meget mere praktisk! 
+    </p>
+
+    <!--  -->
+    
+    <q-stion 1="2" 2="1" 3="10">
+        Lad os prøve at finde en diagonal planke igen:
+        <img class="SpicB" style="width:80%" src="../../../Assets/Chapter2\Section1\WallPlank2.png">
+        <p class="t">
+            Hvor lang skal planken være? Her forventer jeg også bare kun et ca-svar.
+            Brug skemaet! Det er nemmere og hurtigere!
+        </p>
+    <br></q-stion>
+        <answer-box>
+        Jeg har ukúllu og højden, og er interesseret i længden. Derfor burde jeg nok 
+        finde akálla, da den giver mig forholdet mellem højde og længde. Siden 
+        ukúllu er givet til _(0.5_), så skal akálla være omkring _(0.44_).
+        Akálla er jo _(b/c_).
+        _($\frac{b}{c}=0.44 \to c=\frac{b}{0.44}=\frac{7}{0.44}=15.9_)
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="9">
+    <u> 1</u>: Du går _(25m_). Din retning er primært nord, men med en ukúllu på _(1/3_) mod øst. Hvor langt øst går du i alt?
+    <p class="t"> <u> 2</u>: Du går _(18m_). Retning nord, ukúllu _(0.4_) øst. Hvor langt øst går du i alt? </p>
+    <p class="t"> <u> 3</u>: Du går _(24m_). Du går igen primært mod nord, dog også lidt øst.
+    Ykýlly er omkring _(0.8_). Hvor langt nord går du i alt?</p>
+    <p class="t">
+    Prøv faktisk at spar noget tid og brug skemaet i den her opgave! Du har ikke brug for 
+    pythagoras lige her. Du må gerne bruge lommeregner. 
+    </p>
+    <br>
+    </q-stion>
+
+    <answer-box>
+    <u> 1</u>: Det her spørgsmål er præcist det samme som da vi kiggede på:
+    <img class="SpicB" style="width:70%" src="../../../Assets/Chapter2\Section1\WalkPathExercise2.png">
+    <p class="t">Det er bare sagt på en fancy måde, med vores nye ord "Ukúllu". Svaret er altså også det samme, så omkring
+    _(7.911m_).</p>
+    <p class="t">
+    <u> 2</u>: Hvis úkullu er _(0.4_), så kan vi se på skemaet at akálla - i vores tilfælde forholdet mellem total distance og øst - 
+    er omkring _(b/c=0.371_). Vi regner derfor bare _(18*0.371=6.678m_).  
+    </p>
+    <p class="t">
+    <u> 3</u>: Hvis ykýlly er omkring _(0.81_), så kan vi se på skemaet at akálla er ca _(0.573_). 
+    Svaret er altså bare _(24*0.573=13.752_)
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <p class="t"> Det her var altså sådan man i lang tid beskrev alle form for hældninger og retninger.
+    "Hvor meget ændre én størrelse sig i forhold til en anden". Det virker godt i byggeri
+    og håndværk, hvor kvantiteter og mål er meget <i>statiske</i>. I
+    mere generelle situationer kan det dog blive problematisk.
+    Hvad hvis du skulle beskrive en lidt mere kompleks rute til nogen?</p>
+    <img class="SpicB" style="width:80%" src="../../../Assets/Chapter2\Section1\ComplicatedPath.png">
+    <p class="t">Vi kan ikke bare sige at han skal dreje om sig selv
+    med uret en bestemt mængde, fordi sådan virker vores system fundementalt ikke. Os
+    der fortæller er nødt til at vide hvad der er øst, vest, syd, nord ved hvert punkt.
+    Man kan ikke <i>tilføje</i> eller <i>fjerne</i> en retning fra en anden.
+    Der er slet ikke noget koncept om retningen som en <i>aktion</i> - noget der sker.
+    At man <i>drejer</i> sig en bestemt mængde,
+    at solens og månens retning til os <i>ændrer</i> sig fra dag til nat.
+    Nu da vi nævner det, så blev problemerne virkelig klare i arbejdet med astronomi.
+    Man var nødt til at kigge på flere forskellige trekanter baseret på hvor henne solen var:</p>
+    <img class="Spic" style="width:90%" src="../../../Assets/Chapter2\Section1\Astronomi.png">
+    <p class="t">Man havde ikke rigtig nogen god måde at forklare hvor hurtigt solen bevægede sig (rundt om jorden troede man dengang).
+    I "forholds/systemmet" ville forholdet gå super meget opad  når solen var lige over os. Det
+    er et forkert indtryk, da solen tydeligvis går rundt i samme hastighed. Alt i alt var man bare
+    nødt til at spørge sig selv hvorfor man kun havde otte rigtige "retninger".
+    Kunne man ikke bare tilføje en masse flere, og beskrive det i meget højere detalje?</p>
+    <video style="width: 130%; margin-left: -80px;" class="picB" controls>
+        <source src="../../../Assets/Chapter2\Section1\IntroducingVinkler.mp4" type="video/mp4">
+    </video>
+    <p class="t">Vinkler er super simple. Nu har man bare et tal der beskriver hvor langt
+    rundt i cirklen man er gået. _(0_) er når man er _(0%_) rundt, og _(360_) er når man er hele vejen rundt.
+    Alt andet er bare imellem de to. Man kan nemt lægge vinkler sammen, fordi det bare betyder
+    at man vender sig mere rundt. Nu kan vi se hvor mange vinkler solen på himlen bevæger sig over tid, og
+    vi kan sige at personen skal "dreje 30 vinkler med uret, gå 15 favn, dreje 60 vinkler mod uret" osv.
+    Udover de mange andre fordele, så er det også meget nemmere og hurtigere at måle end forholdet, hvor
+    man også først skulle til at regne et divisionsstykke.
+    Da håndværkere og byggerimænd helst stadig skal kunne gøre deres arbejde effektivt i det nye system,
+    så burde vi også lave en håndbog, der fortæller hvilke forhold der korrespondere til hvilke vinkler:</p>
+    <img class="Spic" style="width:200%; margin-left:-240px;" src="../../../Assets/Chapter2\Section1\SinCosTanSkema.png">
+    <p class="t">Hvor vi før kaldte forholdende for ukúllu, akálla, og ykýlly, så kalder vi nu forholdende
+    for "tan" (_(b/a_)), "sin" _(b/c_), og "cos _(a/c_)". Jeg har ingen anelse om hvorfor vi valgte lige de navne.
+    Som du nok kan se så er skemaet lidt større end det sidste: nu går vi <i>hele</i> vejen rundt om
+    cirklen: ikke kun _(1/8_)-del. Det kunne godt blive lidt mindre, da man nemt kan se at alle forholdende
+    efter _(90_) grader bare er de tidligere forhold, men nu
+    måske med en ny negativitet. Der er egentlig ikke noget specielt mærkeligt ved at have negative forhold:
+    I stedet for at du går <i>opad</i> _(5_) favn hver gang du går _(1_) fremad, så går du <i>nedad</i> _(5_) favn.
+    Ergo det modsatte, ergo negativitet. Hvis cos på én vinkel er negativ, og cos på en anden er positiv, så
+    ved du at du i det ene tilfælde skal bygge fremad, i det andet tilfælde bygge bagud. Bemærk
+    også at det her nye skema er en <i>udvidelse</i> af det tidligere skema - ikke en "erstatning".
+    Alle de ratioer vi <i>kun</i> havde før, har vi nu <i>sammen</i> med en bestemt vinkel!
+    De her nye ideer om vinkler og sin, cos, og tan, kan altså bare hjælpe os med at beskrive
+    og udregne en helt masse ting meget mere effektivt.</p>
+
+    <q-stion 1="2" 2="1" 3="11">
+    Selvom det jo egentlig meget er opfundet som et slags skema, så er
+    det super nemt at finde _(sin,cos,tan_) for nogen som helst vinkel.
+    Prøv ved hjælp af en passer, lineal, og vinkelmåler, at udregne:
+    <div style="text-align:center;">
+        <ul style="display: inline-block; text-align: left; list-style:none;">
+            <li>_(tan(15)_)</li>
+            <li>_(tan(25)_)</li>
+            <li>_(tan(40)_)</li>
+            <li>_(sin(30)_) </li>
+            <li>_(cos(75)_) </li>
+        </ul>
+    </div>
+    Det er fint nok hvis dit tal er lidt approximalt. Prøv alligevel at gøre det så præcist du kan!
+    <br><br></q-stion>
+    <answer-box>
+    _(tan(15)_) fortæller os hvad forholdet mellem højden og bredden er, på en trekant med en vinkel på _(15_).
+    Derfor tegner vi bare en eller anden trekant med en vinkel på _(15_) via en vinkelmåler, måler begge
+    dens rette sider, og tager deres forhold. Så let er det! At gøre det <i>præcist</i> er en anden historie,
+    men det var logisk nok altså sådan her man fik skrevet de der skemaer. Samme gælder 
+    når vi skal finde f.eks. _(sin(30)_). Vi laver bare en trekant med en vinkel på _(30_), og måler 
+    så nu forholdet mellem højden og længden. Ved _(cos(75)_) så måler vi bare forholdet mellem 
+    bredden og længden. 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="12">
+    <u> 1</u>: I en af de tidligere byggeopgaver var der en diagonal planke med en ukúllu på _(0.4_).
+    Hvordan kunne dens retning over jorden beskrives i forhold til grader?
+    <p class="t">
+    <u> 2</u>: Samme opgave som _(1_), nu bare hvor vi siger at den har en <i>akálla</i> på _(0.6_).
+    </p>
+    <br></q-stion>
+    <answer-box>
+    <u> 1</u>: Den her opgave er altså lidt den modsatte af den sidste. Vi <i>har</i> nu et 
+    forhold mellem siderne, og skal bruge det til finde vinklen. Løsningen er endnu engang 
+    meget simpel. Her i 1 tegner vi bare en trekant der er _(0.4_) gange så høj som bred, og
+    måler så vinklen. Hvis vi stod der i virkeligheden så ville vi jo også bare tage en vinkelmåler!
+    Ved <u> 2</u> gør vi meget det samme. Her siden det er <i>akálla</i> (som jo er det samme som sin)
+    så skal vi nu tegne en trekant der er _(0.6_) gange så høj som den er lang. Det er en smule mere
+    tricky, men absolut muligt. Bare lav en længere vandret streg og lav så en lodret for enden som du måler.
+    Regn så hvor lang den lange side skal være via forholdet. Nu kan du rotere din lineal omkring 
+    den lodrette, indtil der er den rigtige længde til når linealen skære den vandrette streg. Illustreret her:
+    <img class="SpicB" style="width:60%" src="../../../Assets/Chapter2\Section1\HowToInvSin.png">
+    <p class="t">
+    Vi gider selvfølgelig ikke til at gøre <i>det her</i> upræcise noget gennem resten af bogen. 
+    Derfor hvis du skal finde en vinkel ved hjælp af to sider, så lader jeg dig i alle 
+    de tilfælde bruger en lommeregner. Hvis man har sin, og skal finde vinklen der passer,
+    så siger vi at man regner "arcsin" eller bare "inverse sin". Tan er "arctan/inverse tan" og 
+    samme gælder cos. Du kan udregne dem på din lommeregner
+    ved at trykke på "inverse"-knappen (ofte oppe i en af hjørnerne), og så bare trykke på _(sin_), _(cos_), eller _(tan_). 
+    Det her burde gælde både for de fleste fysiske lommeregnere, windows-lommeregneren, og den 
+    på mac. 
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="13">
+    Hvor langt går du mod øst i de to følgende billeder?
+    <p class="t"><u> 1</u>:
+    <img class="SpicB" style="width:70%" src="../../../Assets/Chapter2\Section1\WalkPathExercise3.png">
+    </p>
+    <img class="SpicB" style="width:70%"src="../../../Assets/Chapter2\Section1\WalkPathExercise4.png">
+    <p class="t">Du må gerne bruge lommeregner i begge disse. Hvis din lommeregner giver dig mærkelige
+    værdier for sin og cos (f.eks at de er negative, eller at de ikke passer til svaret), så 
+    er det måske fordi din lommeregner bruger en anden enhed kaldt "radianer". Dem lærer vi om 
+    senere, men prøv lige her og de kommende opgaver at regn det i grader. På i hvert fald
+    windows-lommeregneren der kan man oppe i det ene hjørne bestemme om vinkler skal være i 
+    grader eller radianer. </p>
+    <br></q-stion>
+    <answer-box>
+    <u> 1</u>: Vi ved at _(tan_) giver os forholdet mellem højden og bredden på en trekant. Det vil altså sige at 
+    _(tan(30)_) i dette tilfælde giver os forholdet mellem hvor langt vi går øst og hvor langt vi går nord.
+    Svaret er derfor bare _(tan(30)*40=0.577*40=23.09_). Det er helt fint hvis du ikke lige fik de samme cifre.
+    Jeg er lidt ligeglad med præcisheden her. 
+    <p class="t">
+    <u> 2</u>: Her skal vi nu bare bruge _(sin_) i stedet. _(sin(55)*24=0.81*24=19.65_). 
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="14">
+    Hvis en flod falder med _(5_) grader og er _(1000m_) lang, hvor meget falder vandet så i alt? 
+    <br><br></q-stion>
+    <answer-box>
+    Meget simpelt. Siden _(tan(5)=0.087_), så ved vi vandet falder _(0.087m_) pr _(m_) det går fremad. 
+    Vi regner altså bare _(1000*0.087=87m_).
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="15">
+    <u> 1</u>: Udregn det blå areal på følgende billede:
+    <img class="SpicB" style="width:70%" src="../../../Assets/Chapter2\Section1\LandOpdeling4.png">
+    <p class="t"><u> 2</u>: Hvor stort skal længden være for at det blå areal er _(10 m^2_)? </p>
+    <p class="t">
+    Den her gang har du fået lidt nye informationer!
+    Du må gerne bruge lommeregner i den her opgave. Som altid <i>ingen</i> cas-værktøjer.
+    </p>
+    <p class="t">
+    <i>Hint</i>: Hvis du har svært ved at finde nogle længder på den lille trekant med _(15_) grader,
+    så prøv at del en af de ikke-retvinklede trekanter en af dens sider er en del af, op i to retvinklede trekanter.
+    </p>
+    <br></q-stion>
+    <answer-box t="h">
+    Du kan se det jeg refererede til i hintet her:
+    <img class="SpicB" style="width:70%" src="../../../Assets/Chapter2\Section1\LandOpdeling4 2.png">
+    </answer-box>
+    <answer-box>
+    <p class="t"> Du kan (og skal!) se svaret på første opgave her: </p>
+    <video class="picB" controls>
+        <source src="../../../Assets/Chapter2\Section1\LandAngles1.mp4" type="video/mp4">
+    </video>
+    <p class="t">
+    Og samme gælder anden opgave her:
+    </p>
+    <video class="picB" controls>
+        <source src="../../../Assets/Chapter2\Section1\LandAngles1 2.mp4" type="video/mp4">
+    </video>
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    <b> 1</b>: Find _(?_1_), _(?_2_) og _(?_3_) på følgende billede:
+    <img class="SpicB" style="width:25%" src="../../../Assets/Chapter2\Section1\Vinkel1 1.png">
+    <p class="t">
+    <b> 2</b>: Har en retvinklet trekant altid den samme vinkelsum, og hvis ja, hvilken?
+    </p>
+    <p class="t">
+    <b> 3</b>: Har en vilkårlig (altså en der ikke nødvendigvis er retvinklet) trekant altid den samme vinkelsum, og hvis ja, hvilken?
+    </p>
+    <br><br></q-stion>
+    <answer-box>
+    <b> 1</b>: Du kan se mit svar på første opgave her:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter2\Section1\Vinkler1.mp4' type='video/mp4'>
+    </video>
+    <p class="t">
+    <b> 2</b>: Du kan se mit svar på anden opgave her:
+    </p>
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter2\Section1\Vinkler1 2.mp4' type='video/mp4'>
+    </video>
+    <p class="t">
+    <b> 3</b>: Du kan se mit svar på tredje opgave her:
+    </p>
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter2\Section1\Vinkler1 3.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    <b> 1</b>: Find det blå areal på dette billede:
+    <img class="SpicB" style="width:70%" src="../../../Assets/Chapter2\Section1\Vinkel2.png">
+    <p class="t">
+    <b> 2</b>: Find vinklen _(?_1_) på dette billede: </p>
+    <img class="SpicB" style="width:70%" src="../../../Assets/Chapter2\Section1\Vinkel3.png">
+    <p class="t">
+    <b> 3</b>: Find vinkelsummen af det blå areal på dette billede: </p>
+    <img class="SpicB" style="width:70%" src="../../../Assets/Chapter2\Section1\Vinkel4.png">
+    <p class="t">Som markeret her, så er der to par sider der er parallelle:</p>
+    <img class="SpicB" style="width:70%" src="../../../Assets/Chapter2\Section1\Vinkel4 2.png">
+    <br><br></q-stion>
+    <answer-box>
+    <b> 1</b>: Du kan se mit svar på første opgave her:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter2\Section1\Vinkler2.mp4' type='video/mp4'>
+    </video>
+    <p class="t">
+    <b> 2</b>: Du kan se mit svar på anden opgave her:
+    </p>
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter2\Section1\Vinkler3.mp4' type='video/mp4'>
+    </video>
+    <p class="t">
+    <b> 3</b>: Du kan se mit svar på tredje opgave her:
+    </p>
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter2\Section1\Vinkler4.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+

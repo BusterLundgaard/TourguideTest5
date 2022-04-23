@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+
+
+    <h3>Mere om normalvektoren</h3>
+    <p class="t">
+    Den vektor _(\vec{n}_) der er vinkelret på et plan kalder man tit
+    for "normalvektoren"
+    </p>
+
+    <q-stion 1="16" 2="1">
+    Sig at et plan indeholder de to vektorer
+    _($\vec{v_1}=\VeC[1,1,2], \qquad \vec{v_2}=\VeC[-2,5,3]_)
+    Find normalvektoren. Husk, at der jo faktisk er uendelig mange mulige
+    normalvektorer: Du skal bare finde en eller anden vektor, der har den rigtige
+    <i>retning</i>. Længden for os er ligegyldig.
+    <p class="t">
+    Den her opgave er ikke super lang, men den er måske lidt tricky!
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Vores normalvektor skal være vinkelret til <i>alle</i> vektorer man muligt
+    kunne lave på planet. Planet kan beskrives som en parameterfremstilling:
+    _($\VeC[x,y,z]=\VeC[2,4,3]+t_1*\VeC[1,1,2]+t_2*\VeC[-2,5,3]_)
+    Hvis bare vores normalvektor er vinkelret på begge de to givne vektorer,
+    må den også være vinkelret på <i>alle andre</i> vektorer! Det er nu
+    målet: Find en vektor, der er vinkelret på både _(\vec{v_1}_) og _(\vec{v_2}_)
+    samtidig. 
+    <p class="t">
+    Vi så, at vinkelrethed matematisk kan oversættes til et prikprodukt på _(0_).
+    Derfor kan vi opstille to ligninger: 
+    _($\begin{eqnarray} 
+    && \vec{v_1} & \cdot & \vec{n} = 0 \\
+    && \vec{v_2} & \cdot & \vec{n} = 0 \\
+    \end{eqnarray}_)
+    Hvilket svarer til:
+    _($\begin{eqnarray}
+    &&  1 & *n_x  + 1 & *n_y + 2 & *n_z & = 0 \\ 
+    &-& 2 & *n_x + 5 & * n_y + 3 & *n_z & = 0 \\
+    \end{eqnarray}_)
+    Det er to ligninger, og tre ubekendte _(n_x_), _(n_y_), _(n_z_). Det giver
+    mening: Der er uendelig mange svar på ligningen, da 
+    vektorens <i>længde</i> er ligegyldig. 
+    Hvis du isolerer _(n_x_) på begge sider, får du _(n_x=-n_y-2n_z_) og
+    _(n_x=2.5n_y + 1.5n_z_) så:
+    _($-n_y-2n_z = 2.5n_y + 1.5n_z_)
+    Hvilket giver _(n_z=-n_y_). Det kan vi indsætte i første ligning og få:
+    _($n_x+n_y+2*(-n_y)=0_)
+    Hvilket giver _(n_x=n_y_). Alting er nu beskrevet i forhold til _(n_y_), siden
+    både _(n_z=-n_y_) og _(n_x=n_y_).
+    _($\vec{n}=\VeC[n_y,n_y,-n_y]=n_y*\VeC[1,1,-1]_)
+    Man kan se, at _(n_y_) ikke ændrer på retningen. Lad os 
+    derfor bare sætte det til _(1_) og få:
+    _($\vec{n}=\VeC[1,1,-1]_)
+    Voila!
+    </p>
+    <br></answer-box>
+
+    <p class="t">
+    I 2D er du vant til at der til hver retning er én og kun én vinkelret retning:
+    </p>
+    <img class='Spic' style='width:50%' src='../../../Assets/Chapter2\Section4\Space\KunEnVinkelret2D.png'> 
+    <p class="t">
+    I 3D er det anderledes. Her er der <i>uendelig</i> mange vinkelrette retninger:
+    </p>
+    <img class='Spic' style='width:100%' src='../../../Assets/Chapter2\Section4\Space\UendeligMangeVinkelret.png'> 
+    <p class="t">
+    Det giver god nok mening: Hver retning er vinkelret til et eller andet plan. Det
+    betyder, at den retning er vinkelret på alle uendelig mange vektorer (og derved også retninger) 
+    <i>i</i> det plan.
+    </p>
+    <p class="t">
+    Det er altså ikke muligt at finde "den vinkelrette vektor" i 3D, som man kan i 2D.
+    Du ville i stedet skulle finde en hel familie af vektorer. 
+    Det er dog muligt at finde èn enkelt retning, der er vinkelret til <i>to</i>
+    andre retninger samtidig. Det var jo det vi gjorde, for at finde normalvektoren
+    på planet i den tidligere opgave. 
+    </p>
+    <img class='Spic' style='width:65%' src='../../../Assets/Chapter2\Section4\Space\HandCross.png'> 
+    <p class="t">
+    Sig f.eks. jeg holdt min hånd som her. 
+    Både min pegefinger og langfinger er beskrevet som vektorer, og min tommelfinger
+    kan jeg beskrive ved at finde en _(5\text{ cm}_)-lang vektor, der er vinkelret 
+    til de to andre fingre. Det giver mig systemet:
+    _($\begin{eqnarray}
+    &&  2.26 & *n_x  + 1.40 & *n_y  + 0.53 & *n_z & = 0 \\ 
+    &-& 1.66 & *n_x  - 2.30 & * n_y - 0.98 & *n_z & = 0 \\
+    \end{eqnarray}_)
+    Hvis løsning er:
+    _($\vec{n}=c*\VeC[-1,-20.26,49.16]_)
+    Jeg skal nu vælge den _(c_), hvor _(\vec n_) er _(5_) lang. Dette kan let regnes som:
+    _($c=\frac{5}{\sqrt{1^2+20.26^2+49.16^2}} = 0.094019_)
+    Endeligt får jeg:
+    _($\Ray{\text{Tommelfinger}} = 0.094019*\VeC[-1,-20.26,49.16] = \VeC[-0.094,-1.904,4.621]_)
+    Som du nok kan regne ud, er det ret vigtigt og praktisk at kunne finde
+    en vektor, der er vinkelret på to andre. Det bliver gjort meget ofte, 
+    og man har heldigvis fundet en dejlig formel:
+    _($\vec{n} = \vec{a} \times \vec{b} = \VeC[a_x,a_y,a_z] \times \VeC[b_x,b_y,b_z] = \VeC[a_yb_z-a_zb_y,a_zb_x-a_xb_z,a_xb_y-a_yb_x]_)
+    Vi har givet denne operation et navn og et symbol, da vi anvender den hyppigt. 
+    Når du bruger denne formel, siger vi at du tager "krydsproduktet" af to vektorer.
+    Det skrives ofte med symbolet _(\times_), som _(\vec a \times \vec b_). 
+    Du skal ligesom prikproduktet ikke lade dig forvirre over ordet "produkt": Det er ret tilfældigt. 
+    </p>    
+    <p class="t">
+    Der findes uendelig mange vektorer, hvis retninger er korrekte, så  
+    formlen for krydsproduktet giver os lidt mere specifikt en vektor hvor:
+    _($|\vec n|=|\vec a|*|\vec b|*Sin(\theta)_)
+    Det virker lidt tilfældigt, men er faktisk ret praktisk: _(|\vec a|*|\vec b|*Sin(\theta)_)
+    svarer til arealet af et parallelogram med siderne 
+    _(\vec a_) og _(\vec b_). Vi får 
+    derfor en ekstra lille "bonus" med i pakken. 
+    Vi kan nu regne dette areal indirekte gennem længden af krydsproduktet! 
+    </p>
+    <p class="t">
+    I mange situationer er dette fuldkommen ligegyldigt 
+    og urelevant, men længden er også valgt fordi, det simpelthen resulterer i en dejlig, praktisk formel. 
+    </p>
+    <p class="t">
+    Vi kan selv bestemme størrelsen på vores vinkelrette vektor, og den størrelse
+    kan godt være "negativ". Vi valgte _(c=0.094019_) i det tidligere eksempel, men vi 
+    kunne også have valgt _(c=-0.094019_) og fået:
+    _($ \VeC[0.094,1.904,-4.621]_)
+    Så på en måde er der <i>to</i> rigtige retninger. _(c=-0.04019_) er <i>forkert</i>, da
+    det ikke har samme retning som tommelfingeren: 
+    </p>
+    <img class='Spic' style='width:65%' src='../../../Assets/Chapter2\Section4\Space\HandCross2.png'> 
+    <p class="t">
+    Hvordan ved vi, hvad der er den "rigtige" retning i en bestemt situation? Begge retninger
+    er matematisk set vinkelrette på begge vektorer. 
+    </p>
+    <p class="t">
+    Her er man kommet frem til en smart løsning: Formlen for krydsproduktet er valgt, 
+    netop så at retningen vil passe din tommelfinger, hvis du holder din hånd ligesom
+    jeg gør på billedet. Det er praktisk, da en hånd er noget
+    stort set alle har på sig, mens de laver matematik. Hvis du er i tvivl om 
+    hvad for en retning krydsproduktet peger, skal du nu bare 
+    holde din hånd som jeg gør på billedet, hvor din pegefinger er den ene 
+    vektor og din langfinger den anden, og se hvilken retning din 
+    tommelfinger peger. Lad mig lige vise et eksempel:
+    </p>
+    
+    
+    <video class='SpicBXL' style="width:100%;" controls>
+        <source src='../../../Assets/Chapter2\Section4\Space\Right hand rule.mp4' type='video/mp4'>
+    </video>
+
+    <p class="t">
+    Det her kaldes for "højrehåndsreglen". 
+    </p>
+
+    <!--  -->
+
+    <q-stion 1="16" 2="2">
+    Sig at:
+    _($\vec a = \VeC[a_x,a_y,a_z], \qquad \vec b = \VeC[b_x,b_y,b_z]_)
+    Bevis nu at
+    _($\vec a \times \vec b = \VeC[a_yb_z-a_zb_y,a_zb_x-a_xb_z,a_xb_y-a_yb_x]_)
+    ... er vinkelret på både _(\vec a_) og _(\vec b_). Du behøver ikke at vise, at 
+    dets længde er lig _(|\vec a|*|\vec b|*Sin(\theta)_). Det er ret let at bevise,
+    men er samtidigt meget uelegant og langt (det er bare en tonsvis masse algebra), så vi
+    springer over det.  
+    <br><br></q-stion>
+    <answer-box>
+    Hvis vi allerede kender formlen og bare skal bevise, at den virker, kan vi 
+    nemt indsætte _(n_x=a_yb_z-a_zb_y_), _(n_y=a_zb_x-a_xb_z_) og _(n_z=a_xb_y-a_yb_x_)
+    i systemet
+    _($\begin{eqnarray}
+    && a_x n_x & + \text{ } a_y n_y & + \text{ } a_z n_z & = 0 \\
+    && b_x n_x & + \text{ } b_y n_y & + \text{ } b_z n_z & = 0 
+    \end{eqnarray}_)
+    Og få f.eks. ved første ligning, at
+    _($\begin{eqnarray}
+    && a_x \left(a_y b_z - a_z b_y \right) & \, + \\
+    && a_y \left(a_z b_x - a_x b_z \right) & \, + \\
+    && a_z \left(a_x b_y - a_y b_x \right) & \, = 0
+    \end{eqnarray}_)
+    Det kan vi let se er sandt, når vi ganger ind i parenteserne. 
+    På første linje får vi _(a_x a_y b_z_), der går ud 
+    med _(-a_y a_x b_z_) på næste linje, ligesom at 
+    _(-a_x a_z b_y_) på første linje går ud med _(a_z a_x b_y_) på tredje osv. 
+    Ved anden ligning kan vi se præcis det samme, så de giver begge _(0_).
+    <p class="t">
+    Det er <i>beviset</i>, men hvordan udledte man denne formel til at begynde med? 
+    Her skal vi
+    egentlig bare gøre det samme, vi gjorde i 
+    starten på denne side: Løse systemet for at finde _(n_x_), _(n_y_), _(n_z_). 
+    Jeg tænker vi starter med at isolere _(n_y_) i 
+    første ligning, hvilket giver:
+    _($n_y = -\frac{a_z n_z + a_x n_x}{a_y}_)
+    Det indsætter vi i anden ligning og får:
+    _($b_x n_x - \frac{b_y}{a_y}\left(a_z n_z + a_x n_x \right) + b_z n_z = 0 \to_)
+    _($\left(b_x-\frac{b_y}{a_y}a_x \right)n_x = \left(\frac{b_y a_z}{a_y} - b_z \right) n_z \to_)
+    _($n_x = \frac{b_y a_z - b_z a_y}{b_x a_y - b_y a_x} n_z_)
+    Vi har nok tænkt os igen at beskrive både _(n_x_) og _(n_y_) i forhold til _(n_z_) og 
+    derefter vælge en praktisk _(n_z_) til sidst, der giver en dejlig formel. Vi kan indsætte
+    denne _(n_x_) i første ligning og få:
+    _($a_x \frac{b_y a_z - b_z a_y}{b_x a_y - b_y a_x} n_z + a_y n_y + a_z n_z = 0 \to_)
+    _($n_y = -\frac{n_z}{a_y} \left(a_x \frac{b_y a_z - b_z a_y}{b_x a_y - b_y a_x} + a_z \right) _)
+    Ved hjælp af en masse kedeligt algebraisk arbejde er det muligt at simplificere højre side
+    massivt til:
+    _($n_y = \frac{a_x b_z -  a_z b_x}{b_x a_y - b_y a_x} n_z _)
+    Så vi har nu:
+    _($\begin{eqnarray}
+    && n_x & = \frac{b_y a_z - b_z a_y}{b_x a_y - b_y a_x} & n_z \\ \\
+    && n_y & = \frac{a_x b_z -  a_z b_x}{b_x a_y - b_y a_x} & n_z 
+    \end{eqnarray}_)
+    Det mest praktiske _(n_z_) vi kan vælge er nok _(n_z=b_x a_y - b_y a_x_), siden det vil 
+    fjerne brøken. Vi får nu endeligt:
+    _($\begin{eqnarray}
+    && n_z = b_x a_y - b_y a_x \\
+    && n_x = b_y a_z - b_z a_y \\
+    && n_y = a_x b_z -  a_z b_x
+    \end{eqnarray}_)
+    Voila!
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="16" 2="3">
+    Et plan indeholder punkterne _((3,-2,6)_), _((2,1,5)_) og _((-1,-4,3)_). 
+    Find planets ligning. 
+    <br><br></q-stion>
+    <answer-box>
+    For at finde planets ligning har vi brug for et punkt _(P_) og normalvektoren _(\vec{n}_).
+    Normalvektoren kan vi finde, ved at tage krydsproduktet af to vektorer
+    på planet, da den skal være vinkelret til dem begge:
+    _($\vec{a}=\VeC[3,-2,6] - \VeC[2,1,5]=\VeC[1,-3,1]_)
+    _($\vec{b}=\VeC[-1,-4,3]- \VeC[2,1,5]=\VeC[-3,-5,-2]_)
+    _($\to_)
+    _($\vec{n}=\VeC[a_3*b_3-a_3*b_2,a_3*b_1-a_1*b_3,a_1*b_2-a_2*b_1]=\VeC[(-3)*(-2)-1*(-5),1*(-3)-1*(-2),1*(-5)-(-3)*(-3)]=\VeC[11,-1,-14]_)
+    Altså, siden vi har formlen
+    _($n_x*x+n_y*y+n_z*z=n_x*p_x+n_x*p_y+n_x*p_z_)
+    ... får vi:
+    _($11x-1y-14z=11*2-1*1-14*5_)
+    Som forsimplet er:
+    _($11x-y-14z=-49_) 
+    Vi behøvede ikke bekymre os om højrehåndsreglen, da det 
+    ikke er relevant for planets ligning, om 
+    normalvektoren går fremad eller tilbage. 
+    <br><br></answer-box>
+    
+    <q-stion 1="16" 2="4">
+    Sig vi har en eller anden kasse i et rum:
+    <img class='Spic' style='width:53%' src='../../../Assets/Chapter2\Section4\Space\KasseKrydsprodukt.png'> 
+    <p class="t">
+    Hvis hver side på kassen er _(0.5m_) lang, hvad er så koordinaterne til punktet _(P_)?
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Lad mig lige give punkterne nogle navne:
+    <img class='Spic' style='width:30%' src='../../../Assets/Chapter2\Section4\Space\KasseKrydsprodukt2.png'> 
+    <p class="t">
+    For at finde _(P_) skal vi finde en eller anden
+    _(0.5m_) lang vektor _(\vec{v}_), der er vinkelret til både
+    _(\vec{BA}_) og _(\vec{BC}_) (som jo er vinkelrette på hinanden). 
+    Så ved vi, at _(P=C+\vec{v}+\vec{BA}_).
+    </p>
+    <p class="t">
+    Først lige hurtigt:
+    _($\vec{BA}=\VeC[3.95,4.45,2.26]-\VeC[4.3,4.48,2.62]=\VeC[-0.35,-0.03,-0.36]_)
+    _($\vec{BC}=\VeC[4.08,4.88,2.82]-\VeC[4.3,4.48,2.62]=\VeC[-0.22,0.4,0.2]_)
+    Så:
+    _($\vec{v}=\VeC[0.03*0.2 - 0.36*0.4,0.36*(-0.22)-0.35*0.2,0.35*0.4-0.03*(-0.22)]=\VeC[-0.138,-0.149,0.146]_)
+    Vi ved fra videoen om højrehåndsreglen, at vi i lige dette
+    eksempel faktisk skal vende retningen om:
+    _($\vec{v}=\VeC[0.138,0.149,-0.146]_)
+    Nu skal vi sørge for, at _(\vec{v}_) har den rigtige længde:
+    _($\frac{0.5}{\sqrt{0.138^2+0.149^2+0.146^2}}*\VeC[0.138,0.149,-0.146]=\VeC[0.275, 0.297, -0.292]_)
+    Endelig. Nu kan vi bare sige:
+    _($P=\VeC[4.08,4.88,2.82]+\VeC[-0.22,0.4,0.23]+\VeC[0.275, 0.297, -0.292]=\VeC[4.005,5.147,2.167]_)
+    Voila!
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="16" 2="5">
+    I mange 3D spil har man en karakter, der går rundt i en 3D verden.
+    De her spil har ofte et stort internt koordinatsystem, som alle objekter (inklusiv
+    spilleren!) er beskrevet i forhold til. Sig at vi er en spiller, der står på
+    positionen _((-4.24,5,2.34)_) og kigger mod
+    _($\vec{r}=\VeC[-0.8,0.4,0.5]_)
+    3D former er ofte beskrevet kun ved hjælp af deres hjørner. F.eks 
+    kunne vi beskrive en 3D kasse gennem positionerne på dens _(8_) hjørner
+    i spillets koordinatsystem:
+    <img class='SpicXL' style='width:95%' src='../../../Assets/Chapter2\Section4\Space\SpilopgaveB.png'> 
+    <p class="t">
+    Mit spørgsmål til dig er nu: Kigger din spilkarakter mod denne 3D rektangel i spillet?
+    Det er nok vigtigt for spillet at vide, siden spilleren måske vil interagere
+    med objektet.
+    </p>
+    <p class="t">
+    For at gøre det lidt nemmere, behøver du ikke tjekke <i>hver</i> flade på rektanglet - bare
+    tjek den røde-ish flade til højre. 
+    Man <i>burde</i> tjekke alle, men det ville blive exceptionelt kedeligt og tidskrævende for os begge.
+    </p>
+    <br></q-stion>
+    <answer-box customWidth="500">
+    Vi skal nok gøre lidt det samme som med bolden fra tidligere: Beskrive fladen som 
+    et plan ved hjælp af en normalvektor, se hvornår vi skærer
+    planet (her nu kamera-synet i stedet for bolden), og se om skæringspunktet
+    er inden for fladens grænser. 
+    <p class="t">
+    Først normalvektoren. Vi ved at planet indeholder:
+    _($\begin{eqnarray}
+    && \VeC[-9.47,7.6,10.77] & - \VeC[-13.92,4.34,9.21] & = \VeC[4.35,3.25,1.56] \\ \\
+    && \VeC[-14.61,8.37,2.8] & - \VeC[-13.92,4.34,9.21] & = \VeC[-0.69,4.02,-6.41]
+    \end{eqnarray}_)
+    Normalvektoren skal være vinkelret på dem begge, så: 
+    _($\vec n =  \VeC[4.35,3.25,1.56] \times \VeC[-0.69,4.02,-6.41] = \VeC[-27.15,27.48,20.17]_)
+    _(-27.15*(-9.47)+27.48*(7.6)+20.17*(10.77)_) er lig _(683.18_), så planet bliver
+    altså:
+    _($-27.15x+27.48y+20.17z = 683.189_)
+    Kameraets syn kan modelleres som en simpel linje:
+    _($\VeC[x,y,z]=\VeC[-4.24,5,2.34]+t*\VeC[-0.8,0.4,0.5]_)
+    Så vi har nu ligningen
+    _($\begin{align}
+    & 5.59*(-4.24-0.8t)-6.18*(5+0.4t)+1.19*(2.34+0.5t) = \\ \\
+    & 683.189
+    \end{align}_)
+    ... som har løsningen _(t=-115.77_). Det vil sige, at skæringspunktet er:
+    _($\VeC[x,y,z]=\VeC[-4.24,5,2.34]-115.77*\VeC[-0.8,0.4,0.5]=\VeC[-11.41,8.58,6.82]_)
+    Hvordan præcist tjekker vi, om det er inden for rammerne? Ved bolden / møblet var det
+    nemt, da vores koordinatsystem var opsat, så vi kun behøvede
+    at kigge på _(x_) og _(y_). Hvad nu, dog? Jeg har èn ide:
+    </p>
+    <img class='Spic' style='width:50%' src='../../../Assets/Chapter2\Section4\Space\Spilopgave2.png'> 
+    <p class="t">
+    Siden skæringspunktet _(I_) er på planet defineret af de to vektorer _(\vec{AB}_)
+    og _(\vec{AC}_), kan _(\vec{AI}_) beskrives som en kombination af 
+    _(\vec{AB}_) og _(\vec{AC}_) som 
+    _($\vec{AI}=a*\vec{AB}+b*\vec{AC}_)
+    Så skal vi 
+    bare finde _(a_) og _(b_), og tjekke om _(0 \gt a \gt 1_) og _(0 \gt b \gt 1_).
+    </p>
+    <p class="t">
+    Vektorerne vi skal arbejde med er:
+    _($\begin{eqnarray}
+    && \vec{AB} = \VeC[4.35,3.25,1.56] \\ \\
+    && \vec{AC} = \VeC[-0.69,4.02,-6.41] \\ \\
+    && \vec{AI} = \VeC[-11.41,8.58,6.82] - \VeC[-13.92,4.34,9.21] = \VeC[2.52,4.24,-2.39]
+    \end{eqnarray}_)
+    Vi kan nu opsætte ligningerne:
+    _($\begin{eqnarray} 
+    && 2.52 & = & a*4.35 & + b*(-0.69) \\
+    && 4.24 & = & a*3.25 & + b*4.02 \\
+    &- & 2.39 & = & a*1.56 & + b*(-6.41)
+    \end{eqnarray}_)
+    Der er to ubekendte, så vi har faktisk kun brug for 
+    de to første ligninger. Løser vi dem, får vi _(a=0.65_) og _(b=0.52_).
+    Så du ser henad mod fladen! Voila! 
+    </p>
+    <br></answer-box>
+
+    <q-stion 1="16" 2="6" customWidth="650">
+    To planer danner en linje, når de skærer hinanden:
+    <img class='SpicXL' style='width:95%' src='../../../Assets/Chapter2\Section4\Space\PlanerDerSkærer.png'> 
+    <p class="t">
+    Find skæringen mellem planerne 
+    _($x+2y-z=3_) 
+    ... og
+    _($-2.5x+3y-2z=15_)
+    Skæringen er altså en linje.
+    </p>
+    <br></q-stion>
+    <answer-box t="h">
+    For at finde en linje, har vi brug for dens retning, samt èt enkelt punkt på linjen. 
+    Punktet burde være nemt nok, da vi har to ligninger og tre ubekendte. Ved retningen kan vi observere,
+    at retningsvektoren ligger i <i>begge planer</i>. Hvad kan det fortælle os? 
+    <br><br></answer-box>
+    <answer-box>
+    For at finde en linje, har vi brug for dens retning, samt èt enkelt punkt på linjen. 
+    Punktet burde være nemt nok. Vi ved at: 
+    _($\begin{eqnarray}
+    && x & + 2y & \, - z & = 3 \\
+    & - & 2.5x & + 3y & - \, 2z & = 15 \\
+    \end{eqnarray}_)
+    Det er to ligninger og tre ubekendte. Der er derfor (højest sandsynligt)
+    uendelig mange svar, og èn variabel er fri til at være, hvad end den lyster. 
+    Vi vælger derfor _(x=0_) og får:
+    _($\begin{align}
+    2y - z & = 3 \\
+    3y - 2z & = 15
+    \end{align}_)
+    Løsningen på dette er _(y=-9_), _(z=-21_), så punktet er _((0,-9,-21)_). 
+    <p class="t">
+    Retningen kan beskrives som en <i>vektor</i>, og den her vektor ligger på <i>begge planer</i>. 
+    Hvis en retning ligger på et plan, er den vinkelret til planets normalvektor, så vores
+    retning er vinkelret på <i>begge</i> normalvektorer. Vi skal derfor tage et krydsprodukt! Genialt! 
+    _($\vec{n_1} \times \vec{n_2} = \VeC[1,2,-1] \times \VeC[-2.5,3,-2] = \VeC[-1,4.5,8]_)
+    Vores linje er altså:
+    _($\VeC[x,y,z] = \VeC[0,-9,-21] + t \VeC[-1,4.5,8]_)    
+    Bum!
+    </p>
+    <br></answer-box>
+
+    <q-stion 1="16" 2="7">
+    Se følgende billede:
+    <img class='Spic' style='width:48%' src='../../../Assets/Chapter2\Section4\Space\Kage.png'> 
+    <p class="t">
+    Her er origo _((0,0,0)_) placeret i midten af kagen nederst, _(P=_) 
+    _((0.05,0.08,0.08)_) og
+    _($\vec{n}=\VeC[0.09,0.02,-0.04]_)
+    Hvor langt er kagestykket du skærer?
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Kagens "skæringslinje" er en skæringslinje også i den rent matematiske
+    forstand:
+    <img class='Spic' style='width:76%' src='../../../Assets/Chapter2\Section4\Space\Kage2.png'> 
+    <p class="t">
+    Det er altså skæringen mellem planet på overfladen af kagen, og planet på overfladen
+    af kniven. Kagens normalvektor er meget simpelt lig
+    _($\VeC[0,0,1]_)
+    Så vi kan finde retningen på skæringslinjen som:
+    _($\VeC[0,0,1] \times \VeC[0.09,0.02,-0.04] = \VeC[-0.02,0.09,0]_)
+    Linjen bliver altså:
+    _($\VeC[x,y,z]=\VeC[0.05,0.08,0.08]+t*\VeC[-0.02,0.09,0]_)
+    Vi skal nu finde det andet punkt på omkredsen. Radiusen på kagen er 
+    _(\sqrt{0.05^2+0.08^2}=0.094 _), så 
+    _($\begin{eqnarray}
+    && \sqrt{(0.05+t*(-0.02))^2 + (0.08+t*0.09)^2}=0.094 \to \\ \\
+    && \sqrt{0.0085*t^2 + 0.0124*t + 0.0089}=0.094 \to \\ \\
+    && 0.0085*t^2 + 0.0124*t + 0.0089 = 0.0089 \to \\ \\
+    && t*\left(0.0085t + 0.0124 \right) = 0
+    \end{eqnarray}_)
+    Denne ligning har løsningerne _(t=0_) og _(t=-1.45_). Nul svarer bare
+    til punktet _((0.05,0.08,0.08)_) hvor vi allerede står, så det
+    er _(-1.45_), vi er interesserede i: 
+    _($\VeC[x,y,z]=\VeC[0.05,0.08,0.08]+(-1.45)*\VeC[-0.02,0.09,0]=\VeC[0.08,-0.05,0.08]_)
+    Afstanden bliver altså:
+    _($\sqrt{(0.05-0.08)^2 + (0.08-(-0.05))^2} = 13 \text{ cm}_)
+    Bum!
+    </p>
+    <br></answer-box>
+

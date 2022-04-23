@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+
+
+    <!-- https://physics.stackexchange.com/questions/111780/why-do-harmonics-occur-when-you-pluck-a-string/111916#111916
+    https://physics.stackexchange.com/questions/503339/do-string-instruments-really-create-standing-waves-or-not?rq=1
+    https://physics.stackexchange.com/questions/420435/non-standing-waves-on-string?rq=1
+     -->
+
+     <h4>Streng-instrumenter</h4>
+    <p class="t">
+    Lad os på denne side kigge på bare èn anvendelse af _(Sin_) og _(Cos_) som bølger: 
+    Streng-instrumenter! 
+    Med det mener jeg f.eks. en guitar, violin, bass, osv. For at forstå dem, 
+    får vi brug for først at forstå,
+    hvordan man beskriver en <i>bevægende bølge</i>. F.eks: 
+    </p>
+    <div style="margin-left:-50px; margin-top:35px;">
+        <hover-video customWidth="600px;"  url="../../../Assets/Chapter2\Section1\TrigProperties\MovingWave.mp4" ></hover-video>
+    </div>
+    
+    <p class="t" style="margin-top:35px;">
+    Det er en bølgeform, der går fremad med tiden.
+    Vi ved at bølgeformen i sig selv kan beskrives som:
+    _($y=A*Sin(B*x)_)
+    Sig nu at denne bølge bevægede sig fremad på _(x_) med en hastighed på _(v_). 
+    Hvordan ville vi beskrive det? 
+    </p>
+    <p class="t">
+    Først af alt kunne vi observere, at eksempelvis 
+    _($A*Sin \left(B*(x-2.3) \right)_)
+    ... bare svarer til _(A*Sin(B*x)_), hvor alt er rykket _(2.3_) fremad:
+    </p>
+    <img class='SpicXL' style='width:100%;' src='../../../Assets/Chapter2\Section1\TrigProperties\RykketSinKurve.png'> 
+    <p class="t">
+    Det giver egentlig god nok mening: _(x_) skal være _(2.3_) højere end tidligere, for at 
+    _(x-2.3_) tager samme værdi som bare _(x_), men den vokser stadig med præcist samme hastighed. 
+    Kurven skal altså
+    være _(2.3_) længere fremme på _(x_), for at nå hen til de samme punkter, 
+    den tidligere kurve kom frem til. 
+    </p>
+    <p class="t">
+    Lidt mere generelt svarer 
+    _($A*Sin \left(B*(x-p) \right)_) 
+    ... til bølgen der er rykket _(p_) fremad. 
+    Den har en hastighed på _(v_), så efter _(t_) sekunder burde den have rykket 
+    _(v*t_). Vi får endeligt:
+    _($A*Sin\left(B*(x-v*t) \right)_)
+    Hvis vi ganger ind i parentesen, bliver det til:
+    _($A*Sin\left(B*x - Bv*t \right)_)
+    Nice! Den her konkrete matematiske beskrivelse er vigtig, da man kan bruge 
+    den til at bevise, et resultat der ikke er særlig intuitivt:
+    </p>
+    <p class="t">
+    Sig du har to bølger. 
+    Bølgerne er identiske, og har også samme startposition. Den eneste 
+    forskel er, at de bevæger sig i
+    modsatte retninger: Den ene fremad, den anden bagud. 
+    Så i den ene minusser vi med _(Bv*t_) inde i _(Sin_), i den
+    anden plusser vi. Sig at de her to bølger blev lagt sammen til èn samlet 
+    bølge. Man kan nu bevise matematisk at:
+    _($A*Sin\left(Bx - Bv*t \right) + A*Sin\left(Bx + Bv*t \right) =_)
+    _($ 2A*Sin(Bx) Cos(Bv*t)_)
+    Vi har ikke helt de matematiske redskaber til at bevise det lige nu, 
+    men det vil være en opgave senere i 
+    dette afsnit. For nu antager vi bare at det er sandt. 
+    </p>
+    <p class="t">
+    Umiddelbart virker det som et kedeligt og uimponerede resultat, men 
+    vil se senere at det forklarer en del.
+    </p>
+
+    <p class="cent">*</p>
+    
+    <p class="t">
+    <i>Anyways</i>: Streng-instrumenter. Ideen bag et hvilket som helst streng-instrument er, 
+    at få en eller flere strenge til at vibrere.
+    De her vibrationer kan vibrere luften, hvilket vi jo ved skaber lyd. 
+    Det "lyder" umiddelbart nemt at få en streng til at vibrere,
+    men det er tricky, da strengen <i>skal</i> vibrere på en meget bestemt måde.
+    Hvis den bliver tilfældigt vibreret skaber den en masse 
+    tilfældige frekvenser oven i hinanden, og lyden vil blive grim. 
+    Følgende animation viser nogle eksempler på, hvad en "ordentlig" vibration kunne se ud som: 
+    </p>
+    <div style="margin-left:114px; margin-top:35px;">
+        <hover-video customWidth="300px;" url="../../../Assets/Chapter2\Section1\TrigProperties\StandingWavesGodDamn.mp4" ></hover-video>
+    </div>
+    <p class="t" style="margin-top:35px;">
+    Her er vibrationen bare èn eller flere bølgedale der går op 
+    og ned gentagende gange. Hver af de
+    her vibrationer danner èn bestemt konstant frekvens i luften, 
+    hvilket sørger for, at vi får en rigtig <i>tone</i> i stedet for  
+    auditivt rod. 
+    </p>
+    <p class="t">
+    I følgende video forklarer jeg, hvordan vi kan få de her bestemte 
+    vibrationer til at opstå:
+    </p>
+    <video class='SpicBXL' style="width:100%;" controls>
+        <source src='../../../Assets/Chapter2\Section1\TrigProperties\StandingWavesForklaring.mp4' type='video/mp4'>
+    </video>
+    <p class="t">
+    Den bølge vi laver med hånden, ved vi kan beskrives som:
+    _($h_1=A*Sin\left(B*x - Bv*t \right)_)
+    Hvor _(h_1_) er højden af bølgen, _(v_) er hastigheden, _(A_) 
+    bestemmer maks- og min højden på bølgen og _(B_) bestemmer bølgelængden. Vi så
+    i videoen, at der ude i enden bliver dannet en identisk kurve med modsat retning:
+    _($h_2=A*Sin\left(B*x + Bv*t \right)_)
+    Den samlede bølge vi får som resultat er _(h_1+h_2_), 
+    hvilket vi ved matematisk kan omskrives til:
+    _($2A*Sin(B*x)*Cos(Bv*t)_)
+    Den her form er meget interessant, fordi den beskriver præcist 
+    hvad der sker på de "ordentlige" bølger jeg viste i animationen.
+    _(2A*Sin(B*x)_) ændrer sig slet ikke med tiden. Vi ved at den 
+    originale bølge var _(A*Sin(B*x-B*v*t)_), 
+    så denne del af den sammenlagte bølge har præcist samme form 
+    som den originale, bare dobbelt så højt og uden at bevæge sig:
+    </p>
+    <img class='SpicXL' style='width:100%' src='../../../Assets/Chapter2\Section1\TrigProperties\MoreOnStandingWaves.png'> 
+    <p class="t">
+    Denne kurve bliver ganget med _(Cos(Bv*t)_), som med tiden skifter 
+    mellem _(-1_) og _(1_). Det har følgende effekt på vores kurve:
+    </p>
+    <div style="margin-top:35px;">
+        <hover-video url="../../../Assets/Chapter2\Section1\TrigProperties\MoreOnStandingWaves.mp4" ></hover-video>
+    </div>
+    <p class="t" style="margin-top:35px;">
+    Bum! Det er præcist den slags vibration vi gerne vil have! 
+    Som vi så i videoen, skal 
+    bølgelængden være lig _(L/(0.5*n)_). Bølgelængden af _(Sin(Bx)_) ved vi 
+    er _(2\pi/B_), så:
+    _($\frac{2\pi}{B}=\frac{L}{0.5*n}_)
+    Vi kan omskrive dette til:
+    _($2\pi = B*\frac{L}{0.5*n} \to B=\frac{2\pi}{\frac{L}{0.5*n}}_)
+    Denne brøk kan forsimples, og vi får:
+    _($B=\frac{\pi*n}{L}_)
+    De forskellige ordentlige vibrationer i animationen var bare 
+    forskellige værdier til _(n_)! Specifikt fra _(n=1_) til _(n=5_).
+    </p>
+    <p class="t">
+    Så vi ved nu, at vi kan skabe de her "ordentlige" toner, ved at 
+    lave bølger på en streng med bestemte bølgelængder der følger _(\pi*n/L_). 
+    De her bølgelængder kaldes "harmoniske", og bølgelængden 
+    hvor _(n=1_) kaldes "den fundamentale".
+    Vibrationen vi danner kaldes en "stående bølge", da 
+    bølgeformen står stille på _(x_), 
+    og kun ændrer højden over tid. 
+    </p>
+    <p class="t">
+    Stående bølger er praktiske, da de vibrerer luften frem og 
+    tilbage med en <i>konstant</i> frekvens. 
+    Strengen kan nu bruges
+    som en primitiv lydkilde, der holder en bestemt frekvens i 
+    et længere stykke tid. 
+    Det naturlige første spørgsmål er så
+    <i>hvilken</i> frekvens. 
+    Det er jo vigtigt for en musiker, der søger en 
+    bestemt slags lyd til deres sang. 
+    </p>
+    <p class="t">
+    Vi ved at _(Cos(Bv*t)_) er hvad der får den stående bølge til at 
+    vibrere op og ned. 
+    Frekvensen af den stående bølge er derfor lig frekvensen af 
+    _(Cos(Bv*t)_). Vi ved at _(1_) gang op og ned på _(Cos(Bv*t)_) 
+    tager _(2\pi/Bv_) sekunder, så frekvensen er:
+    _($\frac{1}{\frac{2\pi}{Bv}} = \frac{Bv}{2\pi}_)
+    Vi ved at _(B=\pi*n/L_). Hastigheden _(v_) er som sagt i videoen 
+    baseret på selve materialet, men det er bevist fysisk at:
+    _($v=\sqrt{\frac{\text{s}}{d}}_)
+    Hvor _(s_) er et tal der beskriver hvor stramt/løst snoren er sat 
+    op ude i enderne, og _(d_) er densiteten (hvor meget 1 længde af snoren vejer). 
+    Hvis vi nu indsætter både _(B_) og _(v_), ser vi at 
+    frekvensen kan beskrives som:
+    _($f=\frac{(\pi*n/L)*\sqrt{s/d}}{2\pi} = \frac{n}{2 \sqrt{d}}*\frac{\sqrt{s}}{L}_)
+    Man ville umiddelbart tænke, at det var _(n_) man justerede på 
+    for at danne en bestemt frekvens, men det er meget sjælen tilfældet. 
+    At skabe en bølge med denne perfekte bølgelængde er nemlig meget svært: 
+    Især hvis begge ender sider fast. 
+    I de følgende to slow-mo videoer 
+    kan du se ét ryk på henholdsvis en guitar og en violin: 
+    </p>
+    <p class="cent">
+        <a href="https://www.youtube.com/watch?v=LNNQvG0jWtw">Guitar</a> <br>
+        <a href="https://www.youtube.com/watch?v=6JeyiM0YNo4">Violin</a>
+    </p>
+    <p class="t">
+    Det ligner ... overhovedet ikke en sinusbølge! I alt ærlighed 
+    ligner det mere en trekant, når de giver slip i starten. 
+    Det der faktisk sker er også ret kompliceret: 
+    Denne tilfældige vibration/form der bliver dannet på strengen, kan beskrives som en 
+    <i>sum</i> af forskellige, harmoniske sinusbølger, hver med deres egen amplitude: 
+    </p>
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter2\Section1\TrigProperties\StolenFourierPicture.png'> <sup><a href="https://physics.stackexchange.com/questions/111780/why-do-harmonics-occur-when-you-pluck-a-string/111916#111916" title="Lige dette billede er skammeløst stjålet fra https://physics.stackexchange.com/questions/111780/why-do-harmonics-occur-when-you-pluck-a-string/111916#111916" target="_blank">[F]</a></sup>
+    <!-- DET HER BILLEDE HAR DU DIREKTE SJÅLET HERFRA BUSTER: https://physics.stackexchange.com/questions/111780/why-do-harmonics-occur-when-you-pluck-a-string/111916#111916-->
+    <p class="t">
+    Det er på <i>ingen måde åbenlyst</i> <sup><a href="https://mathworld.wolfram.com/FourierTransform.html" title="Weisstein, Eric W. 'Fourier Transform.' From MathWorld--A Wolfram Web Resource. https://mathworld.wolfram.com/FourierTransform.html target="_blank">[F]</a></sup>, og 
+    de første streng-instrumenter i 1200-tallet blev ikke
+    opfundet fordi, at folk endelig indså hvordan
+    "fourier-transform integralet kan beskrive en hvilket som
+    helst kurve som en sum af harmoniske funktioner". 
+    Men det <i>er</i> altså sandt. 
+    Ét ryk på en guitar eller violin danner faktisk <i>flere</i> 
+    stående bølger oven i hinanden.
+    Normale akustiske streng-instrumenter kan ikke danne perfekte frekvenser, 
+    men de <i>kan</i> danne bestemte kombinationer af frekvenser.
+    Formen på ens start-vibration sammen med materialet og designet af instrumenter, 
+    bestemmer hvilke frekvenser der bliver kombineret.
+    Det er derfor, at der findes så mange vidt forskellige, 
+    interessante instrumenter, da der er næsten uendeligt potentiale 
+    hvad angår mulige kombinationer af forskellige frekvenser. 
+    </p>
+    <p class="t">
+    Vi ved at frekvensen matematisk blev beskrevet som:
+    _($f=\frac{n}{2 \sqrt{d}}*\frac{\sqrt{s}}{L}_)
+    Som vi har set, kan man ikke ændre direkte på _(n_) via instrumentet, men
+    det <i>er</i> stadig muligt at kontrollere frekvensen gennem _(s_) og _(L_):
+    På en guitar kan man ændre hvor stramt strengene sider. 
+    Det svarer til, at ændre på _(s_), hvilke gør alle toner højere. 
+    Der er hvad man gør, når man tuner en guitar! 
+    Ved hjælp af dine fingre på strengene kan du også bestemme _(L_).
+    Så du laver store ændringer med _(L_), og <i>tuner</i> med _(s_). 
+    En blokfløjte virker på meget samme vis:
+    Du justerer _(L_) ved at dække et bestemt hul på blokfløjten!
+    </p>
+    <p class="t">
+    Instrumenter er yderst fascinerende! 
+    </p>
+

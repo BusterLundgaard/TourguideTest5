@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <p class="t">
+    <b> Rækkefølge og parenteser når vi ganger og dividerer:</b> Ligesom med gange
+    hvor rækkefølgen og parenteser var fuldkommen ligegyldige, så kan vi også være
+    <i>relativt</i> fleksible med rækkefølge og parenteser når vi ganger og dividerer. 
+    Ligesom med gange, så er der nemlig nogle dejlige egenskaber vi kan vise:
+    </p>
+
+    <p class="t">
+    <b> Dejlig egenskab A:</b> Sig at du har følgende stykke:
+    </p>
+
+    <p class="cent">
+        <p-m m=" (2/A1 1)*A3 3"></p-m>
+    </p>
+
+    <p class="t">
+    <p-m m=" 2"></p-m> og <p-m m=" A1 1"></p-m> går ikke op i hinanden,
+    men det gør <p-m m=" A3 3"></p-m>, da vi kan omskrive det til
+    <p-m m=" 3*A1 1"></p-m>. Det ville være super dejligt hvis vi 
+    kunne dividere <p-m m=" A3 3"></p-m> med <p-m m=" A1 1"></p-m>, og
+    så gange med <p-m m=" 2"></p-m>, i stedet for at dividere <p-m m=" 2"></p-m>
+    med <p-m m=" A1 1"></p-m>, og så gange med <p-m m=" A3 3"></p-m>. 
+    Er det på nogen måde muligt? 
+    </p>
+
+    <p class="t">
+    Det er det! At gange med <p-m m=" A3 3"></p-m> svarer jo til at 
+    plusse <p-m m=" (2/A1 1)"></p-m> med sig selv <p-m m=" A3 3"></p-m> gange, så vi kan lave følgende trick:
+    </p>
+
+    <p class="cent">
+        <p-m m=" (2/A1 1)*A3 3="></p-m> <br>
+        <p-m m=" (2/A1 1)+(2/A1 1)+(2/A1 1)+"></p-m> ... <p-m m=" (2/A1 1)"></p-m> <br>
+        <p-m m=" 2*(1/A1 1)+2*(1/A1 1)+2*(1/A1 1)+"></p-m> ... <p-m m=" 2*(1/A1 1)"></p-m> <br>
+    </p>
+
+    <p class="t">
+    Hvert <p-m m=" 2"></p-m> bliver ganget med <p-m m=" (1/A1 1)"></p-m>, så vi kan lægge
+    dem sammen i parenteser:
+    </p>
+
+    <p class="cent">
+        <p-m m=" (1/A1 1)*(2+2+2+"></p-m> ... <p-m m=" 2)="></p-m> <br>
+        <p-m m=" (1/A1 1)*(2*A3 3) ="></p-m> <br>
+        <p-m m=" (2*A3 3)/A1 1"></p-m> <br>
+    </p>
+
+    <p class="t">
+    Bum! Man kan altså nemt "gange ind" i parenteser hvor der bliver divideret,
+    uden man behøver at bekymre sig omkring rækkefølge. Udover at have det som en
+    samlet parentes omkring begge tal, så kan vi også sætte en parentes omkring 
+    specifikt <p-m m=" A3 3"></p-m> hvis det er hvad vi har lyst til:
+    </p>
+
+    <p class="cent">
+        <p-m m=" (2*A3 3)/A1 1 ="></p-m> <br>
+        <p-m m=" (A3 3+A3 3)/A1 1 ="></p-m> <br>
+        <p-m m="A3 3/A1 1 + A3 3/A1 1="></p-m> <br>
+        <p-m m="2*(A3 3/A1 1)"></p-m> <br>
+    </p>
+
+    <p class="t">
+    Pointen er at du ikke rigtig behøver at bekymre dig omkring det særlig meget: 
+    Der er nogen ting vi dividerer med, og nogle ting vi ganger med, og alt 
+    det vi ganger med kan du samle i èn stor parentes, og så kan du selv beslutte
+    dig for hvilke ting skal divideres med hvilke andre ting. 
+    </p>
+
+    <p class="t">
+    <b> Dejlig egenskab B:</b> Sig at vi skulle regne følgende stykke: 
+    </p>
+
+    <p class="cent">
+        <p-m m=" (A3 3/2)/A1 1"></p-m>
+    </p>
+
+    <p class="t">
+    <p-m m=" A3 3"></p-m> og <p-m m=" 2"></p-m> går som sagt ikke op i hinanden, men
+    det gør <p-m m=" A3 3"></p-m> og <p-m m=" A1 1"></p-m>. Noget vi kan gøre for at
+    ændre rækkefølgen i denne situation? Well, vi kan omskrive:
+    </p>
+
+    <p class="cent">
+        <p-m m=" (A3 3/2)/A1 1 = "></p-m> <br>
+        <p-m m=" (A3 3/2)*(1/A1 1) = "></p-m> <br>
+        <p-m m=" A3 3*(1/2)*(1/A1 1) = "></p-m> <br>
+    </p>
+
+    <p class="t">
+    Rækkefølgen man ganger i er ligegyldig, og derfor kan vi se at rækkefølgen man dividerer
+    i også er ligegyldig. Vi kan altså godt dividere med <p-m m=" A1 1"></p-m> først hvis vi har lyst.
+    Yderligere, så kan vi også se at:
+    </p>
+
+    <p class="cent">
+        <p-m m=" (A3 3/2)/A1 1=A3 3/(2*A1 1)  "></p-m>
+    </p>
+
+    <p class="t">
+    Når vi først dividerer med <p-m m=" 2"></p-m>, og så <p-m m=" A1 1"></p-m>, så svarer
+    det til at vi gør <p-m m=" A3"></p-m> <p-m m=" 2"></p-m> gange mindre, og så
+    derefter <p-m m=" A1 1"></p-m> gange mindre. Det er altså blevet 
+    <p-m m=" 2*A1 1"></p-m> gange mindre i alt. Vi kan altså nemt samle alt det vi dividerer med i én parentes!
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Regn følgende stykker:
+    <div style="text-align:center;">
+        <ul style="display: inline-block; text-align: left; padding-left:0%; list-style:none;">
+            <li><b> A</b>: <p-m m=" (A1/A1 1)*(A3 3/2)"></p-m>  </li> <br>
+            <li><b> B</b>: <p-m m=" (A1/A1 2)/(2/A2 1)"></p-m>  </li> <br>
+            <li><b> C</b>: <p-m m=" ((A1 1/2)*3*(B1/(3/A1 2))/A2)/A2 2 "></p-m>  </li> <br>
+        </ul>
+    </div>
+    <br><br></q-stion>
+    <answer-box t="Answer A#" tabColour="rgb(1A1 31,A2 1A1 2,1A1A1 3)">
+    Du kan se hvad jeg gjorde i denne video:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter1\Talsystemmer\Omskrivning\DivisionParenthesis1.mp4' type='video/mp4'>
+    </video>
+    <br></answer-box>
+    <answer-box t="Answer B#" tabColour="rgb(1A1 3A1 1,12A2,1A1 21)">
+    Du kan se hvad jeg gjorde i denne video:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter1\Talsystemmer\Omskrivning\DivisionParenthesis2.mp4' type='video/mp4'>
+    </video>
+    <br></answer-box>
+    <answer-box t="Answer C#" tabColour="rgb(1A1 31,A2 1A1 2,1A1A1 3)">
+    Du kan se hvad jeg gjorde i denne video:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter1\Talsystemmer\Omskrivning\DivisionParenthesis3.mp4' type='video/mp4'>
+    </video>
+    <br></answer-box>
+
+
+
+
+
+
+
+    IDEEN ER BARE AT NÅR DU DIVIDERER MED 5, SÅ GØR DU DEN 5 GANGE SÅ LILLE.
+    NÅR DU DIVIDERER MED 2, SÅ GØR DU DEN 2 GANGE SÅ LILLE. SÅ DU HAR GJORT DEN 5*2 GANGE SÅ LILLE I ALT.
+
+
+
+
+
+
+
+
+
+
+</html>

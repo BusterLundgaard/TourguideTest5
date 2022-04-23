@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+
+    <q-stion 1="2" 2="1" 3="5">
+    Vi har allerede lavet nogle som parallelogram og rhombus, men vi kan selvfølgelig finde på mange flere klasser
+    af firkanter. Følgende er 10 billeder af 10 forskellige typer. En lille streg på to linjer betyder at de er samme længde. 
+    Du får kun billederne og de informationer der er på, ikke nogen mundtlig beskrivelse. Brug venglist heller ikke Google:
+    <img class='Spic' style='width:95%' src='../../../Assets/Chapter2\Section2\Taxonomi\Alle former.png'> 
+    <p class="t">
+    Nogle af de her former er selvfølgelig underkategorier af andre former: f.eks. så er en rhombus jo en slags parralelogram.
+    Jeg vil nu gerne have at du lavet et hiarki/klassificering af de her former. Hvad er undertyper af hvad?
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Du kan se hvordan jeg har gjort det her:
+    <img class="Spic" style="width:80%" src='../../../Assets/Chapter2\Section2\Taxonomi\TaxonomiBillede.png'> 
+    <p class="t">Convex og concave stod der intet specielt om på billedet. Da må altså derfor hver bare
+    være <i>generelle</i> firkanter. Forskellen på dem er at en convex firkanter har vinkler
+    der graduelt går med eller mod uret. På en concave skifter det ved en af dem. 
+    En "dart" er så en specifik form for concave. </p>
+    <br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    En <i>stjerne</i> kunne vi vælge at definere som følgende:
+    <img class="Spic" style="width:70%" src='../../../Assets/Chapter2\Section2\Taxonomi\Stjerne.png'> 
+        <!-- CROP DET HER -->
+    <p class="t">Det er altså en cirkel fyldt op med lige bredde/store pikker. Mængden af pikker kan vi kalde
+    _(n_), den indre radius _(r_), og den ydre radius fra center ud til pikkespids _(R_). 
+    Når vi begynder at lave uendelig mange pikker - altså når _(n_) begynder at blive uendeligt højt, vil 
+    arealet så nærme sig en cirkel med radius _(R_)? Det kunne virke intuitivt hvis det var tilfældigt. 
+    Jeg vil egentlig bare gerne have at du checker om der er noget der tydeligt sker når _(n_) bliver
+    uendeligt, eller om det bliver noget svært at forstå som _(\infty - \infty_) eller _(\infty*0_). </p>
+    <br></q-stion>
+    <answer-box>
+    Lad os starte med først at finde en generel formel for arealet. I stedet for at tænke på nogen form for cirkel,
+    så kan vi også tegne stjernen sådan her:
+    <img class="Spic" style="width:80%" src='../../../Assets/Chapter2\Section2\Taxonomi\Stjerne2.png'> 
+        <!-- CROP DET HER -->
+    <p class="t">Og hvis vi går lidt tættere:</p>
+    <img class="Spic" style="width:80%" src='../../../Assets/Chapter2\Section2\Taxonomi\Stjerne3.png'> 
+        <!-- CROP DET HER -->
+    <p class="t">så kan vi se at hvis vi kan finde længden _(d_) så er arealet  
+    _($n*0.5*d*R_)
+    Via cosinusloven kan vi få 
+    _($d=\sqrt{r^2+r^2-2r*r*Cos(2\pi/n)}=\sqrt{2}*r*\sqrt{1-Cos(2\pi/n)}_) 
+    Altså, i alt:
+    _($Areal=\frac{R}{\sqrt{2}}*n*\sqrt{1-Cos(2\pi/n)}_)
+    Når _(n_) bliver meget stor, så vil _(Cos(2\pi/n)_) nærme sig _(1_), så _(\sqrt{1-Cos(2\pi/n)}_) vil blive _(0_).
+    Der sker altså ikke rigtigt noget specielt brugbart rent matematisk: vi ganger _(n_) som nærmer sig uendeligt med
+    noget der nærmer sig _(0_). Man har nok brug for mere avanceret matematik end det vi har lige nu til at give
+    et rigtig ordentligt svar. </p>
+    <br></answer-box>
+    
+    <q-stion 1="2" 2="1" 3="5">
+    Nem men vigtig opgave: En <i>ellipse</i> er bare en udstrakt cirkel:
+    <img class="Spic" style="width:40%" src='../../../Assets/Chapter2\Section2\Taxonomi\Ellipse.png'> 
+        <!-- GØR DET HER BILLEDE TRANSPARENT OG CROP DET -->
+    <p class="t">Hvad er arealet i forhold til længderne _(a,b_)?</p>
+    <br></q-stion>
+    <answer-box>
+    En cirkel med en radius af _(1_) har et areal på _(1^2*\pi=\pi_). Hvis vi udstrækker
+    den med _(a_) til den ene side, så bliver arealet _(\pi*a=a\pi_). Hvis vi udstrækker den med arealet
+    _(b_) til den anden side så bliver arealet _(b*a\pi=ba\pi_). Bam. 
+    <br></answer-box>
+
+
+
+    DROP DET HER SIDSTE SPØRGSMÅL! DET ER SKRALD!
+    <q-stion 1="2" 2="1" 3="5">
+    En <i>crescent</i> er den form man får når to cirkler skære hinanden:
+    <img class="Spic" style="width:95%" src='../../../Assets/Chapter2\Section2\Taxonomi\Crescent1.png'> 
+    <p class="t">Kald _(AB_) for _(d_). Find en formel for arealet af crescenten. Du vil være nødt til at
+    dele din formel op i flere tilfælde baseret på hvad _(r_a,r_b_) og _(d_) er. </p>
+    <br><br></q-stion>
+    <answer-box>
+    Du kan se mit svar i videon her:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter2\Section2\CrescentAreal.mp4' type='video/mp4'>
+    </video>
+    DU LAVER EN FEJL HVOR DU GLEMMER AT GANGE EN TREKANT MED EN HALV!
+    OVERVEJ OM DEN HER OPGAVE SKAL FJERNES? ER DEN IKKE LIDT OVERLANG OG DUM ALLIGEVEL?
+    MÅSKE SKAL DEN I HVERT FALD DRASTISK ÆNDRES? HVAD ER POINTEN MED DEN, PRÆCIST?
+    ER DET DET DER MED CASES?
+    <br><br></answer-box>
+

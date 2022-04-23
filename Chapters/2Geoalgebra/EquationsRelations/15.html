@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+
+    <h4>Falske løsninger</h4>
+
+    <p class="t">
+    Nogle gange får man <i>for mange</i> løsninger, når man løser ligninger. 
+    <i>Falske løsninger</i>. 
+    Værre endnu: De her falske løsninger er ikke nødvendigvis altid et resultat af fejl! Sig
+    vi skulle løse: 
+    _($\sqrt{2x - 1}=x-2_)
+    Vi ville nok bare gøre følgende:
+    _($\begin{align}
+    \sqrt{2x -1}^2&=(x-2)^2  &\to  \\ \\
+    2x - 1&=x^2 - 4x + 4 &\to \\ \\
+    x^2 - 6x + 5 &= 0 &\to  \\ \\
+    x & = \frac{6 \pm \sqrt{6^2 - 4*5}}{2} = -1, 7
+    \end{align}_)
+    Det så egentlig ikke ud til at vi gjorde noget forkert, men 
+    det er også tydeligt, at _(-1_) <i>ikke</i> er en løsning.
+    Det ville involvere at regne: 
+    _($\sqrt{2*(-1)-1}=\sqrt{-3}_)
+    Hvilket er umuligt. Hvad er der gået galt? 
+    </p>    
+    <p class="t">
+    Well, lad os tænke over hvad der sker når du opløfter begge sider af ligningen til en potens af _(2_).
+    Helt generelt har du _(a=b_) der bliver tli _(a^2=b^2_). Mere præcist:
+    _(a=b_) skal have <i>de samme løsninger</i> som _(a^2=b^2_). 
+    </p>
+    <p class="t">
+    Hvis _(a=b_), så 
+    er _(a^2_) tydeligvis også lig _(b^2_). 
+    </p>
+    <p class="t">
+    Hvis _(a^2=b^2_), så er _(a_) <i>ikke nødvendigvis</i>
+    lig _(b_), da _(a=-3,b=3_) jo stadig giver en rigtig _((-3)^2=3^2_).
+    </p>
+    <p class="t">
+    Bare på grund af vi fandt en rigtig løsning til
+    _($ \sqrt{2x -1}^2=(x-2)^2_)
+    ... betyder det ikke <i>nødvendigvis</i> at den løsning også vil virke til:
+    _($ \sqrt{2x -1}=(x-2)_)
+    Der vil altid være en chance for at få en falsk løsning, når vi opløfter noget i anden potens.
+    Det <i>er</i> irriterende. 
+    </p>
+
+    <p class="t">
+    Lad os se et andet eksempel. Vi er i gang med at løse:
+    _($\frac{1}{x-2}=\frac{3}{x-2}-\frac{6x}{(x-2)(x+2)}_)
+    Vi ganger begge sider med _((x-2) (x+2)_) for at fjerne det fra nævnerne:
+    </p>
+    <div style="margin-left:-15px;">
+    _($\frac{1}{x-2}(x-2)(x+2) = \frac{3}{x-2}(x-2)(x+2) - \frac{6x}{(x-2)(x+2)}(x-2)(x+2)_)
+    </div>
+    <p class="t">
+    Det kan nu simplificeres til bare:
+    _($x+2 = 3*(x-2) - 6x_)
+    Den kan nemt løses og giver _(x=-2_). Men det er en <i>falsk løsning</i>! 
+    Hvis vi sætter _(x=-2_) ind i den originale ligning, bliver 
+    _(x-2_) til _(2-2=0_), hvilket vi umuligt kan dividere med! 
+    Der var ingen kvadratrødder eller potenser, og vi lavede kun simple manipulationer.
+    Hvad gik galt? Jo:
+    </p>
+    <div style="margin-left:-15px;">
+    _($\frac{1}{x-2}(x-2)(x+2) = \frac{3}{x-2}(x-2)(x+2) - \frac{6x}{(x-2)(x+2)}(x-2)(x+2)_)
+    </div>
+    <p class="t">
+    ... har faktisk flere løsninger end 
+    _($\frac{1}{x-2}=\frac{3}{x-2}-\frac{6x}{(x-2)(x+2)}_)
+    Det vi "gør" til begge sider er, at gange med _((x-2)(x+2)_).
+    Vi skal finde ud af hvorfor at 
+    _($a=b_) 
+    ... ikke nødvendigvis har de samme løsninger som 
+    _($(x-2)(x+2)a=(x-2)(x+2)b_)
+    Hvis _(a=b_), så er _((x-2)(x+2)a_) uden tvivl også lig _((x-2)(x+2)b_). 
+    </p>
+    <p class="t">
+    Hvis _((x-2)(x+2)a=(x-2)(x+2)b_) skal vi dividere begge sider som
+    _($\frac{(x-2)(x+2)a}{(x-2)(x+2)}=\frac{(x-2)(x+2)b}{(x-2)(x+2)}_)
+    Det her <i>kan vi ikke gøre</i> hvis _(x=2_) eller _(x=-2_).
+    Operationen fra _((x-2)(x+2)a=(x-2)(x+2)b_) til _(a=b_) er ulovlig
+    på _(x=\pm 2_), men operationen fra _(a=b_) til _((x-2)(x+2)a=(x-2)(x+2)b_)
+    er <i>altid</i> lovlig. Der ligger problemet.
+    </p>
+    <p class="t">
+    Så, like, shit. Matematikken er ødelagt. Alt håb er tabt. Farvel. 
+</p>
+

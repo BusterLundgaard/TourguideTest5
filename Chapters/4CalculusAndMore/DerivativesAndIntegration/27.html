@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+
+    <h3>Seperable differentialligninger</h3>
+    <p class="t">
+    <i>På den her side og fremover må du gerne bruge geogebra til at løse integraler. Du har lært det nok nu. 
+    Brug også bare Geogebra til at løse normale ligninger.</i>
+    </p>
+    <p class="t">
+    <i>Hvis Geogebra i nogen kontekst giver dig _(sgn(x)_), er det en funktion, der er lig _(1_) hvis
+    _(x_) er positiv, og _(-1_) hvis _(x_) er negativ.</i>
+    </p>
+
+    <p class="t">
+    En bestemt type differentialligning kaldt en "separable differentialligning" 
+    ("seperable differential equation" på engelsk) 
+    viser sig at være ret nem at løse. En seperable differentialligning er en differentialligning, der
+    passer til formen:
+    _($y'(x) = F(x)*G(y)_)
+    Ét eksempel kunne være:
+    _($y' = e^{x^2}*x*Tan(y+3)_)
+    Her er:
+    _($\begin{eqnarray}
+    && F(x) = e^{x^2}*x \\ 
+    && G(y) = Tan(y+3)
+    \end{eqnarray}_)
+    Følgende differentialligning er <i>ikke</i> seperable:
+    _($y' = e^{x^2}*x*Tan(y+3) + 3_)
+    Du kan ikke nemt opdele den. 
+    </p>
+    <p class="t">
+    Seperable differentialligninger er dejlige,
+    fordi de kan omskrives på følgende vis:
+    _($y'(x) = F(x)*G(y) \to  \frac{y'(x)}{G(y)} = F(x)_)
+    Vi har nu _(x_) og _(y_) på hver deres side. _(y_) er en funktion af _(x_), så vi kan omskrive
+    _(y'(x)/G(y)_) til _(y'(x)/G(y(x))_). 
+    Lad os nu integrere begge sider af ligningen med _(x_):
+    _($\int \frac{y'(x)}{G(y(x))} \text{ }dx = \int F(x) \text{ }dx _)
+    Integralet på højre side kan forsimples via
+    substitutionen _(u=y(x)_). Tælleren forsvinder nu, når vi dividerer med hældningen af _(u_):
+    _($\int \frac{y'(x)}{G(u)}/y'(x) \text{ }du = \int \frac{1}{G(u)} \text{ }du_)
+    Lad os substituere _(u=y(x)_) tilbage:
+    _($\int \frac{1}{G(y)} \text{ }dy_)
+    Alt i alt ser vi, at ligningen _(y'(x)=F(x)*G(y)_) kan omskrives til:
+    _($\int \frac{1}{G(y)} \text{ }dy = \int F(x) \text{ }dx_)
+    Så man skal "bare" integrere _(F(x)_) med _(x_), _(1/G(y)_) med _(y_), 
+    sætte dem lig hinanden, og voila! 
+    Man får nu
+    en ny ligning, der måske (eller måske ikke!) er dejlig at arbejde med. 
+    Det kan bedst forstås med et eksempel. 
+    </p>
+    <p class="t">
+    Sig f.eks. vi skulle løse
+    _($y'=\frac{Ln(x)}{y^2}_)
+    Det her er en <i>ligning</i>, og den her <i>ligning</i> kan omskrives til:
+    _($\int \frac{1}{\left(\frac{1}{y^2} \right)} \text{ }dy = \int Ln(x) \text{ }dx_)
+    Pointen er, at _(y'=Ln(x)/y^2_) fundamentalt definerer en masse punkter
+    _((x,y)_), der opfylder bestemte krav. Vi har fundet frem til en ligning,
+    der er opfyldt af præcis de samme _((x,y)_)-punkter, men er langt nemmere at
+    arbejde med. Vores ligning er "bare" en normal ligning efter integralerne
+    er løst: 
+    _($\frac{y^3}{3}+C_1 = x*(Ln(x)-1)+C_2_)
+    Vi kan minusse begge sider med _(C_1_) og få:
+    _($\frac{y^3}{3} = x*(Ln(x)-1) + C_2 - C_1_)
+    Èn konstant minus en anden
+    konstant giver en tredje konstant, så _(C_2-C_1=C_):
+    _($\frac{y^3}{3} = x*(Ln(x)-1)+C \to_)
+    _($y(x) = 1.442*\left(x*(Ln(x)-1)+C \right)^{(1/3)}_)
+    Det var nemt at finde _(y(x)_) ved <i>denne</i> differentialligning, men 
+    det er ikke altid tilfældet. Målet med differentialligninger
+    er ikke altid at finde frem til en <i>funktion</i>: 
+    Det handler hyppigere om at finde frem til en <i>ligning</i>.
+    Ligninger kan være nogle svære bitches i forhold til funktioner, men
+    de er stadig nemmere at arbejde med end differentialligninger. 
+    </p>
+
+    <!--  -->
+
+    <q-stion 1="27" 2="1">
+    Brug de følgende differentialligninger til at finde _(y(x)_):
+    <div style="margin-left:-60%; margin-top:25px; margin-bottom: -10px;">
+    _($\begin{eqnarray}
+        && \underline{\textbf{A}}: \, \, \, \, \, \, y'=\frac{1}{Cos(x)^2*Sin(y)} \\ \\
+        && \underline{\textbf{B}}: \, \, \, \, \, \, y'=\frac{1}{4}e^{x-y}  \\ \\
+        && \underline{\textbf{C}}: \, \, \, \, \, \, y'=Tan(y) \\ \\
+        && \underline{\textbf{D}}: \, \, \, \, \, \, y'=Sec(x)^2 
+    \end{eqnarray}_)
+    </div>
+    <p class="t">
+    Det her er nogle differentialligninger, hvor det
+    faktisk <i>er</i> nemt at isolere _(y(x)_) 
+    </p>
+    <br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    Vi har:
+    _($\begin{eqnarray}
+    && F(x) & = \frac{1}{Cos(x)^2} \\
+    && G(x) & = \frac{1}{Sin(y)}
+    \end{eqnarray}_)
+    Så vi regner:
+    _($\int \frac{1}{1/Sin(y)} \, dy = \int Sec(x)^2 \, dx_)
+    Hvilket vi let kan se giver:
+    _($-Cos(y) + C_1 = Tan(x) + C_2_)
+    Det kan omskrives til:
+    _($Cos(y) = -Tan(x) + C_1 - C_2_)
+    _(C_1-C_2_) er bare en konstant _(C_). Alt i alt får vi:
+    _($y=Arccos\left(C - Tan(x) \right)_)
+    Voila! Det ser ud som:
+    <img class='Spic' style='width:85%' src='../../../Assets/Chapter4\DerivativesAndIntegrals\DiffEquations\Exercise1Visualization.png'> 
+    <p class="t">
+    Her har jeg visualiseret løsningen ved forskellige _(C_)-værdier. 
+    </p>
+    <p class="t">
+    Du kan også lege lidt rundt med en simulation, hvor du kan justere på _(C_) her:
+    </p>
+    <p class="cent">
+        <a href="https://www.geogebra.org/m/rwr34k2v">Link til Geogebra simulation</a>
+    </p>
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Først omskriver jeg lige til:
+    _($y' = \frac{1}{4}*e^x*e^{-y}_)
+    Nu skal jeg løse:
+    _($\int e^{y} \, dy = \frac{1}{4} e^{x} \, dx_)
+    Begge integraler er super lette, og vi får:
+    _($e^y = \frac{1}{4} e^x + C_)
+    Vi isolerer til sidst _(y_):
+    _($y = Ln\left(\frac{1}{4} e^x + C \right)_)
+    Voila! Det her kan visualiseres som:
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter4\DerivativesAndIntegrals\DiffEquations\Exercise2Visualization.png'> 
+    <p class="t">
+    Og du kan lege rundt med en simulation her:
+    </p>
+    <p class="cent">
+        <a href="https://www.geogebra.org/m/ghgmxtus">Link til Geogebra simulation</a>
+    </p>
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{C}}_)#" tabColour="rgb(171,96,147)">
+    Det her svarer bare til:
+    _($y'=Tan(y)*1_)
+    Så vi skal regne:
+    _($\int Cot(y) \, dy = \int 1 \, dx_)
+    Det giver:
+    _($Ln(Sin(y)) = x + C_)
+    Så:
+    _($y = Arcsin \left(e^{x+C} \right) _)
+    _(e^{x+C}_) kan omskrives til _(e^C*e^x_). Det kan godt laves en smule simplere faktisk.
+    _(e^C_) er bare <i>en eller anden positiv konstant</i>, så vi får: 
+    _($y=Arcsin\left(C*e^x \right)_)
+    Hvilket kan visualiseres som:
+    <img class='Spic' style='width:92%' src='../../../Assets/Chapter4\DerivativesAndIntegrals\DiffEquations\Exercise3Visualization.png'> 
+    <p class="t">
+    Og igen en simulation:
+    </p>
+    <p class="cent">
+        <a href="https://www.geogebra.org/m/uydkr4zg">Link til Geogebra simulation</a>
+    </p>
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{D}}_)#" tabColour="rgb(175,128,161)">
+    Det her svarer jo bare til integralet 
+    _($\int sec(x)^2 \text{ }dx_)
+    ... som giver 
+    _($y=Tan(x)+C_)
+    Det tror jeg ikke, jeg behøver at visualisere for dig. 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <p class="t">
+    Da vi løste fjeder-differentialligningen _(x''(t) = -k*x(t)_), var der to såkaldte "startbetingelser":
+    _($\begin{eqnarray}
+    && x(0)=d \\
+    && x'(0)=0
+    \end{eqnarray}_)
+    Startbetingelserne specificerer hvad konstanterne _(C_) er lig med, og tilpasser
+    det generelle svar til vores opgave/situation.
+    En differentiallignings 
+    <i>orden</i> fortæller os, hvor mange gange den er differentieret. 
+    F.eks. er _(y'=x*y_) af "første-orden", men
+    _(y''=x*y'_) eller _(y''=x*y_) er begge "anden-orden". 
+    Ved hver ny "orden" kan vi logisk nok tilføje èn ny start-betingelse, 
+    hvilket intuitivt giver mening, siden vi integrerer flere gange
+    (hvordan end nu processen går). Hver integration skaber
+    én konstant. En integral bliver <i>markant</i> svære at løse som ordenen stiger. 
+    Der er relativ få anden, tredje, eller højere-grads 
+    differentialligninger der faktisk har "normale" algebraiske løsninger.  
+    </p>
+    <p class="t">
+    I hvert fald: 
+    </p>
+
+    <q-stion 1="27" 2="2">
+    Løs de følgende første-grads differentialligninger, hvor der er givet en startbetingelse:
+    _($\begin{eqnarray}
+    && \underline{\textbf{A:}} \, \, \, \, & y'=e^y*x, \text{ } & \, \, \, \,  y(5)  =3  \\ \\ 
+    && \underline{\textbf{B:}} \, \, \, \, & y'=\frac{x-2}{x*y}, & \, \, \, \,  y(3)  =10  \\ \\ 
+    && \underline{\textbf{C:}} \, \, \, \, & y'=\frac{Sin(y)}{Cos(x)}, & \, \, \, \,  y(420)  =69   
+    \end{eqnarray}_)
+    Du behøver ikke isolere _(y(x)_), hvis det er umuligt. 
+    <br><br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    Lad os først løse ligningen:
+    _($\int \frac{1}{e^y} \text{ }dy = \int x \text{ }dx \to_)
+    _($-e^{-y} = \frac{x^2}{2} + C _)
+    _(y(5)=3_) svarer bare til _(y=3_), _(x=5_), så:
+    _($-e^{-3} = \frac{5^2}{2}+C \to _)
+    _($C = -12.54_)
+    Til sidst isolerer vi _(y(x)_) og får:
+    _($-e^{-y} = \frac{x^2}{2} -12.54 \to_)
+    _($y(x)=-Ln \left(-\frac{x^2}{2}+12.54 \right) _)
+    Det er så svaret. 
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Vi kan relativt nemt se, at den ene funktion er _((1-2/x)_) og den anden er
+    _(1/y_), så løsningen bliver:
+    _($\frac{y^2}{2}=x-2 Ln(x) + C_)
+    Nu indsætter vi _(x=3, \, y=10_):
+    _($\frac{10^2}{2} = 3-2 Ln(3) + C \to C=49.197 _)
+    Vi isolerer til sidst _(y_) og får:
+    _($y(x)=\sqrt{2x-4 Ln(x) + 98.394}_)
+    Det er svaret.
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{C}}_)#" tabColour="rgb(171,96,147)">
+    Løser man denne, får man:
+    _($-Ln(Csc(y)+Cot(y)) = Ln(Sec(x)+Tan(x)+C_)
+    _(C_) er:
+    _($-Ln(Csc(69)+Cot(69)) - Ln(Sec(420)+Tan(420) = -0.365_)
+    Det er nok ikke muligt at isolere _(y(x)_) i denne. Ved at opløfte
+    _(e_) til begge sider, kan vi dog godt simplificere fra
+    _($-Ln(Csc(y)+Cot(y)) = Ln(Sec(x)+Tan(x)- 0.365_)
+    ... til:
+    _($1.4405 = \left(Sec(x)+Tan(x) \right)* \left(Csc(y)+Cot(y) \right)_)
+    Vi kan visualisere denne ligning med et computerprogram og få:
+    <img class='Spic' style='width:100%' src='../../../Assets/Chapter4\DerivativesAndIntegrals\DiffEquations\InitialConditionsExercise3.png'> 
+    <p class="t">
+    En yderst mærkværdig graf! 
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <p class="t">
+    I nogen få tilfælde kan 
+    seperable equations bruges til at løse differentialligninger af anden orden. 
+    Der er to tricks vi kan bruge: Èt når differentialligningen ikke indeholder noget _(y_), og 
+    èt når den ikke indeholder noget _(x_). 
+    </p>
+
+    <q-stion 1="27" 2="3">
+    Det første trick er relativt nemt, så du må selv opfinde det, og løse de følgende differentialligninger:
+    _($\begin{eqnarray}
+    && \underline{\textbf{A:}} \, \, \, \, & y'' = \frac{y'}{x}, & \, \, \, \,  y'(-3) = -5, & \, \, \, \, y(2) = -8  \\ \\
+    && \underline{\textbf{B:}} \, \, \, \, & y'' = \frac{x}{y'}, & \, \, \, \,  y'(-0.5)=7, & \, \, \, \, y(6)=4 \\ \\
+    && \underline{\textbf{C:}} \, \, \, \, & y'' = (y')^{7.54}, & \, \, \, \,  y'(-10)=0.55, & \, \, \, \,  y(-20)=6  
+    \end{eqnarray}_)
+    <p class="t">
+    Du behøver igen ikke finde _(y(x)_) hvis det er umuligt: Det er fint, hvis du bare har omskrevet det til en ligning.
+    </p>
+    <br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    Er der egentlig nogen konkret stor forskel på _(y'=y/x_) og _(y''=y'/x_), udover deres orden? 
+    Kald _(y'_) for _(u_). Så er _(y''_) lig _(u'_), og vi får nu:
+    _($u' = \frac{u}{x}_)
+    Det her er en nem separable differentialligning, hvis løsning er:
+    _($Ln(u)=Ln(x)+C \to u=C*x, \, \, \, \, C \gt 0_)
+    _(u=y'_), så:
+    _($y'=C*x_)
+    Før vi går videre, skal vi lige finde _(C_). _(y'(-3) = -5_) svarer
+    til _(x=-3, y'=-5_), så:
+    _($-5=C*(-3) \to C = 1.666_)
+    Vi har nu differentialligningen:
+    _($y'=1.666*x _)
+    Det er en simpel integral, der giver
+    _($y = 0.833x^2 + C_)
+    _(y(2)=-8_) svarer til _(x=2, y=-8_), så:
+    _($-8 = 0.833*2^2 + C \to C=-11.33_)
+    Så det endelige svar er:
+    _($y=0.833x^2 - 11.33_)
+    Fantastisk!
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Vi omskriver først differentialligningen til
+    _($u' = \frac{x}{u}_)
+    Nu løser vi den, og får
+    _($\frac{(y')^2}{2} = \frac{x^2}{2}+C_)
+    Indsætter vi nu _(x=-0.5, y'=7_), får vi let _(C=24.37_). 
+    Nu isolerer vi _(y'(x)_) og får:
+    _($y'(x) = \sqrt{x^2+48.75}_)
+    Det her svarer "bare" til at løse integralet _(\int \sqrt{x^2+48.75} \text{ }dx_), som
+    vi kan gøre i Geogebra og få:
+    _($y = 0.25x \sqrt{4x^2+195} - 24.38 Ln(\sqrt{4x^2+195}-2x)+C_)
+    Vi kan nu indsætte _(x=6, \, y=4_) og få _(C=21.68_). Færdig!
+    _($y=0.25x \sqrt{4x^2+195} - 24.38 Ln(\sqrt{4x^2+195}-2x) - 42.58_)
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{C}}_)#" tabColour="rgb(171,96,147)">
+    Vi laver det her om til differentialligningen:
+    _($u' = u^{7.54}_)
+    Den her er stadig separable, bare med _(f(x)=1_). Vi løser den nu, og får:
+    _($-\frac{(y')^{-6.54}}{6.54} = x + C_)
+    Indsætter vi _(x=-10,y'=0.55_) får vi _(C=-17.228_), og isolerer vi _(y'_):
+    _($y'=(-17.28-6.54)^{-\frac{1}{6.54}}_)
+    Det her er en integral, der giver
+    _($y=\frac{1.1772x + 3.1104}{(-17.28-6.54x)^{0.1529}}+C_)
+    ... og løser man for _(C_) får man _(15.911_). Done!
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <p class="t">
+    Det andet trick, er til når der ikke er nogen _(x_) i ligningen. Eksempelvis:
+    _($y''=\frac{5y' + (y')^2}{y}_)
+    Her kalder vi igen _(y'_) for _(u_), men _(y''_) omskriver vi lidt. _(u=d/dt[y]_), så
+    _(u_) er en <i>funktion</i> af _(y_). Det betyder derfor at:
+    _($y'' = ¤x \left[ ¤x \left[y(x) \right]  \right] = ¤x \left[ u \right] = ¤x \left[ u(y) \right]_)
+    _(y_) er i sig selv en funktion af _(x_), så vi kan nu bruge kædereglen:
+    _($¤x \left[ u(y(x)) \right] = u'(y)*y'(x) = u'(y)*u_)
+    Vores ligning bliver nu til:
+    _($u'(y)*u=\frac{5u + u^2}{y}_)
+    _($u'(y) = \frac{5+u}{y}_)
+    Voila! Det her er en seperabel differentialligning! Nu er det bare _(u_) i stedet for _(y_), og 
+    og _(y_) i stedet for _(x_). Vi kan løse den og få:
+    _($Ln(5+u)=Ln(y)+C_)
+    Vi kan nu erstatte _(u_) med _(y'_): 
+    _($Ln(5+y')=Ln(y)+C_)
+    At finde værdierne til _(C_) ud fra start-værdier er en del mere tricky
+    i det her tilfælde, men det vil jeg lade dig finde ud af selv:
+    </p>
+
+    <q-stion 1="27" 2="4">
+    Løs differentialligningen:
+    _($y''= \frac{5y' + (y')^2}{y}, \, \, \, \, y(5)=15, \, \, \, \, y'(13)=8_)
+    Det her er en ret lang og tricky opgave. Jeg anbefaler, at du 
+    tager alt den hjælp du kan få fra Geogebra, og kan sige med stort
+    set garanteret sikkerhed,
+    at du får brug for Geogebras _(\text{NSolve}_)-funktion. 
+    <br><br></q-stion>
+    <answer-box>
+    Vi fortsætter fra hvor vi slap:
+    _($Ln(5+y')=Ln(y)+C_)
+    Hvordan finder vi _(C_) nu? Vi ved, at _(y'(3)=5_), hvilket
+    betyder, at _(y'=5_) når _(x=3_). Det
+    hjælper os bare <i>ikke</i>, da vores ligning slet ikke indeholder _(x_)! 
+    Vi er derfor nødt til at løse differentialligningen generelt
+    i forhold til _(C_) værdierne <i>først</i>, <i>så</i> differentiere den,
+    og <i>så</i> opsætte en ligning!
+    _($y' = C*y - 5_)
+    Denne differentialligning kan let løses og giver:
+    _($\frac{Ln(C*y-5)}{C} = x+C_2_)
+    Vi isolerer _(y_) og får:
+    _($y(x) = \frac{e^{C_2*C}*e^{C x}+5}{C}_)
+    Vi ved, at _(y=15_) når _(x=5_), så vi har:
+    _($15 = \frac{e^{C_2*C}*e^{C 5}+5}{C}_)
+    Sådan her kan vi isolere _(C_2_) og få:
+    _($C_2 = -\frac{5 C - Ln(15C - 5)}{C}_)
+    Vi kan indsætte dette ved _(C_2_)'s plads i formlen for _(y(x)_), simplificere, og få:
+    _($y(x)=\frac{(-5+15 C)*e^{C(x-5)}+5}{C}_)
+    Vi skal nu anvende _(y'(13)=8_) for at finde _(C_). Her har vi 
+    brug for _(y'(x)_), så vi differentierer og får:
+    _($y'(x)=(15C - 5)*e^{C*(x-5)}_)
+    Vi skal nu løse:
+    _($8=(15C-5)*e^{C(13-5)}_)
+    Det her er en svær ligning, så vi får brug for Geogebras _(\text{NSolve}_) funktion.
+    Den giver 
+    _($C=0.3626_)
+    Det indsætter vi i vores udtryk for _(y(x)_):
+    _($y(x)=\frac{(-5+15*0.3626)*e^{0.3626*(x-5)}+5}{0.3626}_)
+    Dette kan simplificeres til:
+    _($y(x)=0.1975*e^{0.3626x} + 13.789_)
+    Phew! 
+    <br><br></answer-box>
+<!-- 
+    <q-stion 1="2" 2="1" 3="5">
+    Løs de følgende differentialligninger:
+    _($\begin{eqnarray}
+    && \textbf{1:} \, \, \, \, & y''= \frac{5y' + (y')^2}{y}, & \, \, \, \, y(5)=15, & \, \, \, \, y'(13)=8 \\ \\
+    && \textbf{2:} \, \, \, \, & y''= y'*y, & \, \, \, \,  y'(5)=0.6, & \, \, \, \, y(-7)=-0.5 
+    \end{eqnarray}_)
+    Du behøver ikke finde _(y(x)_) hvis det er umuligt.
+    <br><br></q-stion>
+    <answer-box t="Answer 1#" tabColour="rgb(171,96,147)">
+    Vi fortsætter fra hvor vi sluttede:
+    _($Ln(5+y')=Ln(y)+C_)
+    Hvordan finder vi _(C_) nu? Vi ved at _(y'(3)=5_), hvilke
+    betyder at _(y'=5_) når _(x=3_). Det
+    hjælper os bare <i>ikke</i>, eftersom vores ligning slet ikke indeholder _(x_)! 
+    Vi er altså nødt til
+    <i>først</i> at løse differentialligningen generelt i forhold til _(C_) værdierne, 
+    <i>så</i> differentiere den, 
+    og <i>så</i> opsætte en ligning!
+    _($y' = C*y - 5_)
+    Denne differentialligning kan let løses og giver:
+    _($\frac{Ln(C*y-5)}{C} = x+C_2_)
+    Vi isolerer _(y_) og får:
+    _($y(x) = \frac{e^{C_2*C}*e^{C x}+5}{C}_)
+    Vi ved at _(y=15_) når _(x=5_), så vi har:
+    _($15 = \frac{e^{C_2*C}*e^{C 5}+5}{C}_)
+    Sådan her kan vi isolere _(C_2_) og få:
+    _($C_2 = -\frac{5 C - Ln(15C - 5)}{C}_)
+    Vi kan indsætte dette ved _(C_2_)'s plads i formlen for _(y(x)_), simplificere, og få:
+    _($y(x)=\frac{(-5+15 C)*e^{C(x-5)}+5}{C}_)
+    Vi skal nu anvende _(y'(13)=8_) for at finde _(C_). Her har vi 
+    brug for _(y'(x)_), så vi differentierer og får:
+    _($y'(x)=(15C - 5)*e^{C*(x-5)}_)
+    Vi skal nu løse:
+    _($8=(15C-5)*e^{C(13-5)}_)
+    Det her er en svær ligning, så vi får brug for Geogebras _(\text{NSolve}_) funktion.
+    Den giver 
+    _($C=0.3626_)
+    Det indsætter vi i vores udtryk for _(y(x)_):
+    _($y(x)=\frac{(-5+15*0.3626)*e^{0.3626*(x-5)}+5}{0.3626}_)
+    Dette kan simplificeres til:
+    _($y(x)=0.1975*e^{0.3626x} + 13.789_)
+    Phew! 
+    <br><br></answer-box>
+    <answer-box t="Answer 2#" tabColour="rgb(175,128,161)">
+    Først omskriver vi ligningen til:
+    _($u'(y)*u=u*y \to u'(y)=y_)
+    Den kan nemt løses, og giver:
+    _($y'=\frac{y^2}{2}+C_)
+    Igen så kan vi ikke finde konstanten endnu. Vi er nødt til at løse dette som en separable differentialligning, 
+    hvor _(f(x)=1_), og _(g(y)=y^2/2 + C_):
+    _($\int \frac{1}{0.5y^2 + C} \text{ }dy = \int 1\text{ }dx \to_)
+    _($\frac{1.414}{\sqrt{C}}*Arctan \left(\frac{0.707}{\sqrt{C}} x \right) = x + C_2 _)
+    Lad os først lige isolere _(y(x)_) før vi isolerer _(C_2_). Vi kan nemlig gøre nogle praktisk ting med konstanterne. 
+    _(\frac{0.707}{\sqrt{C}}_) er jo også bare en eller anden positiv konstant _(C_a_), så vi kan omskrive til:
+    _($2C_a Arctan(C_a y) = x + C_2_)
+    Nu dividere vi begge sider med _(2C_a_):
+    _($\to Arctan(C_a y) = \frac{x}{2 C_a} + \frac{C_2}{2 C_a}_)
+    _(C_2/2C_a_) er også bare en eller anden konstant _(C_3_), så:
+    _($Arctan(C_a y) = \frac{x}{2 C_a} + C_3_)
+    Vi kan nu se at:
+    _($C_3 = Arctan(C_a y) - \frac{x}{2 C_a}_)
+    Og også isolere _(y_) og få:
+    _($y=\frac{1}{C_a}*Tan(\frac{x}{2*C_a} + C_3)_)
+    Hvis vi nu differentierer, så får vi:
+    _($y'(x) = \frac{Sec(\frac{x}{2 C_a}+C_3)^2}{C_a^2}_)
+    _(y'(5)=0.6_) giver:
+    _($15 = \frac{Sec(\frac{3}{2 C_a}+C_3)^2}{C_a^2} \to_)
+    _($C_3 = \frac{0.5}{C_a}*(6.28 C_a - 5 - 2 C_a Arcsec(0.77 C_a))_)
+    Nu kan vi så via _(y(-7)=-0.5_) sige:
+    _($Arctan(-0.5C_a) - \frac{-7}{2 C_a} = \frac{0.5}{C_a} (6.28 C_a - 5 - 2 C_a Arcsec(0.77 C_a)) \to_)
+    _($C_a = 1.95_)
+    Og _(C_3_) bliver nu:
+    _($C_3 = Arctan(1.95*-0.5) - \frac{-7}{2*1.95} = 1.02_)
+    Så vores endelige svar er altså:
+    _($y=\frac{1}{1.95}*Tan(\frac{x}{2*1.95} + 1.02) \to_)
+    _($y = 0.512*Tan(0.256x + 1.02)_)
+    Wholla! 
+    <br><br></answer-box> -->
+

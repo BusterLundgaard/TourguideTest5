@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1D0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <p class="t">
+    Potenser er ikke <i>bare</i> en ny kompakt notation vi bruger
+    til at tegne bestemte gangestykker. Det er en helt ny ide! 
+    Lad os eksperimentere, lege lidt rundt med den og opdage
+    mulige egenskaber. 
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5" bigTop="true">
+    _(\textbf{A:}_) <br>
+    Regn følgende stykke:
+    _($\frac{5^2*5^3}{5^5}_)
+    _(\textbf{B:}_) <br>
+    Kan du på nogen måde generalisere resultatet fra sidste opgave?
+    Finde frem til en matematisk sandhed der gælder lidt mere universelt? 
+    <br><br></q-stion>
+    <answer-box t="Answer _(\textbf{A}_)#" tabColour="rgb(171,96,147)">
+    Her <i>kunne</i> vi nemt-ish bare udregne 
+    tælleren på _(5^2*5^3_), udregne nævneren på _(5^5_) og 
+    dividere hvad vi fik. 
+    Vi kunne også vælge at skrive potenserne ud som en brøk:
+    _($\frac{(5*5)*(5*5*5)}{5*5*5*5*5}_) 
+    Nævneren og tælleren indeholder begge fem faktorer af _(5_). 
+    De er identiske, så svaret er bare _(1_)!  
+    <br><br></answer-box>
+    <answer-box t="Answer _(\textbf{B}_)#" tabColour="rgb(175,128,161)">
+    Sidste opgave gav _(1_) fordi _(2+3=5_).
+    Mere konkret: _(5^2*5^3_) var lig _(5^5_) fordi _(2+3=5_). Gælder
+    det måske også at:
+    _($5^{\text{potens}_1}*5^{\text{potens}_2} = 5^{\text{potens}_1+\text{potens}_2}_)
+    Eller endnu mere generelt for andre tal udover _(5_) som:
+    _($A^{\text{potens}_1}*A^{\text{potens}_2} = A^{\text{potens}_1+\text{potens}_2}_)
+    Svaret er ja. Se følgende:
+    _($\begin{eqnarray}
+    && A^{\text{potens}_1}*A^{\text{potens}_2} = \\ \\
+    && (A*A*A \, * \, \dots \, \text{potens}_1 \text{ gange})*(A*A*A \, * \, \dots \, \text{potens}_2 \text{ gange}) = \\ \\
+    && A*A*A \, * \, \dots \, \text{potens}_1 + \text{potens}_2 \, \text{ gange} \\ \\
+    && A^{\text{potens}_1+\text{potens}_2}
+    \end{eqnarray}_)
+    Bum!
+    <br><br></answer-box>
+
+    <!--  -->
+    
+    <q-stion 1="2" 2="1" 3="5">
+    Omskriv de følgende stykker så at der kun er én exponent: 
+    <div style="margin-left:-7%; margin-top:25px; margin-bottom:25px;">
+    _($\begin{eqnarray}
+    && \textbf{A:} \, \, \, & 6^5*6^{-3} \\ \\
+    && \textbf{B:} \, \, \, & 7^{-3}*7^{-6} \\ \\
+    && \textbf{C:} \, \, \, & \frac{71^{33}}{71^{-35}} \\ \\
+    && \textbf{D:} \, \, \, & 5^2*\frac{5^4}{5^{-6}}*5^{-7} 
+    \end{eqnarray}_)
+    </div>
+    <br></q-stion>
+    <answer-box t="Answer _(\textbf{A}_)#" tabColour="rgb(171,96,147)">
+    Vi bruger reglen vi kom frem til og får:
+    _($6^{5}*6^{-3}=6^{5+(-3)} = 6^{2}_)
+    <br></answer-box>
+    <answer-box t="Answer _(\textbf{B}_)#" tabColour="rgb(175,128,161)">
+    Same deal:
+    _($7^{(-3) + (-6)}=7^{-13}_)
+    <br></answer-box>
+    <answer-box t="Answer _(\textbf{C}_)#" tabColour="rgb(171,96,147)">
+    At dividere med _(71^{35}_) er det samme som at gange med _(71^{-1*35}_). Generelt:
+    _($\frac{A^a}{A^b}=A^a*A^{-b}=A^{a+(-b)}=A^{a-b}_)
+    I vores tilfælde er _(A=71,a=33,b=-35_), så vi får 
+    _($71^{33-(-35)}=71^{33+35}=71^{68}_)
+    <br></answer-box>
+    <answer-box t="Answer _(\textbf{D}_)#" tabColour="rgb(175,128,161)">
+    Her siger vi: 
+    _($5^2*\frac{5^4}{5^{-6}}*5^{-7}=5^2*5^{4-(-6)}*5^{-7}=5^{2+10-7}=5^{5}_)
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5"> 
+    _(\textbf{A:}_) <br>
+    Udregn 
+    _($\frac{(4^5)^3}{4^{15}} _)
+    _(\textbf{B:}_) <br>
+    Kan du på nogen måde generalisere resultatet fra sidste opgave? 
+    <p class="t">
+    _(\textbf{C:}_) <br>
+    Lav 
+    _($\frac{4^{\left(4^4 \right)}}{(4^4)^4}_) 
+    ... om til et stykke med kun én exponent
+    </p>
+    <p class="t">
+    _(\textbf{D:}_) <br>
+    Udregn 
+    _($\frac{4^{60}}{(((4^2)^3)^2)^5}_)
+    </p>
+    <br></q-stion>
+    <answer-box t="Answer _(\textbf{A}_)#" tabColour="rgb(171,96,147)">
+    Igen så <i>kunne</i> vi udrenge _((4^5)^3_) og _(4^{15}_) efterfulgt af division, 
+    men det vil tage <i>lang</i> tid. Lad os i stedet se hvad vi opdager
+    hvis vi tegner brøkken:
+    _($\begin{eqnarray}
+    && \frac{4^5*4^5*4^5}{4*4*4*4*4*4*4*4*4*4*4*4*4*4*4}= \\ \\
+    && \frac{(4*4*4*4*4)*(4*4*4*4*4)*(4*4*4*4*4)}{4*4*4*4*4*4*4*4*4*4*4*4*4*4*4} \\ \\
+    \end{eqnarray}_)
+    Tæller og nævner er identiske da de begge indeholder _(15_) faktorer, så svaret er _(1_). 
+    <br><br></answer-box>
+    <answer-box t="Answer _(\textbf{B}_)#" tabColour="rgb(175,128,161)">
+    Vi skal nok først indse at _((4^5)^3_) er lig _(4^{15}_) fordi at
+    _(5*3=15_). Det giver ok mening hvis vi bruger den tidligere egenskab:
+    _($\begin{eqnarray}
+    && (4^5)^3 = \\ \\
+    && 4^5*4^5*4^5 = \\ \\
+    && 4^{5+5}*4^{5} = \\ \\
+    && 4^{(5+5)+5} = \\ \\
+    && 4^{5*3} = \\ \\
+    && 4^{15}
+    \end{eqnarray}_)
+    Denne process og dette argument kan let generaliseres:
+    _($\begin{eqnarray}
+    && (A^{p_1})^{p_2} = \\ \\
+    && A^{p_1}*A^{p_1}*A^{p_1} \, * \, \dots \, p_2 \text{ gange} = \\ \\
+    && A^{p_1+p_1+p_1 \, + \, \dots \, p_2 \text{ gange}} = \\ \\
+    && A^{p_1*p_2} 
+    \end{eqnarray}_)
+    Bum! Vi ved altså nu at:
+    _($(A^{p_1})^{p_2} = A^{p_1*p_2} _)
+    <br></answer-box>
+    <answer-box t="Answer _(\textbf{C}_)#" tabColour="rgb(171,96,147)">
+    Her skal vi omskrive lidt:
+    _($\frac{4^{4^4}}{(4^4)^4}=\frac{4^{4^4}}{4^{4*4}}=4^{4^4-4*4}=4^{(4*4)^2-4*4}=4^{16^2-16}=4^{16*(16-1)}=4^{16*15}_)
+    Hvilke så kan regnes til:
+    _($4^{240}_)
+    De sidste dele efter _(4^{4^4-4*4}_) var på ingen måde strikt nødvendige. Det var
+    bare for at vise hvordan man kunne regne _(4^4-4*4_) lidt mere effektiv (i min mening). 
+    <br><br></answer-box>
+    <answer-box t="Answer _(\textbf{D}_)#" tabColour="rgb(175,128,161)">
+    Denne ser lidt tricky og mærkelig ud, men er ikke særlig slem. 
+    Vi kan omskrive nævneren som:
+    _($(((4^2)^3)^2)^5 = (4^{2*3})^{2*5} = 4^{(2*3)*(2*5)} = 4^{60}_)
+    Så tæller og nævner er lig hinanden, og svaret er _(1_). 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5"> 
+    Ud fra de definitioner vi har lavet 
+    opfører negative tal sig en smule sjovt - men faktisk meget brugbart - når 
+    de opløftes til potenser. Det kigger vi på i dette sæt opgaver. 
+    <p class="t">
+    _(\textbf{A:}_) <br>
+    Udregn: _((-3)^2_) og _((-3)^3_)
+    </p>
+    <p class="t">
+    _(\textbf{B:}_) <br>
+    Lav _((-3)^{-4}_) om til en simpel normal brøk uden nogle potenser
+    </p>
+    <p class="t">
+    _(\textbf{C:}_) <br>
+    Udregn: 
+    _($(-2)^3*(-5)^2_)
+    </p>
+    <br></q-stion>
+    <answer-box t="Answer _(\textbf{A}_)#" tabColour="rgb(171,96,147)">
+    _((-3)^2_) svarer til:
+    _($(-3)*(-3)_)
+    Det kan vi omskrive som:
+    _($(-1*3)*(-1*3) = (-1)*(-1)*3*3 = 3*3 = 9_)
+    Negativ gange negativ giver positiv, så _((-3)^2_) er
+    positiv og lig _(3^2_). Situationen ved _((-3)^3_) er lidt anderledes:
+    _($(-3)^3 = (-3)*(-3)*(-3) = (-1)*(-1)*(-1)*3*3*3_)
+    _(3*3*3=27_) og _((-1)*(-1)*(-1)_) er lig _((-1)_). Helt generelt
+    ser vi at 
+    _($(-A)^n = (-1)^n*A^n_)
+    ... hvor _((-1)^n_) skifter negativitet hver gang vi øger potensen _(n_) 
+    med _(1_). 
+    <br><br></answer-box>
+    <answer-box t="Answer _(\textbf{B}_)#" tabColour="rgb(175,128,161)">
+    Her opløfter vi en negativ base til et negativt tal. Det er der intet specielt udfordrende ved:
+    _($(-3)^{-4}=\frac{1}{(-3)^4}=\frac{1}{(-1*-1*-1*-1)*3^4}=\frac{1}{1*81} = \frac{1}{81}_)
+    <br></answer-box>
+    <answer-box t="Answer _(\textbf{C}_)#" tabColour="rgb(171,96,147)">
+    Denne er heller ikke super slem:
+    _($\begin{eqnarray}
+    && (-2)^3*(-5^2)= \\ \\
+    && (-2)*(-2)*(-2)*(-5)*(-5)= \\ \\
+    && (-1*-1*-1*-1*-1)*(2^3*5^2)=  \\ \\
+    && -200
+    \end{eqnarray}_)
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5"> 
+    _(\textbf{A:}_) <br>
+    Udvid/omskriv _((4+A)^2_) så at der ikke er nogle parenteser
+    <p class="t">
+    _(\textbf{B:}_) <br>
+    Udvid _((A+B)^2_) (ligesom i sidste opgave)
+    </p>
+    <p class="t">
+    _(\textbf{C:}_) <br>
+    Udvid _((A-B)^2_)
+    </p>
+    <p class="t">
+    _(\textbf{D:}_) <br>
+    Omskriv _(5^A*4^2_) så at _(5_) og _(A_) er det eneste tal der indgår
+    </p>
+    <br></q-stion>
+    <answer-box t="Answer _(\textbf{A}_)#" tabColour="rgb(171,96,147)">
+    Denne handler egentlig bare om at gange ind i parenteser (hvilke vi har gjort før):
+    _($\begin{eqnarray}
+    && (4+A)*(4+A) = \\ \\
+    && (4+A)*4+(4+A)*A = \\ \\ 
+    && 4*4+A*4+4*A+A*A = \\ \\
+    && 4^2+2*4*A+A^2
+    \end{eqnarray}_)
+    Nu er alle parenteser fjernet. 
+    <br><br></answer-box>
+    <answer-box t="Answer _(\textbf{B}_)#" tabColour="rgb(175,128,161)">
+    Dette er faktisk præcist det samme som den sidste, nu bare med en generel "_(B_)" i stedet for _(4_). 
+    Derfor kan vi bare indsætte _(B_) i _(4_)'s plads og få: 
+    _($B^2+2*B*A+A^2_)
+    Så:
+    _($(A+B)^2=B^2+2*B*A+4^2_) 
+    Du kommer til at bruge dette resultat en del i bogen. Det viser
+    sig at være brugbart i mange sammenhænge, og det kan
+    være praktisk at huske. 
+    <br><br></answer-box>
+    <answer-box t="Answer _(\textbf{C}_)#" tabColour="rgb(171,96,147)">
+    Denne <i>kunne</i> vi finde ved at gange parenteserne ind i hinanden, men vi kunne 
+    også bruge formlen fra sidste opgave. Vi ved at: 
+    _($(A-B)^2 = (A+(-B))^2_)
+    Ergo skal vi bare erstatte _(B_) med _(-B_) i den  udvidede version, hvilke giver:
+    _($(-B)^2+2*(-B)*A+A^2 = B^2-2*B*A+A^2_)
+    <br></answer-box>
+    <answer-box t="Answer _(\textbf{D}_)#" tabColour="rgb(175,128,161)">
+    Vi siger: 
+    _($\begin{eqnarray}
+    && 5^A*(5-1)^2 = \\ \\
+    && 5^A*(1^2-5*1+5^2) = \\ \\
+    && 5^A*1-5^A*5+5^A*5^2 = \\ \\
+    && 5^A-5^{A+1}+5^{A+2} 
+    \end{eqnarray}_)
+    Færdig!
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5"> 
+    Regn 
+    _($\frac{64+32+16}{2^4}_)
+    <br></q-stion>
+    <answer-box> 
+    Vi <i>kunne</i> regne denne ved at lægge tallene i tælleren sammen og 
+    dividere med _(2^4_), men vi kunne også observere
+    at _(64_), _(32_) og _(16_) alle er potenser af _(2_) 
+    (det ved jeg primært fra erfaring og fordi de er nemme at huske). 
+    Dette hjælper mig da jeg nu kan sige:
+    _($\frac{2^6+2^5+2^4}{2^4}=\frac{2^6}{2^4}+\frac{2^5}{2^4}+\frac{2^4}{2^4}=2^2+2+1=7_)
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5"> 
+    Bevis at:
+    _($\frac{70.1233}{5.678} = 10^{-1}*\frac{701233}{5678}_)
+    <br></q-stion>
+    <answer-box> 
+    Du har før ganget med potenser af _(10_) for midlertidigt at lave kommatal om til hele. Nu kan du bare
+    gøre det her igen med en lidt bedre notation:<br>
+    _($\frac{70.1233}{5.678}=\frac{70.1233*10^4*10^{-4}}{5.678*10^3*10^{-3}}=\frac{10^{-4}}{10^{-3}}*\frac{701233}{5678}=10^{-1}*\frac{701233}{5678}_)
+    Bum!
+    <br><br></answer-box>
+
+    <!--  --> 
+
+    <q-stion 1="2" 2="1" 3="5">
+    _(\textbf{A:}_) <br>
+    Regn 
+    _($\left(\frac{6}{7}\right)^{12}*\frac{7^{12}}{6^{12}}_)
+    _(\textbf{B:}_) <br>
+    Regn 
+    _($\left(\frac{5}{4}\right)^{-15}*\frac{5^{15}}{4^{15}}_)
+    _(\textbf{C:}_) <br>
+    Regn 
+    _($\frac{12^4}{6^4*2^4}_)
+    _(\textbf{D:}_) <br>
+    Omskriv 
+    _($\frac{\frac{\frac{A}{B^2}}{\frac{B^2}{A}}}{\frac{\frac{B}{A^2}}{\frac{A^2}{B}}}_) 
+    ... til et udtryk med kun én exponent.
+    <br><br></q-stion>
+    <answer-box t="Answer _(\textbf{A}_)#" tabColour="rgb(171,96,147)">
+    Parenteser og potenser arbejder godt sammen, da f.eks.
+    _($\left(\frac{2}{5}\right)^3=\frac{2}{5}*\frac{2}{5}*\frac{2}{5}=\frac{2*2*2}{5*5*5}=\frac{2^3}{2^5}_)
+    Altså, det gælder generelt at 
+    _($\left(\frac{A}{B}\right)^C = \frac{A^C}{B^C}_)
+    Hvis vi indsætter et negativt tal her ved _(C_)'s plads som 
+    _($\frac{A^{-5}}{B^{-5}}=\frac{B^5}{A^5}_)
+    ... så kan vi yderligere se at brøken bliver vendt på hovedet hvis potensen er mindre end _(0_). 
+    <p class="t">
+    Med de nye tricks i hovedet kan vi løse opgaven som følgende:
+    _($\left(\frac{6}{7}\right)^{12}*\frac{7^{12}}{6^{12}}=\frac{6^{12}}{7^{12}}*\frac{7^{12}}{6^{12}}=1_)
+    </p>
+    <br></answer-box>
+    <answer-box t="Answer _(\textbf{B}_)#" tabColour="rgb(175,128,161)">
+    Her siger vi:
+    _($\left(\frac{5}{4}\right)^{-15}*\frac{5^{15}}{4^{15}}=\frac{4^{15}}{5^{15}}*\frac{5^{15}}{4^{15}}=1_)
+    <br><br></answer-box>
+    <answer-box t="Answer _(\textbf{C}_)#" tabColour="rgb(171,96,147)">
+    Denne involverer et trick. _(6^4*2^4_) kan vi omskrive til:
+    _($(6*6*6*6)*(2*2*2*2)=_)
+    _($(6*2)*(6*2)*(6*2)*(6*2)=_)
+    _($(6*2)^4_)
+    Altså generelt:
+    _($a^c*b^c=(a*b)^c_)
+    Med denne regel kan man let se at nævneren bliver til _((6*2)^4=12^4_), så svaret er _(1_). 
+    <br><br></answer-box>
+    <answer-box t="Answer _(\textbf{D}_)#" tabColour="rgb(175,128,161)">
+    Ser lidt stor og mærkelig ud, men den er egentlig ikke konkret særlig slem. 
+    Vi skal bare flytte rundt på tællere og nævnere en masse gange. Alt i alt for vi: 
+    _($(\frac{A}{B})^6_)
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Udregn _(2^{21}_). Jeg vil have et tal. <i>Det bliver ret stort</i>, og der er ikke 
+    nødvendigvis noget enkelt trick der kan "løse" denne udregning.  
+    <br><br></q-stion>
+    <answer-box>
+    Jeg vil nok personligt have nemmere ved at gange et større tal med sig selv mindre gange. 
+    Vi ved at _(2^4=16_) og at _(20/4=5_), så jeg kan omskrive til:
+    _($2^{21}=2^{20}*2^{1}=2*2^{4*5}=2*\left(2^4 \right)^5 = 2*16^5_)
+    Nu skal jeg "bare" gange _(16_) med sig selv _(5_) gange. 
+    Jeg omskriver det til _(20-4_) for at gøre det nemmere:
+    _($\begin{eqnarray}
+    && \, \, \, \, \, \, \, \, \, 16*(20-4) & = 16*2*10-16*4 \\
+    && & = 320-64 \\
+    && & = 256 \\ \\
+    && \, \, \, \, \, \, 256*(20-4) & = 256*2*10-256*4 \\
+    && & = 5120-1024 \\
+    && & = 4096 \\ \\
+    && \, \, \, 4096*(20-4) & = 4096*2*10-4096*4 \\
+    && & = 81920-16384 \\
+    && & = 65536 \\ \\
+    && 65536*(20-4) & = 65536*2*10-65536*4 \\
+    && & = 81920-16384 \\
+    && & = 65536
+    \end{eqnarray}_)
+    Dette skal så nu ganges med det sidste _(2_) så 
+    _($1048576*2=2097152_)
+    Voila!
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+        Udregn: _($1^{2^{3^{4^{5^{6^{7^{8^{9}}}}}}}}_)
+        Det her er nemmere end du måske tror. Meget nemmere. 
+    <br><br></q-stion>
+    <answer-box>
+        Her skal man bare indse at basen jo er _(1_). _(1_) til nogen som helst potens giver 
+        bare _(1_), da _(1*1=1_). 
+    <br><br></answer-box>
+
+                                    <!--LAV EN ELLER ANDEN SVÆR OPGAVE HER! -->
+
+    <!-- <q-stion 1="2" 2="1" 3="5"> 
+        Ryk rundt på tallene fra _(2_) til _(9_) i en form som
+        _($3^{5^{4^{9^{8^{2^{6^{7}}}}}}}_)
+        sådan at du får det mindste mulige tal. Du behøver ikke faktisk at udregne dette tal - bare rolig. 
+        Det eneste du skal er at finde den rækkefølge du skal placere 
+        _(2_) til _(9_) for at resultatet bliver mindst. Husk at den måde du finder frem til svaret godt 
+        kan være meget anderledes end min. Det er helt fint! Vær parat på at den her opgave er pænt svær dog. 
+        Du behøver ikke lave et <i>absolut</i> lydtæt 100% grundigt argument - lidt intuition er fint nok. 
+    <br><br></q-stion>
+    <answer-box t="h" n="1">
+        Hvad er højest: _(2^21_) eller _(21^2_)? 
+    </answer-box>
+    <answer-box t="h" n="2">
+        Ideen er at du skal prøve at vise generelt om man 
+        Den her opgave handler rigtig meget om at du skal prøve at vise 
+        generelt hvorvidt det er en bedre ide at have <i>små potenser</i>, <i>høje baser</i>, frem for 
+        <i>høje baser</i>, <i>små potenser</i>. Altså, hvis potensen er højere end basen, vil det så <i>altid</i>
+        give et mindre svar at bytte dem rundt? 
+    </answer-box>
+    <answer-box t="h" n="3">
+        Når man skal vise noget ret generelt, så kan det være en god ide at kigge på nogle mere specifikke tilfælde.
+        Prøv at kigge på udtryk hvor du personligt ville være i tvivl om hvad der var størst - det må være der 
+        en mulig potentiel faldegruppe i vores teori kunne ligge.
+    </answer-box>
+    <answer-box t="h" n="4">
+        Her er lidt inspiration fra den måde <i>jeg</i> løser opgaven på: Man kan omskrive _(4^3_) som:
+        _(4^3=4*4*4=(3+1)*(3+1)*(3+1)=(3^2+2*3+1)*(3+1)=3^3+2*3^2+3+1_). Læg specielt mærke til hvordan 
+        at det her faktisk involvere _(3_) til nogle potenser - præcis ligesom det vi sammenligner med som 
+        er _(3^4_). _(3^3+2*3^2+3+1._) er lidt kompliceret, men måske er det faktisk kun det første _(3^3_) som 
+        faktisk har konkret vigtig indflydelse? Som sagt må du gerne bruge lidt intuition.
+    </answer-box>
+    <answer-box>
+        I sidste opgave skulle vi udregne _(2^{21}_) som gav _(2097152_). _(21^2=21*21_) giver kun _(441_). 
+        Det er nok en god ledetråd mod at man gerne vil have <i>små potenser</i>,<i>høje baser</i>, frem for 
+        <i>høje baser</i>, <i>små potenser</i>. Kan vi på en eller anden måde vise at det er sandt i alle tilfælde? 
+        Altså, at hvis _(A>B_) så er _(B^A>A^B_)? <i>Hvis</i> det var sandt, så ville
+        _($9^{8^{7^{6^{5^{4^{3^{2}}}}}}}_)
+        være det rigtige svar, da det tydeligvis prioritere de mindst mulige potenser. 
+        <p class="t">
+        Når man skal vise et eller andet generelt, så er det ofte en god ide at starte med et mere specifikt tilfælde. 
+        Hvis de to tal er langt fra hinanden som _(2_) og _(2600_) så er det tydeligt at vores teori kommer til at gælde.
+        Altså, hvis der skulle være en mulig faldegruppe, så ligger den nok i tal der er næsten lige store. 
+        Først kunne vi simpelt analysere _(3,4_) - altså _(3^4_) og _(4^3_). Vi kan nemt direkte regne os til at 
+        _(3^4>4^3_), men vi kan også se på det ved at omskrive: 
+        _(4^3=4*4*4=(3+1)*(3+1)*(3+1)=(3^2+2*3+1)*(3+1)=3^3+2*3^2+3+1_). 
+        Prøv at observere den form vores stykke har lige nu: _(3^3+noget_1*3^2+noget_2*3^1+noget_3*3^0_). 
+        Det her mønster vil altid vise sig når vi udvider et eller andet:
+        </p>  
+        <p class="cent">_((a+b)^n=a^n+noget_1*a^{n-1}+noget_2*a^{n-2} + ... osv osv ... + noget_{n-1}*a+noget_{n}*1_)</p>
+        <p class="t">
+        Alle de her "noget"-koefficienter er selvfølgelig bestemt af _(b_). Jo højere _(b_) er, jo større indflydelse har de. 
+        Nu kommer det smarte og tricky: _(A_) er jo større end _(B_), så vi kan altid omskrive _(A_) til _(B_) <i>opløftet i en eller anden potens</i>
+        _(C_), <i>plus et eller andet tal </i> _(D_). Vi finder bare på symboler som vi vil! Ved _(A=4,B=3_) så er _(C=1,D=1_) da _(3^1+1=4_). Ved noget 
+        andet som _(A=60,B=55_) der er _(C=1,B=5_) da _(55^1+5=60_). Et trejde eksempel kunne være _(A=3125,B=55_) hvor 
+        _(C=2,D=100_) siden _(55^2+100=3025+100=3125_). Med de her ideer kan vi omskrive _(A^B_) 
+        - som vi jo forventer er mindre end _(B^A_) - til
+        </p>
+        <p class="cent">_((B^C+D)^B=B^{C*B}+noget_1*B^{C*(B-1)}+noget_2*B^{C*(B-2)} + ...)_</p>
+        <p class="t">
+        Lad os først kigge exlusivt på den <i>højeste exponent</i> i den udvidede form: nemlig _(B^{C*B}_). 
+        Størrelsesmæssigt hvordan at _(A_) i _(B^A_) i modsætning til _(C*B_) i denne udvidede form? Jo
+        Ved _(55,60_) er det _(1*55_). Altså det er bare ligmed _(B_) som pr definition er mindre end _(A_). Gør vi _(A_) stort nok til at 
+        _(C_) endelig bliver _(1_) højere, så stor vi nu med _(2*55_). Hver gang _(C*B_) bliver <i>plusset</i> med _(B_), så bliver 
+        _(A_) <i>ganget</i> med _(B_). Exponenten ved _(B^A_) er altid større - en god del endda ofte.
+        </p>
+        <p class="t">
+        Det er fint nok, men hvad med alt det andet vi nu plusser med? Jo, det er faktisk ret ligegyldigt! Selv 
+        Vi ved at exponenten på _(B^A_) altid er i hvert fald _(1_) eller højere over vores <i>højeste exponent</i>. Selv i det 
+        bedste scenarie hvor det kun er _(1_), så skal vi stadig forestille os at vi laver _(B_) kloner (at gange) af vores største exponent og plusser dem sammen! 
+        Vores udvidede form har også _(B_) ting vi plusser med hinanden, men da potenser falder, så ved vi at de alle i sig selv er mindre end _(B_) - mindre end klonerne. 
+        De <i>er</i> så ganget med "noget"-koefficienterne baseret på _(D_), hvilke <i>kan</i> gøre nogle af dem større. Men 
+        _(D_) er kun rigtig stor når forskellen mellem _(A_) og _(B_) er stor, og i det tilfælde så vil exponenten være mere meget mere 
+        end bare _(1_) større! 
+        </p>
+        <p class="t">Færdig! Det var en smule sindsygt i know</p>
+    <br><br></answer-box>        -->
+
+
+
+</html>

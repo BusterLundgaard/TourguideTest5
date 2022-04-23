@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+
+
+    <h3>Diverse størrelser i Geometri</h3>
+    <p class="t">
+    Integraler hjælper os <i>især</i> med 3D geometri. Sig f.eks.
+    vi skulle finde overfladearealet på en kegle:
+    </p>
+    <img class='SpicXL' style='width:25%' src='../../../Assets/Chapter4\DerivativesAndIntegrals\Applications\OtherThingsToCount\ConeSurfaceArea1.png'> 
+    <p class="t">
+    Vi leder efter et <i>areal</i>. Det er relativt let at finde arealet på trekanter, så lad os prøve at
+    opdele figuren sådan:
+    </p>
+    <img class='SpicXL' style='width:28%' src='../../../Assets/Chapter4\DerivativesAndIntegrals\Applications\OtherThingsToCount\ConeSurfaceArea2.png'>
+    <p class="t">
+    Her forestiller jeg mig, at jeg opdeler overfladearealet i en masse lige store trekanter
+    med sidelængden 
+    _($L=\sqrt{R^2+H^2}_) 
+    ... og vinklen _(d\theta_). Arealet på hver trekant er nu 
+    _($ \frac{1}{2} *a*b*Sin(v) = \frac{1}{2} L^2 Sin(d \theta)  _) 
+    _(Sin(d\theta)_) nærmer sig _(d\theta_) som 
+    _(d\theta_) nærmer sig _(0_), så man ville umiddelbart tænke, at vi skulle regne integralet:
+    _($\int_{0}^{2\pi} \frac{1}{2}*L^2 \, d\theta_)
+    Men det kan man faktisk <i>ikke</i>. Det giver et forkert svar. Hver af trekanterne har tre
+    sider. To af dem har længden _(L_), men der er også den tredje: 
+    </p> 
+    <img class='SpicXL' style='width:25%' src='../../../Assets/Chapter4\DerivativesAndIntegrals\Applications\OtherThingsToCount\ConeSurfaceArea3.png'>
+    <p class="t">
+    Den tredje side svarer til en lille del af omkredsen, _(do_). 
+    Summen af alle _(do_) burde give omkredsen på den nederste cirkel _(2 \pi r_).
+    Det <i>skal</i> være sandt, hvilket er problematisk, da det slet ikke er <i>muligt</i>
+    at lægge alle uendelig mange _(do_) sammen:
+    _($\begin{eqnarray}
+    && do & = \sqrt{a^2+b^2-2ab*Cos(v)} \\ \\
+    && & = \sqrt{2L^2+2L^2*Cos(d\theta)} \\ \\
+    && & = \sqrt{2}*L*\sqrt{1-Cos(d\theta)}
+    \end{eqnarray}_)
+    Det her passer ikke til nogen form vi kan integrere! Vi kan heller ikke omskrive det yderligere,
+    så det er <i>ikke</i> sandt. 
+    </p>
+    <p class="t">
+    Hvis _(do_) er problemet, er det måske en bedre ide bare at integrere <i>med</i>
+    _(do_): Integrere langs omkredsen i stedet for vinklen. 
+    Nu kan vi integrere fra _(0_) til _(2\pi r_) og sige,
+    at hver trekant har sidelængderne _(L_), _(L_) og _(do_). Arealet kan findes som:
+    </p>
+    <img class='Spic' style='width:15%' src='../../../Assets/Chapter4\DerivativesAndIntegrals\Applications\OtherThingsToCount\ConeSurfaceAreaTriangle.png'>
+    <p class="t">
+    _(h_) er lig _(\sqrt{L^2 - (do/2)^2}_), så
+    arealet er:
+    _($\frac{1}{2}*\sqrt{L^2 - (do/2)^2}*do_)
+    ... og så støder vi <i>igen</i> på et problem. Det her kan
+    ikke omskrives til noget, vi kan integrere! Vi er nødt til at prøve noget nyt. 
+    </p>
+    <p class="t">
+    En anden mulig strategi er mindre elegant, men kunne virke:
+    </p>
+    <img class='SpicXL' style='width:31%' src='../../../Assets/Chapter4\DerivativesAndIntegrals\Applications\OtherThingsToCount\ConeSurfaceArea4.png'>
+    <p class="t">
+    Vi deler overfladearealet op to gange, og regner to integraler. I èn går vi langs _(do_), og
+    i den anden langs _(dh_). Vi gør lidt det samme, som
+    da vi skulle regne inertimomentet på metalpladen: Først beskriver vi arealet af de blå kasser,
+    det bruger vi til at regne et udtryk for arealet af den grønne strippe, og 
+    disse grønne stripper lægger vi sammen og får det endelige areal. 
+    </p>
+    <img class='Spic' style='width:8%' src='../../../Assets/Chapter4\DerivativesAndIntegrals\Applications\OtherThingsToCount\ConeSurfaceArea5.png'> 
+    <p class="t">
+    Vi kan regne de blå kassers længde via pythagoras. De går _(dh_) op.
+    _(?_) kan regnes som _(dh*R/H_), eftersom forholdet mellem at gå
+    indad og opad på keglen er _(R/H_). Længden er derfor:
+    _($\sqrt{dh^2+dh^2*(R^2/H^2)} = \sqrt{1+R^2/H^2}*dh_)
+    Så arealet vi skal integrere er: 
+    _($do*\sqrt{1+R^2/H^2}*dh_)
+    Her hentyder "_(do_)" ikke til den aller nederste _(do_) (som ville være for stor),
+    men i stedet den _(do_), der bliver brugt på vores grønne strimmel. Denne strimmel
+    er _(h_) nede fra spidsen, og har en omkreds på _(2\pi*(R/H*h)_), så
+    vi skal regne integralet: 
+    _($\begin{eqnarray}
+    && \int_{0}^{2\pi*(R/H*h)} \sqrt{1+R^2/H^2}*dh \, do = \\ \\
+    && dh*\sqrt{1+R^2/H^2}*\int_{0}^{2\pi*(R/H*h)} 1 \, do = \\ \\
+    && dh*\sqrt{1+R^2/H^2}*2\pi*(R/H*h)
+    \end{eqnarray}_)
+    Dette skal så bare integreres langs højden _(h_):
+    _($\begin{eqnarray}
+    && \int_{0}^{H} \sqrt{1+R^2/H^2}*2\pi*\frac{R}{H}*h \, dh = \\ \\
+    && \sqrt{1+R^2/H^2}*2\pi*\frac{R}{H}*\int_{0}^{H} h \, dh = \\ \\
+    && \sqrt{1+R^2/H^2}*2\pi*\frac{R}{H}*\frac{H^2}{2}
+    \end{eqnarray}_)
+    Bum! We did it! Lad os lige simplificere udtrykket: 
+    _($ \sqrt{1+R^2/H^2}*2\pi*\frac{R}{H}*\frac{H^2}{2} =_)
+    _($ \pi*\sqrt{\frac{H^2+R^2}{H^2}}*\frac{R}{H}*H^2 = _)
+    _($ \pi*\frac{L}{H}*\frac{R}{H}*H^2 = _)
+    _($ \pi*L*R_)
+    Fantastisk! Super kompliceret process, men et meget simpelt svar. 
+    </p>
+
+    <q-stion 1="16" 2="1">
+    Find <i>volumen</i> for en kegle med radius _(R_) og en højde _(H_). Bare roligt:
+    Det er langt <i>langt</i> nemmere end overfladearealet. 
+    <br><br></q-stion>
+    <answer-box>
+    Jeg tænker, vi kan opdele keglen i cylinder "diske" som:
+    <img class='SpicXL' style='width:50%' src='../../../Assets/Chapter4\DerivativesAndIntegrals\Applications\OtherThingsToCount\ConeVolume.png'> 
+    <p class="t">
+    Volumen af hver disk er bare _(\text{Areal}*dh_), og arealet ved højden
+    _(h_) er _(\pi*(R/H*h)^2_). Vi skal derfor regne integralet:
+    _($\begin{eqnarray}
+    && \int_{0}^{H} \pi*(R/H*h)^2 \, dh = \\ \\
+    && \pi*\frac{R^2}{H^2}*\int_{0}^{H} h^2 \, dh = \\ \\
+    && \pi*\frac{R^2}{H^2}*\frac{H^3}{3} = \\ \\
+    && \frac{\pi}{3}H R^2
+    \end{eqnarray}_)
+    Voila!
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="16" 2="2">
+    Find volumen og overfladearealet på en torus med radiuser _(R_1_) og _(R_2_):
+    <img class='SpicXL' style='width:80%' src='../../../Assets/Chapter4\DerivativesAndIntegrals\Applications\OtherThingsToCount\Torus.png'> 
+    <br><br></q-stion>
+    <answer-box>
+    Først volumen. Det er super nemt at se, hvordan man kan dele en torus op i diske med arealerne
+    _(\pi R_2^2_). 
+    Man kan nu 
+    integrere langs omkredsen af den store cirkel med radius _(R_1_), hvilket giver:
+    _($\begin{eqnarray}
+    && \int_{0}^{2\pi R_1} \pi*R_2^2 \, do = \\ \\
+    && \pi*R_2^2 * \int_{0}^{2\pi*R_1} 1 \, do = \\ \\
+    && \pi*R_2^2*(2\pi*R_1) = \\ \\
+    && 2\pi^2*R_2^2*R_1
+    \end{eqnarray}_)
+    Nu overfladearealet. Her kan vi igen integrere med diske, men bare
+    tage deres overfladeareal i stedet for volumen. Overfladearealet
+    kan findes som diskenes omkreds _(2\pi R_2_) gange tykkelsen _(do_), så:
+    _($\begin{eqnarray}
+    && \int_{0}^{2\pi R_1} 2\pi R_2 \, do = \\ \\
+    && 2\pi R_2 * 2\pi R_1 = \\ \\
+    && 4\pi^2 R_1 R_2
+    \end{eqnarray}_)
+    Bum! Overraskende nemt! 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="16" 2="3">
+    Find volumen af en kugle med radius _(R_):
+    <img class='Spic' style='width:40%' src='../../../Assets/Chapter4\DerivativesAndIntegrals\Applications\OtherThingsToCount\Sphere.png'> 
+    <br><br></q-stion>
+    <answer-box>
+    Lad os igen opdele formen i "diske", og igen integrere langs højden (eller bare _(z_)-aksen), denne gang fra
+    _(h=-R_) til _(h=R_). Vi kunne selvfølgelig også integrere langs _(x_) eller _(y_),
+    da kuglen er symmetrisk.
+    <p class="t">
+    Tykkelsen på de her diske er igen _(dh_), men hvad er arealet? En kugle
+    med radius _(R_) svarer til:
+    _($x^2+y^2+z^2=R^2_)
+    Højden _(h_) svarer til _(z=h_), så:
+    _($\begin{eqnarray}
+    && x^2+y^2+h^2=R^2 \to \\ \\
+    && x^2+y^2=R^2-h^2 
+    \end{eqnarray}_)
+    2D-udskæringen ved højden _(h_) er bare en cirkel med radius _(\sqrt{R^2-h^2}_), så
+    dens areal er
+    _($\pi*\sqrt{(R^2-h^2)}^2 = \pi (R^2 - h^2)_)
+    Vi skal nu regne integralet:
+    _($\begin{eqnarray}
+    && \int_{-R}^{R} \pi*(R^2-h^2) \, dh = \\ \\
+    && \pi*R^2*\int_{-R}^{R} 1 \, dh - \pi*\int{-R}^{R} h^2 z \, dh =  \\ \\
+    && \pi*R^2*\Bigl(R-(-R) \Bigr) - \pi*\left(\frac{R^3}{3} - \frac{(-R)^3}{3} \right) = \\ \\
+    && \pi*R^2*2R - \pi*2\frac{R^3}{3} =  \\ \\
+    && \pi*R^3*\left(2 - \frac{2}{3} \right) = \\ \\
+    && \pi*R^3*\frac{4}{3} 
+    \end{eqnarray}_)
+    Bum! 
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="16" 2="4">
+    Find volumen af en pyramide:
+    <img class='Spic' style='width:35%' src='../../../Assets/Chapter4\DerivativesAndIntegrals\Applications\OtherThingsToCount\Pyramid.png'> 
+    <p class="t">
+    Højden _(H_) er i midten af rektanglet med længde _(L_) og bredde _(W_). 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Jeg tænker igen, at vi opdeler formen i diske og integrerer langs højden. 
+    Lad os først finde længden og bredden _(h_) nede fra toppen, så vi kan beregne arealet.
+    Bredden og højden går fra _(0_) til henholdsvis _(W_) og _(H_), når _(h_) går
+    fra _(0_) til _(H_). Vi kan derfor sige:
+    _($l(h)=\frac{L}{H}*h \qquad w(h)=\frac{W}{H}*h_)
+    Arealet af hver disk er altså:
+    _($\frac{L}{H}h*\frac{W}{H}h = \frac{LW h^2}{H^2}_)
+    Så vi skal regne integralet:
+    _($\int_{0}^{H} \frac{LW h^2}{H^2} \, dh = \frac{LW}{H^2} \int_{0}^{H} h^2 \, dh =  \frac{LW}{H^2}*\frac{H^3}{3} = \frac{1}{3}LWH _)
+    Bum! Super dejlig formel!
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="16" 2="5">
+    Vil pyramidens volume ændre sig, hvis vi rykker på dens top? 
+    I andre ord: Vil følgende figur
+    have samme volume, som en pyramide med samme længde, bredde, og højde?
+    <img class='Spic' style='width:45%' src='../../../Assets/Chapter4\DerivativesAndIntegrals\Applications\OtherThingsToCount\StrangePyramid1.png'> 
+    <p class="t">
+    Det her er i alt ærlighed mere en 3D-geometri opgave, end det er en integral-opgave. 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Jeg tænker, at vi igen forsøger en integration hvor vi opdeler figuren i diske. 
+    For at gøre det, skal vi finde arealet på hver disk. Her undersøger vi først et vigtigt spørgsmål:
+    Når vi er gået _(h_) op, er formen af arealet så overhovedet en rektangel længere?
+    Forbliver hjørnerne rette, når vi går op mod det rykkede toppunkt? 
+    <p class="t">
+    For at svare på det spørgsmål tænker jeg, at vi modellerer de _(4_) linjer rent matematisk:
+    </p>
+    <img class='Spic' style='width:50%' src='../../../Assets/Chapter4\DerivativesAndIntegrals\Applications\OtherThingsToCount\StrangePyramid2.png'> 
+    <p class="t">
+    Vi kalder linjerne _(l_1_), _(l_2_), _(l_3_), _(l_4_). Vi kan sige, at hjørnerne forbliver
+    rette, hvis der ikke er nogen _(y_)-forskel mellem _(l_1_) og _(l_4_) eller _(x_)-forskel mellem
+    _(l_3_) og _(l_4_), når vi går op med _(h_). 
+    </p>
+    <p class="t">
+    _(l_1_) starter med et _(x_)-koordinat på _(W_), og går mod x-koordinatet _(X_) (hvor vi antager
+    at _(X_) kan være negativ) med en konstant rate. Når _(h_) bevæger sig fra _(0_) til
+    _(H_), bevæger x-koordinatet på _(l_1_) sig med _(W-X_), så:
+    _($l_{1,x}(h)=W+\frac{X-W}{H}*h_) 
+    Præcis samme ide kan vi bruge til at finde _(y_):
+    _($l_{1,y}(h)=0+\frac{Y-0}{H}*h_)
+    Herfra kan det ses, hvad vi gør ved de andre linjer _(l_2_), _(l_3_), _(l_4_). 
+    Vi er nu klar til at tjekke, om der er rette hjørner:
+    _($l_{1,y}-l_{4,y} = \frac{Y}{H}*h - \frac{Y}{H}*h = 0_)
+    _($l_{3,x}-l_{4,x} = \frac{X}{H}*h - \frac{X}{H}*h = 0_)
+    Fantastisk! Nu er det nemt. Vi ved at bredden går fra _(W_) til _(0_) med en konstant rate,
+    så den har præcist samme værdi som før. Samme argument gælder længden. Både længden
+    og bredden ved _(h_) matcher pyramiden, så det gør volumen også!
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="16" 2="6">
+    Find overfladearealet af en kugle med radius _(R_). Det her er klart
+    den mest udfordrende opgave på denne side. 
+    <br><br></q-stion>
+    <answer-box>
+    Jeg tænker, at vi gør lidt ligesom keglen, og opdeler kuglen to gange:
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter4\DerivativesAndIntegrals\Applications\OtherThingsToCount\SphereSurfaceArea.png'> 
+    <p class="t">
+    Først finder vi arealet på en af de grønne rækker, via en integral langs omkredsen
+    af cirklen med radius _(\sqrt{R^2-x^2}_) ved _(x_). Det areal integrerer 
+    vi langs _(x_) fra _(-R_) til _(R_). Først af alt skal vi beskrive det blå areal, dog.  
+    Længden (langs omkredsen) er bare _(do_), men hvad er bredden? Bredden er <i>ikke</i>
+    bare _(dx_), siden:  
+    </p>
+    <img class='Spic' style='width:85%' src='../../../Assets/Chapter4\DerivativesAndIntegrals\Applications\OtherThingsToCount\SphereSurfaceAreaSlope.png'> 
+    <p class="t">
+    Når man går _(dx_) frem, går radius lidt indad, siden der er en <i>hældning</i>. Ved keglen
+    var denne hældning konstant lig _(R/H_), men her ved kuglen er det mere kompliceret.
+    Vi ved at radius af cirklen ved _(x_) er:
+    _($r(x)=\sqrt{R^2-x^2}_)
+    Så hældningen er:
+    _($¤x \left[\sqrt{R^2-x^2} \right] = \frac{1}{2*\sqrt{R^2-x^2}}*¤x \left[R^2-x^2 \right] = -\frac{x}{\sqrt{R^2-x^2}}_)
+    Den blå bredde kan nu regnes via pythagoras som:
+    _($\begin{eqnarray}
+    && \sqrt{dx^2 + dx^2*\left(-\frac{x}{\sqrt{R^2-x^2}} \right)^2} = \\ \\
+    && \sqrt{1+\frac{x^2}{R^2-x^2}}*dx = \\ \\
+    && \sqrt{\frac{R^2-x^2}{R^2-x^2}+\frac{x^2}{R^2-x^2}}*dx = \\ \\
+    && \frac{R}{\sqrt{R^2-x^2}}*dx
+    \end{eqnarray}_)
+    Det blå areal er altså:
+    _($ \left(\frac{R}{\sqrt{R^2-x^2}}*dx \right)*do_)
+    Og det grønne areal kan nu regnes med integralet:
+    _($\begin{eqnarray}
+    && \int_{0}^{2\pi*\sqrt{R^2-x^2}} \left(\frac{R}{\sqrt{R^2-x^2}}*dx \right) \, do = \\ \\
+    && \left(\frac{R}{\sqrt{R^2-x^2}}*dx \right) \int_{0}^{2\pi*\sqrt{R^2-x^2}} 1 \, do =  \\ \\
+    && \left(\frac{R}{\sqrt{R^2-x^2}}*dx \right)*2\pi*\sqrt{R^2-x^2} = 2\pi R 
+    \end{eqnarray}_)
+    Så det fulde overfladeareal er:
+    _($\int_{-R}^{R} 2\pi R \, dx = 2\pi R * \int_{-R}^{R} 1 \, dx = 2\pi R * 2R = 4\pi R^2_)
+    Fantastisk! 
+    </p>
+    <br></answer-box>
+
+
+
+
+

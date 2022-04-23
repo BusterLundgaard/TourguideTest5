@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+    <h4> </h4>
+
+    <p class="t">
+    Jokes, jokes. Det er slet ikke ligeså slemt, som man kunne tro. Det 
+    er ikke <i>super</i> ofte man, får de her falske løsninger.
+    Man behøver ikke tænke over det her <i>hver gang</i> man bruger disse operationer.     
+    Man skal bare tjekke sine løsninger! <i>Især</i> hvis man ikke har meget kontekst, og
+    <i>især</i> hvis man arbejder med kvadratrødder. 
+    Du skal bare indsætte løsningerne i den originale ligning, og se om den
+    bliver tilfredsstillet. 
+    Det er lidt irriterende, og jeg
+    forventer personligt ikke, at du gør det gennem resten af bogen. Du skal bare
+    lige vide at det <i>kan</i> ske, og nogle andre lærere/bøger vil være
+    mere strikte omkring det. 
+    </p>
+    
+    <q-stion 1="16" 2="1">
+    Løs ligningen 
+    _($Ln(x+5)=Ln(x-1)-Ln(x+1)_)
+    Find alle løsninger, bare ikke de falske! 
+    Måske er der mange, måske er der ingen!
+    <br><br></q-stion>
+    <answer-box>
+    Lad os først løse den normalt uden at tænke over noget. 
+    Vi tjekker jo alligevel, om løsningerne er rigtige til sidst!
+    <p class="t">
+    Først bruger vi en logaritme-egenskab og omskriver højre side til:
+    _($Ln(x+5)=Ln\left(\frac{x-1}{x+1} \right)_)
+    Vi opløfter nu begge sider i _(e_), for at fjerne _(Ln_):
+    _($\begin{align}
+    e^{Ln(x+5)} &= e^{(x-1)/(x+1)} &\to \\ \\
+    x+5=&\frac{x-1}{x+1}
+    \end{align}_)
+    Vi ganger begge sider med _(x+1_), for at fjerne brøken:
+    _($\begin{align}
+    (x+5)(x+1) &= \frac{x-1}{x+1} (x+1) &\to \\ \\
+    x^2+5x+6 &=0
+    \end{align}_)
+    Denne andengradsligning kan løses, og giver _(x=-2_), _(x=-3_). Lad os nu teste
+    om disse løsninger virker:
+    _($\begin{eqnarray}
+    && Ln(-2+5) = Ln(-2-1) - Ln(-2+1) = Ln(-3) - Ln(-1)\to \\
+    && Ln(-3+5) = Ln(-3-1) - Ln(-3+1) = Ln(-4) - Ln(-2)\to \\
+    \end{eqnarray}_)
+    Det her kan vi ikke! Logaritmer accepterer kun positive input, og 
+    vi har givet dem _(-3_), _(-1_) og _(-4_). Begge løsningerne
+    er falske! 
+    </p> 
+    <p class="t">
+    Lad os prøve at forstå hvor præcis problemet skete. Overraskende nok skete
+    det helt i starten da vi omskrev
+    _($Ln(x+5)=Ln(x-1)-Ln(x+1)_)
+    ... til 
+    _($Ln(x+5)=Ln\left(\frac{x-1}{x+1} \right)_)
+    I den første af disse to ligninger er _(x_) nødt til at være _(\gt 1_).
+    Ellers  
+    er _(x-1_) inde i _(Ln(x-1)_) enten _(0_) eller negativt. 
+    </p> 
+    <p class="t">
+    Den anden er lidt mere kompliceret. 
+    Både _(x-1_) og _(x+1_) er positive, hvis _(x \gt 1_), og brøken er derfor også positiv.
+    De er begge <i>negative</i> hvis _(x \lt -1_), så der får vi igen en positiv brøk. 
+    Derfor er anden ligning valid, 
+    <i>både</i> hvis _(x \gt 1_) <i>og</i> hvis _(x \lt -1_). Vores løsninger
+    _(x=-2_) og _(x=-3_) virker fint i anden ligning, men ikke den originale!
+    </p>
+    <br></answer-box>
+

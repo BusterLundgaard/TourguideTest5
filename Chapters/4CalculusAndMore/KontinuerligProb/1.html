@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+
+
+    <!--7.1 -->
+    <h1 class="header">Afsnit 4:</h1>
+    <h1 class="title">Sandsynlighedsteori runde 2: <br> Kontinuerlig</h1>
+
+    <p class="t">
+    Tilbage i kapitlet om sandsynlighed nævnte jeg, 
+    at der var to <i>skoler</i> af sandsynlighedsteori: Den diskrete og den kontinuerlige. 
+    Forskellen kan beskrives følgende:
+    </p>
+
+    <p class="t">
+    I diskret sandsynlighedsteori arbejdes der med udfaldsrum _(S_) og 
+    <br> begivenheder _(A_), hvis størrelse _(|S|_), _(|A|_) kan <i>tælles</i>. Derved kan 
+    en sandsynlighed _(P(A)_) defineres som: 
+    _($\frac{|A|}{|S|}_)
+    I kontinuerlig sandsynlighed arbejder vi med sample spaces _(S_) og events _(A_), hvis
+    størrelser er "<i>utællelige</i>". Du har måske før hørt udtrykket:
+    </p>
+
+    <p class="cent" style="margin-top:10px;">
+        "Nogle uendeligheder er større end andre"
+    </p>
+
+    <p class="t">
+    Det kommer faktisk fra fiktionsbogen "A Fault in Our Stars" 
+    og har ikke super meget at gøre med matematik, men
+    det <i>er</i> ret fortællende og beskriver fint hvad "utællelighed" handler om som koncept. 
+    Sig du havde følgende sæt: 
+    _($S={0,1,2,3,4,...}_)
+    Det vil sige alle hele tal fra _(0_) til uendelig. 
+    Dette sæt har uendeligt mange elementer, man dets elementer <i>kan tælles</i>. 
+    Du kan opliste dets elementer fra start, til hvornår end du ikke orker at opliste dem længere. 
+    Samme gælder begivenheder _(A \subset S_) som:
+    _($A={0,2,4,6,8,...}_)
+    Og du kan nemt se at:
+    _($P(A) = \frac{|A|}{|S|} = \frac{1}{2}_)
+    Dette er i stor kontrast til, for eksempel, et sæt
+    der indeholder <i>alle</i> tal på intervallet _((0,1)_). 
+    Hvordan ville du optælle elementerne fra 
+    dette sæt? Du ville <i>ikke</i> kunne sige
+    _($\{0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9\}_)
+    Det er jo en fuldkommen arbitrer opdeling af _((0,1)_), og jeg kunne
+    som et simpelt modargument vælge et endnu mindre tal _(0.001_). Hvad 
+    med irrationelle tal som _(1/\pi_)? De skal også med! 
+    Der er <i>ingen lille del</i> af den her liste, der overhovedet kan opremses, fordi den del er sig selv 
+    bare en zoomet-ind version af _((0,1)_), og har derfor også 
+    <i>utælleligt uendelig super vildt voldsomt mange elementer</i>. 
+    </p>
+
+    <p class="t">
+    Denne forskel mellem kontinuer og diskret kan også beskrives med stokastiske variabler. 
+    I diskret sandsynlighed kan mængden af værdier din stokastiske 
+    variable tager <i>tælles</i>, hvilke den ikke kan, hvis
+    den er kontinuerlig. Sig eksempelvis at _(X_) er lig
+    "vægten af folk i en klasse". Man kan både veje _(56kg_) og _(55.999999_) kg, og 
+    det er i alt respekt to forskellige tal. Er chancen _(P(X=56)_) lig _(0_), hvis
+    ingen i klassen vejer <i>præcist</i> _(56_), selv hvis mange vejer <i>næsten</i> _(56_)? 
+    Sig at du i en bestemt klasse på 30 vælger en tilfældig elev. _(X_) modellerer
+    elevens vægt, og "plottet" af sandsynligheden over alle _(X_)'s mulige værdier 
+    er fuldkommen ubrugeligt: 
+    </p>
+
+    <img class='SpicBXL' style='width:140%; margin-left: -20%; margin-top:25px;' src='../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\Stokastisk\Kropsvægt.png'> 
+
+    <p class="tt">
+    I et tidligere kapitel løste vi dette problem
+    ved at <i>gruppere</i> de værdier _(X_) kunne tage:
+    </p>
+
+    <img class='SpicXL' style='width:80%; margin-top:25px; ' src='../../../Assets/Chapter4\KontinuerligProb\Histogram.png'> 
+
+    <p class="tt">
+    Nu ser vi kun på <i>intervaller</i> af _(10kg_). Vi leder ikke længere
+    efter _(P(X=56)_) men _(P(x \in [50, 60])_). Billedet er et plot af de forskellige intervaller
+    og deres sandsynligheder. 
+    </p>
+    <p class="t">
+    Denne strategi virker <i>fint</i> og vi kan stadig beskrive gennemsnittet, spredningen osv. 
+    Vi har bare ikke <i>rigtig</i> løst problemet. Vi har lidt snydt,
+    og gjort hvad der svarer til, at lave 
+    en ny <i>diskret</i> variable der <i>approximerer</i> vores kontinuerlige: En ny variabel, 
+    _(Y_), hvis værdier er "interval _(1_)", "interval _(2_)" osv:
+    _(${1,2,3,4,...}_)
+    Eksempelvis kan det nu siges, at sandsynligheden for, at _(X_) er mellem _(20_) og _(30_), 
+    svarer til  _(P(Y=3)_). 
+    </p>
+
+    <p class="t">
+    Så vi løser stadig problemerne på præcis samme måde som før. Det <i>virker</i>, 
+    men hvad vi faktisk er interesseret i, er
+    at beskrive sandsynlighederne på 
+    alle _(X_)'s utællelig mange værdier 
+    ved hjælp af en <i>funktion</i> _(f(x)_), der
+    accepterer utælleligt mange _(x_) som input, 
+    og associerer hvert med en sandsynlighed. Okay, ikke helt; Det er umuligt, siden
+    chancen for, at _(X_) præcist er lig en bestemt værdi _(x_), altid er _(0_), så vi gør
+    noget smart. Vi konstruerer en funktion, der præcist ligesom dataet 
+    lader os finde sandsynligheden på <i>intervaller</i>. Bare ikke bestemte, arbitrære intervaller
+    som _(10_)kg: <i>Alle</i> intervaller. Vi konstruerer en funktion _(f_), hvor
+    chancen for en værdi mellem _(a_) og _(b_) kan regnes som:
+    _($\int_{a}^{b} f(x) \text{ }dx_)
+    En funktion hvis areal under _(f_) repræsenterer sandsynlighed. 
+    Hvis den henholdsvis mindste og største værdi _(X_) tager er _(c_) og _(d_),
+    skal det gælde at
+    _($\int_{c}^{d} f(x) \text{ }dx = 1_)
+    ... siden sandsynligheden for at _(X_) tager <i>en eller anden værdi</i> altid er _(1_). 
+    </p>
+    <p class="t">
+    Det kan måske virke svært til
+    umuligt at konstruere en funktion med denne egenskab _(f_), men
+    der findes et smart trick. Vi ved, at
+    _($\int_{c}^{x} f(x) \text{ }dx = P(X \lt x) _)
+    Differentier nu begge sider med _(x_). Første fundamentale
+    teori af calculus fjerner integralet på højre side og giver:
+    _($f(x) = ¤t \left[P(X \lt x) \right] _)
+    Så _(f_) er <i>praktisk talt</i> fundet,
+    hvis bare man kan beskrive sandsynligheden for, at _(X_) er mindre end _(x_). 
+    Funktionen _(P(X \lt x)_) kaldes ofte en <i>cdf</i>: "cumulative distribution function", og 
+    funktionen _(f(x)_) for <i>pdf</i>: "probability density function". 
+    </p>
+    <p class="t">
+    Det er i al ærlighed sjælen, at 
+    vi finder pdf'en ved at differentiere cdf'en. 
+    pdf'en bliver udledt på vit forskellige måder i vidt forskellige situationer, og
+    cdf'en er ofte umulig at beskrive som en elementær funktion. Man bruger primært også computere til at evaluere
+    integraler på pdf'er numerisk.
+    </p>
+    <p class="cent">*</p>
+    <p class="t">
+    Lad os forstå igen, <i>hvad vi får ud af det her</i>, før vi går i dybden med at
+    udlede og anvende pdf-funktioner. Hvorfor ikke bare gruppere noget data som i eksemplet? 
+    </p>
+    <p class="t">
+    Her i dette eksempel med klassen og deres vægt vil det <i>ikke</i> være bestemt brugbart. 
+    Men sig som et 
+    andet eksempel, at du driver en lille butik. 
+    Du har observeret, at der i gennemsnit går 
+    _(14_) nye personer ind hver
+    halve time. En ny person er lige gået ind. 
+    Hvad er chancen for, at der går mellem 2 og 4 minutter, 
+    før endnu en ny kommer ind igen? 
+    </p>
+    <p class="t">
+    14 ind pr. halve time svarer til et gennemsnit på _(14/30=0.466_) "ind pr. minut". 
+    Vi vil senere se, at det ud fra _(0.466_) er muligt at fremstille følgende pdf:
+    _($f(t) = 0.466*e^{-0.466t}_)
+    Her er _(t_) tiden det tager imellem to personer går ind i butikken. 
+    For at regne chancen for, at det
+    tager mellem _(2_) og _(4_) minutter, skal vi derfor sige:
+    _($\int_{2}^{4} 0.466*e^{-0.466t} \text{ }dt = -e^{-0.4666*4} - (-e^{-0.4666*2}) = 0.24_)
+    Voila: en _(24_)% chance! Jeg <i>kunne</i> selvfølgelig godt have konstrueret et skema som:
+    </p>
+
+    <table style="border-collapse: collapse; border: 1px solid black; margin-left: 32%; margin-top:35px; background-color: rgb(209,233,230);" >
+        <tr>
+            <td> <b> Minutter  </b> </td>
+            <td> <u> Antal folk </u> </td>
+            <td> <u> Frekvens </u> </td>
+        </tr>
+        <tr>
+            <td> <u> 0-1 min </u></td>
+            <td> 56 </td>
+            <td> 0.373 </td>
+        </tr>
+        <tr>
+            <td> <u> 1-2 min </u></td>
+            <td> 35 </td>
+            <td> 0.233 </td>
+        </tr>
+        <tr>
+            <td> <u> 2-3 min </u></td>
+            <td> 22 </td>
+            <td> 0.146 </td>
+        </tr>
+        <tr>
+            <td> <u> 3-4 min </u></td>
+            <td> 14 </td>
+            <td> 0.093 </td>
+        </tr>
+        <tr>
+            <td> <u> 4-5 min </u></td>
+            <td> 9 </td>
+            <td> 0.060 </td>
+        </tr>
+        <tr>
+            <td> <u> 5-6 min </u></td>
+            <td> 5 </td>
+            <td> 0.033 </td>
+        </tr>
+        <tr>
+            <td> <u> 6-7 min </u></td>
+            <td> 3 </td>
+            <td> 0.020 </td>
+        </tr>
+        <tr>
+            <td> <u> 7-8 min </u></td>
+            <td> 2 </td>
+            <td> 0.0133 </td>
+        </tr>
+        <tr>
+            <td> <u> 8-9 min </u></td>
+            <td> 1 </td>
+            <td> 0.0066 </td>
+        </tr>
+    </table>
+
+    <p class="tt" style="margin-top:35px;">
+    Her har jeg skulle observere, hver gang der gik mellem _(0_) og _(1_) minut, 
+    _(1_) og _(2_) minutter, _(2_) og _(3_) minutter osv. Det har jeg skulle gøre på ca. 
+    _(150_) personer. Jeg har så skulle beregne frekvensen ved
+    at dividere antallet af folk på et bestemt interval med 
+    det samlede antal. 
+    </p>
+    <p class="t">
+    Chancen for at det tager mellem _(2_) og _(4_) minutter kan nu beregnes som:
+    _($0.146+0.093=0.239_)
+    Det virker på mange måder som en mere klumret løsning. Der er mere data, vi skal optage,
+    hvor vi før <i>kun</i> havde
+    brug for "antal nye kunder pr. halve time". Vi kan ikke finde
+    chancen, hvis vi undersøger tiden <i>efter</i> _(10_) minutter. 
+    Vi kan heller ikke finde chancen mellem et interval som _(1.5_) og _(2.5_), hvilket
+    er let med integralet. 
+    </p>
+    <p class="t">
+    Sig som et andet eksempel, at et havdyr
+    lægger tonsvis mikroskopiske æg ud i vandet. Sig at 
+    du ved - du har måske regnet eller vurderet - at hver af disse æg 
+    har en _(60_)% chance for at overleve. Hvad er nu chancen for, 
+    at over halvdelen af alle havdyrets æg overlever? 
+    </p>
+    <p class="t">
+    Det kan bevises, at følgende pdf relativt akkurat beskriver chancen for, at _(t_) procent 
+    (et tal mellem _(0_) og _(1_)) overlever
+    (mere akkurat jo flere æg):
+    _($f(t) = 2.03*0.6^t*0.4^{1-t}_)
+    Så "over halvdelen" svarer til:
+    _($\int_{0.5}^{1} 2.03*0.6^t*0.4^{1-t} \text{ }dt = 0.45_)
+    Det ville være ret svært at gøre på en god måde med diskrete variabler, især da "procent" er sådan
+    et "ikke-diskret" koncept. Denne pdf kunne konstrueres ud fra intet andet, end den gennemsnitlige
+    chance for at 1 æg overlever, men den kan regne 
+    chancen for at <i>en stor del</i> overlever. 
+    </p>
+    <p class="t">
+    Et andet meget brugbart eksempel kunne være antallet af stærke storme. 
+    Sig, at man i mange år har talt, hvor mange 
+    stærke storme (sig, over 35_(m/s_)) der var, i et bestemt 
+    land (falsk data). Man har følgende data:
+    </p>
+
+    <table style="border-collapse: collapse; border: 1px solid black; margin-left: 32%; margin-top: 35px; background-color: rgb(209,233,230);" >
+        <tr>
+            <td> <b> År  </b> </td>
+            <td> <u> Antal stærke storme </u> </td> 
+        </tr>
+        <tr><td> 1990 </td><td> 2 </td></tr>
+        <tr><td> 1991 </td><td> 1 </td></tr>
+        <tr><td> 1992 </td><td> 3 </td></tr>
+        <tr><td> 1993 </td><td> 3 </td></tr>
+        <tr><td> 1994 </td><td> 4 </td></tr>
+        <tr><td> 1995 </td><td> 1 </td></tr>
+        <tr><td> 1996 </td><td> 2 </td></tr>
+        <tr><td> 1997 </td><td> 5 </td></tr>
+        <tr><td> 1998 </td><td> 3 </td></tr>
+        <tr><td> 1999 </td><td> 1 </td></tr>
+        <tr><td> 2000 </td><td> 1 </td></tr>
+        <tr><td> 2001 </td><td> 6 </td></tr>
+        <tr><td> 2002 </td><td> 2 </td></tr>
+        <tr><td> 2003 </td><td> 3 </td></tr>
+        <tr><td> 2004 </td><td> 3 </td></tr>
+        <tr><td> 2005 </td><td> 2 </td></tr>
+        <tr><td> 2006 </td><td> 4 </td></tr>
+        <tr><td> 2007 </td><td> 3 </td></tr>
+        <tr><td> 2008 </td><td> 1 </td></tr>
+        <tr><td> 2009 </td><td> 4 </td></tr>
+        <tr><td> 2010 </td><td> 3 </td></tr>
+        <tr><td> 2011 </td><td> 5 </td></tr>
+        <tr><td> 2012 </td><td> 1 </td></tr>
+        <tr><td> 2013 </td><td> 2 </td></tr>
+        <tr><td> 2014 </td><td> 2 </td></tr>
+        <tr><td> 2015 </td><td> 3 </td></tr>
+        <tr><td> 2016 </td><td> 4 </td></tr>
+        <tr><td> 2017 </td><td> 4 </td></tr>
+        <tr><td> 2018 </td><td> 5 </td></tr>
+        <tr><td> 2019 </td><td> 2 </td></tr>
+        <tr><td> 2020 </td><td> 4 </td></tr>
+    </table>
+
+    <p class="tt" style="margin-top:35px;">
+    Sig at jeg søger chancen for, at der kommer over _(7_) storme 
+    næste år. I ingen af de år vi har målt, har der været mere end _(7_) storme, så 
+    vi har slet ikke nogen datapunkter vi kan lægge sammen, for at finde sandsynligheden!
+    Plus: Chancen for at der er <i>over</i> _(7_) storme svarer til chancen
+    for _(8_) storme, plus chancen for _(9_), plus _(10_), plus _(11_) osv. 
+    til <i>uendelighed</i>! Her kan diskrete metoder ikke hjælpe os meget, men 
+    det <i>er</i> muligt (og relativt let) at konstruere følgende pdf ved hjælp af dataet: 
+    _($f(x)=0.2865*0.7725^{(x-2.83)^2}_)
+    Nu kan vi bare regne:
+    _($\int_{7}^{\infty} 0.2865*0.7725^{(x-2.83)^2} \text{ }dx = 0.00136_)
+    Så en chance på 13%. Det er ret højt, når man tænker over, hvor
+    svært det er, at beregne med diskrete metoder.
+    </p>
+    <p class="t">
+    Vi skal nok se på <i>hvordan</i> man faktisk kommer frem til disse funktioner, men lad os
+    først øve os i at <i>bruge dem</i>. 
+    </p>
+

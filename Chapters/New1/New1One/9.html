@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+    
+    <h4>Rækkefølgen når vi ganger:</h4>
+    <p class="t">
+    For at regne eksempelvis <p-m m=" 2*5"></p-m> siger vi: 
+    </p>
+    <p class="cent">
+        <p-m m=" 2+2+2+2+2"></p-m>
+    </p>
+    <p class="t">
+    Kan vi <i>også</i> vælge at sige
+    </p>
+    <p class="cent">
+        <p-m m="5+5"></p-m>
+    </p>
+    <p class="t">
+    ... eller? Svaret er <i>ja</i>. <p-m m=" 2*5"></p-m> er præcist det samme
+    som <p-m m=" 5*2"></p-m>. Lad os se hvorfor. 
+    </p>
+    <p class="t">
+    <p-m m=" 2"></p-m> kan omskrives til
+    <p-m m=" (5-3)"></p-m>, så vi får:
+    </p>
+    <p class="cent">
+        <p-m m=" (5-3)+(5-3)+(5-3)+(5-3)+(5-3)"></p-m>
+    </p>
+    <p class="t">
+    Det kan vi omskrive på følgende vis:
+    </p>
+    <ul>
+        <li><p-m m=" (5-3)+(5-3)+(5-3)+(5-3)+(5-3) = "></p-m></li>
+        <li><p-m m=" 5-3+5-3+5-3+5-3+5-3 = "></p-m></li>
+        <li><p-m m=" 5+5+5+5+5-3-3-3-3-3 = "></p-m></li>
+        <li><p-m m=" 5*5 - 5*3 = "></p-m></li>
+        <li><p-m m=" 5*(5-3) = "></p-m></li>
+        <li><p-m m=" 5*2 = "></p-m></li>
+        <li><p-m m=" 5+5"></p-m></li>
+    </ul>
+    <p class="t">
+    Bum! 
+    </p>
+    <p class="t">
+    Vi kan også se at det er ligegyldigt hvordan vi sætter parenteser, når vi
+    ganger flere ting. F.eks. at 
+    </p>
+    <p class="cent">
+        <p-m m=" (A1 1*2)*3 = A1 1*(2*3)"></p-m>
+    </p>
+    <p class="t">
+    Det her ved vi er rigtigt, da <p-m m=" (A1 1*2)*3"></p-m> kan omskrives til:
+    </p>
+    <ul>
+        <li><p-m m=" (A1 1+A1 1)*3 ="></p-m></li>
+        <li><p-m m=" 3*(A1 1+ A1 1) = "></p-m></li>
+        <li><p-m m=" 3*A1 1 + 3*A1 1 ="></p-m></li>
+        <li><p-m m=" 2*(3*A1 1)"></p-m></li>
+    </ul>
+    <p class="t">
+    ... og <p-m m=" A1 1*(2*3)"></p-m> kan omskrives til:
+    </p>
+    <ul>
+        <li><p-m m=" A1 1*(3+3) = "></p-m></li>
+        <li><p-m m=" A1 1*3 + A1 1*3 ="></p-m></li>
+        <li><p-m m=" 2*(A1 1*3) ="></p-m></li>
+        <li><p-m m=" 2*(3*A1)"></p-m></li>
+    </ul>
+    <p class="t">
+    Så de er lig hinanden! Samme argument kunne vi lave med et hvilket som helst andet sæt tal. 
+    Det er altså fuldkommen ligegyldigt hvordan vi sætter parenteserne, 
+    hvis vi har et større regnestykke. F.eks:
+    </p>
+    <p class="cent">
+        <p-m m=" (A1 3*3)*A1*(2*A1 2)="></p-m>
+        <p-m m="A1 3*(3*A1)*(2*A1 2)="></p-m> <br>
+        osv. 
+    </p>
+    <p class="t">
+    Dette gælder for et hvilket som helst antal gangestykker. F.eks: 
+    </p>
+    <p class="cent">
+        <img class='Spic' style='width:70%' src='../../../Assets/Chapter1\Talsystemmer\Omskrivning\TimingOrder.png'> 
+    </p>
+    <p class="t">
+    Det kan vi se er sandt ved bare at sætte parenteser og bytte om på rækkefølgen rigtig mange gange: 
+    </p>
+
+    <div style="text-align:center; margin-top:-10px; margin-bottom:-10px;">
+        <ul style="display: inline-block;">
+            <li><p-m m=" A1 3*3*A1*2*A1 2="></p-m></li>
+            <li><p-m m=" A1 3*3*(A1*2)*A1 2="></p-m></li>
+            <li><p-m m=" A1 3*3*(2*A1)*A1 2="></p-m></li>
+            <li><p-m m=" A1 3*3*2*A1*A1 2="></p-m></li>
+            <li><p-m m=" A1 3*(3*2)*A1*A1 2="></p-m></li>
+            <li><p-m m=" A1 3*(2*3)*A1*A1 2="></p-m></li>
+            <li><p-m m=" A1 3*2*3*A1*A1 2="></p-m></li>
+            <li><p-m m=" (A1 3*2)*3*A1*A1 2="></p-m></li>
+            <li><p-m m=" (2*A1 3)*3*A1*A1 2="></p-m></li>
+            <li><p-m m=" 2*A1 3*3*A1*A1 2="></p-m></li>
+            <li><p-m m=" 2*A1 3*(3*A1)*A1 2="></p-m></li>
+            <li><p-m m=" 2*A1 3*(A1*3)*A1 2="></p-m></li>
+            <li><p-m m=" 2*A1 3*A1*3*A1 2="></p-m></li>
+            <li><p-m m=" 2*A1 3*A1*(3*A1 2)="></p-m></li>
+            <li><p-m m=" 2*A1 3*A1*(A1 2*3)="></p-m></li>
+            <li><p-m m=" 2*A1 3*A1*A1 2*3="></p-m></li>
+            <li><p-m m=" 2*A1 3*(A1*A1 2)*3="></p-m></li>
+            <li><p-m m=" 2*A1 3*(A1 2*A1)*3="></p-m></li>
+            <li><p-m m=" 2*A1 3*A1 2*A1*3"></p-m></li>
+        </ul>
+    </div>
+    
+    <p class="t">
+    Voila! Rækkefølgen er fuldkommen ligegyldig! Du kan sætte parenteser som du har lyst,
+    og regne i den rækkefølge der passer dig! 
+    </p>
+    
+    <q-stion 1="10" 2="1" bigTop="true">
+    Regn følgende stykker så effektivt du nu kan:
+    <ul>
+        <li>_(\underline{\textbf{A:}}_) <p-m m=" 3*B1 A2 1"></p-m></li>
+        <li>_(\underline{\textbf{B:}}_) <p-m m=" C2 B3 A2 3*C1"></p-m></li>
+        <li>_(\underline{\textbf{C:}}_) <p-m m=" A1 1*B1*D1 B2 A1 2"></p-m></li>
+        <li>_(\underline{\textbf{D:}}_) <p-m m=" 2*A1*B2"></p-m></li>
+        <li>_(\underline{\textbf{E:}}_) <p-m m=" C1 B3 A1 2*B1 2"></p-m></li>
+        <li>_(\underline{\textbf{F:}}_) <p-m m=" D1 C1 B2 A1 2*C1 B1"></p-m></li>
+        <li>_(\underline{\textbf{G:}}_) <p-m m=" 3*A1 3*A1 + A1 3*A1*2*3"></p-m></li>
+        <li>_(\underline{\textbf{H:}}_) <p-m m="C2 B2 A3 1*C3 B3 A3 2"></p-m></li>
+    </ul>
+    <p class="t">
+    Svaret på nogle af disse er ret store, så vi får lige brug for et ekstra symbol.
+    Sig at der efter <p-m m=" G1"></p-m> kommer <p-m m=" H1"></p-m>. Den samlede rækkefølge har du her:
+    </p>
+    <p class="cent" style="margin-top:25px; margin-bottom:25px;">
+        <p-m m=" 1"></p-m> _(\to_) 
+        <p-m m=" A1"></p-m> _(\to_) 
+        <p-m m=" B1"></p-m> _(\to_) 
+        <p-m m=" C1"></p-m> _(\to_) 
+        <p-m m=" D1"></p-m> _(\to_) 
+        <p-m m=" E1"></p-m> _(\to_) 
+        <p-m m=" F1"></p-m> _(\to_) 
+        <p-m m=" G1"></p-m> _(\to_) 
+        <p-m m=" H1"></p-m> _(\to_)
+        <p-m m=" I1"></p-m>
+    </p>
+    <br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    Det er langt nemmere at lave <p-m m=" 3"></p-m> kopier af <p-m m=" B1 A2 1"></p-m>, end <p-m m=" B1 A2 1"></p-m> kopier af <p-m m=" 3"></p-m>.
+    Derfor omskriver vi til
+    <p class="cent">
+        <p-m m=" B1 A2 1*3 ="></p-m> <br>
+        <p-m m=" B1 A2 1+B1 A2 1+B1 A2 1 ="></p-m>
+        <p-m m=" C1 A2 3"></p-m>
+    </p>
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Vi ved at <p-m m=" C1=A1*A1*A1"></p-m>, så vi omskriver som følgende:
+    <ul class="exercise">
+        <li><p-m m=" C2 B3 A2 3*(A1*A1*A1) = "></p-m></li>
+        <li><p-m m=" (C2 B3 A2 3*A1)*(A1*A1) = "></p-m></li>
+        <li><p-m m=" D2 C3 B2 A3*(A1*A1) = "></p-m></li>
+        <li><p-m m=" (D2 C3 B2 A3*A1)*A1 = "></p-m></li>
+        <li><p-m m=" E2 D3 C2 B3*A1 = "></p-m></li>
+        <li><p-m m=" F2 E3 D2 C3"></p-m></li>
+    </ul>
+    <p class="t">
+    Bemærk at <p-m m=" F2 E3 D2 C3"></p-m> er det samme som <p-m m=" C2 B3 A2 3"></p-m>, men med
+    alle symbolerne rykket <p-m m=" 3"></p-m> frem i rækkefølgen. 
+    Samme mønster med at rykke symbolerne frem
+    gælder generelt med <p-m m=" A1"></p-m>, <p-m m=" B1"></p-m>, <p-m m=" C1"></p-m>, <p-m m=" D1"></p-m> osv, 
+    og det kan blive meget brugbart når vi ganger. 
+    </p>
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{C}}_)#" tabColour="rgb(171,96,147)">
+    Det er nemmest at gange med <p-m m=" B1"></p-m> til sidst, så vi omskriver til:
+    <p class="cent">
+        <p-m m=" (A1 1*D1 B2 A1 2)*B1"></p-m> 
+    </p>
+    <p class="t">
+    Vi regner <p-m m=" A1 1*D1 B2 A1 2"></p-m> til 
+    </p>
+    <p class="cent">
+        <p-m m=" E1 C3 B1 A3 1"></p-m>
+    </p>
+    <p class="t">
+    At gange med <p-m m=" B1"></p-m> svarer til at rykke alle symboler <p-m m=" 2"></p-m> frem, så
+    det endelige resultat er:
+    </p>
+    <p class="cent">
+        <p-m m=" G1 E3 D1 C3 B1 "></p-m>
+    </p>
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{D}}_)#" tabColour="rgb(175,128,161)">
+    Èn mulig strategi er at omskrive som følgende:
+    <ul class="exercise">
+        <li><p-m m=" 2*A1*B2="></p-m> <br></li>
+        <li><p-m m=" 2*A1*2*B1="></p-m> <br></li>
+        <li><p-m m=" A1*A1*B1="></p-m> <br></li>
+        <li><p-m m=" D1"></p-m></li>
+    </ul>
+    <p class="t">
+    Voila!
+    </p>
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{E}}_)#" tabColour="rgb(171,96,147)">
+    Det er nemt at gange med <p-m m=" B1"></p-m> og relativt let at gange med <p-m m=" 2"></p-m>. 
+    Jeg tænker derfor at vi omskriver til:
+    <ul class="exercise">
+        <li><p-m m=" C1 B3 A1 2*(B1 + 2)="></p-m></li>
+        <li><p-m m=" C1 B3 A1 2*B1 + C1 B3 A1 2*2= "></p-m></li>
+        <li><p-m m=" E1 D3 C1 B2+C3 B2 A3 = "></p-m></li>
+        <li><p-m m=" E2 C1 A3"></p-m></li>
+    </ul>
+    <p class="t">
+    Bum!
+    </p>
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{F}}_)#" tabColour="rgb(175,128,161)">
+    Det er ret svært at gange med <p-m m=" C1 B1"></p-m>, da det svarer til virkelig mange kopier. 
+    Vi omskriver derfor til <p-m m=" A1 1*B1"></p-m>. Det kan <i>ok</i> let regnes at:
+    <ul class="exercise">
+        <li><p-m m=" D1 C1 B2 A1 2*A1 1="></p-m></li>
+        <li><p-m m=" E1 D2 C3 B3 A3 2"></p-m></li>
+    </ul>
+    <p class="t">
+    Derfor er det endelige svar lig:
+    </p>
+    <p class="cent">
+        <p-m m=" G1 F2 E3 D3 C3 B2"></p-m>
+    </p>
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{G}}_)#" tabColour="rgb(171,96,147)">
+    Både <p-m m=" 3*A1 3*A1"></p-m> og <p-m m=" A1 3*A1*2*3"></p-m>
+    indeholder <p-m m=" 3"></p-m>, <p-m m=" A1"></p-m> og 
+    <p-m m=" A1 3"></p-m>. Den eneste forskel er,
+    at  <p-m m=" A1 3*A1*2*3"></p-m> er ganget med et <p-m m=" 2"></p-m>, så vi kan derfor sige:
+    <ul class="exercise">
+        <li><p-m m=" 3*A1 3*A1 * (1+2) ="></p-m></li>
+        <li><p-m m=" 3*A1 3*A1*3"></p-m></li>
+    </ul>
+    <p class="t">
+    Jeg tænker vi regner dette som:
+    </p>
+    <ul class="exercise">
+        <li><p-m m=" ((3*3)*A1 3)*A1="></p-m></li>
+        <li><p-m m=" (A2 1*A1 3)*A1="></p-m></li>
+        <li><p-m m=" ((A2+1)*A1 3)*A1="></p-m></li>
+        <li><p-m m=" (A1 3*2*A1+A1 3)*A1="></p-m></li>
+        <li><p-m m=" (A3 2*A1+A1 3)*A1="></p-m></li>
+        <li><p-m m=" (B3 A2+A1 3)*A1="></p-m></li>
+        <li><p-m m=" (B3 A3 3)*A1="></p-m></li>
+        <li><p-m m=" C3 B3 A3"></p-m></li>
+    </ul>
+    <p class="t">
+    Bum!
+    </p>
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{H}}_)#" tabColour="rgb(175,128,161)">
+    Tricket i den her (i hvert fald det trick jeg brugte)
+    var observationen at <p-m m=" C3 B3 A3 2"></p-m> <i>næsten</i>
+    er lig <p-m m=" D1"></p-m>, så man kan omskrive til:
+    <ul class="exercise">
+        <li><p-m m=" C2 B2 A3 1*(D1 - 2)="></p-m></li>
+        <li><p-m m=" C2 B2 A3 1*D1 - C2 B2 A3 1*2="></p-m></li>
+        <li><p-m m=" G2 F2 E3 D1 - D1 C1 B1 A2 2="></p-m></li>
+        <li><p-m m=" G2 F2 E3 - C1 B1 A2 2 ="></p-m></li>
+        <li><p-m m=" G2 F2 E2 D3 C3 B3 A4 - C1 B1 A2 2"></p-m></li>
+        <li><p-m m=" G2 F2 E2 D3 C2 B2 A1 2"></p-m></li>
+    </ul>
+    <p class="t">
+    Bum!
+    </p>
+    <br></answer-box>
+
+
+
+
+

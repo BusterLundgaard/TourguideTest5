@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+
+
+    <h3>Mere om substitution i dobbelt og tredobbelte integraler</h3>
+    <q-stion 1="16" 2="1">
+    Se følgende cylinder:
+    <img class='SpicXL' style='width:70%' src='../../../Assets/Chapter4\MultiVarCalc\DoubleIntegrals\A boring cyllinder.png'> 
+    <p class="t">
+    Find massen, hvis densitetsfunktionen er 
+    _($f(x,y,z) = \frac{z}{2x^2+2y^2+2}_) 
+    Denne opgave vil jeg gerne have at du faktisk regner/løser, helst uden computer. 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Jeg opsætter integralet i følgende video:
+    <video class='picB' style='margin-top:35px; margin-bottom: 35px;' controls>
+        <source src='../../../Assets/Chapter4\MultiVarCalc\DoubleIntegrals\Cyllinder.mp4' type='video/mp4'>
+    </video>
+    <p class="t">
+    Så vi regner:
+    _($\begin{eqnarray}
+    && \int_{0}^{7} \int_{0}^{2\pi} \int_{0}^{3} \frac{z}{2}*\frac{r}{r^2+1} \text{ }dr \text{ }d\theta \text{ }dz = \\ \\ 
+    && \int_{0}^{7} \int_{0}^{2\pi} z*0.5756 \, d\theta \, dz = \\ \\
+    && \int_{0}^{7} z*3.6166 \text{ }dz = \\ \\
+    && 88.613
+    \end{eqnarray}_)
+    Bum!
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="16" 2="2">
+    Sig at du arbejder med følgende område:
+    <img class='SpicXL' style='width:90%' src='../../../Assets/Chapter4\MultiVarCalc\DoubleIntegrals\NotSoBoringCylinder.png'> 
+    <p class="t">
+    Det er altså en cylinder, hvor der er blevet lavet et kvadrat-formet hul
+    hele vejen igennem med sidelængde _(1_). Densitetensfunktionen er:
+    _($f(x,y,z)=z^2+x^2+y^2_)
+    Hvad er massen? 
+    I denne forventer jeg også at du regner det selv, så godt som muligt.
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Jeg tænker, at vi regner massen af cylinderen, massen af udskæringen, og fjerner den ene fra den anden.
+    <p class="t">
+    Cylinderens masse regner vi via _(y=r Cos(\theta)_), _(z=r Sin(\theta)_), _(x=x_), 
+    hvilket giver integralet:
+    _($\int_{-3}^{4} \int_{0}^{2\pi} \int_{0}^{2} (r^2+x^2)*r \text{ }dr \text{ }d\theta \text{ }dz  _)
+    Det kan opdeles i to og regnes som:
+    _($\frac{2^4}{4}*2\pi*7 + \frac{2^2}{2}*2\pi*\frac{1}{3}*(4^3-(-3)^3) = 557.109_)
+    Udskæringen finder vi via:
+    _($\int_{-3}^{4} \int_{-0.5}^{0.5} \int_{-0.5}^{0.5} x^2+y^2+z^2 \text{ }dy \text{ }dz  \text{ }dx _)
+    Det kan opdeles i tre og regnes som:
+    _($\frac{1}{3} 1*1*\left(4^3-(-3)^3 \right) + \frac{1}{3}*(2*0.5^3)*1*7 + 1*(2*0.5^3)*7 = 31.5_)
+    Så svaret er:
+    _($557.109-31.5 = 525.609_)
+    Bum! 
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="16" 2="3">
+    Sig at din densitetsfunktion er 
+    _($f(x,y,z)=yx^2 + yz^2_)
+    ... og at du arbejder med området mellem planet _(y=5_) og paraboloiden 
+    _($y=26-0.1x^2-0.1z^2_)
+    Hvad er massen? I den her får du brug for computeren
+    til at regne integralet. 
+    <br><br></q-stion>
+    <answer-box>
+    Du kan se mit svar her:
+    <video class='picB' style='margin-top:35px; margin-bottom: 35px;' controls>
+        <source src='../../../Assets/Chapter4\MultiVarCalc\DoubleIntegrals\Polar2Small.mp4' type='video/mp4'>
+    </video>
+    <p class="t">
+    Via computeren regner vi:
+    _($\int_{5}^{26} \int_{0}^{2\pi} \int_{0}^{\sqrt{260-10y}} y*r^3 \text{ }dr  \text{ }d\theta  \text{ }dy = 4.970274*10^6_)
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="16" 2="4">
+    Sig at din densitetsfunktion er
+    _($f(x,y,z)=x^2+y^2*z_)
+    Dit område er regionen i fjerde kvadrant mellem:
+    _($z=\sqrt{x^2+y^2}_)
+    ... og
+    _($z=x^2+y^2_)
+    Hvor stor er massen? I den her er det igen fint, hvis du bare bruger computer. 
+    <br><br></q-stion>
+    <answer-box>
+    Du kan se mit svar her:
+    <video class='picB' style='margin-top:35px; margin-bottom: 35px;' controls>
+        <source src='../../../Assets/Chapter4\MultiVarCalc\DoubleIntegrals\polar3.mp4' type='video/mp4'>
+    </video>
+    <p class="t">
+    Det kan regnes med en computer og giver:
+    _($\int_{0}^{1} \int_{\frac{3}{2}\pi}^{2\pi} \int_{z}^{\sqrt{z}} r^3 \left(Cos(\theta)^2 + Sin(\theta)^2*z \right) \text{ }dr  \text{ }d\theta  \text{ }dz = 0.042542_)
+    </p>
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <p class="tt">
+    Polar integration er ikke den eneste mulighed vi har, for at ændre vores variabler.
+    Løs de følgende opgaver:
+    </p>
+
+    <q-stion 1="16" 2="5" bigTop="true">
+    Sig at din densitetsfunktion er:
+    _($f(x,y,z)=\frac{z^2}{\sqrt{x^2+y^2}}_) 
+    Dit område er beskrevet af følgende Torus:
+    <img class='SpicXL' style='width:80%; margin-top:25px;' src='../../../Assets/Chapter4\MultiVarCalc\DoubleIntegrals\AnotherTorus.png'> 
+    <p class="t" style="margin-top:25px;">
+    _(\underline{\textbf{A}}_): <br>
+     Tidligere i bogen beskrev vi en torus' <i>overflade</i> 
+    via to variabler. Beskriv nu dens <i>volume</i> via tre. 
+    </p>
+    <p class="t">
+    _(\underline{\textbf{B}}_): <br>
+     Vi var nødt til at gange densitetfunktionen med _(r_) for
+    at skifte til polære koordinater. Hvordan ændrer integralet sig, hvis vi skifter
+    til "torus-koordinater"? 
+    </p>
+    <p class="t">
+    _(\underline{\textbf{C}}_): <br>
+     Beregn torusens masse. Gør det <i>uden</i> en computer. 
+    </p>
+    <br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    <i>Overfladen</i> af en volume kunne beskrives som:
+    _($\VeC[x,y,z] = \VeC[\left(R_1+R_2*Cos(\phi) \right)*Cos(\theta), \left(R_1+R_2*Cos(\phi) \right)*Sin(\theta), R_2*Sin(\phi)]_)
+    ... hvor _(\phi_) og _(\theta_) begge går fra _(0_) til _(2\pi_). 
+    <p class="t">
+    _(R_1_) og _(R_2_) svarer til henholdsvis _(5_) og _(2_) i vores tilfælde. 
+    _(R_2_) kontrollerer altså donuttens <i>tykkelse</i>, og <i>alle</i>
+    punkter <i>inde i</i> torusen kan beskrives, hvis vi 
+    tillader en hvilken som helst tykkelse mellem _(0_) og _(2_). Vi får:
+    _($\VeC[x,y,z] = \VeC[\left(5+r*Cos(\phi) \right)*Cos(\theta), \left(5 + r*Cos(\phi) \right)*Sin(\theta), r*Sin(\phi)]_)
+    ... hvor _(\phi_) og _(\theta_) begge går fra _(0_) til _(2\pi_) og hvor
+    _(r_) går fra _(0_) til _(2_). 
+    </p>
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Processen er meget det samme, som da vi udledte formlen for polære koordinater. 
+    Vi approximerer massen nær et punkt _((r, \phi, \theta)_) som
+    _($\rho(r, \phi, \theta)*\triangle V(r, \phi, \theta)_)
+    ... hvor _(\rho_) er en densitetsfunktion og _(\triangle V_) en lille volumen omkring
+    _((r, \phi, \theta)_). En tre-dobbelt sum vil nu approximere <i>hele</i> massen, og denne
+    approksimation er perfekt hvis
+    _(r_), _(\phi_) og _(\theta_) deles op i små intervaller der nærmer sig _(0_). Derfra kan vi opstille
+    en grænse, der nemt kan laves om til integraler. Alt det <i>har</i> vi gjort før, og 
+    det primære arbejde kommer fra, at beskrive og udlede formlen _(\triangle V(r, \phi, \theta)_):
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter4\MultivarCalc\DoubleIntegrals\TorusVolumeDeriviation.mp4' type='video/mp4'>
+    </video>
+    <p class="t">
+    Vi har:
+    _($\sum \sum \sum \rho(r, \phi, \theta)*\left(r+\frac{dr}{2} \right)*\left(5+r*Cos(\phi) \right)_)
+    _(dr/2_) forsvinder når vi eventuelt opstiller en grænse, så svaret
+    er, at vi skal gange vores densitetsfunktion med _(r*(5+r*Cos(\phi))_), når
+    vi skifter til de nye koordinater. 
+    </p>
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{C}}_)#" tabColour="rgb(171,96,147)">
+    Først omskriver vi vores densitetsfunktion _(f(x,y,z)_) i forhold til _(r_), _(\phi_) og <br> _(\theta_):
+    _($\begin{align}
+    & \frac{z^2}{\sqrt{x^2+y^2}} = \frac{r^2 Sin(\phi)^2}{\sqrt{\left(5+r Cos(\phi) \right)^2*\left(Cos(\theta)^2 + Sin(\theta)^2 \right)}} = \\ \\
+    & \frac{r^2 Sin(\phi)^2}{5+r Cos(\phi)}
+    \end{align}_)
+    Vi ganger nu med _(r*(5+r*Cos(\phi))_) og får:
+    _($r^3 Sin(\phi)^2_)
+    _(r_) går fra _(0_) til _(2_) og _(\phi_), _(\theta_) fra _(0_) til _(2\pi_), så
+    massen kan regnes via:
+    _($\begin{eqnarray}
+    && \int_{0}^{2\pi} \int_{0}^{2\pi} \int_{0}^{2} r^3 Sin(\phi)^2 \text{ }dr \text{ }d\phi \text{ }d\theta = \\ \\
+    && \int_{0}^{2\pi} \int_{0}^{2\pi} 4 Sin(\phi)^2 \, d\phi \, d\theta = \\ \\
+    && \int_{0}^{2\pi} 4\pi \, d\theta = \\ \\
+    && 8 \pi^2 
+    \end{eqnarray}_)
+    Boom! 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="16" 2="6">
+    Se følgende roterede kasse:
+    <img class='SpicXL' style='width:90%' src='../../../Assets/Chapter4\MultiVarCalc\DoubleIntegrals\RotatedCube.png'> 
+    <p class="t">
+    De tre vektorer er enhedsvektorer. Sig at din masse-densitetsfunktion er:
+    _($f(x,y,z)=1.2x - 0.5y + 0.1z_)
+    Find massen af kassen. Fint med mig hvis du bruger computeren i denne. 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    I følgende video viser jeg ideen:
+    <video class='picB' style='margin-top:35px; margin-bottom: 35px;' controls>
+        <source src='../../../Assets/Chapter4\MultiVarCalc\DoubleIntegrals\rotatedBox.mp4' type='video/mp4'>
+    </video>
+    <p class="t">
+    Så vi skal regne:
+    _($\int_{0}^{2} \int_{0}^{3.5} \int_{0}^{3} f(x,y,z) \text{ }dA \text{ }dB \text{ }dC_)
+    Hvor at:
+    _($\VeC[x,y,z]=\VeC[0.47A-0.35B-0.81C, 0.22A-0.84B+0.49C, 0.85A+0.41B+0.32C]_)
+    Vi substituerer ind i _(f(x, y, z)_) og får
+    _($\begin{eqnarray}
+    & f(x,y,z) = & 1.2*(0.47A-0.35B-0.81C) & \, \, \, - \\
+    && 0.5*(0.22A-0.84B+0.49C) & \, \, \, + \\
+    && 0.1*(0.85A+0.41B+0.32C) & 
+    \end{eqnarray}_)
+    ... hvilket kan simplificeres til
+    _($0.539A-1.185B+0.041C_)
+    Ergo: 
+    _($\int_{0}^{3.5} \int_{0}^{2} \int_{0}^{3} 0.539A-1.185B+0.041C \text{ }dA \text{ }dB \text{ }dC_)
+    Dette er en let og uinteressant lineær integral. Computeren giver:
+    _($-6.399_)
+    Bum! 
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="16" 2="7">
+    Sig at du har en hul kugle med radius _(4_) og tykkelse _(1_) placeret ved origo i et koordinatsystem.
+    Sig yderligere at din densitetsfunktion er:
+    _($f(x,y,z)=\frac{x^2*y^2}{yx^2+y^3}_)
+    Hvad er kuglens "masse"? Det er fint hvis du bruger computeren i denne. 
+    <br><br></q-stion>
+    <answer-box>
+    En kugle er bare en torus med indre radius _(R_) på _(0_):
+    _($\VeC[x, y, z] = \VeC[(0+r Cos(\phi)) Cos(\theta), (0+r Cos(\phi)) Sin(\theta), r*Sin(\phi)] = \VeC[r Cos(\phi) Cos(\theta), r Cos(\phi) Sin(\theta), r Sin(\phi)]_)
+    Nu ganger vi ikke længere med _(r*(R+r Cos(\phi))_) men med _(r^2 Cos(\phi)_). Integralet bliver:
+    _($\int_{0}^{2\pi} \int_{0}^{\pi} \int_{3}^{4} f(x, y, z)*r^2 Cos(\phi) \text{ }dr  \text{ }d\theta \text{ }d\phi _)
+    Bemærk at vi ikke går fra _(0_) til _(2\pi_) ved <i>både</i> _(\theta_) og 
+    _(\phi_), men 
+    <i>kun</i> _(\theta_). Ellers bliver hvert punkt på kuglen dækket to gange! 
+    <p class="t">
+    Vores _(f(x,y,z)_) er lig:
+    _($\begin{eqnarray}
+    && \frac{r^4 Cos(\phi)^4*Cos(\theta)^2*Sin(\theta)^2}{r^3 Cos(\phi)^3*\left(Cos(\theta)^2*Sin(\theta) + Sin(\theta)^3 \right)} = \\ \\
+    && \frac{r Cos(\phi)*Cos(\theta)^2*Sin(\theta)^2}{Sin(\theta)*\left(Cos(\theta)^2+Sin(\theta)^2 \right)} = \\ \\
+    && r*Cos(\phi)*Sin(\theta)*Cos(\theta)^2
+    \end{eqnarray}_)
+    Så integralet er:
+    _($\int_{0}^{2\pi} \int_{0}^{\pi} \int_{3}^{4} r^3 Sin(\theta) Cos(\theta)^2 Cos(\phi)^2 \text{ }dr  \text{ }d\theta \text{ }d\phi _)
+    Det kan regnes både i hånden og med computer, og giver _(91.62_)
+    </p>
+    <br></answer-box>
+
+

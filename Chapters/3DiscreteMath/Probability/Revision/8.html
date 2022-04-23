@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+
+
+    <p class="t">
+    Som sagt så var det fundamentale sandsynlighedsprincip at:
+    _($p=\frac{\text{Antal måder det kan ske på}}{\text{Samlet antal af mulige ting der kan ske}}_)
+    (<i>hvis alle muligheder er lige sandsynlige ...</i>)
+    Sig at vi skriver alle de forskellige muligheder ned, og kalder det for
+    vores <i>udfaldsrum</i> _(S_) ("sample space" på engelsk). Så hvis vi f.eks.
+    kastede med terninger ville udfaldsrummet se ud som:
+    _($S=\{\text{Slå 1}, \text{Slå 2}, \text{Slå 3}, \text{Slå 4}, \text{Slå 5}, \text{Slå 6} \}_)
+    _(S_) ville være markant større hvis vi f.eks. træk et kort fra et dæk:
+    _($S=\{ \text{Træk spar 1}, \text{Træk spar 2}, \text{Træk spar 3}, ... \}_)
+    Et tredje eksempel kunne være:
+    _($S=\{\text{Plat}, \text{Krone}\}_) 
+    hvis vi slår plat eller krone. Hvis vi skal
+    fordele _(6_) personer (person 1, person 2, ...) på 4 stole og bekymre os om 
+    <i>kombinationerne</i>, så kunne vi sige at _(S_) var:
+    _($S = \Biggl\{ \begin{eqnarray}
+    && 1 \, 2 \, 3 \, 4, \\
+    && 1 \, 2 \, 3 \, 5, \\
+    && 1 \, 2 \, 3 \, 6, \\
+    && 1 \, 2 \, 4 \, 5, \\
+    && 1 \, 2 \, 4 \, 6, \\
+    && 1 \, 2 \, 5 \, 6, \\
+    && 1 \, 3 \, 4 \, 5, \\
+    && 1 \, 3 \, 4 \, 6, \\
+    && 1 \, 3 \, 5 \, 6, \\
+    && 1 \, 4 \, 5 \, 6, \\
+    && 2 \, 3 \, 4 \, 5, \\
+    && 2 \, 3 \, 4 \, 6, \\
+    && 2 \, 3 \, 5 \, 6, \\
+    && 2 \, 4 \, 5 \, 6, \\
+    && 3 \, 4 \, 5 \, 6 
+    \end{eqnarray}\Biggr\} _)
+    Hvis vi slog en terning to gange så ville _(S_) være
+    _($S =  
+    \begin{Bmatrix}
+    11 & 12 & 13 & 14 & 15 & 16 \\
+    21 & 22 & 23 & 24 & 25 & 26 \\
+    31 & 32 & 33 & 34 & 35 & 36 \\
+    41 & 42 & 43 & 44 & 45 & 46 \\
+    51 & 52 & 53 & 54 & 55 & 56 \\
+    61 & 62 & 63 & 64 & 65 & 66 \\
+    \end{Bmatrix} 
+    _)
+    <p class="t">
+    Det var den ene del af brøkken: "<i>Samlet antal af mulige ting der kan ske</i>". Den anden
+    del var "<i>Antal måder det kan ske på</i>". Her gør vi præcis det samme: Vi laver en liste over alle
+    de mulige måder "det" kan ske på. Vi kalder det for <i>begivenheder</i>.  
+    Hvis vi gerne vil slå et lige tal med en terning, så kunne den begivenhed _(A_) være 
+    _($A=\{\text{Slå 2}, \text{Slå 4}, \text{Slå 6} \}_)
+    Hvis vi gerne ville trække konger, så er begivenheden _(A_) lig 
+    _($\{\text{Konge spar}, \text{Konge ruder}, \text{Konge kløver}, \text{Konge hjerter} \}_)
+    I samme situation ville vi måske også gerne trække et billedkort fra spar. Det kunne
+    ses som en begivenhed  
+    _($B = \{\text{Knægt spar}, \text{Dronning spar}, \text{Konge spar}\}_)
+    Begivenheden for at du vinder hvis du har stemt på plat er:
+    _($A = \{\text{Plat}\}_)
+    Hvis vi, person 1, gerne vil side på en af de fire stole:
+    _($A = \{1 2 3 4, 1 2 3 5, 1 2 3 6, 1 2 4 5, 1 2 4 6, 1 2 5 6, 1 3 4 5, 1 3 4 6, 1 3 5 6, 1 4 5 6\}_)  
+    Man siger at begivenheden er et <i>subsæt</i> af udfaldsrummet. Udfaldsrummet har elementer begivenheden
+    ikke har, men begivenheden har kun elementer der er i udfaldsrummet. Sandsyndligheden
+    for at få en eller anden begivenhed _(A_) skriver vi _(P(A)_) (fra "probability"). 
+    Kigger vi tilbage på brøken, så er 
+    <i>"samlet antal af mulige ting der kan ske"</i> lig <i>antallet af elementer</i> i 
+    udfaldsrummet, og <i>"antal måder det kan ske på"</i> lig <i>antallet af elementer</i> i
+    begivenheden. Mængden af elementer i et eller andet sæt _(M_) skriver vi ofte _(|M|_), så: 
+    _($P(A)=\frac{|A|}{|S|}_)
+    Én mulig fordel af dette system er at vi lettere kan opdele et problem i mindre dele. 
+    I problemet med røde og gule kasser og kugler kan vi nemt definere to begivenheder:
+    _($\begin{eqnarray} 
+    && A & = & \text{Objektet er rødt} \\
+    && B & = & \text{Objektet er en kasse} \\
+    \end{eqnarray}_)
+    I opgaven skulle vi finde chancen for at få et rødt objekt, <i>eller</i> en kasse. 
+    Ordet "eller" kan vi tyde som at man skal <i>sammensætte</i> begivenheds-sættene: 
+    _($\begin{eqnarray}
+    && A & = & \{\text{Rød Kasse}_1, \text{Rød Kasse}_2, \text{Rød Kasse}_3, \text{Rød Kasse}_4,  \\ 
+    && & & \text{Rød kugle}_1, \text{Rød kugle}_2, \text{Rød kugle}_3, \text{Rød kugle}_4, \text{Rød kugle}_5, \text{Rød kugle}_6 \} \\ \\
+    && B & = & \{\text{Rød Kasse}_1, \text{Rød Kasse}_2, \text{Rød Kasse}_3, \text{Rød Kasse}_4 \\
+    && & & \text{Gul kasse}_1, \text{Gul kasse}_2 \}
+    \end{eqnarray}_)
+    Så: 
+    _($"A \text{ eller } B " \text{ } = _)
+    _($\begin{eqnarray}
+    && \{ \text{Rød Kasse}_1, \text{Rød Kasse}_2, \text{Rød Kasse}_3, \text{Rød Kasse}_4, \\
+    && \text{Rød kugle}_1, \text{Rød kugle}_2, \text{Rød kugle}_3, \text{Rød kugle}_4, \text{Rød kugle}_5, \text{Rød kugle}_6, \\
+    && \text{Gul kasse}_1, \text{Gul kasse}_2 \}
+    \end{eqnarray}_)
+    Man kan så let tælle sig til at _("A \text{ eller } B "_) har _(12_)
+    elementer. I stedet for "eller" så plejer vi at bruge symbolet _(\cup_), kaldt
+    "union". Det er altså symbolet der refererer til sammensætning af sæts, 
+    og som du kan se så var der ingen gentagede elementer i _(A \cup B_). 
+    Det ville resultere i overtælning: </p> 
+    <img class='Spic' style='width:60%' src='../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\UnionIntersection.png'> 
+    <p class="t">
+    Hvis sammensætning kunne modellere "eller", så kan <i>skæring</i> ("intersection"), _(\cap_),
+    modellere "og". Her skal <i>begge</i> begivenheder ske, så det er altså et sæt af 
+    af de <i>delte</i> elementer i to begivenheder. Hvis _(A,B_) igen var "rødt objekt", "kasse", så ville
+    _(A \cap B_) være "rød kasse" lig _(\{kasse_4,kasse_8\} _).
+    </p>
+    <p class="t">
+    Siden fælleselementer ikke skal dobbelttælles, så er størrelsen af _(A \cup B_) logisk nok:
+    _($|A \cup B| = |A| + |B| - |A \cap B|_)
+    Hvilket også med det samme giver:
+    _($|A \cap B| = |A| + |B| - |A \cup B|_)
+    Sådan her kan man altså relativt hjerneløst finde sammensætningen givet man har fællesmængden,
+    eller fællesmængden givet man har sammensætningen. 
+    </p>
+
+
+
+
+

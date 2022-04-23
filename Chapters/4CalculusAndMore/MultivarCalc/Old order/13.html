@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+
+
+    Sidste eksempel med _(z=x*y_) og _((x-3)^2 + (y+2)^2 \lt 25_) krævede at vi fandt løsninger til ligningen:
+    _($15 Cos(t) + 10 Sin(t) - 25 Sin(t)^2 + 25 Cos(t)^2_)
+    Hvilke er relativt svært. Heldigvis så er der en nogle gange lidt nemmere strategi man kan bruge når man 
+    arbejder med at optimere områder der er defineret af en kurve. 
+    Trekanten var f.eks. ikke defineret af en kurve, men i stedet tre linjer. Men med cirklen kunne vi beskrive hele området bare med èn kurve.
+    I de her tilfælde kan vi bruge en teknik kaldt "Lagrange multipliers".
+
+    <p class="t">
+    Sig at du arbejder med at optimere _(f(x,y)_), og at området er beskrevet af _(g(x,y)=0_). I vores tidligere
+    eksempel ville _(g(x,y)_) altså være lig _((x-3)^2 + (y+2)^2 - 25_). Vi beskriver det sådan her, da det tillader os 
+    at beskrive implicitte kurver som cirkler også, i stedet for kun eksplicitte kurver som _(y=F(x)_). 
+    </p>
+    <p class="t">
+    _(g(x,y)=0_) repræsentere en eller anden lukket kurve. Lad os derfor beskrive denne kurve parametrisk i forhold til _(t_):
+    _($\VeC[x,y]=\vec r(t)_)
+    Vi leder efter kritiske punkter på _(f(x,y)_), så vi siger:
+    _($¤t \left[f(r_x(t), r_y(t))  \right] = 0_)
+    Vi bruger den multivariable kæderegel, og får: 
+    _($f_x(x,y)*r_x'(t) + f_y(x,y)*r_y'(t) = 0 \to_)
+    _($\VeC[f_x,f_y] \cdot \VeC[r_x'(t),r_y'(t)] = 0_)
+    Vektoren _((f_x,f_y)_) og vektoren _((r_x'(t),r_y'(t))_) er altså vinkelrette.
+    Siden _((r_x'(t),r_y'(t))_) er en vektor der er tangent på kurven _(\vec r(t)_) ved 
+    _(t_), så _((f_x,f_y)_) vinkelret på denne kurve hvis der er et kritisk punkt. 
+    </p>
+    <p class="t">
+    Kig nu på _(z=g(x,y)_). Det her repræsenterer en eller anden 3D overflade. Vi ved at den normale vektor på overfladen ved _((x,y)_) er:
+    _($\VeC[g_x(x,y),g_y(x,y),-1]_)
+    Vi ved at vores kurve _(g(x,y)=0_) svarer til en udskæring af denne 3D flade når _(z=0_):
+    </p>
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter4\MultiVarCalc\Lagrange3DExample.png'> 
+    <p class="t">
+    Det kan relativt let geometrisk ses at hvis ikke vektoren _((g_x(x,y),g_y(x,y))_) er vinkelret på denne kurve ved _((x,y)_),
+    så er vektoren _((g_x(x,y),g_y(x,y),-1)_) heller ikke vinkelret på denne <i>flade</i> ved _((x,y)_). Ergo så ved vi at
+    vektoren _((g_x,g_y)_) er vinkelret overalt på vores kurve _(g(x,y)=0_). Det betyder at den i hvert flad <i>også</i> er vinkelret
+    ved de kritiske punkter punkter, præcis ligesom _((f_x,f_y)_) var. Eftersom 
+    _((f_x,f_y)_) og _((g_x,g_y)_) begge er vinkelrette til samme kurve ved de kritiske punkter, så ved vi at de er parallelle! Vi leder
+    derfor efter punkter _((x,y)_), hvor der findes en eller anden konstant _(\lambda_) så at:
+    _($\VeC[f_x,f_y] = \lambda*\VeC[g_x,g_y]_)
+    Samtidig med selvfølgelig at kravet _(g(x,y)=0_). Det her svarer altså til følgende system af ligninger:
+    _($\begin{eqnarray}
+    && f_x & = \lambda g_x \\
+    && f_y & = \lambda g_y \\
+    && g(x,y) & = 0
+    \end{eqnarray}_)
+    Så vi kan "bare" løse dette for at finde de kritiske punkter, hvilke ofte er en del nemmere. Hvis vi eksempelvis gerne vil finde
+    de kritiske punkter på _(f(x,y)=x*y_) hvis _(x^2+y^2=9_). 
+    Her er _(f_x=d/dx[y*x]=y_), _(f_y=d/dy[y*x]=x_), _(g_x=d/dx[(x^2+y^2-9]=_) _(2x_) og 
+    _(g_y=2y_). Alt i alt skal vi nu løse systemet:
+    _($\begin{eqnarray}
+    && 2x = \lambda*y
+    && 2y = \lambda*x
+    && x^2+y^2 = 9
+    \end{eqnarray}_)
+    Hvis vi isolerer _(\lambda_) i både første og anden ligning får vi:
+    _($\frac{2x}{y} = \frac{2y}{x} \to y^2=x^2_)
+    Så tredje ligning kan nu omskrives til:
+    _($2y^2 = 9 \to y = \pm 2.121_)
+    Og med _(x_) kan vi lave samme trick. Vi ser derfor at der er _(4_) kritiske punkter:
+    _($(2.121,2.121), (-2.121,2.121), (2.121,-2.121), (-2.121,-2.121)_)
+    Lagrange multiplication kan i alt ærlighed ikke hjælpe os med at fortælle hvorvidt disse punkter er lokale minimums eller maksimums, 
+    men det er stadig relativt praktisk.
+    </p>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    En virksomhed producerer et eller andet produkt der primært består af stål og aluminium. 
+    Pr. kg stål _(s_) og kg aluminium _(a_) kan de tjene:
+    _($2.2*s^{1.1}*a^{1.3} \text{ Dollars}_)
+    Selvfølgelig har de også nogle udgifter og skal faktisk <i>købe</i> den stål og aluminium de bruger. 
+    Sig at _(1kg_) stål er _(5.6_)$, og at _(1kg_) aluminium er _(7.7_)$. Virksomheden har lånt nogle penge, og 
+    har et budget på _(3_) tusind dollars. Hvor meget stål og aluminium burde de købe for at tjene flest penge? 
+    <br><br></q-stion>
+    <answer-box>
+    Vi kan se det her som en optimeringsopgave hvor at vores begrænsning _(b(s,a)_) er lig:
+    _($b(s,a)=5.6s + 7.7a - 3000_)
+    Og funktionen der skal optimeres er lig:
+    _($f(s,a)=s^{1.1}*a^{1.3}*Ln(s)*2.2_)
+    Det kan relativt let ses at _(b_s=5.6_), _(b_a=7.7_) og at:
+    _($\begin{eqnarray}
+    && f_s = 2.42*s^{0.1}*a^{1.3}
+    && f_a = 2.86*s^{1.1}*a^{0.3}
+    \end{eqnarray}_)
+    Så vi skal løse systemet:
+    _($\begin{eqnarray}
+    && 5.6 \lambda = 2.42*s^{0.1}*a^{1.3} \\
+    && 7.7 \lambda =  2.86*s^{1.1}*a^{0.3} \\
+    && 5.6s + 7.7a = 3000 
+    \end{eqnarray}_)
+    Hvis vi isolerer lambda i begge af de to første ligninger, så får vi:
+    _($0.432s^{0.1}*a^{1.3} = 0.371 s^{1.1}*a^{0.3} \to_)
+    _($0.858*\frac{s}{a} = 1 \to _)
+    _($s=a*1.165_)
+    Så fra tredje ligning ser vi at:
+    _($5.6*(a*1.165) + 7.7*a = 3000 \to_)
+    _($a=210.91, s=1.165*210.91=245.71_)
+    Voila!
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Find rektanglet med det største omkreds, som er inde i en ellipse med bredde _(3_) og højde _(1_). 
+    <br><br></q-stion>
+    <answer-box>
+    Du kan se mit svar her:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter4\MultiVarCalc\BiggestInscribedEllipse.mp4' type='video/mp4'>
+    </video>        
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Hvad er den korteste afstand fra punktet _((0,1)_) til kurven _(y=x^2_)? 
+    <br><br></q-stion>
+    <answer-box>
+    Det her kan vi godt lave om til et optimeringsproblem. Vores restriktion er at _(y=x^2_), ergo _(g(x,y)=y-x^2_). 
+    Den funktion vi prøver at optimere er afstanden fra _((0,1)_) til _((x,y)_), som er lig:
+    _($f(x,y)=\sqrt{x^2 + (y-1)^2}_)
+    Vi kan se at _(g_x=-2x_), _(g_y=1_), _(f_x=x/\sqrt{x^2+(y-1)^2}_), _(f_y=(y-1)/\sqrt{x^2+(y-1)^2}_). Alt i alt:
+    _($\begin{eqnarray}
+    && -2 \lambda x = x/\sqrt{x^2+(y-1)^2} \\
+    && \lambda = (y-1)/\sqrt{x^2+(y-1)^2} \\
+    && y=x^2 \\
+    \end{eqnarray}_)
+    Hvis vi isolerer _(\lambda_) i både første og anden ligning får vi:
+    _($\frac{1}{-2\sqrt{x^2+(y-1)^2}} = \frac{y-1}{\sqrt{x^2+(y-1)^2}} \to_)
+    _($y=\frac{1}{2}_)
+    Så _(x=1/\sqrt{2}_), og den korteste afstand er:
+    _($\sqrt{(\frac{1}{\sqrt{2}})^2 + (\frac{1}{2} - 1)^2} = 0.866_)
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <p class="t">
+    En af de steder hvor den her teknik med Lagrange multipliers virkelig bliver praktisk, er at vi også kan
+    bruge den til at optimere (i hvert fald finde kritiske punkter) på funktioner med <i>flere</i> end to variabler. 
+    Sig f.eks at vi havde:
+    _($f(a,b,c)=a^2*b+c_)
+    Og at restriktionen var at:
+    _($a+b^2+3c=23_)
+    Vi kan ikke længere beskrive restriktionen parametrisk med èn variable. Nu har vi brug for <i>to</i>. Den
+    parametriske beskrivelse af _(a_), _(b_), _(c_) i forhold til to nye variabler _(t_), _(s_) skal vi nu sætte ind 
+    i funktionen _(f(a,b,c)_), som så bliver en funktion _(f(t,s)_). Det er en funktion af to variabler, hvilke gør det 
+    en del mere involveret at finde dens kritiske punkter. Hvis vi kunne bruge Lagrange multipliers dog, så skulle
+    vi bare løse systemet: 
+    _($\begin{eqnarray}
+    && 2ab = \lambda*1 \\
+    && a^2 = \lambda*2b \\
+    && 1 = \lambda*3 \\
+    && a+b^2+3c=23
+    \end{eqnarray}_)
+    Hvilket er relativt nemt. Det viser sig at <i>ja</i>, teknikken af Lagrange multipliers generaliserer sig til flere variabler, 
+    men vi vil ikke gennemgå begrundelsen her, da kræver at vi tænker over hvad "vinkelrethed" er i 4 eller flere dimensioner, 
+    hvilket hurtigt bliver svært og abstrakt. 
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Sig at en kasse med bredde _(b_), højde _(h_) og længde _(l_) har en volume på _(33_). 
+    Hvad er det mindst mulige overfladeareal den kan have?
+    <br><br></q-stion>
+    <answer-box>
+    Dens overfladeareal er:
+    _($f(b,h,l) = 2*(bh + bl + hl)_)
+    Hvilke skal optimeres. Restriktionen er at:
+    _($b h l = 33_)
+    Det kan let ses at _(f_b=2(h+l)_), _(f_h=2(b+l)_), _(f_l=2(b+h)_) , og at 
+    _(g_b=h l_), _(g_h = b l_), _(g_l= b h_). Ergo:
+    _($\begin{eqnarray}
+    && \lambda h l = 2 (h+l) \\
+    && \lambda b l = 2 (b+l) \\
+    && \lambda b h = 2 (b+h) \\
+    && b h l = 33 \\
+    \end{eqnarray}_)
+    Hvis _(\lambda_) isoleres i de to første ligninger fås:
+    _($\frac{2(h+l)}{h l} = \frac{2(b+l)}{b l} \to_)
+    _($h = b_)
+    Fra anden og tredje ligning kan deto gså ses at _(l=h_), så både
+    højde, bredde og længde skal være lig hinanden. Det giver:
+    _($h^3 = 33 \to h =3.207_)
+    Så den største (eller mindste!) omkreds er: 
+    _($2*(3*3.207^2) = 61.709_)
+    Vi vælger en tilfældig _(a_), _(b_), _(c_) der opfylder kravet 
+    for at tjekke om dette er den største eller mindste omkreds. 
+    Hvis _(b h l = 33_), så er _(b=33/(h*l)_). Vælg nu _(h=1_), _(l=1_), så _(b=33_). 
+    Nu er omkredsen så lig 
+    _($2*(33*1+33*1+1*1) = 134_)
+    Vores er altså den <i>mindste</i> omkreds, hvilke også er hvad vi søgte. 
+    <br><br></answer-box>
+
+    <!--  -->
+
+
+
+    <!-- DEN HER SIDSTE DROPPEDE JEG, DA JEG IKKE KUNNE FORSTÅ HVORFOR MATEMATIKKEN BLEV MÆRKELIG (IKKE SVÆR, MEN MÆRKELIG) -->
+
+    <!-- <q-stion 1="2" 2="1" 3="5">
+    Sig at vi igen arbejder med at lave en sæbe, og at vi igen har nogle kemikalier _(a_), _(b_), _(c_), _(d_) og _(e_). 
+    Sig at mængden af skidt (i gram) de kan fjerne er:
+    _($f(a,b,c,d,e)=0.2 d a + 10^{-4} e^2 + 10^{-3} a b c + 0.5 b_)
+    Hvor f.eks. _(a_) er mængden af kemikalie _(A_) i liter. 
+    <p class="t">
+    Sig at der i èn container med sæbe skal være 20L. Hvad er den bedste blanding der fjerner mest skidt? 
+    </p>
+    <br><br></q-stion>
+    <answer-box>
+    Vores restriktion her er meget simpel:
+    _($a+b+c+d+e=20_)
+    Så _(g_a_), _(g_b_), _(g_c_), _(g_d_) og _(g_e_) er alle lig _(1_). Ved at finde de forskellige _(f_a_), _(f_b_), osv. kan vi nu se at:
+    _($\begin{eqnarray}
+    && \lambda & = & 0.2d + 10^{-3} b c \\ 
+    && \lambda & = & 10^{-3} a c + 0.5 \\
+    && \lambda & = & 10^{-3} a b \\
+    && \lambda & = & 0.2 a \\
+    && \lambda & = & 2*10^{-4} e \\
+    && a+b+c+d+e=20
+    \end{eqnarray}_)
+    Højre side af alle de fem første ligninger er lig _(\lambda_), så de er også lig hinanden. De to næst-sidste giver os at:
+    _($a=5 \lambda, e=\frac{10^4}{2} \lambda_)
+    Indsætter vi denne _(a_) i 
+    <br><br></answer-box> -->
+

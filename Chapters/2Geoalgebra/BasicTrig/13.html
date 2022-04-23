@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+
+
+    <h3>Deres areal</h3>
+    <p class="t">
+    Arealet er mere tricky. Vi kan kun <i>approximere</i> det med rektangler:
+    </p>
+    <img class="Spic" style="width:50%" src="../../../Assets/Chapter2\Section1\Circles\Subdiv1.png">
+    <p class="tt">
+    Her har jeg delt cirklen op i _(6_) lige store trekanter. 
+    Jeg kunne også gøre det med _(7, \, 8, \, 9, \, 10_) osv:
+    </p>
+    <img class="Spic" style="width:50%" src="../../../Assets/Chapter2\Section1\Circles\Subdiv2.png">
+    <p class="tt">
+    Det kan du prøve at lege lidt rundt med i følgende simulation:
+    </p>
+    <iframe scrolling="no" title="CircleApproximation" src="https://www.geogebra.org/material/iframe/id/xudcsqth/width/740/height/643/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/false/ctl/true" width="493px" height="428px" style="border:solid; margin-left:1%; margin-top:35px; margin-bottom:10px;"> </iframe>
+    <p class="tt">
+    Mit resultat kommer logisk nok tættere og tættere på cirklen, jo flere trekanter jeg deler den op i. 
+    Til mig virker det derfor ret intuitivt, at jeg <i>får</i> cirklens areal, 
+    hvis bare jeg deler den op i 
+    <i>uendelig</i> mange trekanter. Lad os først finde arealet på én trekant:
+    </p>
+    <img class="SpicXL" style="width:75%" src="../../../Assets/Chapter2\Section1\Circles\Archimedes.png">
+    <p class="tt"> 
+    Det er tydeligvis _(0.5*L*d_). Hvis vi har delt cirklen op i _(n_) trekanter, bliver
+    approksimationen 
+    derfor samlet til:
+    _($n*0.5*L*d_)
+    Hvis vi øger antallet af trekanter _(n_), sker der noget spændende:
+    _(n*L_) kommer tættere og tættere på cirklens omkreds. 
+    Vi kan derfor tillade os selv at sige, 
+    at _(n*L_) <i>bliver</i> til cirklens omkreds, hvis bare
+    vi har "uendelig mange trekanter". Distancen _(d_) bliver også lig _(r_), og
+    alt i alt fås:
+    _($n*0.5*L*d=0.5*(n*L)*d=0.5*(2*r*\pi)*r=r^2*\pi_)
+    Voila! Vi har fundet cirklens areal! Det er bare _(\pi*r^2_). 
+    </p>
+    
+    <p class="t">
+    Det her ikke et <i>helt</i> lydtæt argument, og det kigger vi nærmere på senere.
+    Det <i>var</i> dog en af de første idéer man fik, og den endte tydeligvis med at virke. 
+    </p>
+    <p class="t">
+    Selvom det ofte er en effektiv strategi, burde det noteres, at det på 
+    på ingen måde <i>altid</i> er en god ide at opdele en form i trekanter.
+    Det er ikke <i>altid</i> effektivt 
+    at bryde ting ned til deres "atomer" i matematik - kun nogle gange. 
+    Eksempelvis brugte vi <i>vilkårlige</i> trekanter, da de hjalp med at reducere
+    kompleksiteten der fulgte opdelingen i mange små retvinklede. 
+    I matematik skal man 
+    både kunne beskrive koncepter, tal, former - hvad end vi arbejder med - på 
+    et højt og lavt niveau. 
+    </p>
+
+    <!--  -->
+
+    <q-stion 1="13" 2="1">
+    Lad os igen se på vinduet fra tidligere:
+    <img class='SpicBXL' style='width:70%' src='../../../Assets/Chapter2\Section1\Circles\Vindue.png'> 
+    <p class="tt">
+    Hvad er arealet?
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Radius er _(1.7/2=_) _(0.85 \text{m}_), så arealet er:
+    _($0.85^2*\pi=2.269m^2_)
+    Bum!
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="13" 2="2">
+    _(\underline{\textbf{A}}_): <br>
+    Find følgende areal:
+    <img class="Spic" style="width:40%" src="../../../Assets/Chapter2\Section1\Circles\CircleSection.png">
+    <p class="t">
+    _(\underline{\textbf{B}}_): <br>
+    Find følgende areal:
+    </p>
+    <img class='Spic' style='width:52%' src='../../../Assets/Chapter2\Section1\Circles\FigurTilAreal.png'> 
+    <br><br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    Hele cirklens areal er _(\pi*23^2=1661.9m^2_). 
+    Vi arbejder med _((360-94)/360=0.741_) af cirklen, så 
+    svaret er _(1661.9*0.741=1231.4_)
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Det her kan vi regne som arealet af den ydre cirkel, 
+    minus arealet af den indre cirklen indeni. 
+    Den ydre cirkel har en radius på _(18/2=9 \text{m}_), og 
+    den indre en radius på _(9-4=5m_), så:
+    _($9^2*\pi - 5^2*\pi = \pi*(9^2-5^2) = \pi*56 = 175.92m^2_)
+    Voila!
+    <br><br></answer-box>
+    
+    <!--  -->
+
+    <q-stion 1="13" 2="3">
+    Lad os nu se på cylinderen/siloen fra tidligere:
+    <img class='SpicBXL' style='width:80%' src='../../../Assets/Chapter2\Section1\Circles\FinalCyllinder.png'> 
+    <p class="tt">
+    Sig at denne silo indeholder vand. Hvor mange kubikmeter vand kan der være derinde?
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Det svarer bare til at vi skal finde volumen. Vi ved at arealet er:
+    _($16^2*\pi=804.24m^2_)
+    Så volumen er:
+    _($804.24*73=58709m^3_)
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="13" 2="4">
+    Sig at et air hockey bord har følgende form: 
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter2\Section1\Circles\AirhockeyAreal.png'> 
+    <p class="t">
+    Cirkeludsnittene ude på enderne er halvcirkler. 
+    </p>
+    <p class="t">
+    Find arealet af dette air hockey bord. 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Arealet af rektanglet i midten er bare _(1.3*0.9=_) _(1.17m^2_). 
+    Vi har to halvcirkler, hvilket svarer til èn cirkel. 
+    Vi kan se på billedet, at denne cirkel har en diameter på _(0.9m_), så arealet er:
+    _($\left(\frac{0.9}{2} \right)^2*\pi=0.63m^2_)
+    Det samlede areal er altså:
+    _($1.17+0.63=1.79m^2_)
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="13" 2="5">
+    Sig at et stykke metal er blevet skåret ud i en cirkelform. 
+    Stykket er lavet af aluminium med 
+    en densitet på _(2710 \text{kg}/\text{m}^3_), 
+    har en tykkelse på _(0.04m_) og vejer _(166.86kg_). 
+    Hvad er stykkets diameter?
+    <br><br></q-stion>
+    <answer-box>
+    Lad os først lige finde radiusen. 
+    Hvis stykket har en radius på "_(r_)", er dets areal 
+    _(\pi*r^2_) og dets volume 
+    _($\pi*r^2*0.04= 0.1256*r^2_)
+    Med denne volume vil stykket veje:
+    _($0.1256*r^2*2710=340.376*r^2_)
+    Vi ved at det vejer _(166.86kg_), så:
+    _($340.376*r^2=166.86_)
+    Hvilket kan omskrives til:
+    _($r^2=\frac{166.86}{340.376} = 0.4902_)
+    Så:
+    _($r=\sqrt{0.4902} = 0.7001_)
+    Omtrent _(0.7*2 = 0.14m_). Bum! 
+    <br><br></answer-box>
+
+    <!--  --> 
+
+    <q-stion 1="13" 2="6">
+    Du er muligt at give metalplader komplicerede figurer på fabrikker,
+    ved hjælp af at <i>udskære cirkler</i>. Se f.eks. følgende plade:
+    <img class="Spic" style="width:40%" src="../../../Assets/Chapter2\Section1\Circles\CutoutPure.png">
+    <p class="t">
+    Den kunne vi fint beskrive som
+    </p>
+    <img class="Spic" style="width:80%" src="../../../Assets/Chapter2\Section1\Circles\Cutout.png">
+    <p class="t">
+    Hvad er pladens areal? 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Du kan se svaret her:
+    <video class="SpicB" style="width:95%;" controls>
+        <source src="../../../Assets/Chapter2\Section1\Circles\Cutout.mp4" type="video/mp4">
+    </video>
+    <br><br></answer-box>
+

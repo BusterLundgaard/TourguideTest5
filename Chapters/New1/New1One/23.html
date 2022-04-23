@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+
+    <h3> </h3>
+
+    <p class="t">
+    Vi lavede et par finjusteringer på sidste side, men jeg er stadig utilfreds med 
+    at mere grundlæggende aspekt af vores system: Hvorfor 
+    skal den hele og "lille" del af vores tal være så forskellige? 
+    De bruger ikke engang de samme symboler, trods de egentlig 
+    ikke <i>er</i> så forskellige overhovedet. 
+    Vi kunne jo vælge at skrive et eller andet tal</p>
+    <p class="cent">
+        <p-m m=" G1 F2 E1 D1 B1 2 . W1 W0 W3 W1 W2"></p-m>
+    </p>
+    <p class="t">
+    ... som:
+    </p>
+    <p class="cent" style="margin-top:25px;">
+        <p-m m=" 1*A1*A1*A1*A1*A1*A1*A1+"/> <br>
+        <p-m m=" 2*A1*A1*A1*A1*A1*A1+"/> <br>
+        <p-m m=" 1*A1*A1*A1*A1*A1+"/> <br>
+        <p-m m=" 1*A1*A1*A1*A1+"/> <br>
+        <b>Intet </b> <p-m m=" *A1*A1*A1+"/> <br>
+        <p-m m=" 1*A1*A1+"/> <br>
+        <b>Intet </b> <p-m m=" *A1+"/> <br>
+        <p-m m=" 3*1+"/> <br>
+        <p-m m=" 1/(A1)+"/> <br>
+        <b>Intet </b><p-m m=" /(A1*A1)+"/> <br>
+        <p-m m=" 3/(A1*A1*A1)+"/> <br>
+        <p-m m=" 1/(A1*A1*A1*A1)+"/> <br>
+        <p-m m=" 2/(A1*A1*A1*A1*A1)+"/> <br>
+    </p>
+
+    <p class="tt">
+    Alt er bare ganget eller divideret med <p-m m=" A1"></p-m> en 
+    bestemt mængde gange! Ud over det er der også <p-m m=" 3"></p-m>, <p-m m=" 2"></p-m>,
+    <p-m m=" 1"></p-m> og <i>ingenting</i>, som vi kan skrive
+    med symbolerne <p-m m=" W3"></p-m>, <p-m m=" W2"></p-m>, <p-m m=" W1"></p-m> og <p-m m=" W0"></p-m>:
+    </p>
+
+    <p class="cent" style="margin-top:25px;">
+        <img src="../Assets/Chapter1/Talsystemmer/TalBilleder/base 4/1.png" height="10em"> <p-m m=" *A1*A1*A1*A1*A1*A1*A1+"/> <br>
+        <img src="../Assets/Chapter1/Talsystemmer/TalBilleder/base 4/2.png" height="13em"> <p-m m=" *A1*A1*A1*A1*A1*A1+"/> <br>
+        <img src="../Assets/Chapter1/Talsystemmer/TalBilleder/base 4/1.png" height="10em"> <p-m m=" *A1*A1*A1*A1*A1+"/> <br>
+        <img src="../Assets/Chapter1/Talsystemmer/TalBilleder/base 4/1.png" height="10em"> <p-m m=" *A1*A1*A1*A1+"/> <br>
+        <img src="../Assets/Chapter1/Talsystemmer/TalBilleder/base 4/0.png" height="10em"> <p-m m=" *A1*A1*A1+"/> <br>
+        <img src="../Assets/Chapter1/Talsystemmer/TalBilleder/base 4/1.png" height="10em"> <p-m m=" *A1*A1+"/> <br>
+        <img src="../Assets/Chapter1/Talsystemmer/TalBilleder/base 4/0.png" height="10em"> <p-m m=" *A1+"/> <br>
+        <img src="../Assets/Chapter1/Talsystemmer/TalBilleder/base 4/3.png" height="10em"> <p-m m=" *1+"/> <br>
+        <img src="../Assets/Chapter1/Talsystemmer/TalBilleder/base 4/1.png" height="10em"> <p-m m=" /(A1)+"/> <br>
+        <img src="../Assets/Chapter1/Talsystemmer/TalBilleder/base 4/0.png" height="10em"> <p-m m=" /(A1*A1)+"/> <br>
+        <img src="../Assets/Chapter1/Talsystemmer/TalBilleder/base 4/3.png" height="10em"> <p-m m=" /(A1*A1*A1)+"/> <br>
+        <img src="../Assets/Chapter1/Talsystemmer/TalBilleder/base 4/1.png" height="10em"> <p-m m=" /(A1*A1*A1*A1)+"/> <br>
+        <img src="../Assets/Chapter1/Talsystemmer/TalBilleder/base 4/2.png" height="13em"> <p-m m=" /(A1*A1*A1*A1*A1)+"/> <br>
+    </p>
+
+    <p class="t">
+    Denne mærkelige pyramide fylder en del, men vi har kun brug for dens mest essentielle information:
+    </p>
+    <br>
+
+    <hover-video url="../../../Assets/Chapter1\Talsystemmer\MathAnimation.mp4" ></hover-video>
+
+    <p class="t">
+    Aha! Vi har kun brug for symbolerne <p-m m=" W3"></p-m>, <p-m m=" W2"></p-m>, <p-m m=" W1"></p-m> 
+    og <p-m m=" W0"></p-m> og deres rækkefølge! Vi sætter en prik for at indikere
+    tal der er mindre end <p-m m=" 1"></p-m>, præcis ligesom før. Hver gang vi går 
+    <p-m m=" 1"></p-m> bagud (til venstre) ganger vi med <p-m m=" A1"></p-m> 
+    én gang mere. Hver gang vi går <p-m m=" 1"></p-m> fremad (til højre)
+    dividerer vi med <p-m m=" A1"></p-m>. 
+    </p>
+    <p class="t">
+    Perfekt! Det hele er nu ultra kompakt og nemt at arbejde med. Tid til
+    nogle opgaver! 
+    </p>
+
+    <q-stion 1="24" 2="1" bigTop="true">
+    Lav følgende tal om til vores nu endnu nyere talsystem:
+    <ul>
+        <li>_(\underline{\textbf{A:}} \, \, \,_)<p-m m=' 2 W1 W0 W1 W1 W3 W2'/></li>
+        <li>_(\underline{\textbf{B:}} \, \, \,_)<p-m m=' G1 D3 A1. W3 W2'/></li>
+        <li>_(\underline{\textbf{C:}} \, \, \,_)<p-m m=' B2 A3. W2 W1 W0 W2'/></li>
+    </ul>
+    <br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    Svaret er <p-m m=" W2 . W1 W0 W1 W1 W3 W2"></p-m>
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Svaret er <p-m m=" W1 W0 W0 W3 W0 W0 W1.W3 W2"></p-m>
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{C}}_)#" tabColour="rgb(171,96,147)">
+    Svaret er <p-m m=" W2 W3 W0.W2 W1 W0 W1"></p-m>
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="24" 2="2" customWidth="665">
+    Regn de følgende plus- og minusstykker:
+    <ul>
+        <li>_(\underline{\textbf{A:}} \, \, \,_) <p-m m=' W1+W2'></p-m> </li>
+        <li>_(\underline{\textbf{B:}} \, \, \,_) <p-m m=' W1W0+W3'></p-m> </li>
+        <li>_(\underline{\textbf{C:}} \, \, \,_) <p-m m=' W3.W3W0W2+W2.W1W2'></p-m> </li>
+        <li>_(\underline{\textbf{D:}} \, \, \,_) <p-m m=' W2W0W0W0+W3W0W0W0.W1W2W3'></p-m> </li>
+        <li>_(\underline{\textbf{E:}} \, \, \,_) <p-m m=' W3W3W2W0W0W1W1.W1W3W2W1+W1W1W1W2W0W3W3.W0W0W2W1W3'></p-m> </li>
+        <li>_(\underline{\textbf{F:}} \, \, \,_) <p-m m=' W0W0W0W0W0W1+W3W2'></p-m> </li>
+        <li>_(\underline{\textbf{G:}} \, \, \,_) <p-m m=' W0W0W0W0W1-W1'></p-m> </li>
+    </ul>
+    <p class="t">
+    Du skal bare gøre præcis det samme, som da du plussede 
+    tal der var mindre end <p-m m=' 1'></p-m> nogle få spørgsmål tilbage! 
+    Der er ingen konceptuel stor forskel på delen der er mindre
+    og større end <p-m m=" 1"></p-m>, så det er ikke svært. 
+    </p>
+    <p class="t">
+    Jeg ved godt at det her 
+    ligner en kæmpe opgave der vil tage lang tid, men det er det altså ikke. 
+    Bare rolig!
+    </p>
+    <br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" customWidth="665" tabColour="rgb(171,96,147)">
+        <p-m m=' W3'></p-m>
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" customWidth="665"  tabColour="rgb(175,128,161)">
+        <p-m m=' W1W3'></p-m>
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{C}}_)#" customWidth="665" tabColour="rgb(171,96,147)">
+        <p-m m=' W1W2.W0W2W2'></p-m>
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{D}}_)#" customWidth="665" tabColour="rgb(175,128,161)">
+        <p-m m=' W1W1W0W0W0.W1W2W3'></p-m>
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{E}}_)#" customWidth="665" tabColour="rgb(171,96,147)">
+        <p-m m=' W1W1W0W3W2W1W1W0.W2W0W0W2W3'></p-m>
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{F}}_)#" customWidth="665" tabColour="rgb(175,128,161)">
+        <p-m m=' W3W3'></p-m>
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{G}}_)#" customWidth="665" tabColour="rgb(171,96,147)">
+        <p-m m=' W0'></p-m>
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="24" 2="3">
+    Hvad sker der når vi ganger eller dividerer med <p-m m=" A1"></p-m> i vores nye system?
+    <br><br></q-stion>
+    <answer-box>
+    Vi ved, at alle symboler blev rykket fremad, når vi gangede med <p-m m=" A1"></p-m> i vores originale system:
+    <img style='height:1em;' src='../../../Assets/Chapter1\Talsystemmer\Omskrivning\SmallNumbers\Side26\1.png'> 
+    blev til <p-m m=" 1"></p-m>, <p-m m=" 1"></p-m> blev til <p-m m=" A1"></p-m>, <p-m m=" A1"></p-m> blev
+    til <p-m m=" B1"></p-m> osv. 
+    <p class="t">
+    Sig vi har et eller andet tal som <p-m m=" W3W2.W3W0W2"></p-m>
+    og ganger med <br> <p-m m=" A1"></p-m>. Der er <p-m m=" W3"></p-m> 
+    <img style='height:1em;' src='../../../Assets/Chapter1\Talsystemmer\Omskrivning\SmallNumbers\Side26\1.png'>'ere, 
+    som nu alle bliver
+    til <p-m m=" 1"></p-m>'ere, så punktummet rykker sig:
+    </p>
+    <p class="cent">
+        <p-m m=" W3W2W3.W0W2"></p-m>
+    </p>
+    <p class="t">
+    Sådan her sørger vi også for, at de <p-m m=" W2"></p-m> <p-m m=" 1"></p-m>'ere er 
+    blevet til <p-m m=" A1"></p-m>'ere og de <p-m m=" W3"></p-m> <p-m m=" A1"></p-m>'ere 
+    til <p-m m=" B1"></p-m>'ere. Det er altså det eneste man skal gøre, for at
+    gange med <p-m m=" A1"></p-m> (eller <p-m m=" W1W0"></p-m>) i det nye system:
+    Rykke punktummet! Når man <i>dividerer</i> med samme slags tal,
+    skal man bare rykke det til <i>venstre</i> i stedet. 
+    </p>
+    <br></answer-box>
+
+        
+
+

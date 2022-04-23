@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+
+    <h2>Lad os redefinere Sin og Cos</h2>
+    <p class="t">
+    Indtil videre har vi fokuseret på ideerne om trekanter og 
+    trigonometri med henblik på deres <i>brug og anvendelse</i>.
+    Vi har gjort det lettere at modellere og beregne på mange 
+    situationer i den virkelige verden. Vores studie 
+    af de her nye koncepter har fokuseret på, at gøre dem hurtige
+    og effektive til at <i>løse problemer</i>. 
+    F.eks. "sinus-loven" og "cosinus-loven" der helt konkret hjælper 
+    os med at finde ukendte tal, vi har brug for på en vilkårlig trekant.
+    Som vi begynder at anvende _(Sin, \, Cos, \, Tan, \, Arcsin_) osv. 
+    mere og mere, får vi i stigende grad brug for at arbejde
+    med dem på papiret i den <i>matematiske verden</i>. 
+    Trigonometriske ideer er 
+    praktiske i virkeligheden, men skal helst også 
+    være praktiske i <i>matematikken</i> - især fordi vi kommer til at bruge 
+    dem i mange sammenhænge, vi aldrig kunne have tænkt over originalt!
+    At forstå _(Sin_), _(Cos_) osv. 
+    bedre på et teoretisk og matematisk plan, 
+    vil hjælpe os med at modellere en bredere 
+    vifte af situationer, løse nye problemer vi aldrig før kunne løse, 
+    og overordnet set gøre alt vores arbejde med dem hurtigere og mere effektivt. 
+    Der er <i>grund</i> til vi nogen gange 
+    bliver så teoretiske i matematik - en ide er ikke ubrugelig, 
+    bare fordi den ikke kan anvendes <i>direkte</i>. Matematik er ét
+    stort værktøj vi mennesker har opfundet. 
+    Teoretisk matematik hjælper os 
+    med at håndtere denne maskine. 
+    </p>
+    
+    <p class="t">
+    Da vi originalt opfandt _(Sin_), _(Cos_) og _(Tan_), 
+    definerede vi dem til at beskrive ratioer, der
+    korresponderede til bestemte grader <i>på cirklen</i>. 
+    _(Sin(370)_) eller _(Cos(-5)_) 
+    er udtryk, der ikke giver særlig meget <i>mening</i>. 
+    Det var trods alt et skema engang, og _(Sin(30)_) blev 
+    lavet som en forkortelse der indikerede,
+    at man skulle slå op på et skema. Det er rigtig fint, 
+    men tiderne har ændret sig: _(Sin_), _(Cos_) og _(Tan_) bliver brugt overalt nu 
+    - ikke kun i håndværk. 
+    Især i de situationer hvor vi 
+    plusser eller minusser vinkler, kunne det være praktisk,
+    hvis vi udvidede definitionerne en smule. 
+    _(Sin(v)_) er _(\text{højde}/\text{længde}_) og _(Cos(v)_) er _(\text{bredde}/\text{længde}_). 
+    <i>Hvis</i>
+    _(\text{længde}=1_) så er _(Sin=\text{højde}_) og _(Cos=\text{bredde}_):
+    </p>
+    <img class="SpicXL" style="width:95%; margin-top:40px;margin-bottom: 40px;" src="../../../Assets/Chapter2\Section1\TrigProperties\UnitCircleGood.png">
+    <p class="tt">
+    Vi kan altså se på _(Sin(v)_) som <i>højden</i> af en retvinklet 
+    trekant med en længde på _(1_) og vinkel på _(v_).
+    _(Cos(v)_) er denne trekants bredde. De forskellige 
+    vinkler vores trekant kan have, kan nemt visualiseres 
+    i en cirkel med radius _(1_) - <i>enhedscirklen</i>! 
+    </p>
+    <p class="t">
+    Sådan kan man bl.a. se, 
+    at det har samme effekt at gå over _(360_) som 
+    at gå hele vejen rundt til _(0_) hvor vi startede. 
+    _(370_) burde derfor være funktionelt
+    identisk med _(10_) grader.
+    </p>
+    <p class="t">
+    Man kan også se, hvordan vi tænker over "negative" vinkler som
+    _(-10_). Det svarer bare til at gå rundt om cirklen i den <i>modsatte</i> retning!
+    Derfor burde _(-10_) og _(360-10=350_) være funktionelt identiske også. 
+    </p>
+
+    <img class='SpicXL' style='width:180%; margin-left: -40%; margin-top: 40px; margin-bottom:80px;' src='../../../Assets/Chapter2\Section1\TrigProperties\AngleModulos.png'>  
+
+    <q-stion 1="15" 2="1">
+    Regn følgende:
+    <div style="margin-left:-75%; margin-top:25px; margin-bottom: -10px;">
+    _($\begin{eqnarray}
+        && \underline{\textbf{A}}: \, \, \, \, \, \, Sin(-80) \\  \\
+        && \underline{\textbf{B}}: \, \, \, \, \, \, Cos(400) \\  \\
+        && \underline{\textbf{C}}: \, \, \, \, \, \, Cos(-385) \\  \\
+        && \underline{\textbf{D}}: \, \, \, \, \, \, Sin(-180) \\  \\
+    \end{eqnarray}_)
+    </div>
+    <p class="t">
+    Du må godt bruge din lommeregner, men prøv at regn dem <i>kun</i> 
+    ved at bruge vinkler fra _(0_) til _(360_) som før.
+    </p>
+    <br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    _(Sin(-80)=Sin(360-80)=Sin(280)=-0.98_)
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    _(Cos(400)=Cos(360+40)=Cos(40)=0.766_)
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{C}}_)#" tabColour="rgb(171,96,147)">
+    _(Cos(-385)=Cos(-360-25)=Cos(-25)=Cos(360-25)=_) _(Cos(335)=0.9_)
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{D}}_)#" tabColour="rgb(175,128,161)">
+    _(Sin(-180)=0_)
+    <br><br></answer-box>
+
+    <!--  --> 
+
+    <q-stion 1="15" 2="2">
+    Du står på et pariserhjul:
+    <img class="SpicB" style="width:60%;" src="../../../Assets/Chapter2\Section1\TrigProperties\Pariserhjul.png">
+    <p class="tt">
+    Pariserhjulet kører _(1_) omgang på _(163_) sekunder. Hjulet drejer samme hastighed konstant.
+    Hvis du starter med at være på toppen som på billedet, hvor højt oppe er du så efter _(16_) minutter?
+    </p>
+    <br></q-stion>
+    <answer-box>
+    _(1_) omgang pr _(163_) sekunder svarer til en hastighed på 
+    _($\frac{360}{163} = 2.208 \frac{\text{grader}}{\text{sekund}}_)
+    Efter _(16_) minutter har vi altså roteret 
+    _($2.208*(16*60)=2119.6 \text{ grader} _)
+    Vi starter med en vinkel på _(90_) grader, så vi ender ud med:
+    _($2119.6+90=2209.6 \text{ grader}_)
+    Vi ved at sinus gange længde giver højde. For at finde den endelige højde over
+    jorden, skal vi derfor sige:
+    _($20+15*Sin(2209.6)_)
+    Hvad er _(Sin(2209.6)_)? Well, _(2209.6_) svarer til
+    _(2209.6/360 = 6.137_) omgange rundt om cirklen, og
+    er derfor identisk med 
+    _(2209.6-360*6=49.6^o_)
+    Det endelige svar er derfor:
+    _($20+15*Sin(49.6) = 20+15*0.76153 = 31.422_)
+    Voila! 
+    <br><br></answer-box>
+

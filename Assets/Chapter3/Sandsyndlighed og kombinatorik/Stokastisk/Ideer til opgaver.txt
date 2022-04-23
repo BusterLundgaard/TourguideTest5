@@ -1,0 +1,25 @@
+Ide 1:
+==========================
+Man kan enten tage den "safe" rute, eller den "risky" rute.
+"Safe" giver altid 3 points
+"Risky" har 60% chance for at give kun 1 point, men 40% chance for at give 5 points.
+
+Sig at man kører 10 runder. Hvad giver èn størst chance for at vinde: At tage safe-ruten alle gange, eller at tage risky-ruten? 
+(Så er de altså nødt til at se om den mængde points man har størst chance for at få når man tager 10 runder er større end 3*10=30 points
+som man jo får ved den safe rute)
+=======================================================
+
+Ide 2:
+========================================
+Man har et 3x3 koordinatsystem/grid.
+På hvert grid kan der vokse èn blomst.
+Den stokastiske variabel er "mængden af dage før alle blomster er groet".
+Man skal så finde sandsyndligheden for de forskellige værdier på den stokastiske variabel.
+Måske skal man finde den gennemsnitslige mængde dage det tager? (ved at tage gennemsnitsværdien på den
+stokatiske variabel, eller, i hvert fald finde den værdi der er størst chance for).
+
+Reglerne virker som:
+Ved hvert felt er der 10% chance for at der vil gro en blomst på èn dag.
+Hvis et felt står ved siden af (ikke diagonalt!) et felt hvor der allerede er en
+blomst, så er chancen nu 40% 
+=======================================

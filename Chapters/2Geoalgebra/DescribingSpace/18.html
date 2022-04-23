@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+
+
+    <h2>Komplekse tal: <br> En ny måde at tænke over 2D objekter</h2>
+    <p class="t">
+    Vektorer opstod af vores lyst til 
+    at dele ét svært problem op i to, og viste sig 
+    i processen som et generelt og effektivt værktøj til at
+    beskrive rum, former og bevægelser. 
+    De har været en praktisk ide, der dog alligevel
+    ikke altid er helt perfekt at arbejde med i <i>visse</i> tilfælde: Specifikt når det
+    kommer til rotationer og vinkler. Der vil det ofte være nemmere, bare at bruge normal geometri.
+    Vektorer kan nemt beskrive en bevægelse <i>i en retning</i>, men de kan ikke nemt
+    beskrive en <i>rotationsbevægelse</i>. Det kan man heller ikke nemt gøre med
+    normal geometri, men der findes et alternativ, vi endnu ikke har diskuteret. 
+    </p>
+    <p class="t">
+    Det viser sig at vi kan lave en konstruktion, der minder meget om vektorer, men fra
+    et rent funktionelt perspektiv
+    næsten er objektivt bedre. Tillad mig i næste paragraf at introducere en ide,
+    der i starten kommer ud af det blå, virker tilfældig og pointløs, men 
+    viser sig som lettere 
+    genial. 
+    </p>
+    <p class="t">
+    Sig at vi i stedet for 
+    _($\VeC[-5,14.6]_) 
+    ... skrev: 
+    _($-5+14.6*i_)
+    Noget som _(155-19*i_) ville altså repræsentere punktet eller vektoren 
+    _($\VeC[155,-19]_)
+    Det er ligegyldigt hvad _(i_) "er" lige nu: Det er bare noget vi har fundet på.
+    Vi kan plusse de her "punkter/tal" præcist ligesom vektorer: 
+    _($\begin{eqnarray}
+    && (2\pi + 3.6*i) + (13.3 - 18*i) = \\ \\
+    && (2\pi+13.3) + (3.6-18)i = \\ \\
+    && 19.58 - 14.4*i 
+    \end{eqnarray}_)
+    Siden de her punkter er "tal", siger vi, at vi også kan gange dem:
+    _($\begin{eqnarray}
+    && (2\pi + 3.6*i)*(13.3 - 18*i) = \\ \\
+    && 2\pi*13.3 + 2\pi*18*i + 3.6*13.3*i - 3.6*18*i*i = \\ \\
+    && 83.56 + 160.97i - 64.8*i*i 
+    \end{eqnarray}_)
+    Vi støder lidt ind i et problem her, da det tal vi får, ikke længere passer formen. Der
+    er nu et _(i*i=i^2_) led vi ikke rigtig kan tyde geometrisk. 
+    _(i_) har ingen nedarvet mening, eftersom vi lige fandt på det, så vi <i>vælger</i>
+    derfor at _(i^2=-1_) - fordi vi har lyst:
+    _($\begin{eqnarray}
+    && 83.56 + 160.97i - 64.8*i*i = \\ \\
+    && 83.56 - (64.8*(-1)) + 160.97i = \\ \\
+    && 148.36 + 160.97i 
+    \end{eqnarray}_)
+    Jeg ved godt det virker ret tilfældigt, 
+    men læs videre og det vil eventuelt begynde at give mening. 
+    </p>
+    <p class="t">
+    Det her system vi har skabt - de her tal der repræsenterer punkter/vektorer - kalder vi 
+    "<i>komplekse tal</i>".
+    Vi kan dividere dem med hinanden præcis ligesom vi kan gange:
+    _($\frac{2\pi+3.6i}{13.3-18i}_)
+    For at dividere laver vi et smart trick. Vi ved at 
+    _($A^2-B^2=(A+B)(A-B)_)
+    Så: 
+    _($(13.3-18i)(13.3+18i) = (13.3)^2 - (18i)^2_)  
+    Det her er praktisk, da _((18i)^2_) bliver til
+    _(18^2*i^2_) lig _(-18^2_). Vi har nu fjernet alle komplekse tal i nævneren! 
+    Tricket er altså at gange både nævner og tæller med _((13.3+18i)_) som:
+    _($\begin{eqnarray}
+    && \frac{2\pi+3.6i}{13.3-18i} = \\ \\
+    && \frac{2\pi+3.6i}{13.3-18i}*\frac{13.3+18i}{13.3+18i} = \\ \\
+    && \frac{(2\pi+3.6i)*(13.3+18i)}{(13.3)^2 - (18)^2} =  \\ \\
+    && \frac{2\pi*13.3 + 2\pi*18i + 3.6i*13.3 + 3.6i*18i}{(13.3)^2 + 18^2} = \\ \\
+    && \frac{(2\pi*13.3 - 3.6*18) + (2\pi*18 + 3.6*13.3)i}{500.89} = \\ \\
+    && \frac{18.766 + 160.977i}{500.89} = \frac{18.766}{500.89} - \frac{160.977i}{500.89} =\\ \\
+    && 0.0374 - 0.3213i
+    \end{eqnarray}_)
+    Boom!
+    </p>
+
+    <q-stion 1="18" 2="1">
+    Regn følgende komplekse tal:
+    _($\left((1+2i)+5-6i \right)*\left(2+3i \right) - 12i_)
+    <br></q-stion>
+    <answer-box>
+    Først af alt kan _((1+2i)+5-6i_) laves om til:
+    _($(1+5)+(2-6)i = 6-4i_)
+    Vi regner nu gangestykket som:
+    _($\begin{eqnarray}
+    && (6-4i)(5+6i) = \\ \\
+    && 6*5+6*6i + (-4i)*5 + (-4i)*6i = \\ \\
+    && (6*5-4*6i^2) + (6*6-4*5)i = \\ \\
+    && (6*5+4*6) + (6*6-4*5)i = \\ \\
+    && 54 + 16i
+    \end{eqnarray}_)
+    Endeligt får vi:
+    _($\begin{eqnarray}
+    && 54 + 16i - 12i = \\ \\
+    && 54+4i
+    \end{eqnarray}_)
+    Voila! 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="18" 2="2">
+    Regn følgende komplekse tal:
+    _($\frac{6+9i}{-7+2i}_)
+    <br></q-stion>
+    <answer-box>
+    Vi ganger tæller og nævner med _(-7-2i_) for at lave tricket:
+    _($\frac{(6+9i)*(-7-2i)}{(-7+2i)(-7-2i)}_)
+    Nævneren ved vi kan omskrives til _((-7)^2 - (2i)^2_), som 
+    er lig _(7^2 + 2^2 = _) _(53_). Tælleren bliver:
+    _($\begin{eqnarray}
+    && 6*(-7) + 6*(-2i) + 9i*(-7) + 9i*(-2i) = \\ \\
+    && \left(6*(-7) - 9*(-2) \right) + \left(6*(-2) + 9*(-7) \right)i = \\ \\
+    && -24 - 75i
+    \end{eqnarray}_)
+    Så:
+    _($\frac{-24-75i}{53} = \frac{-24}{53} - \frac{75}{53}i = -0.452 - 1.415i_)
+    <br></answer-box>
+
+    <p class="t">
+    Et komplekst tal som _(-23.3 + 16i_) repræsenterer _((-23.3,16)_), 
+    og har derfor både <i>længde</i> og <i>vinkel</i>:
+    </p>
+    <img class='SpicXL' style='width:70%' src='../../../Assets/Chapter2\Section4\Complex numbers\ComplexNumber1.png'> 
+    <p class="t">
+    Hvor længden her kan regnes som _(\sqrt{23.3^2+16^2}_) og vinklen som 
+    _(\pi - Arctan(16/23.3)_). 
+    Og nu bliver det nice:
+    Man kan bevise, at når vi <i>ganger</i> to komplekse tal, 
+    får vi et nyt komplekst tal, hvis
+    længde er de to længder ganget med hinanden, og hvis vinkel er de to vinkler plusset med hinanden.
+    Når vi plusser to komplekse tal, arbejder vi med dem præcist ligesom vektorer: Når vi 
+    ganger dem, kan vi <i>også</i> arbejde med vinkler, længder, og rotation på en god måde. 
+    Det er derfor de er super geniale. 
+    Division har den modsatte effekt, hvor længder divideres og vinkler minuses. 
+    </p>
+    <p class="t">
+    Lad mig lige vise et konkret eksempel. Sig vi har de to følgende komplekse tal:
+    </p>
+    <img class='SpicXL' style='width:95%' src='../../../Assets/Chapter2\Section4\Complex numbers\ComplexNumber2.png'> 
+    <p class="t">
+    Vi kan nu regne produktet som:
+    _($\begin{eqnarray}
+    && \left(2.05+0.75i \right)*\left(-1.97-3.79i \right) = \\ \\
+    && 2.05*(-1.97) + 2.05*(-3.79i) + 0.75i*(-1.97) + 0.75i*(-3.79i) = \\ \\
+    && \left(2.05*(-1.97) - 0.75*(-3.79)\right) + \left(2.05*(-3.79) + 0.75*(-1.97) \right)i = \\ \\
+    && -1.19 - 9.24i
+    \end{eqnarray}_)
+    Hvilket ser ud som:
+    </p>
+    <img class='SpicXL' style='width:95%' src='../../../Assets/Chapter2\Section4\Complex numbers\ComplexNumber3.png'> 
+    <p class="t">
+    Det her en længde på _(\sqrt{1.19^2+9.24^2} = _) _(9.316_), og en vinkel på 
+    _(\pi+Arctan(9.24/1.19) = _) _(4.584_). Længderne på de to originale komplekse tal
+    er 
+    _($\begin{eqnarray}
+    && \sqrt{2.05^2+0.75^2} = 2.18 \\ \\
+    && \sqrt{1.97^2+3.79^2} = 4.27
+    \end{eqnarray}_)
+    Vinklerne er 
+    _($\begin{eqnarray}
+    && Arctan(0.75/2.05)=0.35 \\ \\
+    && \pi+Arctan(3.79/1.97)=4.33
+    \end{eqnarray}_)
+    Vi tjekker nu:
+    _($\begin{eqnarray}
+    && 2.18*4.27 = 9.30 \\
+    && 0.35+4.33 = 4.68
+    \end{eqnarray}_)
+    Det passer (udover lidt afrundingsfejl)! 
+    Du kan lege lidt rundt med det i følgende simulation: 
+    </p>
+    
+    <div style="margin-top: 20px; margin-left:-130px; margin-top:45px;">
+        <iframe scrolling="no" title="ComplexMultiplication" src="https://www.geogebra.org/material/iframe/id/cqzx4qd2/width/1139/height/1149/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/false/ctl/true" width="759px" height="766px" style="border:0px;"> </iframe>
+    </div>
+
+    <p class="t" style="margin-top:45px;">
+    Lad os lige lave to simple opgaver før vi beviser det er sandt:
+    </p>
+    
+    <q-stion 1="18" 2="3">
+    _(\underline{\textbf{A}}_): <br>
+     Hvad er længden og vinklen på:
+    _($(5+6i-3)*(7-9.2i+i)_)
+    <p class="t">
+    _(\underline{\textbf{B}}_): <br>
+     Og på:
+    _($(7-9.2i+i)/(5+6i-3)_)
+    </p>
+    <br><br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    Først af alt omskriver vi lige stykket til:
+    _($\left(2+6i \right)*\left(7-8.2i \right)_)
+    Længden er:
+    _($\sqrt{2^2+6^2}*\sqrt{7^2+8.2^2} = 6.32*10.78 = 68.12_)
+    Vinklen på det ene komplekse tal er _(Arctan(6/2)=_) _(1.249_), og 
+    _(2\pi-Arctan(8.2/7) =_) _(5.419_) på det andet, så vinklen på produktet er
+    _($5.419+1.249=6.667_)
+    Denne vinkel er højere end _(2*\pi=6.28_), så teknisk er vinklen faktisk:
+    _($6.667 - 6.28 = 0.386 _)
+    Men ja, det er lidt smag og behag. 
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Længden er _(10.78/6.32=_) _(1.705_) og vinklen er _(5.419-1.249=_) _(4.17_). 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="18" 2="4">
+    _(a-bi_) kalder vi for _(a+bi_)'s "conjugate", og skriver det som _(\overline{a+bi}_). 
+    Så hvis _(z=a+bi_), så er 
+    _($\overline{z}=a-bi_)
+    Vi får ret tit brug for et komplekst tals conjugate, da
+    _($z*\overline{z} = |z|^2_) 
+    Bevis at dette er sandt 
+    <br><br></q-stion>
+    <answer-box>
+    Det er meget ligeud. Sig at _(z=a+bi_). Vi ved at:
+    _($(a+bi)(a-bi)=a^2 - (bi)^2 = a^2 + b^2 = |z|^2_)
+    Voila! 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="18" 2="5">
+    Bevis, at hvis jeg ganger et komplekst tal _(P_1_) med et andet _(P_2_), er
+    længden på det nye tal lig _(P_1_)'s længde gange _(P_2_)'s længde, og vinklen lig 
+    _(P_1_)'s vinkel plus _(P_2_)'s vinkel. Hint: kan du repræsentere tallet på en måde, det er mere relevant?
+    Vi arbejder med rotation og radius, så ... ?
+    <br><br></q-stion>
+    <answer-box>
+    Den mest direkte tilgang, er nok at sige:
+    _($\begin{align}
+    (a+bi)*(c+di) & = ac+adi*i+bc*i+b*d*i^2 \\
+                  & = (ac-bd)+(ad*bc)i
+    \end{align}_)
+    Vi kunne nu forsøge at bevise, at vektoren _((ac-bd,ad*bc)_) havde længden
+    _(\sqrt{a^2+b^2}*\sqrt{c^2+d^2}_), og at dens vinkel var lig
+    vinklen af _((a,b)_) plus vinklen af _((c,d)_). Det kunne man sikkert fint gøre, 
+    men det virker lidt rodet og langhåret.
+    Problemet er, at vi bruger rektangulære koordinater til at løse et problem, der er langt mere velegnet til 
+    polære. Lad os derfor beskrive _(a+bi_) og _(c+di_) som:
+    _($\begin{eqnarray}
+    && a+bi & = r_a \left(Cos(\theta_a) + Sin(\theta_a) i \right) \\ 
+    && c+di & = r_b \left(Cos(\theta_b) + Sin(\theta_b) i \right)
+    \end{eqnarray}_)
+    Her bruger vi altså _(r_) og _(\theta_), som repræsenterer længden og vinklen. 
+    Produktet bliver nu til:
+    _($r_a \left(Cos(\theta_a) + Sin(\theta_a) i \right) * r_b \left(Cos(\theta_b) + Sin(\theta_b) i \right)=_)
+    _($(r_a r_b)*\left(Cos(\theta_a) + Sin(\theta_a) i \right)*\left(Cos(\theta_b) + Sin(\theta_b) i \right)_)
+    Længden er tydeligvis _(r_a*r_b_), så vi mangler bare at beregne vinklen. Hvis vi 
+    ganger ind i parenteserne og omskriver får vi:
+    _($\begin{eqnarray}
+    && Cos(\theta_a) Cos(\theta_b) &  \, \, + \\
+    && Sin(\theta_a) Cos(\theta_b) i &  \, \, + \\
+    && Cos(\theta_a) Sin(\theta_b) i &  \, \, + \\
+    && Sin(\theta_a) Sin(\theta_b) i^2 
+    \end{eqnarray}_)
+    Lad os omskrive _(i^2_) til _(-1_) og gruppere de led der er ganget med _(i_):
+    _($\begin{eqnarray}
+    && Cos(\theta_a) Cos(\theta_b) - Sin(\theta_a) Sin(\theta_b) & + \\ \\
+    && \left(Sin(\theta_a) Cos(\theta_b) + Cos(\theta_a) Sin(\theta_b) \right)
+    \end{eqnarray}_)
+    Boom! Det passer jo perfekt til _(Cos(\theta_a+\theta_b)_) og 
+    _(Sin(\theta_a+\theta_b)_), så:
+    _($(a+bi)*(c+di)=(r_1 r_2)*\left(Cos(\theta_a+\theta_b) + Sin(\theta_a+\theta_b)i \right)_)
+    Voila! Vinklen er _(\theta_a+\theta_b_), og beviset er nu færdigt!
+    <p class="t">
+    Beviset er stort set identisk for division, så vi har ikke tænkt os at gennemgå det. 
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <p class="t">
+    Lad os kort løse et par geometriske problemer, og se på nogle tilfælde, hvor
+    komplekse tal er brugbare. Først et bevis:
+    </p>
+
+    <img class='SpicXL' style='width:65%' src='../../../Assets/Chapter2\Section4\Complex numbers\AbelsTheorem.png'> 
+    <p class="t">
+    På den her vilkårlige firkant har jeg tegnet et kvadrat op ad hver side. Midtpunkterne
+    af kvadraterne har jeg markeret _(A, \, C, \, B, \, D_). Jeg vil nu 
+    bevise, at _(AB=CD_), og at _(\Seg{AB} \perp \Seg{CD}_) 
+    </p>
+    <img class='SpicXL' style='width:65%' src='../../../Assets/Chapter2\Section4\Complex numbers\AbelsTheorem2.png'> 
+    <p class="t">
+    Sig at _(O_) er vores koordinatsystem. _(AB=CD_) kan altså omskrives til: 
+    _($|\vec OB - \vec OA | = |\vec OD - \vec OC|_)
+    Hvis jeg ser _(a_) som et komplekst tal, ved jeg at
+    _($\vec{OC}=a+a*i_) 
+    ... siden _(a*i_) er _(a_) roteret _(90_) grader.
+    Lignende så er
+    _($\begin{eqnarray}
+    && \vec{OB} = 2a+b+bi \\ \\
+    && \vec{OD} = 2a + 2b + c + c*i \\ \\
+    && \vec{OA} = 2a + 2b + 2c + d + di
+    \end{eqnarray}_)
+    Jeg kan nu indsætte alt det her i vores ligning og få: 
+    _($\begin{eqnarray}
+    && |2a+2b+2c+d+di-2a-b-bi|=|2a+2b+c+ci-a-ai| \to \\ \\
+    && |b+2c+d+(d-b)i|=|2b+a+c+(c-a)i|
+    \end{eqnarray}_)
+    Vi ved, at:
+    _($2a+2b+2c+2d=0_)
+    Så _(d=-b-c-d_) og:
+    _($\begin{eqnarray}
+    && |b+2c-a-b-c+(-a-b-c-b)i| = |a+2b+c+(c-a)i| \to \\ \\ 
+    && |(c-a)-(2b+a+c)i| = |(2b+a+c)+(c-a)i|
+    \end{eqnarray}_)
+    Hvis _(\vec{CD} = (2b+a+c)+(c-a)i _) og _(\vec {BA} = (c-a)-(2b+a+c)i_)
+    så er _(\vec{CD}=i*\vec{BA}_), hvilket altså betyder at de har samme
+    størrelse og er vinkelrette på hinanden. Bum!
+    </p>
+    <p class="t">
+    Det her er ikke en speciel vigtig eller interessant teori, men i stedet et godt eksempel på, hvor
+    effektive komplekse numre kan være som værktøj. 
+    Det er lidt svært at give et "anvendelseseksempel",
+    fordi vi snakker om en meget <i>generel</i> strategi man bruger i ny og næ. 
+    De fleste eksempler
+    ville være en lille del af et meget større problem, og kræve en stor viden om selve anvendelsen.
+    Udover de direkte anvendelser, kan de 
+    selvfølgelig også hjælpe os i teoretisk matematik. 
+    </p>
+
+    <!--  -->
+
+    <q-stion 1="18" 2="6">
+    Èn ting der kan være ret elegant i komplekse koordinater er <i>refleksioner</i>. 
+    Find en praktisk formel for projektionen af tallet _(z_) gennem linjen _(\Seg{AB}_).
+    Det er lidt tricky, så følgende illustration kan måske give dig lidt inspiration: 
+    <img class='SpicXL' style='width:75%' src='../../../Assets/Chapter2\Section4\Complex numbers\ComplexReflection0.png'> 
+    <br><br></q-stion>
+    <answer-box>
+    Se følgende illustration:
+    <img class='SpicXL' style='width:75%' src='../../../Assets/Chapter2\Section4\Complex numbers\ComplexReflection2.png'> 
+    <p class="t">
+    Vi kunne finde det reflekterede punkt _(Z'_) ved at lave en bevægelse hvis
+    vinkel var vinklen af _(AB_) roteret nedad med _(v_) grader, og hvis længde
+    var lig _(BZ_). Bevægelsen/vektoren _(BZ/AB_) har en vinkel på _(v_), så
+    _($AB/(BZ/AB) = \frac{(AB)^2}{BZ}_)
+    ... går i retningen af _(BZ'_). Det har lige nu 
+    en længde på _(|AB|^2/|BZ|_) og det skal have en længde på _(|BZ|_). Vi
+    ganger det derfor med _(|BZ|^2/|AB|^2_) og får:
+    _($Z'=B+\frac{AB^2}{BZ}*\frac{|BZ^2|}{|AB|^2}_)
+    Det virker umiddelbart ikke særlig dejligt, men det kan simplificeres markant. 
+    Vi husker, at _(a*\bar{a}=|a|^2_), og omskriver til:
+    _($B+\frac{(B-A)^2}{Z-B}*\frac{(Z-B)*\overline{Z-B}}{(B-A)*\overline{B-A}}=_)
+    _($B+\frac{B-A}{\overline{B-A}}*\overline{Z-B}_)
+    Tror ikke vi kan simplificere mere, men det her er vel egentlig også meget fint.
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <p class="t">
+    Vi har ikke tænkt os at bruge meget mere tid på komplekse tal og geometri. For det 
+    første er det ikke <i>super</i> vigtigt, og for det andet bliver det meget hurtigt
+    kompliceret. Før vi går videre bør jeg dog nævne, at geometri faktisk ikke
+    er den <i>primære</i> anvendelse af komplekse tal. Komplekse tal vil senere hen
+    (og jeg mener <i>ret langt senere hen</i>) blive ekstremt vigtige 
+    i mange algebraiske og teoretiske sammenhænge. Vi vender tilbage
+    til komplekse tal i et valgfrit kapitel til sidst i bogen. Den her side 
+    er på mange måde bare en slags "teaser", der introducerer et abstrakt
+    og stort emne i form af noget, der er lidt mere konkret (geometri).
+    </p>
+

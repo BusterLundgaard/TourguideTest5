@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+
+
+    <h2>L'Hopitals regel</h2>
+    
+    <p class="t">
+    Nu det er endelig tid til "L'Hopitals regel". En regel, der faktisk
+    ikke er opfundet af "L'Hopitals"™: L'Hopitals var bare en tilfældig gut med penge,
+    der betalte en matematiker for, at formlen blev opkaldt efter hans navn (trods
+    L'Hopitals faktisk selv var matematikker, hvilket forvirrer historien yderligere ...).
+    Reglen/egenskaben hjælper os med mange "mærkelige" grænser
+    som _(Sin(x)/x_) eller 
+    _($\lim_{x \to 7} \left[\frac{Ln(x-7)}{1/(x-7)} \right]_)
+    Generelt set hjælper den os med grænser, hvor enten 
+    både tæller og nævner nærmer sig _(0_) - hvor vi har noget
+    mærkeligt, der ligner _(0/0_) - eller hvor både tæller og nævner nærmer sig _(\infty_)
+    - så vi har noget mærkeligt, der ligner _(\infty/\infty_) 
+    </p>
+
+    <p class="t">
+    L'Hopitals regel er faktisk to teorier:
+    </p>
+
+    <div class="Theory">
+    <b> [1] L'Hopitals regel 1:</b> <br>
+    Hvis både _(\lim_{x \to a}[f(x)]_) og _(\lim_{x \to a}[g(x)]_) er lig enten _(0_) eller _(\infty_), 
+    og begge er kontinuerlige, er: 
+    _($\lim_{x \to a} \left[\frac{f(x)}{g(x)} \right] = \frac{f'(a)}{g'(a)}_)
+    Reglen virker også, hvis _(x \to \infty_) eller _(x \to -\infty_). 
+    </div>
+
+    <div class="Theory">
+    <b> [2] L'Hopitals regel 2:</b> <br>
+    Hvis både _(\lim_{x \to a}[f(x)]_) og _(\lim_{x \to a}[g(x)]_) er lig enten _(0_) eller _(\infty_), 
+    og begge er kontinuerlige, er: 
+    _($\lim_{x \to a} \left[\frac{f(x)}{g(x)} \right] = \lim_{x \to a} \left[ \frac{f'(x)}{g'(x)} \right]_)
+    Reglen virker også, hvis _(x \to \infty_) eller _(x \to -\infty_). 
+    </div>
+
+    <p class="t">
+    Lad os undersøge et par eksempler og løse et par opgaver, før vi går i gang med beviset. 
+    Først af alt:
+    _($\lim_{x \to 0}\left[\frac{Sin(x)}{x} \right]  _)
+    Både _(Sin(x)_) og _(x_) nærmer sig _(0_). L'Hopitals kan anvendes, så 
+    vi differentierer begge sider:
+    _($\frac{¤x[Sin(x)]}{¤x[x]} = \frac{Cos(x)}{1}_)
+    Vi evaluerer nu ved _(x = 0_), hvilket giver
+    _($\frac{Cos(0)}{1} = 1_)
+    Et andet eksempel kunne være:
+    _($\lim_{x \to \infty}\left[\frac{e^x}{x^3} \right]_)
+    Både _(e^x_) og _(x^3_) nærmer sig _(\infty_). Vi differentierer nu, og får:
+    _($\frac{e^x}{3x^2}_)
+    Der er <i>to</i> L'Hopitals regler. Vi kan vælge mellem
+    direkte at evaluere grænsen som _(f'(a)/g'(a)_) eller
+    regne den igen som:
+    _($\lim_{x \to \infty}\left[\frac{e^x}{3x^2} \right]_)
+    Vi støder nu ind i samme problem, og løser det igen på samme måde:
+    _($\lim_{x \to \infty}\left[\frac{e^x}{3*2x} \right]_)
+    Èn gang til:
+    _($\lim_{x \to \infty}\left[\frac{e^x}{3*2} \right]_)
+    Denne grænse <i>kan</i> faktisk beregnes. Det er tydeligt, at 
+    den giver _(\infty_)
+    </p>
+
+    <q-stion 1="7" 2="1" bigTop="true">
+    Regn følgende grænser:
+    <div style="margin-left:-62.5%; margin-top:25px; margin-bottom: -10px;">
+    _($\begin{eqnarray}
+        && \underline{\textbf{A}}: \, \, \, \, \, \, \lim_{x \to \pi/2}\left[\frac{Cos(x)}{x^2-\frac{\pi^2}{4}} \right] \\ \\
+        && \underline{\textbf{B}}: \, \, \, \, \, \, \lim_{x \to \infty}\left[\frac{Ln(x+1)}{Ln(x)} \right] \\ \\
+        && \underline{\textbf{C}}: \, \, \, \, \, \, \lim_{x \to 7} \left[\frac{Ln(x-7)}{1/(x-7)} \right] \\ \\
+        && \underline{\textbf{D}}: \, \, \, \, \, \, \lim_{x \to 0}\left[\frac{1-Cos(2x)}{x^2} \right] 
+    \end{eqnarray}_)
+    </div>
+    <br><br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(175,128,161)">
+    _(Cos(x)_) nærmer sig _(0_) når _(x_) nærmer sig _(\pi/2_), og samme gælder nævneren _(x^2-(\pi/2)^2_). 
+    Vi bruger nu L'hopitals og får:
+    _($\frac{-Sin(x)}{2x}_)
+    Vi evaluerer ved _(\pi/2_):
+    _($\frac{-Sin(\pi/2)}{2*(\pi/2)} = -1/\pi_)
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(171,96,147)">
+    Både _(Ln(x+1)_) og _(Ln(x)_) nærmer sig uendelig, som _(x_) nærmer sig _(\infty_), 
+    så vi differentierer dem begge og får:
+    _($\frac{\frac{1}{x+1}}{\frac{1}{x}} = \frac{x}{x+1}_)
+    Nu skal vi altså regne:
+    _($\lim_{x \to \infty}\left[\frac{x}{x+1} \right]  _)
+    Vi ved fra tidligere arbejde, at dette er _(1_). Hvis <i>ikke</i> vi vidste det, 
+    kunne vi også have brugt
+    L'Hopitals igen, hvilket ville give _(1/1=1_). 
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{C}}_)#" tabColour="rgb(175,128,161)">
+    _(Ln(x-7)_) nærmer sig _(Ln(0)_) og derfor _(-\infty_). Nævneren
+    nærmer sig også _(\infty_) i form af _(1/0_). L'Hopitals kan anvendes, og giver:
+    _($-\frac{\frac{1}{x-7}}{-\frac{1}{(x-7)^2}} = (x-7)_)
+    Noter at jeg tilføjede et ekstra minus: L'Hopitals virker
+    ved _(\infty/\infty_), og vi har _(-\infty/\infty_), så det skulle lige
+    ændres. Ret ligegydligt dog: Slutresultatet er tydeligvis _(0_), hvis
+    vi evaluerer ved _(x=7_). 
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{D}}_)#" tabColour="rgb(171,96,147)">
+    _(Cos(2x)_) bliver _(1_), når _(x \to 0_), så _(1-Cos(2x)_) nærmer sig _(0_). 
+    Samme kan selvfølgelig siges om _(x^2_). 
+    Vi differentierer dem begge og får:
+    _($\frac{Sin(2x)*2}{2x}_)
+    Både tæller og nævner nærmer sig igen _(0_), når _(x \to 0_). 
+    Vi bruger L'Hopitals igen og får:
+    _($\frac{2 Cos(2x)}{1}_)
+    Hvilket bare er _(2_) ved _(x=0_).
+    <p class="cent">*</p>
+    <p class="t">
+    Vi <i>kunne</i> også have lavet substitutionen
+    _(u=2x_), hvis vi af mystiske årsager ikke gad bruge L'Hopitals igen:
+    _($2*\lim_{u \to \infty}\left[\frac{Sin(u)}{u} \right] = 2*1 = 2_)
+    </p>
+    <br></answer-box>
+
+    <p class="tt">
+    Vi har tænkt os først at bevise regel 1 og regel 2, hvis begge funktioner nærmer sig _(0_). 
+    Derefter beviser vi det, hvis de nærmer sig _(\infty_)
+    </p>
+
+    <div class="Proof">
+    <b> Bevis af regel 1:</b> <br>
+    _(f(x)_) og _(g(x)_) er begge kontinuerlige, så vi ved at
+    _($f(a)=\lim_{x \to a}[f(x)]=0, \qquad g(a)=\lim_{x \to a}[g(x)]=0_)
+    Vi omskriver nu:
+
+    _($\begin{eqnarray} 
+    && \lim_{x \to a} \left[\frac{f(x)}{g(x)} \right] & = & \lim_{x \to a} \left[\frac{f(x)-0}{g(x)-0} \right] \\ \\
+    && & = & \lim_{x \to a} \left[\frac{f(x)-f(a)}{g(x)-g(a)} \right] \\ \\
+    && & = & \lim_{x \to a} \left[\frac{\frac{f(x)-f(a)}{x-a}}{\frac{g(x)-g(a)}{x-a}} \right] \\ \\
+    && & = & \frac{\lim_{x \to a} \left[\frac{f(x)-f(a)}{x-a} \right] }{\lim_{x \to a} \left[\frac{g(x)-g(a)}{x-a} \right]} \\ \\
+    && & = & \frac{f'(a)}{g'(a)}
+    \end{eqnarray}_)
+
+    Bevis færdigt _(\blacksquare_). 
+    </div>
+
+    <p class="tt">
+    Vi får brug for 1 ny teori, og 1 lemma for at bevise regel 2:
+    </p>
+
+    <div class="Theory">
+    <b> [3] Rolle's theorem:</b> <br>
+    Sig at _(f(x)_) er kontinuerlig og kan differentieres overalt på intervallet _([a,b]_).
+    Hvis _(f(a)=f(b)_), findes der et punkt _(c_) i _([a,b]_) hvor:
+    _($f'(c)=0_)
+    </div>
+
+    <div class="Lemma">
+    <b> [1] Lemma 1:</b> <br>
+    Hvis _(f(x)_) og _(g(x)_) er kontinuerlige og kan differentieres overalt 
+    på intervallet _([a,b]_), 
+    findes der et punkt _(c_) i _([a,b]_) hvor:
+    _($\frac{f'(c)}{g'(c)} = \frac{f(b)-f(a)}{g(b)-g(a)}_)
+    </div>
+
+    <p class="tt">
+    Jeg kaldte den ene her for en teori, fordi den bliver brugt mange steder, og den anden for et lemma, fordi
+    den ikke er specielt brugbar uden for vores kontekst.
+    </p>
+
+    <q-stion 1="7" 2="2">
+    Bevis Rolle's theorem. Jeg anbefaler stærkt at du visualiserer situationen, før du går i gang med
+    det mere formelle bevis!
+    <br><br></q-stion>
+    <answer-box>
+    Lad os midlertidigt ignorere alt det der "kontinuerligt" og "differentiabelt" 
+    hurlumhej. Teorien fortæller os mere intuitivt,
+    at hvis _(f(x)_) har samme værdi på begge ender af et interval _([a,b]_), 
+    findes der et sted på intervallet, hvor tangenten er flad. Hvor <i>hældningen er</i> _(0_). 
+    Det giver super god mening, hvis man tegner det:
+    <img class='Spic' style='width:70%' src='../../../Assets/Chapter4\Limits\RollesTheorem.png'> 
+    <p class="t">
+    ... eller:
+    </p>
+    <img class='Spic' style='width:70%' src='../../../Assets/Chapter4\Limits\RollesTheorem2.png'> 
+    <p class="t">
+    ... eller:
+    </p>
+    <img class='Spic' style='width:70%' src='../../../Assets/Chapter4\Limits\RollesTheorem3.png'> 
+    <p class="t">
+    På det sidste eksempel - hvor den er helt flad - er der uendelig mange _(c_) punkter. 
+    Hvis den <i>ikke</i> er
+    helt flad, er den nødt til at gå opad først, og den skal 
+    derfor gå nedad igen senere, hvis den skal tilbage, til hvor den startede.
+    Når den begynder at gå nedad skifter retningen, og det betyder, 
+    at hældningen på et tidspunkt er _(0_). Samme
+    sker hvis den går nedad i starten, og så skal gå opad.
+    </p>
+    <p class="t">
+    Kan vi på nogen måde bevise det lidt formelt matematisk? 
+    </p>
+    <p class="t">
+    Vi opdeler det i tre cases: 
+    _($\begin{align}
+    \textbf{A:} \, \, \, \, & f(x)=K, \text{ hvor } K \text{ er en konstant} \\ \\
+    \textbf{B:} \, \, \, \, & f'(a) \gt 0 \\ \\
+    \textbf{C:} \, \, \, \, & f'(a) \lt 0 
+    \end{align}_)
+    _(\textbf{A}:_) 
+    Hvis _(f(x)=k_)  
+    er _(d/dx[f(x)]=0_), og et hvilket som helst punkt i _([a,b]_) kan fungere som _(c_).
+    </p>
+    <p class="t">
+    _(\textbf{B}:_)
+    Hvis _(f'(a) \gt 0_), findes der et punkt _(x=d_), 
+    hvor _(f(d) \gt f(a)_). _(f(d)_) er også større end _(f(b)_).
+    Funktionen er kontinuerlig, så den kan ikke have nogle "hop". 
+    Den er derfor nødt til at gå nedad på et eller andet tidspunkt, 
+    hvis den skal ende ved _(f(b)_), som er mindre end _(f(d)_). 
+    Men <i>hvis</i> den går nedad, findes der
+    et sted _(s_), hvor _(f'(s) \lt 0_). Hældningen går fra en positiv værdi ved _(a_), 
+    til eventuelt en negativ værdi ved _(s_). 
+    Funktionen har ingen "hop", så den <i>skal</i> skære x-aksen på et tidspunkt.
+    Der findes derfor et sted, hvor _(f'(x)=0_).
+    </p>
+    <p class="t">
+    _(\textbf{C}:_)
+    Præcis samme bevis som ved _(\textbf{B}_) _(\blacksquare_). 
+    </p>
+    <br></answer-box>
+
+    <div class="Proof">
+    <b> Bevis af lemma 1</b>: <br>
+    Definer funktionen:
+    _($h(x) = \Bigl(f(x)-f(a) \Bigr)*\Bigl(g(b)-g(a) \Bigr) - \Bigl(g(x)-g(a) \Bigr)*\Bigl(f(b)-f(a) \Bigr)_)
+    Denne funktion er valgt, så at _(h(a)=h(b)_), da begge er lig _(0_). 
+    Nu kan Rolle's theorem anvendes. Den fortæller os, at der findes
+    et punkt _(x=c_) på _([a,b]_) hvor:
+    _($f'(c)*(g(b)-g(a)) - g'(c)*(f(b)-f(a)) = 0_)
+    Som så kan omskrives til:
+    _($\frac{f'(c)}{g'(c)} = \frac{f(b)-f(a)}{g(b)-g(a)}_)
+    Hvilket færdiggøre beviset _(\blacksquare_).     
+    </div>
+
+    <div class="Proof">
+    <b> Bevis af regel 2:</b> <br>
+    Sig at _(x_) i grænsen nærmer sig _(a_). 
+    Antag yderligere, at den nærmer sig _(a_) fra højre side: Beviset
+    er stort set identisk, hvis den nærmer sig fra venstre i stedet. 
+    <p class="t">
+    _(x_) nærmer sig fra højre side
+    og er større end _(a_). Vi kigger derfor på intervallet _([a,x]_).
+    Lemma _(1_) giver, at der på dette interval findes et punkt _(c_) hvor:
+    _($\frac{f'(c)}{g'(c)} = \frac{f(x)-f(a)}{g(x)-g(a)}_)
+    Både _(f(a)_) og _(g(a)_) er pr. definition _(0_). Ergo:
+    _($\frac{f(x)}{g(x)} = \frac{f'(c)}{g'(c)}_)
+    Vi tager nu grænsen af begge sider, når _(x_) nærmer sig _(a_) fra højre side:
+    _($\lim_{x \to a^{+}} \left[\frac{f(x)}{g(x)} \right] = \lim_{x \to a^{+}} \left[\frac{f'(c)}{g'(c)} \right] _)
+    _(c_) er <i>mellem</i> _(x_) og _(a_), så den nærmer sig også _(a_),
+    hvis _(x_) gør:
+    _($\lim_{x \to a^{+}} \left[\frac{f'(c)}{g'(c)} \right] = \lim_{c \to a^{+}} \left[\frac{f'(c)}{g'(c)} \right]_)
+    Grænsen _(\lim_{c \to a^{+}}[f(c)]_) har præcist samme værdi som grænsen _(\lim_{x \to a^{+}}[f(x)]_), da
+    det jo bare er et symbol, der ser anderledes ud. Derfor får vi:
+    _($\lim_{c \to a^{+}} \left[\frac{f'(c)}{g'(c)} \right] = \lim_{x \to a^{+}} \left[\frac{f'(x)}{g'(x)} \right] _)
+    Bum! _(\blacksquare_)
+    </p>
+    </div>
+
+    <div class="Proof">
+    <b> Bevis af regel 1 og regel 2 hvis funktionerne nærmer sig _(\boldsymbol{\infty}_):</b> <br>
+    Vi har allerede bevist, at det virker, når funktionerne nærmer sig _(0_), så 
+    vi kan genbruge vores arbejde, ved at omskrive både _(f(x)_) og _(g(x)_)
+    til _(1/(1/f(x))_) og _(1/(1/g(x))_), siden de nu nærmer sig _(0_) i stedet
+    for _(\infty_): 
+    _($\lim_{x \to a} \left[\frac{f(x)}{g(x)} \right] = \lim_{x \to a} \left[\frac{1/(1/f(x))}{1/(1/g(x))} \right] = \lim_{x \to a} \left[\frac{1/g(x)}{1/f(x)} \right]_)
+    _(1/g(x)_) og _(1/f(x)_) nærmer sig _(0_). Vi genbruger nu vores arbejde og får:
+    _($\begin{eqnarray}
+    && \lim_{x \to a} \left[\frac{1/g(x)}{1/f(x)} \right] & = \lim_{x \to a} \left[\frac{¤x[1/g(x)]}{¤x[1/f(x)]} \right] \\ \\
+    && & = \lim_{x \to a} \left[\frac{g'(x)/g(x)^2}{f'(x)/f(x)^2} \right] \\ \\
+    && & = \lim_{x \to a} \left[\frac{f(x)}{g(x)} \right]^2 / \lim_{x \to a} \left[\frac{f'(x)}{g'(x)} \right]
+    \end{eqnarray}_)
+    Udtrykket indeholder _(\lim_{x \to a} [f(x)/g(x)]^2_), hvilket er præcist den grænse
+    _(L_) vi prøver at finde, opløftet til anden potens. Det hele er en omskrivning
+    af _(\lim_{x \to a} [f(x)/g(x)]_), så:
+    _($L=L^2 / \lim_{x \to a} \left[\frac{f'(x)}{g'(x)} \right]_)
+    Vi løser nu for _(L_) og får:
+    _($L = \lim_{x \to a} \left[\frac{f'(x)}{g'(x)} \right]_)
+    Perfekt!
+    _(\blacksquare_)
+    </div>
+
+    <p class="tt">
+    Så er hele beviset færdigt! Tid til lidt ekstra opgaver! 
+    </p>
+
+    <p class="pageSplitter">
+        *
+    </p>
+
+    <!--  -->
+
+    <q-stion 1="7" 2="3">
+    Regn følgende grænser:
+    <div style="margin-left:-71%; margin-top:25px; margin-bottom: -10px;">
+    _($\begin{eqnarray}
+        && \underline{\textbf{A}}: \, \, \, \, \, \, \lim_{x \to 0}\left[x*Ln(x) \right] \\ \\
+        && \underline{\textbf{B}}: \, \, \, \, \, \, \lim_{x \to -\infty}\left[-x*2^x \right] 
+    \end{eqnarray}_)
+    </div>
+    <br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    _(x_) nærmer sig _(0_) og _(Ln(x)_) nærmer sig _(-\infty_) som
+    _(x \to 0_). Grænsen tager derfor formen:
+    _($0*(-\infty)_)
+    Det har vi ikke set før. Vi løser problemet via
+    samme trick, vi brugte i en af de tidligere beviser:
+    _($Ln(x)*x = Ln(x)*\Bigl(1/ \bigl(1/x \bigr) \Bigr) = \frac{Ln(x)}{1/x}_)
+    Det her passer til L'Hopitals, da både tæller og nævner nærmer sig _(\infty_). 
+    Vi husker et ekstra _(-1_), da _(Ln(x)_) jo faktisk nærmer sig _(-\infty_):
+    _($-\frac{1/x}{-1/x^2} = x_)
+    Det er _(0_) ved _(x=0_). Bum! Grænsen nærmer sig _(0_)! 
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    _(2^x_) bliver til _(0_), som _(x_) nærmer sig _(-\infty_), så vores grænse tager formen:
+    _($-0*(-\infty)_)
+    Vi laver derfor samme trick som før, og omskriver til:
+    _($-\frac{x}{1/2^x}_)
+    Differentierer vi nu fås:
+    _($-\frac{1}{Ln(1/2)/2^x} = -\frac{1}{Ln(1/2)}*2^x_)
+    Det nærmer sig _(0_), når _(x_) nærmer sig _(\infty_). 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="7" 2="4">
+    Find:
+    _($\lim_{x \to \infty}[x*Sin(1/x)]_)
+    <br></q-stion>
+    <answer-box>
+    Denne var lidt tricky. Idéen er, at vi omskriver til:
+    _($\lim_{x \to \infty}\left[\frac{Sin(1/x)}{1/x} \right]_)
+    Det her minder lidt om _(Sin(u)/u_), så vi substituerer _(1/x=u_). Nu går _(u_) mod _(0_), når _(x \to \infty_),
+    så grænsen er:
+    _($\lim_{u \to 0}\left[\frac{Sin(u)}{u} \right] = 1_)
+    <br></answer-box>
+
+
+
+
+

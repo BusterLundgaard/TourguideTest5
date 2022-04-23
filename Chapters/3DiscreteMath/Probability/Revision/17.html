@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+
+
+    <q-stion 1="2" 2="1" 3="5">
+    Du spiller et racer-spil der handler om at få flest points.
+    Man kan vælge to veje: Den sikre vej, og den risky vej. Den sikre
+    vej giver dig <i>altid</i> _(3_) points. Den risky vej giver dig 
+    _(5_) points, men kun _(60_)% af tiden. Den resterende <br> _(40_)% af tiden giver den dig 
+    _(0_) points. Hvis man kører _(10_) runder, er det så den bedste ide at tage den risky vej, 
+    eller den sikre? 
+    <br><br></q-stion>
+    <answer-box>
+    Antag at vi vælger den <i>risky</i> vej, og vores modspiller vælger den sikre. Vores modspiller 
+    vil <i>altid</i> få _(3*10=_)  _(30_) points. Vi skal altså finde ud af om chancen for 
+    at den risky vej får over _(30_) points er lavere eller højere end _(50_)%. Vi kan se på
+    den risky vej som en stokastisk variabel der er lig med "antal points". Denne stokastiske
+    variabel har _(11_) mulige værdier: _(0*5=0_), _(1*5=5_), _(2*5=10_), _(3*5=15_), ... _(10*5=50_). 
+    Vi skal altså beregne:
+    _($P(30)+P(35)+P(40)+P(45)+P(50)_)
+    Hvis den stokastiske variabel i stedet er antal gange den risky vej virker 
+    (hvilket er lidt mere tydeligt og dejligere at arbejde med), så
+    svarer det her til:
+    _($P(6)+P(7)+P(8)+P(9)+P(10)_)
+    Vi kan bruge samme strategi som vi brugte ved basketball til at beregne disse
+    værdier. F.eks. ved _(P(7)_) er der _(\Vec[10,7]_) måder at få _(7_) "rigtige"
+    risky ture ud af _(10_), og hver af de ture har en  _(0.6^7*0.4^3_) chance for at ske.
+    Alt i alt 
+    _($\Vec[10,7]*0.6^7*0.4^3=0.21_) 
+    Hvis vi gør det her ved alle værdierne og lægger dem sammen, så får vi:
+    _($0.25 + 0.21 + 0.12 + 0.04 + 0.01 = 0.63_)
+    Det er større end _(0.5_), så det er altså bedst at tage den risky vej - Carpe diem, eller
+    et eller andet. 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <!-- <q-stion 1="2" 2="1" 3="5">
+    Du spiller "kvit eller dobbelt". Det vil sige at du hvert kast gætter
+    på enten plat eller krone. Dine penge bliver fordoblet
+    hver gang du gætter rigtigt, men spillet stopper hvis du gætter
+    forkert. Hvis du starter med _(10kr_), hvad er så chancen for at få over _(1000kr_)? 
+    <p class="t">
+    Når jeg siger at spilet "stopper" hvis du gætter forkert, så mener jeg ikke at du mister alle dinne 
+    penge, men at du beholder hvad du har tjent indtil videre. Ellers ville du jo altid få _(0_) medmindre du 
+    selv <i>valgte</i> at stoppe, og sådan nogle selvstændige valg er ret svære at modellere i forhold til 
+    sandsynglihed. Det betyder selvfølgelig at dette er et meget kedeligt "spil" uden nogen egentlig strategi, 
+    men sådan er det bare.
+    </p>
+    <p class="t">
+    SVARET SKAL OMSKRIVES, OG DET SKAL HELE DEN HER OPGAVE MÅSKE OGSÅ. NÅR MAN TÆNKER
+    OVER DEN SÅ ER DET ET LIDT DUMT PRINCNIP. 
+    </p>
+    <br><br></q-stion>
+    <answer-box>
+    Sig at mængden af gange du har gættet rigtigt er _(n_). Så har du tjent:
+    _(10kr*2*2*2*....\text{n gange} =_) _(10*2^n_).
+    Efter hvor mange kast er du kommet over _(1000kr_)? Well:
+    _($10*2^n \ge 1000 \to 2^n \ge 100 \to n \ge Log_2(100) \to_)
+    _($n \ge 6.64_)
+    _(n_) kan kun være hele tal, så det skal altså være lig med eller større end _(7_).
+    Spørgsmålet er nu: Hvordan i alverden finder vi chancen for at vi gætter rigtigt
+    <i>over</i> _(7_) gange? Specifikt _(7_) gange er sikkert nemt, men <i>over</i>?
+    Det kan jo både være _(8_), _(9_), _(10_), helt op til uendeligt! Vi gør 
+    derfor noget smart: Chancen for at få en hvilket som helst værdi mellem _(0_)
+    og _(\infty_) er _(100_)%, eller rettere sagt bare _(1_). Det vil sige at chancen
+    for at få noget over eller lig med _(7_) svarer til:
+    _($1 - \text{Chancen for at få noget under 7}_)
+    Og _(\text{Chancen for at få noget under 7}_) kan vi nemt finde,
+    da vi nu bare kan finde chancen for 1, 2, 3, 4, 5 og 6, og så lægge
+    dem sammen! 
+    <p class="t">
+    Chancen for plat er lige så stor som krone, så
+    chancen for _(1_) rigtig
+    er _(0.5_). _(2_) rigtige svarer til, at efter vi har fået _(1_) rigtig,
+    så er der igen _(0.5_) chance for at vi får <i>endnu en</i> rigtig.
+    Det er altså _(0.5*0.5=_) _(0.5^2_). _(3_) rigtige er
+    bare _(0.5^2*0.5=_) _(0.5^3_) osv. Vi skal altså bare regne: 
+    _($0.5+0.5^2+0.5^3+0.5^4+0.5^5+0.5^6_)
+    Det her kunne man relativt nemt gøre bare ved at regne hvert led, men
+    vi kunne også være lidt hurtigere og bruge formlen:
+    _($r^1+r^2+r^3+...r^n = \frac{r*(1-r^n)}{1-r}_)
+    Hvilket giver os:
+    _($\frac{0.5*(1-0.5^6)}{1-0.5} = 0.98437_)
+    Chancen for at få over er altså:
+    _($1-0.98437=0.01563_)
+    Hvilke mere intuitivt svarer til cirka _(1.56_)%
+    </p> 
+    <br><br></answer-box> -->
+
+    <!--  -->
+    
+    <q-stion 1="2" 2="1" 3="5" customWidth="600">
+    På et træ hænger der _(7_) æbler. Sig at der hver dag kan falde _(1_) æble ned, og 
+    at chancen for at det sker er _(0.4_). Der er desværre også en irriterende fugl der nogle
+    gange kommer og spiser af æblerne. Sig at den kan spise _(1_) æble per dag, og 
+    at chancen for at den gør det er _(0.1_). Hvad er chancen for at alle æblerne
+    falder ned før fuglen har spist dem? 
+    <p class="t">
+    <i>Vigtigt</i>: Du er nødt til at <i>approximere</i> et svar til denne opgave, og 
+    du er nødt til at bruge Geogebra. Lidt en spoiler, men du får nok brug for _(Sum_)-funktionen.
+    Jeg minder dig også lige om at _(\Vec[n,k]_) i Geogebra er _(nCr(n,k)_). 
+    </p>
+    <br></q-stion>
+    <answer-box customWidth="600">
+    Lad os tænke på træet som en stokastisk variable der er lig mængden af dage det tager for alle
+    æbler at falde ned. Den her stokastiske variable kan teknisk set have uendelig mange værdier, da
+    der godt kan gå "uendelig" mange dage før æblerne falder ned: Chancen er bare ekstremt lille. 
+    Den mindste værdi er altså _(7_), og den største værdi _(\infty_). Chancen for at 
+    alle æbler falder før fuglen spiser nogen af dem, er <i>alle</i> de her værdier, ganget med
+    chancen for at fuglen ikke spiser <i>nogen</i> frugte i samme tidsperiode, alt lagt sammen. 
+    <p class="t">
+    Chancen for at det tager f.eks. _(9_) dage for alle æbler at falde ned er 
+    _(\Vec[9,7]*0.4^7*0.6^2_). Chancen for at fuglen ikke spiser nogen æbler i _(9_) dage
+    er meget simpelt bare _(0.9^9_). Vores sum ser altså cirka ud som:
+    _($\VeC[7,7]*0.4^7*0.6^0*0.9^7 + \VeC[8,7]*0.4^7*0.6^1*0.9^8 + \VeC[9,7]*0.4^7*0.6^2*0.9^9 \text{ } + \text{ } \dots = _)
+    _($0.4^7 * \sum_{i=0}^{\infty} \VeC[7+i,7]*0.6^i*0.9^{7+i}_)
+    Det her er altså hvad vi skal regne i Geogebra. Vi kan selvfølgelig ikke faktisk regne
+    op til uendelig, så vi vælger bare noget meget meget stort som _(1000000_). I Geogebra
+    skriver vi:
+    _($Sum(nCr(7+i,i)*0.6^i*0.9^{7+i},i,0,1000000)_)
+    Og får:
+    _($p=0.39089_)
+    Voila!
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Du spiller et brætspil hvor du hver runde kaster _(1_) _(6_)-siddet terning der skal 
+    bestemme hvor langt du rykker dig fremad. Hvis du starter på felt _(0_), hvad
+    er så chancen for at du lander på felt _(11_) før du kommer tilbage til start
+    igen?    
+    <br><br></q-stion>
+    <answer-box>
+    Det <i>kunne</i> tage dig kun _(2_) slag før du kom hen på felt _(11_), men det kunne
+    også tage dig _(11_) slag! Sig at vores stokastiske variabel er "antal slag før
+    du rammer felt _(13_) (hvis du rammer felt _(13_))". Så skal vi nu regne:
+    _($P(2)+P(3) \text{ } + \text{ } ... \, P(11)_)
+    _(P(2)_) kan ske på _(2_) måder: _(6,5_) eller _(5,6_). Begge har en chance på
+    _((1/6)^2_), så:
+    _($P(2)=2*(1/6)^2_) 
+    _(P(11)_) kan ske på kun én måde: 
+    _(1,1,1,1,..._), så chancen er 
+    _($P(11) = 1*(1/6)^{11}_)
+    Hvad med noget som _(P(5)_) dog? Hvor mange måder kan man gøre det på?
+    _($x_1+x_2+x_3+x_4+x_5 = 11, \text{  } 1 \le x_1,x_2,x_3,x_4,x_5 \le 6_)
+    Det her slags problem har vi løst før. Vi ved at vi nemt kan håndtere minimumskravet
+    ved bare at minusse _(11_) med _(1+1+1+1+1=_) _(5_), så vi nu har:
+    _($u_1+u_2+u_3+u_4+u_5 = 11, \text{  } u_1,u_2,u_3,u_4,u_5 \le 6_)
+    Antallet af løsninger til det (inklusiv de falske) er 
+    _($\VeC[6+5-1,5-1] = 210_)
+    Vi kalder _(U_1_) for de løsninger hvor _(u_1 \ge 6_), _(U_2_) hvor  _(u_2_)
+    er større, osv. Nu leder vi så efter antallet af falske løsninger
+    _($|U_1 \cup U_2 \, \cup \, ... \, U_5|_)
+    Dette er relativt nemt at udvide hvis vi kun har to eller tre sæt som i 
+    _(|U_1 \cup U_2|_) eller _(|U_1 \cup U_2 \cup U_3|_), men ved _(5_) eller
+    højere vil det hurtigt blive tricky. Hvad gør vi? 
+    <p class="t">
+     Well, vi ved vi skal plusse
+    med alle _(|U_1|_), _(|U_2|_), ... _(|U_5|_) for sig selv, vi skal minusse
+    med alle skæringer af _(2_) forskellige _(U_), plusse med alle skæringer af 
+    _(3_) forskellige _(U_), minusse med skæringerne af fire forskellige _(U_), osv. 
+    Meget af det her behøver vi slet ikke bekymre os om dog. Lad os sige vi f.eks.
+    ville prøve at finde _(|U_1 \cap U_2|_). Svaret ville være _(0_), da der nu ville være
+    to variabler der skulle være lig _(6_) eller større, hvilke ville svare til:
+    _($(u_1+6)+(u_2+6)+u_3+u_4+u_5 = 6 \to _)
+    _($u_1+u_2+u_3+u_4+u_5 = -6_)
+    Hvilke ikke har nogen løsninger. Det ville være muligt hvis èn terning var større end _(6_), men
+    that's it. Det er det eneste vi behøver at bekymre os om. Chancen _(P(5)_) er altså:
+    _($\frac{\VeC[(11-5)+5-1,5-1] - 5*\VeC[(11-5)-6+5-1,5-1]}{6^5} = 0.02636_)
+    Lad os nu bruge Geogebra til at regne dette som en sum i alle _(11_) tilfælde.
+    Det vil ikke være muligt for nogen _(u_) at blive højere end
+    _(6_) hvis der går mere end _(5_) slag, og det passer også til at 
+    _($(11-i)-6+(i-1) = 4_)
+    Hvilke betyder at _(i-1_) i _(\Vec[4, i-1]_) bliver større ved _(i=6_). 
+    Geogebra ved godt at et _(k_) der er større end _(n_) i 
+    _(n_)-choose-_(k_) bliver større end _(n_)
+    svarer til _(0_) løsninger, så vi behøver ikke at bekymre os om dette tidspunkt. Vi 
+    kan bare direkte regne:
+    _($\text{Sum}\left( (\text{nCr}(10, i-1) - i*\text{nCr}(4, i-1))/6^i, i, 2, 11 \right)_)
+    Hvilke giver:
+    _($0.2934_)
+    Voila! En chance på cirka _(30_)%. 
+    </p>
+    <br></answer-box>
+
+
+
+
+

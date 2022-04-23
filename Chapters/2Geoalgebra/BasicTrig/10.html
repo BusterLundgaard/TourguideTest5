@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+
+
+    <h3>Andet trick til at finde sider og vinkler</h3>
+    <p class="t">
+    Lad os gå videre og se på en situation, hvor man slet ikke kan bruge den formel, vi lige kom frem til:
+    </p>
+
+    <q-stion 1="10" 2="1" bigTop="true">
+    Find længden _(?_) i følgende situation:
+    <img class="SpicXL" style="width:24%" src="../../../Assets/Chapter2\Section1\RandomExercises\Exercise 4 1.png">
+    <p class="tt">
+    Her er du altså nødt til at opdele den. 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Trekanten deles op:
+    <img class="SpicXL" style="width:24%" src="../../../Assets/Chapter2\Section1\RandomExercises\Exercise 4 2.png">
+    <p class="tt">
+    Højden er _(Sin(25)*20=8.45_), og bredden af den højre retvinklede trekant er _(30-Cos(25)*20=11.87_)
+    </p>
+    <img class="SpicXL" style="width:24%" src="../../../Assets/Chapter2\Section1\RandomExercises\Exercise 4 3.png">
+    <p class="tt">_(?_) 
+    kan altså nu nemt findes med pythagoras som 
+    _($\sqrt{11.87^2+8.45^2}=14.57_)
+    </p>
+    <br></answer-box>
+
+    <p class="tt">
+    Nu, modsat den tidligere situation, havde vi en vinkel men <i>ikke</i> siden overfor. 
+    I stedet havde vi de to længder <i>ved siden</i> af vinklen. 
+    Kaldes _(25_) for _(v_1_), _(30_) for _(a_2_) og _(20_) for _(a_3_), bliver
+    højden til _(Sin(v_1)*a_2_) og den anden sides bredde til _(a_3-Cos(v_1)*a_).
+    Ergo er _(?_) altså:
+    _($\begin{eqnarray}
+    && \sqrt{(Sin(v_1)*a_2)^2+(a_3-Cos(v_1)*a_2)^2} = \\ \\ 
+    && \sqrt{Sin(v_1)^2*a_2^2+a_3^2-2*a_3*Cos(v_1)*a_2+Cos(v_1)^2*a_2^2} = \\ \\
+    && \sqrt{a_2^2*(Sin(v_1)^2+Cos(v_1)^2)+a_3^2-2*a_3*a_2*Cos(v_1)}
+    \end{eqnarray}_)
+    Det kan godt gøres lidt simplere via pythagoras, da 
+    _($\begin{eqnarray}
+    && Sin(v_1)^2+Cos(v_1)^2 & =\frac{højde^2}{længde^2}+\frac{bredde^2}{længde^2} \\ \\
+    && & =  \frac{højde^2+bredde^2}{længde^2} & = \frac{længde^2}{længde^2}=1
+    \end{eqnarray}_)
+    Så: _(?=\sqrt{a_2^2+a_3^2-2*a_1*a_2*Cos(v_1)}_), og generelt:
+    </p>
+    <img class="SpicXL" style="width:35%" src="../../../Assets/Chapter2/Section1/TrigProperties/CosinusRegel.png">
+    <p class="tt">
+    Kan man se at:
+    _($? = \sqrt{b^2+c^2-2*b*c*Cos(A)}_)
+    </p>
+
+    <q-stion 1="10" 2="2" bigTop="true">
+    Find _(?_) på følgende trekant:
+    <img class='Spic' style='width:52%' src='../../../Assets/Chapter2\Section1\RandomExercises\CosineExercise1.png'> 
+    <br><br></q-stion>
+    <answer-box>
+    Her er vores _(b=5_), _(c=9_) og vinkel _(A_) lig med _(75^o_), så:
+    _($?=\sqrt{5^2+9^2-2*5*9*Cos(75)} = \sqrt{82.7062} = 9.0942_)
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="10" 2="3">
+    Find _(?_) på følgende trekant:
+    <img class='Spic' style='width:52%' src='../../../Assets/Chapter2\Section1\RandomExercises\CosineExercise2.png'> 
+    <br><br></q-stion>
+    <answer-box>
+    Her kan man i alt ærlighed både bruge den tidligere formel, og den vi lige kom frem til.
+    Hvis vi gerne vil bruge den vi kom frem til, kan vi starte med at finde den ukendte vinkel:
+    _(180-30-45=105^o_). Nu kan vi så bruge formlen, da vi har vinklen og de to sider ved siden af:
+    _($\sqrt{11.6^2 + 10^2 - 11.6*10*Cos(105)}=17.16_)
+    <br></answer-box>
+    
+    <!--  -->
+
+    <q-stion 1="10" 2="4">
+    Find længden _(?_):
+    <img class="Spic" style="width:48%" src="../../../Assets/Chapter2\Section1\RandomTriangles\Landopdeling2.png">
+    <br><br></q-stion>
+    <answer-box>
+    Svaret er her:
+    <video class="SpicB" style="width:90%;" controls>
+        <source src="../../../Assets/Chapter2\Section1\RandomTriangles\Landopdeling2.mp4" type="video/mp4">
+    </video>
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="10" 2="5">
+    Find vinklen _(?_) i følgende situation:
+    <img class="SpicXL" style="width:24%" src="../../../Assets/Chapter2\Section1\RandomExercises\Exercise 5 1.png">
+    <br></q-stion>
+    <answer-box>
+    Den her er lidt mere tricky. 
+    Jeg kan umiddelbart ikke se nogle nem måde at finde vinklen, 
+    selv hvis man opdeler det. Man kan dog <i>lade som om</i> man kender vinklen, og 
+    kalde den _(v_). 
+    <p class="t">
+    Vi ved fra sidst at siden overfor, som i vores tilfælde er _(15_), kan 
+    beskrives i forhold til _(v_) som:
+    _($15=\sqrt{20^2+30^2-2*20*30*Cos(v)}=\sqrt{1300-1200*Cos(v)}_)
+    Hvis _(15_) er <i>kvadratroden</i> af _(1300-1200*Cos(v)_), så ved
+    vi at _(15*15=15^2=225_) skal give _(1300-1200*Cos(v)_):
+    _($225=1300-1200*Cos(v)_)
+    Hvis vi skal <i>plusse</i> _(-1200*Cos(v)_) med _(1300_), for at den giver _(225_),
+    må det betyde, at _(-1200*Cos(v)_) for sig selv er _(225-1300=-1075_), så
+    _($-1200*Cos(v)=-1075_) 
+    Hvis _(1200*Cos(v)_) <i>gjort negativ</i> er _(-1075_), så 
+    må <i>selve</i> _(1200*Cos(v)_) bare være _(1075_). 
+    Nu har vi: 
+    _($1200*Cos(v)=1075_) 
+    Herfra kan vi nemt se at:
+    _($Cos(v)=\frac{1075}{1200}=0.8958_) 
+    Endeligt får vi:
+    _($v=Arccos(0.8958)=26.38_)
+    Voila!
+    </p>
+    <br></answer-box>
+
+
+    <p class="tt">
+    I den her havde vi en side, men <i>ikke</i> vinklen overfor. 
+    Her var det nemmest bare at bruge vores tidligere resultat,
+    og finde ud af hvad vinklen var <i>nødt til</i> at være, for at resten gjaldt. 
+    Hvis vi lidt mere generelt ledte efter vinklen over for _(a_), og 
+    de to andre sider var _(b \, c_), 
+    ville vi kunne finde _(?_) som: 
+
+    _($\begin{eqnarray} 
+    && a & = & \sqrt{b^2+c^2-2*b*c*Cos(?)} & \to \\
+    && a^2 & = & b^2+c^2-2*b*c*Cos(?) & \to \\
+    && a^2-b^2-c^2 & = & -2*b*c*Cos(?) & \to \\
+    & - & (c^2+b^2-a^2) & = & -2*b*c*Cos(?) & \to \\
+    && c^2+b^2-a^2 & = & 2*b*c*Cos(?) & \to \\
+    && \frac{c^2+b^2-a^2}{2*b*c} & = & Cos(?) & \to 
+    \end{eqnarray}_)
+    _($Arccos\left(\frac{c^2+b^2-a^2}{2*b*c}\right) = ?_)
+
+    Det her er jo egentlig bare processen vi gennemgik i opgaven, 
+    nu skrevet ned kun med symboler.
+    </p>
+
+    <p class="t">
+    Så hvis vi har _(3_) sider, kan vi finde vinklen over for _(a_), ved at regne 
+    _(Arccos(\frac{c^2+b^2-a^2}{2*b*c})_).
+    Det er faktisk super fascinerende! 
+    Vi kan regne resten af trekantens vinkler ved hjælp af kun den information vi har nu, 
+    så trekanten er 100% <i>bestemt af siderne</i>. 
+    Man kan kun lave én trekant med sidelængderne _(20, \, 30, \, 15_) eller mere generelt _(a, \, b, \, c_). 
+    Det er umuligt at tegne en trekant med de samme længder, men ny form!
+    </p>
+
+    <p class="pageSplitter">*</p>
+
+    <p class="t">
+    Vi har nu både en måde at finde den manglende vinkel givet de to andre, en måde 
+    at finde de resterende sider og vinkler givet sider og vinkler over for hinanden, og en måde 
+    at finde siderne og vinklerne givet længder <i>ved siden af hinanden</i>. Det her 
+    dækker alle tilfælde! Ved hjælp af disse formler behøver vi aldrig opdele trekanten igen
+    for at finde længder og vinkler!
+    </p>
+
+    <p class="t">
+    Ét lille notat før vi går videre til næste side. De to "formler" vi kom frem 
+    til på denne side og den sidste har navne. 
+    Den første af dem, den hvor vi brugte _(Sin_), kaldes meget 
+    passende for "sinusloven", og den anden, hvor vi 
+    brugte kvadratroden, kaldes for "cosinusloven" 
+    (nok fordi der er èn cosinus-funktion inde i kvadratroden).  
+    </p>
+
+
+

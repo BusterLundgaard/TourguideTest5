@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+
+
+    <h2>Uligheder</h2>
+
+    <p class="t">
+    Uligheder:
+    På en ligning _(A=B_) kan vi gøre hvad vi har lyst til, så længe det bliver gjort på begge sider.
+    _(A_) og _(B_) er identiske: De repræsenterer præcist samme værdi. <i>Ja</i>, 
+    der kan ske problemer med falske løsninger, men overordnet set, har vi total frihed. 
+    Det er <i>ikke</i> tilfældet på en ulighed
+    _($A \lt B_)
+    Her er _(A_) <i>ikke</i> lig _(B_). Det <i>eneste</i> vi ved er, at den er mindre. 
+    Det er en <i>svagere</i> relation, og den bliver lettere brudt. 
+    Vi kan ikke være sikker på, at en hvilket som helst funktion/operation brugt på
+    _(A_) er større end samme operation anvendt på _(B_), <i>bare</i> fordi
+    vi ved, at _(A_) for sig selv er større end _(B_).
+    Et åbenlyst
+    modeksempel er _(Cos_) eller _(Sin_). Det er sandt, at
+    _($1.3 \gt 0.7_)
+    ... men det er <i>ikke</i> sandt at
+    _($Cos(1.3) \gt Cos(0.7)_)
+    ... fordi det giver:
+    _($0.2674 \gt 0.7648_)
+    Lad os først og fremmest undersøge hvilke operationer/handlinger man må / ikke må bruge
+    på begge sider af en ulighed. Derefter løser vi et par tricky uligheder.
+    </p>
+
+    <q-stion 1="23" 2="1">
+    Hvis _(A \gt B_), er det så også sandt at:
+    <ul>
+        <li>_(\underline{\textbf{A}}:_) _(A + C \gt B + C_), hvor _(C_) er et hvilket som helst tal</li>
+        <li>_(\underline{\textbf{B}}:_) _(C*A \gt C*B_) hvor _(C_) er positivt. </li>
+        <li>_(\underline{\textbf{C}}:_) _(C*A \gt C*B_) hvor _(C_) er negativt. </li>
+        <li>_(\underline{\textbf{D}}:_) _(Tan(A) \gt Tan(B)_)</li>
+        <li>_(\underline{\textbf{E}}:_) _(A^2 \gt B^2_)</li>
+        <li>_(\underline{\textbf{F}}:_) _(\sqrt{A} \gt \sqrt{B}_)</li>
+        <li>_(\underline{\textbf{G}}:_) _(A^3 \gt B^3_)</li>
+        <li>_(\underline{\textbf{H}}:_) _(C^A \gt C^B_) hvor _(C_) er et positivt tal </li>
+        <li>_(\underline{\textbf{I}}:_) _(1/A \gt 1/B_) </li>
+        <li>_(\underline{\textbf{J}}:_)  _(Floor(A) \gt Floor(B)_), hvor _(Floor(x)_) runder _(x_) <i>ned</i> til et helt tal</li>
+        <li>_(\underline{\textbf{K}}:_)  _(Ceil(A) \gt Ceil(B)_), hvor _(Ceil(x)_) så bare runder <i>op</i> i stedet</li>
+        <li>_(\underline{\textbf{L}}:_)  _(Mod_{C}(A) \gt Mod_{C}(B)_) hvor _(C_) er positivt </li>
+        <li>_(\underline{\textbf{M}}:_)  _(Mod_A(C) \gt Mod_B(C)_) hvor _(C_) er positivt</li>
+    </ul>
+    Antag at både _(A_) og _(B_) kan være alt mellem _(-\infty_) og _(\infty_):
+    <br><br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(175,128,161)">
+    Lad os se på <i>forskellen</i> i stedet. _(A-B_) er større end _(0_) hvis
+    _(A_) er større end _(B_).
+    Denne forskel ændrer
+    sig ikke, hvis _(A_) bliver til _(A+C_) og _(B_) bliver til _(B+C_),
+    da:
+    _($(A+C)-(B+C)=A-B+C-C=A-B_)
+    Svaret er ja: Vi kan snildt plusse begge sider uden at støde på problemer. 
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(171,96,147)">
+    Nu er forskellen lig:
+    _($A*C-B*C=C*(A-B)_)
+    Vi kan antage, at _((A-B)_) er større end _(0_), og _(C_) har
+    vi defineret som positiv. Begge faktorer er positive, så forskellen
+    er større end _(0_). 
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{C}}_)#" tabColour="rgb(175,128,161)">
+    Vi har igen _(C*(A-B)_), men nu bliver positive _(A-B_) ganget 
+    med negative _(C_). Forskellen er nu <i>mindre</i> end _(0_).
+    Uligheden holder ikke! Stik modsat faktisk. Forskellen er
+    <i>garanteret</i> mindre end _(0_), så større-end tegnet
+    skal vendes om:
+    _($C*(A-B) \lt 0_)
+    Det betyder reelt at _(A \gt B_) bliver til:
+    _($A*C \lt B*C_)
+    ... hvis _(C_) er negativt. 
+    Det er vigtigt at huske, hvis du ganger med et negativt tal!
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{D}}_)#" tabColour="rgb(171,96,147)">
+    Som vi gør vinklerne _(A_) og _(B_) større, bliver
+    hældningerne på linjerne med de vinkler også større. 
+    Den argumentation holder fint <i>indtil</i> vinklerne
+    rammer _(\pi/2_), hvor hældningen med det samme bliver negativ.
+    Èt eksempel er:
+    _($1.77 \gt 1.07 \to Tan(1.77) \gt Tan(1.07) \to -4.953 \gt 1.827_)
+    Så generelt set er svaret <i>nej</i>: Du kan <i>ikke</i> bruge _(Tan_) på begge sider <i>uden bekymring</i>.
+    Men du kan bruge den <i>med bekymring</i>, hvis du ved lidt om hvilken kvartdel
+    _(A_) og _(B_) hver befinder sig i. 
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{E}}_)#" tabColour="rgb(175,128,161)">
+    Det her er rigtigt, <i>hvis</i> _(A_) og _(B_) begge er positive. 
+    Man kan lave et ret simpelt intuitivt geometrisk
+    argument: _(A^2_) og _(B^2_) er arealerne på kvadrater med siderne
+    _(A_) og _(B_). Arealet bliver større som vi øger sidelængderne, og 
+    en større sidelængde betyder selvfølgelig også større areal. 
+    <p class="t">
+    Vi får problemer, hvis de er negative, da
+    et negativt tal ganget
+    med sig selv er positivt. Sig f.eks. vi har:
+    _($2 \gt -4 \to 2^2 \gt (-4)^2 \to 4 \gt 16_)
+    Det er tydeligvis <i>ikke</i> rigtigt. 
+    </p>
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{F}}_)#" tabColour="rgb(171,96,147)">
+    Vi kan lave det samme argument som før, bare modsat: Hvis
+    èt kvadrat har større areal end et andet, har det kvadrat også
+    større sidelængde! Kvadratrødder tager slet ikke imod negative tal,
+    så der er intet problem at bekymre sig om der.
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{G}}_)#" tabColour="rgb(175,128,161)">
+    Det er tydeligvis sandt, hvis begge tal er positive. 
+    Hvad hvis ét tal er negativt?
+    _($2 \gt -4 \to 2^3 \gt (-4)^3 \to 8 \gt -64_)
+    Stadig sandt! Hvad hvis begge er negative?
+    _($-2 \gt -4 \to (-2)^3 \gt (-4)^3 \to -8 \gt -64_)
+    Stadig sandt! Det vil faktisk være sandt for nogen som helst _(x^n_), hvor
+    _(n_) er et ulige tal, da kun de lige _(n_) laver negative _(x_) om til positive. 
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{H}}_)#" tabColour="rgb(171,96,147)">
+    I mange tilfælde vil det her tydeligvis være sandt: _(4 \gt 2_)
+    der bliver til _(3^4 \gt 3^2_) for eksempel.
+    Lad os undersøge det generelle tilfælde ved hjælp af forskels-testen: 
+    _($C^A - C^B \gt 0 _)
+    Det her <i>skal</i> være sandt, hvis _(A \gt B_), lige meget hvilken positiv
+    _(C_) vi vælger. Sig at _(A=B+d_), hvor _(d_) er et positivt tal.
+    Du får nu:
+    _($C^{B+d}-C^B \gt 0 \to C^B*C^d-C^B \gt 0 \to C^B*(C^d-1) \gt 0_)
+    Vi ved, at _(C^B_) altid er positivt. 
+    _(C^d-1_) er positivt, hvis _(C \gt 1_), _(0_) hvis _(C=1_) og negativt,
+    hvis _(C \lt 1_). Så uligheden holder, hvis _(C \gt 1_), men du skal bytte rundt,
+    hvis _(C \lt 1_). 
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{I}}_)#" tabColour="rgb(175,128,161)">
+    Dette er tydeligvis ikke sandt. Faktisk det modsatte: Det er altid forkert.
+    Jo større tal _(x_) man dividerer med, jo mindre bliver _(1/x_), så
+    _(1/A_) er altid <i>mindre</i> end _(1/B_) hvis _(A \gt B_). Man skal
+    derfor bytte rundt på større-end tegnet. 
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{J}}_)#" tabColour="rgb(171,96,147)">
+    Et åbenlyst modeksempel er _(2.3 \gt 2.1_), hvor
+    _(Floor(2.3) \gt Floor(2.1)_) ikke er sandt, da de nu er lige store. 
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{K}}_)#" tabColour="rgb(175,128,161)">
+    Samme modeksempel som før: _(2.3 \gt 2.1_), men
+    _(Ceil(2.3)=3_) er lig med _(Ceil(2.1)=3_).
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{L}}_)#" tabColour="rgb(171,96,147)">
+    Nope:
+    _($8 \gt 4 \to Mod_6(8) \gt Mod_6(4) \to 2 \gt 4_)
+    Det er ikke sandt.
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{M}}_)#" tabColour="rgb(175,128,161)">
+    Nope:
+    _($7 \gt 6 \to Mod_7(8) \gt Mod_6(8) \to 1 \gt 2_)
+    Det er ikke sandt. 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="23" 2="2">
+    Beskriv de _(A_) hvor:
+    _($2-7 A \gt 3 - 10A_)
+    <br><br></q-stion>
+    <answer-box>
+    Først får vi samlet _(A_)'erne ved at plusse begge sider med _(10A_) (hvilket vi godt må):
+    _($\begin{align}
+    2-7A+10A & \gt 3 - 10A + 10A \to
+    2+3A & \gt 3
+    \end{align}_)
+    Vi samler nu konstanterne, ved at minusse begge sider med _(2_) (hvilket vi også godt må):
+    _($\begin{align}
+    2+3A - 2 & \gt 3 -2 \to
+    3A & \gt 1
+    \end{align}_)
+    Vi dividerer nu begge sider med _(3_). Det er et positivt tal, så vi skal ikke bytte rundt
+    på større-end tegnet:
+    _($A \gt \frac{1}{3}_)
+    Voila! Dette er sandt for alle de _(A_) der er større end _(1/3_). 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="23" 2="3">
+    Beskriv de _(A_) hvor:
+    _($\frac{1}{-A+6} \gt \frac{-1}{4A-5}_)
+    <br></q-stion>
+    <answer-box>
+    Her har vi _(A \gt B_), og vil gerne omskrive til _(1/A_) og _(1/B_), da det ville fjerne brøkerne. 
+    Vi husker at bytte rundt på større-end tegnet:
+    _($-A+6 \lt -(4A-5)_)
+    Lad os fjerne alt det negative, ved at gange begge sider med _(-1_). Her husker vi, at 
+    bytte rundt på større-end tegnet igen:
+    _($A-6 \gt 4A - 5_)
+    Denne ligning kan vi løse på præcist samme måde som den tidligere. Den kan omskrives til:
+    _($-1 \gt 3A_)
+    Hvilket så giver:
+    _($-1/3 \gt A_)
+    Bum! _(A_) skal være mindre end _(-1/3_) for at tilfredsstille uligheden! 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="23" 2="4">
+    Beskriv alle de _(A_) hvor:
+    _($A^3 \gt A^2_)
+    <br></q-stion>
+    <answer-box>
+    Det her kan vi omskrive til:
+    _($A^3 - A^2 \gt 0 \to A^2*(A-1) \gt 0_)
+    _(A^2_) er altid positiv, så det er _(A-1_) 
+    der bestemmer negativiteten. Den er negativ hvis
+    _(A \lt 1_), så svaret er:
+    _($A \gt 1_)
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="23" 2="5">
+    Beskriv de _(x_) hvor: 
+    _($6x^2-5x \gt 3_)
+    <br></q-stion>
+    <answer-box>
+    Lad os tænke over det her rent visuelt først. _(6x^2-5x_) er en parabel, og vi leder
+    efter de steder, hvor den er større end _(3_):
+    <img class='SpicXL' style='width:80%' src='../../../Assets/Chapter2\Section3\Inequality1.png'> 
+    <p class="t">
+    Så vi skal finde de to steder hvor _(6x^2-5x_) er <i>lig</i> _(3_), og enten vælge
+    et _(x_) der er højere end den største skæring eller mindre end den mindste. Vi løser:
+    _($6x^2 - 5x = 3 \to 6x^2 - 5x - 3 \to x = 1.237, -0.404_)
+    Så uligheden er sand for alle de _(x_) der enten er i _([-\infty, -0.404]_) 
+    eller i _([1.237, \infty]_). 
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="23" 2="6">
+    _(\underline{\textbf{A}}_): <br>
+     Beskriv de _(x_) hvor:
+    _($x^2 \lt 5_)
+    _(\underline{\textbf{B}}_): <br>
+     Beskriv de _(x_) hvor:
+    _($x^2 \lt (3-1.5x)^2_)
+    <br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    Vi ved, at det er lovligt at bruge kvadratroden på begge sider af en ulighed, men vi skal også passe
+    lidt på:
+    _($\sqrt{x^2} \gt \sqrt{5}_)
+    _(\sqrt{5} = 2.236_), men _(\sqrt{x^2}_) er <i>ikke</i> lig _(x_): Det er lig en
+    "altid positiv _(x_)", eller hvad vi også kalder for "den absolutte værdi af _(x_)", skrevet _(|x|_). 
+    Visuelt svarer _(|x|_) til: 
+    <img class='Spic' style='width:70%' src='../../../Assets/Chapter2\Section3\AbsXGraph.png'> 
+    <p class="t">
+    Vi skal beskrive, hvornår dette er mindre end _(2.236_). Det kan vi ser er tilfældet, hvis 
+    _(x_) er større end _(-2.236_) og mindre end _(2.236_). Så:
+    _($x \in [-2.236, 2.236]_)
+    Ofte bruger vi _(\in_)-symbolet til at sige: "Er en del af et interval". Du behøver ikke
+    bekymre dig super meget over, hvordan du beskriver løsningerne til de her uligheder.
+    En mundtlig forklaring er tilstrækkelig så længe, folk forstår dig. 
+    </p>
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Igen tager vi kvadratroden på begge sider, hvilket giver:
+    _($|x| \lt |3-1.5x|_)
+    Lad os analysere situationen. _(3-1.5x_) er en linje der skærer _(x_)-aksen ved:
+    _($3-1.5x = 0 \to x = 2_)
+    Den har en hældning på _(1.5_), er altid positiv og går op i begge retninger
+    omkring _(x=2_). 
+    <p class="t">
+    _(x_) har en hældning på _(1_), er altid positiv og går op i begge retninger omkring _(x=0_). 
+    </p>
+    <p class="t">
+    Ved _(x=0_) er _(|3-1.5x|_) højere end _(|x|_). Den starter højere end _(x_) og går
+    stejlere opad hvis man går bagud. Derfor er _(|3-1.5x|_) højere end _(|x|_) på <i>alle</i>
+    negative _(x_)-værdier. 
+    </p>
+    <p class="t">
+    _(|3-1.5x|_) skærer _(|x|_) først 
+    mens _(3-1.5x_) er positiv, derefter mens den er negativ. 
+    Det svarer til:
+    _($\begin{eqnarray}
+    && 3-1.5x = x \to x = 1.2
+    && -(3-1.5x) = x \to x = 6     
+    \end{eqnarray}_)
+    Så _(|3-1.5x|_) er mindre end _(|x|_) kun på intervallet _([1.2, 6]_)
+    </p>
+    <img class='Spic' style='width:70%' src='../../../Assets/Chapter2\Section3\Inequality1.png'> 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="23" 2="7">
+    _(\underline{\textbf{A}}_): <br>
+     Beskriv de _(A_) hvor:
+    _($(x+5)(x-3)(x+2) \gt 0_)
+    _(\underline{\textbf{B}}_): <br>
+     Beskriv de _(A_) hvor:
+    _($\frac{4x^2-18x+5}{2x^2-4x-30} \lt 0_)
+    _(\underline{\textbf{C}}_): <br>
+     Beskriv de _(A_) hvor:
+    _($\frac{3}{x+7} - \frac{5}{2x+4} \gt 0_)
+    <br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    Jeg gennemgår processen i følgende video: 
+    <video class='SpicB' style="width:95%;" controls>
+        <source src='../../../Assets/Chapter2\Section3\InequalityFactorsIdea.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Strategien i denne er, at omskrive både nævner og tæller til formen, hvor små faktorer er ganget med hinanden. 
+    Derefter kan vi bruge samme trick som i sidste opgave. Vi finder først rødderne:
+    _($\begin{eqnarray}
+    && 4x^2-18x+5 = 0 & \to x = 4.202, 0.297  \\ \\
+    && 2x^2-4x-30 = 0 & \to x = 5, -3
+    \end{eqnarray}_)
+    Så brøken kan omskrives til:
+    _($\frac{4(x-4.202)(x-0.297)}{2(x-5)(x+3)}_)
+    Vi leder efter de _(x_), hvor dette er negativt. Vi gør nu præcis
+    ligesom før, og tjekker alle intervaller ud:
+    <p class="t">
+    _(x \lt -3_): Alle faktorer er negative, hvis _(x_) er lavere end _(-3_). Vi har 
+    fire faktorer, så alt det negative går ud med sig selv. Positivt.
+    </p> 
+    <p class="t">
+    _(-3 \lt x \lt 0.297_). Alle faktorer er negative undtagens _(1_). Vi har et ulige mængde negative, 
+    og det samlede resultat er også negativt.
+    </p>
+    <p class="t">
+    <i>Og sådan kan vi blive ved</i>. Som du nok har observeret, skifter negativiteten hver
+    gang vi går ét interval fremad. Vi har nu:
+    _($\begin{align}
+    [-\infty, -3]&: \, + \\ 
+    [-3, 0.297]&: \, - \\ 
+    [0.297, 4.202]&: \, + \\
+    [4.202, 5]&: \, - \\ 
+    [5, \infty]&: \ +
+    \end{align}_)
+    Så vores endelige svar er:
+    _($x \in [-3, 0.297], [4.202, 5]_)
+    Voila! 
+    </p>
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{C}}_)#" tabColour="rgb(171,96,147)">
+    Her tænker jeg vi kombinerer de to brøker, så vi får èn samlet brøk.
+    Efter det gør vi ligesom før: 
+    _($\frac{3*(2x+4) - 5*(x+7)}{(2x+4)(x+7)}_)
+    Tælleren kan simplificeres til bare _(x-23_), og vi har nu:
+    _($\frac{x-23}{(2x+4)(x+7)}_)
+    Det er lettest hvis alle faktorer har en _(x_)-koefficient på _(1_), så vi omskriver lige
+    til:
+    _($\frac{1}{2}*\frac{x-23}{(x+2)(x+7)}_)
+    Dette er negativt når _(x \lt -7_), 
+    positivt når _(-7 \lt x \lt -2_), negativt
+    når _(-2 \lt x \lt 23_), og positivt når _(x \gt 23_). 
+    Vi søger de positive værdier, så: 
+    _($x \in [-7, -2], [23, \infty]_)
+    Bum!
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="23" 2="8">
+    Beskriv alle _(x_) mellem _(0_) og _(8.1225_) hvor:
+    _($Sin(x) \gt -0.4652 Cos(x)_)
+    Jeg anbefaler, at du prøver at visualisere/tegne opgaven først.
+    Hvad er det for nogle _(x_) du leder efter?
+    <br><br></q-stion>
+    <answer-box t="h" n="1">
+    Lad os se på det her som to <i>funktioner</i>:
+    Funktionen _(y=Sin(x)_) og
+    funktionen _(y=-0.4652*Cos(x)_). Hvad kan <i>skæringspunkterne</i>
+    mellem disse to funktioner fortælle os? 
+    <br><br>
+    </answer-box>
+    <answer-box t="h" n="2">
+    Sig at _(x_0_) og _(x_1_) er to _(x_)-værdier hvor
+    _(y=sin(x)_) og _(y=-0.4652*cos(x)_), og at der
+    er ingen andre skæringspunkter mellem _(x_0_) og _(x_1_). 
+    Nu ved vi med sikkerhed, at _(Sin(x)_) enten er større
+    eller mindre end _(-0.4652*Cos(x)_) på hele dette interval:
+    Det kan umuligt værre begge, ellers ville de skære igen!
+    Det er tricket! 
+    <p class="t">
+    Prøv at tegn situationen. Du kan let se hvad jeg mener. 
+    </p>
+    <br>
+    </answer-box>
+    <answer-box>
+    Du kan se mit svar her:
+    <video class='SpicB' style="width:95%;" controls>
+        <source src='../../../Assets/Chapter2\Section3\TrickyInequality.mp4' type='video/mp4'>
+    </video>
+    <br><br>
+    </answer-box>
+    <!-- <answer-box>
+    Jeg tænker rent strategisk at vi burde dividere begge sider med _(Cos(A)_). Så
+    får vi nemlig _(Tan_) på den ene side og en konstant på den anden.
+    Derefter burde det være nemt "bare" at bruge _(Arctan_). Problemet 
+    er, at _(Cos(A)_) både kan være positivt <i>og</i> negativt, 
+    så hvad gør jeg, når jeg skal skifte større-end tegnet? 
+    <p class="t">
+    Svaret er, at jeg opdeler det i to tilfælde: De _(A_) 
+    med henholdsvis positiv og negativ _(Cos(A)_). 
+    Jeg kan altid samle løsningerne til sidst.
+    </p>
+    <p class="t">
+    Hvis _(Cos(A)_) er positivt får vi:
+    _($Tan(A) \gt -0.4652_)
+    Vi leder nu efter alle vinkler _(A_) mellem 
+    _(0_) og _(8.1225_), hvor hældningen er større end _(-0.4652_) <i>og</i> _(Cos(A)_) er positiv.
+    Først regner vi lige: 
+    _($Arctan(0.4652)=0.435_)
+    Se nu følgende tegning:
+    </p>
+    <img class='Spic' style='width:65%' src='../../../Assets/Chapter2\Section3\Solutions\CirkelLøsninger.png'>  
+    <p class="t">
+    Jeg har tegnet de steder hvor _(Tan(A) \gt -0.4652_) i lilla. Jeg har markeret den 
+    vej vi tager fra _(A=0_) til _(A=8.1225_) med rød. De lilla områder har jeg opdelt i fire:
+    _(a_), _(b_), _(c_), _(d_). Man kan se, at
+    vi går gennem _(a_), _(b_), _(c_), _(d_), og _(a_) èn gang til. _(Cos_)
+    skal være positiv, så det virker kun ved _(a_) og _(d_):
+    _($A \in [0,\pi/2], [2\pi-0.435,\pi/2 + 2\pi]_)
+    Dette kan også skrives med decimaltal som:
+    _($A \in [0, 1.570], [5.848, 7.853]_)
+    Det var ved positive _(Cos(A)_). Ved negative _(Cos(A)_) bliver
+    _(Tan(A^2) \gt -0.4652_) i stedet til: 
+    _($Tan(A^2) \lt -0.4652_)
+    Nu ser situationen ud som:
+    </p>
+    <img class='Spic' style='width:65%' src='../../../Assets/Chapter2\Section3\Solutions\CirkelLøsninger2.png'>  
+    <p class="t">
+    Fra _(0_) til _(8.1225_) går _(A_) gennem både _(b_), _(a_), og en
+    del af _(b_) igen. _(a_) kan fjernes, da det kun er ved _(b_) at  
+    _(Cos_) er negativ:
+    _($A \in [\pi/2,\pi-0.435], [\pi/2+2\pi,8.1225] \to_)
+    Hvilket også kan skrives som:
+    _($A \in [1.570, 2.706], [7.853,8.122]_)
+    Nu samler vi begge cases og får:
+    _($A \in [0, 1.253], [1.253,1.645], [2.418,2.802], [2.80,2.85]_)
+    Det er lidt gentagelse, så vi kan forsimple og få: 
+    _($A \in [0, 1.645], [2.418,2.85]_)
+    Bum! Ret crazy svær opgave, for noget der ellers virkede simpelt! 
+    </p>
+    <br></answer-box> -->
+
+    <!--  -->
+
+
+    <!-- <q-stion 1="2" 2="1" 3="5">
+    ER DENNE OPGAVE KIND OF UNØDVENDIG OG DÅRLIG BUSTER? TÆNKER JEG LIDT
+        Sig at _(n_) kun kan være hele tal. Beskriv nu de _(n_) hvor:
+    _($(-1)^n*(0.03n^2 - 0.4n - 7.5) \lt 8_)
+    Det er ikke rigtig muligt at beskrive svaret som et par "intervaller" i denne. 
+    Du er nødt til at beskrive det på en eller anden måde du syntes virker fint/praktisk. 
+    </q-stion>
+    <answer-box>
+    _((-1)^n_) er positiv når _(n_) er lige og negativ når _(n_) er ulige. 
+    Hvis den er positiv, så skal _(0.03n^2 - 0.4n - 7.5_) være
+    mindre end _(8_). Hvis den er negativ, så
+    _($-(0.03n^2 - 00.4n - 7.5) \lt 8 \to_)
+    _($0.03n^2 - 0.4n - 7.5 \gt -8_)
+    skal det være større end _(-8_). Lad os prøve at skitsere _(0.03n^2 - 00.4n - 7.5_)
+    så vi har en ide om hvornår den opfylder kravene:
+    <img class='Spic' style='width:95%' src='../../../Assets/Chapter2\Section3\Solutions\ParabelGraf.png'> 
+    <p class="t">
+    Lad os først kigge på tilfældet hvor _(n_) er lige. Kurven er 
+    lig _(8_) når:
+    _($0.03n^2 - 0.4n - 7.5 = 8 \to n=-17.02, 30.35 _)
+    Så den er under _(8_) hvis den er på intervallet _([-17.02,30.35]_).
+    Det betyder at følgende _(n_) løser uligheden:
+    _($n = -16,-14,-12, ... 28, 30_)
+    Hvilke man også kunne skrive som:
+    _($n=2*k, k \in [-8, 15]_)
+    Lad os nu kigge på tilfældet hvor _(n_) er ulige. Grafen er lig 
+    _(-8_) når:
+    _($0.03n^2 - 0.4n - 7.5 = -8 \to n=1.39, 11.93_)
+    Så den er over _(-8_) hvis den enten er på _([-\infty,1.39]_) eller _([11.93, \infty]_). 
+    Dette kunne vi også beskrive som:
+    _($n=1-2*k, k \in [0, \infty], \text{ eller } n=13 + 2*k, k \in [0, \infty]_)
+    Så alt i alt har vi:
+    _($\begin{eqnarray}
+    && n=2*k, & \text{ } k \in [-8, 15] & \text{ eller } \\
+    && n=1-2*k, & \text{ } k \in [0, \infty] & \text{ eller } \\
+    && n=13 + 2*k, & \text{ } k \in [0, \infty] 
+    \end{eqnarray}_)
+    Voila! 
+    </p>
+    <br></answer-box> -->
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Sig at _(k_) er èt enkelt helt tal, og at du ved, at
+    _($0.7*k \lt 8.1 - 0.3k_)
+    _($7.8-0.3k \lt 0.7k + 0.7_)
+    Find _(k_). Bare rolig: Den her opgave er relativ hurtig og nem. 
+    <br><br></q-stion>
+    <answer-box>
+    Lad os prøve at isolere _(k_) på begge sider af ulighederne:
+    _($\begin{align}
+    & 0.7k+0.3k \lt 8.1 \qquad & \to k \lt 8.1 \\ \\
+    & 7.8 - 0.7 \lt 0.7k+0.3k \qquad & \to k \gt 7.1
+    \end{align}_)
+    _(k_) skal være et helt tal der er større end _(7.1_) og mindre end _(8.1_).
+    Det eneste tal der passer er _(k=8_). Bum!
+    <br><br></answer-box>
+
+

@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+
+
+    <h2>Grænser og konstanten _(e_)</h2>
+
+    <p class="t">
+    Før vi går videre til L'Hopitals, burde vi lige hurtigt diskutere _(e_). 
+    Vi definerede originalt _(e_) som:
+    _($\left(1+\frac{1}{n} \right)^n, \text{ Hvis } n \text{ bliver virkeligt stort} _)
+    Så:
+    _($e = \lim_{n \to \infty}\left[\left(1+\frac{1}{n} \right)^n \right]_)
+    Men hvordan ved vi overhovedet, at _((1+1/n)^n_) nærmer sig en konstant værdi? 
+    Hvordan ved vi, at det ikke 
+    bliver uendeligt stort? Det skal vi jo bevise, før vi går i gang med at bruge _(e_) i alle mulige
+    mellemregninger. 
+    </p>
+    <p class="t">
+    Der er flere måder, vi kunne gå til det på. Én ville være at bruge grænse-definitionen, og sige
+    _($\lim_{x \to \infty}[(1+1/n)^n]=K_) 
+    ... hvor vi forestillede os, at _(K_) var et positivt tal mindre
+    end _(\infty_). Det viser sig at være relativt svært og rodet. 
+    En anden strategi er, at vise at _((1+1/n)^n_) er <i>upper-bounded</i>, og <i>monotonisk stigende</i>:
+    </p>
+
+    <div class="Definition">
+    <b> Definition: Upper- og lower-bounded</b> <br>
+    En funktion _(f(x)_) siges at være <i>upper-bounded</i>, hvis der findes en konstant _(M_), så at
+    _($f(x) \le M_)
+    ... for alle _(x_). En funktion siges at være <i>lower-bounded</i>, hvis der findes en konstant _(N_), så at
+    _($f(x) \ge N_)
+    ... for alle _(x_). 
+    </div>
+
+    <div class="Definition">
+    <b> Definition: Monotonisk stigende/faldende</b> <br>
+    En funktion _(f(x)_) siges at være "monotonisk stigende", hvis der ikke findes noget _(x_) hvor:
+    _($f'(x) \lt 0_)
+    Bemærk at _(f'(x)_) ikke må være <i>mindre</i> end _(0_), men godt må være <i>lig</i> <br> _(0_): Funktionen 
+    må altså ikke <i>falde</i>. En funktion er lignende "monotonisk aftagende", hvis den aldrig stiger.
+    <p class="t">
+    En funktion _(f_) af hele tal _(n_) siges at være monotonisk stigende hvis:
+    _($f(n+1) \ge f(n)_)
+    </p>
+    </div>
+
+    <div class="Theory">
+    <b> [1] Teori: Monotone convergence theorem</b> <br>
+    Hvis _(f(n)_) er en upper-bounded og monotonisk stigende funktion af hele tal, er:
+    _($\lim_{n \to \infty}[f(n)]=c_)
+    ... hvor _(c_) er en eller anden konstant. 
+    </div>
+
+    <p class="tt">
+    "Monotone" kommer fra monotoni (den stiger). "Convergence"
+    er det ord vi bruger, når noget nærmer sig èn konstant værdi, kontra uendelighed hvor vi 
+    bruger "divergence".
+    Sagt med andre ord: 
+    Funktionen vil nærme sig en konstant ved uendeligt store _(n_), hvis
+    funktionen stiger og har et maksimum. Det giver god intuitiv mening når
+    man tegner det:
+    </p>
+
+    <img class='Spic' style='width:60%' src='../../../Assets/Chapter4\Limits\Convergence.png'> 
+
+    <p class="t">
+    _(f(n)_) nærmer sig hele tiden det her "loft", men kommer aldrig forbi. 
+    Derfor ender den "uendelig tæt" på loftet,
+    så dens grænse ved uendelighed er lig loftets højde. 
+    </p>
+    
+    <p class="t">
+    Det er en fin intuitiv forklaring, 
+    men i dette kapitel vil vi gerne opstille ordentlige <i>beviser</i>. 
+    Teorien siger, at _(f(n)_) nærmer sig en konstant _(c_), 
+    men intet om hvordan vi <i>finder</i> denne konstant. 
+    Grænsen er ikke nødvendigvis lig _(M_), bare fordi _(f(n)_) er bounded af _(M_):
+    </p>
+
+    <img class='Spic' style='width:60%' src='../../../Assets/Chapter4\Limits\Convergence2.png'> 
+
+    <p class="t">
+    <i>Ja</i>, _(f(n)_) er hele tiden lavere end _(M_), men den er også hele tiden 
+    lavere end _(c_), og _(c \lt M_). F.eks.
+    ved vi, at _((1+1/n)^n_) hele tiden er lavere end _(3_), 
+    men det er også lavere end _(2.9_) og _(2.8_) og _(2.719_). 
+    Vi kan bounde en funktion på mange måder, men kun èn af de bounds er <i>mindst</i>:
+    </p>
+
+    <div class="Definition">
+    <b> Definition: </b> <br>
+    Et "Least upper bound" til den monotont stigende og upper-bounded funktion _(f_), er et bound _(c_), der
+    er lavere eller lig alle andre bounds _(M_). 
+    <p class="t">
+    Et "greatest lower bound" til den monotont faldende og lower-bounded funktion
+    _(f_) er et bound _(c_), der er højere eller lig alle andre bounds _(M_). 
+    </p>
+    
+    </div>
+
+    <p class="tt">
+    Hvis vi ved en funktion er bounded (f.eks af _(3_)), ved vi så 
+    også med garanti at den overhovedet
+    <i>har</i> et "mindste-bound"? Hvis den har flere bounds, 
+    må èn af dem vel være mindre end alle de andre ... eller? 
+    Her bliver det lidt mærkeligt:
+    </p>
+
+    <div class="Axiom">
+    <b> [1] Axiom: Least upper-bound property: </b> <br>
+    Hvis en funktion er upper-bounded, findes der et least upper bound. 
+    Samme gælder lower-bounded og greatest lower bound. 
+    </div>
+
+    <p class="tt">
+    Et axiom er en <i>grundregel</i>. Det er en regel, man ikke kan argumentere for eller imod, 
+    fordi "sådan er det bare".
+    Man beviser ikke et axiom: Et axiom er en ny regel, man selv frit finder på. 
+    Da vi skulle opløfte et tal
+    til negative potenser, <i>fandt vi på</i> at:
+    _($a^{-x} = \frac{1}{a^x} _)
+    Du kan ikke rigtig argumentere for eller imod denne regel, fordi det bare er 
+    noget vi fandt på. 
+    Du <i>kan</i> dog vise at en axiom ikke hænger sammen med andre regler, og derfor er modstridende. 
+    F.eks. hvis jeg sagde at:
+    _($a^{-x}=-a^x_)
+    Nu kunne jeg vælge _(x=0_), og få:
+    _($a^{-0} = -a^{0}_)
+    Jeg har tidligere defineret, at et tal opløftet til en potens af _(0_) giver _(1_), så vi får:
+    _($1 = -1_)
+    Denne aksiom ville skabe intet mindre, end et 
+    inkonsistent matematisk system hvor sandhed ikke findes
+    </p>
+    <p class="t">
+    Du kan også vise at et aksiom <i>ikke</i> er et aksiom, men bare en <i>teori</i>. Sig
+    f.eks. jeg forsøgte at tilføje "aksiomet":
+    _($a^{n+m}=a^n*a^m_)
+    Jeg har allerede defineret, hvordan vi opløfter
+    _(a_) til positive eksponenter, og gennem denne definition
+    kan jeg 
+    <i>bevise</i> at _(a^{n+m}=a^n*a^m_). Det er derfor <i>ikke</i> en aksiom, da
+    det kan beskrives i forhold til andre grundregler. 
+    </p>
+
+    <div class="Proof">
+    <b> Bevis af teori [1]: Monotone convergence theorem. </b> <br>
+    Antag at _(f(n)_) er stigende og upper-bounded. Vi skal nu bevise, at:
+    _($\lim_{n \to \infty}[f(n)]=k_)
+    ... hvor _(k_) er en eller anden konstant. Denne grænse giver os ulighederne:
+    _($n \gt \delta, \qquad |f(n)-k| \lt \epsilon_)
+    Vi kan fjerne de absolutte værdier, siden _(f(n)_) altid er mindre end _(k_):
+    _($n \gt \delta, \qquad k-f(n) \lt \epsilon_)
+    _(f_) stiger, så fra første ulighed får vi:
+    _($k-f(n) \lt k-f(\delta)_)
+    Pr. axiomet ved vi, at _(f(n)_) har et least upper-bound. Kald dette bound for _(c_), og
+    vælg _(k=c_). 
+    Vælg nu en _(\delta(\epsilon)_) hvor:
+    _($f(\delta(\epsilon)) = c-\epsilon _)
+    ... så at _(c-f(\delta)_) bliver til 
+    _(c-(c-\epsilon)=\epsilon_), hvilket giver:
+    _($c-f(n) \lt \epsilon_)
+    Vi ved, at det er muligt at finde en _(\delta_) hvor _(f(\delta)=c-\epsilon_), eftersom _(f_)
+    stiger, og _(c_) er dens højeste punkt. _(f_) ville aldrig nå op
+    til _(c-\epsilon_), hvis ikke det var muligt, hvilket
+    ville være en kontradiktion på, at _(c_) er dens least upper bound. _(\blacksquare_) 
+    </div>
+
+    <p class="tt">
+    Vi skal bevise to ting, hvis _(e_) findes:
+    _($\begin{eqnarray}
+    && \textbf{A:} \, \, (1+1/n)^n \text{ er monotont stigende} \\ \\
+    && \textbf{B:} \, \, (1+1/n)^n \text{ er upper-bounded}
+    \end{eqnarray}_)
+    For at bevise _(A_) får vi brug for et praktisk resultat:
+    </p>
+
+    <div class="Lemma">
+    <b> [1] Lemma: </b> <br>
+    _($(1+a)^n \gt 1 + n*a_)
+    hvis _(a \ne 0_) og _(\gt -1_) , og _(n_) er et positivt helt tal større end _(2_). 
+    </div>
+
+    <p class="tt">
+    Hvad er et "lemma"? Well, du vil 
+    opdage, at mange universitet-niveau matematik rent indholdsmæssigt
+    er strikt opdelt i:
+    </p>
+
+    <div style="text-align:center; margin-top:-10px; margin-bottom:-10px;">
+        <ul style="display: inline-block; list-style:disc;">
+            <li>Aksiomer</li>
+            <li>Teorier</li>
+            <li>Eksempler</li>
+            <li>Lemmaer</li>
+            <li>Beviser</li>
+            <li>Corollarier</li>
+        </ul>
+    </div>
+
+    <p class="t">
+    En teori er bare en eller anden matematisk sandhed, vi kan bevise. Der er ofte
+    givet eksempler på den teori, og hvordan den kan anvendes. Teorien skal meget ofte bevises, 
+    men nogle gange har man brug for at bevise nogle små såkaldte "lemmas" først. 
+    Et lemma er bare
+    en matematisk teori, der ikke er særlig brugbar i sig selv, men hjælper med beviset på hoved-teorien. 
+    Det hjælper med at gøre et langt bevis mere overskueligt og forståeligt, hvis man opdeler det i 
+    beviser af lemmaer, samt et bevis af hoved-teorien, der anvender de lemmaer. 
+    Efter beviset finder man
+    nogle gange frem til såkaldte "corollaries". Det er brugbare teorier, 
+    der udspringer som åbenlyse konsekvenser af
+    hovedteorier, lemmaer, og definitioner. 
+    </p>
+
+    <q-stion 1="6" 2="1" bigTop="true">
+    Bevis lemma _(\textbf{1}_). <i>Hint</i>: Brug induktion!
+    <br><br></q-stion>
+    <answer-box>
+    Vi kan relativt let bevise, at det er sandt <i>hvis</i> _(a_) er positivt. 
+    _((1+a)^n_) kan udvides med binomialsteorien, hvilket giver:
+    _($\sum_{i=0}^n \Vec[n,i]*a^i = 1+n*a+\sum_{i=2}^n \Vec[n,i]*a^i_)
+    Så uligheden kan transformeres til:
+    _($\sum_{i=2}^n \Vec[n,i]*a^i \gt 0_)
+    Hvilket selvfølgelig er sandt for positive _(a_). Udfordringen kommer
+    i form af negative _(a_), hvor <i>nogle</i> led i summen (dem med ulige potenser) 
+    er negative. Her kan induktion hjælpe. Vi starter med det mindste
+    tilfælde, hvor _(n=3_):
+    _($\begin{eqnarray}
+    && (1+a)^3 \gt 1 + 3a \to \\ \\
+    && 3a^2 + a^3  \gt 0 \to \\ \\
+    && 3+a \gt 0
+    \end{eqnarray} _)
+    _(a_) er _(\gt -1_), så _(3+a_) vil aldrig være negativt. 
+    <p class="t">
+    Nu skal vi <i>antage</i> at:
+    _($(1+a)^n \gt 1 + n a_)
+    Og bevise:
+    _($(1+a)^{n+1} \gt 1 + (n+1)*a_)
+    Vi kan relativt let omskrive denne ulighed til 
+    _($(1+a)^n*(1+a) \gt 1+n a + a_)
+    Vores antagelse giver nu:
+    _($(1+a)^n*(1+a) \gt (1+a)*(1+n a) = 1 + n a + a + a^2 n_)
+    _(1 + n a + a + a^2 n_) er større end _(1+n a + a_), siden _(a^2_) altid er positivt.
+    Done! _(\blacksquare_).
+    </p>
+    <br></answer-box>
+
+    <div class="Proof" style="margin-top:45px;"> 
+    <b> Bevis: _(\boldsymbol{(1+1/n)^n}_) er monotont stigende</b> <br>
+    Vi skal vise, at _(f(n+1)-f(n)_) altid er større end _(0_). Det
+    kan også skrives som:
+    _($\frac{f(n+1)}{f(n)} \gt 1 \to \frac{\left(1+\frac{1}{n} \right)^{n+1}}{\left(1+\frac{1}{n} \right)^n} \gt 1_)
+    Vi skal nok på en eller anden måde bruge den ulighed, vi kom frem til. 
+    Det kan vi ikke rigtig lige nu, efter som 
+    vi både har en parentes opløftet til en potens i tælleren, 
+    og en parentes opløftet til en potens i nævneren.
+    Hele udtrykket er <i>større</i> hvis vi siger
+    "nævner større end noget" og <i>mindre</i>, hvis vi siger
+    "tæller større end noget". De går i to forskellige "retninger", så
+    lad os i stedet forsøge at konstruere èn stor parentes der passer formen:
+    _($\left(\frac{\frac{n+2}{n+1}}{\frac{1+n}{n}} \right)^n*\frac{n+2}{n+1}_)
+    Den store parentes opløftet til _(n_) kan man med lidt (meget) algebraisk arbejde omskrive til:
+    _($\left(1-\frac{1}{(n+1)^2} \right)^n_)
+    _(1/(n+1)^2_) er mindre end _(1_), så det passer til formen _(1+a_), med _(a=-1/(n+1)^2_). Vi har nu:
+    _($\left(1-\frac{1}{(n+1)^2} \right)^n*\frac{n+2}{n+1} \gt \left(1 + n*\frac{1}{(n+1)^2} \right)*\frac{n+2}{n+1} _)
+    Vi skal bevise, at dette er større end _(1_), hvilket er
+    nemt, siden begge produkter tydeligvis er - de <i>nærmer</i> sig dog _(1_) _(\blacksquare_). 
+    </div>
+
+    <p class="tt">
+    For at bevise _(\textbf{B}_) får vi også brug for et lemma:
+    </p>
+
+    <div class="Lemma">
+    <b> [2] Lemma: </b> <br>
+    Summen
+    _($f(n)=\sum_{i=0}^{n} \frac{1}{i!}_)
+    ... er upper-bounded. _(f(n)_) vil aldrig blive større end et
+    bestemt tal, lige meget hvor mange led man tilføjer. 
+    </div>
+
+    <q-stion 1="2" 2="1" 3="5" bigTop="true">
+    _(\underline{\textbf{A}}_): <br>
+     Bevis lemma _(\textbf{2}_). <i>Hint:</i> Kan du opstille
+    en ulighed ved at sammenligne med en geometrisk sum? 
+    <p class="t">
+    _(\underline{\textbf{B}}_): <br>
+     Bevis at _((1+1/n)^n_) er upper-bounded. 
+    </p>
+    <br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    Jeg hintede, at vi skulle sammenligne det med en geometrisk sum. Den ser ud som f.eks.:
+    _($\frac{1}{1} + \frac{1}{2} + \frac{1}{2*2} + \frac{1}{2*2*2} + \text{ } ..._)
+    Vores sum ser ud som:
+    _($1 + \frac{1}{1}+\frac{1}{2}+\frac{1}{2*3}+\frac{1}{2*3*4}+\text{ }..._)
+    Nævneren på alle vores led er større eller lig nævnerne i den geometriske serie _(\sum (1/2)^i_). 
+    Vi ved derfor, at
+    _($\sum_{i=0}^n 1/i! \lt 1 + \sum_{i=0}^n (1/2)^i _)
+    Den geometriske sum op til _(n_) led er lig:
+    _($\sum_{i=0}^{n} r^i = \frac{1-r^{n+1}}{1-r}_)
+    Vores _(r=1/2_) og vores _(n \to \infty_), så:
+    _($\lim_{n \to \infty}\left[\frac{1-0.5^{n}}{1-0.5} \right] = \frac{1-\lim_{n \to \infty}[0.5^n]}{0.5} = \frac{1-0}{0.5} = 2_)
+    Vores sum er derfor upper-bounded af _(2+1=3_) _(\blacksquare_)
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Lad os se, hvad der sker, hvis vi udvider parentesen med the binomial formula:
+    _($ \sum_{i=0}^n \Vec[n,i]*\frac{1}{n^i} = 
+    \sum_{i=0}^n \frac{n!}{i!*(n-i)!}*\frac{1}{n^i} = 
+    \sum_{i=0}^n \frac{1}{i!}*\left(\frac{n!}{(n-i)!}*\frac{1}{n^i} \right) _)
+    Bum! _(1/i!_) er der! Hvis vi nu bare kan bevise
+    at _((n!/(n-i)!)*(1/n^i)_)
+    er mindre end _(1_), er summen mindre end _(1/i!_), hvilket er mindre end _(3_). 
+    <p class="t">
+    _(n!/(n-i)!_) er bare en forkortet måde at skrive:
+    _($n*(n-1)*(n-2)* \, \dots \, (n-i+1)_)
+    Så vi har:
+    _($\frac{n*(n-1)*(n-2)* \, \dots \, (n-i+1)}{n^i}_)
+    Både tæller og nævner har _(i_) faktorer, men de er alle
+    højere i nævneren. Tallet er derfor markant mindre end _(1_) _(\blacksquare_)
+    </p>
+    <p class="t">
+    _(e_) findes! 
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <p class="tt">
+    Lige hurtigt et par opgaver, før vi går videre:
+    </p>
+
+    <q-stion 1="6" 2="2" bigTop="true">
+    _(\underline{\textbf{A}}_): <br>
+     Regn:
+    _($\lim_{n \to \infty}\left[ \, \left(1 + \frac{6.7}{n}\right)^n \, \right]_)
+    _(\underline{\textbf{B}}_): <br>
+     Regn:
+    _($\lim_{n \to \infty}\left[ \, \left(1 - \frac{1}{n}\right)^n \, \right]_)
+    Idéen i dem begge er, at omskrive grænsen i forhold til _(e_). 
+    <br><br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    Det her ligner rigtig meget _(e_), men ikke helt. Vi laver derfor substitutionen 
+    _($n=6.7u_)
+    Så _(6.7/n_) bliver til bare _(1/u_). _(n/6.7_) nærmer sig
+    _(\infty_) hvis _(n_) gør, så:
+    _($\lim_{u \to \infty}\left[\left(1 + \frac{1}{u}\right)^{6.7u} \right] = \left(\lim_{u \to \infty}\left[\left(1 + \frac{1}{u}\right)^{u} \right] \right)^{6.7} = e^{6.7} = 812.40 _)
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Den første ide ville nok være _(n=-u_), men det har ingen effekt, eftersom grænsen nu også går mod 
+    _(-\infty_). Lad os omskrive til en brøk, og se om der er nogle andre muligheder:
+    _($ \lim_{n \to \infty}\left[\left(\frac{n-1}{n} \right)^n \right] _)
+    Vi vil gerne have have to led <i>plusset</i> med hinanden, i stedet for to led <i>minusset</i> med
+    hinanden. Èn mulighed er at lave substitutionen _(n=u+1_), som giver:
+    _($\lim_{u \to \infty}\left[\left(\frac{u}{u+1} \right)^{u+1} \right]_)
+    <i>Næsten</i> hvad vi har brug for, men tæller og nævner har lige byttet plads.
+    Det er intet problem:
+    _($\begin{eqnarray}
+    && 1/\lim_{u \to \infty}\left[\left(\frac{u+1}{u}\right)^{u+1} \right] = \\ \\
+    && 1/\left(\lim_{u \to \infty}\left[\left(1+\frac{1}{u} \right)^{u}\right]*\lim_{u \to \infty}\left[\left(1+\frac{1}{u}\right) \right]\right) = \\ \\
+    && \frac{1}{e*1} = \\ \\
+    && 0.367
+    \end{eqnarray}_)
+    Ud fra de to sidste opgaver, kan man let generalisere og se: 
+    _($\lim_{x \to \infty}\left[\left(1+\frac{x}{n} \right)^n \right] = e^x_)
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="6" 2="3">
+    Bevis at:
+    _($\lim_{n \to \infty} \left[\frac{n!}{n^k*(n-k)!} \right] = 1_)
+    Hvis _(k_) og _(n_) er hele tal, og _(n \gt k_). 
+    <br><br></q-stion>
+    <answer-box>
+    Vi ved, at _(n!/(n-k)!_) svarer til:
+    _($n*(n-1)*(n-2)*\, \dots \, (n-k+2)*(n-k+1)_)
+    Så brøken kan omskrives til:
+    _($\frac{n*(n-1)*(n-2)\, * \, \dots \, (n-k+2)*(n-k+1)}{n^k}_)
+    Der er _(k_) faktorer i både tæller og nævner, så vi kan omskrive til:
+    _($\frac{n}{n}*\frac{n-1}{n}*\frac{n-2}{n} \, * \, \dots \, \frac{n-k+2}{n}*\frac{n-k+1}{n}_)
+    Hver faktor er lig med eller mindre end _(1_), og hver faktor <i>nærmer</i> sig 
+    _(1_) siden vi kan omskrive til:
+    _($\left(1 \right)*\left(1-\frac{1}{n} \right)*\left(1-\frac{2}{n} \right) \, * \, \dots \, \left(1+\frac{1-k}{n} \right)_)
+    Grænsen af hele udtrykket kan beregnes
+    som et produkt af _(k_) faktorer:
+    _($\lim_{n \to \infty}\left[1 \right]*\lim_{n \to \infty}\left[1 - \frac{1}{n} \right]*\lim_{n \to \infty}\left[1 - \frac{2}{n} \right] * \dots = 1^{k} = 1_)
+    Bum!
+    <br><br></answer-box>
+
+    <q-stion 1="6" 2="4">
+    Se følgende billede:
+    <img class='Spic' style='width:62%' src='../../../Assets/Chapter4\Limits\Needle.png'> 
+    <p class="t">
+    En lille strimmel bomuld strækker sig fra _(A_) til _(B_). 
+    En maskine stikker en nål ned i bomuldet 
+    forskellige steder, mens den bevæger sig fra start til slut. 
+    Du har observeret, at der i gennemsnittet bliver
+    lavet _(12_) stik, og at afstanden fra _(A_) til _(B_) er _(7m_). 
+    Vi kunne nu måske antage, at der på dobbelt
+    så kort en afstand i gennemsnittet er dobbelt så få stik, 
+    på tre gange så lille en afstand i gennemsnittet
+    tre gange så få stik, osv. Generelt:
+    _($\frac{7 \text{ m}}{12 \text{ stik}} = 0.58 \frac{\text{m}}{\text{stik}}_) 
+    Sig vi havde en eller anden afstand mindre end _(0.58_) kaldt _(x_). 
+    Vi kunne nu måske lidt approksimalt sige, at
+    chancen for 1 stik på _(x_) afstand er
+    _($\left(\frac{1}{0.58} \right)*x_)
+    ... eftersom det er lig _(1_), når _(x_) er _(0.58_). Vi får overordnet,
+    at maskinen har en _((1/0.58)*x_) chance for at lave
+    præcis èt stik, hvis den går _(x \lt 0.58_) fremad. Brug denne
+    antagelse til at finde chancen for, at der bliver lavet _(15_) stik på
+    _(7m_).
+    </p>
+    <p class="t">
+    Det her ligner en normal sandsynlighedsopgave, men løsningen er tricky, og har
+    rigtig meget at gøre med grænser. <i>Hint</i>: Opdel afstanden i intervaller! <i>Mange</i> intervaller!
+    </p>
+    <br></q-stion>
+    <answer-box t="h">
+    Vi kan opdele afstanden på _(7m_) i _(n_) lige store intervaller. 
+    I hver interval, er chancen for _(n_) stik identisk. Chancen
+    for _(15_) stik er derfor lig chancen for at vi "får et stik" i _(15_) af de
+    _(n_) intervaller. Det kan regnes som en binomial fordeling! Lidt
+    ligesom at kaste _(n_) basketbolde, hvor hver kast har en bestemt chance for success. 
+    <p class="t">
+    Højere _(n_) gør beregningen mere præcis. Hvad er den bedste _(n_) at vælge? 
+    </p>
+    <br></answer-box>
+    <answer-box>
+    Vi opdeler afstanden på _(7m_) op i _(n_) intervaller, hver med en længde på _(7/n_). Vi sørger
+    for, at _(n_) er stor nok til, at længden på intervallerne er mindre end _(0.58_). 
+    Faktisk gør vi bare _(n_), så stor som den overhovedet kan blive: _(\to \infty_).
+    På et hvilket som helst 
+    interval er chancen for at få _(1_) enkelt stik nu:
+    _($\frac{7}{n}*1.724_)
+    Hvis der er _(n_) intervaller, hvor stor er chancen for _(15_) stik?  
+    Hvert interval har præcis samme sandsynlighed, så det er bare en binomial fordeling, og svaret er:
+    _($\VeC[n,15]*\left(\frac{7}{n}*1.724 \right)^{15}*(1-\frac{7}{n}*1.724)^{n-15}_)
+    Hvis vores resultat skal være helt akkurat, skal vi opdele det i <i>uendelig</i> mange intervaller. 
+    Derfor tager vi nu grænsen:
+    _($\lim_{n \to \infty}\left[\Vec[n,15]*\left(\frac{7}{n}*1.724 \right)^{15}*\left(1-\frac{7}{n}*1.724 \right)^{n-15} \right]_)
+    _(7*1.724=12_). Jeg viser grænsen i følgende video:
+    <video class='picB' style='margin-top:35px; margin-bottom: 35px;' controls>
+        <source src='../../../Assets/Chapter4\Limits\PoissonLimit.mp4' type='video/mp4'>
+    </video>
+    <p class="t">
+    Hvis vi faktisk regner det, får vi:
+    _($\frac{12^{15}}{15!*e^{12}} = 0.0723_)
+    Det er altså chancen for, at den stikker præcist _(15_) gange. 
+    </p>
+    <p class="t">
+    Det vi udregnede her var en <i>poisson sandsynlighed</i>. Det generelle svar, hvis vi vil regne
+    chancen for _(k_) begivenheder når gennemsnittet er _(\lambda_) er:
+    _($P(k)=\frac{\lambda^k}{k!*e^{\lambda}}_)
+    Vi vil snakke mere om poisson sandsynlighed i kapitlet/afsnittet om kontinuerlig sandsynlighed. 
+    </p>
+    <br></answer-box>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

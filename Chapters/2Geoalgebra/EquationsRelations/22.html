@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+
+
+    <h2>Bevis via <i>induktion</i></h2>
+
+    <p class="t">  
+    En teknik man til tider kan bruge, til at vise om en påstand er sand eller falsk, er den såkaldte
+    <i>matematiske induktion</i>. 
+    Sig du har bygget en stor flot dominorække. 
+    Dominoerne er nummereret fra 1 til hvor end mange du nu har brugt. 
+    Det virker rimeligt at konkludere at <i>alle</i> dominoer vil vælte
+    givet to styk info:
+    </p>
+    <ul>
+        <li><b> 1</b>: Første domino vælter</li>
+        <li><b> 2</b>: Én domino der vælter har 100% garanti for at vælte den næste</li>
+    </ul>
+    <p class="t">
+    Det er lidt det samme med nogle teorier i matematik. 
+    Et relevant og simpelt eksempel kunne være 
+    spørgsmålet: "kan alle ikke-prime tal opløses i primtal ganget med hinanden?" 
+    (noget vi lidt har taget for gives).
+    </p>
+    <p class="t">
+    Vi ved at, de første par ikke-prime tal _(4,6,8,9,10..._) tydeligvis kan. 
+    Det er nemt at tjekke. _(4=2*2_), _(6=3*2_) osv. 
+    </p>
+    <p class="t">
+    Man kan også vise at et helt ikke-primt tal som
+    _(a_) kan opløses i primtal <i>hvis</i> alle ikke-prime tal under det kan:
+    _(a_) er ikke et primtal, så det kan i hvert fald opløses i to, mindre tal:
+    _($a=b_1*b_2_)
+    Der er nu tre muligheder:
+    _($\begin{eqnarray}
+    && \textbf{A: } \text{Begge mindre tal er prime} \\ \\
+    && \textbf{B: } \text{Begge mindre tal er ikke-prime}  \\ \\
+    && \textbf{C: } \text{Ét af de mindre tal er prime.} \\
+    \end{eqnarray}_)
+    _(a_) er tydeligvis opløst i primtal i case _(\textbf{A}_).
+    I de to andre cases kan vi <i>pr. vores antagelse</i> opløse _(b_1_) og _(b_2_) i primtal,
+    hvorefter _(a_) nu igen er et produkt af primtal. Done! _(\blacksquare_). 
+    </p>
+    <p class="t">
+    Lad os se på, hvad der skete mere generelt:
+    Vi beviste, at det var sandt i de <i>første tilfælde</i> - _(1,2,3,4,_) osv. 
+    Vi væltede første domino. Bagefter <i>antog</i> vi, at det var sandt på alle
+    ikke-prime tal under _(a_), og ved hjælp af denne antagelse beviste
+    vi, at det også var sandt <i>på</i> _(a_). Den _(n_)'te domino, får 
+    den _(n+1_)'te til at vælte! Derfor vælter alle dominoer! Alle positive hele ikke-prime tal kan opløses!
+    </p>
+    <p class="t">
+    I de næste par opgaver vil jeg gerne have at <i>du</i> prøver at bevise nogle teorier. Det 
+    er oplagt, at man bruger induktion til at bevise dem, men hvis du finder en anden løsning, 
+    er det også rigtig fint! Induktion er en god ide i visse tilfælde, men ikke altid.
+    Gør hvad end der virker bedst og hurtigst.  
+    </p>   
+
+    <!--  -->
+
+    <q-stion 1="22" 2="1" customWidth="540">
+    Bevis at 
+    _($1+2+3+4+5+....n = \frac{n*(n+1)}{2}_) 
+    ... for noget som helst helt, positivt tal _(n_) der er større end _(1_). 
+    <br><br></q-stion>
+    <answer-box customWidth="540">
+    Jeg har valgt at bruge induktion her i et tilfælde, hvor jeg "kun" skal bevise. 
+    Bevise en egenskab nogle <i>andre</i> allerede har opdaget. 
+    Hvis jeg selv skulle finde en formel for _(1+2+3+4+5+\dots+n_), ville jeg ikke starte med induktion:
+    Hvad er min påstand? 
+    <p class="t">
+    Anyways, vi skal bevise at denne givne formel _(n*(n+1)/2_) faktisk
+    regner _(1+2+3+4+5+\dots+n_). Det er oplagt at bruge induktion, da teorien
+    nemt kan deles op i flere, diskrete tilfælde. _(n=2_), _(n=3_), _(n=4_) osv. 
+    </p>
+    <p class="t">
+    Først skal vi vise, at det <i>starter</i> med at være sandt. _(n=2_) er: 
+    _($1+2=\frac{2*(1+2)}{2}=\frac{2*3}{2}=3_)
+    ... så her gælder påstanden. 
+    Nu kommer den svære del, hvor jeg skal <i>antage</i> at 
+    _($1+2+3+4+5+...n=\frac{n*(n+1)}{2}_)
+    ... og ved hjælp af den antagelse <i>bevise</i> at
+    _($1+2+3+4+5+...n+(n+1)=\frac{(n+1)*((n+1)+1)}{2}_)
+    Først omskriver jeg lidt til:
+    _($(1+2+3+4+5+...n)+(n+1)=\frac{(n+1)*(n+2)}{2}_)
+    Parentesen _((1+2+3+4+5+...n)_) kan jeg 
+    nu erstatte med _(n*(n+1)/2_) via min antagelse: Præcis ligesom jeg før antog at 
+    de tal vi delte _(a_) op i begge kunne opløses. Nu får jeg:
+    _($\frac{n*(n+1)}{2}+(n+1) = \frac{n*(n+1)+2*(n+1)}{2} = \frac{n^2+n+2n+2}{2}_)
+    Hvis vi udvider _((n+1)(n+2)_) får vi _(n^2+n+2n+2_), så:
+    _($\frac{(n+1)*(n+2)}{2} = \frac{n^2+n+2n+2}{2}_)
+    Vi ser derfor at:
+    _($(1+2+3+4+5+...n)+(n+1)=\frac{(n+1)*(n+2)}{2}_)
+    Og så er beviset færdigt!
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="22" 2="2">
+    Lidt ligesom før, men måske en smule mere udfordrende: bevis at 
+    _($1+r+r^2+r^3+r^4+...r^n=\frac{1-r^{n+1}}{1-r}_)
+    Hvor _(r_) er et hvilket som helst helt, positivt tal. 
+    <br><br></q-stion>
+    <answer-box>
+    Til at starte med skal vi vise, at det er sandt ved _(n=2_). Altså bevise, at 
+    _($1+r+r^2=\frac{1-r^{2+1}}{1-r}_)
+    Her laver jeg hver af de tre led i _(1+r+r^2_) om til brøker som 
+    _($\frac{1*(1-r)}{1-r}+\frac{r*(1-r)}{1-r}+\frac{r^2*(1-r)}{1-r}=_)
+    _($\frac{1*(1-r)+r*(1-r)+r^2*(1-r)}{1-r}_)
+    Vi har nu sørget for, at det hele bliver divideret med _(1-r_) ligesom i 
+    _($\frac{1-r^{2+1}}{1-r}_) 
+    Derfor skal vi egentlig bare tjekke, om vi kan lave tælleren om til 
+    _($1-r^{2+1}=1-r^3_)
+    Ganger vi _(1_), _(r_) og _(r^2_) ind i deres respektive parenteser, får vi: 
+    _($1-r+r-r^2+r^2-r^3=1-r^3_)
+    I det næste trin, skal vi så <i>antage</i> at 
+    _($1+r+r^2+r^3+r^4+...r^n=\frac{1-r^{n+1}}{1-r}_)
+    ... og <i>bevise</i> at 
+    _($1+r+r^2+r^3+r^4+...r^n+r^{n+1}=\frac{1-r^{n+2}}{1-r}_)
+    Vi gør meget det samme som før:
+    _($\begin{eqnarray}
+    && (1+r+r^2+r^3+r^4+...r^n)+r^{n+1} = \frac{1-r^{n+1}}{1-r}+r^{n+1} = \\ \\
+    && \frac{1-r^{n+1}+r^{n+1}*(1-r)}{1-r}=\frac{1-r^{n+1}+r^{n+1}-r^{n+1}*r}{1-r} = \\ \\
+    && \frac{1-r^{n+1+1}}{1-r} = \frac{1-r^{n+2}}{1-r}
+    \end{eqnarray}_)
+    Færdig! 
+    <br> <br> </answer-box>
+
+    <!--  -->
+
+    <q-stion 1="22" 2="3">
+    Lad os gå tilbage til opgaven med træet i haven. Sig nu, at hvert træ 
+    kun kan skabe _(3_) frø <i>efter første år</i>. Så først er der _(1_) træ.
+    Det træ får _(3_) frø der bliver til _(3_) nye træer. Nu har vi _(4_) i alt,
+    men kun de _(3_) nye træer lægger frø. Der bliver lagt _(3*3=9_) frø, og vi 
+    ender med _(4+9=13_) træer. Næste år bliver der lagt _(9*3=27_) frø osv. 
+    <p class="t">
+    Hvor mange træer har vi efter _(n_) år? 
+    </p>
+    <p class="t">
+    I den her opgave skal du ikke faktisk bruge induktion eller bevise noget. 
+    Du skal bare anvende én af formlerne du beviste.
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Så: 
+    _($\begin{align}
+    \text{År } \textbf{1}: \, \, \, & \text{ } 1 \\ 
+    \text{År } \textbf{2}: \, \, \, & \text{ } 1+1*3=4 \\ 
+    \text{År } \textbf{3}: \, \, \, & \text{ } 4+3*3=13 \\ 
+    \text{År } \textbf{4}: \, \, \, & \text{ } 13+9*3=40 \\ 
+    \text{År } \textbf{5}: \, \, \, & \text{ } 40+27*3=121 \\ 
+    \text{År } \textbf{6}: \, \, \, & \text{ } 121+81*3=364  
+    \end{align}_)
+    Lad os tænke over hvordan man kunne omskrive mængden af træer efter _(5_) år.
+    _(121+81*3_) kan vi lave om til:
+    _($\begin{eqnarray}
+    && 40+27*3+81*3 = \\
+    && 13+9*3+27*3+81*3 = \\
+    && 4+3*3+9*3+27*3+81*3 = \\
+    && 1+1*3+3*3+9*3+27*3+81*3
+    \end{eqnarray}_)
+    Hmmm. _(1, \, 3, \, 9, \, 27, \, 81_) alle ganget med _(3_)? Virker suspekt. _(3=3*1_), _(9=3*3_), _(27=9*3_), osv.
+    Vi kunne også skrive det som:
+    _($1+3+3*3+3*3*3+3*3*3*3+3*3*3*3*3 + ..._)
+    Eller endnu bedre:
+    _($1 + 3^1 + 3^2 + 3^3 + 3^4 + 3^5 + ..._)
+    Og det har vi en formel for! Vi ved  at 
+    _($1+r+r^2+r^3 \, + \, ... \, = \, \frac{1-r^{n+1}}{1-r}_)
+    Formlen giver derfor:
+    _($\frac{1-3^{n+1}}{1-3}_) 
+    Hvilket kan forsimples til:
+    _($\frac{3^{n+1}-1}{2}_)  
+    Bum!
+    <br><br></answer-box>
+

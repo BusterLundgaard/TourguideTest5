@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <p class="t">
+    Vi har indtil videre i vores korte studie af trekanter exlusivt kigget på <i>rette</i> trekanter.
+    Dem hvor to sider er <i>vinkelrette</i>, hvor vi så nemt kan se det som halvdelen af 
+    en rektangel. Det her er helt fint, men det kunne være dejligt med nogle genveje vi kunne tage,
+    så vi ikke <i>altid</i> behøvede at opdele mere vilkårlige trekanter. Sig f.eks. at vi igen skulle
+    regne det blå areal:
+    </p>
+    <img class="SpicB" style="width:60%" src="../../../Assets/Chapter2\Section1\RandomTriangles\Landopdeling1.png">
+    <p class="t">Vi <i>kunne</i> dele det her op som:</p>
+    <img class="SpicB" style="width:60%" src="../../../Assets/Chapter2\Section1\RandomTriangles\Landopdeling1 extra.png">
+    <p class="t">Det ville være helt fint at regne, men ville det alligevel ikke også være praktisk at kunne gøre det på en 
+    eller anden lidt mere direkte måde? Så ville vi også få et bedre overblik hvis vi var igang med større opgaver. </p>
+    
+    <p class="t">
+    Der er altså intet der rigtig er umuligt at gøre uden de resultater vi kommer frem til på denne side,
+    men mange ting der bliver <i>nemmere</i> at gøre. 
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5">
+    <u> 1</u>: Find længden _(?_) i følgende trekant:
+    <img class="SpicB" style="width:50%" src="../../../Assets/Chapter2\Section1\RandomExercises\Exercise 2 1.png">
+    <p class="t"><u> 2</u>: Find vinklen _(?_) her:</p>
+    <img class="SpicB" style="width:50%" src="../../../Assets/Chapter2\Section1\RandomExercises\Exercise 3 1.png">
+    <p class="t">Du må godt bruge lommeregner.</p>
+    <br></q-stion>
+    <answer-box>
+    <u> 1</u>:
+    Igen deler vi bare trekanten op i to:
+    <img class="SpicB" style="width:50%" src="../../../Assets/Chapter2\Section1\RandomExercises\Exercise 2 2.png">
+    <p class="t">Den her nye højdelinje er tydeligvis _(Sin(25)*10=4.2261_) lang. Nu dividere vi bare
+    med _(Sin(70)_) i trekanten til højre og får: _(4.2261/Sin(70)=4.497_). </p>
+    <p class="t">
+    <u> 2:</u> Vi opdeler endnu engang:
+    <img class="SpicB" style="width:50%" src="../../../Assets/Chapter2\Section1\RandomExercises\Exercise 3 2.png">
+    <p class="t">Højden er _(8*Sin(70)=7.51_). Nu i trekanten til venstre har vi både højden og længden,
+    så vi siger bare _(arcsin(7.51/15)=30.07^o_). </p>
+    </p>
+    <br></answer-box>
+
+    <p class="t">
+    Hvis vi er skarpe, så kan vi godt lige prøve at se hvad der skete der i sidste opgave lidt mere generelt.
+    Du havde en vinkel _(70_), og så længden <i>over for</i> den vinkel _(10m_). Yderligere
+    havde du en ekstra vinkel _(25_), og så <i>søgte du</i> længden <i>over for</i> _(25_). 
+    </p>
+    <p class="t">
+    Kald _(70_) for _(v_2_), _(10_) for _(a_2_) og _(25_) for _(v_1_). Nu bliver højden til:
+    _($Sin(v_1)*a_2_)
+    Og så _(?_) til:
+    _($\frac{Sin(v_1)*a_2}{Sin(v_2)}_)
+    I opgave _(2_) skulle du nu finde en ukendt vinkel, med ellers præcis de samme informationer.
+    Kald _(15_) for _(a_2_), _(8_) for _(a_1_), _(70_) for _(v_2_). Højden bliver:
+    _($Sin(v_2)*a_1_)
+    Og vinklen bliver:
+    _($Arcsin\left(\frac{Sin(v_2)*a_1}{a_2}\right)_)
+    Så helt generelt, når man har følgende trekant:
+    </p>
+    <img class="Spic" style="width:50%" src="../../../Assets/Chapter2/Section1/TrigProperties/Sinusregel.png">
+    <p class="St">
+    Der ved vi at:
+        _($? = Sin(A)*\left(\frac{b}{Sin(B)}\right) = Sin(A)*\left(\frac{c}{Sin(C)}\right)_)
+    Og ved:
+    </p>
+    <img class="Spic" style="width:50%" src="../../../Assets/Chapter2/Section1/TrigProperties/Sinusregel2.png">
+    <p class="t">
+    Der er:
+    _($? = Arcsin\left(a*\frac{Sin(B)}{b}\right)=Arcsin\left(a*\frac{Sin(C)}{c}\right)_)
+    Det her er altså nogle praktiske formler man kan bruge.
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Find _(?_) på følgende vilkårlige trekant:
+    <img class="Spic" style="width:50%" src="../../../Assets/Chapter2/Section1/TrigProperties/Sinusregel opgave.png">
+    <br><br></q-stion>
+    <answer-box>
+    Ved hjælp af den formel vi lærte er der ingen direkte måde vi kan finde _(?_) på lige nu:
+    Vi har ikke vinklen på den modsatte side. Vi kunne måske starte med at beregne den ved  
+    at finde vinklen til højre, og så bruge det faktum at vinkelsummen i en trekant er _(180_) grader. 
+    _($\text{vinkel til højre}=Arcsin\left(a*\frac{Sin(B)}{b}\right)=Arcsin\left(5*\frac{Sin(8)}{70}\right)=_)
+    _($35^o_)
+    Så den øverste vinkel modsat siden _(?_) er _(180-70-35=75^o_). Nu kan vi finde _(?_) som:
+    _($? = Sin(A)*\left(\frac{b}{Sin(B)}\right) = Sin(75)*\left(\frac{8}{Sin(70)}\right)=_)
+    _($8.22_)
+    <br><br></answer-box>
+
+    <p class="t">
+    Lad os gå videre og kigge på en situation hvor man <i>ikke</i> kan bruge den formel vi lige kom frem til:
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Find længden _(?_) i følgende situation:
+    <img class="SpicB" style="width:30%" src="../../../Assets/Chapter2\Section1\RandomExercises\Exercise 4 1.png">
+    <br></q-stion>
+    <answer-box>
+    Trekanten deles op:
+    <img class="SpicB" style="width:30%" src="../../../Assets/Chapter2\Section1\RandomExercises\Exercise 4 2.png">
+    <p class="t">Højden er _(Sin(25)*20=8.45_), og bredden af den højre retvinklede trekant er _(30-Cos(25)*20=11.87_)</p>
+    <img class="SpicB" style="width:30%" src="../../../Assets/Chapter2\Section1\RandomExercises\Exercise 4 3.png">
+    <p class="t">_(?_) kan altså nu nemt findes med pythagoras som _(\sqrt{11.87^2+8.45^2}=14.57_)</p>
+    <br></answer-box>
+
+    <p class="t">
+    Nu, modsat den tidligere situation, havde vi en vinkel men <i>ikke</i> siden overfor. 
+    I stedet havde vi de to længder <i>ved siden</i> af vinklen. 
+    Kaldes _(25_) for _(v_1_), _(30_) for _(a_2_) og _(20_) for _(a_3_), så bliver
+    højden til _(Sin(v_1)*a_2_) og den anden sides bredde til _(a_3-Cos(v_1)*a-2_).
+    Ergo er _(?_) altså 
+    _($\sqrt{(Sin(v_1)*a_2)^2+(a_3-Cos(v_1)*a_2)^2}=_)
+    _($\sqrt{Sin(v_1)^2*a_2^2+a_3^2-2*a_3*Cos(v_1)*a_2+Cos(v_1)^2*a_2^2}=_)
+    _($\sqrt{a_2^2*(Sin(v_1)^2+Cos(v_1)^2)+a_3^2-2*a_3*a_2*Cos(v_1)}_)
+    Det kan godt gøres lidt simplere via pythagoras, da 
+    _($Sin(v_1)^2+Cos(v_1)^2=\frac{højde^2}{længde^2}+\frac{bredde^2}{længde^2}=\frac{højde^2+bredde^2}{længde^2}=_)
+    _($\frac{længde^2}{længde^2}=1_)
+    Så: _(?=\sqrt{a_2^2+a_3^2-2*a_1*a_2*Cos(v_1)}_), og generelt:
+    </p>
+    <img class="Spic" style="width:40%" src="../../../Assets/Chapter2/Section1/TrigProperties/CosinusRegel.png">
+    <p class="t">
+    Kan man sige:
+    _($? = \sqrt{b^2+c^2-2*b*c*Cos(A)}_)
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Find _(?_) på følgende tegning:
+    <img class="Spic" style="width:45%" src="../../../Assets/Chapter2/Section1/TrigProperties/CosinusRegel Opgave.png">
+    <br><br></q-stion>
+    <answer-box>
+    Her kan man i alt ærlighed bruge både den tidligere formel og den vi lige kom frem til.
+    Hvis vi gerne vil bruge den vi kom frem til, så kan vi starte med at finde den ukendte vinkel:
+    _(180-30-45=105^o_). Og nu kan vi så bruge formlen, da vi har vinklen og de to sider ved siden af:
+    _($\sqrt{11.6^2 + 10^2 + 11.6*10*Cos(105)}=_)
+    _($9.12_)
+    <br><br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Find vinklen _(?_) i følgende situation:
+    <img class="SpicB" style="width:30%" src="../../../Assets/Chapter2\Section1\RandomExercises\Exercise 5 1.png">
+    <br><br></q-stion>
+    <answer-box>
+    Den her er lidt mere tricky. Man kan ummidelbart ikke se nogle nem måde at finde vinklen på, 
+    selv når man deler det op. Man kan dog <i>lade som om</i> at man kender vinklen og 
+    kalde den _(v_). Vi ved fra sidst at siden overfor (som i vores tilfælde er _(15_)) kan 
+    beskrives i forhold til _(v_) som _(?=\sqrt{20^2+30^2-2*20*30*Cos(v)}=\sqrt{1300-1200*Cos(v)}_).
+    Altså _(\sqrt{1300-1200*Cos(v)}=15_) som må betyde at _(1300-1200*Cos(v)=15^2=225_). 
+    Hvis vi skal <i>plusse</i> _(-1200*Cos(v)_) med _(1300_) for at den giver _(225_),
+    så må det betyde at _(-1200*Cos(v)_) for sig selv er _(225-1300=-1075_). Ergo
+    _(-1200*Cos(v)=-1075_). Hvis _(1200*Cos(v)_) <i>gjort negativ</i> er _(-1075_), så 
+    må selve _(1200*Cos(v)_) bare være _(1075_). Nu har vi _(1200*Cos(v)=1075_) og 
+    vi kan nemt se at _(Cos(v)=\frac{1075}{1200}_) som giver _(v=arccos(\frac{1075}{1200})=26.38_)
+    <br><br></answer-box>
+
+
+    <p class="t">
+    I den her havde vi en side, men <i>ikke</i> vinklen overfor. Her var det nemmest bare at bruge vores tidligere resultat,
+    og så finde ud af hvad vinklen var <i>nødt til</i> at være for at resten gjaldt. 
+    Lidt mere generelt, hvis vi ledte efter vinklen over for _(a_), og de to andre sider var 
+    _(b,c_), så ville vi kunne finde _(?_) som: 
+
+    _($\begin{eqnarray} 
+    && a & = & \sqrt{b^2+c^2-2*b*c*Cos(?)} & \to \\
+    && a^2 & = & b^2+c^2-2*b*c*Cos(?) & \to \\
+    && a^2-b^2-c^2 & = & -2*b*c*Cos(?) & \to \\
+    & - & (c^2+b^2-a^2) & = & -2*b*c*Cos(?) & \to \\
+    && c^2+b^2-a^2 & = & 2*b*c*Cos(?) & \to \\
+    && \frac{c^2+b^2-a^2}{2*b*c} & = & Cos(?) & \to 
+    \end{eqnarray}_)
+    _($Arccos\left(\frac{c^2+b^2-a^2}{2*b*c}\right) = ?_)
+
+    Det her er jo egentlig bare den proces vi gik igennem i opgaven, men skrevet ned kun med symboler.    </p>
+
+    <p class="t">
+    Så hvis vi har _(3_) sider, så kan vi finde vinklen over for _(a_), ved at regne _(arccos(\frac{c^2+b^2-a^2}{2*b*c})_).
+    Det er faktisk super fascinerende! Siden vi kan regne resten af trekantens vinkler ved hjælp af den information vi har nu,
+    så kan vi se at en trekants vinkler er 100% <i>bestemt af siderne</i>. Der er kun én måde 
+    at lave en trekant der har sidelængderne _(20,30,15_) eller mere generelt _(a,b,c_). Det er altså umuligt
+    at tegne en trekant der har en anderledes form, men samme længder! 
+    </p>
+
+
+    <q-stion 1="2" 2="1" 3="5">
+    Hvis en trekant har sidelængderne _(a,b,c_), hvor stort er dens areal så?
+    Find en generel formel for det! Den kommer ikke til at se særlig pæn ud, højest sandsyndligt. 
+    <br><br></q-stion>
+    <answer-box>
+    Vi arbejder altså med en eller anden trekant:
+    <img class="SpicB" style="width:40%" src="../../../Assets/Chapter2\Section1\RandomExercises\Exercise 6 1.png">
+    <p class="t">Én måde vi nemt kan finde arealet på, er bare at gange højde med base og så dividere med _(2_). 
+    Vores trekant kan jo ligemeget hvad deles op i to mindre retvinklede, og hver af dem er halvdelen 
+    af en rektangel. For at finde højden skal vi tage sinus af vinklen _(?_), som jo
+    er ligmed _(arccos(\frac{c^2+b^2-a^2}{2*b*c})_). Den er altså _(sin(arccos(\frac{c^2+b^2-a^2}{2*b*c}))*c_),
+    og arealet bliver:</p>
+    <p class="cent">
+        _($\frac{1}{2}*\left(Sin(Arccos(\frac{c^2+b^2-a^2}{2*b*c}))*c\right)*b_)
+    </p>
+    <p class="t">
+    Man kan sikkert godt gøre den her formel lidt pænere, så man ikke både behøver at tage _(sin_) og _(arccos_). 
+    Den er ikke super pæn, men alligevel en dejlig ting at have (<i>i de meget få situationer hvor man kun
+    har sidelængder og skal finde arealet</i> ...). 
+    </p>
+    <br></answer-box>
+
+    <p class="t">
+    Vi har nu både en måde at finde den manglende vinkel når man har de to andre, en måde 
+    at finde de resterende sider og vinkler når man har ting over for hinanden, og en måde 
+    at finde siderne og vinklerne når man har længder <i>ved siden af hinanden</i>. Det her 
+    dækker alle tilfælde! Hvis vi har de her formler, så behøver vi aldrig at opdele trekanten igen.
+    Vores liv er nu nemmere!  
+    </p>
+
+    <p class="t">
+    Som en lille relevant detalje, så kalder vi formlen vi bruger når vi har en side overfor en vinkel, for "sinus-loven",
+    og formlen vi bruger når vi har to sider op ad en vinkel for "cosinus-loven". De navne er meningsløse,
+    det er bare hvad vi har besluttet os for at kalde dem. 
+    </p>
+
+    <!-- SKRIV OGSÅ LIGE I DEM ALLE HVILKET SVAR VI KOMMER FREM TIL! -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Find dette blå areal endnu en gang:
+    <img class="SpicB" style="width:80%" src="../../../Assets/Chapter2\Section1\RandomTriangles\Landopdeling1.png">
+    Det skal siges at længderne ikke lige passer ordentligt med hvordan de ser ud på billedet.
+    Det er lidt urealistisk tal jeg har sat på. 
+    <br><br></q-stion>
+    <answer-box>
+    Du kan se svaret her:
+    <video class="picB" controls>
+        <source src="../../../Assets/Chapter2\Section1\RandomTriangles\Landopdeling1.mp4" type="video/mp4">
+    </video>
+    <br><br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Find længden _(?_):
+    <img class="Spic" style="width:40%" src="../../../Assets/Chapter2\Section1\RandomTriangles\Landopdeling2.png">
+    <br></q-stion>
+    <answer-box>
+    Svaret er her:
+    <video class="picB" controls>
+        <source src="../../../Assets/Chapter2\Section1\RandomTriangles\Landopdeling2.mp4" type="video/mp4">
+    </video>
+    <br><br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Du har et hus på _(80m^2_), og du får snart en nabo der er ved at planlægge et byggeri:
+    <img class="SpicB" style="width:95%" src="../../../Assets/Chapter2\Section1\RandomTriangles\Huse.png">
+    <p class="t">Naboen er en rigtig IBC-type. Udover det mærkelige "moderne" design, så tror han/hun 
+    så inderligt på det frie arbejdsmarkede og konkurrence, at hans/hendes hus <i>skal</i>
+    være dobbelt så stort som dit. Hvad skal længden _(a_) være for at det er muligt?</p>
+    <br></q-stion>
+    <answer-box>
+    Du kan se videoen hvor vi gennemgår svaret her:
+    <video class="picB" controls>
+        <source src="../../../Assets/Chapter2\Section1\RandomTriangles\Huse.mp4" type="video/mp4">
+    </video>
+    Når man faktisk udregner arealet så får man _(31.86m^2_)
+    <br><br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Efter lidt indkøb i hjem og fix har du _(25m_) hegn. Du vil gerne stille det op 
+    i følgende form:
+    <img class="SpicB" style="width:40%" src="../../../Assets/Chapter2\Section1\RandomTriangles\Hegn.png">
+    <p class="t">Hvor stort bliver arealet?</p>
+    <br></q-stion>
+    <answer-box>
+    Svaret:
+    <video class="picB" controls>
+        <source src="../../../Assets/Chapter2\Section1\RandomTriangles\Hegn.mp4" type="video/mp4">
+    </video>
+    <br><br></answer-box>
+
+    <p class="t">
+    Lige èn lille notat før vi går videre til næste side. De to første "formler" vi kom frem 
+    til på den her side har navne. Den første af dem - den hvor vi brugte _(Sin_) - kaldes meget 
+    passende for "sinusloven", og den anden hvor vi brugte kvadratroden kaldes for "cosinusloven" 
+    (i guess fordi der er èn cosinus-funktion inde i kvadratroden).  
+    </p>
+
+
+
+    HER SKAL DER TIL SIDST VÆRE EFTER ALLE OPGAVER VÆRE LIDT KORT OM HVORDAN DET ER VI KALDER DET FOR SINUSREGLEN OG COSINUSREGLEN.
+    OG HVORDAN DET ER SINUSREGLEN OFTE BLIVER SKREVET OP.
+
+
+    OMDESIGN DEN HER OPGAVE SÅ DEN ER DELT OP I TO: FØRST SKAL DE BARE PRØVE AT FINDE D_MAX.
+    DEREFTER SKAL DE GØRE DET MED AREALET!
+    
+    <q-stion 1="2" 2="1" 3="5">
+    Dig og din familie skal til at bygge et trekantsformet hus som set her:
+    <img class="SpicB" style="width:80%" src="../../../Assets/Chapter2\Section1\RandomTriangles\Walls.png">
+    <p class="t">Huset har selvfølgelig nogle <i>vægge</i> der har en eller anden bestemt tykkelse _(d_). Her er de igen med en større værdi på _(d_):</p>
+    <img class="SpicB" style="width:80%" src="../../../Assets/Chapter2\Section1\RandomTriangles\Walls exercise1.png">
+    <p class="t">Logisk nok så kan de ikke bare blive uendelig tykke. På et tidspunkt vil
+    de jo fylde hele arealet! Jo større hus, jo tykkere er det muligt for væggene at blive. 
+    Givet en eller anden størrelse / et areal, så vil der være en eller anden maksimal vægge-tykkelse
+    _(d_{max}_)
+    </p>
+    <p class="t">
+    I er stadig ikke helt sikre på <i>størrelsen</i> er jeres hus, men i har fundet en <i>form</i> i godt kan lide. 
+    Funktionelt og designmæssigt tænker i at arealet bag væggene skal være _(90%_) så stort som hele huset. 
+    Hvor stor en procentdel af deres maksimale værdi skal væggene have? Altså hvor høj skal _(d_) være i 
+    forhold til den største "_(d_{max}_)". 
+    </p>
+    <p class="t">
+    Det her er en relativ svær opgave! Vi snakker åndsvage dumme blå areal fra sidste side-level svær. 
+    Der er nogle meget generelle strategi-tips i første hint der ikke spoiler alt for meget af svaret. 
+    </p>
+    <br></q-stion>
+    <answer-box t="h" n="1">
+    -Hvis du syntes det er lidt for abstrakt og svært at du slet ikke ved noget omkring husets størrelse, 
+    så bare <i>lad som om</i> at én af siderne er et eller andet bestemt tal. Så kan du bare prøve 
+    at løse noget af opgaven <i>i den situation</i> og så derefter gøre det mere generelt.
+    <p class="t">
+    -Det her med den højeste værdi _(d_) virker lidt mærkeligt. Prøv derfor nok at start med at 
+    se om du kan udregne denne største mulige værdi. Dette tal vil selvfølgelig variere baseret
+    på hvor stort huset er. Du er altså nødt til at beskrive _(d_{max}_) <i>i forhold</i> til et eller 
+    andet tal der kan beskrive husets størrelse.
+    </p>
+    <p class="t">
+    -Du ved at opgaven handler om at finde hvor stor en <i>procentdel</i> _(d_) skal være af _(d_{max}_). 
+    Jeg ville nok sige _(d=\frac{d_max}{100}*p_) hvor _(p_) så er et eller andet tal mellem _(0_) og _(100_). 
+    Der skal altså opstilles et eller andet <i>krav</i>, og så skal du vælge den rigtige _(p_) der opfylder
+    det. Hvad angår _(p_), så er det nok (i min mening) lidt smartere at bare sige _(d=d_{max}*p_) hvor 
+    _(p_) så er mellem _(0_) og _(1_). Det har jo konkret samme effekt, men er lidt nemmere at arbejde med. 
+    </p>
+    <br></answer-box>
+    <answer-box t="h" n="2">
+    ´-For at finde _(d_max_), så prøv og find ud af hvad _(d_) skal være - i forhold til et eller andet - for at 
+    én af de indre sider har en længde på _(0_). 
+    <p class="t">
+    -Prøv at kald et af husets sider for _(a_1_), og beskriv alt andet <i>i forhold til</i> den her længde.
+    Hvor lang er den korresponderende side bag væggen i forhold til _(a_1_) og _(d_)? Hvad er husets
+    fulde areal i forhold til _(a_1_)? 
+    </p>
+    <br></answer-box>
+    <answer-box>
+    Du kan se det fulde - lange - svar her:
+    <video class="picB" controls>
+        <source src="../../../Assets/Chapter2\Section1\RandomTriangles\Walls.mp4" type="video/mp4">
+    </video>
+    Jeg ved godt sådan noget her er pisse iriterrende, men som sagt er det altså virkelig med til at træne dig. 
+    <br><br></answer-box>
+

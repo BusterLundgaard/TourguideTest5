@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+
+
+    <h2>Komplekse tal og <br> trigonometriske funktioner</h2>
+
+    <p class="t">
+    Til sidst mangler vi bare at gennemgå, hvordan vi bruger trig-funktioner på komplekse tal. 
+    Vi ved at:
+    _($\begin{eqnarray}
+    && Sin(x)=\sum_{n=0}^{\infty} (-1)^n*\frac{x^{2n+1}}{(2n+1)!} \\ \\
+    && Cos(x)=\sum_{n=0}^{\infty} (-1)^n*\frac{x^{2n}}{(2n)!}
+    \end{eqnarray}_)
+    Så det er ingen overraskelse, at vi definerer _(Cos(z)_), _(Sin(z)_), _(z \in \mathbb{C}_) følgende:
+    </p>
+
+    <div class="Definition">
+    <b> Definition: Cos og Sin på komplekse tal</b> <br>
+    Sig at _(z_) er et kompleks tal. Funktionen _(Sin(z)_) og funktionen _(Cos(z)_) defineres som:
+    _($\begin{eqnarray}
+    && Sin(z)=\sum_{n=0}^{\infty} (-1)^n*\frac{z^{2n+1}}{(2n+1)!} \\ \\
+    && Cos(z)=\sum_{n=0}^{\infty} (-1)^n*\frac{z^{2n}}{(2n)!}
+    \end{eqnarray}_)
+    </div>
+
+    <p class="tt">
+    Via denne definition kan vi komme frem til nogle (relativt) praktiske formler. 
+    Først finder vi en formel for _(Cos(ki)_) og _(Sin(ki)_), derefter
+    beviser vi, at vinkel-additions formlerne <br>
+    _($Cos(z_1+z_2) = Cos(z_1)Cos(z_2)-Sin(z_1)Sin(z_2)_)
+    ... stadig virker. 
+    </p>
+
+    <q-stion 1="8" 2="1" bigTop=true>
+    _(\underline{\textbf{A}}_):  <br> 
+    Bevis ud fra definitionen, at
+    _($Sin(-z)=-Sin(z), \qquad Cos(-z)=-Cos(z)_)
+    _(\underline{\textbf{B}}_):  <br>
+    Find et praktisk udtryk til at regne _(Sin(ki)_). <i>Stort hint:</i> Du får
+    på et tidspunkt brug for at opsætte en ligning, hvor du bruger en af de to egenskaber fra sidste opgave. 
+    <p class="t">
+    _(\underline{\textbf{C}}_):  <br>
+    Find så til sidst også _(Cos(ki)_). 
+    </p>
+    <br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    Lad os starte med _(Sin_). Vi ser at:
+    _($\begin{align}
+    Sin(-z) & = \sum_{n=0}^{\infty} (-1)^n*\frac{(-1*z)^{2n+1}}{(2n+1)!} \\ \\
+    &= \sum_{n=0}^{\infty} (-1)^n*\frac{(-1)^{2n+1}*z^{2n+1}}{(2n+1)!} \\ \\
+    &= \sum_{n=0}^{\infty} (-1)^n*\frac{(-1)*(-1)^{2n}*z^{2n+1}}{(2n+1)!} \\ \\
+    &= -\sum_{n=0}^{\infty} (-1)^n*\frac{z^{2n+1}}{(2n+1)!} \\ \\
+    &=-Sin(z)
+    \end{align}_)
+    Præcis samme slags argument kan laves med _(Cos(-z)_). 
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Vi starter først med at indsætte _(z=ki_) i _(Cos(z)_),
+    for at se om vi kan omskrive til noget praktisk - lidt ligesom vi
+    gjorde, da vi originalt omskrev _(e^{ki}_) i forhold til _(Cos_) og _(Sin_). 
+    _($\begin{align}
+    Cos(ki) & = \sum_{n=0}^{\infty} (-1)^n*\frac{(ki)^{2n}}{(2n)!} \\ \\\, 
+    & = \sum_{n=0}^{\infty} (-1)^n*i^{2n}*\frac{k^{2n}}{(2n)!} \\ \\
+    & = \sum_{n=0}^{\infty} (-1)^n*(-1)^n*\frac{k^{2n}}{(2n)!} \\ \\
+    & = \sum_{n=0}^{\infty} (-1)^{2n}*\frac{k^{2n}}{(2n)!} \\ \\
+    & = \sum_{n=0}^{\infty} 1*\frac{k^{2n}}{(2n)!} \\ \\
+    \end{align}_)
+    Hvis man gør præcist det samme med _(Sin(ki)_) får man:
+    _($i*\sum_{n=0}^{\infty} \frac{k^{2n+1}}{(2n+1)!}_)
+    Vi ved, at
+    _($e^x = \sum_{n=0}^{\infty} \frac{x^n}{n!} = \sum_{n=0}^{\infty} \frac{x^{2n}}{(2n)!} + \sum_{n=0}^{\infty} \frac{x^{2n+1}}{(2n+1)!}_)
+    Ud fra det kan vi se, at
+    _($ie^k = iCos(ki)+Sin(ki)_)
+    Vi bruger nu _(Cos(-ki)=Cos(ki)_) til at opsætte en ligning. Først isolerer vi
+    _($iCos(ki)=ie^k - Sin(ki)_)
+    ... efterfulgt af:
+    _($\begin{eqnarray}
+    && ie^k - Sin(ki) = ie^{-k} - Sin(-ki) \to \\ \\
+    && ie^k - Sin(ki) = ie^{-k} + Sin(ki) \to \\ \\
+    && Sin(ki) = \frac{i}{2}*\left(e^k - e^{-k} \right) 
+    \end{eqnarray}_)
+    Voila!
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{C}}_)#" tabColour="rgb(171,96,147)">
+    Vi har ligningen:
+    _($ie^k = iCos(ki)+Sin(ki)_)
+    Lad os nu opsætte en ligning via _(Sin(-ki)=-Sin(ki)_):
+    _($\begin{eqnarray}
+    && ie^{-k}-iCos(-ki) = -\left(ie^k - iCos(ki)\right) \to \\ \\
+    && ie^{-k}-iCos(ki) = -ie^k + i Cos(ki) \to \\ \\
+    && Cos(ki) = \frac{1}{2}\left(e^k + e^{-k} \right) 
+    \end{eqnarray}_)
+    Bum!
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="8" 2="2">
+    Udled et udtryk for _(Cos(x)_) og _(Sin(x)_) der minder om det fra
+    sidste opgave. Med andre ord et udtryk via eksponentialfunktioner og komplekse tal. 
+    <br><br></q-stion>
+    <answer-box>
+    Vi ved at 
+    _($e^{xi}=Cos(x)+Sin(x)i, \qquad e^{-xi}=Cos(x)-Sin(x)i_)
+    ... hvilket betyder at
+    _($e^{xi}+e^{-xi}=2Cos(x)_)
+    ... og at
+    _($e^{xi}-e^{-xi}=2 Sin(x)i_)
+    Så det kan nu let ses at:
+    _($\begin{eqnarray}
+    && Cos(x)=\frac{1}{2}\left(e^{xi}+e^{-xi} \right) \\ \\
+    && Sin(x)=\frac{1}{2i}\left(e^{xi}-e^{-xi} \right) = -\frac{i}{2} \left(e^{xi}-e^{-xi} \right)
+    \end{eqnarray}_)
+    Bum!
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <p class="tt">
+    For at bevise at 
+    _($\begin{eqnarray}
+    && Cos(z_1+z_2) & = Cos(z_1)Cos(z_2) - Sin(z_1)Sin(z_2) \\
+    && Sin(z_1+z_2) & = Sin(z_1)Cos(z_2) + Sin(z_2)Cos(z_1) 
+    \end{eqnarray}_)
+    ... skal vi ligesom ved _(e^{z_1+z_2}=e^{z_1}*e^{z_2}_) bruge Cauchy-produktet. 
+    Det er ikke et specielt elegant bevis, men 
+    det er egentlig meget ligetil, og det virker.
+    </p>
+
+    <div class="Proof">
+    <b> Bevis: Vinkeladditionsformlen for _(Cos_) af komplekse tal</b> <br>
+    Pr. definition er _(Cos(z_1+z_2)_) lig:
+    _($\begin{eqnarray}
+    && \sum_{n=0}^{\infty} (-1)^n*\frac{(z_1+z_2)^{2n}}{(2n)!} \, \, = \\ \\
+    && \sum_{n=0}^{\infty} \frac{(-1)^n}{(2n)!} \sum_{k=0}^{2n} \VeC[2n,k]*z_1^k*z_2^{2n-k} \, \, = \\ \\
+    && \sum_{n=0}^{\infty} \sum_{k=0}^{2n} \frac{(-1)^n}{k! (2n-k)!}*z_1^k*z_2^{2n-k}
+    \end{eqnarray}_)
+    For at vi kan anvende cauchy-produktet,
+    burde summen passe til formen _(a_k*b_{n-k}_). 
+    Det gør vores <i>næsten</i>, men med _(2n_) i stedet for _(n_), og med
+    en irriterende _(-1_) faktor i spil. 
+    <p class="t">
+    Ideén er, at vi 
+    omskriver _((-1)^n_) til _((-1)^k*(-1)^{n-k}_) samt 
+    opdeler summen _(\sum_{k=0}^{2n}_) i en sum
+    med lige _(2k_) og ulige _(2k+1_):
+    _($\begin{eqnarray}
+    && \sum_{n=0}^{\infty} \sum_{k=0}^{n} (-1)^n*\frac{z_1^{2k}*z_2^{2n-2k}}{(2k)!*(2n-2k)!} \, \, \, \, + \\ 
+    && \sum_{n=0}^{\infty} \sum_{k=0}^{n-1} (-1)^n*\frac{z_1^{2k+1}*z_2^{2n-(2k+1)}}{(2k+1)!*(2n-(2k+1))!} \, \, \, \, = \\ \\
+    && \sum_{n=0}^{\infty} \sum_{k=0}^{n} (-1)^k*(-1)^{n-k}*\frac{z_1^{2k}}{(2k)!}*\frac{z_2^{2(n-k)}}{(2(n-k))!} \, \, \, \, + \\
+    && \sum_{n=0}^{\infty} \sum_{k=0}^{n-1} (-1)^k*(-1)^{(n-1)-k}*(-1)*\frac{z_1^{2k+1}}{(2k+1)!}*\frac{z_2^{2((n-1)-k)+1}}{2((n-1)-k)+1}
+    \end{eqnarray}_)
+    </p>
+    Begge summe passer nu formen, så vi anvender cauchy-produktet og får
+    _($\begin{eqnarray}
+    && \left(\sum_{n=0}^{\infty} (-1)^n*\frac{z_1^{2n}}{(2n)!} \right)*\left(\sum_{n=0}^{\infty} (-1)^n*\frac{z_2^{2n}}{(2n)!} \right) \, \, + \\ \\
+    && \left((-1)^n*\frac{z_1^{2n+1}}{(2n+1)!} \right)*\left((-1)*(-1)^n*\frac{z_2^{2n+1}}{(2n+1)!} \right)
+    \end{eqnarray}_)
+    ... hvilket selvfølgelig kan omskrives til
+    _($Cos(z_1)Cos(z_2)-Sin(z_1)Sin(z_2)_)
+    _(\blacksquare_)
+    </div>
+
+    <p class="tt">
+    Et meget lignende bevis kan fremstilles for _(Sin(z_1+z_2)_), så det vil ikke
+    gennemgås her. 
+    </p>
+
+    <q-stion 1="8" 2="3" bigTop=true>
+    Holder formlerne for dobbeltvinkler _(Cos(2v)_), _(Sin(2v)_) og halv-vinkler 
+    _(Cos(\frac{1}{2}v)_), _(Sin(\frac{1}{2}v)_) stadig? 
+    <br><br></q-stion>
+    <answer-box>
+    Ja. Dobbeltvinklerne blev udledt eksklusivt ud fra vinkel-additionsformlerne, og 
+    halv-vinklerne blev udledt ud fra dobbelt-vinkel formlerne ved at løse en ligning. 
+    <br><br></answer-box>
+
+    <p class="tt">
+    Vi er nu parat til at finde _(Cos(z)_) og _(Sin(z)_) hvor _(z=a+bi_): 
+    _($\begin{eqnarray}
+    && Cos(a+bi) = \\ \\
+    && Cos(a)Cos(bi)-Sin(a)Sin(bi) = \\ \\
+    && \frac{1}{2}\left(e^{ai}+e^{-ai} \right)\frac{1}{2}\left(e^b + e^{-b} \right)-\frac{1}{2i}\left(e^{ai}-e^{-ai} \right)\frac{i}{2}*\left(e^b - e^{-b} \right) = \\ \\
+    && \frac{e^{ai}e^b+e^{ai}e^{-b}+e^{-ai}e^{b}+e^{-ai}e^{-b}-e^{ai}e^{b}-e^{-ai}e^{-b}+e^{-ai}e^{b}+e^{ai}e^{-b}}{4} = \\ \\
+    && \frac{2e^{ai-b}+2e^{-ai+b}}{4} = \\ \\
+    && \frac{e^{ai-b}+e^{-(ai-b)}}{2} = \\ \\
+    && \frac{e^{i*(a+bi)}+e^{-i*(a+bi)}}{2} = \\ \\
+    && \frac{e^{zi}+e^{-zi}}{2}
+    \end{eqnarray}_)
+    Fantastisk! Vi har altså:
+    _($Cos(z) = \frac{e^{zi}+e^{-zi}}{2}_)
+    Med meget den samme række argumenter, kan det ses at
+    _($Sin(z)=\frac{e^{zi}-e^{-zi}}{2i}_)
+    Før vi går videre til opgaverne, er det lige værd at nævne begreberne _(Cosh_) og _(Sinh_):
+    </p>
+
+    <div class="Definition">
+    <b> Definition: Hyperbolsk sinus og cosinus</b> <br>
+    "Hyperbolsk cosinus" og "hyperbolsk sinus", skrevet henholdsvis _(Cosh_) og _(Sinh_), defineres på _(x \in \mathbb{R}_) som:
+    _($\begin{eqnarray}
+    && Cosh(x)=Cos(xi) \\ \\
+    && Sinh(x)=-i Sin(xi)
+    \end{eqnarray}_)
+    </div>
+
+    <p class="tt">
+    Begge disse funktioner tager et tal fra _(\mathbb{R}_) til et andet tal fra _(\mathbb{R}_), men 
+    er defineret i forhold til komplekse tal. Navnet "hyperbolsk" kommer fra, at det kan bevises 
+    at _(Sinh(x)_) og _(Cosh(x)_) giver henholdsvis
+    højden og bredden på en hyperbola _(x^2-y^2=1_), hvis _(x_) er halvdelen af 
+    arealet til punktet på grafen. Med andre ord, de giver punktets koordinater:
+    </p>
+    <img class='SpicXL' style='width:80%' src='../../../Assets/Chapter4\ComplexNumbers\hypTrig.png'> 
+    <p class="t">
+    "Halvdelen af arealet" virker måske lidt tilfældigt i forhold til "vinklen" som vi kender det på Cos: 
+    </p>
+    <img class='SpicXL' style='width:80%' src='../../../Assets/Chapter4\ComplexNumbers\Trig1.png'> 
+    <p class="t">
+    Det er ikke helt så tilfældigt alligevel dog. Cirkeludsnittet
+    ved _(v_) har et areal på 
+    _($A=1^2*\pi*\frac{\theta}{2\pi}=\theta/2_)
+    Så _(\theta=2A_) og:
+    </p>
+    <img class='SpicXL' style='width:80%' src='../../../Assets/Chapter4\ComplexNumbers\Trig2.png'> 
+    <p class="t">
+    Trig-funktionerne og de hyperbolske trig-funktioner har meget lignende geometriske intuitioner. 
+    Jeg vil ikke gå i dybden med sammenhængens oprindelse, men fundamentalt stammer det fra, at
+    _($\begin{eqnarray}
+    && x^2 + y^2 = 1 \to \\ \\
+    && (a)^2 + (bi)^2 = 1  \to \\ \\
+    && a^2 - b^2 = 1 
+    \end{eqnarray}_)
+    Tid til nogle opgaver! 
+    </p>
+
+    <!--  -->
+
+    <q-stion 1="8" 2="4" bigTop=true>
+    Regn følgende komplekse tal: 
+    <div style="margin-left:-71%; margin-top:25px; margin-bottom: -10px;">
+    _($\begin{eqnarray}
+        && \underline{\textbf{A}}: \, \, \, \, \, \, Cos(-2+3i) \\ \\ 
+        && \underline{\textbf{B}}: \, \, \, \, \, \, Sin(1.4-4i) \\ \\ 
+        && \underline{\textbf{C}}: \, \, \, \, \, \, Cos(i) \\ \\ 
+        && \underline{\textbf{D}}: \, \, \, \, \, \, Sin(i) 
+    \end{eqnarray}_)
+    </div>
+    <br><br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    Vi regner:
+    _($\begin{eqnarray}
+    && \frac{e^{i(-2+3i)}+e^{-i(-2+3i)}}{2} = \\ \\
+    && \frac{e^{-3-2i}+e^{3+2i}}{2} = \\ \\
+    && \frac{e^{-3}*\left(Cos(-2)+Sin(-2)i \right)+e^{3}*\left(Cos(2)+Sin(2)i \right)}{2} = \\ \\
+    && \frac{-0.0207-0.0452i - 8.358 + 18.263i}{2} = \\ \\
+    && \frac{-8.379+18.218i}{2} = \\ \\
+    && -4.189 + 9.109i
+    \end{eqnarray}_)
+    Bum! Generelt kan man se, at en lidt mere brugbar formel til konkret beregning er: 
+    _($Cos(a+bi) = \left(\frac{e^{-b}+e^{b}}{2} \right)Cos(a) + \left(\frac{e^{-b}-e^b}{2} \right) Sin(a) i_)
+    Og for _(Sin_) bliver det: 
+    _($Sin(a+bi) = \left(\frac{e^b-e^{-b}}{2} \right) Cos(a) i + \left(\frac{e^b + e^{-b}}{2} \right) Sin(a) _)
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Vi bruger formlen vi udledte i sidste spørgsmål, og får:
+    _($\begin{eqnarray}
+    && \left(\frac{e^{-4}-e^{-(-4)}}{2} \right) Cos(1.4) i + \left(\frac{e^{-4} + e^{-(-4)}}{2} \right) Sin(1.4) & = \\ \\
+    && 26.91 - 4.63i
+    \end{eqnarray}_)
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{C}}_)#" tabColour="rgb(171,96,147)">
+    Svaret er
+    _($\frac{e^{-1}+e^{1}}{2} = 1.543_)
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{D}}_)#" tabColour="rgb(175,128,161)">
+    Svaret er 
+    _($i*\frac{e^1 - e^{-1}}{2} = 1.1752i_)
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="8" 2="5">
+    Er følgende sandt?
+    _($Cos(z)^2+Sin(z)^2 = 1_)
+    <br></q-stion>
+    <answer-box>
+    Svaret er <i>ja</i>. Det er relativt ligetil at tjekke:
+    _($\begin{eqnarray}
+    && Cos(z)^2+Sin(z)^2 = \\ \\
+    && \left(\frac{e^{zi}+e^{-zi}}{2} \right)^2 + \left(\frac{e^{zi}+e^{-zi}}{2i} \right)^2 = \\ \\
+    && \frac{(e^{zi}+e^{-zi})^2-(e^{zi}-e^{-zi})+2}{4} = \\ \\
+    && \frac{(e^{zi})^2 + 2*e^{zi}*e^{-zi} + (e^{-zi})^2 - (e^{zi})^2 + 2e^{zi}*e^{-zi} - (e^{-zi})^2}{4} = \\ \\
+    && \frac{4e^{zi}*e^{-zi}}{4} = \\ \\
+    && 1
+    \end{eqnarray}_)
+    Bum!
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="8" 2="6">
+    Sig at _(Im(z) \ne 0_). Er _(Sin(z)_) nogensinde lig _(0_)? 
+    <br><br></q-stion>
+    <answer-box>
+    Vi ser på ligningen _(Sin(z)=0_):
+    _($\begin{eqnarray}
+    && \frac{e^{zi}-e^{-zi}}{2i} = 0 \to \\ \\
+    && e^{zi}-e^{-zi} = 0 \to \\ \\
+    && (e^{zi})^2=e^{-zi}*e^{zi}  \to \\ \\
+    && (e^{zi})^2=1  
+    \end{eqnarray}_)
+    Sig at _(z=a+bi_), så at _(zi=-b+ai_):
+    _($\left(e^{-b}*e^{ai} \right)^2 = 1+0i_)
+    Både længden og vinklen skal matche med _(1+0i_). Længden er lig _(e^{-2b}_), så:
+    _($e^{-2b}=1_)
+    Det er aldrig sandt, medmindre _(b=0_), så svaret er <i>nej</i>.
+    <br><br></answer-box>
+
+    <p class="cent">*</p>
+
+    <p class="t">
+    Som sagt tidligere kan komplekse tal hjælpe os med at omskrive
+    f.eks. 
+    _($Cos(x+1.2)+Cos(x+1.7)_) 
+    ...til 
+    _($1.937 Cos(x+1.45)_)
+    De kan lidt mere generelt 
+    hjælpe os, hvis vi skal omskrive noget af formen
+    _($A Cos(x+a)+B Cos(x+b)_)
+    ... til formen
+    _($A Cos(x+a)_)
+    Det her er især vigtigt inden for elektricitet,
+    hvor vekselstrøm tit modelleres som 
+    <i>bølger</i>, der ofte har forskellige såkaldte "faser" _(a_) og _(b_)
+    (de er udskudt i forhold til hinanden)
+    </p>
+
+    <q-stion 1="8" 2="7" bigTop=true>
+    Vi ved at:
+    _($Cos(x)=\frac{e^{xi}+e^{-xi}}{2}_)
+    Brug dette til at omskrive
+    _($13.4*Cos(x+42)-16.7*Cos(x-12.4)_)
+    ... til formen 
+    _($A*Cos(x)+B*Sin(x)_)
+    <br></q-stion>
+    <answer-box>
+    Vi indsætter den alternative formel for _(Cos_) og får:
+    _($13.4*\left(\frac{e^{(x+42)i}+e^{-(x+42)i}}{2} \right) - 16.7*\left(\frac{e^{(x-12.4)i}+e^{-(x-12.4)i}}{2} \right) = _)
+    _($\frac{1}{2}*(e^{xi}*(13.4e^{42i} - 16.7e^{-12.4i}) + e^{-xi}*(13.4*e^{-42i} - 16.7e^{12.4i}))_)
+    Vi regner nu:
+    _($\begin{eqnarray}
+    && 13.4*e^{42i} - 16.7*e^{-12.4i} & = -21.829 - 15.046i \\
+    && 13.4*e^{-42i} - 16.7*e^{12.4i} & = -21.829 + 15.0456i
+    \end{eqnarray}_)
+    Indsæt dette samt _(e^{xi}=Cos(x)+Sin(x)i_) og _(e^{-xi}=Cos(x)-Sin(x)i_). Udtrykket kan nu omskrives til:
+    _($\frac{1}{2} * \left(\begin{eqnarray} 
+            && (Cos(t)+Sin(t)i)*(-21.829 - 15.046i) & + \\
+            && (Cos(t)-Sin(t)i)*(-21.829 + 15.0456i)
+    \end{eqnarray}\right)_)
+    Bemærk at alle _(i_) forsvinder her:
+    _(Sin(t)i_) bliver ganget med _(-21.829_) og fjernet
+    af _(-Sin(t)i_), der også ganges med _(-21.829_). 
+    De resterende led indeholder _(i^2_)-produkter, der kan laves om til _(-1_). 
+    Man får:
+    _($-21.829*Cos(t) + 15.045*Sin(t)_)
+    Voila!
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="8" 2="8">
+    Der findes heldigvis en anden og bedre strategi end den vi brugte i sidste opgave. 
+    <i>Ja</i> vi kan skrive _(Cos_) som:
+    _($\frac{e^{xi}+e^{-xi}}{2}_)
+    Men vi kan <i>også</i> i stedet vælge at skrive den som:
+    _($Re\left(e^{xi} \right)_)
+    Det her virker, da den <i>reelle</i> del af _(e^{xi}=Cos(x)+Sin(x)i_) jo er hvad vi søger. 
+    Brug det her til at omskrive 
+    _($1.6 Cos(t+1.2) - 2.1 Cos(t-3.3)_)
+    ... til formen
+    _($A Cos(t+a)_)
+    Det er måske lidt tricky! 
+    <br><br></q-stion>
+    <answer-box t="h">
+    Et resultat der vil være brugbart er:
+    _($A*Re(z_1)+B*Re(z_2)=Re(A z_1 + B z_2), \qquad A,B \in \mathbb{R}_)
+    Det kan let bekræftes. 
+    <br><br></answer-box>
+    <answer-box>
+    Hvis vi bruger tricket på både _(Cos(t+1.2)_) og _(Cos(t+3.3)_) får vi:
+    _($1.6*Re\left(e^{(t+1.2)i} \right) - 2.1*Re\left(e^{(t-3.3)i} \right)_)
+    Man kan relativt let se, at dette er lig
+    _($Re\left(1.6 e^{(t+1.2)i} - 2.1e^{(t-3.3)i} \right)_)
+    Vores mål er et tal, der følger formen _(A*Cos(t+a)_). 
+    Det komplekse tal inde i _(Re_) skal altså omskrives til
+    _(A*e^{(t+a)i}_):
+    _($\begin{eqnarray}
+    && 1.6 e^{(t+1.2)i} - 2.1e^{(t-3.3)i} = \\ \\
+    && e^{ti}*\left(1.6*e^{1.2i} - 2.1*e^{-3.3i} \right) = \\ \\
+    && e^{ti}*\left(2.653+1.159i \right) = \\ \\
+    && e^{ti}*2.895*e^{0.411t} = \\ \\
+    && 2.895*e^{(t+0.411)t}
+    \end{eqnarray}_)
+    Bum! Det endelige svar er:
+    _($2.895*Cos(t+0.411)_)
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="8" 2="9">
+    Bevis at 
+    _($\sum_{j=0}^{k/2} \VeC[k, 2j] Sin(t)^{2j}*Cos(t)^{k-2j}*(-1)^j_)
+    ... hvor _(k_) er et helt og lige tal.
+    <br><br></q-stion>
+    <answer-box>
+    Vi ved at 
+    _($Cos(x)=Re(e^{xi})_)
+    Så: 
+    _($Cos(kt)=Re \left(e^{kt*i} \right) = Re\left((Cos(t)+Sin(t)i)^k \right)_)
+    Nu kan vi bruge the binomial formula!
+    _($Re \left(\sum_{j=0}^k \VeC[k, j] (Sin(t)i)^j*Cos(t)^{k-j} \right)  _)
+    Vi omskriver til:
+    _($Re\left(\sum_{j=0}^k \VeC[k, j] Sin(t)^j*Cos(t)^{k-j}*i^{j} \right)_)
+    Vi søger kun de <i>reelle</i> led. _(j_) skal være et lige tal,
+    for at _(i^j_) på leddet bliver til _(1_) eller _(-1_). Vi ændrer
+    summen til kun at gennemgå de lige _(j_), og får:
+    _($\sum_{j=0}^{k/2} \VeC[k, 2j] Sin(t)^{2j}*Cos(t)^{k-2j}*(-1)^j_)
+    Bum! Bevist!
+    Det her giver dig en hurtig måde at omskrive _(Cos(kt)_) i forhold til trig-funktioner,
+    hvor _(t_) ikke er ganget med noget. 
+    <br><br></answer-box>
+
+
+
+
+
+
+

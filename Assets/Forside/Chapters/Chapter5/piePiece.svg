@@ -1,0 +1,38 @@
+<svg width="14.93mm" height="16.28mm" version="1.1" viewBox="0 0 14.93 16.28" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <clipPath id="a">
+   <path d="m344.7 1568-6.09-17.59 16.06 9.292c0.0287 0.1292-3.82 6.564-9.974 8.294z" fill="none" stroke="#000" stroke-width=".294px"/>
+  </clipPath>
+  <clipPath id="b">
+   <g transform="matrix(-.9659 .2589 -.2588 -.9659 10.76 21.51)">
+    <rect x="342.6" y="1556" width="2.592" height="36.17" ry="1.107" fill="#fccf72"/>
+    <rect x="337.3" y="1556" width="2.592" height="36.17" ry="1.107" fill="#fccf72"/>
+    <rect x="332.5" y="1556" width="2.592" height="36.17" ry="1.107" fill="#fccf72"/>
+    <rect x="327.8" y="1556" width="2.592" height="36.17" ry="1.107" fill="#fccf72"/>
+    <rect x="348.4" y="1556" width="2.592" height="36.17" ry="1.107" fill="#fccf72"/>
+    <rect x="353.7" y="1556" width="2.592" height="36.17" ry="1.107" fill="#fccf72"/>
+    <rect x="359" y="1556" width="2.592" height="36.17" ry="1.107" fill="#fccf72"/>
+    <rect transform="rotate(90)" x="1561" y="-363" width="2.592" height="36.17" ry="1.107" fill="#fccf72"/>
+    <rect transform="rotate(90)" x="1568" y="-363" width="2.592" height="36.17" ry="1.107" fill="#fccf72"/>
+    <rect transform="rotate(90)" x="1574" y="-363" width="2.592" height="36.17" ry="1.107" fill="#fccf72"/>
+    <rect transform="rotate(90)" x="1580" y="-363" width="2.592" height="36.17" ry="1.107" fill="#fccf72"/>
+    <rect transform="rotate(90)" x="1586" y="-363" width="2.592" height="36.17" ry="1.107" fill="#fccf72"/>
+   </g>
+  </clipPath>
+ </defs>
+ <g transform="translate(-31.09 -77.95)">
+  <g transform="matrix(.9 0 0 .9 -273.3 -1317)" clip-path="url(#a)" opacity=".999">
+   <path transform="matrix(-.9659 -.2589 .2588 -.9659 0 0)" d="m-711-1410a17.89 17.9 0 0 1-14.8 17.63 17.89 17.9 0 0 1-19.92-11.53 17.89 17.9 0 0 1 7.917-21.61 17.89 17.9 0 0 1 22.65 4.064l-13.75 11.46z" fill="#fdd78c" opacity="1" stroke="#e6a88a" stroke-width="1.065"/>
+   <path transform="matrix(-.9659 -.2589 .2588 -.9659 0 0)" d="m-710.9-1410a17.89 17.9 0 0 1-14.8 17.63 17.89 17.9 0 0 1-19.92-11.53 17.89 17.9 0 0 1 7.917-21.61 17.89 17.9 0 0 1 22.65 4.064l-13.75 11.46z" clip-path="url(#b)" fill="#fccf72" opacity="1" stroke="#e6a88a" stroke-width="1.065"/>
+   <g fill="#ffe0e0" stroke="#ff1a1a" stroke-width=".2646px">
+    <path d="m329.3 1543c2.967-0.513 3.976 0.8702 4.945 2.292-1.755-0.529-2.152-0.8885-2.837-1.318-0.4393-0.2752-0.9974-0.5791-2.108-0.9747z"/>
+    <path d="m335.3 1557c0.5075 3.632-1.293 4.854-3.142 6.026 0.7545-2.141 1.229-2.623 1.806-3.457 0.3697-0.5347 0.7815-1.214 1.336-2.569z"/>
+    <path d="m343.6 1558c2.564-2.622 4.631-1.944 6.689-1.198-2.156 0.712-2.827 0.631-3.839 0.6846-0.6492 0.034-1.439 0.124-2.85 0.5133z"/>
+    <path d="m350.6 1541c-1.072 3.507-3.22 3.855-5.39 4.138 1.587-1.623 2.221-1.859 3.095-2.372 0.561-0.3285 1.221-0.7713 2.295-1.765z"/>
+    <path d="m335.4 1539c2.564-2.622 4.631-1.944 6.689-1.198-2.156 0.712-2.827 0.631-3.839 0.6846-0.6492 0.034-1.439 0.124-2.85 0.5133z"/>
+   </g>
+  </g>
+  <path d="m36.77 93.87-5.433-15.59 14.05 8.161" fill="none" stroke="#000" stroke-width=".2381px"/>
+  <path d="m36.81 94.09-5.386-15.73 14.5 8.363" fill="none" stroke="#e6a88a" stroke-width=".365"/>
+ </g>
+</svg>

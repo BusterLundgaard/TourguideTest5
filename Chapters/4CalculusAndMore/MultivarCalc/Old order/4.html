@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+
+
+    <p class="t">
+    Udover at differentiere i forhold til _(x_) og _(y_), så kan vi som sagt også differentiere i forhold til andre retninger. 
+    Det kaldes på engelsk for "directional derivatives". Vores definition på differentiabilitet kan hjælpe os med at komme frem til en formel:
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Sig at _(f(x,y)_) er differentiabel på punktet _((x,y)_). Hvad er hældningen, hvis du ved _((x,y)_) på _(f(x,y)_) differentierer langs retningen defineret af retningsvektoren:
+    _($\VeC[u_x,u_y]_)
+    Det er altså en vektor med en længde på _(1_). 
+    <br><br></q-stion>
+    <answer-box>
+    Siden vi går langs en retning, så oplever _(f(x,y)_) både en ændring _(\triangle x_) langs _(x_), og en ændring 
+    _(\triangle y_) langs _(y_). Vi kan sige at _(\triangle x=t*u_x_) og _(\triangle y = t*u_y_), som vil sørge
+    for at ændringen går i den rigtige retning. Både ændringen i _(x_) og _(y_) skal nærme sig _(0_), så vi siger:
+    _($\lim_{t \to 0} \frac{f(x+t*u_x,y+t*u_y)-f(x,y)}{t}_)
+    _(f(x,y)_) er differentiabel på _((x,y)_) så vi ved at forskellen kan omskrives:
+    _($\lim_{t \to 0} \frac{f_x(x,y) (t u_x) + f_y(x,y) (t u_y) + E(t u_x, t u_y)}{t} = _)
+    _($f_x u_x + f_y u_y + \lim_{t \to 0} \frac{E(t u_x, t u_y)}{t} _)
+    Vi ved pr. definitionen af differentiabilitet at:
+    _($\lim_{t \to 0} \frac{E(t u_x, t u_y)}{\sqrt{(t u_x)^2+(t u_y)^2}} = 0_)
+    Nævneren kan let omskrives til _(t*\sqrt{u_x^2 + u_y^2}_). Da _(\vec u_) er givet
+    til at være en retningsvektor, så er dens længde _(1_), hvilke betyder at 
+    _(\sqrt{u_x^2+u_y^2}=1_). Nu ser vi at:
+    _($\lim_{t \to 0} \frac{E(t u_x, t u_y)}{\sqrt{t} = 0_)
+    Vi ved nu derfor at hældningen langs _((u_x,u_y)_) er:
+    _($f_x u_x + f_y u_y_)
+    En dejlig nem formel. 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Du står på en mark hvor det blæser. Specifikt så er blæsten når du står ved _((x,y)_) lig:
+    _($F(x,y) = \VeC[2-0.1x + 0.05y, 0.5+0.2x - 0.12y], \qquad x \in [-21,21], y \in [-18, 18]_)
+    Du står på _((6,9)_), og begynder at bevæge dig mod _((12,13)_). Hvor hurtigt stiger 
+    vindens styrke? 
+    <br><br></q-stion>
+    <answer-box>
+    På _(x_) bevæger du dig _(12-6=6_), og på _(y_) bevæger du dig _(13-9=4_). Retningsvektoren er altså lig:
+    _($\vec u = \frac{1}{\sqrt{6^2+4^2}}*\VeC[6,4] = \VeC[0.832,0.554]_)
+    Vi fokusere på vindens <i>styrke</i>, så vi skal altså tage vind-vektorens længde. Den funktion _(f_)
+    vi prøver at finde hældningen på er altså lig:
+    _($f(x,y)=\sqrt{(2-0.1x + 0.05y)^2 + (0.5+0.2x - 0.12y)^2}_)
+    Det kan relativt let ses at:
+    _($\begin{eqnarray} 
+    && f_x & = & \frac{0.1x - 0.058y - 0.2}{2*\sqrt{(2-0.1x + 0.05y)^2 + (0.5+0.2x - 0.12y)^2}} \\
+    && f_y & = & \frac{-0.058 x + 0.0388y + 0.08}{2*\sqrt{(2-0.1x + 0.05y)^2 + (0.5+0.2x - 0.12y)^2}}
+    \end{eqnarray}_)
+    Ved _((6,9)_) er de lig:
+    _($\begin{eqnarray} 
+    && f_x & = & \frac{0.1*6 - 0.058*9 - 0.2}{2*\sqrt{(2-0.1*6 + 0.05*9)^2 + (0.5+0.2*6 - 0.12*9)^2}} & = & -0.0312 \\
+    && f_y & = & \frac{-0.058*6 + 0.0388*9 + 0.08}{2*\sqrt{(2-0.1*6 + 0.05*9)^2 + (0.5+0.2*6 - 0.12*9)^2}} & = & 0.00927
+    \end{eqnarray}_)
+    Så vi regner nu:
+    _($f_x u_x + f_y u_y = -0.0312*0.832 + 0.00927*0.554 = -0.0208_)
+    Vinden bliver altså en smule mindre i den retning du går, men ikke meget (i hvert fald i starten, på dit punkt)
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Sig at _(f(x,y)_) er differentiabel på punktet _((x,y)_). I hvilken retning (som en vektor) er hældningen stærkest, 
+    og hvor stærk er den? 
+    <br><br></q-stion>
+    <answer-box>
+    Hvis vi differentierer langs _((u_x,u_y)_), så ved vi at styrken er:
+    _($f_x u_x + f_y u_y_)
+    Det her svarer lidt til et prik produkt:
+    _($\VeC[f_x,f_y] \dot \VeC[u_x,u_y]_)
+    Vi ved at sådanne et produkt kan omskrives til:
+    _($|\VeC[f_x,f_y]|*|\VeC[u_x,u_y]|*Cos(\theta)_)
+    Hvor _(\theta_) er vinklen mellem de to vektorer. _((u_x,u_y)_)'s længde er _(1_), så dette er lig:
+    _($|\VeC[f_x,f_y]|*Cos(\theta)_)
+    Vektoren _((f_x,f_y)_) har samme størrelse lige meget hvilken retning vi går, så
+    det er kun _(\theta_) der er vigtig her. Den størst mulige værdi ville være når _(\theta=0_), så _(Cos(\theta)=1_). 
+    Der er altså <i>0</i> vinkel imellem de to vektorer: De skal være <i>parallelle</i>. 
+    <p class="t">
+    Det her vil konkret sige at vi skal differentiere i retningen af:
+    _($\VeC[f_x,f_y]_)
+    Og at den stærkeste hældning er lig:
+    _($|\VeC[f_x,f_y]| = \sqrt{f_x^2+f_y^2}_)
+    </p>
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Du er ude i rummet i et rumskib, som man jo er:
+    <img class='SpicB' style='width:95%' src='../../../Assets/Chapter4\MultiVarCalc\SpaceExercise.png'> 
+    <p class="t">
+    Sig at styrken af tyngdekraften du oplever ved positionen _((x,y,z)_) er:
+    _($F(x,y,z)=\frac{12.73}{3756+2x+Ln(y^2)^3 + z}_)
+    Dette er <i>ikke</i> den rigtige formel man ville bruge i denne situation overhovedet. Den rigtige
+    er bare for stor og kludret til at vi nemt kan arbejde med. 
+    </p>
+    <p class="t">
+    Sig at du står ved på _((23,-15,6)_). Jeg har nu tre spørgsmål:
+    </p>
+    <p class="t">
+    <b> 1</b>: I hvilken retning stiger tyngdekraften mest?
+    </p>
+    <p class="t">
+    <b> 2</b>: I hvilken retning <i>falder</i> tyngdekraften mest?
+    </p>
+    <p class="t">
+    <b> 3</b>: Find et eksempel på i hvert fald 1 retning hvor tyngdekraften ændrer sig <i>mindst</i>. 
+    </p>
+    <br></q-stion>
+    <answer-box t="Answer 1#" tabColour="rgb(171,96,147)">
+    Vi ved fra den tidligere opgave, at den største hældning på tyngdekraften, er i en retning der
+    er parallel med vektoren: 
+    _($ \VeC[f_x(x,y,z), f_y(x,y,z),f_z(x,y,z)]_)
+    Vi regner:
+    _($\begin{eqnarray} 
+    && f_x & = & -\frac{25.46}{(3756+2x+Ln(y^2)^3 + z)^2} \\ 
+    && f_y & = & -\frac{76.38 Ln(y^2)^3}{(3756+2x + Ln(y^2)^3 + z)^2 y} \\
+    && f_z & = & -\frac{12.73}{(3756+2x+Ln(y^2)^3 + z)^2} \\
+    \end{eqnarray} _)
+    Hvis vi regner det på vores specifikke punkt _((23,-15,6)_), så får vi
+    _(f_x = -1.617 \cdot 10^{-6} _), _(f_y=9.492 \cdot 10^{-6}_), _(-8.089 \cdot 10^{-7}_).
+    Vi skal altså bevæge os i retningen ad:
+    _($\VeC[-1.617 \cdot 10^{-6},9.492 \cdot 10^{-6},-8.089 \cdot 10^{-7}]_)
+    Det er et helt fint svar, men vi kan også normalisere det til:
+    _($\vec u = \frac{1}{\sqrt{(-1.617 \cdot 10^{-6})^2 + (9.492 \cdot 10^{-6})^2 + (-8.089 \cdot 10^{-7})^2}}*\VeC[-1.617 \cdot 10^{-6},9.492 \cdot 10^{-6},-8.089 \cdot 10^{-7}] = \VeC[-0.167,0.982,-0.083]_)
+    Så det er svaret.
+    <br><br></answer-box>
+    <answer-box t="Answer 2#" tabColour="rgb(175,128,161)">
+    Lad os huske tilbage til hvordan vi udledte formlen for den største hældning:
+    _($\VeC[f_x,f_y,f_z] \cdot |\vec u| \cdot Cos(\theta)_)
+    _(Cos(\theta)_) skulle være lig _(1_) for at dette blev størst. Det bliver <i>mest negativt</i>, hvis
+    _(Cos(\theta)_) er lig _(-1_). Vektoren skal altså bare gå den modsatte retning, så svaret er:
+    _($\vec u = \VeC[0.167,-0.982,0.083]_)
+    <br><br></answer-box>
+    <answer-box t="Answer 3#" tabColour="rgb(171,96,147)">
+    Hvis der skal være så lidt <i>ændring</i> som overhovedet muligt, så skal _(Cos(\theta)=0_), ergo
+    _(\theta=\pi/2_). Der her svarer til at _(\vec u_) er <i>vinkelret</i> på _((f_x,f_y,f_z)_). 
+    Èn vektor kan være vinkelret til en anden vektor på uendelig mange måder, så vi skal 
+    kun vælge àf af de mange mulige retninger. Vi ved at krydsproduktet kan give os en vektor
+    der er vinkelret på _(2_) andre. Vi vælger derfor bare en tilfældig vektor, og tager dens krydsprodukt
+    med _((f_x,f_y,f_z)_):
+    _($\VeC[0.167,-0.982,0.083] \times \VeC[1,0,0] = \VeC[0,0.083,0.982]_)
+    Bum! Det er egentlig et meget interessant at der på en hvilken som helst 
+    _(f(x,y)_) vil være i hvert fald to retninger hvor der ingen hældning er, og 
+    på en kurve _(f(x,y,z)_) være uendelig mange retninger hvor der ingen hældning er. 
+    Man kunne ellers godt tænke sig at der måtte være nogen steder på kurven hvor der
+    er en hældning overalt. 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Du har en kasse der er _(60cm_) lang, _(30cm_) bred og _(20cm_) høj. Den bliver trykket sammen
+    af en maskine, så længden gøres kortere. Kassen kompensere rent fysisk for den kortere længe ved 
+    at gøre bredden og højden større:
+    <img class='Spic' style='width:65%' src='../../../Assets/Chapter4\MultiVarCalc\CompressingBox.png'> 
+    <p class="t">
+    Sig at længden bliver mindre _(1.8_) gange hurtigere end at bredden bliver større, og _(2.2_) gange
+    hurtigere end at højden bliver større. Vokser eller falder overfladearealet på kassen? 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Sig at kassen har en længde, bredde og højde på _(l_), _(b_), _(h_). Det kan nu let ses at dens overfladeareal er lig:
+    _($f(l,b,h)=2(hb + hl + bl)_)
+    Sig at længden bliver mindre med en hastighed på _(L_). Så bliver bredden større med en hastighed
+    på _(L/1.8_), og højden større med en hastighed på _(L/2.2_). For at finde retningsvektoren. Det her kan vi beskrive som en vektor:
+    _($\VeC[L, \frac{L}{1.88}, \frac{L}{2.2}] = L*\VeC[-1, \frac{1}{1.88}, \frac{1}{2.2}]_)
+    At ændre på _(L_) kommer ikke til at ændre på <i>retningen</i> af denne vektor. Den <i>retning</i>
+    _(l,b,h_) bevæger sig i kan altså beskrives som:
+    _($\VeC[u_l, u_b, u_h] = \frac{1}{\sqrt{1^1 + (1/1.88)^2 + (1/2.2)^2}}*\VeC[-1, \frac{1}{1.88}, \frac{1}{2.2}] = \VeC[-0.819,0.435,0.372]_)
+    _(f_l_) er tydeligvis lig _(2(h+b)=2(30+20)=100_), _(f_b_) er _(2(h+l)=2(60+20)=160_), og _(f_h_) er _(2(b+l)=2(60+30)=180_). Vi får nu:
+    _($f_l u_l + f_b u_b + f_h u_h = -100*0.819 + 160*0.435 + 180*0.372 = 54.66_)
+    Overfladearealet <i>vokser</i> altså. 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Sig at du har følgende funktion:
+    _($f(x,y)=5x^3 - 2y^4_)
+    Prøv at find dens <i>acceleration</i> ved punktet _((2,3)_) når du bevæger dig i retningen _(u_x=0.961_),
+    _(u_y=-0.274_). Altså: Hvis du bevæger dig i denne retning, hvor "hurtigt" begynder funktionen
+    så at blive hurtigere? 
+    <br><br></q-stion>
+    <answer-box>
+    Lad os bare finde en generel formel for directional acceleration nu da vi alligevel er i gang. 
+    Hvis du har en eller anden funktion _(f(x,y)_), så ved vi at dens hældning ved 
+    _((x,y)_) langs retningen _(\vec u_) er:
+    _($f_x(x,y) u_x + f_y(x,y) u_y_)
+    Jeg en given bestemt retning _(\vec u_), der findes der for hvert punkt _((x,y)_) en associeret 
+    hældning langs den retning. Vi kan altså skrive det her som en funktion:
+    _($F_{\vec u} = f_x(x,y) u_x + f_y(x,y) u_y_)
+    Vi vil gerne finde hældningen af <i>denne funktion</i> når vi står på _((x,y)_) og bevæger os langs _(\vec u_). 
+    Vi tager derfor et directional derivative af <i>den</i>:
+    _($F_x u_x + F_y u_y = _)
+    _($¤x[f_x(x,y) u_x + f_y(x,y) u_y] u_x + ¤y[f_x(x,y) u_x + f_y(x,y) u_y] u_y =_)
+    _($f_{xx} u_x^2 + f_{yx} u_y u_x + f_{xy} u_x u_y + f_{yy} u_y^2 = _)
+    _($f_{xx} u_x^2 + f_{yy} u_y^2 + (f_{yx} + f_{xy} ) u_x u_y _)
+    God damn! I vores tilfælde kan man relativt let se at _(f_{xx}=30x_), _(f_{yy}=-24y^2_), 
+    _(f_{xy} = 0_), _(f_{yx}=0_). Vi får derfor generelt:
+    _($30x u_x^2 - 24y^2 u_y^2_)
+    Ved _((2,3)_) og _(u_x=0.961_), _(u_y=-0.274_) er dette lig:
+    _($30*2*0.961^2 - 24*3^2*(-0.274)^2 = 39.19_)
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Et bestemt skovhugger firma indsamler to forskellige type træer: Birketræ (_(a_)) og grantræ (_(b_)). 
+    De har udregnet en profit-funktion der beskriver hvor mange millioner kroner de tjener, som 
+    funktion af indsamlet birketræ og grantræ:
+    _($P(a,b)=(-0.022a^3 + 0.252a^2 - 0.11a)(-0.047b^3 + 0.288b^2 + 0.814b)_)
+    Hvor _(a_) og _(b_) er henholdsvis antal indsamlet birketræ og grantræ, i enheden tusind tons. 
+    <p class="t">
+    Lige nu producerer de _(1.63_) tusind tons birketræ, og _(1.23_) tusind tons grantræ. Hvad for en 
+    "retning" burde de ændre deres produktion, for at mængden af profit hurtigst <i>accelererer</i> 
+    hurtigst? (Hvilke man kunne tænke på lang sigt nok er vigtigere end den hurtigst vækst). 
+    </p>
+    <p class="t">
+    Du får nok brug for Geogebra til at lave denne opgave. 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Vi ved at accelerationen på _(f(a,b)_) langs _(\vec u_) ved _((a,b)_) er:
+    _($f_{aa} u_x^2 + f_{bb} u_y^2 + (f_{ab} + f_{ba} ) u_x u_y _)
+    Lad os lige finde _(f_{aa}_), _(f_{bb}_), _(f_{ab}_), _(f_{ba}_), og regne dem 
+    ved _((1.63,1.23)_). Det kan relativt let ses at:
+    _($\begin{eqnarray} 
+    && f_{aa} = (-0.12 a + 0.504) (-0.047b^3 + 0.288 b^2 + 0.814 b) & = & \\ 
+    && f_{bb} & = (-0.022a^3 + 0.252a^2 - 0.11a) (-0.282b + 0.576) & \\
+    && f_{ab} & = (-0.066a^2 + 0.504a - 0.11) (-0.141 b^2 + 0.576 b + 0.814) & \\
+    && f_{ba} & = (-0.066a^2 + 0.504a - 0.11) (-0.141 b^2 + 0.576 b + 0.814)  & = & \\
+    \end{eqnarray}_)
+    Det er ikke tilfældigt at _(f_{ab}_) og _(f_{ba}_) giver det samme, men det kommer vil 
+    til på næste side når vi diskutere Clairaut's theorem, der (bl.a.) siger at _(f_{ab}=f_{ba}_), så at
+    _(f_{ab}+f_{ba}=2f_{ab}_). I hvert fald så kan vi nu regne
+    disse hældninger på _((1.63,1.23)_) og få:
+    _($\begin{eqnarray} 
+    && f_{aa} & = & 0.389\\
+    && f_{bb} & = & 0.0905\\
+    && f_{ab} & = & 0.701\\
+    \end{eqnarray}_)
+    Så vi har nu:
+    _($0.389 u_x^2 + 0.0905 u_y^2 + 1.403 u_x u_y_)
+    Vi skal altså finde de to rigtige _(u_x_), _(u_y_) der gør dette så stort som muligt.
+    Vi har antaget at _(\vec u_) er en retningsvektor, så vi kan også i stedet skrive:
+    _($0.389 Cos(t)^2 + 0.0905 Sin(t)^2 + 1.403 Cos(t) Sin(t)_)
+    Nu er problemet langt nemmere, da vi kun skal fokusere på den _(t_) der maksimerer dette. 
+    Vi ved at funktionen gentager sig selv hver _(2 \pi_), så for at finde den højeste værdi skriver vi følgende i Geogebra:
+    _($\text{max(0.389 Cos(x)^2 + 0.0905 Sin(x)^2 + 1.403 Cos(x) Sin(x), 0, 2\pi)}_)
+    Hvilke giver _(t=0.991_). Vores endelige retningsvektor er derfor lig:
+    _($\VeC[Cos(0.991),Sin(0.991)] = \VeC[0.547,0.79]_) 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5" CustomWidth="550">
+    Du er ude at skate:
+    <img class='Spic' style='width:95%' src='../../../Assets/Chapter4\MultiVarCalc\Skating.png'> 
+    <p class="t">
+    Du har på en eller anden måde opnået en ret stor hastighed på _(7.6 m/s_), og skal nu til 
+    at køre over en rampe defineret af:
+    _($z=-0.31(x^6+y^6)+1.36(x^4+y^4)-1.42(x^2+y^2)+0.28_)
+    Du starter ved _((-1.64,0.3)_), og kører i retning af _((-0.63,0.2)_) som er lige ved foden af rampen. 
+    </p>
+    <p class="t">
+    Antag at du ikke mister noget hastighed på vejen op af rampen (hvilke er relativt grovt forkert). 
+    Hvor langt tid kommer du til at være i luften? For at forstå denne opgave lidt bedre kan du kigge 
+    på følgende billede:
+    </p>
+    <img class='Spic' style='width:35%' src='../../../Assets/Chapter4\MultiVarCalc\Skating2.png'> 
+    <p class="t">
+    Du begynder altså at flyve der hvor rampen ikke længere accelerere opad, men i stedet nedad. 
+    </p>
+    <p class="t">
+    Du får også brug Geogebra til denne. 
+    </p>
+    <br></q-stion>
+    <answer-box customWidth="550">
+    Vi skater fra _((-1.64,0.3)_) mod _((-0.63,0.2)_). Det er en ændring
+    i _(x_) på _(-0.63 - (-1.64) = 1.01_) og en ændring i _(y_) på _(0.1_).
+    Det svarer til følgende retningsvektor:
+    _($\vec u = \frac{1}{\sqrt{1^2+(-0.1)^2}}*\VeC[1,-0.1] = \VeC[0.992,-0.119]_)
+    Vores skateboard bevæger sig altså langs.
+    _($\VeC[x,y] = \VeC[-1.64,0.3] + t*\VeC[0.992,-0.119]_)
+    Vi skal finde det punkt på denne rute hvor accelerationen langs retningen _((0.992,-0.119)_) på
+    rampen er lig _(0_), da det går fra positiv til negativ (og derfor skære _(0_)-aksen). 
+    Accelerationen kan vi finde med formlen:
+    _($f_{xx}(x,y) u_x^2 + f_{yy}(x,y) u_y^2 + 2 f_{xy}(x,y) u_x u_y = _)
+    _($f_{xx}(x,y) 0.992^2 + f_{yy}(x,y) (-0.119)^2 + 2 f_{xy}(x,y) 0.992*(-0.119) = _)
+    _($0.984 f_{xx}(x,y) + 0.01416 f_{yy}(x,y) - 0.236 f_{xy}(x,y)_)
+    Vi regner nu:
+    _($\begin{eqnarray} 
+    && f_{xx} & = & -9.29x^4 + 16.32x^2 - 2.84 \\ 
+    && f_{yy} & = & -9.29y^4 + 16.32y^2 - 2.84 \\
+    && f_{xy} & = & 0 \\
+    \end{eqnarray}_)
+    Bakkens acceleration når vi er _(t_) fremme på vejen er altså lig:
+    _($\begin{eqnarray} 
+    && -9.141(-1.64+0.992t)^4 & + 16.058(-1.64+0.992t)^2 & - 2.794 & + 
+    && -0.131(0.3-0.119t)^4 & + 0.231(0.3-0.119t)^2 & - 0.0402 
+    \end{eqnarray}_)
+    Vi bruger Geogebra til at løse hvornår dette udtryk er lig _(0_) via Solve, og får fire svar:
+    _($t=0.3964,1.204,2.102,2.911_)
+    Vi ved at rampen starter ved _((-0.63,0.2)_). Det sker når _(0.3-0.119t=0.2 \to_)
+    _(t=0.84_). Vi er altså interesserede i _(t=1.204_), da den er tættest, og derfor må 
+    svare til det sted hvor accelerationen er _(0_) på rampen. Det svarer til punktet:
+    _($\VeC[x,y] = \VeC[-1.64,0.3] + 1.204*\VeC[0.992,-0.119] = \VeC[-0.445, 0.156]_)
+    Vi finder nu hældningen af _(z_) på dette punkt. Vi kan relativt let se at:
+    _($\begin{eqnarray} 
+    && f_x = -1.85x^5 + 5.44x^3 - 2.84x
+    && f_y = -1.85y^5 + 5.44y^3 - 2.84y
+    \end{eqnarray}_)
+    Evaluerer vi ved _((-0.445,0.156)_) får vi _(f_x=0.816_), _(f_y=-0.422_).
+    Hældningen bliver altså:
+    _($0.816*0.992 + (-0.422)*(-0.119) = 0.859_)
+    Endelig. Det svarer til en vinkel på _(Arctan(0.859)=0.709_), så 
+    vores vertikale hastighed er _(Sin(0.859)*7.6m/s = 5.754 m/s_). Vi starter på en højde
+    af _(z=0.0159_), hvilke kan regnes ud fra funktionen der definerer kurven. Vi bruger nu
+    formlen for bevægelse med acceleration _(a_):
+    _($s(t) = \frac{a}{2}t^2 + v_0 t + s_0_)
+    Så i vores tilfælde:
+    _($z(t) = -\frac{9.8}{2}t^2 + 5.754t + 0.0159_)
+    Det skal være lig _(0_), så vi løser:
+    _($-\frac{9.8}{2}t^2 + 5.754t + 0.0159 = 0_)
+    Og får:
+    _(t=1.177s_)
+    Det er altså vores endelig svar. Phew. 
+    <br><br></answer-box>
+
+    <!--  -->
+    
+    <q-stion 1="2" 2="1" 3="5">
+    Du er ude at klatre et bjerg/bakke:
+    <img class='Spic' style='width:60%' src='../../../Assets/Chapter4\MultiVarCalc\MountainClimb1.png'>
+    <p class="t">
+    Den del af bjerget vi ser her er defineret af:
+    _($z(x,y)=3 Sin(x-y) + x y - x^2 y, \qquad x \in [-2,6], y \in [-2,5]_)
+    Du står lige nu ved det sorte punkt (_(x=-0.85, y=1.02_)), og vil gerne nå op 
+    til en højde af det røde punkt (_(z=2.75_)). Prøv nu at finde/tegne den mest effektive
+    sti du kan bruge til at komme op på den højde. Noget i stil af:
+    </p> 
+    <img class='Spic' style='width:60%' src='../../../Assets/Chapter4\MultiVarCalc\MountainClimb2.png'>
+    <p class="t">
+    Du skal gøre dette inde på Geogebra. Et lille Geogebra hint hvis ud har glemt det: 
+    For at tegne 3D inde i Geogebra, skal du gå ind under _(\text{Vis } \to \text{3D}_). 
+    For at tegne _(z=f(x,y)_), skal du bare skrive funktionen _(f(x,y)_) op i kommandofeltet. 
+    For at kun tegne _(f(x,y)_) på _(x \in [a,b]_), _(y \in [c,d]_), skal du i input-feltet skrive:
+    _($\text{if(a < x < b && c < y < d, f(x,y))}_)
+    Det fungerer altså, fordi _(\text{&&}_) sige at både _(\text{a < x < b}_) og _(\text{c < y < d}_)
+    skal være sande for at _(f(x,y)_) skal vises. 
+    </p>
+    <p class="t">
+    Det her på mange måder en "Geogebra opgave", hvor du prøver at bruge lidt 3D. Du får nok også brug
+    for spreadsheets inde i Geogebra. Stort set alle de kommandoer du kan skrive i input-feltet, kan også skrives 
+    i spreadsheets, og du kan godt i spreadsheets referere til ting i Geometrien, og vice versa. 
+    </p>
+    <p class="t">
+    Det skal siges, at hvis man hele tiden følger den stærkeste hældning, så er det på ingen måde
+    <i>sikkert</i> at man tager den mest effektive rute, men i nogle tilfælde ville det være sandt. 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Vi får brug for _(f_x_) og _(f_y_) til at finde den højeste hældning, som dem finder vi lige.
+    _($\begin{eqnarray} 
+    && f_x & = & 3 Cos(x-y) + y - 2xy_
+    && f_y & = & -3 Cos(x-y) + x - x^2
+    \end{eqnarray}_)
+    Du kan se hvordan jeg gør resten i denne video:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter4\MultiVarCalc\MountainPath.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+

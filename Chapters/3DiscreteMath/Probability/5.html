@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+
+
+    <p class="t">
+    Det du lige gjorde i sidste opgave var at finde en stokastisk variabels <i>gennemsnit</i>. 
+    Hvis en stokastisk variabel har værdierne _(x_0, x_1 ... x_n_) med sandsynlighederne
+    _(P(x_0), P(x_1), ... P(x_n)_) så definerer vi altså dens "gennemsnit" til at være:
+    _($P(x_0)*x_0 + P(x_1)*x_1 \text{ } + \text{ } ... \text{ } P(x_n)*x_n_)
+    Så din stokastiske variabel i sidste opgave var "points du kan få når du prøver at lave tricks", og du
+    regnede så:
+    _($0.20*0+0.15*3+0.2*7+0.3*9+0.15*10 = 6.05_)
+    Gennemsnittet er sjælen brugbart hvis du kun har èn enkelt runde af "noget". 
+    Der vil dén værdi med den højeste sandsynlighed nok fortælle dig mere. Når du har en god del runder dog, så
+    kan gennemsnittet være en god måde at simplificere dine beregninger og problemer. Der kan du bare sige 
+    at vi i hver runde fik "en gennemsnitlig" mængde points, og så vil du få nogle O.K gode approksimationer. 
+    Du har allerede brugt det i nogle opgaver nu, men lad os kigge på lidt flere eksempler
+    </p>
+
+    <p class="t">
+    I alle de følgende opgaver (som i, <i>på denne side</i>) må du gerne bruge Geogebra.
+    </p>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Du spiller kvit eller dobbelt, og starter med _(1kr_). Hvis du spiller _(1000_) runder, hvor
+    mange penge (omkring, sådan cirka-ish) er der så størst chance for at du får? 
+    Du støder måske ind i et problem i den her. 
+    <br><br></q-stion>
+    <answer-box>
+    Vi skal finde mængden af penge efter _(1000_) runder, så lad os finde hvor mange penge vi i gennemsnit 
+    tjener på èn runde, og så gange det med _(1000_). _(1kr_) er _(0.5_), _(2kr_) er _(0.5^2_), _(4kr_) _(0.5^3_) osv.
+    Generelt kan vi sige at det går:
+    _($2^0*0.5^1 + 2^1*0.5^2 + 2^2*0.5^3 + 2^3*0.5^4 \text{ } + \text{ } ...  _)
+    Men det her går hurtigt galt. Det kan man se hvis man omskriver det lidt:
+    _($\sum_{i=0}^{\infty} 2^i*0.5^{i+1} = \sum_{i=0}^{\infty} 2^i*(1/2)^{i+1} = \sum_{i=0}^{\infty} 2^i*2^{-i-1} = \sum_{i=0}^{\infty} 2^{i+(-i-1)}  _)
+    _($= \sum_{i=0}^{\infty} 0.5 _)
+    Og at plusse _(0.5_) med sig selv uendelig mange gange, svarer jo til _(\infty*0.5_), hvilket
+    i hvert fald er uendeligt stort. Det kan vi ikke rigtig bruge til noget, da det ville betyde at
+    der efter f.eks. _(10_) runder var størst chance for at vi havde fået _(\infty_) mange penge.
+    Problemet er jo at vi både ganger og dividerer med _(2_), så hvert led er identisk. 
+    <p class="t">
+    En anden, ikke helt ligeså akkurat strategi, kunne være at finde
+    den gennemsnitlige mængde gange vi gætter rigtigt hver runde, og så bruge den
+    mængde penge man ville få fra det i stedet. Det er ikke helt ligeså rigtigt, 
+    men det er nok vores bedste gæt. I hvert fald så giver det:
+    _($0.5*0+0.5^2*1+0.5^3*2+0.5^4*3 \text{ } + \text{ } ... \text{ } =_)
+    _($Sum(0.5^{i+1}*i,0,10000) = 1_)
+    Så i gennemsnit får vi _(1_) rigtigt gæt, hvilke svarer til _(2kr_).
+    Altså burde vi tjene omkring _(2kr*1000=_) _(2000kr_) efter _(1000_) runder. 
+    Med en god del usikkerhed. 
+    </p>
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Du er ved at søge et arbejde. Der står du har to forskellige
+    slags arbejdsdage: _(4_) timer, og _(9_) timer. Du skal arbejde stort set
+    hver dag i måneden (_(30_) dage), men det varierer om det er _(4_) eller _(9_)
+    timer. Din timeløn er _(135 kr_), og der står at din månedlige forventede gennemsnitsløn er
+    _(23220kr_). Jeg siger "stort set" fordi der hver dag er en _(5_)% chance for at du har fri
+    hvis der ikke kommer nok kunder. Hvad er sådan cirka forholdet mellem de lange og korte dage på en månede?
+    Er der flest lange eller flest korte? 
+    <br><br></q-stion>
+    <answer-box>
+    Lad os sige at vi har en stokastisk variable med tre forskellige værdier: _(0_), _(4_) eller _(9_). 
+    _(P(4)_) er så chancen for at vi en tilfældig dag skal på _(4_)-timers arbejde, og 
+    _(P(9)_) chancen for at vi en tilfældig dag skal på _(9_)-timers arbejde. _(P(0)_) er
+    lig _(0.05_) og er chancen for en fridag. Alt det her betyder at vi på gennemsnitslig dag tjener:
+    _($0*P(0)+4*135*P(4)+7*135*P(9)_)
+    kroner. Der er _(30_) dage i alt, og vores forventede gennemsnit på de _(30_) dage er
+    _(23220_) så:
+    _($30*(4*135*P(4)+7*135*P(9)) = 23220_)
+    Vi ved at _(P(0)+P(4)+P(9)=1_), da de er de eneste værdier vores variabel tager. 
+    _(P(0)=_) _(0.05_), så:
+    _($ \to P(4)=0.95-P(9)_)
+    Nu kan vi omskrive vores ligning til:
+    _($30*(4*135*(0.95-P(9))+7*135*P(9)) = 23220_)
+    Det her kan nemt løses, og det giver: 
+    _($P(9) \approx 0.65_)
+    Så cirka _(65%_) af dagene i måneden kommer til at være lange.
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Sig at du er nysgerrig omkring den samlede vægt af alle _(5000_) personer på dit 
+    universitet. Det vil nok være ret svært at finde ud af hvis du skulle til at 
+    veje absolut <i>alle</i> personer. Du kunne i stedet, hvis du var okay med et <i>approximalt</i> 
+    svar, prøve at lave en <i>stiktest</i>. Bassicly, find et mindre antal (måske 200)
+    personer der relativt godt "repræsenterer" universitet. Så hvis dit universitet
+    f.eks. er _(30_)% drenge og _(70_)% piger, så skal cirka det samme gælde i de personer
+    du udvælger (og lignende med andre faktorer der kunne være vigtige). Nu kan du så bare finde
+    gennemsnitsvægten af <i>disse</i> personer, gange med _(5000_), og wholla! 
+    <p class="t">
+    Sig at du faktisk ikke kan måle den præcise vægt på _(200_) personer, men du kan godt spørge
+    dem om hvad deres vægt er inden for _(10_)kg præcished. Sig at du får følgende data:
+    </p>
+    <img class='SpicB' style='width:95%' src='../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\Stokastisk\Statistik.png'> 
+    <p class="t">
+    Hvis man ikke kan se det på skemaet, så er der altså _(6_) ved _(30-40kg_) og 
+    _(4_) personer ved _(80-90_)kg. 
+    </p>
+    <p class="t">
+    Omtrent hvad er den samlede vægt af alle _(5000_) personer på universitet?
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Vi søger jo bare et gennemsnit ud fra denne "data i intervaller" vi har fået.
+    Gennemsnittet er lig _(\text{samlet vægt}/\text{antal personer}_). Antal
+    personer er omkring _(6+30+70+53+35+4=_) _(198_), men hvordan finder vi den samlede vægt?
+    Well, lad os bare approximere "mellem _(30_) og _(40_)" som "_(35_)" osv. 
+    Så får vi _(6*35+30*45+70*55+53*65+35*75+4*85=_) _(11820kg_), altså:
+    _($5000per*\frac{11820kg}{198per} = 298484.84kg _)
+    Cirka _(300_) tusind kilo. 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <p class="t">
+    Lad os stille os selv et ret naturligt spørgsmål nu hvor vi er gået i gang med at
+    bruge gennemsnittet: Vi ved at gennemsnittet er en <i>approksimation</i>, 
+    men <i>hvor god</i> en approksimation er det? Vi ved også at jo flere "runder"
+    vi arbejder med, jo bedre bliver denne approksimation. Det er intuitivt, men
+    kan vi sætte nogle tal på? Kan vi på en eller anden måde beregne hvor når det
+    er "sikkert" at bruge gennemsnittet. 
+    </p>
+
+    <!-- OMSKRIV DENNE OPGAVE TIL AT DU BRUGER DÉN SKATER-OPGAVE HVOR DER VAR FLERE VALG -->
+    <q-stion 1="2" 2="1" 3="5">
+    Tilbage til skateboard. Vi siger at det var ligesom sidste skateboard-opgave:
+    _(20_)% af tiden får du _(0_) points, _(15_)% af tiden får du _(3_) points, _(20_)% _(7_) points, 
+    _(30_)% af tiden _(9_) points, og _(15_)% af tiden _(10_) points. Sig at du laver _(100_) runder.
+    Vores gennemsnit er nu 
+    _($0.2*0+0.15*3+0.2*7+0.3*9+0.15*10 = 6.05_) 
+    Nu er mit spørgsmål så: Hvis vi har en helt masse
+    runder, hvor mange points er du så <i>i gennemsnit</i>, fra gennemsnittet? 
+    Altså, hvad er "gennemsnitsforskellen" til _(6.05_)? 
+    <br><br></q-stion>
+    <answer-box>
+    Den her kan være lidt mærkeligt at fatte/forstå, men selve beregningen er faktisk meget nem. 
+    Bassicly: Sig at vi laver en <i>ny</i> stokastisk variabel, som er lig 
+    "hvor langt væk du er fra gennemsnittet". Den har i vores tilfælde _(5_) mulige værdier:
+    _(6.05-0=_) _(6.05_), _(6.05-3=_) _(3.05_), _(7-6.05=_) _(0.95_), 
+    _(9-6.05=_) _(2.95_), _(10-6.05=_) _(3.95_). Den ene værdi har en 
+    sandsynlighed på _(0.2_), den næste på _(0.15_), så _(0.2_), så _(0.3_) og til sidst _(0.15_). 
+    Nu finder vi bare gennemsnittet af denne nye stokastiske variabel, da det giver os,
+    <i>i gennemsnittet</i> hvor langt væk vi er fra gennemsnittet!
+    _($6.05*0.2+3.05*0.15+0.95*0.2+2.95*0.3+3.95*0.15 = 3.335_) 
+    Du er altså <i>i gennemsnittet</i> _(3.335_) points væk fra værdien gennemsnittet. 
+    Den her værdi fortæller os ret intuitivt noget omkring hvor meget
+    dataet "spreder sig ud" omkring gennemsnittet. Jo højere tal, jo mere spredning. Lige meget hvor
+    meget den "spreder sig ud" dog, så vil gennemsnittet efter <i>nok</i>
+    runder blive en god approksimation: Hvis dataet både spreder sig til
+    venstre og højre (lavere og større end gennemsnit), så går forskellene
+    jo eventuelt op med hinanden. En større spredning betyder bare at det vil
+    tage længere tid, og at det vil være en del mere "ustabilt". 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Lad os sige vi havde et lidt simplere skater-tilfælde: _(35_)% chance får _(1_) point, _(0.65_)% chance for
+    _(2_) points. Gennemsnittet her er _(0.35*1+0.65*2=_) _(1.65_). Vi kan først rigtig bruge det her gennemsnit
+    som en approksimation, når der er gået en god del runder. Prøv at vurder, på en eller anden måde med et tal,
+    hvor meget <i>bedre</i> det er at bruge gennemsnittet som en approksimation efter _(2_) runder, end en
+    approksimation efter kun _(1_) runde. 
+    <p class="t">
+    Den her opgave er ret tricky!
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Alright, vi skal på en eller anden måde komme frem til ét tal der viser os hvor meget "bedre"
+    gennemsnittet er som en approksimation efter _(4_) runder. Her tænker jeg vi kunne arbejde med <i>spredning</i>.
+    Spredningen efter _(4_) runder <i>vil</i> værre større end efter _(1_) runde, men det er kun fordi alle
+    værdierne også er blevet større (siden vi lægger 4 runder sammen). Det vigtigste er altså ikke
+    bare hvor stor spredningen er, men hvor stor den er <i>i forhold til gennemsnittet</i>. Hvis den gennemsnitlige afstand
+    fra gennemsnittet kun er _(2_)% større eller mindre end gennemsnittet, så gør det en del mindre skade, end hvis
+    det f.eks. er _(53_)% større end gennemsnittet. I den ene kan du fint bruge gennemsnittet som approksimation: I den anden kan du ikke.
+    <p class="t">
+    Okay, så vi ved hvad det er vi skal finde nu: Hvordan finder vi det? Well, ved _(1_) runde er det relativt simpelt.
+    Spredningen er _(|1-1.65|*0.35 + |2-1.65|*0.65 =  _) _(0.455_), hvilke er _(0.455/1.65 = _) _(27_)% af gennemsnittet.
+    Hvad med _(2_) runder? Well, lad os starte med at finde <i>spredningen</i> efter _(2_) runder. Når der går _(2_) runder, og vi lægger
+    points sammen undervejs, så er der _(4_) mulige ting der kan ske:
+    _($\begin{eqnarray} 
+    1, & 1 & : 2 \\
+    1, & 2 & : 3 \\
+    2, & 1 & : 3 \\
+    2, & 2 & : 4 \\
+    \end{eqnarray}_)
+    Hvis vi laver en ny stokastisk variabel som er "antal points efter _(2_) runder", så har den altså 
+    _(3_) værdier: _(2_), _(3_), og _(4_). De har sandsynlighederne _(1*0.35*0.35=_) _(0.1224_), 
+    _(2*0.35*0.65=_) _(0.4549_) og _(1*0.65*0.65=_) _(0.422_). Gennemsnittet er
+    _(2*0.122+3*0.4549+4*0.422=_) _(3.2967_), så spredningen er
+    _($|2-3.296|*0.122 + |3-3.2967|*0.454 + |4-3.2697|*0.422 = 0.601_)
+    Når vi bruger gennemsnittet som en approksimation, så tager vi gennemsnittet af _(1_) runde, og ganger det 
+    med antal runder der er gået. Når der er gået _(2_) runder, så får vi derved _(1.65*2=_) _(3.3_)
+    (hvilke vi kan se er meget tæt på gennemsnittet af _(2_) runder regnet direkte). Spredningen 
+    er altså nu _(0.601/3.30 =  _) _(18_)%. Efter _(2_) runder kan vi altså se at approksimationen er 
+    blevet _(27/18 = _) _(1.5_) gange bedre. 
+    </p>
+    <p class="cent">
+        *
+    </p>
+    <p class="t">
+    Man kan se at vi kunne fortsætte samme trick med f.eks. _(3_) runder:
+    _($\begin{eqnarray} 
+    1, & 1, & 1 & : 2 \\
+    1, & 1, & 2 & : 3 \\
+    1, & 2, & 1 & : 3 \\
+    2, & 1, & 1 & : 3 \\
+    1, & 2, & 2 & : 4 \\
+    2, & 2, & 1 & : 4 \\
+    2, & 1, & 2 & : 4 \\
+    2, & 2, & 2 & : 5 \\
+    \end{eqnarray}_)
+    </p>
+    Det bliver bare meget hurtigt, meget avanceret. Vi arbejder endda med en meget, meget simpel stokastisk variabel
+    hvor der kun er de _(2_) værdier _(1_) og _(2_). Det er det her med at finde de mulige værdier efter flere runder
+    der hurtigt bliver tricky, og det var det samme vi skulle gøre i opgaven hvor to skatere dystede mod hinanden.
+    Der var det faktisk bare lidt simplere, da de to værdier var _(0_) og enten _(5_) eller _(9_). _(0_) gjorde
+    det ret simpelt at arbejde med, da vi let kunne bruge _(\Vec[n,k]_). Det kunne man egentlig også have gjort i vores tilfælde her, men
+    med f.eks. _(3_) eller flere værdier på den stokastiske variabel, så vil det være meget svært. Der er det nok bedre
+    bare at få en computer til at regne det. 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <p class="t">
+    Det her vi er kommet frem til i de to sidste opgaver kaldes <i>spredning</i>, og det defineres som:
+    _($|x_1 - m|*P(x_1) + |x_2-m|*P(x_2) + ... |x_n - m|*P(x_n) _)
+    Hvor _(m_) så er gennemsnittet på den stokastiske variabel. Hvis man skal være helt præcis, så kaldes
+    det faktisk <i>varians</i>, og defineres som:
+    _($(x_1 - m)^2*P(x_1) + (x_2-m)^2*P(x_2) + ... (x_n - m)^2*P(x_n)_)
+    Den første definition her med "spredning" er lidt bare en jeg har fundet på. Det er
+    varians man faktisk bruger. Ved varians opløfter man de forskellige
+    _(x_i - m_) i anden potens, i stedet for bare at tage den absolutte værdi. Den primære grund 
+    til at man gør det, er fordi at absolutte værdier rent matematisk er mere et helvede at arbejde
+    med end bare anden potens. Og anden potens gør stadig lidt det samme, da det sørger for at alting 
+    bliver positivt (alting bliver så bare <i>også</i> en del større). Varians har altså stadig 
+    den samme <i>intuitive</i> betydning, og vi kan stadig bruge det til at <i>sammenligne</i>.
+    Det har bare mistet den meget <i>præcise</i> betydning spredning havde, og kan ikke rigtig bruges
+    til <i>andet</i> end at sammenligne. Jeg anbefaler at du bare bruger spredning, da fordelen
+    af varians primært kommer i mere teoretisk matematik.  
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Du er ved at sammenligne to pistoler. Du vil gerne finde ud af hvilken en er mest præcis.
+    For at gøre det, sætter du hver pistol fast, så det altid skyder samme retning. Du skyder så en masse
+    gange, og måler vinklen til pistolen der hvor kuglen er ramt:
+    <br> <br>
+    <img class='Spic' style='width:95%' src='../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\Stokastisk\Skyde test varians.png'> 
+    <br>
+    <p class="t">
+    Du skyder 50 gange, og får følgende data ved første pistol:
+    </p>
+    <br>
+    <table style="border-collapse: collapse; border: 1px solid black; margin-left: 32%; margin-top:10px; background-color: rgb(209,233,230);" >
+        <tr>
+            <td> <b> Grader/Intervaller  </b> </td>
+            <td> <u> Chance </u> </td>
+        </tr>
+        <tr>
+            <td> -4° til -3° </td>
+            <td> 0.06 </td>
+        </tr>
+        <tr>
+            <td> -3° til -2° </td>
+            <td> 0.08 </td>
+        </tr>
+        <tr>
+            <td> -2° til -1° </td>
+            <td> 0.15 </td>
+        </tr>
+        <tr>
+            <td> -1° til 0° </td>
+            <td> 0.21 </td>
+        </tr>
+        <tr>
+            <td> 0° til 1° </td>
+            <td> 0.23 </td>
+        </tr>
+        <tr>
+            <td> 1° til 2° </td>
+            <td> 0.10 </td>
+        </tr>
+        <tr>
+            <td> 2° til 3° </td>
+            <td> 0.10 </td>
+        </tr>
+        <tr>
+            <td> 3° til 4° </td>
+            <td> 0.07 </td>
+        </tr>
+    </table>
+    <br>
+    <p class="t">
+    Ved anden pistol måler du:
+    </p>
+    <br>
+    <table style="border-collapse: collapse; border: 1px solid black; margin-left: 32%; margin-top:10px; background-color: rgb(209,233,230);" >
+        <tr>
+            <td> <b> Grader/Intervaller  </b> </td>
+            <td> <u> Chance </u> </td>
+        </tr>
+        <tr>
+            <td> -4° til -3° </td>
+            <td> 0.013 </td>
+        </tr>
+        <tr>
+            <td> -3° til -2° </td>
+            <td> 0.0684 </td>
+        </tr>
+        <tr>
+            <td> -2° til -1° </td>
+            <td> 0.205 </td>
+        </tr>
+        <tr>
+            <td> -1° til 0° </td>
+            <td> 0.232 </td>
+        </tr>
+        <tr>
+            <td> 0° til 1° </td>
+            <td> 0.219 </td>
+        </tr>
+        <tr>
+            <td> 1° til 2° </td>
+            <td> 0.246 </td>
+        </tr>
+        <tr>
+            <td> 2° til 3° </td>
+            <td> 0.054 </td>
+        </tr>
+        <tr>
+            <td> 3° til 4° </td>
+            <td> 0.0136 </td>
+        </tr>
+    </table>
+    <br>
+    <p class="t">
+    Hvilken èn er mest præcis? 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Meget simpelt: Lad os finde spredningen på hver pistol, og se hvilken èn er højest. 
+    Da vi arbejder med intervaller (f.eks. _(-3_) til _(-2_) grader), så tager vi bare midtpunktet mellem de to ender
+    (så f.eks. _(-2.5_)). Først finder vi deres gennemsnit:
+    _($\begin{eqnarray}
+    & \text{Pistol 1: } & -3.5*0.06+(-2.5)*0.08+(-1.5)*0.15 \text{ } + \\
+    && (-0.5)*0.21 + 0.5*0.23+1.5*0.1+2.5*0.1 \text{ } + \\
+    && 3.5*0.07 = 0.020
+        \end{eqnarray}_)
+    _($\begin{eqnarray}
+    & \text{Pistol 2: } & -3.5*0.013+(-2.5)*0.068+(-1.5)*0.205 \text{ } + \\
+    && (-0.5)*0.232+0.5*0.219+1.5*0.246 \text{ } + \\
+    && 2.5*0.054+3.5*0.0136 = 0.022
+        \end{eqnarray}_)
+    Man kunne argumentere at vi ikke burde tage spredningen til <i>gennemsnittet</i>, men bare spredningen til _(0_) grader:
+    Det er jo den retning vi gerne vil have at den skal skyde i. Det er helt fair hvis du har gjort det, men man kunne
+    måske forestille sig at pistolen skød lidt til den ene side hele tiden, med ret høj præcision. Så ville den nok
+    stadig være mere "præcis" end den anden. Jeg ved det sku ikke: Jeg ved intet om pistoler. I hvert fald: Vi skal
+    finde spredningerne: 
+    _($\begin{eqnarray}
+    & \text{Pistol 1: } & |-3.5-0.02|*0.06+|-2.5-0.02|*0.08 \text{ }+ \\
+    && |-1.5-0.02|*0.15+|-0.5-0.02|*0.21 \text{ } + \\
+    && |0.5-0.02|*0.23+|1.5-0.02|*0.1 \text{ } + \\
+    && |2.5-0.02|*0.1+|3.5-0.02|*0.07 = 1.50
+    \end{eqnarray}_)
+    _($\begin{eqnarray}
+    & \text{Pistol 2: } & |-3.5-0.022|*0.013+|-2.5-0.022|*0.0684 \text{ } + \\
+    && |-1.5-0.022|*0.205+|-0.5-0.022|*0.232  \text{ } + \\
+    && |0.5-0.022|*0.219+|1.5-0.022|*0.246 \text{ } + \\
+    &&  |2.5-0.022|*0.054+|3.5-0.022|*0.0136 = 1.30 
+    \end{eqnarray}_)
+    Pistol 2 er altså den bedste. 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Sig at vi har to energi-firmaer. Det ene firma står i lidt en akut-situation, og er nødt til
+    at få produceret _(16MJ_) (_(J_) er en enhed for energi) inden for _(4_) dage. Det er
+    deres nummer _(1_) prioritet. Det andet firma skal egentlig bare, <i>i længden</i>, producere
+    så meget strøm som muligt. Det er altså ikke vigtigt at nå det <i>lige nu</i>. 
+    <p class="t">
+    Sig nu at der er to strøm-generatorer. Sig at ingen af dem er fuldkommen forudsigelige, i den
+    forstand at det vil variere hvor meget strøm de producerer pr. dag. F.eks. så kan den
+    første maskine beskrives med følgende skema: 
+    </p>
+    <br>
+    <table style="border-collapse: collapse; border: 1px solid black; margin-left: 21%; margin-top:10px; background-color: rgb(209,233,230);" >
+        <tr>
+            <td> <b> Strøm (MJ) produceret pr. dag  </b> </td>
+            <td> <u> Chance </u> </td>
+        </tr>
+        <tr>
+            <td> 1 til 2 </td>
+            <td> 0.0116 </td>
+        </tr>
+        <tr>
+            <td> 2 til 3 </td>
+            <td> 0.0233 </td>
+        </tr>
+        <tr>
+            <td> 3 til 4 </td>
+            <td> 0.070 </td>
+        </tr>
+        <tr>
+            <td> 4 til 5 </td>
+            <td> 0.327 </td>
+        </tr>
+        <tr>
+            <td> 5 til 6 </td>
+            <td> 0.350 </td>
+        </tr>
+        <tr>
+            <td> 6 til 7 </td>
+            <td> 0.141 </td>
+        </tr>
+        <tr>
+            <td> 7 til 8 </td>
+            <td> 0.040 </td>
+        </tr>
+        <tr>
+            <td> 8 til 9 </td>
+            <td> 0.023 </td>
+        </tr>
+        <tr>
+            <td> 9 til 10 </td>
+            <td> 0.011 </td>
+        </tr>
+    </table>
+    <br>
+    <p class="t">
+    Den anden maskine er:
+    </p>
+    <br>
+    <table style="border-collapse: collapse; border: 1px solid black; margin-left: 21%; margin-top:10px; background-color: rgb(209,233,230);" >
+        <tr>
+            <td> <b> Strøm (MJ) produceret pr. dag  </b> </td>
+            <td> <u> Chance </u> </td>
+        </tr>
+        <tr>
+            <td> 1 til 2 </td>
+            <td> 0.0363 </td>
+        </tr>
+        <tr>
+            <td> 2 til 3 </td>
+            <td> 0.1818 </td>
+        </tr>
+        <tr>
+            <td> 3 til 4 </td>
+            <td> 0.0363 </td>
+        </tr>
+        <tr>
+            <td> 4 til 5 </td>
+            <td> 0.009 </td>
+        </tr>
+        <tr>
+            <td> 5 til 6 </td>
+            <td> 0.054 </td>
+        </tr>
+        <tr>
+            <td> 6 til 7 </td>
+            <td> 0.254 </td>
+        </tr>
+        <tr>
+            <td> 7 til 8 </td>
+            <td> 0.290 </td>
+        </tr>
+        <tr>
+            <td> 8 til 9 </td>
+            <td> 0.090 </td>
+        </tr>
+        <tr>
+            <td> 9 til 10 </td>
+            <td> 0.009 </td>
+        </tr>
+    </table>
+    <br>
+    <p class="t">
+    Din opgave nu at vurdere hvilken maskine passer bedst til hvilket firma.
+    </p>
+    <br><br></q-stion>
+    <answer-box>
+    Vi skal prøve intuitivt at <i>forstå</i> den data vi har fået. Vi <i>kunne</i>
+    gå hen og visualisere det med en computer, men vi kunne også bare beregne gennemsnittet 
+    og spredningen, og så få en O.K god forståelse derfra. Gennemsnittet på den første
+    maskine kan beregnes (jeg gider ikke lige til at vise det, fordi du ved godt
+    hvordan man gør) til 5.254, og på den anden maskine er det 5.67. Spredningen på første
+    maskine er 
+    _($\begin{eqnarray}
+    && |1.5-5.254|*0.0116+|2.5-5.254|*0.0233 \text{ } + \\
+    && |3.5-5.254|*0.070+|4.5-5.254|*0.327  \text{ } + \\
+    && |5.5-5.254|*0.350+|6.5-5.254|*0.141 \text{ } + \\
+    && |7.5-5.254|*0.040+|8.5-5.254|*0.023 + |9.5-5.254|*0.011 \\
+    && = 0.956 
+    \end{eqnarray}_)
+    Spredningen på den anden maskine er:
+    _($\begin{eqnarray}
+    && |1.5-5.254|*0.0363+|2.5-5.254|*0.181 \text{ } + \\
+    && |3.5-5.254|*0.0300+|4.5-5.254|*0.009  \text{ } + \\
+    && |5.5-5.254|*0.054+|6.5-5.254|*0.254 \text{ } + \\
+    && |7.5-5.254|*0.290+|8.5-5.254|*0.090 + |9.5-5.254|*0.009 \\
+    && = 1.860
+    \end{eqnarray}_)
+    Andet firma tænkte <i>langt fremad</i>. Helt teoretisk set, så ville de i vores situation <i>kun</i> gå op i
+    et højt gennemsnit, selv hvis spredningen var ret stor og dårlig. Anden maskine har kun en smule bedre
+    gennemsnit, men værre spredningen, og det er helt fint for dem. Det giver også mening at første virksomhed ville
+    vælge maskine _(1_), da den har et gennemsnit på _(5.254_), og ikke super høj spredning. 
+    De skal komme op på _(16MJ_), og _(5.254*4=_) _(21.016_) er mere end nok. 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    På følgende Geogebra dokument er der blevet indsat størrelsen (arealerne) på alle lande i henholdsvis Europa og 
+    Afrika. Rusland er blevet ekskluderet, da det også er en del af Asien, og vatikanstaten og lignende "by-lande"
+    er også fjernede. Mit spørgsmål er nu: Varierer størrelsen af Europas lande mere end Afrika, eller er det modsat? 
+    <p class="cent">
+        <a href="../../../Assets/Chapter3/Sandsyndlighed og kombinatorik/Stokastisk/Europa og afrika land og størrelser.ggb" download>
+            Download!
+        </a>
+    </p>
+    <p class="t">
+    Det her er teknisk set ikke en "sandsynlighedsopgave", men jeg syntes alligevel det er relevant. 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Gennemsnitsstørrelserne på landende i Europa og Afrika kan vi nemt finde inde i Geogebra via "mean"-funktionen. 
+    Der får vi _(134227 km^2_) i Europa, og _(561260 km^2_) i Afrika. 
+    Hvad med spredning? Well, det er bare "summen af forskellene til gennemsnittet, divideret med mængden af forskelle".
+    Jeg laver altså bare en ny kolonne ved siden af størrelserne, hvor jeg regner forskellen til gennemsnittet.
+    Der er altså f.eks. ved Europa _(|B1 - 134227|_), og så bare at trække nedad. Så tager jeg summen af den
+    nye kolonne, og får _(125668_) ved Europa, og _(477270_) ved Afrika. Afrika har tydeligvis en større spredning,
+    men det er heller ikke en helt fair sammenligning da landende i Afrika også i gennemsnittet er større. 
+    Derfor ville det nok være mest fair hvis vi dividerer begge spredninger med gennemsnittet. 
+    Europas spredning er _(93_)% af gennemsnittet, og Afrikas er _(85_)%. Afrikas lander varierer
+    altså mere i størrelse <i>generelt</i>, men Europas lande varierer mere i størrelse <i>i forhold til hinanden</i>. 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <p class="t">
+    I de tre sidste opgaver har vi meget brugt spredningen til at beskrive ting. Vi har brugt den til at hjælpe os med
+    at forstå ting intuitivt i en eller anden situation. Lad os nu prøve at bruge den til at approximere, og til at
+    løse nogle svære problemer. Her er èt eksempel:
+    </p>
+    <p class="t">
+    Sig at vi igen stod med skateboarderen: Den komplicerede version hvor du
+    _(20_)% af tiden får _(0_) points, _(15_)% af tiden _(3_) points, _(20_)% _(7_) points, 
+    _(30_)% af tiden _(9_) points, og _(15_)% af tiden _(10_) points. Hvis vi skal finde det mest hyppige samlede antal points efter
+    <i>mange</i> runder (nok i hvert fald sådan 20-30+ runder) så virker gennemsnittet fint. Hvad hvis der ikke er
+    gået særlig mange runder dog? F.eks. _(6_)? Det ville være meget svært at gøre uden nogen som helst form for approximation,
+    da _(6_) runder ville kræve at vi skulle finde alle mulige kombinationer af points efter _(6_) omgange, hvilket ville
+    være meget svært og tidskrævende. Her har jeg èn ide:
+    </p>
+    <p class="t">
+    Når vi kommer op på nok runder, så bliver spredningen relativ ligegyldig for vores gennemsnit. Jo mere spredning, jo 
+    flere runder skal der til for at det er akkurat. Hvis der <i>ikke</i> er gået særlig mange runder, så skal vi altså
+    på en eller anden måde i vores approksimation <i>tænke over spredningen</i>. Spredningen i denne situation kan 
+    regnes til _(1.6675_), og det er både til venstre og til højre (mindre eller lavere). Gennemsnittet kan 
+    regnes til _(6.05_). Normalt når vi bruger
+    gennemsnittet, så tænker vi kun over én enkelt værdi. Den her ène værdi repræsentere i denne situation alle _(5_) værdier vores stokastiske
+    variabel kan tage. Det ville være mere akkurat hvis vi brugte <i>to</i> værdier, og her kommer spredningen i brug:
+    Den ene værdi repræsenterer de tilfælde hvor vi er <i>mindre</i> end gennemsnittet, og den anden værdi de tilfælde
+    hvor vi er <i>større</i> end gennemsnittet. Altså:
+    _($\text{Mindre: } 6.05-1.6675=4.382, \qquad \text{Større: } 6.05+1.6675 = 7.717 _)
+    Der er _(2_) værdier (_(0_) og _(3_)) der er mindre end det her gennemsnit,
+    og _(3_) værdier (_(7_), _(9_) og _(10_)) der er større end, så der er _(0.2+0.15=_) _(0.35_) chance for at det er mindre, og
+    _(0.2+0.30.15=_) _(0.65_) chance for at det er højere. Lad os derfor sige vi laver en ny stokastisk variabel der på en måde
+    er en "simplere" version af den vi har lige nu. Dens ene værdi er _(4.382_), med en chance på _(0.35_). Dens anden værdi
+    er _(7.717_) med en chance på _(0.65_). <i>Ja</i>, vi har stadig en stokastisk variabel lige nu, og <i>ja</i>, vi skal stadig
+    finde alle mulige kombinationer i op til _(6_) runder, men det er markant simplere nu da vi kun har _(2_) værdier!
+    Lad os sige at der er _(4_) ud af _(6_) af gangende hvor vi får _(7.717_). Det betyder at der må være _(2) gange hvor vi får
+    _(4.382_). Hvis der går _(6_) runder, så kan det her ske på _(\Vec[6,4]_) måder, så chancen er:
+    _($\Vec[6,4]*0.65^4*0.35^2_)
+    Det er altså bare en basketball-agtig fordeling, som er super dejlig at arbejde med! På 
+    sådan en fordeling kan man også nemt regne den værdi med størst sandsynlighed, som er et tal mellem 
+    _(p*(n+1)_) og _(p*(n+1)-1_), altså mellem _(7*0.65=_) _(4.55_) og _(3.55_), så _(4_). Der er altså størst
+    chance for at få _(7.717_) _(4_) gange og _(4.382_) _(2_) gange, ergo en score på 
+    _($4*7.717+2*4.382=39.632_) 
+    Hvis bare vi havde brugte gennemsnittet, så ville vi få _(6*6.05=_) _(36.3_), hvilke i alt ærlighed er relativt tæt på.
+    Vi kan alligevel være sikre på at det vi gjorde her var mere præcist dog: Der er mange mulige stokastiske variabler
+    med et gennemsnit på _(6.05_), men der er mindre med et gennemsnit på _(6.05_), og specifikt en spredning på
+    _(1.6675_). Vi brugte flere informationer omkring vores stokastiske variabel, så det burde være en bedre approximation. 
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Samme skater-situation som før. Nu er der bare også en anden skater som
+    _(15_)% af tiden får _(0_) points, _(30_)% af tiden _(4_) points, _(25_)% _(6_) points, 
+    _(10_)% af tiden _(7_) points, og _(20_)% af tiden _(8_) points. Hvor stor chance har du cirka for at vinde efter _(7_) runder? 
+    <br><br></q-stion>
+    <answer-box>
+    Vi <i>har</i> løst sådan en slags opgave her før, men der havde de stokastiske variabler kun _(2_) værdier: Nu har de _(5_). 
+    For at finde chancen for at èn er større end den anden, så er vi nødt til at finde <i>alle</i> mulige værdier
+    (points) de hver kan have efter _(7_) runder, og så tage summen af alle de tidspunkter hvor du har flere points end
+    ham/hende. Det er meget svært med _(5_) værdier, men ret nemt med kun _(2_)! Din "approksimale-stokastiske variabel" ved
+    vi er _(4.382_) og _(7.717_) med chancerne _(0.35_) og _(0.65_). Den anden skater kan vi regne har et gennemsnit på
+    _(5.00_) og en spredning på _(2.1_). Han/hun har _(0.15+0.3=_) _(0.45_) chance for at få under, og 
+    _(0.25+0.10+0.20=_) _(0.55_) chance for at få over. Han/hendes approksimale-stokastiske variabel er altså _(5-2.1=_) _(2.9_), _(5+2.1=_) _(7.1_), med
+    chancerne _(0.45_) og _(0.55_). 
+    <p class="t">
+    De mulige værdier du kan få efter _(7_) runder er _(0*4.382+7*7.717_), _(1*4.382+6*7.717_), _(2*4.382+5*7.717_) osv. Samme gælder
+    den anden skater hvor det så er _(0*2.9+7*7.1_), _(1*2.9+6*7.1_), ... . Lad os lige skrive de mulige værdier op:
+    _($\begin{eqnarray} 
+        && \text{Dig}: & 30.67, & 34.00, & 37.34, & 40.67, & 44.01, & 47.34, & 50.68, & 54.01 \\
+        && \text{Modstander}: & 20.30, & 24.50, & 28.70, & 32.90, & 37.09, & 41.3, & 45.59, & 49.69
+    \end{eqnarray}_)
+    Vi har allerede etableret at chancen for at få de her værdier bare er binomiale fordelinger, og vi har løst den her slags opgave
+    før. Vi regner altså:
+    _($\begin{eqnarray} 
+    && \Vec[7,0]*0.55^0*0.45^{7-0}*Sum(\Vec[7,i]*0.65^i*0.35^{7-i},i,0,7) & + \\
+    && \Vec[7,1]*0.55^1*0.45^{7-1}*Sum(\Vec[7,i]*0.65^i*0.35^{7-i},i,0,7) & + \\
+    && \Vec[7,2]*0.55^2*0.45^{7-2}*Sum(\Vec[7,i]*0.65^i*0.35^{7-i},i,0,7) & + \\
+    && \Vec[7,3]*0.55^3*0.45^{7-3}*Sum(\Vec[7,i]*0.65^i*0.35^{7-i},i,1,7) & + \\
+    && \Vec[7,4]*0.55^4*0.45^{7-4}*Sum(\Vec[7,i]*0.65^i*0.35^{7-i},i,3,7) & + \\
+    && \Vec[7,5]*0.55^5*0.45^{7-5}*Sum(\Vec[7,i]*0.65^i*0.35^{7-i},i,5,7) & + \\
+    && \Vec[7,6]*0.55^6*0.45^{7-6}*Sum(\Vec[7,i]*0.65^i*0.35^{7-i},i,5,7) & + \\
+    && \Vec[7,7]*0.55^7*0.45^{7-7}*Sum(\Vec[7,i]*0.65^i*0.35^{7-i},i,6,7) &  
+    \end{eqnarray}_)
+    _($ = 0.8310_)
+    Wholla! Da der jo er noget approksimation involveret i denne metode, så burde vi nok 
+    runde det her ned til èt decimal: Cirka _(80_)% chance. 
+    </p>
+    <br></answer-box>
+

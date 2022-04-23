@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+
+
+    <h3>_(A^x_)</h3>
+    <p class="t">
+    Lad os som det næste på listen undersøge _(A^x_). Et eksempel på det kunne f.eks.
+    være 
+    _($y=2.3^x_)
+    Vi antager, at _(A_) ikke er negativ, da du ikke kan opløfte
+    et negativt tal, til en potens der ikke er hel. F.eks. 
+    kan man ikke evaluere _(-1.7^{1.5}_), da det svarer til 
+    _($(-1.7)^{3/2} = \sqrt{(-1.7)^3} = \sqrt{-4.913}_)
+    Lad os gå i gang:
+    _($\frac{2.3^{x+k}-2.3^x}{k}_)
+    Vi kan ret nemt omskrive det her til
+    _($\frac{2.3^x*(2.3^{k}-1)}{k}_)
+    ... eller, formateret lidt anderledes:
+    _($2.3^x* \left(\frac{2.3^{k}-1}{k} \right)_)
+    Vi står nu i en meget mærkelig situation: Et hvilket
+    som helst tal opløftet i _(0_)'e potens giver _(1_). Det er bare sådan vi har
+    defineret det. 
+    Så _(2.3^k_) nærmer sig _(1_) når _(k_) nærmer sig _(0_), og 
+    _(2.3^k-1_) nærmer sig _(0_) når _(2.3^k_) nærmer sig _(1_). 
+    Vi står nu med en brøk, hvor både tælleren _(2.3^k-1_) og nævneren
+    _(k_) nærmer sig _(0_), når _(k_) nærmer sig _(0_). 
+    Hvad i alverden kan vi sige om dens værdi, når _(k_) kommer "uendelig tæt på _(0_)"?
+    </p>
+    <p class="t">
+    Det er et meget tricky spørgsmål, og for at svare på det <i>rigtigt</i>, får
+    man brug for de mystiske "grænser" jeg nævnte tidligere. 
+    Man kan dog fint <i>approximere</i>
+    svaret og nå frem til en relativt intuitiv forklaring.
+    </p>
+    <p class="t">
+    Vi kan regne værdierne på _((2.3^k-1)/k_) når 
+    _(k_) er lidt <i>under</i> og lidt <i>over</i>, og få en fornemmelse for hvad
+    der sker, når den faktisk nærmer sig _(0_):
+    </p>
+
+    <img class='Spic' style='width:110%; margin-left:-10%;' src='../../../Assets/Chapter4\DerivativesAndIntegrals\ApproximatingE.png'> 
+
+    <p class="t">
+    De her to punkter er lig: 
+    _($\begin{eqnarray}
+    && \bigl( &- & 0.1, & \, \, \frac{2.3^{-0.1}-1}{-0.1} & \bigr) \, \, & = \, \, ( & - & 0.1, & 0.799) \\ \\
+    && \bigl( &  & 0.1, & \, \, \frac{2.3^{0.1} - 1}{0.1} & \bigr) \, \,  & = \, \, ( &  & 0.1, &  0.866)
+    \end{eqnarray}_)
+    Vi kan sætte en streg i mellem de to punkter, og se hvordan den skærer _(y_)-aksen:
+    </p>
+
+    <img class='Spic' style='width:110%; margin-left:-10%;' src='../../../Assets/Chapter4\DerivativesAndIntegrals\ApproximatingE2.png'> 
+
+    <p class="t">
+    Vi kan se, at den skærer y-aksen ved _((0,0.832)_), så _((2.3^k-1)/k_) er ca. lig _(0.832_), og hældningen
+    af _(y=2.3^x_) er derfor (ca.) lig:
+    _($0.832*2.3^x_)
+    Der er rigtig meget interresant at notere her. Hældningen af _(2.3^x_) er lig bare _(2.3^x_)
+    ganget med en konstant - i vores tilfælde _(0.832_). Det er egentlig en super simpel og
+    dejlig formel for hældningen. Konstanten ændrer sig, alt efter hvilken base der bliver opløftet: 
+    _(2.3_) svarer til _(0.832_), og et andet eksempel som _(4.8_), kan man med samme proces
+    regne, giver _(1.568_). Man kunne nu stille et meget interessant spørgsmål: 
+    Hvis konstanten
+    både kan være <i>mindre</i> og <i>større</i> end _(1_), kan den så også være lig ... _(1_)? 
+    Findes der et tal _(b_), hvor hældningen af _(b^x_) er lig _(1*b^x_)? 
+    I så fald er hældningen af _(b^x_) lig <i>sig selv</i>! 
+    </p>
+
+    <p class="t">
+    Svaret er <i>ja</i>. Hvis man justerer på _(b_) og leger lidt kold-eller-varm, ser man 
+    at konstanten nærmer sig _(1_), når _(b_) er omkring _(2.7182 \, \dots \,_).  
+    Minder det tal dig om noget? 
+    </p>
+    <p class="cent"> Det er motherfucking _(e_)! </p>
+    <p class="t">
+    Det tal vi har baseret _(Ln(x)_) på grundet dets
+    mærkelige bank-definition, hvor vi forestiller os, at vi opdeler en rente i "uendelig" mange perioder. Rent
+    matematisk kan _(e_) defineres som:
+    _($e=(1+1/n)^n, \text{Hvis } n \text{ er uendelig stort}_)
+    _(e_) er et tal med uendelig mange decimaler ligesom _(\pi_) eller _(\sqrt{2}_). 
+    Man kan bevise, at hvis man bruger <i>præcist</i> _(e_), 
+    vil konstanten være <i>præcist</i> _(1_). 
+    Man kunne nok meget logisk undre sig over, hvad 
+    i al verden hældningen af _(A^x_) har at gøre med bank-renter opdelt i perioder. Det ordentlige bevis
+    kræver grænser, men følgende forklaring burde gå:
+    </p>
+    <p class="t">
+    _(e_) og _((e^k-1)/k_) har èn ting til fælles: 
+    De omhandler begge størrelser, der enten bliver virkelig store, eller virkelig små.
+    _(e_) er defineret i forhold til _(n_), som bliver virkelig stor. 
+    _((e^k-1)/k_) er defineret i forhold til _(k_), som
+    bliver virkelig lille. Jeg tænker nu vi kan gøre to ting:
+    </p>
+    <p class="t">
+    _(\underline{\textbf{A}}:_) Omskrive _(e_), så den ikke længere handler om ting, der bliver virkelig store, 
+    men i stedet ting der bliver virkelig små.
+    Derved vil den minde mere om _((e^k-1)/k_)
+    </p>
+    <p class="t">
+    _(\underline{\textbf{B}}:_) Omskrive _((e^k-1)/k_), så at den på en eller anden måde lidt har samme definition 
+    som _(e_) - bare en smule anderledes. 
+    Derefter vil vi kunne omskrive det 
+    svære stykke _((e^k-1)/k_) til noget 
+    andet i forhold til _(e_), som bare
+    er et helt normalt tal! 
+    </p>
+    <p class="t">
+    Først _(\textbf{A}_). 
+    Idéen er, at beskrive det i forhold til _(1/n_) i stedet for _(n_): _(1/n_) bliver
+    uendelig <i>lille</i> hvis _(n_) bliver uendelig <i>stor</i>. 
+    Kald _(1/n_) for _(m_). Nu får vi:
+    _($(1+m)^{1/m}, \, \, \text{Hvis } m \text{ er meget tæt på } 0_)
+    Det næste step var _(\textbf{B}_). Her starter vi med, at gøre noget lidt tricky. 
+    Vi omskrev _((1+1/n)^{n}_) i forhold til _(m=1/n_), <i> med det formål</i> at 
+    variablen skulle nærme sig _(0_) og ikke _(\infty_). 
+    Udtrykket ændrede sig <i>som resultat</i> af denne transformation:
+    _($\left(1+\frac{1}{n} \right)^n \, \, \to \, \, (1+m)^{1/m}_)
+    Idéen er nu, at vi laver et lignende trick <i>hvis formål netop er</i> at 
+    ændre på 
+    <i>udtrykket</i>, <i>ikke</i> nødvendigvis tallet variablen nærmer sig. 
+    Sådan her kan vi omskrive _((e^k-1)/k_) til en mere brugbar form. 
+    Èn god ide kunne være 
+    _($q=e^k-1_)
+    Her bruger stykket stadig en variabel, der nærmer
+    sig _(0_)! Hvis _(q=e^k-1_), er _(k=Ln(q+1)_), så _((e^k-1)/k_) bliver til:
+    _($\frac{q}{Ln(q+1)}_)
+    Det her virker på ingen måde simplere end hvad vi startede med, men
+    det er praktisk grundet _(Log_)-funktionens mange dejlige egenskaber: 
+    _($\frac{q}{Ln(q+1)} = \frac{q/q}{Ln(q+1)/q} = \frac{1}{Ln \left((q+1)^{1/q} \right)}_)
+    Bum! Nu har vi _((q+1)^{1/q}_), hvor _(q_) nærmer sig _(0_). 
+    Det er den definition, vi kom frem til for _(e_), så:
+    _($\frac{1}{Ln \left((q+1)^{1/q} \right)} = \frac{1}{Ln(e)} = \frac{1}{1} = 1_)
+    Bevis færdig! _(e_) giver <i>præcis</i> _(1_)! Hældningen på _(y=e^x_) er
+    bare _(e^x_)! 
+    </p>
+
+    <q-stion 1="5" 2="1">
+    Brug samme proces vi lige brugte til at finde hældningen 
+    på _(7.3^x_). Kan du finde frem til en generel formel, for hældningen
+    af _(A^x_)? 
+    <br><br></q-stion>
+    <answer-box>
+    Vi har nu 
+    _($7.3^x*(7.3^k-1)/k_) 
+    ... som skal omskrives. Vi gør præcist det samme som før, og
+    siger, at 
+    _($7.3^k-1=m_)
+    Nu bliver _(k_) så lig med _(Log_{7.3}(m+1)_), og  _(7.3^x*(7.3^k-1)/k_) bliver til:
+    _($\begin{eqnarray}
+    && 7.3^x*\frac{m}{Log_{7.3}(m+1)} = \\ \\
+    && 7.3^x*\frac{m/m}{Log_{7.3}(m+1)/m} = \\ \\
+    && 7.3^x*\frac{1}{Log_{7.3}((m+1)^{1/m})}
+    \end{eqnarray}_)
+    Vi kan nu omskrive _((m+1)^{1/m}_) til _(e_) præcis ligesom før:
+    _($7.3^x*\frac{1}{Log_{7.3}(e)}_)
+    Vi <i>kan</i> teknisk set godt regne logaritmen _(Log_{7.3}(e)_) og få vores svar, men
+    de fleste lommeregnere har kun _(Ln(x)_) eller _(Log_{10}(x)_). Lad os regne det
+    i forhold til _(Ln_), nu da vi jo alligevel tager logaritmen af _(e_). 
+    Vi ved,
+    at man kan bruge følgende formel til at omskrive èn logaritme i forhold til en anden:
+    _($Log_A(B) = \frac{Log_C(B)}{Log_C(A)}_)
+    Så vi får: 
+    _($7.3^x*\frac{1}{\frac{Ln(e)}{Ln(7.3)}}=7.3^x*\frac{Ln(7.3)}{Ln(e)}=Ln(7.3)*7.3^x=1.987*7.3^x_)
+    Bum! Man kan let se, at denne process/argumentation kan generaliseres, og at _(A^x_) er lig:
+    _($Ln(A)*A^x_)
+    Egentlig en rigtig dejlig formel! 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="5" 2="2">
+    Sig du er ved at gro nogle bakterier. Du starter med _(4_), og i gennemsnit
+    føder hver bakterie _(1.4_) nye bakterier om dagen. _(1.4_) fordi de nogle gange føder _(1_), og
+    andre gange føder _(2_): Det er et gennemsnit. 
+    <p class="t">Hvor mange nye bakterier får du sådan ca. på den _(7_)'ne dag?</p>
+    <br></q-stion>
+    <answer-box>
+    Vi kan let se, at mængden af bakterier efter _(n_) dage er:
+    _($4*1.4^n_)
+    Det skal vi finde hældningen af efter _(7_) dage. Hældningen af
+    _(1.4^n_) er 
+    _($Ln(1.4)*1.4^n_)
+    ... så hældningen af _(4*1.4^n_) er:
+    _($4*Ln(1.4)*1.4^n = 1.34*1.4^n_)
+    Vi skal evaluere denne hældning på den _(7_)'ne dag, så vi regner:
+    _($1.34*1.4^{7} = 14.12_)
+    ... hvilket svarer til omtrent _(14_)'ne nye bakterier. 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="5" 2="3">
+    Sig vi har et eller andet radioaktivt materiale. Det udskyder protoner og neutroner, som kan
+    være farlige hvis de rammer kroppen. Sig at materialet starter med at indeholde _(10^5_) protoner,
+    og over tid følger:
+    _($\text{Protoner } = 10^5*1.23^{-t}_)
+    ... hvor _(t_) er antallet af dage. Vi er ikke særlig interesserede i <i>hvor stor</i> kilden er, men
+    mere <i>hvor aktiv</i> den er: 
+    Hvor mange protoner/neutroner skyder den ud, hver dag? 
+    Jo mere aktiv, jo farligere,
+    og vi kan måske forestille os, at "sikkerhedsgrænsen" er _(34_) protoner pr. dag (et meget urealistisk
+    og opfundet tal). Hvornår er det ikke længere farligt, at komme i nærheden af kilden? 
+    <p class="t">
+    Jeg skal notere, at den model jeg har brugt for henfald er opfundet og urealistisk. 
+    Det er kun for pædagogiske årsager. 
+    </p>
+   <br></q-stion>
+    <answer-box>
+    Vi skal regne hvornår hældningen af kurven er lig _(-34_). Vi ved, hvordan vi regner
+    hældningen af _(1.23^t_), men hvordan regner vi _(1.23^{-t}_)? 
+    <p class="t">
+    Lad os forsøge at omskrive til formen _(A^x_) via eksponentreglerne: 
+    _($1.23^{-t} = (1.23^{-1})^{t} = 0.813^t_)
+    Så hældningen er:
+    _($10^5*Ln(0.813)*0.813^t = -20700*0.813^t _)
+    Ergo:
+    _($\begin{align}
+    -20700*0.813^t & = -34 \to \\ \\
+    0.813^t & = 0.00164251 \to \\ \\
+    t & = Log_{0.813} \left(0.00164251 \right) = 30.97
+    \end{align}_)
+    Det tager derfor omtrent _(31_) dage, før vi må gå hen til kilden.  
+    </p>
+    <br></answer-box>
+
+
+
+
+

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+
+
+<h3>Planer som rummet der udfoldes af to vektorer</h3>
+<p class="t">
+Der findes også en tredje måde vi kan se på planer, der lidt hænger sammen med 
+den første. I et 2D-koordinatsystem kan alle
+punkter beskrives ved hjælp af bare to ikke-parallelle vektorer:
+</p>
+<img class='SpicBT' style='width:85%;' src='../../../Assets/Chapter2\Section4\Space\ChangeOfBasis.png'> 
+<p class="t">
+Her i dette eksempel er der valgt to tilfældige vektorer:
+_($\vec{m}=\VeC[3.06,0.42], \qquad \vec{n}=\VeC[-1.4,-1.2]_)
+Og et tilfældigt punkt _(P=(2.14,4.58)_). Man kan se på billedet at:
+_($-1.23*\vec{m} - 4.24*\vec{n}=\VeC[2.14,4.58]_)
+Det her kan man gøre med et hvilket som helst punkt, og to hvilket som helst 
+vektorer, der ikke er parallelle (fordi hvis de er parallelle kan vi kun gå 
+1 retning!). Det svarer til, at
+_($a*\vec{m}+b*\vec{n}=\VeC[x,y]_)
+der altid findes en løsning _((a, \, b)_) til dette system af ligninger, lige meget
+hvilket punkt _((x, \, y)_) og hvilke vektorer _(\vec{m}=(m_x,m_y)_), _(\vec{n}=(n_x,n_y)_)
+der bliver brugt. Det kan man nemt se er sandt, da man bare kan isolere
+_(a_) og _(b_) i 
+_($\begin{eqnarray}
+&& a*m_x & + & b*n_x & = & x \\
+&& a*m_y & + & b*n_y & = & y 
+\end{eqnarray}_)
+... og få:
+_($a=\frac{x*n_y-y*n_x}{m_x*n_y-m_y*n_x}, \qquad b=-\frac{x*m_y-y*m_x}{m_x*n_y-m_y*n_x}_)
+Det her er sandt, så længe at _(m_x*n_y-m_y*n_x_) ikke er lig _(0_), fordi så ville
+vi skulle dividere med _(0_). Vi kan se - som forventet - at det <i>er</i> lig _(0_), 
+hvis de to vektorer er parallelle, hvor at _(m_x=k*n_x_), _(m_y=k*n_y_) så:
+_($m_x*n_y-m_y*n_x = k*n_x*n_y-k*n_y*n_x = 0_)
+Siden et plan også er en slags "2D koordinatsystem", 
+gælder det samme her: 
+Alle punkter i planet kan beskrives, bare ved hjælp af to
+vektorer ganget med forskellige tal!
+</p>
+<img class='Spic' style='width:100%' src='../../../Assets/Chapter2\Section4\Space\ChangeOfBasis3D.png'> 
+<p class="t">
+Her på billedet kan man f.eks. se, at 
+_($A=P+2.2*\vec{m}+1.22*\vec{n}_)
+Vi siger, at vi kan lave en "parameterfremstilling" af planet. Vi beskriver 
+alle dets punkter som _(P_) + kombinationer af _(\vec{m}_) og _(\vec{n}_):
+_($\VeC[x,y,z]=P+t_1*\vec{m}+t_2*\vec{n}_)
+Der er to parametre, siden vi både ganger _(\vec{m}_) og _(\vec{n}_). Hvis
+bare du har to vektorer på et plan, kan du nemt definere det på denne måde. 
+</p>
+<p class="t">
+bupidium!
+</p>
+<cst-test url="../../../Assets/Chapter2\Section4\Conics\EccentricityExplanation.mp4">Test!</cst-test>
+
+
+<p class="t">
+Well, hello there!
+</p>
+<q-stion 1="15" 2="1">
+Kedelig, dum, nem og teoretisk opgave, men skal bare lige hurtig
+tjekke, om du har forstået det:
+<p class="t">
+Sig at de tre punkter _(A=(3,7,8)_), _(B=(-5,6,2)_), _(C=(1,2,0)_) alle
+er på et eller andet plan _(p_). Find en parameterfremstilling for planet. 
+</p>
+<br></q-stion>
+<answer-box>
+Vi har brug for to, ikke-parallelle vektorer på planet. Det kunne f.eks.
+være _(\vec{AB}_) og _(\vec{AC}_):
+_($\vec{AB}=\VeC[-5,6,2]-\VeC[3,7,8]=\VeC[-8,-1,-6]_)
+_($\vec{AC}=\VeC[1,2,0]-\VeC[3,7,8]=\VeC[-2,-5,-8]_)
+Så parameterfremstillingen bliver:
+_($\VeC[x,y,z]=\VeC[3,7,8]+t_1*\VeC[-8,-1,-6]+t_2*\VeC[-2,-5,-8]_)
+<br></answer-box>
+
+<!--  -->
+
+<p class="t">
+Du kan lege lidt rundt med ideen i følgende simulation:
+</p>
+
+<div style="margin-top:25px;">
+    <iframe scrolling="no" title="Planes3" src="https://www.geogebra.org/material/iframe/id/qum9wgkt/width/700/height/500/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/true/ctl/true" width="500px" height="357px" style="border:0px;"> </iframe>
+</div>
+
+<!--  -->
+
+<p class="t">
+Lad os nu prøve at anvende alt det vi ved om planer,
+og forstå hvorfor alle de koniske sektioner kan ses som skæringen mellem
+et plan og en kegle. Her er min "plan" for, hvordan vi gør det: 
+</p>
+<p class="t">
+Vi beskriver på en eller anden måde skæringen <i>i forhold til</i> planets
+koordinatsystem. Tænk over det: En normal ellipse på XY-planet er defineret som:
+_($\frac{x^2}{A^2}+\frac{y^2}{B^2}=1_)
+Hvis vi sagde vi havde de to vektorer
+_($\vec{m}=\VeC[1,0], \qquad \vec{n}=\VeC[0,1]_)
+... kunne vi også sige:
+_($\frac{a^2*\vec{m}}{A^2}+\frac{b^2*\vec{n}}{B^2}=1_)
+Som så beskriver hvad der skal gælde for konstanterne _(a_) og _(b_). Det her
+kan vi gøre, fordi _(\vec{m}_) og _(\vec{n}_) er vinkelrette og begge har en længde på
+_(1_). Samme ide kunne man nemt forestille sig på et andet plan: 
+</p>
+<br>
+<img class='Spic' style='width:130%; margin-left: -15%' src='../../../Assets/Chapter2\Section4\Space\ChangeOfBasisConic.png'> 
+<br>
+<p class="t">
+Vi beskriver derfor skæringen i forhold til de her to vinkelrette _(1_)-lange vektorer
+_(\vec{m}_) og _(\vec{n}_). 
+</p>
+<br>
+<img class='Spic' style='width:95%' src='../../../Assets/Chapter2\Section4\Space\ChangeOfBasisConic2.png'> 
+<br>
+<p class="t">
+Så: Vi skal beskrive skæringen ved hjælp af _(a_) og _(b_), og vise at 
+_(a_) og _(b_) følger enten en ellipse, hyperbola, eller parabel. Det svarer til:
+_($\frac{(a-A)^2}{C^2} + \frac{(b-B)^2}{D^2}=1_)
+Eller:
+_($\frac{(a-A)^2}{C^2} - \frac{(b-B)^2}{D^2}=1_)
+Eller:
+_($b=A a^2 + B a + C_)
+Som vi kan se på billedet, er ellipsen eller hyperbolaen det skal følge ikke nødvendigvis 
+centreret på _((0,0)_).
+</p>
+<p class="t">
+Lad os begynde. Nok det simpleste plan vi kan lave der skærer keglen _(x^2+y^2=z^2_) er
+_(z=k*x+c_), hvor _(k_) er hældningen med respekt til _(x_), og _(z_) er plusset med
+en eller anden konstant _(c_) (så planet ikke kun skærer keglen ved _((0,0,0)_)). Vi skal
+nu finde _(\vec{m}_) og _(\vec{n}_). Den første er meget simpel:
+_($\vec{m}=\VeC[0,1,0]_)
+Det passer også med, hvad du så på de to tidligere billeder. Vi kan nemt gøre det her,
+fordi _(y_) ikke har nogen indflydelse på planet. Denne vektor går kun mod _(y_), så
+hvis vi skal lave en der er vinkelret burde den ikke gå mod _(y_) overhovedet: Kun _(x_)
+og _(z_). Kald længden vi går fremad på _(x_) for _(d_). Vektoren skal være _(1_) lang, så:
+_($\sqrt{d^2+(d*k)^2}=1 \to_)
+_($d=\frac{1}{\sqrt{1+k^2}}_)
+_(z=k*d_) så _(\vec{n}_) er derfor lig:
+_($\vec{n}=\VeC[\frac{1}{\sqrt{1+k^2}}, 0, \frac{k}{\sqrt{1+k^2}}]_)
+Vi ved at ét punkt på planet er _((0,0,c)_), så:
+_($\VeC[x,y,z]=\VeC[0,0,c]+a*\VeC[0,1,0]+b*\VeC[1/\sqrt{1+k^2},0,k/\sqrt{1+k^2}]_)
+Det her svarer i lidt simplere udtryk til at:
+_($x=b/\sqrt{1+k^2}, \qquad y=a, \qquad z=c+b*k/\sqrt{1+k^2}_)
+Keglen vi skærer kan beskrives som:
+_($z^2=x^2+y^2_)
+Vi finder nu skæringen mellem denne kegle og vores plan _(z=k*x+c_):
+_($\begin{eqnarray} 
+&& (k*x+c)^2 =x^2+y^2 & \to \\ \\
+&& k^2*x^2 + 2*k*c*x + c^2 = x^2+y^2 & \to \\ \\
+&& -y^2+(k^2-1)*x^2+2*c*k*x =-c^2 & \to \\ \\
+&& \frac{y^2}{1-k^2}+x^2-2*\frac{c*k}{1-k^2}x =\frac{c^2}{1-k^2} & \to \\ \\
+&& \frac{y^2}{1-k^2} + \left(x - \frac{c*k}{1-k^2} \right)^2 = \frac{c^2*k^2}{(1-k^2)^2}+\frac{c^2}{1-k^2} & \to \\ \\
+&& y^2 + (1-k^2)* \left(x - \frac{c*k}{1-k^2} \right)^2 = \frac{c^2*k^2}{1-k^2}+c^2 & \to \\ \\
+&& y^2 + (1-k^2)* \left(x - \frac{c*k}{1-k^2} \right)^2 = \frac{c^2}{1-k^2} 
+\end{eqnarray}_) 
+Vi indsætter nu endeligt _(x=b/\sqrt{1+k^2}_) og _(y=a_) og får:
+_($a^2 + (1-k^2)* \left(\frac{b}{\sqrt{1+k^2}} - \frac{c*k}{1-k^2} \right)^2 = \frac{c^2*k^2}{1-k^2}+c^2_)
+Det ligner måske ikke, men det her er en ellipse eller hyperbel! Hvis noget følger
+formen 
+_($A*(x-a)^2+B*(y-b)^2=C^2_) 
+... så følger det også 
+_($\frac{(x-a)^2}{A^2} + \frac{(y-b)^2}{B^2} = 1_)
+Vores følger næsten den tidligere, udover at _(b_) er divideret med _(\sqrt{1+k^2}_). Det 
+er intet problem dog: At dividere _(x_) med noget overalt på en kurve svarer bare til, at udstrække kurven. 
+</p>
+<p class="t">
+_(1-k^2_) er positiv, når _(k_) er mindre end _(1_). Samme gælder _(c^2/(1-k^2)_).
+I det tilfælde får vi en ellipse, da både _(x^2_) og _(y^2_) er positive.
+Både _(1-k^2_) og _(c^2/(1-k^2)_) er negativt, hvis _(k \gt 1_), hvilket betyder at 
+_(x_)-ledet bliver positivt og _(y_)-ledet negativt. Nu er det altså en hyperbel.
+</p>
+<p class="t">
+Det er en parabel, hvis _(k=1_), men det kan vi ikke vise med denne ligning, da det er umuligt at 
+dividere med _(0_). Det er meget nemt at vise, at man får en parabel, hvis man gennemgår samme proces som tidligere,
+bare med _(k=1_) helt fra starten. 
+</p>
+
+<p class="t">
+Boom! Hypotese bekræftet! 
+</p>
+
+<q-stion 1="15" 2="2">
+Sig at det _(2D_)-punkt _(A_) er lig _((-5,2)_). Beskriv nu _(A_) i forhold til de to vektorer _(\vec a_) og _(\vec b_):
+_($\vec a = \VeC[1,2], \qquad \vec b = \VeC[3,-2]_)
+<br><br></q-stion>
+<answer-box>
+Sig at:
+_($\VeC[-5,2] = t_1 \VeC[1,2] + t_2 \VeC[3,-2] _)
+Vi har altså systemet:
+_($\begin{eqnarray}
+&& 1 t_1 & + 3 t_2 & = -& 5 \\
+&& 2 t_1 & - 2 t_2 & = &  2
+\end{eqnarray}_)
+Vi kan løse dette lineære system og få _(t_1=-0.5_), _(t_2=-1.5_), så:
+_($A=-0.5 \VeC[1,2] - 1.5 \VeC[3,-2]_)
+Voila!
+<br><br></answer-box>
+
+<!--  -->
+
+<q-stion 1="15" 2="3">
+I _(3D_) kan vi gøre meget det samme, nu har vi bare brug for 3 vektorer til hvert punkt. Sig at 
+_(A=(8,0,-28)_) og at
+_($\vec a = \VeC[1,0,1], \qquad \vec b = \VeC[3,-7,2], \qquad \vec b = \VeC[-2,-4,0] _)
+Beskriv _(A_) i forhold til _(\vec a_), _(\vec b_), _(\vec c_). 
+<br><br></q-stion>
+<answer-box>
+Vi gør præcis det samme:
+_($\VeC[8,0,-28] = t_1 \VeC[1,0,1] + t_2 \VeC[3,-7,2] + t_3 \VeC[-2,-4,0]_)
+Hvilket svarer til systemet
+_($\begin{eqnarray}
+&& 1 t_1 & + 3 t_2 & - 2 t_3 & = 8 \\
+&& 0 t_1 & - 7 t_2 & - 4 t_3 & = 0 \\
+&& 1 t_3 & + 2 t_2 & + 0 t_3 & = -28 
+\end{eqnarray}_)
+Som vi kan løse og få _(t_1 = -44_), _(t_2=8_), _(t_3=-14_). Så:
+_($(8,0,-28)=-44 \VeC[1,0,1] + 8 \VeC[3,-7,2] - 14 \VeC[-2,-4,0]_)
+Bum!
+<br><br></answer-box>
+
+<!--  -->
+
+<q-stion 1="15" 2="4">
+Sig at _(A_), _(B_), _(\vec a_) og _(\vec b_) alle ligger på samme plan:
+<img class='Spic' style='width:80%' src='../../../Assets/Chapter2\Section4\Space\DescribeWithParameters.png'> 
+<p class="t">
+Sig at: 
+_($A=(4,2,2.5), \, B=(-5,4,-2.5), \, \vec{a} = \VeC[-3,1,-1.25], \, \vec{b} = \VeC[0,3,3.75]_)
+Beskriv nu _(B_) i forhold til _(A_) og de to vektorer _(\vec a_), _(\vec b_)
+</p>
+<br></q-stion>
+<answer-box>
+Vi har:
+_($\VeC[-5,4,-2.5] = \VeC[4,2,2.5] + t_1 \VeC[-3, 1, -1.25] + t_2 \VeC[0,3,3.75]_)
+Hvilket svarer til:
+_($\begin{alignat}{3}
+4 & \, - \, & 3 t_1 &\,+\,& 0 t_2 & \, \, = \, \, -5 \\
+2 & \, + \, & 1 t_1 &\,+\,& 3 t_2 & \, \, = \, \, 4 \\
+2.5 & \, - \, & 1.25 t_1 &\,-\,& 3.75 t_2 & \, \, = \, \, -2.5
+\end{alignat}_)
+Vi <i>ved</i>, at dette system kan løses trods vi har tre ligninger og kun to ubekendte. 
+Vi kan derfor vælge bare at ignorere
+tredje ligning, og eksklusivt fokusere på de to første (eller de to sidste; Det bestemmer vi jo helt selv):
+_($\begin{eqnarray}
+&& 4 & - 3 t_1 & + 0 t_2 & = -5 \\
+&& 2 & + 1 t_1 & + 3 t_2 & = 4 
+\end{eqnarray}_)
+Det giver _(t_1=3_), _(t_2=-1/3_), så:
+_($B = A + 3 \VeC[-3,1,-1.25] - \frac{1}{3} \VeC[0,3,-3.75]_)
+Perfekt! 
+<br><br></answer-box>
+
+<!--  -->
+
+<q-stion 1="15" 2="5">
+Hvis vi tegner en cirkel på et roteret plan, og ser på <i>skyggen</i>
+af den cirkel på XY-planet, ligner det en ellipse:
+<img class='Spic' style='width:80%' src='../../../Assets/Chapter2\Section4\Space\ProjectionOfCircle.png'> 
+<p class="t">
+Bevis at skyggen faktisk <i>er</i> formet som en ellipse. 
+</p>
+<br></q-stion>
+<answer-box>
+Jeg tænker, at jeg arbejder med det simpleste mulige plan, der også har hældning:
+_(z=k*y_). På dette plan placerer jeg cirklen på _((0,0,0)_), hvilket nok er lettest. 
+Jeg gør nu meget det samme, som da vi skulle skære keglen med et roteret plan: Vælger
+to vinkelrette vektorer på planet 
+_($\vec a = \VeC[1,0,0], \qquad \vec b = \frac{1}{\sqrt{1+k^2}} \VeC[0,1,k]_)
+... og beskriver den roterede cirkel parametrisk som
+_($\VeC[x,y,z] = R Cos(t)*\VeC[1,0,0] + R Sin(t)*\frac{1}{\sqrt{1+k^2}} \VeC[0,1,k]_)
+... hvor _(R_) er cirklens radius. Denne parametriske fremstilling gør det ekstremt let
+for mig at se cirklens "skygge", da det svarer til bare at fokusere på _(x_)- og _(y_)-komponenterne:
+_($\begin{align}
+x & = R Cos(t) \\
+y & = \frac{R}{\sqrt{1+k^2}} Sin(t)
+\end{align}_)
+Dette passer til den parametriske definition af en ellipse! _(\sqrt{1+k^2}_) 
+kan være alt mellem _(1_) og _(\infty_), så 
+_(R/\sqrt{1+k^2}_) kan være alt mellem _(0_) og _(R_). Hvis vi kalder 
+_(R_) for _(A_) og _(R/\sqrt{1+k^2}_) for _(B_), har vi altså:
+_($\begin{eqnarray}
+&& x & = A Cos(t) \\
+&& y & = B Cos(t)
+\end{eqnarray}, \qquad B \le A_)
+Voila!
+<br><br></answer-box>
+

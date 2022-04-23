@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+
+    <h3>Opgaver hvor vektorer, er praktiske at anvende</h3>
+
+    <q-stion 1="10" 2="1">
+    Se følgende illustration:
+    <img class='SpicXL' style='width:60%' src='../../../Assets/Chapter2\Section4\Vectore\FysikExercise 1 1.png'> 
+    <p class="t">
+    Du kaster en _(1.5kg_) badebold oppe fra hovedets højde. Du giver den en kraft på _(12_) i
+    _(1.2_) sekunder, og eventuelt lander den på en inklination _(2m_) fremme. Lidt
+    ligesom en hoppebold rikochettere den af fladen og flyver tilbage. Vi kan modellere
+    det lidt ligesom lys/bølger i den forstand, at indfaldsvinklen
+    skal matche udfaldsvinklen. 
+    Vi siger,
+    at bolden ikke mister noget hastighed når den rammer: Der er kun retningen der ændrer sig. Der er 
+    en vind _(F_{vind}=3_) og en tyngdekraft på _(14.7_). Rammer bolden dig i hovedet?
+    </p>
+    <p class="t">
+    Husk: Hvis du ikke syntes, du får noget som helst ud af at 
+    bruge den her ide med "vektorer", så lad bare være! Det er mit 
+    job at overbevise dig om, at det er praktisk. 
+    </p>
+    <p class="t">
+    Husk også: Du får brug for at bruge den der formel vi ikke faktisk
+    har bevist endnu. Jeg lover at vi nok skal bevise den senere, vi har 
+    bare ikke lige værktøjerne lige nu. 
+    </p>
+    <p class="t">
+    Det her er en ret lang opgave!
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Alright, "rammer bolden dig i hovedet" kan vi forsimplet omformulere til: 
+    Når bolden vender tilbage til 
+    _(x=0_), er dens y-position så mellem _(1.5_) og _(1.5+0.2=1.7_)? 
+    <p class="t">
+    Vi giver bolden en kraft på _(12_) i _(1.2_) sekunder. Kraften på _(12_) svarer
+    til en acceleration på _(12/1.5=8_). Boldens accelerer med _(8_) i _(1.2_) sekunder, 
+    så den opnår en hastighed på _(1.2*8=_) _(9.6 \text{m}/\text{s}_). Det kan
+    beskrives via en vektor som:
+    _($9.6*\VeC[Cos(65),Sin(65)] = \VeC[4.05,8.7]_)
+    Tyngdekraften og vinden er de eneste kræfter, så 
+    boldens acceleration er:
+    _($a = \frac{\VeC[-3,-9.8]}{1.5} = \VeC[-2,-4.7]_)
+    Vi har både acceleration og starthastighed, så vi kan nu bruge positionsformlen og få:
+    _($\VeC[x,y] = \frac{\VeC[-2,-4.7]}{2} t^2 + \VeC[4.05,8.7]*t + \VeC[0,1.5] = \VeC[-t^2 + 4.05t, -4.9t^2 + 8.7t + 15]_)
+    Inklinationen kan modelleres som 
+    _($y=Tan(20)*(x-2)=0.36x - 0.72_) 
+    Vi skal derfor finde den _(t_) hvor at 
+    _($-4.9t^2 + 8.7t + 1.5 = 0.36*(-t^2 + 4.05t) - 0.72_)
+    Dette kan med lidt algebra omskrives til en simpel andengradsligning 
+    _($-4.54t^2 + 7.24t + 15.72=0_) 
+    ... som giver _(t=2.82_)
+    Bolden rammer altså ved
+    _($\VeC[-1*2.82^2 + 4.05*2.82, -4.9*2.82^2 + 8.7*2.82 + 15] = \VeC[3.46,0.56]_)
+    Med en hastighed på:
+    _($\VeC[4.05,8.7] - \VeC[-2,-4.7]*2.82 = \VeC[-1.59,-18.93]_)
+    Det er en størrelse på _(\sqrt{18.93^2 + 1.59^2}=19_). Lad os nu
+    håndtere alt det med vinkler:
+    </p>
+    <img class='Spic' style='width:35%' src='../../../Assets/Chapter2\Section4\Vectore\FysikExercise 1 2.png'> 
+    <p class="t">
+    Vi er fundamentalt interesserede i vinklen _(w_). Vi kan let 
+    finde _(\theta=_) _(Arctan(18.93/1.59)=_) _(85.21^o_), og vi ved,
+    at de to røde vinkler er identiske. Det kan ses med
+    lidt tænkning, at 
+    _($v=\theta-20=85.21-20=65.21^o_)
+    Det kan også
+    ses, at 
+    _($w=v-20=65.21-20=45.2^o_)
+    Vi har nu både længden og 
+    retningen på den nye hastighed, så: 
+    _($19 \VeC[Cos(45),Sin(45)]=\VeC[-13.38, 13.48]_)
+    Accelerationen er stadig _((-2,-9.8)_), og startpositionen er _((3.46,0.56)_), 
+    så via positionsformlen får vi nu:
+    _($\VeC[x,y] = \VeC[t^2 - 13.38t + 3.46, -4.9t^2 + 13.48t + 0.56] _)
+    Vi skal se, hvad _(y_) er, når _(x=0_), så:
+    _($-t^2 - 13.38t + 3.46 = 0 \to 0.25_)
+    Det betyder at _(y_) ender som:
+    _($y=-4.9*0.25^2 + 13.38*0.25 + 0.56 = 3.63_)
+    Der er langt højere end _(1.7_), så bolden rammer dig ikke i hovedet 
+    (eller resten af kroppen for den sags skyld)
+    </p>
+    <br></answer-box>
+
+    <q-stion 1="10" 2="2">
+    Du ved nok godt hvordan, at man har større indflydelse jo længere ude på en vippe man sidder.
+    Det nævnte jeg kort da vi arbejdede med massecentre: _(indflydelsen_) 
+    var lig 
+    _($\text{længde fra massecenter}*\text{styrke}_)
+    Fænomenet her er ret praktisk, da man kan bruge det til at løfte 
+    tunge objekter uden meget kraft. 
+    Det er lidt for godt til at være sandt, og som bøde 
+    for den billigere kraft skal vi <i>bruge</i>
+    den kraft over en længere distance. Vi bruger stadig den samme energi på at flytte kassen,
+    bare over en mindre koncentreret periode. 
+    <p class="t">
+    Forholdet mellem hvor meget kraft vi normalt skulle bruge, før vi anvendte vippen, og
+    hvor meget kraft vi skal bruge nu kaldes 
+    <i>mekanisk fordel</i> ("mechanical advantage"). Det er et generelt
+    begreb, der også bruges om andre lignende maskiner, og ingeniører i dag gør
+    stadig brugt af princippet. Fortæl mig nu: Hvad er den "mekaniske fordel" på følgende vippe? 
+    </p>
+    <img class='Spic' style='width:35%' src='../../../Assets/Chapter2\Section4\Vectore\FysikExercise 2 1.png'>
+    <p class="t">
+    Det her er et ret nemt og kort problem i forhold til det tidligere. Vektorer er heller
+    ikke nødvendigvis <i>super</i> brugbare eller nødvendige lige her, men måske
+    virker det bedre for dig!
+    </p>
+    <br></q-stion>
+    <answer-box t="h">
+    Lad mig starte med at stille det her spørgsmål: 
+    Hvor meget kraft _(F_) skal jeg bruge, for at vægten _(m_)
+    holder sig i luften? Med andre ord: Hvor stor skal _(F_) være, for at vippen holder balance?
+    <br><br></answer-box>
+    <answer-box>
+    Sig at massen _(m_) har en tyngdekraft på _(F_t_). 
+    Hvor meget kraft _(F_) skal jeg bruge, for at vægten _(m_)
+    holder sig i luften? _(F=F_t_) selvfølgelig! 
+    <p class="t">
+    Hvis du i stedet skulle holde den via vippen, 
+    ville du skulle sørge for, at din side
+    havde lige stor rotationsindflydelse som massen. Den har en indflydelse på 
+    _(F_t*1.2_), og du har en indflydelse på _(F*4.5_), så:
+    _($F*4.5=F_t*1.2 \to F_t = \frac{1.2}{4.5} F_t = 0.26 F_t_)
+    Voila! Den mekaniske fordel er _(1/0.26=3.84_). Det er hvor meget mindre
+    kraft, du skal bruge. 
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="10" 2="3">
+    På følgende billede ser vi en _(3.5m_) lang traditionel, gammeldags vogn:
+    <img class='SpicXL' style='width:80%' src='../../../Assets/Chapter2\Section4\Vectore\FysikExercise 3 1.png'> 
+    <p class="t">
+    Trods det ikke er dens "sande" massepunkt, roterer vognen 
+    omkring linjen, hvor hjulene ligger (markeret blåt). 
+    Sig at træet vognen er lavet af, har en
+    densitet på _(600 \frac{kg}{m^3}_), at den firkantede kasse vejer _(300kg_),
+    at den aflange vejer _(500kg_), og at der er en vind _(F_{\text{vind}}=30_). Hvor meget kraft
+    _(F_{\text{hånd}}_) skal hver af dine hænder give, for at vognen holdes oppe fladt? 
+    Vinden kan du
+    tilnærmelsesvis sige rammer midten af vognen. Du får også brug for det faktum, at
+    tyngdekraften en bestemt masse _(m_) oplever er _(9.8*m_). </p>
+    <p class="t">
+    Resultat du får er nok relativt stort, og en smule (meget) urealistisk 
+    for kun èn person (eller for den sags
+    skyld en hest) 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Lad os først af alt lave det her om til et simplere 2D problem:
+    <img class='SpicXL' style='width:65%' src='../../../Assets/Chapter2\Section4\Vectore\FysikExercise 3 2.png'> 
+    <p class="t"> 
+    Udover hænderne er der _(5_) kræfter i spil. Vi starter med at 
+    finde deres angrebspunkter via lidt simpelt geometri: 
+    </p>
+    <img class='SpicXL' style='width:65%' src='../../../Assets/Chapter2\Section4\Vectore\FysikExercise 3 3.png'> 
+    <p class="t">
+    Massen på vognens "gulv" er _(3.5*2*0.15*600=_) _(630\ text{kg}_), 
+    og massen på den forrest væg er
+    _(0.15*2*600=_) _(360 \text{kg}_). Vognen oplever derfor en 
+    samlet rotationsindflydelse på:
+    _($\begin{eqnarray}
+    && (0.25-2.5)*500 & + \\
+    && (1.75-2.5)*630 & + \\
+    && (2.95-2.5)*300 & + \\
+    && (3.425-2.5)*360 & + \\
+    && (1.75-2.5)*30*Sin(60) \, & + \\
+    && (3+2.5)*F_{\text{hånd}} 
+    \end{eqnarray}_)
+    Så:
+    _($-1148.9 + 5.5 F_{\text{hånd}} = 0 \to F_{\text{hånd}} = 104.4_)
+    Voila! I skal altså nok være flere mennesker (eller heste)!
+    </p>
+    <br></answer-box> 
+
+    <!--  -->
+
+    <p class="t">
+    Vi har indtil videre beskrevet retninger på to måder:
+    Hældninger og vinkler.
+    </p>
+    <p class="t">
+    Hældninger er upraktiske i den forstand, at de kun kan 
+    beskrive _(180_) forskellige grader - der
+    er to unikke grader for hver hældning. 
+    Yderligere kan man nemt <i>lægge vinkler sammen</i>. 
+    Hældninger <i>kan</i> til tider være bedre at bruge,
+    da man ikke først behøver evaluere Sin eller Cos i nogle 
+    kontekster. 
+    </p>
+    <p class="t">
+    <i>Vektorer</i> er 
+    et tredje valg, der til en grad kombinerer det bedste af begge 
+    verdener. De oplyser os med ligeså meget information
+    som en vinkel, <i>og</i> er nemme at regne med. Hvis du har 
+    en vektor, kan du <i>både</i> regne
+    dens hældning, vinkel og for den sags skyld også styrke 
+    (selvom det ikke lige har noget at gøre med retning). 
+    Den eneste ulempe er, at man ikke hurtigt kan "plusse retningen"
+    ligesom en vinkel. Det er selvfølgelig heller ikke helt ligeså godt til "relative" retninger. 
+    </p>
+    <p class="t">
+    En hvilken som helst vektor _(\Vec[a,b]_) kan vi se som en pil, der går i en bestemt retning med en 
+    bestemt styrke. Vektoren 
+    _($\VeC[Cos(\theta),Sin(\theta)]_) 
+    har en størrelse på 
+    _($\sqrt{Cos(\theta)^2+Sin(\theta)^2}=\sqrt{1}=1_) 
+    ... og retning på _(\theta_). Vektoren
+    _($c*\VeC[a,b]=\VeC[ac,bc]_) 
+    er _(c_) gange så lang som _(\Vec[a,b]_), da 
+    _($\sqrt{(ac)^2+(bc)^2}=c*\sqrt{a^2+b^2}_)
+    Man kan derfor nemt rejse _(c_) langs en bestemt <i>retningsvektor</i> 
+    ved bare at gange begge dens elementer. 
+    Det er bedst illustreret via
+    nogle eksempler og opgaver. 
+    </p> 
+
+    <br>
+
+   <q-stion 1="10" 2="4" customWidth="570">
+    En person er ved at beskrive hvor du skal gå hen. Han siger: 
+    "_(6m_) langs 
+    _(\Vec[0.93,0.342]_), _(7m_) langs _(\Vec[-0.86,0.5]_), _(5m_) meter langs
+    _(\Vec[0.5,-0.86]_), _(23m_) ad _(\Vec[0.34,0.93]_) og så _(15m_) _(\Vec[-0.88,-0.57]_)
+    med positiv _(x_) taget til nord, og positiv _(y_) taget til syd".
+    Hvor langt væk nord og syd ender du? Alle de her vektorer han har givet
+    er altså enhedsvektorer. 
+    <br><br></q-stion>
+    <answer-box customWidth="570">
+    Easy og hjernedødt: 
+    _($6*\VeC[0.93,0.342] + 7*\VeC[-0.86,0.5] + 5*\VeC[0.5,-0.86] + 23*\VeC[0.34,0.93] + 15*\VeC[-0.88,-0.57]=_)
+    _($\VeC[6*0.93+7*(-0.86)+5*0.5+23*0.34+15*(-0.88), 6*0.342+7*0.5+5*(-0.86)+23*0.93+15*(-0.57)]=_)
+    _($\VeC[-3.18,14.092]_)
+    Tænk også over hvordan, jeg meget nemt og dobbelt så 
+    hurtigt kunne have fundet <i>kun</i> _(x_)-værdien
+    eller <i>kun</i> y-værdien, hvis det var det eneste 
+    jeg var interesseret i. Det er ikke helt
+    ligeså hurtigt med vinkler. 
+    <br><br></answer-box> 
+
+    <!--  -->
+
+    <q-stion 1="10" 2="5">
+    Se følgende billede:
+    <img class='SpicXL' style='width:65%' src='../../../Assets/Chapter2\Section4\Vectore\VectorMinus.png'> 
+    <p class="t">
+    Sig, at _(\vec{a}=\Vec[-30,50]_) og _(\vec{b}=\Vec[40,20]_). Hvor
+    langt er der fra skolen til cafeèn? 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Kald vektoren fra skolen til
+    cafèen for _(\vec{c}_). Nu kan du se, at:
+    _($\vec{a}+\vec{c}=\vec{b}_)
+    Ergo:
+    _($\vec{c}=\vec{b}-\vec{a}=\VeC[40,20]-\VeC[-30,50]=\VeC[70,-30]_)
+    Så:
+    _($|\vec{c}| = \sqrt{70^2+30^2}=76.15m_)
+    Selvfølgelig kunne man argumentere, at vektorer som en ide ikke nødvendigvis
+    hjælper os med at løse denne opgave, da vi jo nemt bare kunne have argumenteret:
+    </p>
+    <img class='Spic' style='width:60%' src='../../../Assets/Chapter2\Section4\Vectore\VectorMinus2.png'> 
+    <p class="t">
+    "Sæt startpositionen til _((0,0)_)", så skolen er _((-30,50)_) og cafèen 
+    _((40,20)_). Nu bliver længden 
+    _($\sqrt{(40-(-30))^2+(20-50)^2}=76.15m_)
+    Men ja, smag og behag. 
+    </p>
+    <br></answer-box> 
+
+    <!--  -->
+
+    <q-stion 1="10" 2="6">
+    Du løber fra punktet _((12, 6)_) mod en fodbold ved punktet _((25, 38)_) med
+    en hastighed på _(3 m/s_). Beskriv din position efter _(t_) sekunder. 
+    <br><br></q-stion>
+    <answer-box>
+    Fodbolden er _(25-12=13_) væk fra dig på _(x_) og _(38-6=32_) væk 
+    fra dig på _(y_). Det kan vi også beskrive som en vektor _(\vec a_)
+    mellem dig og fodbolden:
+    _($\vec{a}=\VeC[13,32]_)
+    Vi <i>kunne</i> sige
+    _($\VeC[x,y]=\VeC[12,6]+t*\vec{a}_)
+    ... <i>hvis</i> _(\vec{a}_) havde en længde på _(3 \, m/s_).
+    Hvordan skifter vi dens længde til _(3_) mens vi bevarer dens retning?
+    <p class="t">
+    Vi ved, at længden af en vektor ganget med en konstant, 
+    bare er vektorens længde ganget <i>med</i> den konstant. 
+    Derfor kan vi dividere vektoren <i>med dens egen længde</i>
+    for at få en vektor med længde _(1_). Herfra kan vi gange
+    med en hvilken som helst længde, vi har brug for: 
+    _($\left( \frac{\VeC[12,6]}{\sqrt{12^2+6^2}} \right)*3 = \VeC[0.894, 0.447]*3 = \VeC[2.683, 1.341]_)
+    Voila! Din position efter _(t_) sekunder er:
+    _($\VeC[x,y] = \VeC[12,6] + t*\VeC[2.683, 1.341]_)
+    </p>
+    <br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5" customWidth="550">
+    Dig og din ven er til en gymnastikfremvisning, hvor i skal
+    løbe rundt med et banner:
+    <img class='SpicXL' style='width:80%' src='../../../Assets/Chapter2\Section4\Vectore\VectorFlag1.png'> 
+    <p class="t">
+    Ovenfra ser situationen ud som:
+    </p>
+    <img class='SpicBXL' style='width:80%' src='../../../Assets/Chapter2\Section4\Vectore\VectorFlag2.png'> 
+    <p class="t">
+    I skal hver - med banneret i hånden - løbe over mod to andre folk
+    på holdet. Banneret maksimale længde hvis det udstrækkes helt 
+    er _(4.5m_).
+    Du - _((-1,0.5)_) - løber med en hastighed på igen _(3 m/s_), og din ven _(4 m/s_). 
+    Hvornår kan i ikke løbe længere på grund af banneret? 
+    </p>
+    <p class="t">
+    Svaret er ret lavt, bare lige så du ikke bliver forvirret.
+    </p>
+    <br></q-stion>
+    <answer-box customWidth="550">
+    Lad os først og fremmest beskrive dig og din vens position i forhold til tiden.
+    Derefter kan vi opsætte en ligning med bannerets længde:
+    _($\begin{eqnarray}
+    && \vec{a}=\VeC[-4,6]-\VeC[-1,0.5]=\VeC[-3,5.5] \\ \\
+    && \vec{b}=\VeC[6,7]-\VeC[2,1]=\VeC[4,6] 
+    \end{eqnarray}_)
+    ... og
+    _($\begin{eqnarray}
+    && \sqrt{3^2+5.5^2}=6.26 \\ \\
+    && \sqrt{4^2+6^2}=7.21 
+    \end{eqnarray}_)
+    ... så
+    _($\begin{eqnarray}
+    && \vec{h_a}=\frac{3}{6.26}*\VeC[-3,5.5] = \VeC[-1.67, 2.63] \\ \\
+    && \vec{h_b}=\frac{4}{7.21}*\VeC[4,6] = \VeC[2.22, 3.33]
+    \end{eqnarray}_)
+    ... hvilket betyder at:
+    _($\begin{eqnarray}
+    && \VeC[x_1(t),y_1(t)]=\VeC[-1,0.5]+t*\VeC[-1.67, 2.63] \\ \\
+    && \VeC[x_2(t),y_2(t)]=\VeC[2,1]+t*\VeC[2.22,3.33] 
+    \end{eqnarray}_)
+    Bannerets længde kan simpelt modelleres som afstanden mellem
+    dig og din ven:
+    _($\sqrt{(x_1(t)-x_2(t))^2 + (y_1(t)-y_2(t))^2}_)
+    Det kan simplificeres til: 
+    _($\sqrt{(-1+t*(-1.67) - (2+t*2.22))^2 + (0.5+t*2.63 - (1+t*3.33))^2}=_)
+    _($\sqrt{(-3-3.89t)^2+(-0.5-0.7t)^2}=_)
+    _($\sqrt{15.62t^2 + 24.04t + 9.25}_)
+    Nu kan vi sige:
+    _($\begin{align}
+    \sqrt{15.62t^2 + 24.04t + 9.25} & = 4.5 & \to \\ \\
+    15.62t^2 + 24.04t + 9.25 & = 20.25 & \to \\ \\
+    15.62t^2 + 24.04t - 11 & = 0
+    \end{align}_)
+    Det her passer til _(Ax^2 + Bx + C_), så det kan løses. 
+    Vi får:
+    _($t=0.369_)
+    Ikke engang èt sekund!
+    <br><br></answer-box> 
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Find en vektor, der er vinkelret til og har samme størrelse som _(\Vec[a,b]_) 
+    <br><br></q-stion>
+    <answer-box>
+    Sig vores vektor _(\Vec[a,b]_) har en længde på _(c_) og vinkel på _(\theta_).
+    Nu kan vi skrive den som:
+    _($c*\VeC[Cos(\theta), Sin(\theta)]_)
+    Vores vinkelrette vektor skal have samme længde _(c_), men være roteret med _(90=\pi/2_) grader:
+    _($c*\VeC[Cos(\theta+\frac{\pi}{2}), Sin(\theta+\frac{\pi}{2})]_)
+    Vi ved, at _(Cos(v+\pi/2)=-Sin(v)_) og at _(Sin(v+\pi/2)=Cos(v)_), så det endelige
+    svar er:
+    _($c*\VeC[-Sin(v),Cos(v)]=\VeC[-c*Sin(v),c*Cos(v)]=\VeC[-b,a]_)
+    Vi har vores svar! Super simpelt endda: 
+    Bare byt rundt på elementerne og gør det nye x-element negativt! 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Se følgende illustration:
+    <img class='Spic' style='width:90%' src='../../../Assets/Chapter2\Section4\Vectore\CircleExercise.png'> 
+    <p class="t">
+    Sig at _(c_) er en cirkel defineret som _((x-5.72)^2 + (y-5.55)^2 = 4^2_), og at
+    _(\Seg{AP}_) tangerer cirklen. Sig yderligere, at _(A=(8.02,2.28)_), og at 
+    _(AP=6_). Hvad er _(P_)'s koordinater?
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Hvis cirklens center er _(O_), ved jeg, at vektoren der går fra _(O_) til _(A_)
+    er vinkelret med vektoren, der går fra _(A_) til _(P_), da de begge er på tangenten.
+    _($\vec{OA}=\VeC[8.02,2.28]-\VeC[5.72,5.55]=\VeC[2.3,-3.27]_)
+    Den vinkelrette vektor er lig:
+    _($\VeC[-b,a]=\VeC[3.27,2.3]_)
+    Nu har vi en vektor i <i>retningen</i> af _(AP_), men den skal
+    også have den rigtige længde på _(6_). Vi ved, at den lige nu er
+    lige så lang som cirklens radius på _(4_), så vi siger bare:
+    _($\frac{6}{4}*\VeC[3.27,2.3]=\VeC[4.9,3.45]_)
+    Nu så:
+    _($P=A+\VeC[4.9,3.45]=\VeC[8.02+4.9, 2.28+3.45]=\VeC[12.92, 5.73]_)
+    Pænt elegant løsning i min mening! 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5" customWidth="540">
+    Du er ude at sejle et skib. Her via GPS kan det være effektivt at bruge nord-syd koordinater
+    i stedet for noget mere relativt som vinkler. Din position er lige nu _((4564,2093)_), og 
+    du skal over til _((4690, 1922)_). Motoren på skibet giver en kraft _(F_) på _(60_), skibet og
+    bemandingen vejer _(300kg_), og der er en vind på _(F_{vind}=\Vec[-20,30]_). Hvad skal 
+    din båds kraft-vektor være, for at i sejler direkte mod _((4690,1922)_)? 
+    <p class="t">
+    Den her opgave er relativ svær! Der er i hvert fald lidt tricky lignings-løsning involveret
+    (i hvert fald på den måde, jeg har løst den)
+    </p>
+    <br></q-stion>
+    <answer-box customWidth="540">
+    Sig at startpositionen er _(P_), målet er _(S_), motorens kraft
+    er _(\vec{F_m}_) og vindens kraft _(\vec{F_w}_). Lad os nu lige tegne situationen:
+    <img class='Spic' style='width:50%' src='../../../Assets/Chapter2\Section4\Vectore\GpsExercise2.png'> 
+    <p class="t">
+    Det fundamentale problem er, at vinden har en indflydelse på retningen af 
+    vores bevægelse. Bådens kraft plus vindens kraft burde gerne give en vektor
+    i retningen af _(\vec{PS}_), hvor _(P_) er startpositionen og _(S_) 
+    slutpositionen. Altså:
+    _($\vec{F_w}+\vec{F_m}=k*\vec{PS}_)
+    Jeg skriver _(k*\vec{PS}_), fordi det kun er <i>retningen</i> af _(\vec{PS}_) 
+    der er vigtig. Så behøver jeg heller ikke på noget tidspunkt normalisere _(\vec{PS}_).
+    Jeg kan bare sige:
+    _($\vec{PS} = \VeC[4690-4564,1922-2093] = \VeC[126,-171]_)
+    Jeg ved, at _(\vec{F_m}_) har en styrke på _(60_), men jeg kender ikke dens retning.
+    Derfor kan jeg skrive den som:
+    _($\vec{F_m}=\VeC[60 Cos(\theta), 60 Sin(\theta)]_)
+    Så vi får nu:
+    _($\VeC[-20,30]+\VeC[60 Cos(\theta), 60 Sin(\theta)]=\VeC[126k,-171k]_)
+    Det her er altså to ligninger med to ubekendte:
+    _($\begin{eqnarray}
+    & - & 20 & + 60*Cos(\theta) & =   & k*126 \\
+    &   & 30 & + 60*Sin(\theta) & = - & k*171
+    \end{eqnarray}_)
+    Hvordan går vi lige til at løse det, præcist? Vi er ret ligeglade med
+    _(k_), så lad os bare fokusere på at finde _(\theta_) først. Man kan relativt
+    nemt fjerne _(k_), ved at sige
+    _($k=\frac{-20+60*Cos(\theta)}{126}, \qquad k=\frac{30+60*Sin(\theta)}{-171} \to_)
+    ... og så
+    _($\begin{align}
+    \frac{-20+60*Cos(\theta)}{126} &= \frac{30+60*Sin(\theta)}{-171} & \to \\ \\
+    3420 + -10260*Cos(\theta) &= 3780 + 7560*Sin(\theta) & \to \\ \\
+    -Cos(\theta) &= 0.736*Sin(\theta) + 0.035
+    \end{align}_)
+    Nu er vi i en lidt tricky situation. Det ser umiddelbart ikke ud til, at
+    vi kan simplificere mere. Hvis bare alting var i forhold til _(Cos_) eller
+    _(Sin_), kunne vi måske opstille en andengradsligning. Her kan vi
+    udnytte, at _(Cos^2 = 1 - Sin^2_), så hvis vi opløfter begge
+    sider i anden potens, får vi:
+    _($\begin{align}
+    (-Cos(\theta))^2 & = (0.736*Sin(\theta) + 0.035)^2 &\to \\ \\
+    Cos(\theta)^2 & = 0.541*Sin(\theta)^2 + 0.05152*Sin(\theta) + 0.001225 &\to \\ \\
+    1-Sin(\theta)^2 & = 0.541*Sin(\theta)^2 + 0.05152*Sin(\theta) + 0.001225 &\to \\ \\
+    0 & = 1.541*Sin(\theta)^2 + 0.05152*Sin(\theta) - 1.001225 
+    \end{align}_)
+    Voila! Det passer til _(Ax^2+Bx+C=0_) med _(A=1.541_), _(B=0.5152_) og 
+    _(C=-1.00125_). Ligningen har to løsninger: _(Sin(v)=0.78_) og 
+    _(Sin(v)=-0.82_). Når man tegner situationen, som vi gjorde i starten, 
+    kan man se at y-komponentet <i>skal</i> gå nedad. Det er derfor nok _(-0.82_), der
+    er den rigtige løsning. Det giver _(\theta=Arcsin(-0.82)=-0.96_), så:
+    _($\vec{F_m}=\VeC[60*Cos(-0.96),60*Sin(-0.96)]=\VeC[32.41,-49.2]_)
+    Bum!
+    </p>
+    <br></answer-box>
+
+    <!-- <q-stion 1="2" 2="1" 3="5" customWidth="540">
+    Du er ude at sejle et skib. Her via GPS kan det være effektivt at bruge nord-syd koordinater
+    i stedet for noget mere relativt som vinkler. Din position er lige nu _((4564,2093)_), og 
+    du skal over til _((4690, 1922)_). Motoren på skibet giver en kraft _(F_) på _(60_), skibet og
+    bemandingen vejer _(300kg_), og der er en vind på _(F_{vind}=\Vec[-20,30]_). Hvad skal 
+    din båds kraft-vektor være, for at i sejler direkte mod _((4690,1922)_)? 
+    <p class="t">
+    Den her opgave er relativ svær! Der er i hvert fald lidt tricky lignings-løsning involveret
+    (i hvert fald på den måde, jeg har løst den)
+    </p>
+    <br></q-stion>
+    <answer-box customWidth="540">
+    Sig at startpositionen er _(P_), målet er _(S_), motorens kraft
+    er _(\vec{F_m}_) og vindens kraft _(\vec{F_w}_). Lad os nu lige tegne situationen:
+    <img class='Spic' style='width:50%' src='../../../Assets/Chapter2\Section4\Vectore\GpsExercise2.png'> 
+    <p class="t">
+    Det fundamentale problem er, at vinden har en indflydelse på retningen af 
+    vores bevægelse. Bådens kraft plus vindens kraft burde gerne give en vektor
+    i retningen af _(\vec{PS}_), hvor _(P_) er startpositionen og _(S_) 
+    slutpositionen. Altså:
+    _($\vec{F_w}+\vec{F_m}=k*\vec{PS}_)
+    Jeg skriver _(k*\vec{PS}_), fordi det kun er <i>retningen</i> af _(\vec{PS}_) 
+    der er vigtig. Så behøver jeg heller ikke på noget tidspunkt normalisere _(\vec{PS}_).
+    Jeg kan bare sige:
+    _($\vec{PS} = \VeC[4690-4564,1922-2093] = \VeC[126,-171]_)
+    Jeg ved, at _(\vec{F_m}_) har en styrke på _(60_), men jeg kender ikke dens retning.
+    Derfor kan jeg skrive den som:
+    _($\vec{F_m}=\VeC[60 Cos(\theta), 60 Sin(\theta)]_)
+    Så vi får nu:
+    _($\VeC[-20,30]+\VeC[60 Cos(\theta), 60 Sin(\theta)]=\VeC[126k,-171k]_)
+    Det her er altså to ligninger med to ubekendte:
+    _($\begin{eqnarray}
+    & - & 20 & + 60*Cos(\theta) & =   & k*126 \\
+    &   & 30 & + 60*Sin(\theta) & = - & k*171
+    \end{eqnarray}_)
+    Hvordan går vi lige til at løse det, præcist? Vi er ret ligeglade med
+    _(k_), så lad os bare fokusere på at finde _(\theta_) først. Man kan relativt
+    nemt fjerne _(k_), ved at sige
+    _($k=\frac{-20+60*Cos(\theta)}{126}, \qquad k=\frac{30+60*Sin(\theta)}{-171} \to_)
+    ... og så
+    _($\begin{align}
+    \frac{-20+60*Cos(\theta)}{126} &= \frac{30+60*Sin(\theta)}{-171} & \to \\ \\
+    3420 + -10260*Cos(\theta) &= 3780 + 7560*Sin(\theta) & \to \\ \\
+    -Cos(\theta) &= 0.736*Sin(\theta) + 0.035
+    \end{align}_)
+    Nu er vi i en lidt tricky situation. Det ser umiddelbart ikke ud til, at
+    vi kan simplificere mere. Hvis bare alting var i forhold til _(Cos_) eller
+    _(Sin_), kunne vi måske opstille en andengradsligning. Her kan vi
+    udnytte, at _(Cos^2 = 1 - Sin^2_), så hvis vi opløfter begge
+    sider i anden potens, får vi:
+    _($\begin{align}
+    (-Cos(\theta))^2 & = (0.736*Sin(\theta) + 0.035)^2 &\to \\ \\
+    Cos(\theta)^2 & = 0.541*Sin(\theta)^2 + 0.05152*Sin(\theta) + 0.001225 &\to \\ \\
+    1-Sin(\theta)^2 & = 0.541*Sin(\theta)^2 + 0.05152*Sin(\theta) + 0.001225 &\to \\ \\
+    0 & = 1.541*Sin(\theta)^2 + 0.05152*Sin(\theta) - 1.001225 
+    \end{align}_)
+    Voila! Det passer til _(Ax^2+Bx+C=0_) med _(A=1.541_), _(B=0.5152_) og 
+    _(C=-1.00125_). Ligningen har to løsninger: _(Sin(v)=0.78_) og 
+    _(Sin(v)=-0.82_). Når man tegner situationen, som vi gjorde i starten, 
+    kan man se at y-komponentet <i>skal</i> gå nedad. Det er derfor nok _(-0.82_), der
+    er den rigtige løsning. Det giver _(\theta=Arcsin(-0.82)=-0.96_), så:
+    _($\vec{F_m}=\VeC[60*Cos(-0.96),60*Sin(-0.96)]=\VeC[32.41,-49.2]_)
+    Bum!
+    </p>
+    <br><br></answer-box> -->
+
+    <!-- <q-stion 1="2" 2="1" 3="5">
+    Fuck dig.
+    <br><br></q-stion>
+    <answer-box>
+    Ja.
+    <br><br></answer-box> -->
+
+    <p class="t">
+    Jeg vil slutte denne side med en sjov og uvigtig
+    lille geometrisk anvendelse af vektorer. Se følgende skitse: 
+    </p>
+    <img class='Spic' style='width:50%' src='../../../Assets/Chapter2\Section4\Vectore\VectorGeometriBevis.png'> 
+    <p class="t">
+    _(M_1, \, M_2_) er begge midtpunkter. 
+    Sig vi forsøger at bevise, at
+    _($M_1M_2=\frac{1}{2}CB_)
+    Her kan vi i stedet prøve at
+    vise, at 
+    _($\vec{M_1M_2} = \frac{1}{2}*\vec{CB}_)
+    Hvis det er tilfældet, så er 
+    _($|\vec{M_1M_2}|=|\frac{1}{2}*\vec{CB}|=\frac{1}{2}*|\vec{CB}| \to M_1M_2=\frac{1}{2}CB_)
+    Vi kan se, at 
+    _($\vec{AC}+\vec{CB}=\vec{AB} \to \vec{CB}=\vec{AB}-\vec{AC}_)
+    Samme argument kan vi lave med _(\vec{M_1M_2}_), som må være 
+    lig _(\vec{AM_2}-\vec{AM_1}_). Det kan vi omskrive til:
+    _($\frac{1}{2}*\vec{AB}-\frac{1}{2}*\vec{AC}=\frac{1}{2}*(\vec{AB}-\vec{AC})_)
+    Ergo _(\vec{M_1M_2} = \frac{1}{2}*\vec{CB}_), og vi er færdige!
+    </p>
+
+    <p class="t">
+    Det var et meget simpelt problem vi fint kunne have løst uden vektorer. 
+    I alt realiteten
+    bruger man sjælen denne strategi - 
+    bare en smart lille anvendelse, der måske inspirerer dig i fremtiden. 
+    </p> 
+

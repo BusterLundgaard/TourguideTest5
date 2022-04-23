@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+
+    <h3>_(x^A_)</h3>
+    <p class="t">
+    Jeg tænker, at det første punkt på listen nok er _(x^A_), siden vi allerede har set på det en smule.
+    Vi ved, hvordan vi finder hældningen på _(x^A_) <i>hvis</i> _(A_) er et helt, positivt tal
+    (f.eks. _(x^{23}_)), men ikke hvis det er negativt eller et kommatal. Lad os på denne
+    side undersøge situationerne hvor tallet er <i>helt</i> og <i>negativt</i>. Kommatal 
+    er mere tricky, så dem ser vi først på senere.  
+    </p>
+
+    <q-stion 1="4" 2="1">
+    Find hældningen på _(x^{-2}_). In case du har glemt det,
+    sagde vi, at _(x^{-2}_) betød det samme som _(1/x^2_). 
+    <br><br></q-stion>
+    <answer-box>
+    Lad os starte som vi plejer:
+    _($\frac{(x+k)^{-2}-x^{-2}}{k}_)
+    Det svarer til:
+    _($\frac{\frac{1}{(x+k)^2} - \frac{1}{x^2}}{k}_)
+    Lad os eksperimentere og omskrive lidt. Èn mulighed er at kombinere de to brøker
+    til èn som: 
+    _($\frac{\frac{1*x^2}{(x+k)^2*x^2} - \frac{1*(x+k)^2}{x^2*(x+k)^2}}{k}=\frac{\frac{x^2 - (x+k)^2}{(x+k)^2*x^2}}{k}_)
+    Her genkender jeg umiddelbart:
+    _($-\left(\frac{(x+k)^2-x^2}{k} \right)*\frac{1}{(x+k)^2*x^2} _)
+    Det venstre produkt ved vi kan omskrives til _((2x+k)_) fra vores tidligere arbejde!
+    _($-\frac{2x+k}{(x+k)^2*x^2}_)
+    Hmmm. Det ser umiddelbart ikke ud til, at vi <i>direkte</i> kan fjerne
+    _(k_) fra nævneren ligesom før. Det er helt fint dog! Der er ingen
+    problemer, så længe vi ikke aktivt dividerer med _(0_), så:
+    _($-\frac{2x+0}{(x+0)^2*x^2} = -\frac{2x}{x^2*x^2} = -2 x^{-3}_)
+    Bum! Vi fandt en formel! 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="4" 2="2">
+    Find hældningen på _(x^{n}_) hvis _(n_) er et helt, negativt tal. 
+    <br><br></q-stion>
+    <answer-box>
+    Først af alt omformulerer jeg problemet til noget, der er lettere at arbejde med:
+    Find hældningen på _(x^{-n}_) hvis _(n_) er et helt, positivt tal. Nu kan vi lettere
+    omskrive det matematisk. Jeg tænker, at vi bruger præcis den samme process
+    som med _(x^{-2}_), nu generaliseret. 
+    Vi skal omskrive til noget,
+    der minder om, hvad vi ville få med _(x^n_), bruge det til at 
+    fjerne _(k_), og lave alting om til _(0_):
+    _($\frac{\frac{1}{(x+k)^n}-\frac{1}{x^n}}{k} = \frac{\frac{x^n - (x+k)^n}{(x+k)^n*x^n}}{k} = \frac{\frac{x^n - (x+k)^n}{k}}{(x+k)^n*x^n}_)
+    Lad os huske tilbage til, hvordan vi tidligere omskrev _(((x+k)^n-x^n)/k_):
+    _($\sum_{i=2}^{n} \left(\Vec[n,i]*k^{i-1}*x^{n-i}\right) + n*x^{n-1}_)
+    Så:
+    _($\frac{-\sum_{i=2}^{n} \left(\Vec[n,i]*k^{i-1}*x^{n-i}\right) - n*x^{n-1}}{(x+k)^n*x^n}_)
+    Vi erstatter nu _(k_) med _(0_):
+    _($\begin{eqnarray}
+    && \frac{-\sum_{i=2}^{n} \left(\Vec[n,i]*0^{i-1}*x^{n-i}\right) - n*x^{n-1}}{(x+0)^n*x^n} = \\ \\
+    && \frac{-0 - n*x^{n-1}}{x^{2n}} = \\ \\ 
+    && -n*x^{(n-1)-2n} = \\ \\
+    && -n*x^{-n-1}
+    \end{eqnarray}_)
+    Bum, vi har vores svar! Det er et rigtig dejligt svar endda: I vores originale formulering var
+    _(-n_) bare skrevet som _(n_), så svaret bliver til:
+    _($n*x^{n-1}_)
+    Det er præcist det samme vi gør, når _(n_) er positivt! Formlen for hældningen er det
+    samme, når _(x_) er positiv, som når _(x_) er negativ! 
+    <br><br></answer-box>
+
+    <q-stion 1="4" 2="3">
+    I en forlystelsespark bliver det lavet nogle kunstige bølger. Se følgende billede:
+    <img class='Spic' style='width:95%;' src='../../../Assets/Chapter4\DerivativesAndIntegrals\MovingWater.png'> 
+    <p class="t">
+    Man laver dem ved hjælp af et bassin, hvor
+    en af væggene kan rykkes så bassinet bliver kortere. 
+    Vandstanden vil stige, når man gør længden kortere, da volumen skal forblive konstant. 
+    Bredden er konstant, mens længden bliver kortere med _(0.53m/s_). 
+    På hvilken længde stiger vandstanden med en hastighed på _(0.42m/s_)? Det er
+    åbenbart den hastighed, der skaber de bedste bølger.
+    </p>
+    <p class="t">
+    Det er ikke sådan her kunstige bølger faktisk bliver lavet i virkeligheden. 
+    Det er mest for matematikkens og pædagogikkens skyld. 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Lad os først beskrive højden som en funktion af længden. Volumen skal være konstant, så vi har:
+    _($8*2.5*b=L*h*b \to h=\frac{20}{L}_)
+    Hvor _(b_) er bredden som vi er ligeglade med. 
+    <p class="t">
+    Vi har _(h(L)_), så lad os finde hældningen.
+    Her omskriver vi _(20/L_) til _(20*L^{-1}_), og får en hældning på: 
+    _($-\frac{20}{L^2}_)
+    Nu bliver det lidt tricky. _(20/L^2_) fortæller os, 
+    hvor hurtigt højden ændrer sig med _(L_). 
+    Vi leder reelt 
+    efter, hvor hurtigt højden stiger med <i>tiden</i>, da vi skal
+    sætte det lig _(0.42 m/s_). Hvordan bruger vi _(20/L^2_) og informationen
+    om, at _(L_) falder med _(0.53 m/s_), til at finde højdens hastighed til tid? 
+    <p class="t">
+    Ingen problem! Vi kan bare tænke over enhederne:
+    _(20/L^2_) er _(h/m_) og _(0.53_) er _(m/s_), så:
+    _($\frac{20}{L^2} \, \frac{h}{m} * 0.53 \frac{m}{s} = \frac{10.6}{L^2} \frac{h}{s}_)
+    Bum! Herfra kan vi let løse _(10.6/L^2 = 0.43_) og få:
+    _($L = 5.0237m_)
+    Væggen skal være omtrent _(5.0237_) meter
+    for at skabe de bedste bølger. 
+    </p>
+    <br></answer-box>
+
+
+
+
+
+

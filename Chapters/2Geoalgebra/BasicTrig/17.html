@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+
+
+    <h4>Egenskaber af modulus:</h4>
+    <p class="t"> 
+    Som du nok kan se, 
+    er det ekstremt brugbart at kunne finde qoutienten og remainderen. Vi bruger
+    det til at opdele ting, se hvor henne vi er i forhold til en bestemt <i>givet</i> opdeling 
+    (episode, kapitel, mængdeenheder)
+    og også i stor grad til at modellere mængder, der "går rundt" som cirkler eller ure. 
+    </p>
+    <p class="t">
+    Vi kan <i>nemt</i> regne remainderen <i>efter</i> vi har regnet qoutienten, og qoutienten 
+    finder vi bare via division. Men det er også muligt at finde
+    remainderen <i>uden</i> først at finde qoutienten, med lidt smarthed.
+    </p>
+
+    <q-stion 1="17" 2="1">
+    Bevis eller forklar hvorfor at 
+    _($M_n(a+b)=M_n(M_n(a)+M_n(b))_)
+    Det her er super praktisk, fordi man ikke 
+    behøver at plusse <i>langt</i> så store tal med hinanden hvis man kan tage
+    modulos først. _(M_n(a)_) er jo
+    ofte mindre end _(a_). 
+    <br><br></q-stion>
+    <answer-box>
+    Man kan ret godt tænke på _(M_n(x)_) som et slags ur: 
+    Du går rundt om uret, der har en omkreds på _(n_). Hver gang du kommer
+    over _(n_), går du tilbage til _(0_). 
+    Sig at du skal regne et eller andet som _(M_{15}(49+17)_). 
+    <img class="Spic" style="width:60%;" src="../../../Assets/Chapter1/Talteori/RemainderSumBevis.png">
+    <p class="t">_(17_) tager dig én omgang rundt og så _(2_) mere. 
+    _(49_) tager
+    dig tre omgang rundt og _(4_) mere. I alt er
+    du altså fire omgange og _(2+4=6_) rundt om uret. 
+    Det eneste
+    vi havde brug for her, var hvor langt vi i begge tilfælde kørte <i>ud over</i>
+    hele omgange. Så her kan vi godt sige at 
+    _($M_{15}(17+49)=M_{15}(17)+M_{15}(49)_)
+    Det er bare <i>en smule</i> mere problematisk hvis vi i stedet
+    havde f.eks. _(M_{15}(25+53)_), hvor 
+    _($M_{15}(25)+M_{15}(53)=10+8=18_) 
+    ... som jo er over _(15_). Derfor skal vi lige tage remainderen
+    én gang til for en sikkerheds skyld: 
+    _($M_{15}(25+53)=M_{15}(M_{15}(25)+M_{15}(53))=M_{15}(18)=3_)
+    Det her samme argument kan man tydeligvis bruge på noget som helst eksempel, så vi
+    kan godt sige generelt at 
+    _($M_n(a+b)=M_n(M_n(a)+M_n(b))_)
+    </p>
+    <br></answer-box>
+
+    <q-stion 1="17" 2="2">
+    Bevis eller forklar hvorfor at 
+    _($M_n(a*b)=M_n(M_n(a)*M_n(b)), \qquad \text{Hvis } a,b \text{ er hele tal}_)
+    Den tidligere regel med plus virkede generelt, men denne virker kun hvis _(a_), _(b_) og _(n_)
+    er hele tal. 
+    <p class="t">
+    Igen er det her praktisk, fordi de to tal man skal gange nu er
+    drastisk mindre.
+    </p>
+    <p class="t">
+    Husk: bare fordi vi brugte én strategi til at løse/bevise sidste opgave, 
+    er det ikke 
+    sikkert det samme vil virke godt her! Den her er lidt mere udfordrende! 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Når jeg prøver at tegne en skitse som ligesom før, kan jeg ikke umiddelbart se 
+    nogen tydelig regel.
+    Lad os derfor i stedet kigge på et eksempel og 
+    se om det gælder: F.eks. _(M_{15}(18*23)_). Tricket er at omskrive det som:
+    _($M_{15}\left((15+3)*(15+9) \right) = M_{15}\left(15*15+15*(3+9)+3*9 \right)_)
+    Nu kan vi bruge plus-reglen og omskrive til:
+    _($M_{15}\left(M_{15}(15*15)+M_{14}(15*11)+M_{15}(3*9) \right) = _)
+    _($M_{15}(0+0+M_{15}(3*9)) =_)
+    _($M_{15}(3*9)_)
+    Hvad er _(3*9_)? Det er bare _(M_{15}(18)*M_{15}(23)_)! Reglen gjaldt! 
+    Man kan nemt generalisere, og se at 
+    man kunne lave samme trick med nogen som helst tal _(n, \, a, \, b_). 
+    <br><br></answer-box>
+
+    <q-stion 1="17" 2="3">
+    Bevis eller forklar hvorfor at 
+    _($M_n(a^n)=M_n(M_n(a)^n)_)
+    Vi ved at potenser meget hurtigt bliver høje. Det kunne 
+    derfor hjælpe massivt at tage remainderen af _(a_) først.
+    <br><br></q-stion>
+    <answer-box>
+    Dette er super nemt med gange-reglen allerede bevist: 
+    _($\begin{align}
+    M_n(a^n) & = M_n(a*a*a*a...) \\
+    & = M_n(M_n(a)*M_n(a)*M_n(a)*...) \\
+    & = M_n(M_n(a)^n)
+    \end{align}_)
+    <br></answer-box>
+
+    <p class="t">
+    Prøv nu at brug de her egenskaber til at løse de følgende opgaver. 
+    Flere af opgaverne <i>kan</i> man godt 
+    løse uden, så fokuser på at lave udregningerne <i>effektivt</i> ved hjælp af 
+    de tricks. 
+    </p>
+
+    <q-stion 1="17" 2="4">
+    En ingeniør skal bestille noget cement til et projekt. 
+    De har regnet volumen de har brug 
+    for som 
+    _($(4*20+4*28+5*23+5*27+6*30)^3 \text{ } m^3_)
+    De kan kun købe _(6m^3_) af gangen. 
+    Hvor meget går til spilde?
+    <p class="t">
+    <i>Regn dette uden lommeregner. </i>
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Hvis vi gjorde det her via traditionelle metoder, 
+    ville vi skulle opløfte 
+    et meget stort tal til tredje potens, hvilke nok ikke er særlig sjovt.
+    Vi kan heldigvis vælge at tage modulus _(6_) af indholdet <i>først</i>, 
+    og derefter opløfte til potensen. 
+    Målet lige nu er altså:
+    _($M_{6}\left(4*20+4*28+5*23+5*27+6*30 \right)_)
+    Her kan vi spare os selv noget tid og bruge plus-reglen, ved at tage modulus 6 af 
+    hvert led, før vi plusser dem sammen. Mange af de led består af et relativt lille og relativt stort
+    tal ganget med hinanden.
+    Det er derfor nok en god ide at bruge gange-reglen,
+    så ledende bliver nemmere at regne:
+    _($\begin{eqnarray}
+    && M_{6}\left(4*20 \right) = M_{6}\left(M_{6}(4)*M_{6}(20) \right) = M_{6}\left(4*2 \right) = 2 \\ 
+    && M_{6}\left(4*28 \right) = M_{6}\left(M_{6}(4)*M_{6}(28) \right) = M_{6}\left(4*4 \right) = 4 \\ 
+    && M_{6}\left(5*23 \right) = M_{6}\left(M_{6}(5)*M_{6}(23) \right) = M_{6}\left(5*5 \right) = 1 \\ 
+    && M_{6}\left(5*27 \right) = M_{6}\left(M_{6}(5)*M_{6}(27) \right) = M_{6}\left(5*3 \right) = 3 \\ 
+    && M_{6}\left(6*30 \right) = M_{6}\left(M_{6}(6)*M_{6}(30) \right) = M_{6}\left(0*0 \right) = 0 \\ 
+    \end{eqnarray}_) 
+    Vi får altså:
+    _($M_{6}\left(2+4+1+3+0 \right) = 4_)
+    Og endeligt:
+    _($M_{6}\left(4^3 \right) = 4_)
+    Så der går _(4m^3_) til spilde. 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="17" 2="5">
+    Nu _(7100 m_) spær, som hun/han kun kan købe i _(7m_) enheder. Hvor meget går til spilde?
+    Der er ikke rigtig noget enkelt "smart trick" vi kan bruge her, ligesom i den sidste. Bare
+    forsøg at vær så effektiv som mulig!
+    <p class="t">
+    <i>Igen ingen lommeregner i denne!</i>
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Før havde vi fået et <i>udtryk</i>, hvor vi nemt kunne bruge reglerne. Nu er det bare et tal! 
+    _(M_{7}(7100)_) tager nok lidt tid at regne 
+    <i>helt</i> direkte med strategisk gætning/division.
+    Jeg ville i stedet omskrive lidt:
+    <div style="margin-left:-57%; margin-top:25px; margin-bottom: -10px;">
+    _($\begin{eqnarray}
+        && M_{7}(7000+100) = \\ \\  
+        && M_{7}(M_{7}(7000) + M_{7}(100)) = \\ \\  
+        && M_{7}(100) = \\ \\  
+        && M_{7}(M_{7}(10)*M_{7}(10)) = \\ \\  
+        && M_{7}(3*3) = \\ \\  
+        && M_{7}(9) = \\ \\  
+        && 2  
+    \end{eqnarray}_)
+    </div>
+    <p class="t">
+    Boom! Det kan dog i alt ærlighed diskuteres, 
+    hvorvidt dette var hurtigere end den normale strategi.
+    </p>
+    <br></answer-box>
+
+    <!--  --> 
+
+    <q-stion 1="17" 2="6">
+    Vi kan også tage modulos på negative tal. F.eks. kan _(-8_) omskrives til:
+    _($6*(-2)+4_)
+    Så _(M_{6}(-8)=4_). Prøv nu at regn:
+    _($M_{23}(-85)_)
+    <br></q-stion>
+    <answer-box>
+    Vi kan se, at _(23*(-4)=-92_) er det tætteste på _(-85_), der stadig er mindre. 
+    Vi ser at:
+    _($-85=23*(-4)+7_)
+    Så svaret er _(7_). 
+    <br><br></answer-box>
+

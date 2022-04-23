@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+
+
+    <h3>Et tal opløftet til en kompleks eksponent?</h3>
+
+    <p class="t">
+    Vi har set hvordan man opløfter et komplekst tal til en ikke-kompleks eksponent, 
+    så lad os nu undersøge det modsatte:
+    Hvordan opløfter man et ikke-komplekst tal til en 
+    kompleks eksponent? Rettere sagt: Hvordan definerer man det? 
+    </p>
+
+    <p class="t">
+    Vi starter specifikt med et opløfte _(e_) til komplekse eksponenter. 
+    For et reelt tal _(x \in \mathbb{R}_) ved vi fra vores
+    arbejde med taylor-serier, at 
+    _($e^x = \sum_{n=0}^{\infty} \frac{x^n}{n!}_)
+    Sig at _(z_) er et komplekst tal. Vi definerer nu at:
+    _($e^z = \sum_{n=0}^{\infty} \frac{z^n}{n!}_)
+    Det her er praktisk, da vi via vores tidligere definitioner ved, hvordan man regner _(z^n/n!_) 
+    for en hvilket som helst _(n_). 
+    Ofte defineres nye mærkelige operationer ved hjælp af Taylor serier, siden det stort set altid
+    er muligt at plusse og gange. Man har eksempelvis også defineret, hvordan man opløfter et 
+    tal til en <i>matrix</i>:
+    _($e^{\begin{bmatrix} a & b \\ c & d \end{bmatrix}} = \sum_{n=0}^{\infty} \frac{1}{n!} \begin{bmatrix} a & b \\ c & d \end{bmatrix}^n_)
+    Det er jo muligt at plusse og gange matrixer, så denne sum kan regnes! 
+    Dog bør som altid huske at dette er en <i>definition</i> vi har valgt - men det <i>er</i> en 
+    definition der ikke skaber nogen uoverensstemmelse med det tidligere system. 
+    </p>
+    <p class="t">
+    Vores definition på _(e^z_) virker abstrakt og tricky at bruge, men man kan bevise at:
+    _($e^{a+bi} = e^a*\left(Cos(b)+Sin(b)i \right) _)
+    </p>
+
+    <q-stion 1="4" 2="1" bigTop=true>
+    Udled formlen 
+    _($e^{bi}=Cos(b)+Sin(b)i_) 
+    ... ved hjælp af definitionen. 
+    Her minder jeg dig venligt om, at
+    _($\begin{eqnarray}
+    && Cos(x) = \, \sum_{n=0}^{\infty} (-1)^n*\frac{x^{2n}}{(2n)!} \\ \\
+    && Sin(x) = \, \sum_{n=0}^{\infty} (-1)^n*\frac{x^{2n+1}}{(2n+1)!} 
+    \end{eqnarray}_)
+    <br></q-stion>
+    <answer-box>
+    Lad os se hvad der sker, hvis vi sætter _(z=bi_) ind i definitionen:
+    _($\sum_{n=0}^{\infty} \frac{(bi)^n}{n!} = \sum_{n=0}^{\infty} i^n*\frac{b^n}{n!}_)
+    Vi ved at:
+    _($\begin{align}
+    i^0 & = 1 \\
+    i^1 & = i \\
+    i^2 & = -1  \\
+    i^3 & = -i \\
+    i^4 & = 1 \\
+    i^5 & = i \\
+    \vdots  
+    \end{align}_)
+    Så summen kan opdeles i to: De ulige _(n_), hvor det er _(b^n/n!_) ganget med _(i_) 
+    mens negativiteten skifter, og 
+    de lige _(n_), hvor _(b^n/n!_) ikke er ganget med _(i_) men negativiteten stadig skifter. 
+    Vi får:
+    _($\sum_{n=0}^{\infty} (-1)^n*\frac{b^{2n+1}}{(2n+1)!}*i + \sum_{n=0}^{\infty} (-1)^n*\frac{b^{2n}}{(2n)!}_)
+    Den ene sum er lig _(Sin(b)_) og den anden lig _(Cos(b)_), så:
+    _($Sin(b)*i + Cos(b)_)
+    Voila!
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="4" 2="2">
+    Regn _(e^{-2.3i}_)
+    <br><br></q-stion>
+    <answer-box>
+    Formlen/definitionen er:
+    _($e^{ki} = Cos(k)+Sin(k)i_)
+    Så vi skal anvende denne, hvor _(k=-2.3_), hvilket giver:
+    _($Cos(-2.3)+Sin(-2.3)i = -0.666 - 0.745i_)
+    Som så er svaret.
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="4" 2="3">
+    Bevis at:
+    _($e^{\pi i} = -1_)
+    <br></q-stion>
+    <answer-box>
+    Her sætter vi bare _(b=\pi_) og bruger formlen fra sidste opgave til at evaluere:
+    _($e^{\pi i} = Cos(\pi)+Sin(\pi)i = -1+0i_)
+    _(\blacksquare_)
+    <p class="t">
+    Dette er et ret kendt og ikonisk resultat. Ikke fordi det i sig selv er særlig brugbart,
+    men fordi det er et spøjst og interessant forhold
+    mellem de to vigtige konstanter _(e_) og _(\pi_). 
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="4" 2="4">
+    Hvad sker der intuitivt når vi ganger et komplekst tal med _(e^{k*i}_)?
+    <br><br></q-stion>
+    <answer-box>
+    Vi ved, at _(e^{k*i}=Cos(k)+Sin(k)*i_) har en længde på _(1_) og vinkel på _(k_).
+    <i>Længden</i> på vores tal forbliver det samme, men det roteres med _(k_) radianer. 
+    Sådan her kan vi på virkelig elegant vis rotere en bestemt mængde. 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="4" 2="5">
+    Kan du beskrive _(3.5+11*i_) ved hjælp af kun <i>et</i> led?
+    <br><br></q-stion>
+    <answer-box>
+    _(3.5+11*i_) har en radius på _(\sqrt{3.5^2+11^2}=11.54_) og en vinkel på
+    _(Arctan(11/3.5) = 1.262_) radianer, så det kan omskrives til:
+    _($11.54*(Cos(1.262)+Sin(1.262)*i)_)
+    Det kan vi ved hjælp af Eulers formel forsimple til 
+    _($11.54*e^{1.262i}_)
+    Bum!
+    <br><br></answer-box>
+    
+    <p class="tt">
+    For at komme frem til _(e^{a+bi}=e^a*\left(Cos(b)+Sin(b)i \right)_) skal vi nu 
+    bevise at:
+    _($e^{a+bi}=e^a*e^{bi}_)
+    Det er faktisk lettere at bevise, at
+    _($e^{z_1+z_2}=e^{z_1}*e^{z_2}_) 
+    ... generelt for to komplekse tal _(z_1_) og _(z_2_). Her får 
+    man brug for følgende kendte teori:
+    </p>
+
+    <div class="Theory">
+    <b> Teori: Cauchy produkt</b> <br>
+    Sig du har to sekvenser _(a_n_) og _(b_n_). Følgende resultat gælder:
+    _($\left(\sum_{n=0}^{\infty} a_n \right)*\left(\sum_{n=0}^{\infty} b_n  \right) = \sum_{n=0}^{\infty} \sum_{m=0}^{n} a_m*b_{n-m}_)
+    </div>
+
+    <p class="tt">
+    Vi har ikke tid til et <i>rigorisk</i> bevis for hvorfor dette gælder, men vi kan 
+    (relativt) let se, hvor formlen kommer fra: 
+    </p>
+
+    <video class='picB' style='margin-top:35px; margin-bottom: 35px;' controls>
+        <source src='../../../Assets/Chapter4\ComplexNumbers\CauchyProduct.mp4' type='video/mp4'>
+    </video>
+
+    <p class="t" style="margin-bottom:45px;">
+    Hvis man skulle give et eksempel på at bruge den, kan man f.eks. se at: 
+    _($\begin{eqnarray}
+    && \left(\sum_{n=0}^{\infty} Sin(n)*n! \right)*\left(\sum_{n=0}^{\infty} 3n+n^{1/n} \right) = \\ \\
+    && \sum_{n=0}^{\infty} \sum_{m=0}^{n} \bigl(3m+m^{1/m} \bigr)*\bigl(Sin(n-m)(n-m)! \bigr)
+    \end{eqnarray}_)
+    Eller baglæns at:
+    _($\begin{eqnarray}
+    && \sum_{n=0}^{\infty} \sum_{m=0}^{n} \frac{2nm (m+1)^2 - 2m^2 (m+1)^2}{(n-m)!} = \\ \\
+    && \sum_{n=0}^{\infty} \sum_{m=0}^{n} \left(2 m (m+1)^2 \right)*\left(\frac{n-m}{(n-m)!} \right) = \\ \\
+    && \left(\sum_{n=0}^{\infty} 2 m (m+1)^2 \right)*\left(\sum_{n=0}^{\infty} \frac{n}{n!} \right)
+    \end{eqnarray}_)
+    </p>
+
+    <q-stion 1="4" 2="6" bigTop=true>
+    Bevis ud fra definitionen at 
+    _($e^{z_1+z_2}=e^{z_1}*e^{z_2}_)
+    Du får brug for både the binomial formula og the cauchy product. 
+    <br><br></q-stion>
+    <answer-box>
+    Vi substituerer _(z_1+z_2_) ind i definitionen og omskriver som følgende: 
+    _($\begin{eqnarray} 
+    && \sum_{n=0}^{\infty} \frac{(z_1+z_2)^n}{n!} = \\ \\
+    && \sum_{n=0}^{\infty} \frac{\sum_{m=0}^{n} \VeC[n,m]*z_1^m*z_2^{n-m}}{n!} = \\ \\
+    && \sum_{n=0}^{\infty} \sum_{m=0}^{n} \frac{z_1^m*z_2^{n-m}}{m!*(n-m)!} = \\ \\
+    && \sum_{n=0}^{\infty} \sum_{m=0}^{n} \frac{z_1^m}{m!}*\frac{z_2^{n-m}}{(n-m)!} = \\ \\
+    && \left(\sum_{n=0}^{\infty} \frac{z_1^n}{n!} \right)*\left(\sum_{n=0}^{\infty} \frac{z_2^n}{n!} \right) = \\ \\
+    && e^{z_1}*e^{z_2}
+    \end{eqnarray}_)
+    Bum! _(\blacksquare_). 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="4" 2="7">
+    Regn følgende:
+    <div style="margin-left:-71%; margin-top:25px; margin-bottom: -10px;">
+    _($\begin{eqnarray}
+        && \underline{\textbf{A}}: \, \, \, \, \, \, e^{1.4-5.3i} \\ \\ 
+        && \underline{\textbf{B}}: \, \, \, \, \, \, e^{-2.6+3.7i} 
+    \end{eqnarray}_)
+    </div>
+    <br><br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    Vi regner:
+    _($e^{1.4}*\left(Cos(5.3)+Sin(5.3)i \right) = 2.248 - 3.375i_)
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Vi regner:
+    _($e^{-2.6}*\left(Cos(3.7)+Sin(3.7)i \right) = -0.062 - 0.039i_)
+    <br></answer-box>
+
+    <p class="tt">
+    Hvad med andre tal udover _(e_)? Kunne vi f.eks. sige:
+    _($2.3^{5.34i} = (e^{Ln(2.3)})^{5.34i} = e^{Ln(2.3)*5.34i} = e^{4.447i} = Cos(4.447)+Sin(4.447)i_)
+    Svaret er både ja og nej. Problemet er, at vi ikke faktisk har bevist endnu, at
+    _($(e^{A})^{z} = e^{A*z}_)
+    ... hvor _(A_) er reelt og _(z_) komplekst. På sidste side gennemgik vi forskellen mellem
+    den <i>generelle</i> og <i>principielle</i> værdi på et eksponent. Vi så, at et komplekst tal -
+    og derved også et reelt tal med imaginær del lig _(0_) - opløftet til et reelt tal, potentielt kunne
+    tage uendeligt mange værdier. Det samme er muligt, hvis det opløftes til et komplekst tal, da alle 
+    reelle tal også er komplekse. _((e^A)^z_) og _(e^{A*z}_) har derfor begge <i>uendeligt mange værdier</i>.
+    Hvis de er "lig" hinanden skal vi bevise, at hver element i sættet
+    over _((e^A)^z_)'s uendelig mange værdier også er 
+    i sættet over _(e^{A*z}_)'s værdier.
+    Vi vil se på de næste par sider, at dette <i>sjælen</i> er sandt. 
+    Det <i>er</i> dog sandt, hvis man vælger eksklusivt at fokusere på 
+    de <i>principielle</i> værdier af _((e^A)^z_) og _((e^A)^z_).
+    </p>
+    <p class="t">
+    Det skal også pointeres, at følgende ligning:
+    _($(z_1^{z_2})^{z_3} = (z_1)^{z_2*z_3} \qquad \text{Ikke sand}_)
+    ... generelt <i>ikke</i> er sandt udover bestemte tilfælde, 
+    både for den generelle <i>og</i> principielle version.
+    </p>
+<!-- 
+    BRUG CTRL+F OG SØG PÅ "CAUCHY" OG SÅ KAN DU FINDE BEVISET FOR ANGLE ADDITION. DET VIRKER ALTSÅ STADIG FOR KOMPLEKSE TAL!
+    https://math.stackexchange.com/questions/1292/how-can-i-understand-and-prove-the-sum-and-difference-formulas-in-trigonometry
+
+
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- PÅ DENNE SIDE BURDE DU OGSÅ GÅ LIDT MERE I DYBDEN MED THE FUNDAMENTAL THEOREM OF ALGEBRA -->
+<!-- 
+    <p class="t">
+    Jeg nævnte på et tidspunkt begrebet "polynomial": _(a_nx^n + a_{n-1}x^{n-1} + a_{n-2}x^{n-2} + ... a_2x^2 + a_1x + a_0_).
+    Rigtig mange udtryk følger på en eller anden måde denne generelle form, så de er pænt vigtige. 
+    Vi kiggede også lidt på hvordan man kunne omskrive en polynomial som _(x^3+6x^2-7x-60_) til
+    _((x-3)(x-(-5))(x-(-4))_), hvor man så nemt kan se at _(x=3,x=-5,x=-4_) er <i>nulpunkter</i> - steder
+    hvor _(x^3+6x^2-7x-60=0_). Selvfølgelig kan vi ikke <i>altid</i> gøre det her: f.eks så 
+    har _(0.5x^3+2x^2+3_) kun èt nulpunkt, og _(-4x^2+2x-1_) slet ingen overhovedet. Det her er lidt upraktisk.
+    Flere områder af både teoretisk (som ofte kan anvendes) og mere direkte anvendt matematik 
+    ville være dejligere hvis bare en hvilket som helst polynomial kunne skrives
+    som produktet af simple _((x-a)_). Complexe tal gør det her muligt: <i>Grunden</i> til 
+    at _(-4x^2+2x-1_) ikke har nogen nulpunkter er at løsningen til _(-4x^2+2x-1=0_) er
+    _(x=\frac{-2 \pm \sqrt{2^2-4*4}}{2*(-4)} = \frac{-2 \pm \sqrt{-12}}{-8}_). Man kan
+    ikke tage negative kvadratroder, ergo ingen løsninger. <i>Hvis</i> vi dog tilladte
+    os selv at bruge <i>complexe tal</i>, så ved vi at _(i^2=-1 \to i=\sqrt{-1}_):
+    _($\frac{-2 \pm \sqrt{-12}}{-8} = 0.25 \pm \sqrt{(-1)}*\sqrt{12} = 0.25 \pm 3.464i \to _)
+    _($x = 0.25 + 3.464i, 0.25 - 3.464i_) 
+    Sure, hvis _(x_) modellerede en <i>ren fysisk
+    kvantitet</i> så var de her to complexe løsninger fuldkommen meningsløse og ubruglige.
+    Tilfældet er bare at _(x_) <i>ikke</i> altid modellere en fysisk kvalitet. Ofte
+    er det noget mere abstrakt eller matematisk. Vi har flere gange sæt
+    _(Cos(t)_) eller _(Cos(t)^2_) som vores "_(x_)" og så gået videre med at løse ligningen. 
+    Tit skal man finde de her nulpunkter <i>i ens mellemregninger</i>, og så når man arbejder
+    videre med de complexe tal ender delen med _(i_) nogle gange med helt at forsvinde. Det
+    var jo lige præcist hvad der skete i det tidligere eksempel da vi skulle gøre 
+    noget så basalt og kedeligt som at omskrive _(13.4*Cos(x+42)-16.7*Cos(x-12.4)_)! 
+    </p>
+    
+    <q-stion 1="2" 2="1" 3="5">
+    Løs den simple ligning _(x^6=1_). Find <i>alle</i> løsninger. 
+    <br><br></q-stion>
+    <answer-box>
+        Hvis vi kigger på _(1_) som et complekst tal, så har det en vinkel på _(0_) og en længde på _(1_).
+    _(x_) skal altså være et complekst tal med en længde _(1_) 
+    hvis vinkel _(\theta_) opfylder _(M_{2\pi}(6*\theta) = 0_), da _(x*x*x*x*x*x_) jo betyder
+    at vi plusser vinklerne og ganger radiusen. I hvert fald: _(M_{2\pi}(6*\theta) = 0 \to 6\theta = n*2\pi_)
+    hvor _(n_) er et helt tal. Hvis _(n=0_) så bliver _(\theta=0_) hvilket passer fint til
+    løsningen _(x=1_). Hvis _(n=1_) så bliver _(\theta= \frac{1}{6}2\pi = 1.047_), _(n=2_):
+    _($n=2: \theta=\frac{1}{6}4\pi \to \theta=2.094_)
+    _($n=3: \theta=\frac{1}{6}6\pi \to \theta=3.1415_)
+    _($n=4: \theta=\frac{1}{6}8\pi \to \theta=4.188_)
+    _($n=5: \theta=\frac{1}{6}10\pi \to \theta 5.234_)
+    Der er ikke nogen grund til at gå videre herfra, da vinklerne bare vil begynde at gentage dem selv.
+    _($\theta=0 \to x=1_)
+    _($\theta=1.047 \to x=Cos(1.047)+Sin(1.047)i=0.5+0.865i_)
+    _($\theta=2.094 \to x=Cos(2.094)+Sin(2.094)i=-0.5+0.865i_)
+    _($\theta=\pi \to x=Cos(\pi)+Sin(\pi)i = -1_)
+    _($\theta=4.188 \to x=Cos(4.188)+Sin(4.188)i = -0.5 -0.865i_)
+    _($\theta=5.234 \to x=Cos(5.234)+Sin(5.234)i = 0.5-0.865i_)
+    Bam!   
+    <br><br></answer-box>
+    
+    <p class="t">
+    TIL DIG BUSTER: Se side 5 her:https://www.math.wisc.edu/~angenent/Free-Lecture-Notes/freecomplexnumbers.pdf
+    ÅBENBART KAN MAN BRUGE COMPLEXE TAL TIL HURTIGERE AT FINDE _(cos(5x), cos(6x)_) osv. 
+    Altså finde de der formler for hele tal ganget med vinklen.  
+    </p>
+    
+    <p class="t">
+    En anden ting der er dejlig omkring complexe tal er hvordan de lidt "færdiggøre" talene. 
+    Hvis jeg tager et <i>naturligt tal</i> - et helt ikke-_(0_) tal der også er positivt - så kan jeg
+    nemt lave nogle handlinger på det der giver mig et <i>ikke-naturligt tal</i>. Hvis jeg f.eks minuser
+    _(2_) med _(3_) så får jeg det negative _(-3_). Jeg kan også tage et tilfældigt <i>helt tal</i> som _(-15_)
+    og dividere med et andet helt tal som _(7_) og få _(-15/7=-2.142857 ..._). De <i>rationele tal</i>
+    _(a/b_) hvor _(a,b_) er hele tal er heller ikke gode nok, da jeg kan tage kvadratroden af f.eks _(\frac{3}{2}_) 
+    og få et <i>irrationelt tal</i> (hvilke dog ikke er let at bevise) - et tal det er umuligt
+    at beskrive som _(a/b_). Endeligt så kan jeg også tage en kvadratrod af et irrationelt negativt tal og
+    få et complext tal: få noget der <i>ikke</i> er irrationelt. De complexe tal er "færdigjorte"
+    i den forstand at ingen af de "normale" operationer kan lave dem om til noget der ikke falder under
+    den samme familie. Med de "normale" operationer mener vi plus, minus, gange, divition, exponenter/logaritmer/røder. 
+    Det kan virke lidt arbitrært, men faktisk ikke: Hver af de her operation kan på en eller anden måde beskrives
+    i forhold til den aller simpleste operation som er at <i>plusse</i>. At minuse med _(a_) er at løse
+    en ligning _(a+x=0_). At gange er gentaget plusning, at dividere er
+    at løse en ligning med gange som _(3*x=5_), at opløfte til en potens er at gange flere gange,
+    at tage en kvadratrod eller logaritme er at løse en ligning der bruger exponenter. Man kan også lave
+    andre "hyperoperationer" som så bare er "gentaget exponentiation, modsat gentaget exponentiation, 
+    gentaget gentaget exponentiation" osv. I matematik vil vi meget generelt gerne beskrive koncepter og 
+    ideer som nogle <i>objekter</i> man kan lave en eller flere <i>handlinger</i> på. Det 
+    kalder vi "gruppeteori", og vi skal se kort på det i næste kapitel. Tal kan altså
+    modelleres som et sæt objekter man kan <i>plusse</i>. Faktisk kan de også modelleres
+    som et sæt man kan gange, hvilke i nogle (meget abstrakte) kontekster godt
+    kan være lidt mere brugbart. 
+    </p>
+
+
+
+
+
+
+    <p class="t">
+    FØLGENDE ER NOGET DU DROPPEDE DER ORIGINALT VAR PÅ FØRSTE SIDE:
+    </p>
+    
+    <p class="t">
+        I det her mini-afsnit vil vi <i>meget kort</i> kigge lidt mere på komplekse tal (<i>kort</i>, så der vil ikke f.eks. gennemgås komplekse funktioner). 
+        Vi introducerede originalt komplekse tal som et <i>geometrisk værktøj</i>, men noterede kort at de var ligeså vigtige rent algebraisk. Faktisk blev de <i>opfundet</i>
+        som et algebraisk værktøj. Matematiker Rafael Bombelli fik brug for komplekse tal da han 
+        og hans professor Gerolamo Cardano arbejde med tredjegradsligninger _(ax^3+bx^2+cx+d=0_). Vi <i>definerede</i> komplekse tal
+        _(i_) bare som et slags "algebraisk y-komponent" der yderligt havde egenskaben at _(i^2=-1_). Faktisk så 
+        defineres komplekse tal som:
+        _($i=\sqrt{-1}_)
+        Vi ved at _(\sqrt{-1}_) ikke <i>har</i> nogen løsninger. 
+        _(\sqrt{-1}_) som et koncept giver slet ikke nogen mening!
+        </p>
+        <p class="t">
+        Gerolamo var ved at finde en strategi til at løse tredjegradsligninger uden at approksimere / bruge numeriske metoder. 
+        Indtil videre var han kommet frem til en formel der kunne løse ligninger af typen _(x^3=dx+c_). 
+        Den formel sagde at der var _(1_) løsning lig:
+        _($x=\sqrt[3]{\frac{d}{2}+\sqrt{\frac{d^2}{4}-\frac{c^2}{27}}} + \sqrt[3]{\frac{d}{2}-\sqrt{\frac{d^2}{4}-\frac{c^2}{27}}}_)
+        Sig at vi brugte denne formel på _(x^3=15x+4_). Det svarer til at substituere _(d=15_), _(c=4_):
+        _($\begin{eqnarray}
+        && x & = \sqrt[3]{\frac{15}{2}+\sqrt{\frac{15^2}{4}-\frac{4^2}{27}}} + \sqrt[3]{\frac{15}{2}-\sqrt{\frac{15^2}{4}-\frac{4^2}{27}}} \\
+        && & = \sqrt[3]{2+\sqrt{-121}}+\sqrt[3]{2-\sqrt{-121}} 
+        \end{eqnarray}_)
+        Så ... denne ligning har ikke nogen løsninger, eller? <i>Forkert</i>: Det <i>har</i> den faktisk.
+        Vi kan omskrive _(x^3=15x+4_) til _(x^3-15x+4=0_). Nu skal vi bare plotte _(x^3-15x+4) og se hvornår det 
+        skærer x-aksen:
+        </p>
+        <img class='Spic' style='width:80%' src='../../../Assets/Chapter4\ComplexNumbers\ImportantCubic.png'> 
+        <p class="t">
+        Det er ingen problem at plotte funktionen, så vi kan nemt se at den tydeligvis <i>har</i> løsninger: tre endda! 
+        Vi ved også at vi har udledt formlen ordentligt, så hvad sker der? 
+        </p>
+        <p class="t">
+        Det der sker - den løsning Rafel Bombelli kom frem til - var at man bare kunne <i>lade som om</i>
+        at _(\sqrt{-1}_) fandtes. Man kunne sige at _(\sqrt{-1}_) var en ny type tal kaldt _(i_) der havde den specielle egenskab at 
+        _(i^2=-1_). Man kunne så gå videre og forsøge at forsimple udtrykket med dette opfundne tal, og
+        <i>eventuelt</i> vil man opdage at _(\sqrt{-1}_) helt forsvinder igen. I dette tilfælde
+        har vi altså kun brug for midlertidigt at opfinde _(\sqrt{-1}_) i mellemregningerne, men så 
+        viser det sig at vi eventuelt nær slutning skal plusse _(\sqrt{-1}_) og _(-\sqrt{-1}_), så
+        at vi bare står tilbage med _(x=4_). <i>Ja</i>, hvis _(x^3-15x+4=0_) måske modellerer
+        afstand, så giver tal som _(x=2_) eller _(x=-3_) mening for _(x_), men _(x=\sqrt{-1}_) giver ikke
+        mening. Det er helt fint, fordi vi får aldrig <i>brug</i> for at sige at _(x=\sqrt{-1}_). Det er 
+        kun i <i>mellemregningerne</i> at vi får brug for denne mærkelige kvantitet. Præcist
+        det samme skete da <i>negative tal</i> første gang blev opfundet. Sig at vi 
+        har funktionen:
+        _($F(t)=0.12t^2-1.7t+10_)
+        Sig at _(F_) er lig profit for en bestemt virksomhed i tusind dollars, og at _(t_) 
+        er mængden af dage efter de har lanceret en marketingskampagne. I starten falder deres profit
+        fordi de bruger store mængder penge på reklamer, men eventuelt vil det stige som flere folk
+        begynder at komme til butikken. Sig at vi er interesserede i hvornår deres profit 
+        er lig 15 tusind dollars. Her skal vi løse:
+        _($0.12t^2-1.7t+10=15 \to $0.12t^2-1.7t-5 = 0_)
+        Vi bruger nu den kvadratiske formel:
+        _($t=\frac{-b \pm \sqrt{b^2 - 4ac}}{2a}_)
+        Her er _(a=0.12_), _(b=-1.7_), og _(c=-5_), så: 
+        _($t=\frac{-(-1.7) \pm \sqrt{(-1.7)^2 - 4*0.12*(-5)}}{2*0.12} \to_)
+        _($t = -2.5, \qquad t=16.67_)
+        Tænk lige over det: I vores situation her giver negative tal <i>ingen mening</i>. Man kan ikke 
+        have "negativ tid". Alligevel så havde vi brug for at anvende negative tal en helt masse i vores
+        mellemregninger, for eventuelt at komme frem til _(t=16.67_). Man kunne gå endnu længere
+        og sige at <i>kommatal</i> ikke engang giver særlig god mening i denne situation, da _(t_) er dage. 
+        Alligevel så kan vi ud fra disse mellemregninger - hvor vi bruger tonsvis af kommatal - se at 
+        det tager _(17_) dage. Det er præcis den samme ide med komplekse tal! Negative tal 
+        blev originalt opfundet fordi de skulle hjælpe os med at løse ligninger til positive kvantiteter. 
+        Præcist ligesom at man så yderligere også begyndte at bruge negative tal i sig selv, da de ofte faktisk <i>havde</i> logiske og 
+        intuitive betydninger (f.eks. en modsat retning, modsat energi, osv.), så begyndte man også at bruge
+        komplekse tal i sig selv: De kunne f.eks. være effektive til at modellere situationer hvor der 
+        fandtes to "vinkelrette" kvantiteter som _(x_) og _(y_). Det her svarer til den geometriske anvendelse
+        af komplekse tal vi så på i de tidligere kapitel. Vi vil i dette (meget korte og lidt rodede) kapitel se på 
+        hvordan komplekse tal kan hjælpe os som algebraiske objekter: Både med at løse problemer
+        der tilsyneladende intet har at gøre med komplekse tal (f.eks at omskrive _(Cos(x+1.2)+Cos(x+1.7)_) til 
+        _(1.937 Cos(t+1.45)_)), samt hvordan de er meget vigtige i teoretisk matematik grundet 
+        deres rolle i den såkaldte "fundamentale teori af algebra". 
+        </p>
+    
+        
+    
+    
+        _(\begin{eqnarray}
+        && (0,b) & = & bi \\
+        && (a,0) & = & a \\
+        && (a,1) & = & a & + & i \\
+        && (a,-1) & = & a & - & i \\
+        && (0,1) & = & i  \\
+        && (0,-1) & = - & i \\
+        \end{eqnarray}_) -->
+
+    
+

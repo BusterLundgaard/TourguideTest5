@@ -1,0 +1,1467 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:ns1="http://www.iki.fi/pav/software/textext/"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
+   sodipodi:docname="FunctionTransformations.svg">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.35"
+     inkscape:cx="968.83355"
+     inkscape:cy="1568.2708"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:snap-global="false" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.657;stroke-linecap:square;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="M 44.36674,79.977143 V 255.30595"
+       id="path815"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="67.440376"
+       inkscape:export-ydpi="67.440376" />
+    <path
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.657;stroke-linecap:square;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="M -48.380951,200.99404 H 216.95833"
+       id="path817"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="67.440376"
+       inkscape:export-ydpi="67.440376" />
+    <path
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#de0000;stroke-width:1.057;stroke-linecap:square;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m -19.25941,218.95729 c 0,0 25.2721882,-87.93167 44.379814,-87.6644 19.107626,0.26727 10.856606,28.33057 39.518044,36.8832 28.661443,8.55262 39.518042,-9.62171 55.802952,-1.87089 16.28491,7.75082 27.35865,52.91937 27.35865,52.91937"
+       id="path819"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="csssc"
+       inkscape:export-xdpi="67.440376"
+       inkscape:export-ydpi="67.440376" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path821"
+       d="m 39.807156,184.74679 c 0,0 25.272188,-89.535287 44.379814,-89.268017 19.10763,0.26727 10.856606,28.330567 39.51804,36.883197 28.66145,8.55262 39.51805,-9.62171 55.80296,-1.87089 16.28491,7.75082 27.35865,52.91937 27.35865,52.91937"
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#de8d00;stroke-width:1.057;stroke-linecap:square;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       sodipodi:nodetypes="csssc"
+       inkscape:export-xdpi="67.440376"
+       inkscape:export-ydpi="67.440376" />
+    <g
+       id="g843"
+       ns1:jacobian_sqrt="1.035688"
+       ns1:alignment="middle center"
+       ns1:scale="2.93580877603"
+       ns1:preamble="C:\\Users\\Buster\\AppData\\Roaming\\inkscape\\extensions\\textext\\default_packages.tex"
+       ns1:text="$\\dots$"
+       ns1:pdfconverter="pdf2svg"
+       ns1:texconverter="pdflatex"
+       ns1:version="0.11.0"
+       transform="matrix(0.33017628,-0.98164823,0.98164823,0.33017628,-204.75236,333.85363)"
+       inkscape:export-xdpi="67.440376"
+       inkscape:export-ydpi="67.440376">
+      <g
+         id="surface1">
+        <g
+           id="g832"
+           style="fill:#000000;fill-opacity:1">
+          <path
+             id="path830"
+             transform="translate(148.712,134.765)"
+             d="m 1.90625,-0.53125 c 0,-0.28125 -0.234375,-0.53125 -0.515625,-0.53125 -0.296875,0 -0.53125,0.25 -0.53125,0.53125 C 0.859375,-0.234375 1.09375,0 1.390625,0 1.671875,0 1.90625,-0.234375 1.90625,-0.53125 Z m 0,0"
+             style="stroke:none;stroke-width:0"
+             inkscape:connector-curvature="0" />
+        </g>
+        <g
+           id="g836"
+           style="fill:#000000;fill-opacity:1">
+          <path
+             id="path834"
+             transform="translate(153.14336,134.765)"
+             d="m 1.90625,-0.53125 c 0,-0.28125 -0.234375,-0.53125 -0.515625,-0.53125 -0.296875,0 -0.53125,0.25 -0.53125,0.53125 C 0.859375,-0.234375 1.09375,0 1.390625,0 1.671875,0 1.90625,-0.234375 1.90625,-0.53125 Z m 0,0"
+             style="stroke:none;stroke-width:0"
+             inkscape:connector-curvature="0" />
+        </g>
+        <g
+           id="g840"
+           style="fill:#000000;fill-opacity:1">
+          <path
+             id="path838"
+             transform="translate(157.56477,134.765)"
+             d="m 1.90625,-0.53125 c 0,-0.28125 -0.234375,-0.53125 -0.515625,-0.53125 -0.296875,0 -0.53125,0.25 -0.53125,0.53125 C 0.859375,-0.234375 1.09375,0 1.390625,0 1.671875,0 1.90625,-0.234375 1.90625,-0.53125 Z m 0,0"
+             style="stroke:none;stroke-width:0"
+             inkscape:connector-curvature="0" />
+        </g>
+      </g>
+    </g>
+    <g
+       transform="matrix(-0.2741322,-0.9987498,0.9987498,-0.2741322,58.359646,418.04246)"
+       ns1:version="0.11.0"
+       ns1:texconverter="pdflatex"
+       ns1:pdfconverter="pdf2svg"
+       ns1:text="$\\dots$"
+       ns1:preamble="C:\\Users\\Buster\\AppData\\Roaming\\inkscape\\extensions\\textext\\default_packages.tex"
+       ns1:scale="2.93580877603"
+       ns1:alignment="middle center"
+       ns1:jacobian_sqrt="1.035688"
+       id="g869"
+       inkscape:export-xdpi="67.440376"
+       inkscape:export-ydpi="67.440376">
+      <g
+         id="g867">
+        <g
+           style="fill:#000000;fill-opacity:1"
+           id="g857">
+          <path
+             inkscape:connector-curvature="0"
+             style="stroke:none;stroke-width:0"
+             d="m 1.90625,-0.53125 c 0,-0.28125 -0.234375,-0.53125 -0.515625,-0.53125 -0.296875,0 -0.53125,0.25 -0.53125,0.53125 C 0.859375,-0.234375 1.09375,0 1.390625,0 1.671875,0 1.90625,-0.234375 1.90625,-0.53125 Z m 0,0"
+             transform="translate(148.712,134.765)"
+             id="path855" />
+        </g>
+        <g
+           style="fill:#000000;fill-opacity:1"
+           id="g861">
+          <path
+             inkscape:connector-curvature="0"
+             style="stroke:none;stroke-width:0"
+             d="m 1.90625,-0.53125 c 0,-0.28125 -0.234375,-0.53125 -0.515625,-0.53125 -0.296875,0 -0.53125,0.25 -0.53125,0.53125 C 0.859375,-0.234375 1.09375,0 1.390625,0 1.671875,0 1.90625,-0.234375 1.90625,-0.53125 Z m 0,0"
+             transform="translate(153.14336,134.765)"
+             id="path859" />
+        </g>
+        <g
+           style="fill:#000000;fill-opacity:1"
+           id="g865">
+          <path
+             inkscape:connector-curvature="0"
+             style="stroke:none;stroke-width:0"
+             d="m 1.90625,-0.53125 c 0,-0.28125 -0.234375,-0.53125 -0.515625,-0.53125 -0.296875,0 -0.53125,0.25 -0.53125,0.53125 C 0.859375,-0.234375 1.09375,0 1.390625,0 1.671875,0 1.90625,-0.234375 1.90625,-0.53125 Z m 0,0"
+             transform="translate(157.56477,134.765)"
+             id="path863" />
+        </g>
+      </g>
+    </g>
+    <g
+       transform="matrix(0.33017628,-0.98164823,0.98164823,0.33017628,-145.68579,298.57405)"
+       ns1:version="0.11.0"
+       ns1:texconverter="pdflatex"
+       ns1:pdfconverter="pdf2svg"
+       ns1:text="$\\dots$"
+       ns1:preamble="C:\\Users\\Buster\\AppData\\Roaming\\inkscape\\extensions\\textext\\default_packages.tex"
+       ns1:scale="2.93580877603"
+       ns1:alignment="middle center"
+       ns1:jacobian_sqrt="1.035688"
+       id="g885"
+       inkscape:export-xdpi="67.440376"
+       inkscape:export-ydpi="67.440376">
+      <g
+         id="g883">
+        <g
+           style="fill:#000000;fill-opacity:1"
+           id="g873">
+          <path
+             inkscape:connector-curvature="0"
+             style="stroke:none;stroke-width:0"
+             d="m 1.90625,-0.53125 c 0,-0.28125 -0.234375,-0.53125 -0.515625,-0.53125 -0.296875,0 -0.53125,0.25 -0.53125,0.53125 C 0.859375,-0.234375 1.09375,0 1.390625,0 1.671875,0 1.90625,-0.234375 1.90625,-0.53125 Z m 0,0"
+             transform="translate(148.712,134.765)"
+             id="path871" />
+        </g>
+        <g
+           style="fill:#000000;fill-opacity:1"
+           id="g877">
+          <path
+             inkscape:connector-curvature="0"
+             style="stroke:none;stroke-width:0"
+             d="m 1.90625,-0.53125 c 0,-0.28125 -0.234375,-0.53125 -0.515625,-0.53125 -0.296875,0 -0.53125,0.25 -0.53125,0.53125 C 0.859375,-0.234375 1.09375,0 1.390625,0 1.671875,0 1.90625,-0.234375 1.90625,-0.53125 Z m 0,0"
+             transform="translate(153.14336,134.765)"
+             id="path875" />
+        </g>
+        <g
+           style="fill:#000000;fill-opacity:1"
+           id="g881">
+          <path
+             inkscape:connector-curvature="0"
+             style="stroke:none;stroke-width:0"
+             d="m 1.90625,-0.53125 c 0,-0.28125 -0.234375,-0.53125 -0.515625,-0.53125 -0.296875,0 -0.53125,0.25 -0.53125,0.53125 C 0.859375,-0.234375 1.09375,0 1.390625,0 1.671875,0 1.90625,-0.234375 1.90625,-0.53125 Z m 0,0"
+             transform="translate(157.56477,134.765)"
+             id="path879" />
+        </g>
+      </g>
+    </g>
+    <g
+       id="g901"
+       ns1:jacobian_sqrt="1.035688"
+       ns1:alignment="middle center"
+       ns1:scale="2.93580877603"
+       ns1:preamble="C:\\Users\\Buster\\AppData\\Roaming\\inkscape\\extensions\\textext\\default_packages.tex"
+       ns1:text="$\\dots$"
+       ns1:pdfconverter="pdf2svg"
+       ns1:texconverter="pdflatex"
+       ns1:version="0.11.0"
+       transform="matrix(-0.2741322,-0.9987498,0.9987498,-0.2741322,117.42621,382.76288)"
+       inkscape:export-xdpi="67.440376"
+       inkscape:export-ydpi="67.440376">
+      <g
+         id="g899">
+        <g
+           id="g889"
+           style="fill:#000000;fill-opacity:1">
+          <path
+             id="path887"
+             transform="translate(148.712,134.765)"
+             d="m 1.90625,-0.53125 c 0,-0.28125 -0.234375,-0.53125 -0.515625,-0.53125 -0.296875,0 -0.53125,0.25 -0.53125,0.53125 C 0.859375,-0.234375 1.09375,0 1.390625,0 1.671875,0 1.90625,-0.234375 1.90625,-0.53125 Z m 0,0"
+             style="stroke:none;stroke-width:0"
+             inkscape:connector-curvature="0" />
+        </g>
+        <g
+           id="g893"
+           style="fill:#000000;fill-opacity:1">
+          <path
+             id="path891"
+             transform="translate(153.14336,134.765)"
+             d="m 1.90625,-0.53125 c 0,-0.28125 -0.234375,-0.53125 -0.515625,-0.53125 -0.296875,0 -0.53125,0.25 -0.53125,0.53125 C 0.859375,-0.234375 1.09375,0 1.390625,0 1.671875,0 1.90625,-0.234375 1.90625,-0.53125 Z m 0,0"
+             style="stroke:none;stroke-width:0"
+             inkscape:connector-curvature="0" />
+        </g>
+        <g
+           id="g897"
+           style="fill:#000000;fill-opacity:1">
+          <path
+             id="path895"
+             transform="translate(157.56477,134.765)"
+             d="m 1.90625,-0.53125 c 0,-0.28125 -0.234375,-0.53125 -0.515625,-0.53125 -0.296875,0 -0.53125,0.25 -0.53125,0.53125 C 0.859375,-0.234375 1.09375,0 1.390625,0 1.671875,0 1.90625,-0.234375 1.90625,-0.53125 Z m 0,0"
+             style="stroke:none;stroke-width:0"
+             inkscape:connector-curvature="0" />
+        </g>
+      </g>
+    </g>
+    <circle
+       style="opacity:1;fill:#002eff;fill-opacity:1;stroke:#000000;stroke-width:0.35699996;stroke-linecap:square;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="path903"
+       cx="25.52424"
+       cy="131.15924"
+       r="2.5094168"
+       inkscape:export-xdpi="67.440376"
+       inkscape:export-ydpi="67.440376" />
+    <circle
+       r="2.6039109"
+       cy="95.440491"
+       cx="84.739578"
+       id="circle905"
+       style="opacity:1;fill:#002eff;fill-opacity:1;stroke:#000000;stroke-width:0.35699996;stroke-linecap:square;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-xdpi="67.440376"
+       inkscape:export-ydpi="67.440376" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path1106"
+       d="M 316.44712,79.977139 V 255.30595"
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.65700001;stroke-linecap:square;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-xdpi="67.440376"
+       inkscape:export-ydpi="67.440376" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path1108"
+       d="M 223.69943,200.99404 H 489.03871"
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.65700001;stroke-linecap:square;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-xdpi="67.440376"
+       inkscape:export-ydpi="67.440376" />
+    <path
+       sodipodi:nodetypes="csssc"
+       inkscape:connector-curvature="0"
+       id="path1110"
+       d="m 252.82097,218.95729 c 0,0 25.27219,-87.93167 44.37981,-87.6644 19.10763,0.26727 10.85661,28.33057 39.51805,36.8832 28.66144,8.55262 39.51804,-9.62171 55.80295,-1.87089 16.28491,7.75082 27.35865,52.91937 27.35865,52.91937"
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#de0000;stroke-width:1.057;stroke-linecap:square;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-xdpi="67.440376"
+       inkscape:export-ydpi="67.440376" />
+    <g
+       transform="matrix(0.33017628,-0.98164823,0.98164823,0.33017628,67.328018,333.85363)"
+       ns1:version="0.11.0"
+       ns1:texconverter="pdflatex"
+       ns1:pdfconverter="pdf2svg"
+       ns1:text="$\\dots$"
+       ns1:preamble="C:\\Users\\Buster\\AppData\\Roaming\\inkscape\\extensions\\textext\\default_packages.tex"
+       ns1:scale="2.93580877603"
+       ns1:alignment="middle center"
+       ns1:jacobian_sqrt="1.035688"
+       id="g1128"
+       inkscape:export-xdpi="67.440376"
+       inkscape:export-ydpi="67.440376">
+      <g
+         id="g1126">
+        <g
+           style="fill:#000000;fill-opacity:1"
+           id="g1116">
+          <path
+             inkscape:connector-curvature="0"
+             style="stroke:none;stroke-width:0"
+             d="m 1.90625,-0.53125 c 0,-0.28125 -0.234375,-0.53125 -0.515625,-0.53125 -0.296875,0 -0.53125,0.25 -0.53125,0.53125 C 0.859375,-0.234375 1.09375,0 1.390625,0 1.671875,0 1.90625,-0.234375 1.90625,-0.53125 Z m 0,0"
+             transform="translate(148.712,134.765)"
+             id="path1114" />
+        </g>
+        <g
+           style="fill:#000000;fill-opacity:1"
+           id="g1120">
+          <path
+             inkscape:connector-curvature="0"
+             style="stroke:none;stroke-width:0"
+             d="m 1.90625,-0.53125 c 0,-0.28125 -0.234375,-0.53125 -0.515625,-0.53125 -0.296875,0 -0.53125,0.25 -0.53125,0.53125 C 0.859375,-0.234375 1.09375,0 1.390625,0 1.671875,0 1.90625,-0.234375 1.90625,-0.53125 Z m 0,0"
+             transform="translate(153.14336,134.765)"
+             id="path1118" />
+        </g>
+        <g
+           style="fill:#000000;fill-opacity:1"
+           id="g1124">
+          <path
+             inkscape:connector-curvature="0"
+             style="stroke:none;stroke-width:0"
+             d="m 1.90625,-0.53125 c 0,-0.28125 -0.234375,-0.53125 -0.515625,-0.53125 -0.296875,0 -0.53125,0.25 -0.53125,0.53125 C 0.859375,-0.234375 1.09375,0 1.390625,0 1.671875,0 1.90625,-0.234375 1.90625,-0.53125 Z m 0,0"
+             transform="translate(157.56477,134.765)"
+             id="path1122" />
+        </g>
+      </g>
+    </g>
+    <g
+       id="g1144"
+       ns1:jacobian_sqrt="1.035688"
+       ns1:alignment="middle center"
+       ns1:scale="2.93580877603"
+       ns1:preamble="C:\\Users\\Buster\\AppData\\Roaming\\inkscape\\extensions\\textext\\default_packages.tex"
+       ns1:text="$\\dots$"
+       ns1:pdfconverter="pdf2svg"
+       ns1:texconverter="pdflatex"
+       ns1:version="0.11.0"
+       transform="matrix(-0.2741322,-0.9987498,0.9987498,-0.2741322,330.44003,418.04246)"
+       inkscape:export-xdpi="67.440376"
+       inkscape:export-ydpi="67.440376">
+      <g
+         id="g1142">
+        <g
+           id="g1132"
+           style="fill:#000000;fill-opacity:1">
+          <path
+             id="path1130"
+             transform="translate(148.712,134.765)"
+             d="m 1.90625,-0.53125 c 0,-0.28125 -0.234375,-0.53125 -0.515625,-0.53125 -0.296875,0 -0.53125,0.25 -0.53125,0.53125 C 0.859375,-0.234375 1.09375,0 1.390625,0 1.671875,0 1.90625,-0.234375 1.90625,-0.53125 Z m 0,0"
+             style="stroke:none;stroke-width:0"
+             inkscape:connector-curvature="0" />
+        </g>
+        <g
+           id="g1136"
+           style="fill:#000000;fill-opacity:1">
+          <path
+             id="path1134"
+             transform="translate(153.14336,134.765)"
+             d="m 1.90625,-0.53125 c 0,-0.28125 -0.234375,-0.53125 -0.515625,-0.53125 -0.296875,0 -0.53125,0.25 -0.53125,0.53125 C 0.859375,-0.234375 1.09375,0 1.390625,0 1.671875,0 1.90625,-0.234375 1.90625,-0.53125 Z m 0,0"
+             style="stroke:none;stroke-width:0"
+             inkscape:connector-curvature="0" />
+        </g>
+        <g
+           id="g1140"
+           style="fill:#000000;fill-opacity:1">
+          <path
+             id="path1138"
+             transform="translate(157.56477,134.765)"
+             d="m 1.90625,-0.53125 c 0,-0.28125 -0.234375,-0.53125 -0.515625,-0.53125 -0.296875,0 -0.53125,0.25 -0.53125,0.53125 C 0.859375,-0.234375 1.09375,0 1.390625,0 1.671875,0 1.90625,-0.234375 1.90625,-0.53125 Z m 0,0"
+             style="stroke:none;stroke-width:0"
+             inkscape:connector-curvature="0" />
+        </g>
+      </g>
+    </g>
+    <path
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#de8d00;stroke-width:1.057;stroke-linecap:square;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 283.34963,218.57932 c 0,0 12.92449,-87.93168 22.69635,-87.66441 9.77186,0.26727 5.55219,28.33058 20.20998,36.88321 14.65779,8.55262 20.20998,-9.62171 28.53827,-1.87089 8.32829,7.75082 13.99153,52.91937 13.99153,52.91937"
+       id="path1182"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="csssc"
+       inkscape:export-xdpi="67.440376"
+       inkscape:export-ydpi="67.440376" />
+    <g
+       id="g1198"
+       ns1:jacobian_sqrt="1.035688"
+       ns1:alignment="middle center"
+       ns1:scale="2.93580877603"
+       ns1:preamble="C:\\Users\\Buster\\AppData\\Roaming\\inkscape\\extensions\\textext\\default_packages.tex"
+       ns1:text="$\\dots$"
+       ns1:pdfconverter="pdf2svg"
+       ns1:texconverter="pdflatex"
+       ns1:version="0.11.0"
+       transform="matrix(0.1577624,-1.0236018,1.0236018,0.1577624,120.84385,362.72452)"
+       inkscape:export-xdpi="67.440376"
+       inkscape:export-ydpi="67.440376">
+      <g
+         id="g1196">
+        <g
+           id="g1186"
+           style="fill:#000000;fill-opacity:1">
+          <path
+             id="path1184"
+             transform="translate(148.712,134.765)"
+             d="m 1.90625,-0.53125 c 0,-0.28125 -0.234375,-0.53125 -0.515625,-0.53125 -0.296875,0 -0.53125,0.25 -0.53125,0.53125 C 0.859375,-0.234375 1.09375,0 1.390625,0 1.671875,0 1.90625,-0.234375 1.90625,-0.53125 Z m 0,0"
+             style="stroke:none;stroke-width:0"
+             inkscape:connector-curvature="0" />
+        </g>
+        <g
+           id="g1190"
+           style="fill:#000000;fill-opacity:1">
+          <path
+             id="path1188"
+             transform="translate(153.14336,134.765)"
+             d="m 1.90625,-0.53125 c 0,-0.28125 -0.234375,-0.53125 -0.515625,-0.53125 -0.296875,0 -0.53125,0.25 -0.53125,0.53125 C 0.859375,-0.234375 1.09375,0 1.390625,0 1.671875,0 1.90625,-0.234375 1.90625,-0.53125 Z m 0,0"
+             style="stroke:none;stroke-width:0"
+             inkscape:connector-curvature="0" />
+        </g>
+        <g
+           id="g1194"
+           style="fill:#000000;fill-opacity:1">
+          <path
+             id="path1192"
+             transform="translate(157.56477,134.765)"
+             d="m 1.90625,-0.53125 c 0,-0.28125 -0.234375,-0.53125 -0.515625,-0.53125 -0.296875,0 -0.53125,0.25 -0.53125,0.53125 C 0.859375,-0.234375 1.09375,0 1.390625,0 1.671875,0 1.90625,-0.234375 1.90625,-0.53125 Z m 0,0"
+             style="stroke:none;stroke-width:0"
+             inkscape:connector-curvature="0" />
+        </g>
+      </g>
+    </g>
+    <g
+       transform="matrix(-0.1577624,-1.0236018,-1.0236018,0.1577624,531.33968,363.10249)"
+       ns1:version="0.11.0"
+       ns1:texconverter="pdflatex"
+       ns1:pdfconverter="pdf2svg"
+       ns1:text="$\\dots$"
+       ns1:preamble="C:\\Users\\Buster\\AppData\\Roaming\\inkscape\\extensions\\textext\\default_packages.tex"
+       ns1:scale="2.93580877603"
+       ns1:alignment="middle center"
+       ns1:jacobian_sqrt="1.035688"
+       id="g1214"
+       inkscape:export-xdpi="67.440376"
+       inkscape:export-ydpi="67.440376">
+      <g
+         id="g1212">
+        <g
+           style="fill:#000000;fill-opacity:1"
+           id="g1202">
+          <path
+             inkscape:connector-curvature="0"
+             style="stroke:none;stroke-width:0"
+             d="m 1.90625,-0.53125 c 0,-0.28125 -0.234375,-0.53125 -0.515625,-0.53125 -0.296875,0 -0.53125,0.25 -0.53125,0.53125 C 0.859375,-0.234375 1.09375,0 1.390625,0 1.671875,0 1.90625,-0.234375 1.90625,-0.53125 Z m 0,0"
+             transform="translate(148.712,134.765)"
+             id="path1200" />
+        </g>
+        <g
+           style="fill:#000000;fill-opacity:1"
+           id="g1206">
+          <path
+             inkscape:connector-curvature="0"
+             style="stroke:none;stroke-width:0"
+             d="m 1.90625,-0.53125 c 0,-0.28125 -0.234375,-0.53125 -0.515625,-0.53125 -0.296875,0 -0.53125,0.25 -0.53125,0.53125 C 0.859375,-0.234375 1.09375,0 1.390625,0 1.671875,0 1.90625,-0.234375 1.90625,-0.53125 Z m 0,0"
+             transform="translate(153.14336,134.765)"
+             id="path1204" />
+        </g>
+        <g
+           style="fill:#000000;fill-opacity:1"
+           id="g1210">
+          <path
+             inkscape:connector-curvature="0"
+             style="stroke:none;stroke-width:0"
+             d="m 1.90625,-0.53125 c 0,-0.28125 -0.234375,-0.53125 -0.515625,-0.53125 -0.296875,0 -0.53125,0.25 -0.53125,0.53125 C 0.859375,-0.234375 1.09375,0 1.390625,0 1.671875,0 1.90625,-0.234375 1.90625,-0.53125 Z m 0,0"
+             transform="translate(157.56477,134.765)"
+             id="path1208" />
+        </g>
+      </g>
+    </g>
+    <path
+       inkscape:connector-curvature="0"
+       id="path1216"
+       d="M 44.36674,267.30321 V 442.63213"
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.65700001;stroke-linecap:square;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-xdpi="67.440376"
+       inkscape:export-ydpi="67.440376" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path1218"
+       d="M -48.380951,388.32022 H 216.95833"
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.65700001;stroke-linecap:square;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-xdpi="67.440376"
+       inkscape:export-ydpi="67.440376" />
+    <path
+       sodipodi:nodetypes="csssc"
+       inkscape:connector-curvature="0"
+       id="path1220"
+       d="m -19.25941,406.28347 c 0,0 25.2721882,-87.93167 44.379814,-87.6644 19.107626,0.26727 10.856606,28.33057 39.518044,36.8832 28.661443,8.55262 39.518042,-9.62171 55.802952,-1.87089 16.28491,7.75082 27.35865,52.91937 27.35865,52.91937"
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#de0000;stroke-width:1.057;stroke-linecap:square;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-xdpi="67.440376"
+       inkscape:export-ydpi="67.440376" />
+    <g
+       transform="matrix(0.33017628,-0.98164823,0.98164823,0.33017628,-204.75236,521.17981)"
+       ns1:version="0.11.0"
+       ns1:texconverter="pdflatex"
+       ns1:pdfconverter="pdf2svg"
+       ns1:text="$\\dots$"
+       ns1:preamble="C:\\Users\\Buster\\AppData\\Roaming\\inkscape\\extensions\\textext\\default_packages.tex"
+       ns1:scale="2.93580877603"
+       ns1:alignment="middle center"
+       ns1:jacobian_sqrt="1.035688"
+       id="g1238"
+       inkscape:export-xdpi="67.440376"
+       inkscape:export-ydpi="67.440376">
+      <g
+         id="g1236">
+        <g
+           style="fill:#000000;fill-opacity:1"
+           id="g1226">
+          <path
+             inkscape:connector-curvature="0"
+             style="stroke:none;stroke-width:0"
+             d="m 1.90625,-0.53125 c 0,-0.28125 -0.234375,-0.53125 -0.515625,-0.53125 -0.296875,0 -0.53125,0.25 -0.53125,0.53125 C 0.859375,-0.234375 1.09375,0 1.390625,0 1.671875,0 1.90625,-0.234375 1.90625,-0.53125 Z m 0,0"
+             transform="translate(148.712,134.765)"
+             id="path1224" />
+        </g>
+        <g
+           style="fill:#000000;fill-opacity:1"
+           id="g1230">
+          <path
+             inkscape:connector-curvature="0"
+             style="stroke:none;stroke-width:0"
+             d="m 1.90625,-0.53125 c 0,-0.28125 -0.234375,-0.53125 -0.515625,-0.53125 -0.296875,0 -0.53125,0.25 -0.53125,0.53125 C 0.859375,-0.234375 1.09375,0 1.390625,0 1.671875,0 1.90625,-0.234375 1.90625,-0.53125 Z m 0,0"
+             transform="translate(153.14336,134.765)"
+             id="path1228" />
+        </g>
+        <g
+           style="fill:#000000;fill-opacity:1"
+           id="g1234">
+          <path
+             inkscape:connector-curvature="0"
+             style="stroke:none;stroke-width:0"
+             d="m 1.90625,-0.53125 c 0,-0.28125 -0.234375,-0.53125 -0.515625,-0.53125 -0.296875,0 -0.53125,0.25 -0.53125,0.53125 C 0.859375,-0.234375 1.09375,0 1.390625,0 1.671875,0 1.90625,-0.234375 1.90625,-0.53125 Z m 0,0"
+             transform="translate(157.56477,134.765)"
+             id="path1232" />
+        </g>
+      </g>
+    </g>
+    <g
+       id="g1254"
+       ns1:jacobian_sqrt="1.035688"
+       ns1:alignment="middle center"
+       ns1:scale="2.93580877603"
+       ns1:preamble="C:\\Users\\Buster\\AppData\\Roaming\\inkscape\\extensions\\textext\\default_packages.tex"
+       ns1:text="$\\dots$"
+       ns1:pdfconverter="pdf2svg"
+       ns1:texconverter="pdflatex"
+       ns1:version="0.11.0"
+       transform="matrix(-0.2741322,-0.9987498,0.9987498,-0.2741322,58.359646,605.36864)"
+       inkscape:export-xdpi="67.440376"
+       inkscape:export-ydpi="67.440376">
+      <g
+         id="g1252">
+        <g
+           id="g1242"
+           style="fill:#000000;fill-opacity:1">
+          <path
+             id="path1240"
+             transform="translate(148.712,134.765)"
+             d="m 1.90625,-0.53125 c 0,-0.28125 -0.234375,-0.53125 -0.515625,-0.53125 -0.296875,0 -0.53125,0.25 -0.53125,0.53125 C 0.859375,-0.234375 1.09375,0 1.390625,0 1.671875,0 1.90625,-0.234375 1.90625,-0.53125 Z m 0,0"
+             style="stroke:none;stroke-width:0"
+             inkscape:connector-curvature="0" />
+        </g>
+        <g
+           id="g1246"
+           style="fill:#000000;fill-opacity:1">
+          <path
+             id="path1244"
+             transform="translate(153.14336,134.765)"
+             d="m 1.90625,-0.53125 c 0,-0.28125 -0.234375,-0.53125 -0.515625,-0.53125 -0.296875,0 -0.53125,0.25 -0.53125,0.53125 C 0.859375,-0.234375 1.09375,0 1.390625,0 1.671875,0 1.90625,-0.234375 1.90625,-0.53125 Z m 0,0"
+             style="stroke:none;stroke-width:0"
+             inkscape:connector-curvature="0" />
+        </g>
+        <g
+           id="g1250"
+           style="fill:#000000;fill-opacity:1">
+          <path
+             id="path1248"
+             transform="translate(157.56477,134.765)"
+             d="m 1.90625,-0.53125 c 0,-0.28125 -0.234375,-0.53125 -0.515625,-0.53125 -0.296875,0 -0.53125,0.25 -0.53125,0.53125 C 0.859375,-0.234375 1.09375,0 1.390625,0 1.671875,0 1.90625,-0.234375 1.90625,-0.53125 Z m 0,0"
+             style="stroke:none;stroke-width:0"
+             inkscape:connector-curvature="0" />
+        </g>
+      </g>
+    </g>
+    <path
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#de8d00;stroke-width:1.057;stroke-linecap:square;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m -46.967528,406.28884 c 0,0 36.751727,-87.93167 64.538718,-87.6644 27.786997,0.26727 15.788067,28.33057 57.468556,36.8832 41.680464,8.55262 57.468524,-9.62171 81.150624,-1.87089 23.6821,7.75082 39.78593,52.91937 39.78593,52.91937"
+       id="path1294"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="csssc"
+       inkscape:export-xdpi="67.440376"
+       inkscape:export-ydpi="67.440376" />
+    <g
+       id="g1310"
+       ns1:jacobian_sqrt="1.035688"
+       ns1:alignment="middle center"
+       ns1:scale="2.93580877603"
+       ns1:preamble="C:\\Users\\Buster\\AppData\\Roaming\\inkscape\\extensions\\textext\\default_packages.tex"
+       ns1:text="$\\dots$"
+       ns1:pdfconverter="pdf2svg"
+       ns1:texconverter="pdflatex"
+       ns1:version="0.11.0"
+       transform="matrix(0.46964055,-0.92308579,0.92308579,0.46964055,-247.01651,493.40957)"
+       inkscape:export-xdpi="67.440376"
+       inkscape:export-ydpi="67.440376">
+      <g
+         id="g1308">
+        <g
+           id="g1298"
+           style="fill:#000000;fill-opacity:1">
+          <path
+             id="path1296"
+             transform="translate(148.712,134.765)"
+             d="m 1.90625,-0.53125 c 0,-0.28125 -0.234375,-0.53125 -0.515625,-0.53125 -0.296875,0 -0.53125,0.25 -0.53125,0.53125 C 0.859375,-0.234375 1.09375,0 1.390625,0 1.671875,0 1.90625,-0.234375 1.90625,-0.53125 Z m 0,0"
+             style="stroke:none;stroke-width:0"
+             inkscape:connector-curvature="0" />
+        </g>
+        <g
+           id="g1302"
+           style="fill:#000000;fill-opacity:1">
+          <path
+             id="path1300"
+             transform="translate(153.14336,134.765)"
+             d="m 1.90625,-0.53125 c 0,-0.28125 -0.234375,-0.53125 -0.515625,-0.53125 -0.296875,0 -0.53125,0.25 -0.53125,0.53125 C 0.859375,-0.234375 1.09375,0 1.390625,0 1.671875,0 1.90625,-0.234375 1.90625,-0.53125 Z m 0,0"
+             style="stroke:none;stroke-width:0"
+             inkscape:connector-curvature="0" />
+        </g>
+        <g
+           id="g1306"
+           style="fill:#000000;fill-opacity:1">
+          <path
+             id="path1304"
+             transform="translate(157.56477,134.765)"
+             d="m 1.90625,-0.53125 c 0,-0.28125 -0.234375,-0.53125 -0.515625,-0.53125 -0.296875,0 -0.53125,0.25 -0.53125,0.53125 C 0.859375,-0.234375 1.09375,0 1.390625,0 1.671875,0 1.90625,-0.234375 1.90625,-0.53125 Z m 0,0"
+             style="stroke:none;stroke-width:0"
+             inkscape:connector-curvature="0" />
+        </g>
+      </g>
+    </g>
+    <g
+       transform="matrix(-0.51861342,-0.89648745,0.89648745,-0.51861342,160.6645,622.38435)"
+       ns1:version="0.11.0"
+       ns1:texconverter="pdflatex"
+       ns1:pdfconverter="pdf2svg"
+       ns1:text="$\\dots$"
+       ns1:preamble="C:\\Users\\Buster\\AppData\\Roaming\\inkscape\\extensions\\textext\\default_packages.tex"
+       ns1:scale="2.93580877603"
+       ns1:alignment="middle center"
+       ns1:jacobian_sqrt="1.035688"
+       id="g1326"
+       inkscape:export-xdpi="67.440376"
+       inkscape:export-ydpi="67.440376">
+      <g
+         id="g1324">
+        <g
+           style="fill:#000000;fill-opacity:1"
+           id="g1314">
+          <path
+             inkscape:connector-curvature="0"
+             style="stroke:none;stroke-width:0"
+             d="m 1.90625,-0.53125 c 0,-0.28125 -0.234375,-0.53125 -0.515625,-0.53125 -0.296875,0 -0.53125,0.25 -0.53125,0.53125 C 0.859375,-0.234375 1.09375,0 1.390625,0 1.671875,0 1.90625,-0.234375 1.90625,-0.53125 Z m 0,0"
+             transform="translate(148.712,134.765)"
+             id="path1312" />
+        </g>
+        <g
+           style="fill:#000000;fill-opacity:1"
+           id="g1318">
+          <path
+             inkscape:connector-curvature="0"
+             style="stroke:none;stroke-width:0"
+             d="m 1.90625,-0.53125 c 0,-0.28125 -0.234375,-0.53125 -0.515625,-0.53125 -0.296875,0 -0.53125,0.25 -0.53125,0.53125 C 0.859375,-0.234375 1.09375,0 1.390625,0 1.671875,0 1.90625,-0.234375 1.90625,-0.53125 Z m 0,0"
+             transform="translate(153.14336,134.765)"
+             id="path1316" />
+        </g>
+        <g
+           style="fill:#000000;fill-opacity:1"
+           id="g1322">
+          <path
+             inkscape:connector-curvature="0"
+             style="stroke:none;stroke-width:0"
+             d="m 1.90625,-0.53125 c 0,-0.28125 -0.234375,-0.53125 -0.515625,-0.53125 -0.296875,0 -0.53125,0.25 -0.53125,0.53125 C 0.859375,-0.234375 1.09375,0 1.390625,0 1.671875,0 1.90625,-0.234375 1.90625,-0.53125 Z m 0,0"
+             transform="translate(157.56477,134.765)"
+             id="path1320" />
+        </g>
+      </g>
+    </g>
+    <path
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.65700001;stroke-linecap:square;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="M 316.44712,267.3032 V 442.63213"
+       id="path1328"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="67.440376"
+       inkscape:export-ydpi="67.440376" />
+    <path
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.65700001;stroke-linecap:square;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="M 223.69943,388.32022 H 489.03871"
+       id="path1330"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="67.440376"
+       inkscape:export-ydpi="67.440376" />
+    <path
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#de0000;stroke-width:1.057;stroke-linecap:square;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 252.82097,406.28347 c 0,0 25.27219,-87.93167 44.37981,-87.6644 19.10763,0.26727 10.85661,28.33057 39.51805,36.8832 28.66144,8.55262 39.51804,-9.62171 55.80295,-1.87089 16.28491,7.75082 27.35865,52.91937 27.35865,52.91937"
+       id="path1332"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="csssc"
+       inkscape:export-xdpi="67.440376"
+       inkscape:export-ydpi="67.440376" />
+    <g
+       id="g1348"
+       ns1:jacobian_sqrt="1.035688"
+       ns1:alignment="middle center"
+       ns1:scale="2.93580877603"
+       ns1:preamble="C:\\Users\\Buster\\AppData\\Roaming\\inkscape\\extensions\\textext\\default_packages.tex"
+       ns1:text="$\\dots$"
+       ns1:pdfconverter="pdf2svg"
+       ns1:texconverter="pdflatex"
+       ns1:version="0.11.0"
+       transform="matrix(0.33017628,-0.98164823,0.98164823,0.33017628,67.328018,521.17981)"
+       inkscape:export-xdpi="67.440376"
+       inkscape:export-ydpi="67.440376">
+      <g
+         id="g1346">
+        <g
+           id="g1336"
+           style="fill:#000000;fill-opacity:1">
+          <path
+             id="path1334"
+             transform="translate(148.712,134.765)"
+             d="m 1.90625,-0.53125 c 0,-0.28125 -0.234375,-0.53125 -0.515625,-0.53125 -0.296875,0 -0.53125,0.25 -0.53125,0.53125 C 0.859375,-0.234375 1.09375,0 1.390625,0 1.671875,0 1.90625,-0.234375 1.90625,-0.53125 Z m 0,0"
+             style="stroke:none;stroke-width:0"
+             inkscape:connector-curvature="0" />
+        </g>
+        <g
+           id="g1340"
+           style="fill:#000000;fill-opacity:1">
+          <path
+             id="path1338"
+             transform="translate(153.14336,134.765)"
+             d="m 1.90625,-0.53125 c 0,-0.28125 -0.234375,-0.53125 -0.515625,-0.53125 -0.296875,0 -0.53125,0.25 -0.53125,0.53125 C 0.859375,-0.234375 1.09375,0 1.390625,0 1.671875,0 1.90625,-0.234375 1.90625,-0.53125 Z m 0,0"
+             style="stroke:none;stroke-width:0"
+             inkscape:connector-curvature="0" />
+        </g>
+        <g
+           id="g1344"
+           style="fill:#000000;fill-opacity:1">
+          <path
+             id="path1342"
+             transform="translate(157.56477,134.765)"
+             d="m 1.90625,-0.53125 c 0,-0.28125 -0.234375,-0.53125 -0.515625,-0.53125 -0.296875,0 -0.53125,0.25 -0.53125,0.53125 C 0.859375,-0.234375 1.09375,0 1.390625,0 1.671875,0 1.90625,-0.234375 1.90625,-0.53125 Z m 0,0"
+             style="stroke:none;stroke-width:0"
+             inkscape:connector-curvature="0" />
+        </g>
+      </g>
+    </g>
+    <g
+       transform="matrix(-0.2741322,-0.9987498,0.9987498,-0.2741322,330.44003,605.36864)"
+       ns1:version="0.11.0"
+       ns1:texconverter="pdflatex"
+       ns1:pdfconverter="pdf2svg"
+       ns1:text="$\\dots$"
+       ns1:preamble="C:\\Users\\Buster\\AppData\\Roaming\\inkscape\\extensions\\textext\\default_packages.tex"
+       ns1:scale="2.93580877603"
+       ns1:alignment="middle center"
+       ns1:jacobian_sqrt="1.035688"
+       id="g1364"
+       inkscape:export-xdpi="67.440376"
+       inkscape:export-ydpi="67.440376">
+      <g
+         id="g1362">
+        <g
+           style="fill:#000000;fill-opacity:1"
+           id="g1352">
+          <path
+             inkscape:connector-curvature="0"
+             style="stroke:none;stroke-width:0"
+             d="m 1.90625,-0.53125 c 0,-0.28125 -0.234375,-0.53125 -0.515625,-0.53125 -0.296875,0 -0.53125,0.25 -0.53125,0.53125 C 0.859375,-0.234375 1.09375,0 1.390625,0 1.671875,0 1.90625,-0.234375 1.90625,-0.53125 Z m 0,0"
+             transform="translate(148.712,134.765)"
+             id="path1350" />
+        </g>
+        <g
+           style="fill:#000000;fill-opacity:1"
+           id="g1356">
+          <path
+             inkscape:connector-curvature="0"
+             style="stroke:none;stroke-width:0"
+             d="m 1.90625,-0.53125 c 0,-0.28125 -0.234375,-0.53125 -0.515625,-0.53125 -0.296875,0 -0.53125,0.25 -0.53125,0.53125 C 0.859375,-0.234375 1.09375,0 1.390625,0 1.671875,0 1.90625,-0.234375 1.90625,-0.53125 Z m 0,0"
+             transform="translate(153.14336,134.765)"
+             id="path1354" />
+        </g>
+        <g
+           style="fill:#000000;fill-opacity:1"
+           id="g1360">
+          <path
+             inkscape:connector-curvature="0"
+             style="stroke:none;stroke-width:0"
+             d="m 1.90625,-0.53125 c 0,-0.28125 -0.234375,-0.53125 -0.515625,-0.53125 -0.296875,0 -0.53125,0.25 -0.53125,0.53125 C 0.859375,-0.234375 1.09375,0 1.390625,0 1.671875,0 1.90625,-0.234375 1.90625,-0.53125 Z m 0,0"
+             transform="translate(157.56477,134.765)"
+             id="path1358" />
+        </g>
+      </g>
+    </g>
+    <path
+       sodipodi:nodetypes="csssc"
+       inkscape:connector-curvature="0"
+       id="path1402"
+       d="m 252.82097,406.12932 c 0,0 25.27219,-135.5286 44.37981,-135.11666 19.10763,0.41194 10.85661,43.66575 39.51805,56.84788 28.66144,13.18211 39.51804,-14.82989 55.80295,-2.88359 16.28491,11.9463 27.35865,81.56432 27.35865,81.56432"
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#de8d00;stroke-width:1.057;stroke-linecap:square;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-xdpi="67.440376"
+       inkscape:export-ydpi="67.440376" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path1404"
+       d="M 44.361369,454.24154 V 629.57047"
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.65700001;stroke-linecap:square;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-xdpi="67.440376"
+       inkscape:export-ydpi="67.440376" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path1406"
+       d="M -48.386321,575.25856 H 216.95296"
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.65700001;stroke-linecap:square;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-xdpi="67.440376"
+       inkscape:export-ydpi="67.440376" />
+    <path
+       sodipodi:nodetypes="csssc"
+       inkscape:connector-curvature="0"
+       id="path1408"
+       d="m -19.264781,593.22181 c 0,0 25.2721897,-87.93167 44.37981,-87.6644 19.10763,0.26727 10.85661,28.33057 39.51805,36.8832 28.66144,8.55262 39.518041,-9.62171 55.802951,-1.87089 16.28491,7.75082 27.35865,52.91937 27.35865,52.91937"
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#de0000;stroke-width:1.057;stroke-linecap:square;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-xdpi="67.440376"
+       inkscape:export-ydpi="67.440376" />
+    <g
+       transform="matrix(0.33017628,-0.98164823,0.98164823,0.33017628,-204.75773,708.11815)"
+       ns1:version="0.11.0"
+       ns1:texconverter="pdflatex"
+       ns1:pdfconverter="pdf2svg"
+       ns1:text="$\\dots$"
+       ns1:preamble="C:\\Users\\Buster\\AppData\\Roaming\\inkscape\\extensions\\textext\\default_packages.tex"
+       ns1:scale="2.93580877603"
+       ns1:alignment="middle center"
+       ns1:jacobian_sqrt="1.035688"
+       id="g1424"
+       inkscape:export-xdpi="67.440376"
+       inkscape:export-ydpi="67.440376">
+      <g
+         id="g1422">
+        <g
+           style="fill:#000000;fill-opacity:1"
+           id="g1412">
+          <path
+             inkscape:connector-curvature="0"
+             style="stroke:none;stroke-width:0"
+             d="m 1.90625,-0.53125 c 0,-0.28125 -0.234375,-0.53125 -0.515625,-0.53125 -0.296875,0 -0.53125,0.25 -0.53125,0.53125 C 0.859375,-0.234375 1.09375,0 1.390625,0 1.671875,0 1.90625,-0.234375 1.90625,-0.53125 Z m 0,0"
+             transform="translate(148.712,134.765)"
+             id="path1410" />
+        </g>
+        <g
+           style="fill:#000000;fill-opacity:1"
+           id="g1416">
+          <path
+             inkscape:connector-curvature="0"
+             style="stroke:none;stroke-width:0"
+             d="m 1.90625,-0.53125 c 0,-0.28125 -0.234375,-0.53125 -0.515625,-0.53125 -0.296875,0 -0.53125,0.25 -0.53125,0.53125 C 0.859375,-0.234375 1.09375,0 1.390625,0 1.671875,0 1.90625,-0.234375 1.90625,-0.53125 Z m 0,0"
+             transform="translate(153.14336,134.765)"
+             id="path1414" />
+        </g>
+        <g
+           style="fill:#000000;fill-opacity:1"
+           id="g1420">
+          <path
+             inkscape:connector-curvature="0"
+             style="stroke:none;stroke-width:0"
+             d="m 1.90625,-0.53125 c 0,-0.28125 -0.234375,-0.53125 -0.515625,-0.53125 -0.296875,0 -0.53125,0.25 -0.53125,0.53125 C 0.859375,-0.234375 1.09375,0 1.390625,0 1.671875,0 1.90625,-0.234375 1.90625,-0.53125 Z m 0,0"
+             transform="translate(157.56477,134.765)"
+             id="path1418" />
+        </g>
+      </g>
+    </g>
+    <g
+       id="g1440"
+       ns1:jacobian_sqrt="1.035688"
+       ns1:alignment="middle center"
+       ns1:scale="2.93580877603"
+       ns1:preamble="C:\\Users\\Buster\\AppData\\Roaming\\inkscape\\extensions\\textext\\default_packages.tex"
+       ns1:text="$\\dots$"
+       ns1:pdfconverter="pdf2svg"
+       ns1:texconverter="pdflatex"
+       ns1:version="0.11.0"
+       transform="matrix(-0.2741322,-0.9987498,0.9987498,-0.2741322,58.354279,792.30698)"
+       inkscape:export-xdpi="67.440376"
+       inkscape:export-ydpi="67.440376">
+      <g
+         id="g1438">
+        <g
+           id="g1428"
+           style="fill:#000000;fill-opacity:1">
+          <path
+             id="path1426"
+             transform="translate(148.712,134.765)"
+             d="m 1.90625,-0.53125 c 0,-0.28125 -0.234375,-0.53125 -0.515625,-0.53125 -0.296875,0 -0.53125,0.25 -0.53125,0.53125 C 0.859375,-0.234375 1.09375,0 1.390625,0 1.671875,0 1.90625,-0.234375 1.90625,-0.53125 Z m 0,0"
+             style="stroke:none;stroke-width:0"
+             inkscape:connector-curvature="0" />
+        </g>
+        <g
+           id="g1432"
+           style="fill:#000000;fill-opacity:1">
+          <path
+             id="path1430"
+             transform="translate(153.14336,134.765)"
+             d="m 1.90625,-0.53125 c 0,-0.28125 -0.234375,-0.53125 -0.515625,-0.53125 -0.296875,0 -0.53125,0.25 -0.53125,0.53125 C 0.859375,-0.234375 1.09375,0 1.390625,0 1.671875,0 1.90625,-0.234375 1.90625,-0.53125 Z m 0,0"
+             style="stroke:none;stroke-width:0"
+             inkscape:connector-curvature="0" />
+        </g>
+        <g
+           id="g1436"
+           style="fill:#000000;fill-opacity:1">
+          <path
+             id="path1434"
+             transform="translate(157.56477,134.765)"
+             d="m 1.90625,-0.53125 c 0,-0.28125 -0.234375,-0.53125 -0.515625,-0.53125 -0.296875,0 -0.53125,0.25 -0.53125,0.53125 C 0.859375,-0.234375 1.09375,0 1.390625,0 1.671875,0 1.90625,-0.234375 1.90625,-0.53125 Z m 0,0"
+             style="stroke:none;stroke-width:0"
+             inkscape:connector-curvature="0" />
+        </g>
+      </g>
+    </g>
+    <path
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#de8d00;stroke-width:1.057;stroke-linecap:square;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m -19.264781,593.31587 c 0,0 25.2721897,-55.86708 44.37981,-55.69727 19.10763,0.1698 10.85661,17.99973 39.51805,23.43361 28.66144,5.43388 39.518041,-6.11312 55.802951,-1.18866 16.28491,4.92446 27.35865,33.62213 27.35865,33.62213"
+       id="path1442"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="csssc"
+       inkscape:export-xdpi="67.440376"
+       inkscape:export-ydpi="67.440376" />
+    <path
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.65700001;stroke-linecap:square;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="M 317.01665,453.707 V 629.03593"
+       id="path1444"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="67.440376"
+       inkscape:export-ydpi="67.440376" />
+    <path
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.65700001;stroke-linecap:square;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 224.26896,574.72402 h 265.3395"
+       id="path1446"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="67.440376"
+       inkscape:export-ydpi="67.440376" />
+    <path
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#de0000;stroke-width:1.057;stroke-linecap:square;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 253.39049,592.68727 c 0,0 25.2722,-87.93167 44.37982,-87.6644 19.10763,0.26727 10.85661,28.33057 39.51807,36.8832 28.6616,8.55262 39.51824,-9.62171 55.80315,-1.87089 16.28491,7.75082 27.35865,52.91937 27.35865,52.91937"
+       id="path1448"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="csssc"
+       inkscape:export-xdpi="67.440376"
+       inkscape:export-ydpi="67.440376" />
+    <g
+       id="g1464"
+       ns1:jacobian_sqrt="1.035688"
+       ns1:alignment="middle center"
+       ns1:scale="2.93580877603"
+       ns1:preamble="C:\\Users\\Buster\\AppData\\Roaming\\inkscape\\extensions\\textext\\default_packages.tex"
+       ns1:text="$\\dots$"
+       ns1:pdfconverter="pdf2svg"
+       ns1:texconverter="pdflatex"
+       ns1:version="0.11.0"
+       transform="matrix(0.33017628,-0.98164823,0.98164823,0.33017628,67.897723,707.58361)"
+       inkscape:export-xdpi="67.440376"
+       inkscape:export-ydpi="67.440376">
+      <g
+         id="g1462">
+        <g
+           id="g1452"
+           style="fill:#000000;fill-opacity:1">
+          <path
+             id="path1450"
+             transform="translate(148.712,134.765)"
+             d="m 1.90625,-0.53125 c 0,-0.28125 -0.234375,-0.53125 -0.515625,-0.53125 -0.296875,0 -0.53125,0.25 -0.53125,0.53125 C 0.859375,-0.234375 1.09375,0 1.390625,0 1.671875,0 1.90625,-0.234375 1.90625,-0.53125 Z m 0,0"
+             style="stroke:none;stroke-width:0"
+             inkscape:connector-curvature="0" />
+        </g>
+        <g
+           id="g1456"
+           style="fill:#000000;fill-opacity:1">
+          <path
+             id="path1454"
+             transform="translate(153.14336,134.765)"
+             d="m 1.90625,-0.53125 c 0,-0.28125 -0.234375,-0.53125 -0.515625,-0.53125 -0.296875,0 -0.53125,0.25 -0.53125,0.53125 C 0.859375,-0.234375 1.09375,0 1.390625,0 1.671875,0 1.90625,-0.234375 1.90625,-0.53125 Z m 0,0"
+             style="stroke:none;stroke-width:0"
+             inkscape:connector-curvature="0" />
+        </g>
+        <g
+           id="g1460"
+           style="fill:#000000;fill-opacity:1">
+          <path
+             id="path1458"
+             transform="translate(157.56477,134.765)"
+             d="m 1.90625,-0.53125 c 0,-0.28125 -0.234375,-0.53125 -0.515625,-0.53125 -0.296875,0 -0.53125,0.25 -0.53125,0.53125 C 0.859375,-0.234375 1.09375,0 1.390625,0 1.671875,0 1.90625,-0.234375 1.90625,-0.53125 Z m 0,0"
+             style="stroke:none;stroke-width:0"
+             inkscape:connector-curvature="0" />
+        </g>
+      </g>
+    </g>
+    <g
+       transform="matrix(-0.2741322,-0.9987498,0.9987498,-0.2741322,331.00956,791.77244)"
+       ns1:version="0.11.0"
+       ns1:texconverter="pdflatex"
+       ns1:pdfconverter="pdf2svg"
+       ns1:text="$\\dots$"
+       ns1:preamble="C:\\Users\\Buster\\AppData\\Roaming\\inkscape\\extensions\\textext\\default_packages.tex"
+       ns1:scale="2.93580877603"
+       ns1:alignment="middle center"
+       ns1:jacobian_sqrt="1.035688"
+       id="g1480"
+       inkscape:export-xdpi="67.440376"
+       inkscape:export-ydpi="67.440376">
+      <g
+         id="g1478">
+        <g
+           style="fill:#000000;fill-opacity:1"
+           id="g1468">
+          <path
+             inkscape:connector-curvature="0"
+             style="stroke:none;stroke-width:0"
+             d="m 1.90625,-0.53125 c 0,-0.28125 -0.234375,-0.53125 -0.515625,-0.53125 -0.296875,0 -0.53125,0.25 -0.53125,0.53125 C 0.859375,-0.234375 1.09375,0 1.390625,0 1.671875,0 1.90625,-0.234375 1.90625,-0.53125 Z m 0,0"
+             transform="translate(148.712,134.765)"
+             id="path1466" />
+        </g>
+        <g
+           style="fill:#000000;fill-opacity:1"
+           id="g1472">
+          <path
+             inkscape:connector-curvature="0"
+             style="stroke:none;stroke-width:0"
+             d="m 1.90625,-0.53125 c 0,-0.28125 -0.234375,-0.53125 -0.515625,-0.53125 -0.296875,0 -0.53125,0.25 -0.53125,0.53125 C 0.859375,-0.234375 1.09375,0 1.390625,0 1.671875,0 1.90625,-0.234375 1.90625,-0.53125 Z m 0,0"
+             transform="translate(153.14336,134.765)"
+             id="path1470" />
+        </g>
+        <g
+           style="fill:#000000;fill-opacity:1"
+           id="g1476">
+          <path
+             inkscape:connector-curvature="0"
+             style="stroke:none;stroke-width:0"
+             d="m 1.90625,-0.53125 c 0,-0.28125 -0.234375,-0.53125 -0.515625,-0.53125 -0.296875,0 -0.53125,0.25 -0.53125,0.53125 C 0.859375,-0.234375 1.09375,0 1.390625,0 1.671875,0 1.90625,-0.234375 1.90625,-0.53125 Z m 0,0"
+             transform="translate(157.56477,134.765)"
+             id="path1474" />
+        </g>
+      </g>
+    </g>
+    <path
+       sodipodi:nodetypes="csssc"
+       inkscape:connector-curvature="0"
+       id="path1484"
+       d="m 380.75324,592.68727 c 0,0 -25.2722,-87.93167 -44.37982,-87.6644 -19.10763,0.26727 -10.85661,28.33057 -39.51807,36.8832 -28.6616,8.55262 -39.51824,-9.62171 -55.80315,-1.87089 -16.28491,7.75082 -27.35865,52.91937 -27.35865,52.91937"
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#de8d00;stroke-width:1.057;stroke-linecap:square;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-xdpi="67.440376"
+       inkscape:export-ydpi="67.440376" />
+    <g
+       transform="matrix(0.33017628,-0.98164823,0.98164823,0.33017628,27.681031,707.58361)"
+       ns1:version="0.11.0"
+       ns1:texconverter="pdflatex"
+       ns1:pdfconverter="pdf2svg"
+       ns1:text="$\\dots$"
+       ns1:preamble="C:\\Users\\Buster\\AppData\\Roaming\\inkscape\\extensions\\textext\\default_packages.tex"
+       ns1:scale="2.93580877603"
+       ns1:alignment="middle center"
+       ns1:jacobian_sqrt="1.035688"
+       id="g1500"
+       inkscape:export-xdpi="67.440376"
+       inkscape:export-ydpi="67.440376">
+      <g
+         id="g1498">
+        <g
+           style="fill:#000000;fill-opacity:1"
+           id="g1488">
+          <path
+             inkscape:connector-curvature="0"
+             style="stroke:none;stroke-width:0"
+             d="m 1.90625,-0.53125 c 0,-0.28125 -0.234375,-0.53125 -0.515625,-0.53125 -0.296875,0 -0.53125,0.25 -0.53125,0.53125 C 0.859375,-0.234375 1.09375,0 1.390625,0 1.671875,0 1.90625,-0.234375 1.90625,-0.53125 Z m 0,0"
+             transform="translate(148.712,134.765)"
+             id="path1486" />
+        </g>
+        <g
+           style="fill:#000000;fill-opacity:1"
+           id="g1492">
+          <path
+             inkscape:connector-curvature="0"
+             style="stroke:none;stroke-width:0"
+             d="m 1.90625,-0.53125 c 0,-0.28125 -0.234375,-0.53125 -0.515625,-0.53125 -0.296875,0 -0.53125,0.25 -0.53125,0.53125 C 0.859375,-0.234375 1.09375,0 1.390625,0 1.671875,0 1.90625,-0.234375 1.90625,-0.53125 Z m 0,0"
+             transform="translate(153.14336,134.765)"
+             id="path1490" />
+        </g>
+        <g
+           style="fill:#000000;fill-opacity:1"
+           id="g1496">
+          <path
+             inkscape:connector-curvature="0"
+             style="stroke:none;stroke-width:0"
+             d="m 1.90625,-0.53125 c 0,-0.28125 -0.234375,-0.53125 -0.515625,-0.53125 -0.296875,0 -0.53125,0.25 -0.53125,0.53125 C 0.859375,-0.234375 1.09375,0 1.390625,0 1.671875,0 1.90625,-0.234375 1.90625,-0.53125 Z m 0,0"
+             transform="translate(157.56477,134.765)"
+             id="path1494" />
+        </g>
+      </g>
+    </g>
+    <g
+       id="g1516"
+       ns1:jacobian_sqrt="1.035688"
+       ns1:alignment="middle center"
+       ns1:scale="2.93580877603"
+       ns1:preamble="C:\\Users\\Buster\\AppData\\Roaming\\inkscape\\extensions\\textext\\default_packages.tex"
+       ns1:text="$\\dots$"
+       ns1:pdfconverter="pdf2svg"
+       ns1:texconverter="pdflatex"
+       ns1:version="0.11.0"
+       transform="matrix(-0.2741322,-0.9987498,0.9987498,-0.2741322,291.32181,791.77244)"
+       inkscape:export-xdpi="67.440376"
+       inkscape:export-ydpi="67.440376">
+      <g
+         id="g1514">
+        <g
+           id="g1504"
+           style="fill:#000000;fill-opacity:1">
+          <path
+             id="path1502"
+             transform="translate(148.712,134.765)"
+             d="m 1.90625,-0.53125 c 0,-0.28125 -0.234375,-0.53125 -0.515625,-0.53125 -0.296875,0 -0.53125,0.25 -0.53125,0.53125 C 0.859375,-0.234375 1.09375,0 1.390625,0 1.671875,0 1.90625,-0.234375 1.90625,-0.53125 Z m 0,0"
+             style="stroke:none;stroke-width:0"
+             inkscape:connector-curvature="0" />
+        </g>
+        <g
+           id="g1508"
+           style="fill:#000000;fill-opacity:1">
+          <path
+             id="path1506"
+             transform="translate(153.14336,134.765)"
+             d="m 1.90625,-0.53125 c 0,-0.28125 -0.234375,-0.53125 -0.515625,-0.53125 -0.296875,0 -0.53125,0.25 -0.53125,0.53125 C 0.859375,-0.234375 1.09375,0 1.390625,0 1.671875,0 1.90625,-0.234375 1.90625,-0.53125 Z m 0,0"
+             style="stroke:none;stroke-width:0"
+             inkscape:connector-curvature="0" />
+        </g>
+        <g
+           id="g1512"
+           style="fill:#000000;fill-opacity:1">
+          <path
+             id="path1510"
+             transform="translate(157.56477,134.765)"
+             d="m 1.90625,-0.53125 c 0,-0.28125 -0.234375,-0.53125 -0.515625,-0.53125 -0.296875,0 -0.53125,0.25 -0.53125,0.53125 C 0.859375,-0.234375 1.09375,0 1.390625,0 1.671875,0 1.90625,-0.234375 1.90625,-0.53125 Z m 0,0"
+             style="stroke:none;stroke-width:0"
+             inkscape:connector-curvature="0" />
+        </g>
+      </g>
+    </g>
+    <path
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.65700001;stroke-linecap:square;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="M 44.361369,640.50938 V 815.83831"
+       id="path1518"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="67.440376"
+       inkscape:export-ydpi="67.440376" />
+    <path
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.65700001;stroke-linecap:square;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="M -48.386321,761.5264 H 216.95296"
+       id="path1520"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="67.440376"
+       inkscape:export-ydpi="67.440376" />
+    <path
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#de0000;stroke-width:1.057;stroke-linecap:square;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m -19.264781,779.48961 c 0,0 25.2721897,-87.93167 44.37981,-87.6644 19.10763,0.26727 10.85661,28.33057 39.51805,36.8832 28.66144,8.55262 39.518041,-9.62171 55.802951,-1.87089 16.28491,7.75082 27.35865,52.91937 27.35865,52.91937"
+       id="path1522"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="csssc"
+       inkscape:export-xdpi="67.440376"
+       inkscape:export-ydpi="67.440376" />
+    <g
+       id="g1538"
+       ns1:jacobian_sqrt="1.035688"
+       ns1:alignment="middle center"
+       ns1:scale="2.93580877603"
+       ns1:preamble="C:\\Users\\Buster\\AppData\\Roaming\\inkscape\\extensions\\textext\\default_packages.tex"
+       ns1:text="$\\dots$"
+       ns1:pdfconverter="pdf2svg"
+       ns1:texconverter="pdflatex"
+       ns1:version="0.11.0"
+       transform="matrix(0.33017628,-0.98164823,0.98164823,0.33017628,-204.75773,894.38599)"
+       inkscape:export-xdpi="67.440376"
+       inkscape:export-ydpi="67.440376">
+      <g
+         id="g1536">
+        <g
+           id="g1526"
+           style="fill:#000000;fill-opacity:1">
+          <path
+             id="path1524"
+             transform="translate(148.712,134.765)"
+             d="m 1.90625,-0.53125 c 0,-0.28125 -0.234375,-0.53125 -0.515625,-0.53125 -0.296875,0 -0.53125,0.25 -0.53125,0.53125 C 0.859375,-0.234375 1.09375,0 1.390625,0 1.671875,0 1.90625,-0.234375 1.90625,-0.53125 Z m 0,0"
+             style="stroke:none;stroke-width:0"
+             inkscape:connector-curvature="0" />
+        </g>
+        <g
+           id="g1530"
+           style="fill:#000000;fill-opacity:1">
+          <path
+             id="path1528"
+             transform="translate(153.14336,134.765)"
+             d="m 1.90625,-0.53125 c 0,-0.28125 -0.234375,-0.53125 -0.515625,-0.53125 -0.296875,0 -0.53125,0.25 -0.53125,0.53125 C 0.859375,-0.234375 1.09375,0 1.390625,0 1.671875,0 1.90625,-0.234375 1.90625,-0.53125 Z m 0,0"
+             style="stroke:none;stroke-width:0"
+             inkscape:connector-curvature="0" />
+        </g>
+        <g
+           id="g1534"
+           style="fill:#000000;fill-opacity:1">
+          <path
+             id="path1532"
+             transform="translate(157.56477,134.765)"
+             d="m 1.90625,-0.53125 c 0,-0.28125 -0.234375,-0.53125 -0.515625,-0.53125 -0.296875,0 -0.53125,0.25 -0.53125,0.53125 C 0.859375,-0.234375 1.09375,0 1.390625,0 1.671875,0 1.90625,-0.234375 1.90625,-0.53125 Z m 0,0"
+             style="stroke:none;stroke-width:0"
+             inkscape:connector-curvature="0" />
+        </g>
+      </g>
+    </g>
+    <g
+       transform="matrix(-0.2741322,-0.9987498,0.9987498,-0.2741322,58.354279,978.57482)"
+       ns1:version="0.11.0"
+       ns1:texconverter="pdflatex"
+       ns1:pdfconverter="pdf2svg"
+       ns1:text="$\\dots$"
+       ns1:preamble="C:\\Users\\Buster\\AppData\\Roaming\\inkscape\\extensions\\textext\\default_packages.tex"
+       ns1:scale="2.93580877603"
+       ns1:alignment="middle center"
+       ns1:jacobian_sqrt="1.035688"
+       id="g1554"
+       inkscape:export-xdpi="67.440376"
+       inkscape:export-ydpi="67.440376">
+      <g
+         id="g1552">
+        <g
+           style="fill:#000000;fill-opacity:1"
+           id="g1542">
+          <path
+             inkscape:connector-curvature="0"
+             style="stroke:none;stroke-width:0"
+             d="m 1.90625,-0.53125 c 0,-0.28125 -0.234375,-0.53125 -0.515625,-0.53125 -0.296875,0 -0.53125,0.25 -0.53125,0.53125 C 0.859375,-0.234375 1.09375,0 1.390625,0 1.671875,0 1.90625,-0.234375 1.90625,-0.53125 Z m 0,0"
+             transform="translate(148.712,134.765)"
+             id="path1540" />
+        </g>
+        <g
+           style="fill:#000000;fill-opacity:1"
+           id="g1546">
+          <path
+             inkscape:connector-curvature="0"
+             style="stroke:none;stroke-width:0"
+             d="m 1.90625,-0.53125 c 0,-0.28125 -0.234375,-0.53125 -0.515625,-0.53125 -0.296875,0 -0.53125,0.25 -0.53125,0.53125 C 0.859375,-0.234375 1.09375,0 1.390625,0 1.671875,0 1.90625,-0.234375 1.90625,-0.53125 Z m 0,0"
+             transform="translate(153.14336,134.765)"
+             id="path1544" />
+        </g>
+        <g
+           style="fill:#000000;fill-opacity:1"
+           id="g1550">
+          <path
+             inkscape:connector-curvature="0"
+             style="stroke:none;stroke-width:0"
+             d="m 1.90625,-0.53125 c 0,-0.28125 -0.234375,-0.53125 -0.515625,-0.53125 -0.296875,0 -0.53125,0.25 -0.53125,0.53125 C 0.859375,-0.234375 1.09375,0 1.390625,0 1.671875,0 1.90625,-0.234375 1.90625,-0.53125 Z m 0,0"
+             transform="translate(157.56477,134.765)"
+             id="path1548" />
+        </g>
+      </g>
+    </g>
+    <path
+       sodipodi:nodetypes="csssc"
+       inkscape:connector-curvature="0"
+       id="path1558"
+       d="m -19.264781,744.54846 c 0,0 25.2721897,87.93167 44.37981,87.6644 19.10763,-0.26727 10.85661,-28.33057 39.51805,-36.8832 28.66144,-8.55262 39.518041,9.62171 55.802951,1.87089 16.28491,-7.75082 27.35865,-52.91937 27.35865,-52.91937"
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#de8d00;stroke-width:1.057;stroke-linecap:square;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-xdpi="67.440376"
+       inkscape:export-ydpi="67.440376" />
+    <g
+       transform="matrix(0.33017628,0.98164823,0.98164823,-0.33017628,-204.75773,629.88891)"
+       ns1:version="0.11.0"
+       ns1:texconverter="pdflatex"
+       ns1:pdfconverter="pdf2svg"
+       ns1:text="$\\dots$"
+       ns1:preamble="C:\\Users\\Buster\\AppData\\Roaming\\inkscape\\extensions\\textext\\default_packages.tex"
+       ns1:scale="2.93580877603"
+       ns1:alignment="middle center"
+       ns1:jacobian_sqrt="1.035688"
+       id="g1574"
+       inkscape:export-xdpi="67.440376"
+       inkscape:export-ydpi="67.440376">
+      <g
+         id="g1572">
+        <g
+           style="fill:#000000;fill-opacity:1"
+           id="g1562">
+          <path
+             inkscape:connector-curvature="0"
+             style="stroke:none;stroke-width:0"
+             d="m 1.90625,-0.53125 c 0,-0.28125 -0.234375,-0.53125 -0.515625,-0.53125 -0.296875,0 -0.53125,0.25 -0.53125,0.53125 C 0.859375,-0.234375 1.09375,0 1.390625,0 1.671875,0 1.90625,-0.234375 1.90625,-0.53125 Z m 0,0"
+             transform="translate(148.712,134.765)"
+             id="path1560" />
+        </g>
+        <g
+           style="fill:#000000;fill-opacity:1"
+           id="g1566">
+          <path
+             inkscape:connector-curvature="0"
+             style="stroke:none;stroke-width:0"
+             d="m 1.90625,-0.53125 c 0,-0.28125 -0.234375,-0.53125 -0.515625,-0.53125 -0.296875,0 -0.53125,0.25 -0.53125,0.53125 C 0.859375,-0.234375 1.09375,0 1.390625,0 1.671875,0 1.90625,-0.234375 1.90625,-0.53125 Z m 0,0"
+             transform="translate(153.14336,134.765)"
+             id="path1564" />
+        </g>
+        <g
+           style="fill:#000000;fill-opacity:1"
+           id="g1570">
+          <path
+             inkscape:connector-curvature="0"
+             style="stroke:none;stroke-width:0"
+             d="m 1.90625,-0.53125 c 0,-0.28125 -0.234375,-0.53125 -0.515625,-0.53125 -0.296875,0 -0.53125,0.25 -0.53125,0.53125 C 0.859375,-0.234375 1.09375,0 1.390625,0 1.671875,0 1.90625,-0.234375 1.90625,-0.53125 Z m 0,0"
+             transform="translate(157.56477,134.765)"
+             id="path1568" />
+        </g>
+      </g>
+    </g>
+    <g
+       id="g1590"
+       ns1:jacobian_sqrt="1.035688"
+       ns1:alignment="middle center"
+       ns1:scale="2.93580877603"
+       ns1:preamble="C:\\Users\\Buster\\AppData\\Roaming\\inkscape\\extensions\\textext\\default_packages.tex"
+       ns1:text="$\\dots$"
+       ns1:pdfconverter="pdf2svg"
+       ns1:texconverter="pdflatex"
+       ns1:version="0.11.0"
+       transform="matrix(-0.2741322,0.9987498,0.9987498,0.2741322,58.354279,545.70008)"
+       inkscape:export-xdpi="67.440376"
+       inkscape:export-ydpi="67.440376">
+      <g
+         id="g1588">
+        <g
+           id="g1578"
+           style="fill:#000000;fill-opacity:1">
+          <path
+             id="path1576"
+             transform="translate(148.712,134.765)"
+             d="m 1.90625,-0.53125 c 0,-0.28125 -0.234375,-0.53125 -0.515625,-0.53125 -0.296875,0 -0.53125,0.25 -0.53125,0.53125 C 0.859375,-0.234375 1.09375,0 1.390625,0 1.671875,0 1.90625,-0.234375 1.90625,-0.53125 Z m 0,0"
+             style="stroke:none;stroke-width:0"
+             inkscape:connector-curvature="0" />
+        </g>
+        <g
+           id="g1582"
+           style="fill:#000000;fill-opacity:1">
+          <path
+             id="path1580"
+             transform="translate(153.14336,134.765)"
+             d="m 1.90625,-0.53125 c 0,-0.28125 -0.234375,-0.53125 -0.515625,-0.53125 -0.296875,0 -0.53125,0.25 -0.53125,0.53125 C 0.859375,-0.234375 1.09375,0 1.390625,0 1.671875,0 1.90625,-0.234375 1.90625,-0.53125 Z m 0,0"
+             style="stroke:none;stroke-width:0"
+             inkscape:connector-curvature="0" />
+        </g>
+        <g
+           id="g1586"
+           style="fill:#000000;fill-opacity:1">
+          <path
+             id="path1584"
+             transform="translate(157.56477,134.765)"
+             d="m 1.90625,-0.53125 c 0,-0.28125 -0.234375,-0.53125 -0.515625,-0.53125 -0.296875,0 -0.53125,0.25 -0.53125,0.53125 C 0.859375,-0.234375 1.09375,0 1.390625,0 1.671875,0 1.90625,-0.234375 1.90625,-0.53125 Z m 0,0"
+             style="stroke:none;stroke-width:0"
+             inkscape:connector-curvature="0" />
+        </g>
+      </g>
+    </g>
+    <path
+       inkscape:connector-curvature="0"
+       style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0"
+       d="m 52.686563,203.82499 c -0.0695,-0.18521 -0.11576,-0.30097 -0.34728,-0.30097 -0.23151,0 -0.27781,0.0926 -0.34727,0.30097 l -3.05599,8.8207 c -0.27782,0.764 -0.8566,0.99551 -1.6669,0.99551 v 0.46303 c 0.34727,-0.0231 0.99551,-0.0463 1.50484,-0.0463 0.46303,0 1.22703,0.0231 1.71321,0.0463 v -0.46303 c -0.74085,0 -1.11127,-0.37042 -1.11127,-0.74084 0,-0.0463 0.0232,-0.20837 0.0232,-0.23152 l 0.69454,-1.92157 h 3.63478 l 0.78715,2.24569 c 0.0232,0.0695 0.0463,0.16206 0.0463,0.20836 0,0.43988 -0.83345,0.43988 -1.22702,0.43988 v 0.46303 c 0.53248,-0.0463 1.57429,-0.0463 2.12993,-0.0463 0.62509,0 1.31963,0.0231 1.92157,0.0463 v -0.46303 h -0.25467 c -0.87975,0 -1.08812,-0.0926 -1.25018,-0.57878 z m -0.78715,1.64375 1.6669,4.8155 h -3.31066 z m 0,0"
+       id="path2558"
+       inkscape:export-xdpi="67.440376"
+       inkscape:export-ydpi="67.440376" />
+    <path
+       inkscape:connector-curvature="0"
+       style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0"
+       d="m 321.21234,207.93084 v -3.61162 c 0,-0.50933 0.0232,-0.60194 0.7177,-0.60194 h 1.82896 c 1.43539,0 1.94472,1.25018 1.94472,2.03733 0,0.94921 -0.71769,2.17623 -2.36144,2.17623 z m 3.47272,0.13891 c 1.43539,-0.27782 2.45405,-1.22702 2.45405,-2.31514 0,-1.27333 -1.36593,-2.50036 -3.2875,-2.50036 h -5.39429 v 0.46303 h 0.34727 c 1.13443,0 1.18073,0.16206 1.18073,0.69455 v 7.77888 c 0,0.53248 -0.0463,0.69454 -1.18073,0.69454 h -0.34727 v 0.46303 h 5.78786 c 1.96787,0 3.28751,-1.31963 3.28751,-2.70872 0,-1.27333 -1.20388,-2.3846 -2.84763,-2.56981 z m -0.90291,4.8155 h -1.85211 c -0.69454,0 -0.7177,-0.0926 -0.7177,-0.57878 v -4.02835 h 2.77818 c 1.45854,0 2.08363,1.36593 2.08363,2.36144 0,1.04182 -0.78715,2.24569 -2.292,2.24569 z m 0,0"
+       id="path2560"
+       inkscape:export-xdpi="67.440376"
+       inkscape:export-ydpi="67.440376" />
+    <path
+       inkscape:connector-curvature="0"
+       style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0"
+       d="m 47.243624,395.77746 c 0,3.05599 2.3846,5.37113 5.13962,5.37113 2.40775,0 3.84314,-2.06048 3.84314,-3.77368 0,-0.13891 0,-0.25467 -0.18521,-0.25467 -0.16206,0 -0.16206,0.0926 -0.18521,0.25467 -0.11576,2.10678 -1.69006,3.31065 -3.31066,3.31065 -0.90291,0 -3.79683,-0.48618 -3.79683,-4.9081 0,-4.39878 2.89392,-4.90811 3.79683,-4.90811 1.59745,0 2.91708,1.34279 3.21805,3.49587 0.0231,0.20836 0.0231,0.25466 0.23152,0.25466 0.23151,0 0.23151,-0.0463 0.23151,-0.34727 v -3.49586 c 0,-0.25467 0,-0.37043 -0.16206,-0.37043 -0.0463,0 -0.11576,0 -0.23151,0.18521 l -0.74085,1.08812 c -0.53248,-0.53248 -1.29648,-1.27333 -2.70872,-1.27333 -2.77817,0 -5.13962,2.36145 -5.13962,5.37114 z m 0,0"
+       id="path2562"
+       inkscape:export-xdpi="67.440376"
+       inkscape:export-ydpi="67.440376" />
+    <path
+       inkscape:connector-curvature="0"
+       style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0"
+       d="m 318.38384,389.97449 v 0.46303 h 0.37042 c 1.13443,0 1.15758,0.16206 1.15758,0.69455 v 7.77888 c 0,0.53248 -0.0232,0.69454 -1.15758,0.69454 h -0.37042 v 0.46303 h 5.41744 c 2.4772,0 4.51453,-2.17624 4.51453,-4.95441 0,-2.82447 -1.99103,-5.13962 -4.51453,-5.13962 z m 3.51902,9.631 c -0.69454,0 -0.71769,-0.0926 -0.71769,-0.57878 v -7.98725 c 0,-0.50933 0.0232,-0.60194 0.71769,-0.60194 h 1.48169 c 0.92606,0 1.94472,0.32412 2.68557,1.36594 0.64824,0.87975 0.764,2.15308 0.764,3.31065 0,1.6206 -0.27782,2.52351 -0.8103,3.2412 -0.30097,0.39358 -1.13442,1.25018 -2.61612,1.25018 z m 0,0"
+       id="path2564"
+       inkscape:export-xdpi="67.440376"
+       inkscape:export-ydpi="67.440376" />
+    <path
+       inkscape:connector-curvature="0"
+       style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0"
+       d="m 47.682862,586.38714 c 0,0.53248 -0.0463,0.69454 -1.18073,0.69454 h -0.34727 v 0.46303 h 8.51973 l 0.62509,-3.81999 h -0.37043 c -0.37042,2.292 -0.71769,3.35696 -3.2412,3.35696 h -1.96787 c -0.69454,0 -0.71769,-0.0926 -0.71769,-0.57878 v -3.9589 h 1.31963 c 1.43539,0 1.59745,0.48618 1.59745,1.73636 h 0.37042 v -3.9126 h -0.37042 c 0,1.27333 -0.16206,1.73636 -1.59745,1.73636 h -1.31963 v -3.56532 c 0,-0.48618 0.0231,-0.57879 0.71769,-0.57879 h 1.89842 c 2.26884,0 2.66241,0.81031 2.89393,2.87078 h 0.37042 l -0.41672,-3.3338 h -8.31137 v 0.46302 h 0.34727 c 1.13442,0 1.18073,0.16206 1.18073,0.69455 z m 0,0"
+       id="path2566"
+       inkscape:export-xdpi="67.440376"
+       inkscape:export-ydpi="67.440376" />
+    <path
+       inkscape:connector-curvature="0"
+       style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0"
+       d="m 328.13191,576.74104 h -8.103 v 0.46302 h 0.34727 c 1.13442,0 1.18073,0.16206 1.18073,0.69455 v 7.73258 c 0,0.53248 -0.0463,0.69454 -1.18073,0.69454 h -0.34727 v 0.46303 c 0.50933,-0.0463 1.6669,-0.0463 2.24569,-0.0463 0.60194,0 1.94472,0 2.4772,0.0463 v -0.46303 h -0.48618 c -1.38908,0 -1.38908,-0.18521 -1.38908,-0.69454 v -3.63478 h 1.25017 c 1.43539,0 1.5743,0.46303 1.5743,1.71321 h 0.37043 v -3.91259 h -0.37043 c 0,1.25017 -0.13891,1.73635 -1.5743,1.73635 h -1.25017 v -3.75053 c 0,-0.48618 0.0232,-0.57879 0.71769,-0.57879 h 1.75951 c 2.22254,0 2.59296,0.83346 2.82448,2.87078 h 0.37042 z m 0,0"
+       id="path2568"
+       inkscape:export-xdpi="67.440376"
+       inkscape:export-ydpi="67.440376" />
+    <g
+       id="g2574"
+       style="fill:#000000;fill-opacity:1"
+       transform="matrix(1.481692,0,0,1.481692,-237.79524,573.82877)"
+       inkscape:export-xdpi="67.440376"
+       inkscape:export-ydpi="67.440376">
+      <path
+         id="path2572"
+         transform="translate(191.05106,134.765)"
+         d="m 5.90625,-0.625 c 0.140625,0.21875 0.53125,0.609375 0.640625,0.609375 0.09375,0 0.09375,-0.078125 0.09375,-0.21875 V -1.96875 c 0,-0.390625 0.03125,-0.4375 0.6875,-0.4375 v -0.3125 c -0.375,0 -0.921875,0.03125 -1.21875,0.03125 -0.390625,0 -1.25,0 -1.609375,-0.03125 v 0.3125 H 4.828125 C 5.71875,-2.40625 5.75,-2.296875 5.75,-1.9375 v 0.640625 c 0,1.125 -1.265625,1.203125 -1.546875,1.203125 -0.640625,0 -2.625,-0.34375 -2.625,-3.3125 0,-2.984375 1.96875,-3.3125 2.5625,-3.3125 1.078125,0 1.984375,0.890625 2.171875,2.359375 0.03125,0.140625 0.03125,0.171875 0.171875,0.171875 0.15625,0 0.15625,-0.03125 0.15625,-0.234375 V -6.78125 c 0,-0.171875 0,-0.25 -0.109375,-0.25 -0.046875,0 -0.078125,0 -0.15625,0.125 l -0.5,0.734375 C 5.546875,-6.484375 5.015625,-7.03125 4.03125,-7.03125 c -1.859375,0 -3.46875,1.578125 -3.46875,3.625 0,2.046875 1.59375,3.625 3.484375,3.625 0.734375,0 1.53125,-0.265625 1.859375,-0.84375 z m 0,0"
+         style="stroke:none;stroke-width:0"
+         inkscape:connector-curvature="0" />
+    </g>
+  </g>
+</svg>

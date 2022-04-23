@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+
+
+    <p class="t">
+    Lad os tage et nyt eksempel på sandsynlighed jeg har stjålet direkte fra <a href="https://www.youtube.com/watch?v=R13BD8qKeTg&t=94s">YouTube</a>: 
+    Du går til lægen og bliver tjekket for en slem, men sjælden sygdom. Omkring _(0.1_)% af befolkningen har den,
+    og testen blinker positivt ved dig. Du spørger bekymret lægen hvor akkurat testen er, og hun svarer
+    at <i>hvis</i> man har sygdommen så virker den _(99_)% af tiden. Her skal man passe meget på:
+    Bare fordi testen virker <i>hvis</i> man er syg, så betyder det ikke nødvendigvis at den <i>ikke</i> virker
+    hvis man <i>ikke</i> er syg. Du spørger hvad chancen er for en falsk positiv, og 
+    din læge svarer _(1.2_)%. Hvor stor chance er der nu for at du har virussen?
+    </p>
+    <p class="t">
+    Kald begivenheden at du har sygdommen for _(S_), og begivenheden at testen
+    har tjekket dig positiv for _(T_). Sandsynligheden for at 
+    <i>en tilfældig</i> person har virussen er _(P(S)_), som vi fik at vide
+    var lig _(0.001_). Sandsynligheden for at <i>du</i> har virussen svarer
+    til _(P(S|T)_): Chancen for at en person har virussen <i>givet at</i>
+    den person er blevet testet positivt. Det her er ikke det samme som
+    _(P(T|S)=0.99_), da det er chancen for at testen er positiv <i>hvis</i>
+    nogen har sygdommen. 
+    </p>
+    <p class="t">
+    Vi har ikke nogen direkte formel for _(P(S|T)_), men vi ved at:
+    _($P(S \cap T)=P(T)*P(S|T)_)
+    Vi kan nu isolere og få:
+    _($P(S|T)=\frac{P(S \cap T)}{P(T)}_)
+    Vi kender hverken _(P(S \cap T)_) eller _(P(T)_), men vi kan
+    relativt let beregne dem med lidt omskrivning.
+    _(P(S \cap T)_) er 
+    _($P(S)*P(T|S)_)
+     og _(P(T)_) er 
+    _($P(S)*P(T|S)+P(\neg S)*P(T | \neg S)_)
+    Vi ved at _(P(S)=0.001_), at _(P(T|S)=0.99_), 
+    at _(P(\neg S)=_) _(1-P(S)=0.999_) og at _(P(T |\neg S)_) svarer
+    til chancen for en falsk positiv på _(0.012_). Altså:
+    _($P(S|T)=\frac{P(S \cap T)}{P(T)}=\frac{0.001*0.99}{0.001*0.99+0.999*0.012} = 0.076282_)  
+    Det svarer til lidt over _(7.6_)% chance for at du faktisk har virussen. Det er ikke
+    <i>fantastisk</i>, men det er alligevel meget småt, og et ekstremt uintuitivt resultat!
+    De fleste ville nok sige at chancen for at have virussen er meget høj hvis testen 
+    virker _(99_)% af gangene, med kun _(1.2_)% falske positive? 
+    </p>
+    <p class="t">
+    Man kan tænke
+    over det sådan her: Sig at du ude på gaden møder en person der er virkelig høj. 
+    Du ved at at _(90_)% af basketball spillere er "virkelig høje" (falsk statistik).
+    Er den person du mødte en basketball spiller? Højest sandsynligt ikke!
+    Chancen for at det er en basketball spiller er:
+    _($\frac{\text{Antal høje basketball spillere der kunne gå på gaden}}{\text{Antal høje personer der kunne gå på gaden}}_)
+    Lad os sige at "alle" folk ville kunne finde på at "gå på gaden", så vi får:
+    _($\frac{\text{Antal høje basketball spillere}}{\text{Antal høje personer}}_)
+    <i>Ja</i>, procentdelen af basketball spillere af langt oftere høje, men 
+    der er så få basketball spillere i forhold til ikke-basketball spillere, 
+    at antallet af høje personer er langt større end antallet af høje basketball spillere! 
+    </p>
+    <p class="t">
+    Sig at _(10_)% af alle ikke-basketball spillere er virkelig høje, og at
+    _(1_)% af alle personer er basketball-spillere. Hvis det er _(N_) personer
+    i verden, så er der altså _(N*0.01*0.9=_) _(0.009N_) der er høje basketball spillere,
+    og _(N*0.99*0.1=_) _(0.099N_) der er høje ikke-basketball spillere. Der er 
+    altså _(0.099N/0.009N=_) _(11_) gange større chance for at personen ikke spiller 
+    basketball! Dette billede hjælper dig måske med at forstå det: 
+    </p>
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\BayesTheorem.png'> 
+    <p class="t">
+    Det er lettere at forstå situationen med lægen og test-resultatet intuitivt når vi tænker sådan her.
+    Nu er vi ikke længere en person ude på gaden, 
+    men en læge inde i hans kontor. I stedet for at vi møder en tilfældig person ude på gaden
+    der er høj, så møder vi nu på tilfældig person på vores kontor der bliver testet positiv.
+    I stedet for at være interesserede i hvorvidt personen er en basketball spiller, 
+    så er vi nu interesseret i om han har virussen. _(0.1_)% af alle personer
+    der går ind i dit kontor har virussen, og _(99_)% af dem bliver
+    testet positiv. _(1.2_)% af dem der ikke har virussen bliver også 
+    testet positiv. Hvis der er _(N_) personer der kommer ind på dit kontor, så
+    er der _(N*0.001*0.99=_) _(0.00099N_) der er positive og har virussen, og 
+    _(N*0.999*0.012=_) _(0.011988N_) der er positive og <i>ikke</i> har virussen.
+    Der er altså _(0.011988N/0.00099N=_) _(12.1_) gange større chance for at en positiv
+    person <i>ikke</i> har virussen. Den "lille" falske positive på _(1.2_)% har altså
+    stor indflydelse!
+    </p>
+    <p class="t">
+    Den her slags måde at tænke på hedder "Bayesian thinking", hvilke kommer
+    fra en matematikker kaldt "Bayes". Da vi regnede sandsynligheden for at du
+    havde virussen brugte vi formlen:
+    _($P(S|T)=\frac{P(S \cap T)}{P(T)}_)
+    Den kaldes for "bayes rule". Samme navn bliver nogle gange brugt til at referere til 
+    den lidt udvidede version:
+    _($P(S|T)=\frac{P(S)*P(T|S)}{P(S)*P(T|S)+P(\neg S)*P(T| \neg S)}_)
+    </p>
+    
+    <q-stion 1="2" 2="1" 3="5">
+    Inde i en butik ser du en ring der har " <i> 3 stjerner</i> ". Du kan ikke
+    se prisen, men du ved at:
+    _(90_)% af varerne i butikken der koster over _(5000_)kr har 3 stjerner.
+    Kun _(2_)% af varerne under _(5000_)kr har 3 stjerner, og _(5_)% af varerne herinde
+    koster over _(5000_)kr. 
+    <p class="t">
+    Er der størst chance for at ringen koster over eller under _(5000_)kr? 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Alright, så lad os først og fremmest definere to begivenheder:
+    _($\begin{eqnarray} 
+    && S & = \text{Koster over 5000kr} \\
+    && T & = \text{Har 3 stjerner}
+    \end{eqnarray}_)
+    Vi ved at ringen opfylder _(T_), og er nu interesserede i chancen for at den også
+    opfylder _(S_). Vi prøver altså at finde ud af hvorvidt _(P(S|T)_) er større
+    eller mindre end _(0.5_). Vi bruger nu formlen:
+    _($P(S|T) = \frac{P(S)*P(T|S)}{P(S)*P(T|S)+P(\neg S)*P(T| \neg S)}_)
+    _(P(S)_) er _(0.05_), da det er chancen for at en tilfældig vare koster over 5000kr. 
+    _(P(T|S)_) er _(0.9_) og _(P(T| \neg S)_) er _(0.02_). _(P(\neg S)_) er _(1-0.05 = _)
+    _(0.95_), så:
+    _($ \frac{0.05*0.9}{0.05*0.9+0.95*0.02} = 0.7031 _)
+    Det er højere end _(0.5_) - endda en god del. Der 
+    er altså størst chance for at den koster over _(5000_)kr. 
+    <br><br></answer-box>
+    
+    <q-stion 1="2" 2="1" 3="5">
+    Sig at _(0.5_)% af alle i Danmark var hjemløse (falsk statistik, ligesom praktisk talt
+    alt i denne bog), og at _(0.003_)% af verdens hjemløse boede i Danmark. 
+    Hvis vi siger der bor _(7.5*10^9_) mennesker i verden, og _(5.5*10^6_)
+    mennesker i Danmark, hvor stor en procentdel af verdens befolkning er så hjemløse?
+    <br><br></q-stion>
+    <answer-box>
+    Lad os som vi ofte gør starte med at definere nogle begivenheder her:
+    _($\begin{eqnarray} 
+    && S & = \text{Er hjemløs} \\
+    && T & = \text{Bor i Danmark}
+    \end{eqnarray}_)  
+    Lad os nu oversætte vores informationer til sandsynlighedssprog: 
+    _(0.5_)% af alle danskere er hjemløse, så _(P(S|T)=_) _(0.005_). 
+    _(0.003_)% af verdens hjemløse bor i Danmark, så 
+    _(P(T|S)=_) _(0.00003_). Danmarks befolkning er _(5.5*10^6 / 7.5*10^9 = _)
+    _(0.00073333_) af verdens befolkning, så _(P(T)=_) _(0.00073333_).
+    <p class="t">
+    Vi leder efter _(P(S)_). Normalt ville
+    vi i en situation som denne nok bruge 
+    _($P(T)*P(S|T)+P(\neg T)*P(S | \neg T)_)
+    men det ser umiddelbart ikke ud til at vi har _(P(S | \neg T)_). 
+    Her er det nok en bedre ide at bruge Bayes' ligning:
+    _($P(S|T) = \frac{P(S \cap T)}{P(T)} = \frac{P(S)*P(T|S)}{P(T)}_)
+    Den eneste værdi vi ikke kender her er _(P(S)_), så:
+    _($\to P(S) = \frac{P(S|T)*P(T)}{P(T|S)} = \frac{0.005*0.00073333}{0.00003} = 0.122_)
+    Så omkring 12%. Det her betyder selvfølgelig intet siden vi kun arbejde med 
+    helt fiktive tal.
+    </p>
+    <br></answer-box>
+
+
+
+
+

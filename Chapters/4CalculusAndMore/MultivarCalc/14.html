@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+
+
+    <h2>Fra areal under en kurve til <br> volume under en overflade</h2>
+    <p class="t">
+    Vi kan finde arealet under en 2D-funktion, men hvordan finder vi volumen under en 3D-flade? 
+    </p>
+
+    <q-stion 1="13" 2="1" bigTop=true customWidth="540">
+    Følgende er vist et roterende billede af 
+    _($z=2+0.1x*y_)
+    ... i regionen _(x \in [-4.47, 6.20]_), _(y \in [-1.54,9.13]_):
+    <hover-video url="../../../Assets/Chapter4\MultivarCalc\VolumeUnderSurface2.mp4"></hover-video>
+    <p class="t"> 
+    Find volumen under denne flade. 
+    <i>Ja</i>, det er med vilje, at jeg ikke har fortalt dig, hvordan man gør.
+     </p>
+    <br></q-stion>
+    <answer-box customWidth="540">
+    I følgende video forklarer jeg geometrien og ideen: 
+    <video class='picB' style='margin-top:35px; margin-bottom: 35px;' controls>
+        <source src='../../../Assets/Chapter4\MultivarCalc\VolumeUnderSurfaceDirectorsCut.mp4' type='video/mp4'>
+    </video>
+    <p class="t">
+    - ... hold til y". Vi har altså:
+    _($A_x = \int_{-1.54}^{9.13} 2+0.1*x*y \text{ }dy _)
+    ... og:
+    _($V = \int_{-4.47}^{6.20} A_x \text{ }dx _)
+    Integralet af _(2+0.1xy_) integreret med respekt til _(y_) er
+    _(2y+0.1xy^2 / 2_), så:
+    _($\begin{align}
+    A_x & = \bigl(2*9.13 + 0.1*x*9.13^2 / 2 \bigr) - \bigl(2*(-1.54) + 0.1*x*(-1.54)^2 / 2  \bigr) \\ \\
+    & = 21.34 + 4.049x
+    \end{align}_)
+    Ergo: 
+    _($V = \int_{-4.47}^{6.20}  21.34 + 4.049x \text{ }dx = 265.070_)
+    Bum! Man kan mere generelt se, at volumen under _(z=f(x,y)_) 
+    på _(x \in [a, b]_), _(y \in [c, d]_) er lig
+    _($\int_{a}^{b} \int_{c}^{d} f(x,y) \text{ }dy \text{ }dx _)
+    Det er selvfølgeligt ligegyldigt, om vi integrerer med _(x_) eller _(y_) først. 
+    </p>
+    <br></answer-box>
+
+    <p class="tt">
+    Lad mig gennemgå et lidt mere <i>ordentligt</i> bevis, 
+    hvor vi bruger grænse-definitionen på integraler:
+    </p>
+    <p class="t">
+    Sig at _(x \in [A,B]_), _(y \in [C, D]_), og at _(z=f(x,y)_). 
+    Opdel _(x_)-intervallet _([A,B]_) i _(k_) intervaller _([x_0,x_1]_), _([x_1,x_2]_), _(..._)
+    _([x_k-x_{k-1}]_), og _(y_) intervallet _([C,D]_) i _(t_) intervaller _([y_0, y_1] _), _([y_1,y_2]_), _(..._) _([y_t-y_{t-1}]_).
+    Kald længden _(x_{j+1}-x_{j}_) af det _(j_)'te _(x_)-interval for _(\triangle x_j_), og det samme med det _(i_)'ne _(y_)-interval 
+    _(\triangle y_i_). En god approksimation af volumen vil nu være
+    _($\sum_{j=0}^{k} \sum_{i=0}^{t} V(x_j,y_i)_)
+    ... hvor _(V(a,b)_) er volumen af kassen ved _(x=a_), _(y=b_) med: 
+    _($V(a, b) \approx f(x_j,y_i)*R*\triangle x_j*\triangle y_i _)
+    Så:
+    _($\sum_{j=0}^{k} \sum_{i=0}^{t} f(x_j,y_i)*R*\triangle x_j*\triangle y_i_)
+    Denne approksimationen vil være perfekt, hvis både det største interval _(\triangle x_j_) og
+    _(\triangle y_i_) nærmer sig _(0_). Kald det største interval på _(x_) for _(\lambda_x_), 
+    og det største interval på _(y_) for 
+    _(\lambda_y_). Vi skal nu finde:
+    _($\lim_{(\lambda_x,\lambda_y) \to (0,0)} \left[\sum_{j=0}^{k} \sum_{i=0}^{t} f(x_j,y_i)*R*\triangle x_j*\triangle y_i \right]  _)
+    _(R_) er konstant, _(\lambda_y_) har ingen indflydelse på mængden af led i den første sum og 
+    _(\triangle x_j_) er konstant under _(i_), så:
+    _($R \lim_{\lambda_x \to 0} \left[\sum_{j=0}^{k} \triangle x_j * \lim_{\lambda_y \to 0} \left[\sum_{i=0}^{t} (f(x_j,y_i)*\triangle y_i \right]  \right]_)
+    Denne omskrivning giver intuitiv mening, men bruger også nogle af
+    de "generelle brugbare egenskaber af grænser i 2-dimensioner", vi ikke havde tid til at bevise.
+    Anyways: Den indre grænse passer perfekt til definitionen af et integral, så:
+    _($\int_{C}^{D} f(x_j, y_i) \text{ }dy _)
+    Denne integral er en funktion _(F_) af _(x_). Summen er nu: 
+    _($R \lim_{\lambda_x \to 0} \left[\sum_{j=0}^{k} \triangle x_j*F(x_j) \right] _)
+    ... hvilket endnu en gang passer til definitionen og giver:
+    _($R \int_{A}^{B} F(x) \text{ }dx_)
+    Det kan til sidst omskrives til:
+    _($\int_{A}^{B} \int_{C}^{D} R*F(x) \text{ }dx \text{ }dy _)
+    Dette er et (relativt) rigorisk bevis, men man burde gå mere i dybden med
+    at bevise, hvorfor approksimationen er "perfekt", ligesom vi gjorde ved
+    normale integraler og upper/lower integrals.
+    </p>
+
+    <!--  -->
+
+    <q-stion 1="13" 2="2" bigTop="true">
+    Lad os lige gøre det to gange mere, så vi er sikre på vi forstår det: 
+    <br>
+    <p class="t">
+    _(\underline{\textbf{A}}_): <br>
+     Find volumen under 
+    _($z=Ln(x)*y+x^2_)
+    ... hvor _(x \in [2,3]_) og _(y \in [-7,-5]_)
+    </p>
+    <p class="t">
+    _(\underline{\textbf{B}}_): <br>
+     Find volumen under 
+    _($z=x*Sin(y)_)
+    ... hvor _(x \in [-1,1]_), _(y \in [0, 2\pi]_). Hvordan giver svaret god intuitiv mening?
+    </p>
+    <br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    Vi regner integralet:
+    _($\int_{2}^{3} \int_{-7}^{-5} Ln(x)*y+x^2 \text{ }dy \text{ }dx _)
+    Første integral er:
+    _($Ln(x)*\frac{y^2}{2} + x^2 y_)
+    Vi evaluerer nu fra _(y=-5_) til _(y=-7_):
+    _($\begin{eqnarray}
+    && \frac{Ln(x)}{2} \bigl((-5)^2 - (-7)^2 \bigr) + x^2* \bigl((-5) - (-7) \bigr) & = \\ \\
+    && 2x^2 - 12 Ln(x) 
+    \end{eqnarray}_)    
+    Så resten af integralet er:
+    _($\int_{2}^{3} 12 Ln(x) - 2x^2 \text{ }dx_)
+    Hvilket giver _(1.752_). Det er altså volumen. 
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Vi regner integralet: 
+    _($\int_{-1}^{1} \int_{0}^{2\pi} x*Sin(y) \text{ }dy \text{ }dx _)
+    Første integral er _(-x Cos(y)_). Hvis vi evaluerer det fra _(y=0_) til _(y=2\pi_) får vi:
+    _($-x*Cos(2 \pi) - (-x*Cos(0)) = 0_)
+    Så resten af integralet er:
+    _($\int_{-1}^{1} 0 \text{ }dx = 0_)
+    Den endelige volume er bare _(0_)! Det giver fin mening, hvis vi ser et plot af fladen:
+    <img class='Spic' style='width:50%' src='../../../Assets/Chapter4\MultiVarCalc\DoubleIntegrals\VolumeUnderIntegralAnswer.png'> 
+    <p class="t">
+    Den er negativ halvdelen af tiden: Enten når _(y \gt \pi_) og _(x \gt 0_), eller når 
+    _(y \lt \pi_) og _(x \lt 0_). 
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <p class="tt">
+    Der er ingen, der siger, at den volume vi finder behøver at være over en simpel, rektangulær region:
+    </p>
+
+    <q-stion 1="13" 2="3" bigTop="true">
+    Find igen volumen under _(z=2+0.1 x y_), men nu hvor _(x_) og _(y_) er på følgende blå region:
+    <img class='SpicXL' style='width:60%' src='../../../Assets/Chapter4\MultiVarCalc\DoubleIntegrals\DoubleIntegralRegion1.png'> 
+    <p class="t">
+    Igen vil jeg selv lade dig finde ud af det her! 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Jeg viser den generelle ide her:
+    <video class='picB' style='margin-top:35px; margin-bottom: 35px;' controls>
+        <source src='../../../Assets/Chapter4\MultiVarCalc\DoubleIntegrals\DoubleIntegralVariableBounds.mp4' type='video/mp4'>
+    </video>
+    <p class="t">
+    Volumen under fladen _(z=f(x,y)_) i et område, hvor
+    _(x \in [a, b]_) og _(f(xy) \lt y \lt g(x)_), er altså helt generelt lig:
+    _($\int_{a}^{b} \int_{f(x)}^{g(x)} f(x,y) \text{ }dy \text{ }dx_)
+    Hvilket i vores tilfælde er:
+    _($\int_{-1}^{5} \int_{-2+0.3x^2}^{9-0.5x} 2+0.1 x y \text{ }dy \text{ }dx_)
+    Integralet af _(2+0.1x y_) med respekt til _(y_) er ligesom før 
+    _(2y+0.05xy^2_). Det skal integreres fra _(-2+0.3x^2_) til _(9-0.5x_), så:
+    _($\begin{eqnarray}
+    && 2*(9-0.5x)+0.05x*(9-0.5x)^2 \, \,- \\ \\
+    & \Bigl( & 2*(-2+0.3x^2)+0.05x*(-2+0.3x^2)^2 \Bigr)
+    \end{eqnarray}_)
+    ... hvilket med lidt arbejde kan simplificeres til 
+    _($-0.0045x^5 + 0.0725x^3 - 1.05x^2 + 2.85x + 22_)
+    Nu skal vi bare evaluere:
+    _($\int_{-1}^{5} -0.0045x^5 + 0.0725x^3 - 1.05x^2 + 2.85x + 22 \text{ }dx_)
+    Hvilket er relativt nemt og giver _(121.69_). Det er simpelthen volumen!
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="13" 2="4">
+    Find volumen under 
+    _($z=2x-3y_)
+    ... hvis _(y_) er mellem _(-4_) og _(1_) og 
+    _($ -0.3y^2 -3y -4 \lt x \lt 0.3y^2 + 1.5_) 
+    <br></q-stion>
+    <answer-box>
+    Denne gang er det _(x_), der er mellem to funktioner af _(y_). Præcis samme logik 
+    funker:
+    _($\int_{-4}^{1} \int_{-0.3y^2 - 3y -4}^{0.3y^2+1.5} 2x - 3y \text{ }dx \text{ }dy_)
+    Det første integral er lig _(x^2-3yx_), så:
+    _($\begin{eqnarray}
+    && \bigl(0.3y^2+1.5 \bigr)^2 - \bigl(-0.3y^2 - 3y -4 \bigr)^2  + \\ \\
+    && -3y* \bigl(0.3y^2+1.5 \bigr) + 3y* \bigl(-0.3y^2 - 3y -4 \bigr) 
+    \end{eqnarray}_)
+    Det kan simplificeres til
+    _($-3.6y^3 - 19.5y^2 - 40.5y - 13.75_)
+    ... så vi skal nu regne:
+    _($\int_{-4}^{1} -3.6y^3 - 19.5y^2 - 40.5y - 13.75 \text{ }dy_)
+    Hvilket giver _(42.00_). Bum!
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="13" 2="5" customWidth="540">
+    Find volumen under 
+    _($z=x^2_)
+    ... hvis regionen er defineret som området mellem 
+    x-aksen og _(y=Sin(x)_) fra _(x=1_) til _(x=3 \pi_). 
+    <br><br></q-stion>
+    <answer-box customWidth="540">
+    Lad os lige tegne vores region:
+    <img class='SpicXL' style='width:98%' src='../../../Assets/Chapter4\MultiVarCalc\DoubleIntegrals\DoubleIntegralRegion2.png'> 
+    <p class="t"> 
+    Ved nogle værdier af _(x_), er _(y_) mindre end _(Sin(x)_), og ved andre er det større. Vi er derfor
+    nødt til at opdele vores volume i tre mindre voluminer, så:
+    _($ V = \int_{1}^{\pi} \int_{0}^{Sin(x)} x^2 \text{ }dy \text{ }dx + 
+    \int_{\pi}^{2\pi} \int_{Sin(x)}^{0} x^2 \text{ }dy \text{ }dx + 
+    \int_{2\pi}^{3\pi} \int_{0}^{Sin(x)} x^2 \text{ }dy \text{ }dx_)
+    Det kan relativt let beregnes som:
+    _($\int_{1}^{\pi} Sin(x) x^2 \text{ }dx + 
+    \int_{\pi}^{2\pi} -Sin(x) x^2 \text{ }dx + 
+    \int_{2\pi}^{3\pi} Sin(x) x^2 \text{ }dx 
+    _)
+    Hvilket er _(175.299_)
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="13" 2="6">
+    Sig at du har fladen _(z=x*y_), og at din region er området mellem fire enhedscirkler placeret
+    på henholdsvis _((1,1)_), _((-1,1)_), _((1,-1)_), _((-1,-1)_). Hvad er volumen over _(z_)?
+    <p class="t">
+    Der er et trick i denne, så du ikke behøver lave ligeså meget arbejde! 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Jeg gennemgår processen og svaret i følgende video: 
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter4\MultiVarCalc\DoubleIntegrals\CircleBoundedRegion.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <p class="tt">
+    Du må gerne bruge Geogebra fuldt ud hvis du føler, at du har styr på at 
+    evaluere dobbelt-integralerne.
+    Det vigtige (og det vi faktisk skal øve) er at <i>opsætte</i> de rigtige integraler baseret på
+    regionerne og problemet 
+    </p>
+
+    <q-stion 1="13" 2="7" customWidth="550" bigTop="true">
+    Find volumen under overfladen 
+    _($z=x+0.1y^2_)
+    ... hvis regionen er mellem y-aksen og de to følgende kurver:
+    _($\begin{eqnarray} 
+    && x=-y^2+6y-5 \\ \\
+    && x=-3y^2+21y-36
+    \end{eqnarray}_)
+    <br><br></q-stion>
+    <answer-box customWidth="550">
+    I følgende video arbejder jeg med regionen, og finder ud af hvilket integral, vi skal regne:
+    <video class='picB' style='margin-top:35px; margin-bottom: 35px;' controls>
+        <source src='../../../Assets/Chapter4\MultiVarCalc\DoubleIntegrals\BetweenTwoParabolas.mp4' type='video/mp4'>
+    </video>
+    <p class="t">
+    Så vi skal regne:
+    _($\begin{eqnarray}
+    && \int_{1}^{3} \int_{0}^{-y^2 + 6y - 5} x+0.1y^2 \text{ }dx \text{ }dy  & \, \, \, + \\ \\
+    && \int_{3}^{4} \int_{-3y^2+21y-36}^{-y^2 + 6y - 5} x+0.1y^2 \text{ }dx \text{ }dy  & \, \, \, + \\ \\
+    && \int_{4}^{5} \int_{0}^{-y^2 + 6y - 5} x+0.1y^2 \text{ }dx \text{ }dy  & \, \, \, + \\
+    \end{eqnarray}_)
+    </p>
+    Det gør vi bare med Geogebra: 
+    _($\begin{eqnarray}
+    && \text{integral(integral(x+0.1y^2, x, 1, -y^2 + 6y - 5), y, 0, 3)} & \, \, \, + \\
+    && \text{integral(integral(x+0.1y^2, x, -3y^2+21y-36, -y^2 + 6y - 5), y, 3, 4)} &\, \, \,  +\\
+    && \text{integral(integral(x+0.1y^2, x, 0, -y^2 + 6y - 5), y, 4, 5)} & \, \, \, = \\
+    \end{eqnarray}_)
+    _($ 11.36 +10.47+4.93 = 26.76_)
+    Bum!
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="13" 2="8">
+    Sig du har punkterne 
+    _($\begin{eqnarray}
+    && A & = & ( & 3, & 3) \\
+    && B & = & ( - & 5, & 2) \\
+    && C & = & (- & 1, & 1) \\
+    && D & = & (& 3 ,- & 2) \\
+    \end{eqnarray}_)
+    ... og fladen
+    _($z=y*Sin(x)_)
+    Hvad er volumen under _(z_) på polygonen _(\square ABCD_)? 
+    <br><br></q-stion>
+    <answer-box>
+    Det er nok en god ide at plotte polygonet:
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter4\MultivarCalc\DoubleIntegrals\PolygonRegion.png'> 
+    <p class="t">
+    Vi kan nu let dele det op i to integraler: Fra _(x=-5_) til _(x=-1_) er
+    _(y_) større end _(\Seg{BC}_) og mindre end _(\Seg{BA}_), og 
+    fra _(x=-1_) til _(x=3_) er _(y_) større end _(\Seg{CD}_) og _(\Seg{BA}_). Det kan let
+    ses at:
+    _($\begin{eqnarray}
+    && \Seg{BA}: & y = & \frac{1}{8} & \left(x-3 \right)+3 \\ \\ 
+    && \Seg{BC}: & y = - & \frac{1}{4} & \left(x+5 \right)+3 \\ \\
+    && \Seg{CD}: & y = - & \frac{3}{4} & \left(x-3 \right)-3
+    \end{eqnarray}_)
+    Så vi skal regne:
+    _($\int_{-5}^{-1} \int_{-\frac{1}{4}(x+5)+2}^{\frac{1}{8}(x-3)+3} y*Sin(x) \text{ }dy \text{ }dx + \int_{-1}^{3} \int_{-\frac{3}{4}(x-3)-2}^{\frac{1}{8}(x-3)+3} y*Sin(x) \text{ }dy \text{ }dx_)
+    ... hvilket via geogebra giver _(-2.62+5.47=2.849_). Bum!
+    </p>
+    <br></answer-box>
+
+    <p class="tt">
+    Vi har regnet volumen, men vi kan bruge en meget lignende ide til at regne <i>masse</i>.
+    Det er vel egentlig bare "volumen ganget med densitet", når man tænker over det:
+    </p>
+
+    <q-stion 1="13" 2="9">
+    Se følgende matematisk-definerede metalstykke:
+    <img class='Spic' style='width:40%' src='../../../Assets/Chapter4\MultiVarCalc\DoubleIntegrals\JustABoringMetalPlate.png'> 
+    <p class="t">
+    Sig at dette metalstykke <i>ikke</i> har den samme densitet overalt, men at densiteten
+    (i _(g/cm^3_)) er lig 
+    _($\text{Densitet}(x,y) = 7+0.03x+0.02y_)
+    ... hvor _(x_) og _(y_) er i centimeter (som også er enheden på billedet), og
+    hvor koordinatsystemet er opsat som:
+    </p>
+    <img class='Spic' style='width:40%' src='../../../Assets/Chapter4\MultiVarCalc\DoubleIntegrals\JustABoringMetalPlate2.png'> 
+    <p class="t">
+    Find massen på denne plade, hvis den har en tykkelse på _(0.3cm_). 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    I følgende video viser jeg ideen: 
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter4\MultiVarCalc\DoubleIntegrals\MetalPlateMass.mp4' type='video/mp4'>
+    </video>
+    <p class="t">
+    Så vi skal regne:
+    _($\int_{0}^{60} \int_{0}^{35+x/4} 0.3*(7+0.03x+0.02y) \text{ }dy \text{ }dx _)
+    Første integral med respekt til _(y_) giver _((2.1+0.009x)y + 0.003y^2_). Det evaluerer
+    vi nu fra _(y=0_) til _(y=35+x/4_):
+    _($\begin{eqnarray}
+    && (2.1+0.009x)*(35+x/4) + 0.003*(35+x/4)^2 \, \, - \\ \\
+    &\bigl( & (2.1+0.009x)*(0) + 0.003*(0)^2 \, \bigr)  
+    \end{eqnarray}_)
+    ... ergo:
+    _($0.00243x^2 + 0.892x + 77.175_)
+    Hvilket så skal integreres fra _(x=0_) til _(x=60_) som
+    giver _(6412.5g_). Lidt over _(6.4 \text{kg}_)
+    </p>
+    <br></answer-box>
+

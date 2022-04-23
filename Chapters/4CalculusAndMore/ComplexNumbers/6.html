@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+
+
+    <h3>Generelle og principielle logaritmer og eksponenter</h3>
+
+    <p class="t">
+    Vi er nu klar til komplekse logaritmer og eksponenter. Vi starter faktisk med
+    logaritmer:
+    </p>
+
+    <div class="Definition">
+    <b> Definition: Naturlig kompleks logaritme (generel)</b> <br>
+    Den naturlige logaritme til et komplekst tal _(z_), skrevet _(ln(z)_), er et uendeligt
+    sæt af alle komplekse tal _(w_), der løser følgende ligning:
+    _($e^{w}=z_)
+    </div>
+
+    <q-stion 1="6" 2="1" bigTop=true>
+    Beskriv sættet af _(ln(3.2-6.3i)_)
+    <br><br></q-stion>
+    <answer-box>
+    Sig at _(w=x+yi_). Vi skal nu finde de _((x, y)_), hvor
+    _($e^{x+yi} = 3.2-6.3i_)
+    Du kunne være praktisk, hvis vi omskrev _(3.2-6.3i_) til formen
+    _(A e^{Bi}_), siden
+    _($e^{x+yi} = A e^{Bi}_)
+    ... giver:
+    _($\begin{eqnarray}
+    && e^x = A \\
+    && e^{yi} = e^{Bi}
+    \end{eqnarray}_)
+    Første ligning kan tydeligvis løses af _(x=Ln(A)_), så
+    _($x=Ln(|3.2-6.3i|) = Ln(7.066) = 1.955_)
+    Vinklen på _(3.2-6.3i_) er _(5.182_), så _(y=5.182_) er èn løsning. Det
+    er en hvilket som helst _(y=5.182+n 2\pi_) bare <i>også</i>:
+    _($e^{(5.182+n 2\pi)*i} = e^{5.182i}*e^{n*2\pi} = e^{5.182i}*(1+0i) = e^{5.182i}_)
+    Så vores endelige svar er:
+    _($w=1.955 + (5.182+n 2\pi)i_)
+    Det svarer til følgende sæt:
+    _($ \{ \, \, \, \begin{eqnarray}
+    && \vdots \\
+    && 1.955+(5.182-2*2\pi)i \\
+    && 1.955+(5.182-1*2\pi)i \\
+    && 1.955+5.182i \\
+    && 1.955+(5.182+1*2\pi)i \\
+    && 1.955+(5.182+2*2\pi)i \\
+    && \vdots
+    \end{eqnarray} \, \, \, \, \, \}_)
+    <br></answer-box>
+
+    <p class="tt">
+    Vi kan generalisere arbejdet fra sidste opgave, og sige at:
+    _($ln(z)=Ln|z|+arg(z)i_)
+    Notationen her er en lidt forvirrende. _(Ln|z|_) refererer til en 
+    normal logaritme med reelle tal, og _(ln(z)_) til en kompleks logaritme. 
+    </p>
+    <p class="t">
+    Bemærk at det er _(arg(z)_) og ikke _(Arg(z)_). Der refereres altså til et sæt 
+    af komplekse tal, hvor den reelle del er lig den naturlige logaritme af længden af _(z_), og den komplekse del
+    tager uendelig mange værdier. Vi definerer den <i>principielle</i> logaritme af et komplekst tal som følgende:
+    </p>
+
+    <div class="Definition">
+    <b> Definition: Kompleks logaritme (principiel)</b> <br>
+    Den principielle logaritme af det komplekse tal _(z_), skrevet _(Ln(z)_) (med stort i stedet for lille), 
+    defineres som:
+    _($Ln(z)=Ln|z|+Arg(z)i_)
+    Hvor _(Ln||_) med _(||_) i stedet for _(()_) er en normal reel logaritme af _(z_)'s længde. 
+    </div>
+
+    <p class="tt">
+    Så her anvendes bare _(Arg_) i stedet for _(arg_). Vi kan let se, at _(ln(z)_) kan beskrives i forhold til
+    _(Ln(z)_) som
+    _($ln(z)=Ln(z)+n 2\pi i_)
+    ... hvor _(n_) er integer. 
+    </p>
+
+    <q-stion 1="6" 2="2" bigTop=true>
+    Regn de følgende principielle komplekse logaritmer:
+    <div style="margin-left:-67%; margin-top:25px; margin-bottom: -10px;">
+    _($\begin{eqnarray}
+        && \underline{\textbf{A}}: \, \, \, \, \, \, Ln(3.2-6.3i) \\ \\ 
+        && \underline{\textbf{B}}: \, \, \, \, \, \, Ln(-4+3i) \\ \\ 
+        && \underline{\textbf{C}}: \, \, \, \, \, \, Ln(i) \\ \\ 
+        && \underline{\textbf{D}}: \, \, \, \, \, \, Ln(1) 
+    \end{eqnarray}_)
+    </div>
+    <br><br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    Vi ved fra vores tidligere arbejde, at _(x_) skal være _(1.955_), og at _(y_) skal være _(Arg(3.2-6.3i)=5.182_). Så:
+    _($Ln(3.2-6.3i)=1.955+5.182i_)
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Vi regner længden på _(-4+3i_) til _(5_) og vinklen til _(2.498_), så:
+    _($Ln(-4+3i) = Ln|5| + 2.498i = 1.609 + 2.498i_)
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{C}}_)#" tabColour="rgb(171,96,147)">
+    _(i_) har en længde på _(1_), så x er _(Ln|1|=0_). _(Arg(i)_) er tydeligvis _(\pi/2_), ergo:
+    _($Ln(i)=\frac{\pi}{2}i_)
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{D}}_)#" tabColour="rgb(175,128,161)">
+    _(1+0i_) har en længde på _(1_), så _(x_) er _(Ln|1|=0_). _(Arg(i)_) er bare _(0_), ergo: 
+    _($Ln(1)=0+0i=0_)
+    Det matcher fint med logaritmer på reelle tal. 
+    <p class="t">
+    Det kan let ses, at _(ln(1)=n 2\pi i_)
+    </p>
+    <br></answer-box>
+    
+    <p class="tt">
+    Ved hjælp af komplekse logaritmer kan vi nu definere, hvordan man opløfter èt komplekst tal til et andet:
+    </p>
+
+    <div class="Definition">
+    <b> Definition: Komplekst tal til kompleks eksponent (generelt)</b> <br>
+    Sig at _(z_1_) og _(z_2_) er komplekse tal. _(z_1_) opløftet til potensen _(z_2_), 
+    skrevet _(z_1^{z_2}_), defineres
+    som:
+    _($z_1^{z_2}=e^{ln(z_1)*z_2}_)
+    </div>
+
+    <div class="Definition">
+    <b> Definition: Komplekst tal til kompleks eksponent (principielt)</b> <br>
+    Sig at _(z_1_) og _(z_2_) er komplekse tal. Den principielle værdi af _(z_1_) opløftet 
+    til potensen _(z_2_), skrevet _(z_1^{\boldsymbol{*} z_2}_), defineres
+    som:
+    _($z_1^{\boldsymbol{*}z_2}=e^{Ln(z_1)*z_2}_)
+    Notationen her er ikke særlig standard. Vi bruger en lille prik, men det varierer
+    en del i andre ressourcer. 
+    </div>
+
+    <q-stion 1="6" 2="3" bigTop=true>
+    Regn følgende principielle eksponenter:
+    <div style="margin-left:-54%; margin-top:25px; margin-bottom: -10px;">
+    _($\begin{eqnarray}
+        && \underline{\textbf{A}}: \, \, \, \, \, \, (-12.38+3.32i)^{\boldsymbol{*}1.69+0.11i} \\ \\ 
+        && \underline{\textbf{B}}: \, \, \, \, \, \, (0.82-2.5i)^{\boldsymbol{*}-1.53-1.07i} \\ \\ 
+        && \underline{\textbf{C}}: \, \, \, \, \, \, i^{\boldsymbol{*}i} \\ \\ 
+        && \underline{\textbf{D}}: \, \, \, \, \, \, (-i)^{\boldsymbol{*}(-i)} 
+    \end{eqnarray}_)
+    </div>
+    <br><br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    Vi regner:
+    _($e^{Ln(-3+5i)*(2+6i)}_)
+    _(Ln(-12.38+3.32i)_) kan med lidt arbejde regnes til
+    _($2.55+2.88i_) 
+    ... og 
+    _($(2.55+2.88i)*(1.69+0.11i)=3.994 + 5.147i_)
+    ... så:
+    _($e^{3.994 + 5.147i} = e^{3.994}*\left(Cos(5.147)+Sin(5.147)i \right) = 22.858-49.229i_)
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    _(Ln(0.82-2.5i)_) kan regnes til 
+    _($0.967+5.030i_) 
+    ... og 
+    _($(0.967+5.030i)*(-1.53-1.07i) = 3.902 - 8.730i_)
+    ... så:
+    _($e^{3.902}*\left(Cos(8.730)+Sin(8.730) \right) = -38.07 - 31.683i_)
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{C}}_)#" tabColour="rgb(171,96,147)">
+    _(Ln(i)_) ved vi er _((\pi/2)i_), og _((\pi/2)i*i_) er _(-\pi/2_), så 
+    _(i^i_) er bare 
+    _($e^{-\pi/2} = 0.207+0i_)
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{D}}_)#" tabColour="rgb(175,128,161)">
+    _(Ln(-i)_) kan vi se er _(-(\pi/2)i_), og _((-(\pi/2)i)*(-i)_) er
+    igen bare _(-\pi/2_), så svaret er det samme som før.
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="6" 2="4" customWidth="560">
+    Beskriv tre elementer i følgende sæt:
+    <div style="margin-left:-54%; margin-top:25px; margin-bottom:0px;">
+    _($\begin{eqnarray}
+        && \underline{\textbf{A}}: \, \, \, \, \, \, (-2.22+2.19i)^{1.22-0.96i} \\ \\ 
+        && \underline{\textbf{B}}: \, \, \, \, \, \, (-1)^i 
+    \end{eqnarray}_)
+    </div>
+    <p class="t">
+    Tre er helt arbitrært. 
+    </p>
+    <br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)" customWidth="560">
+    Vi ved, at
+    _($\begin{eqnarray}
+    && (-2.22+2.19i)^{1.22-0.96i} \, \, = \\ \\
+    && e^{ln(-2.22+2.19i)*(1.22-0.96i)} \, \, = \\ \\
+    && e^{(Ln(-2.22+2.19i)+n*2\pi i)*(1.22-0.96i)} \, \, = \\ \\
+    && e^{Ln(-2.22+2.19i)*(1.22-0.96i)}*e^{(1.22-0.96i)*n*2\pi*i} \, \, = \\ \\
+    && (-2.22+2.19)^{\boldsymbol{*} 1.22-0.96i}*e^{6.031n}*e^{7.665i*n}
+    \end{eqnarray}_)
+    Helt generelt for to komplekse tal _(z_1=a_1+b_1 i_), _(z_2=a_2+b_2i_) kan det ses, at:
+    _($z_1^{z_2} = z_1^{*z_2}*e^{n*2\pi*(-b_2 + a_2 i )} _)
+    _((-2.22+2.19i)^{*1.22-0.96i}_) kan vi regne på samme måde som i sidste opgave, og få
+    _($-8.455+37.771 i_)
+    Det svarer til _(n=0_) og giver os i hvert fald èt element i sættet. De to resterende
+    nemmeste værdier til _(n_) er nok _(1_) og _(-1_). 
+    <p class="t">
+    _(n=1_) giver:
+    _($\begin{eqnarray}
+    && e^{6.031}*e^{7.655i} \, = \\ \\
+    && e^{6.031} \left(Cos(7.655) + Sin(7.655)i \right) \, = \\ \\
+    && 82.257 + 407.92i
+    \end{eqnarray}_)
+    _(n=-1_) giver:
+    _($\begin{eqnarray}
+    && e^{-6.031}*e^{-7.655i} \, = \\ \\
+    && e^{-6.031} \left(Cos(-7.655) + Sin(-7.655)i \right) \, = \\ \\
+    && 0.000475-0.002355i
+    \end{eqnarray}_)
+    Nu regner vi så til sidst:
+    _($\begin{eqnarray}
+    && \left(-8.455+37.771 i \right)*\left(82.257 + 407.92i \right) = -16102.62 - 342.11i    \\
+    && \left(-8.455+37.771 i \right)*\left(0.000475-0.002355i \right) = 0.084932 + 0.03785i
+    \end{eqnarray}_)
+    Bum! Vi har:
+    _($\{\dots, \, 0.084932 + 0.03785i, \, -8.455+37.771 i, \, -16102.62 - 342.11i, \, \dots \}_)
+    </p>
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)" customWidth="560">
+    Vi bruger formlen vi udledte i sidste opgave:
+    _($z_1^{\boldsymbol{*} z_2}*e^{n*2\pi*(-b_2 + a_2 i)} = (-1)^{\boldsymbol{*}i}*e^{n*2\pi*(-1+0i)} = 0.04321*e^{-2\pi*n}_)
+    Vi vælger igen to nemme værdier til _(n_) udover _(0_):
+    _($\begin{eqnarray}
+    && 0.04321*e^{-2\pi*1} = 0.0000806544 \\
+    && 0.04321*e^{-2\pi*(-1)} = 23.1385
+    \end{eqnarray}_)
+    Så:
+    _($\{ \dots, \, 23.1385, \, 0.04321, \, 0.0000806544, \, \dots \}_)
+    <br></answer-box>
+

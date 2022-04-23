@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+
+
+    <!-- stokes -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Hvad er den flux der kommer gennem den del af paraboloiden _(y=6-x^2-z^2_) som er over _(y=0_)? 
+    Vektor feltet er:
+    _($\vec f = \VeC[3z^2,x,6y^2]_)
+    Husk, her arbejder vi ikke med et lukket 3D område, men kun den flux der er på denne del af overfladen. 
+    <br><br></q-stion>
+    <answer-box>
+    Denne del af denne paraboloid, kan ses som en flade der stikker ud af følgende cirkel:
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter4\MultiVarCalc\Vectorfields\StokesQuestion1.png'> 
+    <p class="t">
+    Cirklen svarer til der hvor _(x^2+z^2=6_), så den har en radius på _(\sqrt{6}=2.449_). Vi kan beskrive den som:
+    _($\VeC[x,y,z] = \VeC[2.449 Cos(t),0,2.449 Sin(t)]_)
+    Stokes theorem siger:
+    _($\int_U \int \vec{Curl}(\vec F)*\vec n \text{ }dA = \int_C \vec F*r'(t) \text{ }dt _)
+    Den flux vi prøver at regne svarer til _(\int_U \int \vec{Curl}(\vec F)*\vec n \text{ }dA_), så hvis 
+    vi i stedet gerne vil regne _(\int_C \vec F*r'(t) \text{ }dt_), så skal vi finde et felt 
+    hvis curl-vektor er lig vores felt. Vi ved at formlen for _(\vec{Curl}(\vec F)_) er:
+    _($\vec{Curl}(\vec F) = \VeC[Q_y-N_z,M_z-Q_x,N_x-M_y]_)
+    Det er relativt tricky at finde denne _(\vec F_), siden der er tre ligninger der skal matche samtidig. 
+    Vi kan dog med lidt arbejde og gætning komme frem til følgende:
+    _($\VeC[M,N,Q] = \VeC[-z^3, -\frac{1}{2}x^2, -2y^3]_)
+    Så vi skal nu regne:
+    _($\begin{eqnarray}
+    && \int_{0}^{2\pi} \VeC[-(2.449 Sin(t))^3, -\frac{1}{2}*(2.449 Cos(t))^2, -2*(0)^3]*\VeC[-2.449 Sin(t), 0, 2.449 Cos(t)] \text{ }dt = \\
+    && \int_{0}^{2\pi} -\frac{3}{2} (2.449 Sin(t))^3*(-2.449*Sin(t)) \text{ }dt = \\
+    && 127.23
+    \end{eqnarray}_)
+    Så det er svaret. Du kunne selvfølgelig også relativt fint argumentere at det her var langsommere og sværere 
+    end bare at tage overfladeintegralet, men ja. 
+    </p>
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <p class="t">
+    "Fladen" vi arbejder med i stokes behøver ikke være kontinuerlig. Brug dette til at løse følgende opgave:
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Sig at du har:
+    _($\begin{eqnarray}
+    && A = & (3,4,3) \\
+    && B = & (6,8,3) \\
+    && C = & (7,1,2) \\
+    && D = & (5,4,6)
+    \end{eqnarray}_)
+    Det er samme tetrehedron som i en af de tidligere opgaver. Find den samlede mængde flux der går gennem 
+    _(\triangle CBD_), _(\triangle ABD_) og. 
+    _(\triangle ACD_), hvis vektor feltet er:
+    _($\vec f = \VeC[-1,4,y]_)
+    <br><br></q-stion>
+    <answer-box>
+    Her er ideen:
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter4\MultivarCalc\Vectorfields\StokesCanGoFuckItself.png'> 
+    <p class="t">
+    Vi kan se med stokes, at hvis vi finder arbejdet rundt omkring _(\triangle ABC_), så vil vi også
+    finde mængden af flux der går gennem alle andre flader på tetrahedronen end _(\triangle ABC_). 
+    </p>
+    <p class="t">
+    Vi skal finde et vektor felt _(\vec F_) hvis curl er lig _(\vec f_). Man kan se at:
+    _($\VeC[z,-4z,-y^2/2]_)
+    virker. De tre veje vi skal regne er:
+    _($\begin{eqnarray}
+    && \vec r_1(t) = \VeC[3+t(7-3),4+t(1-4),3+t(2-3)], & t \in [0, 2\pi]
+    && \vec r_2(t) = \VeC[7+t(6-7),1+t(8-1),2+t(3-2)], & t \in [0, 2\pi]
+    && \vec r_3(t) = \VeC[6+t(3-6),8+t(4-8),3+t(3-3)], & t \in [0, 2\pi]
+    \end{eqnarray}_)
+    Hvilke giver de følgende tre integraler:
+    _($\begin{eqnarray}
+    && \int_{0}^{1} \VeC[(3+t(2-3)),-4(3+t(2-3)),-(4+t(1-4))^2/2]*\VeC[7-3,1-4,2-3] \text{ }dt 
+    && \int_{0}^{1} \VeC[(2+t(3-2)),-4(2+t(3-2)),-(1+t(8-1))^2/2]*\VeC[6-7,8-1,3-2] \text{ }dt 
+    && \int_{0}^{1} \VeC[(3+t(3-3)),-4(3+t(3-3)),-(8+t(4-8))^2/2]*\VeC[3-6,4-8,3-3] \text{ }dt 
+    \end{eqnarray}_)
+    Som vi kan regne giver:
+    _($43.5-84.67+39=-2.17_)
+    </p>
+    <p class="t">
+    Fantastisk! Man kan også se at dette ville kunne hjælpe os med at regne massen af denne tetrehedron, 
+    da vi jo kan regne massen ved at regne dens flux (dog ville vi stadig mangle at finde fluxen gennem _(\triangle ABC_)) 
+    </p>
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Sig at du løber rundt med et sommerfuglenet som følgende:
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter4\MultiVarCalc\Vectorfields\SommerfugleStokes.png'> 
+    <p class="t">
+    Der er en vind i luften, hvilke vi modellerer som følgende vektor-felt:
+    _($\vec f = \VeC[3,-z,2]_)
+    Hvor meget flux kommer der gennem sommerfuglenettet? Det er med vilje at jeg intet har fortalt dig om dets præcise form. 
+    </p>
+    <br><br></q-stion>
+    <answer-box>
+    Først finder vi et felt hvis curl er lig vores. Det viser sig at
+    _($\VeC[-2y,-\frac{1}{2}z^2,3y]_)
+    virker. Nu skal vi bare regne:
+    _($\int_{0}^{2\pi} \VeC[-2(5-0.51 Cos(t) + 0.42 Sin(t)),-\frac{1}{2}(4+1.62 Cos(t) + 1.16 Sin(t))^2,3(5-0.51 Cos(t) + 0.42 Sin(t))]*\VeC[-1.06Sin(t)-1.57Cos(t),0.51Sin(t)+0.42Cos(t),-1.62Sin(t)+1.16Cos(t)] \text{ }dt_)
+    Hvilke giver _(-30.21_)
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Et objekt rejser hele vejen rundt om cirklen der går gennem x-aksen ved _(x=3_), med en radius på _(4_), hvor 
+    vektor feltet er:
+    _($\vec f = \VeC[-5z^3 + 3y^3, 2y^2+6x, 3z^2+x]_)
+    Find mængden af arbejde. 
+    <br><br></q-stion>
+    <answer-box>
+    Som sagt, så bruger vi i langt de fleste tilfælde stokes til at finde flux, men nogle gange
+    kan vi også bruge den omvendt: Finde arbejde ved hjælp af flux! F.eks. kunne vi 
+    i dette tilfælde vælge at finde fluxen på 
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter4\MultivarCalc\Vectorfields\StokesFinal.png'> 
+    <p class="t">
+    Det kan være praktisk primært fordi at vi ved flux skal tage curl af vektor-feltet, som 
+    nogle gange gør det markant simplere. Stokes siger:
+    _($\int_C \vec F*\vec r'(t) \text{ }dt = \int_U \int \vec{Curl}(\vec F)*\vec n \text{ }dA_)
+    Så det vektor felt vi skal regne fluxen af er lig:
+    _($\VeC[¤y[3z^2+x]-¤z[2y^2+6x],¤z[-5z^3 + 3zy^2]-¤x[3z^2+x],¤x[2y^2+6x]-¤y[-5z^3 + 3zy^3]] = \VeC[0,-15z^2+3y^2-1,6-9zy^2]_)
+    Der er mange forskellige områder vi kunne vælge, men jeg tænker nok at en paraboloid burde være nem at 
+    regne. Noget af formen _(x=a*r^2_). Radius skal være _(4_) når _(x=3_), så vi kan løse
+    _(3=a*4^2_) og få _(a=0.188_). _(r^2=y^2+z^2_), så vores flade er:
+    _($x=f(y,z)=0.188*(y^2+z^2)_)
+    Vi ved at vi kan bruge følgende formel til at regne overfladeintegralet:
+    _($\begin{eqnarray}
+    && \int_R \int \vec F*\VeC[-1,f_y,f_z] \text{ }dz \text{ }dy = \\
+    && \int_{-4}^{4} \int_{-\sqrt{4^2-y^2}}^{\sqrt{4^2-y^2}} \VeC[0,-15z^2+3y^2-1,6-9zy^2]*\VeC[-1,0.376y, 0.376z] \text{ }dz \text{ }dy 
+    \end{eqnarray}_)
+    Denne integral bliver nok nemmere hvis vi laver substitutionen _(y=rCos(\theta)_), _(z=rSin(\theta)_):
+    _($\begin{eqnarray}
+    && \int_{0}^{4} \int_{0}^{2 \pi} \VeC[0,-15*(rSin(\theta))^2+3*(rCos(\theta))^2-1,6-9(rSin(\theta))(rCos(\theta))^2]*\VeC[-1,0.376r Cos(\theta), 0.376r Sin(\theta)] \text{ }d\theta \text{ }dr \\
+    && -544.31 
+    \end{eqnarray}_)
+    Og så er vi sateneme færdig med det her kapitel! 
+    </p>
+    <br><br></answer-box>
+
+
+
+
+
+
+    <p class="t">
+    DENNE OPGAVE VAR FAKTISK EN AF DE FØRSTE, MEN DU DROPPEDE DEN FORDI STOKES ER NOGET FUCKIGN LORT:
+    </p>
+    <q-stion 1="2" 2="1" 3="5">
+    Sig at du har den del af fladen _(z=-0.1x^4-y^2_) som er mellem 
+    _(z=0_) og _(z=-10_)
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter4\MultiVarCalc\Vectorfields\Stokes2.png'> 
+    Vektor feltet er:
+    _($\vec f = \VeC[-x^3,y^2,3zx^2-2zy]_)
+    Find flux på denne del af overfladen. 
+    <br><br></q-stion>
+    <answer-box>
+    Vores flade kan ses som en overflade der stikker op imellem den lukkede vej _(C_) der er skabt 
+    af skæringen mellem _(z=-0.1x^4-y^2_) og _(z=-10_). Det kan omskrives til:
+    _($y=\pm \sqrt{10-0.1x^4}_)
+    Så vi er nødt til at dele vejen op i to:
+    _($\vec r_1(t) = \VeC[t, \sqrt{10-0.1t^4}], t \in [-10, 10], \qquad \vec r_1(t) = \VeC[t, -\sqrt{10-0.1t^4}], t \in [-10, 10],_) 
+    For at vi faktisk "går rundt om" skal vi huske at vi i den ene vej skal gå den modsatte retning af den anden 
+    (putte et negativt tegn foran arbejdet). 
+    <p class="t">
+    Vi skal finde det vektor felt hvis curl er lig vores. Det kan ses at 
+    _($\VeC[zy^2,zx^3,0]_)
+    virker. Så alt i alt skal vi regne de to følgende integraler:
+    _($\int_{-10}^{10} \VeC[(-10)*(\sqrt{10-0.1t^4})^2, (-10)*(t)^3 ]*\VeC[1, -\frac{-0.63t^4}{\sqrt{100-t^4}}] \text{ }dt _)
+    _($\int_{-10}^{10} \VeC[(-10)*(-\sqrt{10-0.1t^4})^2, (-10)*(t)^3 ]*\VeC[1, \frac{-0.63t^4}{\sqrt{100-t^4}}] \text{ }dt _)
+    </p>
+
+
+
+    Med lidt arbejde kan vi se at
+    _($\VeC[2y,\frac{1}{2}x^2,z]_)
+    virker. Vores område kan ses som en flade der popper ud af 
+    
+    vej _(\vec r(t)_) kan deles op i to 
+    <br><br></answer-box>
+
+
+
+

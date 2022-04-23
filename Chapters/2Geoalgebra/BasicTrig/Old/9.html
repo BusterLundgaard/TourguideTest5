@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <p class="t">Det kan meget ofte være praktisk at vide hvor <i>stærkt</i> en kurve går op eller ned - altså dens <i>hældning</i> eller dens <i>forandring</i>.</p>
+    <img class="SpicB" style="width:50%" src="../../../Assets/Chapter2\Section1\TrigProperties\Bakke.png">
+    <p class="t">F.eks: Hvor stejlt går denne sin-agtige bakke op eller ned ved _(x=15_) eller _(x=33_)?</p>
+    <p class="t">
+    Hældning er jo bare forholdet mellem hvor meget én værdi bliver større og hvor meget en anden værdi bliver større. 
+    _(a=2.3*b_) er et forhold med en <i>konstant</i> hældning på _(2.3_), men det er jo også bare en simpel lige kurve.
+    Ved langt de fleste der vil denne hældning ændre sig baseret på <i>hvad</i> _(b_) er. _(Sin_) eller _(x^2_) er jo tydeligvis
+    ikke ligeså stejle overalt! 
+    </p>
+    <p class="t">
+    Hvis forholdet var _(a=Sin(b)_) så kunne vi <i>approximere</i> hældningen på _(2.3_) ved at sige:
+    _($\frac{Sin(2.3+0.0000001)-Sin(2.3)}{0.0000001}=0.0174_)
+    Her tager vi først en eller anden super lille forskel i _(b_) _(db_) (i vores tilfælde _(db=0.0000001_)) og udregner
+    den resulterende forskel i _(a_) som _(da=Sin(b+db)-Sin(b)_). Nu giver 
+    _($\frac{Sin(2.3+0.0000001)-Sin(2.3)}{0.0000001}=\frac{da}{db}_)
+    nået der kommer ret tæt på hældningen ved _(b=2.3_). Hvis vi gerne vil have et generelt svar, så skal vi altså
+    "bare" gøre _(db_) uendelig lille og så udregne _(\frac{da}{db}_)! Her tænker jeg at _(Sin_) eller _(Cos_)
+    med alt deres geometriske intuition nok kan hjælpe os:
+    </p>
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter2\Section1\TrigProperties\SinCosDerivative.mp4' type='video/mp4'>
+    </video>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Find hældnigen af
+    <div style="text-align:center;">
+        <ul style="display: inline-block; text-align: left; list-style:none;">
+            <li><b> 1</b>: _(Sin(x)_) ved _(x=2.3_)</li>
+            <li><b> 2</b>: _(Cos(x)_) ved _(x=1.4_) </li>
+            <li><b> 3</b>: _(Sin(3.1x)_) ved _(x=3.2_)</li>
+            <li><b> 4</b>: _(Cos(5.4x)_) ved _(x=6.1_)</li>
+        </ul>
+    </div>
+    <br></q-stion>
+    <answer-box>
+    <u> 1</u>: Hældningen af _(Sin(x)_) er _(Cos(x)_) Derfor er svaret bare 
+    _($Cos(2.3)=-0.66_)
+    Samme gælder <u> 2</u> hvor vi bare siger 
+    _($-Sin(1.4)=-0.985_)
+    <p class="t">
+    <u> 3</u> er lidt mere tricky. Her skal jeg finde hældningen af _(Sin(3.1*x)_). Når vi ganger _(x_) med noget, så har det samme
+    effekt som at forkorte / indskræmpe kurven. Hvis kurven er _(3.1_) gange så indskræmpet, så vil man logisk nok gå _(3.1_) gange
+    så stejlt opad! Prøv lige selv at tegn situationen, og så kan du se hvor meget mening det giver. 
+    Vi skal altså bare sige
+    _($3.1*Cos(3.2)=-3.0947_) 
+    Også i <u> 4</u> der bliver til 
+    _($5.4*-Sin(6.1)=0.983_)
+    </p>
+    <br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Hvad er hældningen på bakken fra før ved _(x=13_)?
+    <br><br></q-stion>
+    <answer-box>
+    Bakken kan modelleres som _(y=10*Sin(\frac{\pi}{40}x)_). Hældningen af bare _(Sin(\frac{\pi}{40}x)_) er
+    _(\frac{\pi}{40}*Cos(13)=0.0712_). Hvis alt det bliver ganget med _(10_), så går vi _(10_) gange så meget
+    op hver _(x_) vi går frem. Hældningen skal altså bare ganges med _(10_) som: _(10*0.0712=0.712m_).     
+    <br><br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5" customWidth="600">
+    Se følgende billede:
+    <img class='SpicB' style='width:95%' src='../../../Assets/Chapter2\Section1\TrigProperties\FlyvehopVinkel.png'> 
+    <p class="t">En cykel kører ned af en bakke og op ad et flyvehop. Vi antager 
+    at bakken er formet som en sin/cos kurve, og at cyklen kører med 
+    en konstant hastighed hele tiden. Flyvehoppet har en vinkel på
+    _(30_) grader</p>
+    <p class="t">
+    Cyklen prøver at lave det længst mulige hop. For at gøre
+    det skal den gerne opnå en vinkel ved flyvehoppet til vandret på 
+    _(45^o_) (som vi jo så var det bedst mulige). Hvor langt
+    væk _(d_) skal flyvehoppet være fra bunden for at vinklen
+    bliver _(45_)? 
+    </p>
+    <br><br></q-stion>
+    <answer-box customWidth="600">
+    Først af alt lad modellere selve bakken som en funktion.
+    Fra det højeste til det laveste punkt er der _(3m_), så
+    _(A_) i _(y=A*Sin(w*x)_) er lig _(3/2 = 1.5_). Der er en horisontal
+    afstand på _(6_) fra top til dal, hvilke betyder at _(w_) er lig
+    _(\pi/6 = 0.52_). Samlet:
+    _($y=1.5*Sin(0.52x)_)
+    Kald bakkens hældning ved foden af flyvehoppet for _(h_).
+    Det skal altså gælde at:
+    _($Arctan(h)+0.523=0.785 \to_)
+    _($Arctan(h)= 0.785 - 0.523 = 0.262_)
+    Hvor _(0.523_) er lig _(30^o_) i radianer, og _(0.785_) er lig _(45^o_)
+    i radianer.  
+    <p class="t">
+    Hældningen ved _(x_) for en normal _(Sin_) kurve
+    er bare _(Cos(x)_). Når vi ganger med _(A_) bliver
+    hældningen _(A_) større. Når vi ganger _(x_) med en 
+    eller anden konstant _(w_), så sker det hele 
+    hurtigere eller langsommere. Derfor bliver hældningen 
+    til 
+    _($A*w*Cos(w*x)_)
+    Vores hældning er altså:
+    _($1.5*0.52*Cos(0.52x)=0.78*Cos(0.52x)_)
+    Vi skal passe lidt på hvis vi skal finde _(d_).
+    _(Sin_) har sin første dal (laveste punkt)
+    ved _(x=\frac{3}{2}\pi_). Det vil sige vores
+    kurve har dens første dal ved 
+    _($w*x = \frac{3}{2}\pi \to_)
+    _($x=\frac{3\pi}{2w}=\frac{3*3.14}{2*0.52}=9.057_)
+    Flyvehoppets position i forhold til _(d_) er altså:
+    _(x=9.057+d_), så:
+    _($Arctan(0.78*Cos(0.52*(9.057+d))) = 0.262 \to_)
+    _($Tan(Arctan(0.78*Cos(0.52*(9.057+d)))) = Tan(0.262) \to_)
+    _($0.78*Cos(0.52*(9.057+d)) = 0.268 \to_)
+    _($Cos(0.52*(9.057+d))=0.343 \to_)
+    _($Arccos(Cos(0.52*(9.057+d)))=Arccos(0.343) \to_)
+    _($0.52*(9.057+d) = 1.21 \to_)
+    _($9.057+d=2.34_)
+    _($d=-6.717_)
+    Hmm. Et negativt tal? Det giver ikke særlig meget mening. Well,
+    problemet er at da vi løste _(Arctan(0.78Cos(X)) = 0.262_), 
+    der fandt vi det <i>første</i> tidspunkt hvor _(1.5*Sin(0.52x)_)
+    havde en vinkel på _(15^o_):
+    <img class='SpicB' style='width:95%' src='../../../Assets/Chapter2\Section1\TrigProperties\FlyvehopVinkel2.png'> 
+    <p class="t">
+    _(2.234_) er ligmed _(x_A_), men vi vil gerne finde _(x_B_). 
+    Problemet lægger i da vi brugte _(Arccos(0.343)_) som når man
+    tænker over det kan give flere mulige svar til samme vinkel:
+    </p>
+    <img class='Spic' style='width:60%' src='../../../Assets/Chapter2\Section1\TrigProperties\FlyvehopVinkel3.png'> 
+    <p class="t">På dette billede ser man èn af mulighederne: Den vi fik på _(1.21_) radianer.
+    Men der er også andre muligheder:
+    </p>
+    <img class='Spic' style='width:60%' src='../../../Assets/Chapter2\Section1\TrigProperties\FlyvehopVinkel4.png'> 
+    <p class="t">Den anden gang _(Cos_) er _(0.343_), er ved _(5.07_) radianer.
+    Man kan nemlig se på cirklen at der er 
+    _($\pi + 2*(\pi/2 - 1.21)=3.86_) 
+    radianer fra den ene løsning til den anden. 
+    Plusser vi så det her med _(1.21_) får vi _(5.07_). </p>
+    <p class="t">
+    Både f.eks. _(1.21_) og _(1.21 + 2\pi_) er jo løsninger,
+    og samme gælder _(1.21 + 4\pi_), _(1.21 + 6\pi_) osv. Det passer
+    med hvad vi ser på sin-kurven, hvor der er uendelig mange steder hvor
+    den har en hældning der svarer til _(15_) grader. 
+    </p>
+    <p class="t">
+    Vi prøver nu at gøre det hele om igen:
+    _($Arccos(Cos(0.52*(9.057+d)))=Arccos(0.343) \to_)
+    _($0.52*(9.057+d) = 5.07 \to_)
+    _($9.057+d=9.75_)
+    _($d=0.693_)
+    Wholla!
+    </p>
+    <br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5" customWidth="700">
+    Sig at du er på en research-orienteret safari-tur i Afrika:
+    <img class='SpicB' style='width:95%' src='../../../Assets/Chapter2\Section4\Vectore\Safari1.png'> 
+    <p class="t"> I prøver at få et billede af den meget sjældne og farverige "drondilidon"-fugl. 
+    Den er ved at passe nogle æg, så i har den perfekte chance for at fange
+    et skud. Desværre så bliver i også jagtet af en sur elefant, så i er
+    nødt til at tage billedet <i>imens</i> i kører. Langdistance kameraet
+    har en meget smal synsvidde for at sikre den bedst mulige kvalitet, og
+    det sidder <i>fast</i> monteret til bilen (så det kan ikke roteres). Fuglen er på
+    positionen _((600,700)_) og vejen kan modelleres som _(y=15*Cos(\frac{\pi}{20}*x)_) (i radianer).
+    Kan man tage et billede af fuglen når _(x_) er lig _(x=41m_)? Det er intet specielt
+    omkring det tal, det er bare som eksempel.  </p>
+    <p class="t">
+    Jeg skal lige notere at billedet ikke er helt akkurat, og mere
+    bare illustrerer ideen. Fuglen har et x-koordinat på _(600_), som er
+    en del længere fremme end det ser ud på billedet. 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Vores _(x_) koordinat er _(41_), så vores _(y_)-koordinat bliver 
+    _($15*Cos(\frac{\pi}{20}*41)=14.81_)
+    Hældningen på _(15*Cos(x*\pi/20)_) er _(-15*\pi/20*Sin(x*\pi/20)_), så hældningen
+    ved punktet _((41,14.81)_) er
+    _($-\frac{15*\pi}{20}*Sin(\frac{\pi}{20}*41)=-0.36_)
+    Prøv nu at se følgende billede:
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter2\Section4\Vectore\Safari2.png'> 
+    <p class="t">
+    Her er min plan for hvordan vi skal regne om man kan se fuglen eller ej:
+    Det område hvor kameraet kan se, kan modelleres som to linjer _(l_1_), _(l_2_).
+    Hvis et punkt _((x,y)_) kan ses af kameraet, så skal 
+    _($l_1(x) \lt y \lt l_2(x)_)
+    Målet er altså bare at finde de to linjer _(l_1,l_2_). Så kan vi bare
+    se om _(y_) opfylder kravet. 
+    </p>
+    <p class="t">
+    For at finde de to linjer har vi brug for deres hældning, hvilke
+    vi nemt kan finde hvis vi har deres vinkel til vandret. Tangenten
+    på _((41,14.8)_) har lige nu en vinkel på _(Arctan(-0.36) =_) _(-19.8^o_).
+    Da _(l_1_) er _(10_) grader til en linje der er ret med tangenten,
+    så kan man se at _(l_1_) har en vinkel på _(-19.8+(90-10)=60.2_). 
+    _(l_2_) har _(20_) grader mere end _(l_1_), så det bliver _(80.2_).
+    Det her svarer til hældningerne _(Tan(60.2)=1.76_) og _(Tan(80.2)=5.79_). 
+    Nu får vi linjerne:
+    _($l_1: y=1.76*(x-41)+14.8_)
+    _($l_2: y=5.79*(x-41)+14.8_)
+    Vi tjekker så nu kravet:
+    _($l_1(x) \lt y \lt l_2(x) \to_)
+    _($1.76*(600-41)+14.8 \lt 700 \lt 5.79*(600-41)+14.8 \to_)
+    _($998.64 \lt 700 \lt 3251.4_)
+    Det <i>er</i> rigtigt at _(700_) er mindre end _(3251.4_), men
+    det er ikke rigtigt at _(998.64_) er mindre end _(700_), ergo man 
+    kan ikke se fuglen. Trist. 
+    </p>
+    <br></answer-box>
+
+
+    
+    <p class="t">
+    Det kunne også være praktisk at finde <i>arealet under kurven</i>. Du har fundet stejlheden af Sin-bakken, men hvad hvis du skal
+    måle dens areal? Her laver vi et rigtig smart trick:
+    </p>
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter2\Section1\TrigProperties\integral.mp4' type='video/mp4'>
+    </video>
+    <p class="t">
+    Perfekt! Prøv at brug det her til at løse de tre følgende opgaver:
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5">
+    <u> 1</u>: Find arealet under _(Sin(x)_) fra _(x=0_) til _(x=2.3_)
+    <p class="t">
+    <u> 2</u>: Find arealet under _(Sin(x)_) fra _(x=1.2_) til _(x=2_). 
+    </p>
+    <p class="t">
+    <u> 3</u>: Find arealet under _(Cos(x)_) fra _(x=2.94_) til _(x=5.98_)
+    </p>
+    <p class="t">
+    <u> 4</u>: Find arealet under _(Sin(1.2*x)_) fra _(x=0.1_) til _(x=0.9_). 
+    </p>
+    <br><br></q-stion>
+    <answer-box>
+    <u> 1</u>: Hvis vi skal regne arealet <i>mellem</i> _(x=0_) til _(x=2.3_), 
+    så skal vi sige 
+    _($-Cos(2.3) - (-Cos(0)) = 1.666_)
+    <u> 2</u>: Hvis vi skal regne arealet <i>mellem</i> _(x=1.2_) til _(x=2_), så skal vi bare trække arealet til _(x=2_) fra
+    arealet til _(x=1.2_). Så: _(-Cos(2)-(-Cos(1.2))=Cos(1.2)-Cos(2)=0.7785_).
+    </p>
+    <p class="t">
+    <u> 3</u>: Meget ligesom før: _(Sin(5.98)-Sin(2.94)=-0.298-0.2=-0.498_). Vi kan altså også godt lidt have et "negativt areal".
+    Det giver i hvert fald mening når man tænker over hvordan vi fandt det: gangede _(Sin_) eller _(Cos_) med _(dx_). Siden _(Sin_) eller
+    _(Cos_) godt kan være negativ, så må det samme gælde "arealet".
+    </p>
+    <p class="t">
+    <u> 4</u>: Når jeg ganger _(x_) i Sin med _(1.2_), så har det jo som før effekten af at <i>indskræmpe</i> kurven. Presse den sammen og 
+    gøre den _(1.2_) gange kortere. Her kan du lidt forestille dig at alle de _(dx_)'ere arealet består af nu er divideret med _(1.2_).
+    Samme sker altså til arealet som en helhed, og svaret er derfor _(\frac{-Cos(0.9)-(-Cos(0.1))}{1.2}=0.31116_)
+    </p>
+    <br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Find arealet af bakken fra før.
+    <br><br></q-stion>
+    <answer-box>
+    Bakken kan som sagt modelleres som _(y=10*Sin(\frac{\pi}{40}x)_). Når vi ganger med _(10_), så er det samme som at
+    hver af rektanglernes højde bliver _(10_) gange større. Defor blive selve arealet også _(10_) gange større. Ergo:
+    _(10*\frac{-Cos(40)-(-Cos(0))}{\frac{1}{40}}=10*40*(1.666)=666.4_) 
+    <br><br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Strøm kommer i to former: Jævnstrøm og vekselstrøm. Jævnstrøm har samme styrke hele tiden, men vekselstrøm variere som en sinus/cosinus-kurve:
+    <img class="Spic" style="width:95%" src="../../../Assets/Chapter2\Section1\TrigProperties\Current.png">
+    <p class="t">Det kunne være dejligt hvis vi kunne finde et <i>gennemsnit</i> af vekselstrømmen, så vi nemmere ville kunne snakke om og arbejde med styrken. 
+    Find gennemsnitsværdien af _(sin(x)_) fra _(0_) til _(\pi_). Det er et smart trick man skal lave her,
+    men ellers er opgaven ikke speciel svær. </p>
+    <br></q-stion>
+    <answer-box>
+    Mit (relativ korte, bare rolig) svar er her:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter2\Section1\TrigProperties\Gennemsnit.mp4' type='video/mp4'>
+    </video>
+    <br></answer-box>
+
+
+
+
+    
+    KÆMPE FEJL I DEN HER NÅR DU SKAL LØSE EN LIGNING!
+    DU KOMMER TIL AT MINUSE I STEDET FOR AT PLUSE MED "D" SÅ 
+    DET FORSVINDER OG LIGNINGEN BLIVER MEGET SIMPLERE END DEN 
+    EGENTLIG ER.
+    <q-stion 1="2" 2="1" 3="5">
+    Lad os sige du skal gå over en bro:
+    <img class="SpicB" style="width:50%" src="../../../Assets/Chapter2\Section1\TrigProperties\Bro1.png">
+    <p class="t">Vi kan ret fint modellere den her bro som én Sin-kurve _(Sin(x)_) og en anden sinkurve over på _(Sin(x)+1_):</p>
+    <img class="SpicB" style="width:50%" src="../../../Assets/Chapter2\Section1\TrigProperties\Bro2.png">
+    <p class="t">Hvad er den korteste mulige rute du kan tage, hvor du hele tiden er på broen undervejs? Du må selv gerne bestemme hvor
+    du starter og slutter. Hvis du på et tidspunkt er nødt til at finde længden <i>langs</i> sin (altså helt ude på yderkanten)
+    så må du gerne approximere det bare ved at tage afstanden fra de to points til hinanden:</p>
+    <img class="SpicB" style="width:60%" src="../../../Assets/Chapter2\Section1\TrigProperties\Bro3.png">
+    <p class="t">Så f.eks. her er det fint hvis du bare regner _(M_) som _(\sqrt{(0.99-0.9)^2+(1.8-1.5)^2}=0.313_)</p>
+    <br></q-stion>
+    <answer-box>
+    Du kan se mit svar i videoform her: 
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter2\Section1\TrigProperties\Bro.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+
+
+

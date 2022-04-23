@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+
+
+    <h2>Potenser og rødder med komplekse tal</h2>
+
+    <p class="t">
+    Lad os nu se på potenser og rødder. 
+    </p>
+
+    <div class="Definition">
+    <b> Definition: Potens (naturligt tal)</b> <br>
+    Sig at _(z \in \mathbb{C}_) og _(n \in \mathbb{N}_). "Potensen" af _(z_) "opløftet" til _(n_) skrevet
+    _(z^n_) defineres som:
+    _($z*z*z*\dots \text{ } n \text{ gange}_)
+    </div>
+
+    <div class="Definition">
+    <b> Definition: Rødder</b> <br>
+    Sig at _(z \in \mathbb{C}_) og _(n \in \mathbb{N}_). "_(n_)-roden" af _(z_), skrevet _(\sqrt[n]{z}_) er
+    lig et komplekst tal _(w_), der løser ligningen:
+    _($w^n = z_)
+    </div>
+
+    <q-stion 1="3" 2="1" bigTop=true>
+    Regn følgende potenser: 
+    <div style="margin-left:-59%; margin-top:25px; margin-bottom: -10px;">
+    _($\begin{eqnarray}
+        && \underline{\textbf{A}}: \, \, \, \, \, \, (-6+9i)^2 \\ \\ 
+        && \underline{\textbf{B}}: \, \, \, \, \, \, (2+5.5i)^4  \\ \\ 
+        && \underline{\textbf{C}}: \, \, \, \, \, \, (0.2287 + 0.9734i)^{73} 
+    \end{eqnarray}_)
+    </div>
+    <br><br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    Vi regner:
+    _($\begin{eqnarray}
+    && (-6+9i)*(-6+9i) = \\ \\
+    && (-6)^2 + 2*(-6)*(9i) + (9i)^2 = \\ \\
+    && 36 - 108i - 81 = \\ \\
+    && -45-108i
+    \end{eqnarray}_)
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Her <i>kunne</i> vi godt udvide og regne:
+    _($(2+5.5i)*(2+5.5i)*(2+5.5i)*(2+5.5i)_)
+    Men vi kunne også bare tænke på geometri: 
+    Længden af produktet af to komplekse tal er produktet af deres længder, 
+    så _((2+5.5i)^4_) har en længde på 
+    _($|2+5.5i|^4 = \left(\sqrt{2^2 + 5.5^2} \, \right)^4 = 5.852^4 = 1172.781_)
+    Vinklen af produktet af to komplekse tal er bare summen af hvert komplekst tals vinkel, så
+    _((2+5.5i)^4_) har en vinkel på:
+    _($4*Arctan(5.5/2) = 2*1.222 = 2.444_)
+    Endeligt ser vi, at _((2+5.5i)^4_) er lig:
+    _($1172.781*\bigl(Cos(2.444) + Sin(2.444)i \bigr) = 205.0625 - 1155.00i_)
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{C}}_)#" tabColour="rgb(171,96,147)">
+    Vi bruger samme trick her. Dog er det i dette tilfælde let, da længden er:
+    _($\sqrt{0.2287^2+0.9734^2} = 1_)
+    _(1^{73}_) er også _(1_), så det behøver vi ikke bekymre os om. Vinklen bliver
+    _($73*Arctan(0.9734/0.2287) = 97.82_)
+    Så det endelige resultat er:
+    _($Cos(97.82)+Sin(97.82)i = -0.908-0.417i_)
+     <br></answer-box>
+
+    <!--  -->
+        
+    <q-stion 1="3" 2="2">
+    Regn følgende rødder: 
+    <div style="margin-left:-71%; margin-top:25px; margin-bottom: -10px;">
+    _($\begin{eqnarray}
+        && \underline{\textbf{A}}: \, \, \, \, \, \,  \sqrt[3]{1.3-4.2i} \\ \\ 
+        && \underline{\textbf{B}}: \, \, \, \, \, \,  \sqrt{i}
+    \end{eqnarray}_)
+    </div>
+    <br><br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    Vi skal finde et komplekst tal _(w_),
+    der ganget med sig selv tre gange er lig _(1.3-4.2i_).
+    Dette er relativt nemt, hvis bare vi tænker i forhold til længder og vinkel. Det kan ses, at _(1.3-4.2i_) 
+    har en længde på _(4.396_) og vinkel på _(5.012_), så:
+    _($\begin{eqnarray}
+    && |w|^3 = 4.396 \\ \\
+    && 3*\text{Vinkel}(w) = 5.012 
+    \end{eqnarray}_)
+    _(w_) skal have en længde på _(4.396^{1/3} = 1.638_) og 
+    vinkel på _(5.012/3=1.670_). Så:
+    _($w=1.638*\left(Cos(1.670)+Sin(1.670)i \right) = -0.162+1.629i_)
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    _(i_) har en længde på _(1_) og vinkel på _(\pi/2_), så:
+    _($\sqrt{i} = Cos(\pi/4)+Sin(\pi/4)i = 0.7071 + 0.7071i_)
+    <br></answer-box>
+
+    <!--  -->
+
+    <p class="tt">
+    De sidste to opgaver med rødder er faktisk ikke helt rigtige. Tag f.eks. _(\sqrt[3]{1.3-4.2i}_). Det 
+    kan ses at 
+    _($-1.330 - 0.954i_) 
+    ... og 
+    _($1.492 - 0.675i_) 
+    ... <i>også</i> er løsninger udover _(-0.162+1.629i_). Komplekse rødder har flere
+    løsninger præcis ligesom en normal rod _(\sqrt{49} = \pm 7_). 
+    Det kan specifikt vises, at _(n_)-roden af et komplekst tal altid har _(n_) unikke løsninger. 
+    Vores _(3_)-rod _(\sqrt[3]{1.3-4.2i}_)
+    har _(3_), og _(\sqrt[4]{1.3-4.2i}_) har fire. 
+    </p>
+    <p class="t">
+    Fundamentalt handler det om <i>vinkel</i>: Du kan f.eks. se, at 
+    længden på _(-0.162+1.629i_), _(-1.330 - 0.954i_) og _(1.492 - 0.675i_) alle er _(1.638_), men
+    deres vinkler varierer som _(1.670_), _(3.764_) og _(5.858_). Tredje potens af længderne
+    skal matche _(|1.3-4.2i|=4.396_), hvilket kun er muligt hvis længderne _(L_) er lig _(L=\sqrt[3]{4.396}_)
+    Det har kun én løsning, da vi antager at _(L_) er et positivt og reelt tal. 
+    Vinklerne gange tre skal alle være lig _(5.012_), men det kan ske på flere
+    måder, siden en vinkel går tilbage til _(0_) efter den bliver større end _(2\pi_). 
+    Tydeligvis er _(5.012/3=1.670_) én løsning, men _(3.764_) er også en løsning, siden
+    _($M_{2\pi}(3*3.764) = M_{2\pi}(11.292) = 5.012_)
+    Samme argument gælder _(5.858_), som ganget med tre går to omgange rundt om cirklen:
+    _($3*5.858 - 2*2\pi = 5.012_)
+    Alle tre vinkler og derved alle tre komplekse tal er 
+    løsninger til ligningen!
+    </p>
+
+    <q-stion 1="3" 2="3" bigTop=true>
+    Find to løsninger til 
+    _($x^2=3+2i_)
+    <br></q-stion>
+    <answer-box>
+    _(3+2i_) har en længde og vinkel på henholdsvis _(3.605_) og _(0.588_).
+    _(\sqrt{3.605}=1.897_) og _(0.588/2=0.294_), så den ene løsning er
+    tydeligvis lig 
+    _($ 1.897*\left(Cos(0.294)+Sin(0.294)i \right) = 1.815+0.549i_)
+    Hvad med den anden?
+    <video class='picB' style='margin-top:35px; margin-bottom: 35px;' controls>
+        <source src='../../../Assets/Chapter4\ComplexNumbers\FindOtherAngle.mp4' type='video/mp4'>
+    </video>
+    <p class="t">
+    Den andet svar er altså:
+    _($-1.815-0.549i_)
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="3" 2="4">
+    Find _(7_) løsninger til _(x^7=1_). Løsninger til _(x^n=1_) generelt kaldes for
+    "roots of unity".
+    <br><br></q-stion>
+    <answer-box>
+    Længden på alle løsninger skal bare være _(1_) og _(1+0i_) har en vinkel på _(0_), så 
+    _(0/7=0_) er èn af de mulige vinkler. _(0_) svarer også til _(2\pi_), så _(2\pi/7=0.897_) er en anden løsning.
+    Det kan let ses, at f.eks. _(5*(2\pi/7)_) også er en løsning, da:
+    _($7*\left(5*\frac{2\pi}{7} \right) = 5*2\pi_)
+    Et hvilket som helst helt tal gange _(2\pi_) svarer bare til _(2\pi_) eller _(0_), så 
+    vores _(7_) vinkler er:
+    _($\begin{align}
+    0*(2\pi/7) & = 0 \\
+    1*(2\pi/7) & = 0.897 \\
+    2*(2\pi/7) & = 1.795 \\
+    3*(2\pi/7) & = 2.692 \\
+    4*(2\pi/7) & = 3.590 \\
+    5*(2\pi/7) & = 4.487 \\
+    6*(2\pi/7) & = 5.385 
+    \end{align}_)
+    Løsningerne er: 
+    _($\begin{align}
+    Cos(0)+Sin(0)i & = 1+0i \\ 
+    Cos(0.897)+Sin(0.897)*i & = 0.62+0.78*i  \\
+    Cos(1.795)+Sin(1.795)*i & = - 0.22+0.97*i    \\
+    Cos(2.692)+Sin(2.692)*i & = - 0.90+0.43*i \\
+    Cos(3.590)+Sin(3.590)*i & = - 0.90-0.43*i \\
+    Cos(4.487)+Sin(4.487)*i & = - 0.22-0.97*i \\
+    Cos(5.385)+Sin(5.385)*i & = 0.62-0.78*i 
+    \end{align}_)
+    Voila!
+    <br><br></answer-box>
+
+    <!--  -->
+    
+    <q-stion 1="3" 2="5">
+    Beskriv vinklerne på _(n_) løsninger til _(x^n=z_), hvis _(z_)
+    har vinklen _(\theta_), og bevis at disse _(n_) løsninger er de <i>eneste</i> løsninger. 
+    <br><br></q-stion>
+    <answer-box>
+    Tydeligvis vil _(\theta/n_) være èn løsning, men det kan også let ses, 
+    at _(\theta/n+2\pi/n_) vil være en anden, da
+    _($n*\left(\frac{\theta}{n}+\frac{2\pi}{n} \right) = \theta+2\pi_)
+    ... som bare svarer til _(\theta_). Ligesom før vil et hvilket som helst helt tal _(k_) ganget
+    _(2\pi_) virke:
+    _($n*\left(\frac{\theta}{n} + \frac{k*2\pi}{n} \right) = \theta + k*2\pi_)
+    Det kan let ses, at vinklerne gentager sig selv, hvis _(k_) er lig _(n_) eller større, så 
+    vi har fundet _(n_) løsninger: _(k=0_) og opad til _(k=n-1_). 
+    Lad os nu bevise, at dette er de <i>eneste</i> løsninger.     
+    <p class="t">
+    Sig at _(k \lt n_). Sig nu at du har en anden vinkel _(v_), der er mellem _(k_)-vinklen og _(k+1_)-vinklen, så:
+    _($\left(\frac{\theta}{n} + \frac{k*2\pi}{n} \right) \lt v \lt \left(\frac{\theta}{n} + \frac{(k+1)*2\pi}{n} \right)_)
+    Lad os bevise, at denne ulighed er umulig. Vi omskriver først til:
+    _($\theta+k*2\pi \lt v*n \lt \theta + (k+1)*2\pi_)
+    Vi ved, at _(v*n_) skal være lig _(\theta+m*2\pi_), hvor _(m \in \mathbb{Z}_), så:
+    _($\theta+k*2\pi \lt \theta+m*2\pi \lt \theta + (k+1)*2\pi_)
+    Det ses nu let, at _(k \lt m \lt k+1_), hvilket er umuligt siden _(m_) er integer _(\blacksquare_).
+    </p>
+   <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="3" 2="6">
+    Find alle løsninger til _(x^5=-6+2i_)
+    <br><br></q-stion>
+    <answer-box>
+    Længden på _(-6+2i_) er _(6.324_) og vinklen _(2.819_). Vores længder skal derfor være
+    _(6.324^{1/5}=1.4461_) og vores _(5_) mulige vinkler lig:
+    _($\begin{eqnarray}
+    && \frac{2.819}{5} + \frac{0*2\pi}{5} = 0.563 \\ \\
+    && \frac{2.819}{5} + \frac{1*2\pi}{5} = 1.820 \\ \\
+    && \frac{2.819}{5} + \frac{2*2\pi}{5} = 3.077 \\ \\
+    && \frac{2.819}{5} + \frac{3*2\pi}{5} = 4.333 \\ \\
+    && \frac{2.819}{5} + \frac{4*2\pi}{5} = 5.590
+    \end{eqnarray}_)
+    Så løsningerne er:
+    _($\begin{eqnarray}
+    && 1.4461*\left(Cos(0.563)+Sin(0.563)i \right) = 1.222+0.773i  \\
+    && 1.4461*\left(Cos(1.820)+Sin(1.820)i \right) = -0.357+1.401i \\
+    && 1.4461*\left(Cos(3.077)+Sin(3.077)i \right) = -1.443+0.092i \\
+    && 1.4461*\left(Cos(4.333)+Sin(4.333)i \right) = -0.534-1.343i \\
+    && 1.4461*\left(Cos(5.590)+Sin(5.590)i \right) = 1.112-0.923i
+    \end{eqnarray}_)
+    Fantastiqué! 
+    <br><br></answer-box>
+     
+    <!--  -->
+
+    <p class="tt">
+    Vi har set på komplekse tal opløftet til naturlige potenser _(n \in \mathbb{N}_), men 
+    hvad med rationelle potenser? Hvis _(a_) og _(b_) er integers <i>kunne</i> vi definere
+    _($z^{a/b} = \left(\sqrt[b]{z} \right)^a_)
+    Der er intet nødvendigvis galt med denne definition, men som vi vil se på næste side,
+    bruger vi i stedet en mere generel 
+    definition, der giver os èt komplekst tal opløftet til et andet. 
+    Det er alligevel værd at pointere, at 
+    denne midlertidige definition er meget interessant, da den fortæller os, at en potens som
+    _(z^{a/b}_) faktisk har op til _(b_) mulige svar. Hver af disse svar har samme længde, 
+    men vinklerne vil variere
+    med de _(b_) mulige vinkler til _(\sqrt[b]{z}_), som alle bliver ganget 
+    med _(a_), når det hele opløftes til potensen.  
+    Der er ikke længere bare én potens, hvis der arbejdes med komplekse tal!
+    </p>
+
+    <q-stion 1="3" 2="7" bigTop=true>
+    Find de mulige værdier til _((1+3i)^{0.75}_).
+    <br><br></q-stion>
+    <answer-box>
+    Dette svarer til _((1+3i)^{3/4}_), som vi midlertidigt har defineret som:
+    _($(\sqrt[4]{1+3i})^3_)
+    _(1+3i_) har længden _(3.162_), så længden af hvert svar skal tydeligvis være 
+    _(3.162^{3/4} = 2.371_). Vinklen på _(1+3i_) er _(1.249_), så vinklerne til _(\sqrt[4]{1+3i}_) er:
+    _($\begin{eqnarray}
+    && (1.249+0*2\pi)/4 & = 0.312 \\
+    && (1.249+1*2\pi)/4 & = 1.883 \\
+    && (1.249+2*2\pi)/4 & = 3.453 \\
+    && (1.249+3*2\pi)/4 & = 5.024 
+    \end{eqnarray}_)
+    Hvilket betyder, at vinklerne til _((\sqrt[4]{1+3i})^3_) er:
+    _($\begin{eqnarray}
+    && 0.312*3 & = 0.935 \\
+    && 1.883*3 & = 5.649 \\
+    && 3.453*3 & = 10.359 \\
+    && 5.024*3 & = 15.072
+    \end{eqnarray}_)
+    Så vores endelige svar er:
+    _($\begin{eqnarray}
+    && 2.371*\left(Cos(0.935)+Sin(0.935)i \right) =     1.407 + 1.907i \\
+    && 2.371*\left(Cos(5.649)+Sin(5.649)i \right) =     1.909 - 1.404i \\
+    && 2.371*\left(Cos(10.359)+Sin(10.359)i \right) = - 1.409- 1.906i \\
+    && 2.371*\left(Cos(15.072)+Sin(15.072)i \right) = - 1.907+ 1.408i
+    \end{eqnarray}_)
+    Boom!
+    <br><br></answer-box>
+    
+    <p class="tt">
+    Noget vi også vil uddybe, når 
+    vi introducerer den rigtige definition, er at vi arbejder med en såkaldt
+    <i>principiel</i> værdi. Den "principielle" værdi på _(\sqrt[4]{1+3i}_)
+    er værdien med den mindste vinkel, hvilket svarer til
+    den med <br> _(0.312_). Vi siger også at den "principielle" værdi på _((1+3i)^{3/4}_) er 
+    den principielle værdi på _(\sqrt[4]{1+3i}_) opløftet i tredje potens: Så _(1.407+1.907i_). 
+    </p>
+    <p class="t">
+    Vi kan se lidt mere generelt, at 
+    den principielle værdi på _(\sqrt[n]{z}_) er et komplekst tal 
+    med længde _(\sqrt[n]{|z|}_) og vinkel _(\theta/7_), hvor
+    _(\theta_) er _(z_)'s vinkel. 
+    Den principielle værdi på _(z^{a/b}_) er et komplekst tal med vinkel
+    _(\theta*(a/b)_) og længde _(|z|^{a/b}_). 
+    </p>
+
+    <p class="t">
+    Hvis _(z^{a/b}_) har _(b_) mulige værdier, har _(z^{r}_), _(r \in \mathbb{R}_) <i>uendeligt</i> 
+    mange værdier, siden man
+    har brug for en "uendelig" præcis brøk (og derfor uendelig høj nævner) 
+    til at beskrive et irrationelt tal. Det vil passe fint med 
+    den definition, vi kommer frem til. I dette tilfælde sættes den principielle værdi til 
+    et komplekst tal med vinkel _(\theta*r_) og længde _(|z|^r_).
+    </p>
+
+
+    
+
+
+
+
+    <!-- SIDE OM DETALJERNE MED AT DET ER EN DEFINITION HER, OG HVILKE EGENSKABER DER HOLDER -->
+    <!-- https://en.wikipedia.org/wiki/Exponentiation#Failure_of_power_and_logarithm_identities -->
+    
+    <!-- RIGTIG MEGET GODT PÅ DENNE WIKI. -->
+    <!-- https://complex-analysis.com/ -->
+    <!-- KONTAKT DUDEN PÅ DENNE HJEMMESIDE OG SPØRG HAM HVORDAN HAN HÅNDTEREDE PROGRAMMERINGEN -->
+
+
+    <!-- http://scipp.ucsc.edu/~haber/ph116A/clog_11.pdf
+    http://scipp.ucsc.edu/~haber/ph116A/arg_11.pdf -->
+
+    
+

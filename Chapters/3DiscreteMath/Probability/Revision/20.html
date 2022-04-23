@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+
+
+    <p class="t">
+    Det du lige gjorde i sidste opgave var at finde en stokastisk variabels <i>gennemsnit</i>. 
+    Hvis en stokastisk variabel har værdierne _(x_0, x_1 ... x_n_) med sandsynlighederne
+    _(P(x_0), P(x_1), ... P(x_n)_) så definerer vi altså dens "gennemsnit" til at være:
+    _($P(x_0)*x_0 + P(x_1)*x_1 \text{ } + \text{ } ... \text{ } P(x_n)*x_n_)
+    Så din stokastiske variabel i sidste opgave var "points du kan få når du prøver at lave tricks", og du
+    regnede så:
+    _($0.20*0+0.15*3+0.2*7+0.3*9+0.15*10 = 6.05_)
+    Gennemsnittet er sjælen brugbart hvis du kun har èn enkelt runde af "noget". 
+    Der vil dén værdi med den højeste sandsynlighed nok fortælle dig mere. Når du har en god del runder dog, så
+    kan gennemsnittet være en god måde at simplificere dine beregninger og problemer. Der kan du bare sige 
+    at vi i hver runde fik "en gennemsnitlig" mængde points, og så vil du få nogle O.K gode approksimationer. 
+    Du har allerede brugt det i nogle opgaver nu, men lad os kigge på lidt flere eksempler
+    </p>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Du kaster med _(2_) terninger _(500_) gange. Hvor langt har du (ca.) bevæget dig på brættet? 
+    <br><br></q-stion>
+    <answer-box>
+    Vores stokastiske variable er selvfølgelig "sum af de to terninger". _(500_) slag er <i>en del runder</i>, så 
+    vi kan estimere den samlede sum fint ved at tage et gennemsnit. Vi skal regne:
+    _($2*P(2) + 3*P(3) + 4*P(4) + 5*P(5) \, + \, \dots_)
+    ... op til _(12*P(12)_). Vi får:
+    _($\begin{eqnarray}
+    && 2*\frac{1}{36} + 3*\frac{2}{36} + 4*\frac{3}{36} + 5*\frac{4}{36} + 6*\frac{5}{36} + 7*\frac{6}{36} + \\ 
+    && 8*\frac{5}{36} + 9*\frac{4}{36} + 10*\frac{3}{36} + 11*\frac{2}{36} + 12*\frac{1}{36} =
+    \end{eqnarray}_)
+    _($7_)
+    Simpelthen bare _(7_)! Det er sku meget simpelt. Vi regner altså:
+    _($500*7=3500_)
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Sig at et udgravningsselskab er ved at udgrave et bestemt metal. 
+    De leder efter bestemte "ore" der indeholder høje koncentrationer af metallet:
+    _($\begin{eqnarray}
+    && \text{Ore A}: \text{Indeholder } 29 \text{kg af metallet} \\
+    && \text{Ore B}: \text{Indeholder } 21 \text{kg af metallet} \\
+    && \text{Ore C}: \text{Indeholder } 18 \text{kg af metallet} \\
+    && \text{Ore D}: \text{Indeholder } 13 \text{kg af metallet} \\
+    && \text{Ore E}: \text{Indeholder } 5 \text{kg af metallet} \\
+    \end{eqnarray}_)
+    De har gravet lidt tid, og har observeret at:
+    _($\begin{eqnarray}
+    && \text{De finder en A hver } 68m^2 \\
+    && \text{De finder en B hver } 80m^2 \\
+    && \text{De finder en C hver } 22m^2 \\
+    && \text{De finder en D hver } 30m^2 \\
+    && \text{De finder en E hver } 12m^2
+    \end{eqnarray}_)
+    Sig at de har gravet _(20000m^2_). Hvor meget af metallet har de
+    sådan cirka indsamlet?
+    <br><br></q-stion>
+    <answer-box>
+    Her kan vi se hver _(m^2_) vi graver op som et slags "slag med en terning", hvor vores stokastiske
+    variabel er:
+    _($X = \text{Hvor mange kg af metallet vi finder}_)
+    Hvis der er ca. _(1_) ore-A pr. _(68m^2_), så er chancen for at finde
+    en på _(1m^2_) lig _(1/68_). Samme gælder de andre fire ore. _(X_) har altså
+    _(6_) mulige værdier:
+    _($0, 29, 21, 18, 15, 5_)
+    Og sandsynlighederne:
+    _($\begin{eqnarray}
+    && P(29) & = 1/68  = 0.0147 \\
+    && P(21) & = 1/80  = 0.0125 \\
+    && P(18) & = 1/22  = 0.0454 \\
+    && P(15) & = 1/30  = 0.0333 \\
+    && P(5) & =  1/12  = 0.0833 \\
+    && P(0) & = 1 - P(29) - P(21) - P(18) - P(15) - P(5) = 0.810
+    \end{eqnarray}_)
+    Så gennemsnittet pr. _(m^2_) er:
+    _($0.0147*29 + 0.0125*21 + 0.0454*18 + 0.0333*15 + 0.0833*5 =_)
+    _($2.422 \frac{kg}{m^3}_)
+    Faktisk overraskende meget! (selvfølgelig fuldkommen falske data dog som normalt). 
+    I hvert fald så skal vi nu bare gange dette med _(20000m^3_), hvilke giver:
+    _($2.422*20000 = 48.44 \text{tons}_)
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Sig at du er nysgerrig omkring den samlede vægt af alle _(5000_) personer på dit 
+    universitet. Det vil nok være ret svært at finde ud af hvis du skulle til at 
+    veje absolut <i>alle</i> personer. Du kunne i stedet, hvis du var okay med et <i>approximalt</i> 
+    svar, prøve at lave en <i>stiktest</i>. Bassicly, find et mindre antal (måske 200)
+    personer der relativt godt "repræsenterer" universitet. Så hvis dit universitet
+    f.eks. er _(30_)% drenge og _(70_)% piger, så skal cirka det samme gælde i de personer
+    du udvælger (og lignende med andre faktorer der kunne være vigtige). Nu kan du så bare finde
+    gennemsnitsvægten af <i>disse</i> personer, gange med _(5000_), og wholla! 
+    <p class="t">
+    Sig at du faktisk ikke kan måle den præcise vægt på _(200_) personer. 
+    Du kan dog godt spørge dem om deres vægt inden for _(10 \text{kg}_) præcished. 
+    Du får følgende data: 
+    </p>
+    <img class='SpicB' style='width:95%' src='../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\Stokastisk\Statistik.png'> 
+    <p class="t">
+    Hvis man ikke kan se det på skemaet, så er der altså _(6_) ved _(30-40kg_) og 
+    _(4_) personer ved _(80-90_)kg. 
+    </p>
+    <p class="t">
+    Omtrent hvad er den samlede vægt af alle _(5000_) personer på universitet?
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Det er jo egentlig meget simpelt og kræver i alt realitet ingen viden om sandsynlighed.
+    Hvis vi antager at eksempelvis alle i intervallet _(40-50_) vejer _(45\text{kg}_), så
+    kan vi regne gennemsnitsvægten som:
+    _($\frac{35*6+45*30+55*70+65*54+75*35+85*4}{6+30+70+74+35+4} = 54.269_)
+    Så de _(5000_) personer vejer omtrent:
+    _($5000*54.269=271345 \text{kg}_)
+    Lad os dog lige for sjovs skyld tænke over det her i forhold til sandsynlighed. 
+    Chancen for at vi vælger en tilfældig person der vejer mellem _(40_) og _(50\text{kg}_)
+    er 
+    _($\frac{30}{200}=0.15_)
+    Vi kunne tænke over et slags "gennemsnit" på en stokastisk variable som:
+    _($35*\left(\frac{6}{200} \right) + 45*\left(\frac{30}{200} \right) + 55*\left(\frac{70}{200} \right) \, + \, \dots_)
+    Rent matematisk set så er det identisk med gennemsnittet vi lige regnede før, siden man bare
+    kan omskrive det. Det er bare lidt en anden måde at tænke over situationen. 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Har du nogensinde tænkt over hvor langt du faktisk bevæger din computermus? 
+    Ja, du bevæger den nok kun nogle få centimeter af gangen, men det bliver 
+    alligevel til en del hvis du bruger den over lang tid.
+    <p class="t">
+    Hvor meget vi flytter musen vil selvfølgelig variere markant i forhold til 
+    hvilke aktiviteter vi laver. Lad os derfor mere specifikt kigge på
+    brug af musen imens man <i>skriver</i>. F.eks. en stil. 
+    </p>
+    <p class="t">
+    På følgende Geogebra dokumentet er der indsat (falske, opfundet) data, der for det første beskriver
+    hvor mange ord vi skriver før vi flytter musen igen, og for det andet beskriver hvor mange
+    _(cm_) vi flytter musen. Det er beskrevet ved at gennemgå hver mulig værdi, og dens sandsynlighed/hyppighed
+    ved siden af. Afstanden vi flytter musen er opdelt i intervaller ligesom vægtene: 
+    </p>
+    <p class="cent">
+        <a href="../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\OpgaveOmkringMus.ggb" download>
+            Download!
+        </a>
+    </p>
+    <p class="t">
+    Sig at du skriver en stil der er _(5000_) ord lang. Ca. hvor langt har du bevæget musen når du er færdig?
+    </p>
+    <br><br></q-stion>
+    <answer-box>
+    Jeg viser svaret i følgende video:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\MusMovingOpgave.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Du er ved at søge et arbejde. Der står du har to forskellige
+    slags arbejdsdage: _(4_) timer, og _(9_) timer. Du skal arbejde stort set
+    hver dag i måneden (_(30_) dage), men det varierer om det er _(4_) eller _(9_)
+    timer. Din timeløn er _(135 kr_), og der står at din månedlige forventede gennemsnitsløn er
+    _(23220kr_). Jeg siger "stort set" fordi der hver dag er en _(5_)% chance for at du har fri
+    hvis der ikke kommer nok kunder. Hvad er sådan cirka forholdet mellem de lange og korte dage på en månede?
+    Er der flest lange eller flest korte? 
+    <br><br></q-stion>
+    <answer-box>
+    Sig at vi har den stokastiske variabel:
+    _($X: \text{Antal timer du skal arbejde en dag}_)
+    _(X_) kan tage _(3_) værdier: _(0_), _(4_) og _(9_). 
+    Gennemsnittet for timer på en dag kan altså regnes som:
+    _($0*P(0) + 4*P(4) + 9*P(9)  _)
+    Hvis vi gennemsnitligt tjener _(23220 \text{kr}_) hver månede, så
+    arbejder vi gennemsnitligt
+    _($\frac{23220}{135*30} = 5.733_)
+    timer om dagen. Vi ved at _(P(0)_) er _(0.05_), så _(P(4)+P(9)_) må fylde
+    de resterende _(0.95_):
+    _($P(9)=0.95-P(4)_)
+    Vi har nu:
+    _($4*P(4) + 9*\left(0.95-P(4) \right) = 5.733_)
+    Denne ligning kan let løses, og giver 
+    _($P(4)=0.5633_)
+    Så _(P(9)=0.95-0.5633=_) _(0.3866_). Vi har derfor
+    _($\frac{0.5633}{0.3866} = 1.457_)
+    gange så mange _(4_)-timers dage som _(9_)-timers dage. 
+    <br><br></answer-box>
+
+
+
+
+

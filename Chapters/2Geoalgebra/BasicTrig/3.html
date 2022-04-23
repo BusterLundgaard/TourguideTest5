@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+
+
+    <h2>Hældninger, og et praktisk skema</h2>
+    <p class="t">
+    Lad os sige at du er en håndværker. 
+    Du er ved at bygge en væg, som en håndværker jo nu gør.
+    For at tilføje styrke skal der bl.a. en planke hen over diagonalen:
+    </p>
+    <img class="SpicBXL" style="width:80%" src="../../../Assets/Chapter2\Section1\WallPlank.png">
+    <p class="tt">
+    Bygningens højde er _(5 \text{favn}_).
+    Du er informeret om, at bredden er omkring _(2.4_) gange så stor som højden.
+    Hvor lang skal planken være?
+    Det er egentlig meget simpelt: 
+    Bredden må være _(5*2.4=12 \text{favn}_). Nu bruger
+    du bare pythagoras, og får _(\sqrt{5^2+12^2}=13_).
+    </p>
+
+    <p class="t">
+    Kunne vi godt få det her til at gå lidt hurtigere? 
+    Hvis du laver tonsvis af beregninger hver dag,
+    virker det så ikke lidt fjollet, at du <i>først</i> 
+    skal regne bredden, <i>så</i> længden?
+    Du har jo konkret kun brug for én sides længde
+    og forholdet til den anden.
+    Det samme gælder, hvis du måske havde længden af den tredje side og
+    dens forhold til højden, og du
+    søgte bredden. 
+    Vi er dovne og gider ikke spilde den tid vi mister på det 
+    her ekstra lille trin. 
+    Ideelt kunne vi bare lave en lille håndbog, hvor der f.eks. 
+    stod, hvordan vi fandt
+    den tredje sides forhold til den første via dens forhold til den anden osv. 
+    </p>
+    <img class="SpicXL" style="width:65%;" src="../../../Assets/Chapter2\Section1\RatioSkema.png">
+    <p class="tt">
+    Sig nu, at højden er _(7 \text{favn}_), og at højden er _(0.6_) 
+    gange så lang som bredden. 
+    Hvis vi igen søger længden af planken _(c_), kan vi se på skemaet, at 
+    _(b/c=0.514_), så:
+    _($\frac{7}{c}=0.514 \to c = \frac{7}{0.514} = 13.61 _)
+    Nu behøver vi kun regne ét divisionsstykke, hvilket 
+    jeg vil sige er en god del hurtigere.
+    Prøv det!
+    </p>
+
+    <q-stion 1="3" 2="1" bigTop="true">
+    _(\underline{\textbf{A}}:_) <br>
+    Sig at højden er _(9 \text{m}_) og at _(b/a_) er _(0.32_). Find længden. 
+    <p class="t">
+    _(\underline{\textbf{B}}:_) <br> 
+    Sig at bredden er _(4 \text{m}_) og _(b/a_) er _(0.84_). Find længden. 
+    </p>
+    <p class="t">
+    _(\underline{\textbf{C}}_): <br>
+    Sig at længden er _(14 \text{m}_) og _(b/a_) er _(0.67_). Find højden.
+    </p>
+    <p class="t">
+    Dine svar behøver på ingen måde at være helt præcise her, da det jo ikke er muligt med skemaet. 
+    </p>
+    <br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    Hvis _(b/a_) er _(0.32_), så er _(b/c_) ca. _(0.287_). Så:
+    _($\frac{9}{c}=0.287 \to c=\frac{9}{0.287} = 31.35 \text{m}_)
+     <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Vi har nu bredden _(a_), og søger længden _(c_). Det vil derfor være praktisk med _(a/c_). 
+    På skemaet ser vi, at hvis _(b/a=0.84_), så er _(a/c_) sådan ca. lig _(0.78_) (lidt over). 
+    Ergo:
+    _($\frac{4}{c}=0.78 \to c=\frac{4}{0.78} = 5.128_)
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{C}}_)#" tabColour="rgb(171,96,147)">
+    Vi har længden _(c_), og vil gerne have højden _(b_). Vi kigger derfor på skemaet, og ser at 
+    _(b/c_) ca. er _(0.573_) i vores situation. Så:
+    _($\frac{b}{14}=0.573 \to b=14*0.573=8.02_)
+    <br></answer-box>
+
+
+    
+
+    <!--  -->
+
+    <q-stion 1="3" 2="2">
+    _(\underline{\textbf{A}}_): <br>
+    Sig at bredden er _(5 \text{m}_) og _(b/c=0.543_). Find højden.
+    <p class="t">
+    _(\underline{\textbf{B}}_): <br>
+    Sig at bredden er _(3 \text{m}_) og _(a/c=0.77_). Find højden. 
+    </p>
+    <br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    Vi har bredden _(a_), og søger højden _(b_). På skemaet kan man se, at hvis 
+    _(b/c=0.543_), så er _(b/a_) sådan ca. _(0.6_) eller _(0.7_). 
+    Lad os sige _(0.65_) da det er lidt midt imellem. 
+    Nu:
+    _($\frac{b}{5}=0.65 \to b=0.65*5=3.25_)
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Hvis _(a/c=0.77_), så kan vi se på skemaet, at _(b/a_) cirka er _(0.8_). Vi får derfor:
+    _($b=0.8*3=2.4_)
+    Bum!
+    <br><br></answer-box>
+    
+    <!--  -->
+
+    <p class="tt">
+    Det skema vi har lavet antager, at bredden er længere eller ligeså stor som højden.
+    Derfor går _(b/a_) ikke højere op end _(1_). 
+    Vi kunne helt fint fortsætte
+    skemaet til endnu længere, men _(b/a_) kan blive uendelig stor, så hvornår ville vi skulle stoppe?
+    Plus: Selv hvis _(b/a_) er større end _(1_), 
+    så er det alligevel muligt at løse problemet via skemaet, hvis
+    man er lidt smart. Det er hvad følgende opgave handler om. 
+    </p>
+
+    <q-stion 1="3" 2="3" bigTop="true">
+    _(\underline{\textbf{A}}_): <br>
+    Sig at højden er _(6 \text{m} \text{m}_) og at _(b/a=2.9_). Find længden. 
+    <p class="t">
+    _(\underline{\textbf{B}}_): <br>
+    Sig at højden er _(12 \text{m}_) og at _(b/a=5.3_). Find længden.
+    </p>
+    <p class="t">
+    _(\underline{\textbf{C}}_): <br>
+    Sig at bredden er _(9 \text{m}_) og at _(b/a=1.5_). Find længden. 
+    </p>
+    <p class="t">
+    _(\underline{\textbf{D}}_): <br>
+    Sig at længden _(15 \text{m}_) og at _(b/a=2.6_). Find højden. 
+    </p>
+    <p class="t">
+    <i>Ja</i> jeg ved godt at _(b/a_) er højere end _(1_), hvilke den ikke er noget 
+    sted på skemaet. Det er pointen med denne opgave.
+    </p>
+    <br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    På skemaet bliver det antaget at "bredden" er større eller lig "højden". På vores trekant er 
+    det modsat, og højden er tydeligvis større end bredden. 
+    Lad os derfor bare "bytte rundt" på højde og 
+    bredde på vores trekant, så vi stadig kan bruge skemaet. Så vores _(a_) er nu _(6_), og 
+    _(a/b=2.9_). Når man siger _(1_) divideret med en brøk, bytter man rundt på tæller og nævner. 
+    Det betyder at
+    _($a/b=2.9_)
+    ... svarer til at:
+    _($b/a=1/2.9=0.344_)
+    Vi vil gerne have _(a/c_) så vi kan regne _(c_) ved hjælp af _(a_). 
+    På skemaet kan vi se, at det i denne situation er lig _(0.957_). 
+    Så:
+    _($\frac{6}{c}=0.957 \to c=\frac{6}{0.957}=6.26 \text{m}_)
+    Boom! 
+    Dette er selvfølgelig ikke det hurtigste i verden, 
+    da vi først skulle regne _(1/2.9_). Det kan altså debatteres, hvorvidt 
+    det ikke er hurtigere, bare at bruge pythagoras i denne situation. 
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Igen bytter vi rundt på bredde og højde. 
+    Vi får derfor _(a=12_) og _(a/b=5.3_). Vi regner nu _(1/5.3=0.188_), og ser på skemaet at
+    _(a/c_) er lig _(0.980_). Så:
+    _($c=\frac{12}{0.98}=12.24 \text{m}_)
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{C}}_)#" tabColour="rgb(171,96,147)">
+    Vi bytter rundt, og i denne situation har vi _(b=9_) og _(a/b=1.5_).
+    Ved hjælp af _(1/1.5=0.66_) kan vi 
+    se, at _(b/c_) cirka er _(0.573_), så:
+    _($\frac{9}{c}=0.573 \to c=\frac{9}{0.573}=15.706 \text{m}_)
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{D}}_)#" tabColour="rgb(175,128,161)">
+    Igen bytter vi rundt. 
+    _(c_) ændrer sig ikke, så den forbliver _(15 \text{m}_). Udover
+    den har vi _(a/b=2.6_). Vi søger <i>højden</i>, hvilket svarer til at finde <i>bredden</i> _(a_) på 
+    denne trekant, hvor vi har byttet alting. Derfor vil vi gerne have _(a/c_), hvilke vi via _(1/2.6=0.384_)
+    kan se på skemaet er ca. _(0.928_). Så:
+    _($\frac{a}{15}=0.928 \to a=15*0.928=13.92_)
+    Sådan! 
+    <br><br></answer-box>
+
+    <!--  -->
+    
+    <p class="tt">
+    Det ville nok være praktisk at give
+    de forhold nogle navne. Babylonianerne kaldte _(b/a_) for "ukúllu", så lad os bare kalde
+    _(b/c, a/c_) for henholdsvis "akálla" og "ykýlly".
+    </p>
+    <p class="t">
+    Med úkullu kan vi beskrive <i>retninger</i> lidt mere
+    præcist. I starten af det her afsnit så vi på følgende situation:
+    </p>
+    <div style="display:flex; width:120%; text-align: center; margin-left:-50px; margin-top:35px; margin-bottom: 35px;">
+        <img style="outline: solid; width:50%;" src="../../../Assets/Chapter2\Section1\WalkPath1.png">  
+        <img style="outline: solid; width:50%;" src="../../../Assets/Chapter2\Section1\WalkPath2.png">  
+    </div>
+    <p class="t">
+    Metoden til højre er tydeligvis forfærdelig. Over <i>små</i> distancer er metoden til venstre nok
+    fin, men skal man gå langt, spilder man en del tid på, ikke at gå den mest direkte rute. 
+    </p>
+    <p class="t">
+    I eksemplet her har vi en ukúllu på _(3.75_). 
+    En tredje løsning kunne nu være, at markere et punkt hvor vi stod,
+    gå _(1_) mod øst, _(3.75_) mod nord, markere et nyt punkt, gå tilbage til det tidligere,
+    og så vende os om mod det nye punkt vi lige lavede:
+    </p>
+    <img class="SpicB" style="width:70%" src="../../../Assets/Chapter2\Section1\WalkPath3.png">
+    <p class="t">
+        Nu vender vi den rigtige retning ukúllu _(3.5_), og kan herfra bare gå ligeud.
+        Meget mere praktisk! 
+    </p>
+
+    <!--  --> 
+
+    <q-stion 1="3" 2="4" bigTop="true">
+    _(\underline{\textbf{A}}_): <br> 
+    Du går _(25m_). Din retning er primært nord, men med en ukúllu på _(1/3_) mod øst. 
+    Hvor langt øst går du i alt?
+    <p class="t"> 
+    _(\underline{\textbf{B}}_): <br>
+    Du går _(18m_). Retning nord, ukúllu _(0.4_) øst. Hvor langt øst går du i alt? 
+    </p>
+    <p class="t"> 
+    _(\underline{\textbf{C}}_): <br>
+     Du går _(24m_). Du går igen primært mod nord, dog også lidt øst.
+    Ykýlly er omkring _(0.8_). Hvor langt øst går du i alt?
+    </p>
+    <br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    Det her spørgsmål er præcist det samme som da vi kiggede på:
+    <img class="SpicB" style="width:70%" src="../../../Assets/Chapter2\Section1\WalkPathExercise2.png">
+    <p class="t">
+    Det er bare sagt på en fancy måde, med vores nye ord "Ukúllu". Svaret er derfor også det samme, så omkring
+    _(7.17m_).
+    </p>
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Hvis úkullu er _(0.4_), 
+    kan vi se på skemaet at akálla - i vores tilfælde forholdet mellem total distance og øst - 
+    er omkring _(b/c=0.371_). Vi regner derfor bare _(18*0.371=6.678m_).  
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{C}}_)#" tabColour="rgb(171,96,147)">
+    Vi går primært mod nord, og lidt mod øst. Det betyder, at 
+    vi kan se _(a_) som nord og _(b_) som øst. Så 
+    ykýlly er forholdet mellem længden _(c_) og nord. Vi er interesseret
+    i akálla: Forholdet mellem længden _(c_) og øst. På skemaet kan man se, 
+    at akálla er omkring _(0.573_), hvis ykýlly er _(0.81_). Svaret er derfor bare:
+    _($24*0.573=13.75 \text{m}_)
+    <br></answer-box>
+

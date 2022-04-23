@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+
+
+    <p class="t">
+    Hvad gør vi præcis når vi har mere end tre variabler? Definitionen på en grænse af tre variabler er jo at:
+    _($\lim_{(x,y,z) \to (a_x,a_y,a_z)} f(x,y,z) = L_)
+    Hvis:
+    _($\sqrt{(x-a_x)^2+(y-a_y)^2+(z-a_z)^2} \lt \delta \implies \left|f(x,y,z) - L \right| \lt \epsilon_)
+    Den her definition opbyggede vi omkring, at lige meget hvordan man nærmede sig 
+    punktet _((a_x,a_y,a_z)_), så ville afstanden 
+    _($\sqrt{(x-a_x)^2+(y-a_y)^2+(z-a_z)^2}_) 
+    altid nærme sig _(0_). Men hvad gør vi hvis vi f.eks. står med fire variabler? Her bliver
+    det mærkeligt at tænke over "afstand" som sådan. Det korte i det lange er at 
+    <i>du ikke behøver at bekymre dig særlig meget om det</i>. Det kan vises at 
+    vi kan definere en grænse af _(n_) variabler _(x_1,x_2,...x_n_) der nærmer sig 
+    _((a_1,a_2,...a_n)_) på præcis samme måde, hvor at "afstanden" er:
+    _($\sqrt{\sum_{i=1}^n (x_i-a_i)^2 }_)
+    Begrundelsen er bare lidt for svær og involveret til at vi har tid til at gennemgå det her. 
+    Hvis vi laver denne antagelse omkring ideen om "afstand" i højere dimensioner dog, så kan vi ud
+    fra denne grænse-definition komme frem til mange af de samme ting vi gjorde tidligere:
+    Differentiabilitet ved et punkt virker på præcis samme måde med _(n_) variabler, og igen
+    skal fejl-termet divideres med "afstanden" af de forskellige _(\triangle x_1, \triangle x_2, ... \triangle x_n_).
+    Præcis samme formel kan også let udledes for directional derivatives, hvor at 
+    vores "enhedsvektor" så har en "afstand" af dens _(n_) komponenter der er lig _(1_). 
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Sig at du er på et laboratorie hvor i er i gang med et udvikle en sæbe:
+    <img class='Spic' style='width:40%' src='../../../Assets/Chapter4\MultiVarCalc\Kemikalier1.png'> 
+    <p class="t">
+    Denne sæbe er en blanding af _(5_) forskellige stoffer. Lad os bare kalde dem for 
+    _(a_), _(b_), _(c_), _(d_), _(e_). I har teoretisk lavet en funktion der regner
+    hvor meget skidt (i gram) sæben kan fjerne, som funktion af hvor meget af 
+    de forskellige stoffer i har blandet i: 
+    _($Skidt(a,b,c,d,e) = d \sqrt{a} \sqrt{b+c} + \frac{Ln(c)}{d} + \frac{e^2}{Ln(e) b} _)
+    hvor _(a,b,c,d,e_) alle er i liter. Lige nu er der i containeren:
+    _($\begin {eqnarray} 
+    && a & = & 4l\\
+    && b & = & 8l\\
+    && c & = & 8l\\ 
+    && d & = & 3l\\ 
+    && e & = & 2l
+    \end{eqnarray}_)
+    I prøver at ændre blandingen i containeren lidt ved gradvist at tilføje sæbe fra en 
+    anden container hvor der er:
+    _($\begin {eqnarray} 
+    && a & = & 12l\\
+    && b & = & 10l\\
+    && c & = & 14l\\ 
+    && d & = & 8l\\ 
+    && e & = & 12l
+    \end{eqnarray}_)
+    Prøv nu at approximere hvor meget sæbe i skal tilføje fra den anden container, for at 
+    sæben i denne container nu samlet vil kunne fjerne omkring _(30g_) skidt. 
+    </p>
+    <p class="t">
+    Jeg skal sige at det ikke på nogen måde er <i>absolut nødvendigt</i> at bruge directional 
+    derivatives til at løse denne opgave, men de er meget brugbare hvis man ligesom os kun søger
+    en approksimation. 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Sig at vi tilføjer _(x_) liter af den nye blanding. I den nye blanding er
+    der samlet _(12+10+14+8+12=56l_), så vi kan sige at:
+    _($\begin{pmatrix} 
+    a \\ b \\ c \\ d \\ e
+    \end{pmatrix}
+    =
+    \begin{pmatrix} 
+    4 \\ 8 \\ 8 \\ 3 \\ 2
+    \end{pmatrix}
+    + 
+    \frac{x}{56}*
+    \begin{pmatrix} 
+    12 \\ 10 \\ 14 \\ 8 \\ 12
+    \end{pmatrix}
+    _)
+    Vi kan altså se på den anden blanding som en slags "retningsvektor". Som vi øger _(x_), så 
+    går blandingsforholdet "henad i den retning". Lad os derfor normalisere denne vektor så den får
+    en længde på _(1_). Dens "længde" (hvad end det betyder) lige nu er:
+    _($\sqrt{12^2+10^2+14^2+8^2+12^2} = 25.455_)
+    Så:
+    _($\vec u = \frac{1}{25.455}*
+    \begin{pmatrix} 
+    12 \\ 10 \\ 14 \\ 8 \\ 12
+    \end{pmatrix}
+    =
+    \begin{pmatrix} 
+    0.4714 \\ 0.392 \\ 0.549 \\ 0.314 \\ 0.471
+    \end{pmatrix}
+    _)
+    Hvis vi finder "hældningen" i denne retning, så kan vi nemt bare gange denne hældning 
+    med en konstant indtil vi kommer op på forskellen mellem _(30g_) og hvor meget vi starter med! 
+    Det er altså planen!
+    <p class="t">
+    Med lidt arbejde ser vi at:
+    _($\begin{eqnarray} 
+    && f_a & = \frac{d \sqrt{b+c}}{2 \sqrt{a}} \\ 
+    && f_b & = \frac{d \sqrt{a}}{2 \sqrt{b+c}} - \frac{e^2}{Ln(e) b^2}  \\
+    && f_c & = \frac{d \sqrt{a}}{2 \sqrt{b+c}} + \frac{1}{d c} \\
+    && f_d & = \sqrt{a} \sqrt{b+c} - \frac{Ln(c)}{d^2} \\
+    && f_e & = \frac{2e}{Ln(e) b} - \frac{e}{Ln(e)^2 b}  
+    \end{eqnarray}_)
+    Og hvis vi faktisk regner dem på "punktet" _((4,8,8,3,2)_) hvor vi starter, så får vi:
+    _($\begin{eqnarray} 
+    && f_a & = 3.00 \\ 
+    && f_b & = 0.659  \\
+    && f_c & = 0.791 \\
+    && f_d & = 7.768 \\
+    && f_e & = 0.201  
+    \end{eqnarray}_)
+    Så hældningen er:
+    _($\begin{eqnarray} 
+    && 0.471*3.00 & + \\
+    && 0.392*0.659 & + \\
+    && 0.549*0.791 & + \\
+    && 0.314*7.768 &  +\\
+    && 0.471*0.201 & = & 4.639
+    \end{eqnarray}_)
+    Vores startværdi er:
+    _($3 \sqrt{4} \sqrt{8+8} + \frac{Ln(8)}{3} + \frac{2^2}{Ln(2) 8} = 25.414 _)
+    Hvis _(t_) er hvor langt vi går langs retningen, så er:
+    _($25.414 + 4.639*t \approx 30 \to t \approx = 0.9885_)
+    Så vi siger:
+    _($
+    0.9885 * 
+    \begin{pmatrix} 
+    0.4714 \\ 0.392 \\ 0.549 \\ 0.314 \\ 0.471
+    \end{pmatrix}
+    =
+    \begin{pmatrix} 
+    0.465 \\ 0.387 \\ 0.542 \\ 0.31 \\ 0.465
+    \end{pmatrix}
+    _)
+    Det er altså samlet _(0.465+0.387+0.542+0.31+0.465=_) _(2.169l_)
+    af den nye blanding vi tilføjer. 
+    </p>
+    <p class="t">
+    Boom!
+    </p>
+    <br><br></answer-box>
+
+
+

@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+
+
+    <h1 class="header">Bonus:</h1>
+    <h1 class="title">Hvad er komplekse tal?</h1>
+    <!--8.1 -->  
+    <p class="t">
+    I dette afsnit 
+    tager vi et nærmere kig på komplekse tal.
+    Vi ridser kun overfladen, da det er et kæmpe emne. Bl.a. gennemgår
+    vi ikke komplekse funktioner. 
+    </p>
+    <p class="t">
+    Vi introducerede originalt komplekse tal som et 
+    <i>geometrisk værktøj</i> _(a+bi_) med egenskaben _(i^2=-1_), 
+    men de bliver ofte introduceret mere algebraisk. <i>Idéen</i> er, at 
+    _($\sqrt{-1}=i_)
+    Du kan også se ud fra dette, at _(i^2=-1_). Komplekse 
+    tal handler om, at vi <i>tillader</i> 
+    kvadratrødder af negative tal. Vi forestiller os 
+    simpelthen, at der findes et eller andet tal _(i_) med den egenskab, og 
+    definerer at 
+    _($\sqrt{-a}=\sqrt{a}*i_)
+    Det virker selvfølgelig meget mærkeligt. Kvadratroden af 
+    et negativt tal giver vel ikke <i>mening</i>? 
+    Det er umuligt at finde et tal, du kan gange med 
+    sig selv og få noget negativt? 
+    </p>
+    <p class="t">
+    <i>Ja</i>, det giver
+    ikke "mening", men på et tidspunkt gav _(0_) ikke mening. 
+    På et tidspunkt gav ikke-hele tal som _(1.5=3/2_) ikke mening. 
+    På et tidspunkt gav negative tal ikke mening. På et tidspunkt gav 
+    irrationelle tal som _(\pi_) ikke mening, osv. 
+    Med tidens gang <i>opfandt</i> og introducerede vi disse taltyper. 
+    Groft sagt gik det:
+    </p>
+    <div style="text-align:center; margin-top:-10px; margin-bottom:-10px;">
+        <ul style="display: inline-block; list-style:disc;">
+            <li> _(\mathbb{N}_) Naturlige tal _(\to_)</li>
+            <li> _(\mathbb{W}_) Hele tal _(\to_)</li>
+            <li> _(\mathbb{Z}_) Integer tal _(\to_)</li>
+            <li> _(\mathbb{Q}_) Rationelle tal _(\to_)</li>
+            <li> _(\mathbb{R}_) Reelle tal _(\to_)</li>
+            <li> _(\mathbb{C}_) Komplekse tal _(\to_)</li>
+        </ul>
+    </div>
+    <p class="t">
+    (De "reelle tal" er en kombination af de rationelle og irationelle tal)
+    </p>
+    <p class="t">
+    I starten havde vi kun de naturlige tal _(\mathbb{N}_):
+    _($\{1,2,3,4, \, \dots \, \}_) 
+    Med disse tal er det umuligt at løse ligninger af følgende type:
+    _($x+1=1_)
+    Løsningen på denne ligning er et tal der er "ingenting". 
+    Det er præcist lige så mærkeligt at tænke over, som et 
+    tal du kan gange med sig selv og få _(-1_). Derfor <i>forestillede</i> 
+    man sig bare, at der 
+    var et tal kaldt _(0_), der løste denne ligning, og
+    <i>udvidede</i> ens samlede sæt af tal til 
+    _($\mathbb{W} = \{0,1,2,3,4,\dots \}_)
+    Det kaldes for sættet af "hele tal". Vi har <i>opfundet</i> dette sæt,
+    og er derfor nødt til at opfinde præcist hvordan,
+    man arbejder med det. Sig at _(w_1_) og _(w_2_) 
+    er tal fra _(W_). Vi siger, at at _(w_1_) er "lig" _(w_2_) hvis:
+    _($(w_1, w_2 \notin \mathbb{N}) \vee (w_1, w_2 \in \mathbb{N} \wedge w_1 =_{\mathbb{N}} w_2)_)
+    ... hvor _(\vee_) er "eller", _(\wedge_) er "og" og 
+    _(=_{\mathbb{N}}_) refererer tilbage til vores
+    tidligere definition på "lig med" for naturlige tal. 
+    Så to tal fra 
+    _(\mathbb{W}_) er "lig" hinanden, enten hvis de 
+    begge <i>ikke</i> er en del af _(\mathbb{N}_) (de er begge _(0_)), eller
+    hvis de begge <i>er</i> en del af _(\mathbb{N}_) og  
+    inden for denne tidligere definition er "lig" hinanden. Vi definerer nu plus
+    _($w_1+w_2 = \left\{\begin{eqnarray}
+    && 0 & \, \, \, \, \,  w_1 = 0 \wedge w_2 = 0\\
+    && w_1, & \, \, \, \, \,  w_1 \ne 0 \wedge w_2 = 0 \\
+    && w_2, & \, \, \, \, \,  w_1 = 0 \wedge w_2 \ne 0 \\
+    && w_1 +_{\mathbb{N}} w_2 &  \, \, \, \, \,  w_1 \ne 0 \wedge w_2 \ne 0
+    \end{eqnarray} \right. _)
+    ... og gange
+    _($w_1*w_2 = \left\{\begin{eqnarray}
+    && 0 & \, \, \, \, \,  w_1 = 0 \wedge w_2 = 0\\
+    && 0, & \, \, \, \, \,  w_1 \ne 0 \wedge w_2 = 0 \\
+    && 0, & \, \, \, \, \,  w_1 = 0 \wedge w_2 \ne 0 \\
+    && w_1 *_{\mathbb{N}} w_2 &  \, \, \, \, \,  w_1 \ne 0 \wedge w_2 \ne 0
+    \end{eqnarray} \right. _)
+    Plus-definitionen fortæller os bare, at _(0_) virker som "ingenting",
+    og at vi ellers skal plusse som normalt.
+    Gange definitionen siger, at et tal gange _(0_) er 
+    lig _(0_), og at vi ellers skal gange som normalt. 
+    Vi kunne også gå 
+    videre og definere eksponenter eller kvadratrødder osv. 
+    Der er to vigtige ting vi skal forstå:
+    </p>
+    <p class="t">
+    <i> 1</i>: Selvom vi har "opfundet" de hele tal _(\mathbb{W}_) 
+    og deres regler, er de tydeligvis brugbare
+    og <i>intuitive</i>. 
+    De hjælper os med at beskrive situationer, hvor vi har "ingenting". 
+    Hvor der er "ingen får", hvor der er 
+    "ingen vand", "ingen længde". Vi har udvidet tallene, fordi 
+    det hjælper os med at modellere situationer og løse
+    problemer vi tidligere ikke kunne løse.
+    </p>
+    <p class="t">
+    <i> 2</i>: De opfundne _(\mathbb{W}_) og deres opfundne regler kan
+    faktisk hjælpe os med beviser og beregninger, der eksklusivt omhandler
+    de naturlige tal _(\mathbb{N}_). Sig f.eks. vi skulle lave følgende beregning:
+    _($(5-2-3)*5+6_)
+    Vi kunne nu bare sige:
+    _($\begin{eqnarray}
+    && (5-2-3)*5+6 = \\
+    && (3-3)*5 + 6 = \\
+    && 0*5 + 6 = \\
+    && 0 + 6 = \\
+    && 6
+    \end{eqnarray}_)
+    Hvis ikke vi havde opfundet hele tal, ville vi være nødt til 
+    at omskrive dette udtryk, så vi aldrig stødte ind i 
+    _(0_):
+    _($\begin{eqnarray}
+    && (5-2-3)*5+6 = \\
+    && 5*5-2*5-3*5+6 = \\
+    && 6+5*5-2*5-3*5 = \\  
+    && 6+25-10-15 = \\
+    && 31 - 10 - 15 = \\
+    && 21 - 15 = \\
+    && 6
+    \end{eqnarray}_)
+    Hvorvidt der findes nogen beregninger eller egenskaber med 
+    naturlige tal _(\mathbb{N}_), der <i>kun</i> kan bevises ved hjælp af 
+    hele tal _(\mathbb{W}_), er et andet svært og langt mere 
+    abstrakt spørgsmål. _(\mathbb{W}_) er dog tydeligvis en brugbar
+    konstruktion både intuitivt, anvendelsesmæssigt og rent algebraisk. 
+    </p>
+    <p class="t">
+    Hvis vi selv opfandt _(\mathbb{W}_) og dets regler 
+    for _(=_), _(+_) og _(*_), kunne vi ikke så bare have valgt alle mulige 
+    andre mærkelige definitioner? 
+    Kunne vi f.eks. have sagt 
+    at "_(w_1 = w_2_)" betød:
+    _($(w_1 \notin \mathbb{N})  \vee (w_1, w_2 \in \mathbb{N} \wedge w_1 =_{\mathbb{N}} 2 *_{\mathbb{N}} w_2)_)
+    ... og at plus var
+    _($w_1+w_2 = \left\{\begin{eqnarray}
+    && 7 & \, \, \, \,  w_1 = 0 \wedge w_2 = 0\\
+    && w_1 -_{\mathbb{N}} w_2, & \, \, \, \,  w_1 \ne 0 \wedge w_2 = 0 \\
+    && w_1*_{\mathbb{N}} w_2, & \, \, \, \,  w_1 = 0 \wedge w_2 \ne 0 \\
+    && w_2 &  \, \, \, \,  w_1 \ne 0 \wedge w_2 \ne 0
+    \end{eqnarray} \right. _)
+    ... eller? I dette yderst mærkværdige system kan vi se, at
+    _($3+8=4_)
+    _(3+8_) er i følge plus-definitionen lig _(8_), og 
+    ligheden er sand, hvis tallet på den venstre side af _(=_) 
+    tegnet er lig (med "lig" som i definitionen af lighed på _(\mathbb{N}_))
+    tallet på højre side ganget med _(2_) (hvor gange 
+    bruger definitionen af gange i _(\mathbb{N}_)). 
+    </p>
+    <p class="t">
+    I dette system kan vi også se, at _(12=6_) er sandt, 
+    men at _(6=12_) ikke er sandt. <i>Pointen er</i>: Konklusionerne 
+    i dette system <i>selv</i> når vi kun bruger naturlige 
+    tal, matcher ikke konklusionerne før vi 
+    introducerede _(\mathbb{W}_)! Når vi opfinder nye tal og regler
+    burde vores system være en <i>udvidelse</i> af det tidligere:
+    </p>
+
+    <div class="Definition">
+    <b> Definition: Udvidelse.</b> <br> 
+    Det siges at talsystemet _(B_) er en "udvidelse" af talsystemet _(A_), hvis 
+    _(A \subset B_), og hvis _(B_) og dets associerede relationer og regler ikke 
+    kan bevise noget resultat, der er falskt i _(A_). 
+    </div>
+
+    <p class="tt">
+    Det her er en lidt forsimplet definition. 
+    Den rigtige definition beskrives i forhold til 
+    såkaldte "fields" og "field-extensions", som er lidt 
+    for avancerede at gennemgå her. Ideen er bare,
+    at vores nye system skal <i>hænge sammen</i> med 
+    det tidligere. Dette betyder <i>ikke</i> nødvendigvis,
+    at alle formler der gælder for elementer i _(A_) 
+    også gælder for elementer i _(B_). Tag f.eks følgende egenskab: 
+    _($\frac{a+b}{c} = \frac{a}{c} + \frac{b}{c}_)
+    Denne egenskab gælder altid, hvis _(a, \, b, \, c_) alle er 
+    naturlige tal. Det gælder dog ikke <i>nødvendigvis</i> 
+    hvis _(a, \, b, \, c_) alle er hele tal, eftersom _(c=0_) er "udefineret". 
+    Du vil også se senere, at 
+    _((a^{b})^c=a^{b*c}_) sjælen gælder, når _(a, \, b, \, c_) er komplekse. 
+    </p>
+    <p class="t">
+    Det vigtigste er bare,
+    at vi i det nye system ikke skal kunne bevise 
+    noget, der er falsk i det tidligere. Sig f.eks. vi skulle
+    arbejde videre på _(\mathbb{W}_) og tænkte over eksponenter. Vi definerer:
+    _($w_1 \textbf{^} w_2 = \left\{\begin{eqnarray}
+    && 1 & \, \, \,  w_1 = 0 \wedge w_2 = 0\\
+    && 1 & \, \, \,  w_1 \ne 0 \wedge w_2 = 0 \\
+    && 1 & \, \, \,  w_1 = 0 \wedge w_2 \ne 0 \\
+    && w_1 \textbf{^}_{\mathbb{N}} \, w_2 &\, \, \, w_1 \ne 0 \wedge w_2 \ne 0
+    \end{eqnarray} \right. _)
+    Og dette er fint, da _(w_1 \text{^} {w_2}_) giver samme resultat i _(\mathbb{B}_) som
+    i _(\mathbb{N}_) hvis _(w_1, w_2_) begge er i sættet _(\mathbb{N}_) (de er ikke lig _(0_)). 
+    </p>
+    <p class="t">
+    Du får nu endelig en god forklaring på, hvorfor et 
+    tal opløftet til en potens på _(0_) er _(1_):
+    Vi har defineret det, og <i>det virker som en udvidelse</i>! Selvfølgelig 
+    er denne definition <i>inspireret</i> af, at begge
+    grænser _(\lim_{x \to 0}[A^x]_), _(\lim_{x \to 0}[x^x]_) nærmer sig _(1_), men
+    det er bare inspiration. 
+    </p>
+
+    <p class="t">
+    Lad os hurtigt gennemgå de andre typer, før vi springer 
+    frem til komplekse tal. Eksklusivt ved hjælp af 
+    tal fra _(\mathbb{W}_) er det umuligt at løse ligninger som: 
+    _($x+5=0_)
+    I den her situation er _(x_) på en eller anden måde
+    nødt til at modellere en "negativ værdi". Det
+    var i lang tid uacceptabelt. En "negativ" mængde 
+    æbler giver vel ikke mening?
+    </p>
+    <p class="t">
+    Som vi har set <i>giver det mening</i> i mange 
+    situationer, og kan hjælpe
+    med intuitivt at beskrive og modellere kvantiteter, 
+    der har naturlige "modsætninger".
+    Ligesom _(0_) er det også et praktisk algebraisk værktøj, vi
+    har set tonsvis af eksempler på allerede. Tag f.eks. ligningen
+    _($0.12t^2-1.7t-5 = 0_)
+    ... hvor _(t_) er "tid" i dage. Vores kvantitet kan ikke være negativ, men for at løse 
+    ligningen har vi brug for den kvadratiske formel:
+    _($t = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} _)
+    Her skal vi bl.a. 
+    regne _((-1.7)^2-4*0.12*(-5)_), der indeholder flere eksempler på negative tal. 
+    </p>
+    <p class="t">
+    Så vi definerer et udvidet system af tal kaldt 
+    _(\mathbb{Z}_), der også kan være negative, som følgende:
+    </p>
+    <p class="t">
+    _(\mathbb{Z}_) er et sæt lig _(\mathbb{W} \times \mathbb{W}_). 
+    Det svarer til en samling af ordered pairs 
+    _((a, \, b)_) hvor _(a, \, b \in \mathbb{W}_). Ideen 
+    er, at _((a,b)_) symboliserer _(a-b_). Vi siger, at _(z_1=(a,b)_) er 
+    "lig" _(z_2=(c,d)_) hvis:
+    _($a +_{\mathbb{W}} \, d \, \, =_{\mathbb{W}} \, \, c +_{\mathbb{W}} \, b_)
+    Hvilket er en definition, der intuitivt kan motiveres ud fra, at 
+    _(a-b=c-d_) kan omskrives til _(a+d=c+b_). 
+    </p>
+    <p class="t">
+    Definer _(\overline{z}_) til at symbolisere sættet 
+    af alle elementer i _(\mathbb{Z}_), der er "lig" 
+    _(z \in \mathbb{Z}_) med den givne definition på lighed. F.eks er 
+    _((6,8)_) og _((1,3)_) begge del af _(\overline{(5,7)}_). 
+    Sig nu, at _(z_1=(a,b), z_2=(c,d)_) er to elementer i _(\mathbb{Z}_) og 
+    definer plus som: 
+    _($z_i \in \overline{z_1} \wedge z_j \in \overline{z_2} \implies z_i + z_j \in \overline{(a +_{\mathbb{W}} \, c, \, \, \, b +_{\mathbb{W}} \, d)}_)
+    Definer gange som:
+    _($z_i \in \overline{z_1} \wedge z_j \in \overline{z_2} \implies 
+    z_i*z_j \in \overline{(a * _{\mathbb{W}} c \, \, +_{\mathbb{W}} \, \, b *_{\mathbb{W}} d, \, \, \, \, a *_{\mathbb{W}}  d \, \, +_{\mathbb{W}} \, \, b  *_{\mathbb{W}}  c)}_)
+    Disse definitioner kommer intuitivt fra, at 
+    _($(a-b)+(c-d)=a+c-(b+d)_)
+    ... og at 
+    _($(a-b)*(c-d)=ac+bd-(ad+bc)_)
+    Følgende notation defineres:
+    _($-(a,b)=(b,a)_)
+    Dette motiveres af, at _(a-b_) er det negative af _(b-a_). 
+    </p>
+
+    <q-stion 1="1" 2="1" bigTop=true>
+    Bevis inde i dette system, at et hvilket som helst tal _(z_) gange _(-1_)
+    er lig _(-z_)
+    <br><br></q-stion>
+    <answer-box>
+    Sig at _(z=(a,b)_). Èt element i _(\mathbb{Z}_), der er del 
+    af _(\overline{-1}_), er _((0,1)_). Derfor ved du, at 
+    _(z*(-1)_) vil være en del af:
+    _($\overline{(a*0+b*1, a*1+b*0)} = \overline{(b,a)} = \overline{-z}_)
+    Hvis _(z*(-1)_) er en del af _(\overline{-z}_), ved vi pr. definition
+    at det er <i>lig</i> _(-z_), hvilket færdiggøre beviset _(\blacksquare_)
+    <br><br></answer-box>
+
+    <p class="tt">
+    Lad os nu gå videre til rationelle tal _(\mathbb{Q}_). I lang tid kunne folk
+    heller ikke acceptere, at det var muligt at have tal, der <i>ikke var hele</i>. 
+    Det giver ikke mening at have "en halv person", 
+    men vi ved bare også fra erfaring, at der findes mange 
+    situationer, hvor det <i>giver</i> mening:
+    Halvdelen af en bestemt længde, _(a_) stykker fra en pizza, der er opdelt 
+    i _(b_) lige store stykker, et hvilket som helst mål i fysik. Alt muligt!
+    Rationelle tal kan selvfølgelig også hjælpe os, når 
+    vi arbejder med integers, hvilket vi har set mange eksempler på allerede. 
+    </p>
+    <p class="t">
+    Rationelle tal defineres med meget den samme strategi vi brugte til at definere integers.
+    Her er sættet lig
+    _($\mathbb{Q} = \mathbb{Z} \times (\mathbb{Z} - {0})_)
+    Så sættet af ordered pairs _((a,b)_), hvor _(a,b_) begge er
+    integers men _(b_) ikke må være _(0_). 
+    Idéen er meget lignende, at 
+    _((a,b)_) symboliserer _(a/b_). Vi siger,
+    at _(q_1=(a,b)_) er "lig" _(q_2=(c,d)_), hvis 
+    _($a *_{\mathbb{Z}} d \, \, =_{\mathbb{Z}} \, \,b *_\mathbb{Z} c_)
+    Det motiveres af, at _(a/b=c/d_) kan omskrives til 
+    _(ad=cd_). Sig at at _(\overline{q}_) symboliserer
+    sættet af elementer i _(\mathbb{Q}_), der er "lig" _(q_). Nu kan 
+    plus defineres som
+    _($q_i \in \overline{q_1} \wedge q_j \in \overline{q_2} \implies
+    q_i+q_j \in \overline{(a*_{\mathbb{Z}} d \, \, + \, \, b *_{\mathbb{Z}} c, \, \, \, \, b *_{\mathbb{Z}} d)}
+    _)
+    ... og gange som
+    _($q_i \in \overline{q_1} \wedge q_j \in \overline{q_2} \implies
+    q_i*q_j \in \overline{(a*_{\mathbb{Z}} c, \, \, \, \, b*_{\mathbb{Z}} d)}
+    _)
+    Det her motiveres af at:
+    _($\frac{a}{b}+\frac{c}{d} = \frac{ad+cb}{bd}, \qquad \frac{a}{b}*\frac{c}{d}=\frac{ac}{bd}_)
+    Vi kommer nu til <i>reelle</i> tal og de irrationelle. Her havde folk svært ved at 
+    acceptere, at der var tal der <i>ikke</i> kunne beskrives som forholdet mellem to integers.
+    Det er egentlig forståeligt nok, da det på mange måder er forvirrende, abstrakt og mærkeligt. 
+    Alligevel en nødvendig udvidelse af systemet, siden vigtige tal
+    som forholdet mellem en cirkels diameter og omkreds (kendt som _(\pi_)),
+    eller hvor meget man får ud af en rente med uendelig mange perioder (kendt som _(e_)),
+    ikke kan
+    beskrives som noget forhold. Vi støder også på de her tal overalt i 
+    mellemregninger: Eksempelvis i kvadratrødder som 
+    _(\sqrt{2}_) eller _(\sqrt{3}_) (samt mange andre). Det ville være fjollet, hvis vi ikke 
+    kunne finde længden på en trekant med sidelængde 
+    _(2_) og _(3_), bare fordi _(\sqrt{2^2+3^2}=\sqrt{13}_) er irrationelt. 
+    </p>
+    <p class="t">
+    De reelle tal _(\mathbb{R}_) tal er <i>meget</i> sværere at definere ordentligt.
+    Der findes flere strategier, men den mest kendte er nok 
+    "Dedekind cuts". Konstruktionen af _(\mathbb{R}_) er for avanceret til at blive gennemgået 
+    her.
+    </p>
+    <p class="t">
+    Endeligt ankommer vi til komplekse tal. Her kunne man ikke acceptere, at det fandtes et tal, der var lig 
+    _(-1_), når det blev opløftet i anden potens. 
+    Man kan se hvorfor komplekse tal har en intuitiv betydning,
+    der kan hjælpe os med at modellere situationer og løse problemer -
+    ligesom negative tal og brøker - hvis man bare 
+    forstår _(\sqrt{-1}_) som "_(i_)", og opfatter
+    et tal _((a+bi)_) som et punkt med koordinaterne _((a, b)_).
+    Hvis negative tal kunne hjælpe os, når en bestemt kvantitet
+    havde en slags "modsætning",
+    så kan komplekse tal hjælpe os, når to kvantiteter <i>ikke har indflydelse på hinanden</i>.
+    To kvantiteter vi bredt sagt kan sige er "vinkelrette". 
+    Geometri er det mest åbenlyse eksempel, men det kunne også være to kvantiteter
+    som _((\text{Størrelse af plante A}, \text{Størrelse af plante B})_), hvor vi 
+    antager, at de to planter ikke har nogen indflydelse på hinanden.
+    </p>
+    <p class="t">
+    Sættet _(\mathbb{C}_) defineres som _(\mathbb{R} \times \mathbb{R}_). Det
+    er sættet af 
+    ordered pairs _((a,b)_), hvor _(a,b_) begge er reelle. Følgende notation bliver anvendt:
+    _($(a,b): a+bi_)
+    Her skal der ikke tænkes over betydningen af _(+_) eller _(i_): Det er bare ren notation. 
+    </p>
+    <p class="t">
+    Udover denne notation anvendes der også følgende forkortelser:
+    _($\begin{eqnarray}
+    && (0,b) & = & bi \\
+    && (a,0) & = & a \\
+    && (a,1) & = & a & + & i \\
+    && (a,-1) & = & a & - & i \\
+    && (0,1) & = & i  \\
+    && (0,-1) & = - & i \\
+    \end{eqnarray}_)
+    Et komplekst tal _(z_1=a+bi_) siges at være "lig" et andet komplekst tal _(z_2=c+di_), hvis
+    _($a =_{\mathbb{R}} c \, \, \wedge \, \, b =_{\mathbb{R}} d_)
+    Plus defineres som:
+    _($z_1+z_2=(a \, +_{\mathbb{R}} \, c, \, \, \, \, b \, +_{\mathbb{R}} \, d)_)
+    Hvilket motiveres af at:
+    _($(a+bi)+(c+di)=(a+c)+(b+d)*i_)
+    Via forkortelserne ser vi,
+    at et komplekst tal som _(a+bi_) både kan forstås som
+    ét komplekst tal og to komplekse tal _(a_) og _(bi_) plusset med hinanden. 
+    </p>
+    <p class="t">
+    Gange defineres som:
+    _($z_1*z_2=(a *_{\mathbb{R}} c \, \, -_{\mathbb{R}} \, \, b*_{\mathbb{R}} d, \, \, \, \, b*_{\mathbb{R}} c \, \, +_{\mathbb{R}} \, \, a*_{\mathbb{R}} d)_)
+    Hvilket motiveres af at:
+    _($(a+bi)(c+di)=ac+ad i+cb i+bd i^2 = (ac-bd) + (ad+cb)i_)
+    </p>
+
+    <q-stion 1="1" 2="2" bigTop=true>
+    Bevis ud fra definitionerne at:
+    _($i*i=-1_)
+    <br></q-stion>
+    <answer-box>
+    _(i_) svarer til _((0,1)_) og _(-1_) til _((-1,0)_), så vi tjekker:
+    _($(0,1)*(0,1)=(0*0-1*1,1*0+0*1)=(-1,0)_)
+    Voila!
+    <br><br></answer-box>
+
+    <p class="tt">
+    Komplekse tal har, ligesom de andre udvidelser, praktiske algebraiske
+    anvendelser udover deres intuitive betydning. 
+    Faktisk blev de originalt opfundet da to italienere Rafael Bombelli og Gerolamo Cardano 
+    var i gang med at løse tredjegradsligninger:
+    _($ax^3+bx^2+cx+d=0_)
+    De havde fokuseret på den lidt nemmere ligning _(x^3=cx+d_), og 
+    fandt frem til følgende formel, der gav i hvert fald én løsning:
+    _($x=\sqrt[3]{\frac{d}{2}+\sqrt{\frac{d^2}{4}-\frac{c^2}{27}}} + \sqrt[3]{\frac{d}{2}-\sqrt{\frac{d^2}{4}-\frac{c^2}{27}}}_)
+    Sig at vi brugte denne formel på _(x^3=15x+4_). Det svarer til at substituere _(d=15_), _(c=4_):
+    _($\begin{align}
+    x & = \sqrt[3]{\frac{15}{2}+\sqrt{\frac{15^2}{4}-\frac{4^2}{27}}} + \sqrt[3]{\frac{15}{2}-\sqrt{\frac{15^2}{4}-\frac{4^2}{27}}} \\ \\
+    & = \sqrt[3]{2+\sqrt{-121}}+\sqrt[3]{2-\sqrt{-121}} 
+    \end{align}_)
+    Så ... denne ligning har ikke nogen løsninger, eller? <i>Forkert</i>: Det <i>har</i> den faktisk.
+    Vi kan omskrive _(x^3=15x+4_) til _(x^3-15x+4=0_). Nu skal vi bare plotte _(x^3-15x+4_), og se
+    hvor det 
+    skærer x-aksen:
+    </p>
+    <img class='SpicXL' style='width:80%' src='../../../Assets/Chapter4\ComplexNumbers\ImportantCubic.png'> 
+    <p class="t">
+    Det er intet problem at plotte funktionen, så vi kan nemt se at den tydeligvis <i>har</i> løsninger: Tre endda! 
+    Vi ved også, at vi har udledt formlen ordentligt, så hvad sker der? 
+    </p>
+    <p class="t">
+    Det der sker - den løsning Rafel Bombelli kom frem til - var, at man bare kunne <i>lade som om</i>
+    _(\sqrt{-1}_) fandtes. Man kunne sige, at _(\sqrt{-1}_) 
+    var en ny type tal kaldt _(i_), der havde den specielle egenskab, at 
+    _(i^2=-1_). Man kunne nu gå videre og forsimple 
+    udtrykket med dette opfundne tal, og
+    <i>eventuelt</i> ville man opdage, at _(\sqrt{-1}_) helt forsvinder igen. Man ville få:
+    _($x=4_)
+    Dette betyder selvfølgelig ikke, at komplekse tal var fuldkommen nødvendige for at 
+    finde denne løsning, 
+    men det er i hvert fald ét eksempel på, at de kan være praktiske og brugbare,
+    selv hvis man er ligeglad med geometrien og intuitionen. 
+    </p>
+    <p class="t">
+    Nogle andre vigtige algebraiske anvendelser er inden for 
+    strøm og elektricitet. På grund
+    af vekselstrøm arbejder man meget med bølger:
+    _($a Sin(x + c)_)
+    Ofte skal man lægge de her bølger sammen som:
+    _($a_1 Sin(x + c_1) + a_2 Sin(x + c_2)_)
+    Det viser sig, at der via komplekse tal kan udvikles en 
+    effektiv strategi til, at omskrive denne sum af to
+    bølger til bare 1 <i>bølge</i>. F.eks. kan det ses, at
+    _($Cos(x+1.2)+Cos(x+1.7)=1.937 Cos(x+1.45)_)
+    Det er sikkert muligt at komme frem til dette resultat 
+    uden komplekse tal, men med komplekse tal er det langt 
+    mere elegant både at udlede og anvende. Et andet eksempel er formlen
+    _($Cos(k*t)=\sum_{j=0}^{k/2}(-1)^j*Sin(t)^{2j}*Cos(t)^{k-j}_) 
+    Den ser meget svær ud, men kan relativt let udledes via komplekse tal.  
+    </p>
+    
+    <p class="pageSplitter">*</p>
+
+    <p class="t">
+    Komplekse tal er på en måde "det endelige tal" / "det ultimative tal". Vi siger
+    i hvert fald, at komplekse tal <i>færdiggøre tallene</i>. Husk
+    tilbage til "den fundamentale teori af algebra" vi introducerede tidligere. Den sagde, at 
+    ethvert polynomie kunne beskrives som et produkt af <br> 
+    førstegradspolynomier og ureducerbare 
+    andengradspolynomier. F.eks:
+    _($3x^4 + 2x^3 - 37x^2 - 64x - 48 = (x+3)(x-4)(3x^2+5x+4)_)
+    Ville det ikke være langt dejligere, hvis det <i>kun</i> var førstegradspolynomier? 
+    Hvis _(3x^2+5x+4_) tog formen _((x-A)(x-B)_),
+    ville vi vide, at vores samlede polynomial var _(0_) ved
+    _(x=A_) og _(x=B_). 
+    Men _(x^2+5x+4_) er <i>aldrig</i> lig _(0_), så det kan umuligt faktoreres!
+    Nulpunkterne ved vi findes med formlen:
+    _($x=\frac{-b \pm \sqrt{b^2-4ac}}{2a}_) 
+    Hvilket i _(x^2+5x+4_)'s tilfælde er:
+    _($\begin{align}
+    x & = \frac{-5 \pm \sqrt{5^2 - 4*3*4}}{2*3}  \\ \\
+    & = \frac{-5 \pm \sqrt{-23}}{6} \\ \\
+    & = \frac{-5 \pm 4.795*i}{6} \\ \\
+    & = -0.833 + 0.799i, \, -0.833 - 0.799i 
+    \end{align}_)
+    Så "problemet" er ikke, at _(A_) og _(B_) <i>ikke findes</i>,
+    bare at de begge er <i>komplekse</i>. 
+    _(3x^2+5x+4_) kan derfor omskrives til:
+    _($3*\bigl(x-(-0.833 + 0.799i) \bigr)* \bigl(x-(-0.833 - 0.799i) \bigr) _)
+    Så ethvert ureducerbart andengradspolynomie kan omskrives til et produkt af to komplekse
+    førstegradspolynomier, hvilket betyder at ethvert _(n_)-gradspolynomie kan omskrives til 
+    et produkt af _(n_) førstegradspolynomier, så længe vi tillader komplekse rødder! 
+    </p>
+    <p class="t">
+    Det kan <i>altid</i> omskrives til denne form, selv hvis koefficienterne 
+    _(a_1,a_2,a_3, \, \dots \, a_n_) på _(a_1+a_2x+a_3x^2 \, + \, \dots a_n \, x^n_) 
+    er komplekse! Det her er meget vigtigt, fordi 
+    det betyder, at 
+    _($a_1+a_2x+a_3x^2+\dots a_n x^n=0_) 
+    ... altid har en løsning, hvis der arbejdes med komplekse tal
+    _(\mathbb{C}_). Denne ligning beskriver 
+    <i>alle</i> ligninger, der muligt kan konstrueres 
+    via plus og gange i _(\mathbb{C}_).
+    _(\mathbb{C}_) har "fuldendt" tallene, da vi aldrig får
+    brug for en ny type tal, for at løse nogen ligning:
+    </p>
+    <p class="t">
+    I både _(\mathbb{N}_), _(\mathbb{W}_), _(\mathbb{Z}_),
+    _(\mathbb{Q}_) og _(\mathbb{R}_) kunne vi opstille 
+    ligninger uden løsninger, men det kan vi ikke længere! 
+    Der er selvfølgelig mange andre operationer end plus og gange (f.eks eksponenter), 
+    men de kan alle omskrives til Taylor serier, så længe de er elementære. 
+    Derfor kan en hvilken som helst ligning med elementære funktioner i _(\mathbb{C}_) løses! 
+    Det er en fantastisk egenskab!
+    </p>
+    <p class="t">
+    Phew!
+    </p>
+

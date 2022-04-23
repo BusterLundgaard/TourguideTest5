@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+
+
+    <h3>Tredje innovation: "Stokastiske variabler" og deres mindset</h3>
+
+    <p class="t">
+    Lad os på denne side introducere et <i>mindset</i> (grindset?),
+    der kan hjælpe os med visse sandsynlighedsopgaver. 
+    Der er intet reelt nyt her, du ikke kunne regne før, men 
+    dette tankesæt er hyppigt brugbart, og bliver ofte
+    brugt af andre, når de kommunikerer deres resultater og ideer inden for sandsynlighed. 
+    </p>
+    <p class="t">
+    Idéen er, at vi ikke længere skal tænke over et 
+    "rum af mange <br> muligheder" _(S_)
+    _($S_{\text{to terninger}} =  
+    \begin{Bmatrix}
+    2 & 3 & 4 & 5 & 6 & 7 \\
+    3 & 4 & 5 & 6 & 7 & 8 \\
+    4 & 5 & 6 & 7 & 8 & 9 \\
+    5 & 6 & 7 & 8 & 9 & 10 \\
+    6 & 7 & 8 & 9 & 10 & 11 \\
+    7 & 8 & 9 & 10 & 11 & 12 \\
+    \end{Bmatrix} 
+    _)
+    ... men i stedet tænke over en <i>kvantitet</i> hvis værdi til
+    en vis grad er tilfældig. Det kunne være summen af øjnene på to terninger, 
+    antal gange du slår plat med en mønt i træk, hvor mange basketball skud
+    du rammer ud af _(10_), højden på en tilfældig udvalgt studerende
+    fra din klasse, hvor mange æbler der falder ned fra dit træ på en dag osv. 
+    De her kvantiteter kan vi se som en slags <i>variabler</i> _(X_). 
+    Ligesom normale variabler kan de skifte mellem flere værdier, men disse 
+    variabler skifter med et niveau af tilfældighed. De kaldes derfor
+    <i>tilfældige variabler</i> - eller det mere videnskabelige begreb
+    <i>stokastiske variabler</i>. 
+    </p>
+    <p class="t">
+    Sig at _(Y_) er en stokastisk variable, og at:
+    _($Y=\text{sum af øjnene på tre terninger}_)
+    I en tidligere opgave blev vi spurgt: 
+    </p>
+    <p class="t">
+    <i>Du slår _(3_) terninger. Hvad er chancen for, at deres sum er over _(13_)?</i>
+    </p>
+    <p class="t">
+    Det kan nu formuleres som:
+    _($P(Y \gt 13)_)
+    Med andre ord: Hvad er chancen for at _(Y_) er over _(13_)?
+    </p>
+    <p class="t">
+    _(Y_) tager værdier mellem _(1+1+1=3_) og 
+    _(6+6+6=18_). Det kunne formuleres som:
+    _($Y \in [3, 18]_)
+    _(P(Y \gt 13)_) kan regnes som:
+    _($P(Y=14)+P(Y=15)+P(Y=16)+P(Y=17)+P(Y=18)_)
+    Og det er præcis hvad vi gjorde i opgaven. Vi så (med lidt arbejde) at
+    _($\begin{eqnarray}
+    && P(Y=14) = 15/216  \\
+    && P(Y=15) = 10/216 \\
+    && P(Y=16) = 6/216 \\
+    && P(Y=17) = 3/216 \\ 
+    && P(Y=18) = 1/216
+    \end{eqnarray}_)
+    ... og lagde dem alle sammen til sidst som:
+    _($\frac{15+10+6+3+1}{216} = 0.162_)
+    Jeg snyder en smule her: Vi regnede aldrig de individuelle
+    sandsynligheder, da alle alligevel var divideret med _(216_). 
+    Vores kære stokastiske variabler har ikke som sådan gjort opgaven
+    lettere rent beregningsmæssigt, men man må alligevel erkende, at 
+    de gav et bedre overblik, og fungerede som et effektivt kommunikationsværktøj. 
+    </p>
+    <p class="t">
+    Lad os se på endnu et eksempel. En tidligere opgave spurgte os: 
+    </p>
+    <p class="t">
+    <i>Hvad er chancen for, at du over 6 gange i streg 
+    kaster en mønt der lander på plat?</i>
+    </p>
+    <p class="t">
+    Her er det nok logisk at definere den stokastiske variable _(X_) hvor:
+    _($X=\text{Antal gange du slår plat i træk før du rammer krone}_)
+    Vi skal regne:
+    _($P(X \gt 6) = P(X \ge 7)_)
+    Det kan let ses, at _(X \in [0, \infty]_). Derfor ved vi, at
+    _($P(X \in [0, 6]) + P(X \ge 7) = 1_)
+    ... hvorfra det let kan ses at:
+    _($P(X \ge 7) = 1 - P(X \in [0, 6])_)
+    Nu skal vi bare regne:
+    _($P(X=0) + P(X=1) + P(X=2) + \dots P(X=6)_)
+    _(P(X=k)_) svarer til at slå plat _(k_) gange og så krone.
+    Det er _(k+1_) selvstændige begivenheder med sandsynligheden 
+    _(0.5_), så:
+    _($P(X=k)=0.5^{k+1}_)
+    Derfor er _( P(X \in [0, 6])_) lig
+    _($\sum_{i=0}^{6} 0.5^{i+1} = 0.99219_)
+    ... og til sidst får vi 
+    _($P(X \ge 7) = 1-0.99219 = 0.0078099_)
+    Beregninger er igen de samme, men det var nemmere at gå til og forklare med stokastiske variabler. 
+    </p>
+    <p class="t">
+    Det er super simpelt at visualisere en stokastisk variabel. Vi plotter bare dens værdier
+    og associerede sandsynligheder:
+    </p>
+    <img class='SpicBXL' style='width:70%' src='../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\BinomialDistribution1.png'> 
+    <p class="t">
+    Her ses det basketball-eksempel vi så tidligere. Et andet eksempel kunne være øjnene på
+    _(2_) terninger:  
+    </p>
+    <img class='SpicBXL' style='width:83%' src='../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\Stokastisk\To terninger.png'> 
+    <p class="t">
+    Man kan studere en masse egenskaber omkring sådan en given stokastisk variable og
+    dens fordeling. Største og mindste værdi? Værdi med højest hyppighed? 
+    Gennemsnit? Hvor udspredt eller koncentreret er sandsynlighederne omkring ét punkt? 
+    Det er idéer, vi slet ikke ville have tænkt over uden dette mindset. 
+    </p>
+    <p class="t">
+    Det kan også være interresant og brugbart at <i>sammenligne</i> stokastiske variabler. 
+    Hvis
+    _($\begin{eqnarray}
+    && X = \text{Øjne på én terning} \\
+    && Y = \text{Øjne på tre terninger}
+    \end{eqnarray}_)
+    ... så kan vi måske-
+    </p>
+
+    <q-stion 1="16" 2="1" customWidth="540">
+    - regne:
+    _($P(X \gt Y)_)
+    <br></q-stion>
+    <answer-box customWidth="540">
+    _(X \in [1,6]_) og _(Y \in [3, 18]_). Derfor gælder _(X \gt Y_) kun i få bestemte tilfælde:
+    _($\begin{eqnarray}
+    && X = 4, Y = 3 \\
+    && X = 5, Y \in [3, 4] \\
+    && X = 6, Y \in [3, 5]
+    \end{eqnarray}_)      
+    Så vi skal regne:
+    _($\begin{eqnarray}
+    && P(X=4)*\Bigl(P(Y=3)\Bigr) \, + \\ 
+    && P(X=5)*\Bigl(P(Y=3) + P(Y=4) \Bigr) \, + \\
+    && P(X=6)*\Bigl(P(Y=3) + P(Y=4) + P(Y=5) \Bigr)
+    \end{eqnarray}_)
+    Det siger selv, at chancen for både _(X=4_), _(X=5_) og _(X=6_) er _(1/6_).
+    Chancen for _(Y=3_) er tydeligvis _(1/6^3 = 0.004629_). 
+    Ved _(Y=4_) er den _(3/6^3 = 0.01388_) og ved 
+    _(Y=5_) kan vi regne
+    _($\frac{\VeC[5+2,2]}{6^3} = 0.09722_)
+    Alt i alt fås:
+    _($\frac{0.004629+(0.004629+0.01388)+(0.004629+0.01388+0.09722)}{6}_)
+    Det kan regnes til _(0.0231445_), så en chance på 
+    lidt over 2% 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <p class="t">
+    Sig vi har en stokastiske variable _(X_) over vægten på en tilfældigt udvalgt
+    elev i din klasse. 
+    Forskellige mulige kropsvægte har
+    forskellige sandsynligheder. Der vil nok være markant større chance for, at man
+    vejede _(60kg_) end _(260kg_). Forskellen på det her eksempel og de tidligere er, at
+    det nok er et, man ville lave <i>kontinuert</i>. 
+    Det er ikke den del af sandsynlighed
+    vi fokuserer på i dette afsnit, men helt essentielt kan vi sige, at man 
+    ved <i>kontinuert</i> sandsynlighed fokuserer på <i>intervaller</i> i stedet for 
+    <i>individuelle, enkelte, specifikke værdier</i>. Det giver super meget mening, når man
+    tænker over situationen: Der er ikke særlig mange personer i klassen (måske _(30_)), men
+    vildt mange værdier til den stokastiske variable. Hvis vi tager decimaltal med
+    er der teoretisk set <i>uendelig</i> mange værdier. Vores graf ville være ubrugelig:
+    </p>
+    <img class='SpicBXL' style='width:160%; margin-left: -30%' src='../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\Stokastisk\Kropsvægt.png'>  
+    <p class="t">
+    Der er _(30_) elever, så hver værdi på den stokastiske variabel har enten en chance 
+    på _(1/30_) eller _(0_). Det er fordi, at chancen for at to elever vejer <i>præcist</i> det samme,
+    hvis vores variable er uendelig præcis, er forsvindende lille. 
+    Vægtene uden associerede elever får sandsynligheden _(0_). 
+    Selv hvis vi begrænsede os 
+    til kun hele tal, ville chancen stadig være lille, og grafen stadig ret ubrugelig. 
+    </p>
+    <p class="t">
+    I alt ærlighed er grafikken ikke <i>helt</i> ubruglig: Vi kan se, at der er langt flere
+    _(1/30_) værdier <i>omkring</i> _(60kg_), og at chancen for de "slags" værdier derfor må være
+    ret stor. Men her bruger jeg ordet "slags": Jeg taler om flere værdier samtidig. Det vi gør
+    er derfor at se på <i>intervaller</i>. Hvad er chancen for, at nogen vejer mellem _(0_) og _(10_) kg?
+    Mellem _(10_) og _(20_)? _(30_) og _(40_), _(40_) og _(50_), _(50_) og _(60_) osv. Det giver os
+    følgende diagram: 
+    </p>
+    <img class='SpicXL' style='width:95%' src='../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\Histogram.png'> 
+    <p class="t">
+    I kontinuert sandsynlighed arbejder man med, at regne sandsynligheden
+    på givne <i>intervaller</i> _([a, b]_) i stedet for enkelte værdier.
+    Det undersøger vi ikke i dette afsnit, da vi fokuserer på diskrete variabler. 
+    </p>
+    <p class="cent">*</p>
+    <p class="t">
+    De næste par opgaver træner dig i at bruge dette mindset med stokastiske variabler.  
+    </p>
+
+    <q-stion 1="16" 2="2">
+    Du spiller et racer-spil der handler om at få flest points.
+    Man kan vælge to veje: Den sikre vej og den risky vej. Den sikre
+    vej giver dig <i>altid</i> _(3_) points. Den risky vej giver dig 
+    _(5_) points, men kun _(60_)% af tiden. Den resterende _(40_)% af tiden giver den dig 
+    _(0_) points. Hvis man kører _(10_) runder, er det så bedst at tage
+    den risky eller sikre vej?
+    <br><br></q-stion>
+    <answer-box>
+    Antag at vi vælger den <i>risky</i> vej, og at vores modspiller vælger den sikre. 
+    Vores modspiller 
+    vil <i>altid</i> få _(3*10=_)  _(30_) points. Vi skal derfor 
+    finde ud af, om chancen for 
+    at den risky vej får over eller lig _(30_) points er lavere eller højere end _(50_)%. Vi kan se på
+    den risky vej som en stokastisk variabel
+    _($X=\text{Antal points med risky vej efter } 10 \text{ runder} _)
+    _(X_) går opad i trin af _(5_), med den laveste værdi _(5*0=0_) og 
+    den højeste _(5*10=50_). Over eller lig _(30_) svarer til 
+    success med den risky vej _(30/5=6_) af runderne. Lad os 
+    i stedet definere:
+    _($Y=\text{Antal runder ud af } 10 \text{ hvor den risky rute virker}_)
+    _(Y \in [0, 10]_) og vi leder efter _(P(Y \ge 6)_), ergo:
+    _($P(Y=6)+P(Y=7)+P(Y=8)+P(Y=9)+P(Y=10)_)
+    Hvis _(Y=k_) har man success i _(k_) ud af _(10_) runder.
+    Chancen er _(0.6^k*0.4^{10-k}_), og det kan ske på _(10_)-choose-_(k_)
+    måder, så:
+    _($P(Y=k) = \VeC[10, k]*0.6^k*0.4^{10-k}_)
+    Nu regner vi:
+    _($\sum_{k=6}^{10} \VeC[10, k]*0.6^k*0.4^{10-k} = 0.633_)
+    Voila! Det er større end _(0.6_), så det er bedre at tage den risky vej - carpe diem! 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="16" 2="3">
+    På et træ hænger _(7_) æbler. Sig at der hver dag kan falde _(1_) æble ned, og 
+    at chancen for, at det sker er _(0.4_). Der er desværre også en irriterende fugl, der nogle
+    gange spiser af æblerne. Sig at den kan spise _(1_) æble per dag, og 
+    at chancen for den gør det, er _(0.1_). Hvad er chancen for, at alle _(7_) æbler
+    falder ned, før fuglen har spist nogen? 
+    <p class="t">
+    <i>Vigtigt</i>: Du er nødt til at <i>approximere</i> et svar til denne opgave, og 
+    du er nødt til at bruge Geogebra. Lidt en spoiler, men du får nok brug for _(Sum_)-funktionen.
+    Jeg minder dig også lige om at _(\Vec[n,k]_) i Geogebra er _(\text{nCr}(n,k)_). 
+    </p>
+    <p class="t">
+    Denne opgave er ret tricky! 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Kan vi modellere situationen med stokastiske variabler? 
+    Jeg tænker umiddelbart, at
+    _($\begin{eqnarray}
+    && X = \text{Dagen hvor det sidste æble falder ned} \\
+    && Y = \text{Dagen hvor fuglen spiser dens første æble}
+    \end{eqnarray}_)
+    I så fald skal vi regne:
+    _($P(Y \gt X)_)
+    Det udfordrende ved denne situation er, at 
+    _(X \in [7, \infty]_) og _(Y \in [1, \infty]_).
+    Det kan tage potentielt <i>uendeligt</i> lang tid, før alle
+    frugter er faldet, eller før fuglen spiser dens første; Chancen
+    er bare meget lille. Vi er nødt til at regne
+    _($\begin{eqnarray}
+    && P(X=7)*P(Y \gt 7) \, + \\
+    && P(X=8)*P(Y \gt 8) \, + \\
+    && P(X=9)*P(Y \gt 9) \, + \\
+    && \vdots \,  \\ 
+    \end{eqnarray}_)
+    ... frem mod uendelighed! 
+    <p class="t">
+    Måske kan vi ikke få et præcist svar, men
+    vi kan let <i>approximere</i>. Hvert led
+    i den uendelig sum bliver hurtigt mindre end det tidligere, så
+    bare de første 100 led eller mindre ville give os en sum, der var præcis op til
+    <i>mange</i> cifre. Geogebra kan let regne tusindvis af led, så længe vi 
+    finder en formel for _(P(X=k)*P(X \gt k)_)!
+    </p>
+    <p class="t">
+    Antag at det tager _(k_) dage, før _(7_) æbler er faldet ned.
+    Det kan ske på _(k_)-choose-_(7_) måder, og hver gang er
+    chancen _(0.4^7*0.6^{k-7}_), da der er _(7_) dage, hvor
+    der falder æbler og _(k-7_) hvor der ikke falder æbler. 
+    Alt i alt:
+    _($P(X=k)=\VeC[k,7]*0.4^7*0.6^{k-7}_)
+    _(P(Y \gt k)_) <i>kunne</i> vi finde som
+    _($P(Y = k+1) + P(Y=k+2) + P(Y=k+3) + \dots P(Y=\infty)_)
+    ... men vi kunne også lave et langt simplere argument:
+    Hvis det tager <i>længere</i> end _(k_) dage før fuglen har spist
+    et æble, har den ikke spist noget æble de første _(k_) dage.
+    Det er det eneste, der behøver gælde, og 
+    dets sandsynlighed kan let regnes som _((1-0.1)^k_). Ergo:
+    _($P(Y \gt k) = 0.9^k_)
+    Endeligt ser vi at:
+    _($P(Y \gt X) = \sum_{k=7}^{\infty} \VeC[k,7]*0.4^7*0.6^{k-7}*0.9^k_)
+    De første omtrent _(50_) led kan regnes i Geogebra som:
+    _($\text{Sum}(\text{nCr}(k,7)*0.4^7*0.6^{k-7}*0.9^k, k, 7, 50)_)
+    Resultatet er:
+    _($0.3908902625878_)
+    Dette er <i>meget</i> præcist, da samme sum evalueret op til 
+    _(1000_) led giver:
+    _($0.3908898601745_)
+    De fire første cifre er identiske, og det femte fejler med
+    kun _(1_). 
+    </p>
+    <br></answer-box>
+
+    <!--  --> 
+
+    <q-stion 1="16" 2="4">
+    Du spiller et brætspil hvor du hver runde kaster én _(6_)-siddet 
+    terning, der  
+    bestemmer hvor langt du rykker fremad. 
+    Du vil meget gerne lande på felt _(11_), for at få en kæmpe penge-bonus.
+    Du står lige nu på start, også kendt som felt _(0_). Brætspillet
+    er cirkulært og går rundt i ring. 
+    <p class="t">
+    Hvad er chancen for, at du lander på bonusfeltet, før du kommer tilbage til start? 
+    Den her er også tricky!
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Hmm. Det <i>kunne</i> tage dig kun _(2_) slag før du landede på felt _(11_), 
+    men du kunne også blive ved for evigt! Sig:
+    _($X=\text{Antal slag før du rammer felt } 11_)
+    Vi er ikke informeret om det totale antal felter 
+    på pladen, før man rammer start igen, men
+    det har vi heller ikke brug for. Vi skal bare regne:
+    _($P(X \le 11)_)
+    ... eftersom _(11_) er det maksimale antal slag med en _(6_)-siddet
+    terning man kan slå, før man rammer felt _(11_). 
+    Det er intet problem, at vi ikke kan regne nogen
+    sandsynligheder hvis _(X_) er større! 
+    <p class="t">
+    Lad os regne _(P(X=5)_) som eksempel. Her slår vi med fem terninger
+    før vi er _(11_) fremme. Det svarer til:
+    _($x_1+x_2+x_3+x_4+x_5 = 11_)
+    Sådanne problemer har vi løst flere gange før. Vi minusser
+    for det første med _(1+1+1+1+1=5_), da den mindste værdi på alle
+    _(x_) er _(1_):
+    _($u_1+u_2+u_3+u_4+u_5=11-5, \, \, u_1, u_2, u_3, u_4, u_5 \ge 1_)
+    Det totale antal løsninger til denne ligning, <i>inklusiv</i> dem hvor
+    nogle _(u_) er større end _(6_), er:
+    _($\VeC[11-5+(5-1),5-1] = \VeC[10,4] = 210_)
+    Vi skal fjerne de falske løsninger, men det er relativt nemt i dette
+    tilfælde. Kun _(1_) terning af gangen kan være højere end
+    _(6_), da _(6+6 \gt 11_). Hvis det f.eks er _(u_1_), finder vi
+    antallet af falske løsninger gennem:
+    _($(7+u_1)+u_2+u_3+u_4+u_5 = 11-4_)
+    Ergo:
+    _($\VeC[11-7-4+(5-1), 5-1] = \VeC[4,4] = 1_)
+    Alle _(5_) terninger kan potentielt være større end _(6_), så vi siger:
+    _($210 - 5*1=205_)
+    Lad os nu generalisere til _(k_) terninger. Det samlede antal løsninger
+    inklusiv de falske er:
+    _($\VeC[11-k+(k-1), k-1] = \VeC[10,k-1]_)
+    De falske løsninger kan tælles gennem:
+    _($k*\VeC[11-7-(k-1)+(k-1), k-1] = k*\VeC[4,k-1]_)
+    Så:
+    _($P(X=k) = \frac{\VeC[10,k-1]-k*\VeC[4,k-1]}{6^k}_)
+    Nu tæller vi det hele op fra _(2_) slag til _(11_)
+    _($\text{Sum}\left( (\text{nCr}(10, i-1) - i*\text{nCr}(4, i-1))/6^i, i, 2, 11 \right)_)
+    ... og får:
+    _($0.2934_)
+    Voila! En chance på cirka _(30_)%. 
+    </p>
+    <br></answer-box>
+
+
+
+
+
+

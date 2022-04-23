@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+
+
+    <!-- CURL OG DIVERGENCE ANVENDELSER -->
+
+    <p class="t">
+    En af de vigtigste anvendelser af curl og divergence, er to teorier jeg allerede lidt har hintet: "Stokes theorem" og 
+    "The divergence theorem". Stokes theorem lader os kort sagt regne arbejdet rundt omkring en eller anden lukket vej
+    _(\vec r(t)_) ved i stedet at regne en dobbelt-integral af curl på området defineret af _(\vec r(t)_). Nogle gange er den éne 
+    nemmere end den anden, så det kan være dejligt at kunne skifte. Divergence theorem gør meget det sammen, idet at flux 
+    af et lukket område, i stedet kan regnes ved at tage en dobbelt/trippelt integral (i forhold til om det er 2D eller 3D) 
+    af divergence på det område. 
+    </p>
+    <p class="t">
+    Dem her går vi meget mere i dybden med snart, men lad os også se hvordan curl og divergence i sig selv kan være 
+    brugbare, intuitive koncepter.
+    </p>
+
+    <p class="cent">
+        *
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Se følgende video (hold musen over):
+    <hover-video url="../../../Assets/Chapter4\MultivarCalc\Vectorfields\VectorFieldFlow.mp4" ></hover-video>
+    <p class="t">
+    Det her kunne vi måske forestille os var et eller andet stof der flød i en strøm. Sig at strømmens styrke og retning ved et punkt kan modelleres som:
+    _($\vec F = \VeC[\frac{x^2}{2} - \frac{Cos(xy^2)}{y}, \frac{Cos(xy^2)}{2x} - xy]_)
+    I fysik differentierer vi mellem <i>en gas</i> og <i>en væske</i>. Der er mange forskelle mellem disse. En af de
+    vigtigste er at kun en gas kan <i>komprimeres</i>/<i>trykkes sammen</i>. En væskes volume vil aldrig ændre sig. Det her er 
+    en af de store forskelle mellem "fluid dynamics" og "aerodynamics" - aerodynamics er markant sværre da vi ikke længere 
+    kan lave denne antagelse.
+    </p>
+    <p class="t">
+    Jeg vil nu gerne have at du skal vurdere om denne strøm modellerer en gas eller en væske. 
+    </p>
+    <br><br></q-stion>
+    <answer-box>
+    Idéen er at vi her skal tænke over <i>divergence</i>. Hvis divergence er negativ noget sted, så kommer der mere vand <i>ind</i> i et punkt 
+    end der kommmer <i>ud</i>. Derfor bliver volumen samlet set <i>mindre</i>. Hvis divergence er positivt noget, så kommer 
+    der mere vand <i>ud</i> fra et punkt end der kommer <i>ind</i>. Derfor bliver volumen <i>større</i>. Vi kan ud fra dette se, at 
+    hvis et vektor felt skal modellere en væske, så <i>skal</i> divergence være _(0_) overalt. Lad os tjekke om dette er tilfældet for vores:
+    _($¤x \left[\frac{x^2}{2} - \frac{Cos(xy^2)}{y} \right] + ¤y \left[\frac{Cos(xy^2)}{2x} - xy \right] = _)
+    _($x+Sin(xy^2)y + (-Sin(xy^2)y - x) = _)
+    _($0_)
+    Divergence <i>er</i> _(0_) overalt, så dette modellere en væske. Fantastisk! 
+    <br><br></answer-box>
+
+    <p class="cent">
+        *
+    </p>
+
+    <p class="t">
+    En anden anvendelse af curl og divergence er når vi skal få en ide/forståelse for et system af differentialigninger. Et 
+    klassisk eksempel på det kunne være en population af to forskellige typer dyr: Èt rovdyr, det andet offer. 
+    Hvis _(x(t)_) er antal offerdyr, og _(y(t)_) er antal rovdyr, så kunne systemet f.eks. beskrives som: 
+    _($\begin{eqnarray}
+    && x'(t) = \frac{2}{3}x - \frac{4}{3}xy
+    && y'(t) = xy - 1.1y
+    \end{eqnarray}_)
+    Vi har ikke lige tid til at diskutere præcist hvor de her differentialigninger kommer fra, men det giver meget god mening at denne situation 
+    kan modelleres af sådanne et system: Væksten af offerdyr ændrer sig både baseret på mængden af offerdyr der allerede findes, og hvor mange 
+    rovdyr der jæger dem. Lignende, så har både mængden af rovdyr, og hvor meget de har at spise (mængden af offerdyr) indflydelse 
+    på væksten af rovdyr. 
+    </p>
+
+    <p class="t">
+    Det interresante for os lige nu, er at dette system af differentialigninger jo faktisk kan beskrives som et vektor felt:
+    _($\VeC[x'(t),y'(t)] = \VeC[\frac{2}{3}x - \frac{4}{3}xy, xy - 1.1y] = \VeC[M(x,y),N(x,y)]_)
+    Og vi kan plotte det: 
+    </p>
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter4\MultivarCalc\Vectorfields\AnimalVectorField.png'> 
+    <p class="t">
+    Bemærk at det er som om der er et center i midten med nogle "cykluser" omkring sig. Det kan man især ser hvis man animere dette plot: 
+    </p>
+
+    <hover-video url="../../../Assets/Chapter4\MultivarCalc\Vectorfields\VectorFieldFlow2.mp4" ></hover-video>
+
+    <p class="t">
+    De her cyklusser er meget intuitive og interessante: Hvis vi starter et bestemt sted på èn af cykluserne, så bliver vi ved med at være 
+    på den cyklus hele tiden, de hver position _((x,y)_) fortæller os hvilken retning _(x_) og _(y_) bevæger sig i. Selv hvis vi 
+    ikke kan løse systemet, så kan vi stadig forstå en del ting omkring det: 
+    </p>
+
+    <div style="text-align:center; margin-top:10px;">
+        <ul style="display: inline-block; text-align: left; padding-left:0%; list-style:disc;">
+            <li>Hvilke cyklusser er der?</li>
+            <li>Jo mindre en cyklus er, jo mere "stabilt" er systemet (jo mindre ændrer det sig)</li>
+            <li>Hvilken retning går en cyklus? (er curl positiv eller negativ på cyklussen?) </li>
+            <li>Findes der noget "stabilt" punkt som alle cyklusser går omkring (ligesom i eksemplet)? Alt 
+                går "omkring" dette punkt, så det svarer til at divergence skal være lig _(0_) </li>
+        </ul>
+    </div>
+
+    <p class="t">
+    Mere generelt, så kan curl og divergence bare være gode til at beskrive hvordan et vektor felt opfører sig på et mere intuitivt niveau. 
+    </p>
+
+    <p class="cent">*</p>
+
+    <p class="t">
+    Den sidste anvendelse vi skal kigge på, og den vi vil gå mest i dybden med, er <i>elektromagnetisme</i> i fysik. Specifikt de 
+    fire såkaldte "Maxwell's equations".
+    </p>
+    <p class="t">
+    Grundlæggende for alt det her lægger to fundamentale fysiske kræfter: Den elektriske kraft _(\vec F_e_), og den magnetiske kraft _(\vec F_m_). 
+    Den elektriske kraft er meget simpel, og minder en del om tyngdekraften:
+    </p>
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter4\MultiVarCalc\Vectorfields\ElektriskKraft.png'> 
+    <p class="t">
+    Det kan vises at: 
+    _($F_E = -\frac{k_1*q_1*q_2}{r^2}_)
+    Så ladninger frastødder hinanden, og denne frastødning bliver mindre med kvadratet af afstanden, præcist 
+    ligesom tyngdekraften. Formlen er lidt mere interessant, da ladningerne i modsætning til masse godt kan være <i>negative</i>. 
+    Man kan se at hvis èn ladning er negativ, og den anden positiv, så bliver _(F_e_) <i>negativt</i>, hvilke må betyde <i>tiltrækning</i>. 
+    Hvis begge er positive eller begge negative, så er _(F_E_) positiv. _(k_1_) (bare kaldt _(k_)) er en fysisk konstant vi ikke 
+    vil diskutere eller gå i dybden med her: Det er bare et tal ligesom _(G_). 
+    </p>
+    <p class="t">
+    Hvis den elektriske kraft kommer fra ladningers - well, <i>ladning</i> - så kommer den magnetiske kraft 
+    fra at ladningerne <i>bevæger sig</i>. Den magnetiske kraft er mindre intuitiv, så det kræver også lidt 
+    flere billeder for at få en ide omkring hvordan den virker: 
+    </p>
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter4\MultiVarCalc\Vectorfields\MagneticForce.png'> 
+    <p class="t">
+    Den magnetiske kraft kan kun ordentligt forstås som en vektor, og den afhænger både af ladningerne _(q_1, q_2_), af 
+    vektoren fra den ene ladning til den anden _(\vec r_), og af de to hastighedsvektorer af ladningerne _(\vec v_1, \vec v_2_):
+    _($\vec F_M = \frac{k_2*q_1*q_2}{|\vec r|^3}*\left((\vec v_1 \times \vec r) \times \vec v_2 \right)_)
+    Første del minder lidt om den elektriske kraft, bare med en ny konstant _(k_2_), og _(r^3_) i stedet for _(r^2_). Den næste del 
+    er meget anderledes dog: Vi tager <i>to</i> krydsprodukter. Bemærk her at _((\vec A \times \vec B) \times \vec C_) <i>ikke</i>
+    er det samme som _(\vec A \times \left(\vec B \times \vec C \right)_). 
+    Forskellen er illustreret via et eksempel her: 
+    </p>
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter4\MultiVarCalc\Vectorfields\CrossProductNonAssociative.png'> 
+    <p class="t">
+    Her er _(\vec a \times \vec b_) et krydsprodukt mellem to parallele vektorer, så det er lig _(0_). 
+    Som et resultat er _((\vec a \times \vec b) \times \vec c_) også lig _(\vec 0_). Dette er grunden til 
+    at tre af de fem tilfælde på billedet med den magnetiske kraft er lig _(\vec 0_). I første tilfælde 
+    (højre, øverst) er _(\vec v_1 \times \vec r_) parralelt med _(\vec v_2_) , så 
+    _((\vec v_1 \times \vec r) \times \vec v_2_) giver _(\vec 0_). I 
+    de to næste tilfælde er _(\vec r_) og _(\vec v_1_) parallele, så 
+    _(\vec v_1 \times \vec r_), og derfor også _((\vec v_1 \times \vec r) \times \vec v_2_) 
+    giver _(\vec 0_). 
+    </p>
+    <p class="t">
+    Anyways, hvis man kigger på de to tilfælde hvor kraften <i>ikke</i> er _(\vec 0_), så kan 
+    man se at den magnetiske kraft trækker ladninger hvis hastighed går <i>langs</i> den 
+    <i>tættere</i>, og vice versa trækker ladninger hvis hastighed går mod den, 
+    <i>langs</i> retningen af sin egen hastighed. 
+    </p>
+    <p class="t">
+    Det viser sig at det kan være meget brugbart og intuitivt at tænke over den 
+    elektriske og magnetiske kraft i forhold til <i>vektor felter</i>, hvor man 
+    ikke længere kigger på en specifik interaktion mellem to ladninger, men i stedet 
+    forestiller sig at en ladning "genere" et vektor felt der kan have indflydelse på alle mulige 
+    andre ladninger. Vi definerer:
+    _($E(r) = \frac{k_1*q_1}{r^2}, \qquad \vec M(\vec r) = \frac{k_2*q_1}{r^3}*(\vec v_1 \times \vec r)_)
+    Så at en ladning _(q_2_) med hastighed _(\vec v_2_), _(\vec r_) væk fra _(q_1_), oplever 
+    følgende kræfter:
+    _($F_E = E(r)*q_2, \qquad \vec M(\vec r)*q_2 \times \vec v_2_)
+    Det her er bare opfindelser/definitioner, men det kan være brugbart af mange årsager: 
+    </p>
+    <div style="text-align:center; margin-top:10px;">
+        <ul style="display: inline-block; text-align: left; padding-left:0%; list-style:none;">
+            <li>Præcis ligesom med tyngdekraft, så er forholdet mellem ladninger ofte 
+                assymetrisk, hvor den ene ladning måske er meget større 
+                end den anden. I disse situationer behøver man ikke tænke over 
+                den lille ladnings indflydelse på den store</li>
+            <li>Det er lidt mere abstrakt, da det felt én ladning genere jo 
+                kan bruges i mange forskellige sammenhænge i forhold til hvad 
+                den anden ladning er. Så behøver man ikke opsætte lige så mange 
+                specifikke konkrette tilfælde for at studere elektromagnetisme - 
+                hvis man har studeret <i>feltet</i>, så vil det gælde for alle interaktioner.</li>
+            <li>Feltet er et vektor felt, og derfor kan mange af de dejlige resultater 
+                fra vector felter anvendes: F.eks. så er det elektroniske felt konservativt, 
+                hvilke gør det meget let at finde arbejde. Resultater som Stokes theorem vil 
+                også kunne hjælpe os.</li>
+        </ul>
+    </div>
+    <p class="t">
+    Eftersom de er vektor felter, så kan vi <i>visualisere</i> det elektroniske og magnetiske felt.
+    Det elektriske ser ud som:
+    </p>
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter4\MultiVarCalc\Vectorfields\ElectricField.png'> 
+    <p class="t">
+    Det giver meget god mening: kraftet vil altid pege ind mod ladningen. Det magnetiske felt ser ud som: 
+    </p>
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter4\MultiVarCalc\Vectorfields\MagneticFieldCharge.png'> 
+    <p class="t">
+    Det giver faktisk også meget god mening. Hver vektor _(\vec M_) er lig:
+    _($\frac{k_2*q_1}{r^3}*(\vec v_1 \times \vec r)_)
+    _(\vec v_1_) i krydsproduktet sørger for at den del af _(\vec M_) der går langs _(\vec v_1_) skal være 
+    _(0_), da det ellers ikke vil være vinkelret. _(\vec r_) i krydsproduktet sørger for at _(\vec M_) skal være vinkelret 
+    på vektoren der går fra aksen langs _(\vec v_) til punktet. Derfor danner det en slags cirkel der går rundt om aksen, hvis vi 
+    holder punktet radius fra aksis konstant (men bare ændre retningen). Det hele divideres med afstanden fra _(q_1_) i tredje, 
+    så punkter der er længere væk fra aksen (større cirkler) samt punkter der er længere væk <i>langs</i> aksen bliver mindre. 
+    </p>
+    <p class="t">
+    Denne ide om felter kan også hjælpe os med at svare på et spørgsmål du nok har haft i hovedet siden jeg introducere magnetisme:
+    Hvis magnetisme opstår på grund af ladninger der <i>bevæger</i> sig, hvordan kan to simple, stationære magnetiske stænger så 
+    være "magnetiske"?
+    </p>
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter4\MultiVarCalc\Vectorfields\MagneticField2.png'> 
+    <p class="t">
+    Begrundelsen er på ingen måde åbenlys. Som du nok ved, så har hvert atom nogle elektroner der flyver rundt 
+    om en kerne. Elektroner har <i>ladninger</i>, og siden de <i>bevæger</i> sig, så skaber de derfor magnetisme inde i atomen. 
+    Det har dog konkret ingen effekt, da elektronerne flyver i modsatte retninger. Det betyder at de magnetfelte de genererer 
+    er modsatte, så at atomets samlede magnetfelt næsten bare er _(0_). Sagen er så bare den, at elektroner også <i>drejer rundt</i>. 
+    De har - af mærkelige kvantefysiske årsager - såkaldt "spin". Det her spin generer også et magnetfelt. I langt de fleste atomer 
+    drejer elektronerne rundt i modsatte retninger, så at magnetfelterne igen går ud med hinanden. Men i nogle bestemte atomer 
+    drejer elektronerne rundt i <i>samme retning</i>, så at atomet har et samlet magnetisk felt. 
+    </p>
+    <p class="t">
+    Processen fra atomer med små magnetiske felter til en helt magnetisk stang er relativ kompliceret, men ideen er at 
+    nogle bestemte typer atomer (f.eks. jern, kobbolt og nikkel)  har en evne kaldt "ferromagnetisme", hvilke har at gøre med hvordan samlinger
+    af atomerne organiserer sig og lægger sig op ad hinanden. Hvis de <i>ikke</i> er ferromagnetiske, så 
+    er atomer der ligger tæt på hinanden orienteret "omvendt", så at de magnetiske felter går ud med hinanden. 
+    Hvis de er orienteret ordnetligt dog, så bliver alle de magnetiske felter lagt sammen, hvilke derved skabber èt, meget 
+    stærkere samlet magnetisk felt (fordi det er jo bare en masse vektorer der bliver lagt sammen). Det her er grunden til at 
+    vi kan sige at en stangmagnet har et samlet "magnetisk felt" som vist på billedet deroppe (dog er det reelt i 3D og ikke 2D). 
+    </p>
+    <p class="t">
+    En magnet har en "nordpol og sydpol", fordi at vektorene på sydpolen er identiske med vektorene på nordpoler, udover
+    at de bare går i den modsatte retning. Så når krydsproduktet der regner kraften bliver taget, vil retningen modsættes 
+    hvis nordpolen bruges i stedet for sydpolen. Derfor enten frastødder eller tiltrækker magneter hinanden. 
+    </p>
+
+    <p class="cent"> ... </p>
+
+    <p class="t">
+    Alright, hvor var vi? Nå jo! Curl, divergence, og Maxwells ligninger! Eftersom magnetfelter og elektriske felter er <i>vektor felter</i>, 
+    så kan vi også tænke over deres curl og divergence. Det viser sig at <i>alle</i> love i elektromagnetisme elegant kan beskrives 
+    ved hjælp af fire, relativt simple ligninger (skrevet i en ekstra forsimplet version her):
+    </p>
+
+    <div style="text-align:center; margin-top:10px;">
+        <ul style="display: inline-block; text-align: left; padding-left:0%; list-style:disc;">
+            <li><b> 1</b>: _(Divergence(\vec E)(x,y,z) = \text{Densitet af ladning ved } (x,y,z) _)</li>
+            <li><b> 2</b>: _(Divergence(\vec M)(x,y,z) = 0_)</li>
+            <li><b> 3</b>: _(\vec{Curl}(\vec E)(x,y,z) = ¤t \vec M(x,y,z)_)</li>
+            <li><b> 4</b>: _(\vec{Curl}(\vec M)(x,y,z) = \text{Densitet af ladningsflow}(x,y,z) + ¤t \vec E(x,y,z)_)</li>
+        </ul>
+    </div>
+
+    <p class="t">
+    Det her virker som noget af en mundfuld, men det er faktisk relativt intuitivt. Lad os gå gennem hver enkel og forstå 
+    hvad den siger:
+    </p>
+
+    <p class="t">
+    <i> 1</i>: Den her fortæller på en lidt mere generel måde at "ladning frastøder". På mange måder 
+    så minder ladning om <i>masse</i>. Ligesom at vi kan tælle den samlede masse af et område ved at 
+    kende <i>massedensiteten</i> af hvert punkt, så kan også tælle den "samlede ladning" på et område 
+    hvis vi har <i>ladningsdensiteten</i> på hvert punkt. Vi ved at "1 ladning" skaber et vektor felt hvor 
+    alle vektorer enten peger mod eller væk fra ladningen. I andre ord: Dette er et vektor felt med enten 
+    meget negativ eller meget positiv <i>divergence</i> ved ladningens position. Problemet er 
+    bare at vi i virkeligheden sjælendt kan tænke over "ladninger" som hele, diskrete objekter ligesom 
+    elektroner ofte bliver visualiseret, eller ligesom vi tænker over et objekt med masse. Forestil 
+    dig en kasse fyldt med lyn og strøm: Kan du sige "der er 3678 lyn her"? Nej, men du kan godt 
+    sige at den ene kasse måske har en stærk densitet af strøm og lyn i forhold til den anden. Selv hvis vi 
+    på det helt teoretiske niveau kunne tænke over diskrete, individuelle ladninger, så ville det være meget 
+    mere praktisk at tænke over èn densitet af ladning, end millioner/millarder små ladninger. Derfor 
+    generaliserer Maxwells første lov ideen om èn ladning, til èn <i>ladningsdensitet</i>, ved ét punkt. 
+    Meget simpelt: Jo stærkere ladningsdenisteten er, jo mere divergence er der ved det elektroniske felt ved 
+    det punkt, hvilke betyder at feltet bliver stærkere omkring det punkt, og derved frastøder mere omkring det punkt. 
+    Jo stærkere ladningsdensitet, jo mere frastødning: Præcis det samme som formlen for elektrisk kraft 
+    siger, bare lidt mere generelt i forhold til densitet i stedet for individuel ladningsstyrke. 
+    </p>
+
+    <p class="t">
+    Første maxwells lov bliver også nogle gange beskrevet i en mere makroskopisk version:
+    _($Flux(R) = \text{Samlet ladning inde i } R_)
+    Det her følger som et direkte resultat hvis vi tænker over den såkaldte "divergence theorem" jeg 
+    hintede til tidligere. Den sagde at flux af _(\vec F_) på et område _(R_) kunne findes ved at lægge 
+    divergence af _(\vec F_) sammen overalt på _(R_) via integraler. Den samlede ladning inde i _(R_) svarer 
+    <i>netop</i> til dette integral af ladningsdensiteten overalt på _(R_)! Så vi har faktisk talt 
+    divergence af _(\vec E_) på _(R_) sammen, og derved talt mængden af flux gennem _(R_). Fantastisk!
+    </p>
+
+    <p class="t">
+    <i> 2</i>: Den her fortæller os bare at divergence på det magnetiske felt overalt er lig _(0_). 
+    Det passer meget godt med billedet vi så af det magnetiske felt fra èn ladning: Rotation overalt omkring 
+    aksen defineret af ladningens hastighed, men <i>ingen</i> vektorer der faktisk gik tættere på denne akse. 
+    Præcis ligesom første lov beskrev den elektroniske kraft på en lidt mere generel måde, så beskriver denne 
+    bare den magentiske kraft på en lidt mere generel måde. Den fortæller os også indirekte, at hvis vi skal 
+    skabe et magnetisk felt, så er vi nødt til at skabe <i>curl</i>, siden der intet divergence er. Curl af 
+    et magnetisk felt kan altså også ses lidt analogt som dets styrke. 
+    </p>
+
+    <p class="t">
+    <i> 3</i>: Den her kender ud måske fra folkeskolen som <i>induktion</i>. En af dens konsekvenser er 
+    i hvert fald at magnetisme kan skabe strøm. For at forstå præcist hvad denne lov siger, så skal vi 
+    forstå at de med _(\vec{curl}_) ikke refferere til et <i>tal</i> ligesom divergence eller curl i de 
+    to tidligere, men i stedet den <i>vektor</i> vi definerede tidligere: En vektor hvis retning er lig retningen 
+    med den største curl, og hvis længde er lig mængden curl <i>i</i> denne retning. Så en ændringen over tid af 
+    det magnetiske felt, skaber curl i retningen af denne ændring i det elektriske felt:
+    </p>
+
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter4\MultivarCalc\Vectorfields\InduktionMagnetisme.mp4' type='video/mp4'>
+    </video>
+
+    <p class="t">
+    <i> 4</i>: Lad os lige ignorere den _(¤t \vec E(x,y,z)_) vi plusser med, og først og fremmest fokusere på
+    den her "densitet af ladningsflow" (ofte kaldt bare "_(J_)"). Med det mener jeg "hvor hurtigt ladningen strømmer 
+    gennem et bestemt område", eller mere specifikt: Hvor <i>meget</i> ladning der strømmer gennem en bestemt flade i rummet. 
+    Det er lidt bare en fancy møde at sige "strømstyrke" på: Ladning pr tid, som du normalt ville måle i enheden "ampere". 
+    Alle de her fire lover gælder dog for <i>punkter</i> _((x,y,z)_) generelt, og ikke for områder. Derfor siger vi ikke 
+    direkte bare "strømstyrke", men i stedet "<i>densiteten</i> af ladningsflowet ved _((x,y,z)_)", hvilke er en 
+    størrelse der kan være ret svær at forestille sig visuelt. Helt konkret dog, så kan vi se at denne lov fortæller
+    os at strøm gennem en ledning skaber curl i det magnetiske felt:
+    </p>
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter4\MultivarCalc\Vectorfields\Electromagnetism.png'> 
+    <p class="t">
+    Vi ved at curl af det magnetiske felt intuitivt fortæller os <i>styrken</i> af det magnetiske felt, så 
+    på et helt simpelt niveau fortæller denne lov os bare at strøm skaber magnetisme. Det kender du måske som 
+    <i>elektromagnetisme</i>. Sådan her kan vi f.eks. lave en plade hvis magnetisme-niveau kan styres ved hjælp af 
+    strøm. Vi kan også f.eks. bruge det sammen med den tidligere lov til at "sende" strøm en kort afstand gennem luften fra én ledning til en anden:
+    </p>
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter4\MultivarCalc\Vectorfields\ElectromagnetismApplication.mp4' type='video/mp4'>
+    </video>
+    <p class="t">
+    I fjerde lov plussede vi også med _(¤t \vec E(x,y,z)_). Dette led kan i mange hverdagskontekste ignoreres, og blev også 
+    først opdaget senere. Alligevel så er det meget vigtigt og interresant, hvilke kan ses hvis vi 
+    midlertidigt ignorere "densitet af ladningsflow", og skriver både tredje og fjerde lov op igen: 
+    _($\begin{eqnarray}
+    && \vec{Curl}(\vec E)(x,y,z) & = ¤t \vec M(x,y,z) \\
+    && \vec{Curl}(\vec M)(x,y,z) & = ¤t \vec E(x,y,z) 
+    \end{eqnarray}_)
+    Så ændringer i det magnetiske felt skaber curl i det elektriske felt, og ændringer i det elektriske felt 
+    skaber curl i det magnetiske felt. <i>Men</i>: Ny curl i det elektriske felt <i>er</i> en <i>ændring</i> i 
+    det elektriske felt, og den <i>ændring</i> skaber så ny curl i det magnetiske felt, hvilke også er en <i>ændring</i>,
+    som derfor skaber ny curl i det elektriske felt, osv. Det er ikke nødvendigvis en process der <i>forstærker</i> sig selv, men 
+    det er en proces der <i>bliver ved</i>, og det her er grundprincippet bag hvordan radiobølger opstår og rejser! Følgende video
+    viser det: 
+    </p>
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter4\MultivarCalc\Vectorfields\RadioWaves.mp4' type='video/mp4'>
+    </video>
+
+    <p class="cent">*</p>
+
+    <p class="t">
+    Så ja, jeg håber jeg har overbevist dig om at curl og divergence kan være brugbare koncepter! 
+    </p>
+

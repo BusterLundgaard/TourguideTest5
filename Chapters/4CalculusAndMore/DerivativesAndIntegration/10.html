@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+
+
+    <h2>Approksimer én funktion med en anden <br> via <i>Taylor polynomier</i></h2>
+    <p class="t">
+    ... ikke helt dog! Jeg vil gerne "hurtigt" nævne 
+    èn vigtig anvendelse af differentiation, før vi går videre til integraler:
+    De såkaldte "Taylor polynomier". 
+    Hvis du har glemt det, er et polynomie en funktion der passer:
+    _($a_n*x^n+a_{n-1}*x^{n-1}+a_{n-2}*x^{n-2}+\text{ }...\text{ }a_2*x^2+a_1*x+a_0_)
+    En sum af led, der alle består af en konstant ganget med _(x_) opløftet til
+    en potens. Langt de fleste funktioner som _(Sin(x)_) passer <i>ikke</i> denne form. 
+    Det er dog også en ret <i>praktisk</i> form, der er nem at arbejde med rent matematisk.
+    Det her er formålet med Taylor polynomier: De <i>approximere</i> en <i>ikke</i>-polynomial
+    funktion _(f(x)_) <i>ved hjælp af</i> et polynomie _(T(x)_), og
+    det polynomie er i visse tilfælde 
+    lettere at arbejde med rent matematisk. Man kan f.eks. vise, at 
+    _($Sin(x) \approx x - \frac{x^3}{6} + \frac{x^5}{120} - \frac{x^7}{5040}_)
+    Du kan se hvor meget de to funktioner ligner hinanden her:
+    </p>
+
+    <img class='SpicXL' style='width:100%' src='../../../Assets/Chapter4\DerivativesAndIntegrals\Taylor1.png'> 
+
+    <p class="t">
+    Polynomier har mange dejlige egenskaber. De er lette at differentiere, og 
+    - som vi vil se senere - lette at finde arealet under. Ofte arbejder man med stykker
+    hvor der både er eksponenter _(a^x_), potenser _(x^a_), trigonometriske funktioner
+    _(Sin(x)_) og meget mere. De arbejder sjælen godt sammen: Især hvis de
+    er gangede eller plussede. Derfor kan det være praktisk at omskrive dem alle til 
+    polynomier, så ens komplicerede stykke nu er èt stor polynomie. Taylor polynomier
+    er et dejligt værktøj i teoretisk matematik også, da de 
+    kan fungere som <i>perfekte</i> approksimationer. Det dækkes
+    i kapitlet om grænser. 
+    </p>
+
+    <p class="t">
+    <i>Så</i> hvordan gør man det? 
+    Hvordan konstruerer man et passende Taylor-polynomie til ens funktion? 
+    Lad os illustrere ideen gennem _(f(x)=e^x_):
+    </p>
+
+    <img class='Spic' style='width:50%' src='../../../Assets/Chapter2\Section4\Complex numbers\E1.png'> 
+    <p class="t">
+    På _(x=0_) er _(e^x_) lig _(1_) og har en hældning på _(1_). En <i>dårlig</i> approksimation kunne
+    derfor være:
+    _(y=1*x+1_)
+    Det matcher med både hældningen og værdien på _(x=0_):
+    </p>
+    <img class='Spic' style='width:50%' src='../../../Assets/Chapter2\Section4\Complex numbers\E2.png'> 
+    <p class="t">
+    De ville minde <i>mere om hinanden</i>, hvis de også havde samme "hældning-hældning".
+    Hvis det på Taylor-polynomiet ligeså hurtigt blev <i>stejlere</i> ved _(x=0_) 
+    som hos _(e^x_). Det svarer til:
+    _($y=\frac{1}{2}*x^2+1*x+1_)
+    ... Siden dens "hældning-hældning" ved
+    _(0_) er _(1_), da 
+    _($¤x \left[\frac{1}{2}*x^2+1*x+1 \right] = 1x + 1_) 
+    ... og _(d/dx[1x+1]=_) _(1_):
+    </p>
+    <img class='Spic' style='width:50%' src='../../../Assets/Chapter2\Section4\Complex numbers\E3.png'> 
+    <p class="t">
+    Det her er bedre, men stadig ikke perfekt. Problemet er, at _(e^x_) også har 
+    en <br>"(hældning-hældning)-hældning". 
+    Vi kan blive ved med at finde hældninger at dets hældninger forevigt,
+    da de alle er lig _(e^x_), hvis hældning er _(e^x_) ... osv. 
+    Jo flere krav vi opfylder, jo bedre bliver approksimationen,
+    og jo flere led får Taylor-polynomiet. Det er en kompromis, og vi må
+    selv vurdere, hvornår vi er tilfredse. 
+    Jeg har plottet polynomier der opfylder op til de fire første krav her:
+    </p>
+    <img class='Spic' style='width:50%' src='../../../Assets/Chapter2\Section4\Complex numbers\E4.png'> 
+    <p class="t">
+    De begynder virkelig at nærme sig! 
+    Ved nogle bestemte funktioner kan man matematisk bevise, 
+    at Taylor polynomiet er <i>lig</i> funktionen man approximere _(e^x_), hvis
+    alle uendelig mange hældninger matcher på funktionen man approximere - 
+    det kræver dog <i>uendelig</i> mange led på polynomiet. Igen
+    et emne til næste afsnit, hvor vi arbejder med grænser.
+    </p>
+    
+    <q-stion 1="10" 2="1">
+    Find en polynomial funktion _(f(x)_), hvor:
+    <ul style="list-style: disc; margin-left:4%;">
+        <li>Dens værdi ved _(x=0_) er det samme som _(e^x_)'s værdi ved _(x=0_)</li>
+        <li>_(d/dx[f(x)]_) er det samme som _(d/dx[e^x]_) ved _(x=0_) </li>
+        <li>_(d/dx^2[f(x)]_) er det samme som _(d/dx^2[e^x]_) ved _(x=0_), hvor
+            _(d/dx^2_) altså betyder vi differentierer to gange. </li>
+        <li>_(d/dx^3[f(x)]_) er det samme som _(d/dx^3[e^x]_) ved _(x=0_) </li>
+    </ul>
+    <br></q-stion>
+    <answer-box>
+    Lad os starte med et lidt nemmere problem: Hvad hvis vi <i>kun</i> skulle opfylde det tredje krav?
+    Hvis kun hældning-hældning-hældningerne behøvede
+    være identiske ved _(x=0_)?
+    <p class="t">
+    Vi burde nok starte med _(x^3_), siden vores funktion skal være et konstant tal
+    <i>efter</i> den differentieres tre gange:
+    _($\frac{d}{dx^3}[x^3]=3*2=6_)
+    Tallet skal være lig _(1_), ikke _(6_), så vi vælger i stedet _(x^3/6_): 
+    _($\frac{d}{dx^3} \left[\frac{1}{6}*x^3 \right] = \frac{1}{6}*\frac{d}{dx^3} = \frac{1}{6}*6 = 1_)
+    Bum! 
+    Hvis vi vil have polynomiet til at opfylde de andre krav, kan vi tage inspiration fra:
+    _($\frac{1}{2}x^2+1*x+1_)
+    Det opfyldte alle tre krav, 
+    da både _(1*x_) og _(\frac{1}{2}x^2_) forsvandt, hvis vi slet ikke
+    differentierede. De var stadig ganget med _(x_), som jo er _(0_). Modsat,
+    forsvandt _(1*x_) og _(1_) hvis vi differentierede to gange, 
+    da deres eksponenter ikke kunne overleve flere differentieringer. Hvis vi 
+    differentierer _(1_) gang, forsvinder både _(\frac{1}{2}x^2_) og _(1_), siden
+    _(1_) ikke har høj nok eksponent, og _(\frac{1}{2}x^2_) har <i>for høj</i> eksponent, og
+    derfor bliver ganget med _(x_). Der er altid kun <i>ét enkelt led</i> der "overlever". 
+    Vi starter fra _(1_), og bevæger os én eksponent op hver gang vi differentierer. 
+    Derfor kan vi let
+    plusse _(\frac{1}{6}x^3_) med de andre!
+    _($f(x)=1+1*x+\frac{1}{2}*x^2+\frac{1}{6}*x^3_)
+    Vi tjekker lige for en sikkerheds skyld, om det virker:
+    _($\begin{eqnarray}
+    && \frac{d}{dx^1}[f(x)] = 1 + 1*x + \frac{1}{2}x^2  \\ \\
+    && \frac{d}{dx^2}[f(x)] = 1 + 1*x  \\ \\
+    && \frac{d}{dx^3}[f(x)] = 1 
+    \end{eqnarray}_)
+    Så:
+    _($\begin{eqnarray}
+    && f(0)=1+1*0+\frac{1}{2}*0^2+\frac{1}{6}*0^3=1 \\ \\
+    && f'(0)=1+1*0+\frac{1}{2}*0^2=1 \\ \\
+    && f''(0)=1+1*0=1 \\ \\
+    && f'''(0)=1 
+    \end{eqnarray}_)
+    Voila!
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="10" 2="2">
+    Helt generelt: Hvad er _(f(x)_), hvis det skal have samme hældning som _(e^x_) helt op til
+    "_(n_) gange"? Find et eller andet mønster. 
+    <br><br></q-stion>
+    <answer-box>
+    Vi ved, at hvis vi har et led, der opfylder første krav, et led der opfylder andet krav, tredje,
+    fjerde, osv., kan vi bare plusse dem og få vores svar. Lige nu kan vi se, at
+    <div style="text-align:center; margin-top:-10px; margin-bottom:-10px;">
+        <ul style="display: inline-block;">
+            <li>_(f(x)=1_) opfylder første krav</li>
+            <li>_(f(x)=1*x_) opfylder andet krav </li>
+            <li>_(f(x)=\frac{1}{2}x^2_) opfylder tredje krav </li>
+            <li>_(f(x)=\frac{1}{6}x^3_) opfylder fjerde krav </li>
+        </ul>
+    </div>
+    <p class="t">
+    Man kan nemt se, at _(x^4/k_1_) (hvor _(k_1_) er en konstant) opfylder femte krav,
+    _(x^5/k_2_) opfylder sjette krav, _(x^6/k_3_) opfylder næste krav osv. _(x^3_) skulle divideres
+    med _(3*2=6_), fordi vi først hev _(3_) ud af den første eksponent, så hev _(2_) ud af den næste, 
+    og så nåede til _(1_), hvor vi ikke kunne hive mere ud længere. 
+    For at få _(x^4_) lavet om til en konstant, skal vi lignende hive _(4_) ud,
+    så _(3_), så _(2_), og så intet mere. Ergo 
+    _($k_1=4*3*2=4!=24_)
+    Dette kan let generaliseres: _(x^n_) skal divideres med konstanten _(n!_). 
+    Det _(n_)'te krav er altså opfyldt af:
+    _($\frac{x^n}{n!}_)
+    Derfor kan vi bare sige:
+    _($f(x)=1+\frac{x}{1!}+\frac{x^2}{2!}+\frac{x^3}{3!}+\frac{x^4}{4!}+\frac{x^5}{5!}\text{ } + \, ... \, = \sum_{i=0}^{n} \frac{x^i}{i!}_)
+    Voila! 
+    </p>
+    <br></answer-box>
+
+    <q-stion 1="10" 2="3">
+    Find et lignende mønster, som du gjorde i sidste opgave, nu bare med 
+    _($Sin(x)_) 
+    ... i stedet for _(e^x_). 
+    <br><br></q-stion>
+    <answer-box>
+    _(e^x_) ved _(x=0_) var ret let at approximere, siden dets værdi og hældning altid var
+    _(1_). Ved _(Sin(x)_) er det mere kompliceret. 
+    _(Sin_) differentieret èn gang er _(Cos_), _(Sin_) differentieret to gange
+    er _(-Sin_), _(Sin_) differentieret tre gange er _(-Cos_), og _(Sin_) differentieret
+    _(4_) gange er bare _(Sin_). Mønsteret gentager sig, og vi kan se at:
+    <div style="text-align:center; margin-top:-10px; margin-bottom:-10px;">
+        <ul style="display: inline-block;">
+            <li>_(f(0)=0_) </li>
+            <li>_(f'(0)=1_) </li>
+            <li>_(f''(0)=0_)</li>
+            <li>_(f'''(0)=-1_)</li>
+            <li>_(f'^{4}(0)=0_)</li>
+            <li>_(f'^{5}(0)=1_) </li>
+            <li>_(\vdots_) </li>
+        </ul>
+    </div>
+    <p class="t">
+    Vi skal derfor få vores led til skiftevis at give _(1_), _(0_), _(-1_) og så _(0_) igen. 
+    _(0_)'erne betyder, at vi fuldkommen dropper hvert andet led. Vi ved, at _(x^i/i!_) giver
+    _(1_), så hvis det skal give _(-1_) siger vi bare _(-x^i/i!_). Vi kan 
+    se, at _(f(x)=x_) opfylder de to første krav, siden _(f(0)=0_), og _(f'(0)=1_). Alt i alt:
+    _($f(x)=x-\frac{x^3}{3!}+\frac{x^5}{5!}-\frac{x^7}{7!}+\frac{x^9}{9!} \, ... \, = \sum_{i=0}^{n} (-1)^{i} \frac{x^{2*i+1}}{(2*i+1)!}_)
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="10" 2="4">
+    Gør det samme som i de to sidste opgaver, nu bare med 
+    _($\frac{1}{1-x}_) 
+    ... i stedet for _(e^x_)
+    <br><br></q-stion>
+    <answer-box>
+    Lad os ligesom før få et indtryk over de forskellige _(f(0)_), _(f'(0)_), _(f''(0)_) osv. 
+    Følger de noget bestemt mønster? _(f(0)_) er bare _(1_) da:
+    _($\frac{1}{1-0}=1_)
+    For at finde de andre differentierer vi lige først _(1/(1-x)_) en masse gange:
+    _($\begin{eqnarray}
+    && ¤x \left[\frac{1}{1-x} \right] = -\frac{¤x[1-x]}{(1-x)^2} = -\frac{-1}{(1-x)^2} = \frac{1}{(1-x)^2} \\ \\
+    && ¤x \left[\frac{1}{(1-x)^2} \right] = -2*\frac{¤x[1-x]}{(1-x)^3} = \frac{2}{(1-x)^3} \\ \\
+    && ¤x \left[\frac{2}{(1-x)^3} \right] = -3*\frac{2*¤x[1-x]}{(1-x)^4} = \frac{3*2}{(1-x)^4} \\ \\
+    && ¤x \left[\frac{3*2}{(1-x)^4} \right] = \frac{4*3*2}{(1-x)^5}
+    \end{eqnarray}_)
+    Nævneren forsvinder, når vi evaluerer ved _(x=0_), så vi kan let
+    generalisere og se, at
+    _($f^{''' \, \dots \, n \text{ gange}}(0) = n!_)
+    Super simpelt! Det er også virkelig dejligt, fordi 
+    _(x^i/i!_) sørger for at hældningen er _(1_), så hvis den skal være
+    _(i!_), ganger vi bare med det og får: 
+    _($\frac{x^i}{i!}*i! = x^i_)
+    Voila! Hvert led tager formen _(x^i_), så det endelige polynomial ser ud som:
+    _($f(x)=1+x^2+x^3+x^4+x^5 \text{ } + \text{} ... = \sum_{i=0}^{n} x^i _)
+    Fantastisk simpelt!
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="10" 2="5">
+    Gør det samme som i de sidste tre opgaver, nu bare med 
+    _($a^x_)
+    ... hvor _(a_) er et positivt tal. 
+    <br><br></q-stion>
+    <answer-box>
+    Hældningen af _(a^x_) er 
+    _($Ln(a)*a^x_)
+    Hældningen af det er 
+    _($Ln(a)*Ln(a)*a^x_)
+    ... Og sådan kan man blive ved. Vi kan let generalisere til den "_(i_)'ne" hældning:
+    _($\frac{d}{dx^i} \left[a^x \right] = Ln(a)^i*a^x_)
+    Som altid evaluerer vi disse værdier når _(x=0_), så:
+    _($Ln(a)^i*a^0 = Ln(a)^i_) 
+    Vores approksimation bliver derfor til:
+    _($\sum_{i=0}^{n} Ln(a)^i*\frac{x^i}{i!}_)
+    Bum! 
+    <p class="cent">
+        *
+    </p>
+    <p class="t">
+    Hvis vi skal være helt generelle, kan Taylor-approksimationen _(T(x)_) af 
+    _(f(x)_) omkring _(x=0_) beskrives som:
+    _($\sum_{i=0}^{n} f^{'i}(0)*\frac{x^i}{i!} _)
+    Så kan man hæve _(n_) i forhold til, hvor præcist man vil have det skal være. Vi så
+    helt i starten, at _(n_) opløftet til _(3_) virkede relativt fint for _(Sin(x)_).
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+  
+    <q-stion 1="10" 2="6">
+    Find en taylor-approksimation til 
+    _($1/x_)
+    Støder du på noget problem? Er det overhovedet muligt
+    at bruge den generelle formel jeg noterede i sidste opgave? Hvorfor/hvorfor ikke?
+    <p class="t">
+    Hvis den gamle formel ikke virker, skal du finde på et nyt alternativ selv!
+    </p>
+    <br></q-stion>
+    <answer-box>
+    For det første: Hvad er værdien af _(1/x_) når _(x=0_)? 
+    <p class="t">
+    Det kan vi slet ikke sige!
+    Man kan ikke dividere med _(0_)!
+    </p>
+    <p class="t"> 
+    Vi støder ind i samme problem med hældningerne til _(1/x_), 
+    som går _(-1/x^2_), _(2/x^3_), _(-3*2/x^4_), osv, hvor vi også dividerer med _(0_). Hvad nu?
+    </p>
+    <p class="t">
+    Formlen og processen vi har brugt approximerer funktionen <i>omkring</i>
+    _(x=0_). Tag et kig på approksimationen af _(Sin(x)_) igen:
+    </p>
+    <img class='Spic' style='width:95%' src='../../../Assets/Chapter4\DerivativesAndIntegrals\Taylor1B.png'> 
+    <p class="t">
+    Den er mest præcis omkring _(0_), og bliver mindre præcis, jo længere vi går fra center. 
+    Det giver helt fint mening,
+    når man tænker over logikken bag hvorfor taylor-approksimationer
+    overhovedet virker: Vi starter et bestemt sted, og bruger hældningen 
+    og hældningernes hældninger til at approximere, hvor vi nu skal bevæge os. 
+    Jo længere væk vi kommer fra "stedet", jo dårligere
+    bliver approksimationen! Det virker tydeligvis ikke at approximere _(1/x_) omkring
+    _(x=0_), så lad os bare approximere omkring _(x=1_). Her får vi: 
+    _($\begin{eqnarray}
+    && \frac{1}{1} = 1 \\ \\
+    && \frac{-1}{1^2} = -1 \\ \\
+    && \frac{2}{1^3} = 2 \\ \\
+    && \frac{-3*2}{1^4} = -3! \\ \\
+    && \frac{4*3*2}{1^5} = 4! 
+    \end{eqnarray}_)
+    Vi kan let generalisere og få:
+    _($f^{'i}(1) = (-1)^i*i!_)
+    Vores approksimation er ikke længere centreret omkring _(0_), så den tidligere formel virker ikke:
+    _($\sum_{i=0}^{n} f^{'i}(0)*\frac{x^i}{i!}_)
+    For det første er _(f^{'i}(0)_) selvfølgelig blevet til _(f^{'i}(1)_). For det
+    andet virker vores trick med _(x^i_) ikke længere: Hele ideen var, at
+    en masse af ledende forsvandt da vi indsatte _(x=0_), men det virker
+    ikke længere, nu hvor vi indsætter _(x=1_)! Vi erstatter
+    derfor _(x^i_) med _((x-1)^i_), som jo er _(0_) ved _(x=1_)
+    _($\sum_{i=0}^{n} f^{'i}(1)*\frac{(x-1)^i}{i!}_)
+    Nu virker det! I vores tilfælde får vi:
+    _($\sum_{i=0}^{n} (-1)^i*i!*\frac{(x-1)^i}{i!} = \sum_{i=0}^{n} (-1)^i (x-1)^i_)
+    </p>
+    <p class="cent">
+        *
+    </p>
+    <p class="t">
+    Lad os generalisere. For at approximere funktionen
+    _(f(x)_) <i>omkring</i> _(x=a_) siger man:
+    _($\sum_{i=0}^{n} f'^{i}(1)*\frac{(x-a)^i}{i!} _)
+    Hvilket virker eftersom _((x-a)_) er _(0_) når man indsætter _(x=a_). 
+    </p>
+    <br></answer-box>
+
+    <q-stion 1="10" 2="7">
+    Sig at du i en bestemt anvendelse skal bruge _(Arctan(x)_). Du er kun interesseret
+    i positive værdier af _(x_), der sjælen bliver højere 
+    end ca. _(4_), og du vil gerne approximere _(Arctan_) som et polynomie, siden
+    den er upraktisk at arbejde med matematisk. 
+    Dit polynomie skal ikke blive for komplekst, så du
+    begrænser dig til en approksimation op til tre hældninger. 
+    Det svarer til et tredjegradspolynomie.
+    <p class="t">
+    Vælg et godt, logisk sted at approximere _(Arctan_) omkring, og 
+    find approksimationen. 
+    Test hvor god approksimationen er ved at plotte den sammen med _(Arctan(x)_) inde i 
+    Geogebra.
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Lad os først vurdere <i>hvor</i> vi skal approximere _(Arctan(x)_). 
+    Vores specifikke _(Arctan(x)_) tager (sådan ca.) værdier mellem _(0_) og _(4_):
+    <img class='Spic' style='width:39%' src='../../../Assets/Chapter4\DerivativesAndIntegrals\ArctanTaylor1.png'> 
+    <p class="t">
+    Jeg tænker <i>ikke</i> det er en super god ide at approximere omkring _(0_). Jo længere
+    væk vi kommer fra _(0_), jo mere upræcist bliver det. Samme gælder alle andre steder vi kunne vælge,
+    men problemet med _(0_) er, at vi kun kan gå èn retning. Derfor kan vi arbejde med dobbelt så
+    få værdier, før det bliver meget upræcist. Så et sted "i midten" ville nok være godt.
+    Midten mellem _(0_) og _(4_) er _(2_), men lad os vælge _(x=1.5_) i stedet, da de
+    små værdier nok har brug for højere præcision:
+    </p>
+    <p class="t">
+    _(Arctan(1.5)=0.9827_). Vi finder nu de tre første hældninger. Vi ved fra tidligere at:
+    _($¤x[Arctan(x)] = \frac{1}{1+x^2}_)
+    Så:
+    _($ ¤x \left[(1+x^2)^{-1} \right] = -(1+x^2)^{-2}*(2x)_)
+    Og:
+    _($\begin{eqnarray}
+    && ¤x \left[-2x*(1+x^2)^{-2} \right] = \\ \\
+    && -2 (1+x^2)^{-2} - 2x*(-2)*(1+x^2)^{-3}*(2x) = \\ \\
+    && 8x^2 (1+x^2)^{-3} - 2 (1+x^2)^{-2}
+    \end{eqnarray}_)
+    Vi regner nu disse hældningers værdier ved _(x=1.5_):
+    _($\begin{eqnarray} 
+    && \frac{1}{1+1.5^2} = 0.3076 \\ \\
+    && -(1+1.5^2)^{-2}*(2*1.5) = -0.284 \\  \\
+    && 8*(1.5)^2 (1+1.5^2)^{-3} - 2 (1+1.5^2)^{-2} = 0.335
+    \end{eqnarray}_)
+    Så approksimationen bliver:
+    _($0.9827 + \frac{0.307}{1!} (x-1.5) - \frac{0.284}{2!} (x-1.5)^2 + \frac{0.355}{3!} (x-1.5)^3_)
+    Hvis vi plotter det i Geogebra får vi:
+    </p>
+    <img class='Spic' style='width:50%' src='../../../Assets/Chapter4\DerivativesAndIntegrals\ArctanTaylor2.png'> 
+    <p class="t">
+    Det bliver en smule upræcist, som vi nærmer os _(4_), men ellers virker det ret godt! 
+    Det kan ses, at _(x=2_) er et lidt bedre "all-around" valg:
+    </p>
+    <img class='Spic' style='width:50%' src='../../../Assets/Chapter4\DerivativesAndIntegrals\ArctanTaylor3.png'> 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="10" 2="8">
+    Lav en Taylor-approksimation af 
+    _($\sqrt{4x-x^2}_)
+    ... op til en fire hældninger. Du skal igen selv bestemme, hvor det er bedst at starte approksimationen. 
+    <p class="t">
+    Det bliver meget hurtigt rodet at differentiere _(\sqrt{4x-x^2}_) gang på gang, 
+    så det er fint, hvis du i denne opgave bruger Geogebras _(\text{Derivative}_) funktion.
+    Du skriver bare en funktion i kommandoens parenteser, og
+    ud kommer hældningen. 
+    Hvis du føler, at du har fint styr på differentiering, har jeg det fint med,
+    at du bruger denne funktion, når du har lyst gennem resten af bogen. 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Lad os først af alt plotte funktionen, så vi får en ide omkring, hvor vi burde
+    approximere den henne:
+    <img class='Spic' style='width:50%' src='../../../Assets/Chapter4\DerivativesAndIntegrals\NewTaylor1.png'> 
+    <p class="t">
+    Den går mellem _(0_) og _(4_) og er symmetrisk. Lad os derfor approximere omkring _(x=2_).
+    Vores polynomie burde <i>også</i> være symmetrisk omkring dette punkt, så den skal
+    kun have lige potenser på dens _((x-2)_)-led. Det betyder, at
+    koefficienten på _((x-2)^1_), _((x_2)^3_), _((x_4)^5_) osv skal være _(0_). 
+    </p>
+    <p class="t">
+    Startværdien kan vi let se er _(2_). Nu mangler vi bare koefficienten på 
+    _((x-2)^2_) og _((x_2)^4_), som kræver, at vi differentierer henholdsvis to og fire gange.
+    Her bruger vi Geogebra:
+    </p>
+    <video class='picB' style='margin-top:35px; margin-bottom: 35px;' controls>
+        <source src='../../../Assets/Chapter4\DerivativesAndIntegrals\FindTaylorGeogebra.mp4' type='video/mp4'>
+    </video>
+    <p class="t">
+    Jeg skal lige notere, at Geogebra er ret <i>dårlig</i> til at differentiere.
+    Dens udtryk er korrekte selvfølgelig, men den formaterer dem så de
+    virker langt mere komplekse og kludrede end de egentlig er.
+    Den tredje hældning var massiv inde på Geogebra, men et bedre program (eller hånden!) ville kunne vise,
+    at den var lig:
+    _($\frac{3 (2-x)^3}{(4x-x^2)^{2.5}} + \frac{3 (2 - x)}{(4x-x^2)^{1.5}}_)
+    Anyways, vi fik de tal vi havde brug for, og vores approksimation bliver til:
+    _($2 - \frac{1/2}{2!} (x-2)^2 - \frac{3/8}{3!} (x-2)^4_)
+    Hvilket ser ud som:
+    </p>
+    <img class='Spic' style='width:50%' src='../../../Assets/Chapter4\DerivativesAndIntegrals\NewTaylor2.png'> 
+    <p class="t">
+    Så ret godt udover de yderste kanter! 
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <p class="t">
+    Jeg kan desværre ikke sige super meget om anvendelserne af de her Taylor polynomier. 
+    De er ofte relativt komplicerede. Èn interessant 
+    og ekstrem vigtig anvendelse man kan nævne er dog <i>lommeregnere</i>. 
+    Taylor polynomier er <i>essentielle</i> for lommeregnere. 
+    En CPU kan nemlig kun (groft forsimplet) plusse og minusse. Ved
+    hjælp af smart programmering, og ved at plusse/minusse flere gange, er det muligt at 
+    <i>gange og dividere også</i>. Hele potenser kan vi selvfølgelig også regne
+    ved gentaget brug af gange-funktionen. Men hvad med en funktion som _(Sin_)? Eller _(Arctan_)? 
+    Intet problem! Lommeregneren kan bare bruge en rigtig god Taylor-approksimation, eftersom
+    det kun involverer at plusse, minusse, gange, dividere, og tage potenser! Lommeregnere
+    kan kun finde ud af at
+    <i>approximere</i>: De approximerer bare virkelig, virkelig godt. 
+    </p>
+
+
+
+
+

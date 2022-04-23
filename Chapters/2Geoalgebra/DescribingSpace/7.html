@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+
+
+    <h3>Anvendelser af koniske sektioner</h3>
+    <p class="t">
+    Lad os kort 
+    se på nogle anvendelser af at beskrive kurverne på denne måde. 
+    På et <i>parabolsk spejl</i> samler man bølger (lys, lyd, osv) i èt koncentreret punkt:
+    </p>
+    <img class='SpicXL' style='width:130%; margin-left:-70px;' src='../../../Assets/Chapter2\Section4\Conics\ParabolicMirror.png'> 
+    <p class="t">
+    Rygtet går, at Archimedes engang designede et spejl, der samlede
+    solens stråler og rettede dem mod fjenden:
+    </p>
+    <img class='SpicBXL' style='width:130%; margin-left:-70px;' src='../../../Assets/Chapter2\Section4\Conics\ArchimedesDeathRay.png'>
+    <p class="t">
+    Man er ikke helt sikker på, om noget parabolsk spejl
+    reelt er stærkt nok til at brænde skibe, men idéen er sej. 
+    En mindre voldelig anvendelse er astronomi, hvor spejlet
+    samler og fokuserer svagt lys, fra langt væk ud i rummet, i ét punkt. 
+    Dette punkt er parablens <i>fokus</i>, hvilket vi nu vil bevise
+    </p>
+    <p class="t">
+    Problemet her - hvordan bølger reflekteres - er ret geometrisk af natur. 
+    Det vil derfor være en fordel at se på 
+    parablen ikke som _(y=ax^2_), men som en samling af punkter, der er lige langt væk fra
+    en linje ved _(y=k_), som de er fra fokuspunktet _(F_)
+    </p>
+    <img class='SpicXL' style='width:50%' src='../../../Assets/Chapter2\Section4\Conics\ParabolicMirror2.png'> 
+    <p class="t">
+    Lyset "reflekteres" på skitsen, ved at sørge for en udskudsvinkel der matcher indskudsvinklen. 
+    Præcis ligesom billiardkugler!
+    </p>
+
+    <q-stion 1="7" 2="1">
+    Prøv at bevis, at alle vertikale bølger der rammer en parabel _(y=ax^2_),
+    bliver reflekteret til dens fokuspunkt.
+    <p class="t">
+    Du får brug for én teori vi ikke rigtig har evnerne til at bevise lige nu
+    (men som vi semi-snart i næste-næste kapitel vil): 
+    Hældningen ved _(x=x_0_) på _(y=ax^2_) kurven,
+    er 
+    _(\text{Hældning}(x_0) = 2*a*x_0_)
+    Her er et billede af hvad jeg mener:
+    </p>
+    <img class='SpicXL' style='width:90%' src='../../../Assets/Chapter2\Section4\Conics\DerivativeOfXSquared.png'> 
+    <p class="t">
+    Det er fordi, du nok for brug for kurvens hældning (og vinkel), hvis du skal arbejde med refleksion.
+    </p>
+    <br></q-stion>
+    <answer-box t="h", n="1">
+    Problemet kan gribes an på mange måder, men måske er der inspiration at hente i følgende diagram:
+    <img class='SpicXL' style='width:60%' src='../../../Assets/Chapter2\Section4\Conics\ParabolicMirror3.png'>
+    <p class="t">
+    Vi skal bevise, at bølgen altid reflekteres i _(F_). 
+    Kan det eventuelt laves om til et mere geometrisk krav, der
+    er lettere at arbejde med?
+    </p>
+    <br></answer-box>
+    <answer-box t="h", n="2">
+    Èn strategi er at bevise, at vinklen _(\angle FEG_) er lig indfaldsvinklen _(\theta_). 
+    Så ved man jo, at refleksionen rammer _(F_). 
+    <p class="t">
+    Et ekstra hint: Det ligner umiddelbart på dette billede,
+    at _(G_) både er skæringen mellem _(\Seg{FC}_), tangenten, og _(x_)-aksen. 
+    To ikke-parallelle linjer vil altid skære hinanden, men det er aldrig åbenlyst at 
+    tre linjer skærer samme sted. Er det faktisk rigtigt, eller er
+    det bare skitsen der forvirrer os. <i>Hvis</i> det er rigtigt, hvad kan du så bruge det til? 
+    </p>
+    <br></answer-box>
+    <answer-box>
+    Se følgende billede:
+    <img class='SpicXL' style='width:60%' src='../../../Assets/Chapter2\Section4\Conics\ParabolicMirror3.png'>
+    <p class="t">
+    Jeg har sat et punkt hvor bølgen rammer ved _(E_), kurvens fokuspunkt ved _(F_) og det tætteste punkt
+    på linjen ved _(C_). _(D_) er defineret som skæringen mellem _(\Seg{CF}_) og tangenten.
+    Spørgsmålet kan nu omformuleres: 
+    Vis, at vinklen _(\angle GEF_) er lig indfaldsvinklen _(\theta_), lige meget hvilket punkt
+    på kurven _(E_) man vælger. Sådan vil vi vise, at _(F_) altid er på den reflekterede bølge.
+    </p>
+    <p class="t">
+    Vi ved at _(FE=CE_), og kan nemt se _(\angle GEC=\theta_). 
+    Hvis vi nu måske bare kan vise at 
+    _($\triangle CGE \equiv \triangle GEF_)
+    ... så vil 
+    _($\angle GEF = \angle GEC = \theta_)
+    Vi definerede _(G_) som skæringen mellem _(\Seg{CF}_) og tangenten, men 
+    det ligner lidt at den <i>også</i> skærer _(x_)-aksen. 
+    Skitser kan lyve, så lad os tjekke om det holder:
+    </p>
+    <p class="t"> 
+    Tangenten har en hældning på _(2ax_) og ligger i punktet _((x,ax^2)_).
+    Det må betyde, at den skærer _(0_) ved 
+    _($x-\frac{ax^2}{2ax}=\frac{x}{2}_)
+    Så <i>ja</i>, _(G_) skærer _(x_)-aksen. 
+    </p>
+    <p class="t"> 
+    Eftersom _(C_) har samme _(x_)-position som
+    _(E_), ved vi at _(G_) er ligeså langt væk fra _(C_) _(x_)-mæssigt som fra _(F_). 
+    Nu ved vi, at den <i>også</i> er 
+    ligeså langt væk fra _(C_) _(y_)-mæssigt som fra _(F_),
+    da den jo er på _(x_)-aksen.  
+    Så _(GC=GF_)! Det er fantastisk, fordi det fortæller os
+    sammen med _(FE=CE_), at _(\triangle CGE \equiv \triangle GEF_),
+    hvilket færdiggøre beviset! Bum!
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <p class="t">
+    En anden anvendelse 
+    er GPS'er eller andre lignende navigationsteknikker. 
+    Sig at 3 satellitter _(S_1, \, S_2, \, S_3_) skal informere
+    en bestemt person på jorden _(P_) om hans/hendes lokation:
+    </p>
+    <img class='SpicXL' style='width:60%' src='../../../Assets/Chapter2\Section4\Conics\GPSEllipse1.png'> 
+    <p class="t">
+    Satellitterne kan kommunikere med hinanden, og kender hinandens positioner. 
+    De kan også sende signaler med information til _(P_), og _(P_) kan sende
+    signaler til dem. 
+    </p>    
+    <p class="t">
+    Sig nu at første satellit _(S_1_) udsender et signal til _(P_), 
+    der fortæller hvad tiden var, da den udsendte signalet.
+    _(P_) er klar på signalet, og sender det øjeblikkeligt 
+    videre til _(S_2_) og _(S_3_). 
+    </p>
+    <p class="t">
+    Eventuelt modtager _(S_2_) og _(S_3_) det nye signal.
+    De kan nu sammenligne den nuværende tid, 
+    med tiden, hvor signalet blev afsendt. Herfra kan 
+    de regne, hvor 
+    lang tid radiobølgerne har brugt på deres rejse i alt.
+    Hastigheden på en radiobølge er altid lig lysets hastighed, 
+    siden radiobølger <i>er</i> lys (på en bølgelængde hvor det
+    er usynligt til det menneskelige øje). 
+    Satellitterne kan ved hjælp af rejsetiden og hastigheden
+    regne hvor <i>langt</i> lyset har bevæget sig, samlet
+    set fra _(S_1_) til _(P_) plus _(P_) til dem selv. 
+    Så vi kender nu:
+    _($S_1P + PS_2 = k_1_)
+    ... og 
+    _($S_1P + PS_3 = k_2_)
+    Vi kalder disse kendte afstande for _(k_1_) og _(k_2_). 
+    Nu ved vi, at _(P_) er på to ellipser. Den ene har fokuspunkter
+    ved _(S_1_) og _(S_2_), og en samlet afstand på _(k_1_). 
+    Den anden fokuspunkter ved _(S_1_) og _(S_3_), og en samlet
+    afstand på _(k_2_). Derfor kan positionen på _(P_) findes som
+    bare <i>skæringen</i>
+    mellem to ellipser! Genialt! 
+    </p>
+    <p class="t">
+    Faktisk <i>tre</i> ellipser, i alt ærlighed. Dette var en 2D skitse.
+    I den virkelige 3D verden har man reelt brug for 4 satellitter, da
+    der skal findes en ekstra ukendt variablen. Skæringen mellem 
+    _(3_) tredimensionelle ellipser i et tredimensionelt rum er også
+    en god del mere kompliceret: 
+    </p>
+    <img class='SpicXL' style='width:60%' src='../../../Assets/Chapter2\Section4\Conics\GPSEllipse3D.png'> 
+    <p class="t">
+    En anden lignende men often bedre teknik bruger <i>hyperbolaer</i>:
+    </p>
+    <img class='SpicXL' style='width:60%' src='../../../Assets/Chapter2\Section4\Conics\GPSEllipse2.png'> 
+    <p class="t">
+    Her behøver satellitterne slet ikke sende nogle signaler til personen. 
+    Det eneste man har brug for er,
+    at personen passivt udsender et signal. 
+    Hver satellit noterer for sig selv, hvornår den får signalet. 
+    Ingen satellitter ved, hvornår _(P_) sendte signalet, kun hvornår de selv fik det.
+    Men hvis _(S_2_) får det senere en _(S_1_), kan de ud fra tiden vurdere hvor
+    meget <i>længere</i> _(S_2_) er fra _(P_) end _(S_1_). Det svarer til:
+    _($S_2P - S_1P_)
+    Kald denne størrelse for _(k_1_). Nu ved vi, at _(P_)
+    ligger på en <i>hyperbola</i> med fokuspunkterne _(S_1, \, S_2_) og forskel _(k_1_). 
+    Samme gælder _(S_2P-S_3P=k_2_).
+    Nu skal vi "bare" finde skæringen mellem hyperbolaerne, og voila!</p> 
+    <p class="t">
+    Det ret interresante her er, at
+    satellitterne kan spore _(P_) uden _(P_) nødvendigvis ved det. F.eks. hvis personen kom til at lave en rigtig 
+    høj lyd og derved udsendte en stærk bølge. Man brugte faktisk det her trick i anden verdenskrig til at finde
+    fjendens lokation via skudlyde fra våben. 
+    </p>
+

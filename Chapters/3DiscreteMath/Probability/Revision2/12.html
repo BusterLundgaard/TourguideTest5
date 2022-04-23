@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+
+
+    <h4>Anvendelsesopgaver med begivenheder og udfaldsrum</h4>
+
+    <q-stion 1="12" 2="1">
+    Se følgende billede:
+    <img class='Spic' style='width:75%' src='../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\CircleIntersection1.png'> 
+    <p class="t">
+    Hvad er arealet af den fulde figur, hvis: cirkel _(A_) har et areal på _(78.53_), _(B_) et areal på _(63.617_), _(C_) et areal på _(411.511_),
+    skæringen mellem _(A_) og _(B_) er _(10.68_), _(A_) og _(C_) _(16.9_), _(B_) og _(C_) _(14_), og skæringen mellem alle cirklerne
+    er _(3.58_) stor?
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Du kan se princippet her:
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\CircleIntersection2.png'>
+    <p class="t">
+    Det er bare _(A + B + C - (I_1 + I_2 + I_3) + S_), 
+    siden vi skal fjerne de dele, vi overtæller 
+    med _(A+B+C_), men ikke "overfjerne" de dele _(I_1, \, I_2, \, I_3_) deler. 
+    Det bliver i vores tilfælde til 
+    _($78.53+63.617+411.511-(10.68+16.9+14)+3.58=515.65_)
+    Sæts kan nemt visualiseres på præcist samme måde jeg visualiserede de
+    tre cirkler _(A_), _(B_), _(C_). Det argument jeg lige brugte,
+    virker uanset hvordan _(A_), _(B_) og _(C_) ser ud!
+    Hvis du skal finde
+    mængden af elementer i _(A \cup B \cup C_), skal du først tælle 
+    alle elementer _(|A|+|B|+|C|_), fjerne de overtalte elementer 
+    _(|A \cap B|+|A \cap C|+|B \cap C|_), og plusse med det 
+    "over-fjernede" elementer _(|A \cap B \cap C|_). Bum! 
+    </p>
+    <p class="t">
+    Samme argument kan fortsætte hvis man arbejder med fire, fem eller uendelig mange begivenheder. 
+    </p>
+    <br></answer-box>
+    
+    <q-stion 1="12" 2="2">
+    I dit tøjskab ved du, at du har følgende sokker:
+    <div style="text-align:center;">
+        <ul style="display: inline-block; text-align: left; padding-left:0%; list-style:none;">
+            <li> _(6_) Grønne ternede</li>
+            <li> _(4_) Grønne prikkede </li>
+            <li> _(3_) Grønne normale </li>
+            <li> _(6_) Røde ternede </li>
+            <li> _(7_) Røde prikkede </li>
+            <li> _(5_) Røde normale </li>
+            <li> _(4_) Blå ternede </li>
+            <li> _(9_) Blå prikkede </li>
+            <li> _(7_) Blå normale </li>
+        </ul>
+    </div>
+    Hvad er chancen for, at du trækker en sok der enten er rød, grøn, eller prikket?
+    <br><br></q-stion>
+    <answer-box> 
+    Vi leder efter en sandsynlighed. Vi skal finde mængden af sokker, der opfylder 
+    vores krav, divideret med den totale mængde sokker 
+    <p class="t">
+    Lad _(A_) være begivenheden, hvor jeg trækker en sok, der er rød, _(B_) begivenheden hvor jeg
+    trækker en sok, der er grøn, og _(C_) begivenheden hvor jeg trækker en prikket sok.
+    Vi leder nu efter _(|A \cup B \cup C|_), som vi ved kan findes med formlen:
+    _($|A| + |B| + |C| - |A \cap B| - |A \cap C| - |B \cap C| + |A \cap B \cap C|_)
+    Vi ser let at:
+    _($\begin{eqnarray}
+    && |A| = 6+7+5 = 18 \\
+    && |B| = 6+4+3 = 13 \\
+    && |C| = 4+7+9 = 20 
+    \end{eqnarray}_)
+    Der findes ingen sokker som både er røde og grønne, og 
+    især ikke nogen, der både er røde, grønne <i>og</i> prikkede, så 
+    både _(|A \cap B|_) og _(|A \cap B \cap C|_) er 0. 
+    _(A \cap C_) er de røde prikkede sokker, så _(|A \cap C|_) er _(7_), og
+    _(|B \cap C|_) er antal grønne prikkede, ergo _(4_). Alt i alt:
+    _($18+13+20-0-7-4+0=40_)
+    Sandsynligheden er derfor:
+    _($\frac{40}{51} = 0.7843_)
+    En chance på lidt under _(80_)% 
+    </p>
+    <br></answer-box>
+    
+    <q-stion 1="12" 2="3" customWidth="600">
+    Du har _(32_) ternede, _(40_) røde, _(15_) prikkede sokker, _(50_) sokker
+    der enten er røde, ternede, eller prikkede, _(43_) der enten er prikkede eller ternede,
+    _(44_) der enten er røde eller ternede, og _(17_) der både er røde og prikkede. 
+    Hvor mange sokker har du, der både er røde, prikkede, og ternede? 
+    <p class="t">
+    Ja, det er meget forvirrende.
+    </p>
+    <br></q-stion>
+    <answer-box customWidth="600">
+    Kald _(A_) begivenheden, hvor vi får en rød sok, _(B_) prikket sok, og _(C_) ternet sok.
+    Vi leder nu efter _(|A \cap B \cap C|_). Det har vi ikke nogen direkte formel for,
+    men vi ved, at
+    _($|A \cup B \cup C| = |A| + |B| + |C| - |A \cap B| - |A \cap C| - |B \cap C| + |A \cap B \cap C|_)
+    Vi kunne nu prøve at isolere _(|A \cap B \cap C|_) og få:
+    _($|A \cap B \cap C| = |A \cup B \cup C| - |A| - |B| - |C| + |A \cap B| + |A \cap C| + |B \cap C|_)
+    Vi kender _(|A \cup B \cup C|_) som er lig _(50_). Vi 
+    kender også _(|A|=40_), _(|B|=15_) og _(|C|=32_). Til sidst kender vi 
+    _(|A \cap B|_) _(=17_), da det svarer til "både røde og prikkede". Alt
+    det her giver os nu:
+    _($|A \cap B \cap C| = 50 - 40 - 15 - 32 + 17 + |A \cap C| + |B \cap C| \to_)
+    _($|A \cap B \cap C| = -20 + |A \cap C| + |B \cap C|_)
+    Vi har _(|A \cup C|_) og _(|B \cup C|_), da de svarer til
+    "enten røde eller ternede" _(=44_) og "prikkede eller
+    ternede" _(=43_). Vi kender dog ikke _(|A \cap C|_) eller 
+    _(|B \cap C|_). Dem er vi nødt til at finde med formlen _(|a \cap b|=|a|+|b|-|a \cup b|_), så:
+    _($-20 + (|A|+|C|-|A \cup C|) + (|B|+|C|-|B \cup C|) = _)
+    _($-20+(40+32-44)+(15+32-43)=_)
+    _($12_)
+    Bum!
+    <p class="cent">*</p>
+    <p class="t">
+    Man kan se mere generelt at:
+    _($|A \cap B \cap C| = |A|+|B|+|C| - |A \cup B| - |A \cup C| - |B \cup C| + |A \cup B \cup C|_)
+    Dette kan let udvides til flere begivenheder. 
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="12" 2="4">
+    Hvor mange løsninger har 
+    _($x_1+x_2+x_3+x_4=12_) 
+    ... hvis _(x_1 \lt 7_) <i>og</i> 
+    _(x_2 \lt 3_)? 
+    <br><br></q-stion>
+    <answer-box>
+    Vi løste tidligere en lignende opgave, hvor kun _(1_) terning var påsat
+    et maksmimumskrav. Her beregnede vi alle løsninger
+    og <i>fjernede</i> de falske, hvor variablet var højere end dets maks. 
+    Vi skal gøre noget lignende nu, men med <i>to</i> variabler _(x_1_) og
+    _(x_2_). Løsningen er falsk enten hvis _(x_1_) er over _(6_), hvis
+    _(x_2_) er over _(2_) <i>eller</i> hvis <i>både</i> _(x_1_) er over
+    _(6_) <i>og</i> _(x_2_) over _(2_). Det er i tilfælde
+    som dette hvor <i>sæts</i> kan hjælpe os med at fjerne tvivl. 
+    Kald _(U_1_) for begivenheden hvor _(x_1_) bryder dens krav og _(U_2_)
+    begivenheden hvor _(x_2_) bryder kravet. Det samlede antal
+    "falske løsninger" er nu
+    _($|U_1 \cup U_2|_)
+    Det kan omskrives til:
+    _($|U_1|+|U_2|-|U_1 \cap U_2 |_)
+    _(|U_1|_) kan regnes til:
+    _($\VeC[12-7+4-1,4-1]=56_)
+    _(|U_2|_) er 
+    _($\VeC[12-3+4-1,4-1]=220_)
+    _(|U_1 \cap U_2|_) svarer til at <i>begge</i> krav opfyldes samtidig, så:
+    _($(u_1 + 7) + (u_2 + 3) + x_3 + x_4 = 12 \to_)
+    _($u_1+u_2+x_3+x_4 = 2_)
+    Hvilket har
+    _($\VeC[2+4-1,4-1]=10 \text{ løsninger}_)
+    Alt i alt er der 
+    _($56+220-10 = 266_)
+    falske løsninger. Så:
+    _($455-266=189_)
+    rigtige løsninger. 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="12" 2="5">
+    Du slår _(3_) terninger. Hvad er chancen for, at deres sum er over _(13_)? 
+    Den her er relativ lang, og der er en god del repetitive beregninger 
+    <br><br></q-stion>
+    <answer-box>
+    Det mindste slag du kan få, er _(3_), hvis du slår
+    _(1, 1, 1_). Det er største er _(18_), hvis du får _(6, 6, 6_). 
+    Man kan samlet set slå med de _(3_) terninger på _(6*6*6=_) _(216_) måder. 
+    Vi skal regne, hvor mange måder man kan få en sum på henholdsvis
+    _(14_), _(15_), _(16_), _(17_) og _(18_). Lad os starte med _(14_).
+    <p class="t">
+    Sig at _(x_1_) er tallet på første terning, _(x_2_) på den anden og _(x_3_) på den tredje.
+    Vi har nu:
+    _($x_1+x_2+x_3 = 14, \, \, 1 \lt x_1, x_2, x_3 \lt 7_)
+    Hver terning er større eller lig med _(1_), så vi ændrer ligningen til:
+    _($u_1+u_2+u_3 = 11, \, \, u_1, u_2, u_3 \lt 6_)
+    Hvor _(11_) jo er _(14-3_). Hvis vi ignorerer størrelseskravet har denne ligning
+    _($\VeC[11+2, 2] = 78_)
+    ... løsninger. Nogle af disse er falske dog. Vi bruger samme strategi som i sidste opgave
+    og definerer 3 sæts:
+    _($\begin{eqnarray}
+    && F_1 & = u_1 \text{ er over eller lig } 6 \\
+    && F_2 & = u_2 \text{ er over eller lig } 6 \\
+    && F_3 & = u_3 \text{ er over eller lig } 6 
+    \end{eqnarray}_)
+    Antallet af falske løsninger kan altså findes som:
+    _($|F_1 \cup F_2 \cup F_3| =_)
+    _($|F_1| + |F_2| + |F_3| - |F_1 \cap F_2| - |F_1 \cap F_3| - |F_2 \cap F_3| + |F_1 \cap F_2 \cap F_3|_)
+    Terningerne er identiske, så 
+    _($|F_1|=|F_2|=|F_3|, \, \, |F_1 \cap F_2| = |F_1 \cap F_3| = |F_2 \cap F_3| _)
+    De falske løsninger er derfor:
+    _($3 |F_1| - 3 |F_1 \cap F_2| + |F_1 \cap F_2 \cap F_3|_)
+    _(|F_1|_) kan regnes som:
+    _($\VeC[11-6+2,2] = 21_)
+    _(|F_1 \cap F_2|_) og _(|F_1 \cap F_2 \cap F_3|_) er begge _(0_) i vores tilfælde, 
+    da 
+    _($(u_1+6)+(u_2+6)+u_3=11_)
+    ... giver et negativt tal på højre side. Så der
+    er alt i alt
+    _($78-3*21=15_)
+    muligheder for at få _(14_). Ved _(15_) har vi nu:
+    _($u_1 + u_2 + u_3 = 12, \, \, u_1, u_2, u_3 \lt 6 _)
+    Her er _(|F_1 \cap F_2|_) ikke _(0_) længere. Vi kan regne antallet af falske løsninger som:
+    _($3*\VeC[12-6+2, 2] - 3*\VeC[12-12+2, 2] = 81_)
+    Så antallet af løsninger er:
+    _($\VeC[12+2, 2] - 81 = 10_)
+    Vi kan let generalisere denne proces ved _(16_), _(17_) og _(18_), ved bare
+    at ændre _(12_) til henholdsvis _(13_), _(14_) og _(15_), så:
+    _($\begin{eqnarray}
+    && \VeC[13+2,2] & - 3*\VeC[13-6+2,2] & + 3*\VeC[13-12+2,2] & = 6 \\
+    && \VeC[13+2,2] & - 3*\VeC[13-6+2,2] & + 3*\VeC[13-12+2,2] & = 3 \\
+    && \VeC[13+2,2] & - 3*\VeC[13-6+2,2] & + 3*\VeC[13-12+2,2] & = 1
+    \end{eqnarray}_)
+    Endeligt får vi:
+    _($\frac{15+10+6+3+1}{216} = 0.162_)
+    En chance på omkring 16%. Ret crazy avanceret at regne når man
+    tænker over hvor simpelt formuleret spørgsmålet er!
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="12" 2="6" customWidth="550">
+    Find en formel for mængden af derangements af _(n_) elementer. Det kan vi endelig nu!
+    <p class="t">
+    Det er fint, hvis din
+    formel er en sum _(\sum_): Bare gør det så let at finde antallet af derangements, som du kan.
+    Hint: Du skal nok bruge det faktum, at
+    _($|A \cup B \cup C| = |A|+|B|+|C|-|A \cap B|-|A \cap C|-|B \cap C|+|A \cap B \cap C|_) 
+    Du får måske endda brug for at generalisere det yderligere. 
+    </p>
+    <br></q-stion>
+    <answer-box customWidth="550">
+    Lad os finde mængden af permutationer, hvor der er elementer der <i>ikke</i> flytter sig. Så kan vi bare minuse
+    det, fra den totale mængde permutationer _(n!_) og få vores svar. Sig
+    at _(A_1_) er de permutationer hvor element _(1_) ikke flytter sig, _(A_2_) de permutationer
+    hvor element _(2_) ikke flytter sig, osv. Problemet kan nu gøres meget lettere,
+    ved bare at tælle det som _(|A_1 \cup A_2 \cup A_3 \cup ... A_n|_), hvilket kan omskrives til 
+    _($|A_1|+...|A_n| - (|A_1 \cap A_2| + |A_1 \cap A_3| + ...) + (|A_1 \cap A_2 \cap A_3|  + ...) \text{ } + \text{ } ... _)
+    Det er lidt svært at skrive det op matematisk på en god måde, men vi ved hvad det siger intuitivt:
+    Plus størrelserne af alle begivenhederne/listerne, minus med størrelserne af alle mulige sammenskæringer
+    af to lister, plus med størrelserne af alle mulige sammenskæringer af tre lister, minus med 
+    alle mulige sammenskæringer af fire lister, osv. En hvilket som helst _(|A_i|_) er lig _((n-1)!_), 
+    da elementet _(i_) altid skal blive på sin plads, og _((n-1)!_) er antallet af måder 
+    man kan flytte rundt på de resterende elementer. Størrelsen af to skæringer er lignende _((n-2)!_), da
+    der nu er to elementer, der ikke flytter sig. Tre skæringer _((n-3)!_) osv. <i>Mængden</i>
+    af skæringer mellem to er bare _(\Vec[2,n]_), mellem tre _(\Vec[3,n]_) osv. Alt i alt:
+    _($\VeC[1,n]*(n-1)! - \VeC[2,n]*(n-2)! + \VeC[3,n]*(n-3)! \text{ } \pm \text{ } ... \VeC[n,n]*(n-n)! = _)
+    _($\sum_{j=1}^n (-1)^{j+1}*\VeC[j,n]*(n-j)!_)
+    Og vi har en formel:
+    _($n! - \sum_{j=1}^n (-1)^{j+1}*\VeC[j,n]*(n-j)!_)
+    Bum! 
+    <p class="cent">
+        *
+    </p>
+    <p class="t">
+    Som sagt er det muligt at approximere denne sum med en simplere formel. Vi kan
+    omskrive til:
+    _($\sum_{j=1}^n (-1)^{j+1} * \frac{n!/(n-j)!}{j!} * (n-j)! = _)
+    _($ n! * \sum_{j=1}^n \frac{(-1)^{j+1}}{j!}_)
+    Den her sum er ret interessant. Vi dividerer _(1_) med højere og højere
+    _(j!_) værdier, så de led vi plusser bliver kvikt meget små. Negativiteten
+    skifter hele tiden fra positiv til negativ osv, så der er ikke
+    engang en gradvis tendens til at blive større eller mindre over tid. Det viser sig, 
+    at denne sum hurtigt nærmer sig èt, enkelt bestemt tal. Hvis man via Geogebra regner
+    _($\sum_{j=1}^{10} \frac{(-1)^{j+1}}{j!} \text{  og  } \sum_{j=1}^{1000} \frac{(-1)^{j+1}}{j!} _)
+    ... får man henholdsvis _(0.632105357143_) og 
+    _(0.632105588286_). Stort set identisk! Summen kommer utroligt tæt på 
+    dette tal allerede ved _(n=6_), så i tilfældet hvor _(n \ge 6_), kan 
+    antallet af derangements approksimeres ekstremt godt af: 
+    _($n! - 0.6321*n! = 0.3679*n!_)
+    Og det bliver selvfølgelig mere præcist, jo flere kommategn man tilføjer. 
+    </p>
+    <p class="t">
+    Lad os for sjov se på en konkret anvendelse. 
+    Hvis en træner laver en tilfældig fordeling af 
+    _(7_) elever, der skal vurdere hinandens arbejde, er chancen for at den er ordentligt
+    cirka lig:
+    _($\frac{Derangments(7)}{7!} \approx \frac{0.3679*7!}{7!} = 0.3679_)
+    Mega elegant! 
+    </p>
+    <br></answer-box>
+
+
+
+
+

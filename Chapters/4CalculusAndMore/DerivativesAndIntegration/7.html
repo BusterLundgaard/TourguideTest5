@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+
+
+    <h3>Hældningen af sammensatte funktioner</h3>
+    <p class="t">
+    Det næste vi skal er, at differentiere <i>sammensatte</i> funktioner: 
+    Differentiere funktioner inde i funktioner. 
+    Lad os starte med _(Sin(x^2)_) som eksempel.
+    </p>
+
+    <p class="t">
+    Som vi ser i følgende video, er det overraskende nemt: 
+    </p>
+
+    <video class='picB' style='margin-top:35px; margin-bottom: 35px;' controls>
+        <source src='../../../Assets/Chapter4\DerivativesAndIntegrals\ChainRule1.mp4' type='video/mp4'>
+    </video>
+
+    <p class="t">
+    Prøv selv!
+    </p>
+
+    <q-stion 1="7" 2="1">
+    Find hældningen på: 
+    _($Cos(Sin(x))_)
+    <br></q-stion>
+    <answer-box>
+    Målet er at finde ændringen i _(Cos(Sin(x))_) når _(x_) ændrer sig med _(k_). 
+    Vi ved, at _(Sin(x)_) ændrer sig med:
+    _($¤x[Sin(x)]*k = Cos(x)*k_)
+    Hvis _(Sin(x)_) ændrer sig med _(Cos(x)*k_), oplever _(Cos_) i 
+    _(Cos(Sin(x))_) en ændring i dens input på _(Cos(x)*k_). 
+    Hældningen af _(Cos_) er _(-Sin_). Den har lige
+    nu en hældning på _(-Sin(Sin(x))_). Forandring er
+    _($\text{Hældning}*\text{Ændring i input}_)
+    Så:
+    _($-Sin(Sin(x))*Cos(x)*k_)
+    Dette svarer til _(dy_) i _(dy/dx_). _(dx_) er _(k_), så vi regner:
+    _($\begin{align}
+    ¤x[Cos(Sin(x))] & = \frac{-Sin(Sin(x))*Cos(x)*k}{k} \\ \\
+    & = -Sin(Sin(x))*Cos(x) 
+    \end{align}_)
+    Voila! Det er svaret!
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="7" 2="2">
+    Find hældningen på:
+    _($Sin\left(2^{Cos(x)} \right)_)
+    <br></q-stion>
+    <answer-box>
+    Hvis _(x_) ændrer sig med _(k_), ændrer _(Cos(x)_) sig med
+    _($-Sin(x)*k_)
+    _(2^u_) oplever nu en ændring i dens input på _(-Sin(x)*k_). 
+    Den har en hældning på _(Ln(2)*2^u_), hvor dens _(u_) lige
+    nu er lig _(Cos(x)_). Den ændrer sig med:
+    _($0.693*2^{Cos(x)}*(-Sin(x)*k)_)
+    Dette er den ændring _(Sin(u)_) oplever i dens input.
+    Den har en hældning på _(Cos(u)_), hvor _(u_) lige
+    nu er _(2^{Cos(x)}_), så den ændrer sig med:
+    _($Cos\left(2^{Cos(x)} \right)*0.693*2^{Cos(x)}*(-Sin(x)*k)_)
+    Hældningen er altså lig:
+    _($¤x \left[Sin\left(2^{Cos(x)} \right) \right] -0.693*Sin(x)*2^{Cos(x)}*Cos\left(2^{Cos(x)} \right)_)
+    Bum!
+    <p class="t">
+    Jeg skal sige, at der er intet specielt omkring "_(u_)" her. Det er 
+    bare en ny variabel, jeg laver, for at man lettere kan forstå idéen. 
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <p class="t">
+    Lad os generalisere den proces vi brugte i de to sidste opgaver. 
+    Sig vi skal differentiere:
+    _($f(g(x))_) 
+    _(g(x)_) har en hældning på _(g'(x)_) ved _(x_), så det ændrer sig
+    _(g'(x)*k_) når _(x_) ændrer sig med _(k_). _(f(x)_) har en hældning på
+    _(f'(g(x))_) ved _(g(x)_), så det ændrer sig med _(f'(g(x))*g'(x)*k_) når
+    _(g(x)_) ændrer sig med _(g'(x)*k_). Vi får nu:
+    _($\frac{f'(g(x))*g'(x)*k}{k}=f'(g(x))*g'(x)_)
+    Så:
+    _($¤x[f(g(x))]=f'(g(x))*g'(x)_)
+    Bum! Man differentierer bare den ydre funktion, sætter den indre funktion ind, og 
+    ganger til sidst med den differentierede version af den indre funktion. Klart
+    nemmest at forstå med nogle opgaver! Selve tricket her kaldes ofte "The Chain Rule", eller
+    på dansk "Kædereglen". 
+    </p>
+
+    <q-stion 1="7" 2="3">
+    Differentier de følgende funktioner:
+    <div style="margin-left:-68%; margin-top:25px; margin-bottom: -10px;">
+    _($\begin{eqnarray}
+        && \underline{\textbf{A}}: \, \, \, \, \, \, Sin(x)^{23} \\ \\
+        && \underline{\textbf{B}}: \, \, \, \, \, \, 2^{(x^5)} \\ \\
+        && \underline{\textbf{C}}: \, \, \, \, \, \, Sin(x^3*Cos(x)) \\ \\
+        && \underline{\textbf{D}}: \, \, \, \, \, \, Sin(Cos(x)^2) \\ \\
+        && \underline{\textbf{E}}: \, \, \, \, \, \, \frac{1}{5x^2-1.3x+7} \\ \\
+        && \underline{\textbf{F}}: \, \, \, \, \, \, \frac{x^3}{Sin(x)} \\ \\
+        && \underline{\textbf{G}}: \, \, \, \, \, \, Tan(x) 
+    \end{eqnarray}_)
+    </div>
+    <br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    Her kan vi sige, at den ydre funktion er 
+    _(x^{23}_) og at _(Sin(x)_) er den indre funktion:
+    Den ydre funktion differentieret er lig _(23x^{22}_), og den indre
+    funktion differentieret er lig _(Cos(x)_). Jeg siger derfor:
+    _($23*Sin(x)^{22}*Cos(x)_)
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Her er den ydre funktion _(2^x_), som har hældningen 
+    _(0.693*2^{x}_), og den indre _(x^5_), som har hældningen
+    _(5*x^4_). Vi siger derfor:
+    _($0.693*2^{(x^5)}*5x^4=_)
+    _($3.465*2^{(x^5)}*x^4_)
+    Bum!
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{C}}_)#" tabColour="rgb(171,96,147)">
+    Den ydre funktion er _(Sin(x)_) med hældningen _(Cos(x)_), 
+    og den indre funktion er _(x^3*Cos(x)_) med hældningen
+    _($3x^2*Cos(x) - x^3*Sin(x)_)
+    Vi siger derfor:
+    _($Cos(x^3*Cos(x))*(3x^2 Cos(x) - x^3 Sin(x))_)
+    Det er altså svaret. 
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{D}}_)#" tabColour="rgb(175,128,161)">
+    Her skal vi bruge tricket to gange. Vores ydre funktion
+    er _(Sin(x)_) med hældningen _(Cos(x)_), og vores indre funktion er _(Cos(x)^2_).
+    Svaret er derfor:
+    _($Cos(Cos(x)^2)*¤x[Cos(x)^2]_)
+    Når vi regner _(d/dx[Cos(x)^2]_) er vores ydre funktion _(x^2_) og 
+    vores indre _(Cos(x)_). Vi får altså:
+    _($Cos(Cos(x)^2)*2*Cos(x)*-Sin(x)=_)
+    _($-2*Sin(x)*Cos(x)*Cos(Cos(x)^2)_)
+    Voila!
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{E}}_)#" tabColour="rgb(171,96,147)">
+    For at differentiere denne er vi nødt til at omskrive lidt først:
+    _($\frac{1}{5x^2-1.3x+7} = (5x^2-1.3x+7)^{-1}_)
+    Vores ydre funktion er altså _(x^{-1}_) med hældningen
+    _(-1x^{-2}_), og vores indre
+    funktion er _(5x^2-1.3x+7_) med hældningen 
+    _(10x-1.3_). Svaret er derfor:
+    _($-1*(5x^2-1.3x+7)^{-2}*(10x-1.3) = \frac{1.3-10x}{(5x^2-1.3x+7)^{2}}_) 
+    Perfekt!
+    <p class="cent">
+        *
+    </p>
+    <p class="t">
+    Hvis vi generaliserer vores proces, kan vi relativt let se at:
+    _($¤x \left[\frac{1}{f(x)} \right]=\frac{-f'(x)}{f(x)^2}_)
+    Hvilket er en praktisk lille huskeregel.
+    </p>
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{F}}_)#" tabColour="rgb(175,128,161)">
+    Jeg ved ikke, hvordan jeg finder hældningen af to funktioner 
+    divideret med hinanden, så jeg starter med at omskrive:
+    _($\frac{x^3}{Sin(x)} = x^3*Sin(x)^{-1}_)
+    Hældningen af _(x^3_) er bare _(3x^2_), og hældningen af 
+    _(Sin(x)^{-1}_), ved vi via huskereglen fra sidste opgave er
+    _($\frac{-¤x[Sin(x)]}{Sin(x)^2} = \frac{-Cos(x)}{Sin(x)^2}_)
+    Hældningen af vores funktion bliver derfor til:
+    _($\frac{3x^2}{Sin(x)} - \frac{x^3 Cos(x)}{Sin(x)^2}   _)
+    Voila!
+    <p class="cent">
+        *
+    </p>
+    <p class="t">
+    Hvis vi igen generaliserer processen, kan man relativt nemt se, at
+    _($¤x \left[\frac{f(x)}{g(x)} \right]=\frac{f'(x)*g(x)-g'(x)*f(x)}{g(x)^2}_)
+    ... hvilket også er en god lille huskeregel. 
+    </p>
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{G}}_)#" tabColour="rgb(171,96,147)">
+    _(Tan(x)_) svarer til _(Sin(x)/Cos(x)_), så vi kan bruge huskereglen:
+    _($\frac{¤x[Sin(x)]*Cos(x) - ¤x[Cos(x)]*Sin(x)}{Cos(x)^2} = _)
+    _($\frac{Cos(x)^2 + Sin(x)^2}{Cos(x)^2} =_)
+    _($Cos(x)^{-2}_)
+    Super dejligt!
+    <br><br></answer-box>
+
+    <q-stion 1="7" 2="4">
+    Er det muligt at bruge kædereglen til at differentiere:
+    _($x^x_)
+    Du behøver ikke gøre det, hvis ikke det er muligt.
+    <br><br></q-stion>
+    <answer-box>
+    Det er <i>ikke</i> muligt nej. Hvad er vores ydre og indre funktioner, præcist?
+    Vi kan ikke sige at den indre funktion er "_(x_)", og at den ydre funktion
+    er _(x^{x}_), fordi ... well, så er den jo bare sig selv! 
+    <br><br></answer-box>
+
+
+
+
+

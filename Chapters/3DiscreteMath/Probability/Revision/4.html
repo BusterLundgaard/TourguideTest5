@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+
+
+    <p class="t">
+    Lad os kigge på et problem der i sig selv ikke er særlig vigtigt, men er meget
+    interessant og var med til at fundamentalt udvikle sandsynlighedsregning som vi kender det idag:
+    "Problem of the points".
+    </p>
+    <p class="t">
+    Idéen er meget simpel: To personer spiller plat eller krone. Man får
+    _(1_) point hver rigtigt gæt, og personen der først får, sig, _(12_) points
+    vinder pengene. Af en eller anden årsag stopper spillet pludselig
+    abrupt. Hvad gør i nu med pengene? I <i>kunne</i> fordele
+    dem lige ud, men den ene spiller har fået _(8_) points, og den anden kun _(2_). 
+    Hun/han burde vel også få en større procentdel af pengene? Spørgsmålet er så:
+    </p>
+    <p class="cent">
+        <i>Hvis</i> spillet fortsætter, hvor stor
+        er chancen for at spiller _(1_) vinder? 
+    </p>
+    <p class="t">
+    Det er et relativt tricky spørgsmål, men det har en rigtig smart løsning. 
+    </p>
+    <p class="t">
+    Vi vælger først og fremmest at kigge på
+    hvor mange points spillerne <i>mangler</i> for 
+    at vinde, ikke hvor mange de har lige nu.  
+    I den aller simpleste situation mangler begge spillere èt point. Her
+    er der tydeligvis kun to muligheder: Spiller 1 får et point, eller spiller
+    2 får et point. Begge muligheder har lige stor chance for at ske, og i kun _(1_) af mulighederne
+    vinder spiler _(1_). Derfor kan sandsynligheden regnes som:
+    _($\frac{\text{Antal måder det kan ske på}}{\text{Samlet antal af mulige ting der kan ske}} = \frac{1}{2} = 0.5_)
+    Så hver spiller for halvdelen af pengene. Jeg lægger her fokus på at
+    denne "fundamentale formel" vi har brug indtil videre <i>kræver</i> at hver
+    "mulighed" / hver "tidslinje" har lige stor sandsynlighed for at ske. Det
+    er ikke altid tilfældet: Sig f.eks. at spiller _(1_) mangler _(1_) point
+    og spiller _(2_) mangler _(2_) points: 
+    </p>
+    <img class='Spic' style='width:40%' src='../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\ProblemOfPoints1.png'> 
+    <p class="t">
+    I denne visualisering af tidslinjerne symbolisere et ryk til venstre at 
+    spiller 1 får et point, og et ryk til højre at spiller 2 får et point. 
+    I parenteserne står der hvor mange points henholdsvis spiller 1 og 2 mangler. 
+    </p>
+    <p class="t">
+    Der er tydeligvis _(3_) mulige tidslinjer, og spiller 1 vinder i _(2_) af dem.
+    Chancen er dog <i>ikke</i> lig
+    _($\frac{2}{3}_)
+    Fordi nogen tidslinjer har større sandsynligheder end andre! Den første
+    sandsynlighed _((0, 2)_) har en _(0.5_) chance, og de to
+    andre har en _(0.5*0.5=0.25_) chance. Den er dobbelt så sandsynlig, så
+    den burde også tælle som "2 muligheder". Nu har vi altså i alt 
+    _(2+2=_) _(4_) muligheder med lige stor chance, og spiller _(1_) vinder i _(2+1=_) _(3_) af dem.
+    Chancen er derfor:
+    _($\frac{3}{4} = 0.75_)
+    Det her lille trick med at dobbelt-tælle _((0, 2)_) kan visualiseres på
+    en rigtig god måde: 
+    </p>
+    <img class='Spic' style='width:40%' src='../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\ProblemOfPoints2.png'> 
+    <p class="t">
+    Sådan her kan man bare "tælle" det aller nederste lag på
+    dette "træ over tidslinjer" og se hvor mange gange en bestemt spiller vinder. 
+    Det kan også meget let generaliseres:
+    </p>
+    <img class='Spic' style='width:160%; margin-left:-30%;' src='../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\ProblemOfPoints3.png'> 
+    <p class="t">
+    Her mangler spiller 1 _(3_) points og spiller 2 _(2_) points. Bemærk at 
+    tidslinje _(b_) har dobbelt så stor chance som tidslinje _(a_), og 
+    det passer perfekt til at den bliver gentaget to gange på det nederste lag. 
+    Tidslinje _(c_) har dobbelt så stor chance som _(b_), og den bliver gentaget
+    to _(2*2=4_) gange på det sidste lag, hvilke også passer. 
+    </p>
+    <p class="t">
+    Vi kan let tælle at spiller 2 vinder i _(11_) af mulighederne på 
+    det endelige lag, og at der er _(2^4=16_) samlede muligheder. 
+    Spiller 2's sandsynlighed er altså:
+    _($\frac{11}{16} = 0.6875_)
+    Her tegnede vi faktisk hele pyramiden og talte, men det er en meget
+    langsom og besværlig proces. Lad os generalisere og forsøge 
+    at tælle det lidt mere matematisk. Sig at spiller 1 mangler _(s_) points, og
+    spiller 2 mangler _(r_) points. Det første vi nok burde finde
+    ud af er hvor mange "lag" _(n_) vores pyramide af tidslinjer har. Det
+    svarer faktisk bare til at regne den længst mulige runde, hvilke er når 
+    èn spiller vinder og den anden har kun _(1_) point tilbage. Man kan let
+    se at det tager _(r+s-1_) runder, så det er vores _(n_). 
+    </p>
+    <p class="t">
+    Det totale antal muligheder er bare _(2^n_) lig _(2^{r+s-1}_), så nu mangler
+    vi bare at tælle antallet af muligheder hvor spiller 1 vinder.
+    På vores "træ" skal der laves _(r+s-1_) "valg". Spiller 1 vinder
+    hvis han/hun får mellem _(s_) og _(r+s-1_) "valg". Nu kan vi let dele det op:
+    Hvor mange måder kan spiller 1 få _(s_) valg på? _(s+1_) valg? _(s+2_) valg osv. 
+    _(s_) valg kan tydeligvis ske på
+    _($\VeC[r+s-1, s]_)
+    forskellige måder, da vi jo egentlig spørger: "På hvor mange måder
+    kan vi udvælge _(s_) steder på vores _(r+s-1_) lange træ hvor spiller
+    1 gætter rigtigt?". Det passer også til eksemplet hvor spiller
+    1 manglede _(3_) points og spiller 2 manglede _(2_). Mængden af 
+    muligheder hvor vi har gået til venstre _(3_) gange er:
+    _($\VeC[3+2-1, 3] = \VeC[4, 3] = \frac{4*3*2}{3!} = 4_)
+    Hvilke du også kan se passer på billedet:
+    </p>
+    <img class='Spic' style='width:160%; margin-left:-30%;' src='../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\ProblemOfPoints4.png'> 
+    <p class="t">
+    Spiller 1 kan også vinde hvis de får _(4_) rigtige "valg", hvilke
+    svarer til _(4_)-choose-_(4_) som er lig _(1_):
+    </p>
+    <img class='Spic' style='width:160%; margin-left:-30%;' src='../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\ProblemOfPoints5.png'> 
+    <p class="t">
+    Alt i alt:
+    _($\frac{\VeC[4,3] + \VeC[4,4]}{2^4} = \frac{4+1}{16} = \frac{5}{16} = 0.3125_)
+    _(1-0.3125=0.6875_), så det virker sgu!
+    </p>
+    <p class="t">
+    Mere generelt ser vi at 
+    spiller _(1_)'s chance for at vinde er: 
+    _($\frac{\VeC[r+s-1, s] + \VeC[r+s-1, s+1] + \VeC[r+s-1, s+2] + \, \dots \, \VeC[r+s-1, r+s-2] + \VeC[r+s-1, r+s-1]}{2^{r+s-1}}_)
+    Voila! Vi har en formel! 
+    Hvis vi f.eks. har et spil hvor spiller 1 mangler _(4_) points 
+    og spiller 2 mangler _(6_), har spiller 1 en chance på:
+    _($\frac{\VeC[9, 4] + \VeC[9, 5] + \VeC[9, 6] + \VeC[9, 7] + \VeC[9, 8] + \VeC[9, 9]}{2^{9}} = 0.74609_)
+    Bum!
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5">
+    To spillere kæmper plat-eller-krone om _(1300 \text{ skillinger}_). Den første spiller der får 
+    _(8_) points vinder spillet. Efter _(7_) runder hvor spiller _(1_) gætter rigtigt
+    _(4_) gange og spiller _(2_) gætter rigtigt _(3_) gange stopper spillet abrupt, da der går ild 
+    i den kro de to spillere sidder ved. Hvordan skal pengene fordeles på mest fair vis? 
+    <br><br></q-stion>
+    <answer-box>
+    Spiller 1 mangler _(4_) points, og spiller _(2_) mangler _(5_). _(4+5-1=7_), så chancen for at spiller
+    1 vinder kan regnes som:
+    _($\frac{\VeC[8,4] + \VeC[8,5] + \VeC[8, 6] + \VeC[8, 7] + \VeC[8, 8]}{2^8}_)
+    Hvilke man kan regne giver:
+    _($\frac{163}{256} = 0.636_)
+    Så spiller 1 skal have
+    _($0.636*1300 = 826.8 \text{ skillinger}_)
+    Og spiller 2 skal have:
+    _($1300 - 826.8 = 473.2 \text{ skillinger}_)
+    Voila! 
+    <br><br></answer-box>
+
+
+
+
+
+

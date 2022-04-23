@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+
+
+    <h2>Det her lort tager alt for lang tid. <br> Hvad gør vi?</h2>
+
+    <p class="t">
+    Selv simple grænser er ret svære 
+    og tidskrævende at udføre. Heldigvis 
+    kan man bevise
+    et par meget kraftfulde egenskaber der gør det tusind gange lettere:
+    </p>
+
+    _($\begin{eqnarray} 
+    & \scriptstyle\bullet & \lim_{x \to a}[x] = a \\ \\
+    & \scriptstyle\bullet & \lim_{x \to a}[C*f(x)] = c*\lim_{x \to a}[f(x)] \\ \\
+    & \scriptstyle\bullet & \lim_{x \to a}[f(x)+g(x)] = \lim_{x \to a}[f(x)] + \lim_{x \to a}[g(x)] \\ \\
+    & \scriptstyle\bullet & \lim_{x \to a}[f(x)*g(x)] = \lim_{x \to a}[f(x)]*\lim_{x \to a}[g(x)] \\ \\
+    & \scriptstyle\bullet & \lim_{x \to a}[f(g(x))] = f(\lim_{x \to a}[g(x)]) \text{ hvis } f \text{ er "kontinuerlig" på } \lim_{x \to a}[g(x)]
+    \end{eqnarray}_)
+
+    <p class="t">
+    Alle de egenskaber gælder også hvis _(a=\infty_) eller _(-\infty_).
+    Jeg skal nok forklare senere, hvad fulans "kontinuerlig på _(\lim_{x \to a}[g(x)]_)" betyder. 
+    </p>
+
+    <p class="t">
+    Det korte i det lange man kan konkludere ud fra disse regler, er
+    at en grænse let kan opdeles i konstanter, plus, gange, og
+    komposition af funktioner. Det betyder konkret at en "kompliceret" grænse som:
+    _($\lim_{x \to 3}[Tan \left(\frac{e^x - x^3}{15*Sin(Cos(x))} \right)] _)
+    Bare kan regnes som:
+    _($\begin{eqnarray}
+    && Tan \left(\frac{e^{\lim_{x \to 3}[x]} - (\lim_{x \to 3}[x])^3}{15*Sin(Cos(\lim_{x \to 3}[x]))} \right) = \\ \\
+    && Tan \left(\frac{e^3 - 3^3}{15*Sin(Cos(3))} \right) =  \\ \\
+    && 0.615003 
+    \end{eqnarray}_)
+    Disse egenskaber beviser til sammen, at det er let at finde grænser på alle
+    "normale" funktioner: Grænsen er stort set altid lig  
+    funktionens værdi. De beviser, at vores intuitive forventning er
+    korrekt, og at vi primært får brug for grænser i de mere tricky tilfælde
+    som _(Sin(x)/x_) eller _(x^{1/x}_). Ved de her mere
+    "interessante" grænser, bruger man "L'hopitals regel" som vi
+    lærer efter vi har bevist og forstået egenskaberne. 
+    </p>
+
+    <p class="cent"> * </p>
+
+    <q-stion 1="4" 2="1">
+    Bevis 
+    _($\lim_{x \to a}[x] = a_) 
+    ... og 
+    _($\lim_{x \to a}[C*f(x)] = C*\lim_{x \to a}[f(x)]_)
+    De er begge meget lette.
+    <br><br></q-stion>
+    <answer-box>
+    Første er super nem. Den giver os de to uligheder:
+    _($ 0 \lt |x-a| \lt \delta, \qquad |x-a| \lt \epsilon_)
+    Så vi sætter bare _(\delta=\epsilon_) og er derved færdige.
+    <p class="t">
+    Ved den anden har vi de to uligheder:
+    _($ 0 \lt |x-a| \lt \delta, \qquad |C*f(x) - C*\lim_{x \to a}[f(x)]| \lt \epsilon_)
+    Kald _(\lim_{x \to a}[f(x)]_) for _(M_). Nu har vi:
+    _($|C*f(x) - C*M| = |C|*|f(x)-M|_)
+    Vi ved, at _(|f(x)-M|_) er mindre end et eller andet tal _(\epsilon_1_) vi frit kan vælge, eftersom
+    _(\lim_{x \to a}[f(x)]=M_). Det betyder at:
+    _($|C|*|f(x)-M| \lt |C|*\epsilon_1_)
+    Vi kan frit vælge _(\epsilon_1_), så vi sætter den bare til _(\epsilon/|C|_), og får:
+    _($|C|*\epsilon/|C| = \epsilon_)
+    Ergo:
+    _($|C|*|f(x)-M| \lt \epsilon_)
+    Og beviset er færdigt!
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="4" 2="2">
+    Bevis sum-egenskaben:
+    _($\lim_{x \to a}[f(x)+g(x)] = \lim_{x \to a}[f(x)] + \lim_{x \to a}[g(x)]_)
+    Her får du nok brug for et lille hint:
+    _($|A+B| \lt |A|+|B|_)
+    hvor _(A_), _(B_) er to tal. Det her kaldes "the triangle inequality", og du kan let bevise
+    det selv, hvis du bare tænker over de forskellige mulige negativiteter/positiviteter på _(A_) og _(B_). 
+    <br><br></q-stion>
+    <answer-box>
+    Sig at _(\lim_{x \to a}[f(x)]=M_) og at _(\lim_{x \to a}[g(x)]=N_). Vi ved nu, at 
+    der findes en _(\delta_) hvor både
+    _($|f(x)-M| \lt \epsilon_1 \, \, \text{ og } \, \, |g(x)-N| \lt \epsilon_2_)
+    Hvor _(\epsilon_1_) og _(\epsilon_2_) frit kan vælges. Vi skal nu bevise, at
+    _($|f(x)+g(x)-M-N| \lt \epsilon_)
+    ... hvor _(\epsilon_) frit kan vælges. Her kan vi bruge "the triangle inequality"
+    til at omskrive _(|f(x)+g(x)-M-N|_) i forhold til _(|f(x)-M|_) og <br> _(|g(x)-N|_):
+    _($\begin{eqnarray}
+    && |f(x)+g(x)-M-N| = \\ \\
+    && |(f(x)-M)+(g(x)-N)| \lt \\ \\ 
+    && |f(x)-M| + |g(x)-N| \lt \\ \\
+    && \epsilon_1 + \epsilon_2
+    \end{eqnarray}_)
+    Så:
+    _($|f(x)+g(x)-M-N| \lt \epsilon_1 + \epsilon_2_)
+    _(\epsilon_1+\epsilon_2_) er bare et frit tal der kan sættes til hvad end man har lyst.
+    Beviset er færdigt! 
+    <p class="t">
+    Det sidste argument kunne også fremføres mere formelt som:
+    _(\epsilon_1=\epsilon/2_), _(\epsilon_2=\epsilon/2_), hvilket giver:
+    _($\epsilon_1+\epsilon_2 = \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon_)
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <p class="tt">
+    Beviset for gange-egenskaben er lidt mere tricky, så den hjælper jeg lige med: 
+    </p>
+
+    <div class="Proof">
+    <b> Delvist bevis for gange-egenskaben:</b> <br>
+    Sig at _(\lim_{x \to a}[f(x)]=M_) og _(\lim_{x \to a}[g(x)]=N_). Ideen bag dette bevis, er at vi 
+    først ser på:
+    _($(f(x)-M)*(g(x)-N)_)
+    Det virker urelevant, men det giver os en måde at omskrive _(f(x)*g(x)_). Vi ved at:
+    _($(f(x)-M)*(g(x)-N) = f(x)*g(x) - f(x)*N - g(x)*M + N*M_)
+    Vi kan nu isolere _(f(x)*g(x)_), og få:
+    _($f(x)*g(x) = (f(x)-M)*(g(x)-N) + f(x)*N + g(x)*M - N*M_)
+    For at finde grænsen af _(f(x)*g(x)_), 
+    behøver vi nu kun bruge sum-egenskaben og tage grænsen af hvert led. 
+    Det smarte er, at _((f(x)-M)*(g(x)-N)_) burde være nemmere at regne
+    grænsen af end _(f(x)*g(x)_), eftersom både _((f(x)-M)_) og _((g(x)-N)_) nærmer sig _(0_). 
+    De tre sidste led er super nemme også. 
+    </div>
+
+    <br>
+
+    <q-stion 1="4" 2="3">
+    Færdiggør beviset ved at udregne:
+    _($\lim_{x \to a}[(f(x)-M)*(g(x)-N) + f(x)*N + g(x)*M - N*M]_)
+    <br></q-stion>
+    <answer-box>
+    Vi kan bare tage grænsen af hvert led for sig:
+    <p class="t">
+    Grænsen af _(N*M_) er _(N*M_) siden
+    det er en konstant.
+    </p>
+    <p class="t">
+    Ved _(f(x)*N_) og _(g(x)*M_) bruger vi ganget-med-en-konstant-egenskaben
+    og får _(M*N_) og _(N*M_).
+    </p>
+    <p class="t">
+    Vi har nu:
+    _($\lim_{x \to a}[(f(x)-M)*(g(x)-N)] + M*N + N*M - N*M_)
+    Hvilket kan simplificeres til bare:
+    _($\lim_{x \to a}[(f(x)-M)*(g(x)-N)] + M*N_)
+    Vi skal bevise, at dette er <i>lig</i> _(M*N_), så:
+    _($\begin{eqnarray}
+    && \lim_{x \to a}[(f(x)-M)*(g(x)-N)] + M*N = M*N \to \\ \\
+    && \lim_{x \to a}[(f(x)-M)*(g(x)-N)] = 0
+    \end{eqnarray}_)
+    Nu mangler vi bare denne sidste grænse der skal bevises. 
+    Vi ved, at der findes en _(\delta_) hvor:
+    _($|f(x)-M| \lt \epsilon_1 \qquad |g(x)-N| \lt \epsilon_2_)
+    Og vi skal bevise at:
+    _($|(f(x)-M)*(g(x)-N) - 0| \lt \epsilon_)
+    Det er relativt lige til:
+    _($\begin{eqnarray}
+    && |(f(x)-M)*(g(x)-N) - 0| = \\ \\
+    && |(f(x)-M)*(g(x)-N)| = \\ \\
+    && |f(x)-M|*|g(x)-N| \lt \\ \\
+    && \epsilon_1*\epsilon_2
+    \end{eqnarray}_)
+    Så:
+    _($|(f(x)-M)*(g(x)-N) - 0| \lt \epsilon_1*\epsilon_2_)
+    Nu kan vi bare sætte _(\epsilon_1_) og _(\epsilon_2_) til 
+    _(\sqrt{\epsilon}_), og bum! 
+    </p>
+    <br></answer-box>
+
+    <p class="tt">
+    Kompositions-egenskaben er lidt mere involveret at bevise og forklare, så lad os først
+    øve os i de fire andre egenskaber før vi går videre. 
+    </p>
+
+    <q-stion 1="4" 2="4">
+    Find de følgende grænser:
+    <div style="margin-left:-51.5%; margin-top:25px; margin-bottom: -10px;">
+    _($\begin{eqnarray}
+        && \underline{\textbf{A}}: \, \, \, \, \, \, \lim_{x \to \pi/2} \left[Sin(x)*x - \frac{5.8}{x} \right]  \\ \\
+        && \underline{\textbf{B}}: \, \, \, \, \, \, \lim_{x \to 1}[Arccos(x)*x^x - 16.4x] \\ \\
+        && \underline{\textbf{C}}: \, \, \, \, \, \, \lim_{x \to 1} \left[x^{x+3+Log_x(5.6)} \right]  \\ \\ 
+        && \underline{\textbf{D}}: \, \, \, \, \, \, \lim_{x \to 0} \left[Cos(x)^{173} \right]  \\ \\
+        && \underline{\textbf{E}}: \, \, \, \, \, \, \lim_{x \to 2} \left[\frac{1}{x^9-x^8} \right] 
+    \end{eqnarray}_)
+    </div>
+    <br><br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    Vi kan bruge gange- og plus reglerne til at omskrive grænsen:
+    _($\lim_{x \to \pi/2}[Sin(x)]*\lim_{x \to \pi/2}[x] - 5.8*\lim_{x \to \pi/2}[1/x]_)
+    Vi har tidligere bevist, at grænsen af _(Sin(x)_) ved 
+    _(x=\pi/2_) er _(1_). Grænsen af _(x_) ved 
+    vi er bare _(pi/2_). Nu mangler vi så grænsen af _(1/x_). En logisk
+    hypotese er nok _(1/(\pi/2)=2/\pi_), så vi skal bevise:
+    _($\left|x - \frac{\pi}{2} \right| \lt \delta, \qquad \left|\frac{1}{x} - \frac{2}{\pi} \right| \lt \epsilon_)
+    Det her er <i>praktisk</i> talt det samme, som da vi beviste _(\lim_{x \to 3.42}[1/x]_), så 
+    jeg vil ikke gennemgå beviset i detalje. _(\pi/2=1.5707_) kan behandles som
+    et vilkårligt tal ligesom _(3.42_), og vi kan igen antage
+    _(\delta \le 1_) siden _([1.5707-1, 1.5707+1]_) garanterer positive _(x_)-værdier. 
+    <p class="t">
+    Alt i alt får vi:
+    _($1*\frac{\pi}{2} - 5.8*\frac{2}{\pi} = -2.1215_)
+    Voila!
+    </p>
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Vi kan opdele denne som:
+    _($\lim_{x \to 1} [Arccos(x)]*\lim_{x \to 1} [x^x] - 16.4*\lim_{x \to 1}[x]_)
+    Vi har løst alle grænserne før, så dette kan vi let regne som:
+    _($0*1 - 16.4*1 = -16.4_)
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{C}}_)#" tabColour="rgb(171,96,147)">
+    Vi omskriver først algebraisk til:
+    _($x^x*x^3*x^{Log_x(5.6)}_)
+    Hvilke også kan laves om til:
+    _($5.6*x*x*x*(x^x)_)
+    Herfra kan vi nemt bruge grænse-egenskaben af grænser. Vi ved
+    at både _(x^x_) og alle _(x_)'erne giver _(1_). Svaret er
+    derfor bare:
+    _($5.6*1^3*1= 5.6_)
+    Bum!
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{D}}_)#" tabColour="rgb(175,128,161)">
+    Det her svarer til: 
+    _($Cos(x)*Cos(x)*Cos(x)* \, \dots \, \text{173 gange}_)
+    Så vi bruger bare gange-reglen _(173_) gange. Hver
+    _(\lim_{x \to 0}[Cos(x)]_) er lig _(1_), så det endelige svar er:
+    _($1^{173} = 1_)
+    Boom! 
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{E}}_)#" tabColour="rgb(171,96,147)">
+    Den her kan vi omskrive algebraisk til:
+    _($\frac{1}{x^8}*\frac{1}{x-1}_)
+    _(1/x^8_) kan vi omskrive til:
+    _($\frac{1}{x}*\frac{1}{x}*\frac{1}{x} \, * \, \dots_)
+    Vi kan bruge præcis samme argumentation som tidligere, og bevise
+    at grænsen af _(1/x_) ved _(x=2_) er _(1/2_), så grænsen
+    af _(1/x^8_) er _(1/2^8_). Nu har vi bare 
+    _(1/(x-1)_), hvor vi skal bevise, at grænsen er _(1/(2-1)=1_), så: 
+    _($|x-2| \lt \delta, \qquad \left|\frac{1}{x-1} - 1 \right| \lt \epsilon_)
+    Her burde vi nok omskrive anden ulighed til:
+    _($\left| \frac{1-(x-1)}{x-1} \right| = \frac{|x-2|}{|x-1|}_)
+    Sig at _(\delta \le 0.5_). Nu er _(x_) på _([1.5, 2.5]_), så:
+    _($\frac{|x-2|}{|x-1|} \lt \frac{|x-2|}{0.5}_)
+    Første ulighed giver nu:
+    _($\frac{|x-2|}{0.5} \lt \frac{\delta}{0.5}_)
+    Vi vælger så bare _(\delta=2 \epsilon_), hvilket færdiggøre beviset. Det endelige svar er derfor:
+    _($\frac{1}{2^8}*1=2^{-8}_)
+    <br></answer-box>
+
+
+
+
+
+

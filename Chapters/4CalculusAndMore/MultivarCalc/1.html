@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+
+    <!--31.1 -->   
+
+    <h1 class="header">Afsnit 3:</h1>
+    <h1 class="title">Multivariable calculus: <br> Calculus (med flere variabler!) </h1>
+
+    <p class="t">
+    Det her kapitel har hovedsageligt handlet om "calculus" og dets mange anvendelser. 
+    Lad os se få et lille overblik af, hvad vi har brugt vores ideer om grænser, 
+    hældninger, og integraler til indtil videre:
+    </p>
+    
+    <ul style="list-style:disc; margin-left:5%;">
+    
+        <li>Helt ordentligt og stringent tænkt over fænomener, hvor en værdi kommer meget tæt på,
+            bliver meget lille eller meget stor. Har eksempelvis svaret på
+            hvad _(Sin(x)/x_) er, hvis _(x_) nærmer sig _(0_) og hvad der sker
+            med uendelige summe. 
+        <li>Fundet hældningen af en funktion ved et punkt. Brugt det til
+            (bl.a.) at vurdere, hvor meget den ændrede sig. 
+        <li>Approximeret funktioner ved hjælp af Taylor-serier</li>
+        <li>Fundet minimum og maksimum på funktioner ved at se, hvornår hældningen var _(0_). Kaldes ofte
+            for "optimering"
+        <li>Fundet arealet under funktioner  </li>
+        <li>Regnet mange nye størrelser via integraler: Længden af en kurve, 
+            massecenter, revolutionsoverflader, mm. </li>
+        <li>Gjort det lettere at arbejde med position, hastighed og acceleration i fysik.  </li>
+        <li>Løst og arbejdet med differentialligningen, hvilke f.eks. har hjulpet med 
+            at modellere fysiske situationer. </li>
+    </ul>
+    
+    <p class="t">
+    Calculus er nogle gange kaldt "studiet af forandring", 
+    og vi lægger mærke til noget, hvis vi tænker i den boldgade:
+    Stort set alle de her anvendelser involverer kun én ting der ændrer sig. 
+    Ét variable der nærmer sig en bestemt værdi. Hældninger
+    af funktioner der tager èt variable, men ikke to. Sig f.eks. vi havde:
+    _($f(x,y) = 2+Sin \left(y*Cos(x) \right)_) 
+    Det svarer til:
+    </p>
+    <img class='SpicXL' style='width:100%' src='../../../Assets/Chapter4\MultivarCalc\Derivatives3D1.png'> 
+    <p class="t">
+    "Hældningen" ved punktet _(A_) kan visualiseres som:
+    </p>
+    <img class='SpicXL' style='width:120%; margin-left:-10%; margin-top:25px;' src='../../../Assets/Chapter4\MultivarCalc\Derivatives3D2.png'> 
+    <p class="tt">
+    Man kan slet ikke sige, at funktioner
+    af to variabler har èn hældning ved et punkt: De har uendelig mange
+    i forhold til hvilken retning _(?_) vi bevæger os! 
+    Og hvorfor begrænse os selv til kun <i>to</i> variabler?
+    Funktionen kan nemt tage endnu flere!
+    </p>
+    <p class="t">
+    Vi ved hvordan man finder Taylor-approksimationer af funktioner med èt variable, 
+    men hvad med funktioner af to?
+    </p>
+    <img class='SpicXL' style='width:120%; margin-left:-10%; margin-top:25px;' src='../../../Assets/Chapter4\MultiVarCalc\LinearApproximations.png'> 
+    <p class="tt" style="margin-bottom:35px;">
+    Hvad med minimums- og maksimums-punkter på multivariable funktioner? 
+    De følgende to eksempler ser relativt komplicerede ud:
+    </p>
+    <hover-video url="../../../Assets/Chapter4\MultiVarCalc\fixedPoints.mp4"></hover-video>
+    <hover-video url="../../../Assets/Chapter4\MultiVarCalc\OptimizationExample2.mp4" ></hover-video>
+    <p class="tt" style="margin-top:35px; margin-bottom:35px;">
+    Vi ved, hvordan man finder arealet under en 2D kurve, men hvad med <i>volumet</i> under en 3D flade? 
+    </p>
+    <hover-video url="../../../Assets/Chapter4\MultiVarCalc\VolumeUnderSurfaceHover.mp4" ></hover-video>
+    <p class="tt" style="margin-top:35px;">
+    Lignende: Vi kunne finde <i>længden</i> af en 2D kurve, men hvad med <i>overfladearealet</i> af en 
+    3D flade? (f.eks. den grønne på videoen deroppe)
+    </p>
+    <p class="t">
+    Vi brugte integraler til at regne moment of inertia i 1D og 2D:
+    </p>
+    <img class='SpicXL' style='width:95%; margin-top:25px;' src='../../../Assets/Chapter4\MultiVarCalc\MetalInertia1.png'> 
+    <p class="tt">
+    Det var defineret som _(m*r^2_), hvor _(r_) er afstanden til objektets massecenter.
+    For at regne det samlede moment på et simpel objekt som en uendelig tynd 1D stang, 
+    var man nødt til at opdele det i en masse små længder, hvis masse hver
+    var _(p(x)*dx_), hvor _(p(x)_) indikerer densiteten _(x_) væk fra massecenteret. 
+    Ved en 2D plade havde man brug for <i>to</i> integraler:
+    Èn, der regnede det samlede inertimoment af en uendelig tynd linje, og
+    én, der lagde alle uendelig tynde linjer sammen til en hel plade. Hvad ville vi gøre i 3D?
+    </p>
+    <img class='SpicXL' style='width:65%; margin-top:25px;' src='../../../Assets/Chapter4\MultiVarCalc\MetalInertia2.png'> 
+    <p class="tt">
+    Vi skal også se på helt nye koncepter i dette afsnit. Eksempelvis <i>vektor felter</i>,
+    der både kan forstås i 2D:
+    </p>
+    <img class='SpicXL' style='width:80%; margin-top:25px;' src='../../../Assets/Chapter4\MultiVarCalc\windField.png'> 
+    <p class="tt" style="margin-bottom:35px;">
+    ... og 3D:
+    </p>
+    <hover-video customWidth="70%" style="margin-left:15%;" url="../../../Assets/Chapter4\MultiVarCalc\VectorField3D.mp4" ></hover-video>
+    <p class="tt" style="margin-top:35px;">
+    Det første 2D vektor felt svarer til:
+    _($\vec F(x,y) = \VeC[2-0.1x+0.3Ln(y), 0.5+0.2x-0.1Ln(y)]_)
+    Og det andet 3D vektor felt til: 
+    _($\vec F(x,y,z) = \VeC[x-y, 0.1z^2, y/z]_)
+    Et vektor felt associerer altså hvert punkt i koordinatsystemet med en vektor. 
+    Det er i sig selv ikke specielt interessant, men viser som en meget brugbar
+    model, især i fysik, hvor vi arbejder med 
+    "magnetiske felter", "elektriske felter" og "tyngdekrafts felter".
+    Vi skal nok gå mere i dybden, når vi når dertil, men der er helt overordnet to problemer
+    vi interesserer os i, hvad angår vektor felter:
+    </p>        
+    <img class='SpicXL' style='width:130%; margin-left:-15%; margin-top:25px;' src='../../../Assets/Chapter4\MultiVarCalc\VectorFieldApplications.png'> 
+    <p class="t">
+    I det første problem forestiller vi os, at et objekt bevæger sig langs 
+    en vej _(\vec r(t)_) - hvor _(\vec r_) giver en position som funktion
+    af _(t_), hvor _(\vec r(t_0)_) så er vejens start, og _(\vec r(t_1)_) er vejens slut. 
+    Vi er nu interesserede, i hvor stor 
+    <i>indflydelse</i> vektor feltet har haft på det. 
+    Hjælper vinden dig meget eller lidt, hvis du cykler en bestemt sti? 
+    Hvordan kvantificerer vi "indflydelse"? 
+    </p>
+    <p class="tt">
+    Andet problem kaldes ofte "flux". 
+    Hvor meget kommer "ind" i et eller andet område _(R_) i vores vektor felt? 
+    Forestil dig, at vektor feltet viser hastigheden af vand-molekyler på forskellige punkter.
+    Nogle vandmolekyler går <i>ind</i> i _(R_) mens andre går <i>ud</i>. 
+    Vi er ret interesserede i denne <i>forskel</i>. Flux kan eksempelvis beskrive,
+    hvor meget varme der bliver tilføjet til et bestemt område, eller 
+    hvor meget dets indhold af radioaktive stoffer falder. 
+    </p>
+
+    <p class="pageSplitter">
+        *
+    </p>
+
+    <p class="t">
+    ... Så her er planen: <br> Calculus er fundamentalt opbygget på <i>grænser</i>. Vi starter derfor
+    med at definere, forstå og analysere "3D grænser". Det næst-vigtigste koncept 
+    er nok <i>hældningen</i>, så vi skal se, hvordan man forstår hældningen på 
+    en funktion med flere variabler, og hvordan den kan regnes langs en hvilken som helst retning.
+    Vi opbygger også et relativt vigtigt teoretisk grundlag i form af <i>differentiabilitet</i>; En ide,
+    der bliver anvendt i flere beviser.
+    Alt det øvre bliver også kort undersøgt i tilfældet af tre eller flere variabler. 
+    Vi går videre med hældning, og tager et mere lavpraktisk kig på
+     <i>Clairaut's theorem</i> og <i>multivariable chain rule</i>. To praktiske, små simple teorier. 
+    </p>
+
+    <p class="t">
+    Området nær et punkt på en 2D funktion kan approksimeres, hvis man kender funktionens hældning ved punktet.
+    Det ville være en <i>lineær</i> approksimation, men 
+    flere hældninger gør det bedre.  
+    At approximere er faktisk en ret <i>vigtig</i> del af calculus 
+    (især på det teoretiske plan), så det næste punkt på listen efter hældninger
+    er Taylor-approksimationer af multivariable funktioner. 
+    </p>
+
+    <p class="t">
+    Efter det ser vi på optimering, hvor vi både skal finde 
+    lokale <i>og</i> globale minimum/maksimum-værdier på et område. 
+    </p>
+
+    <p class="t">
+    Resten af kapitlet fokuserer mere på integration og geometri. 
+    Først hvordan man finder volumen under en overflade, derefter lidt 
+    mere generelt "dobbelt-integraler" og "tredobbelt-integraler". 
+    Vi finder også den vinkelrette vektor til en overflade
+    på et punkt:
+    </p>
+    <img class='SpicXL' style='width:80%' src='../../../Assets/Chapter4\MultiVarCalc\NormalVectorExample2.png'> 
+    <p class="t">
+    Det er også her vi beregner overfladearealer på 3D kurver. </p>
+
+    <p class="t">
+    Det sidste punkt er vektor felter og deres forskellige anvendelser. 
+    </p>
+
+    <p class="t">
+    Lad os komme igang!
+    </p>
+
+

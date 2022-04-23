@@ -1,0 +1,15 @@
+<svg width="919.3" height="335.5" version="1.1" viewBox="0 0 243.2 88.78" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <pattern id="a" xlink:href="#b" patternTransform="matrix(9 0 0 9 -197.4 -939.9)"/>
+  <pattern id="b" patternTransform="scale(10)" xlink:href="#Checkerboard"/>
+  <pattern id="Checkerboard" width="2" height="2" patternTransform="translate(0) scale(10)" patternUnits="userSpaceOnUse">
+   <rect width="1" height="1"/>
+   <rect x="1" y="1" width="1" height="1"/>
+  </pattern>
+ </defs>
+ <g transform="translate(89.57 -154.6)">
+  <path transform="rotate(150.3)" d="m124.8-133a25.27 25.45 0 0 1 1.633 9.09l-25.27-0.09z" fill="#fff"/>
+  <path d="m-88.89 161 242.5-5.103v63.27l-243.2 24.15z" fill="#a5ffc5" opacity=".979"/>
+  <path d="m-88.89 161 242.5-5.103v63.27l-243.2 24.15z" fill="url(#a)" opacity=".024"/>
+ </g>
+</svg>

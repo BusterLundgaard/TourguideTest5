@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <p class="t">
+    Alright nok om radianer! Tid til en masse opgaver der generelt udvider vores viden om trigonometri og 
+    vores evne til at anvende det:
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Du står på et pariserhjul:
+    <img class="SpicB" style="width:60%;" src="../../../Assets/Chapter2\Section1\TrigProperties\Pariserhjul.png">
+    <p class="t">Pariserhjulet kører _(1_) omgang på _(163_) sekunder. Hjulet drejer samme hastighed konstant.
+    Hvor højt oppe er du efter _(16_) minutter?</p>
+    <br></q-stion>
+    <answer-box>
+    _(1_) omgang pr _(163_) sekunder svarer til en hastighed på _(\frac{2\pi}{163}=\frac{\pi}{81}_) radianer pr sekund.
+    Efter _(16_) minutter har vi altså roteret _(\frac{\pi}{81}*16*60=11.85 \pi_) radianer. Det er _(\frac{10}{2}=5_) fem
+    omgange, og så _(1.85\pi_) derefter. Vi starter ved _(\frac{1}{2}\pi_), så det vil sige vi ender ved 
+    _(1.85\pi + \frac{1}{2}\pi = 2.35\pi_), som er _(15*Sin(2.35\pi)=1.927_) over pariserhjulets midte.
+    Altså: Vi ender med at være _(1.927m + 20m = 21.927m_) over jorden.
+    <br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Sin og cos kan være rigtig gode når vi skal modellere og forstå fjedere. Prøv at se følgende video der illustrerer idéen:
+    <video class="picB" controls>
+        <source src="../../../Assets/Chapter2\Section1\TrigProperties\SpringSimulation.mp4" type="video/mp4">
+    </video>
+    <p class="t">Fjederen har en standardlængde _(s_0_). Når vi gør den mindre eller større, så vil den prøve at få sig selv tilbage
+    til sin normale længde. På grund af alt den hastighed og kraft vægten får fra denne længsel, så skyder fjederen faktisk over!
+    Det bliver den altså ved med at gøre i teoretisk set alt uendelighed. Der er friktion og mange andre ting 
+    der stopper den, men dem gider vi ikke tænke over her. </p>
+
+    <p class="t">
+    Hvis dens _(x_)-position er _(0_) når længden er _(s_0_), så kunne vi fint approximere _(x_) som:
+    _($x=A*cos(B*t)_)
+    Vi tager _(Cos_) af tiden _(t_) siden _(x_) går over og under _(0_) i hvad der virker som en bølge. Vi ganger
+    det hele med en eller anden amplitude _(A_), som altså er hvor <i>stor</i> bølgetoppene skal være. 
+    Toppene på _(Sin(a)_) er normalt _(1_) høje, så på _(A*Sin(a)_) bliver de _(1*A=A_) høje. _(A_) skal 
+    nok være lig _(d_), som i videon er hvor langt vi forskyder vægten fra dens startposition. Tiden inde i 
+    _(Sin_) ganges med _(B_). Denne _(B_) bruges til at bestemme <i>hvor hurtigt</i> vægten bevæger sig. Hvis 
+    _(B_) var lig _(1_), så ville det tage _(2\pi=6.28_) sekunder for én hel oscillation. På videon deroppe tager
+    det omkring  _(3_) sekunder, så _(B_) sættes til _(\frac{3}{6.28}_) - dividering med _(6.28_) sætter det
+    ned til _(1_) sekund, og vi øger det til _(3_) ved at gange. Hvis _(d_) måske er _(30cm_) så har vi nu:
+    _($30*Cos(\frac{3}{6.28}*t)_)   
+    Vi bestemmer selv enhed selvfølgelig! 
+    </p> 
+    <p class="t">
+    <u> 1</u>: Hvorfor vælger vi i dette tilfælde _(Cos_) frem for _(Sin_)?
+    </p>
+    <p class="t">
+    <u> 2</u>: Hvornår er _(x_) for første gang lig _(-20cm_)? 
+    </p>
+    <p class="t">
+    <u> 3</u>: Hvis _(x_) er lig _(10cm_) når _(t_) er _(1.2s_), og _(A=40cm_), hvor stor er så _(B_)? 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    <u> 1</u>: Vores model er som sagt _(x=30*Cos(\frac{3}{6.28}*t)_). Hvis vi brugte _(Sin_) så ville vi starte ved _(0cm_)
+    siden _(Sin(0)=0_). Ved _(Cos_) starter vi i stedet ved _(30_) som forventet, da _(30*Cos(0)=30*1=30cm_). 
+    <p class="t">
+    <u> 2</u>: Vi skal altså finde _(t_) ved hjælp af kravet _(30*Cos(\frac{3}{6.28}*t)=-20_). Vi har gjort sådan noget 
+    her før, så det er egentlig meget simpelt:
+    _($30*Cos(\frac{3}{6.28}*t)=-20 \to_)
+    _($Cos(0.477t) = \frac{-20}{30} \to_)
+    _($0.477t=Arccos(\frac{-20}{30}) \to_)
+    _($0.477t=2.3 \to_)
+    _($t=\frac{2.3}{0.477}=4.821_)
+    </p>
+    <p class="t">
+    <u> 3</u>: 
+    Vi ved at:
+    _($10=40*Cos(B*1.2)_)
+    Så nu gør vi bare lidt ligesom før:
+    _($\frac{10}{40}=Cos(B*1.2) \to_)
+    _($Arccos(\frac{10}{40})=B*1.2 \to_)
+    _($1.318=B*1.2 \to_)
+    _($B= \frac{1.318}{1.2}=1.098_)
+    </p>
+    <br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Du hopper på stedet. Approximalt sagt (meget approximalt sagt) så følger dit hop en sinus-kurve med tiden. 
+    Ved hvert hop er du oppe i luften i _(4s_), og det tager dig _(1.5s_) at hoppe igen efter du har landet. Højden på 
+    hvert hop er _(0.8m_). Hvor højt er du oppe efter _(30_) sekunder? 
+    <br><br></q-stion>
+    <answer-box>
+    Fra _(30_) sekunder, hvor lang tid siden er det du begyndte det sidste hop? Fra da du begynder ét hop til 
+    du starter med det næste går der _(1.5+4=5.5_) sekunder. _(30=5.5*5+2.5_) så du er altså _(2.5s_) fremme i hoppet.
+    Sin <i>starter</i> ved _(0_) og går opad. Én halv bølge har normalt en længde på _(\pi_), så hvis den skal have
+    en længde på _(4_) så må vi sige _(Sin(\frac{\pi}{4}*t)_). At gange med _(\pi_) tager længden ned til _(1_) sekund,
+    og at dividere med _(4_) gør den _(4_) gange langsommere. Højden er _(0.8_) så det skal det også lige ganges med. 
+    Alt i alt _(0.8*Sin(\frac{\pi}{4}*2.5)=0.739m_)
+    <br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    _(Cos(1.2)=0.93_). Find _(Sin(\frac{\pi}{2}-1.2)_) <b>uden lommeregner</b> 
+    <br><br></q-stion>
+    <answer-box>
+    _(Sin(v)_) og _(cos(v)_) kan vi som sagt se som sidelængderne på en retvinklet trekant med vinkel _(v_). Altså:
+    <img class="Spic" style="width:40%" src="../../../Assets/Chapter2\Section1\TrigProperties\UnitTriangle.png">
+    <p class="t">Den anden vinkel ved vi er _(\frac{\pi}{2}-v_). Længde _(a_) kan altså både regnes 
+    som _(cos(v)_) <i>og</i> _(sin(\frac{\pi}{2}-v)_) og
+    _(b_) både _(sin(v)_) og _(cos(\frac{\pi}{2}-v)_). Så _(sin(v)=cos(\frac{\pi}{2}-v)_) og vice versa. 
+    Derfor er _(Sin(\frac{\pi}{2}-1.2)=Cos(1.2)_).</p>
+    <p class="t">Man kan bevise præcis samme egenskab på en måske lidt mere intuitiv måde. Vi skal kigge på den her 
+    cirkel med en radius på _(1_) vi har brugt før. Først tegner vi én trekant med vinkel _(v_):</p>
+    <img class="Spic" style="width:100%" src="../../../Assets/Chapter2\Section1\TrigProperties\UnitCircle2.png">
+    <p class="t"> Vi rykker nu _(\frac{\pi}{2}_) grader op, og går _(v_) grader ned:</p>
+    <img class="Spic" style="width:100%" src="../../../Assets/Chapter2\Section1\TrigProperties\UnitCircle3.png">
+    <p class="t">Wholla! _(cos(v)=sin(\frac{\pi}{2}-v)_)!</p>
+    <br></answer-box>
+    
+    <q-stion 1="2" 2="1" 3="5">
+    Prøv at bevis de følgende egenskaber i stil af sidste opgave:
+    <div style="text-align:center;">
+        <ul style="display: inline-block; text-align: left; list-style:none;">
+            <li>_(Cos(\frac{\pi}{2}+v)=-Sin(v)_)</li>
+            <li>_(Cos(-v)=Cos(v)_)</li>
+            <li>_(Sin(-v)=-Sin(v)_)</li>
+            <li>_(Cos(\pi+v)=-Cos(v)_)</li>
+            <li>_(Sin(\pi+v)=-Sin(v)_)</li>
+        </ul>
+    </div>
+    De her er alle meget nemme og intuitive. 
+    <br><br></q-stion>
+    <answer-box>
+    Det er ærlig talt hurtigst og lettest bare at vise det i en video:
+    <video class="picB" controls>
+        <source src="../../../Assets/Chapter2\Section1\TrigProperties\TrigVinkelegenskaber.mp4" type="video/mp4">
+    </video>
+    Der er en lille fejl i videon! Jeg er kommet til at skrive _(Sin(-v)=Sin(v)_), men det var
+    faktisk meningen der skulle stå _(Sin(-v)=-Sin(v)_)
+    <br><br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Hvad skal gælde for _(v_) for at _(Sin(v)*Cos(v)=0_)? Der er <i>uendelig</i> mange _(v_) der 
+    opfylder kravet. Kan du finde en eller anden praktisk og matematisk måde at beskrive dem alle på. Ikke
+    noget absolut rigtigt svar her nødvendigvis! Bare find noget du tror der kunne være
+    praktisk i fremtiden.
+    <br><br></q-stion>
+    <answer-box>
+    Hvis vi ganger noget som helst med _(0_), så får vi _(0_). Derfor er det ligegyldigt hvad
+    _(Sin(v)_) er hvis _(Cos(v)_) er lig _(0_). F.eks _(\pi/2_) giver _(Cos(\pi/2)=0_) og 
+    derfor er _(Sin(v)*Cos(v)_) også _(0_) da den kan regnes som _(Sin(\pi/2)*0=0_). 
+    Prøver man at finde ud af hvornår noget er _(0_), så kan man altså meget let bare kigge på de 
+    individuelle faktore! Det gør arbejdet meget lettere, og gør blandt andet potenser i vores tilfælde
+    helt ligegyldige. Hvis _(Sin(v)_) eller _(Cos(v)_) er _(0_), så vil _(Sin(v)_) og _(Cos(v)_) også
+    være _(0_). Spørgsmålet er nu simpelt: Ved hvilke vinkler er _(Sin_) eller _(Cos_) lig _(0_)? 
+    <p class="t">
+    Helt intuitivt så hvis _(v_) springer i kun _(\pi/2_), så vil _(Sin_) eller _(Cos_) altid blive _(0_).
+    Så er _(v_) jo kun ude på "ekstremerne". Altså: _(v=(\pi/2)*n_) hvor _(n_) er et eller andet helt og potentielt negativt tal.
+    </p> 
+    <br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Ved hvilke _(a_) er _((13-a)*Sin(a)_) lig _(0_)? Igen er der lidt ligesom før ikke rigtig ét enkelt 
+    rigtigt svar her. Bare beskriv det på en måde du syntes virker praktisk!
+    <br><br></q-stion>
+    <answer-box>
+    Igen skal vi bare kigge på de individuelle faktore: _((13-a)_) og _(Sin(a)_). _(13-a_) er _(0_) kun
+    når _(a=13_). _(Sin(a)_) er _(0_) når _(a=n*\pi_) (_(n_) igen helt tal). 
+    Så _(a=n*\pi \text{ & } 13_). 
+    <br><br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Ved hvilke _(x_) er _((a_1-x)*(a_2-x)*(a_3-x)*...(a_n-x)_) lig _(0_)? 
+    <br><br></q-stion>
+    <answer-box>
+    Super simpelt faktisk. Ved hver faktor skal _(x_) bare være lig henholdsvis _(a_1,a_2,a_3_) osv. Så
+    jeg ville nok sige _(x=a_{i}, 1 \le x \le n _). Det med _(i_) og større end og mindre fandt jeg bare lige på her.
+    Pointen er at det effektivt kommunikere konklusionen! 
+    <br><br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    _(Tan(1.249)=3_). Regn _(Sin(1.249)*Cos(1.249)_) uden lommeregner. 
+    Den her opgave er måske lidt på den tricky side! Den er i hvert fald svære 
+    end dem før hvor vi havde _(Sin_) og så skulle finde _(Cos_). 
+    <br><br></q-stion>
+    <answer-box t="h">
+    _(Sin=a/c_), _(Cos=b/c_), så hvordan kan vi også skrive _(Sin*Cos_)? Kan
+    _(c_) på nogen måde omskrives?
+    </answer-box>
+    <answer-box>
+    Hvis jeg har en _(1.249_)-graders retvinklet trekant med bredde _(a_) højde _(b_) længde _(c_), så er
+    _(Sin(1.249)*Cos(1.249)_) lig _(\frac{a}{c}*\frac{b}{c}=\frac{a*c}{c^2}_). Vi ved at _(c^2_) er
+    _(a^2+b^2_) så vi kan omskrive til _(\frac{a*b}{a^2+b^2}_). Det er nemt at simplificere
+    en tæller med flere led, men ikke en nævner. Derfor snyder jeg bare lidt og siger:
+    _($\frac{1}{\frac{1}{\frac{a*b}{a^2+b^2}}}=\frac{1}{\frac{a^2+b^2}{a*b}}_)
+    Hvis jeg for noget her <i>i forhold til </i> _(Tan_), så kan jeg jo bare regne
+    resultatet manuelt derefter. Derfor er det ikke noget stort problem at jeg egentlig - midlertidigt - har gjort vores udtryk en del mere komplekst at arbejde med. 
+    _($\frac{1}{\frac{a^2+b^2}{a*b}}=\frac{1}{\frac{a^2}{a*b}+\frac{b^2}{a*b}}=\frac{1}{\frac{a}{b}+\frac{b}{a}}_)
+    Haha! _(\frac{b}{a}_) er bare _(Tan(1.249)_) og _(\frac{a}{b}=1/Tan(1.249)_). Nu kan jeg altså bare regne _(\frac{1}{3+\frac{1}{3}}_).
+    Jeg gider helst ikke dividere med _(3_) i hovedet, så jeg omskriver det yderligere til:
+    _($\frac{1}{\frac{3*3+1}{3}}=\frac{3}{3*3+1}=\frac{3}{10}=0.3_) 
+    Basta! 
+    <br><br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    _(Tan(1.373)=5_). Regn _(Sin(1.375)+Cos(1.375)_) i hovedet uden at bruge _(Sin, Cos, Tan, Arcsin, Arcos, Arctan_) på din lommeregner. 
+    Du må gerne bruge andre funktioner på lommeregneren.
+    <br><br></q-stion>
+    <answer-box>
+    Vi siger:
+    _($\frac{b}{c}+\frac{a}{c}=\frac{a+b}{c}=\frac{a+b}{\sqrt{a^2+b^2}}=\frac{a}{\sqrt{a^2+b^2}}+\frac{b}{\sqrt{a^2+b^2}}=_)
+    _($\frac{1}{\frac{\sqrt{a^2+b^2}}{a}}+\frac{1}{\frac{\sqrt{a^2+b^2}}{b}}=
+    \frac{1}{\sqrt{\frac{a^2+b^2}{a^2}}}+\frac{1}{\sqrt{\frac{a^2+b^2}{b^2}}}=_)
+    _($\frac{1}{\sqrt{1+\frac{b^2}{a^2}}}+\frac{1}{\sqrt{\frac{a^2}{b^2}+1}}=_)
+    _($\frac{1}{\sqrt{1+Tan(1.375)^2}}+\frac{1}{\sqrt{1+(1/Tan(1.375))^2}}_)
+    Nu kan vi bare indsætte _(Tan(1.375)=5_) og regne det med vores lommeregner:
+    _($\frac{1}{\sqrt{1+5^2}}+\frac{1}{\sqrt{1+(1/5)^2}}=1.176_)
+    <br></answer-box>
+    
+    <q-stion 1="2" 2="1" 3="5">
+    Lad os sige du står på toppen af et isbjerg. Det går lige stejlt ned omend du går øst eller vest:
+    <img class="SpicB" style="width:95%" src="../../../Assets/Chapter2\Section1\TrigProperties\Absoloutte.png">
+    <p class="t">
+        Hældningen nedad er _(0.4m_). Hvis vi <i>kun</i> kunne gå øst, så ville svaret være super simpelt: _(opad=0.4x_). 
+        Hvis vi kun kunne gå vest - negativ øst - så ville det også være nemt: _(opad=0.4*(-x)_). 
+        Men hvad hvis vi gerne ville have èn enkelt funktion, èn formel, der passede i begge tilfælde?
+        Sådan at det var positivt lige meget om _(x_) var negativ eller ej? For at gøre det skal du 
+        arbejde med nogen kvadratroder og potenser! Den her opgave har ikke nødvendigvis noget at gøre med _(Sin_) og _(Cos_). 
+    </p>
+    <br><br></q-stion>
+    <answer-box>
+    <p class="t">
+    Når man ganger et negativt tal med sig selv, så får man et positivt. Samme gælder hvis man ganger et positivt tal med sig selv.
+    Altså _((-x)^2=x^2_). Vi vil gerne have bare <i>x</i>, så vi tager kvadratroden: 
+    _(\sqrt{(-x)^2}=\sqrt{x^2}_). Perfekt! Hvis man skal gøre noget altid positivt, så kan man altså bare
+    opløfte det i anden potens og tage kvadratroden. Svaret er altså _(\sqrt{(0.4*x)^2}_).
+    </p>
+    <p class="t">
+    Fordi vi ofte bruger det her med at fjerne alt negativitet, så kalder vi _(\sqrt{x^2}_) for 
+    _(x_)'s "absolute værdi". For kompakthedens skyld så skriver vi også bare _(|x|_) som forkortelse. 
+    </p>
+    <br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    <u> 1</u>: Hvad er den største og mindste værdi _(Sin(v)_) og _(Cos(v)_) kan have? Hvornår tager de disse værdier? 
+    <p class="t"><u> 2</u>: Find lignende den største og mindste værdi for _(Tan(v)_). Måske involverer det uendelighed!</p>
+    <br></q-stion>
+    <answer-box customWidth="600">
+    _(Sin_) er højden på en retvinklet trekant med længde _(1_). Hvis der er _(\pi/2_) radianer, så går denne trekant direkte opad, og
+    hele dens _(1_) længde går til højden. Hvis der er _(-\pi/2_) radianer, så går længden _(1_) nu kun til <i>negativ</i> højde. 
+    _(Sin(v)_) er altså altid mellem _(-1_) og _(1_). Præcis samme argument kan vi lave med _(Cos(v)_). Du kan se kurven af _(Sin(v)_) her:
+    <img class="Spic" style="width:95%" src="../../../Assets/Chapter2\Section1\TrigProperties\Curves\sin.png">
+    <p class="t">Når vi går fremad på det her billede, så gør vi altså _(v_) større. Opad er så værdie naf _(Sin(v)_). Man kan se 
+    at kurven er _(0_) hver _(\pi_) eller _(-\pi_). Det giver mening med hvad vi ved om _(Sin_). Maksimum
+    og minimum kommer også ved _(\pi/2_) og _(\frac{3}{2}\pi_) som jo er hvor _(Sin_) har sine største og laveste værdier.
+    Sådan her bliver kurven bare ved med at gentage sig selv i alt uendelighed. Cos er meget det samme:</p>
+    <img class="Spic" style="width:95%" src="../../../Assets/Chapter2\Section1\TrigProperties\Curves\cos.png">
+    <p class="t">Her ved cos er det nu ved _(\pi/2_) og _(\frac{3}{2}\pi_) der er _(0_). Det giver også mening. Man kan 
+    se at _(Cos_) bare er en forskudt version af _(Sin_). Den er forskudt præcis _(\pi/2_), da 
+    _(Cos(v)=Sin(\pi/2 - v)_). </p>
+    <p class="t">
+    Lad os nu kigge på _(Tan(x)_). Som vi nok ved, så er _(Tan(x)=Sin(x)/Cos(x)_). Når _(Cos(x)_) nærmer sig _(0_), 
+    som den gør hver _(\frac{\pi}{2}+n*\pi_), så vil vi dividere med _(0_), og vi vil få noget der er uendeligt højt. 
+    Når, på den anden hånd, _(Sin(x)_) nærmer sig _(0_) hver _(n*\pi_), så ganger vi med _(0_) i tælleren, og 
+    får derfor bare _(0_) som resultat. _(Tan(x)_) er altså en kurve der hele tiden skifter mellem er at være uendelig høj
+    og så _(0_):
+    </p>
+    <img class="Spic" style="width:95%" src="../../../Assets/Chapter2\Section1\TrigProperties\Curves\tan.png">
+    <p class="t">
+    Den her crazy kurve passer faktisk med hvad vi intuitivt ser når vi kigger på enhedscirklen. 
+    _(Tan(v)_) er <i>hældningen</i> af vinklen _(v_). Når vinklen nærmer sig _(90_) grader - en lodret linje - 
+    så bliver hældningen selvfølgelig "uendelig" stor. Hvis den nærmer sig _(-90_) grader så bliver den uendelig negativ.
+    </p>
+    <p class="t">
+    Grunden til at den med det samme skifter mellem uendelig positiv og uendelig negativ kan også ses når vi 
+    ser på brøkken. Når _(Cos_) nærmer sig _(0_), så er den først positiv. Når den bagefter går væk fra _(0_), så er 
+    den negativ, men stadig uendelig lille.  I begge tilfælde dividerer vi med noget der er uendeligt småt, men i kun 
+    èn af tilfældene ændre vi også på positiviteten/negativiteten. 
+    </p>
+    <br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Fra nu af har jeg tænkt mig at bruge _(arcsin, arccos, arctan_) i stedet for _(invSin, invCos, invTan_). Jeg 
+    ved ikke lige hvorfor vi siger _(arc_), men det er bare mere standard at gøre det sådan.
+
+    <p class="t">
+    <u> 1</u>: 
+    Giver _(arcsin(1.2)_) eller _(arccos(-2.3)_) nogen som helst mening? (i forhold til de definitioner vi har lavet indtil videre)
+    </p>
+    <p class="t">
+    <u> 2</u>: 
+    På hvilke værdier kan vi faktisk tage _(arcsin_) og _(arccos_) imens det stadig giver mening? 
+    </p> 
+    <p class="t">
+    <u> 3</u>: 
+    På hvilke værdier kan vi tage _(arctan_)? 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    <u> 1</u>: Nope! _(arcsin_) og _(arccos_) laver <i>forhold</i> om til <i>vinkler</i>. Vi ved fra tidligere at 
+    de her forhold er mellem _(-1_) og _(1_), så _(1.2_) og _(-2.3_) er slet ikke rigtige forhold mellem siderne og 
+    længden på nogen som helst trekant! 
+    <p class="t">
+    <u> 2</u>: Tallet skal som sagt være et forhold mellem siderne og længden, så bare _(\ge -1_) og _(\le 1_).
+    </p>
+    <p class="t">
+    _(arctan_) konvertere forhold mellem højden og bredden til vinkler. De forhold kan blive uendelige store, så <u> 3</u>: vi kan 
+    regne _(arctan_) på et noget som helst tal. 
+    </p>
+    <br><br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Hvor høje kan henholdsvis _(arcsin_), _(arccos_), og _(arctan_) blive (ifølge vores definitioner indtil videre)? 
+    Du må godt bruge negative tal.
+    <br><br></q-stion>
+    <answer-box customWidth="600">
+    _(arcsin_), _(arccos_) og _(arctan_) repræsentere alle vinkler, så vi skal egentlig bare spørge os selv hvor 
+    store de vinkler kan blive. Man kunne nemt blive lystet til bare at sige mellem _(0_) og _(2\pi_), men det
+    er ikke helt så simpelt. Der er <i>flere</i> vinkler der kan give de samme ratioer! F.eks. så 
+    giver _(cos(20)_) og _(cos(360-20)=cos(340)_) begge _(0.408_). Hvis _(arccos_) gav værdier
+    fra _(0_) til _(2\pi_), så ville den kunne give to forskellige værdier når vi sagde _(arccos(0.408)_).
+    Det gider vi jo ikke have! Vinklerne mellem _(0_) og _(\pi_) giver præcis de samme
+    _(Cos_)-værdier som vinklerne mellem _(\pi_) og _(2\pi_). Derfor siger vi at _(arccos_) er 
+    mellem _(0_) og _(\pi_). Vi kunne selvfølgelig også vælge mellem _(\pi_) og _(2\pi_), men 
+    det ville bare være lidt mærkeligt og dumt. 
+    <p class="t">
+    På _(arcsin_) der giver værdierne mellem _(-\pi/2_) og _(\pi/2_) det samme som mellem _(\pi/2_) og _(\frac{3}{4}\pi_).
+    Derfor siger vi at _(arcsin_) skal være større end _(-\pi/2_) og lavere end _(\pi/2_). Præcis det samme 
+    kan vi sige omkring _(arctan_). 
+    </p>
+    <p class="t">
+    Du kan se kurven af henholdsvis _(arcsin_), _(arccos_), og _(arctan_) her:
+    <img class="Spic" style="width:30%" src="../../../Assets/Chapter2\Section1\TrigProperties\Curves\arcsin.png">
+    <img class="Spic" style="width:30%" src="../../../Assets/Chapter2\Section1\TrigProperties\Curves\arccos.png">
+    <img class="Spic" style="width:100%" src="../../../Assets/Chapter2\Section1\TrigProperties\Curves\arctan.png">
+    </p>
+    <br></answer-box>
+    
+    <q-stion 1="2" 2="1" 3="5">
+    For hver af de følgende udtryk skal du: <u> 1</u>: finde ud af hvornår det er muligt at evaluere dem (hvornår det giver mening med vores definitioner),
+    <u> 2</u>: finde deres største og laveste værdi, og <u> 3</u>: prøve at meget groft tegne en kurve af hvornår de ændre sig med _(a_). Bare
+    omtrent formen! Det behøver slet ikke at være præcist, og du behøver ikke sørge for at tallene er helt ordentlige! 
+    <div style="text-align:center;">
+        <ul style="display: inline-block; text-align: left; padding-left:0%; list-style:none;">
+            <li><b> 1</b>: _(\sqrt{a}_)</li>
+            <li><b> 2</b>: _(Sin(\sqrt{a})_)</li>
+            <li><b> 3</b>: _(Tan(Sin(a))_)</li>
+            <li><b> 4</b>: _(\sqrt{35-a}_)</li>
+            <li><b> 5</b>: _(\sqrt{30-80*Cos(a)}_)</li>
+            <li><b> 6</b>: _(\sqrt{a^2}_)</li>
+            <li><b> 7</b>: _(\sqrt{Sin(a)^2}_)</li>
+            <li><b> 8</b>: _(\frac{18}{a}_)</li>
+            <li><b> 9</b>: _(\frac{a}{a-3}_)</li>
+            <li><b> 10</b>: _(M_{12}(a)_)</li>
+            <li><b> 11</b>: _(M_{12}(2*a)_)</li>
+            <li><b> 12</b>: _(M_{12}(4a+16)_)</li>
+            <li><b> 13</b>: _(M_{0.5}(Sin(a))_)</li>
+        </ul>
+    </div>
+    Det her er en pænt massiv opgave, i know. Det vil tage lidt tid at komme igennem dem alle sammen. 
+    <br><br><br></q-stion>
+    <answer-box t="Answer 1#" tabColour="rgb(171,96,147)">
+        Du kan se mit svar her:
+        <video class='picB' controls>
+            <source src='../../../Assets/Chapter2\Section1\Funktionsanalyse\1.mp4' type='video/mp4'>
+        </video>
+        <p class="t">
+        Du kan se en computer-genereret tegning af grafen her:
+        </p>
+        <img class='Spic' style='width:80%' src='../../../Assets/Chapter2\Section1\Funktionsanalyse\1.png'> 
+    <br><br></answer-box>
+    <answer-box t="Answer 2#" tabColour="rgb(175,128,161)">
+        Du kan se mit svar her:
+        <video class='picB' controls>
+            <source src='../../../Assets/Chapter2\Section1\Funktionsanalyse\2.mp4' type='video/mp4'>
+        </video>
+        <p class="t">
+        Du kan se en computer-genereret tegning af grafen her:
+        </p>
+        <img class='Spic' style='width:95%' src='../../../Assets/Chapter2\Section1\Funktionsanalyse\2.png'> 
+    <br><br></answer-box>
+    <answer-box t="Answer 3#" tabColour="rgb(171,96,147)">
+        Du kan se mit svar her:
+        <video class='picB' controls>
+            <source src='../../../Assets/Chapter2\Section1\Funktionsanalyse\3.mp4' type='video/mp4'>
+        </video>
+        <p class="t">
+        Du kan se en computer-genereret tegning af grafen her:
+        </p>
+        <img class='Spic' style='width:90%' src='../../../Assets/Chapter2\Section1\Funktionsanalyse\3.png'> 
+    <br><br></answer-box>
+    <answer-box t="Answer 4#" tabColour="rgb(175,128,161)">
+        Du kan se mit svar her:
+        <video class='picB' controls>
+            <source src='../../../Assets/Chapter2\Section1\Funktionsanalyse\4.mp4' type='video/mp4'>
+        </video>
+        <p class="t">
+        Du kan se en computer-genereret tegning af grafen her:
+        </p>
+        <img class='Spic' style='width:90%' src='../../../Assets/Chapter2\Section1\Funktionsanalyse\4.png'> 
+    <br><br></answer-box>
+    <answer-box t="Answer 5#" tabColour="rgb(171,96,147)">
+        Du kan se mit svar her:
+        <video class='picB' controls>
+            <source src='../../../Assets/Chapter2\Section1\Funktionsanalyse\5.mp4' type='video/mp4'>
+        </video>
+        <p class="t">
+        Du kan se en computer-genereret tegning af grafen her:
+        </p>
+        <img class='Spic' style='width:60%' src='../../../Assets/Chapter2\Section1\Funktionsanalyse\5.png'> 
+    <br><br></answer-box>
+    <answer-box t="Answer 6#" tabColour="rgb(175,128,161)">
+        Du kan se mit svar her:
+        <video class='picB' controls>
+            <source src='../../../Assets/Chapter2\Section1\Funktionsanalyse\6.mp4' type='video/mp4'>
+        </video>
+        <p class="t">
+        Du kan se en computer-genereret tegning af grafen her:
+        </p>
+        <img class='Spic' style='width:90%' src='../../../Assets/Chapter2\Section1\Funktionsanalyse\6.png'> 
+    <br><br></answer-box>
+    <answer-box t="Answer 7#" tabColour="rgb(171,96,147)">
+        Du kan se mit svar her:
+        <video class='picB' controls>
+            <source src='../../../Assets/Chapter2\Section1\Funktionsanalyse\7.mp4' type='video/mp4'>
+        </video>
+        <p class="t">
+        Du kan se en computer-genereret tegning af grafen her:
+        </p>
+        <img class='Spic' style='width:80%' src='../../../Assets/Chapter2\Section1\Funktionsanalyse\7.png'> 
+    <br><br></answer-box>
+    <answer-box t="Answer 8#" tabColour="rgb(175,128,161)">
+        Du kan se mit svar her:
+        <video class='picB' controls>
+            <source src='../../../Assets/Chapter2\Section1\Funktionsanalyse\8.mp4' type='video/mp4'>
+        </video>
+        <p class="t">
+        Du kan se en computer-genereret tegning af grafen her:
+        </p>
+        <img class='Spic' style='width:85%' src='../../../Assets/Chapter2\Section1\Funktionsanalyse\8.png'> 
+    <br><br></answer-box>
+    <answer-box t="Answer 9#" tabColour="rgb(171,96,147)">
+        Du kan se mit svar her:
+        <video class='picB' controls>
+            <source src='../../../Assets/Chapter2\Section1\Funktionsanalyse\9.mp4' type='video/mp4'>
+        </video>
+        <p class="t">
+        Du kan se en computer-genereret tegning af grafen her:
+        </p>
+        <img class='Spic' style='width:85%' src='../../../Assets/Chapter2\Section1\Funktionsanalyse\9.png'> 
+    <br><br></answer-box>
+    <answer-box t="Answer 10#" tabColour="rgb(175,128,161)">
+        Du kan se mit svar her:
+        <video class='picB' controls>
+            <source src='../../../Assets/Chapter2\Section1\Funktionsanalyse\10.mp4' type='video/mp4'>
+        </video>
+        <p class="t">
+        Du kan se en computer-genereret tegning af grafen her:
+        </p>
+        <img class='Spic' style='width:95%' src='../../../Assets/Chapter2\Section1\Funktionsanalyse\10.png'> 
+    <br><br></answer-box>
+    <answer-box t="Answer 11#" tabColour="rgb(171,96,147)">
+        Du kan se mit svar her:
+        <video class='picB' controls>
+            <source src='../../../Assets/Chapter2\Section1\Funktionsanalyse\11.mp4' type='video/mp4'>
+        </video>
+        <p class="t">
+        Du kan se en computer-genereret tegning af grafen her:
+        </p>
+        <img class='Spic' style='width:95%' src='../../../Assets/Chapter2\Section1\Funktionsanalyse\11.png'> 
+    <br><br></answer-box>
+    <answer-box t="Answer 12#" tabColour="rgb(175,128,161)">
+        Du kan se mit svar her:
+        <video class='picB' controls>
+            <source src='../../../Assets/Chapter2\Section1\Funktionsanalyse\12.mp4' type='video/mp4'>
+        </video>
+        <p class="t">
+        Du kan se en computer-genereret tegning af grafen her:
+        </p>
+        <img class='Spic' style='width:95%' src='../../../Assets/Chapter2\Section1\Funktionsanalyse\12.png'> 
+    <br><br></answer-box>
+    <answer-box t="Answer 13#" tabColour="rgb(171,96,147)">
+        Du kan se mit svar her:
+        <video class='picB' controls>
+            <source src='../../../Assets/Chapter2\Section1\Funktionsanalyse\13.mp4' type='video/mp4'>
+        </video>
+        <p class="t">
+        Du kan se en computer-genereret tegning af grafen her:
+        </p>
+        <img class='Spic' style='width:100%' src='../../../Assets/Chapter2\Section1\Funktionsanalyse\13.png'> 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5" customWidth="750">
+    Prøv at se følgende video:
+    <div style="text-align: center">
+        <video class="picB" controls>
+            <source src="../../../Assets/Chapter2\Section1\TrigProperties\WaterDrop.mp4" type="video/mp4">
+        </video>
+    </div>
+    <p class="t">Der bliver skabt en bølge som resultatet af en eller anden rystelse - f.eks. en sten der falder i - og den bølge
+    sætter så mange andre bølger igang. Som tiden og distancen fra kollisionspunktet bliver større, så vil 
+    bølgerne selvfølgelig svækkes og blive små. Før modellerede vi det som _(y=A*Cos(B*x)_). Hvis vi gerne
+    vil have at bølgerne bliver mindre som vi går længere væk fra _(x=0_), så kunne vi måske sige gange med
+    en anden, stærkt udstrakt _(Cos_). Idéen er vist her:</p>
+    <img class="Spic" style="width:95%" src="../../../Assets/Chapter2\Section1\TrigProperties\GangeMedCosDemonstration.png">
+    <p class="t">Her er den grønne kurve  en standard _(Cos(Bx)_), de to røde _(A*Cos(x/meget)_) og den
+    sorte så endeligt _(A*Cos(x/meget)*Cos(Bx)_). Toppene og dalene på _(Cos(B*x)_) er
+    _(1_), men når vi ganger dem med _(A*Cos(x/meget)_) så starter de ved _(A_), og 
+    bliver graduelt mindre. Det her gør vi bare indtil _(Cos(x*w)_) er lig _(0_). 
+    Generelt kunne vi altså sige:
+    _($y=A*Cos(x*w)*Cos(x*B)_)
+    Nu kan vi både variere på starthøjden via _(A_), mængden/frekvensen
+    af bølger via _(B_), og hvor hurtigt der stopper med at være bølger via _(w_).
+    Prøv det: </p>
+    <br>
+    
+    <div style="text-align: center">
+        <iframe style="width:700px; height: 700px; border:solid" scrolling="no" src="../../../Assets/Chapter2\Section1\TrigProperties\GraphTool.html"></iframe>
+    </div>
+
+    <p class="t"> Hvor mange gange er kurven _(0_) helt generelt i forhold til _(A,B,w_)? </p>
+    <br><br></q-stion>
+    <answer-box>
+    Først af alt skal vi finde ud af hvornår kurven stopper. Det gør den når 
+    _(A*Cos(x*w) = 0_). Det faktum at vi ganger med _(A_) har ingen indflydelse
+    på hvornår _(A*Cos(x*w)=0_), så det kan vi lige ignorere. Normalt
+    så er _(Cos(x)_) lig _(0_) efter _(\pi/2_) radianer. Det må betyde at 
+    _(Cos(x*w)_) er lig _(0_) efter:
+    _($x*w=\frac{\pi}{2} \to_)
+    _($x=\frac{\pi}{2w}_)
+    radianer. Vi skal altså se hvor mange gange _(Cos(x*B)_) er lig _(0_)
+    før _(\pi/2w_). Vi ved via meget samme logik som før, at _(Cos(x*b)_) er
+    _(0_) hver _(\pi/2B_), så:
+    _($\frac{\frac{\pi}{2w}}{\frac{\pi}{2B}}=\frac{B}{w}_)
+    Wholla! Selvfølgelig skal vi runde _(B/w_) ned, da vi ikke kan 
+    have "trekvarte" bølger osv. 
+    <p class="t">
+    Ved godt at den opgave har en meget lang beskrivelse i forhold til svarets 
+    længde, men syntes bare lige det var en nice modellerings-ting. 
+    </p>
+    <br><br></answer-box>
+
+
+
+
+
+
+    
+
+    SKIP DE TRE SIDSTE SPØRGSMÅL HER! DE ER TRASH! 
+    <q-stion 1="2" 2="1" 3="5">
+    Du er ude at stå på slalumski:
+    <img class="SpicB" style="width:80%" src="../../../Assets/Chapter2\Section1\TrigProperties\SlalumSki.png">
+    <p class="t">Du er ret doven, og gider ikke faktisk til at tænke over at køre mellem pælene. I stedet
+    skiier du bare en sinus-kurve på _(y=Sin(x)_). Altså hvor _(x_) er hvor langt nede af bakken du er,
+    og _(y_) er hvor på bakkens bredde du er:</p>
+    <img class="SpicB" style="width:95%" src="../../../Assets/Chapter2\Section1\TrigProperties\SlalumSki2.png">
+    <p class="t">Der er _(1.8m_) mellem hver to pæle, og selve pælene du kan gøre igennem er _(1.2m_) væk fra 
+    hinanden. Ved hver pæl er _(y=0.6_). Som du kan se på grafen så er det kun <i>nogle</i> du er heldige nok til at ramme. 
+    Find de _(10_) første. Hvor langt fremme (_(x_)) er de hver? Bare brug hvad end strategi du har lyst til!
+    Den her opgave kan godt tage lidt tid. </p>
+    <br></q-stion>
+    <answer-box>
+    Man kunne egentlig relativt nemt bare lidt gætte sig frem her, og hvis det virker godt for dig så gør det. 
+    Jeg vil dog gerne præsentere en lidt mere analytisk og muligt effektiv måde vi kunne gøre det på - især hvis vi skulle finde rigtig mange. 
+    Først vil jeg beskrive de området/intervaller hvor _(x_) er mellem to pæle generelt. Derefter 
+    vil jeg prøve at beskrive alle _(x_)-værdierne hvor _(y=0.6_). Så kan jeg bare sætte begge krav sammen, 
+    og gætte på nogle værdier der opfylder dem. 
+    <p class="t">
+    Hvis _(n_0_) er et eller andet helt tal, så vil det mellem nogle to pæle gælde at:
+    _($1.8 + (1.8+2.2)n \gt x \gt (1.8+2.2)+(1.8+2.2)n \Rightarrow_)
+    _($1.8+3n \gt x \gt 3+3n \Rightarrow _)
+    Hvis _(1.8+3n_) er lavere end _(x_), så giver det mening at hvis vi fjerner lige meget fra dem begge så gælder dette stadig: 
+    _($1.8+3n-3n \gt x - 3n \gt 3+3n-3n_)
+    _($1.8 \gt x - 3n \gt 3_)
+    </p>
+    <p class="t">
+    Hvis _(y=0.6_) så er _(Sin(x)=0.6 \Rightarrow x = 0.643_). 
+    Vi ved at _(\pi-0.643=2.498_) også vil virke, samt noget som helst multiplum af _(2\pi_) plusset med disse. 
+    Så f.eks. de første _(x_) der virker er _(0.643, 2.498, 0.643 + 1*2\pi, 2.498 + 2\pi, 0.643 + 2*2\pi, ..._)
+    For helt generelt at beskrive _(x_) "nummer _(m_)" der virker, så er jeg nok nødt til at dele det op i lige og ulige tal:
+    _($0.643+m*2\pi \text{ hvis } m=2k_)
+    _($2.498+m*2\pi \text{ hvis } m=2k+1_) 
+    Hvor _(k_) igen er et eller andet helt tal.
+    </p>
+    <p class="t">
+    Lad mig først fokusere på kun de lige _(m_). I det tilfælde har jeg to krav: _(x=0.643+m*2\pi_) og _(1.8 \gt x - 3n \gt 3_), altså:
+    _($ 1.8 \gt 0.643+m*2\pi - 3n \gt 3 \Rightarrow_)
+    _($ 1.8-0.643 \gt m*2\pi - 3n \gt 3-0.643 \Rightarrow _)
+    _($ 1.157 \gt m*2\pi - 3n \gt 2.357_)
+    _($ 1.157 \gt (2*k)*2\pi - 3n \gt 2.357_)
+    _(m_) blev lavet om til _(2k_) fordi det jo skulle være et helt tal. 
+    _(1.157_) vil logisk stadig værre mindre end _(m*2\pi - 3n_) hvis de begge bliver ganget eller divideret med det samme tal:
+    _($ 1.157/(2*2\pi) \gt k - (3/(2*2\pi))n \gt 2.357/(2*2\pi) \Rightarrow_)
+    _($ 0.092 \gt k - 0.2385n \gt 0.1875_)    
+    Herfra kan jeg relativt nemt gætte mig frem til nogle der virker:
+    </p>
+    <div style="text-align:center;">
+        <ul style="display: inline-block; text-align: left; list-style:none;">
+            <li>_(k=2, n=8, 2-0.2385*8=0.092_)</li>
+            <li>_(k=3, n=12, 3-0.2385*12=0.1380_) </li>
+            <li>_(k=4, n=16, 4-0.2385*16=0.1840_)  </li>
+            <li>_(k=8, n=33, 8-0.2385*33=0.1295 _)  </li>
+            <li>_(k=9,n=37, 9-0.2385*37=0.1755_) </li>
+            <li>_(k=13,n=54,13-0.2385*57=0.121_)  </li>
+        </ul>
+    </div>
+    <p class="t">
+    Det her burde være nok for de lige siden jeg kun skal finde _(10_). Ved de ulige skal vi gøre præcis det samme, og jeg gider ikke til at 
+    vise min proces der, kun resultaterne: _(k=4,5,9,10_). Altså vi har som
+    vores endelige svar:
+    </p>
+    <div style="text-align:center;">
+        <ul style="display: inline-block; text-align: left; list-style:none;">
+            <li>_(x=0.643+2*2\pi=13.20_)</li>
+            <li>_(x=0.643+3*2\pi=19.49_)</li>
+            <li>_(x=0.643+4*2\pi=25.77_)</li>
+            <li>_(x=0.643+8*2\pi=50.90_)</li>
+            <li>_(x=0.643+9*2\pi=57.19_)</li>
+            <li>_(x=0.643+13*2\pi=82.32_)</li>
+            <li>_(x=2.498+(4*2+1)*2\pi=59.046_)</li>
+            <li>_(x=2.498+(5*2+1)*2\pi=71.61_)</li>
+            <li>_(x=2.498+(9*2+1)*2\pi=121.87_)</li>
+            <li>_(x=2.498+(10*2+1)*2\pi=134.44_)</li>
+        </ul>
+    </div>
+    <br></answer-box>
+
+
+
+    <q-stion 1="2" 2="1" 3="5">
+        Lad os sige at du sjipper. Forholdet mellem tid og højde ser det nok cirka sådan her ud:
+        <img class="SpicB" style="width:95%" src="../../../Assets/Chapter2\Section1\TrigProperties\SjippeForm.ggb.png">
+        <p class="t">Du laver altså et stort spring for at hoppe over ræbet, og så laver du et lille hop når du lander hver gang. 
+        Du har måske prøvet det før. Hvert stort hop tager _(2.2_) sekunder, og hvert lille hop tager omkring _(0.7_). I 
+        det store hop kommer du omtrent _(0.9m_) op hver gang, og ved det lille _(0.2m_). Hvordan kun du beskrive højden _(y_)
+        i forhold til tiden?  </p>
+        <br></q-stion>
+        <answer-box customWidth="650">
+        Først og fremmest så kan man nemt se at formen gentager sig selv hver _(2.2+0.7=2.9_) sekunder:
+        <img class="SpicB" style="width:95%" src="../../../Assets/Chapter2\Section1\TrigProperties\SjippeGentagelse.png">
+        <p class="t">Vi er kun interesseret i hvor _(x_) er i forhold til starten på en af de her gentagelser. 
+        Derfor tager vi _(M_{2.9}(x)_). Hvis vores tal er mindre end _(2.2_), så skal vi bruge
+        det på den store bølge _(0.9*Sin(\frac{\pi}{2.9}*t)_). Hvis det er større, så skal
+        det bruges på den lille bølge _(0.2*Sin(\frac{\pi}{0.7}*(t-2.2))_). Alt i alt siger jeg:
+        _($0.9*Sin(\frac{\pi}{2.9}*Max(L_0-M_{L_0+L_1}(t),0)) + 0.2*Sin(\frac{\pi}{0.7}*(Max(M_{2.9}(t))-L-2.2)_)
+        _(Sin(0)=0_), og _(Max(M_{2.9}(t)-2.2,0)_), _(Max(L_0-M_{2.9}(t),0)_) sørger for at _(Sin_) på 
+        den bølge for _(0_) hvis resten _(M_{2.9}(t)_) er for lille eller for stor. I alt realiteten ville
+        det nok være meget simplere og mere brugbart bare at sige:
+        _($0.9*Sin(\frac{\pi}{2.9}*M_{2.9}(t)), M_{L_0+L_1}(t) \gt 2.2_)
+        _($0.2*Sin(\frac{\pi}{0.7}*(M_{2.9}(t)-2.2),M_{2.9}(t) \lt 2.2 _)
+        Alligevel kan det altså være dejligt at have det hele på én linje, og det er én ting disse _(max()_) og _(min()_) kan hjælpe med. </p>
+        <br><br></answer-box>
+
+
+
+    <q-stion 1="2" 2="1" 3="5">
+    Lad os sige en sten falder ned i noget vand som følgende:
+    <img class="SpicB" style="width:80%; margin-bottom: 0px;" src="../../../Assets/Chapter2\Section1\TrigProperties\Water1 1.png">
+    <img class="SpicB" style="width:80%; margin-top: 0px;" src="../../../Assets/Chapter2\Section1\TrigProperties\Water1 2.png">
+    <p class="t"> Da stenen rammer, så <i>fylder</i> den i vandet. Derfor skubber den noget vand direkte opad over sig.
+    Med et toppunkt, så kommer der naturligvis også et lavpunkt, og vandet vil sprede sig ud som på billede 2 (tror jeg nok).
+    Hvis _(x=0, y=0_) er hvor stenen rammer, så kan vi sige at _(y=0.3m*Cos(\frac{\pi}{0.6}*x)_). Hvor mange gange har 
+    _(y_) været lig _(0.2m_) ved _(x=d_). Altså, beskriv det <i>i forhold</i> til den generelle afstand _(d_). Antag bare
+    at _(d_) er positiv for at opgaven bliver lidt nemmere. Dine svar
+    må gerne komme i flere dele og udtryk; f.eks: "det her hvis _(n_) er større end _(noget_), det her hvis _(n_) ikke
+    er større". Prøv alligevel at gør det så elegant som muligt. </p>
+    <br></q-stion>
+    <answer-box>
+    Lad os prøve at tegne problemet lidt mere grafisk:
+    *VIS BILLEDE HER*
+    Så længe vi er _(L_0_) fremme, så ved vi ved at mængden af gange hvor _(y=0.2_) _(N_) i hvert er _(1_).
+    Hver gang vi går _(L_1+L_2_) frem derfra, så bliver _(N_) _(2_) større. Hvis vi yderligere derover
+    kan gå over _(L_1_) meter, så plusses _(N_) med en endelig _(1_). Altså, hvis _(d_) er større end _(L_0_)
+    så kunne vi sige:
+    _($N=1+2*\bigr((d-L_0) \backslash (L_2+L_1) \bigl)+M_{L_1+L_2}(d-L_0) \backslash L_1_)
+    _((d-L_0) \ (L_2+L_1)_) er mængde af gange jeg kan gå _(L_1+L_2_) frem efter de første _(L_0_). 
+    _(M_{L_1+L_2}(d-L_0) \ L_1_) checker om den ekstra del jeg kan gå (via modulo) er længere end _(L_1_). Qoutentien
+    her sørger for at det giver _(1_) hvis det er større, og _(0_) hvis det er mindre
+    <p class="t">
+    Vi har egentlig næsten vores svar, nu skal vi bare finde _(L_0,L_1,L_2_). _(0.3*Cos(\frac{\pi}{0.6}*L_0)=0.2 \Rightarrow L_0=0.16m_).
+    Man kan nemt se på billedet at _(L_1=2*L_0=2*0.16=0.32_). _(L_3_) er bare én hel omgang minus _(L_2_). En halv omgang ved vi er
+    _(0.6m_) lang, så _(L_3_) bliver _(2*0.6-0.32=0.879m_). Vores endelige svar hvis _(d_) er postiv må derfor være:
+    _($N=1+2*\bigr((d-0.16) \backslash (0.879+0.32) \bigl)+M_{0.879+0.32}(d-0.16) \backslash 0.32 =_)
+    _($N=1+2*\bigr((d-0.16) \backslash (1.199) \bigl)+M_{1.199}(d-0.16) \backslash 0.32_)
+    </p>
+    <br></answer-box>
+
+
+
+
+
+
+
+

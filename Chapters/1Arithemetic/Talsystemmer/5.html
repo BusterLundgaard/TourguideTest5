@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <p class="t">
+    Vores lertavle-ide får lidt problemer hvis vi begynder at arbejde med <i>kæmpe</i> mængder. 
+    Måske mængden af æbler der falder ned fra dit æbletræ, eller mængden af bær i en busk. Lad os sige
+    dig og din ven gerne vil finde ud af hvilke af to buske der har flest bær. Hvad gør i?
+    </p>
+
+    <img class='SpicB' style='width:80%' src='../../../Assets/Chapter1\Talsystemmer\Omskrivning\Berries.png'> 
+
+    <p class="t">
+    Problemet er på mange måder ekstrem lav-praktisk. For det første: Jeres lertavler skal være
+    meget store (og i skal skrive meget småt), hvis i skal kunne tegne en streg for hver bær på busken. 
+    For det andet: Når i endelig har fået tegnet alle stregerne, så vil det være svært at 
+    <i>intuitivt</i> sammenligne hvem der var størst, siden der er så mange streger! Man <i>kunne</i> selvfølgelig
+    godt gøre samme trick med som med fårene, hvor i tegner stregerne over og ser hvem der har nogle tilbage, 
+    men det vil tage en del tid, man ville nemt kunne lave fejl, og det ville ikke være særlig hurtigt intuitivt.
+    Vi er simpelthen nødt til at forbedre systemet.
+    </p>
+
+    <img class='Spic' style='width:95%' src='../../../Assets/Chapter1\Talsystemmer\Omskrivning\BigBerries1.png'> 
+
+    <p class="t">
+    Lige nu symbolisere <p-m m=" 1"></p-m> et bær 
+    <img style='height:1em' src='../../../Assets/Chapter1\Talsystemmer\Omskrivning\inLineBerry.png'> 
+    . Vores streger symbolisere 
+    altså en meget <i>lille</i> bunke bær, så derfor er vi nødt til at tegne en kæmpe masse streger. 
+    Hvad hvis vi lavede et andet symbol, der i stedet symboliserede 
+    <img style='height:1em' src='../../../Assets/Chapter1\Talsystemmer\Omskrivning\inLineBerry2.png'> 
+    . Altså, 
+    et symbol der symboliserede <p-m m=" 4"></p-m>. Hvis symboler kan symbolisere får, så kan de da også
+    godt symbolisere andre symboler! Sig at <p-m m=" A1=4"></p-m>. Lad os prøve lige at bruge det:
+    </p>
+
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter1\Talsystemmer\Omskrivning\BigNumberSystem.mp4' type='video/mp4'>
+    </video>       
+
+    <p class="t">
+    Vi kan nu, <i>lidt bedre</i>, se hvilken busk der har flest bær
+    </p>
+
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter1\Talsystemmer\Omskrivning\BigBerries2.png'> 
+
+    <p class="t">
+    Det her er bedre end før, men det er stadig en smule upraktisk. Intet problem: Vi gør bare præcist det samme igen!
+    Sig at <p-m m=" B1"></p-m> symboliserer <p-m m=" A4"></p-m>. Den symboliserer altså noget, som symboliserer
+    noget, som symboliserer bær. Nu får vi:
+    </p>
+
+    <img class='Spic' style='width:90%' src='../../../Assets/Chapter1\Talsystemmer\Omskrivning\BigBerries3.png'> 
+
+    <p class="t">
+    Det her er helt fint og overskueligt, men lad os lige gøre det èn gang til. Sig <p-m m=" C1=B4 "></p-m>, så vi får:
+    </p>
+
+    <img class='Spic' style='width:90%' src='../../../Assets/Chapter1\Talsystemmer\Omskrivning\BigBerries4.png'> 
+
+    <p class="t">
+    Lad os nu se hvilken busk der har flest bær:
+    </p>
+
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter1\Talsystemmer\Omskrivning\ComparingNumbers.mp4' type='video/mp4'>
+    </video>
+
+    <p class="t">
+    <i>Lige nu</i> har vi ikke brug for flere symboler, men det kunne godt være vi fik det i fremtiden. Lad os bare lige får en sikkerheds skyld sige at:
+    </p>
+
+    <div style="text-align:center;">
+        <ul style="display: inline-block; text-align: left; padding-left:0%; list-style:none;">
+            <li> <p-m m=" C1=B4 "></p-m>  </li>
+            <li> <p-m m=" D1=C4"></p-m>  </li>
+            <li> <p-m m=" E1=D4"></p-m>  </li>
+            <li> <p-m m=" F1=E4"></p-m>  </li>
+            <li> <p-m m=" G1=F4"></p-m>  </li>
+            <li> <p-m m=" H1=G4"></p-m>  </li>
+            <li> <p-m m=" I1=H4"></p-m>  </li>
+            <li> <p-m m=" J1=I4"></p-m>  </li>
+        </ul>
+    </div>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Prøv at skriv <p-m m=" C3 B3 A3 5"></p-m> på en mere kompakt måde i vores nye system.
+    <br><br></q-stion>
+    <answer-box>
+    Du kan se hvordan jeg gjorde det i videon her:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter1\Talsystemmer\Omskrivning\MakeNumberMoreCompact.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+
+    <p class="t">
+    Det burde være mere end nok. Lad os gå videre med problem <b> B</b>! 
+    </p>
+
+
+</html>

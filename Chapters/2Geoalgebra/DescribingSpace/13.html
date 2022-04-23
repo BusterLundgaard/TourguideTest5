@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+
+    <h3> </h3>
+
+    <p class="t">
+    Som vi fandt ud af i sidste opgave, vil prikproduktet af to vektorer
+    give _(0_), hvis de er vinkelrette. Det betyder, at det for punktet
+    _((x,y,z)_) på vores plan skal gælde, at:
+    _($\begin{align}
+    \VeC[x,y,z] \cdot \VeC[n_x,n_y,n_z]&=0 & \to \\ \\    
+    x*n_x + y*n_y + z*n_z & = 0 
+    \end{align}_)
+    Og voila, vi har definitionen på et plan! Hvis vi gerne vil rykke
+    dette plan så det indeholder punktet _((a,b,c)_), skal vi bare rykke
+    det på same måde, vi rykker alle andre kurver: Erstatte _(x_) med _(x-a_), 
+    _(y_) med _(y-b_) og _(z_) med _(z-c_). Ergo:
+    _($(x-a)*n_x + (y-b)*n_y + (z-c)*n_z = 0 _)
+    Det her kan omskrives lidt til:
+    _($x*n_x + y*n_y + z*n_z = a*n_x + b*n_y + c*n_z_)
+    _(a*n_x + b*n_y + c*n_z_) er bare en eller anden konstant _(k_), så generelt
+    kan man sige:
+    _($x*n_x + y*n_y + z*n_z = k_)
+    </p>
+
+    <br>
+
+    <q-stion 1="13" 2="1" customWidth="650">
+    Sig at følgende plan indeholder punktet _(A_):
+    <img class='SpicXL' style='width:95%' src='../../../Assets/Chapter2\Section4\Space\PlanExercise1.png'> 
+    <p class="t">
+    Beskriv planet (find ligningen)
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Vi har formlen:
+    _($x*n_x + y*n_y + z*n_z = a*n_x + b*n_y + c*n_z_)
+    I vores situation ser vi at:
+    _($\VeC[n_x,n_y,n_z] = \VeC[4,3,-6], \qquad (a,b,c)=(-2,4,-3) _)
+    Så:
+    _($4*x + 3*y + (-6)*z = 4*(-2) + 3*4 + (-6)*(-3)_)
+    Hvilket kan simplificeres til:
+    _($4x+3y-6z=22_)
+    Voila! 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="13" 2="2" customWidth="650">
+    Find ligningen for planet _(p_) på følgende billede:
+    <img class='SpicXL' style='width:95%' src='../../../Assets/Chapter2\Section4\Space\Tangent plan.png'> 
+    <p class="t">
+    Planet _(p_) tangerer kuglen ved _(P_). 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Vi har allerede et punkt på planet, så vi har kun brug for en vinkelret vektor.
+    Her kan vi gøre brug af kuglens/cirklens egenskaber: Vi ved, at tangenten til et punkt på kuglen
+    er vinkelret på linjen fra kuglens center til punktet. Vores plan er "tangenten"
+    til denne kugle ved _(P_), så det må være vinkelret på
+    _($\VeC[6,3,4]-\VeC[4,5,3]=\VeC[2,-2,1]_)
+    Bum! Vi får nu:
+    _($2*x-2*y+1*z=2*6-2*3+1*4_)
+    Hvilket forsimplet er:
+    _($2x-2y+z=10_)
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="13" 2="3" customWidth="600">
+    Sig at en lysstråle bliver skudt fra _(A_) og rammer og reflekterer et plan:
+    <img class='SpicXL' style='width:95%' src='../../../Assets/Chapter2\Section4\Space\LysReflektering2.png'> 
+    <p class="t">
+    Sig at lyset bliver skudt fra _(A_) i retningen:
+    _($\vec v = \VeC[-1.4,-0.53,-0.11]_)
+    Og at planet er:
+    _($0.68x+0.89y+z=-0.39_)
+    Find nu retningen på det reflekterede lys. Refleksion følger stadig samme princip 
+    som før: Indfaldsvinkel skal være lig udfaldsvinkel. 
+    </p>
+    <p class="t">
+    Dette er relativt tricky! 
+    </p>
+    <br></q-stion>
+    <answer-box t="h" customWidth="600">
+    Kan følgende billede måske give dig inspiration?
+    <img class='SpicXL' style='width:80%' src='../../../Assets/Chapter2\Section4\Space\LightReflection.png'> 
+    <br></answer-box>
+    <answer-box customWidth="600">
+    Vi ved, at indfaldsvinklen skal være lig udfaldsvinklen. Det kan
+    ses på en lidt anden måde:
+    <img class='Spic' style='width:30%' src='../../../Assets/Chapter2\Section4\Space\VinkelTilNormal.png'> 
+    <p class="t">
+    I 2D kan man også sige, at en linje har en slags
+    "normalvektor", og man kan let se, at hvis indfaldsvinklen på linjen er lig udfaldsvinklen,  
+    er vinklen til normalen på indfaldsvektoren lig vinklen til normalen på
+    udfaldsvektoren. Man behøver derfor ikke finde "vinklen til fladen", man 
+    i stedet bare vinklen til normalvektoren. Samme gælder i 3D, så
+    her er min ide:
+    </p>
+    <img class='SpicXL' style='width:80%' src='../../../Assets/Chapter2\Section4\Space\LightReflection0.png'> 
+    <p class="t">
+    Først finder jeg vinklen lysets vector har til normalvektoren til planet. Jeg skal
+    nu lave en anden vektor _(\vec{u}_) med samme vinkel _(\theta_) til _(\vec{n}_). Problemet
+    er bare, at der findes uendelig mange retninger, der opfylder dette krav. 
+    _(\vec{i}_) er èn af dem, men du kunne også rotere _(\vec{i}_) omkring _(\vec{n}_)
+    som akse, og få en ny vektor med samme vinkel! Vi er nødt til at 
+    tilføje èt ekstra, logisk krav: _(\vec{u}_) skal være i samme plan som 
+    _(\vec{i}_) og _(\vec{n}_). Det er to vektorer, så de definerer et plan. 
+    </p>
+    <p class="t">
+    Hvordan præcist laver vi så en vektor _(\vec{u}_) med denne egenskab? Jeg har èt muligt
+    foreslag:
+    </p>
+    <img class='SpicXL' style='width:80%' src='../../../Assets/Chapter2\Section4\Space\LightReflection.png'> 
+    <p class="t">
+    På billedet her har jeg placeret tre punkter: _(A_), _(M_) og _(A'_). 
+    Forestil dig at _(A_) og _(M_) har bevæget sig lige meget opad
+    _(\vec{n}_), så at _(IM_) er lig _(IA*Cos(\theta)_). Definer nu
+    _(A'_) til at være _(A_) reflekteret i _(M_). Man kan se, at punktet _(A'_) nu opfylder
+    vores krav, da <i> 1</i>: _(\vec{IA'}_)'s vinkel til _(\vec n_) er 
+    _(\theta_), og <i> 2</i>: da _(\vec{IA'}_) ligger på planet defineret af 
+    _(\vec{n}_) og _(\vec{IA}_).
+    </p>
+    <p class="t">
+    <i> 1</i> er let at bevise, da man tydeligt kan se, at de to trekanter 
+    _(\triangle AIM_) og _(\triangle A'IM_) er kongruente.
+    </p>
+    <p class="t">
+    For at bevise <i> 2</i> skal vi vise, at _(\vec{IA'}_) kan beskrives ved hjælp af de
+    to vektorer _(\vec n_) og _(\vec{IA}_) der definerer planet. Vi ved at:
+    _($\vec{IA'} = \vec{IA} + 2 \left(\vec{IM}-\vec{IA} \right)_)
+    _(\vec{IM}_) er lig _(|IA|*Cos(\theta)*\vec{n}_), så med lidt omskrivning får vi:
+    _($\vec{IA'} = -\vec{IA} + 2 |IA| Cos(\theta) \vec{n}_)
+    Voila! Bevist! Det er vigtigt at nævne her at vi antager at _(\vec n_) er en retningsvektor
+    med en længde på 1. 
+    </p>
+    <p class="t">
+    Vi kan let se, at
+    _($\vec{IA} = -\VeC[-1.4,-0.53,-0.11]_)
+    ... og at:
+    _($\vec{n} = \frac{1}{\sqrt{0.68^2+0.89^2+1^2}} \VeC[0.68,0.89,1] = \VeC[0.452,0.592,0.666]_)
+    _(|IA|_) kan regnes til _(\sqrt{1.4^2+0.53^2+0.11^2}=_) _(1.50_), og 
+    vinklen _(\theta_) kan vi regne som:
+    _($\theta = Arccos\left(\frac{(-1.4)*0.68+(-0.53)*0.89+(-0.11)*1}{\sqrt{1.4^2+0.53^2+0.11^2} \sqrt{0.68^2+0.89^2+1^2}} \right) = 2.319_)
+    Det er højere end _(\pi/2_), hvilket ikke er muligt, når vi tænker over situationens geometri. Problemet er,
+    at vi har fundet vinklen til vektoren _(\vec v_) men ikke vektoren _(-\vec v_):
+    </p>
+    <img class='SpicXL' style='width:80%' src='../../../Assets/Chapter2\Section4\Space\LightReflection2.png'> 
+    <p class="t">
+    Vi kan se, at den vinkel vi søger tydeligvis kan regnes som bare _(\pi -  2.319 = 0.822_).
+    Endeligt får vi:
+    _($\vec{IA'} = -\left(-\VeC[-1.4,-0.53,-0.11] \right) + 2*1.50*Cos(0.822)*\VeC[0.452,0.592,0.666] = \VeC[-0.47,0.68,1.25]_)
+    Bum!
+    </p>
+    <br></answer-box>
+

@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+
+
+    <q-stion 1="2" 2="1" 3="5">
+    På et skema her er der blevet samlet nogle (meget falske) data omkring personers højde og hvor mange penge de tjener.
+    Tallet på en bestemt række og kolonne svarer altså til antallet af mennesker med 
+    den givne månedlige indkomst og højde:  
+    <br> <br>
+    <div style="width:100%; margin-top:15px; padding-left:72px;">
+        <table style="border-collapse: collapse; border-spacing: 10px; background-color: rgb(209,233,230);">
+        <tr>
+            <th>Indkomst (1000kr) <br>
+                og højde (cm) </th>
+            <td> <u> 10-20 </u> </td>
+            <td> <u> 20-30 </u> </td>
+            <td> <u> 30-40 </u> </td>
+            <td> <u> 40-70 </u> </td>
+        </tr>
+        <tr>
+            <td> <u> 90-110 </u></td>
+            <td> 500 </td>
+            <td> 600 </td>
+            <td> 800 </td>
+            <td> 300 </td>
+        </tr>
+        <tr>
+            <td> <u> 110-130 </u></td>
+            <td> 700 </td>
+            <td> 300 </td>
+            <td> 100 </td>
+            <td> 200 </td>
+        </tr>
+        <tr>
+            <td> <u> 130-160 </u> </td>
+            <td> 800 </td>
+            <td> 900 </td>
+            <td> 200 </td>
+            <td> 400 </td>
+        </tr>
+        <tr>
+            <td> <u> 160-180 </u> </td>
+            <td> 300 </td>
+            <td> 300 </td>
+            <td> 200 </td>
+            <td> 200 </td>
+        </tr>
+        <tr>
+            <td> <u> 180-200 </u> </td>
+            <td> 100 </td>
+            <td> 50 </td>
+            <td> 20 </td>
+            <td> 10 </td>
+        </tr>
+        </table>
+    </div>
+    <br>
+    <p class="t">
+    Hvad er chancen for at et tilfældigt rigt (40-70 tusind) menneske vi vælger er over 160cm høj? 
+    Hvor meget større er det end chancen for at et tilfældigt menneske er over _(160\text{ cm}_)?
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Vi leder <i>ikke</i> et rigt <i>og</i> højt menneske. Vi leder efter chancen for 
+    at få et højt menneske <i>givet</i> at man vælger blandt de rige. 
+    Der er 
+    _($300+200+400+200+10=1110_)
+    rige mennesker på skemaet, og _(200+10=_) _(210_) af dem er høje. 
+    Derfor er chancen lig:
+    _($\frac{210}{1110} = 0.1891_)
+    Der er
+    _($\begin{eqnarray}
+    && 300+200+400+200+10 \, + \\
+    && 800+100+200+200+20 \,+ \\
+    && 600+300+900+300+50 \, + \\
+    && 500+700+800+300+100 = \\ \\\
+    && 1110 + 1320 + 2150 + 2400 = 6980
+    \end{eqnarray}_)
+    mennesker i alt, og 
+    _($\begin{eqnarray}
+    && 200 + 10 \, + \\
+    && 200 + 20 \, + \\
+    && 300 + 50 \, + \\
+    && 300 + 100 = \\ \\
+    && 210+220+350+400 = 1180
+    \end{eqnarray}_)
+    af dem er høje, så chancen for at trække et tilfældigt højt menneske er:
+    _($\frac{1180}{6980} = 0.1690_)
+    Chancen for at et rigt menneske er højt er altså _(0.1891/0.1690=_)
+    _(1.11_) gange større. 
+    <p class="cent">
+        *
+    </p>
+    <p class="t">
+    Man kunne også have gået til det her lidt mere matematisk ved hjælp af begivenheder.
+    Hvis vi sætter _(A_) til at være begivenheden af at et tilfældigt menneske vi vælger er rig, og 
+    B den begivenhed at han er over 160cm høj, så leder vi altså efter _(P(B|A)_). 
+    Vi ved at:
+    _($P(A \cap B) = P(A)*P(B|A)_)
+    Det kan vi bruge til at isolere og finde _(P(B|A)_):
+    _($P(B | A) = \frac{P(A \cap B)}{P(A)} = \frac{|A \cap B|/|S|}{|A|/|S|} = \frac{|A \cap B|}{|A|}_)
+    På skemaet kan vi se at _(200+10_) mennesker både er over 160 og er rige. 
+    Vi kan også nemt regne at der er _(300+200+400+200+10=_) _(1110_) rige 
+    mennesker i alt. Ergo: 
+    _($P(B|A) = \frac{210}{1110} = 0.1891_)
+    </p>
+    <br></answer-box>
+    
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Sig at chancen for at du spiser morgenmad er _(0.84_).
+    Chancen for at du drikker juice hvis du spiser morgenmad
+    er _(0.52_), og chancen for at du drikker juice hvis du ikke
+    vælger at spise morgenmad er _(0.23_). Hvad er chancen for at
+    du vælger at drikke juice?
+    <br><br></q-stion>
+    <answer-box>
+    Lad os definere to begivenheder:
+    _($\begin{eqnarray} 
+    && A & = \text{Mad} \\
+    && B & = \text{Juice}
+    \end{eqnarray}_)
+    Vi ved at _(P(A)=0.84_), og at: 
+    _($\begin{eqnarray}
+    && P(B|A) & = 0.52 \\
+    && P(B| \neg A) & = 0.23
+    \end{eqnarray} _)
+    Vi leder efter _(p(B)_), som kan findes med formlen:
+    _($P(B)=P(A)*P(B|A)+P(\neg A)*P(B|\neg A)_)
+    _(P(B| \neg A)_) er bare _(1-0.82=0.18_), så vi får:
+    _($0.84*0.52+0.18*0.23 = 0.4782_)
+    Den her opgave er faktisk en del mere interessant end man lige skulle tænke:
+    Den kan ikke modelleres i forhold til den standard
+    _($\frac{\text{Antal måder det kan ske på}}{\text{Samlet antal af mulige ting der kan ske}}_)
+    <i>Ja</i> vi har på en måde fire mulige "begivenheder" i form af:
+    "Spiser morgenmad og drikker juice", "Spiser morgenmad men drikker ikke juice",
+    "Spiser ikke morgenmad men drikker juice" og "spiser hverken morgenmad eller drikker juice",
+    men de har ikke de samme sandsynligheder. 
+    <br></answer-box>
+    
+    <q-stion 1="2" 2="1" 3="5">
+    Det samme som før, men nu med lidt andre info:
+    <p class="t">Chancen for at du drikker juice hvis du spiser morgenmad er _(0.5_).</p>
+    <p class="t">Chancen for at du spiser morgenmad hvis du drikker juice er _(0.7_).</p>
+    <p class="t">Chancen for at du spiser morgenmad er _(0.8_).</p>
+    <p class="t">
+    <b> 1</b>: Hvordan giver det mening at chancen for at 
+    du drikker juice hvis du spiser morgenmad ikke er lig chancen for
+    at du spiser morgenmad hvis du drikker juice. Giver det overhovedet mening?
+    </p>
+    <p class="t">
+    <b> 2</b>: Hvad er chancen for at du drikker juice?
+    </p>
+    <br></q-stion>
+    <answer-box t="Answer 1#" tabColour="rgb(171,96,147)">
+    Vi definerer de to begivenheder:
+    _($\begin{eqnarray} 
+    && A & = \text{Mad} \\
+    && B & = \text{Juice}
+    \end{eqnarray}_)
+    Du er måske forvirret omkring hvorfor _(P(A|B)_) ikke er det samme som _(P(B|A)_).
+    Chancen for at vi drikker juice <i>hvis</i> vi spiser morgenmad, burde
+    da være det samme som chancen for at vi spiser morgenmad <i>hvis</i>
+    vi drikker juice? Ikke nødvendigvis. Det hjælper at tænke over <i>tidslinjer</i>.
+    Når vi siger _(P(A|B)_) så siger vi: <i>hvis vi antager</i> at vi kun arbejder
+    med de tidslinjer hvor vi drikker juice, hvor stor er så chancen for at vi 
+    spiser morgenmad? Forestil dig at der var mange flere tidslinjer hvor vi 
+    spiste morgenmad end hvor vi drak juice. Så kunne vi have en masse tidslinjer
+    hvor vi spiste morgenmad men ikke drak juice, men kun ret få tidslinjer
+    hvor vi drak juice men ikke spiste morgenmad!
+    <br><br></answer-box>
+    <answer-box t="Answer 2#" tabColour="rgb(175,128,161)">
+    Vi skal finde _(P(B)_). Formlen fra før vil ikke hjælpe os, da vi mangler
+    _(P(B|\neg A)_). Lad os i stedet bruge: 
+    _($P(A \cap B) = P(B)*P(A|B) \to P(B)=\frac{P(A \cap B)}{P(A|B)}_)
+    Vi kender ikke _(P(A \cap B)_), men det er intet problem da vi let kan
+    omskrive det til:
+    _($\frac{P(A)*P(B|A)}{P(A|B)} = \frac{0.8*0.5}{0.7} = 0.5714_) 
+    Så cirka 60% chance for at vi drikker juice!
+    <br><br></answer-box>
+
+    <!--  -->
+
+
+
+    
+    
+    <q-stion 1="2" 2="1" 3="5">
+    Sig at der er _(10_) mennesker, men kun _(6_) stole.
+    _(5_) er drenge, _(5_) er piger.
+    Hvad er chancen for at:
+    <p class="t">
+    <i>Dig og din bedste ven (begge piger) bliver valgt</i>
+    </p>
+    <p class="cent">
+        <b> og </b> 
+    </p>
+    <p class="t">
+    <i>Halvdelen af dem der bliver valgt er drenge, og den anden halvdel er piger</i>
+    </p>
+    <p class="cent">
+        <b> og </b> 
+    </p>
+    <p class="t">
+    <i>Mænd og kvinder sidder i deres egen gruppe. Der er altså f.eks noget sted hvor at 
+    der sidder en dreng mellem to piger</i>
+    </p>
+    <p class="t">
+    Altså, hvad er chancen for at alle de her ting sker samtidigt? 
+    </p>
+    <br></q-stion>
+    <answer-box t="h">
+    Man <i>kunne</i> prøve at direkte tælle mængden af måder hvorpå 
+    alle de her tre ting sker samtidig, og så dividerer med den samlede mængde
+    af måder folk kan sætte på stolene. Det virker dog umiddelbart i mine
+    øjne lidt tricky, siden kravene både for os til at tænke over <i>hvem</i>
+    der bliver valgt, men også <i>hvordan</i> de sidder i forhold til hinanden.
+    I den her situation er det nok lidt nemmere at tænke over chancen for at 
+    èn ting sker <i>hvis</i> en anden ting sker, end chancen for at de <i>begge</i> sker.
+    <p class="t">
+    Kan du omskrive _(P(A \cap B \cap C)_) på nogen der måske kunne hjælpe dig?
+    </p>
+    </answer-box>
+    <answer-box>
+    Man <i>kunne</i> prøve at direkte tælle mængden af måder hvorpå 
+    alle de her tre ting sker samtidig, og så dividerer med den samlede mængde
+    af måder folk kan sætte på stolene. Det virker dog umiddelbart i mine
+    øjne lidt tricky, siden kravene både for os til at tænke over <i>hvem</i>
+    der bliver valgt, men også <i>hvordan</i> de sidder i forhold til hinanden.
+    I den her situation er det nok lidt nemmere at tænke over chancen for at 
+    èn ting sker <i>hvis</i> en anden ting sker, end chancen for at de <i>begge</i> sker.
+    Vi omskriver derfor matematisk:
+    _($\begin{eqnarray}
+    && P(A \cap B \cap C) = \\
+    && P \left(A \cap (B \cap C) \right) = \\
+    && P(A | B \cap C)*P(B \cap C) = \\
+    && P(A | B \cap C)*P(B | C)*P(C)
+    \end{eqnarray}_)
+    Jeg tænker nok det er nemmest hvis vi siger at:
+    _($\begin{eqnarray}
+    && A = \text{Dig og din ven} \\
+    && B = \text{Piger og drenge for sig} \\
+    && C = \text{Halvdelen piger og drenge}
+    \end{eqnarray}_)
+    Lad os starte med _(P(C)_). Hvis halvdelen er piger og drenge, så skal vi 
+    vælge _(3_) ud af _(5_) drenge og _(3_) ud af _(6_) piger. Det kan gøres på
+    _($\VeC[5,3]*\VeC[5,3] = 100 \text{ måder}_)
+    Så:
+    _($P(C)=\frac{100}{\VeC[10, 6]} = 0.48_)
+    Lad os nu kigge på _(P(B|C)_). Her skal vi <i>antage</i> at der er lige mange
+    piger og drenge, og finde chancen for at de bliver sat i deres egne grupper på de
+    _(6_) pladser. Se følgende billede: 
+    <img class='Spic' style='width:63%' src='../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\Six chairs groups.png'> 
+    <p class="t">
+    Hvis vi antager at stolene er unikke, så kan de _(6_) udvalgte mennesker placeres på
+    _(6!=720_) måder. Hvis piger og drenge sidder i grupper, så kan alle "roteres"
+    rundt på stolene på _(6_) forskellige måder. I hver af de _(6_) rotationer
+    kan drengene og pigerne også rykkes rundt internt i deres egen gruppe
+    på _(3!_) måder. Sandsynligheden er altså:
+    _($\frac{6*3!*3!}{720} = 0.3_)
+    Nu mangler vi til sidst bare _(P(A | B \cap C)_). _(B_) har ingen indflydelse
+    på _(A_), da den kun er med til at bestemme positionen. _(C_) fortæller os
+    at der bliver udvalgt _(3_) af de _(5_) piger. Hvis dig og din ven bliver
+    valgt, så er der _(3_) piger og _(1_) plads tilbage, hvilke giver _(3_) muligheder.
+    Sandsynligheden er altså:
+    _($\frac{3}{\VeC[5,3]} = 0.3_)
+    Alt i alt får vi:
+    _($0.48*0.3*0.3=0.0431_)
+    Så en sandsynlighed på lidt over _(4_)%. 
+    </p>
+    <br></answer-box>
+    
+    <q-stion 1="2" 2="1" 3="5" customWidth="500">
+    Præcis samme situation som før. Nu stiller jeg bare et lidt (simplere?) spørgsmål:
+    Hvad er chancen for at mænd og kvinder hver sidder i deres egen gruppe? Hvor
+    du før skulle regne _(P(A \cap B \cap C)_), så skal du nu "bare"
+    regne _(P(B)_). 
+    <br><br></q-stion>
+    <answer-box t="h" n="1">
+    Kan du på nogen måde genbruge det faktum at vi ved at _(P(A \cap B \cap C)=0.0431_)? 
+    Prøv at regn _(P(C)_) mere indirekte ved hjælp af smart omskrivning 
+    </answer-box>
+    <answer-box t="h" n="2">
+    Vi ved at:
+    _($P(A \cap B \cap C) = P(B)*P(A|B)*P(C|A \cap B) _)
+    Hvilke vi udledte som:
+    _($\begin{eqnarray}
+    && P(A \cap B \cap C) = \\
+    && P \left(A \cap (B \cap C) \right) = \\
+    && P(A | B \cap C)*P(B \cap C) = \\
+    && P(A | B \cap C)*P(B | C)*P(C)
+    \end{eqnarray}_)
+    Men via præcis samme slags udledning kan man også se at:
+    _($P(A \cap B \cap C)=P(B)*P(A|B)*P(C|A \cap B)_)
+    Kan det måske bruges til noget smart? 
+    </answer-box>
+    <answer-box customWidth="500">
+    Vi ved fra sidste opgave at det
+    kan gøres på _(6*3!*3! =_) _(216_) måder <i>hvis</i> der er lige så mange
+    kvinder som mænd. Men hvad hvis der er kun 1 kvinde og 5 mænd, 2 kvinder
+    og 4 mænd, 4 kvinder og 2 mænd, eller 5 kvinder og 1 mand? 
+    Vi er nødt til at opdele _(B_) i en masse tilfælde for at regne _(p(B)_) direkte,
+    hvilke umiddelbart lyder meget træls. Jeg har derfor en anden mere indirekte
+    ide der genbruger vores arbejde fra sidste opgave:
+    <p class="t">
+    Vi ved at:
+    _($P(A \cap B \cap C) = P(C)*P(B|C)*P(A|B \cap C)_)
+    Men vi kan bytte rundt på bogstaverne som vi vil, så den er egentlig også lig:
+    _($P(A \cap B \cap C)=P(B)*P(A|B)*P(C|A \cap B)_)
+    Hvilke betyder at:
+    _($P(B) = \frac{P(A \cap B \cap C)}{P(A|B)*P(C|A \cap B)}_)
+    Vi ved fra sidste opgave at _(P(A \cap B \cap C) = 0.0431_).
+    _(P(A|B)_) er let at finde, siden _(B_) ikke har nogen indflydelse på _(A_), og 
+    _(P(C|A \cap B)_) burde også være let at finde siden _(B_) heller ikke har indflydelse på 
+    _(C_)! 
+    </p>
+    <p class="t">
+    _(P(A|B)_) er lig _(P(A)_). Der er _(8_) folk og _(4_) pladser tilbage efter dig og din
+    ven er udvalgt, så _(P(A)_) er lig
+    _($\frac{\VeC[8,4]}{\VeC[10,6]} = 0.333_)
+    _(P(C|A \cap B)_) er lig _(P(C|A)_). Der er _(4_) pladser, _(3_) piger og 
+    _(5_) drenge tilbage efter dig og din ven er valgt. Du skal vælge
+    _(1_) pige mere og _(3_) drenge mere for at _(C_) bliver opfyldt, hvilke kan gøres på
+    _($\VeC[3,1]*\VeC[5,3] = 30 \text{ måder}_)
+    Du kan alt i alt vælge på _(\VeC[8,4]_) måder, så:
+    _($P(C|A \cap B) = \frac{30}{\VeC[8,4]} = 0.43_)
+    Vi får nu:
+    _($P(C)=\frac{0.0431}{0.333*0.43} = 0.3_)
+    Voila!
+    </p>
+    <br><br></answer-box>
+    
+    <q-stion 1="2" 2="1" 3="5" customWidth="600">
+    Præcist samme opgaver som før, men nu i stedet for "og"
+    så siger vi "eller". Jeg spørger dig altså nu om at finde
+    _(P(A \cup B \cup C)_), hvor du tidligere skulle finde
+    _(P(A \cap B \cap C)_). 
+    <p class="t">
+    Den her opgave er måske relativ lang, og involverer (i forhold til hvordan du
+    vælger at gøre det selvfølgelig) en lidt tricky ting i starten. 
+    </p>
+    <br></q-stion>
+    <answer-box t="h" n="1" customWidth="600">
+    Vi ved at:
+    _($P(a)=\frac{|a|}{|S|}_)
+    Og at:
+    _($A \cup B \cup C = |A| + |B| + |C| - |A \cap B| - |A \cap C| - |B \cap C| + |A \cap B \cap C|_)
+    Kan du bruge det her til at regne _(P(A \cup B \cup C)_) på nogen smart måde?
+    <br><br></answer-box>
+    <answer-box t="h" n="2" customWidth="600">
+    Lad mig være lidt mere konkret nu:
+    _($P(A \cup B \cup C) = \frac{|A \cup B \cup C|}{|S|}_)
+    Hvilke så kan omskrives til:
+    _($\frac{|A| + |B| + |C| - |A \cap B| - |A \cap C| - |B \cap C| + |A \cap B \cap C|}{|S|}_)
+    Vi <i>kunne</i> godt tælle nævneren, men vi kunne også i stedet omskrive til:
+    _($\frac{|A|}{|S|} + \frac{|B|}{|S|} + \frac{|C|}{|S|} - \frac{|A \cap B}{|S|} - \frac{|A \cap C|}{|S|} - \frac{|B \cap C|}{|S|} + \frac{|A \cap B \cap C|}{|S|}_)
+    Og voila:
+    _($ P(A)+P(B)+P(C) - P(A \cap B) - P(A \cap C) - P(B \cap C) + P(A \cap B \cap C)_)
+    Så nu kan vi genbruge en masse af vores tidligere arbejde! 
+    <br><br></answer-box>
+    <answer-box customWidth="600">
+    Ligesom før, så <i>kunne</i> vi selvfølgelig prøve at tælle det
+    direkte, men det er ret tricky, især nu hvor vi ikke må have gentagelser
+    med. Vi har ikke engang nogen dejlig formel ligesom før hvor vi 
+    kunne bruge _(P(A)*P(B|C)*P(C|A \cap B)_). Vi er nødt til at 
+    lave <i>en eller anden</i> smart omskrivning ...
+    <p class="t">
+    ... Så det gør vi. Vi ved at:
+    _($A \cup B \cup C = |A| + |B| + |C| - |A \cap B| - |A \cap C| - |B \cap C| + |A \cap B \cap C|_)
+    Og at:
+    _($P(A \cup B \cup C) = \frac{|A \cup B \cup C|}{|S|}_)
+    Så:
+    _($\frac{|A| + |B| + |C| - |A \cap B| - |A \cap C| - |B \cap C| + |A \cap B \cap C|}{|S|}_)
+    Vi <i>kunne</i> godt tælle nævneren, men vi kunne også i stedet omskrive til:
+    _($\frac{|A|}{|S|} + \frac{|B|}{|S|} + \frac{|C|}{|S|} - \frac{|A \cap B}{|S|} - \frac{|A \cap C|}{|S|} - \frac{|B \cap C|}{|S|} + \frac{|A \cap B \cap C|}{|S|}_)
+    Og voila:
+    _($ P(A)+P(B)+P(C) - P(A \cap B) - P(A \cap C) - P(B \cap C) + P(A \cap B \cap C)_)
+    Nu kan vi genbruge en masse af vores tidligere arbejde! Vi ved at:
+    _($\begin{eqnarray}
+    && P(A)=0.333 \\
+    && P(B)=0.3 \\
+    && P(C)=0.48 \\
+    && P(A \cap B \cap C)=0.0431
+    \end{eqnarray}_)
+    Vi mangler egentlig bare _(P(A \cap B)_), _(P(A \cap C)_) og _(P(B \cap C)_)
+    hvilke også alle "let" kan findes via tidligere arbejde:
+    _($\begin{eqnarray}
+    && P(A \cap B) & = P(A|B)*P(B) & = 0.333*0.3 & = 0.0999 \\
+    && P(A \cap C) & = P(C|A)*P(C) & = 0.43*0.48 & = 0.2064 \\
+    && P(B \cap C) & = P(C|B)*P(B) & = 0.48*0.3 & = 0.144
+    \end{eqnarray}_)
+    Man kan selv vælge om man omskriver _(P(a \cap b)_) til _(p(a|b) p(b)_)
+    eller _(p(b|a) p(a)_) så jeg valgte bare det der var lettest. Anyways, vi har nu:
+    _($0.333+0.3+0.48 - 0.0999 - 0.2064 - 0.144 + 0.0431 = 0.705_)
+    Bum! 
+    </p>
+    <br></answer-box>
+
+
+
+
+

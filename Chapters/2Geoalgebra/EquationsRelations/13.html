@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+
+    <h4>Visualisering af systemer af ligninger</h4>
+
+    <p class="t">
+    Vi arbejdede med systemet:
+    _($\begin{eqnarray}
+        && e^{x-y}=5 \\
+        && y*x=e^{x-y}+1 \\
+    \end{eqnarray}_)
+    Vi skulle altså finde alle de _((x,y)_)-punkter hvor <i>begge</i> ligninger var tilfredsstillet. Det kunne man visualisere som: 
+    </p>
+    <img class='Spic' style='width:60%' src='../../../Assets/Chapter2\Section3\Graphs\PlotEquation3.png'> 
+    <p class="t">
+    De to skæringspunkter matcher det faktum, at vi fandt to løsninger. 
+    </p>
+    <p class="t">
+    Et andet eksempel vi så var:
+    _($\begin{eqnarray}
+        && \sqrt{x} + \sqrt{y} = 7.5 \\
+        && \sqrt{x} - \sqrt{y} = 2.5 
+        \end{eqnarray}_)
+    Det kan visualiseres som:
+    </p>
+    <img class='Spic' style='width:100%' src='../../../Assets/Chapter2\Section3\Graphs\PlotEquation4.png'> 
+    <p class="t">
+    At plotte ligninger på den måde kan være vigtigt, når vi arbejder med cirkler og ellipser.
+    De kan begge defineres meget elegant som "plottet af en ligning". 
+    Sig du har en _(R_)-radius cirkel centreret på _((0,0)_).
+    Du ved nu, at et hvilket som helst punkt på cirklen skal have en afstand _(R_) fra _((0,0)_). 
+    Det kan vi skrive med Pythagoras som:
+    _($\sqrt{(x-0)^2+(y-0)^2}=R_)
+    Hvilket kan simplificeres til bare:
+    _($\sqrt{x^2+y^2}=R_)
+    Og så endeligt:
+    _($x^2+y^2=R^2_)
+    Det her er èn god måde at beskrive cirkler på matematisk. Jeg vil lade dig finde ud af, 
+    hvad præcis vi gør med ellipser:
+    </p>
+
+    <q-stion 1="13" 2="1">
+    Definer en ellipse som en cirkel på _((0,0)_) med radius _(1_), 
+    der er udstrakt på _(x_)-aksen med en faktor på _(a_) og på _(y_)-aksen med 
+    en faktor på _(b_). Hvordan kan du beskrive denne ellipse som en ligning? 
+    <img class='SpicXL' style='width:40%' src='../../../Assets/Chapter2\Section3\Graphs\Ellipse1.png'> 
+    <br></q-stion>
+    <answer-box>
+    Vi ved, at den nævnte cirkel kan beskrives som:
+    _($x^2+y^2=1_)
+    Da vi arbejdede med at plotte funktioner _(y=f(x)_), så vi, at _(y=A*f(B*x)_)
+    udstræk _(x_)-aksen med _(1/B_) og _(y_)-aksen med _(A_). 
+    Kan vi gøre noget lignende her? Hvad ville der f.eks. ske, hvis vi sagde:
+    _($\left(\frac{x}{b} \right)^2 + y^2 = 1_)
+    På den tidligere cirkel var de yderste _(x_)-værdier _(-1_) og _(1_). På denne modificerede version kan vi se, at 
+    de nu er _(-b_) og _(b_). _((x/b)^2_) gennemgår præcis de samme værdier som _(x^2_) før, 
+    og _(y_) vil derfor <i>også</i> gentage de samme. 
+    Der sker <i>præcis</i> det samme som før, men
+    over <i>et længere interval af _(x_)</i>. Vi får derfor en cirkel der er udstrakt på _(x_)-aksen med en faktor på _(b_):
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter2\Section3\Graphs\Ellipse2.png'> 
+    <p class="t">
+    Præcis det samme argument kan vi lave, hvis vi erstatter _(y_) med _(y/a_), så den endelige ligning er:
+    _($\left(\frac{x}{b} \right)^2 + \left(\frac{y}{a} \right)^2 = 1_)
+    Bum! 
+    </p>
+    <br></answer-box>
+

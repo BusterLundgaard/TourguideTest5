@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+
+
+    <h2><i>Ligninger</i> og "modsatte funktioner"</h2>
+    <p class="t">
+    Lad os prøve lige at løse en ligning, som vi nu har gjort det mange gange før:
+    _($Arctan(3x^2-5)=2_)
+    Vi vil gerne <i>isolere</i> _(x_). Få _(x_) over på sin egen side af ligningen helt for sig selv.
+    Derfra kan vi let se hvad den er lig. 
+    </p>
+    <p class="t">
+    _(Arctan_) er en funktion: i vores tilfælde gør den noget ved _(3x^2-5_) der på magisk vis bliver til _(2_) (radianer). 
+    Great. For at fjerne Arctan og komme tættere på en isoleret _(x_), 
+    bruger vi en anden funktion der gør det modsatte: _(Tan_)! 
+    _($Tan(Arctan(3x^2-5))=Tan(2) \to_) 
+    _($ 3x^2 - 5=-2.18_)
+    Hvis _(a=b_), så er _(Tan(a)_) selvfølgelig også lig _(Tan(b)_)! 
+    Vi har nu _(3x^2-5=-2.18_).
+    Jeg gider ikke have _(3x^2_) minusset med _(5_), så jeg gør det <i>modsatte</i>: jeg 
+    plusser:
+    _($3x^2-5+5=-2.18+5 \to_)
+    _($ 3x^2=2.82_)
+    Igen, selvfølgelig er _(a+c=b+c_) hvis _(a=b_). 
+    _(x^2_) er ganget med _(3_), så jeg gør nu det modsatte og <i>dividerer</i>:
+    _($\frac{3x^2}{3}=\frac{2.82}{3} \to x^2 = 0.94_)
+    Nu vil jeg til sidst gerne have _(x_) i stedet for _(x^2_), så jeg tager kvadratroden.
+    Det er det modsatte af at gange et tal med sig selv:
+    _($\sqrt{x^2}=\sqrt{0.94} \to x=0.969_)
+    Der er egentlig intet nyt der sker her. Du har gjort det her flere gange før, 
+    og det er alt meget logisk og simpelt.
+    Jeg vil bare gerne have dig til at observe, <i>hvad</i> præcist det er, du gør. 
+    Du har en "simpel" ligning, hvor den ene side består af nogle funktioner
+    brugt på _(x_), og den anden side er konstant. 
+    På hver side af ligningen bruger du nu <i>den modsatte funktion</i>, og 
+    du kommer tættere på en isoleret _(x_), ét trin ad gangen
+    </p>
+    <p class="t">
+    Langt de fleste ligninger er <i>ikke</i> så simple. Måske har man <i>flere</i> _(x_) på venstre side.
+    Måske har man mærkelige funktioner på begge sider!
+    _($Sin(x)*x^2 = 3^{x + Cos(x)}_)
+    Mange ligninger (som denne) er enten langt mere udfordrende end den vi lige løste,
+    eller dedikeret umulige. Det her eksempel skulle bare lige illustrere idéen bag en såkaldt
+    "modsat funktion". En funktion der "fjerner" en anden funktion, og hjælper os med at isolere.
+    Hvis en funktion kaldes for _(f_), bruger vi ofte _(f^{-1}_) til at indikere dens associerede
+    modsatte funktion. 
+    </p>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1">
+    Hvis der findes en funktion _(f^{-1}_), så at _(f^{-1}(f(x))=x_) for et hvert _(x_), vil 
+    det så også gælde, at _(f(f^{-1}(x))=x_) for et hvert _(x_)? 
+    Husk at det ikke nødvendigvis
+    behøver at være en funktion på tal! Det kan være på en form eller hvad end du har lyst til. Måske
+    en funktion der laver regulære polygoner om til tal? 
+    Husk yderligere på, at en funktion også kan skrives på mange måder: "_(1_) når _(x_) er _(2_), _(2_) når _(x_) er _(1_), _(0_) ellers"
+    er jo også en funktion. Funktion er et <i>meget</i> generelt begreb i matematik. 
+    <br><br></q-stion>
+    <answer-box>
+    I langt de fleste normale "matematiske" sammenhænge er svaret <i>ja</i>, men hvis vi tillader
+    nogle lidt mærkelige, abstrakte funktioner, er svaret <i>nej</i>. Sig at 
+    _(f_) er en funktion der tager et helt tal som input, 
+    og som output giver os en regulær polygon med det antal kanter. Sig at _(f'_) er 
+    en funktion, der tager en hvilken som helst form, og giver os mængden
+    af kanter på formen. Det er tydeligt, at _(f'(f(x))=x_), men det er ikke
+    nødvendigvis altid tilfældet den anden vej rundt. Sig at _(x_) er en
+    figur med _(6_) kanter som <i>ikke</i> er en regulær polygon. _(f'(x)=6_), så
+    _(f(f'(x))_) bliver til en regulær polygon med _(6_) kanter. Her ender vi ikke hvor
+    vi starter!
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="2">
+    Sig at _(a \sim b_) betyder, at _(a_) <i>har samme enhed</i> som _(b_). 
+    Du står nu i et tilfælde,
+    hvor du ved, at 
+    _($7.5*\frac{A*B}{X} + 30 \sim \frac{X}{C}_)
+    Yderligere ved du, at _(A_) har enheden
+    _(m/kg_), _(B_) har enheden _(J/m_), og _(C_) har enheden _(J*kg_). Hvilken enhed har _(X_)?
+    <p class="t">
+    Du kommer ikke til at bruge det i denne opgave, men hvis du er i tvivl, så står _(J_) for <i>joules</i>. Det
+    er en enhed for energi.
+    </p>
+    <br></q-stion>
+    <answer-box customWidth="500">
+    Både at gange med _(7.5_) og at plusse med _(30_) ændrer ikke enheden. Det kan vi nemt ignorere.
+    Hvis _(X_) har enheden _(e(X)_), så må 
+    _(A*B/e(x)_) have enheden: 
+    _($\frac{(m/kg)*(J/m)}{e(X)}=\frac{J/kg}{e(X)}_) 
+    Og _(e(x)/C_) må være:
+    _($\frac{e(X)}{J*kg}_)
+    Altså: 
+    _($\begin{eqnarray}
+    && \frac{J/kg}{e(X)} \sim \frac{e(X)}{J*Kg} \to \\ \\
+    && \frac{J}{kg} \sim  \frac{e(x)^2}{J*kg} \to \\ \\
+    && J^2 \sim e(X)^2 \to \\ \\
+    && e(X) \sim J \\ \\
+    \end{eqnarray}_)
+    _(X_) skal altså være i joules. 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="3">
+    Sig at du har en eller anden firkant _(Y_) _(\square ABCD_) med 
+    _($A=(-2,-2), B=(-3,2), C=(2,3), D=(2,-1)_)
+    Lad os sige, at _(f_) er en shear-transformation/funktion, der tager
+    et punkt _((a,b)_) til _((a+3b,b)_). Hvis _(f(X)=Y_), hvad
+    er så _(X_)? 
+    <br><br></q-stion>
+    <answer-box>
+    Den modsatte shear funktion _(f'_) må logisk nok være
+    _($(a,b) \to (a - 3*b,b)_)
+    Det gør vi bare på 
+    alle punkter, og får
+    _($\begin{align}
+    A_x & = (-2-3*(-2),-2)  & = (4,-2) \\
+    B_x & = (-3-3*2,2)      & = (-9,2)  \\
+    C_x & = (2-3*3,3)       & = (-7,3)  \\
+    d_x & = (2 - 3*(-1),-1) & = (5,-1) 
+    \end{align}_)
+    Det her ser visuelt ud som:
+    <img class='Spic' style='width:75%;' src='../../../Assets/Chapter2\Section3\ShearEquation.png'> 
+    <p class="t">
+    ... hvor de blå punkter er _(Y_) og de røde punkter _(X_). 
+    </p>
+    <br></answer-box>
+
+    <q-stion 1="2" 2="4">
+    Kan central projection transformationer modsættes? Findes der nogen modsat funktion? 
+    <br><br></q-stion>
+    <answer-box>
+    Centrale projection transformationer tager som input en 3D scene, og giver som output et 2D billede.
+    Alt information omkring punkternes distance til dit øje går tabt, så
+    der kan umuligt findes en modsat funktion der bare "finder informationen frem" igen.  
+    <br><br></answer-box>
+
+    <q-stion 1="2" 2="5">
+    Sig du har en eller anden trekant _(A_) med punkterne 
+    _($A_1=(-1,2), A_2=(-3,-2), A_3=(5,1)_)
+    ... og en anden trekant _(B_) med 
+    _($B_1=(-3,3), B_2=(1,-2), B_3=(2,4)_)
+    Sig at _(f(X)_) er refleksionen af _(X_) - enten en figur eller punkt - omkring punktet _(P_). Hvis du ved at: 
+    _($f(C)=B, \qquad \Seg{f(A_1)f(A_3)} \equiv \Seg{A_1A_3}_) 
+    Hvad er så punkterne på figuren _(C_)? I denne
+    sammenhæng betyder _(\equiv_), at de har samme retning, samme længde, og ligger på samme position.  
+    <br><br></q-stion>
+    <answer-box>
+    Her er hovedstrategien: vi skal først og fremmest finde _(P_), så vi matematisk og konkret
+    kan beskrive transformationen _(f_). Med _(f_) kan vi snildt beregne _(C_),
+    ved at bruge den modsatte transformation på alle _(B_)'s punkter. 
+    <p class="t">
+    Der er to muligheder hvis 
+    _($\Seg{f(A_1)f(A_3)} \equiv \Seg{A_1A_3}_) 
+    Enten I: _(f_) har slet ikke
+    rykket punkterne, eller II: _(f_) har byttet _(A_1_) og _(A_3_)'s positioner. 
+    Det <i>skal</i> være tilfælde II, da det eneste punkt en punkt-refleksion <i>ikke</i> flytter, er sig selv. 
+    <i>Både</i> _(A_1_) og _(A_3_) bliver, hvor de er, og det er mere end ét statisk punkt. 
+    </p>
+    <p class="t">
+    Så _(f_) bytter rundt på _(A_1_) og _(A_3_). Det betyder, at _(P_) er midt imellem dem, så:
+    _($P=\left(\frac{-1+5}{2}, \frac{2+1}{2} \right) = \left(2, 1.5 \right)_)
+    Transformationen _(f_) kan derfor beskrives som: 
+    _($(x,y) \to (4-x,3-y)_) 
+    Så den modsatte funktion _(f'_) er lig:
+    _($(x,y) \to (4-x,3-y)_).
+    Den modsatte funktion er i dette tilfælde ... sig selv.
+    Det er lidt mærkeligt, men det giver god nok mening siden 
+    _(4 - (4-x)=x_) og _(3-(3-y)=y_). 
+    </p>
+    <p class="t">
+    Anyways, vi kan bruge den her funktion og få:
+    _($\begin{alignat}{3}
+    C_1 & \, \, = \, &f'(B_1) & \, \, = \, (4-(-3),3-3)& & \, \, = \, (7,0) \\
+    C_2 & \, \, = \, &f'(B_2) & \, \, = \, (4-1,3-(-2))& & \, \, = \, (3,5) \\
+    C_3 & \, \, = \, &f'(B_3) & \, \, = \, (4-2,3-4)   & & \, \, = \, (2,-1) 
+    \end{alignat}_)
+    Du kan se det hele visualiseret her:
+    </p>
+    <img class='Spic' style='width:83%;' src='../../../Assets/Chapter2\Section3\ReflectPEquation.png'> 
+    <br></answer-box>
+

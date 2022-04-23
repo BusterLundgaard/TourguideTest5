@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Du ved at to <u>rette</u> trekanter i hvert fald deler én vinkel og èn side. Er de kongruente?
+    <br><br></q-stion>
+    <answer-box>
+    Prank: Det kan jo godt være at den vinkel de deler er _(90_) grader vinklen, så du kan ikke være sikker.
+    <br><br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Du ved at to <u>rette</u> trekanter i hvert fald deler én ikke-90-grader vinkel. Er de kongruente?
+    <br><br></q-stion>
+    <answer-box>
+    Ja. Man kan nemt finde resten af informationerne med kun disse to stykker.
+    <br><br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Du ved at to <u>vilkårlige</u> trekanter i hvert fald har alle de samme vinkler. Er de kongruente?
+    <br><br></q-stion>
+    <answer-box>
+    Nej. De er <i>similair</i>, men ikke nødvendigvis kongruente. Du kender ingen længder,
+    så den ene kunne ligeså godt være massivt større end den anden. 
+    <br><br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Du ved at to firkanter deler i hvert fald to længder og to vinkler. Er de kongruente?
+    <br><br></q-stion>
+    <answer-box>
+    Nej. Har kan jeg finde et simpelt modeksempel:
+    <img class="Spic" style="width:80%" src='../../../Assets/Chapter2\Section2\Quads\Modeksempel1.png'> 
+        <!-- CROP DET HER! -->
+    <p class="t">Sig at vi kender siderne _(AC,BC_) og vinklerne _(\angle BDA_), _(\angle BCA_). Den ene trekant
+    _(\triangle ACB_) har vi nok informationer til at finde. I den anden trekant 
+    _(\triangle BDA_) har vi <i>ikke nok</i>, fordi vi kun har vinklen _(\angle BCA_) og sidelængden _(AB_). 
+    Jeg kan altså lave alle trekanter _(\triangle BDA_) der bare har den sidelængde og vinkel, så overall
+    kan hele min firkant altså også konstrueres på forskellige måder. </p>
+    <br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Er to firkanter kongruente hvis de har det samme areal?
+    <br><br></q-stion>
+    <answer-box>
+    Nej. Jeg kan komme på et meget simpelt modeksempel endda. Du ved at arealet af en firkant
+    kan regnes som _(a*b*Sin(v)_) hvor _(a,b_) er længderne af diagonalerne, og _(v_) er vinklen 
+    imellem dem. Hvis jeg bare gør en af diagonalerne dobblet så lang, og den anden halvt så lang, 
+    så har jeg stadig samme areal, men nye diagonaler. Altså jeg har konstrueret to forskellige firkanter
+    med samme areal. 
+    <br><br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    To firkanter har de samme fire sidelængder. Er de kongruente, eller har 
+    de i det mindste det samme areal?
+    <br><br></q-stion>
+    <answer-box>
+    Nej til begge spørgsmål. Her findes et rigtigt nemt modeksempel i form af parallelogrammet. 
+    Dens fire sidelængder er _(a,b,a,b_). Vi kan nemt bare ændre på vinklen mellem disse længder, og få 
+    et nyt parallelogram (som jo er en slags firkant) med samme sidelængder, men nye vinkler.
+    Yderligere så kan vi også se at arealet af et parralelogram er _(a*b*Sin(v)_). Når vi ændre
+    på vinklen så skaber vi altså også et nyt areal selvom sidelængder forbliver inktakte. 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Generelt når en figur bare består af lige kanter (som en trekant, firkant, femkant, osv) så kalder vi den en <i>polygon</i>. 
+    Når der begynder at komme rigtig mange sider på, så har vi ikke længere dedikerede navne og siger i stedet f.eks. bare "_(19_)-gon". 
+    Vi ved at alle trekanter og firkanter har samme vinkelsumme (henholsvis _(180_) og _(360_)). Gælder det også
+    for en hvilken som helst _(n_)-gon, hvor _(n_) er mængden af sider? Hvis ja, så find en formel. 
+    <br><br></q-stion>
+    <answer-box>
+    Du kan se mit svar i videon her:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter2\Section2\ngon vinkelsum.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Når du har de 3 rigtige mål i en vilkårlig trekant, så kan du også finde alle sider og vinkler. Samme gælder
+    en firkant når du har 5 rigtige mål. Hvad gælder for en _(n_)-gon? Hvad er den mindste mængde mål / informationer du har brug for, 
+    for at finde alle sider og vinkler? 
+    <br><br></q-stion>
+    <answer-box>
+    Du kan se mit svar i videon her:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter2\Section2\ngon sider.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    I en trekant der har du brug for 2 mål for at finde arealet. I en firkant har du brug for 3 mål. Hvad med det generelle
+    tilfælde? Hvad er den mindste mængde mål du kan lave på en _(n_)-gon for at finde arealet? 
+    <br><br></q-stion>
+    <answer-box>
+    Du kan se mit svar i videon her:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter2\Section2\ngon areal.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <p class="t">
+    Det virker en smule mærkeligt til mig at det kun er trekanter der er kongruente hvis de har samme sider.
+    Eller for den sags skyld at det kun er trekanter hvis areal ekslusivt er bestemt af deres sidelængder.
+    Det med kongruens giver mening nok: man har brug for 
+    _(2n-3_) informationer for at bestemme sidelængder og vinkler. Det eneste tidspunkter hvor 
+    dette er lig eller under mængden af sider er når _(n=3_) da _(2*3-3=3_). Hvad så med areal dog? 
+    Man har brug for 3 mål for at finde arealet af en firkant, og alligevel er det ikke nok når man har 
+    alle 4 sider. Måske er det <i>næsten</i> nok alligevel dog? 
+    I en opgave viste vi at det i hvert fald ikke var, hvis formen var et
+    parallelogram, men hvad så hvis det specifikt <i>ikke</i> var et parallelogram? Mere generelt, i hvilke slags
+    firkanter <i>kan</i> man finde arealet kun med sidelængderne? Det er tydeligvis tilfældet i kvadrater og rektangler, men
+    er der andre? Kan vi endda måske sige noget om bestemte typer af _(n_)-goner hvor man kan finde arealet kun via
+    sidelængderne?
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Sig at en firkant har to - men ikke fire som ved et parralleogram - sider der er parralele. 
+    Er det muligt at finde dens areal hvis man har sidelængderne?  
+    <br><br></q-stion>
+    <answer-box>
+    Lad os putte det her til testen ved at forestille os den mærkeligste af disse slags former vi kunne lave:
+    <img class="Spic" style="width:95%" src='../../../Assets/Chapter2\Section2\Quads\ToSiderParallele.png'> 
+    <p class="t">
+    Hvordan kan vi finde det her areal? Well: En måde ville være
+    _($(x_2+L_1)*h-\frac{1}{2}*x_1*h-\frac{1}{2}*x_2*h_)
+    Vi har altså brug for _(h, x_1_) og _(x_2_). Dog kan man nemt se via 
+    Pythagoras at vi med hjælp fra _(s_1,s_2_) kan finde _(x_1,x_2_) hvis
+    bare vi har _(h_):
+    _($x_1=\sqrt{s_1^2 - h^2}, \qquad x_2 = \sqrt{s_2^2 - h^2}_)
+    Konkret skal vi altså bare på en eller anden måde finde _(h_), og så 
+    er alle vores problemer løst.
+    </p>
+    <p class="t">
+    Det virker ikke som om der er nogen åbenlys måde at finde _(h_) på,
+    men vi kan måske opstille et krav _(h_) skal følge som vi så kan bruge:
+    _($L_1+x_2 = x_1+L_2_)
+    Det her kan omskrives til noget med _(h_):
+    _($L_1 + \sqrt{s_2^2 - h^2} = L_2 + \sqrt{s_1^2 - h^2}_)
+    Haha! Nu har vi altså et krav _(h_) skal følge, i forhold til
+    _(L_1, L_2, s_1, s_2_) som alle er ting vi kender! Det er måske
+    ikke nemt, men det er altså tilsyneladende muligt at finde
+    højden (og derfor arealet) kun via siderne!
+    Det er faktisk lidt interessant, fordi den her figur er 
+    <i>mindre</i> specifik end parallelogrammet, men alligevel kan man finde arealet her som man ikke kunne der. </p>
+    <br></answer-box>
+
+    <p class="t">
+    Det er helt fint at finde på alle mulige kategorier af firkanter, og vise at arealet kan udregnes, men det ville
+    være bedre hvis vi havde èt svar. Èt bestemt krav en firkant skulle følge hvis det var muligt at finde dens areal
+    via dens sidelængder. Det vil vi finde nu: endda faktisk generelt for nogen som helst _(n_)-gon! 
+    </p>
+    
+    <p class="t">Sig at du har en eller anden avanceret polygon der lige passer ind i en cirkel:</p>
+    <img class="Spic" style="width:100%" src='../../../Assets/Chapter2\Section2\Quads\PolygonCirkel1.png'> 
+        <!-- CROP DET HER -->
+    <p class="t"><i>Hvis</i> vi både kendte radiusen _(R_) og sidelængderne _(AB,BC,CD,DE,EA_), så ville det tydeligvis 
+    være nemt at finde arealet. Hver af de individuelle trekanters areal 
+    kan jo bare regnes som _(2*(d/2)*\sqrt{R^2-(d/2)^2}_) hvor _(d_) så er længden. Spørgsmålet
+    er så om denne radius _(R_) <i>kun</i> er afhængig af sidelængderne. Hvis det var tilfældet, så ville det altså i 
+    hvert fald være muligt at udregne arealet <i>af denne bestemte slags polygon</i> kun via sidelængderne. </p>
+
+    <p class="t">_(R_) <i>er</i> kun afhængig er sidelængderne, og det kan man forstå på følgende måde: Sig at du har et sæt
+    sidelængder _(s_1,s_2,...s_n_). På en eller anden stor cirkel starter du ved et punkt, og placere punkter efter hinanden der er
+    henholdsvis _(s_1_) væk, _(s_2_) væk osv:</p>
+    <img class="Spic" style="width:80%" src='../../../Assets/Chapter2\Section2\Quads\PolygonCirkel2.png'> 
+    <p class="t">Her på dette billede der ender disse længder ikke med at danne nogle form, men hvis du gør radiusen mindre så kommer
+    startpunktet og slutpunktet tættere og tættere på hinanden. Vi kan gøre det her på en hvilken som helst værdi af 
+    _(r_) der er stor nok, så det virker også ret intuitivt og logisk at der vil findes en eller anden _(r_)-værdi hvor 
+    start og slut møder, og hvor vi får en _(n_)-gon. Bam! Vinklerne er ligegyldige: det eneste der har indflydelse
+    her er længderne </p>
+
+    <q-stion 1="2" 2="1" 3="5">
+    En <i>vinkelret bisector</i> af en linje _(\Seg{AB}_), er en linje der er vinkelret med og skære midten af _(\Seg{AB}_). 
+    Vis:
+    <div style="text-align:center;">
+        <ul style="display: inline-block; text-align: left; list-style:none;">
+            <li><b> 1</b>: At de _(3_) vinkelrette bisectore på en trekant altid skære hinanden i èt punkt</li>
+            <li><b> 2</b>: At det her punkt er centeret af den cirkel vi kan placere alle vores punkter på. 
+            Alt i alt så viser det her altså at der for enhver trekant findes en cirkel og radius
+            alle punkter kan ligge på. Det er èn anden forklaring vi kan give på hvorfor at man 
+            kan finde en trekants areal via kun sidelængderne</li>
+        </ul>
+    </div>
+    <br></q-stion>
+    <answer-box>
+    <b> 1</b>: Se følgende billede:
+    <img class="Spic" style="width:80%" src='../../../Assets/Chapter2\Section2\Quads\TrekantCircel1.png'> 
+    <p class="t">Hvis vi laver bare <i>to</i> vinkelrette bisectore, så ved vi at de i hvert fald selvfølgelig vil skære hinanden i et eller andet punkt _(O_).
+    Nogen som helst linjer der ikke er parallele skærer jo eventuelt hinanden. Hvad ved vi om det her punkt _(O_)?
+    Jo, siden _(AI_1=CI_1_) og _(AI_2=BI_2_) (siden det er bisectore), så kan vi ret nemt se at 
+    _(AO=CO_) og _(AO=BO_) hvilke jo også betyder at _(CO=BO_). Men vent: Hvis _(CO=BO_), så kan vi med præcis samme
+    argument se at _(O_) er nødt til at være på den vinkelrette bisector af _(BC_)! Det er umuligt at kun to vinkelrette
+    bisectore skære hinanden. De gør de alle!</p>
+    <p class="t">
+    <b> 2</b>: Easy: _(O_) er lige langt væk fra _(A_), _(B_) og _(C_). Vi kan altså bare lave en cirkel som:
+    <img class="Spic" style="width:80%" src='../../../Assets/Chapter2\Section2\Quads\TrekantCircel2.png'> 
+    Bam! Med en meget lignende strategi kan vi se hvorfor det her <i>ikke</i> gælder for firkanter. Prøv selv.  
+    </p>
+    <br></answer-box>
+
+    <p class="t">
+    En firkants areal kan som set på flere måder nu <i>ikke</i> bestemmes via sidelængderne. Det kunne så naturligt 
+    være interresant at spørge: hvad er det <i>største</i> areal en firkant med et bestemt sæt længder kan have? Potentielt
+    lidt simplere: Hvad er det største forhold mellem areal og omkreds i en firkant? Hvis vi fandt det så kunne vi jo 
+    bare lægge sidelængderne sammen, finde omkredsen, og få vores svar sådan.
+    </p>
+
+    <p class="t">Hvis vi skal finde det her forhold, så burde vi nok starte med et nemmere problem: hvordan
+    laver vi en <i>trekant</i> der har det største mulige forhold mellem areal og omkreds? Lad os
+    kigge på det aller simpleste tilfælde først: en trekant hvor grundlængden er _(1_) og højden er _(1_):</p>
+    <img class="Spic" style="width:50%" src='../../../Assets/Chapter2\Section2\Quads\TrekantOmkreds.png'> 
+    <p class="t">Forholdet mellem arealet og omkredsen er 
+    _($\frac{1*1}{\sqrt{x^2+1}+\sqrt{(1-x)^2+1}+1}_)
+    Det er altså størst når _(\sqrt{x^2+1}+\sqrt{(1-x)^2+1}+1_) er mindst, hvilket i sig selv er tilfældet
+    når mere specifikt  _(\sqrt{x^2+1}+\sqrt{(1-x)^2+1}_) er mindst (siden _(1_) jo bare er konstant).</p>
+
+    <p class="t">Hvis _(x=0_), så fås _(\sqrt{1}+\sqrt{1^2+1}=1+\sqrt{2}=2.414_).
+    Det er nemt at se at hvis _(x_) herfra bliver mindre (negativt) så vil _(\sqrt{x^2+1}+\sqrt{(1-x)^2+1}_) bare blive 
+    større. Vi ved altså (pr symmetri) at _(x_) skal i hvert fald være mellem _(0_) og _(1_). Igen via symmetri så ved vi også at 
+    hvis _(x_) er en af de steder hvor _(\sqrt{x^2+1}+\sqrt{(1-x)^2+1}_) er mindst, så vil _(1-x_) også være en af de steder.
+    Vi har derfor kun grund til at tjekke værdierne hvor _(x_) er mellem _(0_) og _(0.5_). _(x=0_) gav os _(2.414_).
+    _(x=0.5_) kan vi regne til _(\sqrt{0.5^2+1}+\sqrt{0.5^2+1}=2.236_). Omkredsen bliver altså større når vi 
+    går fra _(x=0.5_) til _(x=0_). Det er ikke nok til at vise at _(x=0.5_) er der hvor den er <i>mindst</i> dog.
+    Det ved vi kun hvis den på intet tidspunkt fra _(x=0.5_) til _(x=0_) bliver mindre:</p>
+    <img class="Spic" style="width:60%" src='../../../Assets/Chapter2\Section2\Quads\AnalysisArgument1.png'> 
+    <p class="t">I det tilfælde - i den hypotese - der kan vi nemt se at _(x=0.5_) vil være punktet hvor værdien er lavest. 
+    Hvis det <i>ikke</i> var tilfældet så ville det måske se ud som:</p>
+    <img class="Spic" style="width:80%" src='../../../Assets/Chapter2\Section2\Quads\AnalysisArgument2.png'> 
+    <p class="t">Altså den vil blive større og mindre (det her er bare èt eksempel). Vi kan nemt se at hvis
+    kurven bliver større og mindre, så vil _(\sqrt{x^2+1}+\sqrt{(1-x)^2+1}_) have de samme værdier nogle gange. 
+    Hvis den er som her så bliver alle værdier under _(0.2236_) gentaget to gange. Hvis kurven var som her:</p>
+    <img class="Spic" style="width:80%" src='../../../Assets/Chapter2\Section2\Quads\AnalysisArgument3.png'> 
+    <p class="t">så ville alle værdier mellem _(2.237_) og _(2.238_) blive gentaget endda _(3_) gange! 
+    Hvis jeg kan vise at _(\sqrt{x^2+1}+\sqrt{(1-x)^2+1}_) kun kan have èn værdi på to forskellige måder, så 
+    <i>ved</i> jeg at det må være hypotese _(1_). Hvis det ikke var hypotese _(1_), så ville der være værdier
+    _(\sqrt{x^2+1}+\sqrt{(1-x)^2+1}_) havde fire gange (siden der jo også er fra _(x=0.5_) til _(x=1_) som stadig tæller).
+    Det er altså mit mål nu. Lad os vise at der kun er to _(x_) hvor _(\sqrt{x^2+1}+\sqrt{(1-x)^2+1}_) er lig et eller andet tal _(k_).
+    _($\sqrt{x^2+1}+\sqrt{(1-x)^2+1}=k \to_)
+    _($\sqrt{x^2+1}=k-\sqrt{(1-x)^2+1} \to_)
+    _($x^2+1 = k^2 - 2*k*\sqrt{(1-x)^2+1} + (1-x)^2 + 1 \to_)
+    _($x^2+1 = k^2 - 2*k*\sqrt{(1-x)^2+1} + 1^2 - 2x + x^2 + 1 \to_)
+    _($x^2+1-1+2x-x^2-1=k^2 - 2*k*\sqrt{(1-x)^2+1} \to_)
+    _($2x-1=k^2 - 2*k*\sqrt{(1-x)^2+1} \to_)
+    _($k^2 -2x + 1 = 2*k*\sqrt{(1-x)^2+1} \to_)
+    _($\frac{k^2-2x+1}{2k}=\sqrt{(1-x)^2+1} \to_)
+    _($\frac{(k^2-2x+1)^2}{4k^2}=(1-x)^2+1 \to_)
+    _($\frac{(k^2-2x)^2+2*(k^2-2x)+1}{4k^2}=2-2x+x^2_)
+    _($\frac{k^4 - 4x*k^2 + 4x^2 + 2k^2 - 4x + 1}{4k^2}=2-2x+x^2_)
+    _($\frac{k^2}{4} + \frac{1}{2} - x + \frac{x^2}{k^2} - \frac{x}{k^2} + \frac{1}{4k^2} = 2-2x+x^2_)
+    _($\frac{k^2}{4} + \frac{1}{2} - x + \frac{x^2}{k^2} - \frac{x}{k^2} + \frac{1}{4k^2} - 2 + 2x - x^2 = 0_)
+    _($(\frac{1}{k^2}-1)*x^2+(1-\frac{1}{k^2})*x+(\frac{k^2}{4}+\frac{1}{4k^2}-\frac{1}{2})=0_)
+    Vi er der næsten nu. Sig at:
+    _($(\frac{1}{k^2}-1) = A, \qquad (1-\frac{1}{k^2})=B, \qquad (\frac{k^2}{4}+\frac{1}{4k^2}-\frac{1}{2}) = C_)
+    Nu har vi så:
+    _($Ax^2 + Bx + C=0_)
+    Det her har vi arbejdet med før, og vi ved at i sådan et tilfælde er
+    _($x=\frac{-B + \sqrt{B^2 - 4*A*C}}{2A}_)
+    Kvadratroden af et hvilket som helst tal kan faktisk være to forskellige ting:
+    F.eks. så kan _(\sqrt{4}_) både være _(2_) og _(-2_) da _((-2)*(-2)=4_). Helt 
+    korrekt burde man altså sige:
+    _($x=\frac{-B \pm \sqrt{B^2 - 4*A*C}}{2A}_)
+    Der er altså to, og kun to løsninger! Præcist som vi gerne ville have!
+    </p>
+
+    <p class="t">
+    For at recappe: vi har fundet ud at _(x_) skal være i midten ved _(0.5_). Vi kan lave præcist samme
+    argument med nogen som helst grundlængde og nogen som helst højde. Fordi _(x_) skal være halvdelen af grundlængden,
+    så kan vi også nemt se at to af siderne altså skal være lige lange. Det er altså vores primære resultat:
+    given en bestemt sidelængde og omkreds, så har en trekant sit største areal når de to andre sider
+    er lige store. Bevist på den mest avancerede og naive måde nogensinde! 
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5">
+    En <i>rhombus</i> er en firkant hvor alle sider er lige lange. Et kvadrat er altså bare en rhombus med vinkler på 
+    90 grader overalt. Vis at hvis sidelængden skal være _(b_), så har den største mulige 
+    rhombus et areal på _(b^2_). Bare rolig, det her er slet, slet ikke ligeså svært som det deroppe.
+    <br><br></q-stion>
+    <answer-box>
+    En rhombus er jo bare en form for parallelogram. Dens areal kan derfor findes med _(Sin(v)*s_1*s_2_) hvor
+    _(v_) er vinklen imellem de to sider _(s_1,s_2_). Det giver i vores tilfælde _(Sin(v)*b*b=Sin(v)*b^2_). 
+    _(Sin_) har sin største værdi på _(1_) ved _(90_) grader: ergo _(1*b^2=b^2_). Vi kan
+    se at rhombusens areal er størst når den er en kvadrat.  
+    <br><br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Vis at den største mulige firkant med omkreds _(s_) er et rent og simpelt kvadrat. 
+    <br><br></q-stion>
+    <answer-box>
+    Tag en eller anden firkant. Del den op i to trekanter ved at forbinde to af de modsatte punkter. 
+    Hvis dens areal skal være så stort som muligt med et givent areal, så skal det samme gælde de her
+    individuelle trekanter. Altså:
+    <img class="Spic" style="width:70%" src='../../../Assets/Chapter2\Section2\Quads\QuadToRhombus.png'> 
+    <p class="t">Det her var èn måde at opdele firkanten på i to trekanter, men vi kunne også opdele
+    det som:</p>
+    <img class="Spic" style="width:70%" src='../../../Assets/Chapter2\Section2\Quads\QuadToRhombus2.png'> 
+    <p class="t">
+    Nu skal _(\triangle MQA_) og _(\triangle MQB_) være så store som muligt, så
+    vi gør præcist hvad vi gjorde før:
+    </p>
+    <img class="Spic" style="width:70%" src='../../../Assets/Chapter2\Section2\Quads\QuadToRhombus3.png'> 
+    <p class="t">
+    Og nu har vi bare en rhombus. Som vi så i sidste opgave, så skal en 
+    rhombus have en vinkel på _(90_) grader for at have det størst mulige areal:
+    Ergo, den skal være et kvadrat! Boom!
+    </p>
+    <br></answer-box>
+    
+    <q-stion 1="2" 2="1" 3="5">
+    Hvad er det største mulige areal sidelængderne _(3,6,17,19_) kan danne?  
+    <br><br></q-stion>
+    <answer-box>
+    Deres omkreds er _(3+6+17+9=35_). Kvadratet med det omkreds har en sidelængde på _(35/4=8.75_). Altså: _(8.75^2=76.5625_).
+    <br><br></answer-box>
+

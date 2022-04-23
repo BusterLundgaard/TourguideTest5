@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+
+
+    <h3>Tredobbelt integraler: Det næste level</h3>
+    <p class="t">
+    Vi skulle bruge en <i>dobbelt</i> integral til at beregne massen af en <i>2D figur</i>, 
+    så det kræver en <i>tredobbelt</i> integral hvis man skal finde massen af en <i>3D volumen</i> :
+    </p>
+
+    <q-stion 1="15" 2="1" bigTop="true">
+    Sig at du har følgende kasse:
+    <img class='Spic' style='width:50%' src='../../../Assets/Chapter4\MultiVarCalc\DoubleIntegrals\JustABoringBox.png'> 
+    <p class="t">
+    Denne kasse har <i>ikke</i> en konstant densitet, men en varierende densitet _(\rho(x,y,z)_) i forhold til
+    hvor man er i kassen. Specifikt i dette tilfælde:
+    _($\rho(x,y,z)=1+x+0.01 y z \frac{\text{Gram}}{cm^3}_)
+    Find massen af kassen. 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Jeg viser den geometriske ide her:
+    <video class='picB' style='margin-top:35px; margin-bottom: 35px;' controls>
+        <source src='../../../Assets/Chapter4\MultiVarCalc\DoubleIntegrals\IntegralCenterOfMass.mp4' type='video/mp4'>
+    </video>
+    <p class="t">Så vi skal regne:
+    _($\int_{0}^{20} \int_{0}^{50} \int_{0}^{15} 1+x+0.01 y z \text{ }dz  \text{ }dx \text{ }dy _)
+    Første indre integral med respekt til _(z_) er lig _((1+x)z+ 0.005 y z^2_), hvilket
+    fra _(0_) til _(15_) er: 
+    _($15+15x+1.125y_)
+    Integreres det med _(x_) fås _((15+1.125y)x + 7.5x^2_), hvilket er
+    _($56.25*y + 19500_)
+    ... fra _(0_) til _(50_). Der integreres til sidst med _(y_) fra _(0_) til _(20_), 
+    hvilket giver:
+    _($\int_{0}^{20} 56.25*y + 19500 \text{ }dy = 401250 \text{ gram}_)
+    Omkring _(401kg_), så en voldsom tung lille kasse. 
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+    
+    <q-stion 1="15" 2="2" customWidth="540">
+    Sig at samme kasse som før nu har en konstant densitet overalt og en samlet masse på _(80kg_). 
+    Hvad er dens moment of inertia? Se tilbage til side 1 af dette kapitel, 
+    hvis du har glemt hvad moment of inertia er. 
+    <br><br></q-stion>
+    <answer-box customWidth="540">
+    Vi ved, at moment of inertia måler den samlede mængde "_(m*r^2_)" i massen. Den skal opdeles
+    i uendelig mange små masser, hvis _(m*r^2_) vi lægger sammen. Densiteten overalt
+    er _(80/(15*20*50)=_) _(0.00533_), så _(m*r^2_) ved en lille volume nær
+    _((x,y,z)_) er 
+    _($0.00533*(dx*dy*dz)*r^2_)
+    ... hvor _(r_) er afstanden væk fra massemidtpunktet. Vi <i>kunne</i> placere
+    _((0,0,0)_) hvor den allerede er og beskrive _(r^2_) som
+    _($(x-25)^2+(y-10)^2 + (z-7.5)^2_)
+    Men det er lettere at placere _((0,0,0)_) <i>ved</i> massemidtpunktet hvor
+    _(r^2=x^2+y^2+z^2_). Moment of inertia kan nu approximeres af en sum som: 
+    _($\sum \sum \sum 0.00533*(dx*dy*dz)*(x^2+y^2+z^2)_)
+    Denne sum er "perfekt", hvis de små _(dx_), _(dy_), _(dz_) alle nærmer sig _(0_).
+    Grænsen kan ligesom før omskrives til et tredobbelt integral:
+    _($0.00533*\int_{-7.5}^{7.5} \int_{-25}^{25} \int_{-10}^{10}  x^2+y^2+z^2 \text{ }dy \text{ }dx \text{ }dz_)
+    Vi går fra _(-7.5_) til _(7.5_) osv. da _((0, 0, 0)_) er <i>i midten</i>. 
+    <p class="t">
+    Integralet kan opdeles i tre lettere integraler og regnes som:
+    _($\begin{eqnarray}
+    && \int_{-7.5}^{7.5} \int_{-10}^{10} \int_{-25}^{25} x^2 \text{ }dx  \text{ }dy  \text{ }dz & \, \, \, + \\ \\
+    && \int_{-7.5}^{7.5} \int_{-10}^{10} \int_{-25}^{25} y^2 \text{ }dx  \text{ }dy  \text{ }dz & \, \, \, + \\ \\
+    && \int_{-7.5}^{7.5} \int_{-10}^{10} \int_{-25}^{25} z^2 \text{ }dx  \text{ }dy  \text{ }dz 
+    \end{eqnarray}_)
+    Rækkefølgen er ligegyldig, så vi ændrer det til:
+    _($\begin{eqnarray}
+    && \int_{-7.5}^{7.5} \int_{-10}^{10} \int_{-25}^{25} x^2 \text{ }dx \text{ }dy  \text{ }dz & \, \, \, + \\ \\
+    && \int_{-7.5}^{7.5} \int_{-25}^{25} \int_{-10}^{10} y^2 \text{ }dy \text{ }dx  \text{ }dz & \, \, \, + \\ \\
+    && \int_{-10}^{10} \int_{-25}^{25} \int_{-7.5}^{7.5} z^2 \text{ }dz \text{ }dx  \text{ }dy  
+    \end{eqnarray}_)
+    Dette giver:
+    _($\left(\frac{1}{3}*2*25^3 \right)*20*15 + \left(\frac{1}{3}*2*10^3 \right)*50*15 + \left(\frac{1}{3}*2*7.5^3 \right)*50*20_)
+    Hvilket kan regnes til _(3.90625*10^{6}_). Det skal til sidst nu 
+    bare ganges med_(0.00533_):
+    _($0.00533*3.90625*10^{6} = 20820.31_)
+    Bum!
+    </p>
+    <br></answer-box>
+
+    <p class="tt">
+    Den "ting" vi måler behøver ikke nødvendigvis være masse. Det kan også være alt muligt andet som
+    elektrisk ladning, varme, energi, inertimoment, osv. 
+    </p>
+
+    <q-stion 1="15" 2="3" bigTop="true" customWidth="500">
+    Inde i et laboratorie er der to plader. Mellem dem genereres der
+    elektrisk ladning:
+    <img class='Spic' style='width:50%' src='../../../Assets/Chapter4\MultiVarCalc\DoubleIntegrals\ChargeBetweenTwoPlates.png'> 
+    <p class="t">
+    Den ene plade ser vi som _(z=0_), og den anden som 
+    _($z=10+0.1x-0.1y_)
+    Pladen nederst er _(30cm_) lang og _(10cm_) bred. 
+    </p>
+    <p class="t">
+    Vi ved 
+    på mystiske videnskabelige måder, at <i>ladningsdensiteten</i> ved 
+    _((x,y,z)_) er:
+    _($\rho(x,y,z)=0.005z^2 + 0.01xy_)
+    (... hvilket ikke har nogen basis i rigtig fysik). 
+    Find det samlede antal ladning mellem de to plader. Integralet er lidt rodet, så
+    jeg anbefaler, at du bruger en computer til det hele.
+    </p>
+    <br></q-stion>
+    <answer-box customWidth="500">
+    Processen og argumenterne fra de sidste par opgaver kan let generaliseres til "elektrisk ladning".
+    Med lidt arbejde ser man, at svaret kan regnes af  
+    _($\int_{0}^{30} \int_{0}^{10} \int_{0}^{10+0.1x-0.1y} 0.005z^2 + 0.01xy \text{ }dz \text{ }dy \text{ }dx_)
+    Denne integral <i>kan</i> fint løses i hånden, men det er stort, rodet og klumret.
+    Vi anvender i stedet Geogebra, og skriver:
+    _($\begin{eqnarray}
+    && \text{Integral}( \\
+    && \, \, \, \text{Integral}( \\
+    && \, \, \, \, \, \, \text{Integral}(0.005*z^2 + 0.01*x*y, \, z, \, 0, \, 10+0.1*x-0.1*y), \\
+    && \, \, \, y, 0, 10), \\
+    && x, 0, 30)
+    \end{eqnarray}_)
+    (ud i én linje selvfølgelig). Geogebra giver _(3229.25_). Bum!
+    <br><br></answer-box>
+    
+    <p class="tt">
+    I de næste par opgaver er jeg ligeglad med, om du faktisk beregner massen via
+    densitetsfunktionen. 
+    Den rigtige udfordring kommer fra at <i>opsætte</i> de rigtige
+    integraler baseret på området og problemet. Du får derfor bare en 
+    generel "_(f(x,y,z)_)" densitetsfunktion.
+    </p>
+
+    <p class="t">
+    Lidt relevant terminologi før vi går i gang:
+    </p>
+
+    <div class="Definition">
+    <b>Definition: Kvadrant i koordinatsystemet</b>: <br>
+    Et 2D koordinatsystem opdeles i 4 "kvadranter" som følgende:
+    <img class='Spic' style='width:50%; margin-top:25px;' src='../../../Assets/Chapter4\MultiVarCalc\DoubleIntegrals\Quadrants2D.png'> 
+    <p class="tt">
+    Et 3D koordinatsystem opdeles i 8 "kvadranter" som følgende:
+    </p>
+    <img class='Spic' style='width:75%; margin-top:25px;' src='../../../Assets/Chapter4\MultiVarCalc\DoubleIntegrals\Quadrants3D.png'> 
+    <br></div>
+
+    <q-stion 1="15" 2="4" bigTop="true">
+    Sig du har densitetsfunktionen _(f(x,y,z)_). Dit område er 
+    under planet _(z=10-0.25x-y_) i første kvadrant. Hvad er "vægten"?
+    <br><br></q-stion>
+    <answer-box>
+    I følgende video kommer jeg frem til integralet
+    <video class='picB' style='margin-top:35px; margin-bottom: 35px;' controls>
+        <source src='../../../Assets/Chapter4\MultiVarCalc\DoubleIntegrals\underplanA.mp4' type='video/mp4'>
+    </video>
+    <p class="t">
+    Det er helt fint, hvis du ikke er kommet frem til samme integral:
+    Måske <i>ser</i> dit svar bare anderledes ud, trods det funktionelt er identisk og
+    giver de samme masser. 
+    Du ved, at vores to resultater matcher, hvis din vægt
+    med en arbitrær densitetsfunktion som _(yx^2 + z_) er lig:
+    _($\int_{0}^{40} \int_{0}^{10-0.25x} \int_{0}^{10-0.25x-y} yx^2 + z \text{ }dz \text{ }dy \text{ }dx = -212766.66 _)
+    Det kan du regne via Geogebra. 
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+    
+    <q-stion 1="15" 2="5">
+    Find vægten af densitetsfunktionen _(f(x,y,z)_), hvis dit område er
+    mellem XY-planet, YZ-planet, og XZ-planet og
+    _($-10x+5y-4z=27_)
+    ... og din figur <i>ikke</i> er uendelig stor. Den information får du brug for. 
+    <br><br></q-stion>
+    <answer-box>
+    I følgende video kommer jeg frem til integralet vi skal regne:
+    <video class='picB' style='margin-top:35px; margin-bottom: 35px;' controls>
+        <source src='../../../Assets/Chapter4\MultivarCalc\DoubleIntegrals\UnderPlanB.mp4' type='video/mp4'>
+    </video>
+    <p class="t">
+    På en arbitrær densitetsfunktion som _(yx^2+z_) svarer det til en "masse" på: 
+    _($\int_{-6.75}^{0} \int_{0}^{5.4+0.8z} \int_{-2.7-0.4z+0.5y}^{0} yx^2 + z \text{ }dx \text{ }dy \text{ }dz = -16.91  _)
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="15" 2="6">
+    Vores form er i det fjerde kvadrant, og det gælder at
+    _($1+\frac{1}{2}y \lt z \lt 2+y_)
+    ... samt
+    _($3-x \lt y \lt 4-\frac{1}{2}x_)
+    Hvad er vægten, hvis densitetsfunktionen er _(f(x,y,z)_)? 
+    <br><br></q-stion>
+    <answer-box>
+    I følgende video kommer jeg frem til integralet vi skal regne:
+    <video class='picB' style='margin-top:35px; margin-bottom: 35px;' controls>
+        <source src='../../../Assets/Chapter4\MultivarCalc\DoubleIntegrals\MellemLinjer.mp4' type='video/mp4'>
+    </video>
+    <p class="t">
+    På en arbitrær densitetsfunktion som _(yx^2+z_) svarer det til en "masse" på: 
+    _($\int_{-2}^{0} \int_{1+\frac{1}{2}y}^{2+y} \int_{3-y}^{8-2y} yx^2 + z \text{ }dx  \text{ }dz  \text{ }dy = -207.3_)
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <!-- <q-stion 1="2" 2="1" 3="5">
+    Sig at du har de følgende punkter:
+    _($\begin{eqnarray}
+    && A=(5,5,6)   & \, B=(7,5,6) \\
+    && C=(5,2,5)   & \, D=(7,2,5) \\
+    && E=(5,-2,-3) & \, F=(7,-2,-3) \\
+    && H=(5,-4,-4) & \, G=(7,- 4,-4) \\
+    \end{eqnarray}_)
+    Vores form er inde i mellem de følgende polygoner:
+    _($\begin{eqnarray}
+    && \square ABCD & \, \square EFGH \\
+    && \square BDFG & \, \square ACEH \\
+    && \square CDHG & \, \square EFBA \\
+    \end{eqnarray}_)
+    Hvad er vægten hvis densitetsfunktionen er _(f(x,y,z)_)? 
+    <br><br></q-stion>
+    <answer-box>
+    I følgende video kommer jeg frem til integralet vi skal regne:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter4\MultiVarCalc\DoubleIntegrals\KassePunkterSmall.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box> -->
+
+    <!--  -->
+
+    <!-- <q-stion 1="2" 2="1" 3="5">
+    Sig at du har en pyramideform der er 20 høj, 20 bred, og 20 lang, og roteret
+    45 grader omkring z-aksen:
+    <br><br>
+    <hover-video url="../../../Assets/Chapter4\MultiVarCalc\DoubleIntegrals\PyramidSpinning.mp4" ></hover-video>
+    <p class="t">
+    Sig at du har en anden lignende pyramideform der nu er
+    12 høj, 12 bred, og 12 lang (og igen roteret 45 grader om z-aksen). 
+    </p>
+    <p class="t">
+    <b> 1</b>: Beskriv de to pyramider som funktioner _(z(x,y)_).
+    </p>
+    <p class="t">
+    <b> 2</b>: Find massen, hvis densiteten er _(f(x,y,z)_). Spoilers: du får brug for at opdele denne i <i>en del</i> integraler. 
+    </p>
+    <br></q-stion>
+    <answer-box t="Answer 1#" tabColour="rgb(171,96,147)">
+    Du kan se mit svar her:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter4\MultiVarCalc\DoubleIntegrals\pyramideA.mp4' type='video/mp4'>
+    </video>
+    <p class="t">
+    Det skal siges at der er en lille fejl i videoen:
+    Det burde være _(z=12-|x|-|y|_), ikke _(z=18-|x|-|y|_). Ved ikke
+    lige hvor _(18_) kom fra. 
+    </p>
+    <br><br></answer-box>
+    <answer-box t="Answer 2#" tabColour="rgb(175,128,161)">
+    Du kan se mit svar her:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter4\MultiVarCalc\DoubleIntegrals\pyramideB.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box> -->
+
+    <!--  -->
+
+    <!-- <q-stion 1="2" 2="1" 3="5">
+    Sig at der i et koordinatsystem sættes en 3D kasse, hvis 
+    højre, nederste, bagerste punkt er ved origo, som har en 
+    længde langs _(x_) på _(9_), bredde langs _(y_) på _(3_), og højde
+    langs _(z_) på _(4_). En del af denne kasse bliver skåret over af at plan
+    _(z=8-0.75x-1.5y_). Hvad er planets masse, hvis densitetsfunktionen er _(f(x,y,z)_)?
+    <p class="t">
+    Den her er relativt tricky, og hvis du har svært ved at visualisere det hele i hånden, så anbefaler
+    jeg at bruge Geogebra så du får en lidt bedre ide. 
+    </p>
+    <br><br></q-stion>
+    <answer-box>
+    I følgende video kommer jeg frem til integralet vi skal regne:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter4\MultiVarCalc\DoubleIntegrals\KasseCutSmall.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box> -->
+
+
+

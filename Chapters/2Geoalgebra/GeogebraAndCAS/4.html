@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+
+
+    <h3>Omskrivning</h3>
+    <p class="t">
+    Følgende video introducerer nogle nye funktioner i Geogebra:
+    </p>
+
+    <p class="cent">
+        <a href="https://youtu.be/KD2UbzYRrQk" target="_blank">Link til Youtube video</a>
+    </p>
+
+    <q-stion 1="4" 2="1" customWidth="540">
+    Brug Geogebra til at udvide parenteserne i følgende stykke:
+    _($(xy+z)^3*(y+2z^2)_)
+    <br></q-stion>
+    <answer-box customWidth="540">
+    I Geogebra skriver vi:
+    _($\text{Expand}\left((x*y+z)^3*(y+2z^2) \right)_)
+    Og får:
+    _($x^3 y^4 + 2x^3 y^3 z^2 + 3x^2 y^3 z + 6x^2 y^2 z^3 + 3x y^2 z^2 + 6xyz^4 + yz^4 + yz^3 + 2z^5_)
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="4" 2="2">
+    Brug Geogebra til at simplificere de følgende udtryk:
+    <div style="margin-left:-55%; margin-top:25px; margin-bottom: -10px;">
+    _($\begin{eqnarray}
+        && \underline{\textbf{A}}: \, \, \, \, \, \, \left(\frac{xy^2 z}{2z + 3yz} + \frac{5y^2}{y+x} \right)/y^2 \\  \\
+        && \underline{\textbf{B}}: \, \, \, \, \, \, \frac{\frac{6x-4}{5x-7} - 1}{4+\frac{-27x+11}{7x-2}} \\  \\
+    \end{eqnarray}_)
+    </div>
+    <br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    I Geogebra skriver vi:
+    _($\text{Simplify}(\left(\frac{xy^2 z}{2z + 3yz} + \frac{5y^2}{y+x} \right)/y^2)_)
+    Og får:
+    _($\frac{x^2+xy+15y+10}{3xy+2x+3y^2+2y}_)
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Vi får:
+    _($\frac{7x-2}{5x-7}_)
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="4" 2="3">
+    En kommando jeg ikke diskuterede i videoen var Geogebras _(\text{Division}_). Den kan bruges til 
+    long division of polynomials. F.eks. kan den nemt vise, at
+    _($\frac{x^3+7x+5}{x^2-6x+4} = x + 6 + \frac{39x - 19}{x^2-6x+4}_)
+    Find selv ud af, hvordan man bruger kommandoen (enten via de informationer Geogebra giver
+    dig eller via Google), og lav long division på:
+    _($\frac{4x^5-10x^4+3.5x^3 + x-7}{2x^3-11x^2+x+13}_)
+    <br></q-stion>
+    <answer-box>
+    I følgende video viser jeg processen og svaret: 
+    <video class='SpicB' style="width:95%;" controls>
+        <source src='../../../Assets/Chapter2\Geogebra\CAS\LongDivisionGeogebra.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="4" 2="4">
+    Prøv at løs følgende ligning <i>uden</i> _(\text{Solve}_)-kommandoen i Geogebra:
+    _($(2e^x+5)^2 = 2*(e^x-5) - 7*\left(3+\frac{2}{e^x} \right)*(-4e^{2x}+e^x)_)
+    Kan _(\text{Expand}_) måske hjælpe dig?
+    <br><br></q-stion>
+    <answer-box>
+    Vi kan se, at _(e^{x}_) viser sig en masse gange i denne ligning. 
+    _(e^{2x}_) svarer bare til _((e^x)^2_), så måske kan vi omskrive dette til 
+    en andengradsligning _(aA^2 + bA + c_) hvor "_(A_)" er _(e^{2x}_)? Lad os
+    forsøge med _(\text{Expand}_) og se hvad vi får:
+    _($\text{Expand}\left((2e^x+5)^2 = 2*(e^x-5) - 7*\left(3+\frac{2}{e^x} \right)*(-4e^{2x}+e^x) \right)_)
+    Det giver:
+    _($4 (e^x)^2 + 20e^x + 25 = 84 (e^x)^2 + 59e^x - 10_)
+    Vi vil gerne have noget i formen af et andengradspolynomie, så vi regner:
+    _($4 (e^x)^2 + 20e^x + 25 - \bigl(84 (e^x)^2 + 59e^x - 10\bigr) = 0_)
+    Hvilket giver:
+    _($-80 (e^x)^2 - 39 e^x + 35 = 0_)
+    Så _(a=-80_), _(b=-39_) og _(c=35_). 
+    Vi regner nu:
+    _($e^x = \frac{-(-39) \pm \sqrt{(-39)^2 - 4*(-80)*(35)}}{2*(-80)} = -0.9487, 0.4612_)
+    _(e^x_) kan ikke være negativ, så den eneste mulighed er _(e^x=0.4612_). 
+    Vi ser derfor endeligt at 
+    _($x = Ln(0.4612) = -0.7739_)
+     <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="4" 2="5" customWidth="580">
+    Find de konstanter _(A_), _(B_), _(C_) og _(D_) hvor:
+    _($\begin{eqnarray}
+    && A (4x^2+3) (x+5) + B (2x+7)^3 + C (12-7x)(x-9) + 15 D = \\ \\
+    && 7x^3-5x^2+14x+3
+    \end{eqnarray}_)
+    I den her, er du nødt til at være lidt kreativ. 
+    <br><br></q-stion>
+    <answer-box customWidth="580">
+    Hvis to polynomier er identiske, skal de være lig hinanden for <i>hver værdi af _(x_)</i>. 
+    Det er kun tilfældet, hvis alle deres koefficienter er identiske.
+    Så koefficienten på eksempelvis _(x^2_) i den ene, skal matche koefficienten 
+    på _(x^2_) i den anden. Vi skal altså vælge konstanterne
+    _(A_), _(B_), _(C_) og _(D_), så at dette er sandt. 
+    <p class="t">
+    Koefficienterne på højre side er tydeligvis bare _(7_), _(-5_), _(14_) og _(3_).
+    Koefficienterne på venstre side er beskrevet i forhold til _(A_), _(B_), _(C_) og 
+    _(D_), og vi kan finde dem ved hjælp af _(\text{Coefficients}_)-kommandoen:
+    _($\text{Coefficients}\left(A (4x^2+3) (x+5) + B (2x+7)^3 + C (12-7x)(x-9) + 15 D \right)_)
+    Det giver:
+    _($\{4A + 8B, \, 20A+84B-7C, \, 3A+294B+75C, \, 15A+343B-108C+15D  \}_)
+    Så:
+    _($\begin{eqnarray}
+    && 4A + 8B = 7 \\
+    && 20A + 84B - 7C = -5 \\
+    && 3A + 294B + 75C = 14 \\
+    && 15A + 343B - 108C + 15D = 3 
+    \end{eqnarray}_)
+    Det er et lineært system! Vi kan løse det med Geogebra som:
+    _($\begin{alignat}{1}
+    \text{Solve}\Bigl(&\{4A + 8B = 7, 20A + 84B - 7C = -5, \\ 
+    & 3A + 294B + 75C = 14, 15A + 343B - 108C + 15D = 3 \}, \\ 
+    & \{A,B,C,D \}\Bigr)    
+    \end{alignat}_)
+    Hvilket giver:
+    _($\{\{A=2.86, B=-0.55, C=2.24, D=26.11  \} \}_)
+    Voila! Det her minder en del om det, vi gjorde i algebra kapitlet, 
+    da vi skulle omskrive to polynomier divideret med hinanden til <br> formen
+    _(A_1/(x+B_1)+A_2/(x+B_2)+\dots_) 
+    </p>
+    <br></answer-box>
+
+

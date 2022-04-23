@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+
+
+    <h3>Et problem med vores nuværende definition på sandsynlighed</h3>
+
+    <p class="t">
+    Det er tid til at udvide vores definition på sandsynlighed lidt. 
+    Problemet med 
+    _($\frac{\text{Antal måder det kan ske på}}{\text{Samlet antal af mulige ting der kan ske}}_)
+    ... er at det nogen gange slet ikke er <i>muligt</i> at "tælle" os 
+    frem. Hvad hvis der er uendelig mange muligheder? Hvad hvis
+    vi er blevet givet én sandsynlighed og skal finde en ny? 
+    Det er de slags situationer, vi undersøger på denne side. 
+    </p>
+
+    <q-stion 1="9" 2="1">
+    Du kaster en vægtet mønt to gange. Mønten
+    har _(0.352_) chance for at ramme krone, 
+    _(1-0.352=0.648_) for plat. 
+    Hvad er sandsynligheden for, at 
+    du får krone på første kast og plat på det andet? 
+    <br><br></q-stion>
+    <answer-box>
+    Chancen for, at du får krone på det første kast 
+    er _(0.352_), chancen for at du får plat på
+    det andet er _(0.648_), men hvad med begge samtidig? 
+    <p class="t">
+    Her forestiller jeg mig en stor "kasse" fyldt med tidslinjer. 
+    Helt absurd mange tidslinjer. 
+    I hver tidslinje kaster jeg mønten to gange. 
+    <i>Ja</i>, der er kun fire mulige resultater, men
+    der vil stadig altid være små variationer på, hvordan mønten kastes
+    og flyver gennem luften. <i>Små mikroskopiske variationer</i>.
+    </p>
+    <p class="t">
+    De tidslinjer hvor jeg får krone på første kast fylder
+    _(35.2_)% af kassens samlede vægt. 
+    De er ligeligt fordelt i kassen. Et hvilket som helst
+    udsnit af kassens tidslinjer har altid en densitet
+    af disse slags tidslinjer med _(35.2_)%. 
+    </p>
+    <p class="t"> 
+    De her to typer tidslinjer er helt selvstændige og har ingen indflydelse på
+    hinanden. Det andet kast ændrer intet på hvordan jeg kaster
+    mønten i det første og vice versa. De er begge helt ligeligt
+    fordelt blandt de uendeligt mange tidslinjer i kassen. 
+    </p>
+    <p class="t">
+    Så <i>blandt</i> de _(35.2_)% af kassens tidslinjer, hvor 
+    jeg får krone på første kast, er der _(64.8_)% hvor jeg får plat på
+    det andet. De kasser, hvor jeg får krone på det første kast
+    <i>og</i> plat på det andet, fylder derfor _(64.8_)% <i>af</i>
+    _(35.2_)% af kassens vægt, så:
+    _($0.648*0.352=0.228096 \approx 22.8\text{%}_)
+    ... af kassens vægt. Det er derfor den samlede sandsynlighed. Man ganger
+    bare sandsynligheden for begge begivenheder!
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <p class="t">
+    Lad os lige tænke over, hvad der skete i sidste opgave lidt mere generelt:
+    </p>
+
+    <video class='SpicBXL' style="width:95%;" controls>
+        <source src='../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\KontinuerligTeori.mp4' type='video/mp4'>
+    </video>
+
+    <q-stion 1="9" 2="2">
+    Hvad er chancen for at du <i>over</i> _(6_) gange i streg
+    kaster en krone, der lander på plat? 
+    <p class="t">
+    Den her er måske lidt tricky!
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Hmmm. <i>Over</i> _(6_)? Så enten _(7_) plat i streg før man rammer
+    krone, _(8_) plat, _(9_) plat, _(10_) og ... det kan fortsætte i 
+    uendelighed. I denne situation er det svært at tænke
+    over
+    _($\frac{\text{Antal måder det kan ske på}}{\text{Samlet antal af mulige ting der kan ske}}_)
+    ... fordi "antal måder det kan ske på" er uendelig stor. 
+    Vi får derfor brug for en smart observation.
+    Lige meget hvad, er der _(100_)% chance for at vi slår
+    plat <i>en eller anden mængde gange</i> i streg. 
+    Så chancen for, at slå plat i streg over _(6_) gange svarer til:
+    _($1 - \text{Chancen for at slå plat under 7 gange i streg}_)
+    Chancen for at slå plat under _(7_) gange i streg er meget
+    nemmere at modellere, og kan ske på kun _(7_) måder: 
+    _($\begin{eqnarray}
+    && \text{krone} \\
+    && \text{plat, krone} \\
+    && \text{plat, plat, krone} \\
+    && \vdots \\
+    && \text{plat, plat, plat, plat, plat, plat, krone} 
+    \end{eqnarray}_)
+    Vi skal lægge sandsynligheden for hver af disse situationer sammen.
+    Lad os regne sandsynligheden på 
+    _($\text{plat, plat, plat, krone}_)
+    ... som eksempel. Det her er fire begivenheder, der hver
+    har sandsynligheden _(0.5_). De er alle selvstændige, så tidslinjen
+    hvor de alle opfyldes svarer til _(50_)% af _(50_)% af _(50_)%
+    af _(50_)% af alle mulige tidslinjer:
+    _($0.5*0.5*0.5*0.5=0.5^4=0.0625_)
+    Bum! Herfra kan det let ses, hvordan vi regner de andre tidslinjer også. Vi får:
+    _($0.5+0.5^2+0.5^3+\dots+0.5^7_)
+    Det kan regnes hurtigt med formlen
+    _($1+r+r^2+r^3+\dots r^n = \frac{1-r^{n+1}}{1-r}_)
+    ... så:
+    _($\frac{1-0.5^{7+1}}{1-0.5} - 1 = 0.9921875_)
+    Chancen for at slå plat <i>over</i> _(7_) gange i streg er derfor:
+    _($1-0.9921875=0.0078125_)
+    Voila! Lidt over _(0.7_)%. 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="9" 2="3">
+    Du prøver at kaste en basketball op i net. Du er ikke specielt god, så chancen
+    for at du rammer et kast er _(20_)%. Du kaster nu _(7_) gange:
+    Hvad er chancen, for at du får præcis _(3_) bolde i?
+    <br><br></q-stion>
+    <answer-box>
+    Chancen for at jeg <i>ikke</i> rammer er _(1-0.2=0.8_). Forestil dig, at jeg ramte
+    de tre første gange, og ikke ramte de sidste _(7-3=4_). Chancen for det ville
+    være
+    _($0.2*0.2*0.2*0.8*0.8*0.8*0.8=0.00262_) 
+    ... men det her er kun èn af de mange måder jeg kan få _(3_) points på! 
+    Måske får jeg i stedet mine points på skud 2, 5, og 6. Måske
+    skud 1, 3 og 4. Der er
+    _($\VeC[7,3] = 35_)
+    ... måder at få _(3_) points. Hver af disse situationer har en sandsynlighed på 
+    _(0.00262_), så den samlede sandsynlighed er:
+    _($35*0.00262 = 0.09175_)
+    En chance på omkring _(9_) %. 
+    <p class="t">
+    En generel formel man kunne have brugt i denne situation, er:
+    _($\VeC[n,k]*p^k*(1-p)^{n-k}_)
+    Hvor _(n_) er mængden af gange man kaster, _(k_) er hvor mange points
+    man gerne vil have og _(p_) er chancen for at ramme. Her svarer
+    _(1-p_) til _(0.8_), og _(n-k_) til _(4_). Med _(p^k*(1-p)^{n-k}_)
+    finder vi sandsynligheden i èt tilfælde, og det med antallet
+    af det tilfælde 
+    _(\Vec[n,k]_) for at regne den samlede sandsynlighed. 
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="9" 2="4">
+    De to spillere fra før duellerer igen i plat-eller-krone,
+    men spiller 1 snyder!
+    Han bruger en vægtet mønt, der har _(0.747_) chance for 
+    at lande på krone. Han mangler lige nu _(5_) points for at
+    vinde, og spiller 2 mangler _(4_). Hvor stor er hans chance
+    for at vinde? 
+    <br><br></q-stion>
+    <answer-box>
+    Jeg forklarer den grundlæggende ide i følgende video:
+    <video class='SpicB' style="width:95%;" controls>
+        <source src='../../../Assets/Chapter3/Sandsyndlighed og kombinatorik/ProblemOfPointsWeighted.mp4' type='video/mp4'>
+    </video>
+    <p class="t">
+    Vi kan i vores situation forestille os, at der bliver
+    kastet med mønten _(5+4-1=8_) gange. Spiller 1 vinder
+    ved, at der bliver slået krone enten _(5_), _(6_), _(7_) eller _(8_) gange.
+    Det kan regnes som:
+    _($\begin{eqnarray}
+    && \VeC[8,5]*0.747^5*0.253^3 & + \\
+    && \VeC[8,6]*0.747^6*0.253^2 & + \\
+    && \VeC[8,7]*0.747^7*0.253^1 & + \\ 
+    && \VeC[8,8]*0.747^8*0.253^0 & = 0.88199  \\
+    \end{eqnarray}_)
+    Så en næsten _(90_)% chance! 
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <p class="t">
+    Det er tydeligt, at der er større chance for at få f.eks. 2 points i basketball
+    end alle _(7_). Lad os tegne en graf, der viser dette forhold:k
+    </p>
+    <img class='SpicBXL' style='width:70%' src='../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\BinomialDistribution1.png'> 
+    <p class="t">
+    Her har jeg bare evalueret _(\Vec[7,k]*0.2^k*0.8^{7-k}_) for alle
+    værdier _(k=0_) til _(7_). Man kan se, at der er størst chance for, at jeg kun score
+    èt enkelt mål. Lige nu er _(p=0.2_). Hvad sker der, hvis jeg gør denne chance større? 
+    </p>
+    <video class='SpicBXL' style="width:70%;" controls>
+        <source src='../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\BinomialAnimationCropped.mp4' type='video/mp4'>
+    </video>
+
+    <p class="t">
+    Det kunne være praktisk at vide: Hvilken score er der størst chance for
+    jeg får, hvis jeg kaster _(n_) gange med sandsynlighed _(p_) på
+    hvert skud? 
+    </p>
+
+    <q-stion 1="9" 2="5" customWidth="550">
+    Hvis du kaster _(n_) gange, og sandsynligheden for at du rammer er lig _(p_), hvilken
+    score er der størst chance for, at du får? Vigtigt: Du kan ikke nødvendigvis komme
+    frem til en direkte <i>formel</i> for _(k_), men du kan finde to tal, _(k_) er 
+    <i>imellem</i>. 
+    <p class="t">
+    Den her opgave er måske lidt tricky. Jeg anbefaler, at du bliver inspireret af 
+    <i>grafen</i>: Hvad gælder på grafen, der hvor værdien er størst? 
+    </p>
+    <br></q-stion>
+    <answer-box t="h" customWidth="550">
+    Kald chancen for, at vi får _(k_) points for _(p(k)_). _(k_) er et helt tal, og
+    hvis _(p(k)_) er højest, ved jeg at:
+    _($p(k-1) \lt p(k) \gt p(k+1)_)
+    Med andre ord: Værdien _(p(k)_) er både større end værdien bagved og værdien foran. 
+    <br><br></answer-box>
+    <answer-box customWidth="550">
+    Kald chancen for _(k_) points for _(p(k)_). Her er så ideen:
+    Jeg kan se på grafen, at hvis _(p(k)_) er højest, er:
+    _($p(k-1) \lt p(k) \gt p(k+1)_)
+    Værdien _(p(k)_) er både større end værdien bagved og værdien foran. 
+    Ud fra det, kan vi opsætte to uligheder:
+    _($\VeC[n,k-1]*p^{k-1}*(1-p)^{n-(k-1)} \lt \VeC[n,k]*p^k*(1-p)^{n-k}_)
+    _($\VeC[n,k+1]*p^{k+1}*(1-p)^{n-(k+1)} \lt \VeC[n,k]*p^k*(1-p)^{n-k}_)
+    Lad os se, om vi kan omskrive dem til noget simplere. Lad os 
+    starte med den første. Her kan vi dividere begge sider med _(p^k*(1-p)^{n-k}_) og få:
+    _($\VeC[n, k-1]*\frac{1-p}{p} \lt \VeC[n, i]_)
+    Vi udvider nu den fulde _(n_)-choose-_(k_) formel og får:
+    _($\frac{n!}{(k-1)! (n-k+1)!}*\frac{1-p}{p} \lt \frac{n!}{k! (n-k)!}_)
+    _(n!_) kan tydeligvis fjernes, siden det er på begge sider. _(k! (n-k)!_) kan også
+    <i>næsten</i> fjernes, siden det er tæt på at være på højre side også. Hvis vi omskriver til
+    _($\frac{k}{k!*(n-k+1)*(n-k)!}*\frac{1-p}{p} \lt \frac{1}{k! (n-k)!}_)
+    ... kan vi gange begge sider med _(k!*(n-k)!_) og få:
+    _($\frac{k}{n-k+1} \frac{1-p}{p} \lt 1_)
+    Vi vil gerne så godt som muligt isolere _(k_), så vi ganger begge
+    sider med _(p*(n-k+1)_), og får:
+    _($k*(1-p) - p*(n-k+1) \lt 0_)
+    Det kan let omskrives til:
+    _($k \lt p*(n+1)_)
+    Vi kan gennemgå præcis samme proces med den anden ulighed og få:
+    _($k \gt p*(n+1) - 1_)
+    Alt i alt:
+    _($p*(n+1) - 1 \lt k \lt p*(n+1)_)
+    Vi skal altså bare regne _(p*(n+1)_), regne _(p*(n+1)-1_), og finde et <i>helt</i> tal
+    imellem. 
+    De er _(1_) fra hinanden, så der findes kun ét enkelt _(k_) der opfylder dette krav. 
+    Faktisk er denne ulighed bare en fancy måde at skrive
+    _($k = \text{Floor} \left(p*(n+1) \right)_)
+    ... hvor _(\text{Floor}_) runder ned. 
+    <br><br></answer-box>
+
+    <q-stion 1="9" 2="6">
+    Lad os anvende sidste opgaves resultat:
+    Hvilken score er der størst chance for at få, hvis du kaster _(827_) gange
+    og rammer med en sandsynlighed på _(p=0.65_)?
+    <br><br></q-stion>
+    <answer-box>
+    Vi regner:
+    _($\text{Floor}(0.65*(827+1)) = \text{Floor}(538.2) = 538_)
+    Voila!
+    <br><br></answer-box>
+
+
+
+
+

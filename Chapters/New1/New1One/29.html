@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+
+    <h4>Dem alle sammen!</h4>
+    <p class="t">
+    På denne side finder du en række problemer, hvor du både
+    får brug for at plusse, minusse og gange. Det er
+    faktisk ikke det <i>primære</i> formål med siden dog. 
+    Det primære formål er at du indser en vigtig ide, der lettest kan forklares
+    gennem eksempler. 
+    </p>
+
+    <q-stion 1="30" 2="1"> 
+        Du er ved at gå ned til bageren:
+        <img class="SpicXL" style="width:80%" src="../../../Assets/Chapter1\Talopgaver og intuition\DistanceToBaker\F\smallDistances1.png">
+        <p class="tt">
+        Du begynder at gå. Som du når ned til det gule hus, opdager
+        du, at du har glemt din pung. 
+        Du går tilbage til starten 
+        for at lede, men efter et stykke tid giver du op. Der var ikke specielt mange penge i 
+        alligevel. Du begynder igen at gå mod bageren, men da du når enden af det gule hus, får du 
+        en ide: hvad hvis pungen var blevet taget af vinden, og derfor lå bag det grønne hus?
+        </p>
+        <img class="SpicXL" style="width:80%" src="../../../Assets/Chapter1\Talopgaver og intuition\DistanceToBaker\F\smallDistances2.png">
+        <p class="tt">
+        Du skynder dig tilbage, og til din store lettelse finder du faktisk pungen. Endelig går du 
+        nu ned til bageren, ind ad døren, køber en romkugle, og går tilbage til hvor du startede.
+        </p>
+        <p class="t">
+        Hvor langt har du bevæget dig i alt? 
+        </p>
+    <br></q-stion>
+    <answer-box> 
+        Lad os prøve lige først at beskrive hvor langt vi går i
+        forhold til længden af det første grønne hus _(Hus_{1}_),
+        det andet gule hus _(Hus_{2}_) og 
+        det sidste hus med vinduer _(Hus_{3}_). 
+        Det er langt mere overskueligt end at lægge alle de små tal
+        sammen i èn kæmpe omgang. Ifølge historien bevæger vi os:
+        _($\begin{eqnarray}
+        && Hus_{1} & + \\ 
+        && Hus_{1} & + \\ 
+        && Hus_{2} & + \\ 
+        && Hus_{2} & + \\ 
+        && Hus_{1} & + \\ 
+        && Hus_{1} & + \\ 
+        && Hus_{2} & + \\ 
+        && Hus_{3} & + \\ 
+        && 2 \, \, +  \\ 
+        && 2 \, \, +  \\ 
+        && Hus_{3} & + \\ 
+        && Hus_{2} & + \\ 
+        && Hus_{1}
+        \end{eqnarray}_)
+         Vi kan se, at vi går _(Hus_{1}_)-længden _(6_) gange, 
+        _(4_) gange går vi _(Hus_{2}_) længden
+        og _(2_) gange _(Hus_{3}_) længden. Alt i alt:
+        _($6*Hus_{1}+4*Hus_{2}+2*Hus_{3}+4_)
+        Nu kan vi bare udregne _(Hus_{1}_), _(Hus_{2}_) og _(Hus_{3}_), og sætte dem ind! Ud fra billedet kan vi se at:
+        _($\begin{eqnarray}
+        && Hus_{1} = 1+1.5+0.8+1.5+0.8 = 5.6  \\ \\
+        && Hus_{2} = 2+1.5+3+1+0.1 = 7.6  \\ \\
+        && Hus_{3} = 0.5*2+0.8*4+0.9*3 = 6.9 
+        \end{eqnarray}_)
+        Så den samlede længde er:
+        _($6*5.6+4*7.6+2*6.9+4 = 81.8_)
+        Bum!
+    <br><br></answer-box>
+
+    <q-stion 1="30" 2="2"> 
+        På det følgende billede, er hvert hus _(3_) gange så langt som det før:
+        <img class="SpicXL" style="width:80%" src="../../../Assets/Chapter1\Talopgaver og intuition\DistanceToBaker\F\ligninger1.png">
+        <p class="tt">
+        Hvor langt er der til bageren?
+        </p>
+    <br></q-stion>
+    <answer-box> 
+        Hvis det andet hus er _(9m_), må det næste - tredje - være _(9*3=27m_). 
+        <p class="t">
+        Det første hus skal være 
+        tre gange så småt som det andet, så _(9/3=3m_).
+        </p> 
+        <p class="t">
+        Svaret er altså bare 
+        _($3+9+27=39m_)
+        </p>
+    <br></answer-box>
+
+    <q-stion 1="30" 2="3"> 
+        På det følgende billede er hvert hus nu _(2.5_) gange så langt som det tidligere:
+        <img class="SpicXL" style="width:80%" src="../../../Assets/Chapter1\Talopgaver og intuition\DistanceToBaker\F\ligninger2.png">
+        <p class="tt">
+        Hvor langt er der til bageren?
+        </p>
+    <br></q-stion>
+    <answer-box> 
+    Meget det samme som før. Det andet hus har en længde på
+    _(43.75/2.5=17.5_), og det første en længde på _(17.5/2.5=7_).
+    Alt i alt:
+    _($7 + 17.5 + 43.75=68.25m_). 
+    <br></answer-box>
+
+    <q-stion 1="30" 2="4"> 
+    Hvor lang er den første bygning, hvis der er _(35m_) til bageren, og  
+    hver bygning er _(2_) gange større end den tidligere?
+    <br><br></q-stion>
+    <answer-box customHeight="450"> 
+        Lad os igen beskrive det i forhold til bygningernes længder _(Hus_{1}_), _(Hus_{2}_), og _(Hus_{3}_). 
+        Vi ved at:
+        _($Hus_{1}+Hus_{2}+Hus_{3}=35_)
+        Og at:
+        _($\begin{eqnarray}
+        && Hus_{2} & = 2*Hus_{1} \\
+        && Hus_{3} & = 2*Hus_{2} & = 2*(2*Hus_{1}) & = 4*Hus_{1}
+        \end{eqnarray}_)
+        Nu indsætter vi _(Hus_{2}=2*Hus_{1}_) og _(Hus_{3}=4*Hus_{1}_) og får:
+        _($Hus_{1}+2*Hus_{1}+4*Hus_{1}=35_)
+        Der er i alt _(7_) _(Hus_{1}_)'ere der bliver plusset med hinanden. Derfor ved vi at:
+        _($7*Hus_{1}=35_)
+        Hvis _(7_) gange _(Hus_{1}_) er lig _(35_), så er _(Hus_{1}_) pr. definition lig _(35/7_). Ergo:
+        _($Hus_{1}=35/7=5_)
+        Og vi har vores svar!
+    <br><br></answer-box>
+
+    <q-stion 1="30" 2="5"> 
+    Hvor lang er den <i>sidste</i> bygning, hvis der
+    er _(33.25m_) til bageren, og hver bygning er
+    _(1.5_) gange større end den tidligere?
+    <br><br></q-stion>
+    <answer-box> 
+    I sidste opgave beskrev vi _(Hus_2_) og _(Hus_3_) i forhold til _(Hus_1_). 
+    Eftersom vi skal finde
+    _(Hus_3_) i denne, ville det være logisk at beskrive 
+    _(Hus_1_) og _(Hus_2_) i forhold til den som:
+    _($\begin{eqnarray}
+    && Hus_2 = Hus_{3}/1.5  \\ \\
+    && Hus_1 = (Hus_{3}/1.5)/1.5 = Hus_{3}/2.25
+    \end{eqnarray}_)
+    Det ville så give os:
+    _($\frac{Hus_{3}}{2.25} + \frac{Hus_{3}}{1.5} + Hus_{3} = 33.25_)
+    Men vi kunne gøre det lidt nemmere, ved igen
+    at finde _(Hus_{1}_) først og derefter _(Hus_{3}_) til 
+    sidst via _(2.25*Hus_{1}_):
+    _($\begin{eqnarray}
+    && Hus_{2} = 1.5*Hus_{1} \\ \\
+    && Hus_{3} = 2.25*Hus_{1} 
+    \end{eqnarray}_)
+    Vi har nu:
+    _($Hus_{1}+1.5*Hus_{1}+2.25*Hus_{1} = 33.25_)
+    Der er samlet _(1+1.5+2.25=4.75_) _(Hus_{1}_)'ere. Vi har derfor:
+    _($4.75*Hus_{1} = 33.25_)
+    Hvis _(4.75*Hus_{1}_) er lig _(33.25_), så er _(Hus_{1}_) pr. definition lig _(33.25/4.75_). 
+    Det divisionsstykke kan regnes til _(7_), så vi får:
+    _($Hus_{1}=7_)
+    Hvilket betyder at:
+    _($Hus_{3}=2.25*7=15.75_)
+    Voila! Vi har vores svar!
+    <br><br></answer-box>
+
+    <q-stion 1="30" 2="6"> 
+    Hvert hus er nu _(2_) gange så langt som det næste, plus _(3.5m_) længere end det:
+    <img class="SpicXL" style="width:80%" src="../../../Assets/Chapter1\Talopgaver og intuition\DistanceToBaker\F\ligninger5.png">
+    <p class="tt">
+    Hvor langt er der til bageren? 
+    </p>
+    <br></q-stion>
+    <answer-box customHeight="429.8"> 
+    Det midterste hus er _(13.5m_) så det tredje må være 
+    _($13.5*2+3.5=30.5m_)
+    At finde den første længde er en smule mere tricky.
+    Hvis vi kalder den _(Hus_{1}_), ved vi at: 
+    _($Hus_{1}*2+3.5=13.5m_)
+    Med andre ord: Det dobbelte af den første længde <i>plusset med _(3.5m_)</i> giver _(13.5_). 
+    <p class="t">
+    Vi kan få det dobbelte af _(Hus_{1}_), hvis vi <i>fjerner</i> 
+    _(3.5m_) fra _(13.5m_). Derefter kan vi dividere med _(2_)
+    og finde længden:
+    _($Hus_{1} = (13.5m-3.5m)/2 = 5m_)
+    Derfor er den samlede længde lig:
+    _($5+13.5+30.5=49m_)
+    Bum!
+    </p>
+    <br></answer-box>
+
+    <q-stion 1="30" 2="7" > 
+    Hvert hus er igen _(2_) gange så langt plus _(3.5m_) længere. Sig nu, at der i alt er _(63m_)
+    til bageren. Hvor langt er det første hus? 
+    <br><br></q-stion>
+    <answer-box customHeight="623"> 
+    Vi ved at:
+    _($Hus_{1}+Hus_{2}+Hus_{3}=63_)
+    Vi ved yderligere at:
+    _($Hus_{2}=2*Hus_{1}+3.5_)
+    Og at:
+    _($Hus_{3}=2*Hus_{2}+3.5=2*(2*Hus_{1}+3.5)+3.5_)
+    Vi kan gange ind i parentesen og få:
+    _($Hus_{3}=2*2*Hus_{1}+2*3.5+3.5 = 4*Hus_{1}+10.5_)
+    Nu indsætter vi og får:
+    _($Hus_{1}+2*Hus_{1}+3.5+4*Hus_{1}+10.5=63_)
+    Vi plusser lige _(3.5_) og _(10.5_) sammen, hvilket giver:
+    _($Hus_{1}+2*Hus_{1}+4*Hus_{1}+14=63_)
+    Hvis alt dette plusset med _(14_) er lig _(63_), må alt dette for sig selv
+    være lig _(63-14=49_), ergo:
+    _($Hus_{1}+2*Hus_{1}+4*Hus_{1}=49_)
+    Der er i alt _(7_) _(Hus_{1}_)'ere, så:
+    _($7*Hus_{1}=49_)
+    Vi ved nu at _(Hus_{1}=49/7_), hvilket kan regnes til bare _(7_). Det er altså vores svar. 
+    <br><br></answer-box>
+
+    <q-stion 1="30" 2="8"> 
+    Se følgende billede:
+    <img class="SpicXL" style="width:80%" src="../../../Assets/Chapter1\Talopgaver og intuition\DistanceToBaker\F\system1.png">
+    <p class="tt">
+    Fra hvor du står til bageren er der _(35_) meter. Fra hvor du står til den gule bygning er der
+    _(15_) meter. Hvor lang er den anden og sidste bygning?
+    </p>
+    <br></q-stion>
+    <answer-box> 
+    Her har vi fået at vide at:
+    _($\begin{eqnarray}
+    && Hus_{1}+Hus_{2}=15 \\
+    && Hus_{1}+Hus_{2}+Hus_{3}+Hus_{4}=35
+    \end{eqnarray}_)
+    Vi kan se på billedet, at _(Hus_{1}=5_) og _(Hus_{3}=7_), så vi får nu:
+    _($5+Hus_{2}=15_)
+    Herfra kan det let ses at _(Hus_{2}=15-5=10_). Så:
+    _($5+10+7+Hus_{4}=35_)
+    _(5+10+7=22_), så det kan nu ses at 
+    _($Hus_{4}=35-22=13_)
+    Voila! 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="30" 2="9"> 
+    Der er nu tre huse, og det midterste har _(5_) vinduer, med _(2m_) mellem hver:
+    <img class="SpicXL" style="width:80%" src="../../../Assets/Chapter1\Talopgaver og intuition\DistanceToBaker\F\system3.png">
+    <p class="tt">
+    Den totale afstand til bageren er _(50m_). Hvor langt er hvert vindue?
+    </p>
+    <br></q-stion>
+    <answer-box customHeight="269"> 
+    Lad os starte med lige først at finde ud af, hvor lang den midterste bygning er. Det må logisk 
+    nok bare være _(50-8-7=35m_). 
+    <p class="t">
+    Der er _(5_) vinduer, så _(6_) afstande imellem på
+    _(2m_) hver. Det er altså _(6*2=12m_) af de _(35m_) der bare er gået på afstandene imellem,
+    så vinduerne må fylde _(35-12=23m_) i alt.
+    Der er _(5_) vinduer, så længden på hver er
+    derfor 
+    _($23/5=4.6m_)
+    </p>
+    <br></answer-box>
+
+    <q-stion 1="30" 2="10"> 
+    Lidt samme situation som før. Nu er det første hus bare _(15m_), det sidste hus _(12m_), afstanden 
+    mellem vinduer _(1.5m_), længden af et vindue _(2m_) og den totale afstand _(60m_). 
+    <p class="t">
+    Hvor mange 
+    vinduer er der? 
+    </p>
+    <br></q-stion>
+    <answer-box> 
+    Igen finder vi først længden på det midterste hus, som nu er 
+    _($60-15-12=33m_)
+    Vi kan nemt se, at antal afstande imellem skal være _(1_) større end antal vinduer. Så 
+    _($2*(\text{antal vinduer}) + 1.5*(\text{antal vinduer} + 1) = 33m_)
+    Når vi ganger ind i parenteser
+    får vi:
+    _($\begin{eqnarray}
+    && 2*(\text{antal vinduer}) + 1.5*(\text{antal vinduer})+1.5= \\ \\
+    && (2+1.5)*(\text{antal vinduer}) + 1.5= \\ \\
+    && 3.5*(\text{antal vinduer}) + 1.5 
+    \end{eqnarray}_)
+    Vi ved nu at:
+    _($3.5*(\text{antal vinduer})+1.5=33_)
+    Det ses let, at dette svarer til:
+    _($3.5*(\text{antal vinduer})=31.5_)
+    Så:
+    _($\text{antal vinduer}=31.5/3.5=9_)
+    Bum!
+    <br><br></answer-box>
+

@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+
+
+    <h2>Algebra med stokastiske variabler?</h2>
+    <h3>Det diskrete tilfælde</h3>
+
+    <p class="t">
+    For at forstå hvad præcis det betyder at plusse, gange, 
+    <i>lave algebra</i> på en stokastisk variable, skal vi 
+    først forstå <i>præcist</i> hvad en stokastisk variable er. 
+    Vi fokuserer først på det diskrete tilfælde.
+    </p> 
+    <p class="t">
+    Da vi introducerede
+    stokastiske variabler stoppede vi næsten helt med at tænke 
+    over udfaldsrummet _(S_) og begivenheder _(A_). Det var som 
+    om, vi fuldkommen skiftede gear og opfandt et nyt system. 
+    Stokastiske variabler er <i>en del</i> af det her system dog, og 
+    kan defineres som: 
+    </p>
+
+    <div class="Definition">
+    <b> Definition: Stokastisk variable (diskret)</b> <br>
+    En stokastiske variable _(X_) på et udfaldsrum _(S_) 
+    er en funktion fra _(S_) til _(\mathbb{R}_) som 
+    er gyldig på alle elementer _(s \in S_).  
+    </div>
+
+    <p class="tt">
+    Så en stokastisk variable er en funktion, der tager 
+    elementer i udfaldsrummet og associerer dem med et hvilket som helst tal 
+    mellem _(-\infty_) og _(\infty_). Èt eksempel kunne være en roulette plade:
+    </p>
+    <img class='SpicB' style='width:60%' src='../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\SpinTheWheel.png'> 
+    <p class="t">
+    Sig at hver plade har et symbol:
+    </p>
+    <img class='SpicB' style='width:50%' src='../../../Assets/Chapter4\KontinuerligProb\RouletteFtSymbols.png'> 
+    <p class="t">
+    Vi kunne nu beskrive udfaldsrummet som:
+    _($S=\{a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q \}_)
+    Sig at sort giver 0 points, grå 1 point og hvid 2 points. Den stokastiske
+    variable "mængde af points" kan vi nu beskrive som funktionen:
+    _($X: \text{ }  \begin{eqnarray}
+    && a & \to \text{ } 2    \\
+    && b & \to \text{ } 0    \\
+    && c & \to \text{ } 1    \\
+    && d & \to \text{ } 2    \\
+    && e & \to \text{ } 0    \\
+    && f & \to \text{ } 2    \\
+    && g & \to \text{ } 0    \\
+    && h & \to \text{ } 1    \\
+    && i & \to \text{ } 0    \\
+    && j & \to \text{ } 0    \\
+    && k & \to \text{ } 2    \\
+    && l & \to \text{ } 1    \\
+    && m & \to \text{ } 2    \\
+    && n & \to \text{ } 2    \\
+    && o & \to \text{ } 1    \\
+    && p & \to \text{ } 2    \\
+    && q & \to \text{ } 0    \\
+    \end{eqnarray}_)
+    Ofte glemmer vi helt udfaldsrummet, fordi den stokastiske variable
+    er åbenlys. Sig f.eks.
+    du kaster med en 6-siddet terning. Udfaldsrummet er:
+    _($S = \{\begin{eqnarray}
+    && \text{Slår 1} \\
+    && \text{Slår 2} \\
+    && \text{Slår 3} \\
+    && \text{Slår 4} \\
+    && \text{Slår 5} \\
+    && \text{Slår 6} \\
+    \end{eqnarray} \, \} _)
+    Den stokastiske variable _(X_) "antal øjne på terningen" kunne du nu beskrive som: 
+    _($X: \text{ } \begin{eqnarray}
+    && \text{Slår 1} & \to \text{ } 1 \\
+    && \text{Slår 2} & \to \text{ } 2 \\
+    && \text{Slår 3} & \to \text{ } 3 \\
+    && \text{Slår 4} & \to \text{ } 4 \\
+    && \text{Slår 5} & \to \text{ } 5 \\
+    && \text{Slår 6} & \to \text{ } 6 \\
+    \end{eqnarray} _)
+    Her får du ikke meget ud af at tænke over udfaldsrummet, siden det praktisk talt er identisk.
+    Basketball er et andet eksempel, hvor en stokastisk variable nok 
+    vil lave elementet "5 rigtige skud" om til bare _(5_). I det kontinuerlige
+    tilfælde vil "det regnede 6.32mm" nok laves om til _(6.32_) osv. 
+    </p>
+    <p class="t">
+    Det er ikke altid, at variablerne er så åbenlyse. Udfaldsrummet _(S_) hvis du 
+    kaster to 6-siddede terninger er
+    _($S = \{\begin{eqnarray}
+    && (1,1) & (2,1) & (3,1) & (4,1) & (5,1) & (6,1) \\
+    && (1,2) & (2,2) & (3,2) & (4,2) & (5,2) & (6,2) \\
+    && (1,3) & (2,3) & (3,3) & (4,3) & (5,3) & (6,3) \\
+    && (1,4) & (2,4) & (3,4) & (4,4) & (5,4) & (6,4) \\
+    && (1,5) & (2,5) & (3,5) & (4,5) & (5,5) & (6,5) \\
+    && (1,6) & (2,6) & (3,6) & (4,6) & (5,6) & (6,6) \\
+    \end{eqnarray}\} _)
+    Den stokastiske variable "antal øjne" vil nu kunne beskrives med følgende funktion:
+    _($X: \text{ } \begin{eqnarray}
+    && (1,1) & \to \text{ } 2 \\ 
+    && (2,1) & \to \text{ } 3 \\ 
+    && (3,1) & \to \text{ } 4 \\ 
+    && (4,1) & \to \text{ } 5 \\ 
+    && (5,1) & \to \text{ } 6 \\ 
+    && (6,1) & \to \text{ } 2 \\ 
+    && (1,2) & \to \text{ } 3 \\ 
+    && (2,2) & \to \text{ } 4 \\ 
+    && (3,2) & \to \text{ } 5 \\     
+    && (4,2) & \to \text{ } 6 \\ 
+    && \vdots \\
+    && (6,6) & \to \text{ } 12
+    \end{eqnarray}  _)
+    Vi kunne nemt finde på alle mulige andre funktioner her. F.eks. kunne _(Y_) være
+    "antal øjne på første terning" og _(Z_) "antal terninger hvis øjne er lige":
+    <img class='Spic' style='width:45%' src='../../../Assets/Chapter4\KontinuerligProb\CrazyMathJax.png'> 
+    </p>
+    <!-- eqnarray er meget buggy. man kan simpelthen ikke have en eqnarray efter en anden. det gider den ikke rendere. -->
+     <!-- _($Y: \text{ } \begin{eqnarray}
+    && (1,1) & \to \text{ } 1 \\ 
+    && (2,1) & \to \text{ } 2 \\ 
+    && (3,1) & \to \text{ } 3 \\ 
+    && (4,1) & \to \text{ } 4 \\ 
+    && (5,1) & \to \text{ } 5 \\ 
+    && (6,1) & \to \text{ } 6 \\ 
+    && (1,2) & \to \text{ } 1 \\ 
+    && (2,2) & \to \text{ } 2 \\ 
+    && (3,2) & \to \text{ } 3 \\     
+    && (4,2) & \to \text{ } 4 \\ 
+    && \vdots \\
+    && (6,6) & \to \text{ } 6
+    \end{eqnarray}
+    _)
+    _($Z: \text{ } \begin{eqnarray}
+    && (1,1) & \to \text{ } 0 \\ 
+    && (2,1) & \to \text{ } 1 \\ 
+    && (3,1) & \to \text{ } 0 \\ 
+    && (4,1) & \to \text{ } 1 \\ 
+    && (5,1) & \to \text{ } 0 \\ 
+    && (6,1) & \to \text{ } 1 \\ 
+    && (1,2) & \to \text{ } 1 \\ 
+    && (2,2) & \to \text{ } 2 \\ 
+    && (3,2) & \to \text{ } 1 \\     
+    && (4,2) & \to \text{ } 2 \\ 
+    && \vdots \\
+    && (6,6) & \to \text{ } 2
+    \end{eqnarray}  _)  -->
+    <p class="t">
+    Man kan let se, hvordan vi kan definere algebra/operationer på stokastiske
+    variabler, hvis vi tænker over dem som <i>funktioner</i> sådan her. 
+    </p>
+
+    <div class="Definition">
+    <b> Definition: Funktioner af stokastiske variabler</b> <br>
+    Sig at de stokastiske variabler _(X_1, X_2, \dots X_n_) alle handler på udfaldsrummet 
+    _(S_), og at
+    _($\begin{eqnarray}
+    && X_1(s) = a_1 \\ 
+    && X_2(s) = a_2 \\
+    && \vdots \\
+    && X_n(s) = a_n
+    \end{eqnarray}_)
+    ... hvor _(s \in S_).
+    Den multivariable funktion _(F(X_1, X_2, \dots X_N)_) defineres nu som
+    et nyt stokastisk variable _(Y_) på _(S_), hvor
+    _($Y(s) = F(a_1, a_2, \dots a_n)_)
+    </div>
+
+    <p class="tt">
+    Den definition virker teknisk, men siger egentlig bare at udtryk som
+    _($Sin(A*B)+3*e^{C*A}_)
+    ... svarer til en ny stokastisk variable _(D_) hvor
+    _($D(s) = Sin\bigl(A(s) B(s) \bigr)*e^{C(s)*A(s)}_)
+    Så præcist hvad man intuitivt ville forvente fra definitionen. 
+    </p>
+    <p class="t">
+    Sig som eksempel, at _(S_) er udfaldsrummet på et kast med to terninger, 
+    _(X_) er en stokastisk variable lig "Samlet antal øjne på terningerne" og 
+    _(Y_) er "antal terninger hvis øjne er lige". Nu svarer _(X-3*Y_) til:
+    _($X: \text{ } \begin{eqnarray}
+    && (1,1) & \, \, \, \, \, \to \, \, \, \text{ } 2-3*0 & = 2 \\ 
+    && (2,1) & \, \, \, \, \, \to \, \, \, \text{ } 3 - 3*1 & = 0 \\ 
+    && (3,1) & \, \, \, \, \, \to \, \, \, \text{ } 4 - 3*0 & = 4 \\ 
+    && (4,1) & \, \, \, \, \, \to \, \, \, \text{ } 5 - 3*1 & = 2 \\ 
+    && (5,1) & \, \, \, \, \, \to \, \, \, \text{ } 6 - 3*0 & = 6 \\ 
+    && (6,1) & \, \, \, \, \, \to \, \, \, \text{ } 7 - 3*1 & = 4  \\ 
+    && (1,2) & \, \, \, \, \, \to \, \, \, \text{ } 3 - 3*1 & = 0 \\ 
+    && (2,2) & \, \, \, \, \, \to \, \, \, \text{ } 4 - 3*2 & = -2 \\ 
+    && (3,2) & \, \, \, \, \, \to \, \, \, \text{ } 5 - 3*1 & = 2 \\     
+    && (4,2) & \, \, \, \, \, \to \, \, \, \text{ } 6 - 3*2 & = 0 \\ 
+    && \vdots \\
+    && (6,6) & \to \text{ } 12-3*2 & = 6
+    \end{eqnarray}  _)
+    Det er nok en god ide med et par opgaver for at forstå det: 
+    </p>
+
+    <q-stion 1="6" 2="1" bigTop="true">
+    Sig at _(S_) er et kast med to 6-siddede terninger, _(X_) er 
+    er en stokastisk variable lig "Forskellen mellem de to terninger",  
+    _(Y_) er "tallet på den højeste terning" og _(Z_) er:
+    _($Z=Ln(X*Y)*2_)
+    Regn nu:
+    _($Z(6,4)_)
+    <br></q-stion>
+    <answer-box>
+    _(X(6,4)_) er _(2_), _(Y(6,4)_) er _(6_), så _(Z(6,4)_) er 
+    _($Ln(2*6)*2 = 4.96_)
+    Bum!
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="6" 2="2">
+    Sig at _(S_) er et tilfældig træk fra et klassisk dæk kort (en bunke med alle _(52_) kort). Sig at
+    _(X_) er en stokastisk variable lig hvor "godt" kortet er, så at _(X_) er _(1_) når 
+    kortet er en hvilket som helst esser, _(X_) er 2, når det er en hvilket som helst _(2_)'er, 
+    _(X_) er 11 ved en knægt osv. Sig at _(Y_) er _(1_) hvis det er et billedekort, _(0_) hvis det ikke er. Sig 
+    yderligere at _(Z_) er _(1_) hvis ruder, _(2_) hvis hjerter, _(3_) hvis spar, _(4_) hvis klør. Find nu:
+    _($W(\text{Hjerter konge})_)
+    Hvis
+    _($W=X^{Z-Y}+2_)
+    <br></q-stion>
+    <answer-box>
+    _(X_) ved hjerter konge er _(13_), _(Y_) ved hjerter konge er _(1_), og _(Z_) ved hjerter konge er _(2_). 
+    Derfor er _(W_) ved hjerter konge lig:
+    _($13^{2-1}+2 = 15_)
+    Voila!
+    <br><br></answer-box>
+    
+    <!--  -->
+
+    <q-stion 1="6" 2="3">
+    I de følgende to opgaver skal du beskrive den stokastiske variable _(Z_) som en funktion af 
+    de to stokastiske variabler _(X_) og _(Y_):
+    <p class="t">
+    _(\underline{\textbf{A}}_): <br>
+    _(S_) er et kast med to terninger.
+    _(X_) er antal øjne på første terning og 
+    _(Y_) er antal øjne på anden terning. _(Z_) er det samlede antal øjne. 
+    <i>Ja</i>, den her er åbenlys.
+    </p>
+    <p class="t">
+    _(\underline{\textbf{B}}_): <br>
+    _(S_) er et sæt kort.
+    _(X_) er _(1_) til sort og _(0_) til rød, _(Y_) er _(0_), 
+    hvis det er ruder eller spar, og _(1_), hvis det 
+    er hjerter eller klør. _(Z_) er _(1,2,3,4_) 
+    til henholdsvis ruder/hjerter/spar/klør.
+    </p>
+    <br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    Det samlede antal øjne svarer til antallet af øjne 
+    på første terning plus antallet af øjne på anden. 
+    Ergo:
+    _($Z=X+Y_)
+    Det virker lidt ligegyldigt,
+    men illustrerer faktisk ideen bag, hvad vi gør hvis vi skal "plusse" to 
+    stokastiske variabler fra <i>forskellige udfaldsrum</i>. 
+    <p class="t">
+    Sig at _(X_) handler på _(S_1_) og _(Y_) handler på _(S_2_). 
+    Måske beskriver _(S_1_) de mulige slag på en terning med _(6_) sider
+    og _(S_2_) de mulige slag på en terning med _(8_). 
+    For at definere hvad "_(X+Y_)" betyder, definerer vi først:
+    _($S=S_1 \times S_2_)
+    Du kender måske _(\times_) fra krydsprodukter, men her 
+    bliver det brugt som en operation mellem to sæts kaldt et "cartesian product".
+    Ved et cartesian product laver man en liste over alle 
+    de mulige kombinationer af 1 element fra _(S_1_) og 1 element fra _(S_2_). F.eks:
+    _($\{a,b,c\} \times \{1,2,3,4\} = \{ \begin{eqnarray}
+    && (a,1) & (a,2) & (a,3) & (a,4) \\ 
+    && (b,1) & (b,2) & (b,3) & (b,4) \\
+    && (c,1) & (c,2) & (c,3) & (c,4) \\
+    \end{eqnarray} \, \}_)
+    Vi har før skrevet udfaldsrummet for et slag med to terninger:
+    _($S = \{\begin{eqnarray}
+    && (1,1) & (2,1) & (3,1) & (4,1) & (5,1) & (6,1) \\
+    && (1,2) & (2,2) & (3,2) & (4,2) & (5,2) & (6,2) \\
+    && (1,3) & (2,3) & (3,3) & (4,3) & (5,3) & (6,3) \\
+    && (1,4) & (2,4) & (3,4) & (4,4) & (5,4) & (6,4) \\
+    && (1,5) & (2,5) & (3,5) & (4,5) & (5,5) & (6,5) \\
+    && (1,6) & (2,6) & (3,6) & (4,6) & (5,6) & (6,6) \\
+    \end{eqnarray}\} _)
+    Det kan ses som et cartesian product mellem to sæt 
+    _(S_1_), _(S_2_), hvor _(S_1_) er "kast med den første terning" og 
+    _(S_2_) er "kast med den anden". 
+    </p>
+    <p class="t">
+    _(X+Y_) er et stokastisk variable på _(S_1 \times S_2_). 
+    _(X_) og _(Y_) skal derfor omdefineres, så de begge handler på dette nye sæt. 
+    Kald de nye og alternative versioner for _(X_S_) og _(Y_S_). 
+    Hvis _(s_1_) og _(s_2_) henholdsvis er elementet 
+    fra _(S_1_) og _(S_2_), siger vi meget simpelt at:
+    _($\begin{eqnarray}
+    && X_S(s_1,s_2) & = X(s_1) \\
+    && Y_S(s_1,s_2) & = Y(s_2)
+    \end{eqnarray}_)
+    Så nu kan vi definere _(X+Y_) som:
+    _($(X+Y)(s_1,s_2)=X(s_1)+Y(s_2)_)
+    <i>Ekstrem</i> pedantisk men alligevel en vigtig og interessant lille note. 
+    </p>
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Man kan her med lidt arbejde se, at
+    _($Z=1+2*X+Y_)
+    Du kan bare gennemgå alle tilfælde og se, at det er sandt. 
+    <br><br></answer-box>
+
+    <!--  -->
+    
+    <p class="tt">
+    I første sandsynlighedskapitel opdagede
+    vi hurtigt grænserne på den helt traditionelle definition:
+    _($\frac{|A|}{|S|}_)
+    Vi kom ud på dybt vand, hvis vi forsøgte 
+    at bruge denne model på
+    f.eks. basketball-problemet. Her blev vi 
+    <i>givet</i> en sandsynlighed _(p_) og 
+    et bestemt antal bolde. F.eks. en successrate 
+    på _(0.35_) og _(4_) kast. 
+    I denne situation <i>kunne</i> vi beskrive vores udfaldsrum _(S_) som: 
+    _($S=\{\begin{eqnarray}
+    && \text{0 points} \\
+    && \text{1 points} \\
+    && \text{2 points} \\
+    && \text{3 points} \\
+    && \text{4 points} \\
+    \end{eqnarray} \,  \}_)
+    Vi kunne endda lidt mere detaljeret beskrive det som 
+    _($S= \left\{\begin{eqnarray}
+    && (\times, \times, \times, \times ) & (\unicode{x2714}, \times, \times, \times ) & (\unicode{x2714}, \unicode{x2714}, \times, \times ) & (\times, \unicode{x2714}, \unicode{x2714}, \unicode{x2714}) & (\unicode{x2714}, \unicode{x2714}, \unicode{x2714}, \unicode{x2714} ) \\
+    && &                                   (\times, \unicode{x2714}, \times, \times ) & (\unicode{x2714}, \times, \unicode{x2714}, \times ) & (\unicode{x2714}, \times, \unicode{x2714}, \unicode{x2714} ) \\
+    && &                                   (\times, \times, \unicode{x2714}, \times ) & (\unicode{x2714}, \times, \times, \unicode{x2714} ) & (\unicode{x2714}, \unicode{x2714}, \times, \unicode{x2714} ) \\
+    && &                                   (\times, \times, \times, \unicode{x2714} ) & (\times, \unicode{x2714}, \unicode{x2714}, \times ) & (\unicode{x2714}, \unicode{x2714}, \unicode{x2714}, \times ) \\
+    && & &                                                                              (\times, \unicode{x2714}, \times, \unicode{x2714} ) \\
+    && & &                                                                              (\times, \times, \unicode{x2714}, \unicode{x2714} ) \\
+    \end{eqnarray} \right\}_) 
+    Men begge de her to er ikke gode nok. Hvordan regner du 
+    f.eks. chancen for at få 3 rigtige skud ud fra dette?
+    I vores første forsøg på et udfaldsrum, ville det svare 
+    til begivenheden _(A=\text{"3 points"}_), så
+    chancen ville blive
+    _($\frac{|A|}{|S|} = \frac{1}{5} = 0.2_)
+    I vores andet forsøg på et udfaldsrum ville begivenheden være:
+    _($A=\{(\times, \unicode{x2714}, \unicode{x2714}, \unicode{x2714}), (\unicode{x2714}, \times, \unicode{x2714}, \unicode{x2714}), (\unicode{x2714}, \unicode{x2714}, \times, \unicode{x2714}), (\unicode{x2714}, \unicode{x2714}, \unicode{x2714}, \times)\}_)
+    Så sandsynligheden ville blive:
+    _($\frac{|A|}{|S|} = \frac{\VeC[4,3]}{\VeC[4,0]+\VeC[4,1]+\VeC[4,2]+\VeC[4,3]+\VeC[4,4]} = \frac{4}{11} = 0.363_)
+    Begge disse er forkerte. Den rigtige sandsynlighed er jo:
+    _($\VeC[4,3]*0.35^3*(1-0.35)^1 = 0.11_) 
+    Trods det lægger grundlaget for alt sandsynlighedsteori, er 
+    "antal udfald af en begivenhed divideret med det samlet antal mulige udfald" ikke 
+    altid en særlig god model, da vi ofte arbejder med 
+    udfaldsrum, hvor de forskellige udfald har forskellige chancer. 
+    </p>
+    <p class="t">
+    Vi <i>løste</i> dette problem ved at introducere stokastiske variabler. 
+    Vi kaldte _(X_) for "antal rigtige skud" og beskrev chancen for halvdelen
+    eller over som:
+    _($P(X=3)+P(X=4)+P(X=5)_)
+    Det vi <i>egentlig</i> gjorde var, at associere 
+    hvert element _(a_) i udfaldsrummet med 
+    en bestemt sandsynlighed _(P(X=a)_). 
+    Derfor tænker vi tit på stokastiske variabler som 
+    dem der "giver" et bestemt element i _(S_) dets sandsynlighed. Det er <i>forkert</i>. 
+    Den eneste grund til at 
+    det nogen gange <i>virker</i> rigtigt, er fordi at 
+    den stokastiske variable ofte er 
+    "åbenlys", som 
+    med kast på 1 terning eller basketball. 
+    Stokastiske variabler har <i>intet</i> specifikt 
+    med sandsynlighed at gøre. 
+    Sig f.eks. at du på en eller anden måde havde konstrueret et sæt kort, hvor 
+    chancen for at trække de forskellige typer varierede: 
+    Måske var der 20% chance for at trække klør, 
+    30% for spar, 35% for ruder, og 15% for hjerter. 
+    Du kan lave en bred række vidt forskellige stokastiske variabler til dette
+    sæt kort - som vi så tidligere - og _(P(X=2)_),
+    hvis _(X_) er "hvor godt kortet er", er ikke 
+    det samme som _(P(X=2)_), hvis _(X_) er "_(1_) hvis du får sort, 2 hvis du får rød"
+    </p>
+    <p class="t">
+    Det vi gør er derfor, at omdefinere hvad vi mener med "udfaldsrum":
+    </p>
+
+    <div class="Definition">
+    <b> Definition: Udfaldsrum</b> <br>
+    Et udfaldsrum _(S_) er et sæt af <i>par</i> 
+    _($(s, \, p_s)_) 
+    ... hvor _(s_) er et hvilket som helst muligt udfald
+    i den situation _(S_) modellerer, og _(p_s_) er chancen for det udfald. 
+    </div>
+
+    <p class="tt">
+    F.eks. kan vi modellere udfaldsrummet af basketball som:
+    _($S=\{\begin{eqnarray}
+    && (\text{0 points}, 0.17) \\
+    && (\text{1 points}, 0.38) \\
+    && (\text{2 points}, 0.31) \\
+    && (\text{3 points}, 0.11) \\
+    && (\text{4 points}, 0.01) \\
+    \end{eqnarray} \, \}_)
+    Eller udfaldsrummet af kast med to terninger:
+    _($S = \{\begin{eqnarray}
+    && ((1,1), 1/36) & ((2,1), 1/36) & ((3,1), 1/36) & ((4,1), 1/36) & ((5,1), 1/36) & ((6,1), 1/36) \\
+    && ((1,2), 1/36) & ((2,2), 1/36) & ((3,2), 1/36) & ((4,2), 1/36) & ((5,2), 1/36) & ((6,2), 1/36) \\
+    && ((1,3), 1/36) & ((2,3), 1/36) & ((3,3), 1/36) & ((4,3), 1/36) & ((5,3), 1/36) & ((6,3), 1/36) \\
+    && ((1,4), 1/36) & ((2,4), 1/36) & ((3,4), 1/36) & ((4,4), 1/36) & ((5,4), 1/36) & ((6,4), 1/36) \\
+    && ((1,5), 1/36) & ((2,5), 1/36) & ((3,5), 1/36) & ((4,5), 1/36) & ((5,5), 1/36) & ((6,5), 1/36) \\
+    && ((1,6), 1/36) & ((2,6), 1/36) & ((3,6), 1/36) & ((4,6), 1/36) & ((5,6), 1/36) & ((6,6), 1/36) \\
+    \end{eqnarray}\} _)
+    Hvis vi kun var interesserede i antallet af øjne, kunne vi modellere selv samme situation som:
+    _($S=\{\begin{eqnarray}
+    && (\text{2 øjne},1/36) \\
+    && (\text{3 øjne},2/36) \\
+    && (\text{4 øjne},3/36) \\
+    && (\text{5 øjne},4/36) \\
+    && (\text{6 øjne},5/36) \\
+    && (\text{7 øjne},6/36) \\
+    && (\text{8 øjne},5/36) \\
+    && (\text{9 øjne},4/36) \\
+    && (\text{10 øjne},3/36) \\
+    && (\text{11 øjne},2/36) \\
+    && (\text{12 øjne},1/36) \\
+    \end{eqnarray} \}_)
+    Eller udfaldsrummet af det unfair kortsæt som:
+    _($S = \{\begin{eqnarray}
+    && (\text{Ruder es}, & \frac{0.35}{13}) & (\text{Hjerter es}, & \frac{0.15}{13}) & (\text{Spar es}, & \frac{0.30}{13}) & (\text{Klør es}, & \frac{0.20}{13}) \\
+    && (\text{Ruder 1}, &  \frac{0.35}{13}) & (\text{Hjerter 1}, &  \frac{0.15}{13}) & (\text{Spar 1}, &  \frac{0.30}{13}) & (\text{Klør 1}, &  \frac{0.20}{13}) \\
+    && (\text{Ruder 2}, &  \frac{0.35}{13}) & (\text{Hjerter 2}, &  \frac{0.15}{13}) & (\text{Spar 2}, &  \frac{0.30}{13}) & (\text{Klør 2}, &  \frac{0.20}{13}) \\
+    && (\text{Ruder 3}, &  \frac{0.35}{13}) & (\text{Hjerter 3}, &  \frac{0.15}{13}) & (\text{Spar 3}, &  \frac{0.30}{13}) & (\text{Klør 3}, &  \frac{0.20}{13}) \\
+    && (\text{Ruder 4}, &  \frac{0.35}{13}) & (\text{Hjerter 4}, &  \frac{0.15}{13}) & (\text{Spar 4}, &  \frac{0.30}{13}) & (\text{Klør 4}, &  \frac{0.20}{13}) \\
+    && (\text{Ruder 5}, &  \frac{0.35}{13}) & (\text{Hjerter 5}, &  \frac{0.15}{13}) & (\text{Spar 5}, &  \frac{0.30}{13}) & (\text{Klør 5}, &  \frac{0.20}{13}) \\
+    && (\text{Ruder 6}, &  \frac{0.35}{13}) & (\text{Hjerter 6}, &  \frac{0.15}{13}) & (\text{Spar 6}, &  \frac{0.30}{13}) & (\text{Klør 6}, &  \frac{0.20}{13}) \\
+    && \vdots
+    \end{eqnarray} \, \}_)
+    Nu kan vi også omtænke, hvordan vi finder sandsynligheden for
+    en bestemt værdi _(a_) på en stokastisk variable _(X_).
+    En stokastisk variable som funktion kan godt tage forskellige værdier, 
+    der giver samme output. Det har vi set flere eksempler på. 
+    Sig derfor at _(A \subset S_) er et subsæt af _(S_), hvor en 
+    hvilken som helst _(s \in A_) har egenskaben _(X(s)=a_). Nu
+    ser vi, at
+    _($P(X=a)=\sum_{s \in A} p_s _)
+    Hvor _(p_s_) er sandsynligheden for _(s_). Hvis _(S_) 
+    eksempelvis er det unfair kortsæt, _(X_) er den stokastiske variable 
+    "hvor godt er kortet" og _(a=5_):
+    _($A={\text{5 ruder}, \text{5 hjerte}, \text{5 spar}, \text{5 klør}, }_)
+    Så:
+    _($\begin{align}
+    P(X=5) & = p_{\text{5 ruder}} + p_{\text{5 hjerte}} + p_{\text{5 spar}} + p_{\text{5 klør}} \\ \\
+    & = 0.35*\frac{1}{13} + 0.15*\frac{1}{13}+0.30*\frac{1}{13}+0.20*\frac{1}{13} = 0.076
+    \end{align}_)
+    Voila! 
+    </p>
+
+    <q-stion 1="6" 2="4" bigTop="true">
+    Sig at _(S_) beskriver udfaldsrummet af et slag med _(1_) unfair _(6_)-siddet terning,
+    hvor chancen for at lande på _(1_), _(2_), _(3_) er dobbelt så stor som chancen for _(4_), _(5_), _(6_).
+    Beskriv _(S_)
+    <br><br></q-stion>
+    <answer-box>
+    Sandsynligheden for eksempelvis at slå _(2_), kan beregnes som to sandsynligheder:
+    Du slår èn af _(1, 2, 3_) <i>og</i> blandt disse tre, får du _(2_). Ergo:
+    _($p_{\text{slå 2}} = \frac{2}{3}*\frac{1}{3}_)    
+    _(S_) er altså:
+    _($S = \{
+    \begin{eqnarray}
+    && (\text{slå 1}, 2/9) \\
+    && (\text{slå 2}, 2/9) \\
+    && (\text{slå 3}, 2/9) \\
+    && (\text{slå 4}, 1/9) \\ 
+    && (\text{slå 5}, 1/9) \\ 
+    && (\text{slå 6}, 1/9) \\
+    \end{eqnarray}    
+    \, \}_)
+    Man kan let se, at den samlede sandsynlighed er _(1_).
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="6" 2="5" >
+    Sig at _(S_) beskriver udfaldsrummet af et slag med to unfair terninger fra sidste opgave.
+    Sig at _(X_)
+    er den stokastiske variable "forskel mellem de to terninger". Beregn:
+    _($P(X=2)_)
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Lad os først lige få styr på _(S_). Der er tre mulige sandsynligheder:
+    _($\begin{eqnarray}
+    && \text{Begge slag under } 4: \, \, \, \, & \frac{2}{9}*\frac{2}{9} & = 4/81 \\ \\
+    && \text{Ét slag under } 4: \, \, \, \,    & \frac{2}{9}*\frac{1}{9} & = 2/81 \\ \\
+    && \text{Ingen slag under } 4: \, \, \, \, & \frac{1}{9}*\frac{1}{9} & = 1/81
+    \end{eqnarray}_)
+    Vi skal nu finde alle de elementer, hvor 
+    forskellen mellem de to terninger er _(2_). Vi får:
+    _($(3,1), \, (1,3), \, (4,2), \, (2,4), \, (5,3), \, (3,5), \, (6,4), \, (4,6)_)
+    Så:
+    _($\begin{eqnarray}
+    & P(X=2) = & p_{(3,1)} &  +  &  \\
+    && p_{(1,3)} &  \, \, \, +  &  \\
+    && p_{(4,2)} &  \, \, \, +  &  \\
+    && p_{(2,4)} &  \, \, \, +  &  \\
+    && p_{(5,3)} &  \, \, \, +  &  \\
+    && p_{(3,5)} &  \, \, \, +  &  \\
+    && p_{(6,4)} &  \, \, \, +  &  \\
+    && p_{(4,6)} &  \, \, \, =  & 4/81 & + & \\
+    && & & 4/81 &  \, \, \, + &      \\
+    && & & 2/81 &  \, \, \, + &      \\
+    && & & 2/81 &  \, \, \, + &      \\
+    && & & 2/81 &  \, \, \, + &      \\
+    && & & 2/81 &  \, \, \, + &      \\
+    && & & 1/81 &  \, \, \, + &      \\
+    && & & 1/81 &  \, \, \, = & 18/81 = 0.222  
+    \end{eqnarray}_)
+    Bum!
+    <br><br></answer-box>
+
+    <p class="tt">
+    Med det her nye system kan vi også tænke over gennemsnittet og variansen af en stokastisk variable: 
+    </p>
+
+    <div class="Definition">
+    <b>Definition: Gennemsnit af stokastisk variable</b> <br>
+    Gennemsnittet _(\mu_) af en stokastisk variable _(X_) på udfaldsrummet _(S_) defineres som:
+    _($\sum_{s \in S} X(s)*p_s_)
+    Gennemsnittet af _(X_) skrives ofte som _(E(X)_), hvor _(E_) 
+    hentyder "expected value"
+    </div>
+
+    <div class="Definition">
+    <b>Definition: Varians af stokastisk variable</b> <br>
+    Variansen _(V_) af en stokastisk variable _(X_) på udfaldsrummet _(S_) defineres som:
+    _($\sum_{s \in S} (X(s)-\mu)^2*p_s_)
+    Variansen skrives ofte _(V(X)_) eller _(\text{Var}(X)_). 
+    </div>
+
+    <q-stion 1="6" 2="6" bigTop="true">
+    Sig at _(X_) og _(Y_) er stokastiske variabler på _(S_), at _(a_) og _(b_) er konstanter og
+    at
+    _($Z=a*X+b*Y_)
+    Bevis at:
+    _($E(Z)=a*E(X)+b*E(Y)_)
+    <br></q-stion>
+    <answer-box>
+    Beviset går følgende:
+    <div class="Proof">
+    Hvis _(s \in S_) så er _(Z(s)=a X(s) + b Y(s)_), og gennemsnittet er lig
+    _($\begin{eqnarray}
+    && \sum_{s \in S} (a X(s) + b Y(s))*p_s = \\ \\
+    && a \sum_{s \in S} X(s) p_s + b \sum_{s \in S} Y(s) p_s +  \\ \\
+    && a E(X) + b E(Y)
+    \end{eqnarray}_)
+    Bum! _(\blacksquare_)
+    </div>
+    <br></answer-box>
+    
+    <p class="tt">
+    Det bliver ofte sagt at 
+    _($\text{Var}(aX+bY)=a^2*\text{Var}(X) + b^2*\text{Var}(Y)_)
+    Det er <i>ikke</i> sandt. Venstre side kan regnes som:
+    _($\sum_{s \in S} \bigl(aX(s) + bY(s) - a E(X) - b E(Y) \bigr)^2 p_s_)
+    Man kan udvide parentesen og få tre led:
+    _($\begin{eqnarray}
+    && \sum_{s \in S} \bigl(aX(s) - a E(X) \bigr)^2 \, + \\ \\
+    && \sum_{s \in S}(bY(s) - b E(Y))^2 \, + \\ \\
+    && \sum_{s \in S} 2*(aX(s) - a E(X))*(bY(s) - b E(Y))
+    \end{eqnarray}_)
+    De to første led kan omskrives, så vi får:
+    _($a^2 \text{Var}(X) + b^2 \text{Var}(Y) + \sum_{s \in S} 2*(aX(s) - a E(X))*(bY(s) - b E(Y))_)
+    Så påstanden er en helt sum _(\sum_{s \in S} 2*(aX(s) - a E(X))*(bY(s) - b E(Y))_) 
+    fra, at være sand.
+    </p>
+
+    <p class="pageSplitter">
+        *
+    </p>
+
+    <p class="t">
+    Dette tilfælde med gennemsnit er undtagelsen til reglen: Generelt findes der ikke simple, lette formler
+    når vi arbejder med sandsynlighed på funktioner af stokastiske variabler
+    </p>
+
+    <q-stion 1="6" 2="7" bigTop="true">
+    Sig at _(S_) er den unfair terning, hvor _(1,2,3_) var dobbelt så hyppigt som _(4,5,6_). 
+    Sig at _(X_) er den stokastiske variable "antal øjne på terningen". 
+    <p class="t">
+    _(\underline{\textbf{A}}_): <br>
+    Find _(P(2X=4)_).
+    </p>
+    <p class="t">
+    _(\underline{\textbf{B}}_): <br>
+    Find _(P(2X=3)_)
+    </p>
+    <br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    Vores udfaldsrum på den unfair terning er:
+    _($S=\{\begin{eqnarray}
+    && (1,0.22) \\
+    && (2,0.22) \\
+    && (3,0.22) \\
+    && (4,0.11) \\
+    && (5,0.11) \\ 
+    && (6,0.11) \\
+    \end{eqnarray} \, \}_)
+    Den stokastiske variable _(2X_) er en funktion, der ser ud som:
+    _($2X: \text{ } \begin{eqnarray}
+    && 1 & \to \text{ } 2  \\
+    && 2 & \to \text{ } 4  \\
+    && 3 & \to \text{ } 6  \\ 
+    && 4 & \to \text{ } 8 \\
+    && 5 & \to \text{ } 10 \\
+    && 6 & \to \text{ } 12 
+    \end{eqnarray}_)
+    For at regne _(P(2X=4)_) skal vi finde alle de værdier _(s_) i _(S_) 
+    hvor _(2X(s)=4_). Det er kun tilfældet på _(s=2_), så:
+    _($P(2X=4)=p_2 = 0.22_)
+    Bum!
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Chancen er _(0_). Vi kan se, at der ikke er nogen ulige tal
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="6" 2="8">
+    Sig at _(S_) er udfaldsrummet af et kast med to unfair terninger, at _(X_) er lig 
+    "Sum af øjne på terningerne" og at _(Y_) er lig "forskel på terningerne".  Beregn
+    _($P(X+Y=6)_)
+    <br></q-stion>
+    <answer-box>
+    Vi skal finde alle de elementer _(s_) i vores udfaldsrum, hvor 
+    _(X(s)+Y(s)=6_). Det er ikke specielt nemt eller hurtigt. Denne sum er lig _(6_) i 
+    fem forskellige tilfælde:
+    _($\begin{align}
+    Y = 0, \, \, & X = 6 \\
+    Y = 1, \, \, & X = 5 \\
+    Y = 2, \, \, & X = 4  \\
+    Y = 3, \, \, & X = 3 \\
+    Y = 4, \, \, & X = 2
+    \end{align}_)
+    Vores udfaldsrum _(S_) indeholder følgende elementer:
+    _($S = \{\begin{eqnarray}
+    && (1,1) & (2,1) & (3,1) & (4,1) & (5,1) & (6,1) \\
+    && (1,2) & (2,2) & (3,2) & (4,2) & (5,2) & (6,2) \\
+    && (1,3) & (2,3) & (3,3) & (4,3) & (5,3) & (6,3) \\
+    && (1,4) & (2,4) & (3,4) & (4,4) & (5,4) & (6,4) \\
+    && (1,5) & (2,5) & (3,5) & (4,5) & (5,5) & (6,5) \\
+    && (1,6) & (2,6) & (3,6) & (4,6) & (5,6) & (6,6) \\
+    \end{eqnarray}\} _)
+    Sandsynlighederne er undtaget for kompakthedens skyld. Vi 
+    ved at de enten er _(4/81_), _(2/81_) eller _(1/81_). 
+    <p class="t">
+    Vi skal lede efter elementer _(s_) hvor <i>både</i> _(Y=0_) <i>og</i> _(X=6_), både
+    _(Y=1_) <i>og</i> _(X=5_) osv. Det gør jeg i følgende video:
+    </p>
+    <video class='picB' style='margin-top:35px; margin-bottom: 35px;' controls>
+        <source src='../../../Assets/Chapter4\MultivarCalc\Vectorfields\TwoStochasticVariablesSumDice.mp4' type='video/mp4'>
+    </video>
+    <p class="t">
+    Vi ser:
+    _($\begin{align}
+    Y=0 \text{ & } X=6: & \, \{(3, 3)  \} \\
+    Y=1 \text{ & } X=5: & \, \{(2, 3), (4, 5) \} \\
+    Y=2 \text{ & } X=4: & \, \{(1, 3), (3, 1) \} \\
+    Y=3 \text{ & } X=3: & \, \text{Ingenting} \\
+    Y=4 \text{ & } X=2: & \, \text{Ingenting} 
+    \end{align}_)
+    Så:
+    _($\begin{align}
+    P(X+Y=6) & = p_{(3,3)} + p_{(2,3)} + p_{(4,5)} + p_{(1,3)} + p_{(3,1)} \\
+    & = 4/81+ 4/81 + 1/81 + 4/81 + 4/81 \\ 
+    & = 0.2098
+    \end{align}_)
+    Så ca. 20% chance!
+    </p>
+
+    <!-- Så sandsynligheden kan regnes som:
+    _($\begin{eqnarray}
+    && P(Y=0)*P(X=6) & \, + \\
+    && P(Y=1)*P(X=5) & \, + \\
+    && P(Y=2)*P(X=4) & \, + \\
+    && P(Y=3)*P(X=3) & \, + \\
+    && P(Y=4)*P(X=2) & \, 
+    \end{eqnarray}_)
+    Vores udfaldsrum _(S_) indeholder følgende elementer:
+    _($S = \{\begin{eqnarray}
+    && (1,1) & (2,1) & (3,1) & (4,1) & (5,1) & (6,1) \\
+    && (1,2) & (2,2) & (3,2) & (4,2) & (5,2) & (6,2) \\
+    && (1,3) & (2,3) & (3,3) & (4,3) & (5,3) & (6,3) \\
+    && (1,4) & (2,4) & (3,4) & (4,4) & (5,4) & (6,4) \\
+    && (1,5) & (2,5) & (3,5) & (4,5) & (5,5) & (6,5) \\
+    && (1,6) & (2,6) & (3,6) & (4,6) & (5,6) & (6,6) \\
+    \end{eqnarray}\} _)
+    Sandsynlighederne er undtaget for kompakthedens skyld. Vi 
+    ved at de enten er _(4/81_), _(2/81_) eller _(1/81_). Vi ser at:
+    _($\begin{eqnarray}
+    && P(X=2) & = \, & p_{(1,1)} \\
+    && & = & 4/81 \\ \\
+    && P(X=3) & = \, & p_{(1,2)}+p_{(2,1)} \\
+    && & = & (4+4)/81 = 8/81  \\ \\
+    && P(X=4) & = \, & p_{(1,3)}+p_{(2,2)}+p_{(3,1)} \\
+    && & = & (4+4+4)/81 = 12/81 \\ \\
+    && P(X=5) & = \, & p_{(1,4)}+p_{(2,3)}+p_{(3,1)}+p_{(4,1)} \\
+    && & = & (2+4+4+2)/81 = 12/81 \\ \\
+    && P(X=6) & = \, & p_{(1,5)}+p_{(2,4)}+p_{(3,3)}+p_{(4,2)}+p_{(5,1)} \\
+    && & = & (2+2+4+2+2)/81 = 12/81\\ \\
+    \end{eqnarray}_)
+    Med lidt arbejde kan det også ses at:
+    _($\begin{eqnarray}
+    && P(Y=0) & = \, & p_{(1,1)}+p_{(2,2)}+p_{(3,3)}+p_{(4,4)}+p_{(5,5)}+p_{(6,6)} \\
+    && & = & (4+4+4+1+1+1)/81 = 15/81 \\ \\
+    && P(Y=1) & = \, & p_{(1,2)}+p_{(2,3)}+p_{(3,4)}+p_{(4,5)}+p_{(5,6)} \, + \\
+    && & &           p_{(2,1)}+p_{(3,2)}+p_{(4,3)}+p_{(5,4)}+p_{(6,5)}  \\
+    && & = & 2*(4+4+2+1+1)/81 = 24/81 \\ \\
+    && P(Y=2) & = \, & p_{(1,3)}+p_{(2,4)}+p_{(3,5)}+p_{(4,6)} \, + \\ 
+    && & &           p_{(3,1)}+p_{(4,2)}+p_{(5,3)}+p_{(6,4)} \\
+    && & = & 2*(4+2+2+1)/81 = 18/81 \\ \\
+    && P(Y=3) & = \, & p_{(1,4)}+p_{(2,5)}+p_{(3,6)} \, + \\
+    && & &           p_{(4,1)}+p_{(5,2)}+p_{(6,3)} \\
+    && & = & 2*(2+2+2)/81 = 12/81  \\ \\
+    && P(Y=4) & = \, & p_{(1,5)}+p_{(2,6)} \, + \\
+    && & &           p_{(5,1)}+p_{(6,2)}  \\
+    && & = & 2*(2+2)/81 = 8/81
+    \end{eqnarray}_)
+    Så endeligt får vi:
+    _($P(X+Y=6) = \frac{15}{81} \frac{12}{81} + \frac{24}{81} \frac{12}{81} + \frac{18}{81} \frac{12}{81} + \frac{12}{81} \frac{8}{81} + \frac{8}{81} \frac{4}{81}_)
+    Hvilke kan regnes som:
+    _($\frac{15*12+24*12+18*12+12*8+8*4}{81^2} = \frac{812}{6561} = 0.12376_)
+    Det er altså på ingen måde "nemt" at lave algebra med tilfældige variabler.  -->
+    <br></answer-box>
+
+    <!-- <q-stion 1="2" 2="1" 3="5">
+    <b> 2:</b> <br>
+    Find chancen for at _(X+Y_) er ulige. 
+    <br><br></q-stion>
+    <answer-box>
+    0! I forhold til terning 1 og terning 2 er der fire tilfælde:
+    _($\begin{eqnarray}
+    && \text{lige, lige} & \text{ulige, lige} \\
+    && \text{lige, ulige} & \text{ulige, ulige} \\
+    \end{eqnarray}_)
+    <i>(lige, lige)</i>: Summen af to lige tal er også lige, og det samme kan det siges om deres forskel. Så både _(X_) og _(Y_) i det tilfælde er lige, og 
+    derfor er _(X_) og _(Y_) også lige. 
+    <p class="t">
+    <i>(ulige, lige)</i>: Summen af èt lige tal og èt ulige tal er ulige. Det er forskellen også. Så både _(X_) og _(Y_) er ulige.
+    Men summen af to ulige tal er lige, så det er _(X+Y_) også. 
+    </p>
+    <p class="t">
+    <i>(ulige, ulige)</i>: Summen af to ulige tal er lige, og det er forskellen også. Så både _(X_) og _(Y_) er lige, og det
+    bliver _(X+Y_)  derfor også. 
+    </p>
+    <p class="t">
+    _(X+Y_) er <i>aldrig</i> ulige. 
+    </p>
+    <br><br></answer-box> -->
+
+    <!--  -->
+
+    <q-stion 1="6" 2="9">
+    Sig at _(S_) er udfaldsrummet af den unfair bunke 
+    med kort fra tidligere, at _(X_) er "hvor godt kortet er"
+    og _(Y_) er _(1,2,3,4_) ved henholdsvis ruder/hjerter/spar/klør. Regn nu:
+    _($P(X*Y=12)_)
+    <br></q-stion>
+    <answer-box>
+    Vi skal finde alle de tilfælde i _(S_) hvor _(X*Y=12_). Det sker hvis
+    _($\begin{align}
+    &(X=1, \, \, & Y=12&) \\
+    &(X=2, \, \, & Y=6&) \\
+    &(X=3, \, \, & Y=4&) \\
+    &(X=4, \, \, & Y=3&) \\
+    &(X=6, \, \, & Y=2&) \\
+    &(X=12,\, \, & Y=1&) \\
+    \end{align}_)
+    _(Y_) er aldrig større end _(4_), så dette kan begrænses til:
+    _($\begin{align}
+    &(X=12, \, \, & Y=1) \\
+    &(X=6,  \, \, & Y=2) \\
+    &(X=4,  \, \, & Y=3) \\
+    &(X=3,  \, \, & Y=4) 
+    \end{align}_)
+    Vi kan nu relativt let se, at der kun er èt kort 
+    der passer hver tilfælde:
+    Ved _(X=4,Y=3_) er det "spar 4", ved _(X=6,Y=2_) 
+    er det "hjerter 6" osv. Svaret er derfor:
+    _($\begin{align}
+    P(X*Y=12) & = p_{\text{ruder dronning}} + p_{\text{hjerter 6}} + p_{\text{spar 4}} + p_{\text{klør 3}} \\ \\
+    & = 0.35/36 + 0.15/36 + 0.3/36 + 0.2/36 \\ \\
+    & = 0.0277
+    \end{align}_)
+    <br></answer-box>
+
+    <p class="tt">
+    Som du kan se, er det let at beskrive selve 
+    variablet/funktionen, når vi laver algebra
+    på tilfældige variabler, men <i>ikke</i> sandsynligheden. 
+    Algebra af stokastiske variabler blev ikke gennemgået i kapitlet med diskrete
+    variabler, da vi ikke ville få særlig meget ud af det. 
+    </p>
+    <p class="t">
+    Det bliver <i>også</i> hurtigt svært og kompliceret, hvis 
+    der arbejdes med <i>kontinuerlige</i> stokastiske variabler, 
+    men her bruger vi <i>integraler</i> i stedet for <i>summationer</i>.
+    Integraler er faktisk lettere at arbejde med en summationer. De 
+    er lettere både at omskrive og evaluere, og der kan derfor 
+    opbygges <i>et form for</i> system til algebraen af 
+    tilfældige kontinuerlige variabler. Det er bare ret kompliceret og bliver hurtigt
+    meget specialiseret. I denne bog gennemgår vi kun de simpleste eksempler, men
+    man kan virkelig gå i dybden, hvis man vil!
+    </p>
+    <p class="t">
+    Før vi rigtig kan gå i gang, ligger der desværre et 
+    fundamentalt og udfordrende teoretisk
+    problem foran os: Hvordan <i>præcist</i> definerer 
+    vi kontinuerlige stokastiske variabler -
+    ligesom på denne side?
+    </p>
+
+

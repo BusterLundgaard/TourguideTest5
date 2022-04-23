@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+
+    <body>
+
+        <div style="position: relative;">
+            <canvas id="ruler" width="500" height="500" style="position: absolute; left: 0; top: 0; z-index: 2;"></canvas>
+            <canvas id="background" width="894" height="979" style="position: absolute; left: 0; top: 0; z-index: 1;"></canvas>
+        </div>
+
+        <script>
+
+            // Useful info about click and mouse events: https://stackoverflow.com/questions/47737404/detecting-left-and-right-mouse-events-for-a-canvas-game
+            
+            //Set up background:
+            var bCan = document.getElementById("background"); var bCtx = bCan.getContext("2d");
+            var backgroundImg = document.createElement("img"); backgroundImg.src="background3.png";
+            backgroundImg.onload = function() {
+                bCtx.translate(200,0);
+                bCtx.rotate(0.63);
+                bCtx.drawImage(backgroundImg,0,0);
+            }
+
+            //Set up ruler:
+                //Create the canvas and image:
+            var rCan = document.getElementById("ruler"); var rCtx = rCan.getContext("2d");
+            var rulerImg = document.createElement("img"); rulerImg.src="ruler.png"
+            rulerImg.onload = function() {
+                setTransform(0,0,0);
+                rCtx.drawImage(rulerImg,0,0);
+            }
+
+                //Handle movement with variables and functions:
+            var rX = 0; var rY = 0;
+            var rR = 0;
+
+            var setTransform = function(xPos,yPos,rot) {
+                
+                //Translate canvas back to start:
+                rCtx.translate(-rX,-rY);
+                rCtx.rotate(-rR);
+
+                //Clear picture:
+                rCtx.clearRect(0,0,500,500);
+
+                //Give canvas new translation:
+                rR=rot;
+                rCtx.rotate(rR);
+                rX = xPos*Math.cos(rR)+yPos*Math.sin(rR); 
+                rY = -xPos*Math.sin(rR)+yPos*Math.cos(rR); 
+                rCtx.translate(rX,rY);
+
+                //Draw new picture:
+                rCtx.drawImage(rulerImg,0,0)
+            }            
+     
+            // Get clicks:
+            var tempRot = 0.1;
+
+            rCan.addEventListener("mousemove",function(e) {
+                setTransform(cursorX,cursorY,tempRot);
+            })
+            rCan.addEventListener("click", function() {
+                tempRot += 0.1;
+            })
+
+            var cursorX = 0;
+            var cursorY = 0;
+            var getCursorPosition = function (event) {
+                const rect = rCan.getBoundingClientRect()
+                cursorX = event.clientX - rect.left
+                cursorY = event.clientY - rect.top
+            }
+            rCan.addEventListener("mousemove", function (e) {
+                getCursorPosition(e);
+            })
+
+
+
+
+        </script>
+
+    
+
+    </html>

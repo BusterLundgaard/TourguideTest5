@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+
+
+    <p class="t">
+    På sidste side forsimplede vi:
+    _($\frac{7x^2 - 3.5x - 98}{-3x^2 + 7.5x + 63}_)
+    Det gjorde vi ved at omskrive begge polynomialer til deres specielle form. Vi var så heldige at de
+    delte et nulpunkt / en rod. Der findes heldigvis en meget bedre metode vi kan bruge til at dividere polynomialer.
+    Den kaldes på engelsk "long division of polynomials", og minder meget om den måde vi dividerer tal på.
+    </p>
+    <p class="t">
+    Sig at vi skal finde svaret på _(3549/13_). En mulig strategi er at vi først kigger
+    på _(13*100=1300_), da det er tættere på _(3549_):
+    _($3549 = 1300*2 + 949_)
+    Lad os nu prøve at beskrive _(949_) i forhold til _(13_). Igen så er _(13_) for lille/langsom, så vi tager
+    _(13*10=130_), og får:
+    _($949 = 130*7 + 39_)
+    Nu gør vi det så med _(39_):
+    _($39 = 3*13_)
+    Alt i alt får vi:
+    _($3549=1300*2+130*7+13*3_)
+    Vi kan omskrive denne ligning lidt til:
+    _($3549=13*100*2+13*10*7+13*3 \to_)
+    _($3549=13*(273) \to_)
+    _($3549/13 = 273_)
+    Wholla! Kunne vi måske gøre noget lignende med polynomialer? Sig at vi skal dividere:
+    _($\frac{12x^5 - 20x^4 + 73x^3 - 43x^2 + 77x - 90}{6x^3 - x^2 + 5x - 9}_)
+    Vi dividerede _(3549_) med _(13_) ved egentlig bare at omskrive det en masse.
+    Lad os bruge lidt samme strategi her. Hvis _(6x^3-x^2+5x-9_) var ganget
+    med _(2x^2_), så ville i hvert fald det første led være identisk, siden
+    _(2x^2*6x^3 =_) _(12x^5_). Vi kunne derfor måske skrive:
+    _($12x^5 - 20x^4 + 73x^3 - 43x^2 + 77x - 90 = 2x^2*(6x^3-x^2+5x-9) + \text{Forskel}_)
+    Selvfølgelig er de to polynomialer ikke lig med hinanden bare fordi det første led
+    er identisk. Forskellen ud over det første led er:
+    _($(- 20x^4 + 73x^3 - 43x^2 + 77x - 90) - 2x^2*(-x^2+5x-9) =_)
+    _($-18x^4 + 63x^3 - 25x^2 + 77x - 90_)
+    Altså: 
+    _($\begin{eqnarray} 
+    && 12x^5 - 20x^4 + 73x^3 - 43x^2 + 77x - 90 = \\
+    && 2x^2*(6x^3-x^2+5x-9) + (-18x^4 + 63x^3 - 25x^2 + 77x - 90)
+    \end{eqnarray}_)
+    Det her minder lidt om _(3549 = 1300*2+949_), eller som det også kunne skrives: _(3549=13*100*2+949_).
+    Her svarer _(13_) til den polynomial _(6x^3 - x^2 +5x - 9_) vi dividerer med,
+    _(100_) svarer til _(x^2_), _(2_) svarer til _(2_), og _(949_) svarer
+    til den forskel vi fandt _(-18x^4 + 63x^3 - 25x^2 + 77x - 90_). Præcis ligesom før, så
+    kan vi bare blive ved med at omskrive forskellen, og til sidst så lave samme trick. 
+    Vi kan let se at _(6x^3_) skal ganges med _(-3x_) for at blive til _(-18x^4_), så:
+    _($-18x^4 + 63x^3 - 25x^2 + 77x - 90 = -3x*(6x^3-x^2+5x-9) + \text{Forskel} _)
+    Forskellen er:
+    _($(63x^3 - 25x^2 + 77x - 90) - (-3x*(-x^2+5x-9)) =_)
+    _($60x^3 - 10x^2 + 50x - 90_)
+    Så:
+    _($\begin{eqnarray} 
+    && -18x^4 + 63x^3 - 25x^2 + 77x - 90 = \\
+    && -3x*(6x^3-x^2+5x-9) + (60x^3 - 10x^2 + 50x - 90)
+    \end{eqnarray}_)
+    Vi gør nu samme trick igen. _(6x^3_) skal ganges med _(60/6=10_) for at blive
+    til _(60x^3_), så:
+    _($60x^3 - 10x^2 + 50x - 90 = 10*(6x^3-x^2+5x-9) + \text{Forskel}_)
+    Forskellen er:
+    _($(-10x^2 + 50x - 90) - 10*(-x^2+5x-9) = 0_)
+    Vi blev meget heldige, så forskellen er faktisk _(0_). Det er præcist ligesom
+    at vi var heldige at _(13_) faktisk gik op i _(3549_). Jeg valgte disse to tal, og 
+    disse to polynomialer for at det skete, men det er selvfølgelig ikke altid tilfældet. 
+    I hvert fald, så ved vi samlet at:
+    _($\begin{eqnarray} 
+    && 12x^5 - 20x^4 + 73x^3 - 43x^2 + 77x - 90 = \\
+    && 2x^2*(6x^3-x^2+5x-9) \text{ } + \\
+    && -3x*(6x^3-x^2+5x-9) \text{ } + \\
+    && 10*(6x^3-x^2+5x-9) + 0
+    \end{eqnarray} \to _)
+    _($\frac{12x^5 - 20x^4 + 73x^3 - 43x^2 + 77x - 90}{6x^3-x^2+5x-9} = 2x^2 - 3x + 10_)
+    Wholla! Svaret er altså så simpelt som bare _(2x^2 - 3x + 10_). 
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Simplificer/divider følgende polynomialer:
+    _($\frac{12x^3 - 13x^2 - 15.5x + 15}{-2x^2+0.5x+3}_)
+    Jeg har designet denne opgave til at divisionen går op. Vi skal nok
+    kigge på hvad vi gør når divisionen ikke går op snart. 
+    <br><br></q-stion>
+    <answer-box>
+    Jeg skal gange _(-2x^2_) med _(-6x_) for at få _(12x^3_). Forskellen er 
+    nu:
+    _($-13x^2 - 15.5x + 15 - (-6x*(0.5x+3)) = _)
+    _($-10x^2 + 2.5x + 15_)
+    Jeg skal gange _(-2x^2_) med _(5_) for at få _(-10x^2_). Forskellen er nu:
+    _($2.5x + 15 - 5*(0.5x+3) = 0_)
+    Alt i alt er svaret altså:
+    _($\frac{12x^3 - 13x^2 - 15.5x + 15}{-2x^2+0.5x+3} = -6x+5_)
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Simplificer/divider følgende polynomialer:
+    _($\frac{297x^3 - 49.5x + 5.5}{33x-11}_)
+    Denne opgave har jeg også designet så det går op. 
+    <br><br></q-stion>
+    <answer-box>
+    Vi skal gange _(33x_) med _(297x^3/33x =_) _(9x^2_) for at få _(297x^3_). 
+    Forskellen er:
+    _($-49.5x + 5.5 - 9x^2*(-11) = _)
+    _($99x^2 - 49.5x + 5.5_)
+    Vi skal gange _(33x_) med _(3x_) for at få _(99x^2_). Forskellen bliver:
+    _($-49.5x + 5.5 - 3x*(-11) = _)
+    _($-16.5x+5.5_)
+    Vi skal gange _(33x_) med _(-16.5/33 = _) _(-0.5_) for at få _(-16.5x_). Forskellen er:
+    _($5.5 - (-0.5*(-11))=0_)
+    Svaret er altså:
+    _($\frac{297x^3 - 49.5x + 5.5}{33x-11} = 9x^2+3x-0.5_)
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Lad os nu prøve at se hvad vi gør hvis polynomierne <i>ikke</i> går op. 
+    _($\frac{-21x^3 + 4x^2 + 107x - 78}{-2x^2+0.5x+3}_)
+    Selv hvis det ikke går helt op, kan du så i det mindste omskrive det til noget
+    der er (subjektivt set) simplere end hvad du starter med?
+    <br><br></q-stion>
+    <answer-box>
+    Lad os starte med at gøre det samme som sidst: _(-2x^2_) skal ganges med
+    _(10.5x_) for at blive til _(-21x^3_). Forskellen er nu:
+    _($4x^2 + 107x - 78 - 10.5x*(0.5x+3) = _)
+    _($-1.25x^2 + 75.5x - 78_)
+    _(-2x^2_) skal ganges med _(1.25/2= _) _(0.625_) for at blive til _(-1.25x^2_). Forskellen er:
+    _($75.5x - 78 - 0.625*(0.5x+3) =_)
+    _($75.1875x - 79.875_)
+    Vi kan ikke rigtig lave tricket længere, efter som _(-2x^2_) nu skal <i>divideres</i> med
+    _(x_) for at blive til _(75.1875x_). Vi har indtil videre:
+    _($\begin{eqnarray} 
+    && -21x^3 + 4x^2 + 107x - 78 = \\
+    && 10.5x*(-2x^2+0.5x+3) + \\
+    && 0.625*(-2x^2+0.5x+3) + \\
+    && 75.1875x - 79.875
+    \end{eqnarray}_)
+    Ideen er normalt, f.eks. ved _(3549=13*100*2+13*10*7+13*3_), at alle led er ganget med _(13_), og
+    at vi derfor normalt kan omskrive. Alle vores led skulle helst være ganget med 
+    _((-2x^2 + 0.5x + 3)_), men det er det sidste led _(75.1875x-79.875_) ikke. Hvis tricket
+    stadig skulle virke, så <i>kunne</i> vi dog skrive:
+    _($\begin{eqnarray} 
+    && -21x^3 + 4x^2 + 107x - 78 = \\
+    && 10.5x*(-2x^2+0.5x+3) + \\
+    && 0.625*(-2x^2+0.5x+3) + \\
+    && \frac{75.1875x - 79.875}{-2x^2+0.5x+3}*(-2x^2+0.5x+3)
+    \end{eqnarray}_)
+    Så vi nu kan nu omskrive og se at:
+    _($\frac{-21x^3 + 4x^2 + 107x - 78}{-2x^2+0.5x+3} = _)
+    _($10.5x+0.625+\frac{75.1875x - 79.875}{-2x^2+0.5x+3}_)
+    Det er altså svaret: Vi gør som normalt, og så plusser vi bare med
+    "resten" divideret med nævneren. 
+    <br><br></answer-box>
+    
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Prøv lige endnu en der ikke går op:
+    _($\frac{0.2*x^4 - 20*x^2 - 70*x + 0.6*x^3 - 30}{0.1x+2}_)
+    <br><br></q-stion>
+    <answer-box>
+    Vi ganger _(0.1x_) med _(2x^3_) og finder forskellen:
+    _($ -20*x^2 - 70*x + 0.6*x^3 - 30 - 2x^3*(2) =_)
+    _($ -3.4x^3 - 20x^2 - 70x - 30_)
+    Vi ganger _(0.1x_) med _(-34x^2_) for at få _(-3.4x^3_). Forskellen bliver til:
+    _($-20x^2 - 70x - 30 - ((-34x^2)*(2)) = _)
+    _($ 48x^2 - 70x - 30_)
+    Vi ganger nu med _(48/0.1 =_) _(480x_) for at få _(48x^2_). Forskellen er:
+    _($-70x - 30 - 480x*(2) = _)
+    _($-1030x - 30_)
+    Vi ganger til sidst med _(-10300_) for at _(-1030x_), så resten bliver:
+    _($-30 - ((-1030)*(2)) = _) 
+    _($2030_)
+    Vores svar er altså:
+    _($2x^3 - 34x^2 + 480x - 10300 + \frac{2030}{0.1x+2}_)
+    Wholla! 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Sig at du har følgende tredjegradspolynomial:
+    _($0.2x^3 - 1.3x^2 + x + 2.5_)
+    Sig at vi på en eller anden mystisk måde ved at denne polynomial har i hvert fald 
+    _(1_) nulpunkt ved _(x=-1_). Mit spørgsmål er nu: Har den flere, og hvor? 
+    <br><br></q-stion>
+    <answer-box>
+    Vi ved at _(0.2x^3 - 1.3x^2 + x + 2.5_) ligesom alle andre polynomialer kan omskrives til et 
+    produkt af _((x-A_i)_) og ureducerbare andengradspolynomier. Siden den har et nulpunkt ved
+    _(x=-1_), så er vores polynomial altså lig _((x+1)*P_2(x)_), hvor _(P_2(x)_) er en eller anden
+    (måske reducerbar, måske ikke) andengradspolynomial. Vi burde nu kunne finde _(P_2(x)_) hvis bare vi
+    dividerer som: 
+    _($\frac{0.2x^3 - 1.3x^2 + x + 2.5}{x+1}_)
+    Hvis man regner den her division som vi har gjort i de andre opgaver, så får man 
+    _($0.2x^2 - 1.5x+2.5_)
+    Lad os se om den her nogle nulpunkter:
+    _($0.2x^2 - 1.5x+2.5 = 0 \to x=2.5, 5_)
+    Det har den! Vi ved altså nu at vores tredjegradspolynomial har _(3_) nulpunkter
+    ved henholdsvis _(x=-1_), _(x=2.5_) og _(x=5_). 
+    <br><br></answer-box>
+
+

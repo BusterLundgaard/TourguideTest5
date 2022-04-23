@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+
+
+    <!--7.1 -->
+
+    <p class="t">
+    Det selveste mest fundamentale grundprincip alt sandsynlighed er baseret på er simpelt og intuitivt:
+    Chancen for at noget sker, er lig med: 
+    _($\frac{\text{Antal måder det kan ske på}}{\text{Samlet antal af mulige ting der kan ske}}_)
+    Så hvis du arbejder med en 6-sidet terning hvor hver side har lige stor chance for
+    at lande, så er der 6 udfald i alt, og kun 1 udfald hvor du får 1, 2, 3, 4, osv.
+    _($\text{Chance for at den lander på 4: } \thinspace \frac{1}{6}_)
+    _($\text{Chance for at den lander på et lige tal: } \thinspace \frac{3}{6} = \frac{1}{2}_)
+    _($\text{Chance for at ikke lande på 4:} \thinspace \thinspace \thinspace \frac{6-1}{6} = \frac{5}{6}_)
+    Vi bruger ikke procent i sandsynlighed, men i stedet bare et tal mellem _(0_) og _(1._)
+    Det fortæller os jo præcist det samme, men er dejligere siden vi ikke behøver at gange
+    og dividere med _(100_) hele tiden. Det ville også bare være meget arbitrært.
+    </p>
+
+    <p class="t">Selvom de begge er baseret på denne samme hovedide, så er der lidt to <i>skoler</i> af sandsyndlighed:
+    Den <i>diskrete</i> og den <i>kontinuerlige</i>. Terningen kan <i>kun</i> have
+    6 værdier: _(1, 2, 3, 4, 5, 6_). Den kan ikke lande på "5.5" eller "4.023".
+    Det er i kontrast til et mål som f.eks regn. Det kan regne _(2mm_) på en
+    uge, men også _(2.0003mm_) eller _(3.4892mm_). Der er <i>uendelig mange udfald</i>, og
+    det er derfor ret anderledes at finde sandsynligheden for at
+    det regner, sig, _(3.6mm_). Chancen for at det regner <i>lige præcis</i> _(3.6mm_) er
+    praktisk talt uendelig lille, men chancen for at det regner <i>omkring</i> _(3.6mm_)
+    er straks meget højere. Det er i den kontinuerlige skole hvor du meget ser diagrammer som:</p>
+    <img class='Spic' style='width:95%' src='../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\Histogram.png'> 
+    <p class="t">Den kontinuerlige er super vigtig, men vi vil fokusere specifikt på den
+    <i>diskrete</i> i det her afsnit og kapitel. Vi kommer tilbage til den kontinuerlige senere</p>
+
+    <q-stion 1="2" 2="1" 3="5">
+    En disk bliver sat i gang med et dreje rundt:
+    <img class='SpicB' style='width:65%' src='../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\SpinTheWheel.png'>
+        <!-- CROP DET HER BILLEDE: DER ER LIDT HVIDT ØVERST -->
+    <p class="t">Hvis der er lige stor chance for at lande på hver, hvor stor chance er der så for
+    at få en sort?</p>
+    <br></q-stion>
+    <answer-box>
+    Vi kan se ved at tælle at der er _(17_) pladser, og _(6_) sorte. Ergo:
+    _($\frac{6}{17}_)
+    Hvilke svarer til _(0.3529_) hvilke altså er _(35%_)
+    <br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Du trækket et kort fra et standard dæk (uden jokere). Hvad der chancen for at det først og fremmest ikke er et spar,
+    heller ikke er et billedekort <i>og</i> heller ikke er ruder _(7_)?
+    <br><br></q-stion>
+    <answer-box>
+    Det her er meget simpelt, da vi jo meget ligesom før bare skal <i>tælle</i> mængden af kort.
+    Den totale mængde kort er _(13*4=52_). Der er _(13_) spar kort der skal fjernes. 
+    Der er _(4*4=16_) billedkort, men _(4_) af dem er en del af de _(13_) spar, så
+    _(16-4=12_) billedkort skal fjernes. Ruder _(7_) er der kun èn af. Alt i alt:
+    _($\frac{52-13-12-1}{52}=\frac{26}{52}=\frac{1}{2}_)
+    Bare èn halv! Hvorfor dog nogensinde sige "50% chance", når man i stedet bare kan sige
+    "lig chancen for ikke at trække billedkort, spar, eller ruder 7 i et 52 dæk kort"
+    <br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Du har læst at der om tirsdagen er 4 gange så stor chance for at det regner som for at det ikke regner.
+    Hvor stor chance er der for at det regner?
+    <br><br></q-stion>
+    <answer-box>
+    Der er _(4_) udfald hvor det regner for hver udfald hvor det ikke regner. Den samlede mængde udfald
+    kan vi altså se som _(4+1=5_), og svaret er derfor
+    _($\frac{4}{5}_)
+    En anden måde du måske også kunne have gjort den her på, ville være 
+    at kalde chancen for at det regner _(p_a_) og chancen for at det ikke regner
+    _(p_b_). Det enten regner eller ikke-regner, så _(p_a+p_b=1_), og siden
+    _(p_b=\frac{1}{4}p_a_) så får du ligningen.
+    _($p_a+\frac{1}{4}p_b=1_)
+    Når du løser den så får du, som forventet, at _(p_a=4/5_).
+    <br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Du er til en eller anden form for lotto. Der er tre slags billetter: 
+    B er dyrere men giver dig dobbelt så stor chance som A, C er dyrest men giver dig triplet så god chance som A. Der
+    er _(23_) mennesker der har købt en _(A_) billet, _(17_) der har købt _(B_) billet, og _(15_) der har købt
+    _(C_) billet. Du har selv købt en _(B_) billet. Hvad er chancen for at du vinder en pris, hvis
+    der kun er èn vinder? 
+    <br><br></q-stion>
+    <answer-box>
+    Her er hvordan jeg tænker over det: Forestil dig at at alle dem der købte B billetterne faktisk købte _(2_)
+    _(A_) billetter, og alle dem der købte _(C_) billetter faktisk købte _(3_) _(A_) billetter. 
+    Sådan her har dem der købte B-billetter dobbelt så stor chance, og dem der købte C-billetter
+    triplet så god chance. Der er altså ikke _(23+17+15=55_) billetter i spil, men faktisk
+    på en måde _(23+17*2+15*3=102_) billetter. Du ejer _(2_) af de her billetter, så din
+    chance er:
+    _($\frac{2}{102}=0.01960_)
+    Hvilke cirka svarer til en _(2_)% chance. 
+    </p>
+    <br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Du spiller "kvit eller dobbelt". Det vil sige at du hvert kast gætter
+    på enten plat eller krone. Dine penge bliver fordoblet
+    hver gang du gætter rigtigt, men spillet stopper hvis du gætter
+    forkert. Hvis du starter med _(10kr_), hvad er så chancen for at få over _(1000kr_)? 
+    <br><br></q-stion>
+    <answer-box>
+    Sig at mængden af gange du har gættet rigtigt er _(n_). Så har du tjent:
+    _(10kr*2*2*2*....\text{n gange} =_) _(10*2^n_).
+    Efter hvor mange kast er du kommet over _(1000kr_)? Well:
+    _($10*2^n \ge 1000 \to 2^n \ge 100 \to n \ge Log_2(100) \to_)
+    _($n \ge 6.64_)
+    _(n_) kan kun være hele tal, så det skal altså være lig med eller større end _(7_).
+    Spørgsmålet er nu: Hvordan i alverden finder vi chancen for at vi gætter rigtigt
+    <i>over</i> _(7_) gange? Specifikt _(7_) gange er sikkert nemt, men <i>over</i>?
+    Det kan jo både være _(8_), _(9_), _(10_), helt op til uendeligt! Vi gør 
+    derfor noget smart: Chancen for at få en hvilket som helst værdi mellem _(0_)
+    og _(\infty_) er _(100_)%, eller rettere sagt bare _(1_). Det vil sige at chancen
+    for at få noget over eller lig med _(7_) svarer til:
+    _($1 - \text{Chancen for at få noget under 7}_)
+    Og _(\text{Chancen for at få noget under 7}_) kan vi nemt finde,
+    da vi nu bare kan finde chancen for 1, 2, 3, 4, 5 og 6, og så lægge
+    dem sammen! 
+    <p class="t">
+    Chancen for plat er lige så stor som krone, så
+    chancen for _(1_) rigtig
+    er _(0.5_). _(2_) rigtige svarer til, at efter vi har fået _(1_) rigtig,
+    så er der igen _(0.5_) chance for at vi får <i>endnu en</i> rigtig.
+    Det er altså _(0.5*0.5=_) _(0.5^2_). _(3_) rigtige er
+    bare _(0.5^2*0.5=_) _(0.5^3_) osv. Vi skal altså bare regne: 
+    _($0.5+0.5^2+0.5^3+0.5^4+0.5^5+0.5^6_)
+    Det her kunne man relativt nemt gøre bare ved at regne hvert led, men
+    vi kunne også være lidt hurtigere og bruge formlen:
+    _($r^1+r^2+r^3+...r^n = \frac{r*(1-r^n)}{1-r}_)
+    Hvilket giver os:
+    _($\frac{0.5*(1-0.5^6)}{1-0.5} = 0.98437_)
+    Chancen for at få over er altså:
+    _($1-0.98437=0.01563_)
+    Hvilke mere intuitivt svarer til cirka _(1.56_)%
+    </p> 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    På hvor mange måder kan du dække bord til _(6_) personer hvis dine _(6_) tallerkener hver er unikke?
+    <br><br></q-stion>
+    <answer-box>
+    Lad mig starte med et identisk problem på en mindre størrelse: Du har 4 unikke frugter.
+    På hvor mange måder kan du give _(4_) personer èn hver? Nu er det bare _(4_) i stedet for 
+    _(6_) og frugter i stedet for tallerkener (hvilke gør det nemmere at tegne):
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\FrugtChoice.png'> 
+    <p class="t">
+    Det kan være at person _(A_) for en appelsin. Nu, i denne "tidslinje", er der kun _(3_) frugter tilbage
+    til de resterende _(3_) personer der ikke har fået frugter. Hvis nu vi vælger
+    et æble til person _(B_) så skaber vi endnu en tidslinje hvor der kun er 2
+    frugter og 2 personer. Vi skaber en sidste tidslinje til sidst hvor _(C_)
+    for enten pæren eller bananen (og _(D_) så bare for hvad der er tilbage). 
+    Mængden af måder vi kan gøre det her på er mængden af tidslinjer på dette
+    "træ", hvilket man relativt let kan se er _(4*3*2=24_).
+    </p>
+    <p class="t">
+    Med _(6_) unikke tallerkener kan vi lave præcis det samme argument:
+    Det bliver til _(6*5*4*3*2=720_) måder. Det er altså svaret. 
+    </p>
+    <p class="t">
+    Det her med at gange nedad som f.eks _(8*7*6*5*4*3*2_) er noget vi vil støde ind i 
+    ret meget her i sandsynlighedsregning. Man har derfor valgt at give det et navn:
+    "Fakultet" ("factorial" på engelsk). Man skriver det med et udråbstegn _(!_), så f.eks:
+    _($8!=8*7*6*5*4*3*2_)
+    Hvis du gerne vil skrive noget som _(12*12*11*10*9*8_) (som jo ikke går hele
+    vejen ned til _(2_)) på en kompakt måde, så kan du bare sige:
+    _($\frac{12!}{7!}=_)
+    _($\frac{12*11*10*9*8*7*6*5*4*3*2}{7*6*5*4*3*2}=12*11*10*9*8_)
+    </p>
+    <br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Hvor mange måder kan man sortere et dæk kort uden jokere på? Du behøver ikke faktisk regne tallet,
+    da det er helt abnormalt stort. Bare skriv det symbolsk.
+    <br><br></q-stion>
+    <answer-box>
+    Forestil dig at de forskellige pladser i bunken er forskellige "personer" vi giver
+    de _(52_) kort til. Hver kort er unik, og hver person er unik, så vi kan bruge
+    præcis samme logik som i tidligere opgave. Svaret er altså:
+    _($52!_)
+    <br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    I en bestemt turnering er der i alt _(253_) matche. Hver spiller skal spille mod hver anden spiller èn og kun en gang.
+    Hvor mange spillere er med? Du skal holde tungen lige i munden i den her, fordi selvom
+    den ikke er super lang, så kan den godt villede dig!
+    <br><br></q-stion>
+    <answer-box>
+    Lad os til at begynde med prøve at finde en formel for mængden af matche/kampe
+    hvis der er _(n_) spillere. Sig som eksempel vi har _(4_) spillere _(A_), _(B_), _(C_), _(D._)
+    Vi kan nu lave en liste:
+    <div style="text-align:center;">
+        <ul style="display: inline-block; text-align: left; padding-left:0%; list-style:none;">
+            <li>_(AB_)</li>
+            <li>_(AC_)</li>
+            <li>_(AD_)</li>
+            <li>_(BC_)</li>
+            <li>_(BD_)</li>
+            <li>_(CD_)</li>
+        </ul>
+    </div>
+    <p class="t">
+    Der er altså i alt _(3+2+1=6_) matches. Meget samme logik kunne vi lave hvis vi
+    havde _(5_) spillere:
+    </p>
+    <div style="text-align:center;">
+        <ul style="display: inline-block; text-align: left; padding-left:0%; list-style:none;">
+            <li>_(AB_)</li>
+            <li>_(AC_)</li>
+            <li>_(AD_)</li>
+            <li>_(AE_)</li>
+            <li>_(BC_)</li>
+            <li>_(BD_)</li>
+            <li>_(BE_)</li>
+            <li>_(CD_)</li>
+            <li>_(CE_)</li>
+            <li>_(DE_)</li>
+        </ul>
+    </div>
+    <p class="t">
+    Nu er det så _(4+3+2+1=10_) matches. Et mønster former sig nemt: _(n_) personer
+    vil i alt have _(1+2+3+4+...(n-1)_) matches. Dette kan vi via omskrive
+    via en formlen _(k*(k+1)/2_) til
+    _($\frac{(n-1)*n}{2}_)
+    Vi skal altså finde det _(n_) hvor:
+    _($\frac{(n-1)*n}{2} = 253 \to_)
+    _($(n-1)*n=506 \to_)
+    _($n^2 - n - 506 = 0_)
+    Løser vi denne andengradsligning får vi _(n=23_). Der er altså
+    23 personer til turneringen. 
+    </p>
+    <br><br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    På hvor mange måder kan 6 personer sætte sig rundt om et bord med _(6_) stole hvis:
+    <div style="text-align:center;">
+        <ul style="display: inline-block; text-align: left; list-style:none;">
+            <li><b> 1</b>: Stolene er unikke? </li>
+            <li><b> 2</b>: Stolene er identiske? </li>
+            <li><b> 3</b>: Stolene er identiske, og det har <i>ikke</i> indflydelse om man sidder til højre eller venstre for nogen? </li>
+            <li><b> 4</b>: Der er èn speciel, unik stol? </li>
+            <li><b> 5</b>: Stolene er unikke, men du <i>skal</i> sidde ved siden af din ven Kaj. </li>
+            <li><b> 6</b>: Stolene er identiske, og du skal sidde ved siden af Kaj </li>
+        </ul>
+    </div>
+    <br></q-stion>
+    <answer-box t="Answer 1#">
+    Her kan vi bruge præcis samme frugt-logik vi har brugt mange gange før:
+    Det bliver altså _(6!=720_)
+    <br><br></answer-box>
+    <answer-box t="Answer 2#">
+    Der er irrelevant <i>hvilken stol</i> nogen sidder på, men det er ikke irrelevant
+    <i>hvem de sidder ved siden af</i>. Derfor er det aller første valg ligegyldigt, da det kun
+    bestemmer <i>hvilken stol</i> en af personerne sidder på. Resten af valgene (som der er _(5_) af) er vigtige, da
+    de alle har en indflydelse på hvem der sidder ved siden af hvem. Svaret bliver altså _(5*4*3*2=120_)
+    med den samme frugt-logik vi har brugt før.
+    <br><br></answer-box>
+    <answer-box t="Answer 3#">
+    Prøv at se følgende diagram:
+    <img class='Spic' style='width:25%' src='../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\VenstreOgHøjreVedBord.png'> 
+    <p class="t">
+    Hvis stolene var identiske, så var det som sagt ligegyldigt hvor den første person _(A_) satte sig. 
+    Diagrammet viser to måder man kan placere folk på. Før ville vi skulle tælle dem begge, nu skal
+    vi kun tælle èn. Man kan se, at hvis man har fundet èn eller anden måde at placere folk på, så
+    kan man bare "spejlvende" og få en ny måde. Det betyder at der er dobbelt så mange som når
+    venstre og højre er ligegyldigt, så vi siger bare:
+    _($120/2=60_)
+    </p>
+    <br></answer-box>
+    <answer-box t="Answer 4#">
+    Hvis vi allerede har valgt rækkefølgen, så kan vi rotere folk rundt om bordet så
+    der altså er _(6_) forskellige personer der kunne side i den "specielle stol". Ergo _(6*120=720_).
+    Præcist det samme som da alle stole var unikke.
+    <br><br></answer-box>
+    <answer-box t="Answer 5#">
+    Lad os først af alt vælge hvor <i>du</i> sider. Det kan vi gøre på _(6_) forskellige måder.
+    Derefter lad os vælge om _(Kaj_) sidder på din venstre eller højre side.
+    Nu er der _(4_) personer og _(4_) stole tilbage, som altså kan blive placeret på _(4*3*2=24_) måder.
+    Alt i alt _(6*2*24=288_).
+    <br><br></answer-box>
+    <answer-box t="Answer 6#">
+    Når stolene er identiske, så er det som sagt ligegyldigt hvor vi placere
+    den "første" person. Sig at <i>du</i> er denne første person. Vi kan nu
+    vælge enten at placere Kaj til højre eller venstre for dig. Sig vi vælger højre:
+    Nu er der 4 personer og 4 pladser tilbage, så det bliver _(4*3*2=24_). Det
+    samme sker hvis vi i stedet vælger venstre side til Kaj, så svaret
+    bliver _(24*2=48_)
+    <br><br><</answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    En klassiker af en opgave: På hvor mange måder kan du blande bogstaverne i "Missisippi"?
+    <br><br></q-stion>
+    <answer-box>
+    Den naive, forkerte løsning ville være "_(10!_) fordi der er _(10_) bogstaver". Her overtæller man,
+    siden det ikke har nogen indflydelse hvis man f.eks bytter rundt på det første og andet _(i_).
+    Der er _(3*2_) for mange løsninger hvad angår _(s_), da det er mængden af måder man kan bytte
+    rundt på dem. Samme gælder _(i_) hvor der er _(4*3*2_) for mange, og lidt mere simpelt _(p_) hvor
+    der bare er _(2_) for mange. 
+    _($\frac{10!}{(3*2)*(4*3*2)*2} = 12600_) 
+    er altså svaret.
+    <br><br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    I er 8 folk, men der er desværre kun 5 stole tilbage. Hvor stor er chancen for at du får en stol
+    og ikke skal sidde på gulvet?
+    <br><br></q-stion>
+    <answer-box>
+    Vi skal finde en sandsynlighed, så vi skal både finde den totale mængde af måder man kan fordele folk på stolene,
+    samt mængden af måde man kan fordele dem på stolene hvor <i>du</i> er på. Det er ligegyldigt for
+    sandsynligheden i denne situation om stolene er unikke eller ej, så lad os bare sige at de <i>er</i>
+    unikke: Det gør det nemmere for os at regne. 
+    <p class="t">
+    Først det totale antal. Her bruger vi lidt frugt-logikken igen: 
+    På første stol kan vi vælge _(8_) forskellige mennesker. På næste stol, eller
+    næste "valg" har vi allerede valgt _(1_) menneske, så der er nu kun _(7_) personer vi
+    kan vælge. På næste valg igen er det _(6_), så _(5_) og så _(4_). Nu er alle 5 stole udfyldt. 
+    Alt i alt er der 
+    _($8*7*6*5*4=\frac{8!}{3!}=6720 \text{ måder}_)
+    Nu skal vi tælle de gange hvor du er med. Først har vi _(6_) valg: Hvad for 
+    en af de 6 unikke stole skal du sidde på? Efter det er der _(7_) folk og _(4_) unikke stole
+    tilbage, hvilke svarer til resterende _(7*6*5*4=840_) valg. Alt i alt: 
+    _($6*840=5040 \text{ måder}_) 
+    Nu regner vi så endelig sandsynligheden:
+    _($\frac{5040}{6720}=0.75_)
+    Der er altså en 75% chance, hvilke er ret godt. 
+    </p>
+    <br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Sig at vi er tilbage til bordet med _(6_) stole fra tidligere. Nu er i ikke _(6_) personer også, men 
+    i stedet _(10_). I vil gerne vide <i>hvor mange måder i kan udvælge</i> _(6_) af de _(10_) folk til 
+    at sidde på bordet. I er fuldkommen ligeglade med hvem der sidder ved siden af hvem: Det er nok
+    mindre vigtigt end hvem der overhovedet for lov til at sidde ned. 
+    <br><br></q-stion>
+    <answer-box>
+    Lad os igen antage at stolene alle er unikke: Det burde i denne situation ikke have nogen indflydelse på 
+    mængden af måder i kan udvælge _(6_) ud af 10 personer på. Ved første stol kan i lave _(10_) valg, 
+    ved næste stol _(9_) valg, næste igen _(8_), osv indtil i er alle _(6_) stole igennem. Det giver
+    _(10*9*8*7*6*5=151200_) muligheder. Vi er fuldkommen ligeglad med rækkefølgen og hvem der sidder hvor:
+    Lad os derfor dividere med mængden af måder man kan rykke folk rundt på. Vi ved fra de mange tidligere opgaver
+    at mængden af måder man kan placere _(6_) folk på _(6_) unikke stole er _(6!=720_). Du kan tænke på det sådan her:
+    For hver sæt af folk vi har valgt skal side på bordet, vil der være _(720_) måder at placere dem. Vi skal derfor
+    dividere med _(720_), fordi vi kun er interesseret i mængden af mulige sæt af folk:  
+    _($\frac{151200}{720}=210_)
+    Wholla! _(210_)! 
+    <p class="t">
+    Lad os kigge på hvad vi gjorde her lidt mere generelt. Alt det æstetiske med bordet, personerne, og stolene
+    er egentlig ligegyldigt: Vi fandt mængden af måder vi kunne vælge _(6_) ud af _(10_) ting. Man for meget ofte
+    brug for at løse lignende problemer, så vi har givet det et navn: <i>Binomialske koefficienter</i> (på engelsk: 
+    "Binomial coefficients"), eller som det mere ofte bliver kaldt: <i>n-choose-k</i>. n-choose-k er mængden af måder
+    man kan vælge _(k_) ud af _(n_) ting. Så 11-choose-8 er mængden af måder man kan vælge _(8_) ud af _(11_) ting. 
+    Vi skriver det ofte kort som:
+    _($\VeC[n,k]_)
+    Ved at generalisere hvad vi gjorde i denne opgave kan vi nemt komme frem til en dejlig formel:
+    Først fandt vi mængden af måder man kan placere _(n_) folk ved _(k_) unikke stole. 
+    Ved 12-choose-5 ville det være:
+    _($12*11*10*9*8=\frac{12!}{7!}=\frac{12!}{(12-5)!}_)
+    Så ved n-choose-k er det:
+    _($\frac{n!}{(n-k)!}_)
+    Bagefter dividerede vi med mængden af måder man kan rykke _(k_) folk rundt
+    på _(k_) stole. Det gav _(k!_), altså:
+    _($\VeC[n,k]=\frac{\left(\frac{n!}{(n-k)!}\right)}{k!}=\frac{n!}{k!*(n-k)!}_)
+    Bum! I den her formel er det vigtigt at huske på at _(n!/(n-k)!_) jo faktisk 
+    bare er en mere kompakt måde at skrive f.eks. _(12*11*10*9*8_). Du behøver ikke
+    faktisk finde både _(12!_) og _(7!_), som godt kan blive meget store tal. 
+    </p>  
+    <p class="t">
+    I Geogebra kan du renge n-choose-k med kommandoen _(nCr(n,k)_), hvor _(n_) så
+    er dit _(n_), og _(k_) er dit _(k_). Jeg anbefaler at du lige regner 
+    det en smule i hånden først. Så kan du for det første huske hvordan formlen
+    virker (hvis du måske for brug for at manipulere den algebraisk!), plus du for
+    også lige en god fornemmelse. 
+    </p>
+    <br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Svar på de følgende spørgsmål:
+    <p class="t">
+    <b> 1</b>: Hvor mange _(7_)-kort dæk kan man trække i et fuldt kortsæt uden jokere? Det er et ret stort tal, men
+    slet, slet ikke ligeså stort som _(52!_) fra tidligere. Husk at bruge lommeregner i den her!
+    </p>
+    <p class="t">
+    <b> 2</b>: Du spiser tapas på en restaurant. De har _(14_) retter, og det er tilfældigt hvilke _(5_)
+    du får (du kan dog ikke få flere af den samme ret). Du vil virkelig gerne have deres forårsruller, 
+    deres bagt brie, og deres butterdej med ost. Hvad er chancen for at du får dem alle sammen?  
+    </p>
+    <p class="t">
+    <b> 3</b>: På dit kollegie på _(43_) mennesker bliver _(39_) smittet med en sygdom. Alle
+    har lige stor chance for at blive smittet: Hvor stor er chancen for at du blev det? 
+    </p>
+    <br></q-stion>
+    <answer-box t="Answer 1#">
+    Det her er bare 
+    _($\VeC[7,52]=\frac{52*51*50*49*48*47*46}{7*6*5*4*3*2}=133784560_)
+    <br><br></answer-box>
+    <answer-box t="Answer 2#">
+    Da det er en sandsynlighed, så skal vi både finde mængden af måder man kan få _(5_) ud af _(14_) retter på generelt,
+    og mængden af måder hvor tre af retterne er henholdsvis forårsruller, bagt brie, og butterdej. Første del svarer
+    til at udvælge _(5_) ting ud af _(14_), så:
+    _($\VeC[14,5]=\frac{14*13*12*11*10}{5*4*3*2} = 2002_)
+    Hvis du specifikt skal have dine ynglingsretter, så er der kun _(15-3=12_) retter tilbage, og 
+    vi skal kun lave _(5-3=2_) valg ved de resterende retter. Altså:
+    _($\VeC[12,2]=\frac{12*11}{2}=66_)
+    Svaret er altså:
+    _($\frac{66}{2002}=0.032967_)
+    Hvilke cirka svarer til 3%. Ret lille chance.
+    <br><br></answer-box>
+    <answer-box t="Answer 3#">
+    At finde hvor mange måder folk kan blive smittet på svarer til at se hvor mange måder
+    vi kan smitte kollegiet hvis vi "vælger" _(39_) af de _(43_) elever. Det 
+    er altså lig:
+    _($\VeC[43,39]=\frac{43!}{39!*(43-39)!}_)
+    Du <i>kunne</i> regne det sådan her, men du kunne også være lidt smartere. Der er
+    _(39_) der bliver smittede, men kun _(4_) der <i>ikke</i> bliver smittede. Blandt de _(43_) elever, på
+    hvor mange måder kan vi vælge de _(4_) der <i>ikke</i> smittes?
+    _($\VeC[43,4]=\frac{43!}{4!*(43-4)!}_)
+    Det her passer også til at _(39!*(43-39)!_) bliver til _(39!*4!_) og at
+    _(4!*(43-4)!_) bliver til _(4!*39!_). Generelt:
+    _($\VeC[n,n-k]=\VeC[n,k]_)
+    I hvert fald:
+    _($\frac{43*42*41*40}{4!}=123410_)
+    Hvis <i>du</i> skal være smittet, så er der nu _(42_) personer at vælge imellem, og 
+    _(3_) der mangler at blive smittede. Altså:
+    _($\VeC[42,3]=\frac{42*41*40}{3*2}= 11480_)
+    Chancen for at du <i>ikke</i> bliver smittet er altså:
+    _($\frac{11480}{123410} = 0.093 _)
+    Hvilke betyder at chancen for at du <i>bliver</i> smittet er _(1-0.093=0.907_) hvilke er
+    lidt over _(90%_). 
+    <br><br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5" customWidth="700">
+    Her er et kendt, og lidt tricky problem: Sig at du spiller mønt med en ven.
+    Hver gang man gætter rigtigt så får man èt point, og spilleren der først får _(10_) vinder.
+    Efter 6 runder har du _(4_) points, og din ven kun _(2_). Af en eller anden årsag så stopper spillet pludselig abrupt,
+    og i kan ikke spille videre. Hvad er <i>chancen</i> for at du ville have vundet hvis i havde spillet videre?
+    <p class="t">
+    Det her er en relativ svær opgave. Husk dog alligevel at sandsyndlighedsmæssigt så følger den det samme
+    princip som alle de andre: 
+    _($\frac{\text{mængden af udfald der opfylder krav}}{\text{mængden af udfald}}_)
+    Hvis bare du deler opgaven op i nogle tilfælde, og er villig til at regne et relativ langt
+    udtryk til sidst, så er den faktisk ikke <i>så</i> svær dog!
+    </p>
+    <br></q-stion>
+    <answer-box customWidth="700">
+    Lad os starte med at finde mængden af "tidslinjer" i alt. Du mangler _(6_) points, og din ven mangler _(8_). Nogle
+    runder vil gå meget hurtigere end andre: Allerhurtigst _(6_) hvis du får et point i hver runde, og aller-langsomst
+    _((6-1)+8=13_) hvis du ender ud _(1_) fra at vinde.  I runderne der er _(6,7_) lange er det selvfølgelig altid dig der vinder,
+    men i alle runder der er længere eller lig med _(8_) der kan i begge vinde.
+    Lad os for hver af rundelængderne se hvor mange mulige udfald der er, og i hvor mange udfald du vinder. Så kan vi
+    bare lægge det hele sammen til sidst.
+    <p class="t">
+    I runden med en længde på _(6_) der <i>skal</i> alle kast gå til dig, så der er kun èt udfald.
+    I runden med en længde på _(7_) der <i>skal</i> du have _(6_) af de _(7_) kast hvor du for et point.
+    Det er der _(\Vec[6,7]=\frac{7*6*5*4*3*2}{6*5*4*3*2}=7_) måder du kan gøre på. I de næste fra _(8_) til
+    _(12_) der skal vi både tælle mængden af udfald hvor <i>du</i> vinder, og mængden af udfald hvor <i>han</i> vinder.
+    Du kan få _(6_) points på _(8_) kast på _(\Vec[6,8]_) måder, og din ven kan få _(8_) points på _(8_) kast på _(\Vec[8,8]_) måder.
+    Ved rundelængde _(9_) kan du vinde på _(\Vec[6,9]_) måder, din ven _(\Vec[8,9]_) måder. Rundelængde _(10_)
+    dig _(\Vec[6,10]_) din ven _(\Vec[8,10]_) osv. Alt i alt kan vi se at din chance for at vinde er:
+    _($\frac{1+\Vec[6,7] + \Vec[6,8] + \Vec[6,9] + \Vec[6,10] + \Vec[6,11] + \Vec[6,12] + \Vec[6,13]}
+            {(1+\Vec[6,7] + \Vec[6,8] + \Vec[6,9] + \Vec[6,10] + \Vec[6,11] + \Vec[6,12]) + (\Vec[8,8] + \Vec[8,9] + \Vec[8,10] + \Vec[8,11] + \Vec[8,12] + \Vec[8,13])} =_)
+    _($\frac{3432}{3432+2002} = 0.6315_)
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <p class="t"> At udregne <i>den</i> sum fra sidste opgave tog en del tid.
+    At udregne en helt sum som 
+    _($\VeC[0,6]+\VeC[1,6]+\VeC[2,6]+\VeC[3,6]+\VeC[4,6]+\VeC[5,6]+\VeC[6,6]_)
+    eller 
+    _($\VeC[3,3]+\VeC[3,4]+\VeC[3,5]+\VeC[3,6]+\VeC[3,7]..._)
+    er tydeligvis ret tidskrævende. Der findes heldigvis en nemmere måde via "Pascals trekant/trappe":     </p>
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\PascalsTriangle1.mp4' type='video/mp4'> 
+    </video>
+   <p class="t"> 
+    Den her tilsyneladende urelevante konstruktion/ide er praktisk fordi man nemt 
+    relativt nemt kan bevise at:
+    _($\begin{eqnarray} 
+    && \text{Den } _(m_) \text{'te værdi} \\ 
+    && \text{på den }_(n_) \text{'te række}
+    \end{eqnarray}
+    =
+    \VeC[n,m]
+    _)
+    Så hvis jeg f.eks. gerne vil finde _(\Vec[8,5]_), så kan jeg lave en trekant og se:
+    </p>
+    <img class='Spic' style='width:60%' src='../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\PascalsTrekant.png'> 
+    <p class="t">
+    ...at det er lig _(56_). Det vil selvfølgelig ikke hjælpe os super meget når _(n_) og _(k_)
+    ved n-choose-k har virkelig høje værdier, men det kan alligevel godt være ret praktisk i 
+    mange tilfælde. 
+    </p>
+    <p class="t">
+    Hvorfor er det her sandt? Well, de første værdier matcher:
+    _($\VeC[0,0]=1, \qquad \VeC[0,1]=1, \qquad \VeC[1,1]=1_)
+    I starten er værdierne på Pascals trekant altså det samme som på n-choose-k.
+    Kald den _(k_)'te værdi på 
+    den _(n_)'te række af pascals trekant for _(Pa(k,m)_). Vi ved pr. definition at:
+    _($Pa(n,k)=Pa(n-1,k)+Pa(n-1,k-1)_)
+    Man kan relativt let bevise via matematik at:
+    _($\VeC[n,k]=\VeC[n-1,k]+\VeC[n-1,k-1]_)
+    n-choose-k og pascals trekant har både de samme start-værdier, og følger præcist
+    samme regel for hvordan man generer de næste tal. De er altså identiske. 
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Bevis at:
+    _($\VeC[n,k]=\VeC[n-1,k]+\VeC[n-1,k-1]_)
+    Det her er ikke <i>super</i> svært: Når man tænker over det,
+    så er det jo egentlig bare et algebra problem! 
+    <br><br></q-stion>
+    <answer-box>
+    Jeg tænker jeg går til det her rent algebraisk. Jeg starter
+    fra den mere komplicerede side _(\Vec[n-1,k]+\Vec[n-1,k-1]_) og prøver
+    at omskrive den til bare _(\Vec[n,k]_):
+    _($\VeC[n-1,k]+\VeC[n-1,k-1]=_)
+    _($\frac{(n-1)!}{k!*(n-k-1)!}+\frac{(n-1)!}{(k-1)!*(n-k)!}=_)
+    _($\frac{(n-1)!}{k*(k-1)!*(n-k-1)!}+\frac{(n-1)!}{(k-1)!*(n-k)*(n-k-1)!}=_)
+    _($\frac{(n-1)!}{(k-1)!*(n-k-1)!}*\left(\frac{1}{k} + \frac{1}{n-k} \right) =_)
+    _($\frac{(n-1)!}{(k-1)!*(n-k-1)!}*\left(\frac{1*(n-k)+1*k}{k*(n-k)} \right) =_)
+    _($\frac{(n-1)!}{(k-1)!*(n-k-1)!}*\left(\frac{n}{k*(n-k)} \right) =_)
+    _($\frac{(n-1)!*n}{(k-1)!*k*(n-k-1)!*(n-k)}=_)
+    _($\frac{n!}{k!*(n-k)!}_)
+    Det her var selvfølgelig kun nemt at bevise fordi vi allerede havde hypotesen. 
+    Hvis man skulle prøve at forestille sig hvordan præcist folk kom frem til denne
+    ligning, så kunne man bruge et lidt mere intuitivt argument:
+    <p class="t">
+    Sig jeg er interesseret i at finde en formel for _(\Vec[n,k]_) i forhold
+    til mindre _(n_). Det kunne være praktisk, da _(\Vec[n,k]_) jo kan
+    blive meget stort, meget hurtigt. Sig jeg skal vælge _(k_) af _(n_) 
+    objekter. Èn simpel måde at opdele den opgave på kunne være ved at kigge på
+    èn bestemt af elementerne, sig, _(A_). Jeg ved at når jeg vælger _(k_) ud 
+    af _(n_) objekter, så er _(A_) enten med, eller ikke-med. Hvis _(A_) skal være med, 
+    så er der nu _(n-1_) objekter og _(k-1_) valg tilbage. Ergo: _(\Vec[n-1,k-1]_). 
+    Hvis _(A_) ikke skal være med, så har vi _(n-1_) objekter, men alle _(k_) valg. 
+    Altså: _(\Vec[n-1,k]_). Derfor ved vi nu at:
+    _($\VeC[n,k]=\VeC[n-1,k-1]+\VeC[n-1,k]_)
+    Wholla!
+    </p>
+    <br><br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Udregn hurtigt og effektivt 
+    _($\VeC[7,0]+\VeC[7,1]+\VeC[7,2]+\VeC[7,3]+\VeC[7,4]+\VeC[7,5]+\VeC[7,6]+\VeC[7,7]_)
+    <br></q-stion>
+    <answer-box>
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\PascalsTriangle2.mp4' type='video/mp4'> 
+    </video>
+    <br><br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Der er desværre ingen måde lynhurtigt at summere  
+    _($\VeC[n,0]+\VeC[n,1]+\VeC[n,2]+...\VeC[n,n-1]+\VeC[n,n]_)
+    Det bedste valg er simpelt hen bare at tegne Pascals trekant op til række _(n_), og så lægge hvert element sammen.
+    Bassicly præcist det vi gjorde i sidste opgave. Hvis dog det er <i>n</i> der bliver større som 
+    _($\VeC[n,n]+\VeC[n+1,n]+\VeC[n+2,n]+..\VeC[m,n]_) 
+    Så har vi:
+    _($\VeC[n,n]+\VeC[n+1,n]+\VeC[n+2,n]+..\VeC[m,n]=\VeC[m+1,n+1]_)
+    Prøv at bevis det.
+    <br><br></q-stion>
+    <answer-box>
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\PascalsTriangle3.mp4' type='video/mp4'> 
+    </video>
+    <br><br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Når du udvider _((a+b)^2_) så får du:
+    _($a^2 + 2*a*b + b^2_)
+    Her er der altså tre led: _(a^2_), _(2*a*b_) og _(b^2_).
+    To af dem har en koefficient på _(1_), og _(a*b_) har en koefficient på _(2_). Vi kunne
+    også skrive det som:
+    <div style="text-align:center;">
+        <ul style="display: inline-block; text-align: left; padding-left:0%; list-style:none;">
+            <li>_(a^2*b^0_): 1</li>
+            <li>_(a^1*b^1_): 2</li>
+            <li>_(a^0*b^2_): 1</li>
+        </ul>
+    </div>
+    Når du udvider _((a+b)^3_) så får du:
+    _($a^3 + 3*a^2*b + 3*a*b^2 + b^3_)
+    Her kan man sige:
+    <div style="text-align:center;">
+        <ul style="display: inline-block; text-align: left; padding-left:0%; list-style:none;">
+            <li>_(a^3*b^0_): 1</li>
+            <li>_(a^2*b^1_): 3</li>
+            <li>_(a^1*b^2_): 3</li>
+            <li>_(a^0*b^3_): 1</li>
+        </ul>
+    </div>
+    Udvider man _((a+b)^4_) fås:
+    _($a^4 + 4*a^3*b + 6*a^2*b^2 + 4*a*b^3 + b^4_)
+    Hvor:
+    <div style="text-align:center;">
+        <ul style="display: inline-block; text-align: left; padding-left:0%; list-style:none;">
+            <li>_(a^4*b^0_): 1</li>
+            <li>_(a^3*b^1_): 4</li>
+            <li>_(a^2*b^2_): 6</li>
+            <li>_(a^1*b^3_): 4</li>
+            <li>_(a^0*b^4_): 1</li>
+        </ul>
+    </div>
+    Faktisk at udvide _((a+b)^4_) tager jo en del tid, siden man skal 
+    til at gange ind i parenteser en helt masse gange. Det kunne være praktisk
+    hvis vi havde en hurtig måde at finde koefficienterne de her led tager. 
+    Din opgave er nu at finde koefficienten på _(a^{16}b^7_) når _((a+b)^{23}_)
+    udvides.   
+    <br><br></q-stion>
+    <answer-box>
+    Lad os prøve at starte småt: Hvordan kunne vi hurtig finde koefficienterne på 
+    _((a+b)^4_) hvis vi ikke gad til at gange ind i parenteser en helt masse gange?
+    For at svare på det skal vi først lige forstå hvor præcis koefficienterne kommer
+    <i>fra</i>. Lad os tage _((a+b)^2_) som det mest simple eksempel:
+    _($(a+b)^2=(a+b)*(a+b)=a*a+a*b+b*a+b*b_)
+    Der er nu to led hvor både _(a_) og _(b_) har en potens på _(1_). Sig nu at jeg
+    ved _((a+b)^4_) gerne vil have et led hvor _(a_) har en potens på _(3_). Det kunne
+    jeg se som:
+    _($(a+b)*(a+b)*(a+b)*(a+b)_)
+    Først vælger jeg at gange _(a_) i første parentes med _(a_) i anden parentes.
+    Det svarer til _(a*a_) i den udvidede version _((a+b)*(a+b)=_)
+    _(a^2 + 2*a*b + b^2_). Derefter vælger jeg at gange med _(a_) i tredje parentes, 
+    hvilke svarer til _(a*a*a_) i den udvide _(a^3 + 3*a^2*b + 3*a*b^2 + b^3_).
+    Ved den sidste parentes vælger jeg at gange med _(b_), da jeg allerede har en 
+    potens på _(3_). Det svarer til _(a*a*a*b_) i _(a^4 + 4*a^3*b + 6*a^2*b^2 + 4*a*b^3 + b^4_).
+    Processen af at komme frem til et led kan vi altså lidt se på som en "udvælgelses"-proces:
+    Ved hvert parentes vælger jeg om jeg gerne vil gange med _(a_) eller _(b_). Det kan man
+    omformulere til: Ved hver parentes vælger jeg om jeg gerne vil gange med _(a_), eller
+    <i>ikke</i> vil gange med _(a_). Så kræver _(a^3*b^1_) at der er tre af de fire potenser
+    hvor vi vælger at gange med _(a_), eller i andre ord: _(1_) af de fire
+    potenser vi <i>ikke</i> ganger med _(a_). Det kunne være både den første parentes,
+    den anden parentes, den tredje, og den fjerde. Der er altså fire måder
+    at komme frem til _(a^3*b^1_) på, og det har derfor en koefficient på _(4_).
+    <p class="t">
+    Hvor mange måder er der at komme frem til _(a^{16}b^7_) i _((a+b)^{23}_)? Well,
+    det svarer til at der er _(7_) af de _(23_) parenteser hvor vi vælger at
+    gange med _(b_). På hvor mange måder kan man <i>udvælge</i> _(7_) af _(23_) ting, 
+    hvis rækkefølgen ikke har betydning? You guessed it:
+    _($\VeC[23,7]=\frac{23*22*21*20*19*18*17}{7*6*5*4*3*2} = 245157_)
+    Bum! Så elegant og brillant er det!
+    </p>        
+    <br><br></answer-box>
+
+    <p class="t">
+    <i>Tegnet</i> mange forbinder med "svær, kompliceret matematik" de engang har set på
+    Wikipedia er nok:
+    _($\sum_)
+    Der er virkelig intet svært, mærkeligt eller skræmmende omkrign det her tegn.
+    _($\sum_{i=6}^{13} i_) 
+    er f.eks. bare en mere kompakt måde at skrive 
+    _($6+7+8+9+10+11+12+13_)
+    og _(\sum_{i=2}^n i^2_) er kort for 
+    _($2^2 + 3^2 + 4^2 + ... (n-1)^2 + n^2_)
+    Vi bruger stadig meget det med prikkerne, men denne "sigma-notation" som den kaldes er til tider et bedre valg.
+    Helt generelt så skal _(\sum_{i=a}^b f(i)_) symbolisere 
+    _($f(a)+f(a+1)+f(a+2)+...f(b-1)+f(b)_)
+    hvor _(a,b_) så er to hele tal, og _(f(i)_) er en eller anden funktion. F.eks:
+    _($\sum_{Pandekage=20}^{30} Sin(Pandekage)*Pandekage^2*Ln(Pandekage) = \\
+    \begin{eqnarray}
+       && 20^2Sin(20)Ln(20) + \\ 
+       && 21^2Sin(21)Ln(21) + \\ 
+       && 22^2Sin(22)Ln(22) + \\
+       && \vdots \\
+       && 29^2Sin(29)Ln(29) + \\ 
+       && 30^2Sin(30)Ln(30)
+    \end{eqnarray}_)
+    En varient af sigma-notation man nogle gange finder er "produkt notation" _(\prod_{i=a}^b f(i) _) som så bare
+    ganger i stedet for at plusse. Sigma-notation er det samme som sum-kommandoen inde i Geogebra.
+    Så _(\sum_{i=2}^8 i^2+Sin(i)_) svarer til _(\text{Sum(i^2+Sin(i),i,2,8)}_) i Geogebra. 
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Vis/bevis at 
+    _($(a+b)^n = \sum_{i=0}^n \Vec[i,n]*a^i*b^{n-i}_)
+    Det her kaldes "the binomial formula". Med det bevis vi kom frem til i sidste
+    opgave, så er det her faktisk super nemt. Sigma tegnet for det bare til at se
+    lidt skræmmende ud. 
+    <br><br></q-stion>
+    <answer-box>
+    Med resultat fra den tidligere opgave så er det her super nemt at se. 
+    Der er _(n_) parenteser, så det passer at _(a^i*b^{n-i}_) har _(n_) faktore eftersom _(i+(n-i)=n_).
+    Hvis _(a_) har en potens på _(i_), så ved vi fra sidste opgave at coefficienten er _(\Vec[i,n]_). 
+    <br><br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Du prøver at kaste en basketball op i net. Du er ikke specielt god, så chancen
+    for at du rammer et kast er _(20%_) (så _(0.2)_). Hvis du kaster _(7_) gange, hvad
+    er så chancen for at du får præcis _(3_) bolde i?
+    <br><br></q-stion>
+    <answer-box>
+    Chancen for at jeg <i>ikke</i> rammer er _(1-0.2=0.8_). Forestil dig at jeg ramte
+    de tre første gange, og ikke ramte de sidste _(7-3=4_) gange. Chancen for det ville
+    være _(0.2*0.2*0.2*0.8*0.8*0.8*0.8=0.0032768_) hvilke cirka er _(0.327%_). 
+    Rækkefølgen man ganger i er ligegyldig. Derfor ved jeg, at lige meget
+    <i>hvordan</i> jeg får 3 points, så vil chancen altid være _(0.327%_). Jeg har
+    _(7_) chancer til at få _(3_) points. Det svarer til at vælge _(3_) af de
+    _(7_) kast hvor jeg gerne vil have points, som man kan gøre
+    på _(\Vec[7,3]=(7*6*5)/(3*2)=35_) måder. Chancen er altså _(35*0.327%=11.445%_).
+    <p class="t">
+    En generel formel man kunne have brugt i denne situation, er:
+    _($\VeC[n,k]*p^k*(1-p)^{n-k}_)
+    Hvor _(n_) er mængden af gange man kaster, _(k_) er hvor mange points
+    man gerne vil have, og _(p_) er chancen for man rammer. Her svarer
+    _(1-p_) altså til _(0.8_), og _(n-k_) til _(4_). Med _(p^k*(1-p)^{n-k}_)
+    finder vi sandsynligheden i èt tilfælde, som vi så ganger med mængden af måder
+    _(\Vec[n,k]_) for at den få den samlede chance. 
+    </p>
+    <br><br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Mere basketball; samme situation som før. Du vinder en konkurrence hvis
+    du får <i>over</i> _(3_) points. Hvad er chancen for at du vinder?
+    <br><br></q-stion>
+    <answer-box>
+    Her skal vi finde chancen for at få enten _(4_) points, _(5_) points,
+    _(6_) points, eller _(7_) points. Alternativt så kunne vi lidt nemmere
+    finde chancen for at få _(3_) points, _(2_) points, og _(1_) points, hvilket
+    er hurtigere da vi allerede har svaret for _(3_). Så kan vi bare sige
+    _(1-\text{Chancen vi finder}_) og få svaret. 
+    <p class="t">
+    Chancen for _(2_) points er 
+    _($\VeC[7,2]*0.2^2*0.8^5=0.275_)
+    Chancen for _(1_) point er:
+    _($\VeC[7,3]*0.2*0.8^6=0.367_)
+    Den samlede chance for at få under _(4_) points er altså _(0.1144+0.275+0.367=_)
+    _(0.7564_). Det betyder at chancen for at vinde er
+    _($1-0.7564=0.2436_)
+    Bum!
+    </p>
+    <br><br></answer-box>
+
+    <p class="t">
+    Det er tydeligt at der er større chance for at få, f.eks. 2 points, end
+    for at få alle 7. Lad os tegne en graf der viser dette forhold:
+    </p>
+    <img class='SpicB' style='width:70%' src='../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\BinomialDistribution1.png'> 
+    <p class="t">
+    Her har jeg altså bare evalueret _(\Vec[7,k]*0.2^k*0.8^{7-k}_) for alle
+    værdier _(k=0..7_). Man kan se at der er størst chance for at jeg kun scorer
+    èt enkelt mål. Lige nu er _(p=0.2_). Det vil sige at der er _(20%_) chance for
+    at jeg rammer et kast. Hvad sker der hvis jeg gør denne chance større? 
+    </p>
+    <video class='SpicB' style="width:70%" controls>
+        <source src='../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\BinomialAnimationCropped.mp4' type='video/mp4'>
+    </video>
+
+    <p class="t">
+    Det kunne være praktisk at vide: Givent at jeg kaster så mange gange,
+    og at sandsynligheden _(p_) er lig et eller andet, hvilken score er der
+    størst chance for at jeg får? 
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5" customWidth="550">
+    Hvis du kaster _(n_) gange, og sandsynligheden for du rammer er lig _(p_), hvilken
+    score er der størst chance for at du får? Vigtigt: Du kan ikke nødvendigvis komme
+    frem til en direkte <i>formel</i> for _(k_), men du kan finde to tal _(k_) er 
+    <i>imellem</i>. 
+    <p class="t">
+    Den her opgave er måske lidt tricky. Jeg anbefaler at du bliver inspireret af 
+    <i>grafen</i>: Hvad gælder på grafen der hvor værdien er størst? 
+    </p>
+    <br></q-stion>
+    <answer-box t="h" customWidth="550">
+    Kald chancen for at vi får _(k_) points for _(p(k)_). _(k_) er et helt tal, og
+    hvis _(p(k)_) er højest, så ved jeg at:
+    _($p(k-1) \lt p(k) \gt p(k+1)_)
+    Altså, værdien _(p(k)_) er både større end værdien bagved og værdien foran. 
+    <br><br></answer-box>
+    <answer-box customWidth="550">
+    Kald chancen for at vi får _(k_) points for _(p(k)_). Her er så ideèn:
+    Jeg kan se på grafen, at hvis  _(p(k)_) er højest, så er:
+    _($p(k-1) \lt p(k) \gt p(k+1)_)
+    Altså, værdien _(p(k)_) er både større end værdien bagved og værdien foran. Det
+    kan vi bruge til at opsætte to uligheder:
+    _($\VeC[n,k-1]*p^{k-1}*(1-p)^{n-(k-1)} \lt \VeC[n,k]*p^k*(1-p)^{n-k}_)
+    _($\VeC[n,k+1]*p^{k+1}*(1-p)^{n-(k+1)} \lt \VeC[n,k]*p^k*(1-p)^{n-k}_)
+    Lad os se om vi kan omskrive dem her til noget lidt simplere. Lad os 
+    starte med den første:
+    _($\frac{n!}{(k-1)!*(n-k+1)!}*p^{k-1}*(1-p)^{n-k+1} \lt p(k) \to_)
+    _($\frac{n!}{(k!/k)*(n-k+1)*(n-k)!}*p^k*p^{-1}*(1-p)^{n-k}*(1-p) \lt p(k) \to_)
+    _($\frac{k*(1-p)}{p*(n-k+1)}*\frac{n!}{k!*(n-k)!}*p^k*(1-p)^{n-k} \lt p(k) \to_)
+    _($\frac{k*(1-p)}{p*(n-k+1)}*p(k) \lt p(k) \to_)
+    _($\frac{k*(1-p)}{p*(n-k+1)}*\frac{n!} \lt 1 \to_)
+    _($k*(1-p)-p*(n-k+1) \lt 0 \to_)
+    _($k-p*(n-1) \lt 0_)
+    Vi kan gøre meget det samme med den anden ulighed og få:
+    _($p*(n+1)-k-1 \lt 0_)
+    Ved at tage det negative af begge sider (og vende om 
+    på større-end tegnet!) fås så:
+    _($k-p*(n+1)+1 \gt 0_)
+    Nu har vi:
+    _($\begin{eqnarray} 
+    && k-p*(n+1) \lt 0 \\
+    && k-p*(n+1)+1 \gt 0
+    \end{eqnarray}_)
+    Hvilke kan omskrives til den lidt mere oplysende form:
+    _($\begin{eqnarray} 
+    && k \gt p*(n+1)-1 \\
+    && k \lt p*(n+1)
+    \end{eqnarray}_)
+    Det siger altså intuitivt: _(k_) skal være mindre end <i>noget</i>, men
+    større end det "noget" minus _(1_): Ergo, siden _(k_) kun kan være hele tal,
+    så er _(k_) nødt til at være lig _(p*(n+1)_). Så vi skal bare: Regne 
+    _(p*(n+1)_), regne _(p*(n+1)-1_), og så finde et <i>helt</i> tal imellem! 
+    _($p*(n+1)-1 \lt k \lt p*(n+1)_)
+    <br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Lad os så prøve at bruge det resultat vi fandt frem til i sidste opgave:
+    Hvilken score er der størst chance for at du får hvis du kaster _(827_) gange
+    og rammer med en sandsynlighed på _(p=0.65_)?
+    <br><br></q-stion>
+    <answer-box>
+    Vi skal finde et helt tal imellem 
+    _($p*(n+1)=0.65*(827+1)=538.2_)
+    og 
+    _($538.2-1=537.2_) 
+    Svaret er altså 
+    _($k=538_) 
+    <br></answer-box>
+
+    <p class="t">
+    SKAL FØLGENDE OPGAVE MÅSKE INDSÆTTES EFTER DEN MED KVIT ELLER DOBBELT, ELLER ER 
+    DET UNØDVENDIGT? DET ER EN RIGTIG GOD OPGAVE, JEG VED BARE IKKE LIGE OM DET
+    DER DIREKTE NØDVENDIGT:
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Sig du spiller plat eller krone med en ven. I starter begge med at vælge enten plat eller krone, og
+    begynder derefter på skift at kaste mønten. Vinderen er den første der kaster hvor
+    mønten lander på hans gæt. Hvis mønten <i>ikke</i> lander på ens gæt, så sker der intet
+    og man går videre. Det her er et ret unfair spil, da den første spiller der kaster har større
+    chance for at vinde. Hvor stor procent chance?
+    <br><br></q-stion>
+    <answer-box>
+    På hvor mange måder kan du eller din partner vinde? Det er lidt svært at sige, 
+    da i rent teoretisk set kunne blive ved for evigt. Hvis _(A_1,A_2,...A_n_) er
+    begivenhederne hvor du vinder efter _(1_) af dine kast, _(2_) af dine kast, _(3_) af dine kast osv, 
+    så er din chance for at vinde
+    _(P(A_1 \cup A_2 \cup ... A_n) = P(A_1)+P(A_2)+...P(A_n) \pm \text{andet ting}_)
+    Jeg har skrevet bare "_(\text{andet ting}_)" da det alligevel alt sammen forsvinder. 
+    Alle de andre led som er <i>skæringer</i> mellem begivenheder må være _(0_), da vi umuligt kan vinde
+    på flere tidspunkter samtidigt. Hvis du er den første der kaster,
+    så er _(P(A_1)=0.5_) og _(P(A_2)=0.5*0.5*0.5=0.5^3_) da de første _(0.5*0.5_) skal sørge
+    for at både dig og din ven <i>ikke</i> vinder, og _(0.5_) til sidst skal sørge for at <i>du</i> vinder.
+    _(P(A_3)_) er meget lignende _(|0.5^5_), og alt i alt får vi:
+    _($0.5+0.5^3+0.5^5+0.5^7+0.5^9+..._)
+    Det her kan vi nemt omskrive til
+    _($0.5*(1+0.5^2+0.5^4+0.5^6+0.5^8 + ...) = _)
+    _($0.5*(1+(0.5^2)^1 + (0.5^2)^2 + (0.5^2)^3 + (0.5^2)^4 + ...) = _)
+    _($0.5*\frac{1-0.25^n}{1-0.25} = 0.666 - \frac{1}{0.75}0.25^n_)
+    Når _(n_) bliver uendeligt højt, så nærmer _(\frac{1}{0.75}0.25^n_) sig _(0_).
+    Svaret er altså bare _(0.6666_). Cirka _(16%_) større chance for at vinde, hvilke egentlig ikke er så slemt. 
+    <br><br></answer-box>
+
+

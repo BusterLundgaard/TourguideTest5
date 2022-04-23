@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+
+    <p class="t">
+    De næste par opgaver er designede til at highlighte nogle problemer med den måde
+    vi har løst sandsynlighedsproblemer på indtil videre. Lav dem, og så skal
+    det nok give lidt mere mening hvordan de hænger sammen: 
+    </p>
+    
+    <q-stion 1="2" 2="1" 3="5">
+    Lad os prøve at kigge på den her "spin-the-wheel" ting igen:
+    <img class='SpicB' style='width:80%' src='../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\SpinTheWheel.png'> 
+    <p class="t">Hvad er chancen for at man på _(7_) slag kun rammer de hvide? Hver gang du rammer 1 plads,
+    så er den <i>taget</i>. Du kan ikke lande på den igen. </p>
+    <br></q-stion>
+    <answer-box>
+    Der er i alt _(17_) pladser og _(7_) hvide. Chancen for at vi rammer en hvid <i>i første runde</i> er 
+    altså ligesom før _(7/17_). I <i>anden runde</i> er 
+    der nu kun _(6_) hvide og _(16_) pladser, så der er chancen _(6/16_). I tredje
+    runde bliver det _(5/15_), så _(4/14_) i fjerde osv. Alt i alt får vi:
+    _($\frac{7}{17}*\frac{6}{16}*\frac{5}{15}*\frac{4}{14}*\frac{3}{13}*\frac{2}{12}*\frac{1}{11} = 0.00005141916_)
+    <br></answer-box>
+    
+    <q-stion 1="2" 2="1" 3="5">
+    Sig at der nede i en pose er _(4_) røde kasser, _(6_) røde kugler, _(2_) gule kasser og _(9_) gule kugler.
+    Hvad er chancen for at du <i>enten</i> trækker en et rødt objekt op, <i>eller</i> trækker en kasse op? 
+    <br><br></q-stion>
+    <answer-box>
+    Det er <i>ikke</i> bare 
+    _($\frac{\text{mængden af røde objekter} + \text{mængden af kasser}}{4+6+2+9}_)
+    da der jo også findes <i>røde kasser</i> - objekter der har begge egenskaber. Derfor siger vi:
+    _($\frac{(4+6) + (4+2) - 4}{4+6+2+9} = \frac{12}{21} = 0.5714_) 
+    <br></answer-box>
+    
+    <q-stion 1="2" 2="1" 3="5">
+    Hvad er chancen for at du først trækker et rødt kort, så trækker en ruder, og så trækker en konge? 
+    Efter hvert træk <i>lægger du ikke kortet tilbage igen</i>. Det her er en relativ svær opgave,
+    og der er en god del beregning til sidst (selvfølgelig i forhold til hvordan du går den an) i den. 
+    <p class="t">
+    Bare like en hurtig reminder: Der er _(52_) kort, med _(13_) af hver type. 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Det faktum at vi ikke lægger kortet tilbage gør alting mere kompliceret. Hvad hvis det første kort
+    vi trækker er en ruder? Så er der _(\frac{12}{55}_) og ikke _(\frac{13}{55}_) chance for at det næste
+    træk lykkedes. Hvad hvis det er en konge vi trækker? Eller en ruder-konge? I andet valg
+    kan vi også trække en konge hvilke forvirre sagen yderligere:
+    <img class='Spic' style='width:70%' src='../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\HardProbability1.png'> 
+    <p class="t">Vi er nødt til at regne alle de her tilfælde og lægge chancerne sammen:
+    _($\begin{eqnarray} 
+        && (t_{1,1})          & : & \frac{1}{52}*\frac{12}{51}*\frac{3}{50}  & = & 0.00027149 \\
+        && (t_{1,2}, t_{2,1}) & : & \frac{1}{52}*\frac{1}{51}*\frac{2}{50}   & = & 0.00001538 \\
+        && (t_{1,2}, t_{2,2}) & : & \frac{1}{52}*\frac{12}{51}*\frac{3}{50}  & = & 0.00027149 \\   
+        && (t_{1,3}, t_{2,1}) & : & \frac{12}{52}*\frac{1}{51}*\frac{3}{50}  & = & 0.00027149 \\ 
+        && (t_{1,3}, t_{2,2}) & : & \frac{12}{52}*\frac{11}{51}*\frac{4}{50} & = & 0.00398190 \\ 
+        && (t_{1,4}, t_{2,1}) & : & \frac{12}{52}*\frac{1}{51}*\frac{3}{50}  & = & 0.00027149 \\
+        && (t_{1,4}, t_{2,2}) & : & \frac{12}{52}*\frac{12}{51}*\frac{4}{50} & = & 0.00434390 
+    \end{eqnarray}_)
+    Hvis du ikke forstår hvordan jeg kom frem til de tal, så lad mig lige give et eksempel:
+    _(t_{1,3}, t_{2,1}_). Her trækker vi ved første træk et rødt kort, der også er en ruder,
+    men ikke er en konge. Ved andet træk får vi en ruder, som også skal være en konge. Ved
+    sidste træk får vi en konge. Der er _(13_) ruder kort, og de tæller alle sammen som
+    "røde". _(1_) af dem er konge, så _(12_) er "ikke-konge". Der er _(52_) kort i alt, så
+    første chance er _(12/52_). Ved næste træk skal vi få en konge som også er ruder.
+    Dem er der som sagt kun _(1_) af, så det bliver _(1/51_). Der er nu _(3_) konger tilbage i dækket
+    på nu _(50_) kort, så sidste chance er _(3/50_)
+    </p>
+    <p class="t">
+    Når vi lægger sandsynlighederne sammen får vi en chance på _(0.009427143406_) eller
+    mere intuitivt _(0.9427_)%. Så lidt under _(1_)% chance for at det sker. 
+    </p>
+    <br></answer-box>
+    
+    <p class="t">
+    De sidste par opgaver har ærligt talt været lidt et rod. 
+    Generalt her med sandsyndlighedsopgaverne
+    virker det næsten som om vi er nødt til at opfinde en ny strategi hver opgave! 
+    Vi kommer aldrig tæt på at finde <i>en</i> måde at løse sandsyndlighedsopgaver, men vi
+    burde alligevel til en eller anden grad prøve at strukturere vores proces. Hvornår
+    kan man dele problemet op i mindre sandsyndligheder ganget med hinanden? Hvornår kan
+    man plusse sandsyndligheder? Vi tæller mange forskellige ting, men følger
+    de generelt nogle kategorier? Hvad gør vi hvis vi skal evaluere en svær og lang sum?
+    Udover at være rent praktisk, så vil det også hjælpe os med at forstå om vores svar 
+    <i>faktisk er korrekt</i>. Vi har brugt lidt intuitionsargumenter i nogle af de tidligere opgaver,
+    hvilke vi gerne vil undgå at skulle gøre hele tiden. 
+    Siden der er <i>så</i> mange situationer sandsyndlighedsteori kan modellere og arbejde med,
+    så er vores teori også nødt til at være ret abstrakt. 
+    </p>
+
+
+
+
+

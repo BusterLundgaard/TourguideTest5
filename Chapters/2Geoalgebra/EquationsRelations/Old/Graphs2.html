@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+
+
+    <p class="t">
+    Man kan nemt skalere og rykke rundt på funktioner:
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5">
+    På følgende billeder ses en rød funktion _(f(x)_), og  _(7_) forskellige ting der bliver gjort ved den:
+    <img class='Spic' style='width:100%' src='../../../Assets/Chapter2\Section3\Graphs\FunctionTransformations.png'> 
+    <p class="t">
+    Her er fem funktioner:
+    </p>
+    <div style="text-align:center; margin-top:10px;">
+        <ul style="display: inline-block; text-align: left; padding-left:0%; list-style:none;">
+            <li><u> 1</u>: _(A*f(x)_)</li>
+            <li><u> 2</u>: _(-f(x)_)</li>
+            <li><u> 3</u>: _(f(x-a)+b_)</li>
+            <li><u> 4</u>: _(f(B*x)_)</li>
+            <li><u> 5</u>: _(f(-x)_)</li>
+        </ul>
+    </div>
+    <p class="t">
+    Hvor _(A_), _(B_), _(a_) og _(b_) alle er konstanter. 
+    </p>
+    <p class="t">
+    Hvilke billeder passer til hvilke funktioner? Der er _(7_) billeder og kun _(5_) funktioner, fordi
+    to af funktionerne passer til <i>to</i> billeder. 
+    </p>
+    <br><br></q-stion>
+    <answer-box>
+    Lad os først tænke over hvordan de 5 funktioner intuitivt burde se ud. Ved _(-f(x)_) tager vi det negative af alle værdier. 
+    Så positivt bliver til negativt, og negativt bliver til positivt. Det betyder konkret at alle punkter på kurven bliver <i>reflekteret gennem x-aksen</i>. 
+    Så _(-f(x)_) spejlvender altså _(f(x)_) vertikalt. Ved _(f(-x)_) er værdien når _(x=|k|_) det samme som den før var når 
+    _(x_) var lig _(-|k|_), og vice versa. Hvert punkt er derfor spejlet omkring y-aksen, så _(f(-x)_) spejlvender _(f(x)_) horisontalt.
+    <p class="t">
+    Ved _(A*f(x)_) er hvert punkt _(A_) større, så _(f(x)_) bliver skaleret vertikalt med en faktor på _(A_). Ved _(f(B*x)_) bliver _(x_) skaleret.
+    F.eks gror _(x_) nu måske dobbelt så langsomt. I det tilfælde vil man dobbelt så langsomt gå gennem de forskellige værdier på _(f_), så funktionen 
+    bliver udstrakt på _(x_)-aksen med en faktor på _(2_). Hvis _(B_) f.eks. var lig _(2_), så ville man dobbelt så <i>hurtigt</i> gå gennem de forskellige værdier, og 
+    funktionen vil være <i>strakt indad</i> med en faktor på _(2_). Generelt kan man se at _(f(B*x)_) udstrækker _(x_)-aksen med en faktor på _(1/B_). 
+    </p>
+    <p class="t">
+    Den sidste er så _(f(x-a)+b_). Det er relativt nemt at se effekten af at plusse med _(b_): Det rykker funktionen opad eller nedad. Man kunne tænke 
+    at _(f(x-a)+b_) havde effekten af at rykke _(f_) <i>bagud</i> med _(a_), men det har faktisk effekten af at rykke den <i>fremad</i> med _(a_). Tænk over det:
+    Hvis _(x_) før var lig en eller anden værdi _(k_), så skal _(x_) nu være _(a_) længere fremme for at inputtet _(x-a_) er lig _(k_). Det tager altså længere tid
+    at komme hen til et bestemt sted, så funktionen bliver rykket fremad. Det modsatte sker selvfølgelig når vi plusser
+    </p>
+    <p class="t">
+    Vi kan nu relativt nemt se at billede _(\text{A}_) passer til <u>3</u>, billede _(\text{F}_) og _(\text{G}_) passer til
+    henholdsvis _(f(-x)_) og _(-f(x)_), både billede _(\text{D}_) og billede _(\text{E}_) passer til _(A*f(x)_), og 
+    både _(\text{B}_) og _(\text{C}_) passer til _(f(B*x)_). 
+    </p>
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Her er et billede af funktionen _(f(x)_): 
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter2\Section3\Graphs\PlotTransformationExercise.png'> 
+    <p class="t">
+    Plot følgende:
+    </p>
+    <div style="text-align:center; margin-top:10px;">
+        <ul style="display: inline-block; text-align: left; padding-left:0%; list-style:none;">
+            <li><b> 1</b>: _($0.2*f(3x-5)+1_)</li>
+            <li><b> 2</b>: _($4*f(0.5x+12)-3_)</li>
+        </ul>
+    </div>
+    <p class="t">
+    Dit plot behøver på ingen måde være super godt.
+    </p>
+    <br><br></q-stion>
+    <answer-box t="Answer 1#" tabColour="rgb(171,96,147)">
+    Du kan se processen her:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter2\Section3\Graphs\TransformGraph1.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+    <answer-box t="Answer 2#" tabColour="rgb(175,128,161)">
+    Du kan se processen her:
+    <video class='picB' controls>
+            <source src='../../../Assets/Chapter2\Section3\Graphs\TransformGraph2.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Er der forskel på at udstrække <i>og så</i> flytte en funktion, og at 
+    flytte <i>og så</i> udstrække?
+    <br><br></q-stion>
+    <answer-box>
+    Ja. Første mulighed svarer til:
+    _($A*f(Bx - a)+b_)
+    Og anden mulighed svarer til:
+    _($A*\left(f \left(B*(x-a) \right) + b \right)_)
+    De to er altså ikke lig hinanden. 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Skriv den funktion der svarer til _(f(x)_) med en udstrækning på _(4_) på x-aksen og 
+    _(3_) på y-aksen, og sørg for at 
+    punktet _((3,f(3))_) bliver flyttet til _((-2,5)_). 
+    <br><br></q-stion>
+    <answer-box>
+    Lad os <i>først</i> flytte punktet til _((-2,5)_), og <i>så</i> udstrække funktionen. 
+    Hvis _(y_) skal flyttes fra _(f(3)_) til _(5_), så skal vi plusse med forskellen mellem 
+    de to. Vi siger altså:
+    _($f(x)+\left(5-f(3) \right)_)
+    For at gå fra _(3_) til _(-2_) skal vi _(5_) bagud, så:
+    _($f(x+5)+\left(5-f(3) \right)_)
+    Nu udstrækker vi så _(x_)- og _(y_)-aksen som:
+    _($3*\biggl(f \left(4*(x+5) \right)+\left(5-f(3) \right) \biggr)_)
+    Det her kan forsimples til:
+    _(3f(4x+20)+15-3 f(3)_)
+    Boom! 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Hvad er range og domain på _(2*Arcsin(x/3)_)?
+    <br><br></q-stion>
+    <answer-box>
+    Vi ved at _(Arcsin_) normalt har et range på _([-\pi/2,\pi/2]_) og et domain på _([-1,1]_). 
+    Den er udstrakt på _(x_) med en faktor på _(3_), så domain bliver til 
+    _([-3,3]_). Den er udstrakt på _(y_) med en faktor på _(2_), så range bliver
+    til _([-\pi,\pi]_). Voila! 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Plot de følgende funktioner:
+    <div style="text-align:center; margin-top:10px;">
+        <ul style="display: inline-block; text-align: left; padding-left:0%; list-style:none;">
+            <li><b> 1</b>: _($3*Sin(2x-4)+1_)</li>
+            <li><b> 2</b>: _($5*\sqrt{7-x}_)</li>
+            <li><b> 3</b>: _($-2 Ln(x-1)_)</li>
+            <li><b> 4</b>: _($-e^{-x}*536_)</li>
+            <li><b> 5</b>: _($\left(1+0.3*Sin(x)\right)*0.1x^2_)</li>
+            <li><b> 6</b>: _($\frac{x}{x-3}_)</li>
+        </ul>
+    </div>
+    <br><br></q-stion>
+    <answer-box t="Answer 1#" tabColour="rgb(171,96,147)">
+    Du kan se processen her:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter2\Section3\Graphs\TransformExercise1.mp4' type='video/mp4'>
+    </video>
+    <p class="t">
+    Og et computergenereret billede af grafen her: 
+    </p>
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter2\Section3\Graphs\TransformExercise1.png'> 
+    <br><br></answer-box>
+    <answer-box t="Answer 2#" tabColour="rgb(175,128,161)">
+    Du kan se processen her:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter2\Section3\Graphs\TransformExercise2.mp4' type='video/mp4'>
+    </video>
+    <p class="t">
+    Og et computergenereret billede af grafen her: 
+    </p>
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter2\Section3\Graphs\TransformExercise2.png'> 
+    <br><br></answer-box>
+    <answer-box t="Answer 3#" tabColour="rgb(171,96,147)">
+    Du kan se processen her:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter2\Section3\Graphs\TransformExercise3.mp4' type='video/mp4'>
+    </video>
+    <p class="t">
+    Og et computergenereret billede af grafen her: 
+    </p>
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter2\Section3\Graphs\TransformExercise3.png'> 
+    <br><br></answer-box>
+    <answer-box t="Answer 4#" tabColour="rgb(175,128,161)">
+    Du kan se processen her:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter2\Section3\Graphs\TransformExercise4.mp4' type='video/mp4'>
+    </video>
+    <p class="t">
+    Og et computergenereret billede af grafen her: 
+    </p>
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter2\Section3\Graphs\TransformExercise4.png'> 
+    <br><br></answer-box>
+    <answer-box t="Answer 5#" tabColour="rgb(171,96,147)">
+    Du kan se processen her:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter2\Section3\Graphs\TransformExercise5.mp4' type='video/mp4'>
+    </video>
+    <p class="t">
+    Og et computergenereret billede af grafen her: 
+    </p>
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter2\Section3\Graphs\TransformExercise5.png'> 
+    <br><br></answer-box>
+    <answer-box t="Answer 6#" tabColour="rgb(175,128,161)">
+    Du kan se processen her:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter2\Section3\Graphs\TransformExercise6.mp4' type='video/mp4'>
+    </video>
+    <p class="t">
+    Og et computergenereret billede af grafen her: 
+    </p>
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter2\Section3\Graphs\TransformExercise6.png'> 
+    <br><br></answer-box>
+ 

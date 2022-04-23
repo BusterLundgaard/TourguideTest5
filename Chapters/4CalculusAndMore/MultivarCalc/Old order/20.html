@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+
+
+    <!-- WORK INTEGRALS -->
+
+    DET HELT HER I TOPPEN ER NOGET DER BARE SKAL FJERNES
+    DET HER ER HVAD DU SKREV DA DU SKULLE HAVE HJÆLP PÅ SMASHDK
+
+    <p class="t">
+    Sig at vores vector field er:
+    _($\vec F = \begin{pmatrix} m(x,y) \\ n(x,y) \end{pmatrix}_)
+    Vi ved at der findes et potentiale _(f(x,y)_) så at _(\nabla f = \vec F_), ergo:
+    _($¤x[f(x,y)] = m(x,y) \qquad ¤y[f(x,y)] = n(x,y) \to _)
+    _($f(x,y) = \int m(x,y) \text{ }dx + Q(y) \text{ (1)}  \qquad f(x,y) = \int n(x,y) \text{ }dy + W(x) \text{ (2)}_)
+    Hvor _(Q(y)_) og _(W(x)_) er henholdsvis en hvilken som helst funktion af _(y_) og en 
+    hvilket som helst funktion af _(x_). De vil jo forvinde når der differentieres, på samme måde 
+    som konstanten _(C_) gør i en normal integral. 
+    </p>
+    <p class="t">
+    Vores mål er nu at finde _(Q(y)_). Her omskriver vi følgende ligning:
+    _($¤y[f(x,y)] = n(x,y) \to_)
+    _($¤y \left[\int m(x,y) \text{ }dx + Q(y) \right] = n(x,y) \to_)
+    _($Q'(y) = n(x,y) - ¤y \left[\int m(x,y) \text{ }dx \right] \to_)
+    _($\begin{eqnarray}
+    && Q(y) & = \int \left(n(x,y) - ¤y \left[\int m(x,y) \text{ }dx \right] \right) \text{ }dy \\
+    && & = \int n(x,y) \text{ }dy - \int \left(¤y \left[\int m(x,y) \text{ }dx \right] \right) \text{ }dy \\
+    && & = \int n(x,y) \text{ }dy - \int m(x,y) \text{ }dx
+    \end{eqnarray}_)
+    Gås der nu tilbage til den ligning (1), fås:
+    _($\begin{eqnarray}
+    && f(x,y) & = \int m(x,y) \text{ }dx + Q(y) \\
+    && & = \int m(x,y) \text{ }dx + \int n(x,y) \text{ }dy - \int m(x,y) \text{ }dx \\
+    && & = \int n(x,y) \text{ }dy
+    \end{eqnarray}_)
+    Men det her er vel forkert? Det er især en kontradiktion mod ligning (2) der siger:
+    _($f(x,y) = \int n(x,y) \text{ }dy + W(x)_)
+    Da det ville betyde at _(W(x)_) altid skulle være _(0_). Hvad gør jeg forkert her? 
+    </p>
+
+
+
+    <p class="t">
+    Sig at vi bevæger os ruten _((x,y,z)=\vec r(t)_) fra _(t=a_) til _(t=b_), og at vektor feltet er 
+    _(\vec F(x,y,z)_). I følgende video forklarer jeg hvordan vi finder arbejdet:
+    </p>
+
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter4\MultivarCalc\Vectorfields\WorkIntegralSmall.mp4' type='video/mp4'>
+    </video>
+
+    <p class="t">
+    Så lad os tage et eksempel. Vi bevæger os følgende rute: 
+    </p>
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter4\MultiVarCalc\Vectorfields\WorkIntegral2.png'> 
+    <p class="t">
+    Og vektor feltet er:
+    _($\vec F = \VeC[x-2y,x^2]_)
+    Først beskriver vi vores rute i forhold til et parameter _(t_). Det kan let ses at:
+    _($\VeC[x,y] = \VeC[1,2] + t*\VeC[6-1,4-2] \qquad t \in [0,1]_)
+    Vi skal nu regne:
+    _($\int_{0}^{1} \vec F * \VeC[x'(t),y'(t)] \text{ }dt _)
+    Vores tilfælde er en meget nem lige linje, så vi kan let se at 
+    _(x'(t)_) bare er _(6-1=5_), og _(y'(t)_) bare er _(4-2=2_). 
+    Vi har derfor:
+    _($\begin{eqnarray}
+    && \int_{0}^{1} \VeC[x-2y,x^2] * \VeC[5,2] \text{ }dt & = \\
+    && \int_{0}^{1} \VeC[(1+5t)-2(2+2t),(1+5t)^2] * \VeC[5,2] \text{ }dt & =
+    && \int_{0}^{1} 5*\left((1+5t)-2(2+2t) \right) + 2*(1+5t)^2 \text{ }dt & =
+    && \int_{0}^{1} 50t^2 + 25t - 13 \text{ }dt & =
+    && 50*\frac{1^3}{3} + 25*\frac{1^2}{2} - 13*\frac{1^1}{1} & = 
+    && 16.166
+    \end{eqnarray}_)
+    Så hvis objektet f.eks. havde en masse på _(3kg_), og det startede med en 
+    kinetisk energi på _(20_), så ville du nu have en kinetisk energi på 
+    _(36.166_), og derfor en hastighed på _(\frac{1}{2}*3*v^2 = 36.166 \to_)
+    _(t = 4.91m/s_). Fantastisk! Din tur: 
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Find arbejdet på et objekt der bevæger sig langs
+    _($y=x^2-x_)
+    fra _(x=-2_) til _(x=3_), hvis vektor feltet er:
+    _($\vec F = \VeC[0.5y, 1.5x]_)
+    <br><br></q-stion>
+    <answer-box>
+        
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Find arbejdet på et objekt der bevæger sig i 3D langs
+    _($\VeC[x,y,z]=\VeC[t,t^2,t^3]_)
+    fra _(t=0_) til _(t=1_):
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter4\MultiVarCalc\Vectorfields\Spacecurve1.png'> 
+    Vektor-feltet er:
+    _($\vec F = \VeC[\frac{3 z y}{x}, Ln(y+1), -y]_)
+    <br><br></q-stion>
+    <answer-box>
+    
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Find arbejdet på et objekt der bevæger sig hele vejen rundt om ellipsen 
+    _($\frac{x^2}{3^2} + \frac{y^2}{5^2} = 1_)
+    Hvor at vektor-feltet er:
+    _($\vec F = \VeC[y*x,y^2]_)
+    <br><br></q-stion>
+    <answer-box>
+        
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Find arbejdet rundt omkring (mod uret) en rektangel centreret på _((0,0)_) der 
+    har en længde langs x på _(5_), og en længde langs _(y_) på _(4_), hvor vektor-feltet er:
+    _($\vec F = \VeC[e^y,Sin(x+y)]_)
+    <br><br></q-stion>
+    <answer-box>
+        
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Find arbejdet langs:
+    _($\VeC[x,y,z] = \VeC[2t-3,5+\frac{1}{2}|t-7|,|t-3|^2 - t]_)
+    Hvis vektor-feltet er:
+    _(\vec f = \VeC[2y,56x,3]_)
+    <br><br></q-stion>
+    <answer-box>
+        
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Kuglen _(x^2+y^2+z^2=4^2_) bliver skåret af planet _(2x+3y-6z=16_), hvilke ser ud som:
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter4\MultiVarCalc\Vectorfields\EllipsePlanSkæring.png'> 
+    <p class="t">
+    En masse bevæger sig hele vejen rundt om denne skæring mellem ellipsoiden og planet, og
+    vektor feltet er:
+    _($\vec f = \VeC[2,x,3]_)
+    Find arbejdet. 
+    </p>
+    <br><br></q-stion>
+    <answer-box>
+        
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Sig at både _(x_) og _(y_) er positive, og at paraboloiden _(z=9-x^2-y^3_) skærer 
+    fladen _(z=2xy_). Et objekt rejser langs denne skæring, og vektor feltet er:
+    _($\vec f=\VeC[y+x,x,6]_)
+    Find arbejdet. 
+    <br><br></q-stion>
+    <answer-box>
+        
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Sig at et objekt går langs (mod uret) følgende spiral:
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter4\MultiVarCalc\Vectorfields\Spiral1.png'> 
+    Vektorfeltet er 
+    _($\vec f = \VeC[-y/\sqrt{x^2+y^2},x/\sqrt{x^2+y^2}]_)
+    Find arbejdet. 
+    <br><br></q-stion>
+    <answer-box>
+        
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Følgnede ses et billede af en såkaldt <i>lemniscate</i>:
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter4\MultiVarCalc\Vectorfields\Lemniscate.png'> 
+    <p class="t">
+    Den kan defineres i polære koordinater parametrisk som:
+    _($r=Cos(t), \qquad \theta=Sin(t), \qquad t \in [0, 2\pi]_)
+    Du rejser langs denne lemniscate fra _(t=0_) til _(t=2\pi_). Vektor feltet er:
+    _($\vec f = \VeC[y/x,x/y]_)
+    HVIS DET IKKE VIRKER, SÅ PRØV [-y^2,x^2]
+    Hvad er arbejdet? 
+    <br><br></q-stion>
+    <answer-box>
+        
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Du arbejder nu med en kurve der kan defineres i polære koordinater som:
+    _($r=Sin(t), \qquad \theta=Sin(t), \qquad t \in [0, 2\pi]_)
+    Vektor feltet er:
+    _($\vec f = \VeC[x^2+y^3,-x^7*y^5]_)
+    Find arbejdet. <i>Hint: </i>Det er muligt at lave et trick der gør dette meget nemt.
+    <br><br></q-stion>
+    <answer-box>
+        
+    <br><br></answer-box>
+

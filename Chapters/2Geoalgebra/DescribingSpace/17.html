@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+
+
+    <h3>Prik-produktet og 3D "projektioner"</h3>
+    <p class="t">
+    Da vi undersøgte vektorer i 2D, nævnte jeg kort at prikproduktet havde
+    en O.K geometrisk intuition:
+    </p>
+    <img class='SpicXL' style='width:80%' src='../../../Assets/Chapter2\Section4\Vectore\VectorProjection.png'> 
+    <p class="t">
+    Hvis jeg i dette tilfælde ville vide hvor langt _(\vec{b}_) gik langs _(\vec{a}_),
+    kunne jeg anvende følgende dejlige formel: 
+    _($\frac{\vec{b} \cdot \vec{a}}{|\vec{a}|}_)
+    Så prikker man _(\vec b_) med _(\vec a_) og dividerer med _(\vec a_)'s retning, 
+    får man hvor langt _(\vec b_) går langs _(\vec a_). 
+    Vi siger at man "projekterer" _(\vec{b}_) på _(\vec{a}_). Man kan
+    se med præcis de samme argumenter, der tidligere blev brugt i 2D, at denne regel 
+    også gælder i 3D. Det kan være ret praktisk i flere tilfælde: 
+    </p>
+
+    <q-stion 1="17" 2="1">
+    Se følgende illustration:
+    <img class='Spic' style='width:30%' src='../../../Assets/Chapter2\Section4\Space\Pyramide.png'> 
+    <p class="t">
+    Formlen for volumen af denne pyramide med areal _(A_) og højde _(h_) er:
+    _($\frac{A*h}{3}_)
+    </p>
+    <p class="t">
+    Det vil jeg ikke lige bevise her, da det ikke er specielt interessant.
+    Men det er sandt <sup><a href="https://www.youtube.com/watch?v=k0dCOgMi7IM" title="ELEMENTS Learning. (2016, august 12).'Visual Proof of Volume of Pyramid' [Video]. Youtube. https://www.youtube.com/watch?v=k0dCOgMi7IM" target="_blank">[F]</a></sup>
+    </p>
+    <p class="t">
+    I hvert fald: 
+    </p>
+    <img class='SpicXL' style='width:95%' src='../../../Assets/Chapter2\Section4\Space\Pyramide med punkter.png'> 
+    <p class="t">
+    Find volumen af denne pyramide.
+    </p>
+    <br></q-stion>
+    <answer-box>
+    For at finde volumen skal vi bare bruge arealet og højden. 
+    Arealet er nemt nok, da det er et kvadrat: Sidelængden er
+    _(\sqrt{3.77^2+0.11^2+2.21^2}=_) _(4.37_), så _(4.37^2=19.06m^2_).
+    For at finde højden kunne jeg prøve at se, hvor
+    langt en af vektorerne fra <i>hjørnet</i> til toppen, går langs arealfladens
+    normalvektor: Hvor langt går den vinkelret væk fra arealet? 
+    <p class="t">
+    Normalvektoren er:
+    _($\VeC[3.77,-0.11,2.21] \times \VeC[-1.54,3,2.77] = \VeC[-6.93,-13.84,11.14]_)
+    Så højden kan jeg finde ved at projektere:
+    _($\frac{\VeC[-1.15,-3.08,6.14] \cdot \VeC[-6.93,-13.84,11.14]}{|\VeC[-6.93,-13.84,11.14]|}=6.24_)
+    Volumen er:
+    _($\frac{1}{3}*19.06*6.24= 39.64_)
+    I det her tilfælde kunne man også have brugt en anden, måske/måske-ikke simplere
+    strategi til at finde højden: Lav en vektor fra midtpunktet af arealet til toppunktet, 
+    og find dens længde
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="17" 2="2">
+    Sig at en bold ruller ned af en flade som følgende:
+    <img class='SpicXL' style='width:95%' src='../../../Assets/Chapter2\Section4\Space\BallSlidingDownExercise.png'> 
+    <p class="t">
+    Den starter oppe i det øverste hjørne, har ingen starthastighed, og bliver kun trukket af tyngdekraften med
+    en acceleration direkte nedad på _(z_)-aksen med _(-9.8_). 
+    Hvor lang tid går der, før den falder af den lyserøde flade? 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Pladen kan beskrives ved hjælp af de to vektorer _(\vec a_) og _(\vec b_) på følgende billede:
+    <img class='Spic' style='width:95%' src='../../../Assets/Chapter2\Section4\Space\BallSlidingDownExercise2.png'> 
+    <p class="t">
+    Lad os derfor beskrive boldens bevægelse i forhold til _(\vec a_) og _(\vec b_), 
+    i stedet for _(x_), _(y_), _(z_). Bolden er på en <i>flade</i>, så den har alligevel kun 
+    to "frie" akser. Det er praktisk at vælge lige _(\vec a_) og _(\vec b_), da de er vinkelrette:
+    Boldens bevægelse og acceleration langs _(\vec a_) har ingen indflydelse på 
+    bevægelsen og accelerationen langs _(\vec b_). 
+    </p>
+    <p class="t">
+    Tyngdekraften trækker direkte nedad, men vi vil gerne se, hvor meget den trækker langs henholdsvis
+    _(\vec a_) og _(\vec b_). Derfor projekterer vi. Hvis vi sætter vores koordinatsystem
+    længst fremme i det nederste hjørne af den lilla plade, og sætter _(x_) til længden og _(y_) til bredden, 
+    ser vi let at:
+    _($A=(7,3,5), \qquad \vec{F_t} = \VeC[0,0,-9.8]_)
+    Og at:
+    _($\vec a = \VeC[-7,0,-3], \qquad \vec b = \VeC[0,-3,-2]_)
+    Så projektionen langs _(\vec a_) kan regnes som:
+    _($\frac{\VeC[0,0,-9.8]*\VeC[-7,0,-3]}{\left|\VeC[-7,0,-3] \right|} = \frac{(-9.8)*(-3)}{\sqrt{7^2+3^2}} = 3.86_)
+    Og projektionen langs _(\vec b_) som:
+    _($\frac{\VeC[0,0,-9.8]*\VeC[0,-3,-2]}{\left|\VeC[0,-3,-2] \right|} = 5.43_)
+    Vi normaliserer nu _(\vec a_) og _(\vec b_), så vi kan arbejde med dem som retninger. Vi får:
+    _($\begin{eqnarray}
+    && \frac{1}{\sqrt{7^2+2^2}} \VeC[-7,0,-3] = \VeC[-0.961,0,-0.412] \\ \\  
+    && \frac{1}{\sqrt{3^2+2^2}} \VeC[0,-3,-2] = \VeC[0,-0.832,-0.554]
+    \end{eqnarray}_) 
+    Positionsformlen er _(s=(a/2)t^2 + v_0 t + s_0_), men vores _(v_0=0_), så vi får bare:
+    _($\VeC[x,y,z] = \frac{3.86 \VeC[-0.961,0,-0.412]}{2} t^2 + \frac{5.43 \VeC[0,-0.832,-0.554]}{2} t^2 + \VeC[7,3,5]_)
+    Hvilket kan simplificeres til:
+    _($\begin{eqnarray}
+    && x = 7-1.7741t^2 \\
+    && y = 3-2.2615t^2 \\
+    && z = 5-2.2680t^2
+    \end{eqnarray}_)
+    Vi falder af platformen enten når _(x_) eller _(y_) er lig _(0_):
+    _($\begin{eqnarray}
+    && 0 = 7-1.7741t^2 & \to t=1.9864 \\
+    && 0 = 3-2.2615t^2 & \to t=1.1519
+    \end{eqnarray}_)
+    Det er først _(y_) der er _(0_), og det tager _(1.1519 \text{s}_). Voila! 
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="17" 2="3">
+    Hvad er den korteste afstand mellem de her to linjer:
+    <img class='Spic' style='width:95%' src='../../../Assets/Chapter2\Section4\Space\To linjer korteste afstand0.png'> 
+    <p class="t">
+    Den her opgave er egentlig ikke super lang, men i min mening er den relativ svær:
+    Der er lidt et "trick" man skal lave, der på ingen måde er åbenlyst. Som et
+    hint kan jeg sige, at den måde jeg gør det på involvere at projektere - på en
+    eller anden måde. Det kan godt være, der findes andre, bedre metoder dog. 
+    </p>
+    <br></q-stion>
+    <answer-box t="h" n="1">
+    Der vil være <i>et eller andet sted</i> på begge kurver, hvor afstanden er kortest.
+    Vi kan forestille os, at linjerne engang skar hinanden, men at vi 
+    flyttede en af dem væk. Kald den vektor vi flyttede den med for _(\vec{d}_).
+    <i>Længden</i> af _(\vec{d}_) er den korteste afstand, men
+    ved du noget bestemt om retningen? 
+    <br><br></answer-box>
+    <answer-box t="h" n="2">
+    Når vi tænker over det, så er _(\vec{d}_) <i>vinkelret</i> på begge linjers længder.
+    Hvorfor? 
+    <p class="t">
+    Begge linjers retninger er vinkelrette til _(\vec{d}_), så de bevæger sig aldrig <i>langs</i> _(\vec{d}_). 
+    Afstanden langs _(\vec{d}_) bliver altså aldrig kortere eller mindre. 
+    </p>
+    <br></answer-box>
+    <answer-box>
+    Alright, lad os starte med at tegne situationen op lidt mere abstrakt:
+    <img class='Spic' style='width:60%' src='../../../Assets/Chapter2\Section4\Space\To linjer korteste afstand.png'> 
+    <p class="t">
+    Der vil være <i>et eller andet sted</i> på begge kurver, hvor afstanden er kortest.
+    Vi kan forestille os, at linjerne engang skar hinanden, men at vi flyttede èn af 
+    dem væk. Kald den vektor vi flyttede den med for _(\vec{d}_). 
+    </p>
+    <p class="t">
+    Når vi tænker
+    over det, er _(\vec{d}_) faktisk vinkelret på begge linjers retninger:
+    Hvis det f.eks. var _(l_1_) vi valgte at flytte, ville det ikke hjælpe at flytte
+    _(l_1_) langs dens egen retning _(\vec{r_1}_). Det ville ikke gøre nogen forskel:
+    De ville stadig skære. Det ville heller ikke gøre nogen forskel, hvis vi flyttede
+    _(l_1_) langs den anden linjes retning _(\vec{r_2}_): De ville stadig skære. Vi ville
+    være nødt til, at vælge en retning der hverken gik langs _(\vec{r_1}_) eller
+    _(\vec{r_2}_). Retningen af _(\vec{d}_) er derfor meget specifik, og kan findes
+    med et krydsprodukt _(\vec{r_1} \times \vec{r_2}_)
+    </p>
+    <p class="t">
+    Nu kommer så den kritiske, sværeste og vigtigste observation: Når jeg går langs enten
+    _(\vec{r_1}_) eller _(\vec{r_2}_), er de to linjer aldrig på noget tidspunkt
+    længere væk fra hinanden langs _(\vec{d}_). Lige meget hvilke to steder du vælger på
+    linjerne, vil afstanden langs _(\vec{d}_) altid være identisk. Det giver
+    fuldkommen mening: _(\vec{r_1}_) og _(\vec{r_2}_) er som sagt begge
+    vinkelrette på _(\vec{d}_)!
+    </p>
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter2\Section4\Space\To linjer korteste afstand2.png'> 
+    <p class="t">
+    Konkret: Hvis vi laver en eller anden tilfældig vektor _(\vec{v}_) fra
+    èt sted på den ene linje til èt sted på den anden, vil den vektor altid
+    gå lige meget langs _(\vec{d}_). Vi skal bare beregne hvor meget
+    <i>det</i> så er, hvilket vi kan gøre ved at projektere _(\vec{v}_) på 
+    en vektor i retningen af _(\vec{d}_). Bum! Pænt genialt!
+    </p>
+    <p class="t">
+    For at finde en vektor i retningen af _(\vec{d}_) skulle vi som sagt tage et krydsprodukt:
+    _($\VeC[-2,1,1] \times \VeC[1,3,4] = \VeC[1,9,-7]_)
+    Den tilfældige vektor _(\vec{v}_) kan vi nemt finde, da vi jo 
+    har èt punkt på hver linje:
+    _($\vec{v}=\VeC[3,2,-2]-\VeC[1,1,1]=\VeC[2,1,-3]_)
+    Nu projekterer vi så endeligt:
+    _($\frac{\VeC[1,9,-7] \cdot \VeC[2,1,-3]}{|\VeC[1,9,-7]|}=2.8_)
+    Hot damn!
+    </p>
+    <br></answer-box>
+
+    <p class="t">
+    Alright, det var nok 3D. Videre til noget andet. 
+    </p>
+

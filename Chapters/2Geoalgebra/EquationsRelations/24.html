@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+
+
+    <h2>Ligninger hvis variablerne <i>skal</i> være hele: <br> Diophantine 'time baby.</h2>
+
+    <p class="t">
+    En anden anderledes type af ligning er de såkaldte "diophantine equations". 
+    </p>
+
+    <p class="t">
+    I de ligninger vi har løst indtil videre har de ukendte - x, a, b, y, whatever - 
+    haft ret frie tøjler til at være hvad end de havde lyst til: Positive, negative, kommatal - you name it.
+    Hvad hvis vi f.eks. siger, at de skal være <i>hele</i> tal? Så bliver matematikken
+    pludselig meget anderledes, og langt mere udfordrende. Det område af matematikken, hvor man kun tillader
+    hele tal kaldes "Discrete math", og ligninger, hvor løsningerne skal være hele tal, kaldes
+    for "Diophantine equations" (meget fancy navn!). Lad os kigge lidt på det.  
+    </p>
+
+    <!--  -->
+
+    <q-stion 1="24" 2="1">
+    Løs ligningen 
+    _($35x + 22y = 52_)
+    Løsningerne _(x, y_) <i>skal</i> være hele tal! Det her 
+    er ret tricky, og meget anderledes end noget andet du har gjort.
+    Der er teknisk set faktisk uendelig mange løsninger til denne
+    (hvilket vi kigger på snart), men det er fint, hvis du kun finder _(1_) par _((x, y)_).
+    <br><br></q-stion>
+    <answer-box>
+    Det er nok en god og logisk ide, hvis vi starter med at isolere
+    èn af variablerne. Vælger vi _(y_), får vi:
+    _($y=\frac{52-35x}{22}_)
+    For hver _(x_) værdi vi vælger, får vi nu et par _((x,y)_), der løser ligningen.
+    Men kun få af de par, vil faktisk være hele tal: Det er nemt at vælge et helt tal til _(x_),
+    men _(y_) afhænger af _(x_), og vi kan ikke være sikre på, at det også bliver helt. 
+    Problemet kan omformuleres: Vælg den rigtige værdi til _(x_), hvor _(y_) er
+    et helt tal!
+    <p class="t">
+    Brøken _((52-35x)/22_) kan umiddelbart ikke simplificeres yderligere. 
+    Vi <i>kunne</i> forsøge at gætte os frem på forskellige _(x_),
+    men vi har ingen ide om, hvor lang tid det vil tage. 
+    Jeg har én ide til en mere systematisk tilgang:
+    _($\frac{52-35x}{22}=\frac{44+8-22x-13x}{22}=\frac{44-22x}{22}+\frac{8-13x}{22}_)
+    Nu har vi:
+    _($y=2-x+\frac{8-13x}{22}_)
+    _(2-x_) er fuldkommen ligegyldigt: Det <i>ved</i> vi er et helt tal!
+    Selve brøken vi er i tvivl om er nu blevet simplere. Den skal 
+    være lig et eller andet helt tal _(k_), så:
+    _($k=\frac{8-13x}{22}_)
+    Intet nyt der, men vi kan nu omskrive:
+    _($\to 22k=8-13x \to x = \frac{8-22k}{13}_)
+    Det her er genialt. Vi har gjort nævneren mindre, og omformuleret
+    spørgsmålet: Vælg den _(k_), hvor _(x_) er et helt tal.
+    Vi kan blive ved med at forsimple brøken, bytte rundt på tæller og nævner
+    ved at skifte til et nyt variabel, forsimple tælleren igen, skifte, osv. 
+    Gradvist bliver både tælleren og nævneren simplere, indtil vi står tilbage
+    med en helt triviel brøk! 
+    _($x=\frac{13-5-26k+4k}{13}=1-2k+\frac{4k-5}{13}_)
+    Nu skal _((4k-5)/13_) være et helt tal _(k_2_), så:
+    _($k_2=\frac{4k-5}{13} \to k=\frac{13k_2+5}{4}_)
+    Og vi gør det samme igen:
+    _($k=\frac{12k_2+k_2+4+1}{4}=3k_2+1+\frac{k_2+1}{4}_)
+    Boom! Nu er det let nok til at vælge _(k_2=3_), hvor
+    _((k_2+1)/4_) bliver til _(4/4=1_):
+    _($k=3*(3)+1+\frac{3+1}{4}=11_)
+    Herfra kan vi arbejde os tilbage: 
+    _($\begin{align}
+    x & =\frac{8-22*11}{13}=-18 \\ \\
+    y & =\frac{52-35*(-18)}{22}=31
+    \end{align}_)
+    ... og voila! _(x=-18_), _(y=31_)! 
+    Det er lidt noget "Inception"-agtigt hurlumhej, at vi går
+    ned gennem så mange lag, men det er virkelig cool 
+    at det hele bare virker til sidst!
+    </p>
+    <p class="t">
+    Det du lige løste her, er hvad man kalder en <i>lineær</i>
+    Diophantine ligning. Generelt bliver "lineær" brugt, hvis
+    potensen af noget kun er _(1_). 
+    </p>
+    <p class="t">
+    Processen vi gennemgik her illustrerer ret fint, hvordan man generelt
+    løser lineære Diophantine ligninger. 
+    </p>
+    <br></answer-box>
+
+    <p class="t">
+    I sidste opgave fandt vi èn enkelt løsning på ligningen _(35x + 22y=52_), 
+    men de fleste lineære Diophantine ligninger har uendelig mange løsninger. 
+    Lad os illustrere dét med et lidt simplere eksempel:
+    _($14x+17y=13_)
+    Dette kan løses som:
+    _($y=\frac{13-14x}{17}=\frac{17-4-17x+3x}{17}=1-x+\frac{3x-4}{17}_)
+    ... og 
+    _($\begin{eqnarray}
+    && k_1=\frac{3x-4}{17} \to \\ \\
+    && x=\frac{17k_1+4}{3}=\frac{18k_1-k_1+3+1}{3}=6k_1-1+\frac{1-k_1}{3}
+    \end{eqnarray}_)
+    _(k_1=-4_) <i>ville</i> være en løsning, da _((1-4)/3=-3/3=-1_), men det ville kun være
+    én løsning. Der er uendelig mange løsninger! 
+    Hvis vi siger _(k_1=-2 - 3k_2_), får vi:
+    _($\frac{1-(-2 - 3k_2)}{3}=\frac{3+3k_2}{3}=1+k_2_)
+    Så _(k_1=-2 - 3k_2_) er den <i>generelle</i> løsning.
+    Herfra kan vi arbejde os tilbage igen: 
+    _($x=\frac{17*(-2 - 3k_2) + 4}{3} = -10 -17k_2_)
+    _($y=\frac{13-14*(-10-17k_2)}{17}=9+14k_2_)
+    Endeligt:
+    _($(x=-17k_2 - 10, \, y=14k_2 + 9)_)
+    </p>
+    <br>
+
+    <q-stion 1="24" 2="2">
+    Find den løsning til
+    _($95x+28y=30_)
+    .. hvor _(x_) er tættest på _(0_). 
+    <br><br></q-stion>
+    <answer-box>
+    Strategien er at beskrive den generelle løsning, og til sidst <i>vælge</i>
+    det _(k_) hvor _(x_) er tættest på _(0_). 
+    <p class="t">
+    _(y_) har den laveste koefficient, så jeg tænker, vi vælger at isolere den frem for _(x_):
+    _($\begin{eqnarray}
+    && y = \frac{30-95x}{28} = \frac{28+2-84x - 11x}{28} = 1 - 3x + \frac{2-11x}{28} \\ \\
+    && k_1 = \frac{2-11x}{28} \to x = \frac{2-28k_1}{11} \\ \\
+    && x=\frac{2-22k_1 - 6k_1}{11} = -2k_1 + \frac{2-6k_1}{11}  \\ \\
+    && k_2 = \frac{2-6k_1}{11} \to k_1 = \frac{2-11k_2}{6} \\ \\
+    && k_1 = \frac{2-12k_2+k_1}{6} = -2k_2 + \frac{2+k_2}{6} 
+    \end{eqnarray}_)
+    Vi kan se, at den generelle løsning her er _(k_2=4+6k_3_), eftersom:
+    _($\frac{2+4+6k_3}{6} = \frac{6+6k_3}{6}=1+k_3_)
+    Vi går nu op gennem lagene igen:
+    _($\begin{eqnarray}
+    && k_1 = \frac{2-11*(4+6k_3)}{6} = -7 - 11k_3 \\ \\
+    && x = \frac{2-28*(-7-11k_3)}{11} = 18+28k_3 \\ \\
+    && y = \frac{30-95*(18+28k_3)}{28} = -60 - 95k_3
+    \end{eqnarray}_)
+    Voila! Den generelle løsning er:
+    _($(18+28k_3, -60 - 95k_3)_)
+    _(k_3=-1_) er nok det tættest _(x_) kommer på _(0_) med _(-10_).
+    Her er _(y_) lig _(-60-95*(-1)=35_), så:
+    _($(-10, 35)_)
+    Bum!
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="24" 2="3">
+    Beskriv den generelle løsning til: 
+    _($2.5x+\frac{5}{3}y=20_)
+    <br></q-stion>
+    <answer-box>
+    _(2.5=5/2_), så vi kan bare gange begge sider af ligningen med _(2*3=6_):
+    _($\begin{align}
+    6*2.5x+6*\frac{5}{3}y & =6*20 \to \\ \\
+    15x + 10y &= 120
+    \end{align}_)
+    Herfra kan den løses normalt:
+    _($y=\frac{120-15x}{10}=\frac{12*10-10x-5x}{10}=12-x-\frac{5x}{10}_)
+    Den her er let nok. _(x_) skal bare være _(2k_) for at brøken går op, 
+    så:
+    _($y=\frac{120-15*2k}{10}=12-3k_)
+    Det generelle sæt af løsninger er derfor:
+    _($(x=2k,y=12-3k)_)
+    Voila!
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="24" 2="4">
+    Bevis at Diophantine ligningen
+    _($35x+42y=120_)
+    ... <i>ikke</i> har nogen løsninger. 
+    <br><br></q-stion>
+    <answer-box>
+    Der er ingen løsninger! Det kan vi se, når vi går i gang med processen som normalt:
+    _($\begin{eqnarray}
+    && x=\frac{-42y+120}{35} = \frac{105+15-35y-7y}{35} = 3-y+\frac{15-7y}{35} \\ \\
+    && k_1=\frac{15-7y}{35} \to y=\frac{15-35k}{7}=\frac{14+1-35k}{7} 
+    \end{eqnarray}_)
+    Det er så lige tilfældet, at _(35=5*7_), så:
+    _($\frac{14+1-35k}{7}=2-5k+\frac{1}{7}_)
+    Det her bliver aldrig helt, fordi der er intet det hele
+    tal _(2-5k_) kan gøre ved det ikke-hele tal _(\frac{1}{7}_)!
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="24" 2="5" customWidth="560">
+    En typisk computerskærm er _(1080_) pixels bred og _(720_) pixels høj. 
+    På nogle systemer vil der spille en repetitiv  
+    animation hvis man lader computeren stå for længe. Det heder en "screensaver".
+    I èn er der et _(150x150px_) DVD-logo der bevæger sig skråt opad til højre med _(45_) grader. 
+    Den starter i midten af skærmen og 
+    går 10px pr. sekund, <i>både</i> op/ned på y-aksen <i>og</i> venstre/højre på x-aksen.
+    Den har f.eks. bevæget sig _(20px_) opad og fremad efter _(2_) sekunder.
+    Hver gang den rammer en af kanterne skifter den retning: 
+    <img class='SpicXL' style='width:80%' src='../../../Assets/Chapter2\Section3\ModOgDianphintine\DVD Case 0.png'> 
+    <p class="t">
+    Hvornår rammer screensaveren først hjørnet? Den bevæger sig i diskrete, individuelle "pixels", så 
+    vi kan godt sige, at der findes tidspunkter hvor den rører to vægge på en gang (og derfor et "hjørne"). 
+    </p>
+    <p class="t">
+    Den her opgave er ret på den tricky (og lange!) side! 
+    </p>
+    <br></q-stion>
+    <answer-box t="h" customWidth="560">
+    Lad os <i>ikke</i> spørge
+    "Hvornår er positionen lig et eller andet", 
+    men i stedet spørge: "hvornår kolliderer både x og y 
+    med vægge samtidig!". Lad os prøve at beskrive <i>tiden</i> i forhold til <i>mængden af kollisioner</i> 
+    for henholdsvis _(x_) og _(y_), og se, hvornår de er lig hinanden. 
+    <br><br></answer-box>
+    <answer-box customWidth="560">
+    Vi har følgende situation: 
+    <img class='SpicXL' style='width:80%' src='../../../Assets/Chapter2\Section3\ModOgDianphintine\DVD Case 1.png'> 
+    <p class="t">Skærmen er _(1080px_) bred og _(720px_) høj. 
+    DVD-logoet starter i midten, hvilket svarer til 
+    _($(1080/2, 720/2) = (540, 360)_)
+    Hjørnet af DVD-logoet nederst til venstre,
+    som jeg vælger fordi, det svarer til _((0,0)_) i et koordinatsystem, 
+    er ved _(x=540-150/2=465_) og _(y=360-150/2=285_).
+    </p>
+    <p class="t">
+    DVD-Logoet bevæger sig skråt opad: lige meget op som frem. Det kolliderer ind i sider og skifter retning.
+    En kollision med toppen skifter kurs på logoet til nedad, bunden skifter kurs til opad, højre side til venstre
+    og venstre side til højre. 
+    </p>
+    <p class="t">
+    Det er svært at tænke over logoet som et massiv objekt med areal. 
+    Lad os gøre noget smartere i stedet:
+    </p>
+    <img class='SpicXL' style='width:80%' src='../../../Assets/Chapter2\Section3\ModOgDianphintine\DVD Case 2.png'>
+    <p class="t">
+    Når hjørnet af logoet har en x-værdi større end _(1080-150=930_), vil den ramme ind i den højre væg, og 
+    når y-værdien er højere end _(720-170=570_), rammer den toppen. Nu kan vi behandle
+    logoet som èt enkelt punkt! Det er meget simplere!
+    </p> 
+    <img class='SpicXL' style='width:95%' src='../../../Assets/Chapter2\Section3\ModOgDianphintine\DVD Case 3.png'>
+    <p class="t">
+    Det her punkt rammer eventuelt ind i enten _((0,0)_), _((930,0)_), _((0,570)_) eller _((930,570)_). Vi
+    <i>kunne</i> prøve at beskrive dets position _((x,y)_) i forhold til en tidsvariable _(t_), der var lig
+    mængden af sekunder. Så <i>kunne</i> vi se, hvornår _((x,y)=(0,0)_) eller _((930, 0)_) osv. 
+    Det er en logisk ide, men _((x(t), y(t))_) er upraktisk at beskrive.
+    Det vil kræve noget modulos makværk vi helst gerne vil undgå,
+    lad os gøre noget langt mere elegant i stedet:
+    </p>
+    <p class="t">
+    Vi er enige om, at _(y_) ikke har nogen indflydelse på _(x_) og vice versa. 
+    </p>
+    <p class="t">
+    Logoet bevæger sig _(10px_) fremad hvert. sekund. 
+    Efter _((930-465)/10=_) _(46.5_) sekunder rammer det
+    højre væg, og skifter retning. Der rejser så _(930/10=93_) sekunder, før det kolliderer
+    med venstre væg og skifter retning igen. Derefter _(93_) sekunder til højre, _(93_) sekunder
+    til venstre osv. 
+    </p>     
+    <p class="t">
+    Ved _(y_) sker meget det samme: Toppen bliver ramt efter _((570-285)/10=_) _(28.5_) sekunder,
+    og derefter går der _(570/10=57_) sekunder til bunden, så toppen osv. 
+    </p>
+    <p class="t">
+    Lad os ikke spørge hvornår positionen er lig en bestemt værdi, men i stedet
+    hvornår _(x_) og _(y_) kolliderer med to vægge samtidig. 
+    Det er muligt hvis vi beskriver <i>tiden</i> i forhold til 
+    <i>mængden af kollisioner</i> 
+    for henholdsvis _(x_) og _(y_). Derefter kan vi tjekke hvornår:
+    _($t(\text{antal kollisioner på x}) = t(\text{antal kollisioner på y})_)
+    Kald antallet af gange logoet har kollideret med en væg på _(x_) for _(n_) og på 
+    _(y_) for _(m_). Nu ved vi at:
+    _($\begin{eqnarray}
+    && t(n) = 93n + 46.5 \\
+    && t(m) = 57m + 28.5
+    \end{eqnarray}_)
+    Så vi skal vælge to hele tal _((n, m)_) hvor:
+    _($93n + 46.5 = 57m + 28.5_)
+    Det er "bare" en lineær Diophantine ligning! 
+    _($\begin{eqnarray}
+    && \to m=\frac{93n+18}{57}=\frac{114n - 21n + 18}{57}=2n + \frac{18-21}{57} \\ \\
+    && k_1=\frac{18-21}{57} \to n=\frac{18-57 k_1}{21} \\ \\
+    && n=\frac{21-3-63k_1+6k_1}{21} = 1 - 3k_1 + \frac{6 k_1 - 3}{21} = 1-3k_1 + \frac{2k_1-1}{7} \\ \\
+    && k_2 = \frac{2k_1-1}{7} \to k_1 = \frac{7k_2+1}{2} \\ \\
+    && k_1 = \frac{6k_2+k_2+1}{2} = 3k_2 + \frac{k_2+1}{2} 
+    \end{eqnarray}_)
+    Man kan let se, at den generelle løsning på dette er _(k_2=1+2k_3_). 
+    Vi går nu op gennem lagene for at finde _(n_):
+    _($\begin{eqnarray}
+    && k_1=\frac{7*(1+2k_3)+1}{2} = 4+7 k_3
+    && n = \frac{18-57*(4+7k_3)}{21} = -10-19 k_3
+    \end{eqnarray}_)
+    Vi skal vælge den mindste _(k_3_) hvor _(n_) stadig er positiv (vi antager jo at tiden går fremad). 
+    Det kan man let se er _(k_3=-1_), hvilket giver _(-10-19*(-1)=9_). 
+    Hvis _(n=9_) er der gået:
+    _($46.5+93*9=883.5 \text{ sekunder}_)
+    And boom-bada-bam! Kæmpe omega-lang opgave, i know!
+    </p>
+    <br></answer-box>
+
+
+    <q-stion 1="2" 2="1" 3="5">
+    Find alle løsninger til: 
+    _($3x+4y-5z=23_)
+    Nu har vi 3 variabler! Bare roligt, det er ikke særlig svært overhovedet. 
+    <br><br></q-stion>
+    <answer-box>
+    Ved _(2_) variabler har vi enten haft ligninger med uendelig mange eller 
+    ingen løsninger overhovedet. 
+    Vi har stort set altid beskrevet løsningen i forhold til
+    _(1_) "frit variabel". 
+    Nu har én ligning med _(3_) variabler, og vi får derfor nok <i>to</i> 
+    "frie variabler" til løsningen. 
+    <p class="t">
+    Lad os se om vi kan gøre lidt det samme som andre gange. Vi isolerer
+    _(x_), da den har den laveste koefficient på kun _(3_):
+    _($x=\frac{23+5z-4y}{3}_)
+    Vi gør lidt det samme som vi plejer, bare med 
+    en ekstra variabel _(z_):
+    _($x=\frac{21+2+3z+2z-3y-y}{3}=7+z-y+\frac{2+2z-y}{3}_)
+    Brøken skal være et helt tal, så:
+    _($k=\frac{2+2z-y}{3}_)
+    Nu kan jeg vælge enten at isolere _(y_) eller _(z_). 
+    Jeg vælger _(y_), da den har en koefficient på kun _(1_):
+    _($y=2+2z-3k_)
+    Voila! _(y_) er et helt tal nu. Vi kan se,
+    at både _(z_) og _(k_) kan være hvad end de har lyst til.
+    _($x=\frac{23+5z-4y}{3}=\frac{23+5z-4*(2+2z-3k)}{3}=5-z+4k_)
+    Så alt i alt:
+    _($z=\text{frit}, \qquad y=2+2z-3k, \qquad x=5-z+4k_)
+    Bum!
+    </p>
+    <br></answer-box>
+

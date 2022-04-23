@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+
+
+    <h2>Geogebra, data og <i>spreadsheets</i></h2>
+    <p class="t">
+    Èn af Geogebras andre funktioner der også kan være praktisk, når man laver
+    beregninger er <i>spreadsheets</i>. Det fungerer meget ligesom Excel:
+    </p>
+
+    <p class="cent">
+        <a href="https://youtu.be/359k0oGZz_0">Link til Youtube video</a>
+    </p>
+
+    <p class="t">
+    Og nu til en lidt mærkelig ting: Selvom spreadsheets teknisk set "<i>virker</i>" i Geogebra 6 
+    (som vi jo lige så!),
+    virker det <b>meget dårligt</b>. 
+    </p>
+    <p class="t">
+    Bassicly: Der er flere versioner af Geogebra. Geogebra
+    5 og 6 er de to nyeste, og de er ret forskellige. Geogebra 5 blev lavet
+    fra bunden af til <i>computere</i>. Geogebra 6 blev lavet fra bunden af til <i>internettet</i>.
+    Geogebra 6 kører <i>teknisk set</i> fint på din computer uden internettet,
+    men det er stadig <i>opbygget</i> til at køre på internettet. Det gør
+    det markant værre end Geogebra 5 på to punkter:
+    </p>
+    <p class="t">
+    <b> A</b>: Det er <i>meget</i> langsommere end Geogebra 5. Selv hvis du har en 
+    god PC eller Mac, vil Geogebra 6 hurtigt lagge. <i>Især</i> når
+    du bruger spreadsheets. Geogebra 6 er så langsomt, at der endda er begrænsninger
+    på dine dokumenter. F.eks. må dit spreadsheet-dokument
+    ikke være bredere eller højere end 350 celler, hvilket i mange tilfælde ikke er nok
+    når man har indsamlet meget data. 
+    </p>
+    <p class="t">
+    <b> B</b>: Fejl. Det er svært at pege på noget specifikt, men Geogebra 6 er <i>proppet</i>
+    med fejl sammenlignet med 5'eren. Programmet gør en masse små ting, det ikke
+    er meningen, det skal gøre. Hele tiden. Konstant. Det er en utrolig frustrerende oplevelse at bruge. 
+    Det er fordi, at det internet-fokuserede programmeringssprog Geogebra 6 er programmet i
+    ikke er oplagt eller designet til store programmer. 
+    </p>
+    <p class="t">
+    Jeg valgte Geogebra 6 i de andre opgaver, primært grundet dets CAS-funktioner. 
+    Sig at vi skal skrive et kompliceret udtryk i Geogebra som:
+    _($Arccos \left( \left(\frac{0.7-0.3}{Log_{13}(15)} \right)^{Sin(20^9)} \right) _)
+    Du har allerede set hvordan, du skriver det her i Geogebra 6.  
+    Det er faktisk
+    meget intuitivt og nemt, da Geogebra 6 formaterer matematikken for dig, mens du 
+    skriver. Det gør Geogebra 5 desværre <i>ikke</i>: Man er nødt til at bruge parenteser. 
+    Samme komplicerede stykke bliver skrevet som: 
+    _($\text{Arccos(((0.7-0.3)/Log(13,15))^(Sin(20^9)) )}_)
+    Jeg vil gerne så vidt som muligt sørge for, at alle kan bruge denne bog,
+    uanset hvor stærke de er med computere og teknik. Alt det her med 
+    parenteser kan virke ret skræmmende og svært, og Geogebra 6 er en god del mere
+    brugervenligt grundet denne ène ting. Så:  
+    </p>
+    <p class="t">
+    Hvis du ikke har noget imod at bruge mange parenteser, og hvis du skal
+    bruge spreadsheets: Brug Geogebra 5 i stedet for 6. Det er meget bedre.
+    <i>Meget</i> bedre. 
+    </p>
+    <p class="t">
+    Du kan downloade Geogebra 5 <a href="https://www.geogebra.org/download">her</a>. 
+    Tryk på "Geogebra Classic 5" og kør filen der bliver downloadet. For at gå ind på 
+    spreadsheets skal du trykke på Vis/View og så "Regneark". 
+    </p>
+    <p class="t">
+    Anyways, lad os endelig lave nogle opgaver (med Geogebra 5, fordi vi arbejder med spreadsheets)!
+    </p>
+
+    <!--  -->
+
+    <q-stion 1="5" 2="1">
+    I følgende Geogebra-fil har jeg indsat nogle tal lidt hist og her:
+    <p class="cent">
+        <a href="../../../Assets/Chapter2\Geogebra\CAS\Spreadsheets Opgave 1.ggb" download>
+            Download!
+        </a>
+    </p>
+    <p class="t">
+    _(\underline{\textbf{A}}_): <br>
+     Hvad er tallenes sum og gennemsnit? 
+    </p>
+    <p class="t">
+    _(\underline{\textbf{B}}_): <br>
+     Hvad er forskellen mellem det største og mindste tal? 
+    </p>
+    <p class="t">
+    _(\underline{\textbf{C}}_): <br>
+     Hvad er det højeste tal, hvis du tager _(Tan_) af dem alle?
+    </p>
+    <br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    Du kan se mit svar her:
+    <video class='SpicB' style="width:95%;" controls>
+        <source src='../../../Assets/Chapter2\Geogebra\CAS\SumKommandoSvar1.mp4' type='video/mp4'>
+    </video>
+    <p class="t">
+    Hvis du skriver _(\text{Mean}(A2:J19)_) får du gennemsnittet på _(5.5_). 
+    </p>
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Vi ved, at området er _(\text{A2:J19}_), så i en celle skriver vi:
+    _($\text{Max(A2:J19)} - \text{Min(A2:J19)}_)
+    Det giver _(30_). 
+    <br><br></answer-box>
+    <answer-box t="Answer_(\underline{\textbf{C}}_)#" tabColour="rgb(171,96,147)">
+    Du kan se mit svar her:
+    <video class='SpicB' style="width:95%;" controls>
+        <source src='../../../Assets/Chapter2\Geogebra\CAS\SumKommandoSvar2.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="5" 2="2">
+    I matematik har vi en ret kendt række af tal kaldt "Fibonacci serien". De to første
+    elementer i rækken er _(0_) og _(1_). Det næste element er:
+    _(0+1=1_)
+    Det næste element er:
+    _(1+1=2_)
+    Og det næste igen er:
+    _($1+2=3_)
+    Og så:
+    _($2+3=5_)
+    Og:
+    _($3+5=8_)
+    Vi bliver ved:
+    _($5+8=13_)
+    Indtil videre ser serien altså ud som:
+    _($\begin{eqnarray}
+    && 0 & = 0 \\
+    && 1 & = 1\\
+    && 0+1 & = 2 \\
+    && 1+2 & = 3 \\
+    && 2+3 & = 5 \\
+    && 3 + 5 & = 8 \\
+    && 5 + 8 & = 13
+    \end{eqnarray}_)
+    Så idéen er, at man konstant plusser de to tidligere elementer i serien for at få et nyt.
+    <p class="t">
+    Find de første 100 Fibonacci tal. 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Du kan se mit svar i følgende video:
+    <video class='SpicB' style="width:95%;" controls>
+        <source src='../../../Assets/Chapter2\Geogebra\CAS\FibonacciSvar.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="5" 2="3">
+    På følgende dokument ser man forskellige fiktive virksomheders indkomst i 
+    _(2019_), opdelt i fire kvartdele (hvilke man tit plejer at gøre):
+    <p class="cent">
+        <a href="../../../Assets/Chapter2\Geogebra\CAS\Spreadsheets Opgave 1.ggb" download>
+            Download!
+        </a>
+    </p>
+    <p class="t">
+    Skemaet beskriver også hver firmas <i>forventede</i> kvartårlige indkomst: Hvor meget
+    forventede de at tjene hvert kvarte år? (vi arbejder med firmaer, der tjener
+    ca. lige meget hver årstid)
+    </p>
+    <p class="t">
+    Udfyld i resten af skemaet hvor akkurat hvert firmas prognose var ved hvert kvarte år. Vurder intuitivt,
+    hvilket firma bedst forudså deres indkomst.  
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Du kan se mit svar her:
+    <video class='SpicB' style="width:95%;" controls>
+        <source src='../../../Assets/Chapter2\Geogebra\CAS\StengaardHansenChamp.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="5" 2="4">
+    Regn følgende:
+    _($\begin{eqnarray}
+    && 1 \, + \\
+    && 1 + 2 \, + \\
+    && 1 + 2 + 3 \, + \\
+    && 1 + 2 + 3 + 4  \, + \\
+    && \vdots \\
+    && 1 + 2 + 3 + 4 + \, \dots \, 116
+    \end{eqnarray}_)
+    <br></q-stion>
+    <answer-box>
+    Du kan se mit svar i følgende video:
+    <video class='SpicB' style="width:75%;" controls>
+        <source src='../../../Assets/Chapter2\Geogebra\CAS\SumOfSumsSvar.mp4' type='video/mp4'>
+    </video>
+    <p class="t">
+    Det skal siges at man ikke <i>behøver</i> spreadsheets til en sådanne "sum af summe". 
+    Man kunne også
+    have regnet det i CAS ved hjælp af _(\text{Sum}_)-kommandoen. Her skal man regne, hvad der svarer til:
+    _($\text{Sum}(1+2+3 \, + \, \dots i, i, 1, 116)_)
+    Men _(1+2+3 \, + \, \dots i_) kan i sig selv beskrives som:
+    _($\text{Sum}(j, j, 1, i)_)
+    Det virker måske lidt mærkeligt, men "funktionen" vi plusser ved _(1+2+3+ \dots_) er jo egentlig
+    bare èt enkelt tal _(j_). Det er derfor vi først skriver _(j_). Vores variabel er også _(j_), så det
+    skriver vi efter kommaet. Vi plusser fra _(j=1_) til _(j=i_), så det forklarer de to næste kommaer. 
+    </p>
+    <p class="t">
+    Alt i alt får vi:
+    _($\text{Sum}(\text{Sum}(j, j, 1, i), i, 1, 116)_)
+    Hvilket giver _(266916_), præcis ligesom inde på spreadsheets.  
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="5" 2="5">
+    Udfyld følgende gange-tabel i Geogebra: 
+    <div style="width:100%; margin-top:15px; padding-left:48px;">
+        <table style="border-collapse: collapse; border-spacing: 10px; background-color: rgb(209,233,230);">
+        <tr>
+            <th></th>
+            <td> </td>
+            <td> <b> 13 </b> </td>
+            <td> <b> 15 </b> </td>
+            <td> <b> 4.6 </b> </td>
+            <td> <b> 9 </b> </td>
+            <td> <b> 8 </b> </td>
+            <td> <b> 12.5 </b> </td>
+        </tr>
+        <tr style="height:2px;">
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td>  </td>
+            <td> </td>
+        </tr>
+        <tr>
+            <td style="width: 42px;"> <b> 6 </b></td>
+            <td > </td>
+            <td style="width: 42px;"> _(13*6_) </td>
+            <td style="width: 42px;"> _(15*6_) </td>
+            <td style="width: 42px;"> _(\dots_)  </td>
+            <td style="width: 42px;"></td>
+            <td style="width: 42px;">  </td>
+            <td style="width: 42px;"> </td>
+        </tr>
+        <tr>
+            <td> <b> 6.6 </b></td>
+            <td> </td>
+            <td> _(13*6.6_) </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td>  </td>
+            <td> </td>
+        </tr>
+        <tr>
+            <td> <b> 7 </b> </td>
+            <td> </td>
+            <td> _(\vdots_) </td>
+            <td>  </td>
+            <td> </td>
+            <td>  </td>
+            <td>  </td>
+            <td> </td>
+        </tr>
+        <tr>
+            <td> <b> 20 </b> </td>
+            <td> </td>
+            <td>  </td>
+            <td> </td>
+            <td>  </td>
+            <td>  </td>
+            <td>  </td>
+            <td> </td>
+        </tr>
+        <tr>
+            <td> <b> 18 </b> </td>
+            <td> </td>
+            <td> </td>
+            <td>  </td>
+            <td>  </td>
+            <td>  </td>
+            <td>  </td>
+            <td> </td>
+        </tr>
+        </table>
+    </div>
+    <br>
+    Tabellen er indsat i en Geogebra fil her:
+    <p class="cent">
+        <a href="../../../Assets/Chapter2\Geogebra\CAS\Spreadsheets Opgave 3.ggb" download>
+            Download!
+        </a>
+    </p>
+    <br><br></q-stion>
+    <answer-box>
+    Du kan se mit svar her:
+    <video class='SpicB' style="width:80%;" controls>
+        <source src='../../../Assets/Chapter2\Geogebra\CAS\ProductTableSvar.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="5" 2="6">
+    Regn følgende:
+    _($\begin{eqnarray}
+    && 2 \, * \\
+    && Sin(2) \, *   \\
+    && Sin(Sin(2)) \, *  \\
+    && Sin(Sin(Sin(2))) \, *  \\
+    && Sin(Sin(Sin(Sin(2)))) \, *  \\
+    && \dots \text{ } 11 \text{ gange} \\
+    \end{eqnarray}_) 
+    <br></q-stion>
+    <answer-box>
+    Du kan se mit svar her:
+    <video class='SpicB' style="width:95%;" controls>
+        <source src='../../../Assets/Chapter2\Geogebra\CAS\SinOfSinesSvar.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="5" 2="7">
+    På følgende Geogebra-dokument er der indsat en kolonne med tal i:
+    <p class="cent">
+        <a href="../../../Assets/Chapter2\Geogebra\CAS\Spreadsheets Opgave 4.ggb" download>
+            Download!
+        </a>
+    </p>
+    <p class="t">
+    Den ser ca. ud som: 
+    </p>
+    <img class='Spic' style='width:5%' src='../../../Assets/Chapter2\Geogebra\CAS\OpdelSkema1.png'> 
+    <p class="t">
+    Du kan opdele kolonnen i to ved en hvilken som helst række. F.eks: 
+    </p>
+    <img class='Spic' style='width:9.5%' src='../../../Assets/Chapter2\Geogebra\CAS\OpdelSkema2.png'> 
+    <p class="t">
+    Vælg den række, hvor summen af tal <i>under</i> er tættest på summen af tal <i>over</i>. 
+    Med andre ord det "split", hvor de to 
+    kolonner minder mest om hinanden i sum. 
+    </p>
+    <p class="cent">*</p>
+    <p class="t">
+    Det er på ingen måde essentielt for at løse opgaven, men hvis du får lyst til at
+    tage den absolutte værdi _(|x|_) i Geogebra, kan du enten bruge kommandoen _(\text{abs}()_),
+    eller taste symbolet "_(|_)". For at lave dette mærkelige symbol, skal du på windows holde
+    ALT+GR inde og trykke på en knap, der ofte er til venstre for backspace og over <b>^</b>-knappen. På
+    Mac er det vist shift du skal holde inde. 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Du kan se mit svar her:
+    <video class='SpicB' style="width:95%;" controls>
+        <source src='../../../Assets/Chapter2\Geogebra\CAS\SplitTheSkemaSvar.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+
+

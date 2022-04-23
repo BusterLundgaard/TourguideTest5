@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+
+    <h3>Bevis af second partial derivative test</h3>
+    <p class="t">
+    Lad os nu bevise second partial derivative test. 
+    Først får vi brug for at forstå hvad <i>præcis</i> vi mener med "lokalt minimum". 
+    Lad os definere det:
+    </p>
+
+    <div class="Definition">
+    <b> Definition: Lokalt minimum og maksimum (2D).</b> <br>
+    Funktionen _(f(x)_) siges at have et lokalt minimum ved _(x=a_), hvis der findes et tal _(R_) hvor:
+    _($|x-a| \lt R \implies f(a) \lt f(x)_)
+    Den har et lokalt maksimum hvis i stedet:
+    _($|x-a| \lt R \implies f(a) \gt f(x)_)
+    </div>
+
+    <q-stion 1="9" 2="1" bigTop="true">
+    _(x=\pi/2_) er et lokalt maksimum på _(Sin(x)_). Hvad er den størst mulige _(R_)? 
+    <br><br></q-stion>
+    <answer-box>
+    Du kan se mit svar her:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter4\MultivarCalc\LocalMaxDefinitionRigor.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+
+    <q-stion 1="9" 2="2">
+    Find på en lignende definition for en multivariable funktion _(f(x,y)_)
+    <br><br></q-stion>
+    <answer-box>
+    Her er umiddelbart min ide:
+
+    <div class="Definition" style="border:solid;">
+    <b> Definition: Lokalt minimum og maksimum (3D).</b> <br>
+    Funktionen _(f(x,y)_) siges at have et lokalt minimum ved _((x,y)=(a_x,a_y)_), 
+    hvis der findes et tal _(R_) hvor:
+    _($\sqrt{(x-a_x)^2+(y-a_y)^2} \lt R \implies f(a) \lt f(x)_)
+    Den har et lokalt maksimum hvis i stedet:
+    _($\sqrt{(x-a_x)^2+(y-a_y)^2} \lt R \implies f(a) \gt f(x)_)
+    </div>
+
+    <p class="tt">
+    Med andre ord: Der findes en afstand _(R_) omkring punktet _((a_x, a_y)_) hvor
+    _(f(x,y)_) er større end _(f(a_x, a_y)_). 
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <p class="tt">
+    Hvorfor <i>præcis</i> ved 
+    vi, at der et lokalt minimum ved _(x=a_), hvis
+    _(f''(a) \gt 0_), et maks hvis _(f''(a) \lt 0_) og et
+    inflection point (ingen af delene) hvis _(f''(a)=0_)? 
+    Det virker intuitivt, men vi er nødt til at bevise
+    det ordentligt og rigorisk, hvis vi skal have en chance forstå det langt mindre intuitive tilfælde
+    ved en multivariable funktion. 
+    </p>
+    <p class="t">
+    Et helt generelt bevis, der gælder for <i>alle</i> funktioner er desværre for svært, men vi
+    kan godt bevise, at det gælder for funktioner der perfekt kan approksimeres i et område af en Taylor-serie.
+    Vi skal bevise, at:
+    </p>
+
+    <div class="Theory">
+    Sig at _(f'(a)=0_) og at
+    _(f(x)_) perfekt kan approksimeres på et område _(D_) omkring _(x=a_).
+    <p class="t">
+    _(x=a_) er et minimumspunkt, hvis _(f''(a) \gt 0_)
+    </p>
+    <p class="t">
+    _(x=a_) er et maksimumspunkt, hvis _(f''(a) \lt 0_).
+    </p>
+    <p class="t">
+    _(x=a_) er hverken et minimumspunkt eller et maksimumspunkt, hvis
+    _(f''(a)=0_). 
+    </p>
+    </div>
+
+    <div class="Proof">
+    <b> Bevis: Testen for et lokalt maksimum og lokalt minimum (2D):</b> <br>
+    <i> Lokalt maksimum:</i> <br>
+    Lav en Taylor serie af _(f(x)_) evalueret på _(x=a_):
+    _($\begin{align}
+    f(x) \, \, \, \, = \, \, \, \, \, & f(a) \, \, +  \\ \\
+    & f'(a)*(x-a) \, \, + \\ \\
+    & f''(a)*\frac{(x-a)^2}{2} \, \, + \\ \\
+    & \Bigl( f'^{3}(a)*\frac{(x-a)^3}{3!} \, + f'^{4}(a)*\frac{(x-a)^4}{4!} \, + \, \dots \Bigr)
+    \end{align}_)
+    Det er antaget, at _(f'(a)=0_) så andet led forsvinder. 
+    Beviset er færdigt, hvis det kan bevises, at der findes et _(R_), hvor at
+    _($f''(a)*\frac{(x-a)^2}{2} + \left(f'^{3}(a)*\frac{(x-a)^3}{3!} + f'^{4}(a)*\frac{(x-a)^4}{4!} + \dots \right)_) 
+    ... er negativ overalt, eftersom det ville betyde, at
+    _($f(x)=f(a)+\text{Noget negativt}(x)_)
+    Det giver let _(f(a) \gt f(x)_) indenfor _(|x-a| \lt R_), hvilket pr. definitionen
+    bekræfter, at _(a_) er et lokalt maksimum.
+    <p class="t">
+    Det er antaget at _(f''(a)_) er negativt. Det betyder, at _(f''(a)*(x-a)^2/2_) også er negativt.
+    Beviset er færdigt, hvis der findes et område _(R_), hvor
+    den absolutte version af ledet _(|f''(a)*(x-a)^2/2|_) er større end den absolutte
+    version af resten _(|f'^{3}(a)*\frac{(x-a)^3}{3!} + f'^{4}(a)*\frac{(x-a)^4}{4!} + \dots|_).
+    I det tilfælde kan en positiv "resten" ikke fjerne alt det negative fra
+    _(f''(a)*(x-a)^2/2_)
+    </p>
+    <p class="t">
+    Omskriv for kortheds skyld _(f'^2(a)/2!_), _(f'^3(a)/3!_), _(\dots f'n(a)/n!_) til bare
+    _(a_2_), _(a_3_), _(\dots a_n_) og _(x-a_) til _(r_). Det skal nu bekræftes at:
+    _($|a_2 r^2| \gt \left|\sum_{k=3}^{\infty} a_k*\frac{r^k}{k!} \right|_)
+    Sig at den højeste konstant blandt alle _(a_k_) er _(A_):
+    _($\left|\sum_{k=3}^{\infty} a_k*\frac{r^k}{k!} \right| \lt |A|*\left|\sum_{k=3}^{\infty} \frac{r^k}{k!} \right|_)
+    Boom! Vi ved, at _(\sum_{k=0}^{\infty} r^k/k! = e^r _), så det skal nu bevises, at der findes et område hvor:
+    _($|a_2 r^2| \gt |A|*\left|e^r - \sum_{k=0}^{2} \frac{r^k}{k!} \right| _)
+    Det kan let omskrives til:
+    _($\left|\frac{a_2}{A} \right| r^2 \gt \left|e^r - 1 - r - \frac{r^2}{2} \right|_)
+    Denne ulighed kan bevises, hvis der ses på hældningerne af begge sider ved _(r=0_).
+    Begge sider starter ved _(0_) hvis _(r=0_). Både venstre side
+    og _(e^r-1-r-r^2 /2 _) har også en hældning på _(0_) ved _(r=0_).
+    Men ved den <i>anden hældning</i> er venstre side lig
+    _(2|a_2/A|_) mens _(e^r-1-r-r^2 /2_) igen er _(0_). Så er det
+    ligegyldigt, om _(e^r - 1 - r - r^2 / 2_) er negativ eller positiv:
+    I starten vokser den langsommere i begge retninger end _(r^2_), så
+    der findes med sikkerhed et lille område _(|r| \lt R_) tæt på _(r=0_), hvor
+    venstre side er størst _(\square_). 
+    </p>
+    <!-- <img class='Spic' style='width:60%' src='../../../Assets/Chapter4\MultiVarCalc\ForLocalMinMaxProof.png'> 
+    <p class="t">
+    Det ser ud til at den er positiv ved positive _(r_) og negativ ved negative _(r_). Det positive tilfælde
+    giver god mening da summen _(\sum_{k=3}^{\infty} r^k / k!_) kun består af positive led hvis
+    _(r \gt 0_). Det negative tilfælde er langt mere kompliceret at bevise. Man kan dog let vise
+    at både værdien og de to første hældninger ved _(x=0_) er _(0_) og at den tredje hældning er _(1_). Det betyder
+    at der findes i hvert fald et lille område _(|r| \lt R_) hvor fremad betyder opad fra _(0_) og 
+    bagud betyder nedad fra _(0_). Man <i>kan</i> bevise at denne _(R_) er uendelig stor, men det er ikke
+    nødvendigt. 
+    </p>
+    <p class="t">
+    Antag at _(0 \lt r \lt R_). De absolutte værdier kan nu fjernes:
+    _($\left|\frac{a_2}{A} \right| r^2 \gt e^r - 1 - r - \frac{r^2}{2}_)
+    Denne ulighed kan bevises hvis der kigges på hældningerne af disse sider ved _(r=0_).
+    Første hældning af venstre side er lig _(|a_2/A|*r_), så _(0_) ved _(r=0_). 
+    Første hældning af højre side er lig _(e^r - 1 -r_), hvilke giver _(0_) ved
+    _(r=0_). Den anden hældning af venstre side er lig _(|a_2/A|_), som det også er ved _(r=0_).
+    Den anden hældning af højre side er lig _(e^r-1_) som er _(0_) ved _(r=0_). Hældningerne
+    af venstre side i starten er altså <i>større</i> end hældningerne af højre side, så der må være et område _(R_) i starten
+    hvor den fra den samme startværdi vokser hurtigere, og derfor er større.
+    </p>
+    <p class="t">
+    Antag nu at _(0 \gt r \gt -R_). Her fås:
+    _($\left|\frac{a_2}{A} \right| r^2 \gt -\left(e^r - 1 - r - \frac{r^2}{2} \right) _)
+    Et lignende argument med hældninger kan opstilles _(\square_)
+    </p> -->
+    <p class="t">
+    <i>Lokalt minimum:</i> <br>
+    Præcis samme bevis og strategi som ved maksimum, nu bare hvor _(f''(a)_) er positivt, hvor
+    _(\text{Noget positivt}(a)=0_), og hvor det bliver bevist, at den absolutte værdi 
+    af _(f''(a)*(x-a)^2/2_) er større
+    end den absolutte værdi af resten inden for et område. _(\square_) <br>
+    _(\blacksquare_)
+    </p>
+    </div>
+
+    <p class="tt">
+    Vi lader os nu inspirere af dette bevis til vores bevis for the 
+    second partial derivative test. Igen har vi tænkt os 
+    at approximere funktionen _(f(x,y)_) nær punktet _(A_), nu bare med en 
+    Taylor-approksimation af to variabler.
+    Vi vil igen gøre denne Taylor-approksimation uendelig god, 
+    men egentlig kun fokusere på at bevise,
+    hvornår det kvadratiske led er negativt (hvis maksimum) eller positivt (hvis minimum). 
+    Efter det beviser vi til sidst, at 
+    den absolutte værdi af det kvadratiske led 
+    er større end den absolutte værdi af resten. 
+    </p>
+
+    <div class="Proof">
+    <b> Bevis: Second partial derivative test: </b> <br>
+    Omskriv _(f(x,y)_) til et Taylor-polynomie evalueret ved _(A_):
+    _($\begin{align}
+    f(x,y) = \, \, \, & f(A) \text{ } \, + \\ \\
+    & f_x(A)(x-A_x) + f_y(A)(y-A_y) \text{ } \, + \\ \\
+    & f_{xx}(A)\frac{(x-A_x)^2}{2} + f_{yy}(A)\frac{(y-A_y)^2}{2} + f_{xy}(A)(x-A_x)(y-A_y) \text{ } \, + \\ \\
+    & \dots \text{Mere}
+    \end{align}  _)
+    Det er antaget at _(f_x(A)_) og _(f_y(A)=0_), så:
+    _($\begin{align}
+    f(x,y) = \, \, \, & f(A) \text{ } \, + \\ \\
+    & f_{xx}(A)\frac{(x-A_x)^2}{2} + f_{yy}(A)\frac{(y-A_y)^2}{2} + f_{xy}(A)(x-A_x)(y-A_y) \text{ } \, + \\ \\
+    & \dots \text{Mere}
+    \end{align}  _)
+    Kald _(f_{xx}(A)/2_) for _(a_), _(f_{yy}(A)/2_) for _(c_), og 
+    _(f_{xy}(A)_) for _(b_). Omskriv også _(x-A_x_) til _(X_). Det kvadratiske led er nu lig:
+    _($(a)X^2 + (by)X + (cy^2)*X^0_)
+    Dette er et andengradspolynomie med respekt til 
+    _(x_), hvis _(y_) bliver set som en konstant. 
+    Et sådan polynomie skærer x-aksen enten nul, èn 
+    eller to gange. Kun hvis x-aksen skæres to gange kan det siges,
+    at polynomiet både har positive og negative værdier. Ellers har det <i>kun</i> 
+    positive (altid over x-aksen) eller
+    <i>kun</i> negative værdier. Vi skal undersøge determinanten:
+    _($\begin{eqnarray}
+    && \sqrt{(by)^2 - 4*(a)*(cy^2)}  \, \, \, = \\ \\
+    && y*\sqrt{b^2-4*a*c} \, \, \, = \\ \\
+    && y*\sqrt{f_{xy}(A)^2-4*\frac{f_{xx}(A)}{2}*\frac{f_{yy}(A)}{2}}
+    \end{eqnarray}_)
+    Bemærk at _(y_) ikke har nogen indflydelse på denne determinant, og at 
+    de to _(2_)'ere i nævneren går ud med _(4_). Der er to løsninger hvis:
+    _($f_{xx}(A)*f_{yy}(A) - f_{xy}(A)^2 \lt 0_)
+    Her er _((a)x^2 + (by)x + (cy^2)*x^0_) <i>både</i> positivt og negativt, og 
+    er hverken et minimum eller maksimum. 
+    Pr. udelukkeningsmetoden må vi konkludere, at det
+    er et saddel-punkt. Hvis
+    _($f_{xx}(A)*f_{yy}(A) - f_{xy}(A)^2 \gt 0_)
+    ... er det <i>enten</i> et maksimum <i>eller</i> et minimumspunkt. 
+    _(_(a)X^2 + (by)X + (cy^2)*X^0_) er et andengradspolynomie, 
+    så koefficienten _(a_) vil i længden bestemme, om den er positiv eller negativ.
+    _(f_{xx}(A) \gt 0_) indikerer derfor, at hele udtrykket er positivt, og at punktet er et minimum,
+    modsat maksimumspunktet, hvor _(f_{xx}(A) \lt 0_).
+    <p class="t">
+    Nu mangler vi "bare" at bevise, at
+    der findes et område _(R_), hvor magnituden på den kvadratiske 
+    del af Taylor-polynomiet er større end 
+    magnituden af resten. 
+    Kald _(x-A_x_) for _(r_x_) og _(y-A_y_) for _(r_y_). Kald 
+    _(f_) differentieret med _(x_) _(q_) gange og _(y_) _(w_) gange
+    evalueret på _(A_) for _(a_{q,w}_). Det kan nu ses
+    - med henblik på den generelle process der blev udledt i 
+    afsnittet om Taylor-approksimationer af multivariable funktioner - 
+    at det _(n'te_) led på Taylor-approksimation af _(f_) ved _(A_) er
+    _($\sum_{i=0}^{n} a_{i,n-i}*\frac{r_x^i*r_y^i}{i!*(n-i)!} _)
+    Så "resten" er:
+    _($\sum_{n=3}^{\infty} \sum_{i=0}^{n} a_{i,n-i}*\frac{r_x^i*r_y^i}{i!*(n-i)!}_)
+    Kald den største _(a_) for _(M_), så:
+    _($\begin{eqnarray}
+    && \sum_{n=3}^{\infty} \sum_{i=0}^{n} a_{i,n-i}*\frac{r_x^i*r_y^i}{i!*(n-i)!} & \lt \\ \\
+    && M*\sum_{n=3}^{\infty} \sum_{i=0}^{n} \frac{r_x^i*r_y^i}{i!*(n-i)!} & = \\ \\
+    && M*\sum_{n=3}^{\infty} \frac{1}{n!} \sum_{i=0}^{n} \frac{n!*r_x^i*r_y^i}{i!*(n-i)!} & = \\ \\
+    && M*\sum_{n=3}^{\infty} \frac{(r_x+r_y)^n}{n!}
+    \end{eqnarray}_)
+    Ved sidste lighed bruger jeg the binomial formula baglæns. 
+    </p> 
+    <p class="t">
+    Det skal nu bevises, at der findes et område omkring _((0,0)_) hvor:
+    _($|a_{2,0} \frac{r_x^2}{2} + a_{1,1} r_x*r_y + a_{0,2} \frac{r_y^2}{2}| \gt \left|A*\sum_{n=3}^{\infty} \frac{(r_x+r_y)^n}{n!}\right|_)
+    Samme trick med Taylor-udvidelsen af _(e^x_) kan bruges til at omskrive højre side:
+    _($\left|\frac{1}{2|A|}*(a_{2,0} r_x^2 + 2 a_{1,1} r_x*r_y + a_{0,2} r_y^2) \right| \gt \left|e^{r_x+r_y}-1-r_x-r_y-\frac{r_x^2}{2} - \frac{r_y^2}{2} - r_x r_y \right|_)
+    Igen ligesom i det tidligere ses der på hældningerne. 
+    Det kan ses, at hældningerne _(F_x_), _(F_y_), _(F_{xx}_), _(F_{yy}_) og _(F_{xy}_)
+    evalueret på _((r_x,r_y)=(0,0)_) alle giver _(0_) på højre side. 
+    På den venstre side giver _(F_x_) og _(F_y_) også _(0_), men
+    _(F_{xx}_), _(F_{yy}_) og _(F_{xy}_) giver henholdsvis _(a_{2,0}_), _(a_{1,1}_) og _(a_{0,2}_). 
+    I hvert fald èn af disse er _(ikke_) _(0_), så venstre side vokser hurtigere i starten, og
+    er derfor større inden for et område.
+    </p> 
+    </div>

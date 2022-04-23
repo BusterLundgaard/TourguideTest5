@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+
+    <body>
+
+        <div style="position: relative;">
+            <!-- For GUI -->
+            <canvas id="L6" width="500" height="500" style="position: absolute; left: 0; top: 0; z-index: 8;"></canvas>
+            <!-- Reset button -->
+            <canvas id="reset" width="500" height="500"
+                style="position: absolute; left: 0; top: 0; z-index: 7;"></canvas>
+            <!-- Compass -->
+            <canvas id="L3" width="500" height="500"
+                style="position: absolute; left: 0; top: 0;  opacity: 1; z-index: 6;"></canvas>
+            <!-- Lineal -->
+            <canvas id="L2" width="500" height="500" style="position: absolute; left: 0; top: 0; z-index: 5;"></canvas>
+            <!-- Angle -->
+            <canvas id="L1" width="500" height="500" style="position: absolute; left: 0; top: 0; z-index: 4;"></canvas>
+            <!-- Background image -->
+            <canvas id="background" width="500" height="500" style="position: absolute; left: 0; top: 0; z-index: 1;"></canvas>
+            <!-- Layer for helping drawing / sketching -->
+            <canvas id="L4" width="500" height="500" style="position: absolute; left: 0; top: 0; z-index: -1;"></canvas>
+            <!-- The actual proper drawing done with tools -->
+            <canvas id="L5" width="500" height="500" style="position: absolute; left: 0; top: 0; border: 1px solid black; z-index: -2;" ></canvas>
+        </div>
+
+        <script>
+            var GCan = document.getElementById("L6"); var GCtx = GCan.getContext("2d");
+            var DCan = document.getElementById("L5"); var DCtx = DCan.getContext("2d"); DCtx.lineWidth = 2; DCtx.strokeStyle = "black";
+            var SCan = document.getElementById("L4"); var SCtx = SCan.getContext("2d")
+            var CCan = document.getElementById("L3"); var CCtx = CCan.getContext("2d")
+            var LCan = document.getElementById("L2"); var LCtx = LCan.getContext("2d")
+            var ACan = document.getElementById("L1"); var ACtx = ACan.getContext("2d")
+
+            //Set images for canvas:
+            //var rulerImg = document.createElement("img");      rulerImg.src = "ruler.png";        
+            //var compassImg = document.createElement("img");    compassImg.src = "compass.png";
+            var angleImg = document.createElement("img");      angleImg.src = "protractor2.png";
+            var rotateImg1 = document.createElement("img");    rotateImg1.src = "rotation1.png";
+            var rotateImg2 = document.createElement("img");    rotateImg2.src = "rotation2.png";
+            var resetImg = document.createElement("img");      resetImg.src = "reset.png";
+            var backgroundImg = document.createElement("img"); backgroundImg.src = "background4.png";
+
+            // compassImg.onload = function () {
+            //     Compass.x = 100, Compass.y = 250;
+            //     CCtx.translate(100, 250);
+            //     CCtx.drawImage(compassImg, 0, 0);
+            // }
+            // rulerImg.onload = function () {
+            //     Ruler.r = 0.43; Ruler.x = 160; Ruler.y = 70;
+            //     LCtx.rotate(0.43); LCtx.translate(Ruler.x, Ruler.y);
+            //     LCtx.drawImage(rulerImg, 0, 0);
+            // }
+            angleImg.onload = function () {
+                ACtx.drawImage(angleImg, 0, 0);
+            }
+            // resetImg.onload = function () {
+            //     document.getElementById("reset").getContext("2d").drawImage(resetImg, 15, 15);
+            // }
+            backgroundImg.onload = function() {
+                document.getElementById("background").getContext("2d").drawImage(backgroundImg,0,0);
+            }
+
+            //Declare classes:
+            function ToolTransform(X, Y, R, W, H) {
+                this.x = X; this.y = Y;
+                this.r = R;
+                this.w = W; this.h = H;
+            }
+            ToolTransform.prototype.inRect = function (Point) {
+                return (Point.x > this.x) && (Point.x < this.x + this.w) && (Point.y > this.y) && (Point.y < this.y + this.h);
+            }
+
+            //Declare variables
+            var Compass = new ToolTransform(-3000, -3000, 0, 86, 338);
+            var Ruler = new ToolTransform(-3000, -3000, 0, 294, 48);
+            var Angle = new ToolTransform(0, 0, 0, 274, 274);
+
+            var cursor = { x: 0, y: 0 };
+            var pcursor = { x: 0, y: 0 };
+            var perpMouse;
+
+            var CTX;
+            var CT; //Short for "chosen transform"
+            var CImg; var RImg;
+
+            //For movemenet:
+            var MoveStates = { ENTER: 1, HOVER: 2, MOVE: 3, ROTATE: 4 }
+            var MoveState = MoveStates.ENTER;
+            var movePoint;
+            var middlePoint; var offset;
+            var inCorner = false; var inRect = false;
+            var showHandles = false; var pshowHandles = false;
+
+            //For passer:
+            var prevTransformInfo;
+            var compassRadius;
+            var mouseAngle; var pmouseAngle;
+
+            //For ruler edge:
+            var REL = 10; //Ruler edge leniance
+            var ClosestEdgeCorner;
+            var TopOrSide;
+
+            //Declare functions
+            //Cursor position
+            var getCursorPosition = function (event) {
+                const rect = GCan.getBoundingClientRect()
+                cursor.x = event.clientX - rect.left
+                cursor.y = event.clientY - rect.top
+            }
+            GCan.addEventListener("mousemove", function (e) {
+                getCursorPosition(e);
+            })
+
+            //Change of basis
+            var changeBasis = function (Point, angle) {
+                return { x: Point.x * Math.cos(angle) + Point.y * Math.sin(angle), y: Point.x * (-Math.sin(angle)) + Point.y * Math.cos(angle) };
+            }
+
+            //Event input-system (for elegant removal):
+            var keyPairs = [];
+            var AddRemoveInput = function (inputType, addOrRemove, eventToExecute) {
+                if (addOrRemove) {
+                    keyPairs.push({ IType: inputType, Action: eventToExecute })
+                    GCan.addEventListener(inputType, eventToExecute);
+                }
+                else {
+                    var indexesToRemove = [];
+                    for (let i = 0; i < keyPairs.length; i++) {
+                        if (keyPairs[i].IType == inputType) { indexesToRemove.push(i); }
+                    }
+                    if (indexesToRemove.length != 0) {
+                        for (let i = indexesToRemove.length - 1; i > -1; i--) {
+                            GCan.removeEventListener(inputType, keyPairs[indexesToRemove[i]].Action);
+                            keyPairs.splice(indexesToRemove[i], 1)
+                        }
+                    }
+                }
+            }
+            var EmptyInputs = function () {
+                for (let i = 0; i < keyPairs.length; i++) {
+                    GCan.removeEventListener(keyPairs[i].IType, keyPairs[i].Action);
+                }
+                keyPairs = [];
+            }
+
+            //Set up states for state-machine:
+            var States = {
+                MAIN: 1,
+                toSKETCH: 2, SKETCH: 3,
+                COMPASS: 4,
+                MOVETRANSFORM: 5,
+                toRULEREDGE: 6, RULEREDGE: 7,
+                NOTHING: 8
+            }
+            var CompassStates = { ENTER: 1, toMOVE: 2, MOVE: 3, toRADIUS: 4, RADIUS: 5, toDRAW: 6, hoverDRAW: 7, DRAW: 8 }
+            var MoveStates = { ENTER: 1, HOVER: 2, MOVE: 3, ROTATE: 4 };
+
+            var State = States.MAIN;
+            var CompassState = CompassStates.ENTER;
+            var MoveState = MoveStates.ENTER;
+
+            GCtx.strokeStyle = "red";
+
+            var step = function () {
+                switch (State) {
+                    case States.MAIN:
+
+                        AddRemoveInput("dblclick", true, function () {
+
+                            if (Compass.inRect(cursor)) {
+                                State = States.COMPASS;
+                                CCan.style.setProperty("opacity","0.7");
+                                EmptyInputs();
+                                step();
+                            }
+                            else if (Ruler.inRect(changeBasis(cursor, Ruler.r))) {
+                                CTX = LCtx; CT = Ruler; CImg = rulerImg; RImg = rotateImg1;
+                                LCan.style.setProperty("opacity", "0.7");
+                                State = States.MOVETRANSFORM;
+                                EmptyInputs();
+                                step();
+                            }
+                            else if (Angle.inRect(changeBasis(cursor, Angle.r))) {
+                                CTX = ACtx; CT = Angle; CImg = angleImg; RImg = rotateImg2;
+                                ACan.style.setProperty("opacity", "0.7");
+                                State = States.MOVETRANSFORM;
+                                EmptyInputs();
+                                step();
+                            }
+                            else if ((cursor.x > 15) && (cursor.x < 65) && (cursor.y > 15) && (cursor.y < 65)) {
+                                DCtx.clearRect(0, 0, 500, 500); SCtx.clearRect(0, 0, 500, 500);
+                            }
+                            else {
+                                step();
+                            }
+
+                            AddRemoveInput("dblclick", false, null);
+                        })
+
+                        AddRemoveInput("mousedown", true, function () {
+
+                            perpMouse = changeBasis(cursor, Ruler.r);
+                            if (
+                                ((perpMouse.x > Ruler.x - REL) && (perpMouse.x < Ruler.x + Ruler.w + 2 * REL) &&
+                                    (perpMouse.y > Ruler.y - REL) && (perpMouse.y < Ruler.y + Ruler.h + 2 * REL))
+                                &&
+                                !((perpMouse.x > Ruler.x + REL) && (perpMouse.x < Ruler.x + Ruler.w - REL) &&
+                                    (perpMouse.y > Ruler.y + REL) && (perpMouse.y < Ruler.y + Ruler.h - REL))
+                            ) {
+                                EmptyInputs();
+                                State = States.toRULEREDGE; step();
+                            }
+                            else {
+                                EmptyInputs();
+                                State = States.toSKETCH; step();
+                            }
+
+                            AddRemoveInput("mousedown", false, null);
+                        });
+
+                        break;
+
+                    case States.toSKETCH:
+
+                        AddRemoveInput("mouseup", true, function () {
+                            EmptyInputs();
+                            State = States.MAIN; step();
+                        })
+
+                        pcursor.x = cursor.x; pcursor.y = cursor.y;
+                        State = States.SKETCH; step();
+
+                        break;
+
+                    case States.SKETCH:
+
+                        if (Math.abs(cursor.x - pcursor.x) + Math.abs(cursor.y - pcursor.y) > 10) {
+                            // SCtx.beginPath(); SCtx.moveTo(pcursor.x, pcursor.y); SCtx.lineTo(cursor.x, cursor.y); SCtx.stroke();
+                            pcursor.x = cursor.x; pcursor.y = cursor.y;
+                        }
+
+                        requestAnimationFrame(step);
+
+                        break;
+
+                    case States.MOVETRANSFORM:
+
+                        switch (MoveState) {
+
+                            case MoveStates.ENTER:
+
+                                AddRemoveInput("dblclick", true, function () {
+                                    if (!CT.inRect(changeBasis(cursor, CT.r))) {
+                                        MoveState = MoveStates.ENTER;
+                                        State = States.MAIN;
+                                        ACan.style.setProperty("opacity", "1"); LCan.style.setProperty("opacity", "1");
+                                        EmptyInputs();
+                                        step();
+                                    }
+                                    AddRemoveInput("dblclick", false, null);
+                                })
+
+                                AddRemoveInput("mousedown", true, function () {
+
+                                    if (inRect) {
+
+                                        MoveState = MoveStates.MOVE;
+                                        movePoint = { x: cursor.x, y: cursor.y }; offset = { x: 0, y: 0 };
+
+                                        AddRemoveInput("mouseup", true, function () {
+                                            MoveState = MoveStates.ENTER;
+                                            step(); AddRemoveInput("mouseup", false, null);
+                                        })
+                                    }
+                                    else if (inCorner) {
+                                        MoveState = MoveStates.ROTATE;
+                                        middlePoint = changeBasis({ x: CT.x + 0.5 * CT.w, y: CT.y + 0.5 * CT.h }, -CT.r);
+                                        movePoint = Math.atan2(cursor.y - middlePoint.y, cursor.x - middlePoint.x);
+                                        prevTransformInfo = CT.r;
+
+                                        CTX.translate(-CT.x, -CT.y); CTX.rotate(-CT.r);
+
+                                        AddRemoveInput("mouseup", true, function () {
+                                            MoveState = MoveStates.ENTER;
+
+                                            const newPos = changeBasis(middlePoint, CT.r);
+                                            CTX.clearRect(0, 0, 500, 500);
+                                            CT.x = newPos.x - 0.5 * CT.w; CT.y = newPos.y - 0.5 * CT.h;
+                                            CTX.rotate(CT.r); CTX.translate(CT.x, CT.y);
+                                            CTX.drawImage(CImg, 0, 0);
+                                            showHandles = false; pshowHandles = false;
+
+                                            step(); AddRemoveInput("mouseup", false, null);
+                                        })
+                                    }
+                                    else {
+                                        AddRemoveInput("mouseup", true, function () {
+                                            MoveState = MoveStates.ENTER;
+                                            step(); AddRemoveInput("mouseup", false, null);
+                                        })
+                                    }
+
+                                    step(); AddRemoveInput("mousedown", false, null);
+                                })
+
+                                MoveState = MoveStates.HOVER; step();
+
+                                break;
+
+                            case MoveStates.HOVER:
+
+                                //Figure out where mouse is on transform: 
+                                perpMouse = changeBasis(cursor, CT.r);
+                                inRect = CT.inRect({ x: perpMouse.x, y: perpMouse.y });
+                                    (Math.pow(perpMouse.x - CT.x, 2) +        Math.pow(perpMouse.y - CT.y, 2)        < 200) || //Corner 1
+                                    (Math.pow(perpMouse.x - CT.x, 2) +        Math.pow(perpMouse.y - CT.y - CT.h, 2) < 200) || //Corner 2
+                                    (Math.pow(perpMouse.x - CT.x - CT.w, 2) + Math.pow(perpMouse.y - CT.y, 2)        < 200) || //Corner 3
+                                    (Math.pow(perpMouse.x - CT.x - CT.w, 2) + Math.pow(perpMouse.y - CT.y - CT.h, 2) < 200) //Corner 4
+
+                                //Show rotation handles:
+                                showHandles = inCorner && !inRect;
+                                if (showHandles && (showHandles != pshowHandles)) {
+                                    CTX.drawImage(RImg, -10, -10);
+                                }
+                                else if (!showHandles && (showHandles != pshowHandles)) {
+                                    CTX.translate(-CT.x, -CT.y); CTX.rotate(-CT.r);
+                                    CTX.clearRect(0, 0, 500, 500);
+                                    CTX.rotate(CT.r); CTX.translate(CT.x, CT.y);
+                                    CTX.drawImage(CImg, 0, 0);
+                                }
+                                pshowHandles = showHandles;
+
+                                requestAnimationFrame(step);
+                                break;
+
+                            case MoveStates.MOVE:
+
+                                CTX.translate(-CT.x, -CT.y); CTX.rotate(-CT.r);
+                                CTX.clearRect(0, 0, 500, 500);
+
+                                CT.x -= offset.x; CT.y -= offset.y;
+
+                                offset.x = (cursor.x - movePoint.x) * Math.cos(CT.r) + (cursor.y - movePoint.y) * Math.sin(CT.r)
+                                offset.y = (cursor.x - movePoint.x) * Math.cos(1.57 + CT.r) + (cursor.y - movePoint.y) * Math.sin(1.57 + CT.r)
+
+                                CT.x += offset.x; CT.y += offset.y;
+
+                                CTX.rotate(CT.r);
+                                CTX.translate(CT.x, CT.y);
+                                CTX.drawImage(CImg, 0, 0);
+
+                                requestAnimationFrame(step);
+                                break;
+
+                            case MoveStates.ROTATE:
+
+                                CTX.clearRect(0, 0, 500, 500);
+                                CTX.translate(middlePoint.x, middlePoint.y);
+
+                                perpMouse = changeBasis(cursor, CT.r);
+                                CT.r = prevTransformInfo + Math.atan2(cursor.y - middlePoint.y, cursor.x - middlePoint.x) - movePoint;
+
+                                CTX.rotate(CT.r);
+                                CTX.translate(-0.5 * CT.w, -0.5 * CT.h);
+                                CTX.drawImage(CImg, 0, 0);
+
+                                CTX.translate(0.5 * CT.w, 0.5 * CT.h);
+                                CTX.rotate(-CT.r);
+                                CTX.translate(-middlePoint.x, -middlePoint.y);
+
+                                requestAnimationFrame(step);
+                                break;
+                        }
+                        break;
+
+                    case States.toRULEREDGE:
+
+                        AddRemoveInput("mouseup", true, function () {
+                            DCtx.translate(-ClosestEdgeCorner.x, -ClosestEdgeCorner.y);
+                            DCtx.rotate(-Ruler.r);
+                            State = States.MAIN; step();
+                        })
+
+                        perpMouse = changeBasis(cursor, Ruler.r);
+                        ClosestEdgeCorner = {
+                            x: Ruler.x + Ruler.w * Math.max(Math.sign(perpMouse.x - Ruler.x - 0.5 * Ruler.w), 0),
+                            y: Ruler.y + Ruler.h * Math.max(Math.sign(perpMouse.y - Ruler.y - 0.5 * Ruler.h), 0)
+                        }
+                        DCtx.rotate(Ruler.r);
+                        DCtx.translate(ClosestEdgeCorner.x, ClosestEdgeCorner.y);
+
+                        TopOrSide = Math.abs(perpMouse.y - ClosestEdgeCorner.y) > Math.abs(perpMouse.x - ClosestEdgeCorner.x);
+
+                        pcursor.x = perpMouse.x; pcursor.y = perpMouse.y;
+                        State = States.RULEREDGE; step();
+                        break;
+
+                    case States.RULEREDGE:
+
+                        perpMouse = changeBasis(cursor, Ruler.r);
+
+                        if (!TopOrSide) {
+                            if (Math.abs(perpMouse.x - pcursor.x) > 10) {
+                                DCtx.beginPath(); DCtx.moveTo(pcursor.x - ClosestEdgeCorner.x, 0); DCtx.lineTo(perpMouse.x - ClosestEdgeCorner.x, 0); DCtx.stroke();
+                                pcursor.x = perpMouse.x; pcursor.y = perpMouse.y;
+                            }
+                        } else {
+                            if (Math.abs(perpMouse.y - pcursor.y) > 10) {
+                                DCtx.beginPath(); DCtx.moveTo(0, pcursor.y - ClosestEdgeCorner.y); DCtx.lineTo(0, perpMouse.y - ClosestEdgeCorner.y); DCtx.stroke();
+                                pcursor.x = perpMouse.x; pcursor.y = perpMouse.y;
+                            }
+                        }
+
+                        requestAnimationFrame(step);
+
+                        break;
+
+                    case States.COMPASS:
+                        switch (CompassState) {
+                            case CompassStates.ENTER:
+
+                                AddRemoveInput("dblclick", true, function () {
+                                    if (!Compass.inRect(cursor)) {
+                                        CCan.style.setProperty("opacity","1");
+                                        CompassState = CompassStates.ENTER;
+                                        State = States.MAIN;
+                                        step();
+                                    }
+                                    AddRemoveInput("dblclick", false, null);
+                                })
+
+                                AddRemoveInput("mousedown", true, function () {
+                                    if (Math.abs(cursor.x - Compass.x - 75) + Math.abs(cursor.y - Compass.y - 338) < 100) {
+                                        CompassState = CompassStates.toRADIUS; step();
+                                    }
+                                    else if (Compass.inRect(cursor)) {
+                                        CompassState = CompassStates.toMOVE; step();
+                                    }
+                                    AddRemoveInput("mousedown", false, null);
+                                });
+
+                                break;
+                            case CompassStates.toMOVE:
+
+                                prevTransformInfo = { x: Compass.x, y: Compass.y };
+                                movePoint = { x: cursor.x, y: cursor.y };
+
+                                AddRemoveInput("mouseup", true, function () {
+                                    CompassState = CompassStates.ENTER; step();
+                                    AddRemoveInput("mouseup", false, null);
+                                });
+
+                                CompassState = CompassStates.MOVE; step();
+
+                                break;
+                            case CompassStates.MOVE:
+
+                                CCtx.translate(-Compass.x, -Compass.y); CCtx.rotate(-Compass.r);
+                                CCtx.clearRect(0, 0, 500, 500);
+
+                                Compass.x = prevTransformInfo.x + cursor.x - movePoint.x;
+                                Compass.y = prevTransformInfo.y + cursor.y - movePoint.y;
+
+                                CCtx.rotate(Compass.r); CCtx.translate(Compass.x, Compass.y);
+                                CCtx.drawImage(compassImg, 0, 0);
+
+                                requestAnimationFrame(step);
+
+                                break;
+                            case CompassStates.toRADIUS:
+
+                                AddRemoveInput("mouseup", true, function () {
+                                    GCan.style.setProperty("opacity", "0.3");
+                                    CompassState = CompassStates.toDRAW; step();
+                                    AddRemoveInput("mouseup", false, null);
+                                });
+
+                                CCan.style.setProperty("opacity", "0.4");
+                                GCtx.strokeStyle="black";
+
+                                CompassState = CompassStates.RADIUS; step();
+
+                                break;
+                            case CompassStates.RADIUS:
+
+                                compassRadius = Math.sqrt(Math.pow(cursor.x - (Compass.x + 10), 2) + Math.pow(cursor.y - (Compass.y + 338), 2))
+
+                                GCtx.clearRect(0, 0, 500, 500);
+                                GCtx.beginPath(); GCtx.arc((Compass.x + 10), (Compass.y + 338), compassRadius, 0, 6.28); GCtx.stroke();
+
+                                requestAnimationFrame(step);
+
+                                break;
+                            case CompassStates.toDRAW:
+
+                                EmptyInputs();
+                                AddRemoveInput("dblclick", true, function () {
+
+                                    GCtx.clearRect(0, 0, 500, 500);
+                                    GCan.style.setProperty("opacity", "1"); CCan.style.setProperty("opacity", "0.7");
+
+                                    AddRemoveInput("mousedown", false, null);
+                                    CompassState = CompassStates.ENTER; step();
+
+                                    AddRemoveInput("dblclick", false, null)
+                                })
+
+                                CompassState = CompassStates.hoverDRAW; step();
+                                break;
+                            case CompassStates.hoverDRAW:
+
+                                AddRemoveInput("mousedown", true, function () {
+                                    mouseAngle = Math.atan2(cursor.y - (Compass.y + 338), cursor.x - (Compass.x + 10));
+                                    pmouseAngle = mouseAngle;
+                                    CompassState = CompassStates.DRAW; step();
+                                    AddRemoveInput("mousedown", false, null);
+                                })
+
+                                AddRemoveInput("mouseup", true, function () {
+                                    CompassState = CompassStates.hoverDRAW; step();
+                                    AddRemoveInput("mouseup", false, null);
+                                })
+
+                                break;
+
+                            case CompassStates.DRAW:
+
+                                mouseAngle = Math.atan2(cursor.y - (Compass.y + 338), cursor.x - (Compass.x + 10));
+                                if (Math.abs(mouseAngle - pmouseAngle) > 0.05) {
+
+                                    DCtx.beginPath();
+                                    DCtx.moveTo((Compass.x + 10) + Math.cos(pmouseAngle) * compassRadius, (Compass.y + 338) + Math.sin(pmouseAngle) * compassRadius);
+                                    DCtx.lineTo((Compass.x + 10) + Math.cos(mouseAngle) * compassRadius, (Compass.y + 338) + Math.sin(mouseAngle) * compassRadius);
+                                    DCtx.stroke();
+
+                                    pmouseAngle = mouseAngle;
+                                }
+                                requestAnimationFrame(step);
+
+                                break;
+                        }
+
+                        break;
+                }
+
+
+
+            }
+
+            step();
+
+        </script>
+
+    </body>
+
+</html>

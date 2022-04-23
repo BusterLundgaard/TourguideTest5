@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+
+
+    <h3>Omdrejningslegemer</h3>
+    <p class="t">
+    Både kegler og kugler er eksempler på en type af 3D-figur kaldt et <i>omdrejningslegeme</i> 
+    (på engelsk "Surface of revolution"). De fleste potter (som i dem pottemagere laver) er
+    også omdrejningslegemer:
+    </p>
+
+    <img class='SpicXL' style='width:35%' src='../../../Assets/Chapter4\DerivativesAndIntegrals\Applications\OtherThingsToCount\SurfaceOfRevolutionPot1.png'> 
+
+    <p class="t">
+    Følgende billede illustrerer ideen bag pottemageri for de uindviede: 
+    </p>
+
+    <img class='SpicBXL' style='width:50%' src='../../../Assets/Chapter4\DerivativesAndIntegrals\Applications\OtherThingsToCount\Potteri.png'> 
+    
+    <p class="t">
+    Man placerer et stort stykke ler på en plade, der drejer virkelig hurtigt rundt. Man kan ved
+    en bestemt højde trykke på leret indad: Man ændrer derfor
+    <i>radiusen</i> ved den højde. Man kan danne mange forskellige former, bare
+    gennem radiuser på bestemte højder!
+    </p>
+
+    <img class='SpicXL' style='width:70%' src='../../../Assets/Chapter4\DerivativesAndIntegrals\Applications\OtherThingsToCount\SurfaceOfRevolutionPot2.png'> 
+
+    <p class="t">
+    De her forskellige slags former er ekstrem nemme at arbejde med matematisk, og
+    meget nemme at definere. Vi skal bare give en radius-højde kurve
+    _(r(h)_), og vi har en form! Som vi så med keglen og kuglen, er det også relativt nemt
+    at finde volumen og overfladearealet af disse slags former. Ved volumen kan vi bare
+    lave cylinder "diske". De har arealet _(\pi*r(h)^2_) ved højden _(h_), så volumen
+    af et omdrejningslegeme er bare:
+    _($\int_{0}^{H} \pi*r(h)^2 \, dh_)
+    Overfladearealet er lidt mere tricky. Her kan vi generalisere den proces, vi brugte ved kuglen:
+    </p>
+
+    <img class='SpicXL' style='width:85%' src='../../../Assets/Chapter4\DerivativesAndIntegrals\Applications\OtherThingsToCount\SphereSurfaceAreaSlope2.png'> 
+
+    <p class="t">
+    En cirkel er jo egentlig bare et omdrejningslegeme med funktionen
+    _($r(h)=\sqrt{R^2-h^2}_)
+    For at beregne overfladearealet søgte vi en formel 
+    for det blå areal. Den fandt vi ved hjælp af <i>hældningen</i> og pythagoras:
+    _($do*\sqrt{dh^2+dr^2} = do*\sqrt{dh^2+dh^2*r'(h)^2} = \sqrt{1+r'(h)^2}*dh*do_)
+    Vi skal integrere langs omkredsen
+    af cirklen ved _(h_). Den har omkredsen _(2\pi*r(h)_), så:
+    _($\int_{0}^{2\pi*r(h)} \sqrt{1+r'(h)^2}*dh*do = \sqrt{1+r'(h)^2}*2\pi*r(h) \, dh_)
+    Nu integrerer vi bare med højden:
+    _($\begin{eqnarray}
+    && \int_{0}^{H} \sqrt{1+r'(h)^2}*2\pi*r(h) \, dh = \\ \\
+    && 2\pi * \int_{0}^{H} \sqrt{1+r'(h)^2}*r(h) \, dh
+    \end{eqnarray}_)
+    Det her er den generelle formel for overfladearealet af et omdrejningslegeme. 
+    </p>
+
+    <p class="t">
+    Tid til nogle få opgaver!
+    </p>
+
+    
+    <q-stion 1="17" 2="1">
+    Approximer både volumen og overfladearealet på følgende atomreaktor:
+    <img class='SpicBXL' style='width:80%' src='../../../Assets/Chapter4\DerivativesAndIntegrals\Applications\OtherThingsToCount\AtomReaktor1.png'> 
+    <p class="t">
+    Vi antager, at atomreaktoren stopper, 
+    hvor den ikke kan ses længere på billedet (ved toppen af træerne). 
+    Jeg kan informere, at den er _(80m_) høj. Resten må du selv approximere. 
+    </p>
+    <p class="t">
+    Du kan downloade billedet her:
+    </p>
+    <p class="cent">
+        <a href="../../../Assets/Chapter4\DerivativesAndIntegrals\Applications\OtherThingsToCount\AtomReaktor2.png" download>
+            Download!
+        </a>
+    </p>
+    <p class="t">
+    Hvis du har brug for det, kan man indsætte billeder i Geogebra. Du trækker bare billedet
+    ind i Geogebra, eller indsætter det via "Rediger" _(\to_) "Indsæt billede fra". 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Jeg har brug for en _(r(h)_) kurve der approximerer atomreaktoren. Den finder
+    jeg i Geogebra:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter4\DerivativesAndIntegrals\Applications\OtherThingsToCount\ApproximateNuclearReactor.mp4' type='video/mp4'>
+    </video>
+    <p class="t">
+    Jeg får en parabel med _(a=0.0035_), centreret i _((53.94,22.66)_). Det svarer til:
+    _($\begin{eqnarray}
+    && y-22.66 = 0.0035*(x-53.94)^2 \to \\
+    && y=0.0035x^2 - 0.377x + 32.84
+    \end{eqnarray}_)
+    For at få volumen, skal vi regne:
+    _($\pi*\int_{0}^{80} (0.0035x^2 - 0.377x + 32.84)^2 = 161666 m^3 _)
+    For at regne overfladearealet, har vi brug for _(r'(h)_):
+    _($¤x[0.0035x^2 - 0.377x + 32.84] = 0.007x - 0.377_)
+    Nu kan vi regne:
+    _($2\pi*\int_{0}^{80} \sqrt{1+(0.007x - 0.377)^2}*(0.0035x^2 - 0.377x + 32.84) = _)
+    _($12861 m^2 _)
+    Voila!
+    </p>
+    <br></answer-box>
+
+    <q-stion 1="17" 2="2" customWidth="560">
+    Sig du har følgende omdrejningslegeme / potte:
+    <img class='SpicXL' style='width:95%' src='../../../Assets/Chapter4\DerivativesAndIntegrals\Applications\OtherThingsToCount\PotExercise1.png'> 
+    <p class="t">
+    Det er et omdrejningslegeme defineret af 
+    _($r(h)=20+10*Sin \left(\frac{2\pi}{100}h \right), \, \, 0cm \lt h \lt 80\text{cm}_)
+    ... og en tykkelse på _(4\text{cm}_). Mit spørgsmål er nu 
+    <i>ca.</i> hvor meget plads er der i potten?
+    Hvor stor en volumen kan den (cirka) holde? 
+    </p>
+    <p class="t">
+    Husk at potten også har en bund! Den har samme tykkelse på _(4\text{cm}_), som alle andre steder! 
+    </p>
+    <p class="t">
+    <i>Note</i>: Der er helt tilfældigt, at både denne opgave og sidste opgave går fra _(0_) til _(80_)
+    højdemæssigt. 
+    </p>
+    <br></q-stion>
+    <answer-box customWidth="560">
+    Her er min ide:
+    <img class='Spic' style='width:40%' src='../../../Assets/Chapter4\DerivativesAndIntegrals\Applications\OtherThingsToCount\PotExercise2.png'> 
+    <p class="t">
+    Først regner vi omdrejningslegemets samlede volumen, derefter trækker vi volumen
+    fra væggene og bunden fra. Det er lidt overlap mellem væggen og bunden, men
+    det kan vi snildt ignorere: Fejlen er lille.
+    <p class="t">
+    Bunden er simpel nok at finde. _(h_) er _(0_), så her er radiusen _(20_), hvilket betyder
+    at arealet er _(\pi*20^2=_) _(1256.63 \text{cm}^2_). Dette areal kan vi bare gange med 
+    _(4 \text{cm}_) og få:
+    _($1256.53*4=5026.12 \text{cm}^3_)
+    Ved væggene kan vi gøre noget smart: "Tykkelsen" går altid _(4\text{cm}_) ud <i>vinkelret</i> til væggen.
+    Derfor kan vi gange væggens ydre overfladeareal med _(4 \text{cm}_) og få en volumen! 
+    </p>
+    <p class="t">
+    Vi differentierer vores funktion for at finde overfladearealet:
+    _($¤h \left[20+10*Sin \left(\frac{2\pi}{100}h \right) \right] = 0.628*Cos(0.0628h)_)
+    Nu regner vi så:
+    _($ 2\pi \int_{0}^{80} \sqrt{1+(0.628*Cos(0.0628h))^2}*(20+10*Sin(0.0628h) \, ) \, dh = _)
+    _($ 11678 \text{cm}^2_)
+    Pottens samlede ydre volume er:
+    _($\pi*\int_{0}^{80} (20+10*Sin \left(\frac{2\pi}{100}h \right))^2 \, dh = 127651.73cm^3 _)
+    Så dens indre volume er:
+    _($127651 - 5026 - 11678*4 = 75913 cm^3_)
+    _(1cm^3_) svarer til _(10^{-3}_) liter, så vores svar kan også skrives som:
+    _($ \approx 75.913 L _)
+    Voila!
+    </p>
+    <br></answer-box>
+
+
+
+
+

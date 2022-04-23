@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+
+
+    <p class="t">
+    <b> 2</b>: <br>
+    Mængden af måder vi kan ændre på rækkefølgen af _(n_) elementer (altså 
+    _(n!_) som vi har brugt flere gange allerede) kaldes for antallet af
+    <i>permutations</i> (dansk "permutationer"). Det viser sig at der er en 
+    del - dog må man indrømme ofte relativt abstrakte - tilfælde
+    hvor bestemte fænomener eller handlinger kan modelleres som at være "permutationer". 
+    Altså: Handlinger hvor der bliver rykket rundt på rækkefølgen af noget på en eller
+    anden måde. Sig f.eks man havde funktionen _(f_) 
+    hvor
+    _($f(\{a,b,c,d,f\})=\{b,f,c,d,a\}_)
+    Den gør intet til værdierne, men flytter kun rundt på rækkefølgen. 
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Evaluer 
+    _(f \left(f \left(f \left(f \left( \{ o, b, q, r, s \} \right) \right) \right) \right)_)?
+    <br><br></q-stion>
+    <answer-box>
+    Du kan se mit svar her:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\PermutationOpgave1.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+
+    <p class="t">
+    Et lidt mere konkret og motiverende eksempel kunne være uddeling af aktiviteter til grupper/hold.
+    Sig at man er ved at organisere en eller anden begivenhed hvor nogle hold _(h_1,...h_8_) skal ud og
+    prøve forskellige aktiviteter _(a_1,...a_8_). Den måde man i de fleste tilfælde nok ville fordele hold rundt på aktiviteter
+    kunne modelleres som 
+    _($f(\{h_1,h_2,h_3,h_4,h_5,h_6,h_7,h_8\} ) = \{ h_8,h_1,h_2,h_3,h_4,h_5,h_6,h_7 \}_)
+    Gentaget brug af _(f_) ville altså sende folk rundt i en cyklus/ring hvor alle prøver alle aktiviteter
+    så effektivt som muligt. En anden mulighed kunne åbenlyst nok være:
+    _($g( \{h_1,h_2,h_3,h_4,h_5,h_6,h_7,h_8 \} ) = \{h_2,h_3,h_4,h_5,h_6,h_7,h_8,h_1\}_)
+    Det er bare den tidligere permutation, men baglæns. Så _(f(g(X))=X_) og modsat
+    (hvor _(X_) så er et sæt af elementer). 
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Sender
+    _($f_1( (h_1,h_2,h_3,h_4,h_5,h_6,h_7,h_8) ) = (h_7,h_8,h_1,h_2,h_3,h_4,h_5,h_6) _)
+    Alle holdene rundt til alle aktiviteter uden nogle gentagelser under vejs?  
+    Svar også på samme spørgsmål med følgende transformation:
+    _($f_2( (h_1,h_2,h_3,h_4,h_5,h_6,h_7,h_8) ) = (h_6,h_7,h_8,h_1,h_2,h_3,h_4,h_5)_)
+    <br></q-stion>
+    <answer-box>
+    Man kan se hvis man kigger at _(f_1_) flytter alle elementer _(2_) fremad, og _(f_2_) flytter alle elementer _(3_) fremad:
+    <img class='Spic' style='width:60%' src='../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\PermutationCycleExercise.png'> 
+    <p class="t">Der er et lige antal elementer, så vi kan se at _(h_1_) går tilbage til sig selv efter kun
+    _(8/4=4_) permutationer. Der er altså to cykluser: Èn hvor de lige elementer går rundt i ring, og ên hvor
+    de ulige elementer går rundt i ring. Med _(f_3_) går _(h_1_) først tilbage til sig selv efter _(8_) runder,
+    og den opfylder derfor vores krav. </p>
+    <br></answer-box>
+
+    <p class="t">
+    Det er <i>ikke</i> nødvendigvis åbenlyst hvor mange måder vi kan sende folk rundt i èn cyklus på.
+    Situationen bliver mere kompliceret, da vi måske <i>gerne</i> vil have at folk er i to cykluser. Måske
+    skal èt par grupper gå rundt på bestemte aktiviteter, og et andet gå rundt på nogle andre.
+    Problemet her er ikke at det er umuligt at få det til at hænge sammen i virkeligheden: Det er nemt selfølgelig. 
+    Problemet er at det tilsynneladende er lidt tricky at modellere situationer som denne matematisk på en
+    god og frugtbar måde. Vi definere af denne grund <i>Stirlings første numre</i> ("Stirling numbers of first kind"). 
+    _(S(n,k)_) er mængden af permutationer - fordelingsregler - af _(n_)-objekter (f.eks. grupper) hvor de
+    deles op i _(k_) cykluser. Det kræver nok lige et eksempel:
+    </p>
+
+    <p class="t">
+    Sig vi har _(8_) hold. _(3_) af de hold vil vi gerne have skal prøve "vand-aktiviteterne",
+    _(3_) andre hold skal prøve "flyve-aktiviteterne" og de _(2_) sidste hold skal prøve
+    "skov-aktiviteterne". Det er ligegyldig <i>hvilke</i> hold der prøver bestemte aktiviteter:
+    Det eneste vigtige for os er at der er _(3_) på vand, _(3_) på flyve, og _(2_) på skov. 
+    Én mulig permutation er:
+    _($f( \{h_1,h_2,h_3,h_4,h_5,h_6,h_7,h_8 \} ) = f( \{h_3,h_1,h_2,h_6,h_4,h_5,h_8,h_7 \} )_)
+    En anden mulig permutation er:
+    _($f(\{ h_1,h_2,h_3,h_4,h_5,h_6,h_7,h_8 \}) = f( \{ h_7, h_8, h_6, h_1, h_2, h_3, h_4, h_5\} ) _)
+    Ved den første er det ret åbenlyst hvordan den sender folk rundt i permutationer:
+    _(h_1, h_2, h_3_) har èn cyklus hvor de går _(1_) fremad hver gang, _(h_4,h_5,h_6_)
+    har en cyklus hvor de går _(1_) fremad hver gang, og _(h_7,h_8_) har en cyklus
+    hvor de går _(1_) fremad hver gang. Ved den anden permutation er det slet ikke ligeså
+    åbenlyst, og det er en af grundende til at det er svært at finde antallet af permutationer.
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5">
+    I den anden mulige permutation jeg lige viste, hvilke hold bliver sendt rundt i hvilke
+    cyklusser? 
+    <br><br></q-stion>
+    <answer-box>
+    Well, lad os først af alt se om vi spotter noget bare ved at kigge på selve permutationen direkte.
+    Jeg lægger umiddelbart efter lidt tid mærke til at _(h_3_) og _(h_6_) bytter plads.
+    Der er altså en cyklus der går _(h_3 \to h_6 \to ..._). Ud over det kan jeg ikke se noget
+    direkte, så jeg tænker bare jeg anvender permutationen 2 gange mere: Jeg ved at
+    ingen af cyklusserne er over _(3_) lange, så 3 permutationer i alt burde være
+    nok til at jeg kan se dem. 
+    <p class="t">
+    Anvender vi _(f_) én gang mere får vi:
+    _($f(\{h_7, h_8, h_6, h_1, h_2, h_3, h_4, h_5 \}) = \{h_4,h_5,h_3,h_7,h_8,h_6,h_1,h_2\} _)
+    Og èn gang til:
+    _($f(\{h_4,h_5,h_3,h_7,h_8,h_6,h_1,h_2 \}) = \{h_1,h_2,h_6,h_4,h_5,h_3,h_7,h_8\}_)
+    Hmm. _(h_1_) blev til _(h_7_) og så _(h_4_), _(h_4_) blev til _(h_1_) og så _(h_7_), og 
+    _(h_7_) blev til _(h_4_) og så _(h_1_). _(h_1, h_4, h_7 _) er altså i en cyklus 
+    _(h_1 \to h_4 \to h_7_). Den resterende gruppe består af _(h_2, h_5, h_8_), og hvis
+    vi kigger lidt så kan vi se at den går _(h_2 \to h_5 \to h_8_). Done!
+    </p>
+    <br></answer-box>
+
+    <p class="t">
+    Stirling-tal er svære <i>men mulige</i> at regne. Derfor kan de bare regnes èn gang, og så indsættes på et skema
+    hvor alle kan se dem. _(S(n, k)_) tager kun <i>hele tal</i>, og man
+    får ikke <i>super</i> ofte brug for _(n_) og _(k_) der er højere end _(20_)-30, så et skema
+    burde klare jobbet fint i mange tilfælde. 
+    </p>
+    <p class="t">
+    Udover skemaet så er det praktisk at definere _(S(n, k)_), da vi nu kan studere
+    nogle af dens mulige brugbare matematiske egenskaber. Det kan vi godt trods vi ikke
+    <i>direkte</i> har en proces til at regne bestemte værdier endnu. 
+    </p>
+    <p class="t">
+    Pointen er
+    at det ikke nødvendigvis behøver at være et stort problem at indsætte og introducere _(S(n,k)_)-tal i ens beregninger
+    og matematik bare fordi de er sværre at regne. Det stoppede os ikke fra at bruge kvadrat- og n-roder! 
+    Bare at anerkende en ide's vigtighed, give den et navn, 
+    studere den, og lave lidt forarbejde, kan til tider markant
+    hjælpe en med at løse relevante problemer!
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Hvad er en hvilket som helst _(S(n,n)_) lig?
+    <br><br></q-stion>
+    <answer-box>
+    Hvor mange måder kan du dele _(n_) objekter rundt i _(n_) cykluser? Kun 1: 
+    Ved at de alle bliver på deres plads og ikke bliver rykket overhovedet. 
+    <br><br></answer-box>
+    
+    <q-stion 1="2" 2="1" 3="5">
+    Find en formel for _(S(n,1)_). _(n_) objekter der fordeles i _(1_) cyklus
+    <br><br></q-stion>
+    <answer-box>
+    Lad os sige at en eller anden permutation opdelte noget i nogle cyklusser: 
+    _($f: (1 \to 4 \to 2), (3 \to 5 \to 6 \to 9), (7 \to 8)_)
+    _(1,4,2_) går rundt, _(3,5,6,9_) går rundt, og _(7,8_) går rundt. 
+    Lad os kigge på cyklussen _(3 \to 5 \to 6 \to 9_) som eksempel. 
+    De præcis samme _(4_) objekter kunne også rykkes rundt i en cyklus som:
+    _($3 \to 6 \to 9 \to 5_)
+    eller ... 
+    _($3 \to 9 \to 6 \to 5_)
+    Dette er tre forskellige cykluser. Det skal dog noteres at 
+    _($\begin{eqnarray}
+    3 \to 5 \to 6 \to 9 \\
+    9 \to 3 \to 5 \to 6
+    \end{eqnarray}_)
+    <i>ikke</i> er to forskellige cykluser. Her er den samme cyklus bare skrevet på
+    to forskellige måder. Cyklussens <i>rækkefølge</i> har indflydelse, men ikke nogen
+    "absolut position". Antallet af mulige cyklusser er altså:
+    _($(4-1)!=6_)
+    Og generelt for en _(n_)-lang cyklus med _(n_)-objekter:
+    _($(n-1)!_)
+    Grunden til jeg havde en permutation med _(3_) cykluser _(f_) i eksemplet deroppe var bare får at gøre
+    det lidt mindre abstrakt. 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Vi ved at 
+    _($\VeC[n,m] = \VeC[n-1,m] + \VeC[n-1,m-1]_)
+    Sådan her kan man altså regne èn _(\Vec[m,n]_) i forhold til nogle mindre. 
+    Det er også via denne identitet/regel at vi hurtigt kan finde de forskellige _(\Vec[m,n]_)
+    med Pascals trekant. <b> 1</b>: Kan du finde noget lignende og praktisk for Stirling-tal? 
+    <p class="t">
+    Prøv måske at tage inspiration fra det mere intuitive bevis vi brugte til at komme frem
+    til det øvre resultat! 
+    </p>
+    <p class="t">
+    <b> 2</b>: Brug dit 
+    resultat til at regne _(S(6,4)_) i hånden. 
+    </p>
+    <br></q-stion>
+    <answer-box t="h">
+    Lad os prøve at bruge lidt det samme trick som ved _(n_)-choose-_(k_), hvor vi 
+    specifikt fokuserede på det første element. Vi har lidt to valgmuligheder: 
+    _($\begin{eqnarray}
+    && \text{A: Elementet er en del af en anden cyklus} \\ \\
+    && \text{B: Elementet er i sin egen 1-lange cyklus}
+    \end{eqnarray}_)
+    Måske er begge disse to lette at tælle/beskrive ved hjælp af mindre
+    _(S(n, k)_)? 
+    </answer-box>
+    <answer-box t="Answer 1#" tabColour="rgb(171,96,147)">
+    Okay: Vores mål er at beskrive èt Stirling tal i forhold til nogle andre mindre Stirling tal. Sig
+    vi leder efter _(S(8,5)_). Det er mængden af permutationer af _(8_) objekter man kan lave hvor 
+    der er _(5_) cykluser:
+    <img class='Spic' style='width:45%' src='../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\StirlingRecursion.png'> 
+    <p class="t">
+    Lad os prøve at bruge lidt det samme trick som ved _(n_)-choose-_(k_), hvor vi 
+    specifikt fokuserede på det første element. Vi har lidt to valgmuligheder: 
+    _($\begin{eqnarray}
+    && \text{A: Elementet er en del af en anden cyklus} \\ \\
+    && \text{B: Elementet er i sin egen 1-lange cyklus} 
+    \end{eqnarray}_)
+    Ved _(A_) kan der laves _(S(8-1, 3)_) cyklusser uden det første element.
+    For hver af disse cyklusser kan man så bestemme hvor man "indsætter" _(a_). 
+    Sig f.eks. vi stod med: 
+    _($(2 \to 8 \to 3), \, (5 \to 7), \, (6 \to 4) _)
+    Her kan vi indsætte det første element _(3_) forskellige steder
+    ved cyklus _(1_) (ingen forskel på om den er 
+    efter _(3_) eller før _(2_)), _(2_) forskellige steder ved cyklus _(2_), 
+    og _(2_) forskellige steder ved cyklus _(3_). Det er i alt 
+    _(3+2+2=_) _(7_) steder. Så i situation _(\text{A}_) er der
+    _($7*S(7, 3)_)  
+    muligheder. I situation _(\text{B}_) er der _(7_) elementer tilbage der skal opdeles
+    i 2 cyklusser (èn er allerede brugt på første element). Det kan gøres på
+    _($S(7, 2)_)
+    måder. Alt i alt får vi:
+    _($S(8, 3) = 7*S(7, 3) + S(7, 2)_)
+    Hvilke let kan generaliseres til: 
+    _($S(n,k)=(n-1)*S(n-1,k)+S(n-1,k-1)_)
+    Bum! 
+    </p>
+    <br><br></answer-box>
+    <answer-box t="Answer 2#" tabColour="rgb(175,128,161)">
+    Her <i>kunne</i> jeg vælge at begynde fra toppen som:
+    _($\begin{eqnarray}
+    && S(6, 4) & = 5*S(5, 4) + S(5, 3) \\
+    && & = 6*\left(4*S(4, 4) + S(4, 3) \right) + 4*S(4, 3) + S(4, 2) \\
+    && & = \dots
+    \end{eqnarray}_)
+    ... men det bliver hurtigt rodet, kompliceret og ueffektivt. 
+    Lad os i stedet starte med _(S(1,1),S(2,1),S(2,2)_) og
+    begynde på en trekant ligesom pascal. _(S(1,1)_) og _(S(2,2)_) ved 
+    vi er _(1_), og _(S(2,1)_) er _((2-1)!=1_):
+    </p>
+    <img class='Spic' style='width:30%' src='../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\StirlingTriangle1.png'> 
+    <p class="t">
+    Jeg viser resten af processen i følgende video: 
+    </p>
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\StirlingsTriangle.mp4' type='video/mp4'>
+    </video>
+    <p class="t">
+    Svaret var altså _(85_)
+    </p>
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Find en praktisk formel for _(S(n,n-1)_)
+    <br><br></q-stion>
+    <answer-box>
+    Lad os starte med bare et eksempel: _(S(6,5)_). Hvis der skal være _(5_) cykluser, så
+    er der kun 1 af cykluserne der er _(2_)-lang. Nu skal vi så bare vælge hvilke _(2_)
+    elementer der er en del af denne cyklus, hvilke vi kan gøre på 
+    _($\VeC[n,2]_)
+    måder. Det er svaret. Done. 
+    <p class="cent">
+        *
+    </p>
+    <p class="t">
+    Man kunne også have udledt samme svar på en anden måde som jeg viser i følgende video:
+    </p>
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\RecursiveStirlingTrick.mp4' type='video/mp4'>
+    </video>
+    <p class="t">
+    Det andet er måske mere elegant, men dette er for nice til ikke at vise! 
+    </p>
+    <br></answer-box>
+
+
+
+
+

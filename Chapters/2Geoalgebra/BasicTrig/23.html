@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+
+
+    <h3>Vinkler lagt sammen inde i trig funktioner</h3>
+    <p class="t">
+    Vi <i>har</i> set man håndtere _(Sin(v+\pi)_) eller _(Sin(v+\frac{\pi}{2})_) osv. 
+    Hvad hvis vi ikke plussede med simple tal ganget med _(\pi_) dog? Det ville være praktisk, hvis 
+    _(Sin(a+b)_) eller _(Cos(a+b)_) kunne udregnes nemt, bare vi kendte _(Sin(a), \, Sin(b)_). 
+    Det har man f.eks. brug for, hvis man skal bevise at:
+    _($A*Sin\left(Bx - Bv*t \right) + A*Sin\left(Bx + Bv*t \right) =_)
+    _($ 2A*Sin(Bx) Cos(Bv*t)_)
+    Hvilket var vigtigt, da vi arbejdede med streng-instrumenter. 
+    Lad os derfor prøve at finde et udtryk for _(Sin(a+b)_) eller _(Cos(a+b)_), i forhold til _(Sin(a), \, Sin(b), \, Cos(a), \, Cos(b)_). 
+    </p> 
+
+    <p class="t">
+    Så ... hvordan gør vi det? Hvor skal vi starte? Well, Sin og Cos er geometriske ideer, så det 
+    er i geometrien vi skal søge, hvis vi er på jagt efter nye egenskaber. Jeg har en ide:
+    </p>
+    <img class="Spic" style="width:40%" src="../../../Assets/Chapter2\Section1\TrigProperties\AngleAddition00.png">
+    <p class="t">
+    Her er en helt normal retvinklet trekant, hvis vinkel jeg har delt op i to: _(A_) og _(B_). Ligesom på 
+    en hvilket som helst anden trekant, ved jeg at:
+    _($Cos(v)=a/c, \qquad Sin(v)=b/c_)
+    I vores trekant er det bare lige tilfældet, at _(v=A+B_), så:
+    _($Cos(A+B)=a/c, \qquad Sin(A+B)=b/c_)
+    Det her er virkelig praktisk. Nu er alt den mærkelige abstraktion med
+    _(Cos(A+B)_) eller _(Sin(A+B)_) reduceret til et "simpelt" geometrisk problem! 
+    Vi skal bare måle _(a_), _(b_) og _(c_) for at få vores _(Cos(A+B)_) og _(Sin(A+B)_)!
+    </p>
+    <p class="t">
+    Lad os gå i gang. Først tegner jeg nogle hjælpelinjer op, for lettere at
+    finde _(a_), _(b_) og _(c_):
+    </p>
+    <img class="Spic" style="width:40%" src="../../../Assets/Chapter2\Section1\TrigProperties\AngleAddition0.png">
+    <p class="t">
+    Det her trick vi har gang i, vil tydeligvis virke uanset hvor stor vores trekant er. 
+    Lad os derfor vælge den mest strategiske og praktiske størrelse. 
+    Jeg tænker, at den bedste ide er en størrelse hvor specifikt den midterste linje er lig _(1_):
+    </p>
+    <img class="Spic" style="width:40%" src="../../../Assets/Chapter2\Section1\TrigProperties\AngleAddition1.png">
+    <p class="t">
+    Det er praktisk. Prøv at se:
+    </p>
+    <img class="SpicXL" style="width:55%" src="../../../Assets/Chapter2\Section1\TrigProperties\AngleAddition2.png">
+    <p class="t">
+    For at finde de andre sider i de to mindre trekanter (her markeret med rød og blå)
+    skal vi sige henholdsvis _(Sin(A)*L_), _(Cos(A)*L_), _(Sin(B)*L_), _(Cos(B)*L_). 
+    Men når _(L_) er _(1_), bliver det til bare _(Sin(A)_), _(Cos(A)_), _(Sin(B)_) og _(Cos(B)_):
+    </p>
+    <img class="Spic" style="width:50%" src="../../../Assets/Chapter2\Section1\TrigProperties\AngleAddition3.png">
+    <p class="t">
+    Nu er vi der næsten, vi mangler bare de to sider oppe ved hjørnet.
+    Den anden vinkel i vores trekant er _(\frac{\pi}{2}-(A+B)_):
+    </p>
+    <img class="SpicXL" style="width:50%" src="../../../Assets/Chapter2\Section1\TrigProperties\AngleAddition4.png">
+    <p class="t">
+    Det betyder, at den anden vinkel i den lille trekant oppe ved hjørnet er _(\frac{\pi}{2} - (\frac{\pi}{2} - (A+B))_)
+    som bare er lig _(A+B_), altså:
+    </p>
+    <img class="Spic" style="width:50%" src="../../../Assets/Chapter2\Section1\TrigProperties\AngleAddition5.png">
+    <p class="t">
+    Nu kan vi "nemt" finde de resterende sider som:
+    </p>
+    <img class="SpicXL" style="width:50%" src="../../../Assets/Chapter2\Section1\TrigProperties\AngleAddition6.png">
+    <p class="t">
+    Og så får vi endeligt:
+    </p>
+    <img class="SpicXL" style="width:55%" src="../../../Assets/Chapter2\Section1\TrigProperties\AngleAddition7.png">
+    <p class="t">
+    Det betyder:
+    </p>
+    <div style="margin-top:25px;">
+    _($\begin{eqnarray} 
+    && a = Cos(A) \\ \\ 
+    && b = Sin(B)+\frac{Sin(A)}{Cos(A+B)} \\ \\ 
+    && c = Cos(B) + Sin(A)*Tan(A+B) = Cos(B) + Sin(A)*\frac{Sin(A+B)}{Cos(A+B)}
+    \end{eqnarray}_)
+    </div>
+    <p class="t">
+    ... hvilket, nu når vi ser på det, faktisk lidt er et problem. 
+    Vi prøver jo at finde _(Cos(A+B)_) og _(Sin(A+B)_) <i>kun</i> ved hjælp af 
+    _(Cos(A)_), _(Sin(A)_), _(Cos(B)_), _(Sin(B)_), men både _(b_) og _(c_) 
+    bruger netop _(Cos(A+B)_) og _(Sin(A+B)_) i deres formler! Ud fra:
+    _($Cos(A+B)=a/c, \qquad Sin(A+B)=b/c_)
+    ... fås:
+    </p>
+    <div style="margin-top:25px;">
+    _($\begin{eqnarray} 
+    && Cos(A+B)=\frac{Cos(A)}{Cos(B) + Sin(A)*Tan(A+B)} \\ \\ 
+    && Sin(A+B)=\frac{Sin(B)+\frac{Sin(A)}{Cos(A+B)}}{Cos(B) + Sin(A)*Tan(A+B)} 
+    \end{eqnarray}_)
+    </div>
+    <p class="t">
+    Så nu er vi næsten lidt tilbage ved start.
+    </p>
+    <p class="t">
+    Men alt håb er ikke tabt! Vi har fået opsat to matematiske krav.
+    To ting vi ved der skal gælde for _(Cos(A+B)_) og _(Sin(A+B)_). 
+    Er det måske muligt at finde formler for deres værdier, bare ved hjælp af
+    disse krav? 
+    </p>
+    <p class="t">
+    Well, her er èn ting vi kunne gøre: Hvis _(Cos(A+B)=a/c_), så er
+    _(c=a/Cos(A+B)_). Lignende, hvis _(Sin(A+B)=b/c_), så er <br> _(c=b/Sin(A+B)_).
+    Så _(c_) er lig både _(a/Cos(A+B)_) og _(b/Sin(A+B)_). 
+    De må derfor være lige store:
+    </p>
+    <div style="margin-top:25px;">
+    _($\begin{eqnarray}
+    && a/Cos(A+B)=b/Sin(A+B) \\ \\
+    && \to \\ \\
+    && \frac{Cos(A)}{Cos(A+B)}=\frac{Sin(B)+\frac{Sin(A)}{Cos(A+B)}}{Sin(A+B)}
+    \end{eqnarray}_)
+    </div>
+    <p class="t">
+    Det her er i hvert fald lidt bedre. Og det kan blive bedre éndnu: 
+    Hvis vi ganger begge sider af lighedstegnet (som vi jo kan, siden det 
+    bare er de samme tal, men skrevet på forskellige måder) får vi:
+    </p>
+    <div>
+    _($\begin{eqnarray}
+    && \frac{Cos(A)}{Cos(A+B)}*Cos(A+B)=\frac{Sin(B)+\frac{Sin(A)}{Cos(A+B)}}{Sin(A+B)}*Cos(A+B) \\ \\
+    && \to  \\ \\
+    && Cos(A)=\frac{Sin(B)*Cos(A+B)+Sin(A)}{Sin(A+B)}
+    \end{eqnarray}_)
+    </div>
+    <p class="t">
+    Vi gør nu præcist det samme igen, bare med _(Sin(A+B)_):
+    </p>
+    <div>
+    _($\begin{eqnarray} 
+    && Cos(A)*Sin(A+B)=\frac{Sin(B)*Cos(A+B)+Sin(A)}{Sin(A+B)}*Sin(A+B) \\ \\
+    && \to \\ \\
+    && Cos(A)*Sin(A+B)=Sin(B)*Cos(A+B)+Sin(A)
+    \end{eqnarray}_)
+    </div>  
+    <p class="t">
+    Endeligt dividerer vi lige begge sider med _(Cos(A)_):
+    </p>
+    <div>
+    _($\begin{eqnarray} 
+    && \frac{Cos(A)*Sin(A+B)}{Cos(A)}=\frac{Sin(B)*Cos(A+B)+Sin(A)}{Cos(A)} \\ \\
+    && \to \\ \\
+    && Sin(A+B) = \frac{Sin(B)*Cos(A+B)+Sin(A)}{Cos(A)}
+    \end{eqnarray}_)
+    </div>
+    <p class="t">
+    Vi har med alt det her nu <i>isoleret</i> _(Sin(A+B)_). Vi har
+    beskrevet _(Sin(A+B)_) i forhold til _(Cos(A+B)_). Det virker ikke af meget, 
+    men når vi kombinerer det med det faktum, at _(Cos(v)^2 + Sin(v)^2 = 1_), får vi pludselig
+    noget vigtigt: 
+    _($\begin{eqnarray}
+    && Cos(v)^2 + Sin(v)^2 = 1 \to \\ \\
+    && Cos(A+B)^2 + Sin(A+B)^2 = 1 \to \\ \\
+    && Cos(A+B)^2 + \left(\frac{Sin(B)*Cos(A+B)+Sin(A)}{Cos(A)}\right)^2 = 1
+    \end{eqnarray}_)
+    Se grundigt på det her krav: Der er kun 
+    _(Cos(A+B)_) og ingen _(Sin(A+B)_). Det her krav beskriver 
+    _(Cos(A+B)_) <i>kun</i> i forhold til _(Sin(B)_), _(Sin(A)_) og _(Cos(A)_). 
+    Nu skal vi så "bare" isolere _(Cos(A+B)_), hvilke jeg gør i følgende video:
+    </p>
+    <video class='SpicBXL' style="width:100%;" controls>
+        <source src='../../../Assets/Chapter2\Section1\TrigProperties\AngleAdditionEnding.mp4' type='video/mp4'>
+    </video>
+
+
+    <!-- <p class="t" style="margin-left: -20%; margin-top:30px; margin-bottom:30px;">
+        _($\begin{eqnarray}
+        && \frac{(Sin(B)*Cos(A+B)+Sin(A))^2}{Cos(B)^2}+Cos(A+B)^2=1  \\ \\
+        && \text{Udvider } (Sin(B)*Cos(A+B)+Sin(A))^2 \text{...} \\ \\
+        && \frac{Sin(B)^2*Cos(A+B)^2+2*Sin(B)*Cos(A+B)*Sin(A)+Sin(A)^2}{Cos(B)^2}+Cos(A+B)^2=1  \\ \\
+        && \text{Laver det hele om til én stor brøk ...} \\ \\
+        && \frac{Sin(B)^2*Cos(A+B)^2+2*Sin(B)*Cos(A+B)*Sin(A)+Sin(A)^2+Cos(A+B)^2*Cos(B)^2}{Cos(B)^2}=1 \\ \\
+        && \text{Hvis to ting divideret med hinanden giver 1 så må det jo også være ligmed hinanden ...} \\ \\
+        && Sin(B)^2*Cos(A+B)^2+2*Sin(B)*Cos(A+B)*Sin(A)+Sin(A)^2+Cos(A+B)^2*Cos(B)^2=Cos(B)^2  \\ \\
+        && \text{Hvis to ting er lig hinanden, så er den éne ting minus den anden jo } 0 \\ \\
+        && Sin(B)^2*Cos(A+B)^2+2*Sin(B)*Cos(A+B)*Sin(A)+Sin(A)^2+Cos(A+B)^2*Cos(B)^2-Cos(B)^2=0  \\ \\
+        && \text{Rykker lidt rundt på ledene ...} \\ \\
+        && Sin(B)^2*Cos(A+B)^2+Cos(A+B)^2*Cos(B)^2+2*Sin(B)*Cos(A+B)*Sin(A)+Sin(A)^2-Cos(B)^2=0  \\ \\
+        && \text{Gruppere de led med } Cos(A+B)^2  \\ \\
+        && Cos(A+B)^2*\left(Sin(B)^2+Cos(B)^2 \right)+Cos(A+B)*\left(2*Sin(B)*Sin(A) \right)+\left(Sin(A)^2-Cos(B)^2 \right)=0  \\ \\
+        && \text{Bruger det faktum at } Sin(v)^2+Cos(v)^2=1 \\ \\
+        && Cos(A+B)^2+Cos(A+B)*\left(2*Sin(B)*Sin(A) \right)+ \left(Sin(A)^2-Cos(B)^2 \right)=0 
+        \end{eqnarray}_)
+    </p> -->
+
+    <p class="t">
+    Så vi har nu:
+    _($?^2 + \left(2 Sin(B) Sin(A) \right)*? \left(Sin(A)^2-Cos(A)^2 \right) =0 _)
+    Hvor _(?_) så er _(Cos(A+B)_), det vi leder efter. Det ligner umiddelbart, at vi igen sidder fast.
+    Vi har bare brug for et lille sidespor, dog!
+    Vi skal lære om noget, der intet har at gøre med trigonometri, men er
+    generelt brugbart og vigtigt overalt i matematik.
+    </p>
+
+
+

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+
+
+    <h3>Hældningen af en funktion når man kender dens modsætning</h3>
+    <p class="t"><!--23.1 -->
+    Det <i>er</i> muligt at differentiere _(x^x_) - det er relativt nemt endda. Det
+    kræver bare en ny strategi. Det er samme strategi, vi bruger til at differentiere
+    de resterende punkter på listen:
+    </p>
+
+    <div style="text-align:center; margin-top:-10px; margin-bottom:-10px;">
+        <ul style="display: inline-block; list-style:disc;">
+            <li>_(x^A_), med _(A_) som komma-tal</li>
+            <li>_(Log_{A}(x) _)</li>
+            <li>_(Log_{x}(A) _)</li>
+            <li>_(Arccos(x), Arcsin(x)_)</li>
+            <li>_(Arctan(x)_)</li>
+        </ul>
+    </div>
+
+    <p class="t">
+    Lad mig illustrere. Sig vi skal differentiere _(x^{1/3}_). 
+    _(x^{1/3}_) er et tal med den egenskab, at det er lig _(x_), hvis det opløftes i tredje potens. Så:
+    _($\left(x^{1/3} \right)^3 = x_)
+    _((x^{1/3})^3_) er èn funktion, _(x_) er en anden. 
+    Ligningen fortæller os
+    at de her to <i>funktioner</i> er identiske, lige meget hvilket _(x_) vi vælger. Hvis to funktioner er
+    identiske, er deres <i>hældninger</i> også identiske:
+    _($¤x \left[\left(x^{1/3} \right)^3 \right] = ¤x[x]_)
+    Hældningen af _(x_) er bare _(1_). Hældningen af _((x^{1/3})^3_) kan vi finde
+    med kædereglen:
+    _($3*\left(x^{1/3} \right)^2*¤x[x^{1/3}]=1_)
+    Tænk over det: _(d/dx[x^{1/3}]_) er <i>præcis</i> det vi prøver at finde! Vi skal
+    bare isolere det i ligningen!
+    _($¤x[x^{1/3}] = \frac{1}{3*\left(x^{1/3} \right)^2}_)
+    Og voila, vi har vores hældning! Vi kan f.eks. se, at hældningen ved _(x=1.3_) er
+    _($\frac{1}{3*\left(1.3^{1/3} \right)^2}=0.279_)
+    </p>
+
+    <p class="t">
+    Prøv at brug samme strategi til at løse næste opgave!
+    </p>
+
+    <q-stion 1="8" 2="1">
+    Differentier _(Arccos(x)_).
+    <br><br></q-stion>
+    <answer-box>
+    Vi ved, at man får _(x_) ved at tage _(Cos_) af _(Arccos(x)_). Ergo:
+    _($Cos\left(Arccos(x) \right) = x_)
+    Vi har nu to funktioner med to identiske hældninger:
+    _($¤x[Cos(Arccos(x))] = ¤x[x] \to _)
+    _($-Sin(Arccos(x))*¤x[Arccos(x)] = 1_)
+    Nu isolerer vi _(d/dx[Arccos(x)]_), som er målet:
+    _($¤x[Arccos(x)] = \frac{1}{-Sin(Arccos(x))}_)
+    Voila! Vi har vores svar!
+    <br><br></answer-box>
+
+    <p class="t">
+    _(x^{1/3}_) er det modsatte af _(x^3_), og _(Arccos_) er det modsatte af _(Cos_). 
+    Vores proces kan nemt generaliseres til en hvilken som helst funktion _(f(x)_) og dens modsatte
+    funktion _(F(x)_). Man får:
+    _($¤x[F(x)] = \frac{1}{f'(F(x))}_)
+    Fantastisk! 
+    </p>
+
+    <q-stion 1="8" 2="2">
+    Differentier følgende udtryk:
+    <div style="margin-left:-74%; margin-top:25px; margin-bottom: -10px;">
+    _($\begin{eqnarray}
+        && \underline{\textbf{A}}: \, \, \, \, \, \, Arcsin(x) \\ \\
+        && \underline{\textbf{B}}: \, \, \, \, \, \, Log_{2.3}(x) \\ \\
+        && \underline{\textbf{C}}: \, \, \, \, \, \, Arctan(x) 
+    \end{eqnarray}_)
+    </div>
+    <br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    _(Arcsin(x)_) er det modsatte af _(Sin(x)_), så vi bruger formlen:
+    _($\frac{1}{f'(F(x))}_)
+    _(f'_) er _(Cos(x)_), så svaret bliver:
+    _($\frac{1}{Cos(Arcsin(x))}_) 
+    Nice!
+    <p class="cent">*</p>
+    <p class="t">
+    ... Men det kan blive mere nice! Dette udtryk kan forsimples/omskrives. 
+    Vi ved, at _(Cos(x)^2+Sin(x)^2=1_), så:
+    _($\begin{align}
+    \frac{1}{Cos(Arcsin(x))} & = \frac{1}{\pm \sqrt{1-Sin(Arcsin(x))^2}} \\ \\
+    & =  \pm \frac{1}{\sqrt{1-x^2}}
+    \end{align}_)
+    På meget lignende vis kan vi se, at
+    _($\begin{align}
+    ¤x[Arccos(x)] & = \frac{1}{-Sin(Arccos(x))} \\ \\
+    & = \frac{1}{-1*\pm \sqrt{1-Cos(Arccos(x))^2}} = \\ \\
+    & = \frac{1}{\mp \sqrt{1-x^2}}
+    \end{align}_)
+    Den eneste forskel mellem de to er, at den ene er positiv når den anden er negativ, og vice versa.
+    Man skal derfor passe på med, om man har negativiteten rigtig når man bruger dem. 
+    </p>
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Det modsatte af _(Log_{2.3}(x)_) er _(2.3^x_), hvis hældning
+    er _(0.832*2.3^x_). Vores svar er derfor:
+    _($ \frac{1}{0.832*2.3^{Log_{2.3}(x)}} = \frac{1}{0.832x}_)
+    Bum! Man kan let se, at _(Log_{A}(x)_) generelt giver:
+    _($ \frac{1}{Ln(A)*x}_)
+    Og at _(Ln(x)_) giver:
+    _($\frac{1}{x}_)
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{C}}_)#" tabColour="rgb(171,96,147)">
+    _(Tan_) er det modsatte, og dets hældning er lig _(Cos(x)^{-2}_). Svaret bliver derfor:
+    _($\frac{1}{Cos(Arctan(x))^{-2}} = Cos(Arctan(x))^2_)
+    Dette er helt fint, men vi kan gøre det simplere præcis ligesom _(Arcsin_) og _(Arccos_). 
+    I et tidligere kapitel så vi, at _(Cos(x)_) kunne omskrives i forhold til _(Tan_):
+    _($Cos(x)=\frac{1}{\sqrt{1+Tan(x)^2}}_)
+    Sådan her kan vi fjerne _(Arctan_):
+    _($ \left( \frac{1}{\sqrt{1+Tan(Arctan(x))^2}} \right)^2 = \left(\frac{1}{\sqrt{1+x^2}} \right)_)
+    Så:
+    _($¤x[Arctan(x)] = \frac{1}{1+x^2}_)
+    Egentligt et ekstremt dejligt udtryk, der tilsyneladende ikke har noget at gøre med 
+    trigonometri! 
+    <br><br></answer-box>
+
+    <q-stion 1="8" 2="3">
+    Find en regel vi kan bruge til at differentiere _(x^A_), hvis _(A_) er et kommatal.
+    <p class="t">
+    Hint: Et hvilket som helst <i>kommatal</i> (og <i>irrationelle</i> tal som _(\pi_) eller _(e_) 
+    kalder vi <i>ikke</i> for "kommatal")
+    kan skrives, som <i>to hele tal dividerede med hinanden</i>. F.eks. er
+    _(2.3_) lig _(23/10_). 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Et kommatal kan skrives som to tal divideret med hinanden, så vi prøver at differentiere
+    _($x^{a/b}_)
+    ... hvor _(a_) og _(b_) begge er positive, hele tal. De kunne teknisk set også godt være negative, men
+    det ignorerer vi for nu.
+    _($¤x \left[x^{a/b}  \right] = ¤x \left[(x^{1/b})^{a} \right]_)
+    Vi bruger kædereglen. Den ydre funktion er _(x^a_), hvis hældning
+    er lig _(a*x^{a-1}_), og den indre funktion er 
+    _(x^{1/b}_), hvis hældning er:
+    _($\frac{1}{b*(x^{1/b})^{b-1}} = \frac{1}{b*x^{\frac{b-1}{b}}}_)
+    Vi får nu:
+    _($\begin{eqnarray}
+    && a*(x^{1/b})^{a-1}*\frac{1}{b*x^{\frac{b-1}{b}}} = \\ \\
+    && \frac{a}{b}*x^{\frac{a-1}{b}+\frac{1-b}{b}} = \\ \\
+    && \frac{a}{b}*x^{\frac{a}{b}-1} 
+    \end{eqnarray}_)
+    Voila! Det er ret fantastisk, fordi hvis vi kalder
+    kommatallet _(a/b_) for _(A_), får vi:
+    _($¤x[x^A] = A*x^{A-1}_)
+    Præcis den samme hældning som med hele og negative tal! Det er endda
+    muligt at vise, 
+    <sup><a href="https://proofwiki.org/wiki/Power_Rule_for_Derivatives#Proof_for_Real_Number_Index" title="proofwiki.org (Oktober 2021, 24). 'Power Rule for Derivatives'. https://proofwiki.org/wiki/Power_Rule_for_Derivatives" target="_blank">[F]</a></sup>
+    at denne formel virker, hvis vi har irrationelle tal som _(\pi_) eller _(e_). 
+    Du kan bruge denne formel uden at vide noget som helst om potensen!
+    <br><br></answer-box>
+
+    
+
+
+
+
+

@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <p class="t">
+    Vi har indtil videre lidt lært to strategier vi kan bruge til at dividere. Én er meget opbygget omkring 
+    det med at "gætte strategisk". Her er der en bestemt procedure vi kan følge i det værste tilfælde, hvor vi 
+    ganger vores gæt med noget stort først, kommer tæt på, ganger det med noget mindre og kommer så tættere på fejlen. 
+    Det bliver vi ved med til det går op. I processen er vi flere gange nødt til at gange og dividere med _(10_). 
+    Udover det så har vi lært at opdele både tæller og nævner i deres primfaktore, se hvilke de deler, og så fjerne dem.
+    F.eks: 
+    _($\frac{210}{490}=\frac{2*7*5*3}{2*7*5*7}=\frac{3}{7}_)
+    Brøken er nu lavet om til dens simpleste form.
+    Søger vi at få resultatet som bare ét tal, så er det dog ikke altid lige let at regne. Vise tilfælde som 
+    _($\frac{4}{5}=\frac{40}{5}*10^{-1}=8*10^{-1}=0.8_) 
+    er lette nok, men hvad ville du gøre hvis du fik _(1/3_)?
+    Gang og divider tælleren med hvor end høje tal du har lyst: du vil aldrig kunne få det til at gå op <br> med _(3_). 
+    _(1/5_) og _(1/2_) ser ud til at virke helt fint. Både _(2_), _(3_) og _(5_) er primtal,
+    så hvad præcis er det der går der galt her?
+    </p>
+    <p class="t">
+    Det viser sig at der faktisk ikke er noget specielt omkring _(5_) eller _(2_) i forhold til andre primtal 
+    som _(3_) eller _(7_). Problemet ligger rent og simpelt i vores talsystem: base _(10_). Vi er <i>nødt til</i>
+    i vores nuværende system at beskrive noget som _(1/3_) i forhold til mængden af tiendedele. I det base _(4_) system vi 
+    primært bruge i første afsnit ville vi være nødt til at beskrive det i forhold til mængden af kvartdele. Det kan 
+    man simpelt hen ikke! Hvis vi brugte et base _(3_) system, så ville _(1/3_) bare være _(0.1_). Nu ville vi 
+    dog ikke længere kunne beskrive _(1/2_) eller _(1/5_). Hvordan præcis laver man en halvdel ud af kun progressivt mindre tredjedele,  
+    en tredjedel ud af femtedele af femtedele, eller vice versa? En syvendedel ud af kvartdele af kvartdele?
+    </p>
+    <p class="t">
+    Og så indser man hvad det jo er vi faktisk prøver at gøre: at beskrive ét primtal i forhold til et andet!
+    Normalt hvis vi skal skrive _(1/3_) i base _(10_) så siger vi _(0.3333333..._) og bliver ved for evigt.
+    <i>Forestil</i> dig nu at det eventuelt stoppede. Sig, _(0.33333334_). Nu kunne vi så sige:
+    _($\frac{1}{3}=\frac{3}{10^1}+\frac{3}{10^2}+\frac{3}{10^3}+\frac{3}{10^3}+\frac{3}{10^4}+\frac{3}{10^5}+\frac{3}{10^6}+\frac{4}{10^7}_)
+    Vi kunne lægge alle brøkerne sammen til én brøk som:
+    _($\frac{3*10^6+3*10^5+3*10^4+3*10^3+3*10^2+3*10+4}{10^7}_)
+    Altså vi har:
+    _($\frac{1}{3}=\frac{3*10^6+3*10^5+3*10^4+3*10^3+3*10^2+3*10+4}{10^7}_)
+    Vi ved at når man tager _(1_) divideret med en brøk, så "vender man brøkken om". 
+    _(1/(1/3)_) er derfor lig _(3_), og siden _(1/3_) er sat til den store brøk til højre, så skal vi også vende den om: 
+    _($3=\frac{10^7}{3*10^6+3*10^5+3*10^4+3*10^3+3*10^2+3*10+4}=_)
+    _($\frac{10^7}{3333334}=\frac{(2*5)^7}{3333334}=\frac{2^7*5^7}{3333334}_)
+    <p class="t">
+        Tænk over det: vi dividerer exponenter af _(2_) og _(7_) med et eller andet tal, og får så pludselig 
+        _(3_). Det giver ingen mening! Vi <i>fjerner</i> faktore fra _(2^7*5^7_), og ender ud med en helt 
+        ny faktor. Det kan man ikke!
+    </p>
+    <p class="t">
+        Den eneste grund til at vi kan skrive _(1/2_) eller _(1/5_) i vores _(10_)-base system
+        er fordi at _(5*2=10_). Én femtedel er <i>dobbelt</i> så stor som en tiendedel,
+        og én andendel er <i>femdobbelt</i> så stor som en tiendedel. Mere matematisk sagt:
+        _($\frac{1}{5}=\frac{1}{\frac{10}{2}}=\frac{2}{10}_) 
+        og 
+        _($\frac{1}{\frac{10}{5}}=\frac{5}{10}_)
+        Vi kan kun gøre det her fordi tallende går op i basen! Der er ikke bestemte brøkker vi <i>ikke</i> kan 
+        lave om til tal. Der er kun nogle bestemte brøkker vi <i>kan</i> lave om til tal - dem hvis faktore
+        går op i basen. I base _(3_) er det f.eks. kun 
+        _($\frac{1}{3}, \frac{1}{3^2}, \frac{1}{3^30}_) 
+        osv. I base _(4_) kan man kun dividere med potenser af _(2_). 
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Er det muligt at skrive følgende brøker som decimaltal i base _(10_)? 
+    <div style="text-align:center; margin-top:10px;">
+        <ul style="display: inline-block; text-align: left; padding-left:0%; list-style:none;">
+            <li><b> 1</b>: _(1/20_)</li>
+            <li><b> 2</b>: _(1/30_)</li>
+            <li><b> 3</b>: _(1/250_)</li>
+            <li><b> 4</b>: _(1/26_)</li>
+            <li><b> 5</b>: _(1/27389561_)</li>
+        </ul>
+    </div>
+    <p class="t">
+    Du skal ikke <i>faktisk</i> skrive dem: Bare vurdere hvorvidt det overhovedet er muligt eller ej. 
+    </p>
+    <br><br></q-stion>
+    <answer-box t="Answer 1#" tabColour="rgb(171,96,147)">
+    _(20=5*2*2_). Alle dets faktorer er enten _(5_) eller _(2_), så det <i>er</i> muligt.
+    <br><br></answer-box>
+    <answer-box t="Answer 2#" tabColour="rgb(175,128,161)">
+    _(30=3*5*2_), hvilke indeholder faktoren _(3_) som <i>ikke</i> er i _(10_). Det er derfor <i>ikke</i> muligt.
+    <br><br></answer-box>
+    <answer-box t="Answer 3#" tabColour="rgb(171,96,147)">
+    _(250=5*5*5*2_), så det er muligt.
+    <br><br></answer-box>
+    <answer-box t="Answer 4#" tabColour="rgb(175,128,161)">
+    _(26=13*2_), så det er ikke muligt.
+    <br><br></answer-box>
+    <answer-box t="Answer 5#" tabColour="rgb(171,96,147)">
+    Vi <i>kunne</i> godt bruge samme strategi som de tidligere opgaver på den her, men det ville være relativt svært og tage meget lang tid
+    da _(27389561_) er så stort et tal. I stedet så kan vi observere, at hvis et tal indeholder en faktor af _(2_), så vil det
+    sidste cifre altid være et lige tal. F.eks. _(2*17_) som er lig _(34_). Lignende, hvis et tal indeholder en faktor af 
+    _(5_), så vil det sidste cifre altid være _(0_) eller _(5_). Det sidste cifre på vores tal er 
+    _(1_), som hverken er et lige tal eller lig _(5_). Derfor ved vi at _(27389561_) ikke indeholder nogle
+    faktorer af _(5_) eller _(2_). Det er derfor enten primt, eller består af andre faktorer der ikke i findes i _(10_). 
+    Vi kan derfor med sikkerhed sige at det <i>ikke</i> kan omskrives. 
+    <p class="t">
+    Denne strategi kan <i>ikke</i> bruges modsat: Bare fordi vi ved at et tal indeholder en faktor af _(2_) eller _(5_), så ved vi jo ikke om det
+    <i>også</i> indeholder andre faktorer der ikke er i _(10_). 
+    </p>
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Omskriv følgende brøker til decimaltal i base _(10_): 
+    <div style="text-align:center; margin-top:10px;">
+        <ul style="display: inline-block; text-align: left; padding-left:0%; list-style:none;">
+            <li><b> 1</b>: _(1/8_)</li>
+            <li><b> 2</b>: _(1/50_)</li>
+        </ul>
+    </div>
+    <br><br></q-stion>
+    <answer-box t="Answer 1#" tabColour="rgb(171,96,147)">
+    _(8=2^3_), så vi har:
+    _($\frac{1}{2^3} = \frac{5^3}{2^3*5^3} = \frac{5^3}{10^3} = \frac{125.0}{10^3} = 0.125_)
+    Bum!
+    <br><br></answer-box>
+    <answer-box t="Answer 2#" tabColour="rgb(175,128,161)">
+    _(50=5*5*2_), så vi har:
+    _($\frac{1}{5*5*2} = \frac{2}{(5*2)*(5*2)} = \frac{2}{100} = 0.02_)
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Vurder om det er muligt at omskrive følgende brøk (skrevet i base _(10_)) i den givne base:
+    <div style="text-align:center; margin-top:10px;">
+        <ul style="display: inline-block; text-align: left; padding-left:0%; list-style:none;">
+            <li><b> 1</b>: _(1/49_) i base _(7_) </li>
+            <li><b> 2</b>: _(1/21_) i base _(7_) </li>
+            <li><b> 3</b>: _(1/60_) i base _(30_) </li>
+            <li><b> 4</b>: _(1/45_) i base _(30_) </li>
+            <li><b> 5</b>: _(1/28_) i base _(21_) </li>
+            <li><b> 6</b>: _(1/27_) i base _(21_) </li>
+        </ul>
+    </div>
+    <p class="t">
+    Du skal ikke <i>faktisk</i> skrive dem: Bare vurdere hvorvidt det overhovedet er muligt eller ej. 
+    </p>
+    <br><br></q-stion>
+    <answer-box t="Answer 1#" tabColour="rgb(171,96,147)">
+    _(49=7*7_), så det er absolut muligt. 
+    <br><br></answer-box>
+    <answer-box t="Answer 2#" tabColour="rgb(175,128,161)">
+    _(21=7*3_). _(7_) indeholder ikke faktoren _(3_) (faktisk indeholder det ingen faktorer udover _(7_) da det er primt), så det er ikke muligt. 
+    <br><br></answer-box>
+    <answer-box t="Answer 3#" tabColour="rgb(171,96,147)">
+    _(60=5*3*2*2_) og _(30=3*5*2_). Det er altså muligt, da _(60_) ikke indeholder nogle faktorer _(30_) ikke indeholder.
+    <br><br></answer-box>
+    <answer-box t="Answer 4#" tabColour="rgb(175,128,161)">
+    _(45=5*3*3_), så denne er også mulig. 
+    <br><br></answer-box>
+    <answer-box t="Answer 5#" tabColour="rgb(171,96,147)">
+    _(28=7*2*2_) og _(21=7*3_). Basen indeholder ikke nogen faktor af _(2_) ligesom _(28_), så de er ikke muligt. 
+    <br><br></answer-box>
+    <answer-box t="Answer 6#" tabColour="rgb(175,128,161)">
+    _(27=3^3_), så det er muligt. 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Omskriv følgende brøker (skrevet i base _(10_)) i den givne base:
+    <div style="text-align:center; margin-top:10px;">
+        <ul style="display: inline-block; text-align: left; padding-left:0%; list-style:none;">
+            <li><b> 1</b>: _(178/7^3_) til base _(7_) </li>
+            <li><b> 2</b>: _(1/18_) til base _(6_)  </li>
+            <li><b> 3</b>: _(1/128_) til base _(8_) </li>
+            <li><b> 4</b>: _(1/25_) til base _(15_) </li>
+            <li><b> 5</b>: _(1/27_) til base _(30_) </li>
+            <li><b> 6</b>: _(1/54_) til base _(12_) </li>
+        </ul>
+    </div>
+    <p class="t">
+    Her i de to sidste med base _(30_) og base _(15_) får du brug for at introducere nogle nye symboler, da
+    baserne jo er højere end 10. Bare forsæt _(1,2,3,4,5,6,7,8,9_) som:
+    _($1_0,1_1,1_2,1_3,1_4, \dots_)
+    </p>
+    <br></q-stion>
+    <answer-box t="Answer 1#" tabColour="rgb(171,96,147)">
+    _(178_) kan omskrives til:
+    _($3*49+4*7+3 = 3*7^2+4*7^1+3^7^0_)
+    Så i base _(7_) skrives det som:
+    _($343_)
+    _(7^3_) skrives selvfølgelig bare som _(1000_) i base _(7_), så vores brøk svarer altså til:
+    _($\frac{343.0}{1000} = 0.343_)
+    Bum!
+    <br><br></answer-box>
+    <answer-box t="Answer 2#" tabColour="rgb(175,128,161)">
+    _(18=3*3*2_) og _(6=3*2_) så:
+    _($\frac{1}{3*3*2} = \frac{2}{3*2*3*2} = \frac{2}{6^2}_)
+    I base _(6_) svarer denne brøk til:
+    _($\frac{2}{100} = 0.02_)
+    <br><br></answer-box>
+    <answer-box t="Answer 3#" tabColour="rgb(171,96,147)">
+    _(128=2^7_) og _(8=2^3_), så:
+    _($\frac{1}{2^7} = \frac{1}{2^3*2^3*2} = \frac{2^2}{2^3*2^3*2^3} = \frac{4}{8^3}_)
+    I base _(8_) svarer denne brøk til:
+    _($\frac{4}{1000} = 0.004_)
+    <br></answer-box>
+    <answer-box t="Answer 4#" tabColour="rgb(175,128,161)">
+    _(25=5*5_) og _(15=3*5_). Vi skriver altså:
+    _($\frac{1}{5*5} = \frac{3^2}{5*3*5*3} = \frac{6}{15^2}_)
+    Så i base _(15_) er det bare:
+    _($0.06_)
+    <br><br></answer-box>
+    <answer-box t="Answer 5#" tabColour="rgb(171,96,147)">
+    __(27=3^3_) og _(30=3*5*2_), så:
+    _($\frac{1}{3^3} = \frac{5^2*2^2}{3^3*5^3*2^3} = \frac{100}{30^3}_)
+    _(100_) kan omskrives til:
+    _($3*30 + 10*1_)
+    Så i base _(30_) skrives det som _(31_0_). Brøken skrevet i base _(30_) svarer altså til:
+    _($\frac{31_0}{1000} = 0.031_0_)
+    Sådan! 
+    <br><br></answer-box>
+    <answer-box t="Answer 6" tabColour="rgb(175,128,161)">
+    _(54=2*3^3_) og _(12=2^2*3_), så vi siger:
+    _($\frac{1}{2*3^2} = \frac{2^5}{3*2^2*3*2^2*3*2^2} = \frac{32}{12^3}_)
+    _(32_) kan omskrives til:
+    _($12*2+8_)
+    Så i base _(12_) skrives det som _(28_). Derfor er brøken skrevet i base _(12_) lig:
+    _($0.028_)
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Vi gav før en O.K forklaring på hvorfor at _(\frac{1}{3}_) umuligt kunne beskrives i base 10, hvorend mange _(3_)'ere man sætte på 
+    enden af _(0.3333333_). Men er det alligevel helt rigtigt? Jeg satte omkring _(7_) _(3_)'ere på i mit eksempel. Hvad hvis jeg bare
+    blev ved? Hvis jeg aldrig stoppede, og satte <i>uendelig</i> mange _(3_)'ere på? Det vil jeg gerne have at du prøver at svare på:
+    Er _(0.3333333 ... \infty = 1/3 _)? Lige her kan vores intuition ikke længere gøre alt arbejdet; vi må i dette tilfælde
+    argumentere ret matematisk og præcist. Siden uendelig er noget mærkeligt noget, så lader jeg dig lave en antagelse:
+    _(1/\infty=0_).   
+    <p class="t">
+    Hvis du ikke har lavet induktionsopgaverne (og jeg forventer at du laver alle opgaver kronologisk!) 
+    så vil du højest sandsyndligt ikke kunne lave dette bevis. Dette betyder ikke <i>nødvendigvis</i> at 
+    du skal <i>bruge</i> induktion her, men bare at du i hvert fald skal bruge <i>noget</i> fra de opgaver.
+    </p>
+    <br></q-stion>
+    <answer-box t="h">
+    Prøv at se om det er rigtigt når du har sat _(n_) _(3_)'ere på. Så kan du bare sætte _(n_) til at 
+    være "uendelig stor" og se hvad der sker som resultat. 
+    <br></answer-box>
+    <answer-box>
+    Ideen er at vi først bare sætter _(n_) _(3_)'ere på. Så ændre vi bagefter _(n_) til at være "uendelig stor". Måske
+    bliver alle vores problemer løst, og vi får på magisk vis _(\frac{1}{3}_)? 
+    <p class="t">
+    Vi ved at _(0.333333 ... n_) er 
+    _($\frac{3}{10}+\frac{3}{10^2}+\frac{3}{10^3} + ... +\frac{3}{10^{n-1}}+\frac{3}{10^{n}}_).
+    Det kan vi omskrive til:
+    _($\frac{3*10^{n-1}}{10*10^{n-1}}+\frac{3*10^{n-2}}{10^2*10^{n-2}}+\frac{3*10^{n-3}}{10^3*10^{n-3}}+...+\frac{3*10}{10^{n-1}*10}+\frac{3}{10^n}=_)
+    _($\frac{3*10^{n-1}+3*10^{n-2}+3*10^{n-3}+...+3*10^2+3*10+3}{10^n}=_)
+    _($\frac{3*(10^{n-1}+10^{n-2}+10^{n-3}+...+10^2+10+1)}{10^n}=_)
+    Rækkefølgen vi plusser i er ligegyldig, så 
+    _($10^{n-1}+10^{n-2}+10^{n-3}+...+10^2+10+1_) 
+    er
+    det samme som 
+    _($1+10+10^2+...10^{n-2}+10^{n-1}_)
+    Det passer til 
+    _($1+r+r^2+r^3+...r^{n-1}+r^{n}=\frac{1-r^{n+1}}{1-r}_)
+    hvis _(r=10_) og _(a=n-1_). Vi får derfor 
+    _($\frac{1-10^{n-1+1}}{1-10}=\frac{1-10^{n}}{-9}=\frac{10^n-1}{9}_)
+    Det kan vi nu indsætte: 
+    _($\frac{3*\frac{10^{n}-1}{9}}{10^n}=\frac{\frac{10^n-1}{3}}{10^n}=\frac{10^n-1}{3*10^n}=\frac{10^n}{3*10^n}-\frac{1}{3*10^n}=_)
+    _($\frac{1}{3}-\frac{1}{3*10^n}_)
+    Prøv nu og tænk grundigt over hvad det er vi har lige nu: _(1/3_) - det 
+    vi prøver at approximere - bliver minusset med _(1/(3*10^n)_). Jo flere _(3_)'er vi sætter, 
+    jo højere bliver _(n_), og jo lavere bliver _(\frac{1}{3*10^n}_). Altså _(\frac{1}{3*10^n}_)
+    er <i>fejlen</i>, og den bliver gradvist mindre som vi gør _(n_) større! Hurtigt mindre endda! 
+    Praktisk talt begynder vi altså at dividere _(1_) med uendelig, som vi godt kunne antage var _(0_).
+    Fejlen forsvinder, og vi står tilbage med _(\frac{1}{3}_). Wholla!
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Resultatet fra sidste opgave er interessant. Der er besværligt at beskrive 
+    _(1/3_) i base _(10_), men det er teoretisk set muligt. Gælder det samme for alle andre lignende situationer?
+    Kan vi tage noget som helst primtal som vores base, f.eks. _(11_), og så - ved hjælp af muligvis uendelig mange cifre - 
+    beskrive _(1_) divideret med et noget som helst andet distinkt primtal?
+    <p class="t">
+    Det er lidt for ambitiøst for os at svare på, men vi kan alligevel godt 
+    kigge på nogle lidt simplere mere specifikke tilfælde.
+    Prøv at beskrive _(1/6_) så godt som du nu kan (5 cifre er fint) i base _(7_). Du skal lave et lille "trick", men når du har 
+    fundet ud af det så burde det være relativt nemt. 
+    </p> 
+    <br></q-stion>
+    <answer-box t="h" n="1">
+    Tricket er følgende: _(1/6_) kan omskrives til:
+    _($7^{-1}*\frac{7}{6} = 7^{-1}*\frac{6+1}{6}_)
+    Kan du gøre noget interessant med dette?
+    </answer-box>
+    <answer-box t="h" n="2">
+    Vi har:
+    _($\frac{1}{6}=7^{-1}*\left(1+\frac{1}{6} \right)_)
+    Det virker umiddelbart ubrugeligt at vi her har beskrevet _(1/6_) med en matematisk sætning der også
+    indeholder _(1/6_), men der faktisk ret smart. Vi kan nu sige:
+    _($\frac{1}{6} =_)
+    _($7^{-1}*\left(1+\frac{1}{6} \right) = _)
+    _($7^{-1}*\left(1+7^{-1}*\left(1+\frac{1}{6} \right) \right) =_)
+    _($7^{-1}*\left(1+7^{-1}*\left(1+7^{-1}*\left(1+\frac{1}{6} \right) \right) \right) _)
+    _($\vdots_)
+    Osv. 
+    </answer-box>
+    <answer-box customWidth="560">
+    Tricket er at vi omskriver _(1/6_) som følgende:
+    _($7^{-1}*\frac{7}{6} = 7^{-1}*\frac{6+1}{6} = 7^{-1}*\left(1+\frac{1}{6} \right)_)
+    Så vi har:
+    _($\frac{1}{6}=7^{-1}*\left(1+\frac{1}{6} \right)_)
+    Så _(1/6_) er beskrevet i forhold til sig selv? Well, det er egentlig ikke rigtig noget problem:
+    _($\frac{1}{6} =_)
+    _($7^{-1}*\left(1+\frac{1}{6} \right) = _)
+    _($7^{-1}*\left(1+7^{-1}*\left(1+\frac{1}{6} \right) \right) =_)
+    _($7^{-1}*\left(1+7^{-1}*\left(1+7^{-1}*\left(1+\frac{1}{6} \right) \right) \right) _)
+    _($\vdots_)
+    Osv. Det her er praktisk, da vi gerne vil beskrive det her i forhold til bestemte tal
+    der er divideret med potenser af _(7_). Vi kan nu begynde at gange ind i parentesen igen: 
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter1\Talteori\BaseChange1.mp4' type='video/mp4'>
+    </video>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Omskriv følgende brøker i følgende baser op til _(5_) decimaler:
+    <div style="text-align:center; margin-top:10px;">
+        <ul style="display: inline-block; text-align: left; padding-left:0%; list-style:none;">
+            <li><b> 1</b>: _(1/3_) i base _(7_)</li>
+            <li><b> 2</b>: _(1/5_) i base _(7_)</li>
+            <li><b> 3</b>: _(1/3_) i base _(2_)</li>
+        </ul>
+    </div>
+    <br><br></q-stion>
+    <answer-box t="Answer 1#" tabColour="rgb(171,96,147)">
+    Du kan se min proces og mit svar i følgende video:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter1\Talteori\BaseChange2.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+    <answer-box t="Answer 2#" tabColour="rgb(175,128,161)">
+    Du kan se min proces og mit svar i følgende video:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter1\Talteori\BaseChange3.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+    <answer-box t="Answer 3#" tabColour="rgb(171,96,147)">
+    Den her er lidt anderledes end de tidligere, da nævneren _(3_) nu er større end vores base _(2_). Derfor kan vi altså ikke rigtig bruge samme strategi længere:
+    _($\frac{1}{3} = 2^{-1}*\frac{2}{3}_)
+    Vi kan ikke længere skrive tælleren _(2_) som f.eks _(3*2+1_) eller et eller andet. Vi <i>kunne</i> forsøge at sige:
+    _($2^{-1}*\frac{3-1}{3} = 2^{-1}*\frac{3-1}{3} = 2^{-1}*\left(1 - \frac{1}{3} \right)_)
+    Det er på ingen måde en dårlig ide, men problemet er at vi gerne vil beskrive _(1/3_) i en form som f.eks.:
+    _($\frac{1}{2} + \frac{0}{2^2} + \frac{1}{2^3} + \frac{1}{2^4} + \frac{0}{2^5 } + \dots_) 
+    Ikke en form som:
+    _($\frac{1}{2} - \frac{0}{2^2} + \frac{1}{2^3} - \frac{1}{2^4} + \frac{0}{2^5 } - \dots_)
+    Strategien vi faktisk vælger er derfor følgende: 
+    _($\frac{1}{3} = 2^{-2}*\frac{4}{3} = 2^{-2}*\left(1+\frac{1}{3} \right)_)
+    Ud fra det her kan man let se at det endelige svar i base _(2_) er:
+    _($0.0101010101 \dots_)
+    Voila! 
+    <br><br></answer-box>
+
+
+</html>

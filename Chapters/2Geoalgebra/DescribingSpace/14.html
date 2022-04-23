@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+
+
+<h3>Planer som en 3D udvidelse af linjer</h3>
+<p class="t">
+Der er to andre måder vi også kan se på planer. Den første
+er meget simpelt en slags "3D udvidelse" af linjer: Hvis en
+linje kan beskrives som
+_($y=ax+c_)
+... hvor _(a_) er _(y_)'s hældning med respekt til _(x_), så kan et 
+plan beskrives som:
+_($z=a*x+b*y+c_)
+Hvor _(a_) så er _(z_)'s hældning med respekt til _(x_), og _(b_) er
+_(z_)'s hældning med respekt til _(y_). F.eks. ser _(z=0.5x-2y_)
+ud som:
+</p>
+<img class='SpicXL' style='width:95%' src='../../../Assets/Chapter2\Section4\Space\PlanSomHældning.png'> 
+<p class="t">
+Man kan se, at den går meget stejlere opad/nedad når _(y_) ændrer sig end 
+når _(x_) ændrer sig. Man kan også se, at positivt _(y_) skaber
+en negativ forandring, hvor at positiv _(x_) skaber en positiv forandring. 
+Du kan lege lidt rundt med det i følgende simulation:
+</p>
+
+<div style="margin-top:35px;">
+    <iframe scrolling="no" title="Planes2" src="https://www.geogebra.org/material/iframe/id/jye7rmwf/width/700/height/500/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/true/ctl/true" width="500px" height="357px" style="border:solid;"> </iframe>
+</div>
+
+<br>
+
+<q-stion 1="14" 2="1">
+Se følgende billede:
+<img class='Spic' style='width:60%' src='../../../Assets/Chapter2\Section4\Space\SlopePlaneExercise1.png'> 
+<p class="t">
+På denne 3D figur bliver der skudt vand ud af en af fladerne. 
+Måske er det en del af et springvand. Vandet bliver skudt ud vinkelret
+til fladen, og har en starthastighed på _(12 \text{ m}/\text{s}_), og tyngdeaccelerationen
+på hver vanddråbe er _(-9.8_). Hvis
+hjørnet er _((0,0,0)_), og vandets startposition er  
+_((1.2,1.4,0.9)_), hvor langt væk lander vandet så fra hjørnet? 
+</p>
+<br></q-stion>
+<answer-box>
+Vi har først og fremmest brug for retningen på vandets hastighed, når det bliver skudt ud. 
+Vi kan se, at planet stiger _(1.4-0.8=0.6_) med _(z_) hver _(5_) _(x_) og hver _(3_) _(y_), 
+så:
+_($z=0.8 + \frac{0.6}{5}x + \frac{0.6}{3}y_)
+Hvilket kan omskrives til:
+_($0.12x + 0.19y - 1z = -0.8_)
+Så planet er vinkelret på:
+_($\vec n = \VeC[0.12,0.19,-1]_)
+Det er <i>også</i> vinkelret på:
+_($\vec n = \VeC[-0.12,-0.19,1]_)
+Hvilket nok er mere rigtigt i vores tilfælde, eftersom vandet tydeligvis bliver skudt opad på _(z_)
+og ikke ned. Vi kender retningen, og ved at længden skal være _(48_), så:
+_($\frac{12}{\sqrt{0.12^2+0.19^2+1^2}}*\VeC[-0.12,-0.19,1] = \VeC[-1.402,-2.337,11.686]_)
+Accelerationen vores vanddråber oplever er bare
+_($\VeC[0,0,-9.8]_)
+Så vi bruger nu positionsformlen og får:
+_($\VeC[x,y,z] = \frac{\VeC[0,0-9.8]}{2}t^2 + \VeC[-1.402,-2.337,11.686]t + \VeC[1.2,1.4,0.9]_)
+Hvilket kan simplificeres til:
+_($\begin{align}
+x & = 1.2 - 1.402t \\
+y & = 1.4 - 2.337t \\
+z & = -4.9t^2 + 11.686t + 0.9
+\end{align}_)
+Vi løser nu:
+_($-4.9t^2 + 11.686t + 0.9 = 0, \to t=2.459_)
+Så:
+_($\begin{eqnarray}
+x & = 1.2 - 5.61*2.459 & = -3.275 \\ 
+y & = 1.4 - 8.89*2.459 & = -6.058
+\end{eqnarray}_)
+Bum! Distancen fra hjørnet er altså:
+_($\sqrt{3.275^2+6.058^2} = 13.582 \text{ m}_)
+Voila! 
+<br><br></answer-box>
+
+<!--  -->
+
+<q-stion 1="14" 2="2">
+Se følgende billede:
+<img class='Spic' style='width:85%' src='../../../Assets/Chapter2\Section4\Space\SlopePlaneExercise2.png'> 
+<p class="t">
+Sig at du skater fra _(A_) langs retningsvektoren _(\vec{v}_) med en hastighed på 
+_(6 \text{m/s}_). Du kører op af rampen: Hvor langt væk lander du fra punktet _(B_)? 
+</p>
+<p class="t">
+For at løse denne opgave antager vi, at både din retning langs _(x_) og _(y_) og din hastighed forbliver
+identisk, når du kører op ad bakken. Tyngdekraften burde faktisk sænke din hastighed og 
+ændre din retning, men det kan vi 
+med O.K realisme godt ignorere, eftersom du jo har aktivt 
+kontrol over dit skateboard. Bakken er heller ikke specielt
+stejl i dette tilfælde, så det har ikke den største effekt. 
+</p>
+<br></q-stion>
+<answer-box>
+Lad os først sætte et koordinatsystem ved _(B=(0,0,0)_), så at _(A=(2+2,5,0)_). Nu kan vi se, at 
+_(\vec v_) kan beskrives som:
+_($6*\VeC[-Sin(37.02), -Cos(37.02)] = \VeC[-3.61, -4.79]_)
+Lad os nu finde det sted hvor skateboardet først kommer op på rampen. Her skal vi skære
+linjen _(y=4 - 2x_). Vi har:
+_($\VeC[x,y] = \VeC[4,5]+t*\VeC[-3.61,-4.79]_)
+Så:
+_($5-4.79t = 4-2*(4-3.61t) \to t = 0.749_)
+Punktet er altså:
+_($\begin{eqnarray}
+&& x = 4 - 3.61*0.749 = 1.29 \\
+&& y = 5 - 4.79*0.749 = 1.41  
+\end{eqnarray}_)
+Vi kan se at _(z_) på rampen har en hældning på _(x_) med _(1.5/2=0.75_), og en hældning på 
+_(y_) med _(1.5/4=0.375_). Vores retning op af rampen er altså:
+_($\VeC[-3.61,-4.79, 3.61*0.75+4.79*0.375] = \VeC[-3.61,-4.79, 4.50]_)
+Vores hastighed skal stadig være _(6 \text{ m}/\text{s}_), så:
+_($\frac{6}{\sqrt{3.61^2+4.79^2+4.5^2}}*\VeC[-3.61,-4.79, 4.50] = \VeC[-2.88,-3.83, 3.60]_)
+Lad os nu finde ud af, hvor vi hopper af rampen. Det må være et sted, hvor enten
+_(x=0_) eller _(y=0_). Hvis _(x=0_) fås:
+_($1.29-2.88*t=0 \to t = 0.447_)
+Hvilket betyder at:
+_($y=1.41-3.83*0.447=-0.3_)
+Men så er _(y_) <i>negativ</i>, hvilket ikke giver mening. Vi skal altså i stedet se på, hvornår _(y_) er lig _(0_):
+_($1.41-3.83t = 0 \to t=0.368_)
+Så:
+_($x=1.29-2.88*0.368=0.23_)
+Og:
+_($z=0+3.60*0.368=1.324_)
+Vi har nu både startpositionen og starthastigheden på vores hop, så vi bruger positionsformlen og får:
+_($\VeC[x,y,z] = \VeC[0.23-2.88t, 0 - 3.83t,  -4.9t^2 + 3.60t + 1.324]_)
+Vi ser, hvornår vi rammer jorden:
+_($-4.9t^2 + 3.60t + 1.324 = 0 \to t=1.00386_)
+Og får:
+_($\begin{eqnarray}
+x & = 0.23-2.88*1.00386 & = -2.6611 \\
+y & = 0 - 3.83*1.00386 &  = -3.8447
+\end{eqnarray}_)
+Så endeligt:
+_($\sqrt{2.6611^2+3.8447^2} = 4.6758_) 
+Voila!
+<br><br></answer-box>
+
+<!--  -->
+
+<q-stion 1="14" 2="3">
+Du kaster en bold med en hastighed på _(4 \text{ m}/\text{s}_) henad mod et møbel,
+der står cirka _(1.8 \text{m}_) væk:
+<img class='SpicXL' style='width:60%' src='../../../Assets/Chapter2\Section4\Space\RammerBolden.png'> 
+<p class="t">
+Tyngdekraften accelerer bolden nedad med _(-9.8_). Rammen bolden toppen af møblet, eller
+kaster du for langt eller kort?
+</p>
+<br></q-stion>
+<answer-box>
+Den her opgave handler helt konkret bare om at regne, hvornår 
+bolden skærer det øverste plan på møblet. Hvis vi indstiller følgende koordinatsystem:
+<img class='SpicXL' style='width:60%' src='../../../Assets/Chapter2\Section4\Space\RammerBolden2.png'> 
+<p class="t">
+... kan man relativt nemt se, at planet kan beskrives som:
+_($z=0.6+0.4y_)
+Eller mere specifikt:
+_($z=0.6+0.4y, \qquad \text{Hvis } 0 \le x \le 1, 0 \le y \le 0.5_)
+Boldens startposition kan vi med lidt simpelt geometri se er:
+_($\left(0.29- 1.8 Sin(35), 1.8 Cos(35), 1.4 \right) = (-0.741,-1.475,1.4)_)
+Boldens hastighed langs _(z_)-aksen kan vi se, er:
+_($4*Sin(40)=2.570_)
+Dens hastighed henad mod møblet er 
+_($4*Cos(40)=3.06_)
+Så langs _(x_) og _(y_) kan regnes som henholdsvis _(3.06*Sin(35)=_) _(1.755_)
+og _(3.06*Cos(35)=_) _(2.511_). Alt i alt får vi:
+_($\vec{v_0} = \VeC[1.755,2.511,2.570]_)
+Den oplever kun acceleration direkte nedad, så dens bevægelse kan beskrives som:
+_($\VeC[x,y,z] = \VeC[-0.741+1.755t, -1.475+2.511t, -4.9t^2 + 2.57t + 1.4]_)
+Vi tjekker nu hvornår _(z=0.6+0.4y_) via:
+_($-4.9t^2 + 2.57t + 1.4 = 0.6+0.4 \left(-1.475+2.511t \right)_)
+Hvilket giver _(t=0.78_). Ergo:
+_($\begin{eqnarray}
+&& x & = -0.741 & + 1.755*0.78 & = 0.627 \\
+&& y & = -1.475 & + 2.511*0.78 & = 0.483 
+\end{eqnarray}_)
+Voila! _(x_) er indenfor _([0,1]_) og _(y_) er indenfor _([0,0.5]_), så bolden rammer
+toppen af møblet!
+</p>
+<br></answer-box>
+
+<!--  -->
+
+<q-stion 1="14" 2="4" customWidth="650">
+Det er relativt let at finde volumen under et plan. Hvis
+_($z=ax+by+c_)
+... så er volumen under/over planet i området _(x \in [x_0,x_1]_), _(y \in [y_0,y_1]_) lig:
+_($V=\begin{eqnarray}
+&& \frac{a}{2} (y_1-y_0) (x_1^2-x_0^2) + \\ \\
+&& \frac{b}{2} (x_1-x_0) (y_1^2-y_0^2) + \\ \\
+&& c*(x_1-x_0) (y_1-y_0)
+\end{eqnarray}_)
+Dette skal vi nok bevise senere i bogen (det er faktisk ret let), men vi har ikke værktøjerne lige nu.
+<p class="t">
+Brug denne formel til at beregne volumen på følgende konstruktion:
+</p>
+<div style="margin-top:15px; width:95%; margin-left:2.5%; margin-top:35px;">
+    <hover-video videoBorder="true" url="../../../Assets/Chapter2\Section4\Space\3DHousePicture.mp4" ></hover-video>
+</div>
+<br><br></q-stion>
+<answer-box>
+Du kan se mit svar i følgende video: 
+<video class='SpicB' style="width:95%;" controls>
+    <source src='../../../Assets/Chapter2\Section4\Space\3DHouseVolumeAnswer.mp4' type='video/mp4'>
+</video>
+<p class="t">
+<u> Jeg lavede en regnefejl i videoen:</u> <br>
+Den lille volumen vi trækker fra er faktisk _(30.87m^3_), ikke
+_(75.87m^3_). Derfor bliver den endelige volume til:
+_($312.3+96+207.76-30.87=585.189m^3_)
+Processen i videoen er helt ordentligt dog!
+</p>
+<br></answer-box>
+

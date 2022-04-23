@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+
+
+    <h2>"Shoelace-strategien" til arealer</h2>
+
+    <p class="t">
+    Noget andet man også kan bruge til at finde arealer er <i>positioner</i>. 
+    Det viser sig især at være praktisk, 
+    når man har store, komplicerede former som ved landmåling. Lad os dog som stort 
+    set altid starte simpelt med en trekant.
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Find arealet af følgende trekant:
+    <img class='SpicBXL' style='width:80%' src='../../../Assets/Chapter2\Section2\Shoelace\1.png'> 
+    <p class="t">
+    Prøv at tænk over, hvordan du kan gøre det effektivt, så du ikke behøver at regne super meget. 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Man <i>kunne</i> helt fint 
+    bruge positionerne til at udregne længder og vinkler, men jeg tænker det
+    er mere effektivt, hvis vi i stedet siger:
+    <img class='SpicBXL' style='width:80%' src='../../../Assets/Chapter2\Section2\Shoelace\2.png'> 
+    <p class="t">
+    Idéen her er, at finde arealet af det store kvadrat der dækker trekanten, hvorefter
+    man trækker de små grønne retvinklede fra. Konkret: 
+    _($\begin{alignat}{9}
+                               &\Bigl(&5  &\, \,- \, \,& (&-3.5)&\Bigr)& &\cdot& &\Bigl(&&6.5 &\, \, - \, \,& (&-4.5)&\Bigr) & \, \, - \\ \\
+    \frac{1}{2} \, \cdot \, \, &\Bigl(&5  &\, \,- \, \,& (&-3.5)&\Bigr)& &\cdot& &\Bigl(&&6.5 &\, \, - \, \,& 4&     &\Bigr) & \, \, - \\ \\
+    \frac{1}{2} \, \cdot \, \, &\Bigl(&5  &\, \,- \, \,& (&-1)  &\Bigr)& &\cdot& &\Bigl(&&6.5 &\, \, - \, \,& (&-4.5)&\Bigr) & \, \, - \\ \\
+    \frac{1}{2} \, \cdot \, \, &\Bigl(&-1 &\, \,- \, \,& (&-3.5)&\Bigr)& &\cdot& &\Bigl(&&4   &\, \, - \, \,& (&-4.5)&\Bigr) &
+  \end{alignat}_)
+    Når man faktisk regner dette får man et areal på _(39.25_) 
+    </p>
+    <br></answer-box>
+
+    <p class="t">
+    Via sidelængderne og vinklerne kunne vi nemt finde arealet gennem 
+    en halv appelsin (_(\frac{1}{2}*a*b*Sin(v)_)), men vi har fået koordinaterne. 
+    Lad os udvide en lignende, praktisk formel: 
+    </p>
+    <img class='SpicBXL' style='width:80%' src='../../../Assets/Chapter2\Section2\Shoelace\4.png'> 
+    <p class="t">
+    Lad os gøre problemet en smule nemmere, ved specifikt at arbejde med 
+    trekanter, hvor èn af punkterne er lig _((0,0)_):
+    </p>
+    <img class='SpicBXL' style='width:80%' src='../../../Assets/Chapter2\Section2\Shoelace\5.png'> 
+    <p class="t">
+    Det betyder konkret, at hvis vi nogensinde i udledningen af en formel har brug 
+    for f.eks. _(b_x-a_x_), har vi nu kun brug for _(b_x - 0 = b_x_). Det vil gøre
+    selve processen af et finde en formel lidt simplere. Plus: Vi kan bare 
+    erstatte alle _(b_x, \, b_y, \, c_x, \, c_y_) med henholdsvis _(b_x - a_x_), 
+    _(b_y - a_y_), _(c_x - a_x_), _(c_y - a_y_) til sidst når vi finder formlen!
+    </p>
+    <p class="t">
+    Én mulig strategi er at finde
+    arealet af rektanglet og trække de mindre trekanter fra, ligesom før. 
+    Her støder vi hurtigt på et problem: For at finde afstanden mellem to koordinater,
+    er vi nødt til at vide hvilket et er størst! 
+    Ellers skal vi til 
+    at bruge _(\sqrt{(\text{afstand})^2}_), så det hele bliver positivt. Plus:
+    For at finde <i>rektanglets</i> areal skal vi først erfare hvilken horisontal og 
+    vertikal afstand mellem punkter er størst, en proces der bliver højest upraktisk i
+    en "simpel formel". 
+    </p>
+    <p class="t">
+    Hvor end dumt det lyder, er det nok en bedre ide at gå tilbage til 
+    den halve appelsin _(\frac{1}{2} a b Sin(\theta)_) med 
+    en _(a_), _(b_) og _(v_) der er regnet via koordinaterne. Det bliver nok et værre
+    rod, og er præcist hvad vi frarådede at gøre i første opgave, men hvem ved? 
+    Måske kan vi simplificere det / omskrive det og få noget dejligt?
+    </p>
+    <p class="t">
+    Sidelængderne er simpelt nok. Det er bare _(\sqrt{b_x^2+b_y^2}_) og _(\sqrt{c_x^2+c_y^2}_). 
+    Det bliver dog lidt problematisk at beskrive vinklen mellem de to sider. Vi <i>kunne</i>
+    forsøge at tage forskellen mellem vinklerne til begge sider:
+    </p>    
+    <img class='SpicBXL' style='width:80%' src='../../../Assets/Chapter2\Section2\Shoelace\ShoelaceAngle.png'> 
+    <p class="t">
+    At finde _(v_b_) og _(v_c_) er ikke helt ligetil dog, da _(Arctan_) kun giver
+    vinkler mellem _(-\pi/2_) og _(\pi/2_). Kun på <i>højre</i> halvdel af koordinatsystemet. 
+    Man ville være nødt til at bruge forskellige formler i forhold til hvilke kvartdele af 
+    koordinatsystemet 
+    _(c_) og _(b_) ligger på, så for at færdiggøre beviset <i>helt ordentligt</i> skal man undersøge 
+    alle _(4*4=16_) mulige tilfælde!
+    </p>
+    <p class="t">
+    Det har vi ikke tid til, så lad os eksklusivt kigge på de tilfælde hvor både _(b_) og _(c_) 
+    ligger i højre øvre kvartdel. 
+    Nu kan vinklen imellem siderne findes som:
+    _($Arctan(c_y/c_x) - Arctan(b_y/b_x)_)
+    Alt i alt får vi: 
+    _($0.5*\sqrt{b_x^2+b_y^2}*\sqrt{c_x^2+c_y^2}*Sin \left(Arctan(c_y/c_x) - Arctan(b_y/b_x) \right)_)
+    Lad os simplificere det. En masse. Alt det med _(Arctan_) kan vi simplificere
+    ved hjælp af vinkeladditionsformlen for _(Sin_) som:
+    _($\begin{eqnarray}
+    && Sin \left(Arctan(c_y/c_x) \right)*Cos \left(Arctan(b_y/b_x) \right) \, \, - \\ \\
+    && Sin \left(Arctan(b_y/b_x) \right)*Cos \left(Arctan(c_y/c_x) \right)
+    \end{eqnarray}_)
+    Det er <i>mere</i> kompliceret end hvad vi havde før, men er praktisk <i>hvis</i> 
+    jeg på en eller anden måde kunne skrive _(Sin_) og _(Cos_) <i>i forhold</i> til _(Tan_).
+    Så står vi med 
+    _($Tan(Arctan(\text{noget})) = \text{noget}_) 
+    Det ville eliminere alt trigonometrisk møj! 
+    </p>
+    <p class="t">
+    I en tidligere opgave så vi at:
+    _($Cos(x)^2 = \frac{1}{1+Tan(x)^2}, \qquad Sin(x)^2=\frac{Tan(x)^2}{1+Tan(x)^2}_)
+    Så:
+    _($Cos(x)= \pm \frac{1}{\sqrt{1+Tan(x)^2}}, \qquad Sin(x) = \pm \frac{Tan(x)}{\sqrt{1+Tan(x)^2}}_)
+    Vi har antaget, at både _(b_) og _(c_) er i den højre, øvre kvadrant af koordinatsystemet. 
+    Det betyder at alle 
+    _($\begin{eqnarray}
+    && Sin(Arctan(c_y/c_x)), \\
+    && Cos(Arctan(b_y/b_x)), \\
+    && Sin(Arctan(b_y/b_x)), \\
+    && Cos(Arctan(c_y/c_x))
+    \end{eqnarray}_)
+    ... skal være positive, så _(\pm_) bliver til et simpelt _(+_).
+    Vi får nu:
+    _($\frac{c_y/c_x}{\sqrt{1+(c_y/c_x)^2}}*\frac{1}{\sqrt{1+(b_y/b_x)^2}} - \frac{b_y/b_x}{\sqrt{1+(b_y/b_x)^2}}*\frac{1}{\sqrt{1+(c_y/c_x)^2}}_)
+    Det her kan simplificeres massivt til: 
+    _($\frac{b_y/b_x-c_y/c_x}{\sqrt{1+(b_y/b_x)^2}*\sqrt{1+(c_y/c_x)^2}}_)
+    Vi gør noget lidt tricky nu, og omskriver nævnerne på smart vis for at få:
+    _($\frac{b_y/b_x-c_y/c_x}{\sqrt{\frac{c_x^2+c_y^2}{c_x^2}}*\sqrt{\frac{b_x^2+b_y^2}{b_x^2}}}=
+    \frac{c_x*b_x*(b_y/b_x-c_y/c_x)}{\sqrt{b_x^2+b_y^2}*\sqrt{c_x^2+c_y^2}}=
+    \frac{b_y*c_x-c_y*b_x}{\sqrt{b_x^2+b_y^2}*\sqrt{c_x^2+c_y^2}}
+    _)
+    Det indsætter vi så i den endelige formel og
+    _($0.5*\sqrt{b_x^2+b_y^2}*\sqrt{c_x^2+c_y^2}*\frac{b_y*c_x-c_y*b_x}{\sqrt{b_x^2+b_y^2}*\sqrt{c_x^2+c_y^2}}_)
+    ... et mirakel! Tæller og nævner går ud med hinanden, så vi får til sidst den vidunderlige:
+    _($0.5*(b_y*c_x-c_y*b_x)_)
+    Bam! En super simpel formel! Man kan (let?) bevise, at hvis man gennemgår en lignende process
+    i de _(15_) andre tilfælde, ender man ved samme formel. Den her kan <i>altid</i> bruges, så
+    det er super let at finde arealer via koordinater. 
+    </p>
+
+    <!--  -->
+
+    <q-stion 1="5" 2="1">
+    Find arealet af følgende firkant:
+    <img class="Spic" style="width:100%" src='../../../Assets/Chapter2\Section2\Quads\Shoelace2.png'> 
+    <br><br></q-stion>
+    <answer-box t="h">
+    Kan følgende billede måske give dig noget inspiration?
+    <img class='Spic' style='width:90%' src='../../../Assets/Chapter2\Section2\Quads\Shoelace2 2.png'> 
+    <br><br></answer-box>
+    <answer-box>
+    I sidste opgave fandt vi frem til en formel, der kunne udregne arealet af en
+    trekant hvis ene punkt lå i _((0,0)_), og hvis andre punkter vi kendte. Hvis bare vi bruger det resultat, bliver 
+    denne opgave super nem:
+    <img class='Spic' style='width:90%' src='../../../Assets/Chapter2\Section2\Quads\Shoelace2 2.png'> 
+    <p class="t"> 
+    Vi kan altså dele arealet op i 
+    _(\triangle BOA, \, \triangle AOD, \, \triangle DOC, \,
+    \triangle COB_).
+    De er hver nemme at regne via formlen fra før: 
+    _($\begin{alignat}{5}
+    0.5 \, \cdot \, \, &\Bigl(&(-1) &\, \cdot \,& (&-9) &\, \, - \, \, && 1    &\, \cdot \, & (&-1) &\Bigr)& \, \, \, + \\
+    0.5 \, \cdot \, \, &\Bigl(&1    &\, \cdot \,& 3&    &\, \, - \, \, && 6    &\, \cdot \, & (&-9) &\Bigr)& \, \, \, + \\
+    0.5 \, \cdot \, \, &\Bigl(&6    &\, \cdot \,& 3&    &\, \, - \, \, && (-5) &\, \cdot \, & 3&    &\Bigr)& \, \, \, + \\
+    0.5 \, \cdot \, \, &\Bigl(&(-5) &\, \cdot \,& (&-1) &\, \, - \, \, && (-1) &\, \cdot \, & 3&    &\Bigr)& \, \, \, = 54
+    \end{alignat}_)
+    Hvis du er i tvivl om, hvad for en retning du skal gå 
+    (hvad der kommer til at være _(x_a_) og _(x_b_)), skal 
+    du bare se, hvornår du får et negativ areal. </p>
+    <p class="t">
+    Det vi gjorde her, lægger lidt op til en generel strategi: Vælg et punkt, find ud af hvad 
+    for en retning man skal gå,
+    udregn gradvist _(b_y*c_x-c_y*b_x_) for alle punkterne i sekvens, læg alt sammen og
+    divider til sidst med _(2_).
+    Den her strategi kaldes 
+    <i>the sholeace strategy</i>. 
+    </p>
+    <p class="t">
+    Lad os i næste opgave udforske om den også gælder i mere komplicerede tilfælde. 
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="5" 2="2">
+    Find arealet af følgende form:
+    <img class='Spic' style='width:95%' src='../../../Assets/Chapter2\Section2\Shoelace\New1.png'> 
+    <br><br></q-stion>
+    <answer-box>
+    Vi bruger præcis samme strategi som sidste gang, og regner:
+    _($\begin{alignat}{5} 
+    0.5 \, \cdot \, \, &\Bigl(&1    & \, \cdot \, & 7&    & \, \, - \, \, && 4    & \, \cdot \, & 8&    & \Bigr)& \, \, + \\
+    0.5 \, \cdot \, \, &\Bigl(&4    & \, \cdot \, & 4&    & \, \, - \, \, && 6    & \, \cdot \, & 7&    & \Bigr)& \, \, + \\
+    0.5 \, \cdot \, \, &\Bigl(&6    & \, \cdot \, & (&-5) & \, \, - \, \, && 4    & \, \cdot \, & 4&    & \Bigr)& \, \, + \\
+    0.5 \, \cdot \, \, &\Bigl(&4    & \, \cdot \, & (&-2) & \, \, - \, \, && (-1) & \, \cdot \, & (&-5) & \Bigr)& \, \, + \\
+    0.5 \, \cdot \, \, &\Bigl(&(-1) & \, \cdot \, & 5&    & \, \, - \, \, && (-2) & \, \cdot \, & (&-2) & \Bigr)& \, \, + \\
+    0.5 \, \cdot \, \, &\Bigl(&(-2) & \, \cdot \, & 8&    & \, \, - \, \, && 1    & \, \cdot \, & 5&    & \Bigr)& \, \, = 70
+    \end{alignat}_)
+    Bum! 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="5" 2="3">
+    Find arealet af følgende firkant:
+    <img class="Spic" style="width:90%" src='../../../Assets/Chapter2\Section2\Quads\Shoelace3.png'> 
+    <br><br></q-stion>
+    <answer-box>
+    Nu er vi i lidt af et problem. Vi kan ikke på samme måde forbinde alting til _((0,0)_) som før. 
+    Èn løsning kunne være at rykke alting med _((-2,-2_)), så vi fik:
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter2\Section2\Quads\Shoelace3 3.png'> 
+    <p class="t">
+    Det er egentlig en fin og god ide, men lidt irriterende hvis
+    vi har meget store former og, skal minusse mange koordinater.
+    I ekstra komplicerede figurer ville vi ikke engang være sikre på at det altid virkede!
+    Jeg har derfor en anden løsning:</p>
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter2\Section2\Quads\Shoelace3 2.png'> 
+    <p class="t">Lad os sige vi starter ved _((-8, 4)_) og går med uret. 
+    Nu bliver arealet af _(\triangle OAB_) til 
+    _($0.5*(6*4-7*(-8))=40_) 
+    ... og _(\triangle OBC_) til 
+    _($0.5*(7*4-6*(-5))=29_)
+    ... og _(\triangle OCD_) til 
+    _($0.5*((-5)*2-4*2)=-9_)
+    </p>
+    <p class="t">
+    Det er negativt! Hvilke faktisk er <i>perfekt</i>. 
+    Det samme vil ske med 
+    _($\triangle DOA = 0.5*(2*(-8)-2*4)=-12_) 
+    Ved de to første positive arealer har vi overtalt, og med de to sidste negative har 
+    vi fjernet netop det areal, vi overtalte! 
+    Summen er det <i>rigtige</i> areal:
+    _($40+29-9-12=48_)
+    Vi kan bruge denne strategi altid: Selv hvis 
+    vi har har kæmpe former med hjørner placeret mærkelige steder.
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <!-- <q-stion 1="2" 2="1" 3="5">
+    Find arealet af følgende form:
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter2\Section2\Shoelace\New2.png'> 
+    <br><br></q-stion>
+    <answer-box>
+    Vi bruger igen samme strategi som før:
+    _($\begin{eqnarray}
+    0.5*& &\bigl(3 & * & 3 & -    & 8 &    * & 6 & \bigr) & + \\
+    0.5*& &\bigl(8 & * & (-3) & - & 4 &    * & 3 & \bigr) & + \\
+    0.5*& &\bigl(4 & * & 2 & -    & 4 &    * & (-3) & \bigr) & + \\
+    0.5*& &\bigl(4 & * & (-2) & - & 1 &    * & 2 & \bigr) & + \\
+    0.5*& &\bigl(1 & * & 6 & -    & (-4) & * & (-2) & \bigr) & + \\
+    0.5*& &\bigl((-4) & * & 8 & - & 1 7    * & 6 & \bigr) & + \\
+    0.5*& &\bigl(7 & * & 6 & -    & 1 3    * & 8 & \bigr) & + \\
+    \end{eqnarray}_)
+    _($=61.5_)
+    Voila! 
+    <br><br></answer-box> -->
+
+
+

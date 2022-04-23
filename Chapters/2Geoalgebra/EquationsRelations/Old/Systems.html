@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+
+
+    TILFØJ BILLEDER AF ALLE TINGENDE PÅ DEN HER SIDE! (alle dem der er i 2D i hvert fald. )
+    VI SKAL OGSÅ HAVE EN SIDE OMKRING GRAFER SAMT PLOTS AF LIGNINGER! DER KAN DU OGSÅ PLOTTE NOGLE AF SYSTEMERNE HERINDE!
+
+    <p class="t">
+    Som sagt så kan vi godt have flere ligninger og flere ukendte variabler. Det hedder et "<i>system af ligniger</i>"", og vi 
+    har set et par eksempler på det gennem bogen allerede. F.eks. da vi arbejdede på opgaverne hvor man skulle
+    gå hen til bageren så vi:
+    _($\begin{eqnarray}
+    && Hus_{1}+Hus_{2}=15 \\
+    && Hus_{1}+Hus_{2}+Hus_{3}+Hus_{4}=35
+    \end{eqnarray}_)
+    Den var relativt let at løse. Som et lidt mere tricky eksempel, så havde vi også brug for at løse et system
+    da vi udledte formlen for _(Sin(a+b)_). Der så vi at:
+    _($Cos(A+B)=\frac{Cos(A)}{Cos(B) + Sin(A)*\frac{Sin(A+B)}{Cos(A+B)}}_)
+    _($Sin(A+B)=\frac{Sin(B)+\frac{Sin(A)}{Cos(A+B)}}{Cos(B) + Sin(A)*\frac{Sin(A+B)}{Cos(A+B)}}_)
+    Her var _(Cos(A+B)_) og _(Sin(A+B)_) de ukendte vi prøvede at finde, så det her svarer altså til systemet:
+    _($\begin{eqnarray}
+    && x = \frac{Cos(A)}{Cos(B) + Sin(A)*\frac{y}{x}} \\ \\
+    && y=\frac{Sin(B)+\frac{Sin(A)}{x}}{Cos(B) + Sin(A)*\frac{y}{x}}
+    \end{eqnarray}_)
+    Det var så en del mere tricky at løse. 
+    </p>
+    <p class="t">
+    Generelt så kan vi finde flere ubekendte når vi har flere ligninger. Ofte kan vi få èn ny ubekendt pr ny ligning, men 
+    det er ikke altid helt så simpelt. Se f.eks: 
+    _($\begin{eqnarray}
+    && 5x & + 6y & - 2z & = 8 \\    
+    && 9x & + 3y & + 5z & = 3 \\    
+    && 18x & + 6y & + 10z & = 6  
+    \end{eqnarray}_)
+    Læg mærke til anden og tredje ligning her: De er identiske! Hvis vi ganger begge sider af anden ligning med _(2_) så får vi:
+    _($2*9x + 2*3y + 2*5z = 2*3 \to_)
+    _($18x + 6y + 10z = 6_)
+    Så den tredje ligning giver os i dette tilfælde slet ikke noget nyt information. Der er selvfølgelig også andre mulige årsager
+    til at ligningerne ikke kan give os de ukendte variabler. 
+    </p>
+    <p class="t">
+    Når vi skal løse systemer er der bredt sagt to strategier: Isolering/substitution, og "elimination". 
+    </p>
+    <p class="t">
+    Isolation er meget lige til: Vi isolerer èt variable i èn ligning, indsætter den nye værdi på variablen i en 
+    ny ligning, isolerer en ny variable via den ligning, og bliver ved indtil vi har fundet alle variabler. Det
+    kan bedst forstås via nogle opgaver. 
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Løs følgende systemer:
+    <div style="text-align:center; margin-top:10px;">
+        <ul style="display: inline-block; text-align: left; padding-left:0%; list-style:none;">
+            <li><b> 1</b>: _($\begin{eqnarray}
+            && 5x + 3y = 2.5 \\
+            && 6x - 18y = 12 \\
+            \end{eqnarray}_)</li>
+            <li><b> 2</b>: _($\begin{eqnarray}
+            && x+y=3 \\
+            && Ln(x-y)=5 \\
+            \end{eqnarray}_)</li>
+            <li><b> 3</b>: _($\begin{eqnarray}
+            && e^{x-y}=5 \\
+            && y*x=e^{x-y}+1 \\
+            \end{eqnarray}_)</li>
+        </ul>
+    </div>
+    <p class="t">
+    I tredje opgave er der to par løsninger. 
+    </p>
+    <br><br></q-stion>
+    <answer-box t="Answer 1#" tabColour="rgb(171,96,147)">
+    Jeg tænker at jeg først isolere _(x_) i den her:
+    _($\begin{eqnarray}
+    && x - 18y = 12 \to \\ \\
+    && 6x = 12 - 18y \to \\ \\
+    && x = 2 - 3y
+    \end{eqnarray}_)
+    Det indsætter jeg nu i den første ligning, og får:
+    _($\begin{eqnarray}
+    && 5*(2-3y)+3y = 2.5 \to \\ \\
+    && 7.5 - 12y = 0 \to \\ \\
+    && y = 7.5/12 = 0.625
+    \end{eqnarray}_)
+    Vi har nu værdien på _(y_). Nu kan _(x_) findes via vores tidligere resultat som:
+    _($x=2-3*0.625=0.125_)
+    Så alt i alt:
+    _($x=0.125, y=0.625_)
+    <br><br></answer-box>
+    <answer-box t="Answer 2#" tabColour="rgb(175,128,161)">
+    I den første ligning kan vi nemt få _(y=3-x_). Det indsætter vi i den anden ligning og får:
+    _($\begin{eqnarray}
+    && Ln \left(x-(3-x)\right) = 5 \to \\ \\
+    && e^{Ln \left(2x - 3 \right)} = e^5 \to \\ \\
+    && 2x -3 = 148.41 \to \\ \\
+    && x = \frac{148.41+3}{2} = 75.705
+    \end{eqnarray}_)
+    Vi har nu _(x_), så _(y_) må være lig:
+    _($y=3-75.705=-72.705_)
+    Bum! 
+    <br><br></answer-box>
+    <answer-box t="Answer 3#" tabColour="rgb(171,96,147)">
+    Jeg tænker først og fremmest at vi kan gøre denne simplere ved at indse at anden ligning kan omskrives til:
+    _($y*x=6_)
+    Eftersom _(e^{x-y}_) via første ligning er lig _(5_), så _(e^{x-y}+1_) må være _(6_). 
+    <p class="t">
+    Vi isolerer _(y_) på anden ligning og får:
+    _($y=\frac{6}{x}_)
+    Det indsætter vi i første ligning:
+    _($\begin{eqnarray}
+    && e^{x-\frac{6}{x}} = 5 \to \\ \\
+    && Ln\left(e^{x-\frac{6}{x}} \right) = Ln(5) \to \\ \\
+    && x - \frac{6}{x} = 1.60 \to \\ \\
+    \end{eqnarray}_)
+    For at løse denne ligning tænker jeg at vi ganger begge sider med _(x_) for at skaffe _(6/x_) af vejen:
+    _($\begin{eqnarray}
+    && x*x-x*\frac{6}{x}=1.60*x \to \\ \\
+    && x^2 - 6 = 1.6x \to \\ \\
+    && x^2 -1.6x - 6 = 0 
+    \end{eqnarray}_)
+    Vi kender denne slags ligning, og ved at dens løsning er:
+    _($x=\frac{-(-1.6) \pm \sqrt{(-1.6)^2 - 4*1*(-6)}}{2*1} = \frac{1.6 \pm 5.15}{2} = 3.375, -1.775_)
+    Der er to mulige _(x_)-værdier, så der er også to mulige _(y_)-værdier:
+    _($\begin{eqnarray}
+    && y & = 6/3.375 & = 1.77 \\
+    && y & = 6/(-1.775) & = -3.38 
+    \end{eqnarray}_)
+    De to par af løsninger er altså:
+    _($(x=3.375, y=1.77), (x=-1.775, y=-3.38)_)
+    Voila!
+    </p> 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <p class="t">
+    Nok den nemmeste og vigtigste type af system er et såkaldt "lineært system". Det ser ud som f.eks:
+    _($\begin{eqnarray}
+    && 2x + 5y + 3z = 6 \\
+    && 5x + 10y - 6z = 8 \\
+    && 8x - 11y + 9z = 10 \
+    \end{eqnarray}_)
+    I sådan et system er hvert variable altså bare ganget med en eller anden konstant. Der er ingen potenser eller
+    andre mærkelige funktioner. Man støder på dem her overalt, og de er meget vigtige især i computergrafik. Prøv at regn nogle!
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Regn følgende lineære systemer: 
+    <div style="text-align:center; margin-top:10px;">
+        <ul style="display: inline-block; text-align: left; padding-left:0%; list-style:none;">
+            <li><b> 1</b>: _($\begin{eqnarray}
+            && 7x + 6y - 3z = 32 \\
+            && x + 5y - 2z = 5 \\
+            && 3x +7y - 4z = 9
+            \end{eqnarray}_)</li>
+            <li><b> 1</b>: _($\begin{eqnarray}
+            && 3x + 2y - 24z + 3w = 5\\
+            && 5x - 16z = 11 \\
+            && 7x + 28z - 4w = 4 \\
+            && 8z = 2 \\
+            \end{eqnarray}_)</li>
+        </ul>
+    </div>
+    <br><br></q-stion>
+    <answer-box t="Answer 1#" tabColour="rgb(171,96,147)">
+    Vi har nu tre ligninger, men vi kan egentlig gøre det samme som normalt: Isolere en variable i èn ligning, og indsætte
+    den i en anden ligning. Jeg tænker umiddelbart at det er nemmest først at isolere _(x_) i anden ligning, da den ikke har nogen koefficient.
+    Vi ser at:
+    _($x=5-5y+2z_)
+    Lad os indsætte den i tredje ligning, da vi i det tilfælde skal gange med _(3_) i stedet for _(7_):
+    _($\begin{eqnarray}
+    && 3*(5-5y+2z) + 7y - 4z = 9 \to \\ 
+    && 15 - 15y + 6z + 7y - 4z = 9 \to \\
+    && -8y + 2z = -6 
+    \end{eqnarray}_)
+    Det nemmeste nu er nok at isolere _(z_). Vi får relativt let at:
+    _($z=4y-3_)
+    Det her betyder også at:
+    _($x=5-5y+2*(4y-3)= 3y - 1_)
+    Vi indsætter nu både _(z_) og _(x_) ind i den øverste ligning for at finde _(y_):
+    _($\begin{eqnarray}
+    && 7*(3y-1)+6y -3*(4y-3) = 32 \to \\
+    && 2 + 15y = 32 \to \\ 
+    && 15y = 30 \to \\
+    && y=2
+    \end{eqnarray}_)
+    Vi har nu endelig _(y_). Nu kan _(x_) og _(z_) findes som:
+    _($\begin{eqnarray}
+    && x & = 3*2 - 1 & = 5
+    && z & = 4*2 - 3 & = 5
+    \end{eqnarray}_)
+    De er tilfældigt hvis identiske. Alt i alt kan man se at vores løsninger er:
+    _($x=5, y=2, z=5_)
+    Sådan! 
+    <br><br></answer-box>
+    <answer-box t="Answer 2#" tabColour="rgb(175,128,161)">
+    Den her ser måske lidt sværere ud eftersom der er _(4_) i stedet for _(3_) ligninger, men den er slet ikke særlig slem, da mange
+    af ligningerne har koefficienter med _(0_). Vi kan let starte med at isolere _(z_) via
+    _(8z=2_), hvilke giver:
+    _($z=1/4_)
+    Lad os derefter fokusere på anden ligning som kun indeholder _(z_) og _(x_). Her kan vi isolere _(x_) som:
+    _($5x-16*(1/4)=11 \to 5x = 15 \to x=3_)
+    Tredje ligning indeholder ikke _(y_), så her er det muligt at isolere _(w_):
+    _($7*3 + 28*(1/4) - 4w = 4 \to w=6_)
+    Nu indsætter vi til sidst det hele i sidste ligning for at få _(y_):
+    _($3*3 + 2y - 24*(1/4)+3*6 = 5 \to y=-8_)
+    Så alt i alt har vi:
+    _($\begin{eqnarray}
+    && x & = 3 
+    && y & = -8
+    && z & = 1/3
+    && w & = 6
+    \end{eqnarray}_)
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <p class="t">
+    Den anden strategi hedder elimination. For at forstå den er man lige nødt til at kende nogle resultater: 
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Sig at:
+    _($A=B_)
+    og at:
+    _($C=D_)
+    Er det også sandt at:
+    _($A+C=B+D_)
+    Eller? Hvad med minus?
+    <br><br></q-stion>
+    <answer-box>
+    Det er selvfølgelig sandt ja. Vi ved at _(A=B_) og _(D=C_), så _(A+C=B+D_) bliver til:
+    _($B+C=B+C_)
+    Hvilke selvfølgelig er rigtigt. Man kan let se at det samme også gælder minus. 
+    Man kan endda se at:
+    _($A+k*C = B+k*D_)
+    Da vi jo kan omskrive _(C=D_) til
+    _($k*C=k*D_)
+    Og så bagefter plusse de to ligninger med hinanden. 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <p class="t">
+    Ideen med elimination er at vi "eliminerer" svære/problematiske led fra ligningerne 
+    ved at gange og plusse dem med hinanden. Følgende opgave viser meget godt idéen:
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Løs følgende system:
+    _($\begin{eqnarray}
+    && 3x + Arcsin(x+y)^x = 5 \\
+    && 7x - Arcsin(x+y)^x = 9
+    \end{eqnarray}_)
+    <br><br></q-stion>
+    <answer-box>
+    _(Arcsin(x+y)^x_) ser ret kompleks ud. Heldigvis plusser vi med den i den ene ligning, og minusser den i 
+    den anden. Så den forsvinder fuldkommen hvis vi plusser de to ligninger:
+    _($\left(3x+Arcsin(x+y)^x \right) + \left(7x - Arcsin(x+y)^x \right) = 5+9 \to_)
+    _($10x=14 \to_)
+    _($x=1.4_)
+    Vi har nu _(x_). _(Arcsin(x+y)^x_) er heldigvis ikke <i>for</i> komplekst til at vi kan bruge det 
+    til at finde _(y_):
+    _($\begin{eqnarray}
+    && 3*1.4 + Arcsin(1.4+y)^{1.4} = 5 \to \\
+    && Arcsin(1.4+y)^{1.4} = 0.8099 \to \\
+    && \left(Arcsin(1.4+y)^{1.4} \right)^{1/1.14} = 0.8099^{1/1.14} \to \\ 
+    && Arcsin(1.4+y) = 0.831 \to \\
+    && Sin \left(Arcsin(1.4+y) \right) = Sin(0.831) \to \\
+    && 1.4+y = 0.738 \to \\
+    && y = -0.662
+    \end{eqnarray}_)
+    Så alt i alt har vi:
+    _($x=1.4, y=-0.662_)
+    Bum! 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Løs følgende systemer:
+    <div style="text-align:center; margin-top:10px;">
+        <ul style="display: inline-block; text-align: left; padding-left:0%; list-style:none;">
+            <li><b> 1</b>: _($\begin{eqnarray}
+            && \sqrt{x} + \sqrt{y} = 3 \\
+            && \sqrt{x} - \sqrt{y} = 7 
+            \end{eqnarray}_)</li>
+            <li><b> 2</b>: _($\begin{eqnarray}
+            && \sqrt{x} + 2 \sqrt{y} = 3 \\
+            && \sqrt{x} - 6 \sqrt{y} = 2 
+            \end{eqnarray}_)</li>
+            <li><b> 3</b>: _($\begin{eqnarray}
+            && xy + 5x + 3y = 7 \\
+            && 7y + 3x + xy = 4 
+            \end{eqnarray}_)</li>
+            <li><b> 4</b>: _($\begin{eqnarray}
+            && 5x^2 + 4x - 3y = 7 \\
+            && 2.5x^2 + 3x + 6y = -4 
+            \end{eqnarray}_)</li>
+        </ul>
+    </div>
+    <br><br></q-stion>
+    <answer-box t="Answer 1#" tabColour="rgb(171,96,147)">
+    I den ene minusser vi med _(\sqrt{y}_) og i den anden plusser vi. Jeg tænker
+    altså umiddelbart at vi gør præcist det samme som i sidste opgave:
+    _($\left(\sqrt{x}+\sqrt{y} \right) + \left(\sqrt{x} - \sqrt{y} \right) = 3+7 \to _)
+    _($2 \sqrt{x} = 10 \to_)
+    _($x=5^2=25_)
+    Vi indsætter nu _(x_) i anden ligning får at finde _(y_):
+    _($\begin{eqnarray}
+    && \sqrt{25} - \sqrt{y}=7 \to \\
+    && -2 = \sqrt{y} \to \\
+    && 4 = y
+    \end{eqnarray}_)
+    Alt i alt har vi:
+    _($x=25, y=4_)
+    <br><br></answer-box>
+    <answer-box t="Answer 2#" tabColour="rgb(175,128,161)">
+    I den her kan vi ikke lave helt det samme trick, da _(\sqrt{y}_) nu er ganget med _(2_) i den ene, og 
+    _(6_) i den anden. Det er intet problem. Vi ved at hvis _(A=B_) og _(C=D_) så gælder
+    _($A+k*C=B+k*D_)
+    også. Vi vælger derfor _(k=3_), og siger:
+    _($\left(\sqrt{x} - 6 \sqrt{y} \right) + 3*\left(\sqrt{x} + 2 \sqrt{y} \right) = 2 + 3*3 \to _)
+    _($\sqrt{x}+3*\sqrt{x} - 6*\sqrt{y} + 3*2*\sqrt{y} = 11 \to_)
+    _($4 \sqrt{x} = 11 \to_)
+    _($\sqrt{x} = 2.75 \to_)
+    _($x=2.75^2=7.5625_)
+    Sådan! Vi kan finde _(y_) på præcist samme måde som i sidste opgave, og finder _(y=0.0156_).
+    <br><br></answer-box>
+    <answer-box t="Answer 3#" tabColour="rgb(171,96,147)">
+    Her tænker jeg nok at vi skal  fjerne _(xy_) ved at minusse den ene ligning med den anden. Vi får:
+    _($\left(xy + 5x + 3y \right) - \left(7y + 3x + xy \right) = 7 - 4 \to_)
+    _($2x - 4y = 3_)
+    Jeg tænker at vi isolerer _(x_) i forhold til _(y_), og så indsætter det i èn af ligningerne. Det burde nok give os
+    en kvadratisk ligning vi så kan løse. Vi får let:
+    _($x=2y+1.5_)
+    Så:
+    _($(2y+1.5)*y+5*(2y+1.5)+3y = 7 \to_)
+    _($2y^2+14.5y+0.5_)
+    Vi kender denne type ligning. Vi ved at løsningen kan findes som:
+    _($y=\frac{-14.5 \pm \sqrt{14.5^2 - 4*2*0.5}}{2*2} = -0.034, -7.215_)
+    Så i de to forskellige tilfælde kan vi se at _(x_) er lig:
+    _($\begin{eqnarray}
+    && x = 2*(-0.034) + 1.5 = 1.43 \\
+    && x = 2*(-7.215) + 1.5 = -12.93
+    \end{eqnarray}_)
+    Så de to par løsninger er:
+    _($(1.43,-0.034), (-7.215,-12.93)_)
+    Bum! 
+    <br><br></answer-box>
+    <answer-box t="Answer 4#" tabColour="rgb(175,128,161)">
+    Her burde vi nok fokusere på at fjerne _(x^2_). Vi ganger den anden ligning med _(2_) og minusser så:
+    _($\left(5x^2+4x-3y \right) - 2*\left(2.5x^2 + 3x + 6y \right) = 7 - 2*(-4) \to _)
+    _($-2x -15y = 15 \to _)
+    _($x=-7.5y - 7.5_)
+    Vi indsætter nu dette i første ligning og får:
+    _($5*(-7.5y-7.5)^2 + 4*(-7.5y-7.5) - 3y = 7 \to _)
+    _($281.25*y^2 + 529.50*y + 244.25 = 0 \to_)
+    _($y = \frac{-529.5 \pm \sqrt{529.5^2 - 4*281.25*244.25}}{2*281.25} = -0.808, -1.074_)
+    Så de to mulige _(x_)-værdier er:
+    _($\begin{eqnarray}
+    && x & = -7.5*(-0.808) - 7.5 & = -1.439
+    && x & = -7.5*(-0.808) - 7.5 & = 0.554
+    \end{eqnarray}_)
+    De to par løsninger er altså:
+    _($(-1.439,-0.808), (0.554,-1.074)_)
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Elimination kan være meget brugbart til at løse lineære systemer hurtigere. Prøv at regn de følgende tre systemer:
+    <div style="text-align:center; margin-top:10px;">
+        <ul style="display: inline-block; text-align: left; padding-left:0%; list-style:none;">
+            <li><b> 1</b>: _($\begin{eqnarray}
+            && 3x - 5y + 2z = 5 \\
+            && -9x + 10y - 6z = 3 \\
+            && 5x + 8y - 4z = 4
+            \end{eqnarray}_)</li>
+            <li><b> 2</b>: _($\begin{eqnarray}
+            && 2x + 5y + 3z = 6 \\
+            && 5x + 10y - 6z = 8 \\
+            && 8x - 11y + 9z = 10
+            \end{eqnarray}_)</li>
+            <li><b> 3</b>: _($\begin{eqnarray}
+            && 14x - 6y + 5z = 8 \\
+            && -22x + 14y + 20z = 5 \\
+            && 3x + 3y - 9z = -4 
+            \end{eqnarray}_)</li>
+        </ul>
+    </div>
+    <br><br></q-stion>
+    <answer-box t="Answer 1#" tabColour="rgb(171,96,147)">
+    Du kan se mit svar her:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter2\Section3\LinearSystem1.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+    <answer-box t="Answer 2#" tabColour="rgb(175,128,161)">
+    Du kan se mit svar her: 
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter2\Section3\LinearSystem2.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+    <answer-box t="Answer 3#" tabColour="rgb(171,96,147)">
+    Jeg gennemgår ikke processen i denne, da det er meget det samme som før. Svaret er:
+    _($\begin{eqnarray}
+    && x & = 0.398
+    && y & = 0.107
+    && z & = 0.613
+    \end{eqnarray}_)
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <p class="t">
+    Til sidst lige en kort men vigtig note omkring hvordan man aller mest effektivt går til at løse lineære systemer. Se følgende system vi tidligere løste i en opgave:
+    _($\begin{eqnarray}
+        && 3x + 2y - 24z + 3w = 5\\
+        && 7x + 28z - 4w = 4 \\
+        && 5x - 16z = 11 \\
+        && 8z = 2 \\
+    \end{eqnarray}_)
+    Det her var nemt at løse, fordi man bare kunne isolere _(z_) i fjerde ligning, sætte den ind 
+    i tredje ligning og isolere _(x_), så sætte _(x_) og _(z_) ind i anden ligning og isolere _(w_), og til sidst
+    sætte alt ind i først ligning og endeligt isolere _(y_). 
+    </p>
+    <p class="t">
+    Strategien vi bruger til at løse systemer er derfor ofte at vi forsøger at plusse og gange ligningerne 
+    <i>på sådan en måde</i> at systemet ender ud med denne form. Strategien kaldes for "gaussian elimination", og vi vil
+    vende tilbage til den senere. 
+    </p>
+    

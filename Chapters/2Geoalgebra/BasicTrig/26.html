@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+
+
+
+    <h3>Dobbelt-vinkler</h3>
+
+    <q-stion 1="26" 2="1">
+    I sidste opgave omskrev vi _(Cos(2v)_) til
+    _($Cos(v)^2-Sin(v)^2_)
+    Lad os prøve at videreudvikle lidt på den ide. 
+    Generelt ville det være dejligt, hvis vi havde nogle smarte
+    tricks her, da vores vinkel ofte er ganget med et tal inde i trig-funktionen:
+    f.eks. når man arbejder med bølger. Vi burde nok starte med hele tal. 
+    Prøv at omskrive/udvide de følgende funktioner: 
+    <div style="margin-left:-75%; margin-top:25px; margin-bottom: -10px;">
+    _($\begin{eqnarray}
+        && \underline{\textbf{A}}: \, \, \, \, \, \, Sin(2*x) \\  \\
+        && \underline{\textbf{B}}: \, \, \, \, \, \, Sin(3*x) \\  \\
+        && \underline{\textbf{C}}: \, \, \, \, \, \, Cos(3*x) \\  \\
+        && \underline{\textbf{D}}: \, \, \, \, \, \, Sin(4*x) \\  \\
+    \end{eqnarray}_)
+    </div>
+    <p class="t">
+    Du skal altså omskrive dem i forhold til bare _(Sin_) og _(Cos_), ligesom
+    vi gjorde med _(Cos(2v)_). 
+    </p>
+    <br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    Vi bruger samme trick som i sidste opgave, og omskriver 
+    _(Sin(2x)_) til _(Sin(x+x)_), hvilket giver:
+    _($Sin(x)*Cos(x) + Cos(x)*Sin(x)_)
+    ... som let kan omskrives til 
+    _($2 Sin(x) Cos(x)_)
+    Vi har derfor:
+    _($Sin(2x)=2 Sin(x) Cos(x)_)
+    Som et lille relevant notat burde jeg nok lige sige, at _(Cos(x)^2-Sin(x)^2_),
+    som _(Cos(2x)_) kan omskrives til, ofte bliver lavet om til: 
+    _($\left(1-Sin(x)^2 \right) - Sin(x)^2 = 1-2 Sin(x)^2_)
+    Og
+    _($Cos(x)^2 - (1-Cos(x)^2) = 2 Cos(x)^2 - 1_)
+    Vi har altså:
+    _($\begin{eqnarray}
+    && Sin(2x) = 2 Sin(x) Cos(x)  \\ \\
+    && Cos(2x) = Cos(x)^2 - Sin(x)^2 = 2 Cos(x)^2 - 1 = 1 - 2 Sin(x)^2
+    \end{eqnarray}_)
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Hvad er _(Sin(3x)_)? _(Sin(2x+x)_)! Så:
+    _($\begin{eqnarray}
+    && Sin(3x)=Sin(2x)*Cos(x)+Cos(2x)*Sin(x)= \\ \\
+    && 2*Sin(x)*Cos(x)*Cos(x)+(Cos(x)^2-Sin(x)^2)*Sin(x)= \\ \\
+    && 2*Sin(x)*Cos(x)^2+Sin(x)*Cos(x)^2-Sin(x)^3= \\ \\
+    && 3*Sin(x)*Cos(x)^2-Sin(x)^3
+    \end{eqnarray}_)
+    Bum!
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{C}}_)#" tabColour="rgb(171,96,147)">
+    Samme ide nu med Cos: 
+    _($\begin{eqnarray}
+    && Cos(2x+x)=Cos(2x)*Cos(x)-Sin(2x)*Sin(x)= \\ \\
+    && (Cos(x)^2-Sin(x)^2)*Cos(x)-(2*Sin(x)*Cos(x))*Sin(x)= \\ \\
+    && Cos(x)^3-Sin(x)^2*Cos(x)-2*Sin(x)^2*Cos(x)= \\ \\
+    && Cos(x)^3-3 Sin(x)^2*Cos(x) 
+    \end{eqnarray}_)
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{D}}_)#" tabColour="rgb(175,128,161)">
+    _(Sin(4x)=Sin(2*2x)_) så:
+    _($\begin{eqnarray}
+    && Sin(2*2x)=2*Sin(2x)*Cos(2x)= \\ \\
+    && 2*(2*Sin(x)*Cos(x))*(Cos(x)^2 - Sin(x)^2) = \\ \\
+    && 4*Sin(x)*Cos(x)*(Cos(x)^2 - Sin(x)^2) = \\ \\
+    && 4*Sin(x)*Cos(x)^3 - 4*Cos(x)*Sin(x)^3 
+    \end{eqnarray}_)
+    Som du nok kan se, bliver det her hurtigt meget avanceret som tallet stiger. 
+    Vi kan altså ikke finde nogen <i>nem</i> formel for _(Sin(a*x)_). Vi
+    ser dog i bogens aller sidste kapitel, at det er muligt at finde en 
+    <i>slags</i> formel hvis _(a_) er et helt tal!
+    <br><br></answer-box>
+
+    <!--  -->
+    
+    <q-stion 1="26" 2="2">
+    Lad os nu gå videre og prøve det med kommatal. Det er en del mere tricky, men
+    stadig muligt. Alle kommatal er jo bare et <i>helt</i> tal divideret med _(10_), en 
+    eller anden mængde gange. _(10=5*2_), så vi vil gerne kunne regne 
+    _(Sin(x/2)_) og _(Sin(x/5)_) i forhold til _(Sin(x), Cos(x)_).
+    At finde _(x/5_) er lidt for svært for os lige nu, så jeg vil bare have dig til at:
+    <ul>
+        <li> _(\underline{\textbf{A}}:_) Omskrive _(Cos \left(x/2 \right)_) i forhold til _(Sin(x)_) og _(Cos(x)_). </li>
+        <li> _(\underline{\textbf{B}}:_) Omskrive _(Sin \left(x/2 \right)_) i forhold til _(Sin(x)_) og _(Cos(x)_). </li>
+    </ul>
+    <p class="t">
+    Jeg anbefaler stærkt at du finder _(Cos(x/2)_) før _(Sin_). Det vil være nemmere.
+    Den her opgave er som sagt lidt sværere end den tidligere!
+    </p>
+    <br></q-stion>
+    <answer-box t="h"> 
+    Vi ved at 
+    _($Cos(2x)=2 Cos(x)^2-1_)
+    ... er sandt for en hvilket som helst _(x_). Hvad sker der nu, hvis du siger _(x=a/2_), hvor
+    _(a_) bare er et eller andet tal, du vælger? 
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    Vi <i>har</i> allerede fundet et forhold mellem _(Cos_) og _(Sin_), af en vinkel der var dobbelt så 
+    stor som en anden vinkel. Den måde, vi har beskrevet det på, er via den store vinkel
+    i forhold til den lille. Nu skal vi bare modsætte det, og finde den lille vinkel i forhold til den store!
+    Vores arbejde kan genbruges!
+    _($Cos(2x)=2Cos(x)^2-1_) 
+    Hvis vi bare siger _(x=a/2_), får vi
+    _($Cos(a)=2Cos(a/2)^2-1_)
+    Vi plusser nu begge sider med _(1_) og dividerer med _(2_), hvilket giver:
+    _($Cos(a/2)^2 = \frac{Cos(a)+1}{2}_)
+    Så vi får:
+    _($Cos(a/2) = \pm \sqrt{\frac{Cos(a)+1}{2}}_)
+    Det er plus-minus, da der jo er to løsninger til kvadratroden. 
+    Det ville heller ikke give mening, 
+    hvis det kun var plus, da det ville hentyde, at _(Cos(a/2)_) altid var positiv. 
+    Du skal altså
+    passe lidt på, når du bruger denne formel. 
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Vi kan genbruge arbejdet fra sidste opgave, og relativt let finde _(Sin(a/2)_). Vi ved, at
+    _($Cos(a/2) = \pm \sqrt{\frac{1+Cos(a)}{2}}_)
+    Vi vil gerne have _(Sin(a/2)_) i stedet. Derfor udnytter vi _(Cos(\pi/2 - v)=Sin(v)_), 
+    og sætter _(a_) til _(\pi-v_), hvor _(v_) er et tal vi selv vælger:
+    _($Cos\left(\frac{\pi-v}{2} \right) = Cos\left(\frac{\pi}{2} - \frac{v}{2} \right) = Sin(v/2)_)
+    Nu har vi: 
+    _($Sin(v/2) = \pm \sqrt{\frac{1+Cos(\pi-v)}{2}}_)
+    Vi ved at _(Cos(\pi-v)_) er lig _(-Cos(v)_), så:
+    _($Sin(v/2) = \pm \sqrt{\frac{1-Cos(v)}{2}}_)
+    Boom!
+    <br><br></answer-box>
+    
+    <!--  -->
+
+    <q-stion 1="26" 2="3">
+    Sig du har en simpel rektangulær kasse:
+    <img class="SpicXL" style="width:41%" src="../../../Assets/Chapter2\Section1\TrigProperties\Box.png">
+    <p class="t">
+    Kassen skal have en diagonal længde på _(10cm_), og et areal på _(45cm^2_). Hvor
+    stor skal vinklen _(v_1_) være?</p>
+    <br></q-stion>
+    <answer-box>
+    Lad os opstille et krav ved hjælp af arealet. Arealet kan findes via højde gange bredde.
+    Højden i dette tilfælde er _(Sin(v)*10_), og bredden er _(Cos(v)*10_), så:
+    _($Sin(v)*10*Cos(v)*10=45_)
+    Vi dividerer nu begge sider med _(10*10_), for at gøre det lidt simplere:
+    _($\frac{Sin(v)*10*Cos(v)*10}{10*10} = \frac{45}{10*10} \to_)
+    _($Sin(v) Cos(v) = 0.45_)
+    Nu kan vi lave et smart trick. Vi ved at _(Sin(2v)=2 Sin(v) Cos(v)_). Det betyder også at:
+    _($Sin(v) Cos(v) = \frac{1}{2} Sin(2v)_)
+    Så vi kan omskrive til:
+    _($\frac{1}{2} Sin(2v) = 0.45 to Sin(2v) = 0.9 \to _)
+    _($2v = Arccos(0.9) = 0.451_)
+    Så _(2v=0.451_), hvilket betyder, at _(v=0.451/2=_) _(0.2255_). Det
+    svarer til ca. _(12.92_) grader. På denne grad er kassen bredere end den er høj, men
+    det modsatte ved _(90-12.92=77.08^o_) ville også virke fint. 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="26" 2="4">
+    Prøv at se følgende billede:
+    <img class='SpicBXL' style='width:80%' src='../../../Assets/Chapter2\Section1\TrigProperties\LongestShot.png'> 
+    <p class="t">
+    Vi skyder en bold, så den har hastigheden _(v_0_) og vinklen
+    _(\theta_) til vandret. Hvis vi gør vinklen højere,
+    er bolden længere oppe i luften, men flyver ikke ligeså langt fremad.
+    Hvis vi gør vinklen lavere, er den hurtigere, men ikke ligeså lang
+    tid oppe i luften. Lad os nu finde dén optimale vinkel
+    hvor vi skyder længst.  
+    </p>
+    <p class="t">
+    Man kan vise ved hjælp af fysik, at boldens højde i luften efter _(t_) sekunder er
+    _($y(t) = -\frac{a}{2}t^2 + v_y*t_)
+    ... hvor _(v_y_) er boldens starthastighed, og 
+    _(a_) er tyngdekraften på _(9.8_). Boldens samlede starthastighed
+    er _(v_0_)
+    </p>
+    <p class="t">
+    Find den bedste vinkel. 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Lad os først finde en formel, der beskriver hvor langt _(L_)
+    bolden flyver i forhold til _(v_). Vi kan regne ud at:
+    _($L=v_x*T_)
+    ... hvor _(v_x_) er starthastigheden på _(x_), og _(T_) er
+    hvor lang tid bolden bliver i luften. Med andre ord:
+    Hvor hurtigt bolden flyver fremad gennem luften pr. sekund, gange 
+    hvor mange sekunder den er i luften.
+    <p class="t">
+    Nu mangler vi bare _(v_x_), _(v_y_) og _(T_). Man kan let se, at
+    _($v_x = v_0*Cos(\theta), \qquad v_y=v_0*Sin(\theta)_)
+    For at finde _(T_) skal vi se, hvornår _(y(t)=0_), så:
+    _($-\frac{a}{2}t^2 + v_y*t=0_)
+    Her kan vi bare sige:
+    _($t*\left(-\frac{a}{2}t + v_y \right)=0_)
+    Højden er selvfølgelig _(0_) helt i starten ved _(t=0_), men den er også
+    _(0_) senere ved:
+    _($-\frac{a}{2}t + v_y = 0 \to t=\frac{2v_y}{a} _)
+    Nu er vi endelig klar. _(L_) bliver til:
+    _($L = v_0*Cos(\theta)*\frac{2*v_0*Sin(\theta)}{a} = \frac{v_0^2}{a}*2*Cos(\theta)*Sin(\theta)_)
+    På hvilken _(\theta_)  er dette størst? 
+    Her kan formlen for _(Sin(2v)_) hjælpe os, da _(2*Cos(\theta)*Sin(\theta)_) jo kan omskrives:
+    _($\frac{v_0^2}{a}*2*Sin(2\theta)_)
+    Nu skal vi bare vælge den _(\theta_) hvor _(Sin(2\theta)_) er størst,
+    ergo når _(Sin_) er _(1_) og _(2\theta=\pi/2_), hvor:
+    _($\theta=\pi/4_)
+    Bum! Det er bare _(\pi/4_), hvilke svarer til _(45^o_). Præcis
+    som man intuitivt forventer. 
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="26" 2="5">
+    Find _(v_) hvis
+    _($\frac{Sin(-v)}{Sin(2v)}*\frac{Cos(2v)}{Cos(v)} = 1_)
+    <br></q-stion>
+    <answer-box>
+    Først af alt vil jeg nok lave _(Sin(-v)_) om til _(-Sin(v)_).
+    Så får vi: 
+    _($\frac{Sin(v)}{Sin(2v)}*\frac{Cos(2v)}{Cos(v)} = -1_)
+    Derefter vil jeg nok lave _(Sin(2v)_) om til _(2*Sin(v)*Cos(v)_),
+    da dele af brøken så går ud med hinanden:
+    _($\begin{align}
+    \frac{Sin(v)}{2*Sin(v)*Cos(v)}*\frac{Cos(2v)}{Cos(v)} & = -1 \qquad \to \\ \\
+    \frac{Cos(2v)}{2*Cos(v)^2} & =-1 
+    \end{align}_)
+    Jeg tænker vi går med lidt samme strategi som andre gange, 
+    hvor vi beskriver alting 
+    i forhold til _(Cos(v)_), og så isolerer. 
+    Det er derfor nok en god ide, at omskrive _(Cos(2v)_) til 
+    _($\begin{align}
+    \frac{2*Cos(v)^2 - 1}{2*Cos(v)^2} & = -1 & \to \\ \\
+    2*Cos(v)^2 - 1 & = -2*Cos(v)^2 & \to \\  \\
+    4Cos(v)^2 & = 1 & \to \\ \\
+    Cos(v)^2 & = 0.25 \
+    \end{align}_)
+    Til sidst fås:
+    _($Cos(v) = \pm \sqrt{0.25} = \pm 0.5_)
+    Så _(v_) kan nu regnes som henholdsvis 
+    _(Arccos(0.5) = 1.0471_), og _(Arccos(-0.5)=2.0943_). Bum!
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <!-- DROPPEDE DENNE OPGAVE FORDI DEN VAR O.K SVÆR, OG INVOLVEREDE ET TRICK DER VAR SUPER SPECIFIKT TIL KOEFFICIENTERNE ALLIGEVEL. -->
+    <!-- <q-stion 1="2" 2="1" 3="5">
+    I en af de første opgaver på den her side kiggede vi på en fjeder.
+    Vi modellerede dens position som _(x=A*Cos(B*t)_). Hvis _(x=10_) når _(t=1.2s_) og _(-8_) ved _(2.4s_),
+    hvad langt startede fjederen så med at være udstrakt da du gav slip?  
+    Den her opgave er måske pænt svær!
+    <br><br></q-stion>
+    <answer-box>
+    Vi ved følgende:
+    _($\begin{eqnarray}
+    && A Cos(B*1.2) = & 10 \\
+    && A Cos(B*2.4) = -& 8
+    \end{eqnarray}_)
+    Vores mål er at finde _(A_), da det giver os den maksimale længde, og derved også 
+    det sted vi gav slip på vægten. For at gøre det ville det dog være lettere først at finde _(B_).
+    Her kan vi bruge lidt det samme trick der blev brugt da vi udledte formlen for 
+    _(Cos(a+b)_). Vi kan se at _(A_) både er lig _(10/Cos(B*1.2)_) og lig 
+    _(-8/Cos(B*2.4)_), så:
+    _($\frac{10}{Cos(1.2B)} = \frac{-8}{Cos(2.4B)}_)
+    Vi omskriver lige dette til noget lidt simplere:
+    _($\frac{10}{-8} = \frac{Cos(2.4B)}{Cos(1.2B)}_)
+    Det næste trick vi skal bruge er et der kun ville virke i lige denne opgave:
+    Vi kan nemlig se at _(2.4=1.2*2_), så _(Cos(2.4B)_) kan omskrives til
+    _(2 Cos(1.2B)^2 -1_):
+    _($-1.25 = \frac{2 Cos(1.2 B)^2 - 1}{Cos(1.2 B)}_)
+    Denne brøk kan nemt simplificeres, og vi får:
+    _($\begin{eqnarray}
+    && -1.25 = 2 - \frac{1}{Cos(1.2 B)} \to \\ 
+    && \frac{1}{Cos(1.2 B)} = 3.25 \to \\ 
+    && Cos(1.2 B) = \frac{1}{3.5} 
+    \end{eqnarray}_)
+    _(1/3.5_) er _(0.285_), så vi siger _(Arccos(0.285)_) og får:
+    _($1.2 B = 1.2817 \to B = 1.068_)
+    _(B_) er fundet, så nu er det nemt at finde _(A_). Vi får:
+    _($A*Cos(1.068*1.2) = 10 \to A = \frac{10}{Cos(1.068*1.2)} = 35.06_)
+    Voila! Done! 
+    <br><br></answer-box> -->
+
+    <!-- <q-stion 1="2" 2="1" 3="5">
+    Bevis at 
+    _($Cos(a)+Cos(b)=2*Cos(\frac{a+b}{2})*Cos(\frac{a-b}{2})_)
+    Den her er ret tricky, så du for nok brug for et stort hint til at starte:
+    <p class="t">
+    _(Cos(a+b)_) og _(Cos(a-b)_) minder meget om hinanden:
+    _($Cos(a+b)=Cos(a)*Cos(b) - Sin(a)*Sin(b)_)
+    _($Cos(a-b)=Cos(a)*Cos(b) + Sin(a)*Sin(b)_)
+    Hvis man kalder _(Cos(a)*Cos(b)_) for _(A_) og 
+    _(Sin(a)*Sin(b)_) for _(B_), så ser man:
+    _($Cos(a+b)=A-B_)
+    _($Cos(a-b)=A+B_)
+    Kunne man måske bruge det til noget smart?
+    </p>
+    <br><br></q-stion>
+    <answer-box>
+    Hvis vi gerne vil have et simpelt udtryk når vi plusser
+    to _(Cos_) af forskellige vinkler, så kan vi bruge det faktum at:
+    _($(A-B)+(A+B)=A+A-B+B=2A_)
+    Altså:
+    _($Cos(a+b)+Cos(a-b) = 2A_)
+    Hvor vi jo havde sat _(A_) til _(Cos(a)*Cos(b)_) så:
+    _($Cos(a+b)+Cos(a-b)=2*Cos(a)*Cos(b)_)
+    Det her er en rigtig praktisk formel hvis vi gerne
+    vil lave to Cos af forskellige vinkler <i>ganget med hinanden</i>
+    om til to Cos af forskellige vinkler <i>plusset med hinanden</i>. 
+    <p class="t">
+    Lad mig forklare hvad jeg mener: Lige nu er det nemt for mig ved
+    formlen at f.eks. lave _(2*Cos(20)*Cos(30)_) om til 
+    _(Cos(30+20)+Cos(30-20)_). Her startede jeg med to ting 
+    ganget med hinanden, og fik to ting plusset med hinanden.
+    Jeg vil gerne i stedet kunne lave f.eks. _(Cos(30)+Cos(20)_) 
+    om til noget med _(Cos_) ganget! Det kan jeg næsten 
+    med vores formel lige nu, men ikke helt: Den ene 
+    side er jo _(Cos(a+b)+Cos(a-b)_), så jeg skal først finde 
+    to tal _(a,b_) hvor _(a+b=30_) og _(a-b=20_). Det 
+    gider jeg ikke til at gøre hver gang! Lad os 
+    derfor kalde _(a+b_) for bare _(c_) og _(a-b_) for bare _(d_):
+    _($Cos(c)+Cos(d)=2*Cos(a)*Cos(b)_)
+    Nu skal jeg bare finde ud af hvad _(a,b_) er i forhold til 
+    mine nye vinkler _(c,d_), og så kan jeg gå "den anden retning".
+    _($a-b=d \to a=d+b_)
+    _($a+b=c \to d+b+b=c \to b=\frac{c-d}{2}_)
+    _($a=\frac{c+d}{2}_)
+    Endeligt får vi:
+    _(Cos(c)+Cos(d)=2*Cos(\frac{c+d}{2})*Cos(\frac{c-d}{2})_)
+    Bum!
+    </p>
+    <br><br></answer-box> -->
+
+    <!--  -->
+
+
+

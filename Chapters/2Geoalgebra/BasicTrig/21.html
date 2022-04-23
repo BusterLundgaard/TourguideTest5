@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+
+
+    <h3>Fysik og oscillation</h3>
+    <p class="t">
+    _(Sin_) og _(Cos_) kan udover bølger også være gode til at beskrive såkaldte "harmoniske oscillatorer". 
+    Det er forsimplet sagt et fysisk system, hvor positionen af et objekt går frem og tilbage omkring 
+    et eller andet midtpunkt. De to eksempler vi vil se på er en <i>fjeder</i> og et <i>pendul</i>: 
+    </p>
+
+    <q-stion 1="21" 2="1">
+    Se følgende video der beskriver en fjeder:
+    <video class='SpicBXL' style='width:65%' controls>
+        <source src="../../../Assets/Chapter2\Section1\TrigProperties\SpringSimulation.mp4" type="video/mp4">
+    </video>
+    <p class="t">
+    Fjederen har en standardlængde _(s_0_). Den vil forsøge at trække sig selv tilbage,
+    hvis den er kortere eller længere end _(s_0_).
+    Imens vægten trækkes tilbage,
+    opnår den en hastighed, og den her hastighed forårsager faktisk, at fjederen overskyder målet: Den bliver
+    <i>for</i> lille eller <i>for</i> udstrakt. Nu vil fjederen <i>igen</i> forsøge at trække sig selv tilbage,
+    og massen vil <i>igen</i> opnå en hastighed, og fjederen vil <i>igen</i> overskyde. Det her bliver
+    teoretisk set ved i alt uendelighed, og det er kun friktionen og luftmodstanden der
+    stopper det. Vi vælger at ignorere friktion, da det gør situationen drastisk
+    mere kompleks. 
+    </p>
+    <p class="t">
+    Sig, at _(x_) er hvor mange meter, fjederen er væk fra standardlængden _(s_0_). 
+    Så _(x_) er _(0_), hvis fjederen er <i>lig</i> denne længde, _(x_) er positiv, hvis fjederen
+    er <i>større</i> end denne længde, og _(x_) er negativ, hvis fjederen er <i>mindre</i> end denne længde.
+    I videoen udstrækker min hånd fjederen til en længde på _(d_) centimeter, og giver slip. 
+    Sig at _(t_)
+    er hvor mange sekunder der er gået efter jeg gav slip, og at _(d=90 \text{cm}_). 
+    Forsøg nu at beskrive, hvordan
+    _(x_) ændrer sig med _(t_), enten ved hjælp af _(Sin_) eller _(Cos_). 
+    Sig at _(1_) omgang tager _(1.9_) sekunder, hvilket ca. passer til videoen. 
+    </p><br>
+    </q-stion>
+    <answer-box>
+    På videoen kan vi se, at massen vil bevæge sig mellem _(-d_) og _(d_) hele tiden. Hvis 
+    _(A*Sin(B*t)_) skal gøre det samme, er _(A_) nødt til at være lig _(d_). Ergo:
+    _($x=90*Cos(B*t)_)
+    Jeg har valgt _(Cos_) i stedet for _(Sin_), da vi jo starter på det højeste punkt, når _(t=0_), hvilket
+    _(Sin_) ikke gør.
+    <p class="t">
+    Vi skal nu finde _(B_). 
+    _(1_) omgang tager _(1.9_) sekunder, så:
+    _($\frac{2\pi}{B} = 1.9 \to 2\pi = 2*B \to B = \frac{2\pi}{1.9} = 3.306_)
+    Vi får alt i alt:
+    _($x=90*Cos(3.306t)_)
+    Bum! 
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="21" 2="2">
+    Hvornår er _(x_) på fjederen fra sidste opgave lig _(-20\text{cm}_) første gang? 
+    <br><br></q-stion>
+    <answer-box>
+    Vi siger:
+    _($x=-20 \to 90*Cos(3.306t)=-20_)
+    Vi kan omskrive dette til:
+    _($Cos(3.306t)=\frac{-20}{90}=-0.222_)
+    Hvis _(Cos(A)_) er lig _(-0.222_), så ved vi at _(Arccos(-0.222)_) finder _(A_). 
+    Ergo:
+    _($3.306t = 1.794_)
+    Hvilket vi kan omskrive til:
+    _($t=\frac{1.794}{3.306} = 0.5426 \text{s}_)
+    Voila! 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="21" 2="3">
+    Hvis du har en fjeder, hvor _(x_) er lig _(10cm_) når _(t_) er _(1.2s_), og _(d=40\text{cm}_), hvor stor
+    er så _(B_) i _(d*Sin(B*t)_)? 
+    <br><br></q-stion>
+    <answer-box>
+    Vi har fået at vide at:
+    _($40*Sin(B*1.2) = 10_)
+    Hvilket kan omskrives til:
+    _($Sin(B*1.2)=\frac{10}{40}=0.25_)
+    Så:
+    _($B*1.2=Arccos(0.25)=1.318_)
+    Ergo:
+    _($B=\frac{1.318}{1.2} = 1.098_)
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="21" 2="4">
+    Vi så tidligere på et pendul:
+    <p class="cent">
+        <a href="https://www.geogebra.org/m/ca6myudy">Link til Geogebra simulation</a>
+    </p>
+    <p class="t">
+    At beskrive pendulets vinkel i forhold til tid er faktisk ekstrem 
+    kompliceret, men hvis vinklen er relativt lille
+    (sig _(\lt 30^o_)), kan man fint approximere det som:
+    _($\theta=A*Cos(B*t)_)
+    Sig at startvinklen er _(23^o_) eller _(0.4014_) radianer. Brug simulationen, og find ud af hvad
+    _(A_) og _(B_) skal være. 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Startvinklen er _(0.4014_) radianer, så kuglen bevæger sig mellem _(-0.4014_) og _(0.4014_) hele tiden,
+    og _(A_) er tydeligvis lig _(0.4014_). For at finde _(B_) kan vi se via simulationen, 
+    at èn omgang med en startvinkel på
+    _(0.4014_) tager omtrent _(1.82 \text{s}_). Så:
+    _($\frac{2\pi}{B}=1.82 \to B=\frac{2\pi}{1.82} = 3.452_)
+    Vi får derfor alt i alt:
+    _($0.4014*Cos(3.452t)_)
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="21" 2="5">
+    Hvis man leger lidt rundt, kan man se at perioden for de små vinkler stort set er konstant.
+    Det er altid omtrent _(1.8 \text{s}_). Den antagelse må du gerne lave i denne opgave. 
+    <p class="t">
+    Sig at det samme pendul fra sidste opgave har en vinkel på _(0.086_) radianer ved _(0.39 \text{ s}_). 
+    Hvad var startvinklen i dette tilfælde? 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Vi antager, at perioden er _(1.8 \text{s}_). Det må betyde, at _(B_) er lig _(2\pi/1.8=_) _(3.4906_).
+    Nu ved vi, at
+    _($A*Cos(3.4906*0.39) = 0.086 \to A = \frac{0.086}{Cos(3.4906*0.39)} = 0.3862_)
+    Så _(0.3862_) radianer, hvilket svarer til _(22.12_) grader. 
+    <br><br></answer-box>
+    
+

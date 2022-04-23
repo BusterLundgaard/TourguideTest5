@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+
+
+<h3>Anvendelsesopgaver med Geogebras plot-værktøjer</h3>
+<p class="t">
+Formålet med opgaverne på sidste side var primært at teste,
+om du forstod hvordan, man brugte Geogebras vigtigste graf-værktøjer
+og kommandoer. 
+På den her side, vil vi i stedet lave opgaver, hvor Geogebras graf-funktioner
+kan hjælpe dig med at løse opgaver der ellers er svære / umulige.
+</p>
+
+<q-stion 1="8" 2="1">
+Find sådan cirka tilnærmelsesvist via Geogebra den lavest mulige værdi på:
+_($y=0.3x^4 - 2.6x^3 + 4.1x^2 + 5x + 3.3_)
+<br></q-stion>
+<answer-box>
+Værdien er sådan cirka _(-6.72517_). Du kan se hvordan, jeg gjorde det her:
+<video class='SpicB' style="width:95%;" controls>
+    <source src='../../../Assets/Chapter2\Geogebra\Grafer\biggestValue1.mp4' type='video/mp4'>
+</video>
+<p class="t">
+Vi gjorde det <i>approksimalt</i> og manuelt, men det kan også udføres <i>præcist</i>
+af Geogebra (i hvert fald <i>mere</i> præcist) via to kommandoer
+kaldt "min" og "maks" der har præcist dette formål.
+Man giver dem en funktion, og
+de finder den største eller mindste værdi <i>inden for et givent område</i>. 
+Jeg viser, hvordan de virker i denne video: 
+</p>
+<video class='SpicB' style="width:95%;" controls>
+    <source src='../../../Assets/Chapter2\Geogebra\Grafer\biggestValue1 1.mp4' type='video/mp4'>
+</video>
+<br><br></answer-box>
+
+<q-stion 1="8" 2="2">
+Den laveste værdi på _(Sin(x)_) er _(-1_). Hvad er den laveste værdi på _(Sin(Cos(x))_)?
+<br><br></q-stion>
+<answer-box>
+Svaret er _(-0.8414_). Du kan se hvordan, jeg gjorde det her:
+<video class='SpicB' style="width:95%;" controls>
+    <source src='../../../Assets/Chapter2\Geogebra\Grafer\biggestValue2.mp4' type='video/mp4'>
+</video>
+<br><br></answer-box>
+
+<q-stion 1="8" 2="3">
+Det aller laveste punkt på en funktion kalder vi dens <i>globale minimum</i>, 
+det største tal dens <i>globale maksimum</i>. Et <i>lokalt minimum</i> er
+et sted, hvor væksten ændrer sig fra at gå nedad, til at gå opad. Navnet giver mening:
+Vi begynder endelig at vokse, så det sted, hvor vi starter med at
+vokse, er det mindste i dets område. Et <i>lokalt maksimum</i> er et sted, hvor
+væksten ændrer sig fra at gå opad til nedad: Samme argument gælder. 
+Geogebra forstår _(Min_)- og _(Max_)-kommandoerne som <i>lokale</i> minimums- og 
+maksimumspunkter. 
+<br> <br>
+Her er nu min opgave: Hvornår vokser, og hvornår falder følgende funktion:
+_($\frac{0.6x^3-1.1x^2+4.5x+1}{1x^2+1.1x+0.8}_)
+<br></q-stion>
+<answer-box>
+Hvis man går rigtig langt tilbage (negativ _(\infty_)), vokser funktionen.
+Den vokser indtil _(x=-3.6_), hvor den begynder at falde indtil _(x=-1.18_).
+Den vokser til _(x=0.46_), falder igen en smule til 
+_(x=2.12_), og vokser til sidst frem mod uendelighed.
+<p class="t">
+Du kan se, hvordan jeg kom frem til svaret her:
+</p>
+<video class='SpicB' style="width:95%;" controls>
+    <source src='../../../Assets/Chapter2\Geogebra\Grafer\localMaxMin.mp4' type='video/mp4'>
+</video>
+<br><br></answer-box>
+
+<q-stion 1="8" 2="4">
+Hvor meget skal man rykke _(Cos(x)_) opad, for at den aldrig
+skærer _(Sin(x)_)? Det er fint hvis dit svar er en smule
+approximeret, men prøv at gøre det så præcist som muligt. 
+<br><br></q-stion>
+<answer-box>
+Svaret er sådan cirka _(1.416_) opad. Du kan se hvordan, jeg gjorde det her:
+<video class='SpicB' style="width:95%;" controls>
+    <source src='../../../Assets/Chapter2\Geogebra\Grafer\cosOpad.mp4' type='video/mp4'>
+</video>
+<br><br></answer-box>
+
+<q-stion 1="8" 2="5" customWidth="550">
+Vi har flere gange nu set på _(Sin(Cos(x))_). Den minder tilsyneladende
+en del om en _(Sin_) eller _(Cos_) funktion. Vi kan sige mere
+generelt, at den minder om en trig-funktion:
+_($y=A*Cos(B*x+C)+D_)
+_(\underline{\textbf{A}}_): <br>
+ Find de værdier _(A_), _(B_), _(C_) og _(D_), som 
+bedst passer til _(Sin(Cos(x)) \,_). 
+<p class="t">
+_(\underline{\textbf{B}}_): <br>
+ Gør det samme med _(Cos(Sin(x))_). 
+</p>
+<p class="t">
+Jeg anbefaler, at du forsøger at analysere dig frem til svaret med hjælp
+fra _(\text{min}_)- og _(\text{max}_) kommandoerne, i stedet for 
+at bruge og justere sliders.
+</p>
+<p class="t">
+_(\underline{\textbf{C}}_): <br>
+Brug dit arbejde til at finde én grov og approksimal løsning til 
+_($2*Sin(Cos(x)) = Cos(Sin(x))_)
+... <i>i hånden</i>. Uden hjælp fra Geogebra. Du må godt 
+bruge lommeregner, bare ikke noget CAS. 
+</p>
+<br></q-stion>
+<answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)" customWidth="550">
+Lad os starte med _(Sin(Cos(x))_). Den ser ud som:
+<img class='Spic' style='width:98%' src='../../../Assets/Chapter2\Geogebra\Grafer\Sin af cos.png'> 
+<p class="t">
+Via _(\text{min}_) og _(\text{max}_)-kommandoerne kan vi se, at det første lokale minimum
+og maksimum er ved henholdsvis _((0, 0.84)_) og _((\pi,-0.84)_). 
+Det er et lovene tegn, at der er _(\pi_) imellem dem og, at minimum er en 
+negativ version af maksimum. Det fortæller os, at vi ikke behøver at 
+ændre på frekvensen/bølgelængden, og at _(D=0_), siden centeret
+mellem _(0.84_) og _(-0.84_) er _(0_). Alt i alt:
+_($Sin(Cos(x)) \approx 0.84*Cos(x)_)
+Det kan vi se passer relativt fint:
+</p>
+<img class='Spic' style='width:98%' src='../../../Assets/Chapter2\Geogebra\Grafer\Sin af cos approx.png'> 
+<br></answer-box>
+<answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)" customWidth="550">
+Nu til _(Cos(Sin(x))_). Den er en smule mere udfordrende, og ser ud som: 
+<img class='Spic' style='width:98%' src='../../../Assets/Chapter2\Geogebra\Grafer\cos af sin.png'> 
+<p class="t">
+Vi kan se, at den starter lidt over _(x_) aksen, og har en meget lavere amplitude. _(D_) er
+ikke _(0_) denne gang: Grafen er mellem _(1_) og _(0.54_), så:
+_($D=\frac{1+0.54}{2} = 0.77_)
+Amplituden er forskellen mellem centeret og toppene, så:
+_($A = 1 - 0.77 = 0.229_)
+Kurven starter ved dens højeste punkt, så den passer nok 
+bedst til _(Cos_) med _(C=0_) i stedet for _(Sin_). 
+Mellem maksimum og minimum er der _(1.57_), hvilket svarer til _(\pi/2_): Bølgelængden er forkortet
+med en faktor på to, så _(B=2_). Alt i alt:
+_($Cos(Sin(x)) \approx 0.229*Cos(2x)+0.771_)
+Det passer meget godt, hvis vi faktisk laver en graf i Geogebra:
+</p>
+<img class='Spic' style='width:98%' src='../../../Assets/Chapter2\Geogebra\Grafer\cos af sin approx.png'> 
+<br></answer-box>
+<answer-box t="Answer _(\underline{\textbf{C}}_)#" tabColour="rgb(171,96,147)" customWidth="550">
+Vi skal løse følgende ligning:
+_($2*Sin(Cos(x)) = Cos(Sin(x))_) 
+Det svarer til:
+_($2*0.84*Cos(x) = 0.229*Cos(2x)+0.771_)
+Denne ligning indeholder både _(Cos_) og _(Cos(2x)_). Jeg udnytter
+derfor det faktum, at _(Cos(2x)=2 Cos(x)^2 - 1_), hvilket giver:
+_($\begin{eqnarray}
+&& 1.68*Cos(x) = 0.229*(2*Cos(x)^2 - 1)+0.771 \to  \\ \\
+&& 0 = 0.458*Cos(x)^2 - 1.68*Cos(x) + 0.542
+\end{eqnarray}_)
+Dette er en andengradsligning, hvis vi kalder _(Cos(x)_) for _(u_). 
+Den har løsningerne:
+_($Cos(x)=\frac{-(-1.68) \pm \sqrt{(-1.68)^2 - 4*0.458*0.542}}{2*0.458}=3.3106, 0.3574_)
+_(Cos(x)_) kan ikke være _(3.3106_), så vi vælger _(0.3574_) i stedet:
+_($Cos(x)=0.3574 \to x = 1.2053_)
+... og vi har en løsning! Den er O.K præcis, men ikke fantastisk: 
+Man får _(x=1.274_), hvis man finder den rigtige løsning til 
+_(2*Sin(Cos(x)) = Cos(Sin(x))_) via _(\text{NSolve}_) i Geogebra.
+Det er ca 5% større. 
+<br><br></answer-box>
+
+<!--  -->
+
+<q-stion 1="8" 2="6">
+I algebra-sektionen så vi kort på "extraneous solutions":
+"Falske løsninger" til ligninger. Ideen var, 
+at visse handlinger udført til begge sider af en ligning - som 
+at opløfte venstre og højre side til anden potens - skaber
+nye løsninger, der ikke findes i den originale ligning. 
+<p class="t">
+Sig vi var ved at løse: 
+_($\sqrt{2x-1} = x-2_)
+Vi er ret motiverede til, at opløfte begge sider til anden potens, da det ville
+fjerne den irriterende kvadratrod. Brug nu Geogebra, og vurder om det 
+ville skabe nogle nye, falske løsninger. 
+</p>
+<br></q-stion>
+<answer-box>
+Du kan se, hvad jeg gjorde her:
+<video class='SpicB' style="width:95%;" controls>
+    <source src='../../../Assets/Chapter2\Geogebra\Grafer\falseSolution.mp4' type='video/mp4'>
+</video>
+<p class="t">
+Svaret var <i>ja</i>: Der kom en falsk løsning, ved _(x=1_).
+</p> 
+<br></answer-box>
+
+<!--  -->
+
+<q-stion 1="8" 2="7">
+Geogebra har en rigtig stærk kommando kaldt _(\text{intersect}_), der
+finder skæringen mellem to objekter.
+Det kan være mange forskellige objekter: Linjer, cirkler, funktioner, whatever. 
+Den er super dejlig til at løse ligninger
+med uendelige mængde løsninger, da man kan bestemme et område/interval, hvor den skal finde løsningerne. 
+<p class="t">
+Find selv ud af, hvordan _(\text{intersect}_)-kommandoen virker, og find alle løsninger til
+_($Sin(x) Cos(x)^2 = Sin(1.1x) + Cos(1.3x)_)
+... mellem _([-10,6]_)
+</p>
+<br></q-stion>
+<answer-box>
+Du kan se mit svar her:
+<video class='SpicB' style="width:95%;" controls>
+    <source src='../../../Assets/Chapter2\Geogebra\Grafer\IntersectOpgave.mp4' type='video/mp4'>
+</video>
+<br><br></answer-box>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <p class="t">OPGAVE JEG IKKE SYNTES VAR SÆRLIG GOD:</p>
+
+<q-stion 1="2" 2="1" 3="5">
+Som vi så da vi arbejde med CAS, så kan Geogebra godt 
+finde ud af at løse ligninger med uendelig mange løsninger - nogle gange i hvert fald.
+F.eks. ved _(Sin(Cos(x))=0.5_) der gav Geogebra:
+_($\begin{eqnarray} 
+    && x = 6.28*k_1 - Arccos(6.28*k_2 + 0.52) \\
+    && x = 6.28*k_1 + Arccos(6.28*k_2 + 0.52) \\
+    && x = 6.28*k_3 - Arccos(6.28*k_2 + 2.62) \\
+    && x = 6.28*k_3 + Arccos(6.28*k_2 + 2.62) \\
+\end{eqnarray}_)
+Hvor _(k_1_), _(k_2_) og _(k_3_) så er hele tal. Man kan altså vælge nogle tal
+til de her _(k_) værdier, sætte dem ind i èn af de her fire formler, og så får
+man èn af løsningerne. For det meste virker det
+faktisk super godt i Geogebra, men i nogle få tilfælde ved den bare ikke
+hvad den skal gøre. Tag f.eks. _(y=|Tan(x)|_):
+<img class='Spic' style='width:80%' src='../../../Assets/Chapter2\Geogebra\Grafer\AbsTan.png'> 
+<p class="t">
+Der er tydeligvis mange gange hvor den er lig med, f.eks. _(6_), men hvis
+man prøver at løse _(|Tan(x)|=6_) i Geogebra så får man:
+</p>
+<img class='Spic' style='width:80%' src='../../../Assets/Chapter2\Geogebra\Grafer\CasProblemer.png'> 
+<p class="t">
+Med _(Solve_) siger den der ikke er nogen løsninger, og med _(NSolve_) giver den et
+kæmpe sæt, men ikke nogen generel beskrivelse. Hvis vi kommer ind i den her situation,
+så kan det godt hjælpe at finde løsningerne ved hjælp af at tegne graferne op med
+Geogebra. 
+</p>
+<br><br></q-stion>
+<answer-box>
+    
+<br><br></answer-box> -->
+
+
+
+
+

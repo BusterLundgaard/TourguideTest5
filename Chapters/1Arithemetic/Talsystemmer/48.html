@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+   
+    <p class="t">
+        Det er super nemt at gange og dividere vores tal med <p-m m=" A1"></p-m>. 
+        Sig f.eks at vi havde <p-m m=" W2W1W0W3W1.W3W2W1"></p-m>. Vi ved at vi kunne 
+        skrive det som: 
+    </p>
+
+    <p class="cent">
+        <p-m m=" W2*A1*A1*A1*A1+"/> <br>
+        <p-m m=" W1*A1*A1*A1+"/> <br>
+        <p-m m=" W0*A1*A1+"/> <br>
+        <p-m m=" W3*A1+"/> <br>
+        <p-m m=" W1*1+"/> <br>
+        <p-m m=" W3/(A1)+"/> <br>
+        <p-m m=" W2/(A1*A1)+"/> <br>
+        <p-m m=" W1/(A1*A1*A1)+"/> <br>
+    </p>
+
+    <p class="t">
+        Når vi nu ganger det med noget så skal vi altså bare 
+        gange hver del vi plusser. Her når vi dette tilfælde ganger 
+        med <p-m m=" A1"></p-m> får vi så: 
+    </p>
+
+    <p class="cent">
+        <p-m m=" (W2*A1*A1*A1*A1)*A1+"/> <br>
+        <p-m m=" (W1*A1*A1*A1)*A1+"/> <br>
+        <p-m m=" (W0*A1*A1)*A1+"/> <br>
+        <p-m m=" (W3*A1)*A1+"/> <br>
+        <p-m m=" (W1*1)*A1+"/> <br>
+        <p-m m=" (W3/(A1))*A1+"/> <br>
+        <p-m m=" (W2/(A1*A1))*A1+"/> <br>
+        <p-m m=" (W1/(A1*A1*A1))*A1"/> <br> 
+        <p-m m=" ="/> <br> 
+        <p-m m=" W2*A1*A1*A1*A1*A1+"/> <br>
+        <p-m m=" W1*A1*A1*A1*A1+"/> <br>
+        <p-m m=" W0*A1*A1*A!+"/> <br>
+        <p-m m=" W3*A1*A1+"/> <br>
+        <p-m m=" W1*A1+"/> <br>
+        <p-m m=" W3*1+"/> <br>
+        <p-m m=" W2/(A1)+"/> <br>
+        <p-m m=" W1/(A1*A1)"/> <br>
+    </p>
+
+    <p class="t">
+        Hvis vi skulle skrive det vi nu har op som tal så ville vi få:
+        <p-m m=" W2W1W0W3W1W3.W2W1"></p-m>
+        Altså, punktummet rykkede sig bare til højre! Logisk nok siden tallet blev større. 
+        Da dividering bare er det modsatte, så kan vi nemt se at punktummet 
+        bare vil rykke til venstre hvis vi dividere med <p-m m=" A1"></p-m>. 
+        Prøv at brug det her til at regne de følgende stykker!
+    </p>
+
+    <q-stion 1="1" 2="1" 3="1" >
+
+    Regn følgende stykker: <br>
+    <ul>
+        <li><p-m m=' W2W3W0W1.W3W1W2*A1'></p-m></li>
+        <li><p-m m=' W3W2W3*W1W0'></p-m></li>
+        <li><p-m m=' W1W0W0W1W2.W3W0/A1'></p-m></li>
+        <li><p-m m=' W3W1W3/A1'></p-m></li>
+        <li><p-m m=' W2W2W2W1*W1W0W0'></p-m></li>
+        <li><p-m m=' W2W2W2W1/(W1W0W0)'></p-m></li>
+        <li><p-m m=' W3W0W0W2W0W0.W3W0*W1W0W0W0'></p-m></li>
+        <li><p-m m=' W2W1W2/W1W0W0W0W0'></p-m></li>
+    </ul>
+    <br><br></q-stion>
+
+    <answer-box >
+    Svarene er:
+    <ul>
+        <li><p-m m=' W2W3W0W1W3.W1W2'/></li>
+        <li><p-m m=' W3W2W3W0'/></li>
+        <li><p-m m=' W1W0W0W1.W2W3W0'/></li>
+        <li><p-m m=' W3W1.W3'/></li>
+        <li><p-m m=' W2W2W2W1W0W0'/></li>
+        <li><p-m m=' W2W2.W2W1'/></li>
+        <li><p-m m=' W3W0W0W2W0W0W3W0W0'/></li>
+        <li><p-m m=' W0W.W0W2W1W2'/></li>
+    </ul>
+    <br><br></answer-box>
+    
+    <p class="t">
+        Når vi skal gange tal der er mindre end <p-m m=" 1"></p-m>, så gør vi lidt det samme 
+        som før. Vi ganger med noget der gør tallene større end <p-m m=" 1"></p-m>,
+        ganger dem sammen, og dividere så med det "ekstra" vi gangede med. I dette 
+        system er det bare super meget mere praktisk. Vi kan nu bare rykke punktummet! 
+        F.eks: 
+    </p>
+
+    <div style="text-align:center; width:600px; position:relative; left:-10%; margin-top:15px;">
+        <p-m m=" W1.W2W3W1W2*W1W2.W1W2W3="></p-m> <br>
+        <p-m m=" (W2W1W2W3/(A1*A1*A1))*(W1W2W3W1W2/(A1*A1*A1*A1))="></p-m> <br>
+        <p-m m=" (W2W1W2W3/C1)*(W1W2W3W1W2/D1)="></p-m> <br>
+        <p-m m=" (W2W1W2W3*W1W2W3W1W2)/(C1*D1)="></p-m> <br>
+        <p-m m=" W1W0W0W2W1W0W3W0W2/G1="></p-m> <br>
+        <p-m m=" W1W0.W0W2W1W0W3W0W2"></p-m> <br>
+    </div>
+    
+    <p class="t"> Easy! Prøv det: </p>
+
+    <q-stion 1="1" 2="1" 3="1" customWidth="535">
+    Regn følgende gangestykke:
+    <p-m m=' W2W3W2W1.W3W1W2*W0.W0W2W3'/>
+    <br><br></q-stion>
+
+    <answer-box customWidth="535">
+    Vi siger:
+    <p class='cent'>
+        <p-m m=' W2W3W2W1.W3W1W2*W0.W0W2W3='></p-m> <br>
+        <p-m m=' (W2W3W2W1W3W1W2/(W1W0W0W0))*(W2W3/(W1W0W0W0))='></p-m> <br>
+        <p-m m=' (W2W3W2W1W3W1W2/W1W0W0W0)*(W2W3/W1W0W0W0)='></p-m> <br>
+        <p-m m=' (W2W3W2W1W3W1W2*W2W3)/(W1W0W0W0W0W0W0)='></p-m> <br> <br>
+    </p>
+    Nu skal vi bare regne <p-m m=' W2W3W2W1W3W1W2*W2W3'></p-m>, og så bagefter
+    flytte punktummet efter <p-m m=' W1W0W0W0W0W0W0'></p-m>. Siden det er et større
+    gangestykke, så har jeg lidt tips til hvordan jeg gjorde det nemmere for mig selv:
+    Idéen var at omskrive <p-m m=' W2W3'></p-m> til <p-m m=' W2*W1W0+W3'></p-m>.
+    Sådan her behøvede jeg kun at gange det ret store tal <p-m m=' W2W3W2W1W3W1W2'></p-m>
+    med først <p-m m=' 2'></p-m> 
+        (og tilføje et ekstra <p-m m=' W0'></p-m> på enden fra <p-m m=' *W1W0'></p-m>)
+    og så <p-m m=' 3'></p-m>. Svaret på gangestykket bliver:
+    <p class='cent'>
+        <p-m m=' (W1W3W3W3W3W0W1W0W2)/(W1W0W0W0W0W0W0)='></p-m> <br>
+        <p-m m=' W1W3W3.W3W3W0W1W0W2'></p-m> <br> <br>
+    </p>
+    Boom!
+    <br><br></answer-box>
+
+
+</html>

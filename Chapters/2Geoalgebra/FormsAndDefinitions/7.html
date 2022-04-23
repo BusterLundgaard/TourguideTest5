@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+
+
+    <h2>Massecentre</h2>
+
+    <p class="t">
+    En figurs <i>massecenter</i> er der hvor den balancere:
+    <img class="Spic" style="width:80%" src='../../../Assets/Chapter2\Section2\BilliardsAndProperties\BalancePoint.png'> 
+    <p class="t">Med andre ord: du kan holde den på dette punkt, uden at den roterer over til nogen af siderne. </p>
+    <p class="t">
+    En rektangels massecenter er selvfølgelig bare den tydelige midte, 
+    man på andre former bliver det en udfordring.
+    </p>
+
+    <q-stion 1="7" 2="1" customWidth="650">
+    Hvor skal jeg placere min finger, for at følgende pind med vægte holder balancen? 
+    (hvor er dens massemidtpunkt?)
+    <img class='Spic' style='width:60%' src='../../../Assets/Chapter2\Section2\BilliardsAndProperties\BalanceExercise1.png'> 
+    <p class="t">
+    Tallene på vægtene indikerer, hvor meget de vejer. 
+    </p>
+    <p class="t">
+    For at løse denne opgave, er du nødt til at tænke på en <i>vippe</i>: Jo længere ud du går på vippen, jo 
+    større effekt har du. Du kan sætte dig længere ude på vippen, hvis du 
+    vejer mindre end din kammerat. Den her effekt er direkte: Indflydelsen
+    du har er:
+    _($\text{afstand fra massemidtpunkt}*\text{din vægt}_)
+    Det man kan retfærdiggøre helt ordentligt med fysik, hvilket vi ikke
+    har tid til lige nu. 
+    </p>
+    <br></q-stion>
+    <answer-box customWidth="650">
+    Lad os antage, at massecenteret er ved _(x=m_). 
+    De tre vægte til venstre for _(m_) får vippen til at rotere
+    mod uret, de to vægte til højre får vippen til at rotere med. 
+    Vi ved, at deres indflydelse er lig vægten gange hvor langt væk, de er. 
+    Vi ved også, at vippen skal stå helt stille, hvis _(m_) er massecenteret,
+    så mængden af rotation <i>mod</i> uret skal være lig mængden af rotation <i>med</i> uret. Ergo:
+    _($(m-1.5)*1 + (m-3)*3 + (m-9)*2 + (m-16)*5 + (m-19.5)*2=0_)
+    Hvis du undrer dig over hvorfor, jeg ikke i stedet siger
+    _($(m-1.5)*1 + (m-3)*3 + (m-9)*2 = (16-m)*5 + (19.5-m)*2_)
+    ... så er det fordi, jeg jo ikke endnu kan vide, hvilke vægte 
+    er på den ene og anden side. Det er 
+    kun sådan det ser ud på tegningen, og den kan let snyde! 
+    Det giver mening, at vi lægger alle "rotationseffekter" sammen og 
+    siger, at de skal give _(0_), da dem til venstre for massemidtpunktet
+    bare vil have en "negativ" effekt
+    <p class="t">
+    I hvert fald: Lad os se, om vi kan bruge det her krav til at finde _(m_)!
+    _($0=(m-1.5)*1 + (m-3)*3 + (m-9)*2 + (m-16)*5 + (m-19.5)*2_)
+    ... bliver til
+    _($0=1*m+3*m+2*m+5*m+2*m-(1*1.5+3*3+2*9+5*16+2*19.5)_)
+    ... og så
+    _($m*(1+3+2+5+2)=(1*1.5+3*3+2*9+5*16+2*19.5) _)
+    Endelig fås:
+    _($m=\frac{1*1.5+3*3+2*9+5*16+2*19.5}{1+3+2+5+2}=11.34 _)
+    Voila! 
+    </p>
+    <p class="t">
+    Generelt: Hvis masserne/krafterne er _(m_1,...m_n_) på 
+    positionerne _(d_1,...d_n_), kan man se, at 
+    massecenteret _(x_) er lig 
+    _($x=\frac{m_1*d_1+...m_n*d_n}{m_1+...m_n}_)
+    </p>
+    <br></answer-box>
+
+    <q-stion 1="7" 2="2">
+    Sig du har en rektangulær plade, der holder nogle vægte som her:
+    <img class="Spic" style="width:65%" src='../../../Assets/Chapter2\Section2\BilliardsAndProperties\BalancePoint1.png'> 
+    <p class="t"> Hvor er balancepunktet / massecenteret? Jeg anbefaler at du ikke
+    overtænker den her alt for meget. Det er relativt simpelt. 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    At gøre det vi lige gjorde før nu i _(2D_) er super simpelt. 
+    Alt der her handler om <i>rotation</i>, og vi ved, at
+    en rotering af _(x_)-aksen ikke har nogen indflydelse på en rotering af _(y_) aksen! 
+    Derfor kan det let opdeles i to tilfælde: 
+    _(x_)-massecenteret hvor vi bruger _(x_)-koordinaterne og masserne og _(y_)-massecenteret hvor vi
+    bruger _(y_)-koordinaterne og masserne. Så:
+    _($\begin{eqnarray}
+    && x=\frac{0*5+1*3+6*2+10*2+7*4+5*6+4*7}{5+3+6+10+7+5+4}=3.025 \\ \\
+    && y=\frac{5*5+3*1+10*3+6*7+7*5+5*2+4*7}{5+3+6+10+7+5+4}=4.325
+    \end{eqnarray}_)
+    Ergo: 
+    _($\text{massecenter}=(3.025,4.325)_)
+    </p> 
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="7" 2="3">
+    Indtil videre har vi kun beregnet massecenteret på figurer der består af såkaldte
+    "punkt-masser". Det er vægte vi antager er "så små", at vi ikke behøver tænke over deres geometri. 
+    Ofte ser det lidt anderledes ud:
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter2\Section2\BilliardsAndProperties\NewExercise1.png'> 
+    <p class="t">
+    Her har vi igen en tynd plade med nogle vægte, men denne gang er deres former mere komplicerede. De har hver nu 
+    deres egne massemidtpunkt. For at beregne det samlede massemidtpunkt på pladen, siger vi bare:
+    _($x_m = \frac{2*10+9*12+13*23}{10+12+23} = 9.48_)
+    _($y_m = \frac{4*10+0.5*12+5.5*23}{10+12+23} = 3.83_)
+    Så vi behandler bare hver af de store masser som var de èn simpel punktmasse <i>på deres massemidtpunkt</i>. 
+    I vores øjne er denne situation identisk med:
+    </p>
+    <img class='Spic' style='width:60%' src='../../../Assets/Chapter2\Section2\BilliardsAndProperties\NewExercise1 2.png'> 
+    <p class="t">
+    Prøv nu med denne viden at finde massemidtpunktet på følgende figur: 
+    </p>
+    <img class='Spic' style='width:65%' src='../../../Assets/Chapter2\Section2\BilliardsAndProperties\NewExercise1 3.png'> 
+    <p class="t">
+    Du behøver ikke tænke over de tynde plader imellem disse vægte. Antag bare de har "ingen vægt".
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Vi har fundamentalt fire vægte her. De tre stjerner og den gule kugle. 
+    Formen er symmetrisk på y-aksen omkring _(y=7/3=_) _(3.5_), så vi behøver kun bekymre os om _(x_). 
+    Alle stjerner er symmetriske omkring både x- og y, og har derfor deres massemidtpunkt i midten. 
+    Den første stjernes massemidtpunkt er ved omtrent _((0,3.5)_), de to andres ved henholdsvis 
+    _((4,0)_) og _((4,7)_). Kuglen har en masse på:
+    _($\left(\frac{2}{2} \right)^2 \pi * 1.2 = 3.76 \text{kg}_)
+    ... og et massemidtpunkt på _((6,3.5)_). Alt i alt får vi:
+    _($x_m = \frac{7*0+5*4+5*4+3.76*6}{7+5+5+3.76} = 3.0149_)
+    Bum!
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="7" 2="4">
+    Se følgende figur:
+    <img class='Spic' style='width:52%' src='../../../Assets/Chapter2\Section2\BilliardsAndProperties\NewExercise2.png'> 
+    <p class="t">
+    Antag at denne figur har samme densitet overalt. <br> 
+    Find massemidtpunktet. 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Den her er lidt tricky. Vi har ikke fået noget som helst info omkring vægten: Kun selve formen. I sidste opgave
+    så vi hvordan man fandt det samlede massemidtpunkt af flere figurer. Det kan vi anvende i denne opgave ved at opdele vores form som: 
+    <img class='Spic' style='width:55%' src='../../../Assets/Chapter2\Section2\BilliardsAndProperties\NewExercise2 2.png'> 
+    <p class="t">
+    Formen er nu opdelt i tre mindre former, hver med deres eget massemidtpunkt _(m_1_), _(m_2_) og _(m_3_). Man kan relativt let se
+    geometrisk, at
+    _($\begin{eqnarray}
+    && m_1 = (9/2, & 3.25/2) & = (4.5, & 1.625) \\
+    && m_2 = (9+5/2,   & (3.25+6)/2) & = (11.5,   & 4.625) \\
+    && m_3 = (9+5+3/2, & 12/2) & = (15.5, & 6)
+    \end{eqnarray}_)
+    Det er meget fint, men hvad gør vi nu, hvor vi ikke kan regne deres masser? Well, deres masser svarer til 
+    deres areal ganget med deres densitet _(d_), så formlen for massecenteret bliver nu til:
+    _($\frac{x_1*A_1*d + x_2*A_2*d + \dots}{A_1*d + A_2*d + \dots}_)
+    Hvilket kan omskrives til:
+    _($\frac{d*(x_1 A_1 + x_2 A_2 + \dots)}{d*(A_1 + A_2 + \dots)} = \frac{x_1 A_1 + x_2 A_2 + \dots}{A_1 + A_2 + \dots}_)
+    Vi skal altså bare bruge deres arealer i stedet for massen! Vores tre former
+    har arealer på:
+    _($\begin{eqnarray}
+    && A_1 & = 3.25*9 & = 29.25 \\
+    && A_2 & = (3.25+6)*5 & = 46.25 \\
+    && A_3 & = 12*3 & = 36
+    \end{eqnarray}_)
+    Så massemidtpunktets _(x_)-bliver:
+    _($x_m = \frac{29.25*4.5+46.25*11.5+36*15.5}{29.25+46.25+36} = 10.955_)
+    Og dets _(y_) bliver:
+    _($y_m = \frac{29.25*1.625+46.25*4.625+36*6}{29.25+46.25+36} = 4.281_)
+    Voila!
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="7" 2="5">
+    Find massemidtpunktet på følgende figur:
+    <div style="margin-left:-15px;">
+        <img class='Spic' style='width:48.5%;' src='../../../Assets/Chapter2\Section2\BilliardsAndProperties\BalanceExercise4 1.png'> 
+    </div>
+    <p class="t"> Du kan se målene her: </p>
+    <img class='Spic' style='width:60%' src='../../../Assets/Chapter2\Section2\BilliardsAndProperties\BalanceExercise4 2.png'> 
+    <p class="t">
+    Denne figur har uniform densitet overalt
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Den her ser umiddelbart meget kompleks ud, da formen oppe ved 
+    cirklen virker kompliceret. Det er faktisk intet problem: Vi kan bare
+    forestille os at hulet er et "negativt" areal, med "negativ" masse
+    <p class="t">
+    Så lad os begynde. Sig at _((0,0)_) lægger nede i det venstre nederste hjørne.
+    De individuelle formers massemidtpunkter er nu:
+    _($m_1 = (7,1), \qquad m_2 = (6,4.5), \qquad m_3 = (6,9.5), \qquad m_4 = (5,9)_)
+    Og arealerne er:
+    _($A_1 = 28, \qquad A_2 = 10, \qquad A_3 = 19.63, \qquad A_4 = -3.141_)
+    Så massemidtpunktets _(x_) bliver til:
+    _($m_x = \frac{28*7 + 10*6 + 19.63*6 - 3.141*5}{28 + 10 + 19.63 - 3.141} = 6.57_)
+    Og y:
+    _($m_y = \frac{28*1 + 10*4.5 + 19.63*9.5 - 3.141*9}{28 + 10 + 19.63 - 3.141} = 4.24 _)
+    Svaret er derfor: 
+    _($m=(6.57,4.24)_)
+    </p>
+    <br></answer-box>
+
+    
+    <!--  -->
+
+    <q-stion 1="7" 2="6">
+    Se følgende form:
+    <img class='Spic' style='width:45%' src='../../../Assets/Chapter2\Section2\BilliardsAndProperties\BalanceExercise3.png'> 
+    <p class="t">Alle de gule former har samme densitet. De røde former
+    der får de gule til at hænge sammen, kan du forestille
+    dig er super tynde og lette i forhold til. Bare ignorer dem for nemhedens skyld.</p>
+    <p class="t">
+    <i>Er det muligt</i> at balancere denne form? Kan man placere sin finger noget
+    som helst sted <i>på formen</i> hvor den balancere?
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Det er absolut muligt for et massemidtpunkt ikke at eksistere 
+    noget sted <i>på</i> selve formen. Eksempelvis massemidtpunktet på følgende figur:
+    <img class='Spic' style='width:30%' src='../../../Assets/Chapter2\Section2\BilliardsAndProperties\BalanceExercise3 2.png'> 
+    <p class="t">
+    I denne opgave skal vi altså finde massemidtpunktets lokation og
+    vurdere, hvorvidt det er <i>på</i> selve formen. 
+    </p>
+    <p class="t">
+    Først finder vi massemidtpunktet på hver af de tre figurer:
+    _($\begin{eqnarray}
+    m_1 = (0+5/2, \, \, & 0+5/2) & =(2.5,2.5) \\
+    m_2 = (11+4.5/2, \, \, & 2.5+8/2) & = (13.25,6.5) \\
+    m_3 = (2+7/2, \, \, & 12+4/2) & =(5.5, 14) 
+    \end{eqnarray}_)
+    Deres arealer er:
+    _($A_1 = 5*5=25, \qquad A_2 = 4.5*8 = 36, \qquad A_3 = 4*7 = 28_)
+    Så massemidtpunktets _(x_) bliver:
+    _($x_m = \frac{2.5*25 + 13.25*36 + 5.5*28}{25+36+28} = 7.792_)
+    Og ved _(y_):
+    _($y_m = \frac{2.5*25 + 6.5*36 + 14*28}{25+36+28} = 7.735_)
+    Det kan tegnes som:
+    </p>
+    <img class='Spic' style='width:45%' src='../../../Assets/Chapter2\Section2\BilliardsAndProperties\BalanceExercise3 4.png'> 
+    <p class="t">
+    Massemidtpunktet er <i>ikke</i> på en af de 3 former!
+    </p>
+    <br></answer-box>
+
+

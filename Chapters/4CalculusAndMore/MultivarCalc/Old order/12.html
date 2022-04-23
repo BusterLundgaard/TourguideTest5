@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+
+
+    <p class="t">
+    Alright: Vi kan sådan cirka nu finde ud af finde <i>lokale</i> maksimums og minimums i 3D. 
+    Ofte så er målet dog at finde et <i>globale</i> maksimum eller minimum i en bestemt region:
+    Den allerhøjeste eller mindste værdi _(f(x,y)_) kan tage inden for et eller andet område af _(x_) og _(y_). 
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5" customWidth="550">
+    Se følgende:
+    <br><br>
+    <hover-video url="../../../Assets/Chapter4\MultiVarCalc\Maximum3D.mp4" ></hover-video>
+    <br><br>
+
+    <p class="t">
+    Hvor _(A=(1.77,2)_), _(B=(-0.5,-1)_) og _(C=(-0.5,2)_), og funktionen er 
+    _($f(x,y)=1.5y^3 + 4x^2y - 4.5x^2 - 5.5y^2 + 2_)
+    Som er den samme funktion vi kiggede på tidligere. Find det globale maksimum, og det globale minimum af
+    _(f(x,y)_), hvis _((x,y)_) er inde i trekanten _(\triangle ABC_)
+    </p>
+    <br></q-stion>
+    <answer-box t="h" customWidth="550">
+    Tænk over hvordan
+    du ville finde det globale maksimum på et område _(x \in [a,b]_) på en eller anden funktion _(f(x)_)
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter4\MultiVarCalc\GlobalMaximum2D.png'> 
+    <p class="t">
+    Det "eneste" du skal tjekke for at finde det højeste og laveste punkt, er de aller yderste værdier _(x=a_), _(x=b_), og de lokale minimums og maksimums.
+    Når man tænker lidt over det, så kan man se at ingen andre steder mellem _([a,b]_) muligt kunne være maksimums eller minimums. Så når man har fundet
+    de lokale minimums og maksimums, så er arbejdet næsten færdigt, i den forstand at man bare lige skal evaluere 
+    _(f(a)_) og _(f(b)_), og så se om de er større end nogle af de lokale.
+    </p>
+    <p class="t">
+    Kan du generalisere det her til 3D?
+    </p>
+    </answer-box>
+    <answer-box customWidth="550">
+    Hvis vi kan finde de lokale maksimums og minimums, så er det også relativt ligetil at finde det globale på et område. Tænk over hvordan
+    du ville finde det globale maksimum på et område _(x \in [a,b]_) på en eller anden funktion _(f(x)_)
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter4\MultiVarCalc\GlobalMaximum2D.png'> 
+    <p class="t">
+    Det "eneste" du skal tjekke for at finde det højeste og laveste punkt, er de aller yderste værdier _(x=a_), _(x=b_), og de lokale minimums og maksimums.
+    Når man tænker lidt over det, så kan man se at ingen andre steder mellem _([a,b]_) muligt kunne være maksimums eller minimums. Så når man har fundet
+    de lokale minimums og maksimums, så er arbejdet næsten færdigt, i den forstand at man bare lige skal evaluere 
+    _(f(a)_) og _(f(b)_), og så se om de er større end nogle af de lokale.
+    </p>
+    <p class="t">
+    Lidt det samme kan vi sige i 3D. Enten så er den højeste/laveste værdi ved et lokalt min/max, eller så er den ude i yderkanten. 
+    Vores "yderkant" i 3D er bare lidt mere kompliceret, nu da det faktisk er en <i>form</i>. I vores tilfælde er det en trekant. 
+    Den trekant er dannet af 3 linjer. Når der kun fokuseres på de _(x_) og _(y_) på én linje, så fås en ny "2D" kurve. Eksempelvis linjen
+    fra _(B_) til _(C_), der kan beskrives som _(x=0.25+0.755y_).
+    Nu bliver _(z=f(x,y)_) til _(z=f(0.25+0.755y,y)_), eller 
+    _($z(y)=1.5y^3 + 4*(0.25+0.755y)^2y - 4.5(0.25+0.755y)^2 - 5.5y^2 + 2_)
+    Det her er bare en 2D funktion _(z(y)_), og vi kan nu finde dens globale maksimum mellem 
+    _(y=-1_) og _(y=2_), og samme stil med de andre linjer. Så til sidst sammenligner vi de lokale maksimums på indersiden af trekanten, med 
+    de de globale maksimums på ydersiden, og ser hvad for en der er størst. Wholla! Vi har faktisk allerede lært det 
+    "svære", som er at finde de lokale på en 3D funktion. Resten er bare de globale på en 2D funktion som er relativt nemt, især
+    hvis vi tillader os at bruge computere. 
+    </p>
+    <p class="t">
+    Vi har arbejdet med denne funktion før, og ved at den har et lokalt maksimum ved _((x,y)=(0,0)_). Her
+    kan det let ses at _(f(x,y)_) er lig _(2_). Der er også et lokalt minimum ved _((x,y)=(0, 2.44)_)
+    hvor _(f(x,y)_) er lig _(-8.95_).
+    </p>
+    <p class="t">
+    Vi kigger nu på yderkanten. Først linjen fra _(A_) til _(B_), som giver:
+    _($z(y) = 1.5y^3 + 4*(0.25+0.755y)^2y - 4.5(0.25+0.755y)^2 - 5.5y^2 + 2_)
+    Vi udvider og differentierer dette med respekt til _(y_) og får
+    _($z'(y)=11.34y^2 - 13.11y - 1.448_)
+    Vi bruger nu den kvadratiske formel til at se at dette er _(0_) ved 
+    _(y=-0.101_) og _(y=1.257_). Vi skal nu bestemme om de her punkter
+    er minimums eller maksimums. _(z''(y)_) er lig _(22.68y - 13.11_), som 
+    ved _(y=-0.101_) tydeligvis er negativt (og derfor et maksimum), og ved 
+    _(y=1.257_) er positivt, og derfor et minimum. Her er _(z_) lig _(1.794_). Ved 
+    _(y=1.257_) er _(z_) lig _(-2.951_). 
+    </p>
+    <p class="t">
+    Den næste linje er når _(x=-0.5_), igen fra _(y=-1_) til _(y=2_). Dette giver:
+    _(z(y)=1.5y^3 + 4*(-0.5)^2y - 4.5(-0.5)^2 - 5.5y^2 + 2_)
+    Differentieres dette med _(y_) fås:
+    _($4.5y^2 - 11y + 1_)
+    Som er lig _(0_) ved _(y=0.094_) og _(y=2.349_). Det ene af disse punkter
+    er uden for vores område, så det er vi ligeglade med. _(z''(y)_) er lig
+    _(9y - 11.0_), hvilke er negativt ved _(y=0.094_). Det er altså et maksimum, hvor
+    vi kan regne at _(z=0.921_). 
+    </p>
+    <p class="t">
+    Den sidste linje er når _(y=2_), fra _(x=-0.5_) til _(1.77_). Det giver:
+    _($z(x)=1.5(2)^3 + 4x^2(2) - 4.5x^2 - 5.5(2)^2 + 2_)
+    Differentieres dette med _(x_) fås _(z'(x)=7x_), så det eneste kritiske punkt
+    er ved _(x=0_). Her er _(z''(x)=7_), så det er et lokalt minimum. Det kan let ses at 
+    _(z_) her er lig _(-8_).
+    </p>
+    <p class="t">
+    Til aller sidst bliver alle de yderste yderkanter tjekket: Hjørnerne _(A_), _(B_) og _(C_), hvilket
+    svarer til _(f(1.77,2)=2.965_), _(f(-0.5,-1)=-7.125_) og _(f(-0.5,2)=-7.125_).
+    Hvis vi nu sammenligner alt vores arbejde, så kan vi se at den højeste værdi 
+    er ved _((1.77,2)_), og den laveste værdi ved _((0,2.44)_). Wholla! 
+    </p>
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Sig at:
+    _($(x-3)^2 + (y+2)^2 \lt 25_)
+    Hvad er, og hvor er, det globale maksimum og minimum på _(z=x*y_)?
+    Jeg giver dig med vilje <i>ikke</i> noget billede i den her, da formålet med mange
+    af de her optimeringsværktøjer netop er at hjælpe os når vi <i>ikke</i> hurtigt
+    kan glimte et visuelt svar. F.eks. kunne du i den tidligere opgave relativt troværdigt
+    gætte at det enten var største ved _((0,0)_) eller ved _(A_). 
+    <p class="t">
+    Du må gerne bruge Geogebra til at løse ligninger i denne. 
+    </p>
+    <br><br></q-stion>
+    <answer-box>
+    Vi ved at der ikke findes noget tidspunkt ud over _((x,y)=(0,0)_) på _(z=x*y_)
+    hvor både _(z_x_) og _(z_y_) er lig _(0_). Ved _((0,0)_) er _(z_) tydeligvis _(0_).
+    Vi kan nu fokusere på yderkanten, som er hvor det primære arbejde lægger i dette tilfælde.
+    På yderkanten gælder det at:
+    _($(x-3)^2+(y+2)^2 = 25_)
+    Her kan _(x_) og _(y_) beskrives parametrisk som:
+    _($\VeC[x,y] = \VeC[3,-2] + 5*\VeC[Cos(t),Sin(t)]_)
+    Så _(z=x*y_) er lig:
+    _($(3+5 Cos(t))*(-2 + 5 Sin(t))_)
+    Vi differentierer nu _(z(t)_): 
+    _($z'(t) = 15 Cos(t) + 10 Sin(t) - 25 Sin(t)^2 + 25 Cos(t)^2_)
+    Plottes dette i Geogebra fås:
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter4\MultiVarCalc\PerimeterCurveSolutions.png'> 
+    <p class="t">
+    Hvor _(t_1=1.12_), _(t_2=2.47_), _(t_3=3.53_) og _(t_4=5.45_). Det bliver
+    selvfølgelig ved, men vi er kun interesserede i de kritiske punkter mellem _(0_) og _(2\pi_). 
+    </p>
+    <p class="t">
+    Vi skal nu tjekke hvilke punkter er maksimums og hvilke er minimums. Vi 
+    differentierer derfor igen og får:
+    _($z''(t)=-15 Sin(t) + 10 Cos(t) - 100 Cos(t) Sin(t)_)
+    Det ses at:
+    _($\begin{eqnarray}
+    && z''(1.12) & = - & 48.36   \\
+    && z''(2.47) & = & 31.54  \\
+    && z''(3.53) & = - & 38.62  \\
+    && z''(5.45) & = & 67.59 
+    \end{eqnarray}_)
+    Så der er to lokale minimumspunkter, og to lokale maksimumspunkter. 
+    Vi regner nu:
+    _($\begin{eqnarray}
+    && z(1.12) & = & 12.94   \\
+    && z(2.47) & = - & 1.015  \\
+    && z(3.53) & = & 6.33  \\
+    && z(5.45) & = - & 36.26 
+    \end{eqnarray}_)
+    Så det lokale maksimum er ved _(t=1.12_), og det lokale minimum ved _(t=5.45_). 
+    Det svarer til henholdsvis _((5.178, 2.5)_) og _((6.36,-5.70)_). Bum!
+    </p>
+    <br><br></answer-box>
+
+

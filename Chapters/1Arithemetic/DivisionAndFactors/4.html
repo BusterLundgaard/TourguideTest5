@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+ <!-- OPGAVER HER -->
+
+    <q-stion 1="2" 2="1" 3="5">
+        Lad os gå tilbage til skolen hvor der skal fordeles hold. Nu er situationen lidt mere tricky: i den sport i
+        spiller skal hvert hold i sig selv kunne deles op i tre mindre lige store dele: support, forsvar, og angreb.
+        I er i alt _(273_) elever, og der skal helst være så <i>få</i> hold som muligt (og hvert hold skal være lige stort). Hvor mange
+        personer bliver der i hver mindre support/forsvar/angrebs-gruppe?
+        <br><br></q-stion>
+    <answer-box>
+        Lad os først og fremmest opdele _(273_) i primtal, hvilke faktisk er en smule tricky.
+        Jeg tænker umiddelbart at _(273_) kan omskrives til _(270+3_). _(270_) er 
+        _(30_) væk fra _(300_). Både _(30_) og _(300_) går op i _(3_), så det burde _(270_) også. 
+        Jeg omskriver altså det hele til 
+        _($300-30+3=3*100-3*10+3=3*(100-10+1)=3*91_)
+        Kan man opløse _(91_)? _(2_), _(3_) og _(5_) virker tydeligvis ikke, men _(7_) gør.
+        _(91=7*13_), så endeligt får vi:
+        _($273=3*7*13_)
+        Hvor mange lige store grupper burde vi vælge? _(7_), _(3_), eller _(13_)?
+        Det kan ikke være _(3_), fordi hvert hold er nødt til at kunne divideres med _(3_) hvis vi både vil have forsvar, support, og angreb.
+        Vi vælger derfor _(7_) da skolen gerne ville have den mindste mængde hold muligt. I hver support/forsvar/angrebs-gruppe
+        kommer der altså til at være _(13_) personer.
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+        Sig at du er ude og købe ind. Du har tænkt dig at lave franske hotdogs, så du har både brug for
+        hotdogbrød og pølser. Hotdogbrødet kommer i lidt store pakker af _(60_), og pølserne i
+        pakker af _(126_) - vi er i USA eller et eller andet okay? Du er nu i en problematisk situation:
+        hvad hvis du ender med at købe en masse pølser uden brød, eller en masse brød uden pølser?
+        Spildt mad! Hvad er den <i>mindste</i> mængde henholdsvis hotdog- og pølsepakker du kan købe, hvor det går op?
+        Der kommer selvfølgelig til at være flere brød-<i>pakker</i> end pølse-pakker, men mængden
+        af brød og pølse skal være identisk. 
+    <br><br></q-stion>
+    <answer-box>
+        Vi skal have samme mængde hotdogs som pølser, så vi leder egentlig bare efter ét tal.
+        Når vi har fundet det her tal, så kan vi nemt regne mængden af hotdogpakker og mængden af
+        pølsepakker. Det ville vi gøre ved at <i>dividere</i> tallet med henholdsvist _(60_) og _(126_).
+        Dér lægger svaret: tallet skal kunne divideres med både _(60_) og _(126_), og i begge tilfælde give et helt tal.
+        Hvordan finder vi det mindste tal der har den egenskab?
+        <p class="t">
+        Vi kan starte med at kigge på _(60*126=7560_). Det kan <i>selvfølgelig</i>
+        divideres med begge, da 
+        _($\frac{60*126}{126}=60, \qquad \frac{60*126}{60}=126_) 
+        Det er bare også ret højt. 
+        Hvad ville du gøre hvis du i et nemmere tilfælde skulle finde et tal der 
+        kunne divideres med både _(6_) og _(4_)? Du ved at:
+        _($\begin{eqnarray}
+        && 6 & = 3*2 \\
+        && 4 & = 2*2
+        \end{eqnarray}_)
+        _(3*2*2_) ville altså virke, da: 
+        _($\frac{3*2*2}{2*2}=3, \qquad \frac{3*2*2}{3*2}=2_) 
+        Bemærk at vi her <i>ikke</i> valgte _(6*4_), som svarer til _(3*2*2*2_). 
+        Det eneste der er vigtigt for at et tal kan divideres med
+        et andet, er at det har alle <i>faktorene</i>. _(60*126_) har både _(60_)'s faktore og alle _(126_)'s faktore.
+        Men det har flere faktore end det har brug for, fordi _(60_) og _(126_) jo også <i>deler</i>. 
+        Med lidt arbejde kan man se at:
+        _($\begin{eqnarray}
+        && 126 & = 2*3*3*7 \\
+        && 60 & = 2*2*3*5
+        \end{eqnarray}_)
+        Så de <i>deler</i> faktorerne _(2_) og _(3_). Det eneste _(126_) har som
+        _(60_) mangler er en ekstra _(3_) faktor, og en _(7_) faktor. Derfor er
+        _(60*3*7=1260_) den mindst mulige antal hotdogs, og:
+        _($\frac{60*3*7}{60}=3*7, \qquad \frac{60*3*7}{126} = 2*5_)
+        Det vi har gjort her svarer til at vi har fundet den såkaldte "LCD" (Least common denominator) af to tal. 
+        Når vi skriver _(\text{LCD}(a,b)_) hentyder vi til det mindste tal der både kan divideres
+        med _(a_) og _(b_). Så i denne opgave fandt vi 
+        _($\text{LCD}(60,126)=1260_) 
+        Et lignende begreb er den såkaldte "GCM" (Greatest common multiple). Når vi skriver
+        _(\text{GCM}(a,b)_) hentyder vi til det største tal vi kan dividere både _(a_) med og _(b_) med. 
+        Det svarer med andre ord til at finde alle de fælles faktorer, så:
+        _($\text{GCM}(60,126)=2*3=6_)
+        Baseret på hvad vi gjorde i denne opgave, så kan man relativt let se at:
+        _($\text{LCD}(a,b)=\frac{a*b}{\text{GCM}(a,b)}_)
+        Hvis det er mere forståeligt, så kan dette omskrives til:
+        _($a*\left(\frac{b}{\text{GCM}(a,b)} \right)_)
+        Det er præcis hvad vi gjorde: Vi gangede _(60_) med de faktorer 
+        i _(126_) som _(60_) <i>ikke</i> allerede delte: Det svarer
+        til at gange _(60_) med _(126/\text{GCM}(60,126)_).
+        </p>
+        <p class="t">
+        En anden måde at forstå _(\text{LCD}_)'en og _(\text{GCM}_)'en på er via et venn-diagram: 
+        </p>
+        <img class="Spic" style="width:65%;"  src="../../../Assets/Chapter1/Talteori/vennFaktore.png">
+        <p class="t">
+        Vi ser at _(\text{GCM}_)'en som forventet er de delte faktorer, og at _(\text{LCD}_)'en på 
+        en måde kan forstås som "alle faktorer". Det er altså alle faktorer, men uden at man
+        dobbelt-tæller de delte. Igen ser vi at formlen giver mening: Man ganger _(a_) og
+        _(b_) og får derved alle faktorer, og så dividerer man med de delte faktorer for ikke at dobbelttælle. 
+        Voila!  
+        </p>
+        <p class="cent">*</p>
+        <p class="t">
+        En anden strategi du måske også kunne have brugt til at komme frem til svaret ville være at 
+        sige at _(n_1_) var lig mængden af brødpakker du skulle købe, og _(n_2_) var lig mængden af pølsepakker.
+        Mængden af brød skal være lig mængden af pølser, så:
+        _($n_1*60=n_2*126_)
+        Hvis _(n_1_) gange _(60_) er lig _(n_2*126_), så må _(n_1_) for sig selv være lig 
+        _($\frac{n_2*126}{60}_)
+        Nu kan vi udvide lidt og simplificere:
+        _($n_1=\frac{n_2*2*3*3*7}{2*2*3*5}=\frac{n_2*3*7}{2*5}_)
+        Hvis vi bare satte _(n_2_) til et eller andet tilfældigt som _(3_), så ville vi få
+        _($n_1=\frac{3*3*7}{2*5}=6.3_)
+        hvilke er umuligt. Man kan jo ikke købe _(6.3_) brødpakker. Vi skal vælge
+        den mindst mulige værdi til _(n_2_) hvor _(n_1_) er et helt tal.
+        Det er tydeligvis bare _(2*5=10_), så:
+        _($n_1=\frac{2*5*3*7}{2*5}=3*7=21_)
+        </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Vi kan nemt plusse og lave to brøkker om til én <i>hvis</i> de har samme nævner:
+    _($\frac{4}{5}+\frac{3}{5}=\frac{3+4}{5}=\frac{7}{5}_)
+    Det her kan vi jo fordi det egentlig bare er to led der begge er ganget med _(\frac{1}{5}_).
+    Hvad hvis det ikke er tilfældigt dog? Det er super praktisk både af udregningsmæssige og teoretiske årsager
+    at kunne kombinere. Prøv derfor i denne opgave at lave 
+    _($\frac{3}{5}+\frac{4}{2}_) 
+    om til én brøk.
+    <br><br></q-stion>
+    <answer-box>
+    Hvis brøker er nød til at have samme nævner for at de kan kombineres, så giver vi dem da bare samme nævner!
+    _($\begin{eqnarray}
+    && \frac{3}{5}+\frac{2}{10} = \frac{3*2}{5*2}+\frac{4*5}{2*5} = \frac{6}{10}+\frac{20}{10} = \frac{6+20}{10}=\frac{26}{10} 
+    \end{eqnarray}_)
+    <p class="t">
+    Bam! Strategien er altså bare at sige: hvilke faktorer har den anden brøk i dens nævner som jeg mangler?
+    Derefter ganger man bare nævner (og selvfølgelig også tæller for at vi ikke ændre på tallet) med disse
+    manglende faktorer. Når man har gjort det ved alle brøker så ender man ud med en masse identiske nævnere.
+    Plus disse sammen, og voila!
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Lav de følgende plusstykker med brøker om til bare èn brøk:
+    <div style="text-align:center; margin-top:10px;">
+        <ul style="display: inline-block; text-align: left; padding-left:0%; list-style:none;">
+            <li><b> 1:</b> _($\frac{37}{126}+\frac{42}{60}_)</li>
+            <li><b> 2:</b> _($\frac{12}{15}+\frac{23}{24}_)</li>
+            <li><b> 3:</b> _($\frac{5}{7}+\frac{9}{35}_)</li>
+            <li><b> 4:</b> _($\frac{43}{55}+\frac{3}{14}_)</li>
+            <li><b> 5:</b> _($3+\frac{7}{11}_)</li>
+        </ul>
+    </div>
+    <br></q-stion>
+    <answer-box t="Answer 1#" tabColour="rgb(171,96,147)">
+    Vi kan ikke bare gange nævnerene med hinanden som med _(2_) eller _(5_) - så er det lidt en hotdog-situation
+    hvor vi også ganger med de faktore de deler. Vi skal kun gange hver nævner med
+    det den mangler. De her tal _(126,60_) har vi lige arbejdet med, så vi ved at _(126_) skal
+    ganges med _(2_) og _(5_) ligmed _(10_), og _(60_) skal ganges med _(3_) og _(7_) lig _(21_). Ergo:
+    _($\frac{37*10}{1260}+\frac{42*21}{1260}=\frac{370+42*21}{1260}=\frac{1252}{1260}_)
+    Det her <i>er</i> fint nok, men brøken godt forsimples yderligere. Begge tal kan tydeligvis godt
+    divideret med _(2_), hvilke giver:
+    _($\frac{626*2}{630*2} = \frac{626}{630}_)
+    _(626_) og _(630_) kan også begge divideres med _(2_), så:
+    _($\frac{313*2}{315*2} = \frac{313}{315}_) 
+    Vi kan nok ikke forsimple det mere end dette. 
+    <br><br></answer-box>
+    <answer-box t="Answer 2#" tabColour="rgb(175,128,161)">
+    Lidt bare det samme som den første: _(15=5*3_) og _(24=2^3*3_). De deler altså kun _(3_):
+    _($\frac{12*2^3}{15*2^3}+\frac{23*5}{24*5}=\frac{96}{120}+\frac{115}{120}=\frac{211}{120}_)
+    Dette kan ikke simplificeres yderligere. 
+    <br></answer-box>
+    <answer-box t="Answer 3#" tabColour="rgb(171,96,147)">
+    Her er der ingen faktorer _(7_) har, som _(35_) ikke har. Derfor skal _(35_)-brøkken
+    ikke ganges med noget, men det skal _(7_)-brøkken:
+    _($\frac{5*5}{7*5}+\frac{9}{35}=\frac{25+9}{35}=\frac{34}{35}_)
+    <br></answer-box>
+    <answer-box t="Answer 4#" tabColour="rgb(175,128,161)">
+    _(55=5*11_) og _(14=7*2_) deler ingen faktore. Her ganger vi så bare nævnerne direkte:
+    _($\frac{43*14+3*55}{55*14}=\frac{767}{770} _)
+    <br></answer-box>
+    <answer-box t="Answer 5#" tabColour="rgb(171,96,147)">
+    Den her kan måske godt virke lidt tricky. Hvor er den anden brøk henne?
+    Hvordan kombinere vi en brøk med et helt tal?
+    _($3+\frac{7}{11}=\frac{3*11}{11}+\frac{7}{11}=\frac{33+7}{11}=\frac{40}{11}_)
+    Bam! Et hvert tal kan nemt repræsenteres som en brøk!
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Bevis at:
+    _($\frac{a}{b}+\frac{c}{d}=\frac{a \cdot d+c \cdot b}{\text{GCM}(b,d) \cdot \text{LCD}(b,d)}_)
+    Det her er ikke en svær opgave bare rolig.
+    <br><br></q-stion>
+    <answer-box>
+    Det her er præcist hvad vi har gjort i det tidligere opgaver, bare skrevet lidt mere generelt. Sig
+    at vi gerne vil lave følgende plusstykke om til èn brøk:
+    _($\frac{a}{b}+\frac{c}{d}_)
+    Vi skal gange den først brøk med de faktorer _(d_) har som _(b_) ikke har, og 
+    vice versa med den anden brøk. Dette svarer til at gange med henholdsvis 
+    _(d/\text{GCM(b,d)}_) og _(b/\text{GCM(b,d)}_), så:
+    _($\frac{a*\left(d/\text{GCM}(b,d) \right)}{b*\left(d/\text{GCM}(b,d) \right)} + \frac{c*\left(b/\text{GCM}(b,d) \right)}{d*\left(b/\text{GCM}(b,d) \right)} = _)
+    _($\frac{\frac{a*d}{\text{GCM}(b,d)}}{\frac{b*d}{\text{GCM}(b,d)}} + \frac{\frac{c*b}{\text{GCM}(b,d)}}{\frac{b*d}{\text{GCM}(b,d)}} =
+    \frac{\frac{a*d}{\text{GCM}(b,d)}}{\text{LCD}(b,d)} + \frac{\frac{c*b}{\text{GCM}(b,d)}}{\text{LCD}(b,d)} =_)
+    _($\frac{a*d+c*b}{\text{GCM}(b,d)*\text{LCD}(b,d)}_)
+    Bum! 
+    <br><br></answer-box>
+
+
+</html>

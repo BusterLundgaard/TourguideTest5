@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+
+    <h3>Hvor kom vi lige fra? Domænet på funktioner defineret som serier</h3>
+    <p class="t">
+    Den primære årsag til at vi gik så meget i dybden med konvergens og divergens, var
+    at finde domænet på uendelige serier og Taylor funktioner.
+    Det ville være en skam ikke at give det et lille kig,
+    men det bliver meget kort, da det 
+    i alt ærlighed ikke er specielt interessant.
+    Det er meget det samme, vi har allerede har gjort. 
+    </p>
+
+    <q-stion 1="20" 2="1">
+    Bevis at Taylor-approksimationen af _(Ln(1-x)_) er valid 
+    på _(x \in [-1, 1]_):
+    _($Ln(1-x) = \sum_{k=1}^{\infty} -\frac{x^k}{k} _)
+    <br></q-stion>
+    <answer-box>
+    Vi bruger root testen og får:
+    _($-\lim_{k \to \infty} \left[\left(\frac{x^k}{k} \right)^{1/k} \right] = -\frac{x}{1}_)
+    Det absolutte af root-testen skal være mellem _(0_) og _(1_), så vi kan let se, at
+    _($-1 \gt x \gt 1_)
+    ... hvilket så er domænet. På andre _(x_) vil denne serie divergere. 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="20" 2="2">
+    På hvilke _(x_) er Taylor-approksimationen af _(Arctan(x)_) valid?
+    _($Arctan(x) = \sum_{k=1}^{\infty} = (-1)^k*\frac{x^{2k+1}}{2k+1} _)
+    <br></q-stion>
+    <answer-box>
+    Vi ved med sikkerhed, at serien divergerer hvis _(|x| \gt 1_), siden
+    dens sekvens går mod _(\infty_) eller _(-\infty_) og ikke _(0_). 
+    <p class="t">
+    Hvis _(0 \lt x \lt 1_) så er _(x^{2k+1}/(2k+1)_) positiv, faldende, og nærmer sig _(0_).
+    Alternating series test fortæller os nu, at serien <i>konvergerer</i>
+    </p>
+    <p class="t">
+    Hvis _(-1 \lt x \lt 0_), er _(x^{2k+1}/(2k+1)_) negativ, stigende, og nærmer sig <br> _(0_). 
+    Alternating series
+    test fortæller os, at serien <i>konvergerer</i>. Alt i alt:
+    _($-1 \lt x \lt 1_)
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="20" 2="3">
+    På hvilke _(x_) er Taylor-approksimationen af _(\int Sin(x^2)_) valid?
+    _($\int Sin(x)^2 = \sum_{k=1}^{\infty} (-1)^k * \frac{x^{4k+3}}{(2k+1)!*(4k+3)}_)
+    <br></q-stion>
+    <answer-box>
+    Fakultet-funktionen i nævneren dominerer altid eksponentialfunktion i tælleren, lige
+    meget hvilken _(x_) vi indsætter. Pr. absolute convergence ser vi,
+    at serien er valid på <i>alle</i> værdier af _(x_). 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="20" 2="4">
+    Find domænet på følgende uendelige serie:
+    _($y(x) = a_1*\sum_{k=1}^{\infty} \frac{x^{2k}}{(2k)!} + a_2 * \sum_{k=1}^{\infty} \frac{x^{2k+1}}{(2k+1)!}   _)
+    <br></q-stion>
+    <answer-box>
+    Begge serier er konvergente på alle _(x_), da fakultet igen dominerer eksponenter. Summen
+    af to konvergente serie er også konvergent, så _(y(x)_) kan evalueres på alle _(x_). 
+    <br><br></answer-box>
+
+
+

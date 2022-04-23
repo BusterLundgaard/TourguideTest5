@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+
+
+    <h3>Domination</h3>
+
+    <p class="t">
+    Mange elementer nærmer sig _(\infty_) når _(x_) nærmer sig _(\infty_), 
+    nogle gør det bare hurtigere end andre. <i>Meget</i> hurtigere end andre.
+    Vi har en generel intuitiv ide, om at nogle funktioner
+    "dominerer" andre: De vokser <i>så meget hurtigere</i>, at de andre 
+    stopper med at have konkret, meningsfuld indflydelse. Sig f.eks. vi havde:
+    _($\lim_{x \to \infty}[Ln(x)-x^x]_)
+    <i>Ja</i> det her er <i>teknisk set</i> lig _(\infty-\infty_), hvis vi tager grænsen af hvert led for sig selv, 
+    men vi ved 
+    alle sammen godt indeni, at det ender ved _(-\infty_), da _(x^x_) vokser 
+    uhyrligt meget hurtigere end _(Ln(x)_).  
+    Vi laver følgende definition:
+    </p>
+
+    <div class="Definition">
+    <b> Definition: Domination</b> <br>
+    En funktion _(f(x)_) "dominerer" en anden funktion _(g(x)_) hvis 
+    _($\lim_{x \to \infty} \left[\frac{g(x)}{f(x)} \right] = 0_)
+    </div>
+
+    <div class="Definition">
+    <b> Definition: Lige stærke</b> <br>
+    To funktioner _(f(x)_) og _(g(x)_) siges at være "lige stærke" hvis
+    _($\lim_{x \to \infty} \left[\frac{g(x)}{f(x)} \right] = c_)
+    ... hvor _(c_) er en konstant. 
+    </div>
+
+    <p class="t">
+    <i>Jeg har selv lidt fundet på de her begreber, men selve ideerne bliver også brugt i andre lærebøger,
+        bare typisk uden explicit navngivning </i>
+    </p>
+
+    <p class="tt">
+    Vi kan let bevise, at _(x^x_) dominerer _(Ln(x)_) via Hopitals:
+    _($\begin{align}
+    \lim_{x \to \infty}\left[\frac{Ln(x)}{x^x} \right] & = \lim_{x \to \infty}\left[\frac{1/x}{x^x*(Ln(x)+1)} \right] \\ \\
+    & = \lim_{x \to \infty}\left[\frac{1}{x^{x+1}*(Ln(x)+1)} \right] \\ \\
+    & = 0 
+    \end{align}_)
+    Vi kan nu faktisk bevise, 
+    at _(Ln(x)-x^x_) nærmer sig _(-\infty_) via følgende. Sig at:
+    _($y=\lim_{x \to \infty}[Ln(x)-x^x]_)
+    Opløft nu _(e_) i begge sider:
+    _($e^y = e^{\lim_{x \to \infty}[Ln(x)-x^x]} = \lim_{x \to \infty} \left[e^{Ln(x)-x^x} \right] = \lim_{x \to \infty} \left[\frac{e^{Ln(x)}}{e^{x^x}} \right]_)
+    Ved _(B \gt A \gt 1_) kan man relativt let vise, at
+    _($\frac{e^A}{e^B} \le \frac{A}{B} _)
+    ... hvilket også giver god, intuitiv mening. Nu ved vi, at:
+    _($\lim_{x \to \infty} \left[\frac{e^{Ln(x)}}{e^{x^x}} \right] \le  \lim_{x \to \infty} \left[\frac{Ln(x)}{x^x} \right] = 0 _)
+    Det er altså mindre eller lig noget, der giver _(0_), så det må også selv give _(0_). Vi har nu:
+    _($\begin{eqnarray}
+    && e^y = 0 \to \\ \\
+    && y=Ln(0)=-\infty
+    \end{eqnarray}_)
+    Bum! 
+    </p>
+
+    <q-stion 1="8" 2="1" bigTop="true">
+    Regn:
+    _($\lim_{x \to \infty} \left[x^3-x^2 \right] _)
+    <br></q-stion>
+    <answer-box>
+    _(x^3-x^2_) kan også skrives som _(-(x^2-x^3)_), hvilket bedre passer formen af sidste opgave,
+    hvor det mindre led (_(x^2_)) bliver minusset med det større led (_(x^3_)). Man kan let 
+    se, at _(x^3_) dominerer _(x^2_). Derfor ved vi, at grænsen er _(-\infty_) ligesom i sidste opgave.
+    Vi ganger nu med _(-1_), og får _(-1*-\infty = \infty_)
+    <br><br></answer-box>
+
+    <p class="tt">
+    Det er alt meget fint, men 
+    domination bliver først en virkelig praktisk ide, når 
+    vi arbejder med <i>brøker</i>. Sig f.eks. vi skulle regne:
+    _($\lim_{n \to \infty} \left[\frac{n^n+Ln(n)}{n!+n^6} \right]_)
+    Nu dividerer vi bare tæller og nævner med _(n!_), og får
+    _($\lim_{n \to \infty} \left[\frac{\frac{n^n}{n!}+\frac{Ln(n)}{n!}}{1 + \frac{n^6}{n!}} \right] = 
+    \frac{\lim_{n \to \infty} \left[\frac{n^n}{n!} \right] + \lim_{n \to \infty} \left[\frac{Ln(n)}{n!} \right]}{1+\lim_{n \to \infty} \left[\frac{n^6}{n!} \right] } _)
+    Nævneren vil nu nærme sig _(1_) ved store _(n_), siden _(n!_) dominerer _(n^6_) 
+    (hvilket vi nok skal bevise senere).
+    Tælleren nærmer sig _(\infty_), siden _(n^n_) dominerer _(n!_), 
+    og siden _(n!_) dominerer _(Ln(n)_) (hvilket vi også
+    nok skal bevise). Alt i alt får vi: 
+    _($\frac{\infty}{1} = \infty_)
+    Bum! Vi kunne gøre præcist det samme, hvis nævner og tæller var byttet.
+    </p>
+    <p class="t">
+    Vi kan med dette argument se, mere generelt, 
+    at én sum af funktioner divideret med en anden sum, vil 
+    nærme sig _(\infty_), hvis den dominerende funktion i tæller dominerer
+    den dominerende funktion i nævner, og _(0_) hvis det er modsat. Den vil
+    nærme sig en kontant, hvis begge funktioner er lige stærke. 
+    </p>
+
+    <q-stion 1="8" 2="2" bigTop="true">
+    Regn de følgende grænser:
+    <div style="margin-left:-61%; margin-top:25px; margin-bottom: -10px;">
+    _($\begin{eqnarray}
+        && \underline{\textbf{A}}: \, \, \, \, \, \, \lim_{x \to \infty} \left[\frac{x^3+2x+5}{x^4-20x^3} \right] \\  \\
+        && \underline{\textbf{B}}: \, \, \, \, \, \, \lim_{x \to \infty} \left[\frac{x^5+3x^3+2}{2x^5+19x} \right] \\  \\
+        && \underline{\textbf{C}}: \, \, \, \, \, \, \lim_{x \to \infty} \left[\frac{x!}{200x^6+3x^3} \right] \\  \\
+    \end{eqnarray}_)
+    </div>
+    <br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    Vi omskriver til:
+    _($\lim_{x \to \infty} \left[\frac{\frac{x^3}{x^4}+\frac{2x}{x^4}+\frac{5}{x^4}}{\frac{x^4}{x^4}-\frac{20x^3}{x^4}} \right]_)
+    Tælleren nærmer sig _(0_), fordi _(x^4_) dominerer overalt. 
+    Nævneren nærmer sig sig _(1_), da _(20x^3/x^4_) over tid vil 
+    forsvinde. Svaret er derfor:
+    _($\frac{0}{1}=0_)
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    I denne er de to dominerende funktioner lige stærke (fordi de er identiske...). 
+    Vi omskriver til:
+    _($\lim_{x \to \infty} \left[\frac{\frac{x^5}{x^5}+\frac{3x^3}{x^5}+\frac{2}{x^5}}{\frac{2x^5}{x^5}+\frac{19x}{x^5}} \right] =
+    \lim_{x \to \infty} \left[\frac{1+\frac{3x^3}{x^5}+\frac{2}{x^5}}{2 + \frac{19x}{x^5}} \right]_)
+    Tæller nærmer sig _(1_), og nævner nærmer sig _(2_). Det endelige svar er derfor
+    _($\frac{1}{2}_)
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{C}}_)#" tabColour="rgb(171,96,147)">
+    Vi dividerer alt med _(x!_):
+    _($\lim_{x \to \infty} \left[\frac{\frac{x!}{x!}}{\frac{200x^6}{x!}+\frac{3x^3}{x!}} \right]_)
+    Tælleren bliver til _(1_) og nævneren _(0_), siden _(x!_) dominerer _(x^6_) og _(x^3_).
+    Svaret er derfor:
+    _($\frac{1}{0} = \infty_)
+    <br></answer-box>
+
+    <p class="tt">
+    Vi bruger ofte domination i konteksten af de følgende funktioner:
+    _($\begin{alignat}{2}
+    & & & \qquad A     \\ 
+    && \Downarrow \\
+    & & & \qquad Ln(n) \\ 
+    && \Downarrow \\
+    & & & \qquad n^B   \\ 
+    && \Downarrow \\
+    & & & \qquad n^C   \\ 
+    && \Downarrow \\
+    & & & \qquad D^n   \\ 
+    && \Downarrow \\
+    & & & \qquad E^n   \\ 
+    && \Downarrow \\
+    & & & \qquad n!    
+    \end{alignat}_)
+    <!-- _($\begin{eqnarray}
+    && \Downarrow \, \, & A    \\ 
+    && \Downarrow \, \, & Ln(n)\\ 
+    && \Downarrow \, \, & n^B  \\ 
+    && \Downarrow \, \, & n^C  \\ 
+    && \Downarrow \, \, & D^n  \\ 
+    && \Downarrow \, \, & E^n  \\ 
+    && \Downarrow \, \, & n!   \\ 
+    && & n^n 
+    \end{eqnarray} _) -->
+    Hvor _(C \gt B_) og _(E \gt D \gt 1_). 
+    </p>
+    <!-- _($A, \text{ } Ln(n), \text{ } n^B, \text{ } n^C, \text{ } D^n, \text{ } E^n, \text{ } n!, \text{ } n^n, \qquad C \gt B, E \gt D \gt 1_) -->
+    <p class="t">
+    Alle funktioner på denne liste udover _(A_) vokser til
+    _(\infty_), og hver funktion dominerer
+    alle tidligere elementer. F.eks. dominerer _(Ln(n)_) funktionen _(A_), og 
+    _(D^n_) dominerer både _(A_), _(Ln(n)_), _(n^B_) og _(n^C_).
+    Den sidste funktion _(n^n_) dominerer alle de andre
+    </p>
+    
+    <div class="Theory">
+    <b> [5] Teori: Den dominerende liste</b> <br>
+    Sig at _(A,B,C,D_) alle er konstanter, og at _(C \gt B_), _(E \gt D \gt 1_). Se nu listen:
+    _($A, \text{ } Ln(n), \text{ } n^B, \text{ } n^C, \text{ } D^n, \text{ } E^n, \text{ } n!, \text{ } n^n_)
+    Hver funktion på denne liste dominerer alle de forrige funktioner på listen.
+    </div>
+
+    <p class="tt">
+    Lad os få det her bevist, èt trin ad gangen: 
+    </p>
+
+    <q-stion 1="8" 2="3" bigTop="true">
+    Bevis følgende: 
+    <div style="margin-left:-55%; margin-top:25px; margin-bottom: 0px;">
+    _($\begin{eqnarray}
+        && \underline{\textbf{A}}: \, \, \, \, \, \, Ln(n) & \text{ dominerer } \, \, \, A     \\ \\
+        && \underline{\textbf{B}}: \, \, \, \, \, \, n^B   & \text{ dominerer } \, \, \, Ln(n) \\ \\
+        && \underline{\textbf{C}}: \, \, \, \, \, \, n^C   & \text{ dominerer } \, \, \, n^B   \\ \\
+        && \underline{\textbf{D}}: \, \, \, \, \, \, D^n   & \text{ dominerer } \, \, \, n^C   \\ \\
+        && \underline{\textbf{E}}: \, \, \, \, \, \, E^n   & \text{ dominerer } \, \, \, D^n   \\ \\
+        && \underline{\textbf{F}}: \, \, \, \, \, \, n!    & \text{ dominerer } \, \, \, E^n   \\ \\
+        && \underline{\textbf{G}}: \, \, \, \, \, \, n^n   & \text{ dominerer } \, \, \, n!    
+    \end{eqnarray}_)
+    </div>
+    <p class="t">
+    _(\underline{\textbf{H}}_): <br>
+    Brug resultaterne fra de tidligere spørgsmål til at bevise teori [<b> 5 </b> ] 
+    </p>
+    <br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    Den her er let: _(Ln(n)_) nærmer sig _(\infty_), så vi får en konstant divideret 
+    med _(\infty_), hvilket bare giver _(0_). 
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Vi har:
+    _($\lim_{x \to \infty} \left[\frac{Ln(n)}{n^B} \right]_)
+    Begge nærmer sig _(\infty_), så vi bruger L'Hopitals og får:
+    _($\frac{\frac{1}{n}}{B*n^{B-1}} = \frac{1}{B*n^{B}} _)
+    ... som selvfølgelig går mod _(0_), når _(n \to \infty_)
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{C}}_)#" tabColour="rgb(171,96,147)">
+    Vi omskriver: 
+    _($\frac{n^B}{n^C} = \frac{1}{n^{C-B}}_)
+    _(C-B_) er positivt, så _(n^{C-B}_) nærmer sig _(\infty_). Brøken 
+    bliver derfor _(0_). 
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{D}}_)#" tabColour="rgb(175,128,161)">
+    Den her er lidt tricky. Både _(n^C_) og _(D^n_) nærmer sig _(\infty_), så vi <i>kan</i> bruge L'Hopitals,
+    men hvad vil det hjælpe? 
+    _(n^C_) bliver til _(C*n^{C-1}_) og _(D^n_) til _(Ln(D)*D^n_).
+    Det ser ikke ud til at være nemmere at arbejde med.  
+    <p class="t">
+    Det <i>er</i> faktisk brugbart dog:
+    Hvis vi bruger L'Hopitals <i>nok gange</i>, bliver potensen
+    på _(C^n_) eventuelt negativ! Grænsen vil nu tage formen:
+    _($\frac{1}{A*n^{p}*D^n}_)
+    Hvor _(A_) er en eller anden konstant, og _(p_) er en positiv eksponent. 
+    Det her går tydeligvis mod _(0_), så 
+    _(D^n_) dominerer _(n^C_). Bum!</p>
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{E}}_)#" tabColour="rgb(171,96,147)">
+    Det her er super nemt. Grænsen bliver til:
+    _($\lim_{x \to \infty}[ \, \left(\frac{D}{E} \right)^n]_)
+    Dette er et tal mindre end _(1_), opløftet til en potens af _(n_), så det nærmer sig _(0_)
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{F}}_)#" tabColour="rgb(175,128,161)">
+    Du kan se mit svar her:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter4\Limits\NFactorialDominates.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{G}}_)#" tabColour="rgb(171,96,147)">
+    Jeg ville nok omskrive det til:
+    _($\frac{n}{n}*\frac{n-1}{n}*\frac{n-2}{n}*...\frac{2}{n}*\frac{1}{n}_)
+    Hvert faktor er lig eller mindre end _(1_), så vi ved, at dette er mindre end:
+    _($\frac{1}{n}_)
+    Som nærmer  sig _(0_) når _(n \to \infty_). Det gør vores derfor også. 
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{H}}_)#" tabColour="rgb(175,128,161)">
+    Her skal jeg egentlig bare bevise følgende teori:
+
+    <div class="Theory" style="border:solid;">
+    <b> [6] Teori:</b> <br>
+    Hvis _(m(x)_) dominerer _(f(x)_), og _(f(x)_) dominerer _(g(x)_), så dominerer
+    _(m(x)_) også _(g(x)_)
+    </div>
+
+    <p class="tt">
+    Håber du kan se hvordan resultatet følger af denne teori. Anyways, beviset er relativt let:
+    _($\begin{align} 
+    \lim_{x \to \infty}\left[\frac{g(x)}{m(x)} \right] & = \lim_{x \to \infty}\left[\frac{g(x)}{m(x)}*\frac{f(x)}{f(x)} \right]  \\ \\
+    & =  \lim_{x \to \infty}\left[\frac{g(x)}{f(x)} \right]*\lim_{x \to \infty}\left[\frac{f(x)}{m(x)} \right] \\ \\
+    & = 0*0 \\ \\
+    & = 0 \\
+    \end{align}_)
+    _(\blacksquare_)
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <p class="tt">... Og lad os anvende det: </p>
+
+    <q-stion 1="8" 2="4" bigTop="true">
+    Løs de følgende grænser:
+    <div style="margin-left:-50%; margin-top:25px; margin-bottom: -10px;">
+    _($\begin{align}
+        \underline{\textbf{A}} & : \, \, \, \, \, \, \lim_{n \to \infty}\left[\frac{0.05n^n + 500 Ln(n)}{300n! + 900*15^n} \right] \\  \\
+        \underline{\textbf{B}} & : \, \, \, \, \, \, \lim_{n \to \infty}\left[\frac{7n! + 9n}{14n! + n^{17}} \right] \\  \\
+        \underline{\textbf{C}} & : \, \, \, \, \, \, \lim_{n \to \infty}\left[\frac{Ln(n)^2}{Ln(2n)} \right] 
+    \end{align}_)
+    </div>
+    <br><br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    _(0.05n^n_) i tælleren dominerer _(300n!_) i nævneren, så svaret er _(\infty_)
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    De dominerende funktioner i tæller og nævner er lige stærke, så svaret er:
+    _($\frac{7}{14} = 0.5_)
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{C}}_)#" tabColour="rgb(171,96,147)">
+    Her kan vi omskrive lidt til:
+    _($\frac{Ln(n)^2}{Ln(n)+0.693}_)
+    Den dominerende funktion er _(Ln(n)_) i nævneren og _(Ln(n)^2_) i tælleren. 
+    Vi tester nu:
+    _($\lim_{n \to \infty}\left[\frac{Ln(n)}{Ln(n)^2} \right] = \lim_{x \to \infty} \left[\frac{1}{Ln(n)} \right] = 0_)
+    Tæller dominerer altså nævneren, så svaret er _(\infty_). 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <p class="tt">
+    Vi har indtil videre set på:
+    _($\text{ Funktion } - \text{Dominerende funktion}_)
+    Og:
+    _($\frac{\text{ Sum af funktioner}}{\text{Sum af funktioner}}_)
+    Der er fire andre tidspunkter, hvor dominerende funktioner også kan hjælpe os:
+    _($
+    \begin{eqnarray} 
+    && \frac{(\text{Sum af funktioner})^{p_1}}{(\text{Sum af funktioner})^{p_2}}, &
+    \frac{Ln(\text{Sum af funktioner})}{(\text{Sum af funktioner})^{p_2}} \\ \\
+    && \frac{(\text{Sum af funktioner})^{p_1}}{Ln(\text{Sum af funktioner})}, &
+    \frac{Ln(\text{Sum af funktioner})}{Ln(\text{Sum af funktioner})}
+    \end{eqnarray}_)
+    Hvis vi f.eks. skal regne 
+    _($\lim_{n \to \infty} \left[\frac{(n^n+Ln(n)+15)^{0.6}}{Ln(n!+n^2+13n)} \right]_)
+    ... kan vi (for det meste) i stedet se på bare:
+    _($\lim_{n \to \infty} \left[\frac{(n^n)^{0.6}}{Ln(n!)} \right]_)
+    ... fordi _(n^n_) dominerer i tælleren, og _(n!_) dominerer i nævneren. 
+    For at forstå det, får vi brug for følgende teori: 
+    </p>
+
+    <div class="Theory">
+    <b>[4] Teori: Limit comparison test</b> <br>
+    Sig at _(f(n)_) og _(g(n)_) er lige stærke. Der er nu tre, og kun tre muligheder:
+    _($\begin{align}
+    \textbf{A:} \, \, \, \, & \text{De nærmer sig begge konstanter} \\ \\
+    \textbf{B:} \, \, \, \, & \text{De nærmer sig begge uendelig} \\ \\
+    \textbf{C:} \, \, \, \, & \text{De nærmer sig begge } 0 \\ \\
+    \end{align}_)
+    </div>
+
+    <p class="tt">
+    Det fortæller os, at du kan "sammenligne" to 
+    lige stærke funktioner. Du kan deducere vigtige konklusioner
+    om den 
+    ene funktion _(f(b)_), baseret på viden om den anden funktion _(g(n)_). 
+    </p>
+
+    <q-stion 1="8" 2="5" bigTop="true">
+    Bevis limit comparison test. Du er nødt til at opdele det i tre cases som i beviset. 
+    <br><br></q-stion>
+    <answer-box>
+    Vi opdeler det som sagt i cases: 
+    <div class="Proof">
+    <b> Bevis af limit comparison test:</b> <br>
+    Det antages, at _(f(n)_) og _(g(n)_) er to funktioner, og at:
+    _($\lim_{n \to \infty} \left[\frac{f(n)}{g(n)} \right] = k_)
+    <p class="t">
+    <i> Case 1: _(g(n) \to \infty _): </i> <br>
+    Antag at _(f(n)_) <i>ikke</i> nærmer sig _(\infty_). Brøken bliver nu 
+    et helt tal, divideret med noget der nærmer sig _(\infty_), så den er lig 
+    _(0_). Det er imod vores antagelse, så _(g(n)_) <i>må</i> ikke være andet 
+    end _(\infty_). _(\square_)
+    </p>
+    <p class="t">
+    <i> Case 2: _(g(n) \to 0_): </i> <br>
+    Antag at _(f(n)_) nærmer sig et konstant tal. Brøken bliver nu til et konstant tal, divideret
+    med noget der nærmer sig _(0_): Ergo _(\infty_). Det er imod vores antagelse. 
+    </p>
+    <p class="t">
+    Antag at _(f(n)_) nærmer sig _(\infty_). Vi har nu noget, der nærmer sig _(\infty_), divideret
+    med noget, der nærmer sig _(0_). Det gør brøken til _(\infty_), hvilket igen er mod antagelsen. _(\square_)
+    </p>
+    <p class="t">
+    <i> Case 3: _(g(n) \to A_):  </i> <br>
+    Antag at _(f(n)_) nærmer sig _(0_). Brøken bliver nu til noget, der nærmer sig _(0_) divideret
+    med en konstant. Det er lig _(0_), som bryder antagelsen.
+    </p>
+    <p class="t">
+    Antag at _(f(n)_) nærmer sig _(\infty_). Brøken bliver nu til noget, der nærmer sig _(\infty_) 
+    divideret med en konstant. Det er lig _(\infty_), som er imod antagelsen _(\square_), _(\blacksquare_)
+    </p>
+    </div>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="8" 2="6">
+    Brug limit comparison test til at regne følgende grænse:
+    _($\lim_{n \to \infty} \left[\frac{Ln(n^n+18^n)}{\sqrt{16^n+30n^7}} \right]_)
+    Et hint du måske får brug for: Man kan omskrive
+    _($f(x)+g(x)_)
+    ... til:
+    _($f(x)*\left(1+\frac{g(x)}{f(x)}\right)_)
+    <br></q-stion>
+    <answer-box>
+    Gennem limit comparison test kan man drage konklusioner om 
+    én grænse via en anden grænse, der måske er lettere at evaluere. 
+    I vores tilfælde er det nok en god ide at sammenligne med:
+    _($\lim_{n \to \infty} \left[\frac{Ln(n^n)}{\sqrt{16^n}} \right]_)
+    Man kunne intuitivt tænke, at de ikke-dominerende
+    led stopper med at have indflydelse, så forholdet mellem denne funktion og den originale <i>burde</i>
+    være konstant. Det er også en <i>lettere</i> funktion at evaluere. Vi kan omskrive, og regne den som:
+    _($\frac{n*Ln(n)}{4^n} \lt \frac{n*n}{4^n}_)
+    _(4^n_) dominerer _(n^2_), så funktionen er _(0_), siden den er 
+    mindre. Det samme kan vi sige om vores originale
+    funktion, <i>hvis</i> limit comparison test giver os en konstant:
+    _($\begin{eqnarray}
+    && \lim_{n \to \infty} \left[\frac{\frac{Ln(n^n+18^n)}{\sqrt{16^n+30n^7}}}{\frac{Ln(n^n)}{\sqrt{16^n}}} \right] =  \\ \\
+    && \lim_{n \to \infty} \left[\frac{Ln(n^n+18^n)}{Ln(n^n)} / \frac{\sqrt{16^n+30n^7}}{\sqrt{16^n}} \right] = \\ \\
+    && \lim_{n \to \infty} \left[\frac{Ln(n^n+18^n)}{Ln(n^n)} \right] / \left(\sqrt{1+\lim_{n \to \infty} \left[\frac{30n^7}{16^n} \right]} \right) 
+    \end{eqnarray}_)
+    _(16^n_) dominerer _(30n^7_), så:
+    _($\sqrt{1+\lim_{n \to \infty} \left[\frac{30n^7}{16^n} \right] } = 1_)
+    Vi kan opdele og evaluere logaritmen ved at lave 
+    _(n^n+18^n_) om til _(n^n*(1+18^n/n^n)_):
+    _($\lim_{n \to \infty} \left[\frac{Ln \left(n^n*(1+\frac{18^n}{n^n}) \right)}{Ln(n^n)} \right] =
+    1 + \lim_{n \to \infty} \left[\frac{Ln(1+\frac{18^n}{n^n})}{Ln(n^n)} \right] _)
+    Tælleren går mod _(Ln(1)=0_), og nævneren _(Ln(n^n)_) nærmer sig _(\infty_). Alt i alt får vi:
+    _($(1+\frac{0}{\infty})/1 = 1_)
+    Det er en konstant! Limit comparison test virker, så svaret på vores originale
+    grænse er _(0_). Brilliant!
+
+    <p class="cent">
+        *
+    </p>
+
+    <p class="t">
+    Man kan (relativt let) se,
+    at dette argument virker, uanset hvilke og hvor mange funktioner
+    vi har i _(Ln_) og _(\sqrt{}_). Det eneste vigtige for os,
+    var at èn funktion dominerede den anden. Man kan også let
+    se, at det ville have virket med andre potenser end _(\sqrt{}_), og at
+    det fint ville virke, hvis begge var _(Ln_), eller begge var potenser. 
+    </p>
+
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="8" 2="7">
+    Nærmer følgende grænse sig _(0_), en konstant, eller _(\infty_)? 
+    _($\lim_{x \to \infty} \left[\frac{Ln(x^x+e^x)}{Ln(x^x+2^x+x^3)} \right]_)
+    <br></q-stion>
+    <answer-box>
+    Vi bruger det generelle resultat fra sidste opgave, og ser i stedet på
+    _($\lim_{n \to \infty} \left[\frac{Ln(x^x)}{Ln(x^x)} \right]_)
+    Det er tydeligvis _(1_). Vores funktion nærmer sig derfor en konstant. 
+    <p class="t">
+    Den her strategi <i>er</i> nice og kraftig, men også begrænset:
+    Den kan ikke fortælle os <i>hvilken</i> konstant vores funktion nærmer sig. 
+    Det kan vi dog få en ide om, ved at teste resultatet ved
+    et _(x_) tæt på grænsen. 
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="8" 2="8">
+    Vurder om de følgende grænser nærmer sig _(0_), konstanter, eller _(\infty_): 
+    <div style="margin-left:-45%; margin-top:25px; margin-bottom: -10px;">
+    _($\begin{eqnarray}
+        && \underline{\textbf{A}}: \, \, \, \, \, \, \lim_{x \to \infty}\left[\frac{Ln(x^4+1732 x^3)}{(2^x*370+3^x)^{0.43}} \right] \\ \\
+        && \underline{\textbf{B}}: \, \, \, \, \, \, \lim_{x \to \infty}\left[\frac{(x^x + 5^x)^{0.3}}{(e^x + 16x^2)^{2.6}} \right] \\ \\
+        && \underline{\textbf{C}}: \, \, \, \, \, \, \lim_{x \to \infty}\left[\frac{\sqrt{\frac{5^x+x^3}{4^x+600*Ln(x)}}}{Ln \left(x^x + \frac{1}{5}*Ln(x^{(x^x)}) \right)} \right] 
+    \end{eqnarray}_)
+    </div>
+    <br><br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    Du kan se mit svar her:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter4\Limits\DominantTerm5.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Du kan se mit svar her:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter4\Limits\DominantTerm6.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{C}}_)#" tabColour="rgb(171,96,147)">
+    Du kan se mit svar her:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter4\Limits\DominantTerm7.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+
+
+
+
+

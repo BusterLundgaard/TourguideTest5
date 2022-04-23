@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+
+
+    <h2>Polynomier</h2>
+
+    <p class="t">
+    Vi har stødt på andengradsfunktionen _(ax^2+bx+c_) flere gange nu.
+    En andengradsfunktion et en såkaldt <i>polynomie</i>.
+    En polynomie generelt er et udtryk der følger:
+    _($a_0 + a_1 x + a_2 x^2 \text{ } + \text{ } ... \text{ } a_{n-1}x^{n-1} + a_nx^n_) 
+    ... hvor _(a_)'erne er koefficienter/tal, _(n_) er et helt og positivt tal, og _(x_) er vores ukendte. 
+    En andengradsfunktion går op til _(n=2_), så det kaldes hyppigt for et <i>andengradspolynomie</i>. 
+    </p>
+    <p class="t">
+    Man støder tit på polynomier, både i den teoretiske og rigtige verden. De
+    er derfor vigtige at kende og studere: 
+    </p>
+
+    <q-stion 1="17" 2="1">
+    Hvilke af de følgende udtryk er polynomialer?
+    <div style="margin-left:-49%; margin-top:25px; margin-bottom: -10px;">
+    _($\begin{eqnarray}
+        && \underline{\textbf{A}}: \, \, \, \, \, \, 30x \\  \\
+        && \underline{\textbf{B}}: \, \, \, \, \, \, -5 \\  \\
+        && \underline{\textbf{C}}: \, \, \, \, \, \, \pi*x^5 - 3.09x^2 + 234 \\  \\
+        && \underline{\textbf{D}}: \, \, \, \, \, \, 12x^2 + 5x - 20 + 3x^{-1} + 6x^{-2} \\  \\
+    \end{eqnarray}_)
+    </div>
+    <br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    Ja. Det passer til _(a_0+a_1*x_), hvor _(a_0=0_), og _(a_1=30_)
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Ja, alle _(a_) undtagens _(a_0_) er bare sat til _(0_). 
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{C}}_)#" tabColour="rgb(171,96,147)">
+    Ja. Vi kan godt have mærkelige koefficienter som _(\pi_), og 
+    det er helt fint, hvis nogen _(a_) som _(a_4, a_3, a_1_) er sat til _(0_).
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{D}}_)#" tabColour="rgb(175,128,161)">
+    Nej. Der kan ikke være negative eksponenter.
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="17" 2="2">
+    De steder hvor et polynomie er _(0_) kalder vi nulpunkter - meget kreativt.
+    Jeg har nu to opgaver:
+    <p class="t">
+    _(\underline{\textbf{A}}_): <br> 
+    Konstruer/lav et polynomie med nulpunkterne 
+    _($x=-42,-10.5,\pi^2,6_)
+    Her anbefaler jeg, som et hint, at du husker tilbage til opgaven med:
+    _($((3x^2 + 4x - 5)*(7x+5)=0_)
+    _((3x^2+4x-5)*(7x+5)_) er jo også et polynomie når du ganger parenteserne ind i hinanden.
+    Den er bare ikke skrevet på den standard måde. 
+    </p>
+    <p class="t">
+    _(\underline{\textbf{B}}_): <br> 
+    Lav nu, lidt mere specifikt, et polynomie med nulpunkterne 
+    _($x=-2,3,5,10,15,16_)
+    ... hvor kurven er negativ når den er bag _(-2_), positiv når den er mellem _(-2_) og _(5_),
+    negativ mellem _(5_) og _(15_), og positiv efter _(15_). 
+    </p>
+    <p class="t">
+    Opgave 2 her er en smule på den tricky side!
+    </p>
+    <br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    Et simpelt eksempel kunne være 
+    _($(x+42)*(x+10.5)*(x-\pi^2)*(x-6)_)
+    Man kan nemt se, at den her er _(0_) når _(x+42=0 \to x=-42_), osv. 
+    Et andet eksempel der følger præcist samme logik er 
+    _($-33*(x+42)^4*(x+10.5)*(x-\pi^2)^3*(x-6)^7_)
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Her kan vi gøre lidt ligesom før og sige:
+    _($(x+2)*(x-3)*(x-5)*(x-10)*(x-15)*(x-16)_)
+    Det opfylder kravet med nulpunkterne, men <i>ikke</i> nødvendigvis negativitet/positivitet. 
+    <p class="t">
+    Lad os prøve at tegne en kurve, og tænke over hvad der sker ved nulpunkterne: 
+    </p>
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter2\Section3\Solutions\KurveNulpunkter.png'> 
+    <p class="t">
+    Ved hvert nulpunkt kan der ske to ting: 
+    positiviteten / negativiteten ændrer sig, 
+    positiviteten / negativiteten ændrer sig ikke. 
+    </p>
+    <p class="t">
+    I vores setup lige nu vil negativiteten / positiviteten ændre sig <i>konstant</i>. 
+    Sig at vi nærmer os nulpunktet hvor _(x_) er mindre end _(5_) men større end _(-3_). 
+    De to faktorer _((x+2)_) og _((x-3)_) er positive, 
+    resten af faktorerne _((x-5)_), _((x-10)_), _((x-15)_) og _((x-16)_) er negative. 
+    Alt i alt har vi:
+    _($+ \, * \, + \, * \, - \, * \, - \, * \, - \, * \, - \, = \, +_)
+    Grafen er altså positiv lige bag _(x=5_). Foran _(x=5_) er
+    _((x-5)_) nu positiv, så:
+    _($+ \, * \, + \, * \, + \, * \, - \, * \, - \, * \, - \, = \, -_)
+    Nu er grafen negativ! Hver gang vi går forbi et nulpunkt, vil antallet
+    af negative produkter _((x-a)_) i polynomiet skifte mellem ulige og lige.
+    Derfor vil kurven hele tiden skære _(x_)-aksen og skifte mellem positiv og negativ. Hvad gør vi?
+    </p>
+    <p class="t">
+    Vi gør noget ret smart. 
+    Negativiteten vil <i>ikke</i> ændre sig ved _(x=5_), hvis vi i stedet
+    havde sagt 
+    _($(x+2)*(x-3)*(x-5)^2*(x-10)*(x-15)*(x-16)_)
+    Faktoren
+    _((x-5)^2_) er <i>aldrig</i> negativ, så der er ikke nogen negativitet
+    der skifter når vi går over _(5_). Bum! 
+    </p>
+    <p class="t">
+    Kravene sagde, at negativiteten skulle skifte ved _(-2_), _(5_) og _(15_).
+    Den skal forblive identisk ved alle andre nulpunkter, så:
+    _($(x+2)*(x-3)^2*(x-5)*(x-10)^2*(x-15)*(x-16)^2_) 
+    Bag det bagerste nulpunkt ved _(x \lt -2_) er negativiteten lige nu 
+    _($(-1)*(-1)*(-1)=-1_)
+    ... hvilket passer perfekt. Done!
+    </p>
+    <br></answer-box>
+
+    <q-stion 1="17" 2="3">
+    Løs:
+    _($x^3 + 8x^2-\frac{278}{8}x+65 = 343_)
+    Vi har løst mange ligninger med andengradspolynomier, men 
+    et tredjegradspolynomie er mellem svært og umuligt at løse i hånden helt generelt
+    (formlen er i hvert fald meget stor). 
+    <p class="t">
+    Det er dog muligt i <i>bestemte</i> tilfælde, og jeg har valgt koefficienterne
+    netop så dette polynomie blev "nemt" at løse. 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Vi starter nok med at flytte _(343_), for at få _(0_) på højre side.
+    _(65-343=-278_), så:
+    _($x^3 + 8x^2-\frac{278}{8}x-278 = 0_)
+    Sikke et tilfælde, hva? Nu kan vi sige:
+    _($x^3 + 8x^2 - 278*\left(\frac{1}{8}x + 1 \right)_)
+    _(8_) er i både _(8x^2_) og _(\frac{1}{8}x_). Kan det udnyttes? 
+    Faktisk ja! _(x^3+8x^2_) kan omskrives til _(8x^2*(\frac{1}{8}x+1)_), så:
+    _($8x^2*\left(\frac{1}{8}x+1 \right) - 278*\left(\frac{1}{8}x + 1 \right) = 0_)
+    Det bliver let til:
+    _($\left(\frac{1}{8}x+1 \right)*(8x^2 - 278) = 0_)
+    Nu har vi et førstegradspolynomie ganget med et andengradspolynomie.
+    Dres nulpunkter kan udregnes snildt! _(x/8 + 1 = 0_) er sandt
+    ved _(x=-8_) og _(8x^2-278=0_) ved _(x = \pm 5.894_). Alt i alt får vi:
+    _($x = -8, \, -5.894, \, 5.984_)
+    Hurra!  
+    <br><br></answer-box>
+
+

@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+
+
+    <h3>Det kontinuerlige tilfælde</h3>
+
+    <p class="t">
+    Udfaldsrummet _(S_) i en kontinuerlig stokastisk variable
+    er <i>utælleligt</i> uendeligt stort. 
+    Det, der kan være tricky at forstå, er at vi <i>stadig</i>
+    kan behandle det som et sæt. Vi kan stadig udvælge elementer 
+    _(s_) fra sættet, tage subsets _(A_), alt muligt.
+    Det <i>er</i> muligt at gå mere i dybden med præcist hvordan 
+    man tænker over utælleligt store sæts og tal, men 
+    ikke specielt vigtigt for, at vi kan forstå og arbejde med kontinuerlig sandsynlighed. 
+    </p>
+
+    <p class="t">
+    I det diskrete tilfælde associerede vi hvert element _(s_) 
+    i sættet med en bestemt sandsynlighed _(p_s_). Det 
+    <i>er</i> fint muligt at beskrive hvert element i et 
+    utælleligt sæt med et <i>tal</i>, men det tal vil ikke
+    hjælpe os med at finde nogle sandsynligheder. 
+    Vi kan ikke længere sige, at vi "lægger alle elementernes sandsynligheder sammen", 
+    fordi sådan en sum er umulig og giver ingen mening, 
+    når vi har utælleligt mange elementer. Vi vælger i stedet 
+    at sige, at vores udfaldsrum _(S_) består af:
+    </p>
+
+    <ul style="list-style:disc; margin-left:5%;">
+        <li>Selve listen af elementer, ofte kaldt _(\Omega_)</li>
+        <li>En liste _(F_) over alle mulige <i>begivenheder</i> i _(\Omega_) samt deres associerede sandsynlighed</li>
+    </ul>
+
+    <p class="t">
+    ...Hvor en begivenhed bare er et subsæt _(A_) af udfaldene _(\Omega_). 
+    </p>
+    <p class="t">
+    Denne definition giver super god mening. Det er umuligt at associere
+    en <i>specifik værdi</i> med en sandsynlighed, men  
+    muligt og nemt at associere <i>en række værdier</i>.
+    Vi har også regnet sandsynligheder på intervaller gennem hele dette kapitel! 
+    Med denne definition behøver vi ikke længere lægge uendelig mange små sandsynligheder
+    sammen, siden <i>alle</i> mulige sandsynligheder (begivenheder)
+    allerede er regnet og indkodet <br> i udfaldsrummet _(S_)! 
+    </p>
+    <p class="t">
+    Sig som eksempel at _(\Omega_) var 
+    alle mulige længder, folk kunne kaste en bold på en 
+    _(90_)m lang bane. Her er _(\Omega_) altså sættet 
+    af alle utællelig mange tal mellem _(0_) og _(90_). 
+    Sig for nemhedens skyld, at der af en eller anden mystisk 
+    grund er lige stor chance for, at et hvilket som helst 
+    sted på banen bliver ramt (det er nok i virkeligheden normalfordelt). 
+    Nu kan vi nemt 
+    regne, at boldens sandsynlighed for at lande på 
+    f.eks _([30,45]_) er _(15/90=0.166_). Helt generelt 
+    kan vi definere <i>en funktion</i>. Hvis _(a_), _(b_) er
+    to konstanter hvor _(0 \lt a \lt b \lt 90_), er 
+    sandsynligheden for at bolden lander på _([a,b]_) lig:
+    _($\frac{b-a}{90}_)
+    Bemærk at _(F_) ikke er en liste over <i>alle</i> 
+    mulige subsæts af _(\Omega_), men kun dem vi er <i>interesserede i</i>, og 
+    der, hvor det faktisk giver mening at tænke over 
+    sandsynligheden. I vores tilfælde - der hvor 
+    _(\Omega=[0,90]_) - kan man lave vildt mærkelige 
+    subsæts, hvis man har lyst: Et subsæt over alle hele tal, et subsæt over alle 
+    irrationelle tal mellem _(3_) og _(11_). You name it. 
+    Vi er kun (i vores situation) interesseret i subsæts af _([0, 90]_),
+    der svarer til <i>andre intervaller</i> _([a,b]_): 
+    Andet bliver for tricky at tilpasse en sandsynlighed. 
+    </p>
+    <p class="t">
+    Det er også vigtigt, at vi kan finde sandsynligheden af "eller" og "og". 
+    Hvis det er muligt at finde sandsynligheden for at lande på både _([10, 20]_) og
+    _([50, 60]_), burde det også være muligt at finde sandsynligheden
+    for at "lande på _([10, 20]_) <i>eller</i> _([50, 60]_)". Hvis
+    det er muligt at finde sandsynligheden for at lande på
+    både _([10, 20]_) og _([15, 30]_), burde det også være muligt
+    at finde sandsynligheden for at "lande på _([10, 20]_) <i>og</i> _([15,30]_)".
+    Mere generelt: hvis 
+    _(A_) og _(B_) er subsæts af _(\Omega_) i _(F_),
+    burde _(A \cup B_) og _(A \cap B_) <i>også</i> være
+    elementer i _(F_). Hvis _(A_) og _(B_) ikke deler nogen elementer, 
+    burde det logisk nok gælde, at sandsynligheden
+    for at _(A_) <i>eller</i> _(B_) sker er _(p(A)+p(B)_). 
+    Så den <i>rigtige</i> formelle definition på 
+    et kontinuerligt udfaldsrum er følgende:
+    </p>
+
+    <div class="Definition">
+    <b> Definition: Kontinuerligt udfaldsrum</b> <br>
+    Et kontinuerligt udfaldsrum _(S_) er en samling _((\Omega, F, p)_) af tre ting: 
+    <p class="t">
+    _(\Omega_) er et utælleligt stort sæt, der 
+    beskriver alle de mulige udfald situationen modellerer.
+    </p>
+    <p class="t">
+    _(F_) er en samling af <i>udvalgte</i> begivenheder (subsæts) i _(\Omega_). 
+    Det påkræves, at _(A \cup B_) og _(A \cap B_) er elementer af _(F_), hvis
+    _(A_) og _(B_) er elementer af _(F_). 
+    </p>
+    <p class="t">
+    _(p_) er en funktion 
+    _($F \to [0,1]_)
+    ... der er gyldig for et hvert element _(f_) i _(F_), og associerer _(f_)
+    med et tal mellem _([0,1]_) (en sandsynlighed). Det påkræves at unionen
+    af <i>alle</i> elementer i _(F_) burde være _(1_), og at 
+    _($p(A \cap B)=p(A)+p(B)_)
+    ... hvis _(A, B \in F_) ikke deler nogen elementer.
+    </p>
+    </div>
+
+    <p class="tt">
+    Så i eksemplet deroppe er _(\Omega_) lig det 
+    utællelige sæt af alle mulige tal fra _(0_) til _(90_), 
+    _(F_) er samlingen af subsæts i _(\Omega_), der 
+    er lig intervaller og/eller unioner af intervaller, og _(p_) er
+    en funktion 
+    _($p(A)=\frac{L(A)}{90}_)
+    ... hvor _(L_) er "længden" _(A_) repræsenterer. 
+    Vi kan se, at unionen af to sæts uden delte elementer
+    _(A_1_), _(A_2_) har en længde på _(L_1+L_2_), så:
+    _($p(A_1 \cup A_2) = \frac{L_1+L_2}{90} = \frac{L_1}{90}+\frac{L_2}{90} = P(A_1)+P(A_2)_)
+    Vi kan også let se, at længden af unionen af alle 
+    intervaller er _(90_), så sandsynligheden 
+    af denne union er _(90/90=1_).
+    </p>
+    <p class="t">
+    Vi kunne også lave en lidt mere kompliceret _(p_). 
+    Sig f.eks at _(p_) defineres på følgende vis 
+    for en begivenhed _(A_), der kan ses som en union 
+    af begivenheder uden delte elementer _(A_1, A_2, \dots A_n_):
+    _($p(A)=p(A_1)+p(A_2) \, + \, \dots \, P(A_n)_)
+    ... hvor hver individuel _(P(A_i)_) kan regnes som:
+    _($\int_{\text{min}(A_i)}^{\text{max}(A_i)} 2.3-0.05x \, dx _)
+    Integralet fortæller os intuitivt, at sandsynligheden 
+    falder lineært som kastet bliver længere.
+    Lige dette integral er valgt, da: 
+    _($\int_{0}^{90} 2.3-0.05x \text{ }dx = 2.3*90 - 0.05*\frac{90^2}{2} = 1_)
+    _(\text{min}_) og _(\text{max}_) på unionen 
+    af alle begivenheder er henholdsvis _(0_)
+    og _(90_). 
+    </p>
+
+    <p class="pageSplitter">*</p>
+
+    <p class="t">
+    Et tilfældigt variable kan vi definere som: 
+    </p>
+
+    <div class="Definition">
+    <b> Definition: Stokastisk variable (kontinuerlig)</b> <br>
+    Sig at _(\Omega_) og _(F_) er henholdsvis 
+    sættet af elementer og sættet med begivenheder på 
+    udfaldsrummet _(S_). Sig nu at _(\Omega_2_) er et andet 
+    sæt af elementer, og at _(F_2_) er 
+    et sæt af begivenheder i _(\Omega_2_) (som har de samme 
+    egenskaber som _(F_) i forhold til unioner og skæringer). 
+    <p class="t">
+    En stokastisk variable _(X_) kan nu defineres som en 
+    funktion fra _(\Omega_) til _(\Omega_2_) med følgende egenskab:
+    </p>
+    <p class="t">
+    Hvis _(A_) er et element i _(F_2_) og _(B_), en 
+    samling af alle elementer _(s \in \Omega_), hvor 
+    _(X(s) \in A_), er _(B_) et element af _(F_). 
+    </p>
+    </div>
+
+    <p class="tt">
+    Intuitivt: Hver begivenhed i _(\Omega_2_) er 
+    associeret med en unik begivenhed i _(\Omega_)
+    </p> 
+    <p class="t">
+    Denne definition giver god mening når man tænker over, hvordan sandsynligheder
+    på elementer i _(X_) konkret skal regnes.
+    Der kan som altid ikke tillægges sandsynligheder til nogen individuelle
+    elementer i _(X_)'s _(\Omega_2_), så
+    vi finder sandsynligheden på en bestemt begivenhed _(A_) i _(X_)'s _(F_2_) ved
+    at bruge _(p_)-funktionen på den associerede begivenhed _(B_) i _(F_). 
+    Matematisk set er det fuldkommen pointeløst og tjener kun os mennesker ved
+    at oversætte _(\Omega_) og _(F_) til størrelser 
+    _(\Omega_2_), _(F_2_), der måske er mere intuitive og forståelige.
+    </p>
+    <p class="t">
+    Ét ret forståeligt og brugbart _(\Omega_2_) er sættet over <i>tal</i> _(\mathbb{R}_).
+    Definitionen på stokastiske kontinuerlige variabler <i>virker</i> meget anderledes fra 
+    definitionen på diskrete, primært fordi den er mere <i>generel</i>. Før var _(Q_2_) altid
+    tal, nu er det generelt bare et sæt. I realiteten
+    vælger vi dog stort set altid dette sæt _(\Omega_2_) til et interval _([a, b]_) 
+    eller endnu oftere bare <i>alle</i> de reelle tal _(\mathbb{R}_). 
+    </p>
+    <p class="t">
+    Man kan kun tænke over cdf'en og pdf'en, hvis _(\Omega_2_) er et sæt af tal. 
+    For et bestemt tal _(x_) i _([a,b]_)
+    svarer _(\text{cdf}(x)_) til sandsynligheden for begivenheden 
+    _([a,x]_) i _(F_2_). Dette <i>er</i> en begivenhed,
+    da _([a,x]_) jo er et subsæt af _(F_2_). Herfra kan cdf'en findes, ved at 
+    bruge _(p_)-funktionen på den begivenhed _(B_) i _(F_), der svarer til _([a,x]_) i _(F_2_). 
+    Pdf'en kan som altid findes ved at differentiere _(\text{cdf}(x)_).
+    <i>Teknisk set</i> burde vi her bevise, hvorfor 
+    det overhovedet kan siges, at _(cdf'en_) er kontinuerlig, men det er lidt 
+    for tricky til os. 
+    </p>
+
+    <p class="pageSplitter">*</p>
+
+    <p class="t">
+    _(\text{pdf}(x)*dx_) giver sandsynligheden 
+    på et lille område _([x, x+dx]_). Det giver
+    derfor også fint mening, at gennemsnit og varians 
+    på en stokastisk variable _(X_) kan defineres som:
+    </p>
+
+    <div class="Definition">
+    <b> Definition: Gennemsnit af kontinuerlig 
+    stokastisk variable (udvidet)</b> <br>
+    Sig at den stokastiske variable _(X_) mapper _(\Omega_) til 
+    intervallet _([a, b]_). "Gennemsnittet" _(E(x)_) af _(X_) defineres nu som:
+    _($\int_{a}^{b} x*\text{pdf}(x) \text{ }dx_)
+    </div>
+
+    <div class="Definition">
+    <b> Definition: Varians af en kontinuerlig stokastisk variable (udvidet): </b> <br>
+    Sig at den stokastiske variable _(X_) mapper _(\Omega_) til 
+    intervallet _([a, b]_), og at _(E(x)=\mu_). "Variansen" _(V(X)_) defineres
+    nu som:
+    _($\int_{a}^{b} (x-\mu)^2*\text{pdf}(x) \text{ }dx_)
+    </div>
+
+    <p class="tt">
+    Kontinuerlige stokastiske variabler er stadig funktioner, og vi kan
+    lave algebra med dem på præcist samme måde som før. 
+    Ved diskrete stokastiske variabler var det praktisk 
+    talt umuligt at beskrive sandsynligheden
+    af _(X+Y_), _(X*Y_), _(2*X_) eller lignende udtryk, hvis 
+    man intet vidste om _(X_), _(Y_) osv. Ved kontinuerlige
+    stokastiske variabler er det <i>kind of</i> muligt via integraler.
+    </p>
+
+    <q-stion 1="7" 2="1" bigTop="true">
+    Sig at _(X_) er en stokastisk variable på udfaldsrummet _(S_) der mapper til
+    intervallet _([a,b]_). Kald _(X_)'s pdf for _(f_). Beskriv nu cdf'en på 
+    _($Z=1.4*X_) 
+    ...ved hjælp af en integral. 
+    <br><br></q-stion>
+    <answer-box>
+    _(X_)'s henholdsvis laveste og største værdi er _(a_) og _(b_). Det betyder
+    at _(Z_) går fra
+    _($Z(a)=1.4*a \, \, \, \text{til} \, \, \, Z(b)=1.4*b_)
+    Vi leder efter _(\text{cdf(z)}_), hvor _(z_) er en vilkårlig værdi i _([1.4a, 1.4b]_).
+    Vi søger med andre ord efter chancen for _(Z \in [1.4a, z]_). Det
+    er en <i>begivenhed</i> i det stokastiske variable _(Z_)'s begivenhedssæt _(F_2_), som
+    korresponderer til en bestemt begivenhed i _(X_). Vi har fundet chancen for
+    vores begivenhed, hvis vi bare regner chancen for begivenheden i _(X_)! 
+    <p class="t">
+    Det ses let, at _(Z \in [1.4a, z]_), hvis _(X \in [a, z/1.4]_). Nu regner vi bare
+    _($P(X \in [a, z/1.4]) = \int_{a}^{z/1.4} f(x) \, dx _)
+    Ergo:
+    _($\text{cdf}(z) = \int_{a}^{z/1.4} f(x) \, dx _)
+    Bum! Denne _(\text{cdf}_) kan måske differentieres, så vi opnår _(Z_)'s pdf!
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <p class="tt">
+    Lad mig vise et eksempel på hvad vi gør, når _(Z_) 
+    er en funktion af flere variabler, f.eks.
+    _($Z=X+Y_)
+    Sig at _(X_) og _(Y_) er <i>selvstændige</i> stokastiske variabler, at _(X_) mapper
+    til _([-2,5]_), og at _(Y_) mapper til _([3,7]_). _(\text{cdf}_Z(z)_) svarer til chancen for 
+    at _(Z \lt z_), ergo at 
+    _($X+Y \lt z_)
+    Eksempelvis betyder _(z=6_) at _(X+Y \lt 6_). Det kan visualiseres som:
+    </p>
+    <img class='SpicXL' style='width:80%' src='../../../Assets/Chapter4\KontinuerligProb\StochasticArea1.png'> 
+    <p class="t">
+    Det blå areal opfylder alle vores krav: _(x_) og _(y_) er på 
+    de rigtige intervaller, og _(y_) er mindre end _(6-x_). _(\text{cdf}_Z(z)_) 
+    kan beskrives som sandsynligheden
+    for, at _(X_) og _(Y_) er på dette område _(R_z_).
+    </p>
+    <p class="t">
+    Sandsynligheden for, at _(X_) og _(Y_) er 
+    på et lille kvadrat ved _((x,y)_) med længde 
+    _(dx_) og bredde _(dy_) er 
+    _($f(x)dx*g(y)dy = f(x)g(y) \, dA_)
+    Så:
+    _($\text{cdf}_Z(z) = \int_{R_z} \int f(x) g(y) \, dA _)
+    Som et konkret eksempel kan det ses, at:
+    _($cdf_Z(6) = \int_{-2}^{1} \int_{3}^{7} f(x)g(y) \text{ }dy \text{ }dx + \int_{-1}^{3} \int_{3}^{6-x} f(x)g(y) \text{ }dy \text{ }dx_)
+    Man skal altså "bare" tage en dobbelt-integral af 
+    _(f(x)*g(y)_) på ens område, hvis man arbejder
+    med flere variabler! Det er en tredobbelt-integral med 
+    tre variabler, firdobbelt med fire, 
+    femdobbelt med fem osv. 
+    Funktionen af _(X_) og _(Y_) ændrer ikke på integralet, kun dets <i>område</i>. Det er
+    endda en relativ nem integral, siden _(x_) og _(y_) er helt "opdelt" i to produkter. 
+    Fantastisk!
+    </p>
+
+    <!--  -->
+    
+    <q-stion 1="7" 2="2" bigTop="true">
+    Sig at _(X_) mapper til _([1, \infty]_), og at _(Y_) mapper 
+    til _([-\infty,\infty_)]. De er begge selvstændige. 
+    Beskriv nu cdf'en til _(Z=X*Y_) med en dobbelt-integral.
+    <br><br></q-stion>
+    <answer-box>
+    Vi ved, at
+    _($x*y \lt z \, \, \, \to \, \, \, y \lt z/x_)
+    _(x_) går fra _(1_) til _(\infty_), så vores område ser intuitivt ud som:
+    <img class='SpicXL' style='width:90%' src='../../../Assets/Chapter4\KontinuerligProb\StochasticArea2.png'> 
+    <p class="t">
+    Det kan derfor regnes som:
+    _($\text{cdf}(z) = \int_{1}^{\infty} \int_{-\infty}^{z/x} f(x)g(y) \text{ }dy \text{ }dx_)
+    Det virker også fint ved negative _(z_)
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="7" 2="3">
+    Sig nu, at _(X_) og _(Y_) er to selvstændige variabler, der 
+    begge mapper til intervallerne _([-\infty, \infty]_), og at 
+    _($Z=aX+bY_) 
+    ... hvor _(a_) og _(b_) er konstanter. Beskriv _(\text{cdf}(z)_) med en dobbelt-integral. 
+    <br><br></q-stion>
+    <answer-box>
+    For en hvilken som helst værdi _(z_) ved vi at:
+    _($ax+by \lt z \, \, \, \to \, \, \, y \lt \frac{z}{b} - \frac{a}{b}x_)
+    Så _(x_) går fra _(-\infty_) til _(\infty_), og _(y_) går fra _(-\infty_) til 
+    _(z/b - (a/b)x_). Derfor er dobbelt-integralet lig:
+    _($\int_{-\infty}^{\infty} \int_{-\infty}^{\frac{z}{b}-\frac{a}{b}x} f(x)g(y) \text{ }dy \text{ }dx_)
+    <br></answer-box>
+
+    <!--  -->
+
+    <p class="tt">
+    Sig at 
+    _($Z=F(X,Y)_) 
+    ... hvor _(X_) mapper til _([a,b]_) og _(Y_) mapper til _([c,d]_). 
+    Gennemsnittet af _(Z_) svarer til, at vi ganger hver værdi af 
+    _(z_) med dens sandsynlighed for at ske. Vi <i>kunne</i> forsøge at regne
+    _($\int_{-\infty}^{\infty} z*\text{pdf}(z) \text{ }dz _)
+    ... men det bliver meget avanceret og kræver først og fremmest, at vi finder 
+    _(\text{pdf}_)'en på _(Z_). Der findes en langt bedre strategi:
+    _(Z_) er en eller anden funktion af _(X_) og _(Y_). 
+    _(X_) mapper til _([a,b]_) og _(Y_) mapper til _([c,d]_), så 
+    de definerer samlet set et areal. 
+    Tricket er, at hvert punkt _((x,y)_) svarer til en bestemt _(z_) værdi, 
+    så vi har gennemgået alle _(z_)-værdier, hvis vi gennemgår hvert punkt på dette areal. 
+    Det er intet problem, hvis to punkter har samme _(z_)-værdi: Det betyder bare, at
+    den _(z_) værdi har en større chance for at ske! 
+    </p>
+    <p class="t">
+    Så vi opdeler 
+    arealet defineret af _(X_) og _(Y_) i mange små arealer med _(dx_) bredde og _(dy_) længde.
+    På hvert areal ganger vi _(z_)-værdien _(F(x,y)_) med sandsynligheden
+    for at _(X_) og _(Y_) er på arealet. Gennemsnittet af _(Z_) kan nu regnes som:
+    _($\int_R \int F(x,y)*f(x)g(y) \, dA_)
+    Hvor _(R_) er regionen defineret af _(X_) og _(Y_)
+    </p>
+
+    <q-stion 11="7" 2="4" bigTop="true">
+    Sig at _(X_) og _(Y_) begge er kontinuerlige stokastiske variabler
+    på samme udfaldsrum _(S_). Bevis nu at:
+    _($E(aX+bY)=aE(X)+bE(Y)_)
+    Hvor _(a_) og _(b_) er to konstanter. 
+    <br><br></q-stion>
+    <answer-box>
+    Sig at _(X_) og _(Y_) mapper til henholdsvis _([i,j]_) og _([m,n]_) og 
+    har pdf'erne _(f_) og _(g_). Gennemsnittet kan nu regnes som:
+    _($\begin{eqnarray}
+    && \int_R \int (ax+by)f(x)g(y) \text{ }dx \text{ }dy \, \, = \\ \\
+    && a\int_{i}^{j} \int_{m}^{n} xf(x)g(y) \text{ }dy \text{ }dx + b\int_{m}^{n} \int_{i}^{j} yf(x)g(y) \text{ }dx \text{ }dy \, \, = \\ \\
+    && a\int_{i}^{j} x f(x) \left(\int_{m}^{n} g(y) \text{ }dy \right) \text{ }dx + b\int_{m}^{n} y g(y) \left(\int_{i}^{j} f(x) \text{ }dx \right) \text{ }dy  \, \, = \\ \\
+    && a\int_{i}^{j} x f(x)*1 \text{ }dx + b\int_{m}^{n} y g(y)*1 \text{ }dy \, \, = \\ \\
+    && a*E(X)+b*E(Y) 
+    \end{eqnarray}_)
+    Færdig! 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="7" 2="5">
+    Gælder samme egenskab også, hvis _(X_) og _(Y_) 
+    <i>ikke</i> kommer fra samme udfaldsrum _(S_)?
+    <br><br></q-stion>
+    <answer-box>
+    Sig at _(X_) mapper sættet _(\Omega_1_) til _([i,j]_) 
+    og _(Y_) mapper sættet _(\Omega_2_) til _([m,n]_). 
+    Nu kan vi definere sættet _(\Omega_) som:
+    _($\Omega = \Omega_1 \times \Omega_2_)
+    Dette er et sæt af <i>par</i>: Hvert element 
+    i _(\Omega_) er et par af to elementer som
+    _($(s_{\Omega_1},s_{\Omega_2})_)
+    Vi skal nu også definere to nye versioner 
+    af _(X_{\Omega} _) og _(Y_{\Omega}_), der tager disse par som input. Vi siger.
+    _($\begin{eqnarray}
+    && X_{\Omega}(s_{\Omega_1} ,  s_{\Omega_2}) = X(s_{\Omega_1}) \\
+    && Y_{\Omega}(s_{\Omega_1} ,  s_{\Omega_2})  = Y(s_{\Omega_2}) \\
+    \end{eqnarray}_)
+    Så _(Z_) er en funktion
+    _($Z_{\Omega}(s_{\Omega_1},s_{\Omega_2}) = X(s_{\Omega_1}) + Y(s_{\Omega_2}) _)
+    Givet at _(\Omega_1_) er på et interval _([i,j]_) og _(\Omega_2_) er på et
+    interval _([m,n]_), kan det igen siges, at alle værdier til _(Z_) kan ses som
+    punkter på et areal, og at sandsynligheden af 
+    en lille del af dette areal kan findes på præcist
+    samme måde som før. Svaret er derfor <i>ja</i>, det virker stadig, hvis de ikke kommer
+    fra samme rum. 
+    <br><br></answer-box>
+
+    <p class="tt">
+    Det kan også bevises at
+    _($\text{Var}(aX+bY)=a^2 \text{Var}(X) + b^2 \text{Var}(Y)_)
+    ... på meget samme måde som i beviset for gennemsnit. Det vil ikke gennemgås her.
+    </p>
+
+    <p class="cent">*</p>
+    
+    <p class="t">
+    Jeg lovede, at jeg ville gennemgå beviset for, at 
+    summen af to normalfordelte stokastiske
+    variabler også er normalfordelt. Du får det nu, som slutningen på dette kapitel:
+    </p>
+
+    <div class="Proof">
+    <b> Bevis: Sum af to normalfordelte variabler er normalfordelt</b> <br>
+    Se først på det simplere tilfælde, hvor 
+    _(X_) og _(Y_) er to normalfordelte variabler
+    med _(\mu=0_) og _(\sigma=1_). 
+    Her er deres pdf'er _(f_) og _(g_) lig:
+    _($f(x) = \frac{e^{-x^2}}{\sqrt{2\pi}}, \qquad g(y) = \frac{e^{-y^2}}{\sqrt{2\pi}}_)
+    _(Z=X+Y_), så _(\text{cdf}(z)_) findes som:
+    _($\begin{eqnarray}
+    && \text{cdf}(z) & = \, \int_{-\infty}^{\infty} \int_{-\infty}^{z-x} f(x)g(y) \text{ }dx \text{ }dy \\ \\
+    &&  & = \, \int_{-\infty}^{\infty} \int_{-\infty}^{z-x} \frac{e^{-(x^2+y^2)}}{\sqrt{2\pi}} \text{ }dx \text{ }dy \\
+    \end{eqnarray}_)
+    Noter nu, at _(\text{cdf}(z)_) har samme værdi 
+    uanset hvordan, koordinatsystemet roteres,
+    siden _(x_) og _(y_) kun forekommer i formlen 
+    _(x^2+y^2_), der svarer til _(r^2_). 
+    Kravet _(y \lt z-x_) vil blive markant simplere, hvis linjen _(z-x_) blev roteret
+    parallelt med _(y_)-aksen:
+    <img class='SpicXL' style='width:80%' src='../../../Assets/Chapter4\KontinuerligProb\ForNormalSumProof.png'> 
+    <p class="t">
+    I stedet for at integrere på 
+    området, hvor _(x_) går fra _(-\infty_) til _(\infty_) 
+    og _(y_) fra _(-\infty_) til _(z-x_), kan vi nu bare
+    integreres på området, hvor _(x_) går fra _(-\infty_) til _(c_)
+    og _(y_) fra _(-\infty_) til _(-\infty_):
+    </p>
+    <p class="t">
+    _(c_) har samme længde som _(L_), og med lidt geometri fås:
+    _($L=\sqrt{(z/2)^2+(z/2)^2} = z/\sqrt{2}_) 
+    Så vi regner:
+    _($\begin{eqnarray}
+    && \int_{\infty}^{z/\sqrt{2}} \int_{-\infty}^{\infty} f(x)g(y) \text{ }dy \text{ }dx = \\ \\
+    && \int_{\infty}^{z/\sqrt{2}} f(x) \left( \int_{-\infty}^{\infty} g(y) \text{ }dy \right) = \text{ }dx \\ \\
+    && \int_{\infty}^{z/\sqrt{2}} f(x)*1 \text{ }dx \\
+    \end{eqnarray}_)
+    Ergo:
+    _($\text{cdf}_Z(z) = \int_{\infty}^{z/\sqrt{2}} f(x) \text{ }dx = \text{cdf}_X(z/\sqrt{2})_)
+    Det betyder at:
+    _($\begin{align}
+    \text{pdf}_Z(z) & = ¤z[\text{cdf}_X(z/\sqrt{2})] \\ \\
+    & = f(z/\sqrt{2})*\frac{1}{\sqrt{2}} \\ \\
+    & = \frac{1}{\sqrt{2\pi}}*e^{-(x/\sqrt{2})^2}*\frac{1}{\sqrt{2}} \\ \\
+    & = \frac{1}{\sqrt{2\pi} \sqrt{2}}*e^{-\frac{x^2}{2}}
+    \end{align}_)
+    _(\text{pdf}_Z(z)_) er altså en normalfordeling med 
+    _(\sigma=\sqrt{2}_) og _(\mu=0_). 
+    </p>
+    <p class="t">
+    Med et lignende og mere generelt argument kan man vise, at 
+    _(\text{pdf}_Z(z)_) er en normalfordeling med 
+    _(\sigma=_) _(a^2+b^2_) og _(\mu=0_) hvis _(Z=aX+bY_).
+    </p>
+    <p class="t">
+    For en hvilket som helst stokastisk variable _(A_), ved vi at 
+    _($\begin{eqnarray}
+    && E(A+b) = E(A)+b \\
+    && V(aA) = a^2 V(A)
+    \end{eqnarray}_)
+    Så hvis _(A_) er en normalfordelt variable med _(\mu=0_), _(\sigma=1_), kan et
+    hvilket som helst normalfordelt variable _(X_) med _(\mu_x_) og _(\sigma_x_) 
+    skrives som:
+    _($ \sigma_x A + \mu_x_)
+    Sig at _(A_) og _(B_) er to normalfordelte 
+    variabler med _(\mu=0_), _(\sigma=1_). Summen af _(X_) og _(Y_) 
+    med _(\mu_x_), _(\sigma_x_) og _(\mu_y_), _(\sigma_y_) kan omskrives til:
+    _($\begin{eqnarray}
+    && \sigma_x A+ \mu_x + \sigma_y B + \mu_y = \\ \\
+    && \sigma_x A + \sigma_y B + (\mu_x + \mu_y)
+    \end{eqnarray}_)
+    Fra det tidligere resultat ses det, at _( \sigma_x A + \sigma_y B_) 
+    er en normalfordelt variable
+    med _(\sigma=\sigma_x^2 + \sigma_y^2_) og _(\mu=0_). Det bliver plusset 
+    med et led, der rykker gennemsnittet til 
+    _((\mu_x + \mu_y)_). Summen er nu et normalfordelt variable med
+    _($\begin{eqnarray}
+    && \mu = \mu_x + \mu_y \\
+    && \sigma = \sigma_x^2 + \sigma_y^2
+    \end{eqnarray}_)
+    Bevis færdigt! Damn! _(\blacksquare_)
+    </p>
+    </div>
+
+
+
+
+	

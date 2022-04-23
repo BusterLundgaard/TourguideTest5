@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+
+
+    <h3>Sidespor: Modulus!</h3> 
+    <p class="t">
+    Det her med at "gå rundt i en cirkel" som ved vinkler på _(Sin_) og _(Cos_) kan rigtig
+    fint modelleres af en matematisk ide vi kalder <i>modulus</i> / <i>remainder</i>. 
+    </p>
+    
+    <p class="t"> 
+    I sidste afsnit løste vi en opgave, hvor en rigtig irriterende chef gav dig 
+    løn i kontanter. Vi havde en liste over de forskellige mønter og sedler: 
+    </p>
+    <div style="text-align:center;">
+        <ul style="display: inline-block; text-align: left; list-style:disc;">
+            <li>500kr seddel</li>
+            <li>200kr seddel</li>
+            <li>100kr seddel</li>
+            <li>50kr seddel</li>
+            <li>20kr mønt</li>
+            <li>5kr mønt</li>
+            <li>2kr mønt</li>
+            <li>1kr mønt</li>
+            <li>50-øre mønt</li>
+            <li>20-øre mønt</li>
+            <li>5-øre mønt</li>
+            <li>1-øre mønt</li>
+        </ul>                     
+    </div>
+    <p class="t">
+    I opgaven fik du _(8429.37_) kr. Det var nok til lige _(16_) _(500kr_)-sedler,
+    da _(16*500=8000_), og _(17*500=8500_) er for højt. Man kunne altså skrive 
+    mængden af penge du havde op som: 
+    _($16*500+429.37_)
+    Af de resterende _(429.37_)kr fik du så i hvert fald _(2_) _(200kr_)-sedler, da
+    denne rest kunne skrives som 
+    _($2*200+29.37_)
+    Du fik ingen _(100_)- eller _(50kr_)-sedler,
+    men lige én _(20kr_)-mønt, og derefter en rest på _(9.37kr_). 
+    _($9.37=5*1+4.37_)
+    Så du fik _(1_) _(5kr_)-mønt også
+    _($4.37=2*2+0.37_) 
+    ... og _(2_) _(2kr_)-mønter. 
+    Ingen _(50_)-øre mønter, _(1_) _(20_)-øre mønt, og så _(14_) øre tilbage.
+    _($14=5*2+4_) 
+    Så lige til sidst _(2_) _(5_)-øre og _(4_) _(1_)-øre. 
+    </p>
+    <p class="t">
+    På samme side dividerede vi en del, og kiggede på den her "worst case scenario"-strategi, 
+    hvor man gætter i brede træk, finder fejlen/det resterende, prøver at dividere
+    fejlen i mindre brede træk, finder en ny fejl, osv osv. Det 
+    er som sagt hvad divisionsstrategien du lærte i folkeskolen er baseret på. 
+    </p>
+    <p class="t">
+    Der er to begreber der virkelig kan hjælpe os med at beskrive begge disse tilfælde:
+    <i>Remainder</i>/<i>modulo</i>, og <i>qoutient</i>. Hvor mange _(5_)'ere er der i _(14_), 
+    og hvad er resten? _(14=5*2+4_), så svaret er henholdsvis _(2_) og _(4_). 
+    _(2_) er hvad vi kalder _(14_)'s <i>qoutient</i> med respekt til _(5_), og _(4_) er hvad vi kalder 
+    _(14_)'s <i>remainder</i>/<i>modulo</i> med respekt til _(5_). Et andet eksempel kunne være
+    _(32_) og _(5_). Her er qoutienten _(6_), og remainderen _(2_). Ofte vil vi gerne 
+    have ét tal opdelt af et andet <i>som om</i> de gik op, bare plusset med en rest. 
+    Man kan også sige, at _(a_)'s qoutient med respekt til _(b_) fortæller os 
+    det maksimale antal _(b_) vi må have, før vi når _(a_). 
+    Remainder fortæller
+    os så "den del oven på". 
+    </p>
+    <p class="t">
+    Det her er egentlig bare nogle navne, vi har givet til den måde 
+    vi opdelte tal på i penge-eksemplet. 
+    Selve måden at opdele et tal kaldes <i>euklidisk division</i>. 
+    </p>
+    <p class="t">
+    Lad os skrive modulus af _(a_) med respekt til _(b_) som:
+    _($M_{b}(a)_)
+    Det er ikke en kendt eller universel notation. Det er primært bare mig der bruger den i bogen her.
+    Uden for bogen vil du ofte se modulos skrevet på en lidt forvirrende måde som:
+    _($7 \equiv 12 \, (\text{mod } 5)_)
+    Det her siger, at _(7_) og _(12_) er lig med hinanden, <i>hvis</i> du tager
+    modulos med respekt til _(5_). Ved ikke lige hvorfor man bruger den her notation så meget.
+    Et par steder bruger de også procenttegnet som f.eks. _(7 \% 5 = 2_)
+    </p>
+    <p class="t">
+    Qoutienten skrives ofte med et omvendt divisionstegn som _(12 \setminus 5 = 2_).
+    </p>
+    <p class="t">
+    Vinklen på _(Sin_) og _(Cos_) gik ned til _(0_) hver gang den blev større end _(360_). 
+    Det var kun vinklens <i>rest</i> af _(360_) der var vigtig, så det passer perfekt til:
+    _($Sin\left(M_{360}(v) \right), \qquad Cos\left(M_{360}(v) \right), _) 
+    De næste opgaver viser en masse brugbare anvendelser af modulus:
+    </p>
+
+    <!--  -->
+
+    <q-stion 1="16" 2="1" bigTop="true">
+    Du er ved at se en tv-serie på en eller anden streaming service, og har i alt 
+    set _(146.52_) minutter. Hver episode er _(22_) minutter langt. Hvor mange 
+    episoder har du set, og hvor langt inde i en episode er du lige nu?  
+    <br><br></q-stion>
+    <answer-box>
+    For at få mængden af episoder kan vi <i>ikke</i> bare sige _(146.52/22_), da det kun 
+    er muligt at have <i>hele</i> episoder. Vi skal i stedet beregne, hvor mange episoder
+    man maksimalt kan have set, imens man stadig er <i>under</i> _(146.52_) minutter:
+    _($22*6=132 \lt 146.52, \qquad 22*7=154\gt 146.52_)
+    _(6_) episoder er altså svaret. 
+    Vi har logisk nok set 
+    _($146.52-132=14.52_) minutter af episode _(7_).
+    <p class="t">
+    Svaret på første del af opgaven var altså at finde <i>qoutienten</i>. Svaret på anden 
+    del af opgaven var at finde <i>remainderen/modulo</i>. 
+    </p>
+    <p class="t">
+    I praksis finder man ofte qoutienten _(a \setminus b_) ved at regne
+    _(a/b_) efterfulgt af 
+    afrunding nedad. F.eks er _(146.52/22=6.66_), så qoutienten er _(6_). 
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="16" 2="2">
+    Du vurderer ud fra beregninger, at i mangler
+    _(98m_) gitterspær til et byggeprojekt. 
+    I en bestemt butik kan du kun købe _(12m_) gitterspær af gangen. 
+    Hvor meget ender med at gå til spilde?
+    <br><br></q-stion>
+    <answer-box>
+    Super simpelt: _(M_{12}(98)=2m_) gitterspær for meget. 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="16" 2="3">
+    Du har endelig fået dit kørekort, og er nu fri til at køre hvor og hvornår du har lyst.
+    Du vil se hvor langt du kan køre rundt i en rundkørsel, før du bliver syg. 
+    Du får kastopfornemmelse efter
+    _(34353_) grader. Hvor langt er du (vinkelmæssigt) fra hvor du startede?
+    <br><br></q-stion>
+    <answer-box>
+    Præcis ligesom ved uret der går rundt, eller månederne og ugerne der genstarter:
+    Svaret er _(M_{360}(34353)=153_) grader. 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="16" 2="4">
+    Klassen på _(82_) skal deles op i grupper af _(7_). 
+    Hvor mange grupper bliver der dannet, og hvor mange folk ender med at være alene?
+    <br><br></q-stion>
+    <answer-box>
+    Der bliver dannet _(82\setminus7=11_) grupper, og der er _(M_{7}(82)=5_) 
+    elever der ikke bliver en del af noget hold. 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="16" 2="5">
+    Du læser en digtsamling skrevet af en "meget organiseret" forfatter. Bogen
+    er delt op i kapitler, der hver er _(40_) sider lange præcist. Hver 
+    af de her kapitler er delt op i _(5_) lige store afsnit. Der er _(2_)
+    digte pr side, _(5_) strofer pr digt og _(3_) vers pr strofe 
+    (i digte kalder vi faktisk de enkelte linjer for "vers"!). 
+    Sig at du har læst i alt _(4127_) vers. Hvilket vers, i hvilken strofe, 
+    i hvilket digt, i hvilket afsnit, i hvilket kapitel er du ved lige nu? 
+    <br><br></q-stion>
+    <answer-box>
+    Først ville jeg nok starte med at beskrive alt i forhold til 
+    vers. Et digt er altså _(3*5=15_) vers langt, en side _(15*2=30_), 
+    et afsnit _(30*8=240_), og et kapitel _(240*5=1200_). Nu kan jeg
+    bare finde qoutienten og remainderen gentagelige gange:
+    _($\begin{eqnarray}
+    && 4127 \setminus 1200 = 3 \text{ kapitler læst} \\
+    && \text{plus } 4127-1200*3=527 \text{ af kapitel 4's vers} \\ \\
+    && 527 \setminus 240 = 2 \text{ afsnit af kapitlet læst} \\
+    && \text{plus } 527-2*240=47 \text{ af afsnit 3's vers} \\ \\ 
+    && 47 \setminus 30 = 1 \text{ side af afsnittet læst} \\
+    && \text{plus } 17-1*15=2 \text{ af digt 2's vers} \\ \\
+    && 2 \setminus 3 = 0 \text{ strofer af digtet læst} \\
+    && \text{plus } 2 \text{ vers af strofe 0 læst}
+    \end{eqnarray}_)
+    Så i alt er vi nået til kapitel _(4_), afsnit _(3_), side _(2_), digt _(2_), strofe _(1_), vers _(3_). 
+    (Hvis du undrer dig over hvorfor alting er plusset med _(1_), så husk på at jeg gerne ville
+    have det sted vi var <i>nået</i> til, ikke hvor mange vi havde læst)
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="16" 2="6">
+    Byens havn er _(2032976mm_) lang. Lægmændene vil have denne længde
+    i så meget som muligt <i>hele kilometer</i>. Resten af længden i 
+    hele meter, resten efter det i hele centimeter, og så de endelige
+    små detaljer til sidst i millimeter. 
+    <br><br></q-stion>
+    <answer-box customWidth="500">
+    Den her opgave er meget ligesom den sidste, bare drastisk nemmere. 
+    Igen har vi 
+    nogle bestemte <i>opdelinger</i> (kilometer, meter, centimeter, millimeter), 
+    og vil gerne beregne hvor meget vi har af hver. 
+    På _(1cm_) er der _(10mm_), på _(1m_) er der
+    _(10^3mm_), og på _(1km_) er der _(10^6mm_). Med så lette tal behøver vi ikke engang rigtig
+    dividere ligesom før: 
+    _($2032976=2*10^6mm+32*10^3mm+97*10mm+6*1mm_)
+    Ergo ser man nu let, at havnen er _(2km, \, 32m, \, 97cm, \, 6mm_) lang. 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="16" 2="7">
+    Du har købt 31 æbler, og du har _(4_) æblekasser der hver kan holde _(6_). Er der nok kasser?
+    <br><br></q-stion>
+    <answer-box>
+    Det er ikke nok kasser, siden _(31\setminus6=5 \gt 4_).
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="16" 2="8">
+    I Las vegas går du ind i et casino klokken 03:00. Der er ingen ure eller sollys derinde,
+    men du sætter en optæller i gang, når du går derind. På et tidspunkt ser du, 
+    at du har brugt _(49_) timer.
+    Hvad er klokken nu? 
+    <br><br></q-stion>
+    <answer-box>
+    Bare _(M_{24}(3+49)=4_), så _(4:00_). Hvis din tidsfornemmelse var ødelagt nok, kunne du måske tro
+    du kun havde været derinde i omkring et døgn! 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="16" 2="9">
+    Sig at sommeren varer _(27_) dage, og begynder en ondsdag. Hvilken dag skal du i skole igen?
+    <br><br></q-stion>
+    <answer-box>
+    Vi kan se, at der på de _(27_) dage går _(27\setminus7=3_) uger og _(M_{7}(27)=6_) dage. 
+    Ondsdag plus _(7_) er 
+    bare ondsdag, så plus _(6_) må være <i>tirsdag</i>. 
+    <p class="t">
+    Qoutienten og remainderen er super praktiske, når vi arbejder med datoer og tid! 
+    </p> 
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="16" 2="10">
+    Du begynder på et guitar-kurses der starter 3. april og varer _(298_) dage. 
+    Hvilken måned slutter 
+    kurset i, hvis vi antager hver måned er _(30_) dage lang? 
+    <br><br></q-stion>
+    <answer-box>
+    På de _(296_) dage går der _(298\setminus30=9_) måneder, og _(M_{30}(298)=28_) dage. 
+    April er den fjerde månede i året, så efter _(9_) måneder er vi på årets 
+    _(M_{12}(9+4)=M_{12}(13)=1_). første måned, som er januar.
+    Uden de _(28_) dage er vi på 3. januar. <i>Med</i> de _(28_) dage er vi på 
+    _(M_{30}(3+28)=M_{30}(31)=1_). februar. 
+    <br><br></answer-box>
+
+    <!--  --> 
+
+    <q-stion 1="16" 2="11">
+    Du prøver en bestemt "spin the wheel"-maskine i et casino:
+    <img class="SpicBXL" style="width:80%" src="../../../Assets/Chapter1/Talteori/CasinoModulo1.png">
+    <br>
+    Ideen er simpel: træk i håndtaget og hjulet vil dreje en bestemt mængde. 
+    Du vinder og får penge, hvis hjulet lander på stjernen. Spillet er rigged, dog - én stor løjn!
+    Casinoet gider ikke 
+    risikere at <i>de</i> mister penge, så hjulet bevæger sig slet ikke en tilfældig mængde hver gang!
+    Det bevæger sig <i>altid</i> _(42_) grader, når man trækker. Hjulet bliver hvor det stopper, når 
+    det er færdigt med at dreje rundt. Så ved første træk ender det på _(42_) grader, ved næste på 
+    _(42+42=84_) grader osv. Det her er smart, fordi <i>nogle</i> mennesker vil gå derhen lige 
+    når ét træk vil give stjernen. Det vil gøre folk mindre mistænkelige. 
+    <p class="t">
+    Hvor mange gange skal man trække i håndtaget, før man rammer rigtigt, hvis både
+    stjernen og hjulet starter ved _(0_) som på billedet? 
+    Den her opgave er en god del sværere end de sidste!
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Sig at vi drejer hjulet _(n_) gange. Målet er at:
+    _($M_{360}(42*n)=0_)
+    _(42*n_) beskriver en vinkel, og vi tager modulus med _(360_), 
+    da vinklerne skal tilbage til _(0_) når de
+    kommer op til _(360_). Hvis denne modulus er _(0_), må _(42*n_) være lig _(0_), _(360_), eller
+    et hvilket som helst helt tal _(m_) ganget med _(360_). Vi får derfor:
+    _($42*n=360*m_)
+    Hvilket betyder at:
+    _($n=\frac{360*m}{42}_)
+    _(n_) skal være et helt tal, da vi ikke kan dreje hjulet "_(2.5_) gang". Vi skal derfor vælge
+    den mindste værdi til _(m_), hvor at denne brøk går op. Vi udvider tallene og får:
+    _($\frac{2^3*3^2*5*m}{2*3*7} = \frac{2^2*3*5*m}{7} _)
+    Vi vælger _(m=7_), hvilke så giver:
+    _($n=2^2*3*5=60_)
+    Man skal altså trække i hjulet _(60_) gange. 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="16" 2="12">
+    Folk er ved at indse casinoets trick, da det er tydeligt, 
+    at hjulet bevæger sig omtrent 40 grader 
+    hver gang. 
+    Ejerne skifter derfor hjulet til at dreje enten _(390_), _(750_) eller
+    _(1110_) grader. 
+    <p class="t">
+    _(\underline{\textbf{A}}_): <br>
+    Hvorfor er det ikke dårligt for casinoet, at hjulet 
+    kan dreje lige disse bestemte forskellige mængder?
+    </p>
+    <p class="t">
+    _(\underline{\textbf{B}}_): <br>
+    Hvor mange gange skal man nu trække, før man rammer stjernen? 
+    </p>
+    <br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    At ramme stjernen handler fundamentalt om at få den totale dreje-mængde til at gå op i _(360_). 
+    Præcist hele vejen rundt om cirklen. _(390=360+30_), så hver gang man drejer går
+    hjulet én helt omgang rundt - tilbage til hvor du var før - og en resterende _(30_) fremad. 
+    Det har præcist samme effekt som bare at dreje hjulet _(30_) grader! 
+    Omgangen rundt har kun en kosmetisk, psykologisk effekt. 
+    _(750=2*360+30_), og _(1110=3*360+30_) så samme gælder der. Med andre ord:
+    _($M_{360}(30)=M_{360}(390)=M_{750}(390)=M_{360}(1110)_)
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Her skal vi bare løse samme opgave som før, men med _(30_) i stedet for _(42_) 
+    _($30*n=360*k \to n=\frac{360*k}{30}=\frac{2^3*3^2*5}{3*5*2}=2^2*3=12_)
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="16" 2="13">
+    Casinoet er ved at opdage, at der er folk som dig, der regner ud hvor mange gange man skal trække
+    for at vinde. Selv hvis de ændrer på mængden af spin, kan du let bare regne et nyt resultatet. 
+    De gør det derfor lidt sværere ved at starte længere nede - sig _(8_) grader:
+    <img class="SpicBXL" style="width:80%" src="../../../Assets/Chapter1/Talteori/CasinoModulo2.png">
+    <br>
+    Hvor mange gange skal man dreje før stjernen bliver ramt, hvis hjulet starter _(8_) grader
+    under start og drejer skiftevis _(32, 32+360, 32+2*360, 32+3*360, ... _) hver gang?
+    Hjulet drejer <i>mod</i> uret.
+    <br><br></q-stion>
+    <answer-box>
+    Vi starter _(8_) <i>under</i> stjernen og bevæger os 
+    _(32_) fremad hver spin. Vi har derfor:
+    _($-8+32*k = 360*m_)
+    Hvilket hurtigt kan laves om til:
+    _($k=\frac{360m+8}{32}_)
+    Det kan ses, at _(360=8*45_), og at _(32=8*4_), så brøken kan 
+    reduceres til:
+    _($k = \frac{45m+1}{4}_)
+    Hmmm. Hvad gør vi nu? Hvordan finder vi den _(m_), hvor
+    højre side er et helt tal? Vi <i>kunne</i> fint
+    gætte os frem ligesom altid, f.eks. starte med _(m=1_) som
+    _($\frac{45*1+1}{4} = 46/4 = 11.5_)
+    .. men hele formålet ved at gennemgå denne process er netop, at vi 
+    <i>ikke</i> behøver at gætte. Hvem ved hvor lang tid vi ville skulle blive ved?
+    <p class="t">
+    Lad os i stedet gøre noget smart: 
+    Tælleren skal gå op i nævneren, og vi burde derfor 
+    til så stor en grad som muligt omskrive tælleren <i>i forhold</i> til _(4_). 
+    Lad os lave
+    _(45m_) om til _(44m+m_), så vi har:
+    _($\frac{44m+m+1}{4} = \frac{44m}{4} + \frac{m}{4} + \frac{1}{4} = 11m + \frac{m+1}{4}_)
+    Nu behøver vi kun bekymre os om _((m+1)/4_), da _(11m_) altid er
+    et helt tal! Derfor vælger vi bare _(m=3_) og får:
+    _($k = 11*3 + \frac{1+3}{4} = 33+1 = 34_)
+    Voila!
+    </p>
+    <br></answer-box>
+
+    <!--  --> 
+
+    <q-stion 1="16" 2="14">
+    Nu er casino-designerene fandme ved at have nok. Deres nye ide er, 
+    at det <i>nogle</i> dage er helt umuligt at vinde! De vil vælge vinkler, hvor 
+    man simpelt hen <i>aldrig</i> rammer stjernen. 
+    Bevis at hjulet aldrig rammer stjernen, hvis stjernen 
+    starter _(14_) grader over (før var det under) og man drejer 
+    skiftevis _(44, 44+360, 44+2*360, ..._). 
+    Man drejer stadigvæk mod uret.
+    <p class="t">
+    <i>Hint</i>: Et ulige tal plus eller minus et lige tal giver stadig et ulige tal! 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Lad os starte med bare at gøre lidt det samme som før:
+    _($44n=360m-14 \to n=\frac{360m-14}{44}_)
+    Brøken kan simplificeres til 
+    _($\frac{180m-7}{22}_)
+    Et ulige tal kan aldrig divideres med et lige tal, 
+    da det ulige tal jo aldrig vil have en faktor af _(2_). 
+    Vores tæller _(180m-7_) bliver divideret med et lige tal,
+    og er selv altid ulige, da _(180m_) er lige, og bliver minusset med det ulige tal _(7_). 
+    Derfor tager vores brøk altid formen _(\frac{ulige}{lige}_), 
+    så _(n_) kan aldrig være et helt tal, uanset hvor stor
+    vi gør _(k_).
+    <br><br></answer-box>
+

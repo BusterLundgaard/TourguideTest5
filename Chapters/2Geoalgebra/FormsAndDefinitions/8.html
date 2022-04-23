@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+
+    <h3>Hvor og hvornår vælter en figur?</h3>
+
+    <p class="t">
+    Når en kraft bevæger og handler på os eller et andet objekt, handler den kraft
+    <i>på</i> massecenteret. 
+    Det giver mening: <i>hvis</i> en kraft angreb
+    et sted der <i>ikke</i> var massecenteret, ville objektet begynde at rotere. 
+    Så hvis kraften handler og får objektet til at bevæge sig <i>uden</i> at rotere, <i>må</i> den handle <i>på</i> balancepunktet.  
+    Det her er super praktisk, og kan bl.a. bruges til at bestemme, om en figur vælter eller ej. 
+    </p>
+
+    <p class="t">Se følgende billede:</p>
+    <img class="SpicXL" style="width:120%; margin-left:-10%;" src='../../../Assets/Chapter2\Section2\BilliardsAndProperties\TopplePoint1.png'> 
+    <p class="t">Den ene figur her vælter, den anden gør ikke. Det er fordi massecenteret på den 
+    ene trækker ned, hvor figuren ikke har noget at stå på:</p>
+    <img class="SpicXL" style="width:120%; margin-left:-10%;" src='../../../Assets/Chapter2\Section2\BilliardsAndProperties\TopplePoint2.png'> 
+    <p class="t">Hvis vi skal se om noget vælter, skal vi derfor
+    "bare" finde dets massepunkt, tegne en linje
+    ned i <i>tyngdekraftens</i> retning (som ikke nødvendigvis altid er vinkelret til fladen vores figur står på!) 
+    og se, om den støder ind i bunden af vores figur (det figuren står på). </p>
+
+    <q-stion 1="8" 2="1">
+    _(\underline{\textbf{A}}_): <br>
+    Vis at følgende figur <i>ikke</i> vælter:
+    <img class="Spic" style="width:50%" src='../../../Assets/Chapter2\Section2\BilliardsAndProperties\TopplePoint3.png'> 
+    <p class="t">
+    _(\underline{\textbf{B}}_): <br>
+    Hvor høj skal siden der lige nu er _(16_) være, før figuren vælter? 
+    Uendelig? 
+    </p>
+    <br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    Jeg har tænkt mig at dele figuren op i tre: Èt rektangel i nederste
+    venstre hjørne med dimensionerne _(4*6=24_), ét _(1*1_) minirektangel
+    ved siden af, og det store øverste rektangel på _(9*16=144_).
+    De har _(x_)-midtpunkter på henholdsvis _(2_), _(4.5_) og _(4.5_), så
+    massemidtpunktet ender ved:
+    _($x_m = \frac{24*2+1*4.5+144*4.5}{24+1+144} = 4.1449_)
+    Det er mindre end _(5_), hvilke bekræfter at figuren ikke vælter. 
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Svaret er, at figuren <i>aldrig</i> vælter. Den øverste rektangel har et midtpunkt på _(4.5_), så
+    med en uendelig højde og derved et uendeligt areal vil det endelige massemidtpunkt af <i>hele</i> figuren
+    også ende på _(4.5_). Men det er <i>stadig</i> mindre end _(5_). 
+    Det er en lidt spøjs konklusion da det ellers <i>virkelig</i> ligner, at figuren skal til at vælte.
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="8" 2="2">
+    Hvad skal vinklen være, for at følgende rektangel vælter, som det står lige nu?
+    <img class="SpicXL" style="width:70%" src='../../../Assets/Chapter2\Section2\BilliardsAndProperties\TopplePoint4.png'> 
+    <br><br></q-stion>
+    <answer-box>
+    Se følgende billede:
+    <img class="SpicXL" style="width:70%" src='../../../Assets/Chapter2\Section2\BilliardsAndProperties\TopplePoint5.png'> 
+    <p class="t">
+    Den her opgave handler om at finde den mindste _(v_) hvor 
+    _(a \gt b_). 
+    </p>
+    <p class="t">
+    _(b_) kan man let se er _(Cos(v)*5_). _(a_) er lidt mere kompliceret:
+    _($a=Cos(v)*2.5+Cos(w)*10_)
+    Vi kan se, at _(w=90-v_), så _(Cos(w)_) bliver til
+    _(Cos(90-v)=Sin(v)_), ergo:
+    _($a=2.5Cos(v)+10Sin(v)_)
+    Så vi prøver at finde det mindste _(v_), hvor
+    _($2.5Cos(v)+10Sin(v) \text{større end} 5*Cos(v)_)
+    Hvis det er det <i>mindste</i> _(v_), svarer det til den vinkel 
+    hvor _(a_) netop er <i>lig</i> _(b_), så:
+    _($\begin{align}
+    2.5Cos(v)+10Sin(v) &= 5Cos(v) & \to \\ \\
+    10Sin(v) &= 2.5Cos(v) & \to \\ \\
+    \frac{Sin(v)}{Cos(v)} &= \frac{2.5}{10} & \to \\ \\
+    Tan(v) &= 0.25 & \to \\ \\
+    v &= 14.036
+    \end{align}_)
+    Voila! _(v_) skal være større end _(14.036^o_). 
+    </p>
+    
+    
+    <br></answer-box>
+

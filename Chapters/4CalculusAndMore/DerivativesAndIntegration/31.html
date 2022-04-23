@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+
+    <h3>Lineære differentialligninger af første orden</h3>
+
+    <p class="t"> <i> Du må gerne bruge Geogebra til at løse integraler og lignende på denne side </i> </p>
+
+    <p class="t">
+    Den anden metode vi skulle se på var lineære differentialligninger: 
+    En linear differential equation generelt er defineret som:
+    </p>
+    <div style="margin-left:-3%">
+        _($y^{'n}(x)+p_1(x) y^{'(n-1)}(x) + p_2(x) y^{'(n-2)}(x) + \text{ } ... \text{ } p_{n-1}(x) y'(x) + p_n(x) y = q(x)_)
+    </div>
+    <p class="t">
+    Det minder lidt om en polynomie, men 
+    "potenser af _(x_)" er erstattet med "_(y_) differentieret
+    flere og flere gange" og "konstante koefficienter" er erstattet
+    med funktioner. Disse slags differentialligninger er vigtige i mange felter, 
+    men bliver hurtigt meget svære ved
+    anden orden og opad. Første orden viser sig heldigvis nem: 
+    _($y'(x)+p(x)*y=q(x)_)
+    Man kan bevise, at denne slags differentialligning har løsningen:
+    _($y(x)=\frac{\int q(x)*e^{\int p(x) \text{ }dx} \text{ }dx + C}{e^{\int p(x) \text{ }dx}}_)
+    Ideen er at, vi <i>forestiller os</i>, at der findes en magisk funktion _(u(x)_) der har 
+    evnen:
+    _($u'(x) = p(x)*u(x)_)
+    Det virker helt ud af det blå, men det bliver praktisk, hvis vi nu 
+    ganger begge sider med _(u_):
+    _($y'*u + p*y*u=q*u_)
+    _(p*y*u_) bliver til _(y*u'_):
+    _($y'*u + y*u' = q*u_)
+    Formålet med tricket var, at få den venstre
+    side til at passe til formen, man får, hvis man
+    differentierer et produkt _(y*u_):
+    _($\begin{eqnarray}
+    && ¤x[y(x)*u(x)] = q(x)*u(x) \to \\ \\
+    && y(x)*u(x) = \int q(x)*u(x) \text{ }dx + C \to \\ \\
+    && y(x) = \frac{q(x)*u(x)+C}{u(x)} 
+    \end{eqnarray}_)
+    Det er alt sammen meget nice, men _(u(x)_) opstod i vores fantasi:
+    Findes det, og hvad er det lig? Vi ved, at
+    _($u'(x)=p(x)*u(x) \to p(x) = \frac{u'(x)}{u(x)}_)
+    _(u'(x)/u(x)_) passer til _(d/dx[Ln(u(x))]_), så:
+    _($¤x[Ln(u(x))] = p(x) \to Ln(u(x)) = \int p(x) \text{ }dx + C_)
+    Vi kan nu bare isolere _(u(x)_) og få: 
+    _($u(x) = e^{\int p(x) \text{ }dx + C} = C*e^{\int p(x) \text{ }dx}_)
+    Bum! _(y(x)_) er derfor lig:
+    _($y(x) = \frac{q(x)*C_2*e^{\int p(x) \text{ }dx} + C_1}{C_2*e^{\int p(x) \text{ }dx}}_)
+    Vi kan heldigvis fjerne konstanten _(C_2_) med lidt omskrivning:
+    _($\frac{C_2*\left(q(x)*e^{\int p(x) \text{ }dx} + \frac{C_1}{C_2} \right)}{C_2*e^{\int p(x) \text{ }dx}}_)
+    _(C_2_) på tæller og nævner går ud med hinanden, og _(C_1/C_2_) er bare en ny konstant _(C_), så alt i alt får vi:
+    _($y(x) = \frac{q(x)*e^{\int p(x) \text{ }dx} + C}{e^{\int p(x) \text{ }dx}}_)
+    Tid til nogle opgaver!
+    </p>
+
+    <!--  -->
+
+    <q-stion 1="31" 2="1">
+    Løs de følgende differentialligninger:
+    <div style="margin-left:-52.5%; margin-top:25px; margin-bottom: -10px;">
+    _($\begin{eqnarray}
+        && \underline{\textbf{A}}: \, \, \, \, \, \, y' + Tan(x)*y = Sin(x)  \\ \\
+        && \underline{\textbf{B}}: \, \, \, \, \, \, (x-5)y' = x^7*(x-5) - 2y   \\ \\
+        && \underline{\textbf{C}}: \, \, \, \, \, \, y' + Ln(x)*y = \frac{1}{x^x}  \\ \\
+        && \underline{\textbf{D}}: \, \, \, \, \, \, y' + Cos(x)*y = Cos(x)^3  
+    \end{eqnarray}_)
+    </div>
+    <br><br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    Det her passer til en linear differential equation med _(p(x)=Tan(x)_), _(q(x)=Sin(x)_). 
+    Vi skal nu bruge formlen:
+    _($y(x)=\frac{\int q(x)*e^{\int p(x) \text{ }dx} \text{ }dx + C}{e^{\int p(x) \text{ }dx}}_)
+    _(\int p(x) \text{ }dx_) er integralet af _(Tan(x)_), som er _(-Ln(Cos(x))_). _(e_) opløftet
+    i det bliver _(1/Cos(x)_), så vi har nu:
+    _($y(x)=\frac{\int \frac{Sin(x)}{Cos(x)} \text{ }dx + C}{1/Cos(x)}_)
+    Hvilket vi let kan se bliver:
+    _($ y(x)=Cos(x)*(C - Ln(Cos(x))) _)
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Vi kan dividere med _((x-5)_), rykke lidt rundt, og få:
+    _($y' + \frac{2}{x-5}y' = x^7_)
+    _(p(x)=2/(x-5)_) og _(q(x)=x^7_), så nu skal vi "bare" løse:
+    _($y(x)=\frac{\int x^7*e^{\int \frac{2}{x-5} \text{ }dx} \text{ }dx + C}{e^{\int \frac{2}{x-5} \text{ }dx}}_)
+    Jeg går ikke lige gennem processen eftersom dette "bare" er integraler, men vi kan regne det her til:
+    _($y(x) = \frac{\frac{x^{10}}{10} - \frac{10x^9}{9} + \frac{25}{8}x^8 + C}{(x-5)^2} _)
+    Bum!
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{C}}_)#" tabColour="rgb(171,96,147)">
+    _(p(x)=Ln(x)_) og _(q(x)=1/x^x_). Man kan gennemgå 
+    samme process som de tidligere og få (efter lidt omskrivning):
+    _($y(x)=\frac{e^x*C-1}{x^x}_)
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{D}}_)#" tabColour="rgb(175,128,161)">
+    _(p(x)=Cos(x)_), _(q(x)=Cos(x)^3_). Samme process som før giver:
+    _($y(x)=C*e^{-Sin(x)} - (Sin(x)-1)^2_)
+     <br></answer-box>
+
+     <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Løs følgende differentialligning:
+    _($y'(x) = \frac{1}{Sin(y)-Tan(y)*x}_)
+    Du behøver ikke finde _(y(x)_).
+    <p class="t">
+    I denne får du brug for et smart trick, du ikke har lavet før. Det
+    involverer <i>ikke</i> substitution. 
+    </p>
+    <p class="t">
+    Stort hint: Minder den her opgave lidt om en af de tidligere? 
+    </p> 
+    <br></q-stion>
+    <answer-box>
+    Det ville være rigtig dejligt, hvis vi kunne tage _(1_) divideret med den højre side, så vi 
+    bare fik _(Sin(y)-Tan(y)*x_) i stedet. Det er heldigvis også muligt! 
+    _(y'(x)_) svarer til _(dy/dx_), og 
+    _(x'(y)_) til _(dx/dy_), så _(x'(y)=1/y'(x)_). Ergo:
+    _($\frac{1}{x'(y)}=\frac{1}{Sin(y)-Tan(y)*x} \to _)
+    _($x'(y)=Sin(y)-Tan(y)*x_)
+    Det her er en lineær differentialligning med _(q(y)=Sin(y)_), _(p(y)=Tan(y)_).
+    Vi ved fra første opgave, at løsningen på dette er:
+    _($x = Cos(y)*(C - Ln(Cos(y)))_)
+    <br></answer-box>
+
+    <!--  -->
+
+    <!-- <q-stion 1="31" 2="2">
+    Løs følgende differentialligning:
+    _($y'(x) = \frac{1}{Sin(y)-Tan(y)*x}_)
+    Du behøver ikke finde _(y(x)_).
+    <p class="t">
+    I denne får du brug for et smart trick, du ikke har lavet før. Det
+    involverer <i>ikke</i> substitution. 
+    </p>
+    <p class="t">
+    Stort hint: Minder den her opgave lidt om en af de tidligere? 
+    </p>
+    <br></q-stion>
+    <answer-box t="a">
+    Det ville være rigtig dejligt, hvis vi kunne tage _(1_) divideret med den højre side, så vi 
+    bare fik _(Sin(y)-Tan(y)*x_) i stedet. Det er heldigvis også muligt! 
+    _(y'(x)_) svarer til _(dy/dx_), og 
+    _(x'(y)_) til _(dx/dy_), så _(x'(y)=1/y'(x)_). Ergo:
+    _($\frac{1}{x'(y)}=\frac{1}{Sin(y)-Tan(y)*x} \to _)
+    _($x'(y)=Sin(y)-Tan(y)*x_)
+    Det her er en lineær differentialligning med _(q(y)=Sin(y)_), _(p(y)=Tan(y)_)
+    Vi ved fra første opgave, at løsningen på dette er:
+    _($x = Cos(y)*(C - Ln(Cos(y)))_)
+    <br></answer-box> -->
+
+    <!--  -->
+
+    <q-stion 1="31" 2="3">
+    Nogle gange er vi nødt til at substituere 
+    før differentialligningen bliver lineær. 
+    Løs følgende:
+    _($y'(x)=x*y+\frac{y}{x}*Ln(y)_)
+    Lad være med at overtænk denne. Den er faktisk relativ simpel. 
+    <br><br></q-stion>
+    <answer-box>
+    Lad os se, hvad der sker, hvis vi substituerer _(Ln(y)=z_). Højre side bliver til
+    _($x*e^z+\frac{e^z}{x}*z_)
+    _(y'(x)_) bliver til _(e^z*z'(x)_), så:
+    _($z'(x) = \frac{1}{e^z}*(x*e^z+\frac{e^z}{x}*z)_)
+    Hvilket bliver til:
+    _($z'(x) = x+\frac{1}{x}*z_)
+    Det er lineært! _(p(x)=-1/x_) og _(q(x)=x_). Vi kan nu anvende formlen, simplificere, og få:
+    _($z'(x)=x*(x+C)_)
+    Til sidst substituerer vi _(z=Ln(y)_), isolerer, og får:
+    _($y=e^{x*(x+C)}_)
+    Voila! 
+    <br><br></answer-box>
+
+    <p class="t">
+    Kapitel færdig!
+    </p>
+

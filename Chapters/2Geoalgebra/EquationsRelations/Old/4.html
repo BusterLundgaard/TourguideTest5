@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+
+
+    <p class="t">
+    Når vi har en eller et par ligninger, så er der som sagt ikke nødvendigvis kun èn unik løsning. 
+    Ofte er der flere: nogle gange mange og endda uendelig. Der er tider hvor det simpelt hen ikke er
+    nok bare et finde <i>èn</i> løsning: man skal finde dem alle. Tag for eksempel skæringspunkterne
+    mellem to ellipser:
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter2\Section3\Solutions\Ellipseskæring0.png'> 
+    </p>
+    <p class="t">
+    Den ene ellipse her kan vi modellere som _((x/2)^2 + (y/3)^2 = 1_), den anden 
+    _((x/4)^2 + (y/1.5)^2 = 1_). Vi skal altså finde de _(x,y_) værdier hvor begge
+    de her ligninger holder. 
+    </p>
+    <q-stion 1="2" 2="1" 3="5">
+    Find alle fire løsninger.
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter2\Section3\Solutions\Ellipseskæring.png'> 
+    <br></q-stion>
+    <answer-box>
+    Det tilfælde vi har fået her er dejligt nemt. Jeg ved at billedet er symmetrisk på 
+    både x- og y-aksen, så hvis bare jeg finder èn løsning så har jeg også de tre andre. 
+    <p class="t">
+    Jeg har to ligninger og to ubekendte. Skulle jeg være helt naiv så kunne jeg 
+    i den første ligning _((x/2)^2 + (y/3)^2 = 1_) isolere _(x_), få _(x=2*\sqrt{1-(y/3)^2}_),
+    indsætte det i den anden ligning som _(\frac{4*(1-(y/3)^2)}{16}+(y/1.5)^2=1_), isolere og 
+    finde værdien for _(y_), som jeg så kan bruge til at finde _(x_). 
+    Man kunne dog også gøre noget der var en god del smartere. Begge ligninger kan jeg omskrive
+    så jeg har _(0_) på den ene side: 
+    _($x^2/4 + y^2/9 - 1 = 0, \qquad x^2/16 + y^2/2.25 - 1 = 0_)
+    Hvis det her er tilfældet, så må 
+    _($0=0-0 \to_)
+    _($x^2/4 + y^2/9 - 1 - x^2/16 - y^2/2.25 + 1 = 0_)
+    Èt led med _(x^2_) bliver minuset med et andet led med _(x^2_), og samme gælder _(y^2_).
+    Hvad hvis jeg på en eller anden måde kunne sørge for at de to led med _(x^2_) havde de 
+    samme koefficienter? Så ville _(x_) komplet forsvinde, og jeg ville stå tilbage bare med en dejlig 
+    ligning kun med _(y_)! Hvis _(0=0-0_), så er _(0_) også lig _(0*a-0= _)
+    _($ \frac{a}{4}x^2 + \frac{a}{9}y^2 - a - x^2/16 - y^2/2.25 + 1 = _)
+    _($ (\frac{a}{4}-\frac{1}{16})x^2 + \frac{a}{9}y^2 - a - y^2/2.25 + 1_)
+    Så hvis jeg sætter _(a_) til _(1/4_) så får jeg:
+    _($ (\frac{1}{16}-\frac{1}{16})x^2 + \frac{1/4}{9}y^2 - 1/4 - y^2/2.25 + 1=_)
+    _($0.472y^2 + 0.75_)
+    Alt det her ved jeg skal være lige _(0_), så:
+    _(y=\sqrt{0.75/0.472}=1.26_)
+    Bam! _(y_) fundet! Jeg ved godt jeg brugte længere tid på at forklare det her, men
+    det er altså markant mere effektivt. 
+    </p>
+    <p class="t">
+    Vi har vores _(y_), så nu er _(x_) nemt at finde:
+    _($x^2/4+1.26^2/9=1 \to x=2*\sqrt{1-1.26^2/9}=1.818_)
+    Løsningerne/skæringspunkterne er altså:
+    _($(1.818,1.26),(-1.818,1.26),(1.818,-1.26),(-1.818,-1.26)_)
+    Hvis vi ikke viste at ellipser var symmetriske, så kunne vi se det 
+    rent matematik, siden _(x_) og _(y_) er opløftet til
+    anden potens i begge ligninger. Det
+    betyder at _(x^2_) har den samme værdi når _(x_) er positiv
+    som når _(x_) er negativ. Samme argument med _(y_). Èn anden
+    måde vi også kunne have fundet alle løsninger på, ville have været
+    at isolere _(x_) som _(x=2*\sqrt{1-(y/3)^2}_), men så huske på at
+    kvadratroden faktisk både kan være positiv og negativ: Altså 
+    _(x=\pm 2\sqrt{1-(y/3)^2}_). Det ville give os _(2_) x-værdier.
+    Hver af dem kunne vi bruge til at finde y-værdier, og i begge tilfælde
+    ville vi skulle evaluere en kvadratrod, som igen gav ikke èn men <i>to</i>
+    løsninger: Så begge vores x'er ville hver resultere i to y'ere, så vi 
+    fik _(2*2=4_) løsninger i alt! 
+    </p>
+    <br></answer-box>
+    
+    <q-stion 1="2" 2="1" 3="5" customWidth="600">
+    Vi rykker nu centeret på den breddeste ellipse _(3_) til højre. Hvor mange løsninger er der?
+    Find dem. 
+    <br><br></q-stion>
+    <answer-box customWidth="600">
+    Først af alt: hvad præcis skal gælde for _(x,y_) i din ellipse vi har flyttet væk fra _((0,0)_)? 
+    Well, hvis ellipsen før var _( x^2/16 + y^2/2.25 = 1_) og vi gerne vil flytte den
+    _(3_) til højre, så ændrer vi den til _((x-3)^2/16 + y^2/2.25 = 1_). Hvis punktet
+    _((-3.16,0.92)_) opfylder _(x^2/16 + y^2/2.25 = 1_) via _((-3.16)^2/16+0.92^2/2.25=1_), 
+    så opfylder _((-3.16+3,0.92)_) _((x-3)^2/16 + y^2/2.25 = 1_) via
+    _((-3.16+3-3)^2/16 + 0.92^2/2.25_) _(= (-3.16)^2/16+0.92^2/2.25_) _(= 1_). Det har altså 
+    effekten af at rykke alle punkter _(3_) fremad! 
+    <p class="t">
+    Okay, nu skal vi igang. Lidt ligesom før vil jeg gerne omskrive begge ligninger så de er lig _(0_).
+    Jeg gør egentlig meget det samme som før: 
+    _($0-a*0=0_)
+    _($\left(\frac{(x-3)^2}{16}+\frac{y^2}{2.5} - 1\right) - a*\left(\frac{x^2}{4}+\frac{y^2}{9}-a\right) = 0_)
+    _($(0.0625 - 0.25*a)*x^2 - 0.375*x + (a-0.4375)+(0.444-a*0.111)y^2 = 0_)
+    Hvis vi nu sætter _(a_) til _(4_) så vil _(y^2_) forsvinde, og vi vil få
+    (efter lidt beregning):
+    _($-0.9375x^2 - 0.375x + 3.562 = 0_)
+    Vi ved at hvis en ligning har formen _(ax^2 + bx + c=0_) så er løsningen
+    _(x=\frac{-b \pm \sqrt{b^2 - 4ac}}{2a}_). Vores _(a=-0.9375,b=-0.375,c=3.5625_) ergo 
+    _($x=\frac{-(-0.375) \pm \sqrt{(-0.375)^2 - 4*(-0.9375)*3.562}}{2*(-0.9375)} = -0.2 \pm 1.959_)
+    Okay, vi har to mulige værdier _(x_) kunne have. Lad os først prøve med
+    _(x=-0.2 - 1.959=-2.149_). Putter vi den i _(x^2/4 + y^2/9 = 1 _) får vi
+    _((-2.149)^2/4 + y^2/9 = 1 \to y=3*\sqrt{1 - 4.61/4}=\sqrt{-0.152}_)
+    Man kan ikke tage kvadratroden af et negativt tal, så det her kan altså ikke
+    være en løsning!
+    Lad os nu prøve den anden hvor _(x=-0.2+1.959=1.759_). Her kan vi nemt
+    se at 
+    _($y=3*\sqrt{1 - 1.759^2/4}=3*\sqrt{0.226}=1.4259_)   
+    Ingen ellipser er flyttet på _(y_)-aksen, så den anden løsning kan fås via symmetri:
+    _($(1.759,1.4259), (1.759,-1.4259)_)
+    Phew! 
+    </p>
+    <br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Hvor mange _((x,y)_) punkter findes der hvor både _((\frac{x}{13})^2 + (\frac{y}{5})^2=1_) og _((\frac{x-20}{7})^2 + (\frac{y}{3})^2=1_)?
+    Bare rolig: Du skal ikke til at gøre alt det møj du gjorde i sidste opgave igen. Der er
+    et smart trick lige i denne her.
+    <br><br></q-stion>
+    <answer-box>
+    Det her er en skæring mellem ellipser selvfølgelig. Begge ellipse ligger på samme _(y_)-koordinat (_(0_))  
+    den ene er _(13*2_) lang mens den anden er _(7*2_) lang. Hvis man nu er
+    smart så kan man observere at lige i dette tilfælde der er x-positionen af
+    den anden ellipse lig _(20=13+7_). Hvis du tegner situationen, så kan du altså godt se 
+    hvordan den kun <i>lige</i> kommer hen og rører. Der er altså _(1_) løsning: (13,0)   
+    <br><br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Generelt hvornår har en ligning af formen _(ax^2+bx+c=0_): _(2_) løsninger, _(1_) løsning, og _(0_) løsninger? 
+    Hvad skal gælde for koefficienterne _(a,b,c_)? 
+    <br><br></q-stion>
+    <answer-box>
+    Vi ved at løsningen _(x_) er _(\frac{-b \pm \sqrt{b^2 - 4ac}}{2a}_). Der er
+    to løsninger (på grund af plus-minus) hvis tallet vi tager en kvadratrod af er positivt.
+    Der er _(1_) løsning hvis det er _(0_), fordi plus _(0_) er det samme som minus _(0_), og 
+    der er ingen løsninger hvis det er negativt, fordi så findes der slet ikke nogen kvadratrod. 
+    Altså:
+    <div style="text-align:center;">
+        <ul style="display: inline-block; text-align: left; list-style:none;">
+            <li>_(2_) løsninger hvis: _(b^2 - 4ac \gt 0_)</li>
+            <li>_(1_) løsning hvis: _(b^2 - 4ac = 0_)  </li>
+            <li>_(0_) løsninger hvis _(b^2 - 4ac \lt 0_)   </li>
+        </ul>
+    </div>
+    Kvantiteten _(b^2-4ac_) kalder vi nogle gange "determinanten".
+    <br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Der er rigtig mange fænomener - både menneskabte og naturlige - der let kan modelleres via en
+    <i>andengradsfunktion</i>. En andengradsfunktion er altså bare _(y=ax^2+bx+c_) som vi nu
+    har set før nogle gange. Ofte har man et eller andet der stiger med èn hastighed,
+    og så noget der falder med en anden. Sig f.eks. at _(x_) er mængden af arbejdere i ens
+    virksomhed. Hver arbejder man tilføjer kan måske ideelt skabe
+    _(50000kr_) værdi om måneden (med deres løn trukket fra). Som du begynder at tilføje rigtig 
+    mange dog, så går der penge på spildt arbejde hvor folk ikke har noget at lave. 
+    Det har lille indflydelse (en lille koefficient), men stige hurtigere og hurtigere
+    jo flere arbejdere du tilføjer. Lad os sige vi repræsenterer det ved at
+    minuse med _(100*x^2_). Potensen på _(2_) for det til at stige hurtigere, men _(100_) 
+    er en meget lavere koefficient end _(50000_). Du starter også det hele med at bruge _(20_) tusind på opsætning og så videre. 
+    Alt i alt _(penge= -100x^2 + 50000x - 20000_). Hvad er den ideele mængde arbejdere?
+    <br><br></q-stion>
+    <answer-box>
+    Der er mange måder vi kunne løse det her på, men her er èn, lidt primitiv løsning:
+    <!-- BILLEDE HER AF ANDENGRADSKURVE -->
+        <!-- CROP DET HER: FÅ LAVET DET HER BILLEDE! -->
+    Topstedet er det eneste sted med et _(y_)-koordinat der kun er èn gang på kurven.
+    Altså, det er en værdi _(k_) hvor _(-100x^2 + 50000x - 20000 = k_) kun har 
+    èn løsning. Ligningen _(-100x^2 + 50000x - 20000 - j = 0_) ved vi har _(1_) 
+    løsning når _(b^2 - 4ac=0_), så når: 
+    _($50000^2 - 4*(-100)*(-20000-j)=0 \to_)
+    _($50000^2 = 4*100*(20000+j) \to _) 
+    _(j = \frac{50000^2}{4*100}-20000 = 6230000_).
+    Vi har nu den maksimale mængde penge du kan tjene. 
+    Den _(x_) der resultere i det er - siden ledet med kvadratroden er _(0_) - 
+    bare meget simpelt 
+    _($x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} = \frac{-b \pm 0}{2a}=50000/(2*100)=250_) arbejdere. 
+    <br><br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Sig at mængden af regn i Danmark i mm kan modelleres som:
+    _(3Cos(\frac{2\pi}{52}t)^2 + 5*Cos(\frac{2\pi}{52}t) + 4_)
+    Her er _(t_) hvor mange uger inde i året vi er (der er _(52_) i alt), og 
+    selve tallet fortæller os gennemsnitsligt hvor meget regn der faldt den uge (i mm). Der er blevet
+    brugt trig-funktioner fordi de meget godt kan modellere
+    de forskellige sæsoner. Kurven ser omkring sådan her ud:
+    <img class='SpicB' style='width:80%' src='../../../Assets/Chapter2\Section3\Solutions\Rain.png'> 
+    <p class="t">Er der nogen som helst tidspunkter (hvor halv-uger, kvart-uger, 0.1253 uger osv er tilladt) 
+    hvor det regner over _(13mm_)? </p>
+    <br></q-stion>
+    <answer-box>
+    Lad mig først af alt lave det her om til et meget nemmere problem:
+    Er funktionen nogen sinde ligmed _(13_)? _(13_) er tydeligvis ikke
+    <i>det laveste</i> punkt, da man nemt kan se at et eller andet
+    som _(t=25_) giver _(3Cos(\frac{2\pi}{52}25)^2 + 5*Cos(\frac{2\pi}{52}25) + 4 = 1.99_).
+    Der kan ikke fandtes noget højere punkt end _(13_), hvis kurven aldrig er ligmed _(13_), fordi
+    den kan jo ikke gå fra noget der er mindre end _(13_), og så op til noget der er højere
+    hvor den bare "springer over" _(13_). 
+    <p class="t">
+    Vi skal altså se om der er nogle løsninger til 
+    _(3Cos(\frac{2\pi}{52}t)^2 + 5*Cos(\frac{2\pi}{52}t) + 4 = 13_),
+    hvilke kan omskrives til:
+    _($3Cos(\frac{2\pi}{52}t)^2 + 5*Cos(\frac{2\pi}{52}t) + -9 = 0_)
+    Det jeg ummidelbart lægger mærke til er at det her faktisk 
+    lidt passer formen _(ax^2+bx+c=0_). Hvis bare vi kalder 
+    _(Cos(\frac{2\pi}{52}t)_) for _(x_) så fås nemlig 
+    _(3x^2 + 5x - 9 = 0_). Siden _(25-4*3*(-9) \gt 0_) så kan _(x_) <i>godt</i> findes,
+    og når vi udregner den får vi _(x=1.096_) eller _(x=-2.76_). 
+    _(Cos(\frac{2\pi}{52}t)_) skal altså være ligmed en af de her to 
+    værdier. Det er umuligt, siden _(Cos_) har et range (min til max) fra _(-1_) til _(1_).
+    Svaret må være nej: der er ingen uger hvor det regner mere end _(13mm_). 
+    </p> 
+    <br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Hvis _(x_) er mellem _(0_) og _(3.5_), hvor mange løsninger
+    er der så til _(Sin(7x)=0.4_)? Vi bruger radianer her. 
+    <br><br></q-stion>
+    <answer-box>
+    "Well, siden _(Sin(7x)=0.4_) så må _(7x=Arcsin(0.4)=0.41_), så 
+    _(x=0.41/7=0.058_)" og der er èn løsning. Boom"
+    <p class="cent">
+        Nej
+    </p>
+    <p class="t">
+    _(0.0058_) er ikke nødvendigvis det eneste sted hvor _(Sin_) er lig _(0.4_).
+    Præcis samme gælder _(\pi - 0.058 = 3.08_). 
+    </p>    
+    <img class='Spic' style='width:55%' src='../../../Assets/Chapter2\Section3\Solutions\TilFlereLøsningerSin.png'> 
+    <p class="t">
+    _(7x_) går i alt fra _(0_) til _(7*3.5=24.5_) radianer. Det vil sige
+    den kører halvt rundt om cirklen _(24.5/\pi = 7.79\pi_) gange. Vi kan se
+    _(7.79\pi_) er lig _(6\pi+1\pi+0.79\pi_). _(6\pi_) betyder at den
+    kører hele vejen rundt _(6/2=3_) gange. Det er altså   
+    _(3*2=6_) steder hvor vinklen er lig _(0.058_) eller _(3.08_).
+    Udover de _(3_) hele omgange så kører den også en halv èn igen
+    bagefter via _(1\pi_) og så _(0.79\pi_). Dèn halve omgang
+    giver os to ekstra gange hvor vinklen er _(0.058_) eller _(3.08_).
+    Der er altså i alt _(6+2=8_) løsninger!
+    </p>
+    <br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    En eller anden kasse skal være _(15cm_) længere end dens bredde. Hvis dens
+    areal skal være _(200cm^2_), hvor bred er så kassen? Det her spørgsmål er
+    meget nemt, men følte alligevel det havde en vis vigtighed. 
+    <br><br></q-stion>
+    <answer-box>
+    Easy: 
+    _($b*(b+15)=200 \to b^2 + 15b - 200 = 0 \to_)
+    _($b=\frac{-15 \pm \sqrt{15^2 - 4*1*(-200)}}{2*1} = -7.5 \pm 16_)
+    Den ene løsning er tydeligvis negativ som ikke giver mening, så _(x=-7.5+16=8.5cm_) er svaret.
+    <br><br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Find alle løsninger til _((3x^2 + 4x - 5)*(7x+5)=0_)
+    <br><br></q-stion>
+    <answer-box>
+    "Well, ser du hvis _((3x^2 + 4x - 5)*(7x+5)=0_) så må
+    _(\frac{(3x^2 + 4x - 5)*(7x+5)}{7x+5}=\frac{0}{7x+5} \to 7x+5=0 \to x=-5/7_)"
+    <p class="cent">
+        Nej
+    </p>
+    <p class="t">
+    Eller, jo - til en vis grad. Der er intet helt matematisk du gjorde forkert der, men 
+    ligesom før så fandt du ikke <i>alle</i> løsninger - kun èn. Man kunne
+    nemt blive fristet til enten at gøre hvad du lige gjorde, eller bare
+    at gange _(7x+5_) ind i den anden parentes og få _(21x^3 + 43x^2 - 15x - 25_) (hvilket
+    ville være relativt meget svært at løse). I stedet
+    kan du lave et simpelt argument: hvis der er _(0_) på den ene side af en ligning,
+    og den anden side består af nogle faktore _(F_1(x),F_2(x)..._) ganget med hinanden, så
+    vil det _(x_) hvor _(F_1(x)=0_) være en løsning, det _(x_) hvor _(F_2(x)=0_) være en løsning, 
+    osv. Logisk nok: hvis bare èn af faktorene er _(0_), så bliver <i>hele</i> siden _(0_). 
+    Du kan altså bare kigge på hver faktore for sig, se hvornår den er _(0_), og få alle 
+    dine svar sådan. Vi vil ofte gerne omskrive noget til denne dejlige form,
+    fordi det simpelt hen er så let at arbejde med. Du har allerede vist 
+    at den ene faktor _((7x+5)_) er _(0_) når _(x=-5/7_). Den anden faktor
+    _((3x^2+4x-5)_) er _(0_) når 
+    _($x=\frac{-4 \pm \sqrt{4^2 - 4*3*(-5)}}{2*3}=-0.666 \pm 1.45_)
+    Vores tre løsninger til denne ligning er altså 
+    _($-5/7, -0.666 - 1.45=-2.166, -0.666+1.45=0.783_)
+    </p>
+    <br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Noget man ofte skal i kemi er at <i>balancere reaktioner</i>. Sig f.eks man havde følgende:
+    _($C_3H_8+O_2 \to CO_2 + H_20_)
+    Det her fortæller os at når de to molekyler _(C_3H_8_) og _(O_2_) reagerer, så bliver
+    de på en eller anden måde lavet om til _(CO_2_) og _(H_2O_). Det her er fint, men 
+    virker kun med et bestemt forhold mellem _(C_3H_8_) og _(O_2_). Det
+    er heller ikke sikkert at de producerer ligeså mange _(CO_2_) som de gør _(H_2O_). 
+    <i>Lige nu</i> giver det i hvert fald ingen mening: eksempelvis er der på den ene
+    side _(3_) _(C_)-atomer, men på den anden kun _(1_). Man er nødt til at have det rigtige
+    forhold mellem de her molekyler, så det er lige mange af hvert atom på hver side. 
+    Find en måde at gøre det på i eksemplet deroppe. 
+    <br></q-stion>
+    <answer-box>
+    Sig at jeg har _(k_0_) _(C_3H_8_) og _(k_1_) _(O_2_) molekyler. Det vil betyde
+    at der på den ene side er _(3*k_0_) _(C_)-atomer, _(8*k_0_) _(H_) atomer,
+    og _(2*k_1_) _(O_) atomer. Lignende, hvis vi har _(k_2_) _(CO_2_) molekyler, og 
+    _(k_3_) _(H_2O_) molekyler, så er der på den anden side
+    _(k_2_) _(C_)-atomer, _(2*k_3_) _(H_) atomer, og _(2*k_2+k_3_) _(O_)-atomer.
+    Alt i alt kan vi altså opsætte ligningerne:
+    _($3k_0=k_2, 8k_0=2k_3, 2k_1=2k_2+k_3_)
+    Den ene resultere i at _(k_0=k_2/3_), som vi så kan sætte ind i den anden og 
+    få _(8*k_2/3=2*k_3_) hvilke giver _(k_3=\frac{4}{3}k_2_). Den sidste
+    ligning er _(2k_1=2k_2+\frac{4}{3}k_2 \to k_1=\frac{5}{3}k_2_). Alt i alt har vi altså nu:
+    _($\frac{1}{3}k_2*C_3H_8 + \frac{5}{3}k_2*O_2 \to k_2*CO_2 + \frac{4}{3}k_2*H_2O_)
+    Man kan selvfølgelig ikke have tredjedele af molekyler, så vi ganger begge sider med _(3_) (som jo ikke ændre forholdet)
+    og får:
+    _($k_2*C_3H_8 + 5k_2*O_2 \to 3k_2*CO_2 + 4k_2*H_2O_)
+    Der er selvfølgelig uendelig mange løsninger, fordi <i>mængden</i> 
+    er ligegyldig, sålængde <i>forholdet</i> er rigtigt. Vi kan bare vælge den mindste _(k_2_) som _(k_2=1_) og få:
+    _($C_3H_8 + 5O_2 \to 3CO_2 + 4*H_2O_)
+    <br></answer-box>
+

@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+
+    <h3>Hvorfor lige 360 grader på en cirkel? </h3>
+    
+    <p class="t">
+    Nu hvor vi alligevel er i gang med at indse, at de matematiske 
+    systemer vi bruger i hverdagen
+    ofte er arbitrere og menneskevalgte: 
+    Hvorfor lige _(360_) grader? Vinkler 
+    går fra _(0_) til _(360_), men ville det ikke være meget
+    mere logisk at gå fra _(0_) til _(100_) eller _(0_) til _(1_)? 
+    </p>
+    
+    <p class="t">
+    Svaret er overraskende nok ikke <i>helt</i> dumt.
+    "Grader", som vi kender dem i dag, 
+    blev opfundet af en oldgammel civilisation kaldt "babylonierne". 
+    De valgte _(360_) af to årsager: Med deres astronomiske værktøjer
+    dengang troede de, der gik _(360_) dage på et døgn. 
+    Så én grad hver dag. Giver super god mening. 
+    For det andet tænkte de på tal som _(12_), _(180_) og _(360_) som "runde"
+    af natur, fordi de nemt kan divideres med andre tal. 
+    Det er smart at have _(12_) timer om dagen, da du let kan
+    lave hovedregninger og dividere det med andre tal - samme gælder vinkler og _(360_).
+    </p>
+    <p class="t">
+    _(360_) kan man også skrive som 
+    _($2*2*2*3*3*5_) 
+    Et "simplere" tal som _(100_)
+    ville i stedet blive 
+    _($2*2*5*5_) 
+    _(360_) indeholder _(3_) som _(100_) ikke gør. Det betyder, at vi f.eks. kan dividere det 
+    med noget som _(30=5*3*2_), da vi så bare skal udregne:
+    _($\frac{360}{30}=\frac{2*2*2*3*3*5}{2*3*5}=2*2*3_) 
+    Kontra:
+    _($\frac{100}{30}=\frac{2*2*5*5}{2*3*5}=\frac{2*5}{3}=10/3_) 
+    _(360_) indeholder et mere varieret arsenal,
+    af tal vi kan "fjerne fra tælleren" når vi dividerer, 
+    kan man sige. 
+    </p>
+    <p class="t">
+    _(2_), _(3_), _(5_), _(7_) _(11_), _(13_) osv. kalder vi for <i>primtal</i>. 
+    De her tal kan ikke opdeles i mindre tal ganget med hinanden, og alle andre "ikke-prime" tal 
+    kan opdeles i primtal (hvilke teknisk set skal bevises, men er ret intuitivt og logisk). 
+    Det er lettere at dividere _(360_) med andre tal, fordi det indeholder flere unikke primtal
+    end _(100_). 
+    </p>
+
+    <q-stion 1="31" 2="1" bigTop="true"> 
+    Opdel de følgende tal i primtal ganget med hinanden:
+    <ul>
+        <li>_(\underline{\textbf{A:}} \, \, \,_) _(108_) </li>
+        <li>_(\underline{\textbf{B:}} \, \, \,_) _(90_) </li>
+        <li>_(\underline{\textbf{C:}} \, \, \,_) _(140_) </li>
+        <li>_(\underline{\textbf{D:}} \, \, \,_) _(98_) </li>
+        <li>_(\underline{\textbf{E:}} \, \, \,_) _(110_) </li>
+    </ul>
+    <br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    Det første jeg lægger mærke til, er at _(108_) nemt kan divideres med _(2_), så:
+    _($108=2*54_)
+    _(2_) kan ikke gøres mindre, så jeg skal se på _(54_) nu. Det kan også 
+    divideres med _(2_): 
+    _($54=2*27_)
+    _(27_) kan <i>ikke</i> divideres med _(2_), men jeg kan se 
+    at det kan divideres med _(3_), siden det er _(3_) mindre end _(30_):
+    _($27=3*9_)
+    _(3_) kan ikke gøres mindre, og det er nemt at omskrive _(9_) til bare _(3*3_). 
+    Alt i alt står vi nu tilbage med:
+    _($108=2*2*3*3*3_)
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Her får vi: 
+    _($90=9*10=(3*3)*(5*2)=3*3*5*2_)
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{C}}_)#" tabColour="rgb(171,96,147)">
+    Først kan vi lige halvere et par gange:
+    _($140=2*70=2*2*35_)
+    _(35_) indeholder tydeligvis _(5_) i form af
+    _($5*7_)
+    Hverken _(5_) eller _(7_) kan reduceres yderligere, så vi 
+    ender med
+    _($140=2*2*5*7_)
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{D}}_)#" tabColour="rgb(175,128,161)">
+    Først omskriver jeg lige til:
+    _($98=2*49_)
+    Jeg kan huske fra erfaring, at _(49=7*7_). Det er lidt noget
+    man bare er nødt til at kunne huske ligesom _(5*5=25_). 
+    <p class="t">
+    _(7*7_) er ureducerbart, så svaret er:
+    _($98=2*7*7_)
+    </p>
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{E}}_)#" tabColour="rgb(171,96,147)">
+    Et _(0_) for enden af et tal er altid let at omskrive:
+    _($110=11*10=11*5*2_)
+    Bum!
+    <br><br></answer-box>
+    
+    <!--  -->
+
+    <q-stion 1="31" 2="2">
+    I har idræt i klassen, og skal til at spille rundbold. Læreren vil dele klassen ind 
+    i lige store hold. Vil det være muligt, givet at i er henholdsvis ...
+    <ul>
+        <li>_(\underline{\textbf{A:}} \, \, \, 4  \text{ personer}_) </li>
+        <li>_(\underline{\textbf{B:}} \, \, \, 7  \text{ personer}_) </li>
+        <li>_(\underline{\textbf{C:}} \, \, \, 11 \text{ personer}_) </li>
+        <li>_(\underline{\textbf{D:}} \, \, \, 12 \text{ personer}_) </li>
+        <li>_(\underline{\textbf{E:}} \, \, \, 31 \text{ personer}_) </li>
+        <li>_(\underline{\textbf{F:}} \, \, \, 33 \text{ personer}_) </li>
+        <li>_(\underline{\textbf{G:}} \, \, \, 57 \text{ personer}_) </li>
+    </ul>
+    <br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    Fjern alt fluff og spørgmålene koger ned til: Er tallene primtal eller ej? 
+    Et primtal 
+    kan ikke laves om til <i>nogle</i> andre hele tal ganget med hinanden. Det har 
+    vi brug for, hvis vi skal danne lige store grupper, fordi så kan _(6_) personer opdeles
+    i _(3*2_) eller _(9_) personer i _(3*3_). Det er ikke muligt hvis tallet er primt. 
+    <p class="t">
+    _(4_) personer er tydeligvis muligt, da _(4=2*2_) ikke er et primtal.
+    </p>
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Denne er <i>ikke</i> mulig, da _(7_) er et primtal. 
+    <p class="t">
+    Hvis man er virkelig usikker, kan man tjekke om noget er 
+    et primtal, ved at dividere det med alle primtallene under. Hvis ingen virker, 
+    indeholder vores tal ikke nogle faktorer af andre primtal, 
+    og er derfor <i>selv</i> et primtal.
+    </p>
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{C}}_)#" tabColour="rgb(171,96,147)">
+    Er også umulig siden _(11_) er prim.
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{D}}_)#" tabColour="rgb(175,128,161)">
+    _(12=3*2*2_), ergo denne er <i>mulig</i>.  
+    <p class="t">
+    Ingen primtal er lige, da det hentyder, at de indeholder en faktor af _(2_). 
+    </p>
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{E}}_)#" tabColour="rgb(171,96,147)">
+    Denne er ikke mulig, da det er et primtal. Der er man nok bare nødt til at tjekke med rå kraft. 
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{F}}_)#" tabColour="rgb(175,128,161)">
+    Er lig _(11*3_), så det er ikke et primtal. 
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{G}}_)#" tabColour="rgb(171,96,147)">
+    Denne er <i>ikke</i> et primtal. 
+    <p class="t">
+    Hvis det er svært at genkende nogle faktorer i _(57_), kunne du omskrive til:
+    _($57=60-3=3*10*2-3=3*(10*2-1)=3*19_)
+    Tallet er nu lig to hele tal ganget med hinanden. 
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="31" 2="3">
+    Skolen fordeler igen hold, men situationen denne gang er mere kompliceret:
+    <p class="t">
+    I den sport i
+    spiller, skal hvert hold i sig selv opdeles i tre mindre lige store dele: support, forsvar, og angreb.
+    I er i alt _(273_) elever, og der skal helst være så <i>få</i> hold som muligt (og hvert hold skal være lige stort). 
+    </p>
+    <p class="t">
+    Hvor mange
+    personer bliver der i hver mindre support / forsvar / angrebs-gruppe?
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Lad os først og fremmest opdele _(273_) i primtal, hvilket faktisk er en smule tricky.
+    <p class="t">
+    Jeg tænker umiddelbart at _(273_) kan omskrives til _(270+3_). _(270_) er 
+    _(30_) væk fra _(300_). Både _(30_) og _(300_) går op i _(3_), så det burde _(270_) også. 
+    Jeg omskriver derfor det hele til 
+    _($300-30+3=3*100-3*10+3=3*(100-10+1)=3*91_)
+    Kan man opløse _(91_)? _(2_), _(3_) og _(5_) virker tydeligvis ikke, men _(7_) gør.
+    _(91=7*13_), så vi får: 
+    _($273=3*7*13_)
+    Hvor mange lige store grupper burde vi vælge? _(7_), _(3_), eller _(13_)?
+    </p>
+    <p class="t">
+    Det kan ikke være _(3_), siden hvert hold skal kunne 
+    divideres med _(3_), hvis vi både vil have forsvar, support, og angreb.
+    Derfor vælger vi _(7_), da skolen gerne ville have det mindste antal hold muligt. I hver support / forsvar / angrebs-gruppe
+    kommer der til at være _(13_) personer.
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="31" 2="4">
+    Vi kan nemt plusse og lave to brøker om til én <i>hvis</i> de har samme nævner:
+    _($\frac{4}{5}+\frac{3}{5}=\frac{3+4}{5}=\frac{7}{5}_)
+    Det her kan vi fordi, det jo egentlig bare er to led, der begge er ganget med _(\frac{1}{5}_).
+    Hvad hvis det ikke er tilfældigt dog? Det er super praktisk at kunne kombinere
+    både af udregningsmæssige og teoretiske årsager.
+    Prøv derfor i denne opgave at lave 
+    _($\frac{3}{5}+\frac{4}{2}_) 
+    ... om til én brøk.
+    <br><br></q-stion>
+    <answer-box>
+    Hvis brøker er nød til at have samme nævner for at de kan kombineres, så giver vi dem da bare samme nævner!
+    Begge nævnere er lig _(10_), hvis det første led ganges med _(2_) og det andet led med _(5_):
+    _($\frac{3}{5}+\frac{4}{2} = \frac{3*2}{5*2} + \frac{4*5}{2*5} = \frac{6+20}{10} = \frac{26}{10}_)
+    <p class="t">
+    Bam! Man siger bare: hvilke faktorer har den ene brøk i dens nævner som 
+    den anden mangler? Hvad deler de, og hvad deler de ikke? Både tæller og nævner ganges, så tallet
+    forbliver intakt. 
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="31" 2="5">
+    Lav de følgende plusstykker med brøker om til bare èn brøk:
+    <div style="text-align:left; margin-left:-75%; margin-top:25px; margin-bottom:25px;">
+    _($\begin{eqnarray}
+    && \underline{\textbf{A:}} \, \, \, \, \, \, \, \frac{37}{126}+\frac{42}{60} \\ \\
+    && \underline{\textbf{B:}} \, \, \, \, \, \, \, \frac{12}{15}+\frac{23}{24} \\ \\
+    && \underline{\textbf{C:}} \, \, \, \, \, \, \, \frac{5}{7}+\frac{9}{35} \\ \\
+    && \underline{\textbf{D:}} \, \, \, \, \, \, \, \frac{43}{55}+\frac{3}{14} \\ \\
+    && \underline{\textbf{E:}} \, \, \, \, \, \, \, 3+\frac{7}{11} 
+    \end{eqnarray}_)
+    </div>
+    <br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    Vi <i>kunne</i> gange nævnerne med hinanden som i sidste opgave:
+    _($\frac{37*60}{126*60}+\frac{42*126}{60*126} = \frac{37*60+42*126}{60*126}_)
+    ... Men det giver nogle ret store tal. Kan det gøres mere effektivt?  
+    <p class="t">
+    _(126_) og _(60_) kan opdeles i deres primtal som:
+    _($\begin{eqnarray}
+    && 126 = 2*3*3*7 \\
+    && 60 = 2*2*3*5
+    \end{eqnarray}_)
+    De deler begge _(2*3_), men _(126_) mangler et ekstra _(2_) og en ekstra _(5_), mens
+    _(60_) mangler en ekstra _(3_) og en ekstra _(7_). Derfor siger vi:
+    _($\frac{37*2*5}{126*2*5} + \frac{42*3*7}{60*3*7} = \frac{37*2*5+42*3*7}{60*3*7} = \frac{1252}{1260}_)
+    Og vi har en brøk! Den kan endda forsimples:
+    _($\frac{1252}{1260} = \frac{313*2*2}{315*2*2} = \frac{313}{315}_)
+    Voila!
+    </p>
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Lidt bare det samme som den første: _(15=5*3_) og _(24=2*2*2*3_). De deler kun _(3_), så:
+    _($\frac{12*2*2*2}{15*2*2*2}+\frac{23*5}{24*5}=\frac{96}{120}+\frac{115}{120}=\frac{211}{120}_)
+    Dette kan ikke simplificeres yderligere. 
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{C}}_)#" tabColour="rgb(171,96,147)">
+    _(35_) er lig _(5*7_), så den ene nævner skal ganges med _(5_), mens den anden forbliver intakt:
+    _($\frac{5}{7}+\frac{9}{35} = \frac{5*5}{35}+\frac{9}{35} = \frac{25+9}{35} = \frac{34}{35}_)
+    Færdig. 
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{D}}_)#" tabColour="rgb(175,128,161)">
+    _(55=5*11_) og _(14=7*2_) deler ingen faktorer. Her ganger vi bare nævnerne direkte:
+    _($\frac{43*14+3*55}{55*14}=\frac{767}{770} _)
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{E}}_)#" tabColour="rgb(171,96,147)">
+    Den her kan måske godt virke lidt tricky. Hvor er den anden brøk?
+    Hvordan kombinerer vi en brøk med et helt tal?
+    _($3+\frac{7}{11}=\frac{3*11}{11}+\frac{7}{11}=\frac{33+7}{11}=\frac{40}{11}_)
+    Bam! Et hvert helt tal kan nemt repræsenteres som brøk!
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="31" 2="6">
+    Du er ude at købe ind til franske hotdogs med gutterne, så 
+    i det lokale supermarkedet leder du efter både brød og pølser. Dit supermarked
+    leverer dem kun i massive pakker; Henholdsvis _(60_) styk brød og _(126_) pølser. 
+    Nu står du i en problematisk situation: Hvad hvis du køber en masse pølser
+    uden brød eller en masse brød uden pølser? Gutterne hader madspild!
+    <p class="t">
+    Hvad er den <i>mindste</i> mængde henholdsvis hotdog- og pølsepakker du kan købe, hvor det går op?
+    Der kommer selvfølgelig til at være flere brød-<i>pakker</i> end pølse-pakker, men mængden
+    af brød og pølse skal være identisk. 
+    </p>
+    <br></q-stion>
+    <answer-box t="h">
+    Vi skal have samme mængde hotdogs som pølser, så vi leder egentlig bare efter ét tal.
+    <br><br></answer-box>
+    <answer-box>
+    Vi skal have samme mængde hotdogs som pølser, så vi leder egentlig bare efter ét tal.
+    Vi kan ved hjælp af dette tal let 
+    regne antallet af hotdog- og pølsepakker, 
+    ved at dividere med henholdsvis _(60_) og _(126_). Der ligger svaret:
+    tallet <i>skal</i> kunne divideres med både _(60_) og _(126_).
+    Hvordan finder vi det mindste tal der har denne egenskab?
+    <p class="t">
+    Vi kan starte med at se på _(60*126=7560_). Det kan <i>selvfølgelig</i>
+    divideres med begge, da 
+    _($\frac{60*126}{126}=60, \qquad \frac{60*126}{60}=126_) 
+    Det er bare også ret højt. 
+    Hvad ville du gøre, hvis du i et nemmere tilfælde skulle finde et tal, der 
+    kunne divideres med både _(6_) og _(4_)? Du ved at:
+    _($\begin{eqnarray}
+    && 6 & = 3*2 \\
+    && 4 & = 2*2
+    \end{eqnarray}_)
+    _(3*2*2_) ville altså virke, da: 
+    _($\frac{3*2*2}{2*2}=3, \qquad \frac{3*2*2}{3*2}=2_) 
+    Aha! Vi drager inspiration fra brøkerne, og ganger kun vores tal med de ikke-delte faktorer. 
+    _(126_) og _(60_) kan opdeles i primtal som:
+    _($\begin{eqnarray}
+    && 126 = 2*3*3*7 \\
+    && 60 = 2*2*3*5
+    \end{eqnarray}_)
+    _(126_) mangler en ekstra _(2_) og _(5_) og _(60_) en ekstra
+    _(3_) og _(7_). Vi ender derfor med
+    et samlet antal på 
+    _($126*2*5=1260 \text{ hotdogs}_)
+    Du skal købe _(2*5=10_) pølse-pakker og 
+    _(3*7=21_) brød-pakker. 
+    </p>
+    <p class="cent">*</p>
+    <p class="t">
+    Det vi gjorde her, svarer til at finde den såkaldte "LCD" (Least common denominator) af to tal. 
+    LCD'en af to tal _(a_) og _(b_) er det mindste tal der kan divideres med dem begge. 
+    Det er i modsætning til "GCM"'en (Greatest common multiple), der står for
+    alle delte faktorer. Man kan relativt let se at: 
+    _($\text{LCD}(a,b) = a*\left(\frac{b}{\text{GCM}(a,b)} \right)_)
+    Det er præcis hvad vi gjorde: Vi gangede _(60_) med de faktorer 
+    i _(126_), som _(60_) <i>ikke</i> allerede delte.
+    </p>
+    <p class="t">
+    Man kan også visualisere og forstå _(\text{LCD}_)'en og _(\text{GCM}_)'en via et Venn-diagram: 
+    </p>
+    <img class="SpicT" style="width:65%;"  src="../../../Assets/Chapter1/Talteori/vennFaktore.png">
+    <p class="tt">
+    Vi ser, at _(\text{GCM}_)'en som forventet er de delte faktorer, og at _(\text{LCD}_)'en på 
+    en måde kan forstås som "alle faktorer". Det er alle faktorer
+    <i>uden</i> at man dobbelt-tæller de delte. 
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="31" 2="7">
+    En brøk som _(3/2_) eller _(4/5_) kan let omskrives til et decimaltal:
+    _($\frac{4}{5}=\frac{40}{5}/10 = 8/10 = 0.8_)
+    Men andre tal som _(1/3_) eller _(1/7_) er umulige? _(1/3_) er vi nødt til at
+    beskrive som:
+    _($0.3333333 \dots \, \text{forevigt} _)
+    Hvorfor er det kun nogle gange muligt?
+    <p class="t">
+    <i>Hint</i>: Hvad for en indflydelse har det, at vi arbejder i base _(10_)?
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Det viser sig, at der faktisk ikke er noget specielt omkring _(5_) eller _(2_) i forhold 
+    til andre primtal som _(3_) eller _(7_). Problemet ligger rent og skær simpelt i 
+    vores talsystem: base _(10_). I vores nuværende system <i>skal</i>
+    tal som _(1/3_) beskrives gennem mængden af tiendedele. 
+    I det base _(4_) system vi 
+    brugte tidligere, ville _(1/3_) skulle beskrives i forhold til mængden af kvartdele. 
+    Det kan man simpelt hen ikke! 
+    <p class="t">
+    I et base _(3_) system kan _(1/3_) skrives som _(0.1_), men 
+    _(1/2_) og _(1/5_) kan ikke længeres tegnes som decimaltal. Hvordan præcis laver man en 
+    halvdel ud af kun progressivt mindre tredjedele,  
+    en tredjedel ud af femtedele af femtedele, eller vice versa? En syvendedel ud af kvartdele af kvartdele?
+    </p>
+    <p class="t">
+    Når man tænker over det opstår problemet, fordi vi forsøger at 
+    beskrive ét primtal i forhold til et andet. Et base _(10_) system består
+    af faktorerne _(5_) og _(2_). De to primtal kan ikke beskrive et fænomen 
+    som _(1/3_), der fundamentalt lægger sig op ad primtallet _(3_).     
+    </p>
+    <br></answer-box>
+
+    
+    <p class="tt">
+        Der er uendelig mange primtal. Det er på ingen måde åbenlyst, og beviset er relativt avanceret <sup><a href="https://proofwiki.org/wiki/Number_of_Primes_is_Infinite" title="proofwiki (marts 2021, 27). 'Number of Primes is Infinite'. https://proofwiki.org/wiki/Number_of_Primes_is_Infinite" target="_blank">[F]</a></sup> .
+        Jeg er ikke vild med bare at smide "facts" mod dit ansigt sådan, men lige her må du stole på mig 
+        (stole på fodnoterne, rettere). 
+    </p>
+    <p class="t">
+    Det kan tage lidt tid at finde ud af, hvorvidt et tal er primt. Selve strategien er 
+    nem, men det bliver langsomt, som tallet gror større. 
+    Der <i>er</i> visse bedre strategier, men de virker kun i 
+    få situationer til bestemte tal. Det handler i stor grad om viden og tidligere erfarning.
+    Computere er (praktisk talt) nødt til at bruge den langsomme metode hvor man tester alle mindre
+    primtal stadig idag. Så svært
+    er problemet! 
+    </p>
+    <p class="t">
+    Primtal er - udover deres praktiske anvendelser - et perfekt eksempel på
+    en ide teoretiske matematikere studerer intensivt. 
+    De <i>er</i> bare mystiske og mærkelige. Vi 
+    har bl.a. svært ved at forudsige, hvornår et tal er primt, og hvor stor
+    afstand der er mellem primtal. Matematikere kan lettere studere
+    talegenskaber i andre tal, hvis de først har studeret dem i <i>primtal</i>.
+    Primtal er <i>byggeblokkene</i> for alt talteori, og 
+    man studerer selvfølgelig atomer, før man går videre til molekyler. 
+    </p>
+    
+
+    
+
+

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p class="t">
+    Okay hvor i alverden var vi lige? Vi startede med et forsøg på at udregne 
+    <img src="../Assets/Chapter1/Talsystemmer/TalBilleder/Komma/1.png" height="20em">.
+    Det gik fint nok indtil vi pludselig var nødt til at regne
+    <img src="../Assets/Chapter1/Talsystemmer/TalBilleder/Komma/17.png" height="20em">. 
+    Så blev det pludselig super teknisk, super hurtigt. Men der er en mening i vandviden 
+    tro mig! Vi kan nemlig gøre noget pænt smart nu. 
+    </p>
+    
+    <p class="t">
+    Vi kan med vores nye viden omskrive
+    <img src="../Assets/Chapter1/Talsystemmer/TalBilleder/Komma/40.png" height="20em"> til 
+    <p-m m=" 1/A1 + 2/B1"/> og <img src="../Assets/Chapter1/Talsystemmer/TalBilleder/Komma/18.png" height="20em">
+    til <p-m m=" 3/A1 + 2/B1 + 1/C1"></p-m>. 
+    Vores problem er at vi har svært ved at gange de her små tal med hinanden.
+    Så hvorfor ikke bare lave dem om til store tal, gange dem, og så dividere bagefter?
+    Eksempelvis kunne vi gange <p-m m=" 1/A1 + 2/B1"></p-m> med <p-m m=" B1"></p-m>:
+    </p>
+
+    <p class="cent">
+        <p-m m=" B1*(1/A1 + 2/B1)=A1*A1*(1/A1 + 2/A1*A1)="></p-m><br>
+        <p-m m=" A1*A1*(1/A1) + A1*A1*(2/A1*A1)="></p-m><br>
+        <p-m m=" A1 + 2"></p-m><br>
+    </p>
+
+    <p class="t">
+    Vi gangede med <p-m m=" B1"></p-m>, så det skal vi selvfølgelig også dividere med. Vi 
+    kan jo ikke bare ændre på tallet som det passer os! Altså, vi dividere med 
+    <p-m m=" B1"></p-m> og får: <p-m m=" (A1 + 2)/B1"></p-m>. Vi kunne altså omskrive
+    til <p-m m=" (A1 + 2)/B1"></p-m>! Vi kan gøre noget meget lignende med
+    <p-m m=" 3/A1 + 2/B1 + 1/C1"></p-m>. Her ganger og dividere vi med 
+    <p-m m=" C1"></p-m> i stedet for <p-m m=" B1"></p-m>: pointen er jo at fjerne tal der 
+    er mindre end <p-m m=" 1"></p-m>! Hvis vi gangede med <p-m m=" B1"></p-m> så ville vi stadig
+    ende ud med at tal der var mindre i form af <p-m m=" 1/C1"></p-m>. 
+    </p>
+
+    <p class="cent">
+        <p-m m=" C1*(3/A1 + 2/B1 + 1/C1)="></p-m><br>
+        <p-m m=" A1*B1*(3/A1 + 2/B1 + 1/A1*B1)="></p-m><br>
+        <p-m m=" A1*B1*(3/A1) + A1*B1*(2/B1) + A1*B1*(1/B1*A1))="></p-m><br>
+        <p-m m=" B1*3 + A1*2 + 1"></p-m><br>
+        Vi dividere så med <p-m m=" C1"></p-m> og får:
+        <p-m m=" (B1*3 + A1*2 + 1)/C1"></p-m><br>
+    </p>
+
+    <p class="t"> Nu da vi har omskrevet begge to, så bliver 
+    <img src="../Assets/Chapter1/Talsystemmer/TalBilleder/Komma/17.png" height="20em">
+    til: </p>
+    <p class="cent"><img src="../Assets/Chapter1/Talsystemmer/TalBilleder/brøker/1.png" height="35em"></p>
+    <p class="t"> Tallene i parenteserne kan nemt lægges sammen som: </p>
+    <p class="cent"><img src="../Assets/Chapter1/Talsystemmer/TalBilleder/brøker/2.png" height="35em"></p>
+    <p class="t"> Vi ved yderligere også at man kan skrive nogen som helst divition med et tal, 
+    som et gangestykke med <p-m m=" 1"/> divideret med tallet. Altså, vi får:</p>
+    <p class="cent"><img src="../Assets/Chapter1/Talsystemmer/TalBilleder/brøker/3.png" height="35em"></p>
+    <p class="t"> Rækkefølgen vi ganger i er fuldkommen ligegyldig, så vi kan igen omskrive:
+    <p class="cent"><img src="../Assets/Chapter1/Talsystemmer/TalBilleder/brøker/4.png" height="35em"></p>
+    <p class="t"> ... og igen: </p>   
+    <p class="cent"><img src="../Assets/Chapter1/Talsystemmer/TalBilleder/brøker/5.png" height="35em"></p>
+    <p class="t"> Nu kan vi egentlig bare bruge det første med at omskrive divition, modsat: </p>   
+    <p class="cent"><img src="../Assets/Chapter1/Talsystemmer/TalBilleder/brøker/6.png" height="35em"></p>
+    <p class="t"> Gangestykket i toppen giver <p-m m=" (D1B3A3 2)"/>, så:</p>   
+    <p class="cent"><p-m m=" (D1B3A3 2)/B1*C1"></p-m></p>
+    <p class="t"> Hurrah! Endelig bare ét tal divideret med et andet. For en gangs skyld færdige med det her skide stykke!</p> 
+
+    
+
+</html>

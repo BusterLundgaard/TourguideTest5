@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+    <body>
+
+        <div style="position: relative;">
+            <!-- For GUI -->
+            <canvas id="Background" width="500" height="500" style="position: absolute; left: 0; top: 0; z-index: 8;"></canvas>
+        </div>
+
+        <script>
+           
+            var BCan = document.getElementById("Background"); var BCtx = BCan.getContext("2d");
+
+            var rulerImg = document.createElement("img"); rulerImg.src = "ruler.png";        
+
+            rulerImg.onload = function () {
+                BCtx.drawImage(rulerImg, 0, 0);
+            }
+
+            BCtx.strokeStyle = "red"
+            BCtx.lineWidth = 10
+            BCtx.fillStyle = "green"
+
+            BCtx.beginPath();
+                BCtx.moveTo(100,100);
+                BCtx.lineTo(200,200);
+                BCtx.lineTo(300,200);
+                BCtx.lineTo(300,400);
+                BCtx.lineTo(100,100);
+            BCtx.stroke();
+            BCtx.fill();
+
+            BCtx.beginPath();
+                BCtx.moveTo(100,100);
+                BCtx.lineTo(200,200);
+                BCtx.lineTo(300,200);
+                BCtx.lineTo(300,400);
+                BCtx.lineTo(100,100);
+            BCtx.stroke();
+            BCtx.fill();
+
+            BCan.style.setProperty("opacity","0.4");
+
+        </script>
+
+    </body>
+
+    </html>

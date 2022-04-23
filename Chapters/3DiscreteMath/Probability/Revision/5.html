@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+
+
+    <p class="t">
+    Svaret på problem of the points kræver at vi tager en sum af n-choose-k værdier. 
+    Det er intet problem for os, da vi via CAS i geogebra let kan regne f.eks. 
+    _($\VeC[32,10] + \VeC[32, 11] + \VeC[32, 12] + \dots \VeC[32, 31] + \VeC[32, 32]_)
+    som: 
+    _($\text{Sum(nCr(32, i), i, 10, 32)}_)
+    Hvis man skal gøre det i hånden så er det dog en <i>meget</i> tidskrævende proces. Lad os kigge
+    på en brugbar ide der kan hjælpe med at lindre denne smerte: "Pascals trekant" 
+    </p>
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\PascalsTriangle1.mp4' type='video/mp4'> 
+    </video>
+    <p class="t"> 
+    Den her tilsyneladende urelevante konstruktion/ide er praktisk fordi man
+    relativt nemt kan bevise at:
+    _($\begin{eqnarray} 
+    && \text{Den } _(m_) \text{'te værdi} \\ 
+    && \text{på den }_(n_) \text{'te række}
+    \end{eqnarray}
+    =
+    \VeC[n,m]
+    _)
+    Så jeg kan f.eks. finde 8-choose-5 ved at konstruere en del af Pascals trekant og se: 
+    </p>
+    <img class='Spic' style='width:60%' src='../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\PascalsTrekant.png'> 
+    <p class="t">
+    ...at det er lig _(56_). Det vil selvfølgelig ikke hjælpe os super meget når _(n_) og _(k_)
+    ved n-choose-k har virkelig høje værdier, men det kan alligevel godt være ret praktisk i 
+    mange tilfælde. 
+    </p>
+    <p class="t">
+    Hvorfor er det her sandt? Well, de første værdier matcher:
+    _($\VeC[0,0]=1, \qquad \VeC[0,1]=1, \qquad \VeC[1,1]=1_)
+    I starten er værdierne på Pascals trekant altså det samme som på n-choose-k.
+    Kald den _(k_)'te værdi på 
+    den _(n_)'te række af pascals trekant for _(Pa(k,m)_). Vi ved pr. definition at:
+    _($Pa(n,k)=Pa(n-1,k)+Pa(n-1,k-1)_)
+    Man kan relativt let bevise via matematik at:
+    _($\VeC[n,k]=\VeC[n-1,k]+\VeC[n-1,k-1]_)
+    n-choose-k og pascals trekant har både de samme start-værdier, og følger præcist
+    samme regel for hvordan man generer de næste tal. De er altså identiske!
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Bevis at:
+    _($\VeC[n,k]=\VeC[n-1,k]+\VeC[n-1,k-1]_)
+    Det her er ikke <i>super</i> svært: Når man tænker over det,
+    så er det jo egentlig bare et algebra problem! 
+    <br><br></q-stion>
+    <answer-box>
+    Jeg tænker jeg går til det her rent algebraisk. Jeg starter
+    fra den mere komplicerede side _(\Vec[n-1,k]+\Vec[n-1,k-1]_) og prøver
+    at omskrive den til bare _(\Vec[n,k]_):
+    _($\VeC[n-1,k]+\VeC[n-1,k-1]=_)
+    _($\frac{(n-1)!}{k!*(n-k-1)!}+\frac{(n-1)!}{(k-1)!*(n-k)!}_)
+    De her to led deler faktoren _((n-1)!_), og deler også <i>næsten</i>
+    _(k!_) og _((n-k)!_), der er bare lige en forskel på minus _(1_). Vi ved at:
+    _($\frac{1}{(A-1)!} = \frac{A}{A!}_)
+    Så vi kan være smarte og omskrive til:
+    _($\frac{(n-1)!*(n-k)}{k!*(n-k)!} + \frac{k*(n-1)!}{k!*(n-k)!}_)
+    Nu deler de stort set alting, så vi får:
+    _($\frac{(n-1)!}{k!*(n-k)!}*\left((n-k) + k \right) = \frac{n*(n-1)!}{k!*(n-k)!} = \frac{n!}{k! (n-k)!} = \VeC[n, k]_)
+    Voila! Det her var selvfølgelig kun nemt at bevise <i>fordi</i> vi allerede havde hypotesen. 
+    Hvis man skulle prøve at forestille sig <i>hvordan</i> præcist folk kom frem til denne
+    ligning, så kunne man bruge et lidt mere intuitivt argument:
+    <p class="t">
+    Sig jeg er interesseret i at finde en formel for _(\Vec[n,k]_) i forhold
+    til mindre _(n_). Det kunne være praktisk, da _(\Vec[n,k]_) jo kan
+    blive meget stort, meget hurtigt. Jeg skal tælle hvor mange måder
+    jeg kan vælge _(k_) af _(n_) objekter. Èn simpel måde at opdele
+    den opgave på er ved at kigge på èn bestemt af elementerne. Det kunne f.eks. være
+    det "første" element, som vi måske kalder for _(A_). Jeg ved, at når jeg vælger _(k_) ud 
+    af _(n_) objekter, så er _(A_) enten med, eller ikke-med. Hvis _(A_) skal være med, 
+    så er der nu _(n-1_) objekter og _(k-1_) valg tilbage. Ergo: 
+    _($\VeC[n-1,k-1]_)
+    Hvis _(A_) ikke skal være med, så har vi _(n-1_) objekter, men alle _(k_) valg. 
+    Altså: 
+    _($\VeC[n-1,k]_)
+    Derfor ved vi nu at:
+    _($\VeC[n,k]=\VeC[n-1,k-1]+\VeC[n-1,k]_)
+    Voila!
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+    
+    <q-stion 1="2" 2="1" 3="5">
+    Udregn:
+    _($\VeC[10, 3] + \VeC[10, 4] + \VeC[10, 5] + \VeC[10, 6]_)
+    i hånden. Fremover har jeg intet problem med at du bare bruge Geogebra. 
+    <br><br></q-stion>
+    <answer-box>
+    Du kan se mit svar her:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\PascalsTriangle2 2.mp4' type='video/mp4'> 
+    </video>
+    <br><br></answer-box>
+
+
+    <!-- <q-stion 1="2" 2="1" 3="5">
+    Udregn hurtigt og effektivt 
+    _($\VeC[7,0]+\VeC[7,1]+\VeC[7,2]+\VeC[7,3]+\VeC[7,4]+\VeC[7,5]+\VeC[7,6]+\VeC[7,7]_)
+    <br></q-stion>
+    <answer-box>
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\PascalsTriangle2.mp4' type='video/mp4'> 
+    </video>
+    <br><br></answer-box> -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Der er desværre ingen måde lynhurtigt at summere  
+    _($\VeC[n,0]+\VeC[n,1]+\VeC[n,2]+ \, ...\VeC[n,n-1]+\VeC[n,n]_)
+    Det bedste valg er simpelt hen bare at tegne Pascals trekant op til række _(n_), og så lægge hvert element sammen.
+    Bassicly præcist det vi gjorde i sidste opgave. Hvis dog det er <i>n</i> der bliver større som 
+    _($\VeC[n,n]+\VeC[n+1,n]+\VeC[n+2,n]+..\VeC[m,n]_) 
+    Så har vi:
+    _($\VeC[n,n]+\VeC[n+1,n]+\VeC[n+2,n]+ \, ..\VeC[m,n]=\VeC[m+1,n+1]_)
+    Prøv at bevis det.
+    <br><br></q-stion>
+    <answer-box>
+    Du kan se mit svar her:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\PascalsTriangle3.mp4' type='video/mp4'> 
+    </video>
+    "... -å sandt"
+    <br><br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Når du udvider _((a+b)^2_) så får du:
+    _($a^2 + 2*a*b + b^2_)
+    Her er der altså tre led: _(a^2 \, _), _(2*a*b \,_) og _(b^2_).
+    To af dem har en koefficient på <br> _(1_), og _(a*b_) har en koefficient på _(2_). Vi kunne
+    også skrive det som:
+    <div style="text-align:center;">
+        <ul style="display: inline-block; text-align: left; padding-left:0%; list-style:none;">
+            <li>_(a^2*b^0_): 1</li>
+            <li>_(a^1*b^1_): 2</li>
+            <li>_(a^0*b^2_): 1</li>
+        </ul>
+    </div>
+    Når du udvider _((a+b)^3_) så får du:
+    _($a^3 + 3*a^2*b + 3*a*b^2 + b^3_)
+    Her kan man sige:
+    <div style="text-align:center;">
+        <ul style="display: inline-block; text-align: left; padding-left:0%; list-style:none;">
+            <li>_(a^3*b^0_): 1</li>
+            <li>_(a^2*b^1_): 3</li>
+            <li>_(a^1*b^2_): 3</li>
+            <li>_(a^0*b^3_): 1</li>
+        </ul>
+    </div>
+    Udvider man _((a+b)^4_) fås:
+    _($a^4 + 4*a^3*b + 6*a^2*b^2 + 4*a*b^3 + b^4_)
+    Hvor:
+    <div style="text-align:center;">
+        <ul style="display: inline-block; text-align: left; padding-left:0%; list-style:none;">
+            <li>_(a^4*b^0_): 1</li>
+            <li>_(a^3*b^1_): 4</li>
+            <li>_(a^2*b^2_): 6</li>
+            <li>_(a^1*b^3_): 4</li>
+            <li>_(a^0*b^4_): 1</li>
+        </ul>
+    </div>
+    Faktisk at udvide _((a+b)^4_) tager jo en del tid, siden man skal 
+    til at gange ind i parenteser en helt masse gange. Det kunne være praktisk
+    hvis vi havde en hurtig måde at finde koefficienterne de her led tager. 
+    Din opgave er nu at finde koefficienten på _(a^{16}b^7_) når _((a+b)^{23}_)
+    udvides.   
+    <br><br></q-stion>
+    <answer-box>
+    Lad os prøve at starte småt: Hvordan kunne vi hurtig finde koefficienterne på 
+    _((a+b)^4_) hvis vi ikke gad til at gange ind i parenteser en helt masse gange?
+    For at svare på det skal vi først lige forstå hvor præcis koefficienterne kommer
+    <i>fra</i>. Lad os tage _((a+b)^2_) som det mest simple eksempel:
+    _($(a+b)^2=(a+b)*(a+b)=a*a+a*b+b*a+b*b_)
+    Der er nu to led hvor både _(a_) og _(b_) har en potens på _(1_). Sig nu at jeg
+    ved _((a+b)^4_) gerne vil have et led hvor _(a_) har en potens på _(3_). Det kunne
+    jeg se som:
+    _($(a+b)*(a+b)*(a+b)*(a+b)_)
+    Først vælger jeg at gange _(a_) i første parentes med _(a_) i anden parentes.
+    Det svarer til _(a*a_) i den udvidede version 
+    _($(a+b)*(a+b)=a^2 + 2*a*b + b^2_)
+    Derefter vælger jeg at gange med _(a_) i tredje parentes, 
+    hvilke svarer til _(a*a*a_) i den udvide
+    _($a^3 + 3*a^2*b + 3*a*b^2 + b^3_)
+    Ved den sidste parentes vælger jeg at gange med _(b_), da jeg allerede har en 
+    potens på _(3_). Det svarer til _(a*a*a*b_) i 
+    _($a^4 + 4*a^3*b + 6*a^2*b^2 + 4*a*b^3 + b^4_)
+    Processen af at komme frem til et led kan vi altså lidt se på som en "udvælgelses"-proces:
+    Ved hvert parentes <i>vælger</i> jeg om jeg gerne vil gange med _(a_) eller _(b_). 
+    Hvis _(a_) skal have en potens på _(3_) så vælger jeg den tre ud af fire gange. Det kan ske
+    på
+    _($\VeC[4,3] = 4_)
+    forskellige måder. Derfor er der _(4_) identiske led hvor _(a_) har en potens på _(3_), så
+    _(a^3*b_) for en koefficient på _(4_). Præcis samme argument kunne vi lave
+    hvis vi havde noget meget større som en potens på _(16_) ved _((a+b)^{23}_). Her 
+    <i>vælger</i> vi _(a_) _(16_) ud af _(23_) gange, så vi regner "bare":
+    _($\VeC[23, 16] = \frac{23!}{16!*(23-16)!} = 245157_)
+    Så det er faktisk en super praktisk og simpel formel!        
+    <br><br></answer-box>
+
+
+
+
+

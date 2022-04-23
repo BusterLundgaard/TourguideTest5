@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+
+
+    <p class="t">
+    På den her side skal vi kigge på hvordan man finder den normale vektor til en overflade, samt hvad det kan bruges til:
+    </p>
+
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter4\MultiVarCalc\NormalVectorExample2.png'> 
+        
+    <q-stion 1="2" 2="1" 3="5">
+    Find en generel formel for en vinkelret vektor til funktionen _(f(x,y)_) på punktet _((x,y)_).
+    <p class="t">
+    Du skal altså selv finde ud af hvordan man gør det her. 
+    </p>
+    <br><br></q-stion>
+    <answer-box>
+        I følgende video viser jeg den generelle geometriske ide:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter4\MultiVarCalc\NormalVektorTilFlade1.mp4' type='video/mp4'>
+    </video>
+    <p class="t">
+    Så vi ved at:
+    _($\vec n = \VeC[1,0,f_x(x,y)] \times \VeC[0,1,f_y(x,y)]_)
+    Hvis vi nu faktisk bruger regner krydsproduktet med formlen, så får vi:
+    _($\VeC[0*f_y(x,y) - f_x(x,y)*1, f_x(x,y)*0 - 1*f_y(x,y), 1*1-0*0] = -\VeC[f_x(x,y),f_y(x,y),-1]_)
+    Minus er bare en konstant der ikke har nogen indflydelse på retningen, så: 
+    _($\vec n = \VeC[f_x(x,y),f_y(x,y),-1]_)
+    Hvilke er en fantastisk dejlig nem formel! Det skal siges at:
+    </p>
+    <div class="Definition">
+    Følgende vektor kaldes for "gradienten" af _(f_) ved _((x,y)_):
+    _($\VeC[f_x(x,y),f_y(x,y)]_)
+    og skrives ofte _(\nabla f_). I nogle få tilfælde bliver
+    _($\VeC[f_x(x,y),f_y(x,y),-1]_)
+    også kaldt for "gradienten".
+    </div>
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Denne opgave er lidt åben.
+    <p class="t">
+    Prøv at se et billede af følgende moderne designerstol (som ikke findes): 
+    </p>
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter4\MultiVarCalc\DesignerChair.png'> 
+    <p class="t">
+    Prøv ud fra målene og formen at finde en overflade _(f(x,y)_) der passer til stolen, og
+    at bestemme hvor lange træbenene cirka skal være. 
+    </p>
+    <br><br></q-stion>
+    <answer-box>
+    Se følgende video:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter4\MultiVarCalc\DesignerChairBullshit.mp4' type='video/mp4'>
+    </video>
+    <p class="t">
+    Så vi ved at stolen kan modelleres af:
+    _($z(x,y)=0.15 - 1.25x^3 + 2.31x^2 - 0.3x+y^2_)
+    Og at træbenene er ved _((0.28,0.1,0.23)_) og _((0.8,0.1,0.76)_). Der er altså her vi skal
+    finde de vinkelrette vektorer. Vi kan nemt se at _(f_x = -3.75x^2 + 4.62x - 0.3_) og at
+    _(f_y=2y_), hvilke ved _((0.28,0.1,0.23)_) giver _(f_x=0.6996_), _(f_y=0.2_) og 
+    ved _((0.8,0.1,0.76)_) giver _(f_x=0.99_), _(f_y=0.2_). Så de vinkelrette vektorer bliver til:
+    _($\VeC[0.699,0.2,-1], \qquad \VeC[0.99,0.2,-1] \_)
+    Nu kan de to ben altså beskrives som:
+    _($\VeC[x,y,z] = \VeC[0.28,0.1,0.23] + t*\VeC[0.699,0.2,-1], \qquad 
+    \VeC[x,y,z] = \VeC[0.8,0.1,0.76] + t*\VeC[0.99,0.2,-1] _)
+    Vi kan nu nemt se at _(t=0.23_) får _(z_) til at være _(0_) ved det korte ben, og
+    _(t=0.76_) får _(z_) til at være _(0_) ved det lange ben. Benene kan altså beskrives af vektorerne:
+    _($ 0.23*\VeC[0.99,0.2,-1] = \VeC[0.227,0.046,-0.23], \qquad 0.76*\VeC[0.99,0.2,-1] = \VeC[0.752,0.152,-0.76]_)
+    Nu kan vi bare regne længden på disse vektorer. Det ene er _(0.326m_) langt, og det andet er _(1.079m_) langt. 
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <p class="t">
+    En vinkelret vektor definerer en plan, så hvis vi kan regne denne vektor, så kan vi også regne 
+    et <i>tangent</i> plan på et punkt:
+    </p>
+
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter4\MultiVarCalc\TangentPlane1.png'>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Find en funktion _(z(x,y)_) der beskriver den tangente plan til punktet _((2,3)_) på
+    _($z=Ln(x)*y_)
+    <br><br></q-stion>
+    <answer-box>
+    Vi ved at det vinkelrette plan til vektoren _(\vec n_) ved punktet _(P_) er:
+    _($(x-P_x)n_x + (y-P_y)n_y + (z-P_z)n_z = 0_)
+    Vi kan let se at _(z_x_) og _(z_y_) på _((2,3)_) er lig henholdsvis _(3/2=1.5_) og 
+    _($Ln(2)=0.693_). På _((2,3)_) er _(z_) lig _(Ln(2)*3=2.079_), så planet bliver endeligt til:
+    _(1.5(x-2) + 0.693(y-3) - 1(z-2.079) = 0_)
+    Og hvis vi nu isolerer _(z_) så får vi:
+    _($z = 1.5(x-2) + 0.693(y-3) + 2.079_)
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <p class="t">
+    Når man arbejder i 2D, så kan en <i>linje</i> godt approximere en funktion omkring et punkt:
+    </p>
+
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter4\MultiVarCalc\ApproximateTangent2D.png'> 
+
+    <p class="t">
+    Når man arbejder i 3D, så kan en <i>plan</i> gøre det samme:
+    </p>
+
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter4\MultiVarCalc\TangentPlane2.png'>
+
+    <p class="t">
+    I matematik bruger vi flere gange begrebet "lineær". Det kan betyde forskellige ting 
+    i forskellige kontekster, men generelt så betyder det at der ikke er nogen eksponenter, 
+    eller nogle andre specielle funktioner. Der bliver altså kun arbejdet med gange og plus. 
+    Derfor siger vi at det her plan kan fungere som en <i>lineær approksimation</i> af 
+    funktionen _(f(x,y)_) ved et bestemt punkt. Planet er nemlig "linæert", eftersom der kun bliver ganget
+    med konstanter, og plusset. Generelt kan vi godt lide når ting er linæere, fordi så 
+    er de ofte meget nemmere at arbejde med en hvis de ikke er linæere. 
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Sig at du har følgende funktion:
+    _($f(x,y) = \frac{y^2}{x} - \frac{x^2}{y}_)
+    Og at du ved at det tangente plan på _((3,5)_) er:
+    _(z = -3.98x + 3.69y + 0.02_)
+    Approximer _(f(3.3,4.8)_). Denne opgave er meget simpel
+    <br><br></q-stion>
+    <answer-box>
+    Vi siger bare:
+    _($f(3.3,4.8) \approx -3.98*3.3 + 3.69*4.8 + 0.02 = 4.598_)
+    <br><br></answer-box>
+
+    <p class="t">
+    En mulig anvendelse af dette kunne være at finde arealet under en kurve. Sig at du har
+    _($f(x,y)=Sin(x*Cos(y))+4_)
+    Sig at du gerne vil finde volumen under denne kurve i en lille firkant med sidelængde _(0.5_)
+    omkring _((-3.75,1.79)_):
+    </p>
+
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter4\MultiVarCalc\SurfaceAreaApproximation.png'> 
+
+    <p class="t">
+    Dette <i>kunne</i> godt gøres med en dobbelt integral, men _(Sin(x*Cos(y))+4_) er for svær at integrere
+    (især to gange!). Hvis vi <i>approximere</i> den omkring punktet som et simpelt
+    plan _(z=ax+bx+c_) dog, så kan vi nemt komme relativt tæt på volumen. 
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Approximer volumen under _(Sin(x*Cos(y))+4_) ved en firkant med sidelængde _(0.5_) omkring 
+    _((-3.75,1.79)_). 
+    <br><br></q-stion>
+    <answer-box>
+    Vi kan relativt nemt se at den normale vektor til _(Sin(x*Cos(y))+4_) ved 
+    _((-3.75,1.79)_) er:
+    _($\VeC[-0.15,2.51,-1]_)
+    Så det tangente plan er:
+    _(z = -0.15x + 1.79y - 0.325_)
+    En sidelængde på _(0.5_) svarer til _(x \in [-4, -3.5]_), _(y \in [1.54, 2.04]_). 
+    Vi skal altså regne dobbeltintegralen: 
+    _($\int_{-4}^{-3.5} \int_{1.54}^{2.04} -0.15x + 1.79y - 0.325 \text{ }dy \text{dx} = _)
+    _($\int_{-4}^{-3.5} -0.0751x + 1.4395 \text{dx} = _)
+    _($0.8605_)
+    Det er altså svaret.
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <p class="t">
+    Man kunne godt forestille sig hvordan vi kunne finde volumen under et større
+    område af _(Sin(x*Cos(y))+4_) ved at bare at plusse arealet over flere, små kvadrater. 
+    </p>
+

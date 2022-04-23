@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+
+
+    <!-- FLUX I 3D -->
+
+    <p class="t">
+    <i> Note: På den her side kommer der til at være i mellemregninger nogle relativt store dobbelt-integraler. 
+        Samme princip som altid gælder: Så længe du føler dig sikker på at du godt ville <i>kunne</i> 
+        regne det selv, så må du gerne bruge computeren til at gøre det. Fokusset på denne side er heller 
+        ikke at regne integraler. 
+    </i>
+    </p>
+
+    <p class="t">
+    Flux kan også regnes i 3D:
+    </p>
+
+    <div class="Definition">
+    <b> Definition: Flux (3D):</b>
+    Sig at en plade _(U_) med enhedsnormalvektor _(\vec n_) og areal _(A_) overalt bliver
+    ramt af en vektor _(\vec F_):
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter4\MultivarCalc\Vectorfields\FluxDefinition3D.png'> 
+    <p class="t">
+    "Fluxen" gennem denne plade defineres til at være 
+    _($\vec F*\vec n*A_)
+    Hvilke også er lig
+    _($|\vec F|*Cos(\theta)*A_)
+    </p>
+    </div>
+
+    <p class="t">
+    Så præcis samme ide som i 2D.
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Sig at du har følgende plan
+    _($5x+3y-2z=10_)
+    på området _(y \in [-2,6]_), _(z \in [5,10]_). Sig at vektor feltet er:
+    _($\vec F = \VeC[8,-9,11]_)
+    Find flux gennem dette plan på dette område.
+    <br><br></q-stion>
+    <answer-box>
+    Normalvektoren til planet går i retning af: 
+    _($\VeC[5,3,-2]_)
+    For at vi kan bruge formlen skal længden af denne være _(1_), så:
+    _($\frac{\VeC[5,3,-2]}{\sqrt{5^2+3^2+2^2}} = \VeC[0.81,0.48,-0.32]_)
+    Arealet af pladen kan regnes af følgende integral:
+    _($\int_{-2}^{6} \int_{5}^{10} \sqrt{1+f_y^2 + f_z^2} \text{ }dz \text{ }dy = \int_{-2}^{6} \int_{5}^{10} \sqrt{1+3^2 + (-2)^2} \text{ }dz \text{ }dy =  149.66_)
+    Så flux kan regnes som:
+    _($\VeC[8,-9,11]*\VeC[0.81,0.48,-0.32]*149.66 = -203.53_)
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    En plade centreret på _((0,0,0)_) ligger på YZ-planet, med en længde på _(6_) langs _(y_), og 
+    en længde på _(10_) langs _(Z_). Vektor-feltet er:
+    _($\vec F = \VeC[(x+5)*z^2 + y^4, y^2*Cos(z), z^2*y]_)
+    Find flux. 
+    <br><br></q-stion>
+    <answer-box>
+    Dette plan ligger på YZ-pladen, så dets normalvektor er:
+    _($\vec n = \VeC[1,0,0]_)
+    Så _(\vec F * \vec n_) bliver til _((x+5)z^2 + y^4_). I denne situation kan vi se at 
+    vektoren _(\vec F_) ændrer sig i forhold til hvor på pladen vi står. Det er kun _(x_) der konstant 
+    har værdien _(0_). Vi er derfor nødt til at dele pladen op i en masse små plader med længde _(dy_) og
+    bredde _(dz_), som vi så hver finder flux af og lægger sammen. Arealet af hver af disse små plader 
+    er _(dx*dy_), så den samlede flux kan regnes via følgende dobbelt-integral:
+    _($\begin{eqnarray} 
+    && \int_{-3}^{3} \int_{-5}^{5} (0+5)z^2 + y^4 \text{ }dz \text{ }dy = \\
+    && \int_{-3}^{3} \int_{-5}^{5} \frac{5}{3}*(5^3 - (-5)^3) + y^4*(5 - (-5)) \text{ }dy = \\
+    && 3472
+    \end{eqnarray}_)
+    Så det er den samlede flux. 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Dit område er en 3D kasse centreret på _((0,0,0)_), men en længde langs _(x_) på 
+    _(7_), en længde langs _(y_) på _(3_), og en længde langs _(z_) på _(8_). Vektor feltet er:
+    _($\vec f = \VeC[-y,-x*e^y, x+y+z]_)
+    Find flux gennem dette område. 
+    <br><br></q-stion>
+    <answer-box>
+    Toppen af kassen er hvor _(z=4_), hvor _(x_) går fra _(-3.5_) til _(3.5_), og 
+    hvor _(y_) går fra _(-1.5_) til _(1.5_). Vi er kun interesserede i komponentet af 
+    vektor feltet der går langs _(z_), siden de andre ikke har indflydelse (hvilke svarer til 
+    at prikke med _(\lt 0, 0, 1 \gt_)). Derfor regner vi:
+    _($\int_{-1.5}^{1.5} \int_{-3.5}^{3.5} (-3.5+x)+(-1.5+y)+(4) \text{ }dx \text{ }dy _)
+    I bunden gør vi stort set det samme, men nu er _(z=-4_), og det hele skal ganges med 
+    _(-1_) eftersom vi nu prikker med _(\lt 0, 0, -1 \gt_) i stedet for _(\lt 0, 0, 1 \gt_):
+    _($\int_{-1.5}^{1.5} \int_{-3.5}^{3.5} -(-3.5+x)-(-1.5+y)-(-4) \text{ }dx \text{ }dy _)
+    De her to integraler skal lægges sammen, og de to dele med _((-3.5+x)+(-1.5+y)_) 
+    går ud med hinanden eftersom de er identiske men modsatte. Det resterende er bare:
+    _($\int_{-1.5}^{1.5} \int_{-3.5}^{3.5} (4) \text{ }dx \text{ }dy + \int_{-1.5}^{1.5} \int_{-3.5}^{3.5} -(-4) \text{ }dx \text{ }dy = _)
+    _($2*4*(2*3.5)*(2*1.5) = 168_)
+    Den samlede flux af pladen hvor _(x=-3.5_) og pladen hvor _(x=3.5_) er bare _(0_), 
+    eftersom vi kun er interesseret i komponentet af _(\vec F_) langs _(x_), som bare er 
+    _(-y_). Det her samme værdi ved begge plader, så de går ud med hinanden (da
+    flux på èn af pladerne skal ganges med _(-1_) siden retningen er modsat af den anden plade). 
+    <p class="t">
+    På de to sidste plader er vi kun interesserede i komponentet langs _(y_), som er _(-x*e^y_). 
+    Vi skal derfor regne de to følgende integraler:
+    _($\begin{eqnarray}
+    && \int_{-4}^{4} \int_{-3.5}^{3.5} (-(-3.5+x)*e^{1.5})*(1) \text{ }dx \text{ }dz
+    && \int_{-4}^{4} \int_{-3.5}^{3.5} (-(-3.5+x)*e^{-1.5})*(-1) \text{ }dx \text{ }dz
+    \end{eqnarray}_)
+    Som giver henholdsvis _(884.1_) og _(43.45_). Den endelige samlede flux på kassen er altså:
+    _($168+884.1+43.45 = 1095.55_)
+    Så ja, når der er mange flader involveret kan flux lidt godt blive en længere proces. 
+    Heldigvis lærer vi senere en teori kaldt "The divergence theorem" der kan gøre 
+    en opgave som denne markant lettere. 
+    </p>        
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <p class="t">
+    Sig at vi har en overflade _(U_) defineret af _(z=f(x,y)_) hvor _(x_) og _(y_) er på området _(R_), og 
+    et vektor felt _(\vec F_). Man kan se at fluxen der går gennem _(U_) kan regnes af følgende overfladeintegral:
+    _($\int_U \int \vec F*\vec n \text{ }dA_)
+    Hvor _(\vec n_) så er den normale vektor til _(f(x,y)_) <i>med en længde på _(1_)</i>. 
+    Vi ved at én normal vektor (som ikke nødvendigvis har en længde på _(1_)) på _(f(x,y)_) er 
+    _($\VeC[f_x,f_y,-1]_)
+    Så:
+    _($\vec n = \frac{1}{\sqrt{1+f_x^2+f_y^2}} \VeC[f_x,f_y,-1]_)
+    Vi ved også at _(dA=\sqrt{1+f_x^2+f_y^2}*dx*dy_), så alt i alt:
+    _($\int_U \int \vec F*\vec n \text{ }dA = \int_R \int \vec F*\VeC[f_x,f_y,-1] \text{ }dx \text{ }dy _)
+    Så denne formel kan være brugbar til at regne flux i 3D.
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Sig at _(U_) er den del af planet _(z=10-0.25x-y_) der er i første kvadrant, og at 
+    vektor-feltet er:
+    _($\vec f = \VeC[z,8,y+x]_)
+    Find mængden af flux gennem _(U_)
+    <br><br></q-stion>
+    <answer-box>
+    Jeg gennemgår det i denne video:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter4\MultivarCalc\Vectorfields\FluxPåTiltedPlan.mp4' type='video/mp4'>
+    </video>
+    <p class="t">
+    Så vi skal regne:
+    _($\begin{eqnarray} 
+    && \int_{0}^{40} \int_{0}^{10-0.25x} \VeC[10-0.25x-y,8,y+x]*\VeC[-0.25,-1,-1] \text{ }dy \text{ }dx = \\
+    && \int_{0}^{40} \int_{0}^{10-0.25x} (10-0.25x-y)*(-0.25)+8*(-1)+(y+x)*(-1) \text{ }dy \text{ }dx = \\
+    && -5100 \\
+    \end{eqnarray}_)
+    Det er altså svaret. 
+    </p>
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <p class="t">
+    Det er sjælen at vi kan regne flux <i>direkte</i> med denne formel. Ofte er vi nødt til at bruge substitutioner for 
+    at gøre områderne og integralerne nemmere:
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Området er mellem _(y=9-\sqrt{x^2 + z^2}_) og planet _(y=2_). Vektor-feltet er:
+    _($\vec F = \VeC[x*y,z+3,x^2]_)
+    Find flux
+    <br><br></q-stion>
+    <answer-box>
+    _(y_) er mellem _(9_) og _(2_) når _(0 \lt x^2+z^2 \lt 7^2_). _(y_) er en funktion _(f(x,z)_) af _(z_) og _(x_), og 
+    området _(R_) er en cirkel i XZ-planet med radius _(7_). _(f_x_) er lig _(-x/\sqrt{x^2+z^2}_) og 
+    _(f_z_) er lig _(-z/\sqrt{x^2+z^2}_), så vi skal regne følgende dobbelt-integral:
+    _($\int_{-7}^{7} \int_{-\sqrt{7^2-x^2}}^{\sqrt{7^2-x^2}} \VeC[x*(9-\sqrt{x^2 + z^2}), z+3, x^2]*\VeC[-x/\sqrt{x^2+z^2},-1,-z/\sqrt{x^2+z^2}] \text{ }dz \text{ }dx_)
+    Det kunne nok blive markant nemmere hvis vi brugte polar integration. Sig _(x=rCos(\theta)_), _(z=rSin(\theta)_). Nu kan vi bare skrive:
+    _($\int_{0}^{7} \int_{0}^{2\pi} \VeC[rCos(\theta)*(9-r), rSin(\theta)+3, r^2 Cos(\theta)^2]*\VeC[-rCos(\theta)/r,-1,-rSin(\theta)/r]*r \text{ }d\theta \text{ }dr_)
+    Hvilke er lig:
+    _($\int_{0}^{7} \int_{0}^{2\pi} -r(9-r)Cos(\theta)^2 - r^2 Sin(\theta) - r^2 Cos(\theta)^2 Sin(\theta) - 3r \text{ }d\theta \text{ }dr_)
+    Denne integral er lang, men relativt nem. Den giver _(-795.3_), så det er svaret. 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Find flux gennem trekanten _(\triangle ABC_) hvis:
+    _($\begin{eqnarray}
+    && A & = &(3,4,3) \\
+    && B & = & (6,8,3) \\
+    && C & = & (5,4,6)
+    \end{eqnarray}_)
+    Og vektor-feltet er:
+    _($\vec f = \VeC[x+y,1,z]_)
+    <br><br></q-stion>
+    <answer-box>
+    I følgende video kommer jeg frem til integralet vi skal regne:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter4\MultivarCalc\Vectorfields\3dTriangleFlux.mp4' type='video/mp4'>
+    </video>
+    <p class="t">
+    Krydsproduktet giver _(\lt 12, -9, -8 \gt_), så vi skal regne integralet: 
+    _($\begin{eqnarray}
+    && \int_{0}^{1} \int_{0}^{a} \VeC[7+7a-5b,1,3+3b]*\VeC[12,-9,-8] \text{ }db \text{ }da = \\
+    && \int_{0}^{1} \int_{0}^{a} (7+7a-5b)*(12) + (1)*(-9) + (3+3b)*(-8) \text{ }db \text{ }da = \\
+    && 39.5
+    \end{eqnarray}_)
+    </p>
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Du har følgende Torus:
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter4\MultiVarCalc\DoubleIntegrals\AnotherTorus.png'>
+    <p class="t">
+    Og vektor-feltet er:
+    _(\vec F = \VeC[4,-x,-3]_)
+    Find flux. 
+    </p>
+    <br><br></q-stion>
+    <answer-box>
+    Vi skal regne
+    _($\int_U \int \vec F*\vec n \text{ }dA_)
+    Vores område _(U_) kan beskrives som:
+    _($\VeC[x,y,z] = \VeC[(5+2Cos(\theta))Cos(\phi),(5+2Cos(\theta))Sin(\phi),2Sin(\theta)], \qquad \theta \in [0, 2\pi], \phi \in [0,2\pi]_)
+    Så i forhold til denne parameterisering er _(\vec F_) lig 
+    _($\VeC[4,-(5+2Cos(\theta))Sin(\phi), -3]_)
+    Vi ved fra tidligere arbejde med toruser at 
+    _($dA=2(5+2Cos(\theta))_)
+    Og vi kan relativt nemt geometrisk se at 
+    _($\vec n = \VeC[Cos(\theta)Cos(\phi),Cos(\theta)Sin(\phi),Sin(\theta)]_)
+    Så alt i alt skal vi regne følgende dobbelt-integral: 
+    _($\int_{0}^{2 \pi} \int_{0}^{2\pi} \VeC[4,-(5+2Cos(\theta))Sin(\phi), -3]*\VeC[Cos(\theta)Cos(\phi),Cos(\theta)Sin(\phi),Sin(\theta)]*2(5+2Cos(\theta)) \text{ }d\phi \text{ }d\theta _)
+    Den er heller ikke just "hurtig", men alligevel relativ nem. Den giver _(-394.78_), som så er svaret. 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <p class="t">
+    FØLGENDE OPGAVE ER EGENTLIG RELATIV NICE, MEN OGSÅ RET SVÆR OG LANG. JEG TÆNKER DE HAR LAVET NOK OPGAVER, SÅ
+    AT DENNE IKKE RIGTIG TILFØJER NOGET. 
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Dit område er mellem kuglen _(x^2+y^2+z^2=4^2_) og planet _(2x+3y-6z=16_):
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter4\MultivarCalc\Vectorfields\EllipsePlanFlux.png'> 
+    <p class="t">
+    (det blå område market på billedet). Det er samme kugle og samme plan du arbejde med tidligere. Vektor feltet er lig:
+    _(\vec f = \VeC[3,5,-2/z]_)
+    Find fluxen på dette område. 
+    </p>
+    <br><br></q-stion>
+    <answer-box>
+        
+    <br><br></answer-box>
+    
+
+
+
+
+ 

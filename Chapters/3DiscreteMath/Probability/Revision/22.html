@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+
+
+    <q-stion 1="2" 2="1" 3="5">
+    Du er ved at sammenligne to pistoler. Du vil gerne finde ud af hvilken en er mest præcis.
+    For at gøre det, sætter du hver pistol fast, så det altid skyder samme retning. Du skyder så en masse
+    gange, og måler vinklen til pistolen der hvor kuglen er ramt:
+    <br> <br>
+    <img class='Spic' style='width:95%' src='../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\Stokastisk\Skyde test varians.png'> 
+    <br>
+    <p class="t">
+    Du skyder 50 gange, og får følgende data ved første pistol:
+    </p>
+    <br>
+    <table style="border-collapse: collapse; border: 1px solid black; margin-left: 32%; margin-top:10px; background-color: rgb(209,233,230);" >
+        <tr>
+            <td> <b> Grader/Intervaller  </b> </td>
+            <td> <u> Chance </u> </td>
+        </tr>
+        <tr>
+            <td> -4° til -3° </td>
+            <td> 0.06 </td>
+        </tr>
+        <tr>
+            <td> -3° til -2° </td>
+            <td> 0.08 </td>
+        </tr>
+        <tr>
+            <td> -2° til -1° </td>
+            <td> 0.15 </td>
+        </tr>
+        <tr>
+            <td> -1° til 0° </td>
+            <td> 0.21 </td>
+        </tr>
+        <tr>
+            <td> 0° til 1° </td>
+            <td> 0.23 </td>
+        </tr>
+        <tr>
+            <td> 1° til 2° </td>
+            <td> 0.10 </td>
+        </tr>
+        <tr>
+            <td> 2° til 3° </td>
+            <td> 0.10 </td>
+        </tr>
+        <tr>
+            <td> 3° til 4° </td>
+            <td> 0.07 </td>
+        </tr>
+    </table>
+    <br>
+    <p class="t">
+    Ved anden pistol måler du:
+    </p>
+    <br>
+    <table style="border-collapse: collapse; border: 1px solid black; margin-left: 32%; margin-top:10px; background-color: rgb(209,233,230);" >
+        <tr>
+            <td> <b> Grader/Intervaller  </b> </td>
+            <td> <u> Chance </u> </td>
+        </tr>
+        <tr>
+            <td> -4° til -3° </td>
+            <td> 0.013 </td>
+        </tr>
+        <tr>
+            <td> -3° til -2° </td>
+            <td> 0.0684 </td>
+        </tr>
+        <tr>
+            <td> -2° til -1° </td>
+            <td> 0.205 </td>
+        </tr>
+        <tr>
+            <td> -1° til 0° </td>
+            <td> 0.232 </td>
+        </tr>
+        <tr>
+            <td> 0° til 1° </td>
+            <td> 0.219 </td>
+        </tr>
+        <tr>
+            <td> 1° til 2° </td>
+            <td> 0.246 </td>
+        </tr>
+        <tr>
+            <td> 2° til 3° </td>
+            <td> 0.054 </td>
+        </tr>
+        <tr>
+            <td> 3° til 4° </td>
+            <td> 0.0136 </td>
+        </tr>
+    </table>
+    <br>
+    <p class="t">
+    Hvilken èn er mest præcis? 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Meget simpelt: Lad os finde spredningen på hver pistol, og se hvilken èn er højest. 
+    Da vi arbejder med intervaller (f.eks. _(-3_) til _(-2_) grader), så tager vi bare midtpunktet mellem de to ender
+    (så f.eks. _(-2.5_)). Først finder vi deres gennemsnit:
+    _($\begin{eqnarray}
+    & \text{Pistol 1: } & -3.5*0.06+(-2.5)*0.08+(-1.5)*0.15 \text{ } + \\
+    && (-0.5)*0.21 + 0.5*0.23+1.5*0.1+2.5*0.1 \text{ } + \\
+    && 3.5*0.07 = 0.020
+        \end{eqnarray}_)
+    _($\begin{eqnarray}
+    & \text{Pistol 2: } & -3.5*0.013+(-2.5)*0.068+(-1.5)*0.205 \text{ } + \\
+    && (-0.5)*0.232+0.5*0.219+1.5*0.246 \text{ } + \\
+    && 2.5*0.054+3.5*0.0136 = 0.022
+        \end{eqnarray}_)
+    Man kunne argumentere at vi ikke burde tage spredningen til <i>gennemsnittet</i>, men bare spredningen til _(0_) grader:
+    Det er jo den retning vi gerne vil have at den skal skyde i. Det er helt fair hvis du har gjort det, men man kunne
+    måske forestille sig at pistolen skød lidt til den ene side hele tiden, med ret høj præcision. Så ville den nok
+    stadig være mere "præcis" end den anden. Jeg ved det sku ikke: Jeg ved intet om pistoler. I hvert fald: Vi skal
+    finde spredningerne: 
+    _($\begin{eqnarray}
+    & \text{Pistol 1: } & |-3.5-0.02|*0.06+|-2.5-0.02|*0.08 \text{ }+ \\
+    && |-1.5-0.02|*0.15+|-0.5-0.02|*0.21 \text{ } + \\
+    && |0.5-0.02|*0.23+|1.5-0.02|*0.1 \text{ } + \\
+    && |2.5-0.02|*0.1+|3.5-0.02|*0.07 = 1.50
+    \end{eqnarray}_)
+    _($\begin{eqnarray}
+    & \text{Pistol 2: } & |-3.5-0.022|*0.013+|-2.5-0.022|*0.0684 \text{ } + \\
+    && |-1.5-0.022|*0.205+|-0.5-0.022|*0.232  \text{ } + \\
+    && |0.5-0.022|*0.219+|1.5-0.022|*0.246 \text{ } + \\
+    &&  |2.5-0.022|*0.054+|3.5-0.022|*0.0136 = 1.30 
+    \end{eqnarray}_)
+    Pistol 2 er altså den bedste. 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Sig at vi har to energi-firmaer. Det ene firma står i lidt en akut-situation, og er nødt til
+    at få produceret _(16MJ_) (_(J_) er en enhed for energi) inden for _(4_) dage. Det er
+    deres nummer _(1_) prioritet. Det andet firma skal egentlig bare, <i>i længden</i>, producere
+    så meget strøm som muligt. Det er altså ikke vigtigt at nå det <i>lige nu</i>. 
+    <p class="t">
+    Sig nu at der er to strøm-generatorer. Sig at ingen af dem er fuldkommen forudsigelige, i den
+    forstand at det vil variere hvor meget strøm de producerer pr. dag. F.eks. så kan den
+    første maskine beskrives med følgende skema: 
+    </p>
+    <br>
+    <table style="border-collapse: collapse; border: 1px solid black; margin-left: 21%; margin-top:10px; background-color: rgb(209,233,230);" >
+        <tr>
+            <td> <b> Strøm (MJ) produceret pr. dag  </b> </td>
+            <td> <u> Chance </u> </td>
+        </tr>
+        <tr>
+            <td> 1 til 2 </td>
+            <td> 0.0116 </td>
+        </tr>
+        <tr>
+            <td> 2 til 3 </td>
+            <td> 0.0233 </td>
+        </tr>
+        <tr>
+            <td> 3 til 4 </td>
+            <td> 0.070 </td>
+        </tr>
+        <tr>
+            <td> 4 til 5 </td>
+            <td> 0.327 </td>
+        </tr>
+        <tr>
+            <td> 5 til 6 </td>
+            <td> 0.350 </td>
+        </tr>
+        <tr>
+            <td> 6 til 7 </td>
+            <td> 0.141 </td>
+        </tr>
+        <tr>
+            <td> 7 til 8 </td>
+            <td> 0.040 </td>
+        </tr>
+        <tr>
+            <td> 8 til 9 </td>
+            <td> 0.023 </td>
+        </tr>
+        <tr>
+            <td> 9 til 10 </td>
+            <td> 0.011 </td>
+        </tr>
+    </table>
+    <br>
+    <p class="t">
+    Den anden maskine er:
+    </p>
+    <br>
+    <table style="border-collapse: collapse; border: 1px solid black; margin-left: 21%; margin-top:10px; background-color: rgb(209,233,230);" >
+        <tr>
+            <td> <b> Strøm (MJ) produceret pr. dag  </b> </td>
+            <td> <u> Chance </u> </td>
+        </tr>
+        <tr>
+            <td> 1 til 2 </td>
+            <td> 0.0363 </td>
+        </tr>
+        <tr>
+            <td> 2 til 3 </td>
+            <td> 0.1818 </td>
+        </tr>
+        <tr>
+            <td> 3 til 4 </td>
+            <td> 0.0363 </td>
+        </tr>
+        <tr>
+            <td> 4 til 5 </td>
+            <td> 0.009 </td>
+        </tr>
+        <tr>
+            <td> 5 til 6 </td>
+            <td> 0.054 </td>
+        </tr>
+        <tr>
+            <td> 6 til 7 </td>
+            <td> 0.254 </td>
+        </tr>
+        <tr>
+            <td> 7 til 8 </td>
+            <td> 0.290 </td>
+        </tr>
+        <tr>
+            <td> 8 til 9 </td>
+            <td> 0.090 </td>
+        </tr>
+        <tr>
+            <td> 9 til 10 </td>
+            <td> 0.009 </td>
+        </tr>
+    </table>
+    <br>
+    <p class="t">
+    Din opgave nu at vurdere hvilken maskine passer bedst til hvilket firma.
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Vi skal prøve intuitivt at <i>forstå</i> den data vi har fået. Vi <i>kunne</i>
+    gå hen og visualisere det med en computer, men vi kunne også bare beregne gennemsnittet 
+    og spredningen, og så få en O.K god forståelse derfra. Gennemsnittet på den første
+    maskine kan beregnes (jeg gider ikke lige til at vise det, fordi du ved godt
+    hvordan man gør) til _(5.254_), og på den anden maskine er det _(5.67_). Spredningen på første
+    maskine er 
+    _($\begin{eqnarray}
+    && |1.5-5.254|*0.0116+|2.5-5.254|*0.0233 \text{ } + \\
+    && |3.5-5.254|*0.070+|4.5-5.254|*0.327  \text{ } + \\
+    && |5.5-5.254|*0.350+|6.5-5.254|*0.141 \text{ } + \\
+    && |7.5-5.254|*0.040+|8.5-5.254|*0.023 + |9.5-5.254|*0.011 \\
+    && = 0.956 
+    \end{eqnarray}_)
+    Spredningen på den anden maskine er:
+    _($\begin{eqnarray}
+    && |1.5-5.67|*0.0363+|2.5-5.67|*0.181 \text{ } + \\
+    && |3.5-5.67|*0.0300+|4.5-5.67|*0.009  \text{ } + \\
+    && |5.5-5.67|*0.054+|6.5-5.67|*0.254 \text{ } + \\
+    && |7.5-5.67|*0.290+|8.5-5.67|*0.090 + |9.5-5.67|*0.009 \\
+    && = 1.860
+    \end{eqnarray}_)
+    Andet firma tænkte <i>langt fremad</i>. Helt teoretisk set, så ville de i vores situation <i>kun</i> gå op i
+    et højt gennemsnit, selv hvis spredningen var ret stor og dårlig. Anden maskine har kun en smule bedre
+    gennemsnit, men værre spredningen, og det er helt fint for dem. Det giver også mening at første virksomhed ville
+    vælge maskine _(1_), da den har et gennemsnit på _(5.254_), og ikke super høj spredning. 
+    De skal komme op på _(16MJ_), og _(5.254*4=_) _(21.016_) er mere end nok. 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    På følgende Geogebra dokument er der blevet indsat størrelsen (arealerne) på alle lande i henholdsvis Europa og 
+    Afrika. Rusland er blevet ekskluderet, da det også er en del af Asien, og vatikanstaten og lignende "by-lande"
+    er også fjernede. Mit spørgsmål er nu: Varierer størrelsen af Europas lande mere end Afrika, eller er det modsat? 
+    <p class="cent">
+        <a href="../../../Assets/Chapter3/Sandsyndlighed og kombinatorik/Stokastisk/Europa og afrika land og størrelser.ggb" download>
+            Download!
+        </a>
+    </p>
+    <p class="t">
+    Det her er teknisk set ikke en "sandsynlighedsopgave", men jeg syntes alligevel det er relevant. 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Gennemsnitsstørrelserne på landende i Europa og Afrika kan vi nemt finde inde i Geogebra via "mean"-funktionen. 
+    Der får vi _(134227 km^2_) i Europa, og _(561260 km^2_) i Afrika. 
+    Hvad med spredning? Well, det er bare "summen af forskellene til gennemsnittet, divideret med mængden af forskelle".
+    Jeg laver altså bare en ny kolonne ved siden af størrelserne, hvor jeg regner forskellen til gennemsnittet.
+    Der er altså f.eks. ved Europa _(|B1 - 134227|_), og så bare at trække nedad. Så tager jeg gennemsnittet af den
+    nye kolonne, og får _(125668_) ved Europa, og _(477270_) ved Afrika. Afrika har tydeligvis en større spredning,
+    men det er heller ikke en helt fair sammenligning da landende i Afrika også i gennemsnittet er større. 
+    Derfor ville det nok være mest fair hvis vi dividerer begge spredninger med gennemsnittet. 
+    Europas spredning er _(93_)% af gennemsnittet, og Afrikas er _(85_)%. Afrikas lander varierer
+    altså mere i størrelse <i>generelt</i>, men Europas lande varierer mere i størrelse <i>i forhold til hinanden</i>. 
+    <br><br></answer-box>
+
+
+
+
+

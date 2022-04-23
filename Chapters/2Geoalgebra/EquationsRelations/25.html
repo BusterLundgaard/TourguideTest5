@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+
+
+<h3>Andre diophantine ligninger <br>(primært bare pythagorean triples, dog...)</h3>
+<p class="t">
+Den allerførste Diophantine ligning vi kiggede på var _(a^2+b^2=c^2_). 
+Trepar _((a,b,c)_) der både er siderne på en trekant og alle sammen er hele tal, kaldes
+for "pythagorean triples". Vi fandt et par eksempler, der virkede,
+men det kunne være praktsik at beskrive løsningerne <i>generelt</i>. At kunne hjerneløst 
+finde nye. Problemet kan formuleres: 
+</p>
+<p class="t">
+Hvad skal gælde
+for _(a_) og _(b_), for at kvadratroden af _(a^2+b^2_) går op?  
+</p>
+
+<p class="t">
+Det viser sig at følgende virker:
+_($a=m^2-n^2,b=2mn, \qquad m,n \text{ er hele tal}_)
+F.eks. kan jeg sige:
+_($a=5^2-3^2=16, b=2*5*3=30_)
+Jeg tjekker nu:
+_($\sqrt{16^2+30^2} = \sqrt{1156} = 34_)
+Det virker! 
+</p>
+
+<q-stion 1="25" 2="1">
+Bevis at det altid virker for nogen som helst _(m_) og _(n_). 
+<br><br></q-stion>
+<answer-box>
+Her kan vi sige:
+_($\begin{align}
+a^2 + b^2 & = (m^2-n^2)^2 - (2mn)^2 \\ \\
+& = m^4+n^4-2m^2n^2+4m^2n^2 \\ \\
+& = m^4 + 2m^2n^2 + n^4
+\end{align}_)
+Det her passer formen _(A^2+2AB+B^2_) med _(A=m^2,B=n^2_), så vi kan omskrive til:
+_($(m^2+n^2)^2_)
+Så:
+_($\sqrt{a^2+b^2}=m^2+n^2_)
+Det er altid et helt tal. Bum!
+<br><br></answer-box>
+
+<p class="t">
+Det er lidt svært at beskrive præcist <i>hvordan</i> man er kommet frem til denne løsning. 
+Man kan ikke på nogen åbenlys måde
+bare "isolere variabler". 
+Vi har jo èn ligning med to variabler, og det ekstra <i>krav</i>, at begge variabler er 
+hele tal. Sådan nogle Diophantine ligninger her <i>er</i> 
+bare tricky, og man bruger vidt forskellige strategier til meget lignende problemer. 
+Det handler fundamentalt om at opstille nogle ekstra <i>krav</i> 
+_(a_) og _(b_) skal følge. Et godt, simpelt krav 
+at starte med er lighed og ulighed. 
+</p>
+
+<q-stion 1="25" 2="2">
+Vis at det altid er umuligt at tage kvadratroden af _(a^2+b^2_) hvis
+både _(a_) og _(b_) er ulige. 
+<p class="t">
+Hint: Prøv måske at opdel det i to tilfælde. A: Det er umuligt at
+tage kvadratroden og få et lige tal, og B: Det er umuligt at tage kvadratroden 
+og få et ulige tal. 
+</p>
+<br></q-stion>
+<answer-box>
+Vi antager at de begge er ulige, så skriv _(a_) som _(2k_0+1_) og _(b_) som
+_(2k_1 +1_). Nu får vi:
+_($(2k_0+1)^2+(2k_1+1)^2=4k_0^2 + 4k_0 + 1 + 4k_1^2+4k_1+1_)
+Dette kan omskrives til:
+_($4*(k_0^2+k_0+k_1^2+k_1)+2_)
+_(k_0^2+k_0+k_1^2+k_1_) er bare et eller andet helt tal _(n_). Så:
+_($4n+2_)
+Vi skal se, om det er muligt at tage en kvadratrod af dette, og få et helt tal.
+Kald dette hele tal for _(z_), så:
+_($\sqrt{4n+2} = z \to 4n+2=z^2_)
+Antag først at _(z_) er et ulige tal _(2k+1_):
+_($4n+2=4k^2 + 4k + 1_)
+Nu kan vi dividere begge sider med _(4_) og få:
+_($n+\frac{1}{2}=k^2+k+\frac{1}{4} \to n-k^2 = \frac{1}{4}-\frac{1}{2}_)
+Men _(n-k^2_) er et helt tal, hvilket _(1/4-1/2_) ikke er. Derfor et dette tilfælde umuligt!
+<p class="t">
+Vi prøver nu hvor _(z_) er et lige tal _(2k_):
+_($4n+2=4k^2 \to n+\frac{1}{2}=k^2 \to n-k^2=-\frac{1}{2}_)
+Det samme sker igen. 
+</p>
+<br></answer-box>
+
+<p class="t">
+Den her nye info ville nok kunne hjælpe os en smule med, 
+at komme frem til gættet _(a=m^2-n^2_), _(b=2mn_), eftersom
+_(b_) i dette gæt med sikkerhed er lige.
+Resten er man nok kommet frem til i et forsøg på at opnå 
+formen _(A^2+2AB+B^2_). Den kan omskrives algebraisk til
+_((A+B)^2_), vis kvadratrod selvfølgelig er et helt tal. 
+</p>
+<p class="t">
+Men ja, det er lidt svært at sige præcis hvordan folk originalt kom på idéen. 
+Diophantine ligningen kræver en stor viden inden for <i>talteori</i>: 
+Studiet af hele tal. Med ens viden kender man flere egenskaber, og kan 
+lettere finde på krav til variablerne. 
+</p>
+
+<p class="t">
+Udover de lineære, giver jeg dig her èn ekstra diophantine ligning, 
+du selv kan prøve at løse. 
+Du får kun èn, da der simpelthen ikke findes nok "nemme" Diophantine ligninger. 
+</p>
+
+<q-stion 1="25" 2="3">
+Hvad skal gælde for _(a,b,c,d_) hvis 
+_($a*b=c*d_)
+Her skal du ligesom med pythagorean triples
+forsøge, at beskrive _(a_), _(b_), _(c_) og _(d_) i forhold til nogle nye variabler.
+Så kan du nemt og hjerneløst generere nye løsninger.
+<p class="t">
+Den her er nok for svær til at
+kunne gøres uden et relativt stort hint. 
+Idéen er, at en brøk kan skrives på flere forskellige måder:
+_($\frac{42}{63} = \frac{6}{9} = \frac{2}{3}_)
+Èn af de her (_(2/3_) i vores tilfælde) er den "mest reducerede brøk". 
+Hvis du har _(a/b_), 
+kan du derved introducere to nye variabler
+_(m/n_), der symboliserer henholdsvis tæller og nævner 
+i den mest reducerede brøk. Kan det anvendes på smart vis? 
+</p>
+<br></q-stion>
+<answer-box>
+Jeg tænker først og fremmest at vi omskriver til:
+_($\frac{a}{c} = \frac{b}{d}_)
+Disse to brøker er lig hinanden, men de er også lig den <i>mest reducerede brøk</i> _(m/n_). 
+Både _(a/c_) og _(b/d_) er skalerede version af _(m/n_), hvor både 
+tæller og nævner er blevet ganget med en konstant. 
+Sig at _(a/c_) er skaleret med _(k_1_), og _(b/d_) er skaleret med 
+_(k_2_). Vi har nu:
+_($\frac{a}{c} = \frac{k_1*m}{k_1*n}, \qquad \frac{b}{d} = \frac{k_2*m}{k_2*n}_)
+Hvilket medfører at:
+_($\begin{align}
+a&=k_1*m \\
+c&= k_1*n \\
+b&= k_2*m \\
+d&=k_2*n 
+\end{align}_)
+Det er præcist hvad vi ledte efter! Vi har nu beskrevet både _(a_), _(b_), _(c_) og _(d_) 
+i forhold til fire nye variabler _(k_1_), _(k_2_), _(m_) og _(n_). 
+Vi kan frit justere på disse variabler, så længe at _(m/n_) er 
+en komplet reduceret brøk. _(m/n_) må ikke have nogle delte faktorer. 
+<br><br></answer-box>
+
+<!--  -->
+

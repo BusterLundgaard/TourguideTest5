@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <p class="t">
+    Lad os gå videre til mere komplicerede former og kigge på firkanter. Først specifikt deres areal. 
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Find arealet af følgende firkant
+    <img class="Spic" style="width:80%" src='../../../Assets/Chapter2\Section2\Quads\Exercise1.png'> 
+    <br><br></q-stion>
+    <answer-box>
+    Du kan se svaret i videon her:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter2\Section2\Quads\Firkant1.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+    
+    <q-stion 1="2" 2="1" 3="5">
+    Find arealet af følgende firkant:
+    <img class="Spic" style="width:80%" src='../../../Assets/Chapter2\Section2\Quads\Exercise2.png'> 
+    <br><br></q-stion>
+    <answer-box>
+    Formen her er nok lidt speciel, men der er intet markant svært omkring opgaven. Man kan igen bare dele 
+    den op i to trekanter, og den her gang har den ene endda nok informationer! Luksus!
+    Svaret er i hvert fald omkring _(16.6_). 
+    <br><br></answer-box>
+
+    <p class="t">
+    Som du nok kan se så tager det lidt tid, og er lidt avanceret at finde arealet via siderne og vinklerne.
+    Muligt, men lidt langsomt. Heldigvis så er der jo mange andre længder og vinkler på firkanten vi kan måle,
+    nogle bedre til at give os visse informationer end andre. Hvis man er ude efter arealet som os lige nu,
+    så er diagonalerne klart det bedste svar:
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Find en formel for arealet af følgende firkant:
+    <img class="Spic" style="width:95%" src='../../../Assets/Chapter2\Section2\Quads\Exercise3.png'> 
+    Det er super simpelt! 
+    <br><br></q-stion>
+    <answer-box customWidth="600">
+    Vi kan måle arealet som _(\triangle ABC + \triangle ADC_).
+    Hver kan vi nemt finde via _(\frac{1}{2}*base*højde_)
+    _($\triangle ABC + \triangle ADC =_)
+    _($\frac{1}{2}*(a+c)*Sin(v)*b + \frac{1}{2}*(a+c)*Sin(v)*d =_)
+    _($\frac{1}{2}*(a+c)*Sin(v)*(b+d)_)
+    Men tænk! _(b+d_) er jo faktisk bare afstanden fra _(D_) til _(B_) og
+    _(a+c_) er bare afstanden fra _(A_) til _(C_). Så hvis diagonallængderne
+    på en firkant kaldes for henholdsvis _(s_1_) og _(s_2_), så er arealet:
+    _($\frac{1}{2}*Sin(v)*s_1*s_2_)
+    Super simpel og dejlig formel!
+    <br><br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5" customWidth="600">
+    Brug linealen og vinkelmåleren i følgende opgave til at regne endnu igen et firkants areal:
+    <br> <br>
+    <div style="text-align: center">
+        <iframe style="width:500px; height: 500px" scrolling="no" src="../../../Assets/Chapter2/Section2/ConstructableMath/CompassEdge.html"></iframe>
+    </div>
+    <p class="t">Du kan tegne frit på bagrunden, tegne lige linjer ved at tegne op ad linealen, tegne cirkler ved 
+    at dobbeltklikke på passeren og trykke på dens spids. Du kan bevæge både lineal, vinkelmåler og passer
+    igen ved at dobbeltklikke (alla den måde du bevæger et billede på i powerpoint). Du kan trykke på
+    genstart-knappen oppe i det venstre øvre hjørne for at fjerne alt du har tegnet. </p>
+    <p class="t">
+    Der er en vinkelmåler, men du behøver ikke nødvendigvis 
+    at bruge den.
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Du kan se en video af hvad jeg gjorde her:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter2\Section2\Quads\Constructable1.mp4' type='video/mp4'>
+    </video>
+    <br></answer-box>
+
+    <p class="t">
+    En anden mulighed kunne være "varigon parralelogramet":
+    <img class="Spic" style="width:80%" src='../../../Assets/Chapter2\Section2\Quads\Varigon1.png'> 
+        <!-- CROP DET HER -->
+    <p class="t">Hvis man forbinder midtpunkterne på en firkant så får man hvad vi kalder et <i>parralelogram</i>.
+    Et parralelogram er en bestemt form for firkant hvor de modsatte sider er lige lange. </p>
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Bevis at man får et parralelogram når man forbinder midtpunkterne på en firkant. Bevis
+    også at parralelogramets sider er parralele med firkantens diagonaler (det kommer lidt sammen med det andet)
+    <br><br></q-stion>
+    <answer-box>
+    Prøv at se følgende figur:
+    <img class="Spic" style="width:95%" src='../../../Assets/Chapter2\Section2\Quads\Varigon2.png'> 
+    <p class="t">Fra _(D_) til _(C_) er der _(DQ_2_) langs parallelt med diagonalen _(\Seg{AC}_) og _(Q_2C_) vinkelret med 
+    diagonalen _(\Seg{AC}_). _(M_3_) er <i>midtpunktet</i>, så der går vi halvejs lige så langt i begge retninger. 
+    Vi kan lave præcis samme argument med _(M_4_), og vi kan altså se at _(M_4_) er præcis ligeså højt oppe
+    vinkelret _(\Seg{AC}_) som _(M_3_). Det betyder at _(M_3,M_4_) må ligge i en linje langs _(\Seg{AC}_), ergo
+    _(\Seg{M_3M_4} || \Seg{AC}_). Præcist det samme argument kan vi bruge til at vise at _(\Seg{M_1M_2} || \Seg{AC}_), 
+    _(\Seg{M_1M_4} || \Seg{BD}_) og _(\Seg{M_2M_3} || \Seg{BD}_). Vi har tydeligt vist at hver side
+    er parallel med en diagonal, og siden de modsatte sider er parallele til samme 
+    side, så er de også parallele med hinanden. Færdig.  </p>
+    <br><br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Den primære grund til at "varigon parralelogramet" er praktisk, er at dets areal er halvdelen af selve firkantens areal.
+    Vis at dette er sandt. Så med varigon parralelogramets areal kan vi nemt
+    finde firkantets. Det er praktisk, fordi varigon parralelogramets areal
+    kræver ikke at vi finder nogen vinkel eller bruger _(Sin, Cos_), osv. 
+    <br><br></q-stion>
+    <answer-box>
+    Igen se følgende figur:
+    <img class="Spic" style="width:95%" src='../../../Assets/Chapter2\Section2\Quads\Varigon3.png'>
+    <p class="t">En smule kompliceret, i know, men du må lige bære over med mig. Jeg har 
+    placeret en linje parralel med _(\Seg{M_1M_2}_) eller _(\Seg{M_4M_3}_) eller _(\Seg{AC}_) på _(B_) og _(D_), og 
+    gjort meget det samme med _(\Seg{BD}_) på _(A_) og _(C_). Det er tydeligt at 
+    _(\square Q_1Q_2Q_3Q_4_) også er et parallelogram, og at dets sider har samme retning som varigon parralelogrammet. 
+    Yderligere så kan man med lidt tænkning vise at _(Q_1Q_2=2*M_1M_2_) og _(Q_2Q_3=2*M_2M_3_).
+    Man kan relativt nemt godt se at hvis èn side af et parallelogram bliver dobbelt så stort, så bliver arealet også dobbelt så stort.
+    Så hvis <i>begge</i> sider bliver dobbelt så store, så bliver arealet fire gange så stort. Vi har nu arealet af det 
+    store parallelogram, men ikke arealet af selve firkanten. Arealet af trekanterne _(\triangle AQ_1B, BQ_2C, CQ_3D, DQ_4A_) skal fjernes. 
+    Det er ret tydeligt at se at _(\triangle AQ_1B \equiv AIC, \triangle BQ_2C \equiv BIC, ... _) osv. Hvis vi fjerner dem, 
+    så <i>halvere</i> vi altså størrelsen af arealet. Siden det lige nu er <i>firdobbelt</i> så stort, så bliver det formindsket
+    til kun <i>dobbelt</i> så stort. Bam. </p>
+    <br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5" customWidth="600">
+    Prøv så godt som du kan at finde arealet af følgende figur:
+    <br> <br>
+    <div style="text-align: center">
+        <iframe style="width:500px; height: 500px" scrolling="no" src="../../../Assets/Chapter2/Section2/ConstructableMath/CompassEdge2.html"></iframe>
+    </div>
+    <p class="t">Det er med vilje at jeg ikke har givet dig nogen vinkelmåler. Alle tricks er ellers tilladt (selvfølgelig dog ikke at tage 
+    et screencap af skærmen og tælle mængden af pixels med et værktøj). </p>
+    <p class="t">
+    Igen så er der en vinkelmåler, men du behøver ikke nødvendigvis 
+    at bruge den.
+    </p>
+    <br><br></q-stion>
+    <answer-box>
+    Du kan se en video af hvad jeg gjorde her:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter2\Section2\Quads\Constructable2.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5" customWidth="600">
+    Tegn varigon parralelogrammet, nu hvor linealen ikke længere har mål:
+    <div style="text-align: center">
+        <iframe style="width:500px; height: 500px" scrolling="no" src="../../../Assets/Chapter2/Section2/ConstructableMath/CompassEdge3.html"></iframe>
+    </div>
+    <p class="t">
+    Du skal tænke lidt ud af boksen her! Der er sådan èn "ide", og når man har fået den så burde det 
+    være relativt nemt. Hint: Kan du bruge din passer til noget? </p>
+    <br><br></q-stion>
+    <answer-box>
+    Du kan se en video af hvad jeg gjorde her:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter2\Section2\Quads\Constructable3.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+
+    <p class="t">
+    Noget andet man også kunne bruge til at finde arealer er <i>positioner</i>. Det viser sig især at være praktisk 
+    når man har store, komplicerede former som ved landmåling. Lad os dog som stort set altid starte simpelt med en trekant.
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Find arealet af følgende trekant:
+    <img class='SpicB' style='width:80%' src='../../../Assets/Chapter2\Section2\Shoelace\1.png'> 
+    <br><br></q-stion>
+    <answer-box>
+    Jeg tænker nok i dette tilfælde at det er nemmest at gøre det på følgende måde:
+    <img class='SpicB' style='width:80%' src='../../../Assets/Chapter2\Section2\Shoelace\2.png'> 
+    <p class="t">
+    Altså, først finder jeg arealet af den rektangel der er rundt omkring trekanten, derefter
+    trækker jeg de 3 mindre trekanter (på billedet grønne) fra.
+    _($\begin{eqnarray}
+    &             &   & \bigl(5  & - & (-3.5)\bigr)    & * & \bigl(6.5 & - & (-4.5)\bigr)   & - \\
+    & \frac{1}{2} & * & \bigl(5  & - & (-3.5)\bigr)    & * & \bigl(6.5 & - & 4\bigr)        & - \\
+    & \frac{1}{2} & * & \bigl(5  & - & (-1)\bigr)      & * & \bigl(6.5 & - & (-4.5)\bigr)   & - \\
+    & \frac{1}{2} & * & \bigl(-1 & - & (-3.5)\bigr)    & * & \bigl(4   & - & (-4.5)\bigr)  
+    \end{eqnarray}_)
+    Når man faktisk regner det her så får man et areal på _(39.25m^2_) (eller hvad en for en enhed vi bruger)
+    </p>
+    <br><br></answer-box>
+
+    <p class="t">I tidligere opgave kunne vi selvfølgelig også godt bare have fundet sidelængderne og vinklerne
+    imellem. Kigger man på en simpel trekant:</p>
+    <img class='Spic' style='width:50%' src='../../../Assets/Chapter2\Section2\Shoelace\3.png'> 
+    <p class="t">
+    Så kan man let se at arealet er 
+    _($\frac{1}{2}*h*b=\frac{1}{2}*(Sin(\theta)*b)*a=_)
+    _($\frac{1}{2}*a*b*Sin(\theta)_)
+    Det er også en praktisk formel. Lad os nu prøve at finde en lignende praktisk formel,
+    til de situationer hvor vi kun er blevet givet koordinaterne:
+    </p>
+    <img class='SpicB' style='width:80%' src='../../../Assets/Chapter2\Section2\Shoelace\4.png'> 
+    <p class="t">
+    For at gøre problemet en smule nemmere, så lad os specifikt arbejde med 
+    trekanter hvor èn af punkterne er lig _((0,0)_)
+    </p>
+    <img class='SpicB' style='width:80%' src='../../../Assets/Chapter2\Section2\Shoelace\5.png'> 
+    <p class="t">
+    Det betyder konkret, at hvis vi nogensinde i udledningen af en formel har brug 
+    for f.eks. _(b_x-a_x_), så bliver det nu til _(b_x - 0 = b_x_). Det vil altså gøre
+    selve processen af et finde en formel lidt simplere. Plus: Når vi har fundet en formel,
+    så kan vi bare erstatte alle _(b_x,b_y,c_x,c_y_) med henholdsvis _(b_x - a_x_), 
+    _(b_y - a_y_), _(c_x - a_x_), _(c_y - a_y_). 
+    </p>
+    <p class="t">
+    Én strategi kunne være at gøre lidt det samme som vi gjorde i tidligere opgave: Finde
+    arealet af rektanglet rundt omkring trekanten, og så trække de mindre arealer fra. 
+    Her støder vi hurtigt på et problem dog: For at finde afstanden mellem to koordinater,
+    så er vi nødt til at vide hvilket af koordinaterne er størst! Ellers så skal vi til 
+    at bruge _(\sqrt{(\text{afstand})^2}_) for at sørge for at det bliver positivt. Plus:
+    For at finde rektanglets areal, så er vi nødt til at finde ud af hvilken af de mulige
+    horisontale afstande der er største, hvilket også er upraktisk at gøre i en simpel formel.
+    </p>
+    <p class="t">
+    Hvor end dumt det lyder, så er det nok faktisk en bedre ide at bruge _(\frac{1}{2}abSin(\theta)_),
+    hvor vi så finder længderne _(a,b_) og vinklen _(v_) ved hjælp af koordinaterne. Det vil give
+    os et værre rod, men måske kan vi simplificere det / omskrive det, og få noget dejligt?
+    </p>
+    <p class="t">
+    Omend de individuelle vinkler er positive eller negative, så kan man se at vinklen mellem 
+    de to sider er _(Arctan(y_b/x_b)-Arctan(y_a/x_a)_). Her kan _((x_a,y_a)_) være noget som helst, 
+    så længde den vinkel den danner er <i>mindre</i> end den vinkel _((x_b,y_b_)_) danner. 
+    Vi skal altså gå mod uret. Anyways, generelt så vil arealet blive: 
+    
+    _($0.5*\sqrt{x_a^2+y_a^2}*\sqrt{x_b^2+y_b^2}*Sin(Arctan(y_b/x_b)-Arctan(y_a/x_a))_)
+    
+    Lad os prøve at simplificere det lidt. Specielt alt det med _(Arctan_) vil jeg gerne have fjernet.
+    
+    _($Sin(Arctan(y_b/x_b)-Arctan(y_a/x_a))=_)
+    _($\begin{eqnarray}
+    && Sin(Arctan(y_b/x_b))*Cos(Arctan(y_a/x_a)) - \\
+    && Sin(Arctan(y_a/x_a))*Cos(Arctan(y_b/x_b))
+    \end{eqnarray}_)
+    
+    Hvis jeg på en eller anden måde kunne skrive _(Sin_) og _(Cos_) <i>i forhold</i> til _(Tan_), så ville jeg i en 
+    eller anden grad have _(Tan(Arctan(noget))=noget_). Det ville eliminere alt trigonometrisk møj! 
+    </p>
+    <p class="t">Prøv at se følgende billede:</p>
+    <img class="Spic" style="width:50%" src='../../../Assets/Chapter2\Section2\Quads\Shoelace 1 help.png'> 
+        <!-- CROP DET HER -->
+    <p class="t">_(Sin(v)_) er y-koordinatet på det punkt hvor en linje med vinkel 
+    _(v_) skærer en cirkel med radius _(1_).
+    Siden linjen har en hældning på _(Tan(v)_), så følger et hvilket som helst punkt 
+    på den formen _((x,x*Tan(v))_).
+    Vi ved også at når den rammer cirklen, så er den _(1_) væk fra center 
+    (siden cirklen har en radius på _(1_)).
+    Altså: 
+    _($x^2+y^2 = 1 \to_)
+    _($x^2+(x*Tan(v))^2 = 1 \to_)
+    _($x^2*(1+Tan(v)^2) = 1 \to_)
+    _($x=\sqrt{\frac{1}{1+Tan(v)^2}}_)
+    Det vil altså sige at:
+    _($Cos(v)=\frac{1}{\sqrt{1+Tan(v)^2}}_)
+    Og siden _(Sin(v)=Cos(x)*Tan(v)_):
+    _($Sin(v)=\frac{Tan(v)}{\sqrt{1+Tan(v)^2}}_)
+    Vi kan nu omskrive _(Cos(Arctan(y_b/x_b))_) til:
+    _($\frac{1}{\sqrt{1+Tan(Arctan(y_b/x_b))^2}}=\frac{1}{\sqrt{1+(y_b/x_b)^2}}_)
+    Og det samme kan vi gøre med de andre. Alt i alt får vi:
+    
+    _($\frac{y_b/x_b}{\sqrt{1+(y_b/x_b)^2}}*\frac{1}{\sqrt{1+(y_a/x_a)^2}}-\frac{y_a/x_a}{\sqrt{1+(y_a/x_a)^2}}*\frac{1}{\sqrt{1+(y_b/x_b)^2}}=_)
+    _($\frac{1}{\sqrt{1+(y_a/x_a)^2}}*\left(\frac{y_b/x_b}{\sqrt{1+(y_b/x_b)^2}}-\frac{y_a/x_a}{\sqrt{1+(y_b/x_b)^2}}\right)=_)
+    _($\frac{y_a/x_a-y_b/x_b}{\sqrt{1+(y_a/x_a)^2}*\sqrt{1+(y_b/x_b)^2}}=_)
+    _($\frac{y_a/x_a-y_b/x_b}{\sqrt{\frac{x_b^2+y_b^2}{x_b^2}}*\sqrt{\frac{x_a^2+y_a^2}{x_a^2}}}=_)
+    _($\frac{x_b*x_a*(y_a/x_a-y_b/x_b)}{\sqrt{x_a^2+y_a^2}*\sqrt{x_b^2+y_b^2}}=_)
+    _($\frac{x_b*x_a*\frac{y_a}{x_a} - x_b*x_a*\frac{y_b}{x_b}}{\sqrt{x_a^2+y_a^2}*\sqrt{x_b^2+y_b^2}}=_)
+    _($\frac{y_a*x_b-y_b*x_a}{\sqrt{x_a^2+y_a^2}*\sqrt{x_b^2+y_b^2}}_)
+
+    Lad os endelig sætte det her ind i vores fulde formel:
+    _($0.5*\sqrt{x_a^2+y_a^2}*\sqrt{x_b^2+y_b^2}*Sin(Arctan(y_b/x_b)-Arctan(y_a/x_a))=_)
+    _($0.5*\sqrt{x_a^2+y_a^2}*\sqrt{x_b^2+y_b^2}*\frac{y_a*x_b-y_b*x_a}{\sqrt{x_a^2+y_a^2}*\sqrt{x_b^2+y_b^2}}=_)
+    _($0.5*(y_a*x_b-y_b*x_a)_)
+    Bam! En super simpel formel! De her arealer kan vi altså mega let finde!     
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Find arealet af følgende firkant:
+    <img class="Spic" style="width:100%" src='../../../Assets/Chapter2\Section2\Quads\Shoelace2.png'> 
+    <br><br></q-stion>
+    <answer-box>
+    I sidste opgave fandt vi (jeg) frem til en formel vi kunne bruge til at udregne arealet af en trekant hvis
+    ene punkt lå i _((0,0)_) og hvis andre punkter vi kendte. Hvis bare vi bruger det resultat så bliver 
+    denne opgave super nem:
+    <img class='Spic' style='width:90%' src='../../../Assets/Chapter2\Section2\Quads\Shoelace2 2.png'> 
+   <p class="t"> Vi kan altså dele arealet op i _(\triangle BOA, \triangle AOD, \triangle DOC, \triangle COB_).
+    De er hver nemme at regne: 
+    _($\begin{eqnarray} 
+    0.5*& &\bigl((-1) & * & (-9) & - & 1    & * & (-1) & \bigr) & + \\
+    0.5*& &\bigl(1    & * & 3    & - & 6    & * & (-9) & \bigr) & + \\
+    0.5*& &\bigl(6    & * & 3    & - & (-5) & * & 3    & \bigr) & + \\
+    0.5*& &\bigl((-5) & * & (-1) & - & (-1) & * & 3    & \bigr) 
+    \end{eqnarray}_)
+    _($=54_)
+    Hvis du er i tvivl om hvad for en retning du skal gå (altså hvad der kommer til at være _(x_a_) og _(x_b_)), så skal 
+    du bare se hvornår du for et negativ areal (som jo ikke giver nogen fysisk mening). </p>
+    <p class="t">
+    Det vi gjorde her lægger lidt op til en generel strategi: vælg et punkt, find ud af hvad for en retning man skal gå,
+    og udregn så graduelt _(y_a*x_b-y_b*x_a_) for alle punkterne i sekvens. Læg alt sammen, og divider så med _(2_).
+    Lad os nu i næste opgave se om det også gælder i mere komplicerede tilfælde.
+    </p>
+    <br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Find arealet af følgende firkant:
+    <img class="Spic" style="width:90%" src='../../../Assets/Chapter2\Section2\Quads\Shoelace3.png'> 
+    <br><br></q-stion>
+    <answer-box>
+    Nu er vi i lidt af et problem. Vi kan ikke på samme måde forbinde alting til _((0,0)_) som før. 
+    Èn løsning kunne være bare at rykke alting med _((-2,-2_) så vi fik:
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter2\Section2\Quads\Shoelace3 3.png'> 
+    <p class="t">Det ville egentlig være fint nok, men hvis vi havde meget store former så ville det nok blive lidt iriterrende at skulle minuse så mange koordinater.
+    I ekstra komplicerede figure ville vi ikke engang være sikre på at det altid virkede. Jeg har derfor en anden løsning:</p>
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter2\Section2\Quads\Shoelace3 2.png'> 
+    <p class="t">Lad os sige vi starter ved _(-8,4_) og går med uret. Så bliver arealet af _(\triangle OAB_) til _(0.5*(6*4-7*(-8))=40_) og _(\triangle OBC_) til 
+    _(0.5*(7*4-6*(-5))=29_). Hvis vi nu bliver ved med at gå samme retning med uret, så bliver _(\triangle OCD_) til _(0.5*((-5)*2-4*2)=-9_). 
+    </p>
+    <p class="t">Negativt!
+    Perfekt! Det samme vil ske med _(\triangle DOA=0.5*(2*(-8)-2*4)=-12_). Ved de to første positive arealer har vi overtalt, og med de to sidste så har 
+    vi bare fjernet den del vi overtalte! Altså, alt i alt for vi stadig det rigtig areal når vi lægger det hele sammen! 
+    _($40+29-9-12=48_)
+    Selv når kæmpe former med hjørner placeret mærkelige sted, så kan vi altså bare bruge denne simple strategi. Det officiele navn er
+    "shoelace strategi". </p>
+    <br></answer-box>
+

@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+
+    
+    <h3>Øvelse i tilpasning af sandsynlighedsfunktioner til ens data</h3>
+
+    <q-stion 1="5" 2="1">
+    I følgende Geogebra-dokument er der på spreadsheets indtastet data, der
+    beskriver antallet af stærke storme i et bestemt land de sidste 30 år:
+    <p class="cent">
+        <a href="../../../Assets/Chapter4\KontinuerligProb\StrongStorms.ggb" download>
+            Download!
+        </a>
+    </p>
+    <p class="t">
+    Hvad er chancen for, at der dette år bliver over _(5_) stærke storme i landet?
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Vores stokastiske variable er "antal storme", og vi kan fint argumentere for, at den er normalfordelt. 
+    Vi kan tilpasse den normalfordelings pdf, ved at finde datens _(\mu_) og _(\sigma_). Gennemsnittet
+    kan geogebra regne direkte for os, men standardfordelingen er vi nødt til at regne manuelt: 
+    <video class='picB' style='margin-top:35px; margin-bottom: 35px;' controls>
+        <source src='../../../Assets/Chapter4\KontinuerligProb\StatsExercise1.mp4' type='video/mp4'>
+    </video>    
+    <p class="t">
+    Så _(\mu=2.97_), _(\sigma=2.51_) og pdf'en er:
+    _($f(x)=\frac{1}{\sqrt{2\pi}*2.51}*e^{-(x-2.97)^2 / (2*2.51^2)} = 0.1343*0.94489^{(x-2.51)^2} _)
+    Chancen for over 5 storme kan regnes som:
+    _($\int_{5}^{\infty} 0.1343*0.94489^{(x-2.51)^2} \text{ }dx = 0.2009_)
+    En chance på ca. 20%.
+    </p>
+   <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="5" 2="2">
+    Sig at en skole de sidste 4 år har holdt en årlig kaste-konkurrence med den nye klasse. Dataet
+    fra de tidligere konkurrencer kan findes i følgende dokument:
+    <p class="cent">
+        <a href="../../../Assets/Chapter4\KontinuerligProb\ThrowingCompetition.ggb" download>
+            Download!
+        </a>
+    </p>
+    <p class="t">
+    En ny tilfældig spiller skal til at kaste i det her års konkurrence. Uden du ved
+    noget om ham, hvad er chancen for at han slår verdensrekorden? 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Dette data kan fint modelleres normalt, siden nogle kaster længere og andre kortere end
+    gennemsnittet. 
+    <p class="t">
+    I dokumentet er vi blevet givet navn og år. Det er ligegyldig overflødig information, og
+    vi behøver kun bekymre os om listen af observationer præcis ligesom i sidste opgave. Vi finder:
+    _($\mu = 29.07, \qquad \sigma = 17.76_)
+    Via _(\text{max}_)-funktionen ser vi, at rekorden er _(71.58m_). Chancen
+    for at kaste længere er:
+    _($\int_{71.58}^{\infty} 0.02246*0.9984^{(x-29.07)^2} \text{ }dx = 0.008342_)
+    En meget lille chance på kun lidt over _(0.8_)%. 
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="5" 2="3">
+    Bevis at gennemsnittet af en eksponentiel stokastisk variable 
+    er lig _(1/\lambda_). 
+    <br><br></q-stion>
+    <answer-box>
+    Vi ved, at gennemsnittet på en kontinuerlig variable med pdf _(f(x)_) kan findes som:
+    _($\int_{a}^{b} x*f(x) \text{ }dx_)
+    En eksponentiel variable går fra _(0_) til _(\infty_) og har pdf _(\lambda*e^{-\lambda x}_), så
+    dens gennemsnit er:
+    _($\int_{0}^{\infty} x*\lambda*e^{-\lambda*x} \text{ }dx_)
+    Det kan relativt let ses, at integralet på _(x*\lambda*e^{-\lambda*x}_) er:
+    _($-\frac{(\lambda x + 1)e^{-\lambda x}}{\lambda}_)
+    Det skal evalueres fra _(0_) til _(\infty_), hvilket vil sige:
+    _($-\lim_{x \to \infty}\left[\frac{(\lambda x + 1)e^{-\lambda x}}{\lambda} \right] - (-\frac{(\lambda*0 + 1)e^{-\lambda*0}}{\lambda})_)
+    Grænsen ved uendelighed kan omskrives til:
+    _($\lim_{x \to \infty} \left[\frac{\lambda x + 1}{(e^{\lambda})^x}*\frac{1}{\lambda} \right] _)
+    _(\lambda x + 1_) vokser lineært og _((e^{\lambda})^x_) vokser eksponentielt.
+    Den ene dominerer og grænsen nærmer sig _(0_). Nu står vi tilbage med
+    _($0 - \left(-\frac{(\lambda*0 + 1)e^{-\lambda*0}}{\lambda} \right)_)
+    ... hvilket man let kan se giver _(1/\lambda_). 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="5" 2="4">
+    Sig at der siden 2018 er blevet optaget hver gang en meteor over en bestemt størrelse har ramt jorden.
+    Datoerne er indsat i følgende Geogebra dokument:
+    <p class="cent">
+        <a href="../../../Assets/Chapter4\KontinuerligProb\Meteornedslag.ggb" download>
+            Download!
+        </a>
+    </p>
+    <p class="t">
+    Der er ca. _(52_) uger på et år. Hvor stor er chancen for, at der ikke kommer flere af disse
+    meteornedslag i _(2020_) baseret på dataet? (dataet er falsk og opfundet)
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Vi arbejder med <i>afstanden/tiden</i> mellem begivenheder. Èt meteornedslag 
+    har ingen indflydelse på chancen for hvornår en anden meteor rammer, så det er absolut
+    en eksponentiel distribution.
+    <p class="t">
+    I tidligere opgaver med eksponentielle distribution blev vi <i>givet</i> den 
+    gennemsnitlige mængde begivenheder pr. tidsenhed _(\lambda_). Her er vi kun oplyst med
+    lidt statistik. Hvordan finder vi _(\lambda_), så vi kan tilpasse pdf'en?
+    </p>
+    <p class="t">
+    Her kan vi bruge resultatet fra tidligere opgave: Gennemsnittet er 
+    _(1/\lambda_), så vi kan bare regne gennemsnittet på vores data, løse en simpel ligning, og 
+    få _(\lambda_). 
+    </p>
+    <p class="t">
+    I følgende video regner jeg gennemsnittet og _(\lambda_) i Geogebra:
+    </p>
+    <video class='picB' style='margin-top:35px; margin-bottom: 35px;' controls>
+        <source src='../../../Assets/Chapter4\KontinuerligProb\StatQuestion3.mp4' type='video/mp4'>
+    </video>    
+    <p class="t">
+    Vores pdf er altså:
+    _($f(x)=0.14 e^{-0.14x}_)
+    Det seneste meteoernedslag i 2020 på dataet er uge _(47.4_), så
+    der er _(4.6_) uger tilbage på året. Vi regner nu:
+    _($\int_{0}^{4.6} 0.14 e^{-0.14x} \text{ }dx = 0.47_)
+    Så næsten en 50/50 chance. 
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="5" 2="5">
+    Sig at der er en stor (opfundet), øde ørken med et areal på ca _(130Gm^2_)
+    (hvor _(G_) er prefix for _(10^9_)).
+    Rundt omkring den ligger der _(900_) oaser, der ca. er ligeligt fordelt.
+    Deres arealer er så små sammenlignet med ørkenens størrelse, at du ikke rigtig
+    behøver tænke over geometrien. 
+    <p class="t">
+    Sig at du vælger en lokation ca. i midten af ørkenen. 
+    Hvad er chancen for, at der ikke er nogen 
+    oaser inden for _(10km_) af lokationen? 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Vi har indtil videre tænkt på eksponentiel distribution enten i forhold til <i>tid</i> 
+    eller <i>længde</i> mellem begivenheder. 
+    Hvem siger, at det ikke kan være <i>areal</i> også? Vores
+    "begivenheder" er i dette tilfælde oaser og vores areal er ørkenen. 
+    Før gjorde vi tid større fra et _(0_) punkt, nu gør vi areal
+    større fra en lokation. Vi forestiller os en cirkel på 
+    lokationen, hvis radius vi konstant øger, ligesom tiden. Lokationen er ca. på
+    midten, så vi behøver ikke bekymre os om ørkenens kanter. Vores
+    _(\lambda_) er _(900/130=6.92_) oaser pr. _(Gm^2_). "Inden for _(10km_)" svarer
+    til et areal omkring lokationen på _(\pi*10000^2 m^2 = 0.314 Gm^2_). 
+    Vi regner nu:
+    _($1-\int_{0}^{0.3141} 6.92 e^{-6.92*x} \text{ }dx = 1 - 0.8862 = 0.113_)
+    Så en relativt lille chance, heldigvis! 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="5" 2="6" customWidth="540">
+    Sig at nogle børn har samlet _(130_) medium-små sten,
+    der til sammen vejer _(24.7kg_). 
+    De har virkelig intet at lave, så de sorterer stenene fra mindst til størst, så godt som 
+    de nu kan, visuelt og intuitivt uden at veje dem alle sammen. Ud
+    fra dette kan de vurdere, at den _(20_)'ne mindste sten vejer _(0.11kg_). Cool. 
+    <p class="t">
+    Alle sten puttes op i en kurv, og en tilfældig sten bliver udvalgt.
+    Hvad er chancen for at den vejer mere end _(0.231kg_) ? 
+    </p>
+    <p class="t">
+    <i>Note</i>: Denne opgave kræver at du løser en numerisk 
+    ligning som Geogebra 5 ikke kan løse, men som 
+    Geogebra 6 godt kan. 
+    </p>
+    <br></q-stion>
+    <answer-box customWidth="540">
+    Sig at vores tilfældige variable er _(X_): "Vægten på en sten". 
+    Det er nok normal fordelt, da vi kan forestille os 
+    en "gennemsnitlig sten", samt nogle der vejer mere, 
+    og nogle der vejer mindre. Det kan let ses, at
+    _($\mu = \frac{24.7}{130} = 0.19_)
+    ... men hvad er _(\sigma_)? Det har vi brug for, hvis vi skal regne
+    _($\int_{0.231}^{\infty} \frac{1}{\sqrt{2\pi} \sigma}*e^{-(x-0.19)^2/(2\sigma^2)} \, dx _)
+    Hvis den _(20_)ne mindste sten vejer _(0.11kg_), er 
+    der en _(20/130=0.1538_) chance
+    for at få en mindre sten. Det betyder, at
+    _($\int_{-\infty}^{0.11} \frac{1}{\sqrt{2\pi} \sigma}*e^{-(x-0.19)^2/(2\sigma^2)} \, dx = 0.153 _)
+    Vi skal nu "bare" løse denne ligning for _(\sigma_). Geogebra 5 burde fint kunne
+    gøre det numerisk, men den crasher. Vi er derfor nødt 
+    til at skrive følgende kommando i Geogebra 6:
+    _($\begin{align}
+     \text{NSolve} &\bigl(\text{integral}(\frac{1}{\sqrt{2*3.14}*s}*2.718^{-(x-0.19)^2 / (2s^2)}, x, -\text{infinity}, 0.11)=\\
+    & 0.153, s\bigr)
+    \end{align}_)
+    Det giver _(s=0.0784_). Endeligt regner vi
+    _($\int_{0.231}^{\infty} \frac{1}{\sqrt{2\pi}*0.0784}*e^{-(x-0.19)^2/(2*0.0784^2)} \, dx = 0.3005_)
+    Bum! En chance på ca. 30%. 
+    <br><br></answer-box>
+
+    <!--  -->
+
+
+    <q-stion 1="5" 2="7">
+    En anden skole holder også en kaste konkurrence, 
+    men før den tjekker de hvor <i>stærke</i> eleverne 
+    er gennem en vægtløftningskonkurrence. 
+    Dataet fra begge konkurrencer kan findes i følgende dokument:
+    <p class="cent">
+        <a href="../../../Assets/Chapter4\KontinuerligProb\ThrowingCompetition2.ggb" download>
+            Download!
+        </a>
+    </p>
+    <p class="t">
+    Man kunne meget logisk tænke, at en elevs styrke vil have 
+    <i>en eller anden</i> indflydelse på, hvor langt han kaster. 
+    </p>
+    <p class="t">
+    _(\underline{\textbf{A}}_): <br>
+     Beskriv forholdet mellem styrke og hvor 
+    langt en elev kaster. Hvordan ser det ud? Ligner
+    det lidt et lineært forhold? Til hvor stor en grad 
+    kan vi overhovedet sige, at der <i>er</i> et forhold? 
+    Det er her lidt en åben opgave: Du skal selv vurdere, hvad 
+    der er vigtigt at forstå omkring forholdet.
+    </p>
+    <p class="t">
+    _(\underline{\textbf{B}}_): <br>
+     Approximer chancen for, at en elev 
+    kaster længere end _(30m_), <i>givet</i> at eleven kan løfte
+    _(38kg_). 
+    </p>
+    <br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    Se følgende video: 
+    <video class='picB' style='margin-top:35px; margin-bottom: 35px;' controls>
+        <source src='../../../Assets/Chapter4\KontinuerligProb\CorrelatedVariablesVideo1.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Ideen er, at vi har korrelationen
+    _($L=13.65+0.24*s_)
+    ... hvor _(L_) er længde og _(s_) er styrke. Det betyder, 
+    at hvis vores elev har en styrke på _(s=38_), 
+    er der <i>størst chance</i> for at de kaster
+    _($13.65+0.24*38 = 22.77m_)
+    Hvis vi skal lave en normalfordeling, der 
+    beskriver sandsynlighederne, for elever
+    med styrker på _(38_), vil dette være 
+    <i>gennemsnittet</i>. Der er så også
+    en <i>spredning</i> omkring det gennemsnit, eftersom 
+    korrelationen ikke er perfekt. 
+    Det er hvad vi fandt frem til i sidste opgave.
+    Vi regnede det til _(\sigma=4.09_). Så vores pdf er:
+    _($f(L)=\frac{1}{\sqrt{2\pi}*4.09}*e^{-(L-22.77)^2 / (2*4.09^2)}_)
+    Så chancen for at kaste længere end _(30_) meter svarer til:
+    _($\int_{30}^{\infty} \frac{1}{\sqrt{2\pi}*4.09}*e^{-(L-22.77)^2 / (2*4.09^2)} \text{ }dx = 0.038_)
+    En chance på kun lidt under 4% chance. 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="5" 2="8">
+    Da vi arbejdede med diskrete variabler fandt vi 
+    chancen for, at en tilfældig variable var større end en anden.
+    Det var klumret men relativt nemt, da vi bare 
+    kunne dele det op i mange tilfælde:
+    Hvad er chancen for at 
+    _(Y \gt 1_) når _(C=1_), chancen for at _(Y \gt 2_) når _(C=2_), osv. 
+    hele vejen igennem alle _(X_)'s mulige værdier. 
+    <p class="t">
+    Kontinuerligere variabler komplicerer situationen, da det
+    ikke længere er muligt at "gennemgå alle mulige værdier". 
+    Problemet er nu mere abstrakt og udfordrende.
+    Det viser sig heldigvis som relativt nemt <i>hvis</i>
+    begge variabler er normalt fordelte.
+    </p>
+    <p class="t">
+    Sig at _(X_) og _(Y_) er to normalt fordelte variabler. 
+    _(X-Y_) vil være en ny tilfældig variable lig 
+    forskellen mellem disse to andre tilfældige variabler:
+    _($X-Y = \text{Hvor meget større } X \text{ er end } Y _)
+    Det giver mening nok, og man kan også forestille sig, at der findes
+    bestemte sandsynligheder for forskellen mellem _(X_) og _(Y_), 
+    på et givent interval. Det brugbare for os er, at det kan bevises
+    at _(X-Y_) i sig selv er en normalt fordelt variable, 
+    at dens gennemsnit er lig _(X_)'s gennemsnit minus _(Y_)'s gennemsnit, og 
+    at dens standardfordeling er lig _(X_)'s standardfordeling 
+    plus _(Y_)'s standardfordeling. 
+    Det kræver en del abstrakt teori at bevise, men vi gennemgår 
+    det på de næste par sider. Løs nu følgende problem:
+    </p>
+    <p class="cent">*</p>
+    <p class="t">
+    Janette og George er i gang med en darts konkurrence. 
+    Hver runde vinder spilleren med den  
+    laveste radius til bullseye. Data (det vil sige 
+    radius fra bullseye) fra 
+    de sidste 22 runder kan findes i følgende dokument:
+    </p>
+    <p class="cent">
+        <a href="../../../Assets/Chapter4\KontinuerligProb\DartCompetition.ggb" download>
+            Download!
+        </a>
+    </p>
+    <p class="t">
+    Hvad er chancen for at Janette vinder næste konkurrence?
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Sig at _(X_) er "radius Janette skyder fra bullseye", og _(Y_) er 
+    "radius George skyder fra bullseye". Nu er _(X-Y_) 
+    "hvor mange flere (eller mindre!) points 
+    Janette får end George". Det vil sige, at vi skal finde:
+    _($P(X-Y \gt 0)_) 
+    Vi ved, at _(X-Y_) er normalt fordelt,
+    så vi mangler bare dets gennemsnit og standardfordeling. 
+    På dokumentet kan det let ses, at
+    _($\begin{align}
+    \mu_X = 2.34, & \, \, \sigma_X = 0.64 \\
+    \mu_Y = 2.96, & \, \, \sigma_Y = 0.69 
+    \end{align}_)
+    Derfor ved vi at
+    _($\begin{align}
+    \mu_{X-Y} & = 2.34 - 2.96 = -0.62 \\
+    \sigma_{X-Y} & = 0.64+0.69 = 1.33
+    \end{align}_)
+    Så vores pdf er:
+    _($f(x) = \frac{1}{\sqrt{2\pi}*1.33}*e^{-\frac{(x+0.62)^2}{2*1.33^2}}_)
+    _(P(X-Y \gt 0)_) kan regnes som
+    _($\int_{0}^{\infty} \frac{1}{\sqrt{2\pi}*1.33}*e^{-(x-0.62)^2/(2*1.33^2)} \text{ }dx = 0.320_)
+    Janette har en ca. 32% chance for at vinde. Bam! 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <p class="t">
+    Hvis du går videre i studiet af sandsynlighed, 
+    vil du se, at man ofte begynder
+    at lave <i>algebra</i> med tilfældige variabler. 
+    Det er et <i>meget</i> forvirrende koncept at forstå, og det kræver
+    at man ser lidt dybere på det helt 
+    fundamentale <i>grundlag</i> af sandsynlighed. 
+    Tidligere opgave var én anvendelse. Lad os nu dykke
+    ned i teorien. 
+    </p>
+
+    <!-- <p class="t">FØLGENDE OPGAVE VAR ORIGINALT TIDLIGERE (EFTER DEN MED ØRKENEN) MEN DU DROPPEDE DEN FORDI DEN VAR FOR FORVIRRENDE/DÅRLIG:</p>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Sig at en væg med areal på _(15m^2_) splattes ud med maling/paintball splatter:
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter4\KontinuerligProb\JustAWallBro.png'> 
+    <p class="t">
+    Sig at malingen altid samlet fylder _(7m^2_), men at det er helt tilfældigt hvordan den 
+    fordeles ud på muren. Hvis du vælger et tilfældigt sted på muren, og laver et lille område 
+    på _(1m^2_), hvad er så chancen for at over _(0.4m^2_) af dette område er dægget med maling? 
+    </p>
+    <br><br></q-stion>
+    <answer-box>
+        
+    <br><br></answer-box> -->
+
+
+
+
+
+
+
+
+
+

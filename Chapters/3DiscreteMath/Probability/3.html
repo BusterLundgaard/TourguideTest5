@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+
+
+    <p class="t">
+    På sidste side kiggede vi meget på hvordan vi kunne opdele svære sandsyndlighedsproblemer.
+    Vi lavede to <i>meget svære</i> tal vi skulle tælle om til to <i>lettere tal</i> vi skulle tælle. På 
+    den her side vil vi lidt mindre abstrakt bare kigge på to-tre ting man ofte
+    er nødt til at tælle der ikke helt er lige åbenlyse.    
+    </p>
+
+    <p class="t">
+    Sig at du er på en strand fyldt men en helt tonsvis - rent sagt uendelig - mængde af sten. Hvis de her sten 
+    let kan deles op i 5 praktisk talt identiske typer: a, b, c, d, e, hvor mange forskellige
+    kombinationer af _(17_) af dem kan du så tage med hjem?    
+    </p>
+
+    <p class="t">Vi tager _(17_) sten af _(5_) forskellige typer.
+    Generelt når vi arbejder med valg sådan her, så ser vi på det som tomme pladser der på en eller anden måde
+    skal udfyldes:</p>
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\Multiset1.png'> 
+    <p class="t">På hvor mange måder kan man udfylde de her _(17_) pladser med de forskellige typer sten? Da
+    vi kun tænker over kombinationer, så er rækkefølgen ligegyldig. Det er exlusivt
+    <i>mængden af hver sten</i> der er vigtig. En måde at bestemme mængden af hver sten vi 
+    tager er at indsætte nogle "stop-punkter":</p>
+    <img class='Spic' style='width:100%' src='../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\Multiset2.png'> 
+    <p class="t">Det første stop-punkt bestemmer altså hvornår vi ikke længere skal udfylde med 
+    _(a_) længere, det næste hvor vi ikke skal med _(b_) længere, osv. Der
+    er _(5-1=4_) af dem her i alt, og deres placering på de nu _(4+5=9_) pladser
+    bestemmer _(1_) unik kombination af sten. Vi skal altså bare
+    se hvor mange måder vi kan indsætte stoppunkterne, hvilke tydeligvis er 
+    _(\Vec[9,4]=_) _(\frac{9*8*7*6}{4*3*2} = _) _(126_).
+    Bam! Hvis man generalisere så kan vi nemt se at når vi gerne vil have _(n_) objekter af _(m_) forskellige elementer,
+    så kan vi gøre det på _(\Vec[n+m-1, m-1]_) måder.</p>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Hvor mange løsninger har ligningen _(x_1+x_2+x_3+x_4+x_5=13_), hvis
+    _(x_1_), _(x_2_), ... _(x_5_) alle er hele, positive tal? 
+    <br><br></q-stion>
+    <answer-box>
+    Det her er jo praktisk talt det problem vi lige løste! Hvordan kan man vælge nogle bestemte mængder - mængder af typer - 
+    der sammenlagt giver et eller andet bestemt totalt antal? Du kan forestille dig at
+    _(x_1_) er sten af type _(1_), _(x_2_) er sten af type _(2_), osv. "Mængden af løsninger" er
+    så mængden af forskellige kombinationer af sten. Vi skal have _(13_) objekter af _(5_) 
+    forskellige typer, så vi siger:
+    _($\Vec[13+5-1,5-1] = 2380_)
+    Wholla! 
+    <br><br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Hvor mange løsninger har ligningen _(x_1+x_2+x_3+x_4+x_5=13_), <i>hvis</i> _(x_1 \gt -4, x_2 \gt 0, x_3 \gt 5, x_4 \gt -10, x_5 \gt 7_)
+    og de alle er hele tal?
+    <br><br></q-stion>
+    <answer-box>
+    <i>Hvis</i> _(x_1,x_2,x_3,x_4,x_5_) alle startede
+    fra _(0_), så ville svaret bare være _(\Vec[5-1+13,5-1]_). For at sørge for at 
+    _(x_3_) er større end _(5_), så kunne vi bare introducere et nyt helt tal _(u_3 \ge 0_) og skrive _(5+u_3_).
+    Lignende hvis _(x_1_) starter fra _(-4_) så kunne vi også bare sige _(-4+u_1_). Alt i alt:
+    _($(-4 + u_1) + (0 + u_2) + (5 + u_3) + (-10 + u_4) + (7 + u_5)=13_)
+    _($u_1 + u_2 + u_3 + u_4 + u_5 = 15_)
+    Easy! Det her er nu _(\Vec[5-1,5-1+15]=_) _(\frac{19*18*17*16}{4*3*2}=_) _(3876_). 
+    Hvis du på nogle måde kan lave tingen du tæller om til mængden af løsninger på denne slags ligning,
+    så har du altså dit svar!
+    <br><br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5" customWidth="600">
+    Sig at din mand er ude at købe ind. Han er komplet hjælpeløs, og det eneste du kan sige 
+    med sikkerhed er at han køber imellem _(8_) og _(12_) frugter. Der er fire typer
+    han kan vælge, og supermarkedet har langt over _(12_) af hver. Til en bestemt dessert
+    du laver har du brug for i hvert fald _(2_) af hver frugt. Hvad er chancen for at han kommer
+    hjem og dit ønske er opfyldt? 
+    <br><br></q-stion>
+    <answer-box customWidth="600">
+    Vi skal finde tò tal: Mængden af måder din mand kan købe frugt på, og mængden af måder han kan købe
+    frugt på hvor der er over to af hver. Man kan nemt se at et simplere spørgsmål som "hvor mange måder
+    kan han købe f.eks. _(10_) frugter af _(4_) typer på", let kan laves om til det samme problem 
+    vi lige løste før: _(\Vec[4-1+10,4-1]_). Det skal vi bare gøre både ved _(8_), 
+    _(9_), _(10_), _(11_) og _(12_). Altså, samlet set så kan han købe frugt på:
+    _($\Vec[8+3,3]+\Vec[9+3,3]+\Vec[10+3,3]+\Vec[11+3,3]+\Vec[12+3,3]=1490_)
+    måder. Hvis han <i>skal</i> købe _(2_) eller over af hver, så har vi problemet 
+    _($x_1+x_2+x_3+x_4=\text{mængden af frugt han køber}, x_1 \ge 2, x_2 \ge 2, x_3 \ge 2, x_4 \ge 2_) 
+    Det så vi godt hvordan vi løste i sidste opgave:
+    _($(u_1+2)+(u_2+2)+(u_3+2)+(u_4+2)=\text{mængden af frugt han køber} \to_)
+    _($u_1+u_2+u_3+u_4 = \text{mængden af frugt han køber} - 8_)
+    Så hvis han f.eks. skal købe _(10_) frugter og over _(2_) af hver, så kan 
+    han gøre det på _(\Vec[10-8+3,3]=_) _(\Vec[10-5,3]_) måder. Alt i alt siger vi:
+    _($\Vec[8-5,3]+\Vec[9-5,3]+\Vec[10-5,3]+\Vec[11-5,3]+\Vec[12-5,3]=70_)
+    Chancen er altså:
+    _($\frac{70}{1490} = 0.0469_)
+    Så der er desværre cirka kun _(4.5_)% chance for at din ubrugelige mand opfylder
+    dine kage-ønsker. 
+    <br><br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Hvor mange led vil _((a+b+c+d+e+f)^{14}_) have når vi udvider det helt? "Helt"
+    i den forstand at hvert led følger _(k*a^{p_1}b^{p_2}c^{p_3}d^{p_4}e^{p_5}f^{p_6}_) hvor
+    _(k_) er en coefficient og _(p_1,...p_6_) er potenser der godt kan være _(0_). 
+    <br><br></q-stion>
+    <answer-box>
+    Som vi så der med the binomial theorem på sidste-sidste side, så kan ledene 
+    ved f.eks _((A+B+C)*(A+B+C)*(A+B+C)*..._) intuitivt ses som os der ved
+    hver parentes frit <i>vælger</i> en faktor. "Her vil jeg gerne have _(A_), her _(B_), her _(A_) igen, måske _(C_) her, osv".
+    Rækkefølgen er ligegyldig, fordi ledende alligevel til sidst kan sættes sammen med en coefficient. 
+    Der er altså bare <i>mængden</i> af _(A_), <i>mængden</i> af _(B_) osv der er vigtigt. Spørgsmålet
+    kan altså derfor omformuleres til mængden af løsninger på 
+    _($p_1+p_2+p_3+p_4+p_5+p_6=14_)
+    Så _(\Vec[6-1,6-1+14]=\Vec[5,19] = 11628_). En del led! 
+    <br><br></answer-box>
+    
+    <q-stion 1="2" 2="1" 3="5">
+    Hvor mange løsninger har _(x_1+x_2+x_3+x_4=12_), hvis _(x_1 \lt 7_), og alle
+    andre er hele, positive tal? 
+    <br><br></q-stion>
+    <answer-box>
+    Hvis bare vi siger _(\Vec[12+4-1,4-1]=_) _(455_), så får vi også alle 
+    de løsninger med hvor _(x_1_) er lig med eller højere end _(7_). Hvis bare
+    vi kan finde mængden af de her "falske løsninger", så kan vi fjerne dem fra _(455_)
+    og få vores svar. Det er meget nemt faktisk: Hvis det er en "falsk" løsning, så er
+    _(x_1_) større eller lig med _(7_). Det svarer nu til ligningen:
+    _($x_1+x_2+x_3+x_4 = 12, x_1 \ge 7_)
+    Det har vi løst flere gange før:
+    _($(u_1+7)+x_2+x_3+x_4 = 12 \to u_1+x_2+x_3+x_4 = 5_)
+    Så _(\Vec[5+4-1,4-1]=56_) falske løsninger. Der er altså:
+    _($455-56=399_)
+    rigtige løsninger. 
+    <br><br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Hvor mange løsninger har _(x_1+x_2+x_3+x_4=12_) hvis _(x_1 \lt 7_) <i>og</i> 
+    _(x_2 \lt 3_)? Her anbefaler jeg at du tænker over <i>sæts</i> som vi brugte
+    meget på sidste side. 
+    <br><br></q-stion>
+    <answer-box>
+    Det man umiddelbart tænker man kan gøre i denne opgave er simpelt:
+    Man finder ligesom før først <i>alle</i> løsninger (inklusiv de falske), så fjerner
+    man antallet af løsninger hvor _(x_1_) er lig med eller større end _(7_) <i>og</i>
+    fjerner antallet af løsninger hvor _(x_2_) er lig med eller større end _(3_).
+    Simpelt! Det er <i>næsten</i> rigtigt, men ikke helt: Der findes også løsninger
+    hvor <i>både</i> _(x_1_) bryder kravet <i>og</i> _(x_2_) bryder kravet. Så når vi 
+    fjerner både dem med _(x_1_) der bryder <i>og</i> dem med _(x_2_) der bryder, så 
+    <i>overfjerner</i> vi, da de også har noget tilfældes. Det er i et tilfælde
+    som dette at de kan være godt at tænke over sæts, da de fjerner alt vores tvivl.
+    Sig at _(U_1_) er alle de løsninger hvor _(x_1_) bryder kravet, og at
+    _(U_2_) er alle de løsninger hvor _(x_2_) bryder kravet. Det samlede antal
+    "falske løsninger" er altså _(|U_1 \cup U_2|_). Det kan omskrives til 
+    _(|U_1|+|U_2|-|U_1 \cap U_2 |_). _(|U_1|_) ved vi allerede godt er 
+    _(56_) fra før. _(|U_2|_) er _(\Vec[12-3+4-1,3]=220_). _(|U_1 \cap U_2|_) svarer
+    til at <i>begge</i> krav opfyldes samtidig, så:
+    _($(u_1 - 7) + (u_2 - 3) + x_3 + x_4 = 12 \to_)
+    _($u_1+u_2+x_3+x_4 = 2_)
+    Denne ligning har _(\Vec[2+4-1,4-1]=_) _(10_) løsninger. 
+    Alt i alt er der altså:
+    _($56+220-10 = 266_)
+    falske løsninger. Så:
+    _($455-266=189_)
+    _(189_) rigtige løsninger. 
+    <br><br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Du slår _(3_) terninger. Hvad er chancen for at deres sum er over _(13_)? 
+    Den her er ikke ultra svær, men der er en god del repetitive beregninger, så
+    jeg anbefaler du bruger _(nCr_) funktionen i Geogebra. 
+    <br><br></q-stion>
+    <answer-box>
+    Det mindste tal du kan få når du slår _(3_) terninger er _(3_), hvis du får
+    _(1_), _(1_), _(1_). Det højeste tal du kan få er _(3*6=_) _(18_). Du kan så 
+    også få alle værdierne imellem. Hvis vi siger at f.eks. _(P(14)_) er chancen 
+    for at få en sum på _(14_), så skal vi altså regne:
+    _($P(13)+P(14)+...P(18)_)
+    Lad os som eksempel finde ud af hvordan vi regner _(P(14)_). Ligesom vi ville
+    gøre med _(1_) terning og _(2_) terninger, så tænker vi i retning af:
+    _($\frac{\text{Antal måder det kan ske på}}{\text{Samlet antal af mulige ting der kan ske}}_)
+    Denne gang kan vi dog ikke ligeså nemt bare tegne alle mulighederne og så tælle. 
+    Det samlede antal af muligheder er nemt nok bare _(6*6*6=_) _(216_), men
+    hvor mange måder kan terningerne give en sum af _(14_)? Well, det svarer
+    vel egentlig bare til:
+    _($x_1 + x_2 + x_3 = 14_)
+    Hvor _(1 \le x_1,x_2,x_3 \le 6_) siden terningerne ikke kan give tal 
+    der er højere end _(6_). Lad os først af alt lige ændre problemet til:
+    _($(x_1 + 1) + (x_2 + 1) + (x_3 + 1) = 14 \to_)
+    _($x_1+x_2+x_3 = 11_)
+    Hvor _(x_1,x_2,x_3 \le 5_). Sig at _(U_1_) er de løsninger hvor _(x_1_) er større end _(5_),
+    _(U_2_) _(x_2_) er større end _(5_), _(U_3_) _(x_3_) større. Nu skal
+    vi finde _(|U_1 \cup U_2 \cup U_3|_). Det ved vi at vi kan omskrive til:
+    _($|U_1| + |U_2| + |U_3| - |U_1 \cap U_2| - |U_1 \cap U_3| - |U_2 \cap U_3| + |U_1 \cap U_2 \cap U_3| _)
+    _(U_1_) svarer til at _(x_1_) skal være større end _(5_), så:
+    _($(x_1+6)+x_2+x_3=11 \to x_1+x_2+x_3 = 5_)
+    Ergo er _(|U_1|= _) _(\Vec[5+3-1,3-1]=_) _(21_). Præcis samme logik gælder
+    _(|U_2|_) og _(|U_3|_). Når der er èn skæring som ved _(|U_1 \cap U_2|_) så 
+    er der ingen løsninger, da _(11_) bliver til _(11-6-6=_) _(-1_), og samme gælder tre skæringer
+    ved _(|U_1 \cap U_2 \cap U_3|_) da _(11-6-6-6=_) _(-7_). Svaret er altså bare
+    _(3*21-3*0+0=_) _(63_). Siden der er _(\Vec[11+3-1,3-1] = 78_) løsninger i alt, så får vi:
+    _(78-63=_) _(15_). 
+    <p class="t">
+    Lad os nu finde antallet af måder ved _(13,15,16,17,18_), lægge dem sammen, og dividere dem 
+    med _(216_). Antallet af måder ved _(13_) er:
+    _($\Vec[(13-3)+3-1,3-1]-3*\Vec[(13-3)-6+3-1,3-1] = 21_)
+    Ved _(15_) er det nu tilfældet at _((15-3)-6-6=_) _(0_), så der er nu èn løsning ved skæringen:
+    Hvis alle er lig _(0_). Det bliver altså til:
+    _($\Vec[(15-3)+3-1,3-1] - 3*\Vec[(15-3)-6+3-1,3-1] + 3*\Vec[(15-3)-6-6+3-1,3-1] = 10_)
+    Ved resten er det meget det samme:
+    _($16: \text{ } \Vec[(16-3)+3-1,3-1] - 3*\Vec[(16-3)-6+3-1,3-1] + 3*\Vec[(16-3)-6-6+3-1,3-1] = 6_)
+    _($17: \text{ } \Vec[(17-3)+3-1,3-1] - 3*\Vec[(17-3)-6+3-1,3-1] + 3*\Vec[(17-3)-6-6+3-1,3-1] = 3_)
+    Og ved _(18_) er det selvfølgelig _(1_), så:
+    _($\frac{21+15+10+6+3+1}{216} = _) _(0.259_).
+    Så cirka en kvart dels chance. 
+    </p>
+    <br></answer-box>
+
+    <!-- STIRLING NUMBERS OF FIRST KIND  -->
+
+    <p class="t">
+    Mængden af måder vi kan ændre på rækkefølgen af _(n_) elementer (altså 
+    _(n!_) som vi har brugt flere gange allerede) kaldes for antallet af
+    <i>permutations</i> (dansk "permutationer"). Det viser sig at der er en 
+    del - dog må man indrømme ofte relativt abstrakte - tilfælde
+    hvor bestemte fænomener eller handlinger kan modelleres som at være "permutationer". 
+    Altså: Handlinger hvor der bliver rykket rundt på rækkefølgen af noget på en eller
+    anden måde. Sig f.eks man havde funktionen _(f_) 
+    hvor _(f(\{a,b,c,d,f\})=\{b,f,c,d,a\}_). Den gør intet til værdierne,
+    men flytter kun rundt på rækkefølgen. 
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Evaluer 
+    _(f \left(f \left(f \left(f \left( \{ 30,12,15,30,16 \} \right) \right) \right) \right)_)?
+    <br><br></q-stion>
+    <answer-box>
+    _(f(\{30,12,15,30,16\})_) er _( \{12,16,15,30,30\}_), _(f( \{12,16,15,30,30 \})_)
+    er _(\{16,30,15,30,12\}_), så _(f( \{16,30,15,30,12 \})_) er lig _(\{30,12,15,30,16\}_). 
+    Vi har stadig èn _(f_) tilbage, men vi er tilbage til hvad vi startede med. Vi ved
+    derfor at den næste _(f_) giver os _(\{12,16,15,30,30\}_)  
+    <br><br></answer-box>
+
+    <p class="t">
+    Et lidt mere konkret og motiverende eksempel kunne være uddeling af aktiviteter til grupper/hold.
+    Sig at man er ved at organisere en eller anden begivenhed hvor nogle hold _(h_1,...h_8_) skal ud og
+    prøve forskellige aktiviteter _(a_1,...a_8_). Den måde man i de fleste tilfælde nok ville fordele hold rundt på aktiviteter
+    kunne modelleres som 
+    _($f(\{h_1,h_2,h_3,h_4,h_5,h_6,h_7,h_8\} ) = \{ h_8,h_1,h_2,h_3,h_4,h_5,h_6,h_7 \}_)
+    Gentaget brug af _(f_) ville altså sende folk rundt i en cyklus/ring hvor alle prøver alle aktiviteter
+    så effektivt som muligt. En anden mulighed kunne åbenlyst nok være:
+    _($g( \{h_1,h_2,h_3,h_4,h_5,h_6,h_7,h_8 \} ) = \{h_2,h_3,h_4,h_5,h_6,h_7,h_8,h_1\}_)
+    Det er bare den tidligere permutation, men baglæns. Så _(f(g(X))=X_) og modsat
+    (hvor _(X_) så er et sæt af elementer). 
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Sender
+    _($f_1( (h_1,h_2,h_3,h_4,h_5,h_6,h_7,h_8) ) = (h_7,h_8,h_1,h_2,h_3,h_4,h_5,h_6) _)
+    Alle holdene rundt til alle aktiviteter uden nogle gentagelser under vejs?  
+    Svar også på samme spørgsmål med følgende transformation:
+    _($f_2( (h_1,h_2,h_3,h_4,h_5,h_6,h_7,h_8) ) = (h_6,h_7,h_8,h_1,h_2,h_3,h_4,h_5)_)
+    <br></q-stion>
+    <answer-box>
+    Man kan se hvis man kigger at _(f_1_) flytter alle elementer _(2_) fremad, og _(f_2_) flytter alle elementer _(3_) fremad:
+    <img class='Spic' style='width:60%' src='../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\PermutationCycleExercise.png'> 
+    <p class="t">Der er et lige antal elementer, så vi kan se hvordan at _(h_1_) går tilbage til sig selv efter kun
+    _(8/4=4_) permutationer. Der er altså to cykluser: Èn hvor de lige elementer går rundt i ring, og ên hvor
+    de ulige elementer går rundt i ring. Med _(f_3_) der går _(h_1_) først tilbage til sig selv efter _(8_) runder,
+    og den opfylder derfor vores krav. </p>
+    <br></answer-box>
+
+    <p class="t">
+    Det er <i>ikke</i> nødvendigvis åbenlyst hvor mange måder vi kan sende folk rundt i èn cyklus på.
+    Situationen bliver mere kompliceret, da vi måske <i>gerne</i> vil have at folk er i to cykluser. Måske
+    skal èt par grupper gå rundt på bestemte aktiviteter, og et andet gå rundt på nogle andre.
+    Problemet her er ikke at det er umuligt at få det til at hænge sammen i virkeligheden: Det er nemt selfølgelig. 
+    Problemet er at det tilsynneladende er lidt tricky at modellere situationer som denne matematisk på en
+    god og frugtbar måde. Vi definere af denne grund <i>Stirlings første numre</i> ("Stirling numbers of first kind"). 
+    _(S(n,k)_) er mængden af permutationer - fordelingsregler - af _(n_)-objekter (f.eks. grupper) hvor de
+    deles op i _(k_) cykluser. Det kræver nok lige et eksempel:
+    </p>
+
+    <p class="t">
+    Sig vi har _(8_) hold. _(3_) af de hold vil vi gerne have skal prøve "vand-aktiviteterne",
+    _(3_) andre hold skal prøve "flyve-aktiviteterne" og de _(2_) sidste hold skal prøve
+    "skov-aktiviteterne". Det er ligegyldig <i>hvilke</i> hold der prøver bestemte aktiviteter:
+    Det eneste vigtige for os er at der er _(3_) på vand, _(3_) på flyve, og _(2_) på skov. 
+    Én mulig permutation er:
+    _($f( \{h_1,h_2,h_3,h_4,h_5,h_6,h_7,h_8 \} ) = f( \{h_3,h_1,h_2,h_6,h_4,h_5,h_8,h_7 \} )_)
+    En anden mulig permutation er:
+    _($f(\{ h_1,h_2,h_3,h_4,h_5,h_6,h_7,h_8 \}) = f( \{ h_7, h_8, h_6, h_1, h_2, h_3, h_4, h_5\} ) _)
+    Ved den første er det ret åbenlyst hvordan den sender folk rundt i permutationer:
+    _(h_1, h_2, h_3_) har èn cyklus hvor de går _(1_) fremad hver gang, _(h_4,h_5,h_6_)
+    har en cyklus hvor de går _(1_) fremad hver gang, og _(h_7,h_8_) har en cyklus
+    hvor de går _(1_) fremad hver gang. Ved den anden permutation er det slet ikke ligeså
+    åbenlyst, og det er en af grundende til at det er svært at finde antallet af permutationer.
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5">
+    I den anden mulige permutation jeg lige viste, hvilke hold bliver sendt rundt i hvilke
+    cyklusser? 
+    <br><br></q-stion>
+    <answer-box>
+    Well, lad os først af alt se om vi spotter noget bare ved at kigge på selve permutationen direkte.
+    Jeg lægger umiddelbart efter lidt tid mærke til at _(h_3_) og _(h_6_) bytter plads.
+    Der er altså en cyklus der går _(h_3 \to h_6 \to ..._). Ud over det kan jeg ikke se noget
+    direkte, så jeg tænker bare jeg anvender permutationen 2 gange mere: Jeg ved at
+    ingen af cyklusserne er over _(3_) lange, så 3 permutationer i alt burde være
+    nok til at jeg kan se dem. 
+    <p class="t">
+    Anvender vi _(f_) én gang mere får vi:
+    _($f(\{h_7, h_8, h_6, h_1, h_2, h_3, h_4, h_5 \}) = \{h_4,h_5,h_3,h_7,h_8,h_6,h_1,h_2\} _)
+    Og èn gang til:
+    _($f(\{h_4,h_5,h_3,h_7,h_8,h_6,h_1,h_2 \}) = \{1,2,6,4,5,3,7,8\}_)
+    Hmm. _(h_1_) blev til _(h_7_) og så _(h_4_), _(h_4_) blev til _(h_1_) og så _(h_7_), og 
+    _(h_7_) blev til _(h_4_) og så _(h_1_). _(h_1, h_4, h_7 _) er altså i en cyklus 
+    _(h_1 \to h_4 \to h_7_). Den resterende gruppe består af _(h_2, h_5, h_8_), og hvis
+    vi kigger lidt så kan vi se at den går _(h_2 \to h_5 \to h_8_). Done!
+    </p>
+    <br><br></answer-box>
+
+    <p class="t">
+    Stirling-tal er svære <i>men mulige</i> at regne. Derfor kan de bare regnes èn gang, og så indsættes på et skema
+    hvor alle kan se dem (ligesom _(Sin_), _(Cos_) og _(Tan_)! ). I modsætning til noget som _(Ln(x)_) hvor _(x_) kan have uendelig mange værdier, så kan
+    _(S(n,k)_) kun have <i>hele tal</i>. Man får nok ikke <i>super</i> ofte brug for _(S(n,k)_) med 
+    _(n,k_) højere end 20-30, så et skema kan gøre jobbet fint. Ud over bare et skema, så kan vi også bevise
+    mange praktiske <i>egenskaber</i> _(S(n,k)_) har, trods vi ikke <i>direkte</i> kan regne det. Pointen er
+    at det ikke nødvendigvis behøver at være et stort problem at indsætte og introducere _(S(n,k)_)-tal i ens beregninger
+    og matematik bare fordi de er sværre at regne. Det stoppede os ikke fra at bruge kvadrat- og n-roder! 
+    Bare at anerkende en ide's vigtighed, give den et navn, og så lave lidt forudarbejde i starten, kan 
+    nogle gange markant hjælpe en med at løse relevante problemer. 
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Find en formel for _(S(n,1)_).
+    <br><br></q-stion>
+    <answer-box>
+    Lad os sige at en eller anden permutation opdelte noget i nogle cyklusser: 
+    _($f: (1 \to 4 \to 2), (3 \to 5 \to 6 \to 9), (7 \to 8)_)
+    _(1,4,2_) gik altså rundt, _(3,5,6,9_) gik rundt, og _(7,8_) gik rundt. Permutationen
+    ville både kunne få _(1_) til at gå til _(4_), _(4_) til at gå til _(2_), _(2_) til at gå til _(1_), <i>og</i> _(2_)
+    til at gå til _(4_), _(1_) til at gå til _(2_) osv. Lidt ligesom da vi kiggede på hvor mange måder
+    man kunne sætte folk rundt omkring et bord på, så har <i>rækkefølgen</i> indflydelse, men ikke nogen
+    absolut position. Mængden af måder man kan ændre _((1 \to 4 \to 2)_)-cyklusen på er altså 
+    _((3-1)!=_) _(2!=_) _(2_). Et bedre eksempel er nok 
+    _((3 \to 5 \to 6 \to 9)_) som kan ændres på 
+    _((4-1)!=_) _(3!=_) _(3*2=_) _(6_) måder.
+    Generelt: 
+    _($S(n,1)=(n-1)!_)
+    Grunden til jeg havde en permutation med _(3_) cykluser _(f_) i eksemplet deroppe var bare får at gøre
+    det lidt mindre abstrakt. 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Vi ved at 
+    _($\VeC[n,m] = \VeC[n-1,m] + \VeC[n-1,m-1]_)
+    Sådan her kan man altså regne èn _(\Vec[m,n]_) i forhold til nogle mindre. 
+    Det er også via denne identitet/regel at vi hurtigt kan finde de forskellige _(\Vec[m,n]_)
+    med Pascals trekant. Kan du finde noget lignende og praktisk for Stirling-tal? Brug dit 
+    resultat til at regne _(S(6,4)_) i hånden. 
+    <br><br></q-stion>
+    <answer-box>
+    Okay: Vores mål er at beskrive èt Stirling tal i forhold til nogle andre mindre Stirling tal. Sig
+    vi leder efter _(S(8,5)_). Det er mængden af permutationer af _(8_) objekter man kan lave hvor 
+    der er _(5_) cykluser:
+    <img class='Spic' style='width:45%' src='../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\StirlingRecursion.png'> 
+    <p class="t">
+    _(S(7,5)_) er meget lignende mængden af permutationer af _(7_) objekter med _(5_) cykluser.
+    Man kan lidt se på det som _(S(8,5)_) men "uden det røde, 8'tene element". 
+    For hver kombination af _(5_) cykluser vi kan lave af de _(7_) første elementer, så kan vi
+    "indsætte" det sidste 8'tene element. Sig f.eks. vi stod med
+    _($(1 \to 4 \to 2 \to 8), (5 \to 3 \to 9 \to 5), (10 \to 7) _)
+    Vi kan indsætte det 8'tene element _(4_) forskellige
+    steder ved _((1 \to 4 \to 2 \to 8)_)-cyklusen, _(4_) forskellige
+    steder ved _((5 \to 3 \to 9 \to 5)_)-cyklusen, og _(2_) forskellige
+    steder ved _((10 \to 7)_)-cyklusen. Alt i alt _(4+4+2=7_) steder, og _(7*S(7,5)_) må derfor tælle en god del af løsningerne. </p>
+    <p class="t">
+    Vi er der næsten, men har glemt at tælle de permutationer hvor der er èn cyclus med <i>kun</i> det 8'tene element. 
+    Alle permutationerne _(7*S(7,5)_) var jo dannet af at vi <i>tilsatte</i> det 8'tene element til 
+    en allerede eksisterende cyklus. Det er nemt at se at der er _(S(7,5-1)_) af de her løsninger,
+    da _(1_) af cykluserne skal gå eksklusivt til det 8'tene element
+    lige meget hvad. Alt i alt:
+    _($S(8,5) = 7*S(7,5) + S(8,5)_) 
+    Man kan nemt generalisere det her resultat til:
+    _($S(n,k)=(n-1)*S(n-1,k)+S(n-1,k-1)_)
+    </p>
+    <p class="t">Hvad angår at finde _(S(6,4)_), så ville jeg bare starte med _(S(1,1),S(2,1),S(2,2)_) og
+    begynde på en trekant ligesom pascal:</p>
+    <img class='Spic' style='width:30%' src='../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\StirlingTriangle1.png'> 
+    <p class="t">
+    _(S(2,1)=(2-1)*S(1,1)+S(1,0)=1*1+0=1_) og _(S(2,2)_) er også tydeligvis _(1_). 
+    _(S(3,1)=(3-1)*S(2,1)+S(2,0)=2*1+0=2_) og _(S(3,2)=2*S(2,2)+S(2,1)=2+1=3_), _(S(3,3)=1_).
+    Jeg gør altså præcist det samme som ved pascal, men ganger bare en af elementerne med dets rækkenummer. 
+    Bliver jeg ved sådan her får jeg:</p>
+    <img class='Spic' style='width:30%' src='../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\StirlingTriangle2.png'> 
+    <p class="t">Sådan her kan man se at _(S(6,4)=85_)</p>
+    <p class="t">
+    Geogebra kan desværre ikke regne Stirling-tal. 
+    </p>
+    <br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Find en praktisk formel for _(S(n,n-1)_)
+    <br><br></q-stion>
+    <answer-box>
+    Lad os starte med bare et eksempel: _(S(6,5)_). Hvis der skal være _(5_) cykluser, så
+    er der kun 1 af cykluserne der er _(2_)-lang. Nu skal vi så bare vælge hvilke _(2_)
+    elementer der er en del af denne cyklus, hvilke vi kan gøre på 
+    _($\VeC[n,2]_)
+    måder. Det er svaret. Done. 
+    <p class="cent">
+        *
+    </p>
+    <p class="t">
+    Der er en anden måde man kunne have udledt denne formel, som simpelthen er for nice til 
+    ikke at vise. Hvis vi bruger den regel vi kom frem til i sidste opgave
+    på _(S(n,n-1)_) så får vi:
+    _($S(n,n-1)=(n-1)*S(n-1,n-1)+S(n-1,n-2)_)
+    Vi ved at _(S(n-1,n-1)_) er _(1_), fordi noget som helst der følger formen
+    _(S(A,A)_) er lig _(1_):
+    _($S(n,n-1)=(n-1)+S(n-1,n-2)_) 
+    Det der er yderligere interessant dog, er at
+    _(S(n-1,n-2)_) følger formen _(S(A,A-1)_) - det vi startede med! 
+    _($(n-1)+(n-2)*S(n-2,n-2)+S(n-2,n-3)_)
+    Og det bliver ved! _((n-2)*S(n-2,n-2)_) bliver til bare
+    _((n-2)_), og _(S(n-2,n-3)_) kan vi igen ændre:
+    _($(n-1)+(n-2)+(n-3)+S*(n-3,n-4) = _)
+    _($(n-1)+(n-2)+(n-3)+(n-4) + S(n-4,n-5) = \text{ } ..._)
+    Det her fortsætter så helt ned til _(S(2,1)=1_), altså,
+    hvis vi går baglæns så ser vi at _(S(n,n-1)_) er lig:
+    _($1+2+3 \text{ } + \text{ }...(n-1)= \frac{(n-1)*n}{2}_)
+    Wholla! _(\Vec[n,2]_) er lig med _((n-1)*n/2_) by the way - de her to forskellige beviser
+    modsiger ikke hinanden. 
+    </p>
+    <br></answer-box>
+
+    <p class="t">
+    Stirling tal er som sagt virkelig mest brugt i mellemregninger og i sammenhæng med mere teoretisk matematik (som <i>er</i> vigtigt).
+    Jeg undskylder meget, men jeg kan simpelt hen ikke finde eller finde på en god <i>direkte</i> anvendelse du kan øve dig på. 
+    Et lignende og lidt mere øjeblikkeligt brugbart koncept findes dog i form af <i>derangments</i>.
+    </p>
+
+    <p class="t">
+    En derangments er en permutation hvor alle elementer flytter sig hele tiden. _(f((a,b,c,d))=(d,a,c,b)_) er <i>ikke</i>
+    en derangment, fordi _(c_) konstant forbliver på sin plads. Der er flere tidspunkter hvor vi kunne
+    få lyst til at tælle mængden af derangments. Et ret konstrueret eksempel kunne være spillekort:
+    Hvis du blandede dine kort på hånden, hvad ville så være chancen for at ingen endte det samme
+    sted som før? "Blandingen" er tydeligvis en permutation, den totale mængde udfald er bare _(7!_) hvis
+    du har _(7_) kort på hånden, og mængden af udfald der opfylder vores krav er derangment-antallet af 
+    _(7_) elementer.  Et andet eksempel kunne være at en træner satte elever til at vurdere hinandens arbejde.
+    Hver elev skal vurdere èn anden elevs arbejde, og denne anden elev skal helst ikke <i>være dem selv</i>. 
+    Hvis træneren bare laver en helt tilfældig fordeling, så er chancen for at den er ordentlig altså 
+    _($\frac{Derangments(\text{antal elever})}{(\text{antal elever})!}_)
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Find antallet af derangments for de første _(5_) tilfælde. Så ved _(1_) element, _(2_)
+    elementer, _(3_) elementer, _(4_) elementer og _(5_) elementer
+    <br><br></q-stion>
+    <answer-box>
+    Ved _(1_) element er der _(0_) mulige derangments, da der ikke er noget sted vi kan
+    bevæge det første element hen til. Ved _(2_) elementer er der èn derangment:
+    _($\{1,2\} \to \{2,1\} _)
+    Lad os skrive den her transformation som en cyklus i stedet. Det er nok 
+    mere relevant i forhold til hvad vi er i gang med:
+    _($f: (1 \to 2)_)
+    Med _(3_) elementer, der er vi nødt til at have _(1_) _(3_)-lang cyklus, da vi 
+    ikke må have nogle cykluser der kun er _(1_) lange. Der er to mulige _(3_)-lange cyklusser
+    _(\begin{eqnarray} && (1 \to 2 \to 3) \\ && (1 \to 3 \to 2) \end{eqnarray} _)
+    Så antallet af derangments af _(3_) elementer er altså _(2_).
+    <p class="t">
+    Der er to muligheder: Jeg kan enten
+    have 2 2-lange cyklusser, eller 1 4-lang cyklus. Mængden af 2 2-lange cyklusser
+    er lig _(\Vec[4,2]=6_) , da det giver os antallet af unikke par af elementer blandt 4. 
+    Mængden af 4-lange cyklusser med 4 elementer er _(3!=_) _(6_), da det er mængden af måder
+    4 folk kan side ved siden af hinanden, hvis vi er ligeglade med nogle absolutte 
+    positioner. Alt i alt er der altså _(6+6=_) _(12_) mulige derangments. 
+    </p>
+    <p class="t">
+    Der er to muligheder: _(1_) _(5_)-lang cyklus, eller _(1_) _(3_)-lang og _(1_) _(2_)-lang.
+    Der er _(4!=_) _(24_) mulige _(5_)-lange (via samme ide som før), 
+    og _(\Vec[5,2]*2! = _) _(20_) ved den anden mulighed, da vi for det første skal vælge _(2_) ud af _(5_)
+    elementer til den 2-lange cyklus, og så også kan rykke rundt på elementerne
+    i den _(3_)-lange cyklus på _((3-1)!_) måder. Alt i alt _(24+20=_) _(44_) derangments
+    </p>
+    <p class="t">
+    Den strategi vi bruger her, hvor vi først finder de forskellige mulige former
+    for cyklusser der kan være, finder antal muligheder i hver, og så plusser det hele sammen, 
+    virker fint <i>lige nu</i>, men når _(n_) bliver større end _(7_), så bliver det hurtigt
+    svært at holde styr på. Det kan heller ikke rigtig bruges til at opstille nogen generel formel.
+    </p>
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Find en formel for derangments der minder lidt om dem vi lavede tidligere med
+    Pascals trekant og Stirling. 
+    <br><br></q-stion>
+    <answer-box>
+    Sig at _(D(n)_) er antallet af derangments for _(n_) elementer. Vi vil gerne på en
+    eller anden måde beskrive _(D(n)_) i forhold til tidligere værdier som
+    _(D(n-1)_) eller _(D(n-2)_). Lad os starte med et lidt mere specifikt eksempel hvor
+    vi prøver at finde _(D(6)_). Ud fra hver derangment i det tidligere antal
+    med _(5_) elementer, kan vi nemt skabe en ny derangment. Flere faktisk.
+    Sig at der var en bestemt derangment af 5 elementer, hvor der var _(1_) _(3_)-lang
+    cyklus, og _(1_) _(2_)-lang cyklus. Jeg kunne sætte det nye _(6_)'te element ind 
+    _(3_) forskellige steder i den første cyklus, og _(2_) forskellige steder i den anden.
+    Det er _(3+2=5_) måder, og præcist samme trick kunne jeg gøre lige meget hvor mange 
+    og hvor lange de forskellige cykluser var. For hver tidligere derangment kan jeg 
+    altså lave _(5_) nye. _(5*D(n-1)_) burde derfor give mig en god del af svarene. 
+    Det giver mig ikke <i>alle</i> svarene dog, fordi tænk over det her: Hvis jeg
+    kun tilføjer det _(6_) element til andre cyklusser, så vil det aldrig være mindre
+    end _(3_) lang, da den mindste tilladte cyklus jeg kan tilføje det til er _(2_). 
+    Jeg mangler altså de tilfælde hvor mit _(6_)'te element er en del af en 2-lang cyklus.
+    Der kan være _(5_) andre elementer _(6_) kan vælge at være sammen med, og for hver
+    af de tilfælde kan de _(4_) resterende elementer danne derangments som de har lyst.
+    _(5*D(4)_) giver mig derfor antallet af derangments hvor det _(6_)'te element er 
+    i en 2-lang cyklus. Alt i alt får vi 
+    _($D(6) = 5*D(5)+5*D(4) = 5 * \left(D(5)+D(4) \right) _)
+    Det her kan vi ledt generalisere til:
+    _($D(n) = (n-1)*\left(D(n-1) + D(n-2) \right) _)
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Imodsætning til Stirling-tallene, så kan man udover formlen vi kom frem til i sidste
+    opgave (som lidt er en "fake"-formel), også komme frem til en mere direkte formel.
+    I alt ærlighed ikke en super dejlig formel, idet den bruger sum-tegnet _(\sum_), men
+    bedre end det vi har lige nu hvor man skal til at finde alle de tidligere elementer. 
+    Den formel er lidt svær at komme frem til, så jeg giver dig lige et nemmere, simplere
+    tilfælde her i starten. Sig at du har _(10_) elementer, og at _(1_) af dem 
+    <i>skal</i> bevæge sig. De andre <i>må</i> også gerne bevæge sig, men dette
+    element <i>skal</i> bevæge sig. Så i stedet for en normal derangment hvor <i>alle</i>
+    elementer <i>skal</i> bevæge sig, så har vi nu en "derangment"-light, hvor dette
+    kun behøver at gælde _(1_) af elementerne. Eksempelvis det første. Find dette antal.
+    Det er relativt simpelt. 
+    <br><br></q-stion>
+    <answer-box>
+    Det samlede antal permutationer er _(10!=3528800_). Jeg har tænkt mig at finde
+    antallet hvor første element bevæger sig ved at fjerne det antal permutationer
+    hvor det <i>ikke</i> bevæger sig. Det er lidt lettere. Hvis det skal stå på den
+    samme plads hele tiden, så er det kun de resterende _(9_) pladser der kan bevæge sig.
+    Det kan de på _(9!=362880_) måder, så svaret er _(3528800-362880=3165920_) måder.
+    Det er svaret. 
+    <br><br></answer-box>
+    
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5" customWidth="550">
+    Find en formel for mængden af derangments af _(n_) elementer. Det er fint hvis din
+    formel er en summation _(\sum_): Bare gør det så let at finde antallet af derangments som du kan.
+    Hint: Du skal nok bruge det der med 
+    _($|A \cup B \cup C| = |A|+|B|+|C|-|A \cap B|-|A \cap C|-|B \cap C|+|A \cap B \cap C|_) 
+    som nemt kan generaliseres. 
+    <br><br></q-stion>
+    <answer-box customWidth="550">
+    Lad os finde mængden af permutationer hvor der er elementer der <i>ikke</i> flytter sig. Så kan vi bare minuse
+    det fra den totale mængde permutationer _(n!_) og få vores svar. Sig
+    at _(A_1_) er de permutationer hvor element _(1_) ikke flytter sig, _(A_2_) de permutationer
+    hvor element _(2_) ikke flytter sig, osv. Problemet kan nu gøres meget lettere
+    bare ved at tælle det som _(|A_1 \cup A_2 \cup A_3 \cup ... A_n|_), hvilke kan omskrives til 
+    _($|A_1|+...|A_n| - (|A_1 \cap A_2| + |A_1 \cap A_3| + ...) + (|A_1 \cap A_2 \cap A_3|  + ...) \text{ } + \text{ } ... _)
+    Det er lidt svært at skrive det op matematisk på en god måde, men vi ved hvad det siger intuitivt:
+    Plus størrelserne af alle begivenhederne/listerne, minus med størrelserne af alle mulige sammenskæringer
+    af to lister, plus med størrelserne af alle mulige sammenskæringer af tre lister, minus med 
+    alle mulige sammenskæringer af fire lister, osv. En hvilket som helst _(|A_i|_) er lig _((n-1)!_) 
+    da elementet _(i_) altid skal blive på sin plads, og _((n-1)!_) så er hvor mange måder
+    man kan flytte rundt på de resterende elementer. Størrelsen af to skæringer er lignende _((n-2)!_), da
+    der nu er to elementer der ikke flytter sig. Tre skæringer _((n-3)!_) osv. <i>Mængden</i>
+    af skæringer mellem to er bare _(\Vec[2,n]_), mellem tre _(\Vec[3,n]_) osv. Alt i alt:
+    _($\Vec[1,n]*(n-1)! - \Vec[2,n]*(n-2)! + \Vec[3,n]*(n-3)! \text{ } \pm \text{ } ... \Vec[n,n]*(n-n)! = _)
+    _($\sum_{j=1}^n (-1)^{j+1}*\Vec[j,n]*(n-j)! = _)
+    _($\sum_{j=1}^n (-1)^{j+1} * \frac{n!/(n-j)!}{j!} * (n-j)! = _)
+    _($ n! * \sum_{j=1}^n \frac{(-1)^{j+1}}{j!}_)
+    Bam! Jeg ved godt formler beskrevet med summation kan være lidt intimiderende, men det her
+    er ærlig talt ret nemt og praktisk at finde - især i forhold til Stirling tal. Og den
+    her formel er faktisk endnu dejligere - langt dejligere - end man lige ville tro. 
+    Lad os tænke lidt over _(\sum_{j=1}^n \frac{(-1)^{j+1}}{j!}_). Vi dividerer _(1_) 
+    med højere og højere _(j_)-værdier, så de led vi summer sammen begynder at blive meget små.
+    Ud over det, så er der hverken en tendens til at gå konstant opad eller konstant nedad,
+    fordi negativiteten hele tiden skifter. Resultatet er at _(\sum_{j=1}^n \frac{(-1)^{j+1}}{j!}_)
+    meget hurtigt begynder at nærme sig èn bestemt værdi. Nemlig _(0.6321 ..._) (du kan
+    teste det her selv i Geogebra). Den er
+    faktisk utrolig tæt på denne værdi allerede når _(n=6_). Så for langt de fleste
+    værdier af _(n_) kan vi bare bruge formlen:
+    _($0.6321*n!_)
+    Ret god damn fantastisk simpelt. Vi skal huske at det her faktisk er antallet af permutationer hvor elementerne <i>ikke</i>
+    flytter sig. Så det rigtige tal vi leder efter er _(n!_) (total antal permutationer) minus
+    dette tal, altså:
+    _($Derangments(n) = n! - 0.6321*n! = 0.3679*n!_)
+    Så hvis træneren laver en tilfældig fordeling af 
+    _(7_) mennesker der skal vurdere hinandens arbejde, så er chancen for at den er ordentligt
+    cirka lig:
+    _($\frac{Derangments(7)}{7!} \approx \frac{0.3679*7!}{7!} = 0.3679_)
+    <br><br></answer-box>
+
+
+
+
+
+    <p class="t">
+    FØLGENDE OPGAVE VAR ORIGINALT DEN SIDSTE VED MULTISETS, MEN JEG DROPPEDE DEN FORDI JEG SYNTES
+    AT DEN MED TERNINGER VAR MEGET BEDRE:
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5" customWidth="650">
+    Lige os sige du skal til at gå ud af dit hus, og du står ved et nøgleskab.
+    Der er:
+    <div style="text-align:center;">
+        <ul style="display: inline-block; text-align: left; list-style:none;">
+            <li>Seks nøgler til huset</li>
+            <li>Fem nøgler til bilen </li>
+            <li>Fire nøgler til sommerhuset </li>
+        </ul>
+    </div> 
+    Hvor mange forskellige kombinationer af _(14_) nøgler kan du tage, hvis du
+    <i>i hvert fald</i> skal tage _(1_) hus- og bilnøgle?  
+    <br></q-stion>
+    <answer-box customWidth="650">
+    Vi leder efter mængden af løsninger til
+    _($x_1+x_2+x_3 = 14, 1 \le x_1 \le 6, 1 \le x_2 \le 5, 0 \le x_3 \le 4 \to_)
+    _($u_1+u_2+u_3=12, u_1 \le 5, u_2 \le 4, u_3 \le 4_)
+    Sig at _(U_1_), _(U_2_) og _(U_3_) er de falske løsninger.
+    _($|U_1 \cup U_2 \cup U_3| = |U_1| + |U_2| + |U_3| - |U_1 \cap U_2| - |U_1 \cap U_3| - |U_2 \cap U_3| + |U_1 \cap U_2 \cap U_3| _)
+    Den sidste _(|U_1 \cap U_2 \cap U_3|_) er _(0_), da man ikke kan have nogle løsning hvor man trækker 
+    _(5+4+4 = 13 \gt 12_) nøgler.
+    De andre kan vi finde som:
+    _($|U_1| = \Vec[12-5+3-1,3-1] = 36_)
+    _($|U_2| = \Vec[12-4+3-1,3-1] = 45_)
+    _($|U_3| = \Vec[12-4+3-1,3-1] = 45_)
+    _($|U_1 \cap U_2| = \Vec[12-5-4+3-1,3-1] = 10_)
+    _($|U_1 \cap U_3| = \Vec[12-5-4+3-1,3-1] = 10_)
+    _($|U_2 \cap U_3| = \Vec[12-4-4+3-1,3-1] = 15_)
+    Der er altså _(36+45+45-10-10-15=_) _(91_) falske løsninger. I alt er
+    der _(\Vec[14+3-1,3-1]=_) _(120_) løsninger. Så der er:
+    _($120-91=29_)
+    <i>rigtige</i> løsninger. 
+    <br></answer-box>
+

@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <p class="t"> 
+    I sidste afsnit løste vi en opgave, hvor du havde en rigtig iriterende chef der gav dig 
+    din løn i kontanter. Vi havde en liste over de forskellige mønter og sedler: 
+    </p>
+    <div style="text-align:center;">
+        <ul style="display: inline-block; text-align: left;">
+            <li>500kr seddel</li>
+            <li>200kr seddel</li>
+            <li>100kr seddel</li>
+            <li>50kr seddel</li>
+            <li>20kr mønt</li>
+            <li>5kr mønt</li>
+            <li>2kr mønt</li>
+            <li>1kr mønt</li>
+            <li>50-øre mønt</li>
+            <li>20-øre mønt</li>
+            <li>5-øre mønt</li>
+            <li>1-øre mønt</li>
+        </ul>                     
+    </div>
+    <p class="t">
+    I opgaven fik du _(8429.37_) kr. Det var nok til lige _(16_) _(500kr_)-sedler,
+    da _(16*500=8000_), og _(17*500=8500_) er for højt. Man kunne altså skrive 
+    mængden af penge du havde op som: 
+    _($16*500+429.37_)
+    Af de resterende _(429.37_)kr fik du så i hvert fald _(2_) _(200kr_)-sedler, da
+    denne rest kunne skrives som 
+    _($2*200+29.37_)
+    Du fik ingen _(100_)- eller _(50kr_)-sedler,
+    men lige én _(20kr_)-mønt, og derefter en rest på _(9.37kr_). 
+    _($9.37=5*1+4.37_)
+    så du fik _(1_) _(5kr_)-mønt også
+    _($4.37=2*2+0.37_) 
+    og derfor _(2_) _(2kr_)-mønter. 
+    Ingen _(50_)-øre mønter, _(1_) _(20_)-øre mønt, og så _(14_) øre tilbage.
+    _($14=5*2+4_) 
+    så lige til sidst _(2_) _(5_)-øre og _(4_) _(1_)-øre. 
+    </p>
+    <p class="t">
+    På samme side dividerede vi en del, og kiggede på den her "worst case scenario"-strategi, 
+    hvor man gætter i brede træk, finder fejlen/det resterende, prøver at dividere
+    fejlen i mindre brede træk, finder en ny fejl, osv osv. Det 
+    er som sagt hvad divideringsstrategien du lærte i folkeskolen er baseret på. 
+    </p>
+    <p class="t">
+    Der er to begreber der virkelig kan hjælpe os med at beskrive begge disse tilfælde:
+    <i>Remainder</i>/<i>modulo</i>, og <i>qoutient</i>. Hvor mange _(5_)'ere er der i _(14_), 
+    og hvad er resten? _(14=5*2+4_), så svaret er altså henholdsvist _(2_) og _(4_). 
+    _(2_) er hvad vi kalder _(14_)'s <i>qoutient</i> med respekt til _(5_), og _(4_) er hvad vi kalder 
+    _(14_)'s <i>remainder</i>/<i>modulo</i> med respekt til _(5_). Et andet eksempel kunne være
+    _(32_) og _(5_). Her er qoutienten _(6_), og remainderen _(2_). Ofte vil vi gerne 
+    have ét tal opdelt af et andet <i>som om</i> de gik op, bare plusset med en rest. 
+    _(a_)'s qoutient med respekt til _(b_) kan man også sige fortæller os 
+    maximum hvor mange _(b_) vi kan have før vi når _(a_). Remainder fortæller
+    os så "den del oven på". Det her er egentlig bare nogle navne vi har givet til den måde 
+    vi opdelte tal på i pengeeksemplet. Selve måden at opdele et tal på hedder <i>eucleudisk division</i>. 
+    Brugbarheden af de her definitioner og ideer kan bedst ses gennem nogle eksempler og opgaver.
+    </p>
+
+    <!-- NOGLE OPGAVER DER GIVER MANGE GODE EKSEMPLER PÅ BRUGBARHEDEN -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Du er ved at se en tv-serie på en eller anden streaming service, og har i alt 
+    set _(146.52_) minutter. Hver episode er _(22_) minutter langt. Hvor mange 
+    episoder har du set, og hvor langt inde i en episode er du lige nu?  
+    <br><br></q-stion>
+    <answer-box>
+    For at få mængden af episoder kan vi <i>ikke</i> bare sige _(146.52/22_), da det kun 
+    er muligt at have <i>hele</i> episoder. Vi skal i stedet se hvor mange episoder
+    man maksimalt kan have set imens man stadig er <i>under</i> _(146.52_) minutter. 
+    _($22*6=132 \lt 146.52, \qquad 22*7=154\gt 146.52_)
+    _(6_) episoder er altså svaret. Vi har logisk nok set 
+    _($146.52-132=14.52_) minutter af episode _(7_).
+    <p class="t">
+    Svaret på første del af opgaven var altså at finde <i>qoutienten</i>. Svaret på anden 
+    del af opgaven var at finde <i>remainderen/modulo</i>. Den notation vi bruger
+    til at skrive qoutienten er f.eks her _(146.52\setminus22_). Det er altså konventionen 
+    at lave et omvendt divisionstegn for at vise hvad man gør. Hvad angår
+    remainder/modulo, der siger vi _(146.52 \% 22_) eller _(M_{22}(146.52)_). 
+    Vi bruger enten et _(\%_) imellem de to tal, eller vi skriver
+    det inde i parenteserne af et _(M_). Den med _(M_) (kort for <i>modulo</i>) er i min mening lidt mere
+    praktisk hvis man f.eks. har store tal eller hele udtryk. 
+    </p>
+    <br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Du læser en digtsamling skrevet af en forfatter med svært OCD. Bogen
+    er delt op i kapitler der hver er _(40_) sider lange præcist. Hver 
+    af de her kapitler er delt op i _(5_) lige store afsnit. Der er _(2_)
+    digte pr side, _(5_) strofer pr digt, og _(3_) vers pr strofe 
+    (i digte der kalder vi faktisk de enkelte linjer for "vers"!). 
+    Sig at du har læst i alt _(4127_) vers. Hvilket vers, i hvilken strofe, 
+    i hvilket digt, i hvilket afsnit, i hvilket kapitel er du ved lige nu? 
+    <br><br></q-stion>
+    <answer-box>
+    Først ville jeg nok starte med at beskrive alt i forhold til 
+    vers. Et digt er altså _(3*5=15_) vers langt, en side _(15*2=30_), 
+    et afsnit _(30*8=240_), og et kapitel _(240*5=1200_). Nu kan jeg
+    bare gentagelige gange finde qoutienten og remainderen:
+    _($\begin{eqnarray}
+    && 4127 \setminus 1200 = 3 \text{ kapitler læst} \\
+    && \text{plus } 4127-1200*3=527 \text{ af kapitel 4's vers} \\ \\
+    && 527 \setminus 240 = 2 \text{ afsnit af kapitlet læst} \\
+    && \text{plus } 527-2*240=47 \text{ af afsnit 3's vers} \\ \\ 
+    && 47 \setminus 30 = 1 \text{ side af afsnittet læst} \\
+    && \text{plus } 17-1*15=2 \text{ af digt 2's vers} \\ \\
+    && 2 \setminus 3 = 0 \text{ strofer af digtet læst} \\
+    && \text{plus } 2 \text{ vers af strofe 0 læst}
+    \end{eqnarray}_)
+    Så i alt er vi nået til kapitel _(4_), afsnit _(3_), side _(2_), digt _(2_), strofe _(0_), vers _(3_). 
+    (Hvis du undrer dig over hvorfor alting er plusset med _(1_), så husk på at jeg jo gerne ville
+    have det sted vi var <i>nået</i> til, ikke hvor mange vi havde læst)
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Byens havn er _(2032976mm_) lang. Lægmændende vil gerne have denne længde
+    i så meget som muligt <i>hele kilometer</i>. Resten af længden i 
+    hele meter, resten efter det i hele centimeter, og så de endelige
+    små detaljer til sidst i millimeter. 
+    <br><br></q-stion>
+    <answer-box customWidth="500">
+    Den her opgave er egentlig meget ligesom den sidste, bare nemmere. Igen har vi 
+    nogle bestemte <i>opdelinger</i> (kilometer, meter, centimeter, millimeter)  og 
+    vi vil gerne se hvor meget vi har af hver. På _(1cm_) er der _(10mm_), på _(1m_) er der
+    _(10^3mm_), og på _(1km_) er der _(10^6mm_). Med så lette tal behøver vi ikke engang rigtig
+    dividere ligesom før: 
+    _($2032976=2*10^6mm+32*10^3mm+97*10mm+6*1mm_)
+    ergo ser man nu let at havnen er _(2km, 32m, 97cm, 6mm_) lang. 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Efter nogle beregninger på et byggeprojekt har du fundet af at du skal have _(98m_) gitterspær.
+    I en bestemt butik kan du kun købe _(12m_) gitterspær. Hvor meget ender med at gå til spilde?
+    <br><br></q-stion>
+    <answer-box>
+    Super simpelt: _(M_{12}(98)=2m_)  gitterspær for meget. 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Klassen på _(82_) skal deles op i grupper af _(7_). Hvor mange grupper bliver der dannet, og hvor mange folk ender med at være alene?
+    <br><br></q-stion>
+    <answer-box>
+    Der bliver dannet _(82\setminus7=11_) grupper, og der er så _(M_{7}(82)=5_) der ikke bliver en del af noget hold. 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Du har købt 31 æbler, og du har _(4_) æblekasser der hver kan holde _(6_). Er der nok kasser?
+    <br><br></q-stion>
+    <answer-box>
+    Det er ikke nok kasser, siden _(31\setminus6=5 \gt 4_).
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Sig at sommeren varer _(27_) dage, og begynder en ondsdag. Hvilken dag skal du i skole igen?
+    <br><br></q-stion>
+    <answer-box>
+    Vi kan se at der på de _(27_) dage går _(27\setminus7=3_) uger og _(M_{7}(27)=6_) dage. Ondsdag plus _(7_) er 
+    bare ondsdag, så plus _(6_) må altså være <i>tirsdag</i>. 
+    <p class="t">
+    Qoutienten og remainderen er super praktiske når vi arbejder med datoer og tid! 
+    </p> 
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Du begynder på et guitar-kurses der starter 3. april og varer _(298_) dage. Hvilken månede slutter 
+    kurset i, hvis vi antager at hver månede bare er _(30_) dage lang? 
+    <br><br></q-stion>
+    <answer-box>
+    På de _(296_) dage går der _(298\setminus30=9_) måneder, og _(M_{30}(298)=28_) dage. 
+    April er den fjerde månede i året, så efter _(9_) måneder er vi på årets _(M_{12}(9+4)=M_{12}(13)=1_) første månede, som er januar.
+    Uden de _(28_) dage er vi altså på 3. januar. <i>Med</i> de _(28_) dage er vi på 
+    _(M_{30}(3+28)=M_{30}(31)=1_). februar. 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    I Las vegas går du ind i et casino klokken 03:00. Der er ingen ure eller sollys derinde,
+    men du sætter en optæller igang da du går derind. På et tidspunkt ser du at du har brugt _(49_) timer.
+    Hvad er klokken nu? 
+    <br><br></q-stion>
+    <answer-box>
+    Bare _(M_{24}(3+49)=4_), så _(4:00_). Hvis din tidsfornemmelse var ødelagt nok, så kunne du måske tro
+    du kun havde været derinde i omkring et døgn! 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Fordi du lige har fået dit kørekort og endelig kan være fri til at gøre hvad du har lyst til, 
+    så prøver du at se hvor langt du kan køre rundt i en rundkørsel før du bliver syg. Du får kastopfornemmelse efter
+    _(34353_) grader. Hvor langt er du (vinkelmæssigt) fra hvor du startede?
+    <br><br></q-stion>
+    <answer-box>
+    Præcis ligesom ved uret der går rundt, eller månederene og ugerne der genstarter, så kan vi nemt bare bruge remainderen. 
+    Svaret er _(M_{360}(34353)=153_) grader. 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Du prøver en bestemt "spin the wheel"-maskine i et casino:
+    <img class="SpicB" style="width:80%" src="../../../Assets/Chapter1/Talteori/CasinoModulo1.png">
+    <br>
+    Ideen er simpel: træk i håndtaget, og hjulet vil dreje en bestemt mængde. Hvis det lander
+    på stjernen, så vinder du og får penge. Det er rigged dog - én stor løjn! Casinoet gider ikke 
+    risikere at <i>de</i> mister penge, så hjulet bevæger sig slet ikke en tilfældig mængde hver gang!
+    Det bevæger sig <i>altid</i> _(42_) grader når man trækker. Hjulet bliver hvor det stopper når 
+    det er færdig med at dreje rundt. Så ved første træk ender det på _(42_) grader, ved næste på 
+    _(42+42=84_) grader osv. Det her er smart, fordi så vil <i>nogle</i> mennesker gå derhen lige 
+    der hvor ét træk vil give stjernen. Det vil gøre folk mindre mistænkelige. 
+    <p class="t">
+    Hvis hjulet starter ved _(0_) grader som på billedet, hvor 
+    mange gange skal man så trække i håndtaget før man rammer rigtigt? Den her opgave er en god del sværere end de sidste!
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Sig at vi drejer hjulet _(n_) gange. Målet er at:
+    _($M_{360}(42*n)=0_)
+    _(42*n_) beskriver en vinkel, og vi tager modulus med _(360_) da vinklerne skal tilbage til _(0_) når de
+    kommer op til _(360_). Hvis denne modulus er _(0_), så må _(42*n_) være lig _(0_), _(360_), eller
+    et hvilket som helst helt tal _(m_) ganget med _(360_). Vi får derfor:
+    _($42*n=360*m_)
+    Hvilke betyder at:
+    _($n=\frac{360*m}{42}_)
+    _(n_) skal være et helt tal, da vi ikke kan dreje hjulet "_(2.5_) gang". Vi skal derfor vælge
+    den mindste værdi til _(m_) så at denne brøk går op. Vi udvider tallene og får:
+    _($\frac{2^3*3^2*5*m}{2*3*7} = \frac{2^2*3*5*m}{7} _)
+    Vi vælger _(m=7_), hvilke så giver:
+    _($n=2^2*3*5=60_)
+    Man skal altså trække i hjulet _(60_) gange. 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Folk er ved at indse casinoets trick, da det er tydeligt at hjulet kun bevæger sig _(40_) grader 
+    hver gang. Ejerene tænker det vil blive sværre at opdage, hvis hjulet bare
+    drejer <i>meget</i> hver gang. Så er det ikke ligeså nemt at se at det er det samme! 
+    Yderligere, så skifter hjulet tilfældigt mellem at dreje _(390, 750_) og _(1110_) grader. 
+    <p class="t">
+    <u> 1</u>: Hvorfor er det ikke dårligt for casinoet at hjulet kan dreje lige disse bestemte forskellige mængder?
+    </p>
+    <p class="t">
+    <u> 2</u>: Hvor mange gange skal man så trække før man rammer stjernen? 
+    </p>
+    <br></q-stion>
+    <answer-box t="Answer 1#" tabColour="rgb(171,96,147)">
+    At ramme stjernen handler fundementalt om at få den totale dreje-mængde til at gå op i _(360_). 
+    Altså, præcist hele vejen rundt om cirklen. _(390=360+30_), så hver gang man drejer så går
+    hjulet én helt omgang rundt - tilbage til hvor du var før - og går så en ekstra _(30_) fremad. 
+    Det har altså præcist samme endelige effekt som bare at dreje hjulet _(30_) grader. Omgangen
+    rundt er rent kosmetisk! _(750=2*360+30_), og _(1110=3*360+30_) så samme gælder der. Med andre ord:
+    _($M_{360}(30)=M_{360}(390)=M_{750}(390)=M_{360}(1110)_)
+    <br></answer-box>
+    <answer-box t="Answer 2#" tabColour="rgb(175,128,161)">
+    Her skal vi bare løse samme opgave som før, men med _(30_) i stedet for _(42_). 
+    _($30*n=360*k \to n=\frac{360*k}{30}=\frac{2^3*3^2*5}{3*5*2}=2^2*3=12_)
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Casinoet er ved at opdage at der er folk som dig der regner ud hvor mange gange man skal trække
+    for at vinde. Selv hvis de ændrer på mængden af spin, så kan du let bare regne et nyt resultatet. 
+    De gør det derfor lidt sværre ved at starte længere nede - sig _(8_) grader:
+    <img class="SpicB" style="width:80%" src="../../../Assets/Chapter1/Talteori/CasinoModulo2.png">
+    <br>
+    Hvis hjulet drejer skiftevis _(32, 32+360, 32+2*360, 32+3*360, ... _) hver gang, og 
+    stjernen som sagt er _(8_) grader under start, hvor mange gange skal man så 
+    dreje før man rammer den? Hjulet drejer <i>mod</i> uret.
+    <br><br></q-stion>
+    <answer-box>
+    Denne gang har vi:
+    _($M_{360}(32*n)=-8_)
+    Så:
+    _($38*n=360*m-8 \to n=\frac{360m-8}{38}_)
+    Jeg skal altså finde en _(m_), så at _(360*m-8_) går op i _(32_). Det første jeg nok ville gøre er
+    at simplificere _((360m+8)/32_). Vi ved at _(32=8*4_) og _(360=8*45_) så brøken kan reduceres
+    til:
+    _($\frac{45m-1}{4}_)
+    Hvordan vælger vi et _(m_) så _(45m-1_) går op i _(4_)? Skal vi bare gætte? Well, én smart ting
+    man kunne gøre ville være at lave _(45m_) om til _(44k-m_), da _(44m_) jo går op. Nu har vi:
+    _($\frac{44m+m-1}{4}=\frac{44m}{4}+\frac{m-1}{4}=11m+\frac{m-1}{4}_)
+    _(11m_) behøver vi ikke bekymre os om, da den jo hele tiden vil være et helt tal.
+    _(\frac{k-1}{4}_) kan vi tydeligvis få til at forsvinde bare ved at vælge _(m=1_), så tælleren bliver _(0_):
+    _($n=11m+\frac{m-1}{4}=11*(1)+\frac{(1)-1}{4}=11_)
+    Bum!
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Nu er casino-designerene fandme ved at have nok. Deres nye ide er 
+    at det <i>nogle</i> dage er helt umuligt at vinde! De vil vælge vinkler hvor 
+    man simpelt hen <i>aldrig</i> rammer stjernen. Bevis at hvis stjernen er _(14_) grader nede,
+    og man drejer skiftevis _(44, 44+360, 44+2*360, ..._) så vil stjernen aldrig nogensinde
+    blive ramt. Man drejer stadigvæk mod uret.
+    <p class="t">
+    <i>Hint</i>: Et ulige tal plus eller minus et lige tal giver et ulige tal! 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Lad os starte med bare at gøre lidt det samme som før:
+    _($44n=360m-14 \to n=\frac{360m-14}{44}_)
+    Brøken kan simplificeres til 
+    _($\frac{180m-7}{22}_)
+    Et ulige tal kan aldrig divideres med et lige tal, 
+    da det ulige tal jo aldrig vil have en faktor af _(2_). Vores tæller _(180m-7_) bliver divideret med et lige tal,
+    og er selv altid ulige, da _(180m_) er lige, og bliver minuset med det ulige tal _(7_). Derfor
+    tager vores brøk altid formen _(\frac{ulige}{lige}_), så _(n_) kan aldrig være et helt tal, lige meget hvor stor
+    vi gør _(k_).
+    <br></answer-box>
+
+    <p class="t">
+    Som du nok kan se så er det altså ekstremt brugbart at kunne finde qoutienten og remainderen. Vi bruger
+    det til at opdele ting, se hvor henne vi er i forhold til en bestemt <i>givet</i> opdeling (episode, kapitel, mængdeenheder), 
+    og også rigtig meget til at modellere mængder der "går rundt" som cirkler eller ure. Det giver en nem måde 
+    at lave matematik med specielle ting som tiden der går ned til _(0_) efter _(24_) timer. 
+    Hvis vi tager remainderen til sidst, så kan vi bare plussen tiden og så få et simpelt 
+    svar i klokkeslet.
+    </p>
+    <p class="t">
+    Siden det er så praktisk, så gider vi også gerne have noget der gør det lidt nemmere at regne remainderen. 
+    Vi kan <i>nemt</i> regne remainderen <i>efter</i> vi har regnet qoutienten, og qoutienten 
+    finder vi bare med strategisk gætning (eller hvad end anden strategi der er bedst at bruge i tilfældet). Ved hjælp af lidt smarthed så kan man dog også finde 
+    remainderen <i>uden</i> man først er nødt til at regne qoutienten. 
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Bevis eller forklar hvorfor at _(M_n(a+b)=M_n(M_n(a)+M_n(b))_)
+    Det her er super praktisk, fordi så behøver man ikke at 
+    plusse <i>langt</i> så store tal med hinanden. _(M_n(a)_) er jo
+    ofte mindre end _(a_). 
+    <br><br></q-stion>
+    <answer-box>
+    Man kan ret godt tænke på _(M_n(x)_) som et slags ur: 
+    Du går rundt om uret, som har en omkreds på _(n_). Hvor gang du kommer
+    over _(n_) så går du tilbage til _(0_). 
+    Sig at du skal regne et eller andet som _(M_{15}(49+17)_). 
+    <img class="Spic" style="width:70%;" src="../../../Assets/Chapter1/Talteori/RemainderSumBevis.png">
+    <p class="t">_(17_) tager dig én omgang rundt og så _(2_) mere. _(49_) tager
+    dig tre omgang rundt og _(4_) mere. I alt er
+    du altså fire omgange og _(2+4=6_) rundt om uret. Det eneste
+    vi havde brug for her var hvor langt vi i begge tilfælde kørte <i>ud over</i>
+    hele omgange. Så her kan vi godt sige at _(M_{15}=M_{15}(17)+M_{15}(49)_). 
+    Det er bare <i>en smule</i> mere problematisk hvis vi i stedet
+    havde f.eks. _(M_{15}(25+53)_) hvor _(M_{15}(25)+M_{15}(53)=10+8=18_) som
+    jo er over _(15_). Derfor skal vi altså lige tage remainderen
+    én gang til for en sikkerhedsskyld: 
+    _($M_{15}(25+53)=M_{15}(M_{15}(25)+M_{15}(53))=M_{15}(18)=3_)
+    Det her samme argument kan man tydeligvis bruge på noget som helst eksempel, så vi
+    kan altså godt sige generelt at _(M_n(a+b)=M_n(M_n(a)+M_n(b))_). </p>
+    <br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Bevis eller forklar hvorfor at _(M_n(a*b)=M_n(M_n(a)*M_n(b))_). 
+    Igen så er det praktisk, fordi det måske er super nemt at gange 
+    remainderene (der ofte er ret små), men ikke særlig nemt eller 
+    i hvert fald langsomt at gange selve tallene. 
+    <p class="t">
+    Husk: bare fordi vi brugte én strategi til at løse/bevise sidste opgave, så er det ikke 
+    sikkert det samme vil virke godt her! Den her er lidt mere udfordrende! 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Jeg kan ummidelbart når jeg prøver at tegne en skitse op som før se nogen 
+    tydelig regel. Lad os derfor i stedet prøve bare at kigge på et eksempel og 
+    se om det gælder: F.eks. _(M_{15}(18.2*21.6)_). Det kan jeg omskrive til
+    _(M_{15}((15+3.2)*21.6)=M_{15}(15*21.6+3.2*21.6)_). Hvis nu vi bruger plus-reglen
+    fra før så får vi 
+    _($M_{15}(15*21.6+3.2*21.6)=M_{15}(M_{15}(15*21)+M_{15}(3.2*21.6))=_)
+    _($M_{15}(3.2*21.6)_)
+    Nu kan vi gøre præcis det samme igen:
+    _($M_{15}(3.2*(15+6.6))=M_{15}(3.2*15+3.2*6.6)=_)
+    _($M_{15}(M_{15}(3.2*15)+M_{15}(3.2*6.6))=M_{15}(3.2*6.6)_)
+    Hvad er _(M_{15}(3.2*6.6)_)? Well, det er bare _(M_{15}(M_{15}(18.2)*M_{15}(21.6))_)!
+    Reglen gjaldt! Man kan nemt generalisere og se at det vi gjorde her med _(15,18.2_) og _(21.6_) vil
+    kunne gøres med nogen som helst tal _(n,a,b_). 
+    <br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Bevis eller forklar hvorfor at _(M_n(a^n)=M_n(M_n(a)^n)_).
+    Vi ved at potenser meget hurtigt bliver høje. Det kunne 
+    derfor hjælpe massivt at tage remainderen af _(a_) først, der 
+    måske ville hjælpe med at gøre udregningen meget mindre.
+    <br><br></q-stion>
+    <answer-box>
+    Med gange bevist så er det her super nemt: _(M_n(a^n)=M_n(a*a*a*a...)=M_n(M_n(a)*M_n(a)*M_n(a)*...)=_)<br>
+    _(M_n(M_n(a)^n)_)
+    <br><br></answer-box>
+
+    <p class="t">
+    Prøv nu at brug de her egenskaber til at løse de følgende opgaver. Flere af opgaverne <i>kan</i> man godt 
+    løse uden, så prøv at fokuser på at lave udregningerne <i>effektivt</i> ved hjælp af 
+    de her nye regler. 
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5">
+    En ingeniør skal til at bestille noget cement til et projekt. Han/hun har regnet volumen de har brug 
+    for som _((4*20+4*28+5*23+5*27+6*30)^3)m^3_). Han/hun kan kun købe _(6m^3_) af gangen. 
+    Hvor meget går til spilde?
+    <br><br></q-stion>
+    <answer-box customWidth="885">
+    Jeg vil så meget som muligt gerne omskrive ting til at de er ganget med _(6_). Det kan her
+    blive praktisk at _(6*3=18_), _(6*4=24_), og _(6*5=30_). 
+    <p class="cent">
+        _(M_6((4*20+4*28+5*23+5*27+6*30)^3=)_)<br>
+        _(M_6\bigl(M_6(4*20+4*28+5*23+5*27+6*30)^3\bigr)=_)<br>
+        _(M_6\bigl(M_6((4*18+4*2)+(4*30-4*2)+(5*24-5)+(5*30-5*3)+6*30)^3\bigr)=_)<br>
+        _(M_6\bigl(M_6(M_6(4*18)+M_6(4*2)+M_6(4*30)-M_6(4*2)+M_6(5*24)-M_6(5)+M_6(5*30)-M_6(5*3)+M_6(6*30))^3\bigr)=_)<br>
+        _(M_6\bigl(M_6(0+M_6(4*2)+0-M_6(4*2)+0-M_6(5)+0-M_6(5*3)+0)^3\bigr)=<br>_)
+        _(M_6\bigl(M_6(2-2-5-3)^3)=M_6(M_6(-7)^3\bigr)_)
+    </p>
+    <p class="t">
+    Hmmm. Vi har nu et <i>negativt</i> tal vi skal finde remainderen af. Det er ingen problem!
+    _(-7=-2*6+5_), ergo er qoutienten her _(-1_) og remainderen _(5_). Det her sagde vi 
+    altså i stedet for _(-7=-1*6-1_) da det i vores sammenhæng (og de fleste sammenhænge generelt)
+    ikke giver mening at have "negative rester". I hvert fald så er _(M_6(-7)=5_) og
+    </p>
+    <p class="cent">
+        _(M_6(M_6(-7)^3)=M_6(5^3)=M_6(125)=M_6(120+5)=M_6(M_6(6*20)+M_6(5))=M_6(5)=5_)
+    </p>
+    <p class="t">
+    Der går altså _(5m^3_) til spilde. Jeg lavede stort set ingen hovedregning her! Kun meget simple plus og minusstykker,
+    og en lille smule gange. 
+    </p>
+    <br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Ingeniøren fra før skal nu have _(257m^2_) gipsplade. Han/hun kan købe _(3m^2_) gipsplader. Hvor meget går til spilde?
+    <br><br></q-stion>
+    <answer-box>
+    Den her er nok aller hurtigst at gøre når man spotter at _(257=256+1=2^8+1=4^4+1_), ergo 
+    kan vi bare regne _(M_3(M_3(M_3(4)^8)+M_3(1))=M_3(M_3(1^8)+1)=2_). 
+    <br><br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Nu _(25694 m_) spær, som han/hun kun kan købe i _(34m_) enheder. Hvor meget går til spilde?
+    Der er ikke rigtig noget enkelt "smart trick" vi kan bruge her ligesom den sidste. Bare
+    prøv og vær så effektiv som mulig!
+    <br><br></q-stion>
+    <answer-box customWidth="590">
+    Før havde vi fået et <i>udtryk</i> hvor vi nemt kunne bruge reglerne. Nu er det bare et tal! Det vil 
+    nok tage en smule tid at udregne _(M_{34}(25694)_) bare <i>helt</i> direkte med strategisk gætning.
+    Jeg ville i stedet omskrive lidt:
+    _($M_{34}(25694)=M_{34}(34000-8306)=M_{34}(-8306)=_)
+    _($M_{34}(-2*3400-1506)=M_{34}(-1506)=M_{34}(-2*753)=_)
+    _($M_{34}(-2*M_{34}(753))=M_{34}(-2*M_{34}(340*2+73))=M_{34}(-2*M_{34}(73))=_)
+    _($M_{34}(-2*5)=M_{34}(-10)=24_)
+    <br></answer-box>
+
+    <!-- <q-stion 1="2" 2="1" 3="5">
+    Du sætter nogle penge ind i banken. Første månede tjener du _(2kr_) på det, næste månede _(4kr_), måneden efter _(6kr_), osv.
+    Altså, hver månede får du _(2kr_) mere end du fik sidste månede. F.eks har du efter _(3_) måneder _(2+4+6=12kr_). 
+    Hver fjerde månede kommer du hen til en super lækker slikbutik, hvor du gerne vil bruge dine tjente penge på
+    et bestemt brand af lakrids der koster _(15kr_) pakken. Du ved at du får et spejdermærke hvis du bruger 
+    <i>alle</i> dine penge på slik - intet må være til overs! Hvor mange måneder tager det før det her
+    endelig kan blive en mulighed? 
+    <br><br></q-stion>
+    <answer-box>
+        
+    <br><br></answer-box> -->
+
+    <!-- FØRST NOGLE MED INGENIØR OG LÆNGDER HER -->
+
+    <!-- SÅ NOGLE HVOR MAN BARE HAR ÉT TAL, MEN MAN SKAL STRATEGISK OG PRAKTISK LAVE DET OM, SÅ MAN KAN BRUGE EGENSKABERNE -->
+
+    <!-- SÅ DEM HVOR DER BEGYNDER AT VÆRE UKENDTE. -->
+
+
+
+</html>

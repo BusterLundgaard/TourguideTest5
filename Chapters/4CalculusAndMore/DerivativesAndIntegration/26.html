@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+
+<h2>Differentialligninger</h2>
+<p class="t">
+Vi så, at integraler var meget brugbare i fysik til bl.a. at beskrive bevægelsen af et objekt.
+Ofte er de desværre ikke <i>nok</i>: Vi har brug for en udvidet ide kaldt <i>differentialligninger</i>.
+</p>
+
+<p class="t">
+Sig vi havde en fjeder med en lille masse/vægt ude for enden. Jeg genbruger lige min fantastiske video-illustration: 
+</p>
+
+<video class='SpicBXL' style='margin-top:35px; margin-bottom: 35px; width:75%;' controls>
+    <source src='../../../Assets/Chapter2\Section1\TrigProperties\SpringSimulation.mp4' type='video/mp4'>
+</video>
+
+<p class="t">
+Fjederen har en eller anden normal længde _(S_0_), som den hele tiden prøver 
+at gå imod. Hvis den er længere går den bagud, hvis den er kortere går den fremad. 
+Sig at den her "normale længde" svarer til en position på _(x=0_). 
+Vægten <i>accelerer</i> mod _(x=0_) hvis den trækkes væk derfra. 
+Ved hjælp af fysiske eksperimenter, forsøg, og regression har man opdaget, at
+_($a(t)=k*(-x(t))_)
+... hvor _(k_) er en eller anden konstant. Det her giver god intuitiv mening:
+Vægten accelerer til den modsatte retning vi har trukket den! Accelerationens styrke
+er bestemt af selve den individuelle fjeder, så vi ganger med en konstant _(k_).
+Det kunne f.eks. være 
+_($1.3 \, \frac{(m/s)/s}{m}_)
+_((m/s)/s_) (også forkortet _(m/s^2_)) svarer til acceleration, da det er ændringen i
+meter per sekund <i>pr. sekund</i>. Vi er interesserede i acceleration pr. meter _(x_), så vi siger
+_((m/s^2)/m_), hvilket kan forsimples til _(1/s^2_). 
+</p>
+<p class="t">
+Anyways: Sig vi rykker vægten hen til _(x=d_) og giver slip. 
+Vi er interesserede i, at beskrive vægtens bevægelse, så det er nok 
+en god ide at finde _(x(t)_). Det eneste vi ved, er at
+_($a(t)=k*(-x(t))_)
+... som også kan omskrives til:
+_($x''(t) = -k*x(t)_)
+Det her er en såkaldt <i>differentialligning</i>. En integral som f.eks. _(\int 2x^3 \text{ }dx_) 
+er faktisk også en slags differentialligning:
+_($f'(x)=2x^3_)
+At integrere _(2x^3_) handler fundamentalt om at finde en funktion _(f(x)_)
+med den egenskab, at _(f'(x)=2x^3_). Vi løser altså en slags "ligning"
+for at finde funktionen. Meget det samme gælder _(x''(t)=-k*x(t)_). Vi leder
+efter en eller anden funktion _(x(t)_),
+hvor _(x(t)_) differentieret to gange er lig _(-k*x(t)_). 
+</p>
+<p class="t">
+Præcis ligesom integraler findes der ingen
+ingen general strategi vi kan bruge. Lad os i dette tilfælde
+resonere og gætte os frem:
+Funktionen minder
+tydeligvis meget om sig selv, efter den bliver differentieret - selv to gange endda! 
+Én mulighed er derfor noget i retningen af _(e^t_):
+_($\frac{d}{dt^2}[e^t]=e^t_)
+_(x(t)=e^t_) løser ligningen 
+_($x''(t)=x(t)_)
+... men mangler at blive ganget med en konstant _(-k_).  
+_(x(t)=a^t_) er derfor en mulighed da 
+_($¤t[a^t]=Ln(a)*a^t_) 
+Så:
+_($\frac{d}{dt^2}[a^t]=Ln(a)^2*a^t_)
+Det her passer til _(x''(t)=k*x(t)_) hvis _(Ln(a)^2=k_), altså
+hvis _(a=e^{\sqrt{k}}_). Det passer dog <i>ikke</i> til 
+_(x''(t)=-k*x(t)_), siden _(Ln(a)^2_) altid er positivt. 
+Det giver også god intuitiv mening: funktionen _(a^t_) går hele tiden opad, 
+men fjederen går frem og tilbage, igen og igen. 
+</p>
+
+<p class="t">
+En anden funktion der minder en del om sig selv, når vi differentierer, er _(Sin(t)_). 
+Den bliver til _(Cos_), så _(Sin_), så _(Cos_), osv:
+_($\frac{d}{dt^2}[Sin(t)] = -Sin(t)_)
+Det her passer til _(x''(t)=-x(t)_), men vi mangler lige konstanten _(k_). 
+Let! Vi ganger bare
+_(t_) med en konstant inde i _(Sin_), som så bliver trukket ud 
+når vi differentierer: 
+_($\frac{d}{dt^2}[Sin(a*t)] = \frac{d}{dt}[a*Cos(a*t)] = -a^2*Sin(a*t)_)
+Aha! Nu vælger vi _(a=\sqrt{k}_) og får _(-k*Sin(a*t)_). Det passer
+til differentialligningen, og vi ved nu at 
+_($x(t)=Sin(\sqrt{k}*t)_) 
+... er løsningen. <i>Teknisk set</i> er løsningen lidt mere generel:
+_($x(t)=A*Sin(\sqrt{k}*t)_)
+En funktion af denne type har de rigtige egenskaber lige meget hvilken _(A_) vi vælger: 
+_($\frac{d}{dt^2}[A*Sin(\sqrt{k}*t)] = -a^2*(A*Sin(\sqrt{k}*t))_)
+Og den går længere; _(A*Sin(\sqrt{k}*t+B)_) hvor _(B_) er
+en ny konstant virker også:
+_($\begin{eqnarray}
+&& \frac{d}{dt^2}[A*Sin(\sqrt{k}*t+B)] = \\ \\
+&& \frac{d}{dt}[A*\sqrt{k}*Cos(\sqrt{k}*t+B)] = \\ \\
+&& -k*A*Sin(\sqrt{k}*t+B)
+\end{eqnarray}_)
+Vores fjeder starter ved _(x=d_) med en hastighed på _(0_) ved _(t=0_). Det betyder rent
+matematisk at:
+_($\begin{eqnarray}
+&& x(0) & =d \\  
+&& x'(0) &=0
+\end{eqnarray}_)
+Vi kan bruge de her <i>to</i> ligninger til at bestemme de <i>to</i> rette værdier _(A_) og _(B_).
+Lad os starte med _(x'(0)=0_):
+_($A*\sqrt{k}*Cos(\sqrt{k}*0+B) = 0_)
+Hverken _(A_) eller _(k_) er _(0_), så vi står tilbage med:
+_($Cos(B)=0 \to B=\pi/2_)
+Vi går nu videre til _(x(0)=d_)
+_($A*Sin(\sqrt{k}*0+\frac{\pi}{2}) = d \to_)
+_($A = d_)
+Fantastisk! Nu har vi endelig:
+_($x(t)=d*Sin \left(\sqrt{k}*t+\frac{\pi}{2} \right)_)
+Et andet lignende eksempel på en differentialligning i fysik er et <i>pendul</i>:
+</p>
+
+<img class='SpicXL' style='width:80%' src='../../../Assets/Chapter4\DerivativesAndIntegrals\Applications\Physics\Pendulum1.png'> 
+
+<p class="t">
+Vi er interesserede i at finde _(\theta(t)_): Hvordan ændrer kuglens vinkel på pendulet sig over tiden? 
+Kuglen oplever altid samme tyngdekraft på _(m*g_), 
+men <i>retningen</i> er tættere parallelt med cirkelbevægelsen hvis
+vinklen er stor:
+</p>
+
+<img class='SpicXL' style='width:80%' src='../../../Assets/Chapter4\DerivativesAndIntegrals\Applications\Physics\Pendulum2.png'> 
+
+<p class="t">
+Man kan med lidt Geometri se, at vinklen 
+_($\phi(t)=\pi/2-\theta(t)_)
+... så kraften, der trækker i retningen af 
+cirkelbevægelsen, er lig_(m g Cos(\pi/2 - \theta(t))_). Med andre ord:
+_($F(\theta) = mg Sin(\theta(t))_)
+Et objekt, der roterer på en _(R_) meter lang snor med _(\theta'(t)_) radianer pr. sekundet,
+bevæger sig _(\theta'(t)*R_) meter langs cirklen hvert sekund. Det betyder (lidt generaliseret) at:
+_($\begin{eqnarray}
+&& v(t)=\theta'(t)*R \to \\ \\
+&& ¤t[v(t)] = ¤t[\theta'(t)*R] \to \\ \\
+&& a(t) = \theta''(t)*R \to \\ \\
+&& \theta''(t) = a(t)/R
+\end{eqnarray}_)
+Vi ved, at _(a=F/m_), så 
+_($a(t)=\frac{mg Sin(\theta(t))}{m} = g*Sin(\theta(t))_)
+Endeligt:
+_($\theta''(t) = \frac{g}{R}*Sin(\theta(t))_)
+En differentialligning! Denne her differentialligning er svær til umulig <i>at faktisk løse</i>,
+men det er et problem til en anden dag. 
+</p>
+
+<p class="t">
+Et tredje eksempel kunne være vores bil. 
+Bilen kan maksimalt producere en begrænset mængde strøm pr. sekund. 
+Jo hurtigere den køre, jo mere energi kræver det at få den til 
+at køre <i>endnu hurtigere</i>; Ergo, accelerationen bliver mindre med hastighed.
+Èn måde at modellere det på er måske
+_($a(t)=B-A*v(t)_)
+... hvor _(B_) og _(A_) begge er positive konstanter. 
+_(B_) bestemmer hvor hurtig accelerationen er i starten, og _(A_) bestemmer
+hvor hurtigt den falder. Denne differentialligning er relativ
+let at løse i kontrast til pendulet, men jeg vil ikke gennemgå det nu.  
+</p>
+
+<p class="t">
+Samme differentialligning kan også anvendes til at 
+beskrive noget lidt mere brugbart: Luftmodstand. 
+Sig at et objekt falder ned højt oppe fra luften. 
+Tyngdekraften accelerer objektet, men 
+luftmodstand <i>hindrer</i> denne acceleration, 
+grundet de mange luft-molekyler, det bliver ramt af. 
+Jo hurtigere objektet falder, jo flere luftmolekyler rammer det. 
+Èn relativ logisk antagelse er, at 
+kraften fra luftmodstanden stiger proportionelt med hastigheden. 
+Det viser sig (fra fysiske observationer), at bevægelsen
+kan modelleres O.K af: 
+_($a = \frac{F_t - F_{luftmodstand}}{m} = g - \frac{K}{m}*v_)
+... hvor _(K_) er en eller anden positiv konstant. 
+_(K_) varierer nok med lufttrykket og overfladearealet, der bliver 
+ramt af luft. Luftmodstanden bliver eksempelvis højere, hvis man ligger på 
+maven mens man skydiver. 
+</p>
+<p class="t">
+Sig at _(K_) var _(12_) og at objektet vejede <i title="din mor">410 kg. </i> 
+Vi ville nu have differentialligningen:
+_($y''(t) = 9.18 - \frac{12}{410}*y'(t)_)
+Sådan en differentialligning her er brugbar <i>selv hvis</i> vi ikke
+har lært at løse den endnu. Vi kan
+f.eks. finde "terminalhastigheden": Den størst mulige hastighed objektet opnår i frit fald. 
+Det svarer til, at accelerationen nedad stopper, så:
+_($0 = 9.18 - 0.0292*y'(t) \to y'(t) = 314.38 \, \frac{m}{s}_)
+Lad os gå i gang med at lære nogle teknikker, før vi ser på flere eksempler.
+</p>
+
+

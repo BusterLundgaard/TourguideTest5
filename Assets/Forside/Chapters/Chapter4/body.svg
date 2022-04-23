@@ -1,0 +1,12 @@
+<svg width="904.5" height="1102" version="1.1" viewBox="0 0 239.3 291.5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <pattern id="a" xlink:href="#b" patternTransform="matrix(9 0 0 9.267 -197.6 -1188)"/>
+  <pattern id="b" width="2.5" height="1" patternTransform="translate(0) scale(10)" patternUnits="userSpaceOnUse">
+   <rect y="-.5" width="1" height="2"/>
+  </pattern>
+ </defs>
+ <g transform="translate(88.58 -50.87)" stroke="#000">
+  <path d="m-88.35 56.34 239-5.348v281.2l-239.1 10z" fill="#fdfcf4" opacity=".979" stroke-width=".2381px"/>
+  <path d="m-88.35 56.24 239-5.25v279.4l-239.1 11.43z" fill="url(#a)" opacity=".013" stroke-opacity=".9394" stroke-width=".2381px"/>
+ </g>
+</svg>

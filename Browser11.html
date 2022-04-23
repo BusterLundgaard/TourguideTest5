@@ -1,0 +1,2036 @@
+<!DOCTYPE html>
+<body lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0; maximum-scale=1.0; minimum-scale=0.56;">
+    <title>Document</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script id="MathJax-script" defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="BrowserCSS3.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/aaaakshat/cm-web-fonts@latest/fonts.css">
+
+</head>
+<body>
+
+    <div id="TocBackground">
+        <div id="TocTitle">Indholdsfortegnelse</div>
+        <div id="Toc">
+        </div>
+    </div>
+
+    <div id="master">
+        <div id="documentContainer"></div>
+    </div>
+
+    <div id="breadcrumpContainer">
+        <div class="breadcrumpTitle" id="h2Title"></div>
+        <div class="breadcrumpTitle" id="h3Title"></div>
+        <div class="breadcrumpTitle" id="h4Title"></div>
+        <div id="breadcrumpDropdown"></div>
+    </div>
+    
+    <div id="scrollCover"></div>
+
+    <div id="subSectionTitle"></div>
+    <div id="subSubSectionTitle"></div>
+    <div id="subScrollBar"></div>
+
+    <div id="scrollSelectorCont">
+        <p id="scrollPage">23</p>
+        <img id="scrollSelector" src="Assets/GUI/hoverSelector.svg"></img>
+    </div>
+    <div id="secSplitCont"></div>
+    <div id="sectionTitleCont"> 
+        <div id="sectionTitle"></div>
+    </div>
+    <div id="scrollBar"></div>
+
+    <img id="leftButton" src="Assets/GUI/pageLeft.svg" alt="no pic"> </img>
+    <img id="rightButton" src="Assets/GUI/pageRight.svg" alt="no pic"> </img>
+
+    <div id="pageDisplayer">
+        <span>Side </span> 
+        <span id="setPage" role="textbox" contenteditable="true">Hello!</span>
+        <span id="pageTotalDisplayer"></span> 
+    </div>
+
+    <br><br><br><br><br><br>
+
+
+    <script>
+
+        document.body.style.zoom=1.25;
+
+        //Mathjax:
+        window.MathJax = {
+            startup: {
+                typeset: false
+            },
+            tex: {
+                inlineMath: [
+                    ['_(', '_)'],
+                ],
+                displayMath: [
+                    ['_($', '_)']
+                ],
+                packages: {'[+]': ['ams']}
+            }
+        };
+
+        const MathJaxFilter = function(s) {
+
+            s=s.replace(/(?<=\_\()(.|\n|\r)*?(?=\_\))/g, (str) => {
+
+                //Multiplication:
+                str=str.replace(/\*/g, " \\cdot ");
+
+                //Lines and segments:
+                str=str.replace(/\\Lin/g, "\\overleftrightarrow");
+                str=str.replace(/\\Seg/g, "\\overline");
+                str=str.replace(/\\Ray/g, "\\overrightarrow");
+
+                //Vectors:
+                str=str.replace(/\\Vec\[([\s\S]*?)\]/gi, (s) => {
+
+                    params = s.substring(5, s.length - 1).split(",");
+
+                    var insideContent = "";
+                    for(var i = 0; i < params.length; i++) {
+                        insideContent += params[i];
+                        if(i != params.length - 1){insideContent += "\\\\";}
+                    }
+
+                    var matrixString;
+                    var isBig = (s[3]=='C');
+                    if(isBig) {
+                        matrixString = "\\begin{pmatrix}" + insideContent + "\\end{pmatrix\}";
+                    }
+                    else{
+                        matrixString = "\\bigl(\\begin{smallmatrix}" + insideContent + "\\end{smallmatrix\}\\bigr)";
+                    }
+
+                    return matrixString; 
+
+                });
+
+                //Derivatives:
+                str=str.replace(/¤./g, (s) => {
+                    return "\\frac{d}{d" + s[1] + "}";
+                });
+
+                return str; 
+            })
+
+            return s;
+        }
+
+
+        //Page loading:
+        var chapter = "/Chapters/4CalculusAndMore/MultivarCalc/"; 
+        const chapters = [
+            ["/Chapters/New1/New1One/"],
+            [
+            "/Chapters/2Geoalgebra/BasicTrig/",
+            "/Chapters/2Geoalgebra/FormsAndDefinitions/",
+            "/Chapters/2Geoalgebra/EquationsRelations/",
+            "/Chapters/2Geoalgebra/DescribingSpace/"
+            ],
+            [
+            "/Chapters/2Geoalgebra/GeogebraAndCAS/",
+            "/Chapters/2Geoalgebra/Regression/"
+            ],
+            ["/Chapters/3DiscreteMath/Probability/Revision2/"],
+            [
+            "/Chapters/4CalculusAndMore/DerivativesAndIntegration/",
+            "/Chapters/4CalculusAndMore/InfinityAndBeyond/",
+            "/Chapters/4CalculusAndMore/MultivarCalc/",
+            "/Chapters/4CalculusAndMore/KontinuerligProb/"
+            ],
+            ["/Chapters/4CalculusAndMore/ComplexNumbers/"]
+        ]
+        var chapNum = 0; var secNum = 0;
+
+        var startingPage = 7;
+        var chapterPageCount;
+        var activePage;
+        var prevPage;
+
+        var pages; //The actual array of strings
+        var pageContainers; //An array of not strings, but Div objects ready to load in (to prevent fetching any ressources twice)
+
+        var pageMeta = [];
+        var pagesIL;
+        var chapterIL = 0;
+        var secs = []; //Section and title metadata
+        var pageHeights;
+
+        var amountOfLoadedElements = []; //An array that for each page gives how many elements have actually been loaded.
+        var loadedDocHeight = []; //Array of how much height has currently been loaded in each page.
+
+        var docContainer = document.getElementById("documentContainer"); //Just for practicality and performance
+        var lowestVisiblePosition = 0;
+
+        startUp();
+        async function startUp() {
+
+            //Change the url param without reloading:
+            //window.history.pushState("", "", "?407");
+            const queryString = window.location.search;
+            chapNum = parseInt(queryString[1]);
+            secNum = parseInt(queryString[2]);
+            
+            startingPage = parseInt(queryString.substring(3));
+            chapter = chapters[chapNum][secNum];
+
+            await loadMetadata();
+
+            pages = new Array(chapterPageCount);
+            pageContainers = new Array(chapterPageCount);
+            amountOfLoadedElements = new Array(chapterPageCount);
+
+            activePage=startingPage;
+
+            setupPageSetter();
+            setupScrollbar(true);
+            setupBreadcrumps();
+            setupTableOfContents();
+
+            loadPage(startingPage-1, true);
+        }
+
+        let getTreePath = (page)=>{ //Page here is 0-indexed
+            
+            let sec2=0; let sec3=0; let sec4=0;
+            let i =0; let j=0;
+
+            while(sec2 < secs.length && secs[sec2].p <= page+1)  {sec2++;}
+            sec2--;
+
+            while(i < secs[sec2].secs.length && secs[sec2].secs[i].p <= page+1) {  
+                if(secs[sec2].secs[i].t != "" && secs[sec2].secs[i].t != " ") {sec3++};
+                i++;
+            }
+            sec3--;
+
+            while(j < secs[sec2].secs[i-1].secs.length && secs[sec2].secs[i-1].secs[j].p <= page+1) {
+                if(secs[sec2].secs[i-1].secs[j].t != "" && secs[sec2].secs[i-1].secs[j].t != " ") {sec4++;}
+                j++;
+            }
+            sec4--;
+
+            return [sec2, sec3, sec4];
+        }
+
+        //LOADING PAGES AND DATA
+        async function loadMetadata() {
+
+            //Page IL's:
+            await $.get(chapter + "IlMeta.txt", (data) => {
+                pagesIL=data.split(",");
+                chapterPageCount=pagesIL.length;
+            })
+            for(let i =0; i < chapterPageCount; i++) {
+                pagesIL[i] = parseFloat(pagesIL[i]);
+                chapterIL += pagesIL[i];
+            }
+
+            //Page heights:
+            await $.get(chapter + "heightsMeta.txt", (data) => {
+                pageHeights=data.split(",");
+            })
+            for(let i = 0; i < chapterPageCount; i++) {
+                pageHeights[i] = parseInt(pageHeights[i]);
+            }
+
+            //Page elements:
+            let pData;
+            await $.get(chapter + "pagMeta.txt", (data) => {
+                pData = data.split("#");
+            })
+
+            for(let i=0; i < chapterPageCount; i++) {
+                let elInfo = pData[i].split(",");
+                let elArray = [];
+                for(let j=0; j < elInfo.length/3; j++) {
+                    elArray.push({sI:elInfo[j*3+0], eI:elInfo[j*3+1], t:elInfo[j*3+2]});
+                }
+                pageMeta.push(elArray);
+
+            }
+   
+
+            //Section data: 
+            let sD;
+            await $.get(chapter+"secMeta.txt", (data)=>{
+                sD = data;
+            });
+
+            let i = 0;
+            let h2n = 0; let h3n = 0; let h4n=0;
+            let pParam = 0;
+            let paramCounter = 0; 
+            let el; 
+
+            secs.push({secs:[{secs:[{}]}]});
+            while(i < sD.length) {
+
+                if(sD[i]=="#") {
+
+                    if(paramCounter==0) {
+                        if(sD[i+1]=="0"){el = secs[h2n];}
+                        if(sD[i+1]=="1"){el = secs[h2n].secs[h3n];}
+                        if(sD[i+1]=="2"){el = secs[h2n].secs[h3n].secs[h4n]; }
+
+                        el.t=sD.substring(pParam,i); 
+                        paramCounter++;
+                    }
+                    else if(paramCounter==1){
+                        el.p=sD.substring(pParam,i);
+                        paramCounter++;
+                    }
+                    else{
+                        el.IL =sD.substring(pParam,i);
+                        paramCounter=0; 
+                    }
+
+                    pParam=i+2;
+                    i++; 
+                }
+                else if(sD[i]=="¤"){
+                    if(sD[i+1]=="0"){
+                        secs.push({secs:[{secs:[{}]}]});
+                        h2n++; h3n=0; h4n=0;
+                    }
+                    else if(sD[i+1]=="1"){
+                        secs[h2n].secs.push({secs:[{}]});
+                        h3n++; h4n=0;
+                    }
+                    else if(sD[i+1]=="2") {
+                        secs[h2n].secs[h3n].secs.push({});
+                        h4n++; 
+                    }
+
+                    pParam=i+2;
+                    i++;
+                }
+
+                i++;
+            }
+
+        }
+
+        let rD = [];
+        async function loadResumeData(){
+            let rs;
+            await $.get("/Chapters/resumeData.txt", (data)=>{
+                rs = data;
+            });
+
+            let hn = [-1, -1, -1, -1, -1];
+            let param = "";
+
+            let i=0;
+            let L = rs.length;
+            let num = 0;
+            let c; 
+
+            while(i < L) {
+
+                c=rs[i]; 
+
+                if(c == "¤") { //Fill out structure
+                    num = parseInt(rs[i+1]);
+
+                    let listEl = rD;
+                    for(let i = 0; i < num; i++) {
+                        listEl = listEl[hn[i]][0];
+                    }
+                    listEl.push([[]]);
+
+                    hn[num] += 1;
+                    for(let i = num+1; i < 5; i++) {
+                        hn[i]=-1;
+                    }
+
+                    i+=4;
+                }
+                else if(c == "#") { //Push parameters
+                    num = parseInt(rs[i+1]);
+
+                    let listEl = rD;
+                    for(let i = 0; i < num; i++) {
+                        listEl = listEl[hn[i]][0];
+                    }
+                    listEl[hn[num]].push(param);
+                    param="";
+
+                    i+=4;
+                }
+                else{
+                    if(c=="\n" || c=="\r") {
+                        if(param.length > 15) { //Don't add newlines, *except* for if we're already a way into the string. Then they're just meant as another kind of space
+                            param += " ";
+                        }
+                    }
+                    else{
+                        if(!(param == "" && c==" ")) { //Don't add whitespace *before* the parameter has begun
+                            param += c;
+                        } 
+                    }
+                    i++;
+                }
+
+            }
+        }
+
+        async function loadPage(pageNum, initialLoad) {
+
+            //Load the page itself
+            if (pages[pageNum] == undefined) {
+                await $.get(chapter + (pageNum+1).toString() + ".html", (data) => {
+                    pages[pageNum] = data;
+                })
+            }
+
+            //Disable the currently loaded page
+            if(pageContainers[activePage] != undefined) {
+                docContainer.removeChild(pageContainers[activePage])
+            }
+
+            prevPage=activePage;
+            activePage=pageNum;
+
+            //getTreePath();
+
+            //Enable new page
+            window.scrollTo(0, 0);
+
+            if(pageContainers[activePage] == undefined) { //If page has never been loaded before
+
+                pageContainers[activePage] = document.createElement("div");
+                docContainer.appendChild(pageContainers[activePage]);
+
+                amountOfLoadedElements[activePage] = 0;
+                loadedDocHeight[activePage] = 0;
+
+                updateLoadedContent(0)
+            }
+            else { //If page has been loaded before
+                docContainer.appendChild(pageContainers[activePage]);
+            }
+
+            //Update UI elements:
+            document.getElementById("setPage").innerHTML = (activePage+1).toString();
+
+            let breadcrumpCont = document.getElementById("breadcrumpContainer");
+            if(breadcrumpCont.style.opacity == 0) {
+                breadcrumpCont.style.opacity=1;
+                setTimeout(() => {
+                    breadcrumpCont.style.opacity=0;
+                }, 1000);
+            }
+            setupBreadcrumps();
+
+            highlightActivePageToc();
+
+            setupScrollbar(false);
+
+            //Set page height:
+            document.getElementById("master").style.minHeight=pageHeights[activePage].toString() + "px";
+
+            //Set cookie:
+            document.cookie = "lastPage="+chapNum.toString() + secNum.toString() + (pageNum+1).toString();
+        }
+
+
+        var extraHeight = 5;
+        var chunkSize = 0;
+        var chunkMin = 1; 
+        function updateLoadedContent() {
+
+            let oldElCount = amountOfLoadedElements[activePage];
+
+            let loadOneEl = ()=>{
+                var elMeta = pageMeta[activePage][amountOfLoadedElements[activePage]];
+
+                var el = document.createElement(elMeta.t);
+                pageContainers[activePage].appendChild(el);
+
+                el.outerHTML = MathJaxFilter(pages[activePage].substring(elMeta.sI, elMeta.eI));
+
+                amountOfLoadedElements[activePage] += 1;
+                loadedDocHeight[activePage] = docContainer.clientHeight;
+                lowestVisiblePosition = window.innerHeight + document.documentElement.scrollTop;
+
+                chunkSize++;
+
+                if(amountOfLoadedElements[activePage] < pageMeta[activePage].length &&
+                   (chunkSize < chunkMin || loadedDocHeight[activePage] < lowestVisiblePosition + extraHeight)) {loadOneEl();}
+                    
+            }
+
+            if(pageMeta[activePage] != undefined && 
+               amountOfLoadedElements[activePage] < pageMeta[activePage].length && 
+               loadedDocHeight[activePage] < lowestVisiblePosition + extraHeight) {
+                    chunkSize=0;
+                    loadOneEl();
+
+                    if(chunkMin==1){
+                        chunkMin = 6;
+                        extraHeight=200;
+                    }
+
+                    let elsToTypeset = [];
+                    let els = pageContainers[activePage].children;
+                    for(let i = oldElCount; i < amountOfLoadedElements[activePage]; i++) {
+                        elsToTypeset.push(els[i]);
+                    }
+                    MathJax.typesetPromise(elsToTypeset).then(()=>{
+                        MathJax.typesetPromise();
+                    }).catch((err)=>{console.log(err.message);});
+
+            }
+
+
+        }
+
+        document.addEventListener("scroll", (e) => {
+            lowestVisiblePosition = window.innerHeight + document.documentElement.scrollTop;
+            updateLoadedContent();
+        })
+
+
+
+        //UI AND CONTROLS:
+        //Swipe on mobile:
+        let touchstartX = 0
+        let touchendX = 0
+        let isPinching = false;
+        let touchTime = 0;
+
+        function handleGesture() {
+        if (!isPinching && touchendX < touchstartX-50 && (new Date()) - touchTime < 1000) {
+            if(activePage != chapterPageCount-1) {loadPage(activePage+1);}}
+        else if (!isPinching && touchendX > touchstartX+50 && (new Date()) - touchTime < 1000) {
+            if(activePage != 0) {loadPage(activePage-1);}}
+        }
+
+        document.addEventListener('touchstart', e => {
+        touchstartX = e.changedTouches[0].screenX
+        touchTime = new Date();
+        })
+
+        document.addEventListener("touchmove", e=>{
+            if(e.touches.length === 2){isPinching=true;}
+            else{isPinching=false;}
+        })
+
+        document.addEventListener('touchend', e => {
+        touchendX = e.changedTouches[0].screenX
+        handleGesture()
+        })
+
+
+
+        //Page displayer:
+        let pageSetterVisible=true;
+        let setupPageSetter = function() {
+            let pageSetter = document.getElementById("setPage");
+
+            pageSetter.innerHTML = (activePage).toString();
+            document.getElementById("pageTotalDisplayer").innerHTML="/" + chapterPageCount.toString();
+
+            pageSetter.addEventListener("keydown", (e)=> {
+                if(e.keyCode==13) {
+                    document.activeElement.blur();
+
+                    let typedPage = pageSetter.innerText;
+                    if(!isNaN(typedPage) && Number.isInteger(parseFloat(typedPage))) {
+                        typedPage=parseInt(typedPage);
+                        if(typedPage > 0 && typedPage <= chapterPageCount) {
+                            loadPage(typedPage-1);
+                        }
+                        else{
+                            pageSetter.innerHTML = (activePage+1).toString();
+                        }
+                    }
+                    else{
+                        pageSetter.innerHTML = (activePage+1).toString();
+                    }
+
+                }
+            })
+
+            document.getElementById("pageDisplayer").addEventListener("mouseenter", (e)=>{
+                document.getElementById("pageDisplayer").style.opacity=1;
+            });
+            document.getElementById("pageDisplayer").addEventListener("mouseleave", (e)=>{
+                document.getElementById("pageDisplayer").style.opacity=0.5;
+            });
+            document.getElementById("leftButton").addEventListener("mouseenter", (e)=>{
+                document.getElementById("leftButton").style.opacity=1;
+            });
+            document.getElementById("leftButton").addEventListener("mouseleave", (e)=>{
+                document.getElementById("leftButton").style.opacity=0.5;
+            });
+            document.getElementById("rightButton").addEventListener("mouseenter", (e)=>{
+                document.getElementById("rightButton").style.opacity=1;
+            });
+            document.getElementById("rightButton").addEventListener("mouseleave", (e)=>{
+                document.getElementById("rightButton").style.opacity=0.5;
+            });
+
+            window.addEventListener("resize", (e)=>{
+                let pageDisplayer = document.getElementById("pageDisplayer");
+                if(0.5*document.documentElement.clientWidth - 250 > pageDisplayer.clientWidth) {
+                    if(!pageSetterVisible) {
+                        document.getElementById("pageDisplayer").style.opacity=0.5;
+                        document.getElementById("pageDisplayer").style.pointerEvents="all";
+                        document.getElementById("leftButton").style.opacity=0.5;
+                        document.getElementById("leftButton").style.pointerEvents="all";
+                        document.getElementById("rightButton").style.opacity=0.5;
+                        document.getElementById("rightButton").style.pointerEvents="all";
+                        pageSetterVisible=true;
+                    }                
+                }
+                else{
+                    if(pageSetterVisible){
+                        document.getElementById("pageDisplayer").style.opacity=0;
+                        document.getElementById("pageDisplayer").style.pointerEvents="none";
+                        document.getElementById("leftButton").style.opacity=0;
+                        document.getElementById("leftButton").style.pointerEvents="none";
+                        document.getElementById("rightButton").style.opacity=0;
+                        document.getElementById("rightButton").style.pointerEvents="none";
+                        pageSetterVisible=false;
+                    }
+                }
+            })
+
+            document.getElementById("leftButton").addEventListener("click", (e)=>{
+                if(activePage!=0) {loadPage(activePage-1);}
+            })
+            document.getElementById("rightButton").addEventListener("click", (e)=>{
+                if(activePage!=chapterPageCount-1) {loadPage(activePage+1);}
+            })
+
+        }
+
+        //Scrollbar:
+        let selectedSelector = -1;
+        function setupScrollbar(intialSetup) {
+
+            //Make it quicker and more performant to work with the various elements composing the scrollbar:
+            let scrollBar = document.getElementById("scrollBar");
+            let selecCont = document.getElementById("scrollSelectorCont");
+            let scrollSelector = document.getElementById("scrollSelector");
+            let scrollPage = document.getElementById("scrollPage");
+            let secSplitCont = document.getElementById("secSplitCont");
+            let sectionTitle = document.getElementById("sectionTitle");
+
+            let subScrollBar = document.getElementById("subScrollBar");
+            let subTitle = document.getElementById("subSectionTitle");
+            let subSubTitle = document.getElementById("subSubSectionTitle");
+
+            let scrollCover = document.getElementById("scrollCover");
+
+            let scrollBarRect = scrollBar.getBoundingClientRect();
+            if(intialSetup) {
+                window.onresize = () => {
+                    scrollBarRect = scrollBar.getBoundingClientRect();
+                }
+            }   
+
+            //Moving selector functionality:
+            let movingSelector = false;
+            let selectedMouse = -1;
+
+            if(intialSetup) {
+            scrollSelector.addEventListener("mouseenter", (e)=>{
+                styleSelector(true);
+            })
+
+            scrollSelector.addEventListener("mouseleave", (e)=>{
+                if(!movingSelector) {styleSelector(false);}
+            })
+
+            scrollSelector.addEventListener("mousedown", (e)=> {
+                movingSelector=true;
+                styleSelector(true);
+            })
+
+            selecCont.addEventListener("mousemove", (e) => {
+                if(movingSelector){
+
+                    //Remmember to take into account the width of the scrollSelector here! 
+                    let newPos = ((e.clientX/1.25-scrollBarRect.x-scrollSelector.getBoundingClientRect().width/2)/scrollBarRect.width)*100; //BOTH THIS NEEDS TO BE ADJUSTED AND ...
+
+                    if(newPos > -1.5 && newPos < 98) {
+
+                        scrollSelector.style.marginLeft = (newPos).toString() + "%"; //THIS DOWN HERE
+                        scrollPage.style.marginLeft = (newPos).toString() + "%";
+
+                        //Get and show the page under the selector:
+                        let read = newPos*chapterIL/100.0;
+                        //let read = (1/1.25)*(e.clientX - scrollBarRect.x)*chapterIL/scrollBarRect.width - 1; 
+
+                        let R = 0; let i = 0;
+                        while(R < read) {
+                            R += pagesIL[i];
+                            i++;
+                        }
+
+                        scrollPage.innerText = i.toString();
+
+                        let curSection = getSectionUnderSelector();
+
+                        if(curSection != selectedSelector) {
+                            visualizeSubsecs(selectedSelector, false);
+                            selectedSelector = curSection;
+                            visualizeSubsecs(selectedSelector, true);
+                        }
+
+                    }
+
+                }
+            })
+
+            selecCont.addEventListener("mouseup", (e) => {
+                if(movingSelector==true) {
+                    movingSelector=false;
+                    styleSelector(false);
+
+                    let curSection = getSectionUnderSelector();
+
+                    loadPage(parseInt(scrollPage.innerText)-1);
+                }
+            })
+
+            selecCont.addEventListener("mouseleave", (e) => {
+                movingSelector=false;
+                styleSelector(false);
+            })
+            }
+
+            let styleSelector = function(yes) {
+                if(yes) {
+                    scrollSelector.style.opacity = 1;
+                    scrollPage.style.opacity=1;
+                    scrollPage.style.marginTop = "0vh";
+                }
+                else{
+                    scrollSelector.style.opacity = 0.5;
+                    scrollPage.style.marginTop = "0.4vh";
+                    scrollPage.style.opacity=0;
+                }
+            }
+
+
+            //Create the section elements and draw them:
+            const hMin = 200; const hMax = 360;
+            const lMax = 65;
+            let h = hMax;
+
+            if(intialSetup) {
+                let dW = document.documentElement.clientWidth;
+                let accumPercent=0;
+                
+                for(let i = 0; i < secs.length; i++) {
+
+                //Create the contents:
+                let sectionSpan = document.createElement("div");
+                sectionSpan.style.display = "inline-block";
+
+                let secWidth = 100*secs[i].IL / chapterIL;
+                sectionSpan.style.width = secWidth.toString() + "%";
+                sectionSpan.style.height = "100%";
+
+                scrollBar.appendChild(sectionSpan);
+
+                for(let j = 0; j < secs[i].secs.length; j++) {
+
+                    let subsectionSpan = document.createElement("div");
+                    subsectionSpan.style.display = "inline-block";
+                    subsectionSpan.style.width = (100*secs[i].secs[j].IL / secs[i].IL).toString() + "%";
+                    subsectionSpan.style.height = "100%";
+
+                    subsectionSpan.style.backgroundColor = "hsl(" + h.toString() + ", 100%," + lMax.toString() + "%)";
+
+                    sectionSpan.appendChild(subsectionSpan); 
+                } 
+
+                h -= (hMax-hMin)/secs.length;
+
+                if(secs[i].secs.length != 1) {
+
+                    sectionSpan.addEventListener("mouseenter", (e)=> {
+                        visualizeSubsecs(i, true);
+                    })
+                    sectionSpan.addEventListener("mouseleave", (e)=> {
+                        if(selectedSelector != i) {visualizeSubsecs(i, false);}
+                    })
+                    sectionSpan.addEventListener("click", (e)=> {
+                        showSectionDetailed(i);
+                    })
+                }
+
+                //Create the splits/borders between:
+                if(i!=secs.length-1) {
+
+                    let secSplit = document.createElement("div");
+
+                    // secSplit.style.paddingLeft = "0.75%";
+                    // secSplit.style.paddingRight = "0.75%";
+                    secSplit.style.width = "0.4%";
+                    secSplit.style.height = "100%";
+
+                    secSplit.style.backgroundColor = "black";
+                    secSplit.style.backgroundClip = "content-box";
+
+                    secSplit.style.pointerEvents="all";
+                    
+                    secSplit.style.position="relative";
+                    accumPercent += secWidth;
+                    secSplit.style.left = (accumPercent - 0.4*i).toString() + "%";
+
+                    secSplit.style.transition="all 100ms";
+
+                    let localAccumPos = accumPercent; //Since accumpos is global to this function call, it uses it's value (the latest one added) instead of the value we really want. Therefore we store it in a local variable the call doesn't know.
+                    secSplit.addEventListener("mouseenter", (e)=> {
+
+                        sectionTitle.style.opacity=1;
+                        scrollSelector.style.opacity=0;
+                        sectionTitle.innerHTML = secs[i+1].t.replace("<br>", "");
+
+                        sectionTitle.style.left = (localAccumPos-0.5).toString() + "%";
+                        sectionTitle.style.bottom="calc(100% + 13px)";
+
+                        secSplit.style.bottom="5px";
+                        secSplit.style.height="300%";
+                    })
+                    secSplit.addEventListener("mouseleave", (e)=> {
+
+                        sectionTitle.style.opacity=0;
+                        scrollSelector.style.opacity=1;
+
+                        secSplit.style.bottom="0px";
+                        secSplit.style.height="100%";
+
+                    })
+                    secSplit.addEventListener("click", (e)=> {
+
+                        visualizeSubsecs(selectedSelector, false);
+
+                        let newPage = secs[i+1].p;
+                        let newSec = 0;
+                        while(newSec < secs.length && secs[newSec].p <= newPage)  {newSec++;}
+                        newSec--;
+
+                        sectionTitle.style.opacity=0;
+                        scrollSelector.style.opacity=1;
+                        
+                        selectedSelector=newSec;
+                        visualizeSubsecs(selectedSelector, true);
+                        loadPage(secs[i+1].p-1);
+
+                    })
+
+                    secSplitCont.appendChild(secSplit);
+                }
+            }
+            }
+
+            //Create the detailed view of a section:
+            let showSectionDetailed = function(sec) {
+
+                subScrollBar.innerHTML="";
+                subScrollBar.style.bottom="7%";
+                scrollCover.style.height="20%";
+                subScrollBar.style.opacity=1;
+
+                h=hMax - sec*(hMax-hMin)/secs.length;
+
+                for(let i =0; i < secs[sec].secs.length; i++) {
+
+                    //The containers left-handle / split:
+                    let edgeHandle = document.createElement("div");
+                    edgeHandle.style.display = "inline-block";
+
+                    let hoverEffect = secs[sec].secs[i].t != " " && (i==secs[sec].secs.length-1 || secs[sec].secs[i+1].t != " ");
+
+                    if(i==0 || (secs[sec].secs[i].t!="" && secs[sec].secs[i].t!=" ")) {
+
+                        edgeHandle.style.width = "1%";
+                        edgeHandle.style.height = "100%";
+                        if(i!=0) {edgeHandle.style.marginLeft = "2%";}
+
+                        edgeHandle.style.backgroundColor = "black";
+
+                        edgeHandle.style.marginTop = "-1px";
+                        edgeHandle.style.transition = "marginTop, 100ms";
+
+                        edgeHandle.addEventListener("mouseenter", (e)=>{
+                            subTitle.innerHTML = secs[sec].secs[i].t;
+                            if(subTitle.innerHTML == "") {subTitle.innerHTML = "Intro";}
+
+                            subTitle.style.left = 100*(edgeHandle.getBoundingClientRect().x/document.documentElement.clientWidth).toString() + "%";
+
+                            subTitle.style.opacity = 1;
+
+                            if(hoverEffect){
+                                edgeHandle.style.marginTop = "-1.2%";
+                                edgeHandle.style.height = "150%";
+                                subsecSpan.style.marginTop = "-0.9%";
+                            }
+                            else{
+                                edgeHandle.style.marginTop = "-1%";
+                                edgeHandle.style.height = "160%";
+                            }
+
+                            MathJax.typeset([subTitle]);
+
+                        })
+                        edgeHandle.addEventListener("mouseleave", (e)=> {
+
+                            edgeHandle.style.marginTop = "-0.1%";
+                            edgeHandle.style.height = "100%";
+                            
+                            if(hoverEffect){
+                                subsecSpan.style.marginTop = "0%";
+                            }
+                            
+                            subTitle.style.opacity = 0;
+                        })
+                        edgeHandle.addEventListener("click", (e)=>{
+                            loadPage(secs[sec].secs[i].p-1);
+                            subTitle.style.opacity = 0;
+                        })
+
+                        subScrollBar.appendChild(edgeHandle);
+                    }
+
+                    //Create the container for each subsection:
+                    let subsecSpan = document.createElement("div");
+                    subsecSpan.style.display = "inline-block";
+
+                    let subsecWidth = ((100-(secs[sec].secs.length-1)*3)*secs[sec].secs[i].IL/secs[sec].IL);
+                    if(subsecWidth < 5) {subsecWidth = 5; }
+
+                    subsecSpan.style.width = subsecWidth.toString() + "%";
+                    subsecSpan.style.height="100%";
+
+                    subsecSpan.style.transition = "marginTop, 100ms";
+
+                    subScrollBar.appendChild(subsecSpan);
+
+                    let L = lMax;
+
+                    for(let j = 0; j < secs[sec].secs[i].secs.length; j++) {
+
+                        let subSubsecSpan = document.createElement("div");
+                        subSubsecSpan.style.display = "inline-block";
+
+                        subSubsecSpan.style.width = (100*secs[sec].secs[i].secs[j].IL/secs[sec].secs[i].IL).toString() + "%";
+                        subSubsecSpan.style.height = "85%";
+
+                        subSubsecSpan.style.backgroundColor = "hsl(" + h.toString() + ", 100%," + L.toString() + "%)";
+                        subSubsecSpan.style.outline = "1px solid black";
+                        L -= 10;
+
+                        if(secs[sec].secs[i].secs.length != 1) {
+                            subSubsecSpan.addEventListener("mouseenter", (e)=>{
+                                subSubTitle.innerHTML = secs[sec].secs[i].secs[j].t
+                                if(subSubTitle.innerHTML == "") {subSubTitle.innerHTML="Intro";}
+                                subSubTitle.style.left = 100*(subSubsecSpan.getBoundingClientRect().x/document.documentElement.clientWidth).toString() + "%";
+
+                                subSubTitle.style.opacity=1;
+                                subSubsecSpan.style.borderTop = "3px";
+                            })
+                            subSubsecSpan.addEventListener("mouseleave", (e)=> {
+                                subSubTitle.style.opacity=0;
+                            })
+                            subSubsecSpan.addEventListener("click", (e)=>{
+                                loadPage(secs[sec].secs[i].secs[j].p-1);
+                            })
+                        }
+                        else{
+                            subSubsecSpan.addEventListener("mouseenter", (e)=>{
+                                if(hoverEffect){
+                                    subTitle.innerHTML = secs[sec].secs[i].t;
+                                    if(subTitle.innerHTML == "") {subTitle.innerHTML = "Intro";}
+                                    subTitle.style.left = 100*(edgeHandle.getBoundingClientRect().x/document.documentElement.clientWidth).toString() + "%";
+
+                                    subTitle.style.opacity = 1;
+
+                                    edgeHandle.style.marginTop = "-1.2%";
+                                    edgeHandle.style.height = "150%";
+                                    subsecSpan.style.marginTop = "-0.9%";
+
+                                    MathJax.typeset([subTitle]);
+                                }
+                                else{
+                                    subSubsecSpan.style.opacity=0.9;
+                                }
+                            })
+                            subSubsecSpan.addEventListener("mouseleave", (e)=> {
+                                if(hoverEffect){
+                                    edgeHandle.style.marginTop = "-0.1%";
+                                    subsecSpan.style.marginTop = "0%";
+                                    edgeHandle.style.height = "100%";
+                                    subTitle.style.opacity = 0;
+                                }
+                                else{
+                                    subSubsecSpan.style.opacity=1;
+                                }
+                            })
+                            subSubsecSpan.addEventListener("click", (e)=>{
+                                loadPage(secs[sec].secs[i].p-1);
+                            })
+                        }
+
+                        subsecSpan.appendChild(subSubsecSpan);
+                    }
+
+                }
+            }
+            if(intialSetup){
+                document.addEventListener("click", (e) => { //Disable the detailed view if user clicks anywhere that isn't between 10% and 15% away from bottom
+
+                let mouseBottom = 1 - e.clientY/document.documentElement.clientHeight;
+                let mouseLeft = 1 - e.clientX/document.documentElement.clientWidth;
+
+                if((mouseBottom > 0.05 && mouseBottom < 0.1) || ( (mouseLeft < 0.15 || mouseLeft > 0.85) && mouseBottom < 0.15)) {
+
+                    subScrollBar.style.bottom="5%";
+                    subScrollBar.style.opacity="0";
+                    setTimeout(() => {
+                        subScrollBar.innerHTML="";
+                    }, 150);
+
+                    scrollCover.style.height = "20%";
+                }
+                })
+            }
+
+            //Visualize selected subsections:
+            let getSectionUnderSelector = function() {
+                let chosenPage = parseInt(scrollPage.innerText);
+                let sec = 0;
+                while(sec < secs.length && secs[sec].p <= chosenPage)  {sec++;}
+                return sec-1;
+            }
+
+            let visualizeSubsecs = function(sec, yes) {
+                if(yes) {
+                    h=hMax - sec*(hMax-hMin)/secs.length;
+                    let L = 63;
+                    for(let i = 0; i < secs[sec].secs.length; i++) {
+                        
+                        if(secs[sec].secs[i].t != "" && secs[sec].secs[i].t != " ") {
+                            L-=7;
+                            scrollBar.children[sec].children[i].style.outline = "1px solid black";
+                        } else{
+                            scrollBar.children[sec].children[i].style.borderTop = "1px solid black";
+                        }
+
+                        scrollBar.children[sec].children[i].style.backgroundColor =  "hsl(" + h.toString() + ", 100%," + L.toString() + "%)";
+
+                    }
+                }
+                else if(sec != -1){
+                    h=hMax - sec*(hMax-hMin)/secs.length;
+                    for(let i = 0; i < secs[sec].secs.length; i++) {
+                        scrollBar.children[sec].children[i].style.backgroundColor =  "hsl(" + h.toString() + ", 100%," + lMax.toString() + "%)";
+                        scrollBar.children[sec].children[i].style.outline = "0px";
+                        scrollBar.children[sec].children[i].style.border="0px";
+                    }
+                }
+            }
+
+            //Get cover to work:
+            if(intialSetup) {
+                let scrollShowing = false;
+                let movingSelector = false;
+
+                scrollCover.addEventListener("mouseover", (e)=> {
+                if(mouseInRegion(e.clientX,e.clientY) && !scrollShowing) {
+
+                    scrollCover.style.opacity=0.65;
+                    scrollSelector.style.opacity = 0.5;
+
+                    setTimeout(() => {
+                        scrollCover.style.opacity=0.98;
+                        scrollCover.style.zIndex=1;
+                        scrollCover.style.height="20";
+                        scrollShowing=true;
+                    }, 35);
+                }});
+
+                scrollCover.addEventListener("mouseleave", (e)=> {
+                if(!mouseInRegion(e.clientX,e.clientY) && scrollShowing) {
+
+                    scrollSelector.style.opacity = 0;
+                    scrollCover.style.opacity=0.5;
+
+                    setTimeout(() => {
+                        scrollCover.style.opacity=0.98;
+                        scrollCover.style.zIndex=4;
+                        scrollCover.style.height="15%";
+                        scrollShowing=false;
+                    }, 35);
+
+                    subScrollBar.style.bottom="5%";
+                        subScrollBar.style.opacity="0";
+                        setTimeout(() => {
+                        subScrollBar.innerHTML="";
+                    }, 150);
+
+                }});
+
+                let mouseInRegion = function(x, y) {
+                    let docW = document.documentElement.clientWidth;
+                    let docH = document.documentElement.clientHeight;
+
+                    let recWidth = scrollCover.clientWidth*1.25;
+                    let recX = (docW-recWidth)/2;
+
+                    let recHeight = scrollCover.clientHeight*1.25;
+
+                    if(!scrollShowing) {return (y >= docH-recHeight) && (x >= recX) && (x <= recX + recWidth);} //Enter
+                    else{return (y >= docH-recHeight) && (x > recX) && (x < recX + recWidth);} //Leave
+
+                }
+            }
+
+            //Update when changing page:
+            if(!intialSetup) {
+                let newSec = 0;
+                while(newSec < secs.length && secs[newSec].p <= activePage+1)  {newSec++;}
+                newSec--;
+
+                if(newSec != selectedSelector){
+                    visualizeSubsecs(selectedSelector, false);
+                    selectedSelector=newSec;
+                    visualizeSubsecs(newSec, true);
+                }
+
+                let R=0;
+                for(let i=0; i < activePage; i++) {
+                    R+=pagesIL[i];
+                }
+                scrollSelector.style.marginLeft=(100*R/chapterIL).toString() + "%";
+                scrollPage.style.marginLeft=scrollSelector.style.marginLeft;
+            }
+
+        }
+
+        //Breadcrump menu:
+        let aH2; let aH3; let aH4; 
+
+        let breadcrumpsInitial = true;
+        function setupBreadcrumps() {
+            let h2Title = document.getElementById("h2Title"); 
+            let h3Title = document.getElementById("h3Title"); 
+            let h4Title = document.getElementById("h4Title"); 
+            let dropdown = document.getElementById("breadcrumpDropdown");
+            let breadcrumpContainer = document.getElementById("breadcrumpContainer");
+
+            breadcrumpContainer.addEventListener("mouseenter", (e)=> {
+                if(breadcrumpContainer.getBoundingClientRect().width < 0.5*document.documentElement.clientWidth - 230) {
+                    breadcrumpContainer.style.opacity=1;
+                }
+            })
+            breadcrumpContainer.addEventListener("mouseleave", (e)=> {
+                breadcrumpContainer.style.opacity=0;
+                breadcrumpContainer.style.zIndex=0;
+            })
+
+            let updateSections = function() {
+                aH2=0; aH3=0; aH4=0;
+
+                while(aH2 < secs.length && secs[aH2].p <= activePage+1)  {aH2++;}
+                aH2--;
+
+                while(aH3 < secs[aH2].secs.length && secs[aH2].secs[aH3].p <= activePage+1) {
+                    aH3++;
+                }
+                aH3--;
+                
+                while(aH4 < secs[aH2].secs[aH3].secs.length && secs[aH2].secs[aH3].secs[aH4].p <= activePage+1) {
+                    aH4++;
+                }
+                aH4--;
+            }
+            let updateTitles = function() {
+
+                h2Title.style.display="block";
+                h3Title.style.display="block";
+                h4Title.style.display="block";
+
+                h2Title.innerHTML = "> " + secs[aH2].t.replace("<br>","");
+
+                if(secs[aH2].secs[aH3].t != " " && secs[aH2].secs[aH3].t != ""){h3Title.innerHTML = "> " + secs[aH2].secs[aH3].t;}
+                else{h3Title.innerHTML = "";}
+                if(secs[aH2].secs[aH3].secs[aH4].t != " " && secs[aH2].secs[aH3].secs[aH4].t != ""){h4Title.innerHTML = "> " + secs[aH2].secs[aH3].secs[aH4].t;}
+                else{h4Title.innerHTML="";}
+                MathJax.typeset([h3Title]);
+            }
+
+            //Setup structure and logic
+            if(breadcrumpsInitial) 
+            { 
+                breadcrumpsInitial=false;
+
+                updateSections();
+                updateTitles();
+
+                let cH2 = aH2; let cH3 = aH3; 
+                let chosenDropdown;
+
+                h2Title.addEventListener("click", (e)=>{
+                    breadcrumpContainer.style.zIndex=2;
+                    chosenDropdown=2;
+                    h2Title.style.display="none";
+                    h3Title.style.display="none";
+                    h4Title.style.display="none";
+                    cH2=aH2; cH3=aH3; 
+                    leftCounter = 0;
+                    document.getElementById("master").style.webkitFilter="blur(1.5px)";
+                    constructDropdown(secs, aH2);
+                })
+                h3Title.addEventListener("click", (e)=>{
+                    breadcrumpContainer.style.zIndex=2;
+                    chosenDropdown=3;
+                    h3Title.style.display="none";
+                    h4Title.style.display="none";
+                    cH2=aH2; cH3=aH3; 
+                    leftCounter = 0;
+                    document.getElementById("master").style.webkitFilter="blur(1.5px)";
+                    constructDropdown(secs[aH2].secs, aH3);
+                })
+                h4Title.addEventListener("click", (e)=>{
+                    breadcrumpContainer.style.zIndex=2;
+                    h4Title.style.display="none";
+                    chosenDropdown=4;
+                    cH2=aH2; cH3=aH3; 
+                    leftCounter = 0;
+                    document.getElementById("master").style.webkitFilter="blur(1.5px)";
+                    constructDropdown(secs[aH2].secs[aH3].secs, aH4);
+                })
+
+                //Reset if user leaves:
+                breadcrumpContainer.addEventListener("mouseleave", (e)=>{
+                    dropdown.style.opacity="0"
+                    dropdown.style.borderTop="none";
+                    document.getElementById("master").style.webkitFilter="blur(0px)";
+                    setTimeout(() => {
+                        dropdown.style.opacity="1"
+                        dropdown.innerHTML="";
+                        updateTitles();
+                    }, 100);
+                })
+                let leftCounter = 0; 
+ 
+        
+                let clickedSection = function(sec) {
+                    if(chosenDropdown==2) {
+
+                        let hasSubSecs = false;
+                        for(let i = 0; i < secs[sec].secs.length; i++) {
+                            if(secs[sec].secs[i].t != "" && secs[sec].secs[i].t != " "){hasSubSecs=true; break;} 
+                        }
+
+                        if(hasSubSecs==false) {
+                            loadPage(secs[sec].p-1);
+                            dropdown.style.opacity="0"
+                            dropdown.style.borderTop="none";
+                            setTimeout(() => {
+                                document.getElementById("master").style.webkitFilter="blur(0px)";
+                                dropdown.style.opacity="1"
+                                dropdown.innerHTML="";
+                                updateTitles();
+                            }, 100);
+                        }
+                        else{
+                            cH2=sec;
+                            chosenDropdown=3;
+                            
+                            h2Title.style.display="block";
+                            h2Title.innerHTML = "> " + secs[sec].t.replace("<br>","");; 
+
+                            if(cH2 == aH2) {constructDropdown(secs[sec].secs, aH3);} //Show border
+                            else {constructDropdown(secs[sec].secs);} //Dont show border
+                        }
+
+                    }
+                    else if(chosenDropdown==3) {
+
+                        if(secs[cH2].secs[sec].secs.length == 1) {
+                            loadPage(secs[cH2].secs[sec].p-1);
+                            dropdown.style.opacity="0"
+                            dropdown.style.borderTop="none";
+                            setTimeout(() => {
+                                document.getElementById("master").style.webkitFilter="blur(0px)";
+                                dropdown.style.opacity="1"
+                                dropdown.innerHTML="";
+                                updateTitles();
+                            }, 100);
+                        }
+                        else{
+
+                            cH3=sec;
+                            chosenDropdown=4;
+                            
+                            h3Title.style.display="block";
+                            h3Title.innerHTML="> " + secs[cH2].secs[sec].t;
+                            MathJax.typeset([h3Title]);
+
+                            if(cH3 == aH3) {constructDropdown(secs[cH2].secs[sec].secs, aH4);}
+                            else{constructDropdown(secs[cH2].secs[sec].secs);}
+                        }
+
+                    }
+                    else if(chosenDropdown==4){
+                        loadPage(secs[cH2].secs[cH3].secs[sec].p-1);
+                        dropdown.style.opacity="0"
+                        dropdown.style.borderTop="none";
+                        setTimeout(() => {
+                            document.getElementById("master").style.webkitFilter="blur(0px)";
+                            dropdown.style.opacity="1"
+                            dropdown.innerHTML="";
+                            updateTitles();
+                        }, 100);
+                    }
+                }
+
+                let constructDropdown = function(node, border) {
+                    
+                    dropdown.innerHTML="";
+                    dropdown.style.borderTop="solid";
+
+                    for(let i = 0; i < node.length; i++) {
+
+                        if(node[i].t != "" && node[i].t != " "){
+                            let secTitle = document.createElement("div");
+                            dropdown.appendChild(secTitle);
+                            secTitle.setAttribute("class", "dropdownItem");
+                            
+                            let titleText = node[i].t;
+                            if(titleText == "") {secTitle.innerHTML = "Intro";}
+                            else{secTitle.innerHTML = titleText;}
+                            MathJax.typeset([secTitle]);
+
+                            if(border && i==border){
+                                secTitle.style.borderTop="solid";
+                                secTitle.style.borderBottom="solid";
+                                secTitle.style.borderWidth="1px";
+                                secTitle.style.marginTop="6px";
+                                secTitle.style.marginBottom="6px";
+                            }
+
+                            secTitle.addEventListener("click", (e)=> {
+                                clickedSection(i);
+                            })
+                        }
+
+                    }
+                }
+
+            }
+
+            //Update and animate when switching page
+            else 
+            {
+                let pH2 = aH2; let pH3 = aH3; let pH4 = aH4;
+                updateSections();
+
+                // Changes in h2:
+                if(pH2 != aH2){
+                    h2Title.style.opacity=0;
+                    setTimeout(() => {
+                        h2Title.innerHTML = "> " + secs[aH2].t;
+                        h2Title.style.opacity=1;
+                    }, 50);
+                }
+
+                // //Changes in h3:
+                if(pH2 != aH2 || pH3 != aH3) {
+                    let pTitle = secs[pH2].secs[pH3].t;
+                    let aTitle = secs[aH2].secs[aH3].t;
+                    
+                    if((pTitle!="" && pTitle!=" ") && (aTitle!="" && aTitle!=" ")) { //A h3 title changes
+                        h3Title.style.opacity=0;
+                        setTimeout(() => {
+                            h3Title.innerHTML="> " + aTitle;
+                            h3Title.style.opacity=1;
+                        }, 50);
+                    }
+                    if((pTitle=="" || pTitle==" ") && (aTitle!="" && aTitle!=" ")) { //A h3 title appears
+                        h3Title.innerHTML = "> " + aTitle;
+                        h3Title.style.opacity=1;
+                        h3Title.style.marginTop="0px";
+                    }
+                    if((pTitle!="" && pTitle!=" ") && (aTitle==""||aTitle==" ")) { //A h3 title disappears
+                        h3Title.style.opacity=0;
+                        h3Title.style.marginTop="-10px";
+                        setTimeout(() => {
+                            h3Title.innerHTML="";
+                        }, 50);
+                    }
+                }
+
+                if(pH2 != aH2 || pH3 != aH3 || pH4 != aH4){
+                    let pTitle = secs[pH2].secs[pH3].secs[pH4].t;
+                    let aTitle = secs[aH2].secs[aH3].secs[aH4].t;
+                    if((pTitle!="" && pTitle!=" ") && (aTitle!="" && aTitle!=" ")) { //A h3 title changes
+                        h4Title.style.opacity=0;
+                        setTimeout(() => {
+                            h4Title.innerHTML="> " + aTitle;
+                            h4Title.style.opacity=1;
+                        }, 50);
+                    }
+                    if((pTitle=="" || pTitle==" ") && (aTitle!="" && aTitle!=" ")) { //A h3 title appears
+                        h4Title.innerHTML = "> " + aTitle;
+                        h4Title.style.opacity=1;
+                        h4Title.style.marginTop="0px";
+                    }
+                    if((pTitle!="" && pTitle!=" ") && (aTitle==""||aTitle==" ")) { //A h3 title disappears
+                        h4Title.style.opacity=0;
+                        h4Title.style.marginTop="-10px";
+                        setTimeout(() => {
+                            h4Title.innerHTML="";
+                        }, 50);
+                    }
+                }
+
+            }
+        }
+
+
+        //Table of contents:
+        let resumeDataLoaded = false;
+
+        function setupTableOfContents() {
+            let Toc = document.getElementById("Toc");
+
+            for(let i = 0; i < secs.length; i++) {
+                
+                let secDiv = document.createElement("div");
+                secDiv.setAttribute("class", "TocDiv");
+                secDiv.style.marginTop="max(2vh, 12px)"
+                
+                let secNode = document.createElement("div");
+                secNode.setAttribute("class", "TocNode");
+
+                let secNodeText = document.createElement("span");
+                secNodeText.setAttribute("class", "TocNodeText");
+
+                let expandImg = document.createElement("img");
+                expandImg.setAttribute("class", "TocExpand");
+                expandImg.src="Assets/Forside/TocExpand.svg";
+
+                Toc.appendChild(secDiv);
+                secDiv.appendChild(secNode);
+                secNode.appendChild(secNodeText);
+                secNodeText.innerHTML = "-" + secs[i].t.replace("<br>","");
+                secNode.appendChild(expandImg);
+
+                secNodeText.addEventListener("click", (e)=>{
+                    loadPage(secs[i].p-1);
+                })
+                expandImg.addEventListener("click", async (e)=>{
+
+                    if(secNode.children.length == 2){
+
+                        if(!resumeDataLoaded){await loadResumeData(); resumeDataLoaded = true;}
+
+                        let resume = document.createElement("div");
+
+                        secNode.appendChild(resume);
+                        let lastTreeIndex = getTreePath(secs[i].p-1);
+                        let resumeStr = rD[chapNum][0][secNum][0][lastTreeIndex[0]][2];
+                        resume.innerHTML=resumeStr;
+                        resume.style.color="black";
+                        MathJax.typeset([resume]);
+                        
+                    }
+                    else{
+                        secNode.removeChild(secNode.children[2]);
+                    }
+
+                })
+
+                if(secs[i].secs.length != 1) {
+
+                    secNode.addEventListener("mouseenter", (e)=> {secDiv.style.backgroundColor="orange";})
+                    secNode.addEventListener("mouseleave", (e)=>{secDiv.style.removeProperty("background-color");})     
+                    
+                    for(let j = 0; j < secs[i].secs.length; j++){
+                    if(secs[i].secs[j].t != "" && secs[i].secs[j].t != " ") {
+
+                        let subSecDiv = document.createElement("div");
+                        subSecDiv.setAttribute("class", "TocDiv");
+
+                        let subSecNode = document.createElement("div");
+                        subSecNode.setAttribute("class", "TocNode");
+                        subSecDiv.style.marginLeft = "20px";
+                        subSecDiv.style.marginTop="max(1vh, 6px)";
+
+                        let subSecNodeText = document.createElement("span");
+                        subSecNodeText.setAttribute("class", "TocNodeText");
+
+                        let subExpandImg = document.createElement("img");
+                        subExpandImg.setAttribute("class", "TocExpand");
+                        subExpandImg.src="Assets/Forside/TocExpand.svg";
+
+                        secDiv.appendChild(subSecDiv);
+                        subSecDiv.appendChild(subSecNode);
+                        subSecNode.appendChild(subSecNodeText);
+                        subSecNode.appendChild(subExpandImg);
+
+                        subSecNodeText.innerHTML = "-" + secs[i].secs[j].t;
+
+                        subSecNodeText.addEventListener("click",(e)=>{
+                            loadPage(secs[i].secs[j].p-1);
+                        })
+                        subExpandImg.addEventListener("click",async (e)=>{
+                            if(subSecNode.children.length == 2){
+
+                                if(!resumeDataLoaded){await loadResumeData(); resumeDataLoaded = true;}
+
+                                let resume = document.createElement("div");
+
+                                subSecNode.appendChild(resume);
+                                let lastTreeIndex = getTreePath(secs[i].secs[j].p-1);
+                                let resumeStr = rD[chapNum][0][secNum][0][lastTreeIndex[0]][0][lastTreeIndex[1]][2];
+                                resume.innerHTML=resumeStr;
+                                resume.style.color="black";
+                                MathJax.typeset([resume]);
+                            }
+                            else{
+                                subSecNode.removeChild(subSecNode.children[2]);
+                            }
+                        })
+
+                        if(secs[i].secs[j].secs.length != 1) {
+
+                            subSecNode.addEventListener("mouseenter", (e)=> {subSecDiv.style.backgroundColor="orange";})
+                            subSecNode.addEventListener("mouseleave", (e)=> {subSecDiv.style.removeProperty("background-color");})
+                            
+                            for(let z = 0; z < secs[i].secs[j].secs.length; z++) {
+
+                            if(secs[i].secs[j].secs[z].t != "" && secs[i].secs[j].secs[z].t != " ") {
+
+                                let subSubSecNode = document.createElement("div");
+                                subSubSecNode.setAttribute("class", "TocNode");
+                                subSubSecNode.style.marginLeft = "40px";
+
+                                let subSubSecNodeText = document.createElement("span");
+                                subSubSecNodeText.setAttribute("class", "TocNodeText");
+
+                                let subSubExpandImg = document.createElement("img");
+                                subSubExpandImg.setAttribute("class", "TocExpand");
+                                subSubExpandImg.src="Assets/Forside/TocExpand.svg";
+
+                                subSecDiv.appendChild(subSubSecNode);
+                                subSubSecNode.appendChild(subSubSecNodeText);
+                                subSubSecNode.appendChild(subSubExpandImg);
+                                subSubSecNodeText.innerHTML = "-" + secs[i].secs[j].secs[z].t;
+
+                                subSubSecNodeText.addEventListener("click", (e)=>{
+                                    loadPage(secs[i].secs[j].secs[z].p-1);
+                                })
+                                subSubExpandImg.addEventListener("click", async (e)=>{
+                                    if(subSubSecNode.children.length == 2){
+
+                                        if(!resumeDataLoaded){await loadResumeData(); resumeDataLoaded = true;}
+
+                                        let resume = document.createElement("div");
+
+                                        subSubSecNode.appendChild(resume);
+                                        let lastTreeIndex = getTreePath(secs[i].secs[j].secs[z].p-1);
+                                        let resumeStr = rD[chapNum][0][secNum][0][lastTreeIndex[0]][0][lastTreeIndex[1]][0][lastTreeIndex[2]][2];
+                                        resume.innerHTML=resumeStr;
+                                        resume.style.color="black";
+                                        MathJax.typeset([resume]);
+                                    }
+                                    else{
+                                        subSubSecNode.removeChild(subSubSecNode.children[2]);
+                                    }
+                                })
+                            }
+                        }}
+
+                    }
+                }}
+
+            }
+            
+            let bottomSpaceAtEnd = document.createElement("div");
+            Toc.appendChild(bottomSpaceAtEnd);
+            bottomSpaceAtEnd.innerHTML="<br><br>";
+
+            //highlightActivePageToc();
+
+            document.getElementById("TocBackground").addEventListener("mouseenter", (e)=> {
+                
+                setTimeout(() => {
+                    document.getElementById("master").style.webkitFilter = "blur(1px)";
+
+                    let sec2=0; 
+
+                    while(sec2 < secs.length && secs[sec2].p <= activePage+1)  {sec2++;}
+                    sec2--;
+
+                    Toc.scrollTop = Toc.children[sec2].offsetTop - Toc.offsetTop-10;
+
+                }, 50); 
+
+            })
+
+            document.getElementById("TocBackground").addEventListener("mouseleave", (e)=> {
+                setTimeout(() => {
+                    document.getElementById("master").style.webkitFilter = "blur(0px)";
+                }, 50);
+            })
+
+        }
+
+        let selectedToc;
+        let highlightActivePageToc = function() {
+            
+            let convertedPath = getTreePath(activePage);
+            let sec2 = convertedPath[0];
+            let sec3 = convertedPath[1];
+            let sec4 = convertedPath[2];
+            
+            if(selectedToc != null) {selectedToc.style.color="black";}
+            
+            if(sec3==-1 && sec4==-1) {selectedToc=Toc.children[sec2].firstElementChild}
+            else if(sec4==-1) {selectedToc=Toc.children[sec2].children[sec3+1].firstElementChild}
+            else if(secs[sec2].secs[i-1].p != secs[sec2].secs[i-1].secs[j-1].p){
+                selectedToc=Toc.children[sec2].children[sec3+1].children[sec4+1]; 
+            } else{
+                selectedToc=Toc.children[sec2].children[sec3+1].firstElementChild
+            }
+            selectedToc.style.color="red";
+
+        }
+
+
+        //Keyboard:
+        document.addEventListener('keydown', function(event) {
+            if(document.getElementById("setPage") !== document.activeElement) {
+                if(event.keyCode == 39) {
+                    if(activePage != chapterPageCount-1){loadPage(activePage+1);}
+                }
+                else if(event.keyCode == 37) {
+                    if(activePage != 0){loadPage(activePage-1);}
+                }
+            }
+        });
+
+
+
+
+        //CUSTOM ELEMENTS:
+        class QuestionStart extends HTMLElement {
+            constructor() {
+                super();
+
+                //Get attributes
+                const content = this.innerHTML;
+                this.innerHTML="";
+
+                var customWidth = this.getAttribute("customWidth");
+                if(customWidth == null) {customWidth = "500";}
+
+                const optionalTitle = this.getAttribute("title");
+                const group1 = this.getAttribute('1');
+                const group2 = this.getAttribute('2');
+                const group3 = this.getAttribute('3');
+
+                if(true) {
+
+                    //Create the question title
+                    var BoxTitle = document.createElement("p");
+                    var BoxTitleString = "Spørgsmål";
+
+                    if(group1 != null) {BoxTitleString += (" " + group1);}
+                    if(group2 != null) {BoxTitleString += ("." + group2);}
+                    if(group3 != null) {BoxTitleString += ("." + group3);}
+                    BoxTitleString += ": "
+                    if(optionalTitle != null) {BoxTitleString += (" " + optionalTitle);}
+
+                    BoxTitle.innerHTML = BoxTitleString;
+
+                    BoxTitle.style =
+                    "position: relative; left: 8px;" +
+                    "font-size: 18.5px; color:black"
+
+
+                    //Create the tab
+                    var tab = document.createElement("div");
+
+                    tab.style = "width: " + customWidth + "px; " +
+                    "background-color: rgb(78, 230, 222); " +
+                    "margin-top: 45px;" +
+                    "margin-left: " + (0.5*(500 - customWidth)).toString() + "px;" + 
+                    "padding-top:10px; padding-bottom:5px;";
+                    tab.style.height = "30px";
+
+                    tab.appendChild(BoxTitle);
+
+
+                    //Create the content-holder and background
+                    var contentHolder = document.createElement("div");
+                    var contentBackground = document.createElement("div");
+
+                    contentHolder.setAttribute("id", "holder");
+                    contentHolder.innerHTML = content
+                    contentHolder.style =
+                    "width: " + (parseInt(customWidth) - 20).toString() + "px; " +
+                    "position: relative; top: 10px; " +
+                    "margin-left: 10px;";
+
+                    contentBackground.setAttribute("id", "background");
+                    contentBackground.style =
+                    "width: " + customWidth + "px; " +
+                    "position: relative; top: 0px; " +
+                    "left: " + (0.5*(500 - customWidth)).toString() + "px; " +
+                    "background-color: rgb(113, 187, 183); ";
+
+                    contentBackground.appendChild(contentHolder);
+
+                    // Attach the created elements to the shadow dom
+                    this.appendChild(tab);
+                    this.appendChild(contentBackground);
+                }
+            }
+        }
+        customElements.define("q-stion",QuestionStart);
+
+
+        class AnswerBox extends HTMLElement {
+
+            constructor() {
+                super();
+
+                //Define attributes
+                const content = this.innerHTML;
+
+                var width = this.getAttribute("customWidth");
+                width = (width == null) ? "500" : width;
+
+                const boxType = this.getAttribute("t");
+                const hintNumber = this.getAttribute("n");
+                const optionalQuestionNumber = this.getAttribute("questionNumber");
+
+                const tabColour = this.getAttribute("tabColour");
+                const bodyColour = this.getAttribute("bodyColour");
+                const hasTopMargin = this.getAttribute("margin");
+
+                if(content != null) {
+
+                    //Create title
+                    var BoxTitle = document.createElement("p");
+                    var BoxTitleString = "";
+
+                    if(boxType == null){
+                        BoxTitleString = "<b>Svar</b> "
+                    }
+                    else if(boxType == "h") {
+                        BoxTitleString = "Hint ";
+                        if(hintNumber != null){
+                            BoxTitleString = BoxTitleString + "#" + hintNumber;
+                        }
+                    }
+                    else if (boxType == "t") {
+                        BoxTitleString = "Trin #" + hintNumber;
+                    }
+                    else if(boxType == "q") {
+                        BoxTitleString = "Spørgsmål " + optionalQuestionNumber;
+                    }
+                    else {
+                        BoxTitleString="<b>Svar </b>" + boxType.substring(6);
+                    }
+
+                    BoxTitle.innerHTML = BoxTitleString;
+                    BoxTitle.style = "position: relative; top: -50px; left: 30px; font-size: 18.5px; color:black"
+
+
+                    //Create tab:
+                    var tab = document.createElement("div");
+
+                        //Set the colour
+                    var TabC;
+                    var BodyC;
+
+                    if(boxType == "h") {
+                        TabC  = "rgb(192,209,132)";
+                        BodyC = "rgb(211, 219, 179)";
+                    }
+                    else if (boxType == "t") {
+                        TabC  = "rgb(129, 168, 70)";
+                        BodyC = "rgb(211, 219, 179)";
+                    }
+                    else if(boxType == "q") {
+                        TabC  = "rgb(78, 230, 222)";
+                        BodyC = "rgb(113, 187, 183)";
+                    }
+                    else if(tabColour != null || bodyColour != null) {
+                        if(tabColour != null) {TabC = tabColour;}
+                        else {TabC="rgb(175,128,161)";}
+
+                        if(bodyColour != null) {BodyC = bodyColour;}
+                        else {BodyC = "rgb(211, 219, 179)"}
+                    }
+                    else{
+                        TabC = "rgb(175,128,161)"; BodyC="rgb(211, 219, 179)";
+                    }
+
+                        //Create the dropdown button:
+                    var DropdownButton = document.createElement("img");
+                    DropdownButton.src = "Assets/Forside/TocCollapse.svg";
+
+                    DropdownButton.style = "width: 20px; height:15px;" +
+                                            "position: relative;" +
+                                            "left: 5px; top: 2px;";
+
+                        //Style tab and append dropdown + title
+                    tab.style = "width: " + width + "px;" +
+                                "margin-left: " + (0.5*(500 - width)).toString() + "px;" +
+                                "margin-top: 0px;" +
+                                "padding-top:10px;" + 
+                                "background-color:" + TabC;
+                    tab.style.height = "30px";
+
+                    tab.appendChild(DropdownButton);
+                    tab.appendChild(BoxTitle);
+
+
+                    //Create content-holder and background:
+                    var contentBackground = document.createElement("div");
+                    var contentHolder = document.createElement("div");
+
+                    contentHolder.innerHTML = content;
+
+                    contentHolder.style = "width: " + (parseInt(width) - 20).toString() + "px;" +
+                                        "position: relative;" +
+                                        "top: 10px;" +
+                                        "margin-left: 10px;";
+
+                    contentBackground.style = "width: " + width + "px;" +
+                                            "margin-left: " + (0.5*(500 - width) ).toString() + "px;" +
+                                            "background-color: " + BodyC;
+
+                    contentBackground.appendChild(contentHolder);
+
+
+                    //Add content to mask:
+                    var Masker = document.createElement("div");
+
+                    Masker.style = "width: " + width.toString() + "px; " +
+                                   "display:none;"
+
+                    Masker.appendChild(contentBackground);
+
+
+                    //Add elements to custom element:
+                    this.innerHTML="";
+                    this.appendChild(tab);
+                    this.appendChild(Masker);
+                }
+            }
+
+            connectedCallback() { //Only runs after the element is initialized and loaded into a document
+
+                var masker = this.lastChild;
+                var dropdownButton = this.firstChild.firstChild;
+
+                var isDisplayed = false;
+                dropdownButton.addEventListener("click", function() {
+
+                    if(isDisplayed) {masker.style.display = "none"; isDisplayed=false;}
+                    else{masker.style.display="block"; isDisplayed=true;}
+
+                })
+
+
+
+            }
+            }
+            customElements.define('answer-box', AnswerBox);
+
+
+        class HoverVideo extends HTMLElement {
+            constructor() {
+                super();
+
+                //Get attributes
+                var videoUrl = this.getAttribute('url');
+                var theWidth = this.getAttribute('customWidth');
+                var hasBorder = this.getAttribute('videoBorder');
+
+                //Create video element
+                var theVideo = document.createElement('video');
+                theVideo.src=videoUrl;
+
+                //Set width and border
+                var borderString = "";
+                if(hasBorder != null) {
+                    borderString = "border: solid 2px;"
+                }
+
+                if(theWidth != null) {
+                    theVideo.style="width:"+theWidth+";" + "padding-bottom:0px;" + borderString;
+                }
+                else{
+                    theVideo.style="width:100%;" + "padding-bottom:0px;" + borderString;
+                }
+
+                //Set video to play upon hover
+                theVideo.setAttribute('loop','loop');
+
+                theVideo.addEventListener("mouseover",function(event) {
+                    this.play();
+                })
+                theVideo.addEventListener("mouseout",function(event) {
+                    this.pause();
+                })
+
+                //Add video to custom element
+                this.innerHTML="";
+                this.appendChild(theVideo);
+            }
+        }
+        customElements.define("hover-video",HoverVideo);
+
+
+        class PrimitiveMath extends HTMLElement {
+            constructor() {
+                super();
+
+                //Define attributes
+                const matStr = this.getAttribute('m');
+
+                //Prepare variables
+                var shadow = this.attachShadow({mode: 'open'});
+
+                var mathStyle = 'margin-left:3px; margin-right:3px;'
+
+                const generalString = "../Assets/Chapter1/Talsystemmer/TalBilleder/CustomElement/";
+                var specificString = "";
+                var indexer = 0;
+
+                var spaceNode = document.createElement("img");
+                spaceNode.setAttribute("src","../Assets/Chapter1/Talsystemmer/TalBilleder/CustomElement/space.png");
+                spaceNode.style=mathStyle;
+                spaceNode.setAttribute("height","20em")
+
+                //Construct the math by substitution:
+                var matLength = matStr.length;
+                while(indexer < matLength) {
+
+                    var newNode = document.createElement("img");
+                    newNode.style=mathStyle;
+                    newNode.setAttribute("height","12em")
+
+                    var isNumber = false;
+                    var isPrefix = false;
+
+                    switch(matStr.charAt(indexer)) {
+
+                        case '(': specificString="(.png"; break;
+                        case ')': specificString=").png"; break;
+                        case '+': specificString="plus.png"; break;
+                        case '-': specificString="minus.png"; break;
+                        case '*': specificString="gange.png"; break;
+                        case '/': specificString="divider.png"; break;
+                        case '=': specificString="ligmed.png"; break;
+                        case 'h': specificString="h.png"; break;
+                        case '.': specificString="punktum.png"; break;
+                        case 'q': specificString="10Symbol.png"; break;
+
+                        case '0': case '1': case '2': case '3': case '4': case '5': case '6': case '7': case '8': case '9':
+                            isNumber=true; break;
+                        default:
+                            isPrefix=true; indexer++; break;
+                    }
+
+                    if(!isPrefix && !isNumber) {
+                        newNode.setAttribute("src",generalString+specificString);
+                        shadow.appendChild(newNode);
+                        indexer++;
+                    }
+                    else if(!isPrefix) {
+                        //Get final index of number
+                        var fI = indexer + 1; //fI = finalIndex
+                        var fIC = matStr.charAt(fI);
+                        while((fIC=='0'||fIC =='1'||fIC =='2'||fIC =='3'||fIC =='4'||fIC =='5'||fIC =='6'||fIC =='7'||fIC =='8'||fIC =='9') && fI < matLength) {
+                            fI++; fIC = matStr.charAt(fI);
+                            }
+
+                        //Determine what symbol to draw (Names matching in directory):
+                        var chosenSymbol = matStr.charAt(indexer - 1);
+                        switch(chosenSymbol) {
+                            case 'A': chosenSymbol="A";break;
+                            case 'B': chosenSymbol="B";break;
+                            case 'C': chosenSymbol="C";break;
+                            case 'D': chosenSymbol="D";break;
+                            case 'E': chosenSymbol="E";break;
+                            case 'F': chosenSymbol="F";break;
+                            case 'G': chosenSymbol="G";break;
+                            case 'W': chosenSymbol="w";break;
+                            case 'H': chosenSymbol="H"; break;
+                            case 'I': chosenSymbol="I"; break;
+                            case 'J': chosenSymbol="J"; break;
+                            default:  chosenSymbol="bar"
+                        }
+
+                        if(chosenSymbol == null) {chosenSymbol = "bar";}
+
+                        //Determine how many times to draw the symbol.:
+                        var strNum = matStr.substring(indexer,fI);
+                        var symbolCount = parseInt(matStr.substring(indexer,fI));
+
+                        //Construct the number to shadow DOM
+                        var qoutient = Math.floor(symbolCount/4);
+                        var remainder = symbolCount - qoutient*4;
+
+                        if(remainder > 0) {
+                            newNode.setAttribute("src",generalString + chosenSymbol + remainder.toString() + ".png");
+                            shadow.appendChild(newNode);
+                        } else if (strNum == 0) {
+                            newNode.setAttribute("src",generalString + chosenSymbol + "0.png");
+                            shadow.appendChild(newNode);
+                        }
+
+                        for(let i = 0; i < qoutient; i++) {
+                            var FourNode = document.createElement("img");
+                            FourNode.setAttribute("src",generalString + chosenSymbol + "4.png");
+                            FourNode.style=mathStyle;
+                            FourNode.setAttribute("height","12em")
+
+                            shadow.appendChild(FourNode);
+                            //shadow.appendChild(spaceNode.cloneNode());
+
+                            FourNode.style=mathStyle;
+                        }
+
+                        //Advance the indexer:
+                        indexer += strNum.length;
+
+                    }
+
+                }
+
+            }
+        }
+        customElements.define('p-m', PrimitiveMath);
+
+    </script>
+
+</body>

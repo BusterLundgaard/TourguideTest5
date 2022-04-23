@@ -1,0 +1,222 @@
+p$$$1$$$<p class="t">
+    Lad os prøve at løse Zenos paradoks, og i processen komme frem til ideen bag en grænse.
+    Sig at afstanden mellem _(A_) og _(B_) er _(2m_), og at personen bevæger sig med en
+    hastighed på _(1 m/s_). Når han har gået f.eks. _(5_) halvdele, så er han altså:
+    _($1+\frac{1}{2}+\frac{1}{4}+\frac{1}{8}+\frac{1}{16} = 1.9375_)
+    ... meter fremme. Hvis han går _(n_) halvdele generelt, så går han:
+    _($\sum_{i=0}^n \frac{1}{2^i}_)
+    Spørgsmålet er altså nu: Hvis _(n_) er "uendelig stort", vil 
+    denne sum så nogensinde nå _(2m_), så hele afstanden er gået? 
+    </p>$$$p$$$1$$$<p class="t">
+    Det giver ikke rigtig mening at arbejde med "uendelig" som et tal ligesom _(2_) eller _(3_). 
+    Vi ser ikke på uendelig som et <i>tal</i>, 
+    men mere som en <i>process</i>: En "uendelig" størrelse 
+    har ikke nogen øvre grænser. Den kan blive så stor som den har lyst.
+    "Lig med _(2_)" kan vi også tænke over som en process: "Uendelig <i>tæt på</i> _(2_)". 
+    Det her er næsten det samme. Det vil være muligt 
+    at gå "tæt nok på" lige meget hvor lille du siger forskellen til
+    _(2_) skal være for at vi har "nået _(B_)". 
+    Eksempelvis er der 
+    en fysisk lov der beviser at den korteste afstand
+    noget partikel kan bevæge sig i universet er lig "plancks længde" 
+    _($1.6162*10^{-35}m_)
+    Så det er intet problem selv hvis afstanden skal
+    være så lille som overhovedet fysisk muligt, fordi summen <i>kan</i> komme tæt nok på. 
+    Alt i alt kan vi omformulere spørgsmålet til: 
+    _($\begin{eqnarray} 
+    && \text{Hvis } n \text{ kan blive så stor som den har lyst,} \\ \\
+    && \text{kan summen } \sum_{i=0}^n \frac{1}{2^i} \text{ så komme så tæt på } 2 \text{ som vi har lyst?}
+    \end{eqnarray}_)
+    Vi kan bruge en lignende ide/strategi til nogle af de andre eksempler jeg nævnte. Sig f.eks. vi gerne ville
+    finde værdien af
+    _($\frac{Sin(x)}{x}_) 
+    ... når _(x_) nærmer sig _(0_). Vi beregnede via _(Sin(0.001)/0.001_) at 
+    dette var tæt på _(1_), så lad os sige vi 
+    har en <i>hypotese</i>:
+    _($\frac{Sin(x)}{x} \text{ nærmer sig } 1 \text{ når } x \text{ nærmer sig } 0_)
+    "_(x_) nærmer sig _(0_)" kan
+    vi nu forstå som "_(x_) kommer uendelig tæt på _(0_)", eller "_(x_) kan komme så tæt på _(0_) den har lyst", og 
+    _(Sin(x)/x_) nærmer sig _(1_) kan vi forstå som "_(Sin(x)/x_) kan komme så tæt på _(1_) som vi har lyst". 
+    Jeg skal derfor svare på følgende: 
+    _($\begin{eqnarray} 
+    && \text{Hvis } x \text{ kan komme så tæt på } _(0_) \text{ som den har lyst,}   \\ \\
+    && \text{kan } \frac{Sin(x)}{x} \text{ så komme så tæt på } 1 \text{ som vi har lyst?}
+    \end{eqnarray}_)
+    Lad os gøre det lidt mere matematisk. Vi har to uligheder:
+    _($\qquad |x-0| \lt \delta, \qquad 0 \lt \left|\frac{Sin(x)}{x}-1 \right| \lt \epsilon, _)
+    _(|x-0|_) er forskellen mellem _(x_) og _(0_). Denne forskel siger vi skal
+    være mindre end "delta" _(\delta_), som vi forestiller os kan blive så lille som
+    den har lyst. 
+    </p>$$$p$$$1$$$<p class="t">
+    _(|Sin(x)/x-1|_) er forskellen på _(Sin(x)/x_) og vores hypotese _(1_). Vi tager den absolutte værdi, 
+    da vi ikke ved om _(Sin(x)/x_) er mindre eller større. Vi siger at denne kan blive så lille som 
+    vi har lyst _(\epsilon_). "Epsilon" _(\epsilon_) er altså et tal vi frit selv vælger. 
+    </p>$$$p$$$1$$$<p class="t">
+    Vi skal nu bevise at uligheden _(|Sin(x)/x - 1| \lt \epsilon_) altid kan tilfredsstilles hvis bare
+    man vælger den rigtige _(\delta_). Med andre ord: For et hvilket som valgt _(\epsilon_) findes der
+    en mulig _(\delta_). Jeg skal altså bevise at der findes et forhold mellem de to, 
+    hvor jeg frit kan vælge en _(\epsilon_) værdi og få en korresponderende _(\delta_)
+    værdi der tilfredsstiller uligheden. _(Sin(x)/x_) er ret tricky, så lad mig vise denne process på en lidt lettere funktion.
+    </p>$$$p$$$1$$$<p class="t">
+    Sig at vi arbejder med _(x^2_) når _(x_) nærmer sig _(0_). 
+    Min hypotese er at _(x^2_) nærmer sig _(0_) når _(x_) nærmer sig _(0_). Vi har derfor nu to uligheder:
+    _($0 \lt |x-0| \lt \delta, \qquad |x^2-0| \lt \epsilon_)
+    Jeg skal finde et eller andet forhold _(\delta(\epsilon)_), så uligheden _(|x^2-0| \lt \epsilon_)
+    altid er opfyldt. Jeg gætter _(\delta(\epsilon)=\sqrt{\epsilon}_). 
+    Jeg ved nu pr. definition at 
+    _($|x-0| \lt \sqrt{\epsilon}_)
+    ... og skal se om jeg ud fra det kan bevise
+    at den anden ulighed også er sand:
+    _($\begin{eqnarray}
+    && |x-0| \lt \sqrt{\epsilon} \to \\ \\
+    && |x|^2 \lt |\epsilon| \to \\ \\
+    && |x^2| \lt |\epsilon| 
+    \end{eqnarray}_)
+    _(\epsilon_) er pr. definition altid positivt, så _(|\epsilon|=\epsilon_). Vi har nu:
+    _($\begin{eqnarray}
+    && |x^2| \lt \epsilon \to \\ \\
+    && |x^2 - 0| \lt \epsilon
+    \end{eqnarray}_)
+    Bum! Bevist! Det er altså muligt at finde et forhold _(\delta(\epsilon)_), så vi kan nu med komplet sikkerhed sige at
+    _(x^2_) nærmer sig _(0_), når _(x_) nærmer sig _(0_)
+    </p>$$$p$$$1$$$<p class="t">
+    Ud fra de her eksempler kan vi se hvordan vi præcist og teknisk definerer ideen/konceptet af en grænse:
+    </p>$$$div$$$1$$$<div class="Definition">
+    <b> Definition:</b> <br>
+    Hvis en grænse, skrevet _(\lim_{x \to a}[f(x)] _) er lig tallet _(L_), så findes der for et hvilket som
+    helst tal _(\epsilon \gt 0_), et tal _(\delta \gt 0_) hvor:
+    _($0 \lt |x - a| \lt \delta \implies |f(x)-L| \lt \epsilon _)
+    </div>$$$p$$$1$$$<p class="t">
+    Her betyder _(\implies_) at: "Hvis påstand _(A_) er sand, så er påstand _(B_) også sand".
+    </p>$$$p$$$1$$$<p class="t">
+    Lad mig give to ekstra eksempler på hvordan vi beviser de her grænser. Det er en ret svær proces, men 
+    heldigvis opdager vi lidt senere at vi sjælen for brug for det. 
+    </p>$$$p$$$1$$$<p class="t">
+    Sig at jeg gerne vil bevise at 
+    _($\lim_{x \to \pi/2}[Cos(x)] = 0_)
+    De to uligheder er:
+    _($0 \lt \left|x-\frac{\pi}{2} \right| \lt \delta, \qquad |Cos(x) - 0| \lt \epsilon_)
+    Før gættede vi lidt tilfældigt på _(\delta(\epsilon) = \sqrt{\epsilon}_) og endte ud heldige. 
+    Det illustrer ikke helt den generelle situation: I langt de fleste tilfælde bruger man meget mere arbejde
+    på at komme frem til gættet end man bruger på at teste det.  
+    Lad os lege lidt rundt, omskrive ulighederne, og se om vi finder noget brugbart. 
+    </p>$$$p$$$1$$$<p class="t">
+    Absolutte værdier er ofte noget møj at arbejde med,
+    så jeg har tænkt mig først at dele situationen op i to: 
+    Er _(x_) mindre eller større end _(\pi/2_)?
+    </p>$$$p$$$1$$$<p class="t">
+    Først mindre. Her ved jeg at:
+    _($|x-\pi/2| = -(x-\pi/2)_)
+    Jeg kan fjerne absolut-værdi tegnet på den ene ulighed, men
+    det er svært at fjerne på _(|Cos(x)|_). <i>Ja</i> jeg ved 
+    at _(x_) er mindre end _(\pi/2_), men det fortæller
+    mig intet om hvorvidt 
+    _(Cos(x)_) er positiv eller negativ. 
+    _(x_) er jo faktisk mellem _(-\infty_) og _(\pi/2_), så _(Cos_) tager alle
+    dens mulige værdier. 
+    </p>$$$p$$$1$$$<p class="t">
+    ... men, er det ikke ret <i>fjollet</i> at _(x_) dækker så bredt?
+    Vi er fundamentalt kun interesserede i de situationer hvor _(x_) er <i>ret tæt på</i>, så
+    hvorfor bekymre os om alle disse andre tilfælde hvis det gør opgaven sværere? 
+    </p>$$$p$$$1$$$<p class="t">
+    Lad os derfor <i>antage</i> at _(\delta \le \pi/2_). Det betyder at 
+    _(x_) er mellem _(\pi/2-\pi/2=0_) og _(\pi/2 + \pi/2 = \pi_). Nu er
+    det markant lettere at bestemme hvorvidt en værdi er positiv eller negativ så 
+    man lettere kan 
+    fjerne absolutte værdier. Der er intet <i>galt</i> med at vi laver sådan en antagelse, så længe
+    vi holder det i hovedet når vi eventuelt skal tjekke/teste vores gæt. 
+    </p>$$$p$$$1$$$<p class="t">
+    Anyways. _(x_) er på intervallet _([0, \pi]_), og i èn af de to tilfælde
+    har vi yderligere bestemt at den er mindre end _(\pi/2_). Den er nu på
+    _([0, \pi/2]_), hvilke betyder at _(Cos(x)_) er <i>positivt</i>:
+    _($|Cos(x)|=Cos(x)_)
+    Så vores to uligheder er:
+    _($\frac{\pi}{2} - x \lt \delta, \qquad Cos(x) \lt \epsilon _)
+    Målet er at gætte et _(\delta(\epsilon)_) hvor højre venstre ulighed altid beviser
+    højre ulighed. Det her er lettere jo mere ulighederne ligner hinanden, så lad os
+    prøve at omskrive _(\pi/2 - x \lt \delta_) så godt som vi nu kan. Det er nok 
+    en god ide at isolere _(x_) og tage _(Cos_) af begge sider:
+    _($\frac{\pi}{2}-x \lt \delta \to x \gt \frac{\pi}{2} - \delta_)
+    Både højre og venstre side af uligheden er 
+    mellem _(0_) og _(\pi/2_). Vi ved derfor at _(Cos_) af venstre side
+    er <i>mindre</i> end _(Cos_) af højre: 
+    _($Cos(x) \lt Cos \left(\frac{\pi}{2}-\delta \right)_)
+    Hvilke let kan omskrives til:
+    _($Cos(x) \lt Sin(\delta)_)
+    Recap: Ved hjælp af et par få simple antagelser har vi bevist at venstre ulighed
+    medfører <i>denne ulighed</i>. Vi vil gerne have at venstre ulighed medfører
+    _($Cos(x) \lt \epsilon_)
+    Vi må frit vælge _(\delta(\epsilon)_), så fuck it: _(\delta(\epsilon)=Arsin(\epsilon)_). 
+    Nu går trig funktionerne ud med hinanden og vi får:
+    _($Cos(x) \lt Sin(Arcsin(\epsilon)) \to Cos(x) \lt \epsilon_)
+    Bum! Dette gæt sørger for at _(\pi/2-x \lt \delta_) medfører
+    _(Cos(x) \lt \epsilon_). Det var den ène halvdel hvor 
+    _(x \lt \pi/2_). Vi har <i>fundet vores gæt</i> hvilke
+    er klart den største udfordring, men vi skal lige teste at det også virker 
+    _(x \gt \pi/2_). 
+    </p>$$$p$$$1$$$<p class="t">
+    _(x_) er nu på intervallet _([\pi/2, \pi]_) så vi har:
+    _($\begin{eqnarray}
+    && |x - \pi/2| & = & & x - \pi/2 \\ \\
+    && |Cos(x)| & = & - & Cos(x)
+    \end{eqnarray}_)
+    Vores uligheder er nu: 
+    _($x-\frac{\pi}{2} \lt \delta, \qquad -Cos(x) \lt \epsilon_)
+    Vi ved at _(\delta=Arcsin(\epsilon)_), så:
+    _($x - \frac{\pi}{2} \lt Arcsin(\epsilon) \to x \lt Arcsin(\epsilon)+\frac{\pi}{2}_)
+    Både _(x_) og _(Arsin(\epsilon)_) er mellem _(\pi/2_) og _(\pi_): 
+    _(\epsilon \gt 0_), så _(Arcsin(\epsilon)_) er mellem _(0_) og _(\pi/2_), hvilke
+    betyder at _(Arcsin(\epsilon)+\pi/2_) er mellem _(\pi/2_) og _(\pi_). 
+    På dette interval er _(Cos_) større på mindre værdier, så:
+    _($Cos(x) \gt Cos \left(Arcsin(\epsilon)+\frac{\pi}{2} \right)_)
+    Hvilke let kan omskrives til
+    _($Cos(x) \gt -Sin \left(Arcsin(\epsilon) \right) = -\epsilon _)
+    Nu tager vi bare det negative af begge sider, modsætter større-end tegnet, og får:
+    _($-Cos(x) \lt \epsilon_)
+    Kravet er bevist! Gættet _(\delta=Arcsin(\epsilon)_) virker altså både når _(x_) er større og mindre
+    end _(\pi/2_). 
+    </p>$$$p$$$1$$$<p class="cent">
+        Du har nu bevist at _(Cos(\pi/2)=0_)! <i> <b> <u> God damn! Business going down!</u></b></i>
+    </p>$$$p$$$1$$$<p class="t">
+    Lad mig give èt til eksempel på en grænse. Sig at jeg gerne vil finde 
+    _($\lim_{x \to 1}[x^8]_)
+    Min hypotese er at dette er lig _(1_), så mine to uligheder bliver:
+    _($0 \lt |x-1| \lt \delta, \qquad |x^8-1| \lt \epsilon_)
+    Lad mig starte med at omskrive den anden ulighed _(|x^8-1|_) til noget der minder mere om den første. 
+    Jeg ved at _(A^2-B^2 = (A+B)(A-B)_), så:
+    _($\begin{eqnarray}
+    && x^8-1 = \\ \\
+    && (x^4-1)(x^4+1) = \\ \\
+    && (x^2-1)(x^2+1)(x^4+1) = \\ \\
+    && (x-1)(x+1)(x^2+1)(x^4+1)
+    \end{eqnarray}_)
+    _(|x^8-1|_) kan altså omskrives til:
+    _($\begin{eqnarray}
+    && |(x-1)(x+1)(x^2+1)(x^4+1)| = \\ \\
+    && |x-1|*|(x+1)(x^2+1)(x^4+1)|
+    \end{eqnarray}_)
+    Vi ved at _(|x-1| \lt \delta_), så begge uligheder deler denne faktor! 
+    Begge sider kan nu ganges med resten hvilke giver:
+    _($\begin{eqnarray}
+    && |x-1|*|(x+1)(x^2+1)(x^4+1)| \lt \delta*|(x+1)(x^2+1)(x^4+1)| \to \\ \\
+    && |x^8 - 1| \lt \delta*|(x+1)(x^2+1)(x^4+1)|
+    \end{eqnarray}_)
+    Jeg vil gerne vælge en _(\delta(\epsilon)_) hvor den højre side i denne ulighed bliver lig _(\epsilon_).
+    Det virker umiddelbart umuligt,eftersom _(\delta_) jo ikke kan være en funktion af _(x_). 
+    Derfor gør vi noget smart: Vi ved at _(\delta_) er meget lille, så
+    der sker intet slemt ved at <i>antage</i> at den er mindre eller lig med _(1_). Der er intet
+    specielt omkring lige _(1_): Vi kunne også vælge _(0.78_) eller _(3.8_) eller hvad
+    end positive tal hvor hjerte lyster. Pointen er at vi har sat <i>en konstant</i>. 
+    Vi har <i>begrænset </i> _(x_), og derved også begrænset 
+    en hvilket som helst <i>funktion</i> af _(x_): Eksempelvis _(|(x+1)(x^2+1)(x^4+1)|_)! 
+    Vi ved nu at den er mellem 
+    _($|0+1|*|0^2+1|*|0^4+1| = 1_)
+    ... og
+    _($|2+1|*|2^2+1|*|2^4+1| = 255_)
+    Så vi ved med sikkerhed at:
+    _($|x^8-1| \lt \delta*255_)
+    Nu vælger vi bare _(\delta=\epsilon/255_), og voila:
+    _($|x^8-1| \lt (\epsilon/255)*255 \to |x^8 - 1| \lt \epsilon_)
+    Bum! Vi har bevist at dette gæt samt antagelsen _(\delta \le 1_) 
+    sørger for at den ene ulighed medfører den anden! Grænse done! 
+    </p>

@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+
+
+    <p class="t">
+    Lad os, som et eksempel, kigge på noget man ofte studerer ved former: Deres såkaldte "massecenter"
+    </p>
+
+    <p class="t">
+    En figurs <i>massecenter</i>, er der hvor den balancere:
+    <img class="Spic" style="width:80%" src='../../../Assets/Chapter2\Section2\BilliardsAndProperties\BalancePoint.png'> 
+    <p class="t">Altså, du kan holde den på det punkt uden den roterer over til nogen af siderne. </p>
+    <p class="t">
+    En rektangels massecenter er selvfølgelig bare den tydelige midte, men på andre former er det lidt mere udfordrende. 
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5">
+    På denne uendelig tynde 1-D pind med vægte på, hvor skal jeg placere min finger
+    for at den holder balancen? (Altså, hvor er dens massemidtpunkt?)
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter2\Section2\BilliardsAndProperties\BalanceExercise1.png'> 
+    <p class="t">
+    For at gøre det, skal du lidt tænke på en <i>vippe</i>: Jo længere du går ud på vippen, jo 
+    større effekt har du. Hvis du vejer mindre end din kammerat, så kan du bare sætte
+    dig længere ude for at der er balance. Den her effekt er direkte: Altså, indflydelsen
+    du har er
+    _($\text{afstand fra massemidtpunkt}*\text{din vægt}_)
+    Hvilke er noget man kan bevise med fysik, som vi ikke lige har tid til nu. 
+    </p>
+    <br><br></q-stion>
+    <answer-box customWidth="650">
+    Lad os antage at massecenteret er ved _(x=m_). 
+    De tre vægte til venstre for _(m_) for vippen til at rotere
+    mod uret, de to vægte til højre for vippen til at rotere med uret. 
+    Vi ved at indflydelsen hver er deres vægt gange hvor langt væk de er. 
+    Vi ved også at vippen skal stå helt stille hvis _(m_) er massecenteret,
+    så mængden af rotation mod uret skal være lig mængden af rotation med uret. Altså:
+    _($(m-1.5)*1 + (m-3)*3 + (m-9)*2 + (m-16)*5 + (m-19.5)*2=0_)
+    Hvis du undrer dig over hvorfor jeg ikke i stedet siger:
+    _($(m-1.5)*1 + (m-3)*3 + (m-9)*2 = (16-m)*5 + (19.5-m)*2_)
+    Så er det fordi jeg jo ikke kan vide hvilke vægte der er på den
+    ene side, og hvilke vægte der er på den anden side. Det er jo
+    kun sådan det ser ud på tegningen, men den kunne nemt snyde os! 
+    Det giver mening at vi lægger alle "rotationseffekter" sammen og 
+    siger at de skal give _(0_), da dem til venstre for massemidtpunktet
+    bare vil have "negativ" effekt
+    <p class="t">
+    I hvert fald, lad os se om vi kan bruge det her krav til at finde _(m_):
+    _($(m-1.5)*1 + (m-3)*3 + (m-9)*2 + (m-16)*5 + (m-19.5)*2=0 \to_)
+    _($1*m+3*m+2*m+5*m+2*m-(1*1.5+3*3+2*9+5*16+2*19.5) = 0 \to_)
+    _($m*(1+3+2+5+2)=(1*1.5+3*3+2*9+5*16+2*19.5) \to_)
+    _($m=\frac{1*1.5+3*3+2*9+5*16+2*19.5}{1+3+2+5+2}=11.34 _)
+    Wholla!
+    </p>
+    <p class="t">
+        Generelt: Hvis masserne/krafterne er _(m_1,...m_n_) på 
+    positionerne _(d_1,...d_n_), så kan vi se at 
+    massecenteret _(x_) er lig 
+    _($x=\frac{m_1*d_1+...m_n*d_n}{m_1+...m_n}_)
+    </p>
+    <br><br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Sig at du har en rektangulær plade der holder nogle vægte som her:
+    <img class="Spic" style="width:65%" src='../../../Assets/Chapter2\Section2\BilliardsAndProperties\BalancePoint1.png'> 
+   <p class="t"> Hvor er balancepunktet / massecenteret? </p>
+    <br></q-stion>
+    <answer-box customWidth="600">
+    At gøre det vi lige gjorde før i _(2D_) er super simpelt. Alt der her handler om <i>rotation</i>, og vi ved at
+    en rotering på _(x_)-aksen ikke har nogen indflydelse på en rotation på _(y_) aksen! Der kan vi bare dele det op 
+    i to tilfælde: _(x_)-massecenteret hvor vi bruger _(x_)-koordinaterne og masserne, og _(y_)-massecenteret hvor vi
+    bruger _(y_)-koordinaterne og masserne. Altså:
+    _($x=\frac{0*5+1*3+6*2+10*2+7*4+5*6+4*7}{5+3+6+10+7+5+4}=3.025_)
+    _($y=\frac{5*5+3*1+10*3+6*7+7*5+5*2+4*7}{5+3+6+10+7+5+4}=4.325_)
+    Altså: _(massecenter=(3.025,4.325)_).  
+    </p> 
+    <br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Se følgende form:
+    <img class='Spic' style='width:50%' src='../../../Assets/Chapter2\Section2\BilliardsAndProperties\BalanceExercise3.png'> 
+    <p class="t">Alle de gule forme har samme densitet. De røde forme kan du forestille
+    dig er super tynde og lette i forhold til, så dem kan vi bare ignorere for nemhedens skyld.</p>
+    <p class="t">
+    Er det muligt at balancere denne form? Kan man placere sin finger noget
+    som helst sted <i>på formen</i> hvor den balancere?
+    </p>
+    <br><br></q-stion>
+    <answer-box>
+    Alright, så det er absolut muligt for et massemidtpunkt ikke at eksistere 
+    noget sted <i>på</i> selve formen. Sig f.eks. jeg tog massemidtpunktet 
+    af følgende figur:
+    <img class='Spic' style='width:40%' src='../../../Assets/Chapter2\Section2\BilliardsAndProperties\BalanceExercise3 2.png'> 
+    <p class="t">
+    I denne her opgave skal vi altså finde massemidtpunktets lokation, og så 
+    se om det er noget sted på selve formen. 
+    </p>
+    <p class="t">
+    Hvordan finder vi massemidtpunktet når vi overhovedet ikke er blevet givet nogle masser?
+    Well, det er kun <i>forholdet mellem masserne</i> der egentlig har indflydelse på 
+    positionen af massemidtpunktet. Masse er densitet gange areal. Hvis densiteten
+    på alle de gule kasser er de samme, så skal vi altså bare sammenligne deres arealer i stedet!
+    </p>
+    <p class="t">
+    Så lad os begynde. Først finder vi massemidtpunktet på hver af de tre figurer:
+    </p>
+    <img class='Spic' style='width:50%' src='../../../Assets/Chapter2\Section2\BilliardsAndProperties\BalanceExercise3 3.png'> 
+    <p class="t">
+    Det bliver:
+    _($m_1 = (0+5/2,0+5/2)=(2.5,2.5)_)
+    _($m_2 = (11+4.5/2,2.5+8/2) = (13.25,6.5)_)
+    _($m_3 = (2+7/2,12+4/2)=(5.5, 14)_)
+    Og deres arealer er:
+    _($A_1 = 5*5=25, \qquad A_2 = 4.5*8 = 36, \qquad A_3 = 4*7 = 28_)
+    Så massemidtpunktets _(x_) bliver:
+    _($x_m = \frac{2.5*25 + 13.25*36 + 5.5*28}{25+36+28} = 7.792_)
+    Og ved _(y_):
+    _($y_m = \frac{2.5*25 + 6.5*36 + 14*28}{25+36+28} = 7.735_)
+    Altså:
+    </p>
+    <img class='Spic' style='width:40%' src='../../../Assets/Chapter2\Section2\BilliardsAndProperties\BalanceExercise3 4.png'> 
+    <p class="t">
+    Massemidtpunktet er <i>ikke</i> på en af de 3 former!
+    </p>
+    <br><br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Find følgende massemidtpunkt:
+    <img class='Spic' style='width:40%' src='../../../Assets/Chapter2\Section2\BilliardsAndProperties\BalanceExercise4 1.png'> 
+    <p class="t"> Du kan se målene her: </p>
+    <img class='Spic' style='width:60%' src='../../../Assets/Chapter2\Section2\BilliardsAndProperties\BalanceExercise4 2.png'> 
+    <p class="t">
+    Forestil dig at denne figur har uniform densitet overalt
+    </p>
+    <br><br></q-stion>
+    <answer-box>
+    Den her ser umiddelbart meget kompleks ud, da formen oppe ved 
+    cirklen virker kompliceret. Det er faktisk intet problem: Vi kan bare
+    forestille os at hulet er et "negativt" areal, med "negativ" masse
+    <p class="t">
+    Så lad os begynde. Sig at _((0,0)_) lægger nede i det venstre nederste hjørne.
+    Jeg gider ikke lige til at gå igennem det, siden det er meget basal 
+    geometri, men hvis vi finder de individuelle formers massemidtpunkter, så får vi:
+    _($m_1 = (7,1), \qquad m_2 = (6,4.5), \qquad m_3 = (6,9.5), \qquad m_4 = (5,9)_)
+    Og arealerne er:
+    _($A_1 = 28, \qquad A_2 = 10, \qquad A_3 = 19.63, \qquad A_4 = -3.141_)
+    Så massemidtpunktets x bliver:
+    _($m_x = \frac{28*7 + 10*6 + 19.63*6 - 3.141*5}{28 + 10 + 19.63 - 3.141} = 6.57_)
+    Og y:
+    _($m_y = \frac{28*1 + 10*4.5 + 19.63*9.5 - 3.141*9}{28 + 10 + 19.63 - 3.141} = 4.24 _)
+    Så svaret er:
+    _($m=(6.57,4.24)_)
+    </p>
+    <br><br></answer-box>
+
+    <p class="t">Indtil videre har vi kigget på forholdsvis "simple" former, men hvad hvis vi havde noget 
+    som en trekant? Hvordan præcis ville vi gå til at finde dens massemidtpunkt? 
+    </p>
+    <p class="t">Jeg vil nok dele trekanten op i uendelig mange arealer som følgende:</p>
+    <img class="Spic" style="width:90%" src='../../../Assets/Chapter2\Section2\BilliardsAndProperties\ CenterOfMassRightTriangle.png'> 
+    <p class="t"> 
+    Lad os nu beskrive arealet og positionen af hver masse. Hvis vi er _(x_) henne ad _(\Seg{AB}_) så vil 
+    massecenteret på rektanglen ligge ved _((x,(0.5*Tan(v))*x)_). Jeg dividere med _(2_) da det jo er centeret. 
+    Arealet af rektanglen vil være _(h*b=(Tan(v)*x)*dx_) hvor _(dx_) altså er den uendelig lille bredde vi giver
+    vores rektangler. Hvis vi sigter efter massecenteret på x-aksen så bliver tælleren altså til:
+    _($ \begin{eqnarray} 
+        && (dx)*Tan(v)*(dx)*dx & + \\
+        && (2dx)*Tan(v)*(2dx)*dx & + \\
+        && (3dx)*Tan(v)*(3dx)*dx & + \\
+        && \vdots & + \\
+        && (AB-dx)*Tan(v)*(AB-dx)*dx & + 
+    \end{eqnarray} _)
+    _($= Tan(v)*((dx)^2*dx+(2dx)^2*dx+(3dx)^2*dx+...(AB-dx)^2*dx) _)
+    Nu bliver det lidt tricky: 
+    _($\left((dx)^2*dx+(2dx)^2*dx+(3dx)^2*dx+...(AB-dx)^2*dx\right)_) 
+    er jo faktisk det samme som arealet under _(x^2_) fra _(x=0_) til _(x=AB_): 
+    </p>
+    <img class='Spic' style='width:60%' src='../../../Assets/Chapter2\Section2\BilliardsAndProperties\Integration igen.png'> 
+    <p class="t">
+    Da vi fandt arealet af _(Sin_) og _(Cos_), 
+    der lavede vi det der argument med at dele det op i uendelig mange rektangler, og viste
+    så at arealet af hver rektangel til f.eks _(Cos_) var forandring i _(Sin_) omkring den _(x_). Er _(m^2*dx_) en
+    forandring i noget? 
+    </p>
+    <p class="t">
+    Well, det her kunne du umuligt vide, men det viser sig at det er en forandring i _(\frac{1}{3}*m^3_).
+    Der er et helt område af matematik der omhandler de her "uendelig småt" (f.eks hældning) eller
+    "uendelig mange arealer"-argumenter. Det kommer vi til senere i bogen, men vi har ikke lig tid til
+    det nu. Pointen er: Ved hjælp af det kan vi se at arealer af _(x^2_) er forandringer i _(\frac{1}{3}*m^3_).
+    Når vi lægger alle rektanglerne sammen fra _(0_) til et eller andet punkt _(a_), så for vi altså hvor meget
+    _(\frac{1}{3}x^3_) har forandret sig fra _(0_) til _(a_). Ergo er 
+    _($(dx)^2*dx+(2dx)^2*dx+(3dx)^2*dx+...(AB-dx)^2*dx)=_)
+    _($\frac{1}{3}*AB^3=\frac{1}{3}*Cos(v)^3*c^3_)
+    Altså, tælleren bliver til 
+    _($Tan(v)*\frac{1}{3}*Cos(v)^3*c^3=\frac{1}{3}*Sin(v)*Cos(v)^2*c^3_) 
+    Det betyder at 
+    _($x_{massecenter}=\frac{\frac{1}{3}*Sin(v)*Cos(v)^2*c^3}{\text{areal af trekant}}_)
+    Arealet af trekanten kan regnes som _(\frac{1}{2}*c*Sin(v)*c*Cos(v)_), så:
+    _($\frac{\frac{1}{3}*Sin(v)*Cos(v)^2*c^3}{\frac{1}{2}*c^2*Sin(v)*Cos(v)}=_)
+    _($\frac{2}{3}*(Cos(v)*c)_)
+    Boom! Vi kan gøre meget det samme ved _(y_)'s massecenter og få 
+    _($y_{massecenter}=\frac{1}{3}*(Sin(v)*c)_)
+    Punktet er altså i alt 
+    _($\left(\frac{2}{3}*Cos(v)*c, \frac{1}{3}*Sin(v)*c\right)_) 
+    eller bare 
+    _($\left(\frac{2}{3}*\text{bredde},\frac{1}{3}*\text{højde}\right)_)
+    </p>
+    
+    <q-stion 1="2" 2="1" 3="5">
+    Find massecenteret på følgende vilkårlige trekant:
+    <img class='Spic' style='width:60%' src='../../../Assets/Chapter2\Section2\BilliardsAndProperties\CenterOfMassTriangleExercise0.png'> 
+    <br><br></q-stion>
+    <answer-box>
+    Vi deler bare trekanten op i to som følgende:
+    <img class='Spic' style='width:60%' src='../../../Assets/Chapter2\Section2\BilliardsAndProperties\CenterOfMassTriangleExercise.png'> 
+    <p class="t">
+    Nu kan vi finde massecenteret på hver retvinklet trekant, 
+    arealet af hver retvinklet trekant, og så bruge formlen til 
+    at finde det endelige massemidtpunkt. _(y_) er nem, da
+    hver af de retvinklede trekanter tydeligvis har det samme
+    _(y_) massemidtpunkt når vi bruger denne formel. Det kan vi
+    se er:
+    _($y_{m}=\frac{1}{3}*5*Sin(60)=1.44_)
+    Den venstre retvinklede trekant har en bredde på _(5*Cos(60)=2.5_).
+    Det vil sige at den højre har en bredde på _(10-2.5=7.5_)
+    Højden på trekanten er _(5*Sin(60)=4.33_). Alt i alt får vi:
+    _($x_{m}=\frac{(\frac{2}{3}*2.5)*\frac{1}{2}*4.33*2.5+(\frac{2}{3}*7.5)*\frac{1}{2}*4.33*7.5}{\frac{1}{2}*10*4.33}=4.16_)
+    Så:
+    _($(1.44,4.16)_)
+    Hvis man gør det her med en helt generel vilkårlig trekant:
+    <img class='Spic' style='width:60%' src='../../../Assets/Chapter2\Section2\BilliardsAndProperties\CenterOfMassTriangle.png'> 
+    Og så går gennem samme process vi gjorde her, simplificere det udtryk man for
+    en hulans masse (det er gigantisk og meget svært at overskue) så ender man ud 
+    med den dejlige formel:
+    _($x_m=\frac{Cos(A)*c+b}{3}_)
+    Som sagt er udledningen ikke svær, den er bare meget lang og svær at overskue uden 
+    at lave fejl, så jeg har ikke lige tænkt mig at gå igennem den. 
+    </p>
+    <br><br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Find massecenteret på følgende figur: 
+    <img class="Spic" style="width:80%" src='../../../Assets/Chapter2\Section2\BilliardsAndProperties\CenterOfMassWeirdShape1.png'> 
+        <!-- FIX OG CROP FIGUREN HER. DER ER NOGET DER SKAL GØRES TRANSPARENT -->
+    <br><br></q-stion>
+    <answer-box>
+    Min strategi er følgende: Del firkanten op i to vilkårlige trekanter, 
+    find deres massecentre og arealer som normalt, og brug så formlen. 
+    At finde de to massecentre er det sværeste her, men egentlig bare et helt normalt 
+    geometrisk problem:
+    <img class="Spic" style="width:45%" src='../../../Assets/Chapter2\Section2\BilliardsAndProperties\CenterOfMassWeirdShape2.png'> 
+    <p class="t">
+    Altså, vi skal finde massecenteret på _(\triangle ABC_) og _(\triangle ABD_). 
+    Lad os først og fremmest lige se på dem hver for sig:
+    </p>
+    <img class="Spic" style="width:55%" src='../../../Assets/Chapter2\Section2\BilliardsAndProperties\CenterOfMassWeirdShape3.png'> 
+    <p class="t">
+    Ved hjælp af formlen for massemidtpunktet på en vilkårlig trekant kan vi finde _(x_1,y_1_) og 
+    _(x_2,y_2_). Ved hjælp af de fire tal og nogle vinkler kan vi så faktisk finde koordinaterne
+    på _(m_1,m_2_). Formlen vi skal bruge er:
+    _($m=\left(\frac{Cos(A)*c + b}{3},\frac{Sin(A)*c}{3} \right)_)
+    Ved _(\triangle ABC_) er _(\angle CAB_) vores "_(A_)", _(AB_) vores
+    "_(c_)" og _(AC_) vores "_(b_)". 
+    _($AB=\sqrt{(4-(-4))^2 + (-3 - 2)^2} = 9.43_)
+    _($AC = \sqrt{(2-(-4))^2 + (-5 - 2)^2}=9.21_)
+    At finde _(\angle CAB_) er lidt mere tricky: Hvis vi får fat i den sidste side _(CB_)
+    _($CB=\sqrt{(4-2)^2 + (-3 - (-5))^2}=2.82_)
+    så kan vi bruge cosinusloven:
+    _($2.82 = \sqrt{9.43^2 + 9.21^2 - 2*9.43*9.21*Cos(A)}_) 
+    Det her kan vi bruge omvendt (isolere _(A_)) til at finde ud af at _(A=0.3_) radianer.
+    </p>
+    <p class="t">
+    Nu med alle tallene klar kan vi sige:
+    _($\left(\frac{Cos(0.3)*9.43+9.21}{3}, \frac{Sin(0.3)*9.43}{3}\right)=(6.07,0.94)_)
+    Fantastisk, nu skal vi så bare bruge det her til at finde de aktuelle koordinater på _(m_1_).
+    </p>
+    <img class='Spic' style='width:55%' src='../../../Assets/Chapter2\Section2\BilliardsAndProperties\CenterOfMassWeirdShape4.png'> 
+    <p class="t">
+    Vi har først og fremmest brug for vinklen _(\angle CAO_), så vi 
+    kan finde ud af hvor langt væk det er fra _(A_). Denne vinkel kan vi finde
+    som 
+    _($0.3+\angle BAO = 0.3+Arctan \left(\frac{2-(-3)}{4-(-4)} \right)=0.862_)
+    Vi har også brug for endnu en vinkel:  
+    </p>
+    <img class='Spic' style='width:55%' src='../../../Assets/Chapter2\Section2\BilliardsAndProperties\CenterOfMassWeirdShape5.png'> 
+    <p class="t">
+    Den kan vi let se bare er _(\pi/2 - 0.862=0.708_). Vi får nu at _(m_1_) er
+    _($Cos(0.862)*6.07+Cos(0.708)*0.94=4.67_)
+    væk fra _(A_) på x-aksen. Den er:
+    _($-Sin(0.862)*6.07+Sin(0.708)*0.94=-4.00_)
+    væk fra _(A_) på y-aksen. Den er altså ved:
+    _($m_1=(-4+4.67,2-4.00)=(0.67,-2)_)
+    Jeg vil ikke gennemgå det her, men vi kan gøre præcist det samme for
+    at finde _(m_2_) som er:
+    _($m_2 = (-0.67,1.67)_)
+    Nu skal vi bare bruge formlen som vi kender den. Arealet af _(\triangle ABC_) 
+    er _(9.43*Sin(0.3)*9.21=13_), og man kan lignende regne at arealet på _(\triangle ABD_)
+    er _(21_). Man får så:
+    _($x_m = \frac{0.67*13 - 0.67*21}{13+21}=-0.157_)
+    og:
+    _($y_m = \frac{-2*13 + 1.67*21}{13+21}=0.266_)
+    Phew! Endelig! 
+    </p>
+    <br><br></answer-box>
+    
+    <p class="t">
+    Hvis en eller anden kraft bevæger os eller et hvilket som helst objekt, så handler den kraft <i>på</i> massecenteret. 
+    Det giver mening: hvis en kraft angriber et sted der <i>ikke</i> er massecenteret, så for den jo objektet til at 
+    rotere. Ergo, hvis objektet bevæger sig <i>uden</i> at rotere, så må kraften handle på balancepunktet! 
+    Det her er super praktisk, og en af de mange nice ting vi kan bruge det til er at finde ud 
+    af hvornår figurer vælter. 
+    </p>
+
+    <p class="t">Prøv at se følgende billede:</p>
+    <img class="Spic" style="width:100%" src='../../../Assets/Chapter2\Section2\BilliardsAndProperties\TopplePoint1.png'> 
+    <p class="t">Den ene figur her vælter, den anden gør ikke. Det er fordi massecenteret på den 
+    ene trækker ned hvor figuren ikke har noget at stå på:</p>
+    <img class="Spic" style="width:100%" src='../../../Assets/Chapter2\Section2\BilliardsAndProperties\TopplePoint2.png'> 
+    <p class="t">Hvis vi skal se om noget vælter, så skal vi altså "bare" finde dets massepunkt, tegne en linje
+    ned i <i>tyngdekraftens</i> retning (som ikke nødvendigvis altid er vinkelret til fladen vores figur står på!), og så se om den støder ind i bunden af vores figur (det den står på altså). </p>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Vælter følgende figur?
+    <img class="Spic" style="width:50%" src='../../../Assets/Chapter2\Section2\BilliardsAndProperties\TopplePoint3.png'> 
+    Hvis den ikke gør, hvor højt op kan vi så sætte de to øverste punkter før den vælter? Uendelig? 
+    <br><br></q-stion>
+    <answer-box>
+    Figuren kan nemt deles op i to rektangler, og man kan nemt finde hver af deres massecentre ved
+    bare at tage midten. I hvert fald får man et masse center _(M_) på _((3.68, noget)_) - y-koordinatet
+    er vi jo ret ligeglade med. Vores figur står på grunden fra _(x=0_) til _(x=4_), så det er altså ikke
+    noget problem at tyngdekraften trækker ned hvor den gør nu. 
+    <p class="t">
+    Nu til det mere interresante problem: hvor højt op kan vi flytte _((0,22),(8,22)_) før figuren vælter?
+    Hvis vi deler figuren op i den lille rektangel der er _(4_) bred og _(6_) høj, og så den store høje der 
+    er _(8_) bred og _(y-6_) høj, så er 
+    _($x_{massecenter}=\frac{2*4*6+4*8*(y-6)}{4*6+8*(y-6)}=\frac{32y-144}{8y-24}=\frac{4y-18}{y-3}_)
+    Lad os erstatte _(y-3_) med _(u_). Så får vi
+    _($\frac{4*(u+3)-18}{u}=\frac{4u-4}{u}=4*(1-\frac{1}{u})=4*(1-\frac{1}{y-3})_)
+    Når vi gør _(y_) uendelig høj, så nærmer _(\frac{1}{y-3}_) sig _(0_). Derfor vil
+    _(4*(1-\frac{1}{y-3})_) nærme sig _(4*1=4_). Så hvis vi antager at figuren ikke
+    vælter når den er lige ude på kanten _(4_), så kan vi altså gøre den uendelig høj! 
+    </p>
+    <br><br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Hvad skal vinklen være for at følgende rektangel vælter som det står lige nu?
+    <img class="Spic" style="width:80%" src='../../../Assets/Chapter2\Section2\BilliardsAndProperties\TopplePoint4.png'> 
+    <br><br></q-stion>
+    <answer-box>
+    Se følgende billede:
+    <img class="Spic" style="width:80%" src='../../../Assets/Chapter2\Section2\BilliardsAndProperties\TopplePoint5.png'> 
+    <p class="t">
+    Helt fundamentalt, så skal vi vinde den mindste
+    vinkel _(v_) hvor _(a \gt b_). _(b_) er bare
+    lig _(Cos(v)*5_). _(a_) er lidt mere kompliceret:
+    _($a=Cos(v)*2.5+Cos(w)*10_)
+    Vi kan se at _(w=90-v_), så _(Cos(w)_) bliver til
+    _(Cos(90-v)=Sin(v)_), ergo:
+    _($a=2.5Cos(v)+10Sin(v)_)
+    Så vi prøver at finde et _(v_) hvor:
+    _($2.5Cos(v)+10Sin(v) \ge 5Cos(v) \to_)
+    _($10Sin(v) \ge 2.5Cos(v) \to_)
+    _($\frac{Sin(v)}{Cos(v)} \ge \frac{2.5}{10}\to_)
+    _($Tan(v) \ge 0.25 \to_)
+    _($v \ge 14.036_) 
+    Wholla!
+    </p>
+    <br></answer-box>
+
+
+    ALT DET HER ER NOGET JEG VALGTE AT DROPPE, DA DET IKKE VAR RELEVANT. 
+    <p class="t">Lad os forestille os at kanten på vores form viste en eller anden vej vi gik, som her:</p>
+    <img class="Spic" style="width:80%" src='../../../Assets/Chapter2\Section2\BilliardsAndProperties\Wind1.png'> 
+    <p class="t">Der er en kraftig modvind (de lyseblå pile). Helt ideelt går du omkring _(20m_) minuttet, men vinden vil sørge for 
+    at du går _(2_) gange hurtige med dens retning - og selvfølgelig modsat hvis du går <i>mod</i>. 
+    Hvis vinden f.eks. har en vinkel til din retning på _(20^o_) grader: 
+    </p>
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter2\Section2\BilliardsAndProperties\Wind0.png'> 
+    <p class="t">Så vil der ske følgende:</p>
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter2\Section2\BilliardsAndProperties\Wind01.png'> 
+    <p class="t">
+    Du går altså i dette tilfælde _(30*Cos(20)=28.19m_) i vindens retning. Siden
+    du har medvind, så tager dette dig kun
+    _($\frac{28.19m}{2*20m/min}=0.7 min_)
+    
+    </p>
+    <q-stion 1="2" 2="1" 3="5">
+    Find ud af hvor lang tid det tager at gå langs denne form:
+    <img class="Spic" style="width:80%" src='../../../Assets/Chapter2\Section2\BilliardsAndProperties\Wind2.png'> 
+    <p class="t">Målene er i meter</p>
+    <br></q-stion>
+    <answer-box customWidth="565">
+    Vi ved at vinden får en til at gå hurtigere eller langsommere <i>langs dens retning</i>. Hvis vi går parallelt
+    med den, så har den aller størst indflydelse og du går dobbelt så hurtigt eller langsomt. Hvis vi går vinkelret med den, så har den absolut ingen.
+    Hvis vi går halvt vinkelret halvt parralelt, så har den halv indflydelse osv. Så:
+    <img class="Spic" style="width:80%" src='../../../Assets/Chapter2\Section2\BilliardsAndProperties\Wind3.png'> 
+    <p class="t"><i>Selve bevægelserne</i> kan vi dele op i to: en vinkelret del og en parralel del.
+    I den første trekant der går vi _(30*Cos(20)=30*0.939=28.169_) langs medvind og 
+    _(30*Sin(20)=30*0.342=10.26m_) vinkelret. Uden vind ville på et minut have gået _(20*0.939=18.779m_) langs
+    og _(20*0.342=6.84m_) perpendikulært. Siden vinden for os til at dobbelt så hurtigt langs dens retning, så
+    vil vi med vind gå _(18.779*2=37.338m_) langs pr minut. Nu har vi altså en retvinklet trekant med 
+    èn side på _(37.338_) og en anden side på _(6.84_), hvilket betyder at vi pr minut bevæger os 
+    _(\sqrt{37.338^2+6.84^2}=37.959_) meter. Ergo, det tager os _(30/37.959=0.79_) minutter at gå langs den første side. </p>
+    <p class="t">
+    Den næste trekant har en vinkel på _(20+(180-120)=20+60=80_) og der gør vi præcist det samme: langs
+    den retning går vi _(\sqrt{(20*Cos(80)*2)^2+(20*Sin(80))^2}=20*\sqrt{(0.173*2)^2+0.984^2}=20.861_) meter pr minut.
+    Den tredje trekant kan man med lidt arbejde se har en vinkel på _(5_) grader <i>mod</i> vinden, så
+    det bliver _(20*\sqrt{(Cos(5)*0.5)^2+Sin(5)^2}=_) _(10.111 m/minut_). Den sidste er direkte vinkelret så vingen 
+    har ingen indflydelse. Alt i alt:
+    _(0.79+25/20.861+40/10.111+38/20=7.844_) minutter. 
+    </p> 
+    <br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    En regulær polygon er som sagt tidligere en polygon hvor alle vinkler og sider er lige store. Med
+    den givne vindretning i følgende billede, prøv at find ud af hvor lang tid det tager at gå langs
+    en regulær polygon med _(10_) kanter og en omkreds på _(40m_) hvis vindens retning er parallel med 
+    èn af siderne. Vindhastigheden er den samme som før.
+    <p class="t">    Se billedet her:</p>
+    <img class="Spic" style="width:80%" src='../../../Assets/Chapter2\Section2\BilliardsAndProperties\Reg10PolygonWind.png'> 
+    <br><br></q-stion>
+    <answer-box>
+    Fordi det bare er en cirkel, så behøver vi ikke at bekymre os om <i>hvad</i> for en side vinden er parallel med.
+    På grund af symmetri så er der kun i dette tilfælde _(6_) forskellige sider vi skal finde ud af hvor lang tid det
+    tager at gå på. Hver side er _(40/10=4m_) lang, og man kan relativt nemt se på diagrammet at den _(i_)'ne side
+    har en vinkel til vinden på _(36*i_). Altså, vi skal bare udregne:
+    _($ \begin{eqnarray} 
+        && \frac{4}{20*2} + \frac{4}{20/2} & +  \\
+        && 2*\frac{1}{20*\sqrt{Cos(36)^2*4+Sin(36)^2}} & + \\
+        && 2*\frac{1}{20*\sqrt{Cos(72)^2*4+Sin(72)^2}} & + \\
+        && 2*\frac{1}{20*\sqrt{Cos(36)^2/4+Sin(36)^2}} & + \\
+        && 2*\frac{1}{20*\sqrt{Cos(72)^2/4+Sin(72)^2}} &
+    \end{eqnarray}_)
+    _($ = 8.356 minutter_)
+    <br><br></answer-box>
+
+    
+
+    <!-- <q-stion 1="2" 2="1" 3="5">
+    Kan følgende form rulle ned af en bakke med en hældning nedad på 35 grader?
+    BILLEDE HER AF EN RET IRREGULÆR FORM. DET SKAL VIRKE NÅR DEN STÅR PÅ ALLE ANDRE KANTER END ÈN BESTEMT
+    <br><br></q-stion>
+    <answer-box>
+        
+    <br><br></answer-box> -->
+
+

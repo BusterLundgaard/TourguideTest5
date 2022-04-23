@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+
+
+    <h3>Anvendelsesopgaver med Geogebras geometri-funktioner</h3>
+    <p class="t">
+    Nu er det som sagt tid til opgaver, hvor du faktisk skal løse svære
+    problemer med Geogebra:
+    </p>
+
+    <q-stion 1="10" 2="1">
+    Sig vi arbejder med følgende slags opsætning:
+    <img class='SpicXL' style='width:80%' src='../../../Assets/Chapter2\Geogebra\Geometri\TandhjulForklaret.png'> 
+    <br>
+    En opsætning, hvor hjul trækker andre hjul ved hjælp af 
+    en kæde/rem. 
+    Sig vi har to hjul: Det ene har en radius på _(30cm_), det andet en radius på _(70cm_).
+    Centeret af det ene hjul er _(230cm_) væk fra centeret af det andet hjul. Hvor lang skal
+    kæden/remmen være? 
+    <br><br></q-stion>
+    <answer-box>
+    Lad os konstruere situationen i Geogebra, og måle længden derinde: 
+    <video class='SpicB' style="width:95%;" controls>
+        <source src='../../../Assets/Chapter2\Geogebra\Geometri\TandhjulExercise.mp4' type='video/mp4'>
+    </video>
+    <br> <br>
+    Geogebra filen er her: <a href="../../../Assets/Chapter2\Geogebra\Geometri\TandhjulExercise.ggb" download>
+        Download!
+    </a>
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="10" 2="2">
+    Sig der bliver bygget en moderne statue med en stjerne-figur på enden:
+    <img class='SpicXL' style='width:90%' src='../../../Assets/Chapter2\Geogebra\Geometri\Statue.png'> 
+    <p class="t">
+    Stjernen der hænger ved enden vejer _(20_)% så meget som resten af figuren. Hvor langt
+    kan man bevæge _(x_), før figuren vælter? Det
+    er fint, hvis dit svar på denne ikke er super præcist. 
+    </p>
+    <p class="t">
+    I denne opgave vil kommandoen _(\text{Centroid}_) hjælpe dig markant. Den finder massecenteret
+    af en polygonfigur. Hvis du f.eks. har lavet en polygon du navngav _(\text{buster}_), 
+    skriver du _(\text{Centroid}(\text{buster})_), og Geogebra plotter _(\text{buster}_)'s massemidtpunktet. 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Vi har to figurer på billedet lige nu: Selve statuen, og stjernen der hænger for enden.
+    De her to figurer har et <i>samlet</i> massemidtpunkt, og vi skal se hvor stort 
+    - eller helt korrekt, hvor negativt - vi kan gøre _(x_), før dette massemidtpunkt er så langt
+    til venstre, at figuren vælter:
+    <img class='Spic' style='width:95%' src='../../../Assets/Chapter2\Geogebra\Geometri\TopplePoint3.png'> 
+    <p class="t">
+    Den ene figur vælter, fordi dens massemidtpunkt ikke længere er over bunden af figuren. 
+    </p>
+    <p class="t">
+    For at finde det samlede massemidtpunkt af to figurer med massemidtpunkter 
+    _(M_1=_) _((x_1,y_1)_) og _(M_2=_) _((x_2,y_2)_), siger vi
+    _($ x_{massemidtpunkt} = \frac{x_1*m_1 + x_2*m_2}{m_1+m_2}_)
+    Der findes også en formel for _(y_)-koordinatet, men det er vi ligeglade med lige nu.
+    Pointen er, at vi hverken kender _(m_1_) eller _(m_2_): Kun _(m_2/m_1=_) _(0.2_). 
+    Det er intet stort problem dog: 
+    En brøk forbliver intakt, så længe man ganger både nævner og tæller. 
+    Lad os derfor gange nævner og tæller med _(1/m_1_) og få:
+    _($\frac{\frac{x_1*m_1 + x_2*m_2}{m_1}}{\frac{m_1+m_2}{m_1}} = \frac{x_1+x_2*(\frac{m_2}{m_1})}{1+\frac{m_2}{m_1}}_)
+    _(m_2/m_1_) er som sagt lig _(0.2_), og stjernens massemidtpunkt _(x_2_) er
+    lig _(x_) på billedet, som vi ved, fordi en stjerne er symmetrisk. Ergo:
+    _($x_{massemidtpunkt} = \frac{x_1+x*0.2}{1.2}_) 
+    På billedet kan vi se, at dette samlede massemidtpunkts x-koordinat skal 
+    være mindre end _(0_), før figuren vælter. Geogebra kan let finde _(x_1_)
+    for os gennem _(\text{Centroid}_) kommandoen, så lad os plotte hele situationen
+    og <i>se</i>, hvornår figuren burde vælte:
+    </p>
+    <video class='SpicB' style="width:95%;" controls>
+        <source src='../../../Assets/Chapter2\Geogebra\Geometri\MassCenterExercise.mp4' type='video/mp4'>
+    </video>
+    <p class="t">
+    Du kan downloade Geogebra filen her:
+    </p>
+    <p class="cent">
+        <a href="../../../Assets/Chapter2\Geogebra\Geometri\StatueExercise.ggb" download>
+            Download!
+        </a>
+    </p>
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="10" 2="3">
+    Sig du har en ellipse-formet billiards-bane:
+    <img class='SpicXL' style='width:88%' src='../../../Assets/Chapter2\Geogebra\Geometri\BilliardExercise.png'> 
+    <p class="t">
+    Bolden vil rikochettere når den rammer kanter. Sig at man i dette spil
+    får flere points, jo flere gange bolden rikochettere, før den rammer målet. Er det muligt med den position
+    bolden står ved lige nu, at rikochettere to gange før man rammer mål? 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Min strategi er relativ simpel: Jeg har tænkt mig at genskabe banen i Geogebra, lave en slider
+    hvor jeg kan justere vinklen, få Geogebra til automatisk at beregne hvor bolden lander
+    efter to rikochetteringer, og så se om den nogensinde rammer mål: 
+    <video class='SpicB' style="width:95%;" controls>
+        <source src='../../../Assets/Chapter2\Geogebra\Geometri\BilliardsExercise.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="10" 2="4">
+    Det er let nok at få et objekt til at <i>dreje rundt</i>: 
+    Tyngdekraften på et vandhjul,
+    elektromagnetisme og magneter, damp/tryk, osv. 
+    Det er simplere fordi en "drej rundt"-bevægelse bare bliver ved og ved: 
+    Den er simpel, og ændrer sig aldrig. 
+    Hvad gør vi hvis et objekt skal gå frem og tilbage i en lige linje? 
+    Nu står vi pludselig med <i>to</i> diskrete bevægelser: Èn frem, én tilbage. 
+    Det er sværere at fremkomme en sådanne lineær handling,
+    så man bygger ofte i stedet en smart konstruktion, der konvertere
+    en cirkulær til en lineær bevægelse. 
+    Det findes et hav af metoder og maskiner til formålet, men her er ét simpelt eksempel:
+    <br><br><br>
+    <hover-video url="../../../Assets/Chapter2\Geogebra\Geometri\circularToLinear.mp4" ></hover-video>
+    <br><p class="t">
+    Den ene ende af en stang sidder fast til den cirkulære bevægelse, og 
+    den anden sidder fast, så den kun kan bevæge sig lineært i en
+    given retning. Som resultat bevæger 
+    en rød prik sig frem og tilbage, når vi drejer hjulet.
+    </p>
+    <p class="t">
+    Sig vi arbejder med præcist samme slags setup som i videoen. 
+    Sig yderligere, at radiusen på den cirkulære bevægelse er _(1.74m_), den lineære bevægelse
+    skal være lodret og præcis _(4.1m_) lang, og længden af stangen er _(4.3m_). 
+    Nu mangler vi kun ét essentielt stykke info: 
+    <i>Hvor</i> er den 
+    lineære bevægelse? Hvor langt væk er den på x- og y fra cirklens center? Jeg forklarer
+    opgaven i denne video: 
+    </p>
+    <video class='SpicBXL' style="width:95%;" controls>
+        <source src='../../../Assets/Chapter2\Geogebra\Geometri\LinearCircularExerciseIntro.mp4' type='video/mp4'>
+    </video>
+    <p class="t">
+    Det her er en relativ svær opgave! Det er ikke muligt at gøre det 100% præcist i Geogebra,
+    men der findes absolut en strategi man kan bruge, så man ikke behøver, at vælge en masse tilfældige
+    punkter indtil det cirka virker. 
+    </p>
+    <p class="t">
+    Det her er også en opgave, hvor det virkelig kan hjælpe at eksperimentere! Leg lidt
+    rundt i Geogebra, og se om du opdager noget brugbart.
+    </p>
+    <br></q-stion>
+    <answer-box t="h">
+    Prøv at tænke over hvor <i>cirklen skal være</i> i forhold til stangen, i stedet for hvor
+    <i>stangen</i> skal være i forhold til cirklen. Nu kan du stille dig selv to spørgsmål:
+    <p class="t">
+    <b> 1</b>: Cirklen skal være placeret sådan, at et hvert sted på den kan nås af stangen,
+    der er på linjestykket
+    </p>
+    <p class="t">
+    <b> 2</b>: Der må ikke være noget sted på linjestykket, hvor stangen <i>ikke</i> kan nå
+    cirklen. 
+    </p>
+    <p class="t">
+    Du kan lave en cirkel på den lineære bevægelse med radius _(4.3_), som repræsenterer alle de
+    steder stangen kan nå. 
+    </p>
+    <br></answer-box>
+    <answer-box>
+    Du kan se mit svar her:
+    <video class='SpicB' style="width:95%;" controls>
+        <source src='../../../Assets/Chapter2\Geogebra\Geometri\CircularToLinearExercise.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+
+
+
+

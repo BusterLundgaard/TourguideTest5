@@ -1,0 +1,2612 @@
+¤0
+Vi tæller får, og udvikler et matematisk grundfundament#0
+Det her er et lidt mærkeligt kapitel, og det er klart det kapitel der
+<i>mindst</i> følger nogen form for pensum. Kapitlet antager
+at du <i>intet</i> ved om matematik eller tal, og starter så
+<i>helt</i> fra starten. Men det er ikke rettet mod børn; Det er rettet mod folk, der føler, de har brug for
+en "frisk start". Brug for at forstå det helt grundlæggende.
+En af de vigtigste formål her er også at forbedre din <i>talforståelse</i>. 
+Bliver du eksempelvis let forvirret over procenter, kommatal eller negative tal? 
+Hvis du læser kapitlet bliver du bedre til at forstå, anvende, arbejde med og omskrive tal. 
+<br><br>
+Jeg anbefaler <i>virkelig</i> at du læser det her kapitel, selvom
+det i starten kan virke lidt formålsløst og "nemt". Bare roligt:
+Kapitlet og dets opgaver er ikke "nemme", og du <i>vil</i> få noget ud af det.
+Udover tal, plus, minus osv, er der undervejs mange
+små koncepter og idéer, du nok ikke har lært før. 
+Ligesom alle andre kapitler er der også stor fokus på at 
+træne dine problemløsningsevner. 
+<br><br>
+Kapitlet kan godt se lidt intimiderende ud, hvis du bare skimmer over det, da
+vi starter ud med et andet talsystem end det decimaltalssystem (1, 2, 3, 4, 5, 6, 7, 8, 9),
+du er vant til. Kapitlet handler om hvordan vi udvikler vores eget system, og til sidst  
+ender med decimaltalssystemet (spoilers!) #0
+får, land-ejer #0
+/Chapters/New1/#0
+tal, plus, minus, gange, division, parenteser, potenser, gange og dividere ind parenteser, euklidisk division, variabler, primtal, kommatal, enheder, SI-enheder, signifikante decimaler, negative tal #0
+
+¤1
+ #1
+ #1
+ #1
+New1One/#1
+ #1
+
+¤2
+Intro #2
+Kapitlet bliver introduceret. Vi forstiller os, at vi aldrig har lært om tal,
+og ser på en masse problemer, der er svære at løse uden. #2
+får, land-ejer, hvede, gæld, dyr, wrestling #2
+1 #2
+ #2
+
+
+¤2
+Problem A: Får #2
+Hvordan holder du styr på dine får, hvis tal slet ikke er opfundet? 
+Hvordan vurderer du, om der er forsvundet nogle får gennem natten, eller om
+du har flere eller mindre får end din nabo? 
+<br><br>
+Vi udvikler et primitivt talsystem med en lertavle, for at svare på disse spørgsmål #2
+streger, bær, lertavle, sammenligning #2
+2 #2
+ #2
+
+
+¤2
+Problem B: Et røvhul der kalder sig selv for "land-ejer" #2
+Vi undersøger hvordan, man kan løse diverse problemer associeret med gæld
+og tyveri, og udvikler i processen "plus" og "minus". #2
+kapitalisme, hvede #2
+5 #2
+plus, minus #2
+
+
+¤2
+Problem C: Er der nok hvede til vinteren? #2
+En landmand skal vurdere, om han har nok hvede til at overleve vinteren.
+Det hjælper vi ham med, og udvikler i processen "gange" og "division".
+Efter det går vi på et ret stort sidespor og ser mere dybdegående på gange, 
+division og deres diverse egenskaber; Det er faktisk klart <i>størstedelen</i> af
+det her kapitel - landmanden fylder ret lidt. #2
+fractions, distributivitet #2
+6 #2
+gange, division, parenteser, brøker, gange og dividere ind i parenteser, rækkefølge når man ganger og dividerer #2
+
+¤3
+Lad os lære mere om gangestykker! #3
+Vi går i dybden med at gange. Udover opgaver og gode teknikker introducerer
+vi også <i>parenteser</i> ( ), som bliver meget vigtige gennem resten af bogen. Vi
+lærer også om hvordan, man kan gange ind i parenteser. Det er en
+vigtig og brugbar egenskab. Til sidst lærer vi hvorfor, rækkefølge
+er ligegyldigt når man ganger #3
+distributivitet, algebra #3
+7 #3
+¤4
+Parenteser #4
+Parenteser bliver introduceret, og vi øver os på et par opgaver #4
+Parentes, algebra #4
+7 #4
+¤4
+At gange ind i parenteser #4
+Vi ser hvorfor og hvordan man kan "gange ind i parentes",
+ser hvorfor det kan være brugbart, og øver os med et par opgaver. #4
+parentes, distributivitet, algebra #4
+8 #4
+¤4
+Rækkefølgen når vi ganger #4
+Vi undersøger om rækkefølgen har nogen indflydelse når man ganger, og
+finder ud af at svaret er nej - den har ikke nogen indflydelse. #4
+rækkefølge, associative #4
+9 #4
+
+¤3
+Tilbage til landmanden! #3
+Vi tager tilbage til landmanden og hjælper ham for en gangs skyld med at løse hans problem.
+Overlever han vinteren? Find out now! #3
+gange, division, anvendelse #3
+10 #3
+
+¤3
+Lad os lære mere om divisionstykker #3
+Stort set alt hvad vi undersøgte tidligere for gange undersøger vi nu
+også for division: Tricks, opgaver, parenteser og rækkefølge. Udover
+dette ser vi også nærmere på hvordan, division og multiplikation spiller
+sammen, og hvordan de virker som "modsætninger af hinanden".
+<br><br>
+Vi introducerer også brøker her, hvilket nok er ret vigtigt at sige. #3
+ #3
+11 #3
+¤4
+Parenteser 2: The sequel #4
+Vi ser på parenteser i forhold til division. #4
+ #4
+11 #4
+¤4
+At dividere er det modsatte af at gange #4
+Vi undersøger hvordan division og multiplikation er to "modsatte handlinger".
+Vi undersøger det ved at lave en masse opgaver, og opdager mønstre og praktiske tricks undervejs.
+På en måde udvikler vi faktiske også en masse formler til brøker her! #4
+ #4
+12 #4
+¤4
+Rækkefølge og parenteser når vi dividerer og ganger #4
+I hvilken rækkefølge skal vi gange og dividere? Det her er også lidt
+en udvidelse af tidligere afsnit med multiplikation og division som to modsatte handlinger. #4
+ #4
+13 #4
+¤4
+En meget bedre måde at skrive/tegne divisionsstykker (aka brøker) #4
+Vi introducerer brøker! Brøker er intet andet end det vi allerede har arbejdet med
+en del nu, bare tegnet på en ny måde. Vi øver os på et par opgaver. #4
+ #4
+14 #4
+
+
+¤2
+Problem D: Hvordan kvantificerer vi andre størrelser udover antal? #2
+Vi har udviklet et system, der succesfuldt kan løse og beskrive diverse problemer
+indenfor <i>antal</i>. Hvad med andre størrelser som <i>længde</i> eller <i>tid</i> dog?
+Det er problematikken der bliver undersøgt her. Vi introducerer
+"enheder" til tal, og ser, hvordan vi kan måle diverse størrelser som 
+længde, vægt, tid og areal.  #2
+pind #2
+15 #2
+enheder, mål, længde, vægt, tid, areal, densitet #2
+
+
+¤2
+Problem E: Noget "mellem" to tal #2
+Vores system kan indtil videre håndtere både antal og mål,
+men især i vores forsøg på at beskrive mål, er vi stødt på et problem:
+Hvad hvis "noget" ikke helt passer enheden? Hvis det er mellem
+1 og 2 æbler tungt? Generelt skal vores system på en eller
+anden måde kunne beskrive noget "mellem" to tal.
+<br><br>
+Udover denne innovation udvikler vi også vores talsystem på en lang række
+andre måder i dette meget store afsnit. Vi ender faktisk ud med et 
+praktisk talt <i>perfekt</i> system: <i>decimaltalssystemet</i>.
+Derefter træner vi vores regne-færdigheder i dette "nye" færdige system, og heriblandt
+en masse anvendelsesopgaver med plus, minus gange og division
+<br><br>
+En helt side er dedikeret til en bestemt slags opgave, med en person
+der skal ned til bageren og hente brød. De her opgaver er ret vigtige, da
+de tilsammen er med til at udvikle et princip vi bruger
+gennem resten af bogen: bogstaver. At generalisere/abstrahere et tal
+til et bogstav/symbol, fordi det i diverse situationer kan hjælpe på diverse måder. 
+<br><br>
+I underafsnittet "hvorfor lige 360 grader på en cirkel" introducerer vi også primtal,
+og lærer bl.a. at lægge to brøker med forskellige nævnere sammen, samt
+hvordan man beskriver tricky tilfælde som 1/3 gennem decimaltal. En del
+vigtigt stof i dette lidt lange underafsnit!
+<br><br>
+Til sidst definerer vi lige kort potenser. #2
+ #2
+19 #2
+kommatal, decimaltal, talbaser, aritmetiktræning, euklidisk division, variabler, primtal, GCM og LCD, læg to brøker sammen, potenser #2
+
+¤3
+Kan vi gøre systemet <i>endnu</i> bedre? #3
+Vores system kan nu beskrive kvantiteter "mellem" to tal. Det
+er stadig lidt upraktisk at arbejde med. Kan vi udvikle det på nogen måde
+der gør det lettere og mere praktisk?
+<br><br>
+I dette underafsnit reviderer vi systemet og introducerer en lang række nye innovationer.
+Til sidst ender vi ud med det system du kender fra hverdagen: Decimaltalssystemet. #3
+kommatal, decimaltal, komma, baser, talbaser, talbase #3
+22 #3
+
+¤3
+Træn dine skills #3
+Vi er endelig nået frem til decimaltalssystemet! Nu skal vi bare
+træne os i at plusse, minusse, gange og dividere ... igen. 
+Nu bare lidt mere udfordrende og vigtige opgaver, eftersom 
+vores system er bedre og kan håndtere mere. 
+<br><br>
+Det er ikke <i>bare</i> kedelige hovedregningsopgaver i dette afsnit dog.
+Vi fokuserer i højere grad på anvendelser, teknik og tricks end bare beregning.
+<br><br>
+Underafsnittet slutter på en side fyldt med opgaver
+der omhandler en person, der skal ned til bageren og hente brød.
+De her opgaver er ret vigtige, da
+de tilsammen er med til at udvikle et princip vi bruger
+gennem resten af bogen: bogstaver. At generalisere/abstrahere et tal
+til et bogstav/symbol, fordi det i diverse situationer kan hjælpe. #3
+plus, minus, gange, division, aritmetik, hovedregning, euklidisk, variabler, algebra #3
+26 #3
+¤4
+Plus og minus #4
+Vi øver os i at plusse og minusse store tal. #4
+plus, minus, hovedregning, aritmetik #4
+26 #4
+¤4
+Gange #4
+Vi ser på diverse tips og teknikker, der kan effektivisere multiplikation, og øver os med et par opgaver #4
+gange, multiplikation, hovedregning, aritmetik #4
+27 #4
+¤4
+Division #4
+På denne side gør vi lidt tre ting:
+Vi øver os i at beregne tricky divisionsstykker, 
+vi ser på en helt masse anvendelser af division og
+vi introducerer en teknik kaldt "Euklidisk division".
+Det er intet specielt fancy, og er bare et slags "worst case scenarie",
+hvis du ikke kan løse et divisionsstykke med nogle hurtigere tricks.
+Det svarer til den divisionsteknik på papiret du lærte i skolen. #4
+division, dividere, euklidisk, anvendelser, aritmetik #4
+28 #4
+¤4
+Dem alle sammen! #4
+Dette er en side fyldt med opgaver
+der omhandler en person, der skal ned til bageren og hente brød.
+De her opgaver er ret vigtige, da
+de tilsammen er med til at udvikle et vigtigt princip, vi bruger
+gennem resten af bogen: bogstaver. At generalisere/abstrahere et tal
+til et bogstav/symbol, fordi det i diverse situationer kan hjælpe på diverse måder. #3
+plus, minus, gange, division, aritmetik, hovedregning, euklidisk, variabler, algebra #4
+variabler, algebra, generalisering #4
+29 #4
+
+¤3
+Hvorfor lige 360 grader på en cirkel? #3
+Vi lærer faktisk en del mere i dette afsnit end hvorfor der er
+360 grader på en cirkel - det er bare det motiverende problem. 
+Mere generelt introducerer vi <i>primtal</i>, og hvorfor 
+det er en brugbar ide, der kan hjælpe 
+os med at forstå en del 
+problematikker og fænomener. Vi ser på en del anvendelser og løser en del opgaver,
+heriblandt hvordan man plusser to brøker med forskellige nævnere, og hvordan
+man beskriver en tricky brøk som 1/3 via et decimaltal. Det er
+også en opgave med hotdogbrød og hotdogpølser, hvor vi introducerer
+en ide kaldt LCD og GCM: "Lowest commen denominator" og "greatest common multiple". #3
+ #3
+30 #3
+
+¤3
+Potenser #3
+Vi definerer potenser, ser hvorfor de er brugbare, løser et par opgaver
+og undersøger et par egenskaber. En kort simpel lille side. #3
+potens, potenser, algebra, variabler #3
+31 #3
+
+
+¤2
+Problem F: Internationalt samarbejde #2
+Vi ser på SI-systemet for enheder. Det er
+de europæiske enheder du er vant til:
+Kg, meter, sekunder osv, samt de
+officielle "prefixes": Er det liter, 
+deci-liter eller mili-liter? Måske
+pico-liter? Vi øver os også i at konvertere mellem
+forskellige enheder.
+<br><br>
+Udøver dette lærer vi om hvordan, man bestemmer det rigtige antal <i>nødvendige decimaler</i>,
+når man arbejder med kommatal på professionelt eller akademisk niveau. 
+Det er ret vigtigt med den rigtige mængde: Runder vi ned for meget får vi et upræcist tal,
+men indeholder vores mål får mange kommatal, virker de mere præcise end hvad
+de reelt er. 
+#2
+enheder, SI, prefixes, kg, mm, meter, sekunder, pico, deci, nano, giga, præcision, videnskab, mål #2
+32 #2
+SI-enheder, SI-prefixes, konvertering af enheder, signifikante decimaler #2
+
+¤3
+Størrelse, præcision og mellemregninger #3
+Hvornår er og hvornår er et tal ikke "præcist"? Hvordan
+tyder vi antallet af kommaer på et mål? 
+Hvad er det "rigtige" antal kommaer:
+Runder vi ned for meget får vi et upræcist tal,
+men indeholder vores mål får mange kommatal, virker de mere præcise end hvad
+de reelt er.  #3
+signifikante tal, decimaltal, komma, præcision #3
+33 #3
+
+
+¤2
+Problem G: Mindre end 0? #2
+Vi introducerer og udvikler et system til tal, der er "mindre end 0": Negative tal.
+Hvorfor har man overhovedet brug for "negative tal"? Hvorfor
+giver minus ganget med minus plus? Hvad med potenser: Kan de godt
+være "negative"? #2
+-1*-1, minus, negative tal, potenser #2
+34 #2
+Negative tal #2
+
+
+
+
+
+¤0
+Geometri og Algebra: En ikonisk duo #0
+I det her ret brede kapitel dækker vi geometri og ... øh... algebra.
+Her mener jeg geometri meget bredt som: "Noget med størrelser, former, længder, mål, whatever", 
+og algebra meget bredt som: "arbejde med tal og symboler og sådan nogle ting der". Hvert afsnit
+bygger på det tidligere, og sværhedsgraden stiger, så jeg anbefaler at du starter med første afsnit
+om trekanter. 
+<br><br>
+Gennem alle afsnit i dette kapitel går vi på rigtig mange sidespor. Hele afsnit 2
+(en biksemad geometri) er praktisk tal én stor samling af sidespor! Det er både fordi man umuligt
+kunne lave én logisk og struktureret vej gennem alt det varierede stof der bliver dækket i kapitlet, men også
+fordi vi mere generelt bare skal træne vores geometri- og algebra-<i>evner</i>; Så
+er det til dels ligegyldigt, hvad præcis vi træner det på. 
+<br><br>
+... Men <i>skulle man nu</i> give et groft resume alligevel, dækker første afsnit
+primært trekanter og trigonometri - heriblandt Cos og Sin. Andet afsnit fokuserer meget på former,
+tredje afsnit er primært bare algebra (symboler, funktioner osv) og fjerde afsnit handler
+om at bruge algebra til at beskrive visuelle og rumlige koncepter og ideer på forskellige måder - 
+alt fra former, grafer, position, bevægelse, 3D og mere. #0
+ #0
+/Chapters/2Geoalgebra/#0
+Trigonometri, Sin og Cos og Tan, Cirkler, Modulos, Bølger, Geometrisk fagterminologi, Ligninger, Funktioner, 3D geometri, Uligheder, Systemer af ligninger, Vektorer, Kræfter, Massecentre, Koniske sektioner, Komplekse tal, Matrixer#0
+
+¤1
+Trekanter, trekanter, og flere trekanter #1
+Trekanter danner en slags basis for stort set alt geometri. Det er nok den simpleste todimensionelle 
+figur der findes, og rigtig mange andre figurer kan reduceres til samlinger af trekanter. 
+Hvordan finder vi trekantens tredje side? Hvordan finder vi hurtigt arealer og sidelængder? 
+<br><br>
+En trekant har to dimensioner, og har derfor en slags "retning" - et 
+forhold mellem dens bredde og højde, en stejlhed. 
+Det koncept fik vi aldrig rigtig kvantificeret eller overvejet i sidste kapitel, så
+i starten fokuserer vi en del på <i>hvordan</i>, vi vælger at tænke over
+og forstå "retninger". I processen udvikler vi <i>vinkler</i>, og med vinkler kommer
+Sin, Cos og Tan. De introduceres først i konteksten 
+af trekanten, men bliver senere studeret selvstændigt og omdefineret. De går
+fra en meget geometrisk ide, til noget der kan anvendes i en langt bredere vifte af situationer. 
+<br><br>
+Et par bemærkelsesværdige sidespor er: 
+Cirkler, et koncept i talteori kaldt "modulos", andengradsligninger.
+Ja, andengradsligninger bliver introduceret i dette kapitel og ikke algebra-kapitlet. Det er lidt
+forvirrende, i know. #1
+andengradsligning, andengradspolynomie, ax^2 + bx^2 + c, a^2 + b^2 = c^2 #1
+BasicTrig/#1
+Pythagoras sætning, Vinkler, Sin og Cos, Vilkårlige trekanter, Cirkler, Modulos, Radianer, Bølger i fysik, Vinkeladditionsformlen for Sin og Cos, Dobbelt-vinkel og halv-vinkel på Sin og Cos, Produkt til sum og sum til produkt for Sin og Cos #1
+
+¤2
+Intro #2
+Denne intro dækker hvorfor trekanter er vigtige, og hvordan andre former kan beskrives 
+i forhold til trekanter #2
+landmåling, ret vinkel, 90 grader, hjørne #2
+1 #2
+ #2
+
+
+¤2
+Trekantens tredje side #2
+Vi udvikler en formel til at beregne den tredje side af en trekant givet de to andre, og øver os
+på en helt masse opgaver. Rigtig mange. #2
+a^2 + b^2 = c^2, kvadratrod, sqrt #2
+2 #2
+Pythagoras sætning, kvadratrødder #2
+
+
+¤2
+Hældninger, og et praktisk skema #2
+Vi udvikler et praktisk skema der gør det lettere at beregne én side på en trekant ved
+hjælp af de andre. Vi ser på trekantens "retning" i forhold til hældning:
+f.eks. hvor høj den er <i>i forhold til</i> hvor bred den er. #2
+ #2
+3 #2
+Hældning #2
+
+
+¤2
+Vinkler: En bedre ide #2
+Vi udvikler en langt bedre måde at beskrive retninger på gennem <i>vinkler</i>, og 
+studerer deres egenskaber, anvendelser, og forhold til hældning. Hvordan
+går man fra vinkel til hældning og vice versa? Det tidligere skema bliver
+opdateret/udvidet til vinkler, og gennem det introducerer vi 
+Sin, Cos og Tan. #2
+vinkel, angle #2
+4 #2
+Vinkler, Grader, Sin og Cos og Tan, Inverse trigonometriske funktioner  #2
+
+¤3
+Vinkler og vores hældnings-skemaer #3
+Vi opdaterer vores tidligere skema til vinkler, øver os i det, og introducerer
+Sin, Cos og Tan, som faktisk slet ikke er nye koncepter.  #3
+ #3
+5 #3
+
+¤3
+Fra hældning til vinkel #3
+Vi har beregnet hældning givet vinkel, og gør nu det modsatte: Vinkel givet hældning.
+Det kalder vi for Arccos, Arcsin og Arctan. #3
+invCos, invSin, invTan, sin^-1, cos^-1, tan^-1 #3
+6 #3
+
+¤3
+Smarte tricks og øvning i vinkler #3
+Vi ser på et par tricks og teknikker med vinkler der gør
+livet lidt nemmere, heriblandt vinkelsummen af former. En del opgaver og øvelse i det her underafsnit #3
+vinkelsum, 90 grader, ret vinkel, komplimentar, vertikal, areal #3
+7 #3
+
+
+¤2
+Vilkårlige trekanter: Dem der ikke nødvendigvis er retvinklede #2
+Vi øver os i at regne ukendte sider, vinkler og areal på vilkårlige trekanter.
+Det er altså trekanter, hvor der <i>ikke</i> nødvendigvis er en ret vinkel på 90 grader.
+<br><br>
+Vi træner og introducerer tre praktiske resultater: Sinusloven, Cosinusloven og en praktisk
+formel til at regne areal. Der er intet reelt "nyt" med disse teorier,
+men de gør livet hurtigere og nemmere. #2
+0.5*a*b*sin(v), sinusreglen, cosinusreglen #2
+8 #2
+Sinusloven, Cosinusloven, Appelsinformlen  #2
+
+¤3
+Første trick til at finde sider og vinkler #3
+Vi finder hurtigt frem til sinusreglen, og øver os en masse i at bruge den.
+Vi undersøger også de tilfælde hvor man <i>ikke</i> kan bruge reglen, selvom
+det umiddelbart ligner at man kan. #3
+ambigious, sinusreglen, sinusloven, sinusrelationen #3
+9 #3
+
+¤3
+Andet trick til at finde sider og vinkler #3
+Vi finder hurtigt frem til cosinusreglen, og øver os en masse i at bruge den.
+Vi lærer også at bruge cosinusreglen <i>modsat</i>. #3
+cosinusreglen, cosinusregel, cosinusloven, cosinusrelationen #3
+10 #3
+
+¤3
+Arealet på vilkårlige trekanter #3
+Vi finder en praktisk formel til hurtigt at regne arealet på en vilkårlig trekant, og øver
+os gennem nogle lidt tricky opgaver. #3
+appelsinformlen, areal #3
+11 #3
+
+
+¤2
+Cirkler, lige pludselig #2
+Vi undersøger hvordan, cirkler kan opdeles i uendelig mange små trekanter, og bruger
+det trick til at udlede formler for omkredsen og arealet. 
+Derefter står den bare på en helt masse øvelse:
+Rigtig mange opgaver hvor vi anvender de to formler. 
+<br><br>
+Vi går også på et meget kort
+sidespor omkring tangenter. #2
+ #2
+12 #2
+Cirkler, Pi, Radius / Diameter, Omkreds, Tangenter #2
+
+¤3
+Deres omkreds #3
+Vi finder omkredsen af en cirkel, og øver os i at bruge den gennem en helt masse opgaver #3
+omkreds, cirkel, pi, cirkler, længde, 2*r*pi, cirkeludsnit #3
+12 #3
+
+¤3
+Deres areal #3
+Vi finder arealet af en cirkel, og øver os i at bruge det gennem en helt masse opgaver #3
+cirkel, pi, cirkler, areal, pi*r^2, cirkeludsnit #3
+13 #3
+
+¤3
+Sidebemærkning oven på sidesporet: Tangenter #3
+Jeg forklarer hvad en tangent på en kurve er, og hvorfor det kan være praktisk at vide.
+Vi ser specifikt på en <i>cirkels</i> tangent, men en hvilket som
+helst kurve har tangenter overalt. #3
+refleksion #3
+14 #3
+
+
+¤2
+Lad os redefinere Sin og Cos #2
+Sin og Cos blev introduceret i konteksten af trekanter, men det er tid til at
+de skal udvides og fjernes fra denne kontekst. I dette afsnit ser
+vi på Sin, Cos og Tan som matematiske funktioner. Vi tænker over hvad der sker, hvis
+vi tager Sin eller Cos af et negativt tal, eller et tal der er højere end 360. Vi omdefinere
+Sin og Cos i forhold til "enhedscirklen". Vi skifter enheden fra grader til "radianer",
+og vi anvender de nye definitioner som en model til 
+bølger og som et praktisk værktøj i fysik.
+<br><br>
+Undervejs går vi på et sidespor omkring modulos. Det er som sådan ikke vigtigt at forstå for 
+trigonometriens skyld, men godt at vide for sin egen. Det passede ikke rigtig ind nogen
+andre steder, og lægger sig nok tættere op ad talteori end ad hverken geometri eller algebra, men ak. #2
+ #2
+15 #2
+enhedscirkel, modulos, bølger, akustik, oscillation og fjedere #2
+
+¤3
+Sidespor: Modulus! #3
+Vi introducerer modulos kort og laver en hulans masse opgaver; For at øve os og for at se dets brugbarhed.
+Det skal trænes før det bliver intuitivt. #3
+dato, ur, klokkeslæt, måned, år, rundkørsel, casino #3
+16 #3
+¤4
+Egenskaber af modulus #4
+Vi udvikler et par dejlige egenskaber til modulos, der gør det lettere at regne, og øver os
+meget kort i at bruge dem. #4
+potenser, gange, plus #4
+17 #4
+
+¤3
+En ny enhed til vinkler #3
+Vi erstatter grader med en ny enhed kaldt "radianer". Vi ser hvorfor,
+den er mere matematisk brugbar, bl.a. til arbejde med cirkler. #3
+radianer, grader, 2pi, 2*pi, arklængde, cirkeludsnit #3
+18 #3
+
+¤3
+Sin og Cos som <i>bølger</i> #3
+Vi lærer om fysikken bag lydbølger, og modellerer dem matematisk ved hjælp
+af vores nye definitioner på Sin og Cos. #3
+akustik, lydbølge, fysik, snor, frekvens, bølgelængde, hastighed, hz #3
+19 #3
+¤4
+Streng-instrumenter #4
+Vi sætter os ind i fysikken og matematikken bag 
+hvordan strenginstrumenter som en guitar eller violin fungerer, og anvender vores matematiske model. #4
+akustik, violin, guitar, streng, stående bølge, harmonisk #4
+20 #4
+
+¤3
+Fysik og oscillation #3
+Vi bruger Cos og Sin til at beskrive fænomener i fysik hvor et objekt bevæger sig "frem og tilbage"
+i bred forstand. Specifikt ser vi på en fjeder og et pendul. #3
+fjeder, pendul, harmonic oscillator, nominallængde #3
+21 #3
+
+
+¤2
+Matematiske egenskaber af Sin og Cos #2
+Vi undersøger diverse matematiske egenskaber på vores nydefinerede Sin og Cos-funktioner.
+Vi bruger rigtig lang tid på at udvikle en formel til _(Sin(A+B)_) og _(Cos(A+B)_) i
+forhold til _(Sin(A)_), _(Sin(B)_), _(Cos(A)_) og _(Cos(B)_), og får brug for et helt sidespor
+til andengradsligningernes land for at udlede formlen. Udover det undersøger
+vi halve og hele vinkler som _(Sin(2x)_) og _(Sin(x/2)_) samt vinkel-til-produkt- og 
+produkt-til-vinkel-formler. 
+<br><br>
+Til sidst undersøger vi også kort hældningen på en trigonometrisk kurve, da
+dets formel og udledning er meget elegant. #2
+ #2
+22 #2
+Vinkeladditionsformler, Dobbelt-vinkel og halv-vinkel, vinkel-til-produkt, produkt-til-vinkel #2
+
+¤3
+Vinkler lagt sammen inde i trig funktioner #3
+Vi bruger rigtig lang tid på at udvikle en formel til _(Sin(A+B)_) og _(Cos(A+B)_) i
+forhold til _(Sin(A)_), _(Sin(B)_), _(Cos(A)_) og _(Cos(B)_). Den her side er 
+én stor lang full-force udledning, og vi slutter på en intellektuel blokade
+der kræver et sidespor. #3
+Bevis, Sin(A+B), Cos(A+B), Sin(A)*Cos(B) + Sin(B)*Cos(A) #3
+23 #3
+¤4
+Sidespor: Andengradskrav #4
+Vi finder en generel strategi til at isolere _(x_) i krav som
+_(Ax^2 + Bx + c_), øver os, og bruger endelig resultatet til 
+at løse sidste sides problem. #4
+andengradsligning, andengradspolynomie, ax^2 + bx^2 + cx, kvadratisk formel #4
+24 #4
+¤4
+Træning i vores vinkel-additionsformel #4
+Vi øver os kort i at bruge formlen vi nu endelig har udledt #4
+ #4
+25 #4
+
+¤3
+Dobbelt-vinkler #3
+Vi finder en formel til _(Sin(2x)_) og _(Cos(2x)_) i forhold til _(Sin(x)_) og
+_(Cos(x)_). Vi gør også det præcist modsatte og finder en formel
+for _(Sin(x/2)_) og _(Cos(x/2)_) i forhold til _(Sin(x)_) og _(Cos(x)_) #3
+dobbelt vinkel, halv vinkel, dobbelt-vinkel, halv-vinkel #3
+26 #3
+
+¤3
+Produkt til sum og sum til produkt #3
+Vi finder to praktiske formler: Èn der kan lave to trig-funktioner ganget med hinanden om
+til to trig-funktioner plusset med hinanden, og én der kan gøre det modsatte. Vi
+ser et par anvendelser i forhold til ligninger også. #3
+produkt til sum, sum til produkt #3
+27 #3
+
+¤3
+Hældningen af en trig-kurve #3
+Vi udleder en meget let formel for hældningen ved _(x_) på _(Sin(x)_) og _(Cos(x)_), og træner os
+selv i at anvende og bruge den. #3
+derivative, calculus, hældning, graf, funktion, afledt, bevis #3
+28 #3
+
+
+
+¤1
+En biksemad geometri #1
+Det her afsnit bliver lidt rodet i forhold til de andre: 
+"Geometri" er et ekstremt bredt begreb. Hvad betyder det, 
+at man er "god til geometri"? Normalt vil man i et afsnit 
+som dette lære terminologien (hvilke dette afsnit også starter med) 
+og derefter gå i gang 
+med en masse opgaver, hvor man skal bevise en masse geometriske påstande for at træne 
+ens "bevisnings"-kræfter. Det syntes jeg er 
+lidt kedeligt, så vi vil i stedet se på en bred vifte af emner, 
+problemer og spørgsmål. De emner, som vi dækker, har ikke 
+specielt meget at gøre med hinanden, og formålet er primært 
+bare at træne dine geometri-evner, samt lære noget nyt og lidt 
+vilkårligt matematik, der måske kan blive brugbart.
+<br><br>
+Først vil vi undersøge firkanter og specifikt fokusere på forskellige strategier, man kan bruge til at regne deres areal. Hot damn!
+<br><br>
+Derefter vil vi undersøge en strategi til at finde store, komplicerede arealer kaldt "The shoelace strategy".
+<br><br>
+Derefter vil vi lave lidt opgaver med kongruens, similaritet, og lige store arealer. Business going down!
+<br><br>
+Vi vil så se en smule på, hvad vi kan sige generelt om "_(n_)-goner": En form med _(n_) sider, 
+hvor en firkant så er en _(4_)-gon.
+<br><br>
+Vi vil derefter se lidt på forholdet mellem omkreds og areal: Hvad er f.eks. den største firkant med en given omkreds?
+<br><br>
+I nok den mest anvendelige og brugbare 
+side vil vi undersøge "massecentre", og hvordan man beregner dem. 
+Et massecentre er på en måde "balancepunktet" på en figur.
+<br><br>
+Til sidst vil vi se 
+lidt på symmetri. Her vil vi lære, at "symmetri" i matematikken 
+faktisk er et mere abstrakt begreb, end man lige skulle tænke. #1
+ #1
+FormsAndDefinitions/#1
+Kongruens, Similaritet, Polygoner, Parralel, Massecentre, Symmetri #1
+
+¤2
+Geometrisk fagterminologi #2
+Vi skal kunne snakke om visuelle ting, uden at det bliver nødvendigt at vise 
+alting i billeder og videoer. Denne side introducerer
+derfor en masse begreber. Det kan virke irriterende med
+alt den terminologi, 
+men det betaler sig virkelig i den lange ende.
+Det meste 
+indhold i lige dette afsnit hjælper dig ikke med at løse problemer:
+Fokus lige nu er kommunikation mellem læreren mig og eleven dig #2
+ #2
+1 #2
+Linjer, Linjestykker, Komplimentar og Suplementar, Ydre vinkler, Kongruens, Similaritet, Median #2
+
+
+¤2
+Kort resume og forklaring af formålet med dette rodede afsnit #2
+Skal jeg seriøst give et resume af det her resume? #2
+ #2
+2 #2
+Fuldkommen, sindsygt, og resume #2
+
+
+¤2
+Firkanter og deres arealer #2
+Man <i>kan</i> let måle en firkants areal som samlingen af to vilkårlige trekanter, men
+findes der eventuelt andre, mere effektive strategier? Og hvad hvis vi er blevet
+givet nogle andre mål end just vinklerne og siderne? Måske er bestemte mål 
+virkelig effektive til at regne arealet? #2
+passer, lineal, areal, firkant, midtpunkter, varigon, diagonal, diagonaler #2
+3 #2
+Arealer af vilkårlige firkanter, Varigon parallelogram #2
+
+
+¤2
+Firkanters taxonomi: En lidt tilfældig opgave #2
+Vi prøver at klassificere og gruppere alle slags firkanter, man kan konstruere #2
+taxonomi, parallelogram, kvadrat, rhombus, dart, kite, trapezoid, rektangel, convex, concave, klassifikation  #2
+4 #2
+ #2
+
+
+¤2
+Shoelace-strategien til arealer #2
+Vi ser på en praktisk strategi til at regne arealer, hvis man har
+alle hjørner på sin figur. #2
+hesteskosteknikken, areal #2
+5 #2
+ #2
+
+
+¤2
+Forhold mellem omkreds og areal #2
+Vi undersøger forholdet mellem omkreds og areal, først på en trekant, så på en firkant. #2
+rhombus, overfladeareal, omkreds, areal, forhold #2
+6 #2
+ #2
+
+
+¤2
+Massecentre #2
+Vi lærer hvad massecenteret på en figur er, og regner en masse eksempler.
+Vi undersøger yderligere, hvordan man kan bruge dette massepunkt, til at beregne hvornår
+en figur vælter. #2
+center of mass, centroid, tipping point, topple point, vippe #2
+7 #2
+Massecenter #2
+
+¤3
+Hvor og hvornår vælter en figur? #3
+Vi bruger massecenteret til at beregne, hvornår en figur vælter #3
+ #3
+8 #3
+
+¤3
+Massecentre på lidt mere avancerede figurer #3
+Vi beregner massecenteret på mere komplicerede figurer, der ikke let kan reduceres til samlinger
+af cirkler og rektangler; F.eks. trekanter. #3
+integraler #3
+9 #3
+
+
+¤2
+Et lettere prætentiøst afsnit om symmetri #2
+Vi undersøger og udforsker symmetri, og opdager at det i matematikken 
+er et bredere og mere abstrakt begreb, end man lige skulle tænke.  #2
+ #2
+10 #2
+ #2
+¤3
+Den ret seje "kryds-ratio": 2D til 3D #3
+Når man laver en 3D verden om til et simpelt 2D billede er der meget information der går tabt - 
+hele scenens "tredimensionalitet" forsvinder. 
+Kan noget af den information måske reddes? 
+Det viser sig, at der findes en ratio mellem bestemte længder, der giver samme resultat
+med de <i>rigtige længder i virkeligheden</i> som <i>længderne man kan måle på det flade billede</i>.
+Ud fra det kan man (hvis man kender et par længder i virkeligheden) beregne 3D længder på et
+2D billede! #3
+cross-ratio, 3D, perspektiv, one-point perspective #3
+11 #3
+
+
+
+¤1
+Det obligatoriske og kedelige algebra afsnit #1
+Jeg har indtil videre været lidt hush-hush hvad angår algebra.
+Jeg har <i>brugt</i> algebra <i>en masse</i>, men jeg har aldrig som sådan
+nævnt fagbegreberne. Ingen "variabler" eller "ligninger". Det har jeg gjort
+fordi, det egentlig er simple koncepter <i>med kontekst</i>, men uden
+virker de ekstrem abstrakte. Vi <i>har</i> lært nok kontekst nu, så 
+det er tid til at sætte sig ned og få en grundig, kedelig og akademisk introduktion
+til algebra. Ligninger, funktioner, alt muligt og hele molevitten. 
+<br><br>
+Vi lærer først en masse fagterminologi ligesom sidste afsnit, heriblandt idéen
+bag en "modsat funktion". Så undersøger vi ligninger, der involverer eksponenter, og støder
+her på <i>logaritmer</i>. Derefter bruger vi en masse tid på at visualisere og analysere funktioner, 
+og dykker for første gang ned i 3D. Så står menuen på lidt flere ligninger,
+og derefter en introduktion til polynomier: Fagudtrykket, et par smarte tricks til hyppige omskrivninger,
+og hvordan de relaterer til intet mindre end "den fundamentalle algebra teori". 
+<br><br>
+Vi slutter af med tre lidt tilfældige underafsnit:
+En bevis-teknik kaldt "induktion", lidt uligheder (større-end mindre-end), og ligninger hvor
+løsningerne skal være hele tal. #1
+ #1
+EquationsRelations/#1
+Ligninger, modsatte funktioner, logaritmer, potenser af tal der ikke er hele, definitionsværdi og funktionsværdi, 3D koordinatsystemer, systemer af ligninger, falske løsninger, den fundamentalle algebra teori, division af polynomier (long division of polynomials), partial fraction decomposition, induktion, uligheder #1
+
+¤2
+Intro #2
+Vi introducerer en masse algebraisk fagterminologi. Spændende stof #2
+ #2
+1 #2
+Ligninger, funktioner, variabler #2
+
+
+¤2
+<i>Ligninger</i> og "modsatte funktioner" #2
+Man kan tænke over flere ligninger som en "modsat funktion", man bruger på begge sider,
+for at "fjerne" alle de funktioner, der er påsat det variabel eller tal, man forsøger
+at finde. Vi ser kort på denne ide, og laver et par lidt abstrakte opgaver #2
+ #2
+2 #2
+Modsatte funktioner #2
+
+¤2
+Logaritmer #2
+Det modsatte af at opløfte et tal til en potens, kalder vi 
+for en "logaritme". Det er bare et navn til en bestemt slags ligning. 
+I dette afsnit studerer vi logaritmer og eksponenter, deres
+algebraiske egenskaber, og hvordan de kan anvendes i ligninger. Vi bruger
+også logaritmer til at definere hvordan, man opløfter et tal til en "ikke-hel" potens.
+<br><br>
+Til sidst tager vi et kig på hvordan, logaritmer kan bruges i visualisering af data. En såkaldt
+<i>logaritmisk graf</i> #2
+ #2
+3 #2
+Logaritmer, Egenskaber af logaritmer, Eksponenter af ikke-hele tal, Logaritmisk graf #2
+
+¤3
+"-a hvad for en potens?": Potenser med tal, der ikke er hele #3
+Hvordan opløfter vi et tal til en potens, der ikke er hel? Kan man overhovedet det?
+Svaret er at vi <i>opfinder</i> en regel selv. Dette underafsnit
+handler om motivitationen bag den regel vi vælger, samt hvordan man bruger
+den i praksis. #3
+potens, kvadratrod, rødder, n-rod #3
+4 #3
+
+¤3
+Logaritmers egenskaber #3
+Vi udleder et par praktiske algebraiske egenskaber af logaritmer, og
+ser hvordan, man ved hjælp af én base kan regne logaritmer af <i>alle</i> baser.
+Det lægger grundlaget for hvordan, du kan regne logaritmer på din lommeregner #3
+lommeregner #3
+5 #3
+
+¤3
+Logaritmer som et intuitivt visualiseringsværktøj #3
+Vi ser hvordan en logaritmisk graf / skala kan hjælpe os med
+at visualisere data i visse situationer #3
+data, statistik, youtube, logaritmisk, skala #3
+6 #3
+
+
+¤2
+Visualisering af funktioner og ligninger #2
+Vi går i dybden med at visualisere / skitsere funktioner og ligninger - både i 2D og 3D.
+Det her handler i stor grad om at <i>analysere</i> det matematisk objekt, vi skal skitsere.
+Man leder efter bestemte vigtige informationer, der kan hjælpe en med tegningen. #2
+visualisering, skitsering, skitse, tegne, Geogebra, transformere, transform, 3D #2
+7 #2
+Definitionsværdi og funktionsværdi, Transformation af funktioner, 3D koordinatsystem, Ellipsoider, Kontourlinjer #2
+
+¤3
+Transformering af funktioner #3
+Vi ser hvordan, man kan rykke rundt på funktioner og skalere dem. 
+Mange funktioner er lettere at skitsere, hvis man ser dem som
+transformerede versioner af grafer, man allerede kender. #3
+skala, f(x-a), placering, offset #3
+8 #3
+
+¤3
+Visualisering i 3D #3
+Vi tager de første skridt ind i den tredimensionelle verden, og starter
+helt fra starten med simple koordinatsystemer, punkter og linjer. Derefter
+skitserer vi mere komplicerede former som ellipsoider ved hjælp af
+<i>kontour linjer</i>. Alt arbejdet kulminerer til sidst i skitsering af 
+3D funktioner. Det bliver et lidt langt afsnit! #3
+3D, koordinatsystem, rum, rumligt, visualisering, rumsans #3
+9 #3
+¤4
+Punkter og linjer #4
+Vi tager de første skridt ind i den tredimensionelle verden, og starter
+helt fra starten med simple koordinatsystemer, punkter og linjer #4
+punkter, linjer, koordinatsystem, rum, rumligt, visualisering, rumsans #4
+9 #4
+¤4
+Cirkler og ellipser #4
+Vi skitserer 3D kugler og ellipsoider. Det virker svært, men man kan hurtigt
+få en intuitiv skitse hvis man tegner "kurver" omkring kuglen eller ellipsoiden.
+Det snyder øjnene og giver en simpel 3D illusion  #4
+curves, kurver, 3D, rum, koordinatsystem, kontour, contour, ellipser, cirkler. kugle #4
+10 #4
+¤4
+Hvordan plotter man en "3D funktion"? #4
+Vi forsøger at plotte relativt simple 3D funktioner som _(z=x^2-y^2_).
+Det er svært, men muligt! #4
+multivariable, 3D, rum, koordinatsystem, kontour, contour, funktion, graf #4
+11 #4
+
+
+¤2
+Lidt mere tricky ligninger #2
+Vi går endelig i dybden med ligningsløsning. Vi undersøger både
+normale ligninger og "systemer" af ligninger. Vi undersøger løsnings<i>formen</i> også; 
+Er der én løsning? Flere? Ingen? Her ser vi, at man også gennem en rigtig og korrekt proces
+kan støde på "falske" løsninger. #2
+irraneous solution, equations, løsning, form, uendelig, antal #2
+12 #2
+Systemer af lignigner, falske løsninger, nulreglen, nulregel #2
+
+¤3
+Systemer af ligninger #3
+Vi har allerede stødt på et par systemer af ligninger gennem bogen, men nu 
+går vi endelig i dybden og udleder et par teknikker.
+Vi lærer om hvordan, man kan forsimple et system ved at "eliminere" 
+bestemte led, der minder om hinanden, og vi løser en masse opgaver. #3
+systems, systemer, ligninger, linear algebra, gaussian #3
+12 #3
+¤4
+Visualisering af systemer af ligninger #4
+I et kort afsnit ser vi, hvordan systemer af ligninger kan visualiseres, og hvad
+visualiseringerne fortæller os. #4
+visualisering, geogebra #4
+13 #4
+
+¤3
+Én, to, ingen, mange eller uendelig mange løsninger #3
+Vi løser en helt masse forskellige ligninger og systemer. Nogle
+har én løsning, nogle har mange, nogle har ingen. Ikke super meget teori på 
+denne side udover "nulreglen". Bare en masse træning og nogle vigtige tricks. #3
+nulreglen, nulregel, lig 0, ligninger, løsninger, uendelig #3
+14 #3
+¤4
+Falske løsninger #4
+En ligning løst på helt korrekt vis producerer i vise tilfælde 
+<i>falske løsninger</i>. Vi undersøger årsagen bag dette mærkelig fænomen, og 
+ser hvordan man håndterer det i praksis. #4
+irraneous, falske løsninger, irreversable #4
+15 #4
+
+
+¤2
+Polynomier #2
+Vi definerer polynomier, forstår hvorfor de er vigtige, og lærer
+et par smarte trick til hvordan de effektivt håndteres algebraisk. #2
+polynomial, ax^2 + bx + c,  #2
+17 #2
+Den fundamentale algebra teori, division af polynomier, partial fraction decomposition #2
+
+¤3
+Den fundamentale algebra teori (damn!) #3
+Én lidt abstrakt årsag til at polynomier er vigtige er "den fundamentalle algebra teori".
+Teorien forklares og bevises. #3
+bevis, algebra, fundamental, division, factors #3
+18 #3
+
+¤3
+Polynomier divideret med hinanden #3
+Polynomier kan "divideres med hinanden" lidt ligesom tal, med meget samme teknik.
+På denne side lærer vi teknikken, og øver os med et par opgaver. #3
+ #3
+19 #3
+
+¤3
+Partial fractions: Opdel en stor brøk i simplere #3
+Vi ser hvordan en brøk med polynomier kan opdeles i flere mindre brøker af polynomier 
+gennem et trick kaldt "partial fractions". Vi øver os på et par opgaver. #3
+ #3
+20 #3
+¤4
+Et smart trick til partial fractions #4
+Vi lærer et mere sofistikeret trick, og ser på brøker, der er sværere at nedbryde. #4
+calculus, differentiering, integration #4
+21 #4
+
+
+¤2
+Bevis via <i>induktion</i> #2
+Hvis man skal bevise, at en bestemt påstand er sand i <i>alle</i> tilfælde,
+men kun kan bevise at den er sand i <i>nogle</i> tilfælde, kan det ofte hjælpe
+at bruge en smart teknik kaldt "induktion". Vi introducerer induktion, og træner det 
+i to korte opgaver. #2
+induktion, aritmetisk serie, geometrisk serie #2
+22 #2
+Induktionsbevis #2
+
+
+¤2
+Uligheder #2
+At løse uligheder er et helt andet bæst end at løse ligninger.
+Nu er det ikke <i>nødvendigvis</i> lovligt at udføre funktioner på begge sider af ligninger, da
+det i flere tilfælde "ødelægger" uligheden. På denne ret lange sider udleder vi reglerne
+for uligheder, og løser et par udfordrende eksempler. #2
+<, >, større end, mindre end #2
+23 #2
+Uligheder #2
+
+
+¤2
+Ligninger hvis variablerne <i>skal</i> være hele: Diophantine 'time baby #2
+Vi ser på en tricky form for ligning hvor løsningerne <i>skal</i> være hele tal.
+Fokuset er primært på de "linæere diophantine ligninger", da resten er meget svære,
+men vi går også i dybden med "pythagorean triples", dog uden mange opgaver. #2
+linæer, diskret #2
+24 #2
+Diophantine ligning, pythagorean triple #2
+
+¤3
+Andre diophantine ligninger (primært bare pythagorean triples, dog...) #3
+De fleste diophantine ligninger er utroligt svære. Der er dog ét eller to eksempler
+på vores niveau. Vi går især i dybden med "pythagorean triples". #3
+triple, pythagorean #3
+25 #3
+¤4
+Kan vi generere <i>alle</i> pythagorean triples? #4
+Vi har en strategi til at genere løsninger til pythagorean triples, men kan den generere dem <i>alle</i>?
+Det er spørgsmålet i dette afsnit, og svaret kræver et langt, udfordrende bevis. #4
+triple, pythagorean, bevis, proof #4
+26 #4
+
+
+
+¤1
+Kunsten af at beskrive rum #1
+Det her er til en vis grad lidt et "rode-kapitel" med pænere navn.
+Meget bredt kan man dog sige, at vi arbejder med at beskrive geometri
+på forskellige måder <i>ved hjælp af</i> algebra. Sammenlignet med et mere traditionelt
+pensum, lægger det sig nok tættest op ad "analytisk geometri", men vi dækker mere stof. 
+<br><br>
+Først beskriver vi kurver parametrisk og med polære koordinater (i stedet for med en 
+ligning eller med _(y_) som funktion af _(x_)). Derefter dækker
+vi en familie af kurver kaldt "koniske skæringer", der kan beskrives på
+mange vidt forskellige måde, hver med egne fordele og ulemper. 
+Så opfinder vi en konstruktion kaldt vektorer for lettere at kunne beskrive bevægelse
+og diverse fysiske problemer. Vektorer viser sig som meget brugbare til at beskrive
+3D <i>retninger</i>, så vi dykker igen ned i 3D geometri - en form for geometri, der
+er meget svær at håndtere og beskrive <i>uden</i> algebra. Til sidst ser vi
+en helt ny måde at beskrive punkter og bevægelser på gennem "komplekse tal", og
+går til allersidst på et sidespor med "matrixer". #1
+ #1
+DescribingSpace/#1
+Analytisk geometri, koniske skæringer, polære koordinater, parametriske kurver, vektorer, kraft, 3D planer, prikprodukt, krydsprodukt, komplekse tal, matrixer#1
+
+¤2
+Polære koordinater #2
+I stedet for at beskrive en kurve med _(x_) og _(y_), kan vi også
+vælge at beskrive den med <i>radius</i> og <i>vinkel</i>. Dette afsnit
+udforsker denne ide samt dens fordele og ulemper. #2
+koordinat, polar, radius, vinkel, theta, solsystem, mirkofon, cardioid #2
+1 #2
+Polære koordinater #2
+
+
+¤2
+Parametriske beskrivelser #2
+Indtil videre har vi beskrevet en kurve ved hjælp af <i>forholdet</i> mellem
+to størrelser: Enten _(x_) og _(y_) eller _(r_) og _(\theta_). I flere
+situationer kan det hjælpe, hvis man i stedet introducerer et <i>tredje</i> variabel,
+der både beskriver _(x_) og _(y_) eller _(r_) og _(\theta_). Det kaldes en <i>parametrisk beskrivelse</i>, og
+dem undersøger og træner vi gennem en helt masse opgaver. #2
+parametric, t, rundetårn, billiard, rikochet, fjeder, spiral, #2
+2 #2
+Parametrisk beskrivelse #2
+
+
+¤2
+Koniske kurver #2
+De koniske kurver er en familie af relativt vigtige kurver (cirklen, ellipsen, parablen, hyperbolaen), 
+der super fint illustrerer hvordan, ét slags objekt kan beskrives matematisk på mange måder, og hvorfor
+det kan være brugbart. Vi beskriver både disse kurver som ligninger, geometrisk som 
+afstandende væk fra bestemte punkter og linjer, som en 3D udskæring af en kegle og som 
+forholdet mellem afstanden fra en linje til et punkt. Det bliver nice! #2
+directrix, eccentricitet, e, fokus, focus, F, P, X #2
+3 #2
+Koniske skæringer, hyperbola #2
+
+¤3
+Simulationer #3
+Simulationer af henholdsvis ellipsen, parablen og hyperbolaen, både som
+matematiske ligninger og geometriske definitioner #3
+simulation, visualisering, visualisation #3
+4 #3
+¤4
+Ellipse simulation #4
+En simulation af ellipsen som både en matematisk ligning og en geometrisk definition #4
+simulation, visualisering, visualisation, fokus #4
+4 #4
+¤4
+Parabola-simulation #4
+En simulation af parablen som både en matematisk ligning og en geometrisk definition #4
+simulation, visualisering, visualisation, directrix #4
+5 #4
+¤4
+Hyperbola-simulation #4
+En simulation af hyperbolaen som både en matematisk ligning og en geometrisk definition #4
+simulation, visualisering, visualisation, fokus #4
+6 #4
+
+¤3
+Anvendelser af koniske sektioner #3
+De matematiske lignigner så ud til at virke fint, så hvorfor bære over med denne tricky
+geometriske definition? Vi ser i dette afsnit et par eksempler på problemer,
+der lettere kan løses, når de koniske sektioner ses i dette nye lys, og endda
+et problem der bedst kan løses, hvis man skifter mellem at se
+på parablen på to forskellige måder. Damn! #3
+parabolsk spejl, archimedes, GPS, anvendelse, rummet, sporing #3
+7 #3
+
+¤3
+En helt ny måde at se på koniske sektioner #3
+Vi finder to nye måder at beskrive koniske sektioner: Som en udskæring
+af en 3D kegle, og som et forhold mellem afstanden til en linje og afstanden til et punkt. #3
+skæring, 3D, udsnit, simulation, eccentricitet, e #3
+8 #3
+
+
+¤2
+En retning med en længde: Fysik og vektorer #2
+Vi opfinder "vektorer", og ser hvordan de kan hjælpe os med 
+at løse problemer i matematik og fysik. Vi lærer også om et
+vigtigt begreb i fysik, der bliver beskrevet med vektorer, kaldt "krafter". #2
+vektor, kraft, fysik, cykel, hastighed, position, bold, newton, F #2
+9 #2
+vektorer, prikprodukt  #2
+
+¤3
+Opgaver hvor vektorer er praktiske at anvende #3
+Vi løser først et par fysiske opgaver hvor vektorer er praktiske at anvende. Derefter ser vi, at vektorer
+meget effektivt beskriver <i>retning</i>, og løser et par matematiske opgaver hvor denne ide hjælper. #3
+retning, opgaver, anvendelse, fysik, bold, vogn #3
+10 #3
+
+¤3
+Vinklen mellem to vektorer #3
+Vi finder en praktisk formel for vinklen mellem to vektorer, og anvender den kort i to
+små opgaver. #3
+vinkel, theta, 3D #3
+11 #3
+
+
+¤2
+Tilbage til 3D: Planer (og lidt ekstra)#2
+Det er igen tid til at dykke ned i 3D! Denne gang er fokus på 3D planer og 
+mere generelt 3D retninger. Planer er en meget grundlæggende og vigtig 3D konstruktion. 
+De kan beskrives på mange måder, hver med fordele og ulemper. Vi ser at planer
+og 3D vektorer hjælper os massivt med at beskrive tredimensionelle objekter, 
+og løser en masse opgaver. Det her afsnit dækker altså meget mere end "bare" planer! #2
+retning, rumlig #2
+12 #2
+3D planer, Krydsprodukt #2
+
+¤3
+Planer som en 3D udvidelse af linjer #3
+Vi udforsker hvordan planer i 3D svarer til linjer i 2D. 
+Et plan kan ofte hurtigt og intuitivt beskrives i dette lys.
+Vi bruger det til at løse et par opgaver #3
+hældning, slope #3
+14 #3
+
+¤3
+Planer som rummet der udfoldes af to vektorer #3
+Planer fungerer som et slags "2D-vindue" i en 3D verden.
+Derfor kan det hjælpe et "ned-dimensionere" udfordrende 3D problemer og koncepter til
+en 2D verden ved hjælp af et plan. Vi udforsker og anvender denne ide. Bl.a.
+beviser vi at skæringen mellem et kegle og et plan er en cirkel, ellipse, parabel eller hyperbola #3
+ #3
+15 #3
+
+¤3
+Mere om normalvektoren #3
+Vi går lidt mere i dybden med vektorer som 3D retninger, og hvordan
+vi tænker over "vinkelrethed" i 3D rum. Vi lærer at beregne normalvektoren,
+og udvikler i processen en mere generel ide kaldt "krydsproduktet". Den
+anvender vi i et sæt dejligt tricky opgaver. #3
+retning, tommelfinger, tommelfingerregel #3
+16 #3
+
+¤3
+Prik-produktet og 3D "projektioner" #3
+Prik-produktet i 2D svarede til en projektion af én vektor på en anden. 
+Det virker stadig i 3D, og er meget brugbart. Vi ser hvordan det virker, og
+anvender det i et par opgaver. #3
+linje, afstand #3
+17 #3
+
+
+¤2
+Komplekse tal: En ny måde at tænke over 2D objekter #2
+Vi introducerer komplekse tal som en helt ny måde at 
+beskrive punkter og retninger. Komplekse tal har lidt "det bedste af begge verdener":
+De beskriver længde og retning samtidig ligesom vektorer, men de kan også beskrive rotation
+ligesom vinkler.
+<br><br>
+Det skal siges at komplekse tal i alt ærlighed er vigtige grundet
+deres <i>algebraiske</i> og ikke geometriske anvendelser. Det
+er bare en positiv side-effekt vi lægger fokus på i dette afsnit. Senere
+(som i <i>aller sidste afsnit</i>) vender vi tilbage til komplekse tal, og ser
+dem i stedet som rent algebraiske konstruktioner. #2
+i, i^2, pi, -1 #2
+18 #2
+Komplekse tal #2
+
+
+¤2
+Men hvad <i>er</i> en matrix #2
+En matrix er bare et fancy matematisk ord for <i>skema med ting i</i>. Det har forskellige
+betydninger i forskellige kontekster, men et par betydninger er hyppigere end andre, og værd
+at se nærmere på #2
+shear, krydsprodukt, kryds #2
+19 #2
+Matrix, Gauss-elimination, Lineær transformation, Determinant #2
+
+
+
+
+
+
+¤0
+Teknisk pause #0
+Vi går på et hurtigt sidespor og lærer lidt om hvordan computeren kan hjælpe os med matematik #0
+ #0
+/Chapters/2Geoalgebra/#0
+CAS, Geogebra, Numerisk ligningsløsning, Statistik, Regression, Emperi #0
+
+¤1
+CAS-programmer og Geogebra #1
+Det er endelig tid til at bruge CAS-programmer, der ellers har været strikt forbudte
+i bogen indtil videre. I dette afsnit lærer vi først og fremmest <i>hvornår</i> man bør
+bruge CAS-programmer mens man lærer matematik. Derefter går vi ret meget i dybden
+med Geogebra, og træner os selv i hvordan og hvornår vi kan bruge dets funktioner. Vi
+ser også på Geogebras svagheder og begrænsninger.  #1
+CAS, Maple, Math-cad, Ti-NSpire, lommeregner #1
+GeogebraAndCAS/#1
+CAS, Geogebra, Grafvisualisering, Numerisk ligningsløsning, Spreadsheets #1
+
+¤2
+Intro #2
+Denne intro går i dybden med <i>hvornår</i> du bør bruge et CAS-program mens du lærer matematik,
+og forklarer hvorfor, det kan være farligt. #2
+ #2
+1 #2
+ #2
+
+
+¤2
+Geogebra til beregninger #2
+Vi bruger Geogebra til at beregne store, svære udtryk vi selv godt <i>kunne</i> regne, men helst gerne vil undgå. #2
+store udtryk, simplifikation, beregning, lommeregner #2
+2 #2
+ #2
+
+
+¤2
+Geogebra til algebra #2
+Vi bruger Geogebra til at hjælpe os med diverse algebraiske problemstillinger #2
+ #2
+3 #2
+ #2
+
+¤3
+Ligninger og systemer #3
+Et hvilket som helst CAS-programs vigtigste funktion er nok at løse ligninger. 
+Geogebra er en af de svagere CAS-programmer på dette område, men man kan arbejde
+sig udenom dets begrænsninger #3
+ligninger, numerisk, approksimation, solutions, løsninger #3
+3 #3
+
+¤3
+Omskrivning #3
+Vi bruger geogebra til at omskrive algebraiske udtryk. Måske har man brug for et
+udtryk i en bestemt form, eller måske har man noget stort og rodet, der skal simplificeres. #3
+simplifikation, algebra, omskrivning, expand, simplify #3
+4 #3
+
+
+¤2
+Geogebra, data og <i>spreadsheets</i> #2
+Geogebra har en afdeling kaldt "spreadsheets", der minder meget om Excel. Vi
+får først styr på det rent tekniske, og anvender derefter spreadsheets til
+diverse matematiske opgaver #2
+spreadsheets, data, statistik, excel #2
+5 #2
+ #2
+
+¤3
+Spreadsheets anvendelsesopgaver #3
+Vi anvender Geogebras spreadsheet-afdeling til et par opgaver. Faktisk en god del mængde opgaver. 
+Eller i hvert fald en medium mængde. #3
+ #3
+6 #3
+
+
+¤2
+Geogebra til plotning af funktioner og ligninger #2
+Geogebra har ekstrem stærke funktioner hvad angår plotning og visualisering.
+Dem lærer vi at bruge, og anvender dem endda til at løse et par problemer. #2
+ #2
+7 #2
+ #2
+
+¤3
+Anvendelsesopgaver med Geogebras plot-værktøjer #3
+Vi anvender Geogebras plot-værktøjer til et par opgaver. #3
+ #3
+8 #3
+
+
+¤2
+Geometri med Geogebra #2
+Geogebra har også virkelig stærke geometri funktioner. Vi lærer dets funktioner, og
+bruger dem til en række tricky anvendelsesopgaver. #2
+ #2
+9 #2
+ #2
+
+¤3
+Anvendelsesopgaver med Geogebras geometri-funktioner #3
+Vi bruger Geogebras geometri-funktioner til at løse et par relativt svære opgaver. #3
+ #3
+10 #3
+
+
+
+¤1
+Regression #1
+Regression er et meget vigtigt værktøj indenfor stort set hvilken som helst fag 
+der involverer data: Fysik, biologi, økonomi, samfundsfag, mm. Helt 
+simpelt handler det om at tilpasse en funktion til data, samt at vurdere, 
+hvor godt data passer en bestemt funktion. #1
+ #1
+Regression/#1
+ #1
+
+¤2
+Intro #2
+Vi lærer hvad regression er, og hvorfor det er vigtigt #2
+dataanalyse, eksperiment, emperi, fysik, statistik, kausalitet, korrelation #2
+1 #2
+Regression, datatilpasning, _(R^2_) #2
+
+¤2
+Opgaver #2
+Vi øver os i at bruge regression. #2
+Træning, opgaver, dataanalyse, eksperiment, emperi, fysik #2
+2 #2
+ #2
+
+
+
+
+
+
+¤0
+Sandsynlighedsteori runde 1: Diskret #0
+Vi lærer at beregne sandsynligheder! I det her kapitel specifikt fokuserer vi på 
+"diskret" sandsynlighed, som svarer til sandsynlighed, hvor det samlede antal mulige udfald er
+<i>begrænset</i>; En terning kan lande på _(6_) og kun _(6_) sider, men en tilfældig udvalgt person
+kan have (teoretisk set) uendelig mange forskellige højder. "Uendeligt" i den forstand, at
+personen både kan være _(170cm_) men også _(170.0000001cm_), og det er i matematikkens øjne
+to forskellige tal.
+<br><br>
+Først laver vi et par simple opgaver og bliver introduceret til sandsynlighed.
+Derefter øver vi os i at tælle en masse tricky antal og kvantiteter,
+da diskret sandsynlighed i stor grad handler om at <i>tælle muligheder</i>. 
+Derefter udvider vi definitionen på sandsynlighed en smule i et lettere abstrakt afsnit.
+Til sidst erkender vi at sandsynlighedsopgaver hurtigt bliver rodede, og finder på et
+par ideer og konstruktioner, der skal hjælpe os med at organisere procesen og løse opgaver
+hurtigere. #0
+ #0
+Chapters/3DiscreteMath/#0
+Basal sandsynlighedsteori, Fakultet, n-choose-k, Binominalfordeling, Stirling tal, Begivenheder og udfaldsrum, Konditionel sandsynlighed, Stokastiske variabler #0
+
+¤1
+ #1
+ #1
+ #1
+Probability/Revision2/#1
+ #1
+
+¤2
+Intro #2
+Vi får en intro til de basale principper i sandsynlighedsteori, og løser et par simple opgaver #2
+sandsynlighed, terning #2
+1 #2
+ #2
+
+
+¤2
+Lad os tælle en masse ting! #2
+Hvis sandsynlighed virkelig er 
+_($\frac{\text{Antal måder det kan ske på}}{\text{Samlet antal af mulige ting der kan ske}}_)
+... så handler det primært om at tælle. Tælle antal; Sandsynligheden kommer let derefter.
+Det vil vi se senere ikke helt er sandt, da definitionen bliver udvidet og udfordret, 
+men for nu skal vi øve os i at tælle. Tælle tricky antal og mængder der ikke er åbenlyse. 
+Selv senere i kapitlet vil det her altid være vores vigtigste værktøj. 
+<br><br>
+Vi starter ud med et par relativt simple situationer. Derefter går vi i dybden med
+at <i>udvælge objekter</i>. Rigtig mange antal i sandsynlighed kan ses som resultatet af
+en slags "udvælgningsproces":
+Hvilke retter bliver der valgt i en resturant, hvilke pladser bliver valgt til hvilke personer
+til et musical, hvem bliver smittet af sygdom, hvor mange af de sten der udvælges er grå, osv. 
+Vi slutter af ret akademisk og abstrakt med de såkaldte "stirling tal" og underkategorien "derangements".
+Deres direkte anvendelser er få, men matetikken er interesant, og det kan blive relevant senere. #2
+tal, tælle #2
+2 #2
+Fakultet, n-choose-k, Binominalfordeling, Multisets, Stirling tal #2
+
+¤3
+Udvælgelse af objekter #3
+Rigtig mange antal i sandsynlighed kan ses som resultatet af
+en slags "udvælgningsproces":
+Hvilke retter bliver der valgt i en resturant, hvilke pladser bliver valgt til hvilke personer
+til et musical, hvem bliver smittet af sygdom, hvor mange af de sten der udvælges er hvide, osv. 
+<br><br>
+Vi løser en masse opgaver, og udvikler undervejs et par ny ideer. Bl.a. "n-choose-k", en
+af de vigtigste formler i sandsynlighed vi bruger konstant. Den giver os hvor mange kombinationer
+der findes hvis man vælger _(k_) ud af _(n_) objekter. #3
+stole, permutation #3
+3 #3
+¤4
+Pascals trekant: En genvje til _(n_)-choose_(k_) #4
+Vi ser kort på Pascals trekant, en fascinerende lille matematisk konstruktion 
+der på første indtryk ikke relaterer til sandsynlighed, men viser sig effektiv til at
+regne _(n_)-chooose_(k_) værdier #4
+sum, lommeregner #4
+4 #4
+
+¤3
+Udvælgelse af objekter med <i>gentagende elementer</i> #3
+Indtil videre har vi udvalgt <i>unikke</i> objekter som personer, men hvad hvis
+vi skal vælge fra et sæt der indeholder visse gentagede elementer? 
+Måske _(10_) frugter i et supermarkede der sælger _(3_) forskellige <i>slags</i> frugter?
+Vi udleder en formel til dette antal, og løser nogle opgaver. #3
+sten, multiset #3
+5 #3
+
+¤3
+Permutationer og Stirling tal #3
+Vi definerer permutationer, et fancy matematisk ord for:
+"Regel der beskriver hvordan du shuffler rækkefølgen rundt på et par objekter".
+Med permutationer forstået definerer vi Stirling tal, der tæller antallet
+af permutationer med et bestemt givent sæt "cykluser". Disse tal
+er svære at regne, men vi løser et par simple eksempler, og finder
+en generel regel, der gør det lettere. #3
+gruppe, fordeling, rekursion, recursive #3
+6 #3
+¤4
+Derangements #4
+Vi ser på en brugbar underkategori af Stirling tal kaldt derangements (fordelinger
+hvor <i>alle</i> objekter bevæger sig), og finder (næsten) frem til en formel.
+Ikke super mange eksempler eller anvendelser her, desværre. #4
+kort, træner #4
+7 #4
+
+
+¤2
+Lad os tænke over <i>tidslinjer</i> #2
+Vi går i dybden med et kendt sandsynlighedsproblem kaldt "problem of the points", og
+ser hvad, det fortæller os om sandsynlighed og vores definition generelt. Vi ser,
+at det kan være et effektivt mindset at tænke over antallet af "tidslinjer" i stedet for
+"antallet af muligheder". #2
+ #2
+8 #2
+ #2
+
+¤3
+Et problem med vores nuværende definition på sandsynlighed #3
+Hvad gør vi, når vi for et sandsynlighedsproblem, hvor givne sandsynligheder
+allerede er bestemt? Eksempelvis en vægtet mønt der rammer plat med sandsynligheden 0.367. 
+Hvordan "tæller" vi antallet af tidslinjer eller muligheder i disse situationer? #3
+plat, krone, vægtet, definition #3
+9 #3
+
+
+¤2
+Sandsynlighed er lidt noget rod: Hvad gør vi? #2
+Vi starter dette lange afsnit med at løse tre opgaver. Ud fra de tre opgaver
+når vi en simpel konklusion: Det her med sandsynlighedsberegning er lidt noget rod.
+Hvordan organiserer vi processen, så vi skal tænke mindre og laver færre fejl?
+<br><br>
+Vi finder på tre konstruktioner / mindsets der skal gavne dette formål:
+Begivenheder og udfaldsrum, konditionel sandsynlighed, og "stokastiske variabler".
+<br><br>
+Den første handler om at tænke over "sæts" med mulige udfald, og hvordan de sæts
+kan behandles rent matematisk. 
+<br><br>
+Den anden handler om at analysere hvordan
+de her sæts af mulige udfald (begivenheder) har indflydelse på hinanden. 
+<br><br>
+Den sidste
+er et lidt alternativt mindset, hvor vi i stedet for tidslinjer tænker over en
+slags "tilfældig variabel", der kan lande på forskellige værdier. #2
+rod, kompliceret, struktur #2
+10 #2
+Begivenheder og udfaldsrum, Sæts, Konditionel sandsynlighed, Stokastiske variabler #2
+
+¤3
+Første innovation: Begivenheder og udfaldsrum #3
+Vi ser på bestemte sandsynlige begivenheder som "sæts" der indeholder alle mulige
+udfald der tilfredsstiller begivenheden (alle de udfald hvor en bestemt kasse er rød, 
+hvor over 5 personer er smittede, hvor terningen er ulige osv.), og ser på
+det totale antal muligheder som et kæmpe sæt med alle mulige udfald. Det her mindset
+kan hjælpe os med at organisere processen af at løse et problem, fungere som et effektivt
+sprog og løse diverse udfordrende problemer, da disse "sæts" lettere kan analyseres
+og bearbejdes matematisk. #3
+og, eller, sæt-teori, teoretisk #3
+11 #3
+¤4
+Anvendelsesopgaver med begivenheder og udfaldsrum #4
+Vi ser et par eksempler på hvorfor, denne meget abstrakte og generelle
+fagterminologi / mindset er brugbart. Bl.a. finder vi endelig en formel
+for derangements! #4
+opgaver, anvendelser, permutationer, stirling #4
+12 #4
+
+¤3
+Anden innovation: Begivenheders indflydelse på hinanden (konditionel sandsynlighed) #3
+En sandsynlig begivenhed har ofte indflydelse på sandsynligheden for, at
+en given anden begivenhed finder sted. Der er større chance for, at du kommer
+for sent på arbejde, hvis det tilfældigvis er tåget, og der er mindre chance
+for at trække en konge, hvis dine modspillere tilsammen har trukket tre. Vores 
+system skal kunne modellere disse slags situationer. #3
+ #3
+13 #3
+¤4 
+Anvendelsesopgaver af konditionel sandsynlighed #4
+Vi anvender vores opdaterede model og løser et par opgaver #4
+ #4
+14 #4
+¤4
+Bayes law #4
+Bayes law er en simpel ligning i konditionel sandsynlighed der
+resulterer i meget mærkelige, uintuitive resultater. Intuitionen og faldgrupperne 
+forklares, og vi regner to eksempler #4
+basketball, falsk positiv, corona, test, læge #4
+15 #4
+
+¤3
+Tredje innovation: "Stokastiske variabler" og deres mindset #3
+Vi lægger midlertidigt udfaldsrum og begivenheder til siden, og 
+skifter i stedet vores mindset til "stokastiske variabler" / "tilfældige variabler". Her modellerer vi
+situationer gennem variabler, der tager bestemte værdier med bestemte sandsynligheder, og
+studerer egenskaberne af disse opfundne "stokastiske variabler".
+Det forsimpler situationen fra sæts af muligheder til enkle tal, hvilket i flere tilfælde
+er muligt og meget brugbart. Det er især brugbart, hvis man skal <i>sammenligne</i> to semi-tilfældige
+størrelser. #3
+stokastisk, tilfældig #3
+16 #3
+¤4
+"Gennemsnit" af et stokastisk variable? #4
+Vi definerer "gennemsnittet" af et stokastisk variable, hvad det intuitivt betyder,
+og hvad det kan bruges til #4
+tilfældig, sandsynlighed, statistik, mean #4
+17 #4
+¤4
+Hvor <i>godt</i> er gennemsnittet? Spredning #4
+Vi undersøger hvor akkurat et mål gennemsnittet virkelig er, og definerer
+"spredning". Vi laver et par opgaver, hvor spredning anvendes deskriptivt som et
+tal, der kan forstås intuitivt og sammenlignes. #4
+tilfældig, sandsynlighed, statistik, spread, standardafvigelse #4
+18 #4
+
+
+¤2
+Kort outro og teaser til næste sandsynlighedskapitel #2
+En kort outro og teaser til næste sandsynlighedskapitel. #2
+ #2
+19 #2
+ #2
+
+
+
+
+¤0
+Calculus: Studiet af forandring (og en masse andet) #0
+Newton og Leibniz revolutionerede matematiken i 1800-tallet gennem <i>calculus</i>. 
+Calculus handler bredt sagt om at studere mikroskopiske lille forskelle, og at opdele
+diverse objekter i uendelig mange forsvindende små dele. Det hele startede ret lavpraktisk
+med <i>hældningen på en kurve</i>, men udvilkede sig til et bredere og universalt brugbart værktøj.
+Bl.a. fandt man ved hjælp af hældningen en teknik til beregning af <i>volumen</i> under en kurve,
+og opfandt derved <i>integraler</i>. De her teknikker åbnede dørene til ny praktisk såvel som
+teoretisk arbejde der ikke var muligt før.
+<br><be>
+I første afsnit dækker vi de vigtigste og mest basale principper i calculus. I andet
+afsnit tager vi et grundigt og teoretisk kig på calculus, og retfærdiggører et par argumenter
+fra første afsnit af dubiøs karakter. Det virker måske lidt kedeligt, men den træning vi for
+i grænser og "serier" har flere praktiske anvendelser også. 
+I tredje afsnit udvider vi calculus fra ét variable der ændrer sig til flere variabler: Primært to 
+og tre. Til sidst vender vi tilbage til sandsynlighed med nye værktøjer i kassen, og
+analyserer situationer med "uendelig / utælleligt" mange udfald. #0
+ #0
+/Chapters/4CalculusAndMore/#0
+Differentialregning, integralregning, differentialligninger, grænser, uendelige serier, multivariable calculus, vektor felter, energi og arbejde, magnetisme (en smule) #0
+
+¤1
+Hældningen af en kurve, og dets vildt mange anvendelser #1
+Det her afsnit ville nok i en mere normal bog kaldes "introduktion til Calculus". 
+Vi lærer at differentiere, løse integraler, og løse differentialligninger - i den rækkefølge. 
+Det hele starter dog meget simpelt med <i>hældningen af en kurve</i>: Hvor hurtigt kurven ændrer sig / 
+hvor stejl den er ved et punkt. Resten opstår ret naturligt fra denne meget lavpraktiskse anvendelse!
+<br><br>
+Så: I første del af afsnittet lærer vi at finde hældningen på en kurve. Vi går i dybden, og sigter
+efter at kunne differentiere <i>alle</i> funktioner. Derefter har vi et par anvendelser af denne hældning,
+før vi endelig når <i>integraler</i>. Før vi rigtig går i gang med at <i>løse</i> integraler, ser
+vi først på en masse anvendelser. En helt masse. Det bliver ret sjovt, og retfærdiggører den store
+mængde tid, vi bruger bagefter på <i>faktisk at løse dem selv</i>. Vi går virkelig i dybden med løsningsteknikker,
+og bruger en del tid på at træne vores evner - du vil kunne løse mange ret svære integraler selv.
+Stort set alt der overhovedet kan løses i hånden. Til sidst ser vi meget kort på differentialligninger.
+Det er et kæmpe emne, så vi dækker kun toppen af isbjerget. #1
+ #1
+DerivativesAndIntegration/#1
+Differentialregning, integralregning, omdrejningslegemer, dobbelt og tredobbelte integraler, differentialligninger, numerisk løsning af differentialligninger #1
+
+¤2
+Intro #2
+Vi klargører hvad præcis vi mener med "hældningen på en kurve", og sætter et mål for resten af afsnittet #2
+ #2
+1 #2
+ #2
+
+
+¤2
+Hvordan finder vi hældning? #2
+Vi lærer hvordan man finder hældningen på en simpel funktion som _(y=x^2_), øver os 
+i et par opgaver på andre simple funktioner, og sætter et mål: Vi skal lære at differentiere
+<i>alle</i> funktioner. 
+<br><br>
+Det er et stort projekt, men langt fra umuligt.
+Funktioner kan opdeles i mindre stykker, og hvis vi bare kan differentiere de stykker, og differentiere
+"stykker sat sammen", vil vi kunne differentiere (praktisk talt) alle funktioner. Vi skal bare gennem
+alle punkterne, og så er vi færdige! #2
+derivative #2
+2 #2
+Differentiation, Kædereglen, Implicit differentiation #2
+
+¤3
+Den overordnede plan til at finde hældning #3
+Den overordnede plan til at finde hældning på alle funktioner bliver gennemgået.
+Funktioner kan opdeles i mindre stykker, og hvis bare vi kan differentiere de stykker, og differentiere
+"stykker sat sammen", vil vi kunne differentiere (praktisk talt) alle funktioner. #3
+atom, primtal, derivative #3
+3 #3
+
+¤3
+_(x^A_) #3
+Vi lærer at differentiere funktioner af typen _(y=x^A_) #3
+eksponent #3
+4 #3
+
+¤3
+_(A^x_) #3
+Vi lærer at differentiere funktioner af typen _(y=A^x_) #3
+eksponent #3
+5 #3
+
+¤3
+Hældningen af funktioner der er plusset eller ganget #3
+Vi lærer at differentiere to funktioner der er plusset eller ganget med hinanden #3
+ #3
+6 #3
+
+¤3
+Hældningen af sammensatte funktioner #3
+Vi lærer at differentiere én funktion "sat ind i" en anden #3
+ #3
+7 #3
+
+¤3
+Hældningen af en funktion når man kender dens modsætning #3
+Vi lærer at differentiere en funktions modsætning #3
+k #3
+8 #3
+¤4
+Mere om det trick vi lige brugte: Implicit differentiation#4
+Vi ser at implicit differentiation ikke bare tillader os at differentiere
+funktioner vi aldrig kunne differentiere før, men også lader os differentiere
+<i>ligninger</i>. Det kan faktisk bruges i stort set <i>alle tilfælde</i>, og gør alting meget lettere. #4
+ligning, visualisation #4
+9 #4
+
+
+¤2
+Approksimer én funktion med en anden via <i>Taylor polynomier</i> #2
+Vi lærer at konstruere et polynomie der approksimere en ikke-polynomial funktion gennem
+"Taylor-polynomier". Tricket er ret simpelt, og vi gennemgår flere opgaver og eksempler. #2
+taylor, approksimation, tilnærmelsesvis, tilnærme, kompleks #2
+10 #2
+Taylor-polynomier #2
+
+
+¤2
+Arealet under en kurve og <i>integraler</i>: Et vildt kraftigt værktøj #2
+Det er endelig tid til integraler! De bliver opfundet i et forsøg på at
+regne arealet under en kurve, og viser sig som et generelt og utrolig brugbart værktøj. 
+Vi gennemgår den smarte ide, og løser et par eksempler #2
+definitiv, areal #2
+11 #2
+Integraler #2
+
+¤3
+Integraler fagterminologi <i>zzz</i> #3
+Vi lærer lidt relevant og vigtigt fagterminologi ang. integraler, så vel som
+et par generelle facts omkring integraler, og hvornår de faktisk kan løses #3
+ #3
+12 #3
+
+
+¤2
+Anvendelser af integraler #2
+Integraler blev opfundet til at regne arealet under en kurve, men de kan bruges
+til en helt masse andre ting også. I dette afsnit lader vil Geogebra gøre arbejdet, og
+fokuserer 100% på anvendelse: Hvad kan vi få ud af dette nye værktøj? #2
+anvendelse, geogebra, numerisk #2
+13 #2
+Massecenter, Omdrejningslegemer, 3D geometri, Hastighedhed og acceleration #2
+
+¤3
+Arealer #3
+Vi finder et par tricky arealer via integraler, og svarer på hvorfor
+man nogensinde ville få brug for arealet på en figur, der var defineret
+af matematiske kurver. #3
+areal #3
+13 #3
+
+¤3
+Massecentre #3
+Vi regner et par tricky massecentre via integraler #3
+ #3
+14 #3
+
+¤3
+Længde langs kurve #3
+Vi regner længden langs en kurve via integraler #3
+ #3
+15 #3
+
+¤3
+Diverse størrelser i geometri #3
+Vi finder volumer og overfladearealer på diverse figurer i 3D Geometri. #3
+ #3
+16 #3
+
+¤3
+Omdrejningslegemer #3
+Flere avancerede 3D former kan let defineres som "omdrejningslegemer". Vi introducerer denne ide, og
+måler deres volume og overfladeareal via integraler. #3
+surface, revolution, pottemager #3
+17 #3
+
+¤3
+Position, hastighed og acceleration i fysik #3
+Vi bruger integraler og differentiation som et praktisk værktøj i fysik, der
+kan konvertere mellem position, hastighed og acceleration #3
+ #3
+18 #3
+
+
+¤2
+Hvordan løser vi integraler selv? #2
+I dette underafnsit går vi i dybden med at løse integraler <i>selv</i>, uden computerhjælp.
+Det er et relativt langt afsnit, og vi ser på <i>mange</i> integraler. 
+Vi går virkelig i dybden med løsningsteknikker,
+og bruger en del tid på at træne vores evner - du vil kunne løse mange ret svære integraler selv.
+Stort set alt der overhovedet kan løses i hånden. Det bliver sjovt! #2
+integral, substitution, parts, træning, øvning, geogebra, løsning #2
+19 #2
+Substitutioner, trignometrisk substitution, partial integration #2
+
+¤3
+Første teknik: Substitution #3
+Man kan "erstatte" udtryk i integralet med et nyt variable, så længe
+man ved, hvad man laver. Det kan transformere integralet til et, der er langt simplere at løse - 
+eller langt mere kompliceret, hvis man substituerer dårligt. Det er lidt en sofistikeret kunstform at mestre,
+og meget anderledes end noget andet, du har arbejdet med indtil videre. Vi ser derfor på mange
+eksempler, og træner mange opgaver. #3
+ #3
+20 #3
+¤4
+Bare en dejlig masse substitutionsopgaver #4
+En helt masse opgaver! Lidt en hård side, men nødvendig. #4
+ #4
+21 #4
+¤4
+Substitution, men modsat, kind of og <i>trigonometriske substitutioner</i> #4
+Vi har erstattet et udtryk med et variable, men hvad hvis vi vil gøre det modsatte og ersatte
+et variable med et udtryk? Det er meget muligt, og man gør det hele tiden! 
+Én vigtig anvendelse er de såkaldte "trigonometriske substitutioner", hvis formål er,
+at fjerne kvadratrødder ved at indsætte trigonometriske funktioner. Lidt mærkeligt, men super brugbart. #4
+substitution, u, trig-substitution #4
+22 #4
+¤4
+Træning i integration af trig-funktioner #4
+Vi øver os i at integrere funktioner af formen
+_($Cos(x)^n*Sin(x)^m_) 
+Vi går grundigt igennem alle tilfælde, og ser hvornår det er let og svært at integrere.
+#4
+Sin, Cos, integration, trignometrisk #4
+23 #4
+
+¤3
+Anden teknik: Integration by parts #3
+Den anden primære teknik kaldes partial integration, eller "integration by parts", og 
+hjælper os med at integrere to funktioner ganget med hinanden. Den er en del simplere end substitution,
+men kan stadig anvendes på mange måder, og tager lidt tid at mestre også. #3
+recursive, rekursion #3
+24 #3
+
+¤3
+Din bedste ven: En helt masse integrationsopgaver! #3
+Vi løser en uacceptabelt afsindig mængde opgaver med varierende teknikker og sværhedsgrader. En lang, men
+nødvendig side! #3
+opgaver #3
+25 #3
+
+
+¤2
+Differentialligninger #2
+Med differentialligninger kan man definere en funktion ud fra et par krav den og dens 
+hældning(er) skal følge. Eksempelvis kan _(y=e^x_) defineres som en funktion _(f(x)_), hvor
+_(f'(x) = f(x)_). Eller måske leder vi efter en funktion, hvor _(2*f'(x)+f''(x)^2 = 3^{f(x)}_).
+<br><br>
+Langt de flest af disse ligninger er enten utrolig svære eller aktivt umulige at løse, og 
+differentialligninger er et gigantisk matematisk emne. Vi dækker kun toppen af isbjerget i dette kapitel.
+Vi løser de to simpleste slags differentiallingninger: De seperable og de 
+lineære af første orden. Vi ser også hvordan, man med substitutioner kan få andre
+differentialigninger til (nogen gange) at passe disse former. Udover det arbejder
+vi en masse anvendelser, og lærer at approksimere svar på (nogle) svære differentialligninger med vores computer. #2
+ #2
+26 #2
+Seperable differentialligninger, Linæere differentialligninger af første orden, Numerisk beregning af differentialligninger #2
+
+¤3
+Seperable differentialligninger #3
+Vi lærer at løse differentialligninger af formen:
+_($y'(x) = f(x)*g(y)_) 
+Vi lærer også at løse differentialigninger med givne startbetingelser som
+_($y'(1)=2, \, \, y(3)=4.5_) #3
+startbetingelse #3
+27 #3
+
+¤3
+Diverse anvendelsesopgaver med differentialligninger #3
+Seperable differentialligninger er simple, men dækker en del vigtige tilfælde. 
+De bliver brugt i dette afsnit til en helt masse anvendelsesopgaver. Vi
+ser, hvordan differentialligninger kan bruges i praksis, og hvorfor de er så vigtige #3
+anvendelse, opgaver, træning, ingeniør #3
+28 #3
+
+¤3
+Numerisk approksimation af differentialligninger: Vigtigt og praktisk #3
+Vi lærer at approksimere løsninger til en bestemt type første- og andenordens 
+differentialligninger numerisk med hjælp
+fra computeren. Man kan bruge en (o.k) simpel teknik så længe _(y'_) eller _(y''_) står 
+isoleret på den ene side. #3
+geogebra, statistik, tilnærmelse, approskimation, runge-kutta #3
+29 #3
+
+¤3
+Substitutionsteknikker i differentialligninger #3
+Vi lærer at omskrive differentialligninger på samme måde, som vi omskrev integraler. 
+Målet er at gøre dem seperable.  #3
+u, substitution #3
+30 #3
+
+¤3
+Lineære differentialligninger af første orden #3
+Vi lærer at løse differentialligninger af formen:
+_($y'(x) + p(x)*y = q(x)_)
+Det viser sig ret simpelt. Det er bare en formel, så vi træner kun et par få eksempler #3
+lineær, linæer #3
+31 #3
+
+
+
+¤1
+Fra uendelig småt til uendelig stort #1
+Det her afsnit handler om en ide kaldt "grænser", deres anvendelser, og hvordan
+de lægger det teoretiske grundlag for mange påstande i sidste afsnit. Vi er meget matematisk
+grundige i dette afsnit, og vi bruger lang tid på beviser. 
+<br><br>
+Vi starter med 
+motivationen bag grænser og et par problemer. Ud fra den motivation definerer vi, hvad
+en "grænse" er, og arbejder med at forstå og anvende den definition. Vi beviser nogle vigtige
+resultater, der gør grænser lette og intuitive at arbejde med, og går så endelig
+igang med et par "anvendelser". Vi ser hvordan, man kan regne mærkelige og uintuitive udtryk
+som _(sin(0)/0_), beviser diverse påstande fra sidste afsnit og undersøger 
+"uendelige serier". Det er en sum med "uendelig" mange led, og selvom det virker
+super abstrakt, har det flere praktiske anvendelser. #1
+ #1
+InfinityAndBeyond/#1
+Grænser, L'Hopitals regel, Serier, Divergence / convergence tests #1
+
+¤2
+Intro #2
+Vi ser på en række problemer og spørgsmål der lige nu virker umulige at løse / besvare.
+Det eventuelle svar er <i>grænser</i> selvfølgelig, men bare rolig, det kommer. #2
+ #2
+1 #2
+ #2
+
+
+¤2
+Vi opfinder grænser #2
+Vi forsøger at løse problemerne på sidste side, og opfinder i processen "grænser".
+Vi ender ud med en ret matematisk og meget "ordentlig/rigorisk" definition på grænser, og 
+anvender den på et par eksempler. #2
+delta, epsilon, definition, bevis #2
+2 #2
+Epsilon-delta definition på grænser #2
+
+¤3
+Et par trænings-opgaver i grænser #3
+Det er ret teknisk og svært at bevise grænser, så vi skal lige øve
+os med et par opgaver. Vi ser heldigvis senere, at man sjælen for
+brug for denne lange, manuelle proces. #3
+bevis #3
+3 #3
+
+
+¤2
+Det her lort tager alt for lang tid. Hvad gør vi? #2
+Det er for svært og tager simpelt hen for lang tid at bevise grænser på selv simple funktioner.
+Der <i>må</i> være en bedre vej fremad, især hvis vi skal anvende grænser
+til at bevise komplicerede ideer som hældninger og integraler eller beregne
+svære udtryk som _(sin(x)/x_), når _(x_) nærmer sig _(0_). I dette underafsnit
+<i>finder</i> vi denne vej, endda ret nemt. Vi skal bare bevise
+et par egenskaber - på samme måde vi har bevist grænser indtil videre - og derefter 
+kan grænser regnes hurtigt og let i _(99%_) af tilfælde. #2
+bevis, elementar, elementær, continuous #2
+4 #2
+Elementære funktioner, kontinuerlig #2
+
+¤3
+Kompositions-egenskaben #3
+Vi har bevist de fleste egenskaber, men kompositions-egenskaben er lidt mere tricky end de andre.
+Her får vi brug for en forståelse for, hvad vi mener med "kontinuerlig". #3
+bevis, elementar, elementær, continuous #3
+5 #3
+
+
+¤2
+Grænser og konstanten _(e_) #2
+Konstanten _(e_) kan egentlig kun defineres i forhold til grænser:
+Enten som grænsen af _((1+1/n)^n_) eller som funktionen 
+_(e^x_) hvis <i>hældning</i> - et koncept der kræver grænser - er lig sig selv. 
+Det er derfor vigtigt at vi tager et grundigt kig på _(e_) med en ny forståelse
+for grænser i værktøjskassen. Vi skal også forstå, hvorfor præcis de to definitioner er identiske - 
+og bevise at den her konstant overhovedet findes til at begynde med! #2
+poisson, sandsynlighed #2
+6 #2
+_(e_), upper- og lower-bounded, monotonisk stigende og faldende #2
+
+
+¤2
+"L'Hopitals regel" #2
+Vi lærer "L'Hopitals regel": En sætning der kan hjælpe os, med  
+grænser der tager formen _(0/0_), _(\infty/\infty_) og lignende. Den kan 
+regne udtryk der ellers er meget uintuitive og svære at forstå. Hvordan regner vi 
+f.eks. noget der nærmer sig _(0_) ganget med noget der nærmer sig _(\infty_)?  #2
+uendelig, intuitiv, uintuitiv #2
+7 #2
+"L'Hopitals regel" #2
+
+¤3
+Domination #3
+Vi lærer og anvender et fagbegreb jeg lidt selv har opfundet til denne bog, der
+kan hjælpe en med at regne mere avancerede grænser. Idéen er, at se på
+en bestemt liste af funktioner, der "dominerer hinanden": Hver funktion
+i listen får alle andre tidligere funktioner, til at nærme sig _(0_), hvis de divideres.
+Så både det første og anden element i listen nærmer sig _(0_), når de divideres med det 
+tredje element osv. #3
+0, brøker, uendelig, uendelighed #3
+8 #3
+
+¤3
+Domination: Advanced mode #3
+Vi videreudvikler idéen fra sidste side, og lærer
+om "ratio testen" til grænser, der hjælper en med at teste, om en funktion
+nærmer sig _(0_) eller _(\infty_) #3
+ratio, test, 0, uendelig, uendelighed #3
+9 #3
+
+
+¤2
+Rode-skuffe side hvor vi ser på vilkårlige teknikker til at løse grænser #2
+Titlen siger lidt sig selv: Vi regner en masse udfordrende grænser, og lærer
+et par tricks og teknikker. #2
+opgaver, øvelse #2
+10 #2
+ #2
+
+
+¤2
+Lad os finde hældninger <i>ordentligt</i> #2
+En af vores store motivationer for alt dette arbejde med grænser var at 
+bevise nogle af de vigtigste påstande fra sidste kapitel <i>ordentligt</i>, uden
+intuitionsargumenter overalt. Det gør vi nu. Vi definerer hældningen som en
+grænse, og beviser alle regler vi bevidste før, nu med grænser.  #2
+bevis, hældning, rigorisk, epsilon, delta, derivative, afledt #2
+11 #2
+ #2
+
+
+¤2
+Lad os finde integraler <i>ordentligt</i> #2
+Integralerne i sidste afsnit var i stor grad bygget på intuition, så
+det er tid til, at de defineres som grænser og får en grundtig og matematisk omgang
+under forstørelsesglaset. Det her bliver lidt sværere end det var for grænser, og
+det involverer et ret langt bevis i starten. Det er også meget spændende dog! #2
+bevis, hældning, rigorisk, epsilon, delta, integral, areal #2
+12 #2
+Den fundamentalle calculus teori #2
+
+
+¤2
+Serier: Uendelig mange ting plusset med hinanden? #2
+I det her underafsnit lærer vi en mærkelig men vigtig matematisk ide
+kaldt "serier" eller "uendelige serier". Det er - forsimpelt sagt - bare
+en sum _(\sum_) med uendelig mange led. Vi undersøger hvorfor, man nogensinde skulle
+få brug for sådan en mærkelig konstruktion, hvordan det overhovedet kan defineres og giver mening,
+og tester om en serie <i>reelt kan findes</i>. En stor del af afsnittet fokuserer på dette
+sidste punkt, i form af de såkaldte "divergence tests". Vi siger, at en serie "findes", hvis
+den nærmer sig ét enkelt tal selv efter uendelig mange led. Det skal vi kunne bevise,
+før vi arbejder med serien. Ellers giver den ikke rigtig mening. 
+<br><br>
+De her tests er lidt en kunstform i sig selv, så vi lærer flere teknikker og bruger
+god tid på at træne. Det er en god matematisk evne at have i værktøjskassen. #2
+sum, led, uendelig, integraler #2
+13 #2
+Serier, Divergens og Konvergens, Integral test, Ratio test, Root test, Limit-comparison test, Alternating serier, Power-serier #2
+
+¤3
+Spørgsmål _(\textbf{A}_) og Lagrange error bound #3
+I introen stillede vi to spørgsmål, og i dette underafsnit svarer vi på det første. 
+Vi forsøger at sætte os ind i, hvornår en taylor-serie "perfekt" approksimerer en funktion.
+Vi bruger en formel kaldt "lagrange error bound", der giver den værst mulige afvigelse fra den
+originalle funktion. Serien er jo identisk, hvis vi kan bevise, at den størst mulige afvigelse nærmer sig _(0_). #3
+k #3
+14 #3
+
+¤3
+Hvordan tester vi divergence? #3
+Vi lærer hvordan man tester om en uendelig serie faktisk nærmer sig ét tal. 
+Det kan tjekkes på flere måder, men er lidt tricky. Det er ofte nemt at tjekke
+hvis en serie <i>ikke</i> konvergerer - det ved man med sikkerhed hvis hvert led i summen ikke
+nærmer sig _(0_). Men selv hvis hvert led nærmer sig _(0_), kan summen stadig nærme sig _(\infty_) eller
+_(-\infty_): Det handler om hvor <i>hurtigt</i> de nærmer sig _(0_). For at bestemme
+det har man to muligheder, bredt sagt:
+<br><br>
+-Brug en "test" på serien, der kan bestemme convergence. Her er der primært tre valgmuligheder i form
+af ratio testen, root testen, og integral testen.
+<br><br>
+-Sammenlign med en anden serie du ved konvergerer eller divergerer. Hvis din serie hele tiden er
+større end en serie, der divergere, ved du f.eks, at din også divergerer. 
+Udover direkte større-end / mindre-end sammenligninger findes der også den lidt mere
+sofistikerede "limit-comparison test", der også er brugbar i visse tilfælde. #3
+divergens, divergence, konvergens, convergence #3
+15 #3
+¤4
+De tre tests #4
+Vi lærer ratio-testen, root-testen og integral-testen, der tjekker om en serie divergerer
+eller konvergerer. Raio-testen og root-testen kender vi stort set allerede, men 
+integral-testen kræver lidt ekstra arbejde at forstå. #4
+test #4
+16 #4
+¤4
+Sammenligninger #4
+Vi lærer hvordan man kan teste divergens eller konvergens på én serie ved hjælp
+af sammenligning med en anden serie man kender bedre. Vi undersøger også "limit-comparison test", 
+der kan hjælpe med dette formål #4
+uligheder #4
+17 #4
+¤4
+Uhyrligt mange dejlige opgaver der træner dig i at teste divergence #4
+Det kræver træning at teste konvergens, så her
+er en masse opgaver der anvender mange forskelligartede teknikker. #4
+træning, opgaver #4
+18 #4
+
+¤3
+Alternating serier #3
+Hvordan tester man divergens eller konvergens på serier, der konstant skifter mellem postiive og negative led?
+Hvordan forstår man overhovedet sådan nogle mærkelige serier?
+I dette afsnit lærer vi en test til serier, hvis led skifter mellem positiv og negativ, og lærer
+at passe ordentligt på, når man arbejder med denne slags serier: Ellers ender man 
+med at bevise at _(1=2_). En kendt matematiker kaldt Riemann illustrerede nemlig, at man kan få
+en alternating serie til at konvergere til et hvilket som helst tal, hvis man 
+"rykker rundt på ledende" (Riemann theorem). Det må vi derfor <i>ikke</i>. #3
+-1/12, numberphile, led, rækkefølge, logik, axiom, bevis #3
+19 #3
+
+¤3
+Hvor kom vi lige fra? Domænet på funktioner defineret som serier #3
+Vi anvender alt vores nye viden, og finder domænet på et par funktioner,
+der defineres gennem serier. En meget kort og let side. #3
+differentialligning #3
+20 #3
+
+
+
+¤1
+Multivariable calculus: Calculus (med flere variabler!) #1
+I dette afsnit udvider vi calculus fra forandring i ét variable til 
+forandring i flere. Alt fra afsnit 1 bliver udvidet: Hældningen af en funktion med flere variabler,
+volumen under en funktion med flere variabler, Taylor-approskimationer af funktioner med flere variabler,
+største og mindste punkt på en funktion med flere variabler, overfladearealer hvor vi før
+studerede kurvelængder osv. Alt det her er utrolig brugbart, både inden for fysik, ingeniøri og 
+økonomi, og vi træner lidt anvendelser undervejs.
+<br><br>
+Til sidst i afsnittet går vi også i dybden med et helt nyt emne: Vektor felter. 
+De har i sig selv intet at gøre med multivariable calculus, da det egentlig bare
+er et koordinatsystem, hvor hvert punkt associeres med en vektor. Flere interesante egenskaber
+og anvendelser af denne brede definition kan dog studeres <i>gennem</i> multivariable calculus, som
+eksempelvis arbejde, flux, divergence og curl. Vektor felter er især vigtige inden for fysik, og
+det er et stort fokus i dette underafsnit. #1
+ #1
+MultivarCalc/#1
+Directional derivative, Clairaut's theorem, Multivariable kæderegel, Second partial derivative test, Lagrange multipliers, Tredobbelte integraler, Jakobian, Arbejde og energi, Konservativt vektor felt, Flux, Divergence og Curl, Stokes' Theorem og The divergence theorem #1
+
+¤2
+Intro #2
+Afsnittets formål og mål bliver etableret. Hvad er multivariable calculus, og hvorfor
+har vi brug for det? #2
+ #2
+1 #2
+ #2
+
+
+¤2
+Grænser med flere variabler #2
+Vi udvider vores definition på grænser til flere variabler, der nærmer sig flere værdier.
+Vi ser, at variablerne kan nærme sig disse værdier <i>langs mange retninger</i>, hvor 
+det med ét variable kun var et spørgsmål om at komme fra højre eller venstre side.
+Der regnes kun to eksempler, da disse grænser er meget udfordrende. #2
+konisk, cirkel, ellipse, bevis, retninger, limit #2
+2 #2
+Grænser af flere variabler #2
+
+
+¤2
+Hældning med flere variabler #2
+Hvordan definerer vi og udregner hældningen på en funktion af flere variabler?
+Vælger man bare at differentiere langs én variabel, eller har man andre muligheder?
+Vi ser eksempler, regner opgaver og anvendelser, og lærer til sidst
+om to praktiske tricks: Clairaut's theorem og den multivariable kæderegel #2
+directional, derivative #2
+3 #2
+Hældning langs en retning, Clairauts teori, Den multivariable kæderegel #2
+
+¤3
+Hældning langs en bestemt retning #3
+Vi udvikler en formel der kan regne hældningen på en flade langs en bestemt 
+retning på _(x_), _(y_) og _(z_), og anvender formlen i en helt masse opgaver og situationer. #3
+lambda, directional, field, retningsvektor, u_x, u_y, u_z, største, mindste #3
+4 #3
+
+¤3
+Hældning med mere end tre variabler? #3
+To variabler er 2D, tre variabler er 3D, så fire variabler er ... flere end tre dimensioner?
+Vores udvidelse af grænser indtil videre har lagt basis i geometri, så det bliver
+hurtig mærkeligt, når antallet af variabler øges til over _(3_). I dette korte
+underafsnit erkender vi, at vi lige nu er for dumme og ulæste til at forstå _(n_)-dimensionelt rum,
+men får alligevel set på én interesant anvendelse. #3
+sæbe, n, dimensioner, rum, abstrakt #3
+5 #3
+
+¤3
+Praktiske tricks til multivariable hældning #3
+Vi ser på to praktiske tricks der gør især partiale hældninger lidt nemmere:
+Clairaut's theorem og den multivariable kæderegle. Clairaut's theorem især er ret vigtig,
+og bliver faktisk brugt i flere beviser. Den multivariable kæderegel er ikke særlig
+vigtig overhovedet, men værd at nævne #3
+ #3
+6 #3
+¤4
+Clairaut's theorem #4
+Vi beviser, at rækkefølgen hvorpå man differentierer eller integrerer er ligegyldig,
+og anvender dette praktiske faktum i et par opgaver #4
+clairaut, rækkefølge, integral, integration, hældning, differentier, partial #4
+6 #4
+¤4
+Multivariable chain rule #4
+Vi lærer og beviser den (ikke specielt vigtige) multivariable kæderegel, og regner
+et par opgaver. #4
+chain, kæde, #4
+7 #4
+
+
+¤2
+Approksimationer af multivariable funktioner #2
+Vi ser hvordan, man laver en Taylor-approskimation af en multivariable funktion, og regner
+et par eksmpler. Idéen er præcis den samme som før, men det bliver hurtigt lidt rodet. #2
+taylor, serie, approksimation, tilnærmelse, tilnærmelsesvis #2
+8 #2
+ #2
+
+
+¤2
+<i>Optimering</i> af multivariable funktioner #2
+Vi arbejder med at finde de henholdsvis største og mindste punkter
+på multivariable funktioner. Mange mål og tal i økonomi og handel
+kan modelleres gennem multivariable funktioner, så de mindste og laveste punkter på disse funktioner
+har mange direkte anvendelser. #2
+mindste, største, større, mindre, kritisk, optimal, økonomi, anvendelse #2
+9 #2
+Lokal vs. globalt maks og min, Second partial derivative test, Lagrange multipliers #2
+
+¤3
+Bevis af second partial derivative test #3
+Vi beviser endelig second partial derivative test, som vi brugte på sidste side.
+Beviset er lidt langt, og vi anvender vores taylor-approksimationer af multivariable funktioner
+så vel som en ny definition på "kontinuerlig". #3
+kontinuerlig, bevis, grænse, sum, uendelig #3
+10 #3
+
+¤3
+<i>Globalt</i> min og maks #3
+Indtil har vi egentlig ikke fundet reele min og maks-punkter med sikkerhed: Vi har
+bare vurderet <i>typen</i> af et kritisk punkt. I dette korte afsnit arbejder vi med
+at finde det henholdsvis største og mindste punkt på en given region. Der er ingen store
+teoretiske gennembrud her, og afsnittet er ret lavpraktisk. #3
+mindste, største, større, mindre, region #3
+11 #3
+
+¤3
+Lagrange multipliers: Et praktisk trick til at finde kritiske punkter #3
+Vi ser en teknik kaldt "lagrange multipliers", der sommetider gør det nemmere
+at finde kritiske punkter. Lagrange multipliers er især praktiske i anvendelsesopgaver, hvor
+man er givet en funktion, der skal optimeres, samt en slags "begrænsning" for de inputs, funktionen må tage. #3
+lagrange, systemer, ligninger, teknik, genvej, anvendelse #3
+12 #3
+
+
+¤2
+Den normale vektor til en overflade #2
+Vi regner den normale vektor ved et punkt, på en flade defineret
+af en multivariable funktion _(f(x,y)_), og arbejder et par eksempler og anvendelser #2
+normal, normalvektor, flade, kryds, krydsprodukt #2
+13 #2
+ #2
+
+
+¤2
+Fra areal under en kurve til volume under en overflade #2
+I dette underafsnit går vi i dybden med dobbelt-integraler og tredobbelt-integraler.
+Dobbelt-integraler kan regne <i>volumen</i> under en overflade, ligesom et integral kan
+regne <i>arealet</i> under en kurve. Vi træner et par udfordrende volumer, og 
+beskriver dem endda med andre variabler som _(r_) og _(\theta_) for at overskueliggøre
+opgaven.
+<br><br>
+Tredobbelte integraler kan hjælpe os med at regne diverse <i>masser</i>. Her kan det være tricky
+at opsætte de tre rigtige integraler til ens givne region _(R_), og det kræver noget træning.
+<br><br>
+Til sidst i under-afsnittet lærer vi at substituere i dobbelt- og tredobbelte integraler
+(ligesom vi substituerede for at løse enkelte integraler) #2
+volume, 3D, 2D, polær, torus, integral, integration, rækkefølge, region, geometri #2
+14 #2
+Dobbelt-integral, Tredobbelt-integral, Sfæriske koordinater, Jakobian #2
+
+¤3
+Polære koordinater og 3D voluminer #3
+Vi ser hvordan en dobbelt-integral kan beskrives med polære koordinater, og hvorfor
+og hvornår det kan hjælpe.  #3
+polær, rum, parametrisk, volume, substitution #3
+15 #3
+
+¤3
+Tredobbelt integraler: Det næste level #3
+Vi ser hvordan man med én ekstra integral kan finde <i>massen</i> af et
+tredimensionelt objekt med en given "densitetsfunktion" _(\rho(x,y,z)_).
+Disse integraler kan være en smule tricky at opsætte, da man ofte skal
+beskrive og forstå en til tider kompliceret 3D volumen. Vi træner derfor en del opgaver. #3
+masse, densitet, elektricitet, fysik #3
+16 #3
+
+¤3
+Mere om substitution i dobbelt og tredobbelte integraler #3
+Vi træner endnu flere tre-dobbelte integraler, nu med polære koordinater og
+endda et par andre substitutioner. #3
+torus, kugle, substitution, træning, integration #3
+17 #3
+¤4
+En generel strategi til substitutioner uafhængigt fra geometri #4
+Vores substitutioner indtil videre har virket grundet geometriske argumenter, og det vil
+vi helst gerne undgå - især hvis vi søger en mærkelig substution uden tydelig
+geometrisk intuition. Det er muligt gennem <i>jakobianen</i>, men med tre variabler
+eller flere bliver det så rodet og upraktisk, at man ligeså godt argumentere geometrisk. #4
+ #4
+18 #4
+
+
+¤2
+Overfladearealer #2
+Vi lærer at beregne overfladearealet, på en given del af en flade _(U_) defineret
+af en multivariable funktion _(f(x,y)_) #2
+surface, integral, overflade, areal #2
+19 #2
+Overfladeareal #2
+
+
+¤2
+Vektor felter #2
+Et vektor er meget bredt bare et koordinatsystem, hvor hvert punt associeres med 
+en vektor - enten 2D eller 3D. Det er der i sig selv intet spændende ved, men 
+denne slags model bliver hyppigt anvendt i fysik især, og dens vigtigste og mest
+interesante egenskaber kan kun studeres gennem multivariable calculus. Man vil eksempelvis
+gerne måle hvor meget energi et vindfelt har fjernet eller tilføjet en masse,
+der rejser langs en bestemt rute i feltet, og det kan lettest
+beskrives som en vej _(\vec{r}(t)_) gennem et vektor felt _(\vec{F}(x,y) _) 
+<br><br>
+De to anvendelser og mål vi primært undersøger er <i>arbejde</i> og <i>flux</i>.
+Vi går også i dybden med <i>curl</i> og <i>divergence</i>.
+Det er to lidt abstrakte (men meget interesante) koncepter, der <i>har</i> brugbare
+intuitioner og anvendelser i sig selv, men især er vigtige <i>fordi</i>
+de hjælper os med beregning af flux og divergence gennem "Stokes' Theorem" og "The Divergence Theorem". #2
+ #2
+20 #2
+Energi og arbejde, Konservativt vektor felt, Flux, Curl og divergence, Magnetisme, Stokes' Theorem og The divergence theorem #2
+
+¤3
+Arbejde og energi #3
+Vi undersøger hvad man mener med "energi" og "arbejde" i fysik, hvorfor man går
+så meget op i at regne det, og hvordan man reelt regner det gennem vektor felter og integraler. #3
+fysik, energi, linje-integral, linje, arbejde, work, E, kinetisk, potentiel #3
+21 #3
+¤4
+Hvordan regner vi arbejde? #4
+Vi udleder et integral, der kan regne arbejdet langs en vej gennem et vektor felt, og anvender
+formlen på en masse opgaver og eksempler #4
+fysik, energi, linje-integral, linje, arbejde, work, træning, opgave #4
+22 #4
+¤4
+Arbejde og konservative vektor felter #4
+Vi undersøger de såkaldte "konservative vektor felter", hvor massens rute ikke
+har nogen indflydelse udover dens start og slut-punkt. Flere vigtigte "felter" i fysik er
+konservative, og denne egenskab er super praktisk. #4
+tyngdekraft, stram, kurs, rute, retning, position, anvendelser #4
+23 #4
+
+¤3
+Vektor felter og <i>flux</i> #3
+Vi undersøger hvad man mener med "flux", hvorfor det kan være en brugbar model, og hvordan
+man beregner det med integraler. Flux er et slags mål af "hvor meget" af vektor feltet, der suser
+ind eller ud af et bestemt område. Måske hvor meget vind, der flyver ind i et sommerfuglenet. 
+Flere vigtige størrelser - især inden for magnetisme - beskrives gennem "flux". #3
+ #3
+24 #3
+¤4
+Træning i at regne flux #4
+Vi udleder et integral, der kan regne flux, og øver os gennem en masse opgaver. #4
+træning #4
+25 #4
+¤4
+Flux i 3D! #4
+Vi regner fluxen gennem en tredimensionel overflade, og træner en masse opgaver.
+Det bliver hurtigt en smule kringlet og rodet, men formlen og teorien er simpel nok. 
+Det er ikke særlig slemt, så længe man lader computeren regne de aktuelle integraler
+numerisk. #4
+3D, flade, overflade, banana #4
+26 #4
+
+¤3
+<i>Curl</i> og <i>divergence</i>: To lidt specielle koncepter #3
+Curl og divergence er to lidt abstrakte (men meget interesante) koncepter, der <i>har</i> brugbare
+intuitioner og anvendelser i sig selv, men især er vigtige fordi
+de hjælper os med beregninger af flux og arbjede gennem "Stokes' Theorem" og "The Divergence Theorem". 
+<br><br>
+Forsimplet sagt er divergence et mål af flux <i>på et punkt</i> og curl arbejde på et punkt, hvor
+de to koncepter tidligere kun gjaldt områder eller voluminer. Divergence er derfor intuitivt hvor
+meget feltet "går ind / ud" af punktet, og curl hvor meget det går "rundt omkring" punktet. 
+<br><br>
+I dette underafsnit starter vi med at definere og forstå curl og divergence, og finder
+derefter et par praktiske formler der gør dem lette at regne. Vi ser derefter på deres anvendelser,
+og bruger en del tid på at forstå, hvordan de meget elegant beskriver magnetismens vigtigste love. 
+Der er ikke rigtig nogen opgaver blandt anvendelserne, da eksemplerne er for specialiserede. #3
+3blue1brown #3
+27 #3
+¤4
+Anvendelser af curl og divergence #4
+Vi undersøger et par anvendelser af curl og divergence før Stokes' og The divergence theorem.
+To anvendelser, specifikt: Hvordan de intuitivt kan beskrive og visualisere
+flere differentialligninger, og deres essentielle rolle i "maxwells fire sætninger" -
+nogle af de mest grundlæggende regler i magnetisme. Vi bruger en del tid på det her 
+med magnetisme, men det er ret spændende. #4
+fysik, axiom, maxwell, felt, magnet, elektron, krydsprodukt #4
+28 #4
+
+¤3
+Stokes theorem, Green's theorem og the divergence theorem #3
+Med Stokes' og Green's theorem kan man beregne arbejde
+via curl og vice versa, og med the divergence theorem gjælder det samme
+divergence og flux. Vi introducerer teorierne og deres intuition, giver
+"sort-of" et bevis af Stokes (men ikke af the divergence theorem, da det er for svært),
+og træner et par eksempler og opgaver. Der kommer til at være nogen lidt lange, 
+beregningstunge opgaver her, men der er heldgivis ikke super mange. #3
+bevis, intuition, stokes, green, divergence, divergens, integraler, områder, region #3
+29 #3
+¤4
+Øvelse i Green's theorem #4
+Vi øver os i at anvende Green's theorem, den todimensionelle version af Stokes' #4
+øvelse, træning, opgaver, green, stokes, integral, integration #4
+30 #4
+¤4
+Øvelse i The Divergence Theorem #4
+Vi øver os i at anvende The divergence theorem #4
+øvelse, træning, opgaver, divergence, divergens, integral, integration #4
+31 #4
+¤4
+Øvelser i Stokes* #4
+Vi øver os i at anvende Stokes' theorem #4
+øvelse, træning, opgaver, green, stokes, integral, integration #4
+32 #4
+
+
+
+¤1
+Sandsynlighedsteori runde 2: Kontinuerlig #1
+I første sandsynlighedsafsnit arbejdede vi kun med udfaldsrum med et <i>begrænset antal elementer</i>, og
+stokastiske variabler der kun tog <i>et begrænset antal værdier</i>. Vi har nu meget stærkere
+værktøjer til at analysere det kontinuerlige, det uendelige og forsvindede lille. Vi
+skal beregne sandsynligheden for at, "det regner over _(2.3mm_)" eller sandsynligheden
+for at, "der går mellem _(5_) og (_9.72_) sekunder, før en ny kunde går ind i butikken".
+<br><br>
+På første side etablerer vi hvad præcist, vi forsøger at regne, og hvad der menes med 
+"kontinuerlig sandsynlighed" og "utællelig". Grundideerne bag <i>hvordan</i> vi vil beregne
+det bliver også introduceret. Derefter anvender vi disse idéer og beregner en masse sandsynligheder, 
+uden vi <i>helt</i> forstår endnu præcis <i>hvorfor</i> det virker. Efter opgaverne tager vi 
+et dyk ned i teorien og forstår <i>hvorfor</i> samt <i>hvordan</i>, folk fandt frem til disse
+resultater. Derefter øver vi os i at regne sandsynligheder, der skal tilpasses et bestemt datasæt.
+Til sidst undersøger vi, hvordan man kan udføre <i>algebra</i> på kontinuerlige stokastiske variabler,
+og hvordan det overhovedet giver mening. #1
+ #1
+KontinuerligProb/#1
+PDF: Sandsynlighedsdensitetsfunktion, CDF: Kumultativ densitets funktion, Standardafvigelse, Normalfordeling, Eksponentiel distribution, Kontinuerlig Bernoulli distribution, Algebra med stokastiske variabler #1
+
+¤2
+Intro #2
+Vi etablerer hvad præcist vi forsøger at regne, og hvad der menes med 
+"kontinuerlig sandsynlighed" og "utællelig". Grundideen bag <i>hvordan</i> vi regner
+der bliver beskrevet, og vi introducerer "kumultative densitetsfunktioner" _(cdf(x)_) og
+"sandsynlighedsdensitetsfunktioner" _(pdf(x)_). Vi regner et par eksempler og får
+en ide bag, hvordan det virker. #2
+pdf, cdf, intuition #2
+1 #2
+PDF: Sandsynlighedsdensitetsfunktion, CDF: Kumultativ densitets funktion, Normalfordeling, Eksponentiel distribution #2
+
+
+¤2
+Træning i at anvende sandsynlighedsdensiteter til diverse problemer #2
+Vi anvender teorien fra introsiden, og bruger diverse PDF-funktioner til at
+regne en masse sandsynlighedsopgaver. Alle PDF-funktioner på denne side
+er bare <i>givne</i>, og vi forstår ikke helt endnu, hvor de faktisk kommer fra. #2
+træning, anvendelser, opgaver #2
+2 #2
+Kontinuerlig Bernoulli distribution #2
+
+
+¤2
+Genenmsnit og spredning på PDF'er #2
+Vi ser hvordan, gennemsnit og spredning kan forstås og beregnes ved kontinuerlige stokastiske variabler,
+og løser en masse opgaver. #2
+mean, spredning, standard, afvigelse, varians, median #2
+3 #2
+Standardafvigelse, Median #2
+
+
+¤2
+Hvordan bliver sandsynlighedsfunktioner udledt? #2
+Hvor kommer alle de her brugbare sandsynlighedsfunktioner fra? Vi lærer hvordan,
+PDF'en til normalfordeling og eksponentiel distribution udledes, og forstår hvordan
+man reelt arbejder med en "familie" af sandsynligheder, der kan tilpasses ens specifikke data #2
+bevis, proof, normalfordeling, statistik #2
+4 #2
+ #2
+
+¤3
+Øvelse i tilpasning af sandsynlighedsfunktioner til ens data #3
+Vi løser et par opgaver, hvor PDF'en <i>ikke</i> er givet på forhånd og selv
+skal konstrueres ud fra informationen eller den givne data. #3
+statistik, data #3
+5 #3
+
+
+¤2
+Algebra med stokastiske variabler? #2
+Selvom de har "variabler" i navnet, bliver stokastiske variabler ikke helt behandlet
+ligesom de normale - men hvad hvis de gjorde? Ville det ikke være praktisk, hvis vi kunne
+regne sandsynligheden på forskellige værdier, hvis to variabler var plusset eller minuset?
+Måske endda divideret? Det <i>er</i> muligt, endda ret effektivt, men teorien er utrolig svær at forstå.
+<br><br>
+Vi er nødt til at opbygge sandsynlighedsteori fra bunden igen, nu <i>helt</i> ordentligt.
+Hvis vi overhovedet skal have en chance for, at forstå det kontinuerlige tilfælde, bør vi 
+først starte med det diskrette. Her gentænker vi flere definitioner, og ser hvordan
+de giver fin mening at behandle stokastiske variabler algebraisk. De idéer tager
+vi med os, og forstår det mere teoretisk udfrodrende kontinuerlige tilfælde. Det bliver crazy! #2
+normalfordeling, sæt, abstrakt #2
+6 #2
+ #2
+
+¤3
+Det diskrete tilfælde #3
+Vi gentænker hvordan vi fundamentalt har opbygget sandsynlighedsteori, får
+defineret hvordan man udfører algebra på stokastiske variabler, og udregner
+sandsynlighederne <i>på</i> et variable der er behandlet algebraisk (ganget, plusset, minuset osv.). #3
+diskret, definition, bevis, tal, sæt, teori #3
+6 #3
+
+¤3
+Det kontinuerlige tilfælde #3
+Vi udvider vores teori til det kontinuerlige tilfælde, og det <i>bliver</i> ret abstrakt. 
+Men den gode form for abstrakt, for det endelige resultat vi kommer frem til et super
+praktisk og brugbart. Bl.a. finder vi ud, af hvordan man med et integral kan regne PDF'en på
+et variable, der er ganget med en konstant, eller med en dobbelt-integral regne PDF'en på 
+to variabler, der er plusset og/eller ganget. Vi beviser også, at 
+PDF'en på to normalfordelte variabler plusset og/eller minusset stadig
+er normalt fordelt.  #3
+normalfordeling, sæt, algebra, maps #3
+7 #3
+
+
+
+
+
+¤0
+Men hvad <i>er</i> komplekse tal? #0
+I "kunsten af at beskrive rum" introducerede vi komplekse tal som en hel geometrisk konstruktion, men
+realiten er anderledes: Komplekse tal blev skabt på grund af deres algebraiske egenskaber. 
+I dette kapitel forsøger vi at forstå hvorfor, det giver mening at have komplekse tal - hvordan
+giver det mening at have et tal, der gør det muligt at tage kvadratrødder af negative tal, selv hvis
+det står uden for nogen som helst analogi til den rigtige verden? Vi når frem til en ordentlig og 
+rigorisk definition, og studerer og udvider den, indtil de komplekse tal kan alt hvad de normale kan
+(og mere). <i>Alle</i> operationer: Plus, minus, gange, division, eksponenter, trigonometri, rødder osv. 
+bør også virke hos komplekse tal, og det er slet ikke helt ligetil at definere. #0
+ #0
+Komplekse tal, principiel værdi og generel værdi #0
+
+¤1
+ #1
+ #1
+ #1
+ComplexNumbers/#1
+ #1
+
+¤2
+Intro #2
+I denne lange intro svarer vi på <i>hvorfor</i>. Vi undersøger motivationen bag komplekse tal,
+hvordan det ikke er helt lige så mærkeligt, som man måske skulle tro givet den historiske kontekst, og
+hvorfor de spiller en utrolig vigtig algebraisk rolle. Vi ender ud med en definition, der så 
+bliver finpudset og udvidet gennem resten af kapitlet.   #2
+sæt, definition, teori, motivation, kompleks, dedekind, rafael, bombelli, gerolamo, cardano, real #2
+1 #2
+Taltyperne, Krydsproduktet af sæts, Den fundamentalle algebra teori #2
+
+
+¤2
+Basalt arbejde med komplekse tal #2
+Vi har en definition, men den er ret upraktisk. 
+I dette afsnit undersøger vi, hvordan vi bruger komplekse tal i basalt
+aritmetik med plus/minus/gange/division, og beviser hvorfor, vi kan behandle
+dem præcis ligesom normale tal i denne respekt. #2
+kommutativ, associativ #2
+2 #2
+Konjugatet af et komplekst tal #2
+
+¤2
+Potenser og rødder med komplekse tal #2
+Indtil videre har det været relativt let at se hvordan vi udførte operationer med og på 
+komplekse tal. De har opført sig ret intuitivt, og det giver fin mening, at vi ganger
+to komplekse tal ved at gange dem som vi ville to parenteser. Men som vi trædder ind i eksponenternes
+land, bliver det hurtig mærkeligt og udfordrende. Hvordan opløfter vi et tal til et komplekst tal?
+Hvordan kan man overhovedet visualisere og forstå, hvad det betyder? Eller et komplekst tal opløftet til
+et andet komplekst tal? Måske endda en "kompleks rod"? 
+<br><br>
+Èt problem vi hurtigt støder på er, at 
+operationer som eksponenter og logaritmer af komplekse tal har <i>flere</i> rigtige svar, hvor de normalt
+kun har ét. F.eks. har et komplekst tal opløftet til et irrationelt tal som _(\pi_)
+<i>uendelig</i> mange svar, og samme gælder et komplekst tal opløftet til et 
+andet komplekst tal såvel som komplekse logaritmer. Mange
+af de dejlige egenskaber af potenser og logaritmer som _(a^{b+c} = a^b*a^c_) og 
+_(Log(a*b)=Log(a)+Log(b)_) stopper med at virke hos komplekse tal, og man skal
+virkelig holde tungen i munden.  #2
+potens, eksponent, uendelig, e^pi*i = -1, euler, e #2
+3 #2
+Komplekse eksponenter, principiel og generel værdi, Cauchy-produkt #2
+
+¤3
+Et tal opløftet til en kompleks eksponent #3
+Vi finder ud af hvordan, man kan definere "komplekse eksponenter" på intuitiv og logisk vis.
+Vi studerer derefter definitionens egenskaber. #3
+e^pi*i = -1, euler, e, potens, definition, udvidelse #3
+4 #3
+
+¤3
+To definitioner på vinkler #3
+Komplekse udtryk kan have uendelig mange svar <i>netop</i> på grund af 
+de komplekse tals vinkler. Vi skelner derfor mellem én principiel vinkel - 
+den mindst mulige vinkel der opfylder kravet - og den <i>generelle</i> vinkel - 
+et uendelig sæt af vinkler der <i>alle</i> opfylder kravet. Det her er lidt
+bare en terminologiside #3
+terminologi, fagbegreb, vinkel, modulos, kompleks, i #3
+5 #3
+
+¤3
+Generelle og principielle logaritmer og eksponenter #3
+Vi finder ud af hvordan, man opløfter et komplekst tal til et andet, og hvordan man
+regner "komplekse logaritmer". Vi definerer to versioner af hver handling: Én med
+ét enkelt svar med den principielle vinkel, og én med et sæt af alle uendelig mange svar.
+Det er praktisk at have begge versioner, især på næste side hvor vi 
+studerer hvilke potens- og logaritme-egenskaber, der stadig gjælder. #3
+potens, kompleks, eksponent #3
+6 #3
+
+¤3
+Egenskaber af komplekse eksponenter og logaritmer #3
+Vi studerer hvilke egenskaber for potenser og logaritmer, der stadig gjælder hos komplekse tal,
+både i det principielle og generelle tilfælde. Det bliver lidt langt og kedsomeligt. #3
+bevis, skema, egenskab, potens, teori, #3
+7 #3
+
+
+¤2
+Komplekse tal og trigonometriske funktioner #2
+Vi definerer hvordan man tager Sinus og Cosinus af komplekse tal (hint: meget samme
+trick og definition som ved eksponenter), finder et par praktiske formler til definitionen og
+regner lidt opgaver. Vi lærer også kort om de "hyperbolske" sinus og cosinus funktioner.  #2
+cosh, sinh, cauchy, trig #2
+8 #2
+Hyperbolske trigonometriske funktioner #2
+
+
+
+

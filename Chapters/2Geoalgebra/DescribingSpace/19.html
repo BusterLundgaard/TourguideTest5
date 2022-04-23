@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+
+
+    <h2>Men hvad <i>er</i> en matrix?</h2>
+    <p class="t">
+    Til aller sidst i det her kapitel vil jeg snakke om lidt 
+    notation / syntaks du ofte kommer til at støde på: Matrixer.
+    </p>
+
+    <p class="t">
+    En "<i>matrix</i>" er bare et skema med ting i. Hyppigst tal. F.eks:
+   
+    _($ \begin{bmatrix}
+    4 & \pi & 13 \\
+    -15.68 & 3+5 & y^2 \\
+    Sin(30)  & 1+2+3... & 99 \\
+    \end{bmatrix}, 
+
+    \begin{bmatrix}
+    2 & 7i+3 \\
+    9 & 13  \\
+    -12  & -15 \\
+    \end{bmatrix},
+
+    \begin{bmatrix}
+    1 & 0 & 1 & 0 & 1 \\
+    0 & 1 & 0 & 1 & 0  \\
+    1 & 0 & 1 & 0 & 1 \\
+    \end{bmatrix}
+    _)
+
+    Man sætter ofte _([ \, ]_) tegn omkring, men det varierer lidt fra tekst til tekst.
+    </p>
+    <p class="t">
+    Tal bliver opdelt i "grupper" og rækker/kolonner i mange vidt forskellige 
+    kontekster. Det
+    kunne være alt fra points i et spil, mængden af penge forskellige folk (rækker) havde på
+    forskellige dage, osv. Det er altså forfatteren og konteksten der bestemmer,
+    hvad præcis matrixen betyder. <i>Med det sagt</i> findes der 
+    bestemte vigtige og hyppige betydninger, der er værd at se nærmere på. F.eks. bruger
+    man ofte matrixer til at beskrive lineære systemer af ligninger:
+    _($\begin{eqnarray} 
+    && 3x & + 5.9y & - \,  16z & + 2.3w & = 18 \\
+    && 12x & - 14y & + \, 1z & - 1w & = 9 \\
+    &-& 13x & + 20y & + \, 0z & + 2.3w & = 0 \\
+    && 33x & + 66y & - \, 12.45z & + 19w & = -15 \\
+    \end{eqnarray}_)
+    Som vi ved allerede, er et lineært system af ligninger ét, hvor hver ligning følger 
+    _($a_1x_1 + a_2x_2 + a_3x_3 + ... a_nx_n=b_)
+    ... og hvor hvert _(x_i_) er et variabel vi ikke kender og _(a_i_) koefficienten på det variabel. 
+    Vi støder på de her systemer ret tit, og burde nok effektivisere vores
+    løsnings-proces så meget som muligt. 
+    Vi har jo ikke rigtig <i>brug</i> for at skrive de forskellige variabler _(x, \, y, \, z, \, w,..._) op
+    når vi løser ligningen på papir. Det 
+    tager bare tid og plads. Det eneste vi har brug for er koefficienterne, og hvad de skal være lig med til sidst:
+    </p>
+
+    <img class='Spic' style='width:115%; margin-left:-9%' src='../../../Assets/Chapter2\Section4\Matrixer\LinearSystems.png'> 
+    <p class="t">
+    Vi ved, at vi kan bruge elimination til at løse de her systemer effektivt. Det bliver
+    ekstra hurtigt, hvis vi viser alting i en matrix. Der er simpelt hen mindre
+    unødvendigt skrivearbejde med plus, minus og symboler, når vi laver mellemregningerne med matrixer: 
+    </p>
+    <video class='SpicBXL' style="width:95%;" controls>
+        <source src='../../../Assets/Chapter2\Section4\Matrixer\GaussianElimination.mp4' type='video/mp4'>
+    </video>
+    <p class="t"> 
+    En matrix finder dens anden mest hyppige betydning i konteksten 
+    af såkaldte <i>lineære transformationer</i>.
+    Vi så tidligere en "shear-transformation", der tog ethvert punkt
+    _((x, y)_) til _((x+ky, y)_) hvor _(k_) var en konstant:
+    </p>
+    <img class='SpicXL' style='width:95%' src='../../../Assets/Chapter2\Section4\Matrixer\Shear F1.png'> 
+    <p class="t">
+    Èn måde at beskrive den her transformation på, er 
+    _($ \begin{bmatrix} 1 & k \\ 0 & 1 \end{bmatrix} _)
+    Denne matrix "transformerer" punktet _((x,y)_) ved at gange 
+    _(x_) med vektoren _(\Vec[1,0]_), gange
+    _(y_) ganget med vektoren _(\Vec[k,1]_), og lægge de to sammen:
+    _($\begin{bmatrix} 1 & k \\ 0 & 1 \end{bmatrix}*\VeC[x,y] = x*\VeC[1,0] + y*\VeC[k,1] = \VeC[x+ky,y]_)
+    Vi siger, at vi "ganger" matrixen med et punkt eller en vektor, men det er ligesom "prikproduktet" bare
+    ren konvention. </p>
+    <p class="t">
+    Transformationen kan visualiseres som: 
+    </p>
+    <img class='SpicXL' style='width:95%' src='../../../Assets/Chapter2\Section4\Matrixer\Shear F2.png'> 
+    <p class="t">
+    Prøv at fokuser på det nederste punkt.  
+    Før transformationen kan vi beskrive det som: 
+    _($\VeC[x,y] = 2*\vec{\text{Blå}} + 1*\vec{\text{Rød}}_)
+    Hvor:
+    _($\vec{\text{Blå}} = \VeC[1,0], \qquad \vec{\text{Rød}} = \VeC[0,1]_)
+    Så:
+    _($\VeC[x,y]=2 \VeC[1,0] + 1 \VeC[0,1] = \VeC[2,1]_)
+    Efter transformationen kan punktet stadig beskrives som 
+    _(2 \vec{\text{Blå}} + 1 \vec{\text{Rød}}_), men _(\vec{\text{Blå}}_) og 
+    _(\vec{\text{Rød}}_) har ændret sig, så:
+    _($\VeC[x,y] = 2 \VeC[1,0] + 1 \VeC[1.5, 1] = \VeC[3.5,1]_)
+    Et andet eksempel kunne være en skalering. Den kan beskrives med matrixen:
+    _($\begin{bmatrix} k & 0 \\ 0 & k \end{bmatrix} _)
+    Hvilket kan visualiseres som: 
+    </p>
+    <img class='SpicXL' style='width:70%' src='../../../Assets/Chapter2\Section4\Matrixer\Scale F1.png'> 
+    <p class="t">
+    Det giver god intuitiv mening, at lige denne matrix skalerer, eftersom
+    _(\Vec[k,0]_) og _(\Vec[0,k]_) bare svarer til skalerede versioner
+    af de originale _(\vec{\text{Blå}}_) og _(\vec{\text{Rød}}_). 
+    </p>
+
+    <!--  -->
+
+    <q-stion 1="19" 2="1">
+    Hvis 
+    _($\begin{bmatrix} Cos(\theta) & -Sin(\theta) \\ Sin(\theta) & Cos(\theta) \end{bmatrix} _)
+    ... repræsenterer en linear transformation, hvad er det så intuitivt
+    den gør geometrisk?
+    <br><br></q-stion>
+    <answer-box>
+    Det er en rotation!
+    <img class='Spic' style='width:95%' src='../../../Assets/Chapter2\Section4\Matrixer\Rotate F1.png'> 
+    <p class="t">
+    Det er let at se hvorfor: Vores to nye vektorer er bare roterede versioner
+    af de originale _(\vec{\text{Blå}}_) og _(\vec{\text{Rød}}_). De har 
+    begge en radius på _(1_) som før, og de er stadig vinkelrette på hinanden. Hvis
+    vi faktisk ganger ind i matrixen
+    _($\begin{eqnarray}
+    && \begin{bmatrix} Cos(\theta) & -Sin(\theta) \\ Sin(\theta) & Cos(\theta) \end{bmatrix}*\VeC[x,y] = \\ \\
+    && x \VeC[Cos(\theta), Sin(\theta)] + y \VeC[-Sin(\theta), Cos(\theta)] = \\ \\
+    && \VeC[x Cos(\theta) - y Sin(\theta), x Sin(\theta) + y Cos(\theta)]
+    \end{eqnarray}_)
+    ... så ser vi også, at det perfekt passer til rotationsformlen vi fandt tidligere!
+    </p>
+    <br></answer-box>
+
+    <q-stion 1="19" 2="2">
+    Hvad gør 
+    _($\begin{bmatrix}  0.774 & -2.895 \\ 2.895 & 0.774 \end{bmatrix}_)
+    Altså, hvad gør den intuitivt, hvis du bare skulle forklare det til nogen? 
+    <br><br></q-stion>
+    <answer-box customWidth="500">
+    Det ser ud til, at passe formen af en rotationsmatrix ret godt, men nogle 
+    af talende er højere end _(1_), hvilket ikke er muligt på rotationsmatrixen,
+    hvor alle tal kommer fra _(Sin_) eller _(Cos_). Hvert element er nok blevet
+    skaleret en eller anden mængde _(k_), så matrixen generelt følger:
+    _($\begin{bmatrix}  k*Cos(\theta) & -k*Sin(\theta) \\ k*Sin(\theta) & k*Cos(\theta) \end{bmatrix}_) 
+    Hvilket vi kan forestille os som:
+    <img class='Spic' style='width:95%' src='../../../Assets/Chapter2\Section4\Matrixer\Custom F1.png'> 
+    <p class="t">
+    Lad os nu forsøge faktisk at finde rotationen _(\theta_) og skaleringsfaktoren _(k_).
+    Vi ved at
+    _($\begin{eqnarray}
+    && 0.774 & = k*Cos(\theta) \\
+    && 2.895 & = k*Sin(\theta)
+    \end{eqnarray}_)
+    Ud fra dette får vi let:
+    _($\frac{0.774}{Cos(\theta)}=\frac{2.895}{Sin(\theta)} \to Tan(\theta) = 3.74 \to \theta=75^o_)
+    Nu kan vi finde _(k_) som:
+    _($\frac{0.774}{Cos(75)}=2.99_)
+    Altså: Vi roterer med _(75^o_) og skalerer med en faktor på ca. _(3_). 
+    </p>
+
+    <br></answer-box>
+
+    <q-stion 1="19" 2="3">
+    _(\underline{\textbf{A}}_): <br>
+     Er det muligt at lave en linear transformation der flytter alle punkter?
+    Kan vi repræsentere f.eks. _(f((x,y)) \to (x+a,y+b) _)
+    som en matrix? 
+    <p class="t">
+    _(\underline{\textbf{B}}_): <br>
+     Kan man skalere omkring et punkt, der ikke er _((0,0)_)?
+    </p>
+    <p class="t">
+    _(\underline{\textbf{C}}_): <br>
+     Kan man reflektere gennem et punkt eller en linje?
+    </p>
+    <br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    Det her kan vi nemt svare på rent matematisk: Den generelle lineære transformation
+    _($\begin{bmatrix}  a & b \\ c & d \end{bmatrix}_) 
+    tager et punkt _((x,y)_) til _((ax+by, ac+dy)_), så det første spørgsmål
+    er, hvorvidt det er muligt at vælge _(a,\, b, \, c, \, d_) så at:
+    _($\begin{eqnarray}
+    && ax+by=x+A \\
+    && ac+dy=y+B
+    \end{eqnarray}_)
+    Det er det tydeligvis <i>ikke</i>. Bare første ligning i sig selv er umulig.
+    Man kan fjerne _(y_)-ledet ved at sætte _(b_) til _(0_), men så står
+    man tilbage med _(ax=x+A_) hvilket ikke kan løses 
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Skalering _(s_) omkring et punkt _((A,B)_) flytter _((x,y)_) til 
+    _($\VeC[A+s*(x-A),B+s*(y-B)]_)
+    Det kan omskrives til:
+    _($\VeC[s*x+(1-s)*A,s*y+(1-s)*B]_)
+    _((1-s)*A_) og _((1-s)*B_) er konstanter, så transformationen
+    skalerer med _(s_), og flytter derefter alle punkter med _(((1-s)A,(1-s)B)_). 
+    Samme argument vi brugte på _((x+A,y+B)_) gælder, så det er <i>ikke</i> muligt. 
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{C}}_)#" tabColour="rgb(171,96,147)">
+    Ved en hvilket som helst lineær transformation vil _((0,0)_) altid flyttes til _((0,0)_).
+    Derfor er det heller ikke muligt at reflektere omkring en linje 
+    eller et punkt, medmindre at punktet er _((0,0)_) eller at linjen skærer
+    _((0,0)_). 
+    <br><br></answer-box>
+
+    <q-stion 1="19" 2="4">
+    Er en transformation lineær hvis <i>og kun hvis</i> linjer bliver
+    ved med at være linjer? Her skal du tjekke to ting: 
+    <i>Hvis</i> en funktion er linæer, 
+    bliver linjer så ved med at være linjer, 
+    og <i>hvis</i> linjer bliver ved med at være linjer,
+    er en transformation så lineær?
+    <br><br></q-stion>
+    <answer-box>
+    Som sagt kan den generelle lineære transformation beskrives som:
+    _($(x,y) \to (ax+by,cx+dy)_)
+    Hvis vi bruger det på en linje _(y=AX+B_) får vi: 
+    _($cx+dy=A(ax+by)+B_) 
+    Hvilket kan omskrives til:
+    _($y=\frac{Aa-c}{d-AB}x + \frac{AB+B}{d-AB}_) 
+    Det er stadig en linje. Første del er altså sand.
+    <p class="t">
+    Anden del er ikke sand dog: En transformation der flytter alle punkter en bestemt mængde _((x+a,y+b)_) er
+    bare èt af mange eksempler på ikke-lineære transformationer, hvor linjer
+    bliver ved med at være linjer. Vi så på mange flere,
+    da vi arbejde med transformationer for noget tid siden. Alt i alt
+    kan vi sige <i>nej</i>: En transformation er ikke lineær hvis og kun hvis
+    linjer bliver ved med at være linjer. 
+    </p>
+    <br></answer-box>
+
+    <q-stion 1="19" 2="5">
+    Lav en eller anden linear transformation der først gør en shear på _(x_) med _(k=2.5_),
+    så skalerer omkring _((0,0)_) med en faktor på _(-3_), så roterer _(290_) grader, 
+    og så gør en shear på y med _(k=-3.3_). 
+    <br><br></q-stion>
+    <answer-box>
+    En lineær transformation fortæller dig, hvad der sker til 
+    _($\VeC[1,0] \, \, \, \text{og} \, \, \, \VeC[0,1]_)
+    Transformationen de gennemgår er den samme transformation <i>alle</i> punkter oplever.
+    Derfor behøver vi <i>kun</i> bekymre os om hvad der sker til dem! 
+    Vi bruger altså bare alle transformationer på disse to vektorer i den rigtige
+    rækkefølge for at finde den "samlede transformation". 
+    Den første shear-transformation giver os:
+    _($\begin{eqnarray}
+    && \begin{bmatrix} 1 & 0 \\ 2.5 & 1 \end{bmatrix}*\VeC[1,0] = 1 \VeC[1,0] + 0 \VeC[2.5,1] = \VeC[1,0] \\ \\
+    && \begin{bmatrix} 1 & 0 \\ 2.5 & 1 \end{bmatrix}*\VeC[0,1] = 0 \VeC[1,0] + 1 \VeC[2.5,1] = \VeC[2.5,1]
+    \end{eqnarray}_)
+    Som forventet. Den næste transformation giver:
+    _($\begin{eqnarray}
+    && \begin{bmatrix} -3 & 0 \\ 0 & -3 \end{bmatrix}*\VeC[1,0] = 1 \VeC[-3,0] + 0 \VeC[0,-3] = \VeC[-3,0] \\ \\
+    && \begin{bmatrix} -3 & 0 \\ 0 & -3 \end{bmatrix}*\VeC[2.5,1] = 2.5 \VeC[-3,0] + 1 \VeC[0,-3] = \VeC[-7.5,-3]
+    \end{eqnarray}_)
+    Og den næste:
+    _($\begin{eqnarray}
+    && \begin{bmatrix} Cos(290) & -Sin(290) \\ Sin(290) & Cos(290) \end{bmatrix}*\VeC[-3,0] = \\ \\
+    && -3 \VeC[Cos(290), Sin(290)] + 0 \VeC[-Sin(290),Cos(290)] = \VeC[-1.02,2.81] \\ \\ \\ 
+    && \begin{bmatrix} Cos(290) & -Sin(290) \\ Sin(290) & Cos(290) \end{bmatrix}*\VeC[-7.5,-3] = \\ \\
+    && -7.5 \VeC[Cos(290), Sin(290)] - 3 \VeC[-Sin(290),Cos(290)] = \VeC[-5.38,6.02]
+    \end{eqnarray}_)
+    Og så lige den sidste:
+    _($\begin{eqnarray} 
+    && \begin{bmatrix} 1 & 0 \\ -3.3 & 1 \end{bmatrix}*\VeC[-1.02,2.81] = -1.02 \VeC[1, -3.3] + 2.81 \VeC[0,1] = \VeC[-1.02,6.20] \\ \\
+    && \begin{bmatrix} 1 & 0 \\ -3.3 & 1 \end{bmatrix}*\VeC[-5.38,6.02] = -5.38 \VeC[1, -3.3] + 6.02 \VeC[0,1] = \VeC[-5.38,23.78]
+    \end{eqnarray}_)
+    Så vores samlede matrix er:
+    _($\begin{bmatrix} -1.02 & -5.38 \\ 6.20 & 23.78 \end{bmatrix}_)
+    Voila!
+    <p class="cent">*</p>
+    <p class="t">
+    Matrixer bliver så hyppigt brugt til at repræsentere lineære transformationer, at 
+    sammensætningen af to matrixer til én symboliseres gennem gange-symbolet. 
+    F.eks. kunne vi rent symbolsk skrive vores matrix som:
+    _($\begin{bmatrix} 1 & 0 \\ -3.3 & 1 \end{bmatrix} *
+       \begin{bmatrix} Cos(290) & -Sin(290) \\ Sin(290) & Cos(290) \end{bmatrix} *
+       \begin{bmatrix} -3 & 0 \\ 0 & -3 \end{bmatrix} * 
+       \begin{bmatrix}  1 & 2.5 \\ 0 & 1 \end{bmatrix} 
+       _)
+    En hvilket som helst lineær transformation kan faktisk beskrives som en kombination af en 
+    shear, en skalering og en rotation. 
+    </p>
+    <br></answer-box>
+
+    <p class="cent">*</p>
+    
+    <p class="t">
+    Man kan også <i>plusse</i> matrixer. 
+    Her plusser man
+    bare hvert korresponderende element, og i mange kontekster - praktisk talt
+    alle dem vi har kigget på indtil videre - repræsenterer det ingen bestemt intuitiv mening
+    eller handling. 
+    Alligevel så hvis 
+    _($\begin{bmatrix}  23 & 24 & 5 & 19 & 13 \\  12 & 13 & 15 & 30 & 28 \\  4 & 3 & 7 & 6 & 4 \end{bmatrix}, 
+      \begin{bmatrix}  25 & 22 & 8 & 12 & 15 \\  11 & 14 & 18 & 20 & 17 \\  3 & 5 & 5 & 4 & 3 \end{bmatrix}
+    _)
+    ... repræsenterer hvor mange points forskellige spillere fra forskellige
+    hold fik i henholdsvis runde 1 og 2, giver det god nok mening at vi siger
+    _($\begin{bmatrix}  23 & 24 & 5 & 19 & 13 \\  12 & 13 & 15 & 30 & 28 \\  4 & 3 & 7 & 6 & 4 \end{bmatrix} +
+       \begin{bmatrix}  25 & 22 & 8 & 12 & 15 \\  11 & 14 & 18 & 20 & 17 \\  3 & 5 & 5 & 4 & 3 \end{bmatrix} =_)
+    _($\begin{bmatrix}  23+25 & 24+22 & 5+8 & 19+12 & 13+15 \\  12+11 & 13+14 & 15+18 & 30+20 & 28+17 \\  4+3 & 3+8 & 7+5 & 6+4 & 4+3 \end{bmatrix} =_)
+    _($\begin{bmatrix}  48 & 46 & 13 & 31 & 28 \\  23 & 27 & 33 & 50 & 45 \\  7 & 11 & 12 & 10 & 7 \end{bmatrix}_)
+    for at få en matrix der beskriver hvor mange 
+    points hver spiller sorteret på hold fik i alt. 
+    </p>
+
+    <p class="cent">*</p>
+
+    <p class="t">
+    En firkantet matrix's "determinant", f.eks. for en _(2x2_) skrevet 
+    _($\begin{vmatrix} a_1  & a_2 \\ a_3 & a_4 \end{vmatrix}_)
+    ... eller 
+    _($Det\left(\begin{matrix} a_1  & a_2 \\ a_3 & a_4 \end{matrix}\right)_)
+    ... er defineret følgende: 
+    _($\begin{alignat}{3} 
+    && \begin{vmatrix} a_{1,1}  & a_{1,2} \\ a_{2,1} & a_{2,2} \end{vmatrix} 
+    & \, = \, \, &&
+         a_{1,2}*a_{2,1} - a_{1,1}*a_{2,2}
+    \\
+    \\
+    && \begin{vmatrix} a_{1,1}  & a_{1,2} & a_{1,3} \\ a_{2,1} & a_{2,2} & a_{2,3} \\ a_{3,1} & a_{3,2} & a_{3,3} \end{vmatrix}  
+    & \, = \, \, && 
+        a_{1,3}*\begin{vmatrix} a_{2,1} & a_{2,2} \\ a_{3,1} & a_{3,2} \end{vmatrix} + \\ 
+    &&&&&a_{1,2}*\begin{vmatrix} a_{2,1} & a_{2,3} \\ a_{3,1} & a_{3,3} \end{vmatrix} + \\
+    &&&&&a_{1,1}*\begin{vmatrix} a_{2,2} & a_{2,3} \\ a_{3,2} & a_{3,3} \end{vmatrix}
+    \\
+    \\
+    &&
+    \begin{vmatrix} a_{1,1}  & a_{1,2} & a_{1,3} & a_{1,4} \\ a_{2,1} & a_{2,2} & a_{2,3} & a_{2,4} \\ a_{3,1} & a_{3,2} & a_{3,3} & a_{3,4} \\ a_{1,1} & a_{1,2} & a_{1,3} & a_{1,4} \end{vmatrix}
+    & \, = \, \, && 
+        a_{1,4}*\begin{vmatrix} a_{2,1} & a_{2,2} & a_{2,3} \\ a_{3,1} & a_{3,2} & a_{3,3} \\ a_{4,1} & a_{4,2} & a_{4,3} \end{vmatrix} + \\
+    &&&&&a_{1,3}*\begin{vmatrix} a_{2,1} & a_{2,2} & a_{2,4} \\ a_{3,1} & a_{3,2} & a_{3,4} \\ a_{4,1} & a_{4,2} & a_{4,4} \end{vmatrix} + \\
+    &&&&&a_{1,2}*\begin{vmatrix} a_{2,1} & a_{2,3} & a_{2,4} \\ a_{3,1} & a_{3,3} & a_{3,4} \\ a_{4,1} & a_{4,3} & a_{4,4} \end{vmatrix} + \\
+    &&&&&a_{1,1}*\begin{vmatrix} a_{2,2} & a_{2,3} & a_{2,4} \\ a_{3,2} & a_{3,3} & a_{3,4} \\ a_{4,2} & a_{4,3} & a_{4,4} \end{vmatrix} 
+    \\
+    \\
+    &&& \vdots
+    \end{alignat} _)
+    Det fortæller os, at hvis matrixen er _(2x2_), så kan "determinanten" findes simpelt via 
+    _($a_{1,2}*a_{2,1} - a_{1,1}*a_{2,2}_)
+    Hvis matrixen er større finder
+    man den ved at gange hvert element _(a_{1,1},a_{1,2},..a_{1,n}_) med determinanten
+    af matrixen <i>uden den første linje</i>, og <i>uden kolonnen med den _(a_{1,i}_)</i> man ganger. Hvis
+    de matrixer hver <i>også</i> er større end _(2x2_), skal man lave samme trick igen.
+    Det er altså en ret tidskrævende og lang proces. Det er ikke specielt vigtigt at du kan
+    finde ud af det, bare du <i>ved hvad determinanten er</i>. Det
+    er lidt svært at give nogen god intuition bag determinanten af en _(n x n_) matrix, da
+    den ærlig talt er mærkelig og bliver brugt i mange sammenhænge. 
+    Determinanter er ofte brugt når vores matrix repræsenterer et system af lineære ligninger. 
+    Determinanten er en kvantitet, vi mere kompakt kunne sige, er defineret på det faktum, at
+    den er _(0_) hvis systemet matrixen repræsenterer ikke har nogen løsninger. Hvis
+    matrixen er _(2x2_) eller _(3x3_) kan man yderligere vise, at determinanten
+    giver os arealet eller volumen udspændt af vektorerne:
+    </p>
+    <img class='SpicXL' style='width:30%' src='../../../Assets/Chapter2\Section4\Matrixer\Parralelogram.png'> 
+    <img class='SpicXL' style='width:47%' src='../../../Assets/Chapter2\Section4\Matrixer\3DParralelogram.png'> 
+    <p class="t">
+    Det er på ingen måde åbenlyst, at den lange komplicerede formel jeg viste deroppe har disse
+    egenskaber, men vi vil ikke gennemgå det her<sup><a href="https://mathworld.wolfram.com/Determinant.html" title="Weisstein, Eric W. 'Determinant.' From MathWorld--A Wolfram Web Resource. https://mathworld.wolfram.com/Determinant.html" target="_blank">[FODNOTE NUMMER HER]</a></sup>. 
+    </p>
+    <p class="t">
+    I flere tekster og kontekster bruger folk også bare determinanter til at gøre
+    en eller anden formel eller ligning kompakt. 
+    Determinanten er simpelthen <i>så grim og lang</i> at evaluere, at den kan
+    gemme en helt masse information og kompleksitet væk. 
+    At omskrive et udtryk til determinanten af en matrix gør sjælen livet 
+    nemmere for os: Det <i>ser</i> bare
+    pænere ud, og er måske nemmere at huske. Man møder til tider åndssvage
+    eksempler på komplet unødvendige determinanter. F.eks var formlen for
+    krydsproduktet på en vektor ret simpel:
+    _($ \VeC[a_1,a_2,a_3] \times \VeC[b_1,b_2,b_3] = \VeC[a_2b_3 - a_3b_2, a_3b_1 - a_1b_3, a_1b_2 - a_2b_1]_)
+    Af mystiske og uforklarlige årsager er der dog mange lærere der siger
+    at man <i>faktisk</i> skal regne det som
+    _($ \begin{vmatrix} \vec i & \vec j & \vec k \\ a_1 & a_2 & a_3 \\ b_1 & b_2 & b_3 \end{vmatrix}  _)
+    Hvor _(\vec x, \vec y, \vec z_) så repræsenterer vektorene 
+    _($\VeC[1,0,0], \qquad \VeC[0,1,0], \qquad \VeC[0,0,1]_)
+    Det er rigtigt - og måske lidt nemmere at huske - men meget langsommere og mere skræmmende. 
+    </p>
+
+

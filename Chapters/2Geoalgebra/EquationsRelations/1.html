@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+
+    <!--26.20 --> 
+
+    <h1 class="header">Afsnit 3:</h1>
+    <h1 class="title">Det obligatoriske og kedelige <br> algebra afsnit</h1>
+
+    <p class="t">
+    Tillad mig lige kort at introducere lidt nyt sprog, som jeg gjorde det i sidste sektion i starten.
+    </p>
+
+    <p class="t">
+    Vi har mange gange gennem denne bog fundet frem til et eller andet ukendt tal eller ting, 
+    ved hjælp af, at det tal eller den ting opfyldte et bestemt krav. Især et krav omkring lighed. 
+    Sig at vi søgte _(A_), og kun viste at:
+    _($3A+4=20_) 
+    Hvis _(3A_) skal plusses med _(4_) for at være lig _(20_), så
+    må _(3A_) i sig selv være lig _(20-4=16_):
+    _($3A=20-4=16_) 
+    Så 
+    _($A=16/3=5.333_)
+    Det her har vi gjort mange gange nu, og vi kalder det  
+    en <i>ligning</i>. Den ubekendte der opfylder kravet kalder vi en <i>løsning</i>. Dem
+    kan der selvfølgelig godt være flere eller ingen af. Der er ingen løsning
+    på _(x=x+2_), fordi det kan laves om til _(0=2_), som jo ikke er rigtigt.
+    Der er flere løsninger på _(x^2=4_), fordi både _(x=2_) og _(x=-2_) virker, og
+    der er uendelig mange løsninger på _(Sin(v)=0.4_), fordi _(Sin_) bliver
+    ved med at gå op og ned hele tiden. Måske ved vi kun, at den ubekendte skal 
+    være større/mindre en et eller andet som 
+    _($2.5Cos(v)+10Sin(v) \ge 5Cos(v)_) 
+    Det kalder vi, lidt forvirrende, en <i>ulighed</i>. Det brugte vi bl.a. i sidste kapitel, da vi undersøgte
+    hvornår en figur væltede.
+    </p>
+
+    <p class="t">
+    Meget "lignende" har vi flere gange oplevet situationer, hvor vi stod med  <i>to</i> ukendte tal og <i>to</i> ligninger.
+    Det kunne være, da vi arbejde med bageren i første kapitel, hvor vi havde afstanden derhen, afstanden efter to huse,
+    og to ukendte længder vi prøvede at finde. Vi fik også brug for to ligninger, da vi udledte formlen 
+    for _(Cos(A+B)_). Det her kaldes et <i>system af ligninger</i>.
+    Med èn ny ligning kan man generelt også finde èn ny ukendt: det er dog stærkt forsimplet. 
+    Nogen ligninger har måske slet ikke løsninger, eller ikke de <i>rigtige</i> løsninger vi kan bruge. 
+    Nogle ligninger har <i>flere</i> løsninger, og det forvirrer sagen yderligere. 
+    </p>
+
+    <p class="t">
+    Vi har mange gange nu brugt bogstaver i stedet for tal. Det kaldes for <i>variabler</i>: De "variere": Man
+    kan indsætte forskellige ting ved deres plads. Ligningen 
+    _($Ak^2+d*Cos(k*\text{Buster})-\text{badass}_1=\text{badass}_2_) 
+    ... har 5 variabler: 
+    _($A, \, d, \, k, \, Buster, \, \text{badass}_1, \, \text{badass}_2_)
+    Måske er _(k_) den ukendte vi søger. 
+    </p>
+    <p class="t">
+    Vi har mange gange skulle flytte rundt på variabler og tal, så de stod
+    på en bedre, mere praktisk måde. Vi har også gjort det <i>meget</i> mens vi løste ligninger. 
+    Kunsten af dette - kunsten af et omskrive udtryk med variabler - kaldes <i>algebra</i>. Jeg vil måske 
+    kunne finde på et sige: "Resten herfra er nemt: det er bare simpelt algebra". 
+    </p>
+
+    <p class="t">
+    Når vi ved, at en variabel "er noget" i forhold til andre variabler, 
+    siger vi, at den er <i>en funktion</i> af de variabler.
+    F.eks:
+    _($\text{længde}=30/\text{bredde}_) 
+    Her siger vi at længde er "en funktion" af bredde. Et andet
+    eksempel kunne være 
+    _($A=Cos(t)*t_)
+    ... hvor _(A_) er funktion af _(t_), eller 
+    _($z=y^2-x^2_) 
+    ... hvor _(z_)
+    er funktion af _(y_) og _(x_). 
+    </p>
+    <p class="t">
+    Vi kan tegne grafer, der visuelt og intuitivt beskriver sammenhængen i en funktion:
+    </p>
+    <img class='SpicXL' style="width:100%" src='../../../Assets/Chapter2\Section3\SprogOgInverses\Funktion1.png'> 
+    <img class='Spic' style="width:100%" src='../../../Assets/Chapter2\Section3\SprogOgInverses\Funktion2.png'> 
+    <img class='SpicXL' style="width:58%" src='../../../Assets/Chapter2\Section3\SprogOgInverses\Funktion3.png'> 
+    <p class="t">
+    Man vil ofte også sige at man "definerer en funktion". 
+    F.eks. "Sig at 
+    _($f(x)=x^2 + 20_)
+    ... så er 
+    _($f(3)=3^2 + 20=29_) 
+    ... og 
+    _($f(5)=5^2+20=45_)
+    ...". Det er lidt løst, og betyder stort set det samme som "transformation" vi brugte tidligere. 
+    En funktion tager
+    bare et input, og giver os et output. Det er et meget generelt ord. 
+    </p>
+    <p class="t">
+    Vi <i>evaluerer</i> en bestemt funktion _(M_) ved at skrive parenteser omkring, præcis ligesom 
+    vi f.eks. gør med _(Sin_), _(Cos_), _(Arsin_), _(f_) deroppe osv. 
+    Hvis:
+    _($M(a, \, b, \, c)=a+b^2+c^3_)
+    .. så er 
+    _($M(4, \, 9, \,7)=4+9^2+7^3=428_) 
+    Funktionen _(Sin(\sqrt{x})_) kan kun evalueres på positive tal, og har værdier fra _(-1_) til _(1_). I
+    mere rigtigt sprog siger vi, at den har et "<i>domain</i>" fra _(0_) til _(\infty_) og 
+    et "<i>range</i>" fra _(-1_) til _(1_). På dansk har vi valgt at kalde det for
+    "definitionsværdi" og "funktionsværdi".
+    </p>
+    <p class="t">
+    En vigtig detalje omkring funktioner er, at de kun må give én værdi. 
+    Vi ville f.eks ikke sige at
+    _($f(x)=2 \pm x_)
+    er en "funktion" som sådan. Hver _(x_) har jo to mulige værdier, og vi kan ikke
+    bare <i>antage</i> at _(\pm_) altid er positivt!
+    </p>
+

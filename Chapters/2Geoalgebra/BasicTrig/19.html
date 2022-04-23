@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+
+    <h3>Sin og Cos som <i>bølger</i></h3>
+    <p class="t">
+    _(Sin_) og _(Cos_) er med vores nye ændringer rigtig gode til at beskrive kvantiteter 
+    der går op og ned, frem og tilbage, bliver store og små, osv.
+    Det kunne være bølger i havet, en fjeder, en vibrerende snor eller 
+    bestemte geometriske former.
+    Lad os prøve at visualisere _(Sin_) og _(Cos_). Vi tegner et koordinatsystem, 
+    hvor der på èn akse er vinklen, og 
+    på den anden akse er _(Sin_) af den vinkel:
+    </p>
+    <img class='SpicXL' style='width:180%; margin-left:-40%;' src='../../../Assets/Chapter2\Section1\TrigProperties\GraphOfSinRadians.png'> 
+    <p class="t">
+    Som du kan se, starter _(Sin_) som _(0_) ved _(0_) radianer. _(y_)-koordinatet eller
+    højden på cirklen er jo _(0_) i dette tilfælde. 
+    Som vinklen nærmer sig _(90_) grader (eller i vores tilfælde _(\pi/2_) radianer),
+    nærmer _(Sin_) sig sit højeste punkt på _(1_). Den bliver mindre igen, og rammer
+    _(0_) ved _(180_) grader eller 
+    _(\pi_) radianer. Så bliver den negativ, og er mest negativ _(3/4_) rundt om cirklen
+    ved _(3/2 \pi_) radianer. Herfra bliver den igen mere positiv igen, og rammer 
+    _(0_) ved _(360_) eller _(2\pi_). 
+    Sådan fortsætter den igen og igen. Hvis vinklen bliver mere negativ, 
+    sker præcist det samme, nu bare
+    baglæns og i modsat rækkefølge. 
+    </p>
+    <p class="t">
+    _(Cos_) ser meget lignende ud som:
+    </p>
+    <img class='SpicXL' style='width:180%; margin-left:-40%;' src='../../../Assets/Chapter2\Section1\TrigProperties\GraphOfCosRadians.png'> 
+    <p class="t">
+    Den starter på dens højeste da _(0_) grader/radianer har den største _(x_)-værdi på cirklen. 
+    Den går nedad og nærmer sig _(0_), som vinklen går op
+    til _(\pi/2_) grader. Den bliver negativ, og rammer _(-1_) halvvejs rundt ved _(\pi_) radianer. 
+    De næste _(90_) grader / _(\pi/2_) radianer begynder den igen at nærme sig _(0_), og 
+    i de sidste _(90_) grader fra _(3/2\pi_) til _(2\pi_) nærmer den sig _(1_). Igen gentages det hele. 
+    </p>
+    <p class="t">
+    Vi kan også plotte begge sammen:
+    </p>
+    <img class='SpicXL' style='width:180%; margin-left:-40%;' src='../../../Assets/Chapter2\Section1\TrigProperties\GraphOfBothRadians.png'> 
+    <p class="t">
+    Vi ser - interessant nok - at _(Sin_) bare ligner _(Cos_) rykket fremad med _(\pi/2_) radianer. 
+    Det giver mening nok, når vi tænker over _(Sin_) og _(Cos_) som koordinater på en cirkel:
+    </p>
+    <img class='SpicXL' style='width:92%' src='../../../Assets/Chapter2\Section1\TrigProperties\SinCosPhase.png'> 
+    <p class="t">
+    Her svarer _(y_1_) til _(Sin(v)_), og _(y_2_) til _(Sin(v+\pi/2)_). 
+    Hvis man vender hovedet _(90_) grader, kan
+    man se, at _(y_2_) også kan beskrives som _(Cos(a)_). 
+    Det kan relativt let ses, at _(a=v_), så:
+    _($Sin(v+\pi/2)=Cos(v)_)
+    Så _(Sin_) kurven er identisk med _(Cos_) kurven rykket _(90_) frem. 
+    </p>
+    <p class="t">
+    Hvis man skulle beskrive bevægelsen af en airhockey-disk, 
+    der rikochettere fra væg til væg, ville
+    det nok være mere praktisk, med en kurve, der så ud som f.eks: 
+    </p>
+    <img class='SpicXL' style='width:180%; margin-left:-48%;' src='../../../Assets/Chapter2\Section1\TrigProperties\GraphOfDiscreteRadians.png'> 
+    <p class="t">
+    Denne kurve går op og ned i diskrete "hak" i modsætning til bølgen. 
+    Det er sikkert brugbart i nogle tilfælde, men mange "gentagende" fænomener
+    i virkeligheden, viser sig at være langt tættere på den mere 
+    gradvise overgang i _(Sin_) og _(Cos_). 
+    _(Sin_) og _(Cos_) er også bare
+    nemmere at arbejde med rent matematisk, siden de har gode, 
+    intuitive geometriske intuitioner, samt en masse dejlige egenskaber vi kan udnytte. 
+    </p>
+    <p class="t">
+    Lad os kigge på to ting i fysik der kan være effektive at 
+    beskrive / modellere ved hjælp af _(Sin_) og _(Cos_). 
+    Først af alt har vi <i>bølger</i>. 
+    </p>
+    <p class="t">
+    Når vi i fysik siger "bølger", snakker vi sjælen om bølger i havet. 
+    I stedet snakker vi lidt
+    mere generelt om ting der bevæger sig i "bølgeformer". 
+    Et godt eksempel er <i>lyd</i>:
+    </p>
+    <img class='SpicBXL' style='width:70%' src='../../../Assets/Chapter2\Section1\TrigProperties\EarDrumPicture.png'> 
+    <p class="t">
+    Når vi oplever en lyd, oplever vi faktisk en <i>energioverførsel</i> 
+    på vores ører. Lyden skaber et tryk i luften, og 
+    det her tryk rammer vores øre og overfører energi:
+    </p>
+    <div style="margin-left:-100px; margin-top:35px; margin-bottom:25px;">
+        <hover-video customWidth="700px;" url="../../../Assets/Chapter2\Section1\TrigProperties\LydSkitse\LuftMolekyler.mp4" ></hover-video>
+    </div>
+    <p class="t" style="margin-top:35px;">
+    _(\text{W}/\text{A}_) står for <i>watt</i> over <i>areal</i>. 
+    Watt er enheden for effekt/energi over tid. 
+    </p>
+    <p class="t">
+    Følgende video visualiserer hvordan lyden bevæger sig: 
+    </p>
+    <p class="cent">
+        <a href="https://www.youtube.com/watch?v=aPswnDcteS4" target="_blank">Link til Youtube Video!</a>
+    </p>
+    <p class="t">
+    Sig at du hører èt enkelt slag med en tromme. På animationen 
+    kan du se, at lydkilden skaber nogle "impulser". Hver impuls rejser gennem luften
+    og rammer øret. Èt slag med en tromme svarer ikke til èt impuls, 
+    men <i>mange</i> impulser. Når du slår ned i trommen, begynder
+    den jo at <i>vibrere</i>, hvilke skubber luften omkring den 
+    frem og tilbage. Det bliver den ved med, indtil den har mistet energien fra dit slag. 
+    </p>
+    <p class="t">
+    På animationen bliver der vist en graf med energioverførslen
+    på èn akse og tid på den anden. Mængden af energi der bliver overført
+    bestemmer <i>intensiteten</i> af lyden. Hvor <i>høj</i> den er. 
+    Det er dog ikke præcist sådan, øret og hjernen tænker over lyd: 
+    Trommehinden <i>vibrerer</i>, når luften rammer øret. 
+    Den går frem og tilbage, lidt ligesom en, well, tromme! 
+    Derfor bruger man ofte
+    negative tal til at beskrive lyd: Positivt er 
+    når trommehinden bevæger sig indad, negativt når den bevæger sig udad. 
+    Lidt det samme gælder selve bølgerne i luften: 
+    Positiv er når luftdensiteten er højere end normalt, negativ når den er lavere.
+    Vælg et hvilket som helst x-koordinat på animationen, 
+    og du vil se at luftmolekylerne nær det x-koordinat skifter mellem at være mere og 
+    mindre tætte på hinanden. Du kan også se at hver individuel partikel bevæger sig i 
+    en sinuskurve frem og tilbage. 
+    </p>
+    <p class="t">
+    Hør følgende tone:
+    </p>
+    <div style="margin-left:100px; margin-top:15px;">
+        <audio controls style="border:solid;">
+            <source src="../../../Assets/Chapter2\Section1\TrigProperties\Tone.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+    <p class="t">
+    Når denne lyd visualiseres på en computer får man: 
+    </p>
+    <img class='Spic' style='width:95%' src='../../../Assets/Chapter2\Section1\TrigProperties\ToneVisualized.png'> 
+    <p class="t">
+    På x-aksen her har du tid i sekunder, og på y-aksen lydstyrke 
+    (i en enhed der er lidt for involveret at gennemgå den nu). 
+    Du kan se, at denne bølge går mellem _(-0.5_) og _(0.5_). 
+    Det vil altså kunne beskrives rigtig fint 
+    af _(0.5*Sin(t)_)! 
+    </p>
+    <p class="t">
+    ... og så alligevel ikke helt. En lyd har både en bestemt intensitet, 
+    men også en bestemt <i>tone</i>. Tonen bestemmes
+    af bølgens frekvens: Hvor mange gange bølgen går op og ned på èt sekund. 
+    Det er simpelt hen sådan, hjernen er programmeret. 
+    Vi kan se på visualiseringen, at bølgen går op og ned ca. _(9_) gange 
+    mellem _(0.430 \text{s}_) og _(0.450 \text{s}_). Det betyder
+    at den har en frekvens på:
+    _($\frac{9}{0.450-0.430} = 450 \text{ } \frac{\text{Omgange}}{\text{s}}_)
+    _(\text{Omgange}/\text{s}_) kaldes også hyppigt for _(hz_). 
+    En normal trig-funktion som _(Sin(t)_) tager _(2\pi_) _(t_) om èn omgang, så den
+    har en frekvens på:
+    _($\frac{1}{2\pi} = 0.159 \text{ Hz}_)
+    Det er markant lavere end _(450 \text{ Hz}_). 
+    </p>
+
+    <!--  -->
+
+    <q-stion 1="19" 2="1">
+    _(\underline{\textbf{A}}_): <br>
+    Hvad er frekvensen på _(Sin(1.4t)_)?
+    <p class="t">
+    _(\underline{\textbf{B}}_): <br>
+    Hvad skal _(B_) være, for at frekvensen på _(Sin(B*t)_) matcher tonen vi hørte?
+    </p>
+    <p class="t">
+    _(\underline{\textbf{C}}_): <br>
+    Se følgende visualisering af en tone:
+    </p>
+    <img class='SpicB' style='width:95%' src='../../../Assets/Chapter2\Section1\TrigProperties\LydAudacity2.png'> 
+    <p class="t">
+    Find den _(A*Sin(B*t)_) der beskriver denne bølge. 
+    </p>
+    <br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    Vi ved, at der går _(1_) periode når _(1.4t_) går fra _(0_) 
+    til _(2\pi_). Hvis _(1.4t=0_), så er _(t_) også lig _(0_). 
+    Når _(1.4t_) er lig _(2\pi_), fås:
+    _($1.4t=2\pi \to t=\frac{2\pi}{1.4} = 4.487_)
+    Så periodelængden er _(4.487_). Det betyder at frekvensen er:
+    _($\frac{1}{4.487} = 0.2228_)
+    Vi kan se, at høje _(B_) værdier på _(Sin(B*t)_) gør frekvensen større. 
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Vi skal vælge _(B_), så at frekvensen bliver lig _(450_). 
+    Lad os først generalisere arbejdet i den tidligere opgave, 
+    og beskrive frekvensen generelt i forhold til _(B_). 
+    I forhold til periodens længde ved vi at:
+    _($B*t=2\pi \to t=\frac{2\pi}{B}_)
+    Så frekvensen er:
+    _($\frac{1}{\left(\frac{2\pi}{B} \right)} = \frac{B}{2\pi}_)
+    Den skal som sagt være lig _(450 \text{ Hz}_), så:
+    _($\frac{B}{2\pi} = 450 \to B = 2\pi*450 = 2827.43 _)
+    Alt i alt ser vi, at tonen kan beskrives som:
+    _($0.5*Sin(2827.43t)_)
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{C}}_)#" tabColour="rgb(171,96,147)">
+    Først af alt kan vi se, at intensiteten/amplituden går mellem _(-0.7_) og _(0.7_). 
+    _(A_) er altså lig _(0.7_). For
+    det andet kan vi se, at _(0.730_) og _(0.810_) ser ud til at være ca. 
+    _(9_) perioder/bølger væk fra hinanden. 
+    Frekvensen er derfor:
+    _($\frac{9}{0.810-0.730} = 112.49_)
+    Så tonen er omkring _(112 \text{ Hz}_). Derfor skal _(B_) være lig:
+    _($2\pi*112 = 703.71_)
+    Alt i alt:
+    _($0.7*Sin(703.71*t)_)
+    Bum!
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="19" 2="2">
+    _(Sin_) går mellem _(-1_) og _(1_), og _(A*Sin_) går mellem _(-A_) og _(A_). 
+    Kan du lave noget, der går mellem
+    to vilkårlige tal _(a_) og _(b_) (hvor _(a_) er mindre end _(b_))? 
+    F.eks. noget der går mellem _(5_) og _(7.9_) eller _(-2_) og _(1000_).
+    <p class="t">
+    Du må gerne plusse med noget, så f.eks. 
+    _(2.1*Sin(t)+2_) osv. 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Lad os tage et lille eksempel. Sig at vi har:
+    _($A*Sin(t)+B_)
+    _(A*Sin(t)_) går mellem _(-A_) og _(A_), så _(A*Sin(t)+B_) 
+    går mellem _(B-A_) og _(B+A_). 
+    Lidt mere intuitivt: _(B_) er midten, og _(A_) er hvor 
+    langt væk, vi går fra midten. Midten af
+    _(a_) og _(b_) er: 
+    _($a+\frac{1}{2}*\left(b-a \right) = a+\frac{1}{2}b - \frac{1}{2}a = \frac{a+b}{2}_)
+    Vi vælger derfor:
+    _($B=\frac{a+b}{2}_)
+    "Hvor langt vi bevæger os fra midten" svarer til 
+    forskellen mellem den højeste værdi _(b_) og midten.
+    Det kan vi regne som:
+    _($b-\frac{a+b}{2} = b-\frac{b}{2} - \frac{a}{2} = \frac{b-a}{2}_)
+    Så vi vælger:
+    _($A=\frac{b-a}{2}_)
+    Alt i alt får vi:
+    _($\frac{b-a}{2}*Sin(t) + \frac{b+a}{2}_)
+    Bum!
+    <br><br></answer-box>
+
+    <!--  -->
+    
+    <q-stion 1="19" 2="3">
+    _(\underline{\textbf{A}}_): <br>
+    Sig at to lydkilder er lige ved siden af hinanden. 
+    De har begge en frekvens på _(340 \text{ Hz}_). Den ene har en intensitet
+    på _(0.6_), og den anden en intensitet på _(1.3_). 
+    Dit øre hører selvfølgelig ikke to forskellige kilder i dette tilfælde, men 
+    én samlet lyd. Find den _(A*Sin(B*t)_) 
+    der beskriver bølgen i dette tilfælde. 
+    <p class="t">
+    _(\underline{\textbf{B}}_): <br>
+    Præcis samme situation som før, men den ene 
+    lydkilde (den med _(1.3_) intensitet) starter nu først _(0.00147058 \text{s}_) 
+    efter den anden. Find nu igen 
+    den _(A*Sin(B*t)_) der beskriver bølgen. <i>Hint</i>: 
+    Er der noget specielt ved lige dette tal _(0.00147058 \text{s}_)? 
+    </p>
+    <br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    Hvordan finder vi resultatet af to bølger? Vi plusser dem bare! 
+    Det giver egentlig god nok mening, når man tænker over det: 
+    Bølgerne repræsenterer
+    en energioverførsel over et areal. Arealet er altid trommehinden, 
+    så kun energioverførslen varierer.
+    Sig at den ene kilde på èt tidspunkt overfører _(E_1_) energi, 
+    og den anden kilde på samme tidspunkt overfører _(E_2_). 
+    Den samlede effekt er nu:
+    _($\frac{E_1+E_2}{\text{Trommehindeareal}} = \frac{E_1}{\text{Trommehindeareal}} + \frac{E_2}{\text{Trommehindeareal}}_)
+    Og det er jo bare de to effekter plusset sammen!
+    <p class="t">
+    Lad os beskrive vores bølger via _(Sin_). 
+    Frekvensen på _(340 \text{ Hz}_) betyder, at _(B_) i _(A*Sin(B*t)_) skal være
+    lig _(340*2*\pi=_) _(2136.3_). 
+    _(A_) på den ene er _(0.6_), og på den anden _(1.3_). Vi får:
+    _($0.6*Sin(2136.3t), \qquad 1.3*Sin(2136.3t)_)
+    Så alt i alt:
+    </p>
+    <ul>
+        <li>_(0.6*Sin(2136.3t)+1.3*Sin(2136.3t) =_)</li>
+        <li>_((0.6+1.3)*Sin(2136.3t) = _)</li>
+        <li>_(1.9*Sin(2136.3t)_)</li>
+    </ul>
+    <p class="t">
+    <i>konstruktiv interferens</i>, da bølgerne til sammen bliver en lignende, 
+    <i>større</i> bølge. 
+    </p>
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Vi skal igen plusse dem. 
+    Den ene kan ligesom før beskrives gennem _(0.6*Sin(2136.3t)_). 
+    Den anden starter 
+    _(0.00147058 \text{s}_) senere, og kan beskrives som:
+    _($1.3*Sin \left(2136.3*(t-0.00147058) \right)_)
+    Hvis vi ganger ind i parentesen, får vi:
+    _($\begin{align}
+    & 1.3*Sin\left(2136.3t - 2136.3*0.00147058 \right) = \\ 
+    & 1.3*Sin\left(2136.3t + 3.14160005 \right)
+    \end{align}_)
+    _(\pi_)! Det er bare _(\pi_)! Så vi har nu alt i alt:
+    _($0.6*Sin(2136.3t), \qquad 1.3*Sin(2136.3t - \pi)_)
+    Den ene bølge starter ved _(-\pi_), og går fremad. 
+    Det betyder, at den starter på grænsen mellem anden 
+    og tredje kvartdel/kvadrant af koordinatsystemet. 
+    Den går så ned til tredje kvartdel, og eventuelt fjerde.
+    Mens den gør det,
+    går den første bølge i præcis samme hastighed op i første kvadrat, så andet. 
+    Den ene bølge er i de positive kvadrater i starten, mens den anden er i de negative.
+    Derfor kan vi sige, at: 
+    _($1.3*Sin(2136.3t-\pi) = -1.3*Sin(2136.3t)_) 
+    Vi lægger nu vores to bølger sammen:
+    <ul>
+        <li>_(0.6*Sin(2136.3t) - 1.3*Sin(2136.3t)=_)</li>
+        <li>_((0.6-1.3)*Sin(2136.3t) =_)</li>
+        <li>_(-0.7*Sin(2136.3t)_)</li>
+    </ul>
+    <p class="t">
+    Bum!
+    </p>
+    <p class="t">
+    Det her var ét eksempel på såkaldt 
+    <i>destruktiv interferens</i>, hvor to bølger "ødelægger" hinanden. Hvis 
+    der er komplet destruktiv interferens, har bølgerne også samme intensitet, 
+    og bølgen forsvinder helt. 
+    Konstruktiv og destruktiv interferens er visualiseret i følgende billede:
+    </p>
+    <img class='SpicXL' style='width:95%' src='../../../Assets/Chapter2\Section1\TrigProperties\KonstruktivOgDestruktivInteferens.png'> 
+    <p class="t">
+    Lydisolerende høretelefoner virker gennem destruktiv interferens. 
+    De optager lyden fra omgivelserne og sender så en "modsat bølge"
+    ind i dine øre. Bølgerne fra omgivelserne 
+    og denne nye bølge går sammen og danner destruktiv interferens, 
+    hvilke ideelt set burde fjerne støjen helt. 
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <p class="t">
+    Udover frekvens og amplitude siger vi også, at en bølge har en bestemt <i>bølgelængde</i>:
+    </p>
+    <div style="margin-left:-100px; margin-top:35px;">
+        <hover-video customWidth="700px;" url="../../../Assets/Chapter2\Section1\TrigProperties\LydSkitse\SecondAirMolecoules.mp4" ></hover-video>
+    </div>
+    <p class="t" style="margin-top:35px;">
+    Det er hvad vi før kaldte "perioden". 
+    Bølgelængden er vigtig at kende, da den har stor 
+    indflydelse på, hvordan bølgen reflekteres 
+    omkring dens omgivelser. Det er vigtigt for akustik.
+    F.eks. opstår diverse fænomener, hvis lyd rejser gennem en 
+    sprække, der er smallere end dens bølgelængde. 
+    Bølgelængder er også vigtige, hvis man vil forstå 
+    hvordan en lang række musikalske instrumenter virker 
+    (hvilke vi gør på næste side).
+    </p>
+
+    <!--  -->
+
+    <q-stion 1="19" 2="4">
+    Lydens hastighed gennem luft er omtrent _(343 \text{m}/\text{s}_). 
+    Sig at en bestemt lydbølge, der rejser gennem luften,
+    har en frekvens på _(311 \text{Hz}_). Hvad er bølgelængden?
+    <p class="t">
+    Her skal du selv finde ud af hvordan man beregner 
+    bølgelængden via hastigheden og frekvensen!
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Kald bølgelængden for _(L_). Hvis frekvensen er _(311_), 
+    bliver der på _(1_) sekund lavet _(311_) bølger, der hver er
+    _(L_) lange. Det forreste punkt på den aller første bølge 
+    har nu _(311_) bølger bag det, hvilke svarer til en afstand på:
+    _($311*L_)
+    Bølgen har altså bevæget sig denne afstand på _(1_) sekund, 
+    så _(311*L_) svarer til hastigheden. Derfor ved vi at:
+    _($311*L=343 \to L = \frac{343}{311} = 1.1028 \text{ m}_)
+    Bølgelængden er derved omtrent _(1.1028 \text{m}_).
+    <p class="t">
+    En lille note: Bølgelængden skrives ofte med 
+    tegnet _(\lambda_) i stedet for _(L_). Det
+    udtales "lambda _(\lambda_)". 
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <p class="t">
+    Der findes selvfølgelig mange andre slags bølger udover lyd. 
+    Èt andet eksempel er vekselstrøm. På normalt jævnstrøm er
+    strømstyrken konstant, men på vekselstrøm går den op og ned som en _(Sin_)-kurve. 
+    Den skifter ikke bare styrke, men også retning 
+    (hvor positiv er èn retning og negativ er den anden). 
+    Det virker umiddelbart lidt mærkeligt, men mange af de metoder vi bruger til
+    at generere strøm (kulstof, sol, vand, fusion, osv.), 
+    genererer vekselstrøm og ikke jævnstrøm. 
+    Vekselstrøm har også til tider
+    fordele i designs af kredsløb, og det kan være meget brugbart at 
+    beskrive og måle andre bølger via strøm. 
+    Lyd modellerer vi som en positiv og negativ bølge der går op og ned, 
+    så det kan let "oversættes" til vekselstrøm - 
+    langt simplere end gennem jævnstrøm i hvert fald. 
+    </p>
+    <p class="t">
+    Udover vekselstrøm har vi selvfølgelig også lys. Hvis luftbølger beskriver 
+    densiteten af luften, og vekselstrøm beskriver
+    strømstyrken, så beskriver lysbølger "ændringer i det magnetiske og elektriske felt". 
+    Det er relativt kompliceret, og vi har ikke
+    rigtig tid til at gennemgå det her, men en lysbølge bliver ofte visualiseret som: 
+    </p>
+    <img class='SpicXL' style='width:100%' src='../../../Assets/Chapter2\Section1\TrigProperties\Lightwave.png'> 
+    <p class="t">
+    Det er helt fint, hvis du ikke ved hvad præcis det "magnetiske felt" og "elektriske felt" er, 
+    men lys kan altså forstås som en 
+    ændring i disse felter, der går op og ned i en sinus-kurve. 
+    Lys kan <i>også</i> forstås som små partikler, men det 
+    er en anden historie. 
+    </p>
+    <p class="t">
+    Amplituden på lysbølgen bestemmer selvfølgelig hvor <i>intenst</i> 
+    og effektivt lyset er. <i>Bølgelængden</i> bestemmer 
+    <i>farven</i> af lyset:
+    </p>
+    <img class='Spic' style='width:67%' src='../../../Assets/Chapter2\Section1\TrigProperties\Elektromagnetisk spektrum.png'> 
+    <p class="t">
+    På billedet kan du se, at grøn svarer til en bølgelængde på omtrent 
+    _(590 \text{nm}_), hvor _(1 \text{nm}_) 
+    er _(10^{-9} \text{m}_). Bølgelængden på lys er ikke nødvendigvis 
+    altid mellem _(400 \text{nm}_) og _(700 \text{nm}_). Det er kun
+    det såkaldte <i>synlige spektrum</i>. Det lys vores øjne faktisk 
+    opfanger. Bølgelængder på lys kan komme helt ned på
+    _(10^{-16} \text{m}_) og helt op på _(10^8 \text{m}_), så det 
+    synlige spektrum er en meget lille del. 
+    Lys med lave bølgelængder bliver bl.a. 
+    brugt til x-rays og røntgen, da bølgelængden som sagt har 
+    indflydelse på, hvordan lys reflekteres. 
+    Store bølgelængder bliver brugt til radiobølger. 
+    </p>
+
+    <!--  -->
+
+    <q-stion 1="19" 2="5">
+    Sig at du skyder et lilla lys gennem et bestemt glas, der 
+    forstørrer bølgelængden med _(1.5_). Hvilken 
+    farve kommer ud af glasset? 
+    <br><br></q-stion>
+    <answer-box>
+    Lilla lys svarer ca. til _(400 \text{nm}_). Lyset der kommer ud har 
+    altså en bølgelængde på _(1.5*400=_) _(600 \text{nm}_),
+    hvilket sådan ca. er <i>grønt</i>. 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="19" 2="6">
+    Lysets hastighed er _(299792458 \text{m}/\text{s}_). 
+    Sig at du har en lyseblå lysbølge. Hvad, sådan ca, er frekvensen? 
+    Tallet du får er meget stort! 
+    <br><br></q-stion>
+    <answer-box>
+    Vi ved fra den tidligere opgave, at bølgelængden er lig
+    hastigheden divideret med frekvensen. Kald den ukendte frekvens for _(f_).
+    Bølgelængden på vores bølge er ifølge billedet omtrent _(520 \text{nm}_), hvilket svarer til 
+    _(520*10^{-9} \text{m}_). Nu ved vi at:
+    _($520*10^{-9} = \frac{299792458}{f} \to f*520*10^{-9} = 299792458 \to_)
+    _($f=\frac{299792458}{520*10^{-9}}_)
+    _(299792458/520_) kan vi regne med vores lommeregner til 
+    _(576523.957692_). At dividere med _(10^{-9}_) svarer til 
+    at gange med _(10^9_), så vi flytter punktummet _(9_) gange til højre og får:
+    _($576523957692000 \text{Hz}_)
+    Hvilke også kan beskrives lidt mere approximalt som:
+    _($5.765239*10^{14}_)
+    Bum!
+    <br><br></answer-box>
+

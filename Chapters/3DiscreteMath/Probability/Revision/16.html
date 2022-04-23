@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+
+    <p class="t">
+    På den her sidste side skal vi kigge på en ide der i starten virker
+    som fuldkommen pointeløs, unødvendig terminologi, men som vi hurtigt vil se
+    faktisk kan hjælpe os en del i visse opgaver, og virkelig hjælpe os med at
+    beskrive bestemte situationer. Jeg snakker om <i>tilfældige variabler</i>, eller
+    <i>stokastiske variabler</i> hvis man gerne vil lyde klog. 
+    </p>
+
+    <p class="t">
+    Et par af de sandsynlighedsopgaver vi allerede har lavet kan godt modelleres med 
+    "tilfældige variabler". Sig at vi kaster terninger og gerne vil finde
+    chancen for at få lige tal. Normalt ville vi argumentere: Der er _(6_) mulige udfald, 
+    alle med lige stor chance, og _(3_) opfylder vores krav. Ergo: _(p=_) _(3/6=_) _(0.5_).
+    Men hvad hvis alle udfald <i>ikke</i> havde lige stor chance? Sig f.eks. vi kastede
+    2 terninger og lagde deres øjne sammen: 
+    _($S =  
+    \begin{Bmatrix}
+    2 & 3 & 4 & 5 & 6 & 7 \\
+    3 & 4 & 5 & 6 & 7 & 8 \\
+    4 & 5 & 6 & 7 & 8 & 9 \\
+    5 & 6 & 7 & 8 & 9 & 10 \\
+    6 & 7 & 8 & 9 & 10 & 11 \\
+    7 & 8 & 9 & 10 & 11 & 12 \\
+    \end{Bmatrix} 
+    _)
+    Chancen for at du får et lige tal er tydeligvis <i>ikke</i> bare _(6/11_) (der _(6_) lige værdier
+    øjne-summen kan tage, og _(11_) værdier i alt). Vi skal i stedet tælle alle
+    måder man kan få _(2_) på, få _(4_) på, få _(6_) på, få _(8_) på, få _(10_)
+    på og få _(12_) på og dividere det med det samlede antal udfald _(6*6=_) _(36_).
+    Det giver 
+    _($\frac{18}{36} = 0.5_) 
+    Her fulgte vi lidt samme strategi som altid:
+    _($\frac{\text{Rigtige udfald}}{\text{Alle udfald}}_) 
+    Man kunne også tænke over det på en lidt anden måde dog:
+    _($P(2)+P(4)+P(6)+P(8)+P(10)+P(12)_)
+    Hvor _(P(2)_) er chancen for at få en sum på _(2_), 
+    _(P(4)_) chancen for at få en sum på _(4_), _(P(6)_) en sum på _(6_) osv. 
+    Det her er <i>praktisk talt</i> allerede hvad vi gør lige nu, men det 
+    er et lidt andet mindset: Vi bekymrer os ikke længere over at tælle
+    et bestemt antal udfald, men tænker i stedet over situationen som 
+    <i>forskellige værdier</i>, der har <i>forskellige chancer for at ske</i>. 
+    </p>
+    <p class="t">
+    Vi siger at vi har en "tilfældig variabel". Kald den eksempelvis for _(X_), og sig
+    at _(X_) svarer til "summen af øjnene på terningerne". Nu kan "chancen for 
+    at få et lige tal" modelleres som: "Chancen for at _(X_) er lige". 
+    Vi ved _(X_) kan tage _(11_) mulige
+    værdier, og at _(6_) af dem er lige, så vi skriver:
+    _($P(X=2)+P(X=4)+P(X=6)+P(X=8)+P(X=10)+P(X=12)_)
+    Præcis det samme som før, bare med ny terminologi. I resten af kapitlet vil jeg 
+    ikke altid give stokastiske variabler navne eller skrive _(P(X = \text{et eller andet})_). 
+    Det er til tider lidt over-formelt og unødvendigt: Det er mindsettet der er
+    vigtigt lige nu, og du forstår godt hvad jeg siger ud fra kontekst. Lad os se på
+    nogle flere eksempler. 
+    </p>    
+
+    <p class="t">
+    Vi kiggede tidligere på en person der kastede 7 basketball-skud, men
+    kun ramte _(20_)% af tiden. Her er den "stokastiske variabel" lig "antal basketball skud der rammer".
+    Denne stokastiske variabel kan tage _(8_) værdier: _(0_), _(1_), _(2_), _(3_), _(4_), _(5_), _(6_) og _(7_).
+    Chancen for at få over _(3_) points er altså:
+    _($P(4)+P(5)+P(6)+P(7)_)
+    Hvilke man også kunne have regnet som:
+    _($1 - P(0) - P(1) - P(2) - P(3)_)
+    Det er super simpelt at visualisere en stokastisk variabel. Vi plotter bare dens værdier
+    og associerede sandsynligheder:
+    </p>
+    <img class='SpicB' style='width:70%' src='../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\BinomialDistribution1.png'> 
+    <p class="t">
+    Vi kan se her intuitivt at der er størst chance for at få _(1_) point. Speaking of 
+    "største chance", så ved de fleste af os nok at der er størst chance for at få 
+    _(7_) hvis man slår to terninger:
+    </p>
+    <img class='SpicB' style='width:83%' src='../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\Stokastisk\To terninger.png'> 
+    <p class="t">
+    Man kan se at den påstand er rigtig. Man kan også se at chancen meget simpelt
+    går lineært opad og nedad hvis summen er bag ved eller foran _(7_). Et andet eksempel
+    vi også har set på allerede er: 
+    </p>
+    <img class='Spic' style='width:95%' src='../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\Histogram.png'> 
+    <p class="t">
+    Her kunne vi måske forestille os at vi arbejdede med en skoleklasse (lidt urealistisk 
+    at der er flere der skulle vej over 200kg, men you get the point), og at den
+    stokastiske variabel var lig "kropsvægt". Forskellige mulige kropsvægte ville så 
+    have forskellige sandsynligheder. Der ville nok være markant større chance for at man
+    vejede _(60kg_) end _(260kg_). Forskellen på det her eksempel og de tidligere er at
+    det nok er et man ville lave <i>kontinuert</i>. Det er ikke den del af sandsynlighed
+    vi fokuserer på i dette afsnit, men helt essentielt så kan vi sige at man 
+    ved <i>kontinuert</i> sandsynlighed fokuserer på <i>intervaller</i> i stedet for 
+    <i>individuelle, enkelte, specifikke værdier</i>. Det giver super meget mening når man
+    tænker over denne situation: Der er ikke super mange personer i klassen (måske _(30_)), men
+    der er rigtig mange mulige værdier til den stokastiske variabel. Over _(250_), og 
+    endnu flere hvis vi tager decimaltal med (alle vejer jo ikke
+    en vægt i hele tal). Vores graf ville være fuldkommen ubrugelig: 
+    </p>
+    <img class='SpicB' style='width:160%; margin-left: -30%' src='../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\Stokastisk\Kropsvægt.png'> 
+    <p class="t">
+    Der er _(30_) elever, så hver værdi på den stokastiske variabel har enten en chance 
+    på _(1/30_) eller _(0_). Det er fordi at chancen for at to elever vejer <i>præcist</i> det samme
+    (og jeg har brugt to decimaltal her) er meget lille. Udover det, så er det rigtig mange
+    vægte/værdier som der bare ikke er nogen elever der vejer. De bliver til _(0_). Selv hvis vi begrænsede os selv
+    til kun hele tal så ville chancen stadig være lille, og grafen stadig ret ubrugelig. 
+    I alt ærlighed så er grafikken ikke <i>helt</i> ubruglig: Vi kan se at der er langt flere
+    _(1/30_) værdier <i>omkring</i> _(60kg_), og at chancen for de "slags" værdier derfor må være
+    ret stor. Men her bruger jeg ordet "slags": Jeg taler om flere værdier samtidig. Det vi gør
+    er derfor at kigge på <i>intervaller</i>. Hvad er chancen for at nogen vejer mellem _(0_) og _(10_) kg?
+    Mellem _(10_) og _(20_)? _(30_) og _(40_), _(40_) og _(50_), _(50_) og _(60_) osv. Det giver os
+    så dét blå diagram jeg præsenterede først. 
+    </p>
+    <p class="t">
+    "Værdierne" på vores stokastiske variabel kan også godt være lidt mere primitive. Sig at
+    vi er tilbage til vores "spin-the-wheel" ting:
+    </p>
+    <img class='SpicB' style='width:50%' src='../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\SpinTheWheel.png'> 
+    <p class="t">
+    Den kan have 3 "værdier": Hvid, grå, sort. Så hvis vores stokastiske variabel 
+    er "farven", så kan vi måske vælge at sige at en værdi på _(1_) svarer til "Hvid",
+    _(2_) er grå, og _(3=_) sort. Vi kunne nu lave en graf som:
+    </p>
+    <img class='SpicB' style='width:35%' src='../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\Stokastisk\SpinTheWheel.png'>  
+    <p class="t">
+    På næste side ser vi nogle opgaver hvor det her mindset burde hjælpe os
+    </p>
+
+
+
+
+

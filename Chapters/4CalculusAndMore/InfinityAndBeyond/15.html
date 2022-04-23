@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+
+
+    <h3>Hvordan tester vi divergence?</h3>
+    <p class="t">
+    Vi er nu nået til spørgsmål _(\textbf{B}_): Hvordan tester vi, 
+    om en uendelig serie divergerer eller konvergerer, og hvordan bruger vi
+    det til at finde dens domæne? 
+    </p>
+
+    <p class="t">
+    Vi så, da vi beviste eksistensen af _(e_), at serien
+    _($\sum_{k=1}^{\infty} \frac{1}{k!} _)
+    ... var mindre end _(3_). Den er bounded og stiger konstant, siden hvert led _(1/k!_) er positivt,
+    så vi kan med sikkerhed sige, at den <i>konvergerer</i>. Et andet eksempel er den geometriske serie fra
+    Zenos paradoks:
+    _($\sum_{k=1}^{\infty} \left(\frac{1}{2}\right)^k _)
+    Den konvergerer mod _(2_).
+    Et eksempel på en serie
+    vi så <i>divergede</i> er:
+    _($\sum_{k=1}^{\infty} \frac{1}{k} _)
+    Den såkaldte "harmoniske serie"
+    </p>
+
+    <p class="t">
+    Både _(\sum_{k=1}^{\infty} 1/k! _) og _(\sum_{k=1}^{\infty} 1/k _) er ret atypiske eksempler 
+    på at teste divergence/convergence af en serie.
+    Generelt ser processen lidt anderledes ud, og kan på et overordnet plan deles op i tre trin:
+    </p>
+    <p class="t">
+    Først tjekker vi om den _(f(n)_) vi tager serien _(\sum_{n=1}^{\infty} f(n) _) af overehovedet
+    nærmer sig _(0_). Hvis ikke, ved vi med det samme, at serien diverger. 
+    </p>
+
+    <q-stion 1="15" 2="1" bigTop="true">
+    Bevis at serien
+    _($\sum_{n=1}^{\infty} f(n) _)
+    ... divergerer hvis _(f(n)_) ikke konvergerer mod _(0_). 
+    <br><br></q-stion>
+    <answer-box>
+    Lad os dele beviset op i to tilfælde: _(f(n)_) nærmer sig en konstant _(K \ne 0_), 
+    og _(f(n)_) nærmer sig _(\infty_). Begge er ret intuitive.
+    Hvis hvert led på _(f(n)_) nærmer sig _(\infty_), begynder summen at minde om:
+    _($\sum_{n=0}^{\infty} \infty_)
+    ... hvilket selvfølgelig er lig _(\infty_). Samme intuitive argument kan laves,
+    hvis _(f(n)_) nærmer sig en konstant _(K_). Summen begynder at minde om:
+    _($\sum_{n=0}^{\infty} K_)
+    ... hvilket enten nærmer sig _(\infty_) eller _(-\infty_). 
+
+    <div class="Proof">
+    <b> Bevis</b>: <br>
+    <i> _(f(n)_) nærmer sig _(\infty_): </i> <br>
+    Vi ved, at:
+    _($n \gt \delta, \qquad f(n) \gt \epsilon_)
+    Vælg _(\epsilon = 0_). Der findes nu et eller andet _(M_), hvor
+    _(f(n) \gt 0_) ved alle _(n \gt M_). Vores uendelige sum kan nu opdeles som:
+    _($\sum_{k=0}^{M} f(k) + \sum_{k=M}^{n} f(k)_)
+    Kald _(f(n)_)'s mindste værdi efter _(n \gt M_) for _(C_). Vores sum er nu 
+    større end:
+    _($\begin{eqnarray}
+    && \sum_{k=0}^{M} f(k) + \sum_{k=M+1}^{n} C = \\ \\
+    && \sum_{k=0}^{M} f(k) + C*(n-M-1)
+    \end{eqnarray}_)
+    _(c*(n-M-1)_) nærmer sig _(\infty_) med _(n \to \infty_), og 
+    summen op til _(M_) er bare en konstant _(A_) _(\blacksquare_). 
+    <p class="t">
+    <i>f(n) nærmer sig en konstant _(K \gt 0_)</i> <br>
+    Der findes
+    et _(M_), hvor _(f(n)_) er større end en positiv konstant ved 
+    alle _(n \gt M_). Jo mindre _(K_), jo mindre er denne konstant. Vi ved
+    pr. grænse-defintionen at:
+    _($n \gt \delta, \qquad K-\epsilon \lt f(n) \lt K+\epsilon_)
+    Vi kan ikke bare vælge noget småt som _(\epsilon=0.000001_), siden _(K_)
+    <i>måske</i> er mindre. Vælg derfor _(\epsilon=K/2_), hvilket giver:
+    _($f(n) \gt \frac{K}{2}_)
+    ... ved alle _(n_) større end en eller anden _(\delta=M_). Vores sum kan nu opdeles som:
+    _($\begin{eqnarray}
+    && \sum_{k=0}^{M} f(k) + \sum_{k=M+1}^{n} f(k) \gt \\ \\ 
+    && \sum_{k=0}^{M} f(k) + \sum_{k=M+1}^{n} \frac{L}{2} 
+    \end{eqnarray}_)
+    Summen op til _(n_) af konstanten _(L/2_) nærmer sig tydeligvis
+    _(\infty_), og summen op til _(M_) er bare en konstant _(A_) _(\blacksquare_)
+    </p>
+    </div>
+    <p class="tt">
+    Identiske beviser kan fremstilles, hvis _(f(n)_) nærmer sig _(-\infty_), eller
+    hvis _(K \lt 0_)
+    </p>
+    <br></answer-box>
+
+    <p class="tt">
+    Vi kan <i>ikke</i> være sikre på, at
+    en serie konvergerer bare fordi, dens funktion _(f(n)_) nærmer sig _(0_). 
+    Den harmoniske serie _(1/n_) er et godt modeksempel. Vi ved <i>intet</i>, hvis
+    _(f(n)_) nærmer sig _(0_), og er derfor nødt til at gå videre til anden del af processen. 
+    </p>
+
+    <p class="t">
+    Her forsøger vi at lave nogle <i>tests</i>. Specifikt bruger vi én eller flere af <br> følgende:  
+    </p>
+
+    <div style="text-align:center; margin-top:-10px; margin-bottom:-10px;">
+        <ul style="display: inline-block; list-style:disc;">
+            <li>Ratio test</li>
+            <li>Root test</li>
+            <li>Integral test</li>
+        </ul>
+    </div>
+
+    <p class="t">
+    De her tests - som har de samme navne, men ikke er de samme tests du lærte tidligere - kan anvendes
+    på en serie for at tjekke, hvorvidt den konvergerer eller divergerer. De giver os hver
+    et "ja" eller "nej". Det er ikke helt ligetil dog: 
+    De kan også i visse tilfælde give et "måske", og ved
+    bestemte funktioner er de umulige eller for komplicerede at bruge. 
+    F.eks. involverer ratio og root test begge at finde <i>grænser</i>. 
+    En del af testen (som vi nok skal forklare og 
+    bevise snart), siger at testen er <i>inconclusive</i> hvis grænsen er lig _(1_). 
+    Den kan ikke fortælle os noget som helst. Integral
+    testen er ofte umulig at bruge, siden man skal tage et integral af funktionen
+    _(f(n)_), hvilket ikke er muligt hvis den f.eks. indeholder fakultet _(n!_). 
+    I de her tricky tilfælde er vi nødt til at gå videre til tredje del af processen:
+    <i>Sammenligninger</i>
+    </p>
+
+    <p class="t">
+    Man kan forsøge at sammenligne ens sum med
+    en anden sum man allerede kender, eller mere
+    generelt en sum, der bare er lettere at teste. 
+    F.eks. sammenlignede vi _(\sum_{k=1}^{m} \Vec[m,k]*(1/n)^k _) med _(\sum_{k=1}^{\infty} 1/k! _), som vi vidste
+    var mindre end _(3_). Vores serie konvergerer, hvis den er mindre end en serie der konvergerer, og 
+    divergerer, hvis den er større end en serie, der diverger. 
+    </p>
+    <p class="t">
+    Der findes også en slags limit comparison test for serier, der virker lidt ligesom den for grænser. 
+    </p>
+    <p class="t">
+    Vi sammenligner ofte med:
+    _($\sum_{k=1}^{\infty} \frac{1}{k^p} _)
+    Dette kaldes (meget ukreativt) for "p-serien", og vi kan vise, at den divergerer for 
+    alle _(p \le 1_) og konvergerer for 
+    alle _(p \gt 1_). Sig f.eks. vi havde:
+    _($\sum_{k=1}^{\infty} \frac{1}{k^{Arctan(k)}} _)
+    Arctan er større end _(1_) for alle _(k \ge 2_), så:
+    _($\sum_{k=1}^{\infty} \frac{1}{k^{Arctan(k)}} \le \sum_{k=1}^{\infty} \frac{1}{k^{1.01}}_)
+    Vores serie er nu mindre end en p-serie, der konvergerer med _(p \gt 1_). 
+    </p>
+    <p class="t">
+    Hvis man har en serie der tager formen 
+    _($\sum_{k=1}^{\infty} \frac{A^{f(x)}}{A^{g(x)}}_)
+    ... hvor _(A \gt 1_) og hvor _(g(x)_) dominerer _(f(x)_), kan det være en god ide at sammenligne med:
+    _($\sum_{k=1}^{\infty} \frac{f(x)}{g(x)}_)
+    Der er stor chance for at denne serie konvergerer, siden _(g(x)_) dominerer _(f(x)_). Den er langt nemmere
+    og teste, og vi ved at:
+    _($\sum_{k=1}^{\infty} \frac{A^{f(x)}}{A^{g(x)}} \lt \sum_{k=1}^{\infty} \frac{f(x)}{g(x)}_)
+    Det giver god nok intuitiv mening: _(A^{f(x)}_) vokser hurtigere end _(f(x)_) hvis _(A \gt 1_), så
+    _(A^{g(x)}_) dominerer også _(A^{f(x)}_) stærkere. Generelt kan man bevise, at
+    _($\frac{A^{B}}{A^{C}} \lt \frac{B}{C}_)
+    ... hvis _(C \gt B_), _(A \gt 1_) og _(B*Ln(A)*A^{C-B} \gt 1_). 
+    Den tredje betingelse behøver du ikke rigtig bekymre dig om, hvis _(C_) og _(B_) er funktioner
+    af _(n_). Den ene vil eventuelt blive så meget større end den anden ved _(n \to \infty_),
+    at _(A^{C-B}_) nærmer sig _(\infty_) også. 
+    </p>
+
+    <p class="pageSplitter">*</p>
+
+    <p class="t">
+    Det tager sjælen ligeså lang tid at teste en serie, 
+    som det tager at løse en tricky og stor integral. De 3 tests
+    er ret nemme, og vi har ofte kun brug for at lave 1 eller 2 sammenligninger. 
+    <i>Alligevel</i> kan det godt være <i>ret tricky</i>,
+    især at lave de <i>rigtige</i> sammenligninger. Det er slet ikke åbenlyst, hvilke
+    serier vi bør sammenligne med. At teste for divergence er en evne,
+    man skal øve sig, præcis lige som integraler. 
+    </p>
+
+
+
+
+

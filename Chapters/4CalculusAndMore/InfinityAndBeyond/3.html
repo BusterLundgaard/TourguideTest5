@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+
+
+    <h3>Et par træningsopgaver i grænser</h3>
+
+    <q-stion 1="3" 2="1">
+    Bevis at:
+    _($\lim_{x \to 0}[x^3] = 0_)
+    <br></q-stion>
+    <answer-box>
+    Vi har de to uligheder:
+    _($0 \lt |x-0| \lt \delta, \qquad |x^3 - 0| \lt \epsilon_)
+    De kan forsimples til:
+    _($0 \lt |x| \lt \delta, \qquad |x^3| \lt \epsilon_)
+    Lad os forsøge at bevise anden ulighed ved hjælp af den første. 
+    Her opløfter vi begge sider til en potens på _(3_), og får:
+    _($|x|^3 \lt \delta^3_)
+    _(|x|^3_) er lig _(|x^3|_), så:
+    _($|x^3| \lt \delta^3_)
+    Det passer <i>næsten</i> til den anden ulighed. Vi mangler bare at vælge
+    den rigtige _(\delta(\epsilon)_), så jeg siger _(\delta=\epsilon^{1/3}_) og får:
+    _($|x^3| \lt (\epsilon^{1/3})^{3} \to |x^3| \lt \epsilon_)
+    Boom! 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="3" 2="2">
+    Bevis at:
+    _($\lim_{x \to \pi/2}[Sin(x)] = 1_)
+    <br></q-stion>
+    <answer-box>
+    Vi har to uligheder:
+    _($0 \lt \left|x - \frac{\pi}{2} \right| \lt \delta, \qquad |Sin(x)-1| \lt \epsilon_)
+    Vi går til denne opgave meget ligesom _(\lim_{x \to \pi/2}[Cos(x)] = 0_).
+    Først og fremmest antager vi, at _(\delta \le \pi/2_), derefter opdeler vi situationen i to cases:
+    _(x \lt \pi/2_) og _(x \gt \pi/2_). I den éne finder vi frem til et gæt, 
+    vi tester så at gættet virker i den anden. 
+    <p class="t">
+    _(x \lt \pi/2_), så ulighederne kan omskrives til:
+    _($0 \lt -\left(x-\frac{\pi}{2} \right) \lt \delta, \qquad -(Sin(x)-1) \lt \epsilon_)
+    Vi vil have første ulighed til at ligne den anden, så vi isolerer _(x_) og får:
+    _($x \gt \frac{\pi}{2} - \delta_)
+    Begge sider er på intervallet _([0, \pi/2]_). Her korresponderer større inputs 
+    også til større _(Sin_)-værdier, så:
+    _($Sin(x) \gt Sin\left(\frac{\pi}{2} - \delta \right)_)
+    Hvilket vi kan omskrive til:
+    _($Sin(x) \gt Cos(\delta)_)
+    Uligheden vi søger er:
+    _($-(Sin(x)-1) \lt \epsilon_)
+    Så vi minusser begge sider med _(1_), og ganger derefter med _(-1_), hvilket giver:
+    _($-(Sin(x)-1) \lt 1 - Cos(\delta)_)
+    Jeg skal vælge den _(\delta(\epsilon)_), hvor højre side bare bliver til _(\epsilon_), så 
+    jeg siger:
+    _($\delta(\epsilon)=Arccos(1-\epsilon)_)
+    Hvilket giver:
+    _($1 - Cos(Arccos(1-\epsilon))= 1-(1-\epsilon) = \epsilon_)
+    Gættet virker derfor, hvis _(x \lt \pi/2_). Vi tjekker nu ved _(x \gt \pi/2_), hvor ulighederne er:
+    _($x - \frac{\pi}{2} \lt \delta, \qquad -(Sin(x)-1) \lt \epsilon_)
+    Vi isolerer _(x_) og får:
+    _($x \lt \delta + \frac{\pi}{2}_)
+    Begge sider er mellem _(\pi/2_) og _(\pi_). Her korresponderer større inputs til mindre _(Sin_)-værdier, så:
+    _($Sin(x) \gt Sin(\delta + \pi/2) = Cos(\delta)_)
+    Vi omskriver nu højre side til _(-(Sin(x)-1)_) og får:
+    _($-(Sin(x)-1) \lt 1- Cos(\delta)_)
+    Nu indsætter vi _(\delta=Arccos(1-\epsilon)_), højre sider bliver
+    til _(\epsilon_), og beviset er færdigt! 
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="3" 2="3">
+    Bevis at:
+    _($Lim_{x \to 1}[x^x] = 1_)
+    <br></q-stion>
+    <answer-box>
+    Vi har de to uligheder:
+    _($0 \lt |x - 1| \lt \delta, \qquad |x^x-1| \lt \epsilon_)
+    Lad os igen for nemhedens skyld antage, at _(\delta \lt 1_). 
+    Her har jeg valgt lige _(1_) ikke <i>kun</i> fordi det er simpelt, men 
+    fordi det specifikt fortæller os, at _(0 \lt x \lt 2_), hvilket
+    betyder, at _(x^x_) altid er <i>mindre</i> end _(x^2_). Nu ved vi at:
+    _($|x^x-1| \lt |x^2-1|_)
+    Her kører vi lidt en anden strategi. I de sidste par eksempler 
+    forsøgte vi at omskrive den ene ulighed til den anden ved hjælp af
+    et brugbart gæt. Nu prøver vi at bevise den anden ulighed direkte
+    <i>med hjælp fra</i> første ulighed. _(|x^2-1|_) er lig
+    _(|x-1| |x+1|_), så første ulighed kan hjælpe, da
+    _(|x-1| \lt \delta_) medfører at:
+    _($|x-1|*|x+1| \lt \delta*|x+1|_)
+    Så:
+    _($|x^x-1| \lt \delta*|x+1|_)
+    _(x+1_) er maksimalt _(|2+1|=3_), så:
+    _($|x^x-1| \lt \delta*3_)
+    Nu vælger vi bare _(\delta = \epsilon/3_) og voila! I den her
+    strategi forsøger man altså at opsætte en ulighed, hvor _(|f(x)-L|_) 
+    er mindre end en funktion _(F(\delta)_). 
+    Man kan så indsætte den modsatte funktion, og (højest sandsynligt) få et svar
+    der virker. Man skal selvfølgelig også tjekke, at ens antagelser om _(\delta_) stadig
+    holder. F.eks. ville vi ikke kunne substituere _(\delta=4.4+\epsilon_), siden
+    det bryder _(\delta \lt 1_). 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="3" 2="4">
+    Bevis at:
+    _($\lim_{x \to 1}[Arccos(x)] = 0_)
+    <br><br></q-stion>
+    <answer-box>
+    Vi har:
+    _($|x-1| \lt \delta, \qquad |Arccos(x)-0| \lt \epsilon_)
+    _(Arccos_) har et domain på _([-1, 1]_), så 
+    _(x_) er <i>nødt til</i> at være mindre end _(1_), hvilket giver
+    _($|x-1|=(1-x)_) 
+    _(Arccos_) er altid positiv, så:
+    _($|Arccos(x)|=Arccos(x)_)
+    Man kan isolere _(x_) i første ulighed og få: 
+    _($x \gt 1 - \delta_)
+    _(Arccos_) er lavere på højere værdier, så større-end tegnet skal vendes om, hvis vi
+    bruger operationen på begge sider:
+    _($Arccos(x) \lt Arccos(1-\delta)_)
+    Nu vælger vi bare _(\delta=1 - Cos(\epsilon)_), og beviset er færdigt. 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="3" 2="5">
+    Bevis at:
+    _($\lim_{x \to 3.42}\left[\frac{1}{x} \right] = \frac{1}{3.42}_)
+    <br></q-stion>
+    <answer-box>
+    Vi har:
+    _($\left|x - 3.42 \right| \lt \delta, \qquad \left|\frac{1}{x} - 1/3.42 \right| \lt \epsilon_)
+    Lad os begrænse _(\delta_) for at gøre situationen simplere. Vi kan ret arbitrært sige
+    at _(\delta \le 1_), så at _(x \in [2.42, 4.42]_). 
+    Jeg kunne have valgt alle mulige andre tal end _(1_) også:
+    Bare et eller andet tal, hvor vi ved, at _(x_) er større end _(0_) (siden jeg 
+    er nødt til at opdele situationen i flere cases, hvis _(x_) skal være mindre eller lig _(0_)).
+    <p class="t">
+    Anden ulighed kan omskrives til:
+    _($\left|\frac{3.42-x}{3.42*x} \right| = \frac{|3.42-x|}{3.42*|x|} = \frac{|x-3.42|}{3.42x} _)
+    Vi ved, at _(x_) minimalt er _(2.42_), så:
+    _($\frac{|x-3.42|}{3.42x} \lt \frac{|x-3.42|}{3.42*2.42}_)
+    Ved hjælp af første ulighed får vi:
+    _($|x-3.42| \lt \frac{\delta}{3.42*2.42}_)
+    Så:
+    _($\left|\frac{1}{x}-\frac{1}{3.42} \right| \lt \frac{\delta}{3.42*2.42}_)
+    Nu kan man bare vælge _(\delta=\epsilon*3.42*2.42_) og bum! 
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="3" 2="6">
+    Find på en god definition for en grænse, hvor _(x_) nærmer sig "uendelig", og bevis at:
+    _($\lim_{x \to \infty} \left[\frac{x+1}{x} \right]=1_)
+    <br></q-stion>
+    <answer-box>
+    At _(x_) nærmer sig uendelig betyder 
+    bare, at den "kan blive så stor, som vi har lyst".
+    At grænsen nærmer sig _(1_), beskriver vi på præcist samme måde via _(\epsilon_). Definitionen bliver:
+    
+    <div class="Definition" style="border:solid;">
+    <b> Definition:</b> <br>
+    Hvis en grænse nærmer der sig uendelig, skrevet _(\lim_{x \to \infty}[f(x)] _), er lig tallet _(L_), 
+    findes der for et hvilket som
+    helst tal _(\epsilon \gt 0_), et tal _(\delta \gt 0_) hvor:
+    _($x \gt \delta \implies |f(x)-L| \lt \epsilon _)
+    </div>
+
+    <p class="t">
+    Lad os nu finde _(\lim_{x \to \infty}[(x+1)/x]_). Her har vi:
+    _($x \gt \delta, \qquad \left|\frac{x+1}{x} - 1\right| \lt \epsilon_)
+    Den anden ulighed kan simplificeres en del:
+    _($\left|\frac{x+1}{x} - 1\right| = \frac{1}{|x|}_)
+    Vi antager, at _(x \gt \delta \gt 0_), så _(|x|=x_), og vi får:
+    _($x \gt \delta, \qquad \frac{1}{x} \lt \epsilon_)
+    Lad os omskrive første ulighed til den anden. Vi opløfter begge sider til _(-1_), og husker
+    at modsætte større-end tegnet:
+    _($\frac{1}{x} \lt \frac{1}{\delta}_)
+    Nu vælger vi _(\delta=1/\epsilon_), og bum! Bevis færdigt! 
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+    
+    <q-stion 1="3" 2="7">
+    Definer hvad det betyder, at en grænse er lig "uendelig", og bevis at:
+    _($\lim_{x \to 3} \left[\frac{1}{(x-3)^2 } \right] = \infty_)
+    <br></q-stion>
+    <answer-box>
+    At grænsen nærmer sig uendelig, betyder bare at den kan blive "så stor som den har lyst", imens
+    _(x_) kan komme så tæt på _(a_) som vi har lyst:
+
+    <div class="Definition" style="border:solid;">
+    <b> Definition:</b> <br>
+    Hvis en grænse er lig uendelig, skrevet _(\lim_{x \to a}[f(x)] = \infty _), findes der for et hvilket som
+    helst tal _(\epsilon \gt 0_) et tal _(\delta \gt 0_), hvor:
+    _($0 \lt |x-a| \lt \delta, \implies  f(x) \gt \epsilon_)
+    </div>
+
+    <p class="t">
+    Lad os først lige omskrive vores grænse ved hjælp af substitutionen 
+    _($u=x-3_)
+    _(u_) nærmer sig nu _(0_), og vi skal bevise at
+    _($\lim_{u \to 0} \left[\frac{1}{u^2} \right]=\infty_)
+    Vores to uligheder er:
+    _($0 \lt |u-0| \lt \delta, \qquad \frac{1}{u^2} \gt \epsilon_)
+    Første ulighed kan vi let omskrive til:
+    _($\frac{1}{|u|} \lt \frac{1}{\delta}_)
+    Jeg opløfter nu begge sider til anden potens og får:
+    _($\frac{1}{|u|^2} \lt \frac{1}{\delta^2}_)
+    _(|u|^2_) er lig _(u^2_) siden potensen på _(2_) allerede sørger for positivitet, så:
+    _($\frac{1}{u^2} \lt \frac{1}{\delta^2}_)
+    Nu vælger jeg _(\delta=1/\sqrt{\epsilon}_), og bum! Bevis færdigt! 
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="3" 2="8">
+    Definer hvad det betyder, at en grænse er lig _(\infty_), når _(x_) nærmer sig _(\infty_), og bevis 
+    at:
+    _($\lim_{x \to \infty}[Ln(x)] = \infty_)
+    <br></q-stion>
+    <answer-box>
+    You know the drill. Definitionen bliver:
+    
+    <div class="Definition" style="border:solid;">
+    <b> Definition:</b> <br>
+    Hvis en grænse hvor _(x_) nærmer sig _(\infty_) er lig _(\infty_), skrevet
+    _(\lim_{x \to \infty}[f(x)]=\infty_), findes der for et hvilket som
+    helst tal _(\epsilon \gt 0_) et tal _(\delta \gt 0_), hvor:
+    _($x \gt \delta \implies f(x) \gt \epsilon_)
+    </div>
+    
+    <p class="t">
+    Grænsen vi skal bevise giver ulighederne:
+    _($x \gt \delta, \qquad Ln(x) \gt \epsilon_)
+    Vi kan tage _(Ln_) på begge sider af første ulighed, og få:
+    _($Ln(x) \gt Ln(\delta)_)
+    Nu vælger vi bare _(\delta=e^{\epsilon}_), og beviset er færdigt.
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    
+    <!--  -->
+
+    <q-stion 1="3" 2="9">
+    Beregn:
+    _($\lim_{x \to \infty} \left[\frac{x^{7.23}}{x^{7.23}-1} \right]_)
+    <i>Hint:</i> Lav en substitution!
+    <br><br></q-stion>
+    <answer-box>
+    Vi substituerer:
+    _($u=x^{7.23}-1_)
+    Substitutioner er et ret kraftigt værktøj indenfor grænser. 
+    Man kan let omskrive funktionen, og det eneste man skal holde styr på er, hvad
+    den nye variabel nærmer sig. _(u_) nærmer sig _(\infty_) hvis _(x_) gør, så:
+    _($\lim_{x \to \infty} \left[\frac{x^{7.23}}{x^{7.23}-1} \right] = \lim_{u \to \infty} \left[\frac{u+1}{u} \right]  _)
+    Nu har vi en grænse vi evaluerede i sidste opgave. Det er fuldkommen ligegyldigt,
+    at det nu står med _(u_) i stedet for _(x_): Grænsens værdi forbliver identisk, så
+    svaret er _(1_).
+    <p class="t">
+    <i>... Hold up though</i>: Svaret <i>er</i> _(1_), men en af vores argumenter
+    var lidt for intuitive. Du kan ikke bare sige
+    </p>
+    <p class="cent">
+        "_(x^{7.23}-1_) nærmer sig _(\infty_), hvis _(x_) nærmer sig _(\infty_)""
+    </p>
+    <p class="t">
+    ... uden først at bevise det. Det svarer jo til påstanden:
+    _($\lim_{x \to \infty}[x^{7.23}-1] = \infty_)
+    Så vi har:
+    _($x \gt \delta, \qquad x^{7.23}-1 \gt \epsilon_)
+    Det er heldigvis ret nemt. Vi kan let omskrive første ulighed til:
+    _($x^{7.23} - 1 \gt \delta^{7.23}-1_)
+    Nu vælger vi bare _(\delta=(\epsilon+1)^{1/7.23}_), og bum!
+    </p>
+    <br></answer-box>
+
+    <p class="t">
+    <i>Ja</i> jeg ved godt at de grænser vi evaluerer her i starten af kapitlet virker fuldkommen pointløse.
+    Lange og komplicerede beviser med åbenlyse konklusioner. Det er primært <i>træning</i> dog:
+    Vi skal snart bruge denne træning til at bevise et par generelle teorier, der sørger for,
+    at vi sjælen får brug for at udføre disse slags beviser igen. 
+    </p>

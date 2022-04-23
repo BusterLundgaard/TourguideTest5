@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+
+
+    <h3>Logaritmers egenskaber</h3>
+   
+   <!-- <q-stion 1="2" 2="1" 3="5">
+   Prøv at tegn grafen af en eller anden log-funktion. 
+   Du skal altså bare få en generel god ide omkring hvordan de ser ud. 
+   <br><br></q-stion>
+   <answer-box>
+   <video class='picB' controls>
+       <source src='../../../Assets/Chapter2\Section3\Logarithms\LogGraf.mp4' type='video/mp4'>
+   </video>
+   <br><br></answer-box> -->
+
+   <q-stion 1="5" 2="1">
+   Hvad er _(a^{Log_a(b)}_) og _(Log_a(a^b)_)? Det her er super simpelt. 
+   <br><br></q-stion>
+   <answer-box>
+   Super simpelt: bare _(b_). At opløfte _(a_) til en potens _(b_), er det modsatte af _(Log_a(b)_),
+   så du gør noget efterfulgt at det modsatte, og får hvad du startede med. 
+   <p class="t">
+    Vi kan også tænke over det helt intuitivt: Hvad sker der, når man opløfter _(a_) til den potens, _(a_) skal
+   opløftes til for at være _(b_)? Well: det bliver _(b_)! Hvad for en potens skal
+   _(a_) opløftes til for at blive _(a^b_)? _(b_) selvfølgelig!  
+    </p>
+   <br></answer-box>
+
+   <!--  -->
+
+    <q-stion 1="5" 2="2">
+    Sig at du på en eller anden måde har beregnet, at
+    _($Log_{5.2}(9.8) = 1.38 \qquad Log_{5.2}(39.5) = 2.23_)
+    Find nu en måde at beregne: 
+    _($Log_{5.2}(9.8*39.5)_)
+    Du må gerne bruge din lommeregner til dette, men kun plus, minus, gange og division. 
+    <br><br></q-stion>
+    <answer-box>
+    Vi leder efter den _(x_) hvor:
+    _($5.2^{x} = 9.8*39.5_)
+    Og vi ved at:
+    _($5.2^{1.38}=9.8, \qquad 5.2^{2.23} = 39.5_)
+    Så det indsætter vi bare og får:
+    _($5.2^{x} = 5.2^{1.38}*5.2^{2.23}_)
+    Højre side kan gennem potensreglerne omskrives til _(5.2^{1.38+2.23}_), så:
+    _($x=1.38+2.23=3.61_)
+    _(3.61_) er altså svaret. Bum!
+    <p class="cent">*</p>
+    <p class="t">
+    Hvis man generaliserer vores arbejde, ser man at:
+    _($Log_{c}(a*b)=Log_{c}(a)+Log_{c}(b)_)
+    Man kan også let få:
+    _($Log_{c}\left(\frac{a}{b}\right)=Log_{c}(a)-Log_{c}(b)_)
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="5" 2="3">
+    Vi ved igen nu at:
+    _($Log_{5.2}(9.8)=1.38_)
+    Find nu en måde at beregne:
+    _($Log_{5.2}(9.8^{7.3})_)
+    Igen må du kun bruge din lommeregners plus, minus, gange og divisionsfunktion. 
+    <br><br></q-stion>
+    <answer-box>
+    Vi leder efter den _(x_) hvor:
+    _($5.2^{x}=9.8^{7.3}_)
+    Og vi ved at:
+    _($5.2^{1.38}=9.8_)
+    Det indsætter vi og får:
+    _($5.2^{x} = \left(5.2^{1.38} \right)^{7.3} = 5.2^{1.38*7.3}_)
+    Så: 
+    _($x = 1.38*7.3 = 10.074_)
+    Så _(Log_{5.2}(9.8^{7.3})=10.074_).
+    <p class="cent">*</p>
+    <p class="t">
+    Hvis man generaliserer vores arbejde, ser man at:
+    _($Log_{c}(a^b)=b*Log_{c}(a)_)
+    </p>
+     <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="5" 2="4">
+    Sig at du på en eller anden måde har beregnet, at
+    _($Log_{7.8}(27.8) = 1.619, \qquad Log_{7.8}(1.23) = 0.101_)
+    Find nu en måde at beregne:
+    _($Log_{1.23}(27.8)_)
+    Igen med samme krav omkring din lommeregner. 
+    <br><br></q-stion>
+    <answer-box>
+    Vi leder efter den _(x_) hvor:
+    _($1.23^x = 27.8_)
+    Og vi ved at:
+    _($7.8^{1.619}=27.8, \qquad 7.8^{0.101} = 1.23_)
+    Vi indsætter det ligesom før:
+    _($\left(7.8^{0.101} \right)^x = 7.8^{1.619}_)
+    Vi kan let omskrive venstre side, og få:
+    _($7.8^{0.101x} = 7.8^{1.619}_)
+    Hvis _(7.8^{0.101x}_) er lig _(7.8^{1.619}_), så 
+    er _(0.101x_) lig _(1.619_), så:
+    _($0.101x = 1.619 \to x = \frac{1.619}{0.101} = 16.029_)
+    Voila: _(Log_{1.23}(27.8)=16.029_).
+    <p class="cent">*</p>
+    <p class="t">
+    Igen kan vores arbejde generaliseres til:
+    _($Log_{a}(x) = \frac{Log_{b}(x)}{Log_{b}(a)} _)
+    Den her formel er meget brugbar, og kaldes ofte "the change of base formula". 
+    Den kan bruges til at regne logaritmer af _(a_), hvis man kun kan
+    regne logaritmer af _(b_). F.eks. hvis jeg skal regne 
+    _(Log_{3.187}(19.8)_) og hellere vil regne
+    _($\frac{Log_{10}(19.8)}{Log_{10}(3.187)}_)
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <p class="t">
+    Jeg har indtil videre ikke fortalt dig hvordan vi faktisk regner logaritmer på en lommeregner. 
+    Årsagen er, at få lommeregnere faktisk har en generel _(Log_{y}(x)_)-funktion. 
+    Stort set alle lommeregnere har dog en såkaldt "_(Ln_)"-funktion. Det står for
+    "den naturlige logaritme", og svarer til:
+    _($Ln(x)=Log_{2.718}(x)_)
+    <i>Obviously</i>. Det her virker måske lidt tilfældigt, men tallet 
+   _(2.718 ... _) er kendt som "eulers konstant" _(e_), og er meget kendt og vigtigt,
+    på grund af to specielle egenskaber: 
+    </p>
+    <p class="t">
+    <b> 1</b>: Hvis man tegner en kurve af _(y=e^x_), så er hældningen på et vilkårligt punkt på
+    kurven som _(x=6.4_) lig _(e^x_): Det vil sige _(e^{6.4}_), så hældningen på
+    _(e^x_) ved punktet _((6.4, e^{6.4})_) er lig _(e^{6.4}_).
+    Man kan på en måde sige, at _(e^x_)'s hældning er "lig med
+    sig selv". 
+    </p>
+    <p class="t">
+    <b> 2</b>: 
+    Den måde tallet _(e_) først blev opdaget på er en helt anden historie. Vi skal
+    faktisk tilbage til banken!
+    </p>
+    <p class="t">
+    Hvis du har sat _(30kr_) ind i banken med en interesse _(r_) på _(1.23_), får
+    du _(30kr*1.23=_) _(36.9 \text{kr}_),
+    når du tager pengene ud efter èt år. Efter to år ville du få _(36.9kr*1.23=_)
+    _(45.387kr_), tre år _(45.387kr*1.23=_) _(55.82601_) osv. 
+    Du gør beløbet 23% større hvert år, men hvad hvis du ikke gider vente et helt år? 
+    </p>
+    <p class="t">
+    Hvis man vil have pengene allerede efter et halvt år, gør bankerne 
+    renten dobbelt så lav (i vores model). Det svarer til: 
+    _($23\text{%}/2=11.5\text{%}_)
+    Så _(1.15_). 
+    Efter et halvt år har du nu _(30kr*1.15=_) _(34.5kr_). Efter ét år 
+    - 2 halve år - har du _(34.5kr*1.15=_) _(39.675kr_). Men vent <i>lige</i> et sekund:
+    Ved at dele renten op i to perioder kom du på èt år op på _(39.675kr_). 
+    Det er <i>mere</i> end ved èn periode, som gav dig _(36.9kr_)! Hvad hvis vi delte
+    det op i tre, eller fire? Ville vi tjene endnu flere penge? 
+    </p>
+    <p class="t">
+    Svaret er ja, faktisk! Jo flere perioder renten bliver delt op i, jo flere penge får man! 
+    Man kan ikke bare blive ved og ved dog: Jo flere perioder man opdeler året i, jo mindre
+    bliver forskellen. Ved _(12395_) perioder tjener man <i>teknisk set</i> flere
+    penge end _(12394_), men kun med en forskel på mindre end _(0.000001kr_).
+    _(e_) er hvor meget man kan gange ens penge med efter èt år, hvis man opdeler det år
+    i "uendelig" mange perioder, og hvis man har en rente på 100%.
+    </p>
+    <p class="t">
+    Det har umiddelbart intet at gøre med hældningen på en graf eller logaritmer, men vi vil 
+    senere i bogen se, at de her to definitioner faktisk er identiske.
+    Det vigtige du skal forstå lige nu er bare, at _(e_) er <i>vigtigt</i>. Det er en konstant
+    der bliver brugt overalt i matematik, så det er ikke et helt dumt valg <i>hvis</i> lommeregneren 
+    skal have kun én logaritme.
+    </p>
+    <p class="t">
+    Prøv nu at brug din lommeregners _(Ln_)-funktion
+    til at regne de følgende logaritmer: 
+    </p>
+
+    <!--  -->
+
+    <q-stion 1="5" 2="5">
+    Regn:
+    <div style="margin-left:-68%; margin-top:25px; margin-bottom: -10px;">
+    _($\begin{eqnarray}
+        && \underline{\textbf{A}}: \, \, \, \, \, \, Ln(17.5) \\  \\
+        && \underline{\textbf{B}}: \, \, \, \, \, \, Ln(1.2) \\  \\
+        && \underline{\textbf{C}}: \, \, \, \, \, \, Ln(0.157) \\  \\
+        && \underline{\textbf{D}}: \, \, \, \, \, \, Log_{1.69}(19.5) \\  \\
+        && \underline{\textbf{E}}: \, \, \, \, \, \, Log_{18.9}(315.6) \\  \\
+        && \underline{\textbf{F}}: \, \, \, \, \, \, Log_{245.3}(12.9) \\  \\
+        && \underline{\textbf{G}}: \, \, \, \, \, \, Log_{0.88}(30.4) \\  \\
+        && \underline{\textbf{H}}: \, \, \, \, \, \, Log_{0.65}(0.0023) \\  \\
+    \end{eqnarray}_)
+    </div>
+    <br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    Vi bruger _(Ln_)-funktionen på vores lommeregner og får: _(2.8622_)
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Svaret er _(0.182_)
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{C}}_)#" tabColour="rgb(171,96,147)">
+    Svaret er _(-1.851_)
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{D}}_)#" tabColour="rgb(175,128,161)">
+    Her skal vi bruge den formel, vi udledte i sidste opgave. Vi kan ikke
+    regne _(1.69_)-logaritmer, men vi kan godt regne _(2.718_)-logaritmer via _(Ln_), så
+    vi omskriver til:
+    _($\frac{Ln(19.5)}{Ln(1.69)} = 5.66_)
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{E}}_)#" tabColour="rgb(171,96,147)">
+    Svaret er _(1.95786_)
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{F}}_)#" tabColour="rgb(175,128,161)">
+    Svaret er _(0.46474_)
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{G}}_)#" tabColour="rgb(171,96,147)">
+    Svaret er _(-26.710_)
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{H}}_)#" tabColour="rgb(175,128,161)">
+    Svaret er _(14.1018_)
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="5" 2="6">
+    Brug de egenskaber vi opdagede til at løse de følgende ligninger:
+    <div style="margin-left:-55%; margin-top:25px; margin-bottom: -10px;">
+    _($\begin{eqnarray}
+        && \underline{\textbf{A}}: \, \, \, \, \, \, Log_{2}(3^x)=x^2 \\  \\
+        && \underline{\textbf{B}}: \, \, \, \, \, \, Log_{x}(5^x)=2x \\  \\
+        && \underline{\textbf{C}}: \, \, \, \, \, \, Log_{5}(3x)+Log_{5}(2x^2) = 5 \\  \\
+    \end{eqnarray}_)
+    </div>
+    <br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(175,128,161)">
+    Her bruger vi
+    _($Log_{c}(a^b)=b Log_c(a)_)
+    Og omskriver _(Log_{2}(3^x)_) til _(x*Log_{2}(3)_), så vi får:
+    _($x*Log_{2}(3) = x^2 \to x = Log_{2}(3) = 1.584_)
+    Bum!
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(171,96,147)">
+    Vi omskriver til:
+    _($x Log_{x}(5) = 2x \to Log_{x}(5)=2_)
+    Det her svarer til at:
+    _($x^{2}=5 \to x = \sqrt{5} = 2.236_)
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{C}}_)#" tabColour="rgb(175,128,161)">
+    Her bruger vi 
+    _($Log_{c}(a*b)=Log_{c}(a)+Log_{c}(b)_)
+    ... plus den tidligere egenskab, for at omskrive venstre side til:
+    _($Log_{5}(x)+Log_{5}(3)+Log_{5}(2)+2 Log_{5}(x)_)
+    Så:
+    _($3 Log_{5}(x) = 5-Log_{5}(3) - Log_{5}(2)_)
+    Højre sider udregnes, og vi omskriver til: 
+    _($Log_{5}(x) =  1.295  _)
+    Det her svarer til at:
+    _($x = 5^{1.295} = 8.03_)
+    Voila! 
+    <br><br></answer-box>
+
+    <!--  -->
+
+   <q-stion 1="5" 2="7" customWidth="820">
+   I lang, lang tid før man havde lommeregnere, brugte man 
+   en smart opfindelse kaldt "sliding-rules". 
+   De kom i mange varianter, og kunne mange ting. F.eks. var de praktiske, hvis man skulle 
+   <i>gange</i>. Det gjorde de ved hjælp af:
+   _($Log_a(b)+Log_a(c)=Log_a(b*c)_)
+   I den følgende simulation er der to linealer man kan "slide" op ad hinanden. 
+   På hver lineal ser du en <i>logaritmisk skala</i>. _(2_) og _(3_)
+   er ligeså langt væk fra hinanden på skalaen som _(Log_{10}(2)_) er fra _(Log_{10}(3)_).
+   <p class="t">
+   Prøv ved hjælp af den følgende simulation at approximere _(2356*3777_). Jeg vil ikke fortælle dig 
+   mere om, hvordan præcis du bruger denne spøjse innovation til at gange: Det må du selv finde ud af. 
+   </p> <br>
+   <iframe style="width:800px; height:210px;" src="../../../Assets/Chapter2/Section3/Logarithms/SlidingRule.html"></iframe>
+   <br><br></q-stion>
+   <answer-box t="h">
+    Prøv at ryk den øverste lidt fremad. Måske _(1_) fremad på den nederstes logaritmiske skala.
+    Læg nu mærke til, hvor langt du bevæger dig på den nederste hver gang du går _(1_) fremad på den øverste.
+   <br><br></answer-box>
+   <answer-box>
+   Du kan se mit svar her:
+   <video class='SpicB' style="width:95%;" controls>
+       <source src='../../../Assets/Chapter2\Section3\Logarithms\SlidingRule.mp4' type='video/mp4'>
+   </video>
+   <br><br></answer-box>
+
+ 

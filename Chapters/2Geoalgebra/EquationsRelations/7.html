@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+
+
+    <h2>Visualisering af funktioner og ligninger</h2>
+
+    <p class="t">
+    Lad os undersøge det med at plotte funktioner lidt nærmere. Når vi plotter funktionen _(y=f(x)_), 
+    tegner vi hvad _(y_) er ved en masse _(x_) værdier. F.eks. ved _(y=3+2x-0.5x^2_) kunne et plot 
+    se ud som:
+    </p>
+    <img class='SpicXL' style='width:80%' src='../../../Assets/Chapter2\Section3\Graphs\IntroGraph.png'> 
+    <p class="t">
+    Vi plotter altså bare en masse _(\left(x,f(x) \right)_)-punkter. Forrige plot kunne vi have tegnet på følgende vis:
+    </p>
+    <video class='SpicBXL' style="width:100%;" controls>
+        <source src='../../../Assets/Chapter2\Section3\Graphs\GraphIntro.mp4' type='video/mp4'>
+    </video>
+    <p class="t">
+    Prøv nu selv at gøre det samme i følgende opgaver: 
+    </p>
+    
+    <q-stion 1="7" 2="1">
+    Prøv at plot de følgende funktioner:
+    <div style="margin-left:-60%; margin-top:25px; margin-bottom: -10px;">
+    _($\begin{eqnarray}
+        && \underline{\textbf{A}}: \, \, \, \, \, \, y=-2+0.5x^2 \\  \\
+        && \underline{\textbf{B}}: \, \, \, \, \, \, y=7-1.5x \\  \\
+        && \underline{\textbf{C}}: \, \, \, \, \, \, y=1.5*2^x \\  \\
+        && \underline{\textbf{D}}: \, \, \, \, \, \, y=\sqrt{x} \\  \\
+        && \underline{\textbf{E}}: \, \, \, \, \, \, y=Ln(x) \\  \\
+        && \underline{\textbf{F}}: \, \, \, \, \, \, y=M_{12}(x) \\  \\
+        && \underline{\textbf{G}}: \, \, \, \, \, \, y=Sin(x)+Cos(x) \\  \\
+    \end{eqnarray}_)
+    </div>
+    <br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    Du kan se processen her:
+    <video class='SpicBXL' style="width:90%;" controls>
+        <source src='../../../Assets/Chapter2\Section3\Graphs\Exercise1.mp4' type='video/mp4'>
+    </video>
+    <p class="t">
+    Du kan se et computergenereret resultat her:
+    </p>
+    <img class='Spic' style='width:65%' src='../../../Assets/Chapter2\Section3\Graphs\Exercise1.png'> 
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Du kan se processen her:
+    <video class='SpicBXL' style="width:90%;" controls>
+        <source src='../../../Assets/Chapter2\Section3\Graphs\Exercise2.mp4' type='video/mp4'>
+    </video>
+    <p class="t">
+    Du kan se et computergenereret resultat her:
+    </p>
+    <img class='Spic' style='width:65%' src='../../../Assets/Chapter2\Section3\Graphs\Exercise2.png'> 
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{C}}_)#" tabColour="rgb(171,96,147)">
+    Du kan se processen her:
+    <video class='SpicBXL' style="width:90%;" controls>
+        <source src='../../../Assets/Chapter2\Section3\Graphs\Exercise3.mp4' type='video/mp4'>
+    </video>
+    <p class="t">
+    Du kan se et computergenereret resultat her:
+    </p>
+    <img class='Spic' style='width:65%' src='../../../Assets/Chapter2\Section3\Graphs\Exercise3.png'> 
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{D}}_)#" tabColour="rgb(175,128,161)">
+    Du kan se processen her:
+    <video class='SpicBXL' style="width:90%;" controls>
+        <source src='../../../Assets/Chapter2\Section3\Graphs\Exercise4.mp4' type='video/mp4'>
+    </video>
+    <p class="t">
+    Du kan se et computergenereret resultat her:
+    </p>
+    <img class='Spic' style='width:98%' src='../../../Assets/Chapter2\Section3\Graphs\Exercise4.png'> 
+    <p class="t">
+    Hvis du ikke helt forstod, hvorfor det der med modsatte funktioner virkede, kan man måske også forklare det sådan her. Vi har:
+    _($y=\sqrt{x}_)
+    Det kan omskrives til:
+    _($x=y^2_)
+    Så vi skal egentlig bare tegne den kendte kurve _(y=x^2_), men med _(x_) i stedet for _(y_). 
+    Vi skal vende koordinatsystemet om med 90 grader, hvilket
+    geometrisk har effekten af, at reflektere det omkring en 45-graders linje _(y=x_). 
+    Lidt mere generelt:
+    _($y=f^{-1}(x)_)
+    Hvis _(f^{-1}_) er den modsatte funktion til _(f_), kan vi omskrive dette til
+    _($x=f(y)_)
+    og lave samme refleksionstrick.
+    </p>
+    <p class="t">
+    Man kan også forstå det på anden måde: 
+    Hvis det ene punkt _(M_) er _((a, \, b)_), er 
+    det andet punkt _(N_) lig _((b, \, a)_). 
+    <i>Hvis</i> _(M_) er en reflekteret version af _(N_), 
+    er det reflekteret gennem et punkt, der ligger midt imellem _(N_) og _(M_).
+    Det punkt kan regnes som:
+    _($\left(\frac{a+b}{2}, \frac{b+a}{2} \right)_)
+    Så refleksionspunktet ligger altid et sted, hvor _(x_) og _(y_) er identiske.
+    Derfor ligner det, at vi reflekterer
+    gennem linjen _(y=x_). Bum! 
+    </p>
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{E}}_)#" tabColour="rgb(171,96,147)">
+    Du kan se processen her:
+    <video class='SpicBXL' style="width:90%;" controls>
+        <source src='../../../Assets/Chapter2\Section3\Graphs\Exercise5.mp4' type='video/mp4'>
+    </video>
+    <p class="t">
+    Du kan se et computergenereret resultat her:
+    </p>
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter2\Section3\Graphs\Exercise5.png'> 
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{F}}_)#" tabColour="rgb(175,128,161)">
+    Du kan se processen her:
+    <video class='SpicBXL' style="width:90%;" controls>
+        <source src='../../../Assets/Chapter2\Section3\Graphs\Exercise6.mp4' type='video/mp4'>
+    </video>
+    <p class="t">
+    Du kan se et computergenereret resultat her:
+    </p>
+    <img class='Spic' style='width:90%' src='../../../Assets/Chapter2\Section3\Graphs\Exercise6.png'> 
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{G}}_)#" tabColour="rgb(171,96,147)">
+    Du kan se processen her:
+    <video class='SpicBXL' style="width:90%;" controls>
+        <source src='../../../Assets/Chapter2\Section3\Graphs\Exercise7.mp4' type='video/mp4'>
+    </video>
+    <p class="t">
+    Du kan se et computergenereret resultat her:
+    </p>
+    <img class='Spic' style='width:95%' src='../../../Assets/Chapter2\Section3\Graphs\Exercise7.png'> 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <p class="t">
+    Vi definerede tidligere "domain" og "range": De værdier vi kan putte ind i funktionen, og 
+    de værdier funktionen kan tage. Det kan være rigtig praktisk at vide, da
+    det giver os et godt overblik over funktionens generelle natur og hvordan den ser ud. 
+    Det er lettest at forstå, hvis du arbejder lidt med det selv:
+    </p>
+
+    <q-stion 1="7" 2="2">
+    Find domain og range på de følgende funktioner. Du må gerne sige noget som f.eks. "Fra _(-\infty_) til _(\infty_)" hvis det er nødvendigt. 
+    <div style="margin-left:-68%; margin-top:25px; margin-bottom: -10px;">
+    _($\begin{eqnarray}
+        && \underline{\textbf{A}}: \, \, \, \, \, \, Sin(x) \\  \\
+        && \underline{\textbf{B}}: \, \, \, \, \, \, Tan(x) \\  \\
+        && \underline{\textbf{C}}: \, \, \, \, \, \, Tan(x)^2 \\  \\
+        && \underline{\textbf{D}}: \, \, \, \, \, \, x^2 \\  \\
+        && \underline{\textbf{E}}: \, \, \, \, \, \, \sqrt{x} \\  \\
+        && \underline{\textbf{F}}: \, \, \, \, \, \, e^x \\  \\
+        && \underline{\textbf{G}}: \, \, \, \, \, \, Ln(x) \\  \\
+        && \underline{\textbf{H}}: \, \, \, \, \, \, Arcsin(x) \\  \\
+        && \underline{\textbf{I}}: \, \, \, \, \, \, Arctan(x) \\  \\
+        && \underline{\textbf{J}}: \, \, \, \, \, \, Ln \left(Ln(x) \right) \\  \\
+        && \underline{\textbf{K}}: \, \, \, \, \, \, e^{Sin(x)} \\  \\
+        && \underline{\textbf{L}}: \, \, \, \, \, \, Sin(x)*Cos(x) \\  \\
+    \end{eqnarray}_)
+    </div>
+    <p class="t">
+    Ved _(Arcsin_) og _(Arctan_) skal du huske på, at en "funktion" kun må tage èn værdi ved hvert input. 
+    Det bliver vigtigt når du skal finde deres range.
+    De to opgaver er lidt tricky. 
+    </p>
+    <p class="t">
+    For at finde range på den sidste opgave med _(Sin(x)+Cos(x)_), 
+    får du brug for nogle af de egenskaber vi opdagede om trig-funktionerne i 
+    trigonometri-afsnittet. 
+    </p>
+    <br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    _(Sin(x)_) tager værdier fra _(-\infty_) til _(\infty_), så det er dens domæne. Det ville vi ofte skrive som:
+    _($[-\infty,\infty]_)
+    Eller nogen gange som
+    _($(-\infty,\infty)_)
+    Det er ikke super vigtigt hvordan du skriver det, så længe du kan kommunikere pointen klart og tydeligt. 
+    <p class="t">
+    _(Sin(x)_) er højest _(1_), og lavest _(-1_), så dens range er _([-1,1]_). 
+    </p>
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Vi ved, at 
+    _($Tan(x)=\frac{Sin(x)}{Cos(x)}_)
+    Når _(Cos(x)=0_) bliver _(Tan_) uendeligt stor. _(Tan_) kan både være
+    negativ og positiv når _(Cos(x)=0_), så range er _([-\infty,\infty]_). 
+    _(Tan_) accepterer alle værdier ligesom _(Cos_) og _(Sin_), <i>undtagens</i> dem hvor 
+    _(Cos(x)=0_). Man må jo ikke dividere med _(0_)!. _(Cos_) er både
+    _(0_) når _(x=\pi_), _(x=\pi+2\pi_), _(x=\pi+4\pi_) osv. Derfor er domænet:
+    <p class="t">
+    "_([-\infty,\infty]_) undtagens _(x=\pi+n*2\pi_), hvor _(n_) er et helt tal". 
+    </p>
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{C}}_)#" tabColour="rgb(171,96,147)">
+    _(Tan(x)^2_) har samme domæne som _(Tan_), men giver kun positive værdier, eftersom anden potens gør alting positivt.
+    Range er derfor _([0,\infty]_), og domæne "_([-\infty,\infty]_) undtagens _(x=\pi+n*2\pi_), hvor _(n_) er et helt tal". 
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{D}}_)#" tabColour="rgb(175,128,161)">
+    _(x^2_) bliver uendelig stor, men er aldrig negativ. Den accepterer alle x-værdier. 
+    Ergo: Dens domain er _([-\infty,\infty]_) og dens range _([0,\infty]_).
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{E}}_)#" tabColour="rgb(171,96,147)">
+    _(\sqrt{x}_) er kun positiv, og accepterer kun positive værdier. _(\sqrt{x}_) kan blive uendelig stor.
+    Det virker umiddelbart lidt uintuitivt, da den vokser så langsomt, men kan forstås på følgende vis:
+    Vi kan gøre _(\sqrt{x}_) så stor som <i>vi har lyst til</i>. Vi ved at der altid findes en _(x_) hvor 
+    _(\sqrt{x}_) er lig med en given _(A \gt 0_) vi har valgt, da 
+    _($\sqrt{x}=A \to x=A^2_)
+    Denne ligning kan <i>altid</i> løses, lige meget hvor stort vi gør _(A_). 
+    <p class="t">
+    Så både domænet og range er _([0, \infty]_).
+    </p>
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{F}}_)#" tabColour="rgb(175,128,161)">
+    _(e^x_) bliver aldrig negativ. Den accepterer alle værdier, og bliver uendelig stor. 
+    Domæne er derfor _([-\infty, \infty]_), og range er _([0, \infty]_). 
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{G}}_)#" tabColour="rgb(171,96,147)">
+    _(Ln_) tager ikke negative værdier. Den nærmer sig noget uendeligt negativt som _(x_) nærmer sig _(0_). 
+    Det er fordi vi forsøger at løse ligningen:
+    _($e^{A}=0.00000001_)
+    _(e_) skal altså opløses til et meget negativt tal for at blive så lille. 
+    Den vil aldrig blive <i>helt</i> _(0_), så 
+    vi siger at _(Ln_) er udefineret på _(0_). Den accepterer simpelt hen ikke værdier på _(0_),
+    og domænet er derfor _(0 \lt x \le \infty_). Det ville ofte skrives som _((0, \infty]_), hvor
+    parentesen indikerer, at _(0_) i sig selv ikke er en del af intervallet. 
+    <p class="t">
+    _(Ln_) vokser langsomt, men kan ligesom kvadratroden blive uendelig stor hvis det lyster. 
+    Den er uendelig negativ omkring _(x=0_), så range er _([-\infty, \infty]_). 
+    </p>
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{H}}_)#" tabColour="rgb(175,128,161)">
+    Hvis _(Arcsin(x)=y_), ved vi at:
+    _($Sin(y)=x_)
+    _(Sin(y)_) tager kun værdier mellem _(-1_) og _(1_), så _(x_),
+    så domænet af _(Arcsin_) er _([-1, 1]_). 
+    <p class="t">
+    Range er mere tricky. Domænet på _(Sin_) er _([-\infty, \infty]_), så det ville være et logisk 
+    range til _(Arcsin_). Men vi støder på et problem.
+    Sig at _(y_) ét sted er lig _(1.2_) og et andet lig _(1.2+2\pi_). I begge disse tilfælde gælder det at:
+    _($\begin{alignat}{2}
+    x &= Sin(1.2) &=\,& 0.93 \\  
+    x &= Sin(1.2+2\pi) &=\,& 0.93 
+    \end{alignat}_)
+    Så to forskellige _(y_)-værdier svarer til samme _(x_) værdi. Det er ikke tilladt på en funktion! Vi er nødt til at vælge 
+    en range hvor dette ikke er muligt. 
+    Vi siger derfor, at _(y_) er i _([-\pi/2,\pi/2]_), da _(Sin_) ikke har de samme værdier noget sted på dette interval. 
+    </p>
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{I}}_)#" tabColour="rgb(171,96,147)">
+    Hvis _(Arctan(x)=y_), ved vi at:
+    _($Tan(y)=x_)
+    Domænet bliver _([-\infty, \infty]_), da det er range på _(Tan_).
+    Range er vi igen nødt til at begrænse, så _(Tan_)
+    ikke gentager sig noget tidspunkt. 
+    Her vælger vi endnu en gang _([-\pi/2, \pi/2]_), eftersom
+    _(Tan_) ikke har samme værdi noget sted på dette interval. 
+    <p class="cent">*</p>
+    <p class="t">
+    Ved _(Arccos_) får man domain til _([-1,1]_) og range til _([0,\pi]_). 
+    Her vælger vi _([0,\pi]_) i stedet for 
+    _([-\pi/2,\pi/2]_) da _(Cos_) gentager sig på _([-\pi/2,\pi/2]_), men ikke _([0,\pi]_)
+    </p>
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{J}}_)#" tabColour="rgb(175,128,161)">
+    Vi ved at _(Ln_) har en range på _(-\infty_) til _(\infty_). 
+    _(Ln_) er _(0_) hvis _(x_) er lig _(1_), og negativ hvis _(x_) er under. 
+    Den yderste _(Ln_) i _(Ln(Ln(x))_) 
+    accepterer kun <i>positive</i> værdier, så domænet bliver _((1,\infty]_). 
+    Range bliver det samme som
+    på et _(Ln_): _([-\infty,\infty]_). 
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{K}}_)#" tabColour="rgb(171,96,147)">
+    Både _(e^x_) og _(Sin(x)_) accepterer alle værdier, så vores domain er tydeligvis _([-\infty,\infty]_). 
+    _(Sin(x)_) er kun på _([-1,1]_), så de henholdsvis mindste og laveste værdier på _(e^{Sin(x)}_) er
+    _(e^1=2.718_) og _(e^{-1}=0.367_). Range er derfor _([0.367,2.718]_). 
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{L}}_)#" tabColour="rgb(175,128,161)">
+    Domæne på denne er tydeligvis _([-\infty,\infty]_), men range er lidt tricky. Vi ved fra et tidligere afsnit at:
+    _($Sin(2x)=2 Sin(x) Cos(x)_)
+    Så vi kan omskrive vores funktion til:
+    _($\frac{Sin(2x)}{2}_)
+    Den er tydeligvis størst, når _(Sin(2x)=1_), hvor den tager værdien _(1/2_). 
+    Den er lavest når _(Sin(2x)=-1_), hvor den tager værdien _(-1/2_). 
+    Range er derfor _([-1/2,1/2]_). Bum!
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <p class="t">
+    Præcis ligesom vi kan plotte funktioner på et koordinatsystem, kan vi også plotte ligninger med to variabler. 
+    F.eks:
+    _($y*x=e^{x-y}+1_)
+    Det kan visualiseres som:
+    </p>
+    <img class='Spic' style='width:70%' src='../../../Assets/Chapter2\Section3\Graphs\PlotEquation1.png'> 
+    <p class="t">
+    Ideen er altså, at plotte alle de _((x,y)_)-værdier der tilfredsstiller ligningen. 
+    Så ligningen vil være sand, hvis du vælger et tilfældigt punkt på grafen, og 
+    indsætter dets _(x_)-koordinat ved _(x_) og _(y_)-koordinat ved _(y_). 
+    </p>
+    <p class="t">
+    Et andet eksempel kunne være:
+    _($e^{x-y}=5_)
+    Som ser ud som:
+    </p>
+    <img class='Spic' style='width:60%' src='../../../Assets/Chapter2\Section3\Graphs\PlotEquation2.png'> 
+    <p class="t">
+    Det ligner bare en simpel linje. Det giver god nok mening, siden vi kan omskrive den til:
+    _($Ln\left(e^{x-y} \right) = Ln(5) \to x-y=1.609 \to y=x-1.609_)
+    </p>
+

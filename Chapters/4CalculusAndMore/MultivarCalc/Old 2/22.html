@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+
+
+    <!-- GREENS THEOREM -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Du har følgende 4-sidede polygon:
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter4\MultiVarCalc\Vectorfields\PolygonRegion1.png'> 
+    <p class="t">
+    Vektor feltet er:
+    _($\vec F = \VeC[\frac{1}{3}x^2y,y^2x]_)
+    Find arbejdet rundt om denne polygon. 
+    </p>
+    <br><br></q-stion>
+    <answer-box>
+    Normalt ville vi være nødt til at regne fire integraler for at finde arbejdet rundt omkring denne polygon. 
+    Nu kan vi i stedet bare regne:
+    _($\int_R \int Curl(\vec F) \text{ }dA_)
+    Området _(R_) kan beskrives som: 
+    _($1 \lt x \lt 5, \qquad 0.25(x-1)+2 \lt y \lt 1(x-1)+4_)
+    _(Curl(\vec F)_) er lig:
+    _($y^2 - \frac{1}{3}x^2_)
+    Så vi skal regne følgende dobbelt-integral:
+    _($\int_{1}^{5} \int_{0.25x + 1.75}^{x+3} y^2 - \frac{1}{3}x^2 \text{ }dy \text{ }dx _)
+    Dette er relativt let, og giver _(242.11_)
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Dit område er den del af følgende ellipse hvor _(y \gt 0_):
+    _($\frac{x^2}{2^2} + \frac{y^2}{5^2} = 1_)
+    Din densitetsfunktion er:
+    _($f(x,y)=2x+2y_)
+    Find massen af området. 
+    <br><br></q-stion>
+    <answer-box>
+    Området inde i en ellipse kan hverken beskrives nemt med rektangulære <i>eller</i> polære koordinater. 
+    Men området <i>omkring</i> en ellipse kan nemt beskrives parametrisk:
+    _($\vec r(t) = \VeC[2Cos(t),5Sin(t)], \qquad t \in [0,2\pi]_)
+    Vi er kun interesseret i halvdelen:
+    _($\vec r(t) = \VeC[2Cos(t),5Sin(t)], \qquad t \in [0,\pi]_)
+    Derfor er det i dette tilfælde måske nemmere at regne dobbelt-integralet ved hjælp af 
+    faktisk at regne arbejdet rundt omkring. Green's Theorem siger:
+    _($\int_C \vec F*\vec r'(t) = \int_R \int Curl(\vec F) \text{ }dA_)
+    Vi skal finde et vektor felt _(\vec F_) hvis curl er lig _(f(x,y)=2x+2y_).
+    Der er ikke rigtig nogen bestemt struktureret proces der finder dette _(\vec F_) for os, og 
+    der er mange forskellige muligheder (flere _(\vec F_) der virker). Vi kan relativt 
+    let se at følgende vil virke:
+    _($\vec F = \VeC[-y^2,x^2]_)
+    Vi ved at 
+    _($\vec r'(t) = \VeC[-2Sin(t),5Cos(t)]_)
+    Så vi skal nu regne:
+    _($\int_{0}^{\pi} \VeC[-(5Sin(t))^2,(2Cos(t))^2]*\VeC[-2Sin(t),5Cos(t)] \text{ }dt _)
+    Hvilke man (relativt) let kan se giver _(66.67_). Det er altså vores svar. 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Du rejser den øvre halvdel (positiv _(y_)) af en cirkel med radius _(2_), centreret ved origo. Vektor-feltet er:
+    _($\vec F = \VeC[3y+5x^7,2 Arctan(y)+x^3]_)
+    Find arbejdet.
+    <br><br></q-stion>
+    <answer-box>
+    Denne vej vi rejser (en cirkel) kan egentlig meget nemt beskrives parametrisk. Integralet vil 
+    dog ikke blive nem, da vores specifikke vektor felt er ret grimt. Derfor 
+    kan det i dette tilfælde være praktisk at bruge Green's theorem, eftersom
+    _(Curl_) af vores vektor felt måske gør det lettere at arbejde med. Vi kan
+    se at:
+    _($\begin{eqnarray}
+    && Curl(\vec F) & = ¤x \left[Arctan(y)+x^2 \right] - ¤y \left[3y+5x^7] \\
+    && & = 3x^2 - 3 \\
+    \end{eqnarray}_)
+    Vores område _(R_) er en cirkel, så lad os også beskrive det parametrisk via
+    _(x=rCos(\theta)_), _(y=rSin(\theta)_). Vi skal nu regne følgende dobbelt-integral:
+    _($\int_{0}^{2} \int_{0}^{2\pi} 3r^2 Cos(\theta)^2 - 3 \text{ }d\theta \text{ }dr _)
+    Det er relativt nemt, og giver _(-12.57_). Det er så arbejdet. 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Du har følgende område: 
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter4\MultiVarCalc\Vectorfields\PolygonRegion2.png'> 
+    Og en densitetsfunktion der er lig:
+    _($f(x,y)=-Sin(x)-Cos(y)_)
+    Find massen. 
+    <br><br></q-stion>
+    <answer-box>
+    I den her er det ret subjektivt om du syntes det er bedst at gøre det med eller uden Green's Theorem.
+    Hvis man ikke nemt kan tegne ens polygon, så syntes jeg i hvert fald at Green's er bedre i dette tilfælde:
+    Vores polygon er ret mærkelig, så vi ville være nødt til at opdele den i tre dobbelt-integraler. 
+    Så virker mere direkte ligetil bare at slavisk regne arbejdet fra punkt til punkt. 
+    <p class="t">
+    Vi skal finde et felt _(\vec F_) hvis curl er lig _(f(x,y)=-Sin(x)-Cos(y)_). Det kan let
+    ses at følgende felt opfylder dette krav:
+    _($\VeC[Sin(y),Cos(x)]_)
+    De fire veje vi rejser er:
+    _($\begin{eqnarray}
+    && \VeC[1+t(4-1),1+t(14-1)] & t \in [0,1]
+    && \VeC[4+t(3-4),14+t(7-14)] & t \in [0,1]
+    && \VeC[3+t(5-3),7+t(8-7)] & t \in [0,1]
+    && \VeC[5+t(1-5),8+t(1-8)] & t \in [0,1]
+    \end{eqnarray}_)
+    Så vi skal regne de følgende fire integraler:
+    _($\begin{eqnarray}
+    && \int_{0}^{1} \VeC[Sin(1+t(14-1)),Cos(1+t(4-1))]*\VeC[4-1,14-1] \text{ }dt \\
+    && \int_{0}^{1} \VeC[Sin(14+t(7-14)),Cos(4+t(3-4))]*\VeC[3-4,7-14] \text{ }dt \\
+    && \int_{0}^{1} \VeC[Sin(7+t(8-7)),Cos(3+t(5-3))]*\VeC[5-3,8-7] \text{ }dt \\
+    && \int_{0}^{1} \VeC[Sin(8+t(1-8)),Cos(5+t(1-5))]*\VeC[1-5,1-8] \text{ }dt 
+    \end{eqnarray}_)
+    De er alle relativt lette, og de minder meget om hinanden. Hvis man 
+    havde en stor mængde punkter, og skulle regne dobbelt-integralet med en computer, så ville
+    denne strategi derfor nok være markant nemmere. Det er et let mønster man nemt ville 
+    kunne programmere, i modsætning til dobbelt-integralet hvor det slet ikke
+    er åbenlyst hvordan man skal opdele den. 
+    </p>
+    <p class="t">
+    I hvert fald så kan vi regne disse integraler og få:
+    _($-6.83+6.2+1.25+2.76=3.38_)
+    Som så er det endelige svar. 
+    </p>
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Se følgende område:
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter4\MultiVarCalc\Vectorfields\Spiral2.png'> 
+    <p class="t">
+    Find dets areal. 
+    </p>
+    <br><br></q-stion>
+    <answer-box>
+    Et areal svarer til et dobbelt-integral hvor densitetsfunktionen er lig _(1_). 
+    Derfor ville vi normalt kunne 
+    finde et areal som dette ved hjælp af et polart dobbelt-integral, hvor 
+    vi på en bestemt _(\theta_)-værdi sagde at _(r_) skulle gå fra èn værdi til en anden.
+    Det kan vi ikke rigtig her dog, da begge spiraler ikke er beskrevet som _(r=f(\theta)_), men 
+    _(r=f_1(t)_), _(\theta=f_2(t)_). Vi må derfor bruge en anden strategi.
+    <p class="t">
+    Green's theorem er nok en god ide i dette tilfælde, eftersom 
+    spiralerne relativt nemt kan beskrives parametrisk, hvilke betyder at vi 
+    også nemt burde kunne finde arbejdet.
+    </p>
+    <p class="t">
+    Vi skal finde et felt _(\vec F_) hvis curl er lig _(f(x,y)=1_). Det simpleste af disse ville nok være:
+    _($\VeC[0,x]_)
+    På begge spiraler går _(\theta_) to gange hele vejen rundt om cirklen. Derfor kan 
+    det siges at den ene spiral går fra _(t \in [0, 4\pi]_), og den anden
+    fra _(t \in [0, 4\pi/1.1] = \in [0, 11.42]_). 
+    </p>
+    <p class="t">
+    Første spiral svarer til
+    _($\vec r(t) = \VeC[tCos(t),tSin(t)], \qquad t \in [0, 4\pi]_)
+    Så her skal vi regne integralet:
+    _($\begin{eqnarray}
+    && \int_{0}^{4\pi} \VeC[0,tCos(t)]*\VeC[Cos(t) - tSin(t), Sin(t) + tCos(t)] \text{ }dt = \\
+    && \int_{0}^{4\pi} tCos(t)*(Sin(t) + tCos(t)) \text{ }dt = \\
+    && 330.73
+    \end{eqnarray}_)
+    En lige linje på x-aksen forbinder de 
+    to spiraler. Vores vektor felt har intet x-komponent, så det er kun <i>vinkelret</i> på 
+    denne linje, og gør derfor intet arbejde. 
+    </p>
+    <p class="t">
+    På den anden spiral skal vi ind mod midten igen. Arbejdet er derfor <i>negativt</i> på denne,
+    så vi skal gange det med _(-1_) til sidst. 
+    </p>
+    <p class="t">
+    Vejen på den anden spiral kan beskrives som:
+    _($\vec r(t) = \VeC[1.4t Cos(1.1t), 1.4t Sin(1.1t)]_)
+    Så vi skal regne:
+    _($\begin{eqnarray}
+    && -\int_{0}^{11.42} \VeC[0,1.4t Cos(1.1t)]*\VeC[1.4 Cos(1.1t) - 1.54 t Sin(1.1t), 1.4 Sin(1.1t) + 1.54 t Cos(1.1t)] \text{ }dt = \\
+    && -\int_{0}^{11.42} 1.4*t*cos(1.1t)*(1.4*sin(1.1t) + 1.54 t*cos(1.1t))  \text{ }dt = \\
+    && -534.62
+    \end{eqnarray}_)
+    Så det samlede areal er:
+    _($534.62-330.73 = 203.89_)
+    Vi burde faktisk have regnet den anden spiral først, eftersom 
+    arbejde <i>mod</i> urets retning tæller som positivt. Det er 
+    derfor vores negative del var større end den positive, selvom det ikke
+    giver trods at arealet selvfølgelig ikke er negativt. 
+    </p>
+    <br><br></answer-box>
+

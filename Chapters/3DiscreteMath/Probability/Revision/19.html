@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+
+
+    <q-stion 1="2" 2="1" 3="5">
+    Du slår med én _(6_)-sidet terning, din ven slår med to. Hvad er chancen for at
+    du får et større tal end ham (altså et større tal end den <i>sum</i> han får)?
+    <br><br></q-stion>
+    <answer-box>
+    Man ville tro at et spørgsmål der er så simpelt at stille også er simpelt at svare på, men
+    det er det ikke nødvendigvis her. _(2_) terninger kan have værdier fra _(2_) til _(12_). 
+    Hvis de her to terninger giver tal mellem _(6_) eller _(12_), så kan din terning umuligt være
+    større. Det er vel meget nemt. Men hvad hvis de er mellem _(2_) og _(5_)? 
+    Din terning er større når:
+    _($\begin{eqnarray} 
+        && \text{Ham: } 5, & \text{Dig: } 6 \\
+        && \text{Ham: } 4, & \text{Dig: } 5,6 \\
+        && \text{Ham: } 3, & \text{Dig: } 4,5,6 \\
+        && \text{Ham: } 2, & \text{Dig: } 3,4,5,6 
+    \end{eqnarray}_)
+    Man kan egentlig sige at det vi gør er relativt simpelt og meget direkte brute-force: 
+    Vi kigger på alle mulige kombinationer af hans kast og dine kast, 
+    og ser på <i>alle</i> de kombinationer hvor dit er højere. Vi kan så
+    gange hver af de her kombinationer med deres chance for at ske, lægge dem
+    alle sammen, og voila, vi har vores svar! Der er _(4/36_) chance for at han får _(5_),
+    _(3/36_) chance for han får _(4_), _(2/36_) ved _(3_) og _(1/36_) ved _(2_). Der 
+    er _(1/6_) chance for at du får både _(3,4,5_) og _(6_), så:
+    _($\frac{4}{36}*\frac{1}{6}*1+\frac{3}{36}*\frac{1}{6}*2+\frac{2}{36}*\frac{1}{6}*3+\frac{1}{36}*\frac{1}{6}*4 = 0.09259_)
+    Så en ret lille chance!
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5" customWidth="550">
+    I er to skateboardere der kæmper om at få flest points. Hver runde prøver i at lave et
+    trick. Du kan lave et trick der giver _(5_) points med _(60_)% chance (så du fejler _(40_)% af tiden).
+    Din ven kan lave et trick med _(9_) points og _(35_)% chance. Svar nu på følgende tre spørgsmål:
+    <p class="t">
+    <b> 1</b>: Hvem har størst chance for at vinde hvis i kun har _(1_) runde?
+    </p>
+    <p class="t">
+    <b> 2</b>: Hvem har størst chance for at vinde hvis i har _(4_) runder?
+    </p>
+    <p class="t">
+    <b> 3</b>: Hvem har størst chance for at vinde hvis har _(7_) runder?
+    </p>
+    <p class="t">
+    <b> 4</b>: Hvem har størst chance for at vinde hvis i har _(1000_) runder? Hvis du tillader
+    en smule approksimation så er den her markant simplere end de tidligere. 
+    </p>
+    <br></q-stion>
+    <answer-box t="Answer 1#" tabColour="rgb(171,96,147)" customWidth="550">
+    Du gør det samme du altid har gjort: Slavisk kigger på hver mulig kombination af
+    værdier på de stokastiske variabler, og finder chancen for at dinne værdier er højere end ham.
+    Det er ret let i det her tilfælde, da de stokastiske variabler kun har _(2_) værdier. 
+    Chancen for at du vinder, er chancen for at hans trick fejler, men dit ikke gør:
+    _($(1-0.35)*0.6 = 0.39_)
+    Du skal nu sammenligne, om chancen for at du vinder er større end chancen for at <i>han</i> vinder.
+    Du <i>kunne</i> godt direkte regne chancen for at han vandt ligesom du gjorde med dig selv,
+    men du kunne også bruge det faktum at:
+    _($P(\text{Han vinder}) = 1 - P(\text{Du vinder}) - P(\text{Lige})_)
+    Det er jo fordi du ved at der kun kan ske tre mulige ting lige meget hvad: Du vinder, i står lige,
+    han vinder. I hvert fald, så står i lige hvis i begge fejler, så:
+    _($1-0.39-(1-0.35)*(1-0.6) = 0.35_)
+    _(0.39_) er større end _(0.35_), så der er størst chance for at du vinder. 
+    <br><br></answer-box>
+    <answer-box t="Answer 2#" tabColour="rgb(175,128,161)" customWidth="550">
+    Det bliver lidt mere tricky når vi har _(4_) runder. Lad os sige at vi laver en stokastisk
+    variabel _(X_A_) der er lig "din samlede score efter _(4_) runder", og en stokastisk variabel
+    _(X_B_) lig "din vens samlede score efter _(4_) runder". De mulige værdier på din er
+    _(5*0,_) _(5*1_), _(5*2_), ... og lignende med din ven:
+    _($\begin{eqnarray} 
+        && X_A: & 0, & 5, & 10, & 15, & 20 \\
+        && X_B: & 0, & 9, & 18, & 27, & 36
+    \end{eqnarray}_)
+    At faktisk finde chancerne for de forskellige værdier på de to stokastiske variabler er
+    nemt, da det i dette tilfælde bare er lidt ligesom basketball: Enten 
+    gennemfører du eller fejler et trick, og der er ligeså stor chance hver gang (vi kalder
+    de her lignende "basketball"-agtige tilfælde for "bionomial distribution". Altså, situationer
+    hvor du har flere runder, og hver af dem enten er "ja" eller "nej", og hver runde
+    ikke har nogen indflydelse på hinanden: Præcis ligesom basketball). Så chancen for 
+    at du får f.eks. _(15_) points er bare _(\Vec[4,3]*0.6^3*(1-0.6)^{4-3}_). 
+    <p class="t">
+    I hvert fald, så er chancen for at du vinder lig:
+    _($\begin{eqnarray} 
+    && P(X_B = 0)*P(X_A \ge 5) & + \\
+    && P(X_B = 9)*P(X_A \ge 10) & + \\
+    && P(X_B = 18)*P(X_A \ge 20) \\
+    \end{eqnarray} _)
+    Det er altså alle de tilfælde hvor du vinder. Vi kan regne det her i Geogebra som:
+    _($\begin{eqnarray} 
+    && \text{nCr}(4,0)  *0.35^0*(1-0.35)^{4-0}*\text{Sum}(\text{nCr}(4,i)*0.6^i*(1-0.6)^{4-i}, i, 1, 4) & + \\
+    && \text{nCr}(4,1)  *0.35^1*(1-0.35)^{4-1}*\text{Sum}(\text{nCr}(4,i)*0.6^i*(1-0.6)^{4-i}, i, 2, 4) & + \\
+    && \text{nCr}(4,2)  *0.35^2*(1-0.35)^{4-2}*\text{Sum}(\text{nCr}(4,i)*0.6^i*(1-0.6)^{4-i}, i, 4, 4)
+    \end{eqnarray} _)
+    _($ = 0.53_)
+    Det her er over _(0.5_), så du ved at du vinder. 
+    </p>
+    <br></answer-box>
+    <answer-box t="Answer 3#" tabColour="rgb(171,96,147)" customWidth="550">
+    Vi gør præcis det samme igen: 
+    _($P(X_A \gt X_B) = _)
+    _($\begin{eqnarray} 
+    && P(X_B = 0)*P(X_A \ge 5) & + \\
+    && P(X_B = 9)*P(X_A \ge 10) & + \\
+    && P(X_B = 18)*P(X_A \ge 20) & + \\
+    && P(X_B = 27)*P(X_A \ge 30) &  \\
+    \end{eqnarray} = _)
+    _($\begin{eqnarray} 
+    && \text{nCr}(7,0)*0.35^0*(1-0.35)^{7-0}*Sum(\text{nCr}(7,i)*0.6^i*(1-0.6)^{7-i}, i, 1, 7) & + \\
+    && \text{nCr}(7,1)*0.35^1*(1-0.35)^{7-1}*Sum(\text{nCr}(7,i)*0.6^i*(1-0.6)^{7-i}, i, 2, 7) & + \\
+    && \text{nCr}(7,2)*0.35^2*(1-0.35)^{7-2}*Sum(\text{nCr}(7,i)*0.6^i*(1-0.6)^{7-i}, i, 4, 7) & + \\ 
+    && \text{nCr}(7,3)*0.35^3*(1-0.35)^{7-3}*Sum(\text{nCr}(7,i)*0.6^i*(1-0.6)^{7-i}, i, 6, 7) \\ 
+    \end{eqnarray} _)
+    _($ = 0.48_)
+    Det her er mindre end _(0.5_), så lad os tjekke chancen for at din ven vinder:
+    _($1 - 0.48 - (1-0.35)^7*(1-0.6)^7 = 0.52_)
+    Her siger vi altså _(1-P(\text{Du vinder}) - P(\text{Lige})_). 
+    Vi kan se at han har lidt større chance for at vinde end dig.
+    <br><br></answer-box>
+    <answer-box t="Answer 4#" tabColour="rgb(175,128,161)" customWidth="550">
+    Den her er meget nemmere end de andre <i>hvis</i> vi tillader os selv
+    at lave en lille approksimation. Tænk over det: Hvis der går _(4_) runder, så 
+    er der relativ lille chance for at du succesfuldt laver et trick i _(60_)% af dem,
+    altså _(4*0.6 = 2.4 \approx 2_) runder. Samme gælder din ven selvfølgelig. Hvis 
+    der går super mange runder dog, så vil dataen mere og mere begynde at passe til at
+    at du får lav et succesfuldt trick <i>omkring</i> _(60_)% af tiden, og lignende med din 
+    ven. Når der går så mange runder, så kan vi altså <i>med relativ sikkerhed</i> 
+    meget let approximere hvor mange points i får! Du får lavet et succesfuldt trick
+    i cirka _(1000*0.6 = _) _(600_) runder, hvilke giver dig _(600*5=_) _(3000_) points.
+    Din ven får lavet et trick _(1000*0.35 = _) _(350_) gange, hvilke giver ham
+    _(350*9 =_) _(3150_) points. Vi kan altså sige <i>med ret stor sikkerhed</i>, at
+    der er størst chance for at han vinder.
+    <p class="t">
+    Så lad os tænke over hvad der skete i denne opgave: Du startede med at vinde hvis der
+    var få runder, men din ven begyndte at vinde hvis der var _(7_) eller flere. Der her 
+    sidste check vi lavede svarede jo egentlig bare til at tjekke om _(0.6*5_) er større
+    eller lavere end _(0.35*9_), så hvis vi ved at der er "en god del runder", så er
+    det her en hurtig måde at vurdere hvem der har størst chance for at vinde. 
+    </p>
+    </answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5" customWidth="530">
+    Igen skateboarding. Det er nu lidt mere kompliceret (men denne opgave er relativ simpel, bare rolig):
+    _(20_)% af tiden får du _(0_) points, _(15_)% af tiden får du _(3_) points, _(20_)% _(7_) points, 
+    _(30_)% af tiden _(9_) points, og _(15_)% af tiden _(10_) points. Sig at du laver _(100_) runder.
+    <p class="t">
+    <b> 1</b>: Hvilket antal points vil du højest sandsynligt have flået flest gange i de _(100_) runder?
+    </p>
+    <p class="t">
+    <b> 2</b>: Ca. hvor mange points vil du have i alt efter _(100_) runder? 
+    </p>
+    <br></q-stion>
+    <answer-box t="Answer 1#" tabColour="rgb(171,96,147)" customWidth="530">
+    Super simpelt, _(9_) points, siden det er den med den største procent.
+    <br><br></answer-box>
+    <answer-box t="Answer 2#" tabColour="rgb(175,128,161)" customWidth="530">
+    _(15_)% af tiden får du _(3_) points, hvilke svarer til cirka _(100*0.15*3=_) _(45_) points, osv. Det kan vi gøre 
+    ved alle:
+    _($100*0.20*0+100*0.15*3+100*0.2*7+100*0.3*9+100*0.15*10 =_)
+    _($100*(0.20*0+0.15*3+0.2*7+0.3*9+0.15*10) =_)
+    _($100*6.05 = _)
+    _($605_)
+    <br></answer-box>
+
+
+
+
+

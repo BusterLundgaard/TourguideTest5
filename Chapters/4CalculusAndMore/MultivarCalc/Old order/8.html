@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+
+
+    <q-stion 1="2" 2="1" 3="5">
+    Prøv nu i stedet for at approximere volumen under, at approximere
+    <i>overfladsarealet</i> _(A_) over den lille firkant med sidelængde _(0.5_) ved _((-3.75,1.79)_) på 
+    _(Sin(x*Cos(y))+4_)
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter4\MultiVarCalc\SurfaceAreaApproximation.png'> 
+    <br><br></q-stion>
+    <answer-box>
+    Jeg viser den generelle, geometriske ide her:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter4\MultiVarCalc\CrossProductSurfaceArea.mp4' type='video/mp4'>
+    </video>
+    <p class="t">
+    Vi ved sidste opgave at _(f_x_) og _(f_y_) nær denne firkant er lig henholdsvis _(-0.15_) og _(2.51_). 
+    Vores sidelængde _(s_) er på _(0.5_), så vi kan se at arealet bliver:
+    _($ \approx s^2 \sqrt{f_x^2 + f_y^2 + 1} = 0.5^2 \sqrt{(-0.15)^2 + 2.51^2 + 1} = 0.676 _)
+    </p>
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <p class="t">
+    Vi kan bruge denne strategi til at beregne overfladearealet af en funktion _(f(x,y)_) helt præcist via et dobbelt-integral. Her forestiller
+    vi os at vi ikke længere har et kvadrat med sidelængde _(s_), men en rektangel hvis ene side langs _(x_) er _(dx_) lang, og hvis
+    anden side langs _(y_) er _(dy_) lang. De to vektorer _(\vec a_) og _(\vec b_) bliver altså til:
+    _($ dx \VeC[1,0,f_x], \qquad dy \VeC[0,1,f_y]_)
+    Og så kan vi nemt se at længden af deres krydsprodukt bliver:
+    _($dx dy \sqrt{f_x^2 + f_y^2 + 1}_)
+    Så overfladsarealet af _(f(x,y)_) på området _(x \in [a,b]_), _(y \in [c,d]_) er lig:
+    _($\int_{a}^b \int_{c}^{d} \sqrt{1+f_x^2+f_y^2} \text{ }dy \text{ }dx _)
+    Det er ret interessant at se hvor meget dette minder om <i>overfladelængden</i> af en 2D kurve 
+    _(f(x)_) på _(x \in [a,b]_), hvis længde kunne regnes som:  
+    _($\int_{a}^b \sqrt{1+f'(x)^2} \text{ }dx_)
+    I de flest tilfælde vil det være for svært at finde dobbelt-integralet af _(\sqrt{f_x(x,y)^2 + f_y(x,y)^2 + 1}_)
+    eftersom hældningerne _(f_x_), _(f_y_) ikke længere er konstanter, men funktioner, men i nogle få tilfælde er det muligt:
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Find overfladearealet af _(f(x,y)=x^2+y_) på området _(x \in [2,3.5]_), _(y \in [4,6]_). 
+    Prøv at se om du kan gøre dette <i>uden</i> at Geogebra løser integralerne.  
+    <br><br></q-stion>
+    <answer-box>
+    Du kan se mit svar her:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter4\MultiVarCalc\SurfaceIntegral1.mp4' type='video/mp4'>
+    </video>
+    Vi skulle altså evaluere:
+    _($Sec(u) Tan(u) + Ln(Sec(u) + Tan(u)) _)
+    fra _(1.23_) til _(1.37_). Hvis man gør det med en lommeregner får man _(16.731_).
+    Det er altså svaret. 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Find overfladearealet af _(f(x,y)=x*y_) på området _(x \in [-2, 1]_), _(y \in [3,4]_).
+    Du må gerne bruge Geogebra så meget som du har lyst til i denne her. 
+    <br><br></q-stion>
+    <answer-box>
+    _($f_x=y_), _(f_y=x_), så dobbelt-integralet er:
+    _($\int_{-2}^{1} \int_{3}^{4} \sqrt{x^2 + y^2 + 1} _)
+    Vi regner det her med Geogebra via følgende kommando:
+    _($\text{Integral(Integral(sqrt(x^2+y^2+1), y, 3, 4),x,-2,1)}_)
+    Og får _(11.321_). 
+    <br><br></answer-box>
+
+    <p class="t">
+    Der er andre måder at beskrive en overflade på end _(z_) som funktion af _(x_) og _(y_). Eksempelvis så kan en torus
+    </p>
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter4\MultiVarCalc\Torus.png'> 
+    <p class="t">
+    Beskrives som:
+    _($\VeC[x,y,z] = \vec r = \VeC[(R_1 + R_2 Cos(\theta))*Cos(\phi), (R_1 + R_2 Cos(\theta))*Sin(\phi), r*sin(\theta)]_)
+    I følgende video beskriver jeg ideen bag hvordan vi finder overfladearealet på den:
+    </p>
+
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter4\MultiVarCalc\ParametricSurfaceIntegral.mp4' type='video/mp4'>
+    </video>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Find en formel for arealet af torus med radiuser _(R_1_) og _(R_2_). 
+    Dette er en relativ lang opgave, og der kommer til at være nogle relativt lange
+    udtryk også. Jeg lover dig dog at det i slutningen begynder at simplificere
+    sig selv, og blive meget dejligt. 
+    <br><br></q-stion>
+    <answer-box>
+    Første del viser jeg lige i en video:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter4\MultiVarCalc\TorusSurfaceIntegral.mp4' type='video/mp4'>
+    </video>
+    <p class="t">
+    Vi skal altså regne dobbelt-integralet:
+    _($\int_{0}^{2\pi} \int_{0}^{2\pi} |\vec r_{\phi}(\phi, \theta) \times \vec r_{\theta}(\phi, \theta)| d\theta d\phi_)
+    Lad os først af alt finde _(\vec r_{\phi}(\phi, \theta)_) og _(\vec r_{\theta}(\phi, \theta)_). Så:
+    _($\begin{eqnarray} 
+    && \vec r_{\phi}(\phi, \theta) & = 
+    \begin{pmatrix} 
+    \frac{d}{d\phi}\left[(R_1 + R_2 Cos(\theta))*Cos(\phi)\right] \\ 
+    \frac{d}{d\phi}\left[(R_1 + R_2 Cos(\theta))*Sin(\phi)\right] \\
+    \frac{d}{d\phi}\left[r*Sin(\theta)\right] \\
+    \end{pmatrix}
+    \\ \\
+    && & = \VeC[(-R_1+R_2 Cos(\theta)) Sin(\phi), (-R_1+R_2 Cos(\theta)) Cos(\phi), 0]
+    \end{eqnarray}_)
+    Og:
+    _($\vec r_{\theta}(\phi, \theta) = \VeC[-R_2 Sin(\theta) Cos(\phi), -R_2 Sin(\theta) Sin(\phi), r*Cos(\theta)]_)
+    Vi tager nu krydsproduktet. Formlen for krydsproduktet er:
+    _($\vec a \times \vec b = \VeC[a_2 b_3 - a_3 b_2, a_3 b_1 - a_1 b_3, a_1 b_2 - a_2 b_1] _)
+    Hvis vi kalder _(\vec r_{\phi}(\phi, \theta)_) for _(\vec b_) og
+    _(\vec r_{\theta}(\phi, \theta)_) for _(\vec a_), så ved vi at 
+    _(a_2*b_3_) og _(a_1*b_3_) forsvinder eftersom _(b_3=0_). 
+    Det kan nu let ses at:
+    _($\begin{eqnarray} 
+    && a_2 b_3 - a_3 b_2 & = -R_2 Cos(\theta) (R_1 + R_2 Cos(\theta)) Cos(\phi) \\
+    && a_3 b_1 - a_1 b_3 & = -R_2 Cos(\theta) (R_1 + R_2 Cos(\theta)) Sin(\phi)
+    \end{eqnarray}_)
+    Det er også værd at sige at _(a_1 b_2_) og _(a_2 b_1_) minder meget om hinanden, hvilke gør
+    at gør at _(a_1 b_2 - a_2 b_1_) kan forsimples. Det kan ses at:
+    _($\begin{eqnarray} 
+    && a_1 b_2 & = -& R_2 Sin(\theta) (R_1 + R_2 Cos(\theta))*Cos(\phi)^2 \\
+    && a_2 b_1 & =  & R_2 Sin(\theta) (R_1 + R_2 Cos(\theta))*Sin(\phi)^2 \\
+    \end{eqnarray}_)
+    Så:
+    _($\begin{eqnarray} 
+    && a_1 b_2 - a_2 b_1 & = -R_2 Sin(\theta) (R_1 + R_2 Cos(\theta))*(Cos(\phi)^2 + Sin(\phi)^2)  \\
+    &&                   & = -R_2 Sin(\theta) (R_1 + R_2 Cos(\theta))
+    \end{eqnarray}_)
+    Krydsproduktet bliver altså til:
+    _($\VeC[-R_2 Cos(\theta) (R_1 + R_2 Cos(\theta)) Cos(\phi), -R_2 Cos(\theta) (R_1 + R_2 Cos(\theta)) Sin(\phi), -R_2*Sin(\theta)*(R_1 + R_2 Cos(\theta))] = _)
+    _($-R_2 Cos(\theta) (R_1 + R_2 Cos(\theta))*\VeC[Cos(\phi),Sin(\phi),Tan(\theta)]_)
+    Det er ret nemt at finde magnituden af, da selve vektorne er relativ simpel:
+    _($\left|\VeC[Cos(\phi),Sin(\phi),Tan(\theta)] \right| = \sqrt{Cos(\phi)^2 + Sin(\phi)^2 + Tan(\theta)^2} = _)
+    _($\sqrt{1+Tan(\theta)^2} = Sec(\theta)_)
+    Så magnituden er:
+    _($R_2 Cos(\theta) (R_1 + R_2 Cos(\theta))*Sec(\theta) = R_2*(R_1 + R_2 Cos(\theta))_)
+    Fantastisk! Vi skal nu regne dobbelt-integralet: 
+    _($\int_{0}^{2\pi} \int_{0}^{2\pi} R_2*(R_1 + R_2 Cos(\theta)) d\phi d\theta =_)
+    _($ 2\pi R_2 \int_{0}^{2\pi} R_1 + R_2 Cos(\theta) d\theta = _)
+    _($4 \pi^2 R r_)
+    Boom! I alt ærlighed så er hele denne lange udledning komplet pointløs da vi i et tidligere afsnit fandt
+    en langt nemmere og langt mere intuitiv måde at regne det på, men shhh. Stadig godt at vide. 
+    </p>
+    <br><br></answer-box>
+
+    <p class="t">
+    At regne overfladearealet på en funktion _(f(x,y)_) er et eksempel på et mere 
+    generelt koncept kaldt <i>overfladeintegraler</i>. Sig at du har en eller anden flade i rummet kaldt _(U_):
+    </p>
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter4\MultivarCalc\Vectorfields\SurfaceIntegralExample.png'> 
+    <p class="t">
+    Den her flade <i>kunne</i> være defineret af en funktion _(f(x,y)_), og så et interval til _(x_) og _(y_), men den kunne også
+    være defineret på alle mulige andre måder. Det kunne eksempelvis også være en cirkel. 
+    Pointen er bare at det er <i>en 3D flade</i>
+    </p>
+    <p class="t">
+    Sig yderligere at du har en densitetsfunktion _(\rho(x,y,z)_) (hvor vi som altid med "densitet" også kan hentyde til 
+    andre ting end nødvendigvis bare vægt). Her er _(\rho_) defineret som forholdet mellem et <i>areal</i> på fladen, og "masse", så 
+    for at finde massen på et lille areal _(dA_) ved punket _((x,y,z)_) skal du sige:
+    _($\rho(x,y,z)*dA_)
+    Vi definerer derfor følgende:
+    </p>
+
+    <div class="Definition">
+    <b> Definition: Overfladeintegral</b> <br>
+    Overfladeintegralet af densitetsfunktionen _(\rho(x,y,z)_) på en 3D flade _(U_) defineres som følgende dobbelt-integral: 
+    _($\int_{U} \int \rho(x,y,z) dA_)
+    </div>
+
+    <p class="t">
+    Vi er ikke mere specifikke end bare "_(U_)" ved integralets grænser, da vi ikke nødvendigvis
+    altid kan sige at det bare er _(x_) og _(y_) i et bestemt interval. Det er f.eks. ikke tilfældet 
+    ved torusen. Vi skriver også bare "_(dA_)" i stedet for _(dx*dy*\sqrt{1+f_x^2+f_y^2}_), da 
+    vi jo også som ved f.eks torusen kunne beslutte os for at bruge en anden parameterisering end _(x_) og _(y_)
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Sig at _(U_) er den del af torusen med _(R_1=3_), _(R_2=2_) centreret på _((0,0,0)_) hvor 
+    _($0 \lt x \lt y, \qquad z \gt 0_) 
+    Regn nu følgende overfladeintegral:
+    _($\int_U \int \frac{x*z}{y} \text{ }dA_)
+    <br><br></q-stion>
+    <answer-box>
+    Hvis vi bruger følgende parameterisering:
+    _($\VeC[x,y,z] = \VeC[(3 + 2 Cos(\theta))*Cos(\phi),(3 + 2 Cos(\theta))*Sin(\phi),2*Sin(\theta)]_)
+    Så kan _(U_) beskrives som det område hvor _(\theta \in [0, \pi]_), _(\phi \in [\pi/4, \pi/2]_). Det 
+    kan også ses (med alt den arbejde vi lavede i sidste opgave) at _(dA_) kan regnes som:
+    _($dA = 2*\left(3+2*Cos(\theta)\right)_)
+    Densitetsfunktionen er:
+    _($\rho(x,y,z)=\frac{z}{x+y} = \frac{2 Sin(\theta)}{(3 + 2 Cos(\theta))*(Cos(\phi)+Sin(\phi))}_) 
+    Alt i alt skal vi derfor regne følgende dobbelt-integral:
+    _($\begin{eqnarray}
+    && \int_{0}^{\pi} \int_{-\pi/4}^{\pi/4} \frac{(3+2Cos(\theta))Cos(\phi)*2 Sin(\theta)}{(3+2Cos(\theta))Sin(\phi)}*2*\left(3+2*Cos(\theta)\right) \text{ }d\phi \text{ }d\theta = \\
+    && \int_{0}^{\pi} \int_{-\pi/4}^{\pi/4} 4Sin(\theta)(3+2Cos(\theta))*\frac{Cos(\phi)}{Sin(\phi)} \text{ }d\phi \text{ }d\theta = \\
+    && \int_{0}^{\pi} 4Sin(\theta)(3+2Cos(\theta))*\left(Ln(Sin(\pi/2)) - Ln(Sin(\pi/4)) \right) \text{ }d\theta = \\
+    && 0.3465 \int_{0}^{\pi} 4Sin(\theta)(3+2Cos(\theta)) \text{ }d\theta = \\
+    && 0.3465 \int_{0}^{\pi} 4Sin(\theta)(3+2Cos(\theta)) \text{ }d\theta = \\
+    && 0.3465*24 =  \\
+    && 8.315
+    \end{eqnarray}_)
+    Bum! 
+    <br><br></answer-box>
+

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+
+
+    <!--20.1 -->  
+    <h1 class="header">Afsnit 2:</h1>
+    <h1 class="title">Fra uendelig småt til uendelig stort</h1>
+    <p class="t">
+    <i> Husk: Du må godt bruge Geogebra generelt her i bogen, nu da vi er længere inde. Bare følg de
+        guidelines jeg beskrev i Geogebra-kapitlet.  
+    </i>
+    </p>
+
+    <p class="t">
+    Lad os lige lave et hurtigt flashback, til da vi først lærte om differentiering og hældningen af funktioner: 
+    </p>
+
+    <p class="t" style="color: grey; margin-left: 5%;">
+    <span style="font-size: 2em; color:black;"> <i> " </i> </span>
+    Hældningen er derfor lig _(8+k_), hvis hældningen er _(k_) væk. 
+    <i>Så</i> ... hvis punktet var <i>uendelig</i> tæt på, ville _(k_) være lig _(0_)
+    og hældningen lig
+    _($8+0=8_)
+    ... eller? Svaret <i>er</i> faktisk ja, men det bliver hurtig til en ... <i>filosofisk</i> debat
+    Vi gør noget, der ikke rigtig giver særlig meget mening, når man tænker over det:
+    Vi finder hældningen på to punkter, der er "uendelig" tæt på hinanden. Svarer
+    det ikke til at finde hældningen på et punkt "gennem sig selv"? Og hvordan
+    er det overhovedet tilladt at sætte _(k_) til _(0_), fordi 
+    _($\frac{(4+0)^2-4^2}{0}_)
+    ... så dividerer vi med _(0_)? Det bryder vel den vigtigste mest hellige 
+    matematiske lov i universet? For at svare på disse mærkværdige spørgsmål får vi brug 
+    for en ny ide kaldt <i>grænser</i>, men den vil vi <i>ikke</i> gennemgå i dette afsnit.
+    <span style="font-size: 2em; color:black;"> <i> " </i> </span>
+    </p>
+
+    <p class="t">
+    Men vi <i>vil</i> gennemgå det i <i>dette</i> afsnit! Yee-haw! 
+    </p>
+
+    <p class="t">
+    Ideen bag differentiering var, at vi gik en lille mikroskopisk mængde
+    _(k_) fremad på _(x_). Vi fandt så hældningen mellem punktet ved
+    _(x_) på _(f(x)_) og punktet ved _(x+k_) på _(f(x)_). Det gav:
+    _($ \frac{dy}{dx}[f(x)] = \frac{f(x+k)-f(x)}{k} _)
+    Men problemet er, at vi <i>ikke</i> må dividere med _(0_). Det kan man simpelthen ikke!
+    Det virkede fint at "forestillede sig" _(k_) ikke var _(0_) i starten, 
+    men vi har ingen ide om, hvorvidt
+    det faktisk er et matematisk validt argument. 
+    Vi kan ikke lade som om, at _(k_) er _(0_), men samtidig ikke _(0_).
+    Vi har brug for - på en eller anden måde - at lave en _(k_), 
+    der er så lille som overhovedet mulig, men aldrig <i>direkte</i> _(0_).
+    Det vi har brug for, er <i>grænser</i>.
+    </p>
+
+    <p class="t">
+    Det her afsnit handler om denne matematiske ide kaldt "grænser". 
+    Jeg har ikke tænkt mig, at sige præcis hvad det er <i>lige nu</i>, men 
+    overordnet handler det om at gå <i>ekstrem tæt på noget</i>.
+    Det kan hjælpe os med at løse en helt masse mærkelige, 
+    tilsyneladende umulige matematiske problemer. 
+    Det er især en essentiel ide, hvis vi på nogen måde arbejder med uendeligheder. 
+    Lad os se på nogle af disse problemer. 
+    </p>
+
+    <p class="t">
+    Sig at vi har:
+    _($\frac{Sin(x)}{x}_)
+    _(Sin(x)_) nærmer sig _(0_) når _(x_) nærmer sig _(0_). 
+    Så både tæller og nævner rejser tættere og tættere ind mod _(0_). 
+    Vi kan ikke regne hvad værdien er ved _(x=0_) præcist, fordi det giver
+    _($\frac{Sin(0)}{0} = \frac{0}{0}_)
+    ... hvilket ikke giver nogen mening. 
+    Det er en tricky situation at forstå intuitivt:
+    Vi dividerer med en nævner, der nærmer sig _(0_), hvilket gør udtrykket meget stort.
+    Men tælleren nærmer sig også _(0_), hvilket gør udtrykket meget lille. 
+    Nærmer vi os så _(0_), uendelighed, eller noget mit imellem? 
+    </p>
+    <p class="t">
+    For at få en ide kunne vi forsøge at gå <i>meget tæt</i> på _(x=0_), f.eks. _(x=0.0001_):
+    _($\frac{Sin(0.0001)}{0.0001} = 0.99999_)  
+    Det ligner umiddelbart, vi nærmer os _(1_). 
+    Grænser er meget nyttige i sådan en situation. 
+    For det første kan de bevise, at hvis _(x_) er så
+    tæt på _(0_) <i>som overhovedet muligt</i>, får vi <i>præcis</i> _(1_). 
+    For det andet kan de hjælpe os med 
+    at <i>forstå</i> en situation som denne: 
+    Havde du nogen ide om, at _(Sin(x)/x_) ville nærme sig _(1_), når _(x_) kom tæt på _(0_)?
+    Kunne du gætte det uden at regne udtrykket _(Sin(0.0001)/0.0001_) med en computer? 
+    Det kan du med grænser. 
+    </p>
+
+    <p class="t">
+    Et andet eksempel kunne være udtrykket:
+    _($x^{1/x}_)
+    Sig her, at _(x_) nærmer sig <i>uendelig</i> - hvad end det nu betyder;
+    _(x_) bliver "så stor som overhovedet muligt".
+    Skæbnen på _(x^{1/x}_) er uintuitiv, da 
+    _(x_) bliver meget stort, mens den dæmpende effekt
+    af _(1/x_) stiger. 
+    "Hvem vinder"? Væksten af _(x_), eller "anti-væksten" af potensen? Nærmer _(x^{1/x}_) sig 
+    uendelig, _(1_), eller noget imellem?
+    Grænser kan både hjælpe os med at præcisere
+    betydningen af "_(x_) nærmer sig uendelig", og 
+    vise os relativt let med fuld matematisk korrekthed
+    at _(x^{1/x}_) nærmer sig _(1_). 
+    </p>
+
+    <p class="t">
+    Jeg har gennem bogen lavet flere argumenter, hvor jeg intuitivt og løst brugte
+    uendelighed. 
+    Tag f.eks. arealet af en cirkel:
+    </p>
+    <img class='Spic' style='width:60%' src='../../../Assets/Chapter2\Section1\Circles\Subdiv2.png'> 
+    <p class="t">
+    Jeg opdelte arealet i "uendelig" mange trekanter som vist på billedet:
+    </p>
+    <img class='SpicXL' style='width:80%' src='../../../Assets/Chapter2\Section1\Circles\Archimedes.png'> 
+    <p class="t">
+    Det samlede areal af trekanterne var
+    _($\frac{1}{2}*n*L*d_)
+    ... og herfra argumenterede jeg, at 
+    _(n*L_) nærmede sig omkredsen af cirklen _(2\pi*r_), mens 
+    _(d_) nærmede sig _(r_), hvis antallet af trekanter _(n_)
+    steg til uendelighed. 
+    Arealet ville derfor blive til:
+    _($\frac{1}{2}*2\pi r*r = \pi r^2_)
+    Der er også en del ting, man kan blive i tvivl om her. 
+    Især _(n*L_), der bliver til _(2\pi r_) er usikkert, 
+    eftersom _(n_) bliver uendelig stor, og _(L_) uendelig lille. 
+    Vi har en "uendelig gange _(0_)"-situation, og dem 
+    kan grænser snildt håndtere. 
+    </p>
+    <p class="t">
+    I alt realiteten er arealet af en cirkel nok lettest at udlede
+    med en integral,
+    men hele ideen bag
+    integraler er, at vi tager en "uendelig sum" af rektangler. 
+    Hvordan kan vi forstå en <i>uendelig</i> sum? Hvordan er summen af
+    uendelig mange positive led ikke uendelig? 
+    Vi havde O.K belæg for, at den uendelige sum var lig 
+    forskellen i funktionens "integral", men 
+    igen brugte vi uendelighed løst uden nogen faste regler eller 
+    definitioner.
+    </p>
+  
+    <p class="t">
+    Der er mange interessante spørgsmål hvad angår "uendelige summe". 
+    Sig f.eks.
+    at en person, der bevæger sig med konstant hastighed, skal gå fra _(A_) til <br> _(B_):
+    </p>
+
+    <img class='Spic' style='width:60%' src='../../../Assets/Chapter4\Limits\ZerosParadox.png'> 
+
+    <p class="t">
+    Sig at det tog personen _(1s_) at gå <i>halvvejs</i> fra _(A_) til _(B_). 
+    Kald personens position lige nu for _(C_1_). 
+    </p>
+    <p class="t">
+    Afstanden fra _(C_1_) til _(B_) er dobbelt så lille som fra _(A_) til _(B_), 
+    så det vil tage personen
+    dobbelt så kort tid at gå halvvejs fra _(C_1_) til _(B_), altså _(1/2 s_). 
+    Kald den nye position _(C_2_). 
+    </p>
+    <p class="t">
+    Vejen
+    fra _(C_2_) til _(B_) er halvt så kort som fra _(C_1_) til _(B_), så det tager _((1/2)/2=1/4 s_) at gå 
+    halvvejs fra _(C_2_) til _(B_). Kald den nye position _(C_3_).
+    </p>
+    <p class="t">
+    Kald den næste _(C_4_), _(C_5_) osv. 
+    Turen fra _(C_3_) til _(C_4_) vil tage _(1/8 s_), fra _(C_4_) til _(C_5_) _(1/16s_) osv. Ideen er illustreret her:
+    </p>
+
+    <img class='Spic' style='width:60%' src='../../../Assets/Chapter4\Limits\ZerosParadox2.png'> 
+
+    <p class="t">
+    Personen kommer tættere og tættere på _(A_), 
+    men det virker lidt som om, de aldrig kommer <i>helt</i> derhen.
+    Det er fascinerende, fordi uden at bryde nogen fysiske eller logiske
+    love får vi et resultat, der slet ikke hænger sammen med virkeligheden. 
+    Dette tankeeksperiment kaldes "Zenos paradoks", og kan relativt
+    let "løses" og forstås med grænser. 
+    Den uendelige sum kommer fra at løsningen involverer at summere: 
+    Det svarer jo til en uendelig sum:
+    _($\frac{1}{1} + \frac{1}{2} + \frac{1}{4} + \frac{1}{8} + \text{ } ... \text{ } = \sum_{i=1}^\infty \frac{1}{2^i} _)
+    Grænser kan bevise at denne sum er "lig" _(2_).
+    </p>
+
+    <p class="t">
+    Jeg håber den her side har illustreret, hvorfor grænser kan hjælpe os i mange situationer. 
+    Lad os nu endelig
+    se på, hvad grænser faktisk er. 
+    </p>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

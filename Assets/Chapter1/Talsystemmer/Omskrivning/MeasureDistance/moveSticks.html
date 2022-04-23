@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div style="position: relative;">
+        <canvas id="ruler" width="700" height="596" style="position: absolute; left: 0; top: 0; z-index: 3;"></canvas>
+        <canvas id="removeStoneButton" width="700" height="596" style="position: absolute; left: 0; top: 0; z-index: 2;"></canvas>
+        <canvas id="createStone" width="700" height="596" style="position: absolute; left: 0; top: 0; z-index: 2;"></canvas>
+        <canvas id="stones" width="700" height="596" style="position: absolute; left: 0; top: 0; z-index: 1;"></canvas>
+        <canvas id="background" width="700" height="596" style="position: absolute; left: 0; top: 0; z-index: 0;"></canvas>
+    </div>
+
+    <script>
+
+        // Useful info about click and mouse events: https://stackoverflow.com/questions/47737404/detecting-left-and-right-mouse-events-for-a-canvas-game
+        
+        //Set up background:
+        var bCan = document.getElementById("background"); var bCtx = bCan.getContext("2d");
+        var backgroundImg = document.createElement("img"); backgroundImg.src="background.png";
+        backgroundImg.onload = function() {
+            bCtx.drawImage(backgroundImg,0,0);
+        }
+
+            //Set up create-stone layer:
+            var sCan = document.getElementById("stones"); var sCtx = sCan.getContext("2d");
+
+        //Set up button-layer:
+        var buttonCan = document.getElementById("removeStoneButton"); var buttonCtx = buttonCan.getContext("2d");
+
+        //Set up ruler:
+            //Create the canvas and image:
+        var rCan = document.getElementById("ruler"); var rCtx = rCan.getContext("2d");
+        var rulerImg = document.createElement("img"); rulerImg.src="stick.png"
+        var firstLoad = true;
+        rulerImg.onload = function() {
+            if(firstLoad) {
+                setTransform(200,200,0)
+                rCtx.drawImage(rulerImg,0,0);
+                firstLoad = false;
+            }
+            else{
+                setTransform(stickX,stickY,rR);
+                rCtx.drawImage(rulerImg,0,0);
+            }
+        }
+
+        //Handle movement with variables and functions:
+        var rX = 0; var rY = 0;
+        var stickX = 0; var stickY = 0; 
+        var rR = 0;
+
+        var setTransform = function(xPos,yPos,rot) {
+            
+            //Save coordinates of the stick, so that they can be used for other purposes (not stricly neccesary)
+            stickX = xPos; 
+            stickY = yPos; 
+
+            //Translate canvas back to start:
+            rCtx.translate(-rX,-rY);
+            rCtx.rotate(-rR);
+
+            //Clear picture:
+            rCtx.clearRect(0,0,1000,1000);
+
+            //Give canvas new translation:
+            rR=rot;
+            rCtx.rotate(rR);
+
+                //Make sure the stick will be in the middle of the mouse (not neccesary for a general movement system, only this case)
+            var fakeX = xPos-76*Math.cos(rot)+76*Math.sin(rot);
+            var fakeY = yPos-76*Math.sin(rot)-76*Math.cos(rot);
+            rX = fakeX*Math.cos(rR)+fakeY*Math.sin(rR); 
+            rY = -fakeX*Math.sin(rR)+fakeY*Math.cos(rR); 
+            rCtx.translate(rX,rY);
+
+            //Draw new picture:
+            rCtx.drawImage(rulerImg,0,0)
+        }            
+    
+        // Stick movement:
+        var radiusToStick = 0;
+        var pradiusToStick = 0; 
+
+        var isMovingStick = false;
+        var isRotatingStick = false;
+
+        rCan.addEventListener("mousemove",function(e) {
+            
+            if(isMovingStick) {
+                setTransform(cursorX,cursorY,rR);
+            }
+            else if(isRotatingStick) {
+                setTransform(stickX,stickY,Math.atan2(cursorY-stickY,cursorX-stickX));
+            }
+            else {
+                //Change pictures:
+                radiusToStick = Math.sqrt((cursorX - stickX)*(cursorX - stickX) + (cursorY - stickY)*(cursorY - stickY));
+                if(radiusToStick < 53.13 && pradiusToStick > 53.13) {
+                    rulerImg.src="stickMove1.png"
+                }
+                else if((radiusToStick > 53.13 && radiusToStick < 106.26) && (pradiusToStick < 53.13 || pradiusToStick > 106.26)) {
+                    rulerImg.src="stickRotate1.png"
+                }
+                else if(radiusToStick > 106.26 && pradiusToStick < 106.26) {
+                    rulerImg.src="stick.png"
+                }
+            }
+
+            pradiusToStick = radiusToStick;
+
+        })
+
+        rCan.addEventListener("mousedown",function(e) {
+
+            if(e.button==0) {
+                radiusToStick = Math.sqrt((cursorX - stickX)*(cursorX - stickX) + (cursorY - stickY)*(cursorY - stickY));
+            
+                if(radiusToStick < 53.13) {
+                    isMovingStick = true;
+                    rulerImg.src="stickMove2.png"
+                }
+                else if(radiusToStick > 53.13 && radiusToStick < 106.26) {
+                    isRotatingStick = true;
+                    rulerImg.src="stickRotate2.png"
+                }
+            }
+
+        })
+
+        rCan.addEventListener("mouseup", function() {
+            if(isMovingStick) {
+                isMovingStick=false;
+                rulerImg.src="stick.png"
+            }
+            if(isRotatingStick) {
+                isRotatingStick=false;
+                rulerImg.src="stick.png"
+            }
+
+        })
+
+        //Create stone-placing functionality:
+        sCtx.fillStyle="rgb(40,40,40)"
+
+        rCan.addEventListener('contextmenu', function(ev) { //Right click
+            ev.preventDefault();
+
+            sCtx.beginPath();
+            sCtx.arc(cursorX,cursorY,4,0,6.28);
+            sCtx.fill();
+
+            return false;
+        }, false);
+
+        //Create stone-removing functionality:
+        var onButton = false;
+        var ponButton = false;
+
+        buttonCtx.strokeStyle="green";
+        buttonCtx.lineWidth=4;
+
+        rCan.addEventListener("mousemove",function() {
+            
+            onButton = (cursorX > 570) && (cursorY < 65);
+
+            if(onButton && !ponButton) {
+                buttonCtx.beginPath();
+                buttonCtx.moveTo(570,0);
+                buttonCtx.lineTo(570,65);
+                buttonCtx.lineTo(700,65);
+                buttonCtx.stroke();
+            }
+            else if(!onButton && ponButton) {
+                buttonCtx.clearRect(0,0,1000,1000);
+            }
+            
+            ponButton = onButton;
+        })
+
+        rCan.addEventListener("mousedown", function(e) {
+            if(e.button==0 && onButton) {
+                sCtx.clearRect(0,0,1000,1000);
+            }
+        }) 
+
+        //Get mouse input:
+        var cursorX = 0;
+        var cursorY = 0;
+        var getCursorPosition = function (event) {
+            const rect = rCan.getBoundingClientRect()
+            cursorX = event.clientX - rect.left
+            cursorY = event.clientY - rect.top
+        }
+        rCan.addEventListener("mousemove", function (e) {
+            getCursorPosition(e);
+        })
+
+    </script>
+
+</body>

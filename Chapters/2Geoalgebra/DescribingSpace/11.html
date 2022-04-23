@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+
+
+    <h3>Vinklen mellem to vektorer</h3>
+
+    <p class="t">
+    Vi får ofte brug for at finde vinklen mellem to vektorer. 
+    Det er der selvfølgelig intet specielt <i>svært</i> ved:
+    Hvis man bliver helt desperat kan man bare finde deres 
+    vinkler med arctan og regne forskellen. Det kunne 
+    alligevel være dejligt med en hurtigere, mere praktisk metode. 
+    </p>
+    <img class='Spic' style='width:45%' src='../../../Assets/Chapter2\Section4\Vectore\AngleBetweenVectors.png'> 
+    <p class="t">
+    Sig at de to vektorer _(\vec a_) og _(\vec b_) danner trekanten _(ABC_) og vinklen
+    _(\theta_). Som altid er 
+    _($CB=\sqrt{|\vec a|^2 + |\vec b|^2 - 2*|\vec a|*|\vec b|*Cos(\theta)} \to_)
+    _($2|\vec a|*|\vec b|*Cos(\theta) = |\vec a|^2 + |\vec b|^2 - CB^2_)
+    _(\vec{CB}=\vec a - \vec b_), så vi kan omskrive til:
+    _($|\vec a|^2 + |\vec b|^2 - |\vec a - \vec b|^2 =_)
+    _($\sqrt{a_x^2+a_y^2}^2+\sqrt{b_x^2+b_y^2}^2 - \sqrt{(a_x-b_x)^2+(a_y-b_y)^2}^2_)
+    _($a_x^2+a_y^2 + b_x^2 + b_y^2 - (a_x-b_x)^2 - (a_y-b_y)^2 = _)
+    _($a_x^2+a_y^2 + b_x^2 + b_y^2 - a_x^2 - b_x^2 + 2a_xb_x - a_y^2 - b_y^2 + 2a_yb_y =_)
+    _($2*(a_xb_x + a_yb_y)_)
+    Med andre ord: _(2|\vec a|*|\vec b|*Cos(\theta)_) er lig _(2*(a_xb_x + a_yb_y)_), og vinklen
+    imellem er derfor 
+    _($\theta = Arccos \left(\frac{a_xb_x + a_yb_y}{|\vec a|*|\vec b|} \right)_)
+    </p>
+    <p class="t">
+    Formlen er <i>OK</i>, set eksklusivt ud fra synspunktet af at finde
+    _(\theta_) hurtigt. 
+    Ikke super meget bedre end bare at bruge Arctan dog. 
+    Det virkelig brugbare resultat kommer i form
+    af 
+    _($|\vec a|*|\vec b|*Cos(\theta) = a_xb_x + a_yb_y_)
+    Udover hvor let det er at huske,
+    giver det os en hurtig måde at skifte mellem at regne med vektorernes <i>længder</i> og
+    vektorernes <i>koordinater</i>. Resultatet er så brugbart, at man støder på
+    _(a_x b_x + a_y b_y_) i mange sammenhænge, så vi giver det et navn: "Prikproduktet"
+    ("dot product") mellem _(\vec a_) og _(\vec b_). Det har intet at gøre med et
+    produkt eller at gange (det er jo bare noget vi lige fandt på), men vi skriver det tit som: 
+    _($\vec a \cdot \vec b_)
+    Jeg gentager: den eneste grund til vi bruger gangesymbolet, er fordi det er 
+    hurtigt og let at skrive. 
+    </p>
+    
+    <p class="t">
+    Vi har flere gange nu opdelt en vektor i to efter en
+    given retning. Ofte har vektoren haft en bestemt vinkel til retningen,
+    hvorfra vi nemt kunne bruge _(Cos_) og _(Sin_)
+    til konvertering.  
+    Vektorer fungerer også i sig som retninger,
+    så det kunne være dejligt at hurtigt dele èn vektor op i 
+    en anden vektors retning:
+    </p>
+    <img class='Spic' style='width:70%' src='../../../Assets/Chapter2\Section4\Vectore\VectorProjection.png'> 
+    <p class="t">
+    Vi leder altså efter _(OA_) og _(AB_) (den vinkelrette del). 
+    Hvis _(\theta_) er vinklen imellem,
+    så er 
+    _($OA=Cos(\theta)*|\vec b|=Cos \left(Arccos \left(\frac{\vec a * \vec b}{|\vec a|*|\vec b|} \right) \right)*|\vec b|=\frac{\vec a * \vec b}{|\vec a|}_)
+    Det er en relativ dejlig formel. Hvis jeg skulle finde _(BA_), ville jeg nok bare tage den 
+    vinkelrette vektor til _(\vec a_) og gøre præcist det samme.
+    </p>
+    <p class="t">
+    Sig eksempelvis, du prøver at finde ud, hvor stor en kraft vinden _(\Vec[1,4]_) gør
+    på dig i følgende billede:
+    </p>
+    <img class='Spic' style='width:28.5%' src='../../../Assets/Chapter2\Section4\Vectore\Vind.png'> 
+    <p class="t">
+    Det svarer til at finde ud af, hvor stor en del af vektoren går i din bevægelsesretning
+    _(\Vec[4.5,3]_), så:
+    _($\frac{\vec{a} \cdot \vec{b}}{|\vec{a}|} = \frac{\VeC[1,4] \cdot \VeC[4.5,3]}{|\VeC[4.5,3]|} = \frac{1*4.5+4*3}{\sqrt{4.5^2+3^2}} = 3.05_)
+    Boom! Easy!
+    </p>
+
+    <q-stion 1="11" 2="1">
+    Her har du et eller andet molekyle i 3D:
+    <img class='SpicXL' style='width:80%' src='../../../Assets/Chapter2\Section4\Vectore\MolekyleVinkel.png'> 
+    <p class="t">
+    Find den markerede røde vinkel. Du har ikke brug for alle informationer på det her billede.
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Vi har ikke rigtig prøvet at finde en vinkel i 3D før, men hvis vi tænker over det, 
+    kan vi bruge præcist samme argument som tidligere i 2D:
+    <img class='Spic' style='width:60%' src='../../../Assets/Chapter2\Section4\Vectore\MolekyleVinkel2.png'>
+    <p class="t">
+    Vi kan forme en trekant mellem de tre punkter, finde _(\theta_) i forhold til 
+    siderne via cosinus-loven, beskrive den modsatte side til _(\theta_) ved hjælp af
+    vektorerne
+    _($\VeC[2.68,1.17,2.85], \VeC[1.98,-2.83,-2.42]_)
+    ... og så udvide
+    og simplificere 
+    _($|\vec a|^2 + |\vec b|^2 - |\vec b - \vec a_|^2_) 
+    ... på nøjagtig
+    samme måde som før. Svaret er derfor bare:
+    _($\begin{align}
+    & Arccos \left(\frac{1.98*2.68 + (-2.83)*1.17 + (-2.42)*2.85}{\sqrt{1.92^2+2.83^2+2.42^2}*\sqrt{2.68^2+1.17^2+2.85^2}}\right)=\\ \\
+    & 106.54^o
+    \end{align}_)
+    </p>
+    <br></answer-box>
+
+    <q-stion 1="11" 2="2">
+    Er personen stærk nok til at skubbe 
+    kassen på 
+    _(3kg_) kasse op i følgende billede?
+    <img class='Spic' style='width:90%' src='../../../Assets/Chapter2\Section4\Vectore\DotProductExercise.png'> 
+    <p class="t">
+    Personen skubber kassen med en kraft på _(50_), og den grønne vinkel er _(60^o_). 
+    Tyngdekraften på kassen er _(30_). 
+    Du behøver ikke at bekymre dig om friktion eller massecenter i denne opgave.</p>
+    <br></q-stion>
+    <answer-box>
+    Helt fundamentalt skal vi vurdere: Er den kraft, personen giver kassen langs bakken, 
+    større eller mindre end den negative kraft, tyngdekraften giver kassen langs bakken? I begge
+    tilfælde skal vi finde kraften langs vektoren 
+    _($\VeC[12,5]-\VeC[9,3]=\VeC[3,2]_)
+    Ved tyndekraften får vi:
+    _($\frac{0*3-30*2}{\sqrt{3^2+2^2}} = -16.64_)
+    For at gøre det samme med armen skal vi først lige oversætte den til en vektor i forhold
+    til _(x_) og _(y_). Personens krafter er _(60^o_) grader til en bakke med vinklen
+    _(Arctan((4-3)/(5-8.55))=_) _(-15^o_), så _(-15+60=45^o_), ergo: 
+    _($\VeC[Cos(45)*50,Sin(45)*50] = \VeC[35.35,35.35]_)
+    Så:
+    _($\frac{35.35*3+35.35*2}{\sqrt{3^2+2^2}}=49.02_)
+    Det er meget større end _(16.64_), så personen kan nemt skubbe kassen. _(3kg_)
+    er jo heller ikke særlig meget, så det er ikke en overraskelse. 
+    </p>
+    <br></answer-box>
+
+
+

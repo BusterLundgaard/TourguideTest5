@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+
+<i>Du må gerne bruge Geogebra til at løse integraler og lignende på denne side</i>
+
+<h3>Substitutionsteknikker i differentialligninger</h3>
+
+<p class="t">
+Differentialligninger er et <i>kæmpe</i> emne i matematik, og 
+denne bog dækker kun en minimalt brøkdel af, hvad der er at lære. 
+Vi har mest fokuseret på anvendelser indtil videre, 
+og har kun anvendt separable equations. Lad os nu slutte dette kapitel
+ved at se på to andre vigtige løsningsmetoder til første-ordens differentialligninger:
+</p>
+
+<div style="text-align:center; margin-top:-10px; margin-bottom:-10px;">
+    <ul style="display: inline-block; list-style:disc;">
+        <li>Substitution</li>
+        <li>Linear equations</li>
+    </ul>
+</div>
+
+<p class="t">
+Substitution er præcist ligeså vigtigt i differentialligninger som det er i integration. 
+Formålet er igen, at omskrive differentialligningen til en type vi kender og kan løse. 
+Sig f.eks. vi havde:
+_($y' = \frac{1+\frac{y}{x}}{1-\frac{y}{x}}_)
+_(y/x_) er to steder på udtrykket i højre side, så 
+det kunne (måske) være en god ide at lave substitutionen _(z=y/x_), så vi fik:
+_($y'(x) = \frac{1+z}{1-z}_)
+Vi skal nu huske at ændre _(y'(x)_), så det er i 
+forhold til _(z_) i stedet. _(z=y/x_) giver _(y=z*x_), så
+_(y'(x)_) bliver til:
+_($¤x[z*x]=x*z'(x)+z*1_)
+Vores ligning er nu:
+_($x*z'(x) + z = \frac{1+z}{1-z} \to_)
+_($z'(x) = \frac{1}{x}*\left(\frac{1+z}{1-z} - z \right)_)
+Det her er separablet! Det kan altså løses med:
+_($\begin{align}
+\int \frac{1}{\frac{1+z}{1-z} - z} \text{ }dz &= \int \frac{1}{x} \text{ }dx &\to \\ \\
+Arctan(z) &= Ln(x) + C &\to \\ \\
+z&=Tan(Ln(x)+C) &\to \\ \\
+\frac{y}{x} &= Tan(Ln(x)+C) &\to \\ \\
+y(x) &= x*Tan(Ln(x)+C)
+\end{align}_)
+Bum! Lad mig give et andet eksempel: 
+_($y'=\frac{1-x*y^2}{x^2 y}_)
+Vi kan omskrive den her til:
+_($y'=\frac{1}{x^2}*\frac{1}{y}*(1-x y^2)_)
+_(1-xy^2_) faktoren er det eneste grund til, at dette ikke er separable. 
+Det ville være super dejligt,
+hvis vi kunne lave en substitution som 
+_($y=1/\sqrt{x}_)
+... så at _(x*y^2_) ville blive til 
+_($x*(1/\sqrt{x})^2 = x/x = 1_)
+Sådan en substitution kan vi ikke bare lave dog!
+Vi introducerer pludseligt
+et forhold mellem _(x_) og _(y_) vi ikke nødvendigvis ved faktisk eksisterer. 
+Det er jo hele forholdet mellem 
+_(x_) og _(y_) vi prøver at finde gennem differentialligningen til at begynde med, så det ville
+være pointeløst bare at <i>antage</i> det var _(y=1/\sqrt{x}_). 
+</p>
+<p class="t">
+Vi kunne 
+<i>I stedet</i> vælge 
+_($y=z*(1/\sqrt{x})_)
+... hvor vi nu introducerer en ny, ukendt variable _(z_). 
+Variablen sørger for, at dette forhold mellem _(x_) og _(y_) er muligt. 
+Højre side af ligningen bliver nu til:
+_($ \frac{1}{x^2}*\frac{1}{z/\sqrt{x}}*(1-x*(z/\sqrt{x})^2) = \frac{\sqrt{x}}{x^2}*\frac{1}{z}*(1-z^2)_)
+... hvilket er separablet! Ligningen er nu:
+_($y'(x) = \frac{\sqrt{x}}{x^2}*\frac{1}{z}*(1-z^2)_)
+_(y'(x)_) skal ændres, da _(y_) slet ikke er en del af 
+ligningen længere. _(y'(x)_) bliver til 
+_($¤x \left[\frac{z}{\sqrt{x}} \right] = \frac{z'(x)*\sqrt{x} - z*\frac{1}{2\sqrt{x}}}{x} _) 
+Vores ligning er nu:
+_($\frac{z'(x)*\sqrt{x}-\frac{z}{2\sqrt{x}}}{x} = \frac{\sqrt{x}}{x^2}*\frac{1}{z} (1-z^2)_)
+Dette ser ret komplekst ud, men kan <i>heldigvis</i> forsimples en del, hvis begge
+sider ganges med _(x*\sqrt{x}_):
+_($z'(x) x - 0.5 z = \frac{1}{z}*(1-z^2) _)
+Vi isolerer endeligt _(z'(x)_) og får:
+_($z'(x) = \frac{1}{x}*\left(\frac{1}{z}*(1-z^2) + 0.5 z \right)_)
+Det er separablet! (dog i alt ærlighed ikke specielt let at løse ...).  
+</p>
+<p class="t">
+Jeg lagde fokus på "<i>heldigvis</i>"", fordi der var en stor del af <i>held</i> involveret her. 
+Vi kunne ikke vide på forhånd, at _(y'(x)_) blev transformeret til et stykke, der lige
+arbejdede godt sammen med højre side. I langt de fleste tilfælde, vil vi 
+isolere _(z'(x)_) og ende ud med en <i>ny</i> ikke-seperable differentialligning. 
+<i>Så</i>: Man skal være klar på, at en hvilken som helst substitution, der forbedre den
+højre side, også får den venstre til at ændre sig. Jo mere kompliceret en substitution, jo
+mere vil _(y'(x)_) ændre sig. 
+</p>
+<p class="t">
+Første eksempel på denne side kunne også skrives som:
+_($y'=\frac{y+x}{y-x}_)
+Det er et eksempel på en såkaldt <i>homogenous</i> equation. En homogenous 
+equation er en differentialligning af formen _(y'=F(x,y)_), hvor _(F_) har den specielle
+evne at:
+_($F(t*x, t*y) = F(x,y)_)
+Hvor _(t_) er et hvilket som helst tal eller variable. Denne specielle evne kommer hyppigt fra <i>brøker</i>:
+_($\begin{eqnarray}
+&& \bullet \, \, \, \frac{t*y+t*x}{t*y-t*x} = \frac{t*(y+x)}{t*(y-x)} = \frac{y+x}{y-x} \\ \\
+&& \bullet \, \, \, Sin \left(\frac{(tx)^3}{(ty)^3} \right) = Sin \left(\frac{t^3*x^3}{t^3*y^3} \right) = Sin \left(\frac{x^3}{y^3} \right)
+\end{eqnarray}_)
+Alle homogenous equations kan omskrives til noget separable, fordi vi kan være
+smarte og sætte _(t_) til _(1/x_) så:
+_($F(x,y) = F((1/x)*x,(1/x)*y)=F(1,y/x)_)
+Nu er differentialligningen altså:
+_($y'(x) = F(1, y/x)_)
+Den højre side er nu <i>en funktion af</i> _(y/x_), så vi substituerer _(z=y/x_) og får
+_($\begin{eqnarray}
+&& z'(x)*x+z = F(1,z) \to \\ \\
+&& z'(x) = \frac{1}{x}*(F(1,z)-z)
+\end{eqnarray}_)
+... hvilket er separable. 
+</p>
+
+<p class="t">
+Homogenous equations er ret vigtige, og vi bruger tit substitutioner, bare for at kunne omskrive ligningen
+til at være homogenous. Tag f.eks: 
+_($y' = \frac{x+y-5}{x-y+3}_)
+Dette er <i>ikke</i> homogenous lige nu, og det er på grund af _(5_) og _(3_). Ved 
+_((x+y)/(x-y)_) blev hvert led på tæller og nævner ganget med _(t_), så vi kunne faktorere det væk. 
+Det kan vi ikke med _(-5_) og _(3_), eftersom
+_($\frac{t*x+t*y-5}{t*x-t*y+3} = \frac{t*(x+y)-5}{t*(x-y)+3}_)
+... ikke rigtig kan bruges til noget. Vores mål er derfor, 
+at lave nogle substitutioner, der
+fjerner _(-5_) og _(3_). Én mulig ide ville være, at introducere to nye variabler 
+_(u_) og _(w_), og sige
+_($x=u+A, \qquad y=w+B_)
+... hvor _(A_) og _(B_) er to konstanter, vi endnu ikke har bestemt. Nu bliver brøken til:
+_($\frac{u+A+w+B-5}{u+A-w-B+3} = \frac{u+w+(A+B-5)}{u-w+(A-B+3)}_)
+Det geniale er nu, at vi kan vælge _(A_) og _(B_), så at de konstante led 
+bliver _(0_) ved at løse systemet:
+_($\begin{eqnarray} 
+&& A+B-5=0 \\
+&& A-B+3=0
+\end{eqnarray} \to A=1,B=4_)
+Så
+_($x=u+1, \qquad y=w+4_)
+... giver:
+_($y'(x) = \frac{u+w}{u-w}_)
+Vi skal også huske at omskrive _(y'(x)_) i forhold til _(u_) og _(w_). 
+Der er nu <i>to</i> nye variabler, så hvad gør vi? Kædereglen giver
+_($¤u[y] = ¤x[y]*¤u[x]_)
+Så: 
+_($¤x[y] = \frac{¤u[y]}{¤u[x]}_)
+_(y'(x)_) bliver altså til:
+_($\frac{¤u[y]}{¤u[x]} = \frac{¤u[w+B]}{¤u[u+A]} = \frac{u'(w)}{1}_)
+Differentialligningen er nu:
+_($u'(w) = \frac{u+w}{u-w}_)
+Hvilket vi ved er homogenous, og har løsningen:
+_($u = w*Tan(Ln(w)+C)_)
+_(u=x-1_) og _(w=y-4_), så:
+_($x-1=(y-4)*Tan(Ln(y-4)+C)_)
+Fantastisk!
+</p>
+
+<p class="t">
+Din tur til at arbejde med substitution i nogle opgaver: 
+</p>
+
+<q-stion 1="30" 2="1">
+Vurder om hver af de følgende differentialligninger er homogenous: 
+<div style="margin-left:-64%; margin-top:25px; margin-bottom: 0px;">
+_($\begin{eqnarray}
+    && \underline{\textbf{A}}: \, \, \, \, \, \, \frac{x y + 3 y^2}{5 x^2 + 7 y^2} \\ \\
+    && \underline{\textbf{B}}: \, \, \, \, \, \, Ln(x)-Ln(y) \\ \\
+    && \underline{\textbf{C}}: \, \, \, \, \, \, \frac{Ln(x^y)-Ln(y^x)}{Ln(x^y)+Ln(y^x)} \\ \\
+    && \underline{\textbf{D}}: \, \, \, \, \, \, \frac{x^2 + y x (\sqrt[y]{e})^x}{y^2} \\ \\
+    && \underline{\textbf{E}}: \, \, \, \, \, \, \frac{(x+y)^5}{y*(x-y)^4} \\ \\
+    && \underline{\textbf{F}}: \, \, \, \, \, \, \frac{(x+y^2)^5}{(x+y)^{10}} 
+\end{eqnarray}_)
+</div>
+<br></q-stion>
+<answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+Du kan se mit svar her:
+<video class='picB' controls>
+    <source src='../../../Assets/Chapter4\DerivativesAndIntegrals\DiffEquations\Applications\Homogenous1.mp4' type='video/mp4'>
+</video>
+<br><br></answer-box>
+<answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+Du kan se mit svar her:
+<video class='picB' controls>
+    <source src='../../../Assets/Chapter4\DerivativesAndIntegrals\DiffEquations\Applications\Homogenous2.mp4' type='video/mp4'>
+</video>
+<br><br></answer-box>
+<answer-box t="Answer _(\underline{\textbf{C}}_)#" tabColour="rgb(171,96,147)">
+Du kan se mit svar her:
+<video class='picB' controls>
+    <source src='../../../Assets/Chapter4\DerivativesAndIntegrals\DiffEquations\Applications\Homogenous3.mp4' type='video/mp4'>
+</video>
+<br><br></answer-box>
+<answer-box t="Answer _(\underline{\textbf{D}}_)#" tabColour="rgb(175,128,161)">
+Du kan se mit svar her:
+<video class='picB' controls>
+    <source src='../../../Assets/Chapter4\DerivativesAndIntegrals\DiffEquations\Applications\Homogenous4.mp4' type='video/mp4'>
+</video>
+<br><br></answer-box>
+<answer-box t="Answer _(\underline{\textbf{E}}_)#" tabColour="rgb(171,96,147)">
+Du kan se mit svar her:
+<video class='picB' controls>
+    <source src='../../../Assets/Chapter4\DerivativesAndIntegrals\DiffEquations\Applications\Homogenous5.mp4' type='video/mp4'>
+</video>
+<br><br></answer-box>
+<answer-box t="Answer _(\underline{\textbf{F}}_)#" tabColour="rgb(175,128,161)">
+Du kan se mit svar her:
+<video class='picB' controls>
+    <source src='../../../Assets/Chapter4\DerivativesAndIntegrals\DiffEquations\Applications\Homogenous6.mp4' type='video/mp4'>
+</video>
+<br><br></answer-box>
+
+<!--  -->
+
+<q-stion 1="30" 2="2">
+Løs følgende differentialligning:
+_($y'= \sqrt{3x+7y-8}_)
+Du behøver ikke finde et direkte forhold _(y(x)_), bare 
+en ligning. 
+<br><br></q-stion>
+<answer-box>
+Jeg tænker, at det virker som en god ide at erstatte _(3x+7y-8_) med _(z_), 
+hvilket transformere højre side til bare _(\sqrt{z}_). Venstre side bliver til:
+_($¤x \left[\frac{1}{7}z - \frac{3}{7}x + \frac{8}{7} \right] = \frac{1}{7}z'(x) - \frac{3}{7}_)
+Vores ligning er nu:
+_($\frac{1}{7}z'(x) - \frac{3}{7} = \sqrt{z} \to_)
+Vi kan isolere _(z'(x)_) og få:
+_($z'(x) = 7 \sqrt{z} + 3_)
+Hvilket er separable:
+_($\int \frac{1}{7 \sqrt{z} +3} \, dz = \int 1 \, dx_)
+Integralet på venstre side kan løses relativt nemt ved at substituere _(z=u^2_). Vi får:
+_($0.29 \sqrt{z} - 0.12 Ln(7 \sqrt{z} + 3) = x + C_) 
+Til sidst sætter vi _(z=3x+7y-8_) tilbage, og får:
+_($0.29 \sqrt{3x+7y-8} - 0.12 Ln(7 \sqrt{3x+7y-8} + 3) = x + C_) 
+Ikke en dejlig ligning, men en ligning! 
+<br><br></answer-box>
+
+<!--  -->
+
+<q-stion 1="30" 2="3">
+Omskriv følgende differentialligning til noget separable:
+_($y' = \frac{1+x y^3}{x^2 y^2}_)
+<br></q-stion>
+<answer-box>
+Det er _(1+x y^3_) der sørger for, at dette ikke er separable, så jeg tænker vi gør lidt ligesom i eksemplet, 
+og sætter _(y_), så den fjerner _(x_) imens den introducerer en ny variable _(z_). 
+Hvis _(y=z*x^{-1/3}_), bliver _(x*y^3_) til _(z_), og højre side (med lidt omskrivning) til:
+_($x^{-\frac{4}{3}}*\frac{1+z}{z^2}_)
+_(y'(x)_) bliver til:
+_($¤x \left[z*x^{-\frac{1}{3} } \right] = z'(x)*x^{-\frac{1}{3}} - \frac{1}{3}*z(x)*x^{-\frac{4}{3}}_)
+Så ligningen er nu:
+_($\begin{align}
+z'(x)*x^{-\frac{1}{3}} - \frac{1}{3}*z(x)*x^{-\frac{4}{3}} &= x^{-\frac{4}{3}}*\frac{1+z}{z^2} &\to  \\ \\
+z'(x)*x - \frac{1}{3} z(x) &= \frac{1+z}{z^2} &\to  \\ \\
+z' &= \frac{1}{x}*\left(\frac{1+z}{z^2} + \frac{1}{3}z \right) 
+\end{align}_)
+Det er seperable, og kan (måske) løses.
+<br><br></answer-box>
+
+<!--  -->
+
+<q-stion 1="30" 2="4">
+Løs følgende differentialligning:
+_($y'=\frac{y}{x}*\frac{1-x*y}{1+x*y}_)
+Du behøver ikke finde en _(y(x)_). 
+<br><br></q-stion>
+<answer-box>
+Vi siger bare _(x*y=z_), så højre side bliver til:
+_($x^{-2}*z*\frac{1-z}{1+z}_)
+Og _(y'(x)_) bliver:
+_(z'(x)*x^{-1} - z(x)*x^{-2}_)
+Ligningen er nu:
+_($\begin{align}
+z'(x)*x^{-1} - z(x)*x^{-2} &= x^{-2}*z*\frac{1-z}{1+z} & \to  \\ \\
+z'(x) &= \frac{1}{x}*(z*\frac{1-z}{1+z} + z) & \to \\ \\
+z'(x) &= \frac{2}{x}*\frac{z}{1+z} 
+\end{align}_)
+Det her er separable, og kan let løses:
+_($\begin{eqnarray}
+&& Ln(z)+z=2Ln(x)+C \to \\ \\
+&& Ln(xy)+xy=2Ln(xy)+C
+\end{eqnarray}_)
+<br></answer-box>
+
+<!--  -->
+
+<q-stion 1="30" 2="5" customWidth="650">
+Løs følgende differentialligning:
+_($y'=\frac{3x+7y - 8}{9x + 4y+15} _)
+Du behøver ikke finde _(y(x)_)
+<br><br></q-stion>
+<answer-box customWidth="650">
+Vi gør ligesom i eksemplet og substituerer
+_($\begin{eqnarray}
+&& x & = w+A \\
+&& y & = u+B 
+\end{eqnarray}_)
+... hvor _(A_) og _(B_) er to konstanter. Højre side bliver nu til:
+_($\frac{3w+7u + (3A + 7B - 8)}{9w+4u+(9A+4B+15)}_)
+Målet er at vælge de _(A_), _(B_), der giver os en homogenous funktion, så vi løser:
+_($\begin{eqnarray}
+&& 3A+7B-8=0 \\
+&& 9A +4B + 15 = 0
+\end{eqnarray}_)
+Hvilket giver _(A=-2.686_) og _(B=2.294_), så:
+_($\begin{eqnarray}
+&& x & = w - 2.686 \\
+&& y & = u + 2.294
+\end{eqnarray}_)
+Vi skal også lige håndtere venstre side _(y'(x)_). Den omskriver vi og regner som:
+_($\frac{¤w[y]}{¤w[x]} = \frac{¤w[u+2.294]}{¤w[w-2.686]} = u'(w)_)
+Så vores ligning er nu:
+_($u'(w) = \frac{3w+7u}{9w+4u}_)
+Det er homogenous, så vi kan lave substitutionen _(z=u/w_) og få:
+_($\frac{3+7z}{9+4z}_)
+_(u'(w)_) bliver til _(z'(w)*w + z(w)_), så ligningen kan omskrives til:
+_($z'(w)=\frac{1}{w}*\left(\frac{3+7z}{9+4z}-z \right)_)
+Det her er separable, og vi kan løse det som:
+_($\int \frac{1}{\frac{3+7z}{9+4z}-z} = Ln(w) + C_)
+Integralet på venstre side kan laves om til:
+_($\int \frac{9+4z}{-4z^2 - 2z + 3}_)
+Det kan løses via partial fractions. Man får:
+_($-1.609 Ln(z-0.651) + 0.609 Ln(z+1.151) = Ln(w) + C_)
+Vi ved at:
+_($z=\frac{u}{w} = \frac{y-2.294}{x+2.686}_)
+Så:
+_($\begin{align}
+& -1.609 Ln \left(\frac{y-2.294}{x+2.686}-0.651 \right) + 0.609 Ln \left(\frac{y-2.294}{x+2.686}+1.151 \right) = \\ \\
+& Ln(x+2.686) + C
+\end{align}_)
+<br></answer-box>
+
+<!--  -->
+
+<q-stion 1="30" 2="6">
+Omskriv følgende differentialligning til noget separable:
+_($y'=\frac{11x + 5.5 y - 3}{4x + 2y + 5}_)
+Den her ligner umiddelbart meget den tidligere, men koefficienterne er
+designet specifikt, så at systemet af ligninger ikke har nogen løsning. Hvad gør du nu?
+<br><br></q-stion>
+<answer-box t="h">
+Hmmm. Det lineære system kan <i>ikke</i> løses. Det kan både
+ses som en dårlig ting, men også som noget positivt: Måske fortæller det os, at koefficienterne
+har bestemte egenskaber, der kan udnyttes? Hvornår har et lineært system ingen løsninger? 
+<br><br></answer-box>
+<answer-box>
+Vi ved at 
+_($\begin{alignat}{2}
+11x & \, \, \, + \, \, \, & 5.5y & \, \, \, \, = \, \, \,  3 \\
+4x  & \, \, \, + \, \, \, & 2y   & \, \, \, \, = \, \, \,  -5
+\end{alignat}_)
+<i>ikke</i> kan løses. Hvorfor? Fortæller det os noget bestemt om ligningerne
+vi måske kan bruge til vores fordel? 
+<p class="t">
+Det sker fordi,
+at højre side på første ligning er en skaleret version af højre side på anden ligning, men
+venstre side på første er <i>ikke</i> en skaleret version af venstre på anden. 
+Så vi ved at:
+_($11x+5.5y=k*(4x+2y)_)
+Specifikt kan vi se, at _(k=2.75_). Det er nok en god ide nu, at substituere _(z=4x+2y_),
+så højre side giver:
+_($\frac{2.7z - 3}{z+5}_)
+Venstre side bliver til:
+_($¤x[z/2 - 2x] = z'(x) - 2_)
+Så:
+_($z'(x) = \frac{2.7z - 3}{z+5} + 2_)
+Det er seperable. Voila!
+</p>
+<br></answer-box>
+
+<!--  -->
+
+<q-stion 1="30" 2="7">
+Løs følgende differentialligning:
+_($y' = \frac{e^x - e^y}{e^x+e^y}_)
+Du behøver ikke finde _(y(x)_). 
+<br><br></q-stion>
+<answer-box>
+Det bliver nok svært at gøre denne seperable <i>direkte</i>. Vi har også en brøk, så 
+det er nok bedst at sigte efter en <i>homogenous</i> form. Følgende funktion
+ved vi er homogenous:
+_($\frac{x-y}{x+y}_)
+Vi <i>kunne</i> opnå en lignende form, hvis vi substituerede
+_($\begin{eqnarray}
+&& x & = Ln(u) \\
+&& y & = Ln(w)
+\end{eqnarray}_)
+Det virker som lidt en fjollet ide, men er faktisk ret smart.
+Substitutionen er dejlig, da venstre side ikke bliver meget mere kompleks,
+eftersom logaritmer er lette at differentiere. Vi får:
+_($y'(x) = \frac{¤w[Ln(u)]}{¤x[Ln(w)]} = \frac{w}{u} u'(w)_)
+Så ligningen er:
+_($u'(w)=\frac{u}{w}*\frac{w-u}{w+u}_)
+Det her er homogenous! 
+Vi kan nu lave substitutionen _(z=u/w_), og få:
+_($\begin{eqnarray}
+&& z'(w)*w+z = z*\frac{1-z}{1+z} \to \\ \\
+&& z'(w) = \frac{1}{w}*z*\left(\frac{1-z}{1+z} - 1 \right)  
+\end{eqnarray}_)
+Det her er separable, og vi kan løse det som:
+_($\begin{align}
+\int \frac{1}{z*(\frac{1-z}{1+z} - 1)} \text{ }dz &= \int \frac{1}{w} \text{ }dw  &\to \\ \\
+\frac{1}{2}*\left(\frac{1}{z} - Ln(z) \right) &= Ln(w)+C &\to \\ \\
+\frac{1}{z} - Ln(z) &= 2 Ln(w) + C 
+\end{align}_)
+Vi substituerer nu _(w=e^x_), og _(z=e^y/e^x_), og får:
+_($e^{x-y} + x - y = 2x + C_)
+Bum! Super nice!
+<br><br></answer-box>
+
+<!--  -->
+
+<q-stion 1="2" 2="1" 3="5">
+Omskriv følgende til en separable differentialligning:
+_($y'=p(x)*y^{n}-q(x)*y_)    
+Hvor _(p(x)_), _(q(x)_) er to funktioner du ikke kender, og hvor _(n_) er et helt tal. 
+<br><br></q-stion>
+<answer-box t="h">
+Jeg tænker nok, at vores substitution <i>ikke</i> burde indeholde _(p(x)_) eller _(q(x)_),
+siden de er så generelle. Så får vi også brug for at arbejde med deres hældninger,
+når vi beregner _(y'(x)_), hvilket er upraktisk. 
+Lad os i stedet fokusere på 
+_(y_)'s potenser. Kan vi på en eller anden måde sørge for, at _(y^n_) og 
+_(y_) får samme potens? Det er nok ikke <i>direkte</i> muligt med
+en substitution, men måske er det muligt, efter vi har beregnet
+_(y'(x)_) og isoleret den nye hældning? 
+<p class="t">
+Prøv at lav substitutionen _(y=z^A_), hvor _(A_) er en eller anden ukendt potens du vælger senere.
+Det er bare en måde at beskrive alle
+disse <i>slags</i> substitutioner generelt, så du ikke først skal
+teste _(z=y^2_), så _(z=y^3_), 
+_(z=y^{2.5}_) osv. 
+</p>
+<br></answer-box>
+<answer-box t="a">
+Jeg tænker nok, at vores substitution <i>ikke</i> burde indeholde _(p(x)_) eller _(q(x)_),
+siden de er så generelle. Så får vi også brug for at arbejde med deres hældninger,
+når vi beregner _(y'(x)_), hvilket er upraktisk. 
+Lad os i stedet fokusere på 
+_(y_)'s potenser. Kan vi på en eller anden måde sørge for, at _(y^n_) og 
+_(y_) får samme potens? Det er nok ikke <i>direkte</i> muligt med
+en substitution, men måske er det muligt, efter vi har beregnet
+_(y'(x)_) og isoleret den nye hældning? 
+<p class="t">
+Èn mulig ide er _(z=y^n_), eller _(y=z^{1/n}_). Det <i>kunne</i> 
+godt virke, men
+vi kan ikke være sikre. Lad os i stedet være mere generelle og sige _(y=z^{A}_), hvor _(A_) er en potens vi ikke kender.
+Så kan vi arbejde med det, og senere vælge _(A_), så vi får noget nemt. 
+</p>
+<p class="t">
+_(y'(x)_) bliver til _(A*z^A*\frac{1}{z}*z'(x)_), så ligningen er nu:
+_($A*z^{A-1}*\frac{1}{z}*z'(x) = p(x)*z^{An}-q(x)*z^A_)
+Hvis vi dividerer begge sider med _(z^{A-1}_) får vi:
+_($A z'(x) = p(x)*z^{A(n-1)+1} - q(x)*z_)
+Nu er nok et godt tidspunkt at vælge _(A_). 
+Målet er:
+_($A(n-1)+1=1_)
+I det tilfælde er begge potenser identiske, og udtrykket bliver seperable. Vi vælger derfor:
+_($A=\frac{1}{n-1}_)
+... og får:
+_($\begin{eqnarray}
+&& \frac{1}{n-1}*z'(x) = p(x)*z-q(x)*z \to \\ \\
+&& z'(x) = z*\left((n-1)*p(x)-q(x) \right)
+\end{eqnarray}_)
+Voila! Det er separable! Denne slags ligning kan derfor løses af
+_($Ln(z) = (n-1) \int p(x) \text{ }dx - \int q(x) \text{ }dx + C_)
+... med _(z=y^{n-1}_). Man skal bare kunne integrere _(p(x)_) og _(q(x)_), og 
+der vil altid findes en løsning! 
+</p>
+<p class="t">
+Dette resultat er ret generelt og brugbart, så det har et navn: 
+"Bernoullis equation"
+</p>
+<br></answer-box>
+
+<!-- <q-stion 1="30" 2="8">
+Omskriv følgende til en separable differentialligning:
+_($y'=p(x)*y^{n}-q(x)*y_)    
+Hvor _(p(x)_), _(q(x)_) er to funktioner du ikke kender, og hvor _(n_) er et helt tal. 
+<br><br></q-stion>
+<answer-box t="h">
+Jeg tænker nok, at vores substitution <i>ikke</i> burde indeholde _(p(x)_) eller _(q(x)_),
+siden de er så generelle. Så får vi også brug for at arbejde med deres hældninger,
+når vi beregner _(y'(x)_), hvilket er upraktisk. 
+Lad os i stedet fokusere på 
+_(y_)'s potenser. Kan vi på en eller anden måde sørge for, at _(y^n_) og 
+_(y_) får samme potens? Det er nok ikke <i>direkte</i> muligt med
+en substitution, men måske er det muligt, efter vi har beregnet
+_(y'(x)_) og isoleret den nye hældning? 
+<p class="t">
+Prøv at lav substitutionen _(y=z^A_), hvor _(A_) er en eller anden ukendt potens du vælger senere.
+Det er bare en måde at beskrive alle
+disse <i>slags</i> substitutioner generelt, så du ikke først skal
+teste _(z=y^2_), så _(z=y^3_), 
+_(z=y^{2.5}_) osv. 
+</p>
+<br></answer-box>
+<answer-box>
+Jeg tænker nok, at vores substitution <i>ikke</i> burde indeholde _(p(x)_) eller _(q(x)_),
+siden de er så generelle. Så får vi også brug for at arbejde med deres hældninger,
+når vi beregner _(y'(x)_), hvilket er upraktisk. 
+Lad os i stedet fokusere på 
+_(y_)'s potenser. Kan vi på en eller anden måde sørge for, at _(y^n_) og 
+_(y_) får samme potens? Det er nok ikke <i>direkte</i> muligt med
+en substitution, men måske er det muligt, efter vi har beregnet
+_(y'(x)_) og isoleret den nye hældning? 
+<p class="t">
+Èn mulig ide er _(z=y^n_), eller _(y=z^{1/n}_). Det <i>kunne</i> 
+godt virke, men
+vi kan ikke være sikre. Lad os i stedet være mere generelle og sige _(y=z^{A}_), hvor _(A_) er en potens vi ikke kender.
+Så kan vi arbejde med det, og senere vælge _(A_), så vi får noget nemt. 
+</p>
+<p class="t">
+_(y'(x)_) bliver til _(A*z^A*\frac{1}{z}*z'(x)_), så ligningen er nu:
+_($A*z^{A-1}*\frac{1}{z}*z'(x) = p(x)*z^{An}-q(x)*z^A_)
+Hvis vi dividerer begge sider med _(z^{A-1}_) får vi:
+_($A z'(x) = p(x)*z^{A(n-1)+1} - q(x)*z_)
+Nu er nok et godt tidspunkt at vælge _(A_). 
+Målet er:
+_($A(n-1)+1=1_)
+I det tilfælde er begge potenser identiske, og udtrykket bliver seperable. Vi vælger derfor:
+_($A=\frac{1}{n-1}_)
+... og får:
+_($\begin{eqnarray}
+&& \frac{1}{n-1}*z'(x) = p(x)*z-q(x)*z \to \\ \\
+&& z'(x) = z*\left((n-1)*p(x)-q(x) \right)
+\end{eqnarray}_)
+Voila! Det er separable! Denne slags ligning kan derfor løses af
+_($Ln(z) = (n-1) \int p(x) \text{ }dx - \int q(x) \text{ }dx + C_)
+... med _(z=y^{n-1}_). Man skal bare kunne integrere _(p(x)_) og _(q(x)_), og 
+der vil altid findes en løsning! 
+</p>
+<p class="t">
+Dette resultat er ret generelt og brugbart, så det har et navn: 
+"Bernoullis equation"
+</p>
+<br></answer-box> -->
+

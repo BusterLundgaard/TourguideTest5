@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+
+    <h2>Problem G: Mindre end 0?</h2>
+
+    <p class="t">
+    <i>I laver en slags wrestling-konkurrence. Enten vinder man, det står lige, eller man taber. 
+    Det svarer til enten at få points, ikke få nogle points, eller få fjernet points. Et par folk får fjernet
+    flere points, end de får. Hvem, kan vi så sige, er "taberen"?</i>
+    </p>
+
+    <p class="t">
+    Lad os lige gøre opgaven lidt mere konkret. Sig at vi har _(4_) wrestling-spillere, _(5_) runder, og 
+    de følgende resultater:
+    </p>
+
+    <table style="border-collapse: collapse; border: 1px solid black; margin-top: 25px; margin-bottom: 25px; margin-left: 30px;">
+        <tr>
+            <td> <b> Person/Runder  </b> </td>
+            <td> <u> Runde 1 </u> </td>
+            <td> <u> Runde 2 </u> </td>
+            <td> <u> Runde 3 </u> </td>
+            <td> <u> Runde 4 </u> </td>
+            <td> <u> Runde 5 </u> </td>
+        </tr>
+        <tr>
+            <td> <u> Jan </u></td>
+            <td> _(3_) </td>
+            <td> _(0_) </td>
+            <td> _(-4_) </td>
+            <td> _(-4_) </td>
+            <td> _(0_) </td>
+        </tr>
+        <tr>
+            <td> <u> Niels </u> </td>
+            <td> _(3_) </td>
+            <td> _(0_) </td>
+            <td> _(0_) </td>
+            <td> _(0_) </td>
+            <td> _(3_) </td>
+        </tr>
+        <tr>
+            <td> <u> Anna </u></td>
+            <td> _(-4_) </td>
+            <td> _(-4_) </td>
+            <td> _(3_) </td>
+            <td> _(3_) </td>
+            <td> _(-4_) </td>
+        </tr>
+        <tr>
+            <td> <u> Klara </u> </td>
+            <td> _(-4_) </td>
+            <td> _(3_) </td>
+            <td> _(0_) </td>
+            <td> _(3_) </td>
+            <td> _(3_) </td>
+        </tr>
+    </table>
+
+    <p class="t">
+    Vi skal se hvem der har fået mindst og flest points. Lad os se hvor mange
+    points f.eks. Jan får:
+    _($3+0-4-4+0_)
+    Først kommer vi op på _(3_), så trækker vi _(4_) fra og står med ... hvad?
+    Vores tal bliver mindre end _(0_)! Andre spillere som Anna får også
+    "mindre end _(0_)" points, så hvordan vurderer vi, hvem
+    der har klaret sig <i>værst</i>? 
+    </p>
+    <p class="t">
+    Her er min ide: Points er en fiktiv kvantitet <i>vi</i> har opfundet, så lad
+    os bare sige, man godt kan have et "negativt" antal points. 
+    Man står tilbage med <br> "_(-1_) point" hvis man starter med _(3_) og trækker _(4_) fra. 
+    Trækker man yderligere _(4_) fra igen, ender man med _(-1 - 4 = -5_) points. 
+    Det er 100% bare noget vi har opfundet, men
+    det virker meget praktisk rent matematisk:
+    _($\begin{eqnarray} 
+    && \text{Jan:} & 3 + 0 - 4 - 4 + 0 & = & -5 \\
+    && \text{Neils:} & 3 + 3 + 0 + 0 - 4 & = & 2 \\
+    && \text{Anna:} & -4 - 4 + 3 + 3 - 4 & = & -6 \\
+    && \text{Klara:} & -4 + 3 + 0 + 3 + 3 & = & 5 
+    \end{eqnarray}_)
+    Vi kan altså se, at bedste til værst går: Anna, Jan, Niels, Klara. 
+    <i>Kunne</i> vi godt have løst det her uden "negative tal"? Ja.
+    Var det mere effektivt bare at "forestille" os, at der fandtes tal der
+    var mindre end _(0_)? Absolut. Negative tal er noget <i>vi</i> har
+    opfundet, og <i>vi</i> bestemmer selv hvad det skal betyde. Vi
+    kan også bruge det i alle mulige andre situationer: 
+    </p>
+    <p class="t">
+        Ind til videre har vi ofte kigget på afstand (L), i forhold til hvor langt noget er. Hvor langt er et 
+        træ, hvor højt er et hus, ladi lada. Vi kan selvfølgelig også bruge det til at beskrive <i>position</i>:
+    </p>
+    <img class="SpicT" style="width:65%" src="../../../Assets/Chapter1/Talopgaver og intuition/DistanceToBaker/F/position1.png">
+    <p class="tt">
+        Lad os sige vi starter fra det gule hus her - måske bor du der eller noget. Du er lige nu 
+        _(0m_) væk fra hvor du bor. Du begynder at gå:
+    </p>
+    <img class="SpicT" style="width:75%" src="../../../Assets/Chapter1/Talopgaver og intuition/DistanceToBaker/F/position2.png">
+    <p class="tt">
+        Som vist, kan vi beskrive din position forskellige steder baseret på hvor langt væk, du er fra dit hus. 
+        Det virker dog lidt fjollet, at vi ikke rigtig kan se, om du går mod eller væk fra bageren. 
+        Tabt og vigtig information!
+    </p>
+    <p class="t">
+        Du går enten mod bageren eller væk fra bageren. Det er - rent intuitivt - to modsætninger. 
+        Derfor sætter vi af ren og skær praktikalitet et "-" tegn 
+        foran, baseret på hvad du gør (og vi kunne nemt have valgt alle mulige andre tegn).
+        <i>Vi</i> bestemmer hvad et 
+        positivt tal skal betyde; I dette tilfælde afstand fra hus til bager. 
+        Hvis den ting vi måler har en naturlig 
+        "modsætning", og vi tror vi kommer til at arbejde med den modsætning, kalder vi bare  
+        modsætningerne for "negative tal". 
+        Der er intet magi her: Vi bruger bare "negativitet" til at kommunikere
+        og beskrive kvantiteter vi personligt føler virker som modsætninger. 
+    </p>
+    <p class="t">
+        Præcis ligesom afstand og position deroppe 
+        har <i>vinkler</i> også en retning og derfor naturlig modsætning.
+        "Venstre eller højre", "Foran eller bagud", bliver nu til "med eller mod" uret. Vi <i>kunne</i> sige: 
+        "Først drej _(20_) grader med uret, gå ligeud _(15m_), drej _(45_) mod uret og gå til sidst bagud _(32m_)" 
+    </p>
+    <img class="SpicBT" style="width:80%;" src="../../../Assets/Chapter1\Talopgaver og intuition\Misc\F\DesertMinusRoute.png">
+    <p class="tt">
+        ... Eller vi kunne sige 
+        _($(20°,15m,-45°,-32m)_)
+        Det er præcist det samme kommunikeret på en mere matematisk og kompakt måde. 
+        Vi har her bare fundet 
+        på den regel, at "_(-_)" før en afstand betyder, at man går bagud, og at 
+        "_(-_)" før en vinkel, betyder at 
+        man går <i>mod</i> uret.
+    </p>
+    <p class="t">
+        Du har helt sikkert brugt en køkkenvægt før. 
+        Først sætter man en skål/holder ned på vægten, så tænder man vægten, og <i>så</i> begynder man at hælde.
+        Vægten har et indstillet _(0_)-punkt omkring vores skål, præcis ligesom vi før
+        indstillede huset som vores "_(0_)-position". Vi er interesserede
+        i <i>mængden af vægt vi tilføjer</i>; Det er den mening
+        vi har givet positive tal i lige dette tilfælde. 
+        <i>Intuitivt</i> siger vi at "det modsatte" er, at 
+        <i>fjerne</i> vægt fra skålen. Prøv engang at gør det på din køkkenvægt
+        derhjemme: Mange køkkenvægte kan godt vise negative tal! Måske
+        måler man et objekt, der mister vægt over tid i et videnskabeligt eksperiment, eller
+        måske skal man fjerne en bestemt mængde dej fra ens dejblanding.
+    </p>
+    <p class="t">
+        Der findes ikke "negativ temperatur", ligesom der i virkeligheden 
+        ikke findes "negativ vægt". 
+        Temperatur beskriver hvor meget molekyler i et materiale ryster:
+        De <i>kan</i> være helt statiske, men de kan ikke "bevæge sig modsat" og skabe
+        en negativ temperatur. 
+        <i>Alligevel</i> beskriver vi ofte temperatur i enheden "celcius", der godt kan være negativ. 
+        _(0_) celcius er sat til
+        _(273.15_) "kelvin". Kelvin er den videnskabelige SI enhed, og en temperatur
+        på _(0_) kelvin fortæller os, at molekylerne er komplet statiske. 
+        Celcius er centreret 
+        omkring lige denne temperatur på _(273.15K_), da det er hvor vand 
+        fryser til is. Begge enheder 
+        er skaleret præcist, så der er _(100_) mellem vands
+        kogepunkt og frysepunkt. Celcius er derfor en praktisk og intuitiv enhed:
+        _(0_) ved frysepunktet og _(100_) ved kogepunktet. Let at forstå for alle. 
+    </p>
+    <p class="t">
+        _(-4_) celcius er 
+        _($-4+273.15=269.15_) 
+        ... kelvin. _(4_) celcius er 
+        _($4+273.15=277.15_)
+        ... kelvin. De to tal er på ingen måde "modsatte" 
+        temperature. "_(-_)"-tegnets primære formål er 
+        at tilføje lidt ekstra praktisk information til tallet. 
+        En dejlig lille måde at huske 
+        på, hvorvidt vand er i solidform eller væskeform på en bestemt temperatur. I hvert fald nemmere 
+        at huske end 
+        "Over _(273.15_)!". 
+    </p>
+    <p class="t">
+        <i>Tid</i> går kun fremad - selv intet hyperfysik rumrelativitet kan argumentere imod den påstand!
+        Alligevel kan vi nemt forestille os følgende situation, hvor "negativ tid" er en brugbar konstruktion:
+    </p>
+    <p class="t">
+    En _(100m_) løber er ved at forbedre deres tid.
+    Det er praktisk for dem, at kunne sammenligne
+    med et gennemsnit. Var de bedre eller dårligere end normalt?
+    Efter en masse løb ville de nok få et skema, hvor der stod tiderne <i>i forhold til gennemsnittet</i>. 
+    Det ville være det eneste vigtige hvad angik træning, og ville give et meget bedre overblik! 
+    Tal under gennemsnit vil nok naturligt 
+    og logisk beskrives via et "_(-_)" tegn, fordi man nemt kan forstå hvad det betyder gennem
+    samfundets accepterede og forståede betydning af tegnet. 
+    </p>
+    <p class="t">
+        Hvad angår sport og den kendte betydning af "_(-_)", 
+        vil det nok også give intuitiv mening til de 
+        fleste, at "negative points" symboliserer
+        en dårlig performance, i modsætning til positive
+        points, der symboliser succes og evner.
+    </p>
+    <p class="t">
+        Sig at du skal til at spille hockey med nogle af dine venner. Ham der forklarer reglerne siger, at 
+        man får -2 point som straf for at skyde med foden. 
+        Du vil selvfølgelig ikke brokke dig og blive sur over, at det ikke giver logisk
+        og naturlig mening at få "mindre end ingenting".
+        Du vil bare acceptere, at sådan er reglerne blevet valgt, 
+        og sådan kan spillet virke og forklares effektivt. Samme gælder bræt- og kortspil.
+    </p>
+    
+    <q-stion 1="35" 2="1" bigTop="true"> 
+    Lad os se på en eller anden racerkørselsport. 
+    Bilisterne her kæmper ikke side om side, men i stedet 
+    individuelt om at få flest points. 
+    Man har _(15s_) til at gennemføre hver bane, og 
+    får positive points, hvis man når i mål før, og negative points hvis man
+    først når i mål efter. Points regnes gennem formlen _(15-t_), hvilket
+    er negativt hvis _(t_) stiger over _(15_). 
+    <p class='t'>
+        Man kan få _(6_) ekstra positive points ved at hoppe på et flyvehop. Modsat bliver 
+        man straffet med henholdsvis _(4_) og _(8_), hvis man kører ind i en kegle eller vejbeskyttelse. 
+        Se nu følgende klip:
+    </p>
+    <video class='SpicBT' style="width:95%;" controls>
+        <source src='../../../Assets/Chapter1\Talopgaver og intuition\Racerkørsel\F\Racerbil.mp4' type='video/mp4'>
+    </video>
+    <p class='tt'>
+    Hvor mange points får bilisten? 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Det tager ham _(20s_), så han får _(15-20=-5_) points. Der skal også lægges nogle negative points 
+    til, fordi han vælter _(3_) kegler, og _(8_) minuspoints fordi han ødelægger en vejbeskyttelse: _(-5-3*3-8=-22_).
+    Den tydeligvis elendige chauffør får dog _(6_) points for at tage flyvehoppet. Alt i alt: 
+    _($-5 - 4*3 - 8 + 6 = -19 \text{ points}_) 
+    Han ender altså ud med <i>negative points</i> som nok indikerer, at han er under standard. 
+    <br><br></answer-box>
+
+    <p class="tt">
+        Man kunne nævne mange flere faglige- og dagligdagseksempler, hvor vi bruger negative tal og fortegn. 
+        Elektricitet, lyd, lys, og vand i havet kommer alle i bølger:
+    </p>
+    <img class="Spic" style="width:65%" src="../../../Assets/Chapter1/Talsystemmer/Bølge.png">
+    <p class="t">
+        Bølgerne her bliver på en eller anden måde ved med at gå over og under en "_(0_)-værdi". I vandbølger er 
+        det højden, i lydbølger er det henholdsvis over- og undertryk i luften omkring os. 
+        Man kunne også vælge at sætte positive tal til tryk og negative til træk. Eller give "negative karakterer" som
+        _(-3_), fordi det hjælper med at justere gennemsnittet.  
+    </p> 
+
+    <p class="t">
+        Men jeg ved hvad du tænker. Jeg ved hvad du har haft i hovedet, lige siden denne snak 
+        om negative tal begyndte:
+    </p>
+    <p class="cent">
+        ...<br>
+        Hvorfor giver minus og minus plus?
+    </p>
+    <p class="t">
+        Ja, <i>hvorfor</i> er det at _(\text{noget} - (-7)=\text{noget}+7_) og at _((-1)*(-1)=1_)? 
+        Der findes intet svar: Det er 
+        sådan vi har valgt det skulle være! Vi opfandt negativitet
+        og tegnet "_(-_)", da vi fik brug for det, og <i>vi</i> kan 
+        selv bestemme, hvordan vi regner med det matematisk, og hvilke
+        regler det skal følge. Det rigtige spørgsmål omhandler <i>motivation</i>:
+        Hvorfor har vi valgt lige disse regler?
+        Hvorfor hjælper de os med at opstille
+        intuitive, logiske situationer? Hvorfor passer de til det 
+        man føler, ville give mest mening?   
+    </p>
+    <p class="t">
+        Lad os kigge på position og bageren igen: 
+    </p>
+    <img class="SpicT" style="width:75%" src="../../../Assets/Chapter1/Talopgaver og intuition/DistanceToBaker/F/Minus og minus.png">
+    <p class="tt">
+        Vi bruger både symbolet "_(-_)" til at beskrive et tals negativitet <i>og</i>
+        som en <i>handling</i> i form af "minus". I den forstand forventer
+        vi, at minus gør <i>det modsatte</i> af plus. 
+        Hvad sker der, når vi siger _(9+(-6.02)_) i situationen deroppe? Den negative bevægelse væk fra 
+        bageren trækker fra den positive bevægelse mod bageren! 
+        Det er intuitivt. 
+         _(9-(-6.02)_)
+        burde gøre <i>det modsatte</i> og lægge bevægelsen væk <i>til</i> som et positivt tal. 
+    </p>
+    <p class="t">
+        Lige meget 
+        hvad ville det være åndssvagt, hvis den gjorde <i>det samme</i> som _(+_) i tilfældet. Så ville vi have 
+        et helt minus tegn, vi ikke brugte til dets fulde potentiale. 
+        Det ville også bare være irriterende at stå med et matematik system, 
+        hvor to vidt forskellige ting gjorde det samme. 
+        Det giver tonsvis af mening, både fra et teknisk 
+        og intuitivt synspunkt, at man valgte reglerne her som man gjorde. 
+        Det er også dejligt, hvis man tænker over minus som <i>forskel</i>:
+        Afstanden mellem pungen og manden er _(9+6.02_), hvilket er præcist hvad _(9-(-6.02)_) giver!
+    </p>
+    <p class="t">
+        I nogle situationer vil man arbejde med sammenhænge, hvor positiviteten / negativiteten ændrer sig en del. 
+        Det giver helt intuitivt mening at _(--1=1_) da vi "modsætter en modsætning". Men hvad hvis vi skal gøre 
+        det en helt masse gange? Vi gider ikke skrive 
+        _($-------1_)
+        Det er lidt svært både at se på og arbejde med.
+        Som et bedre alternativt har vi valgt, at negativiteten af et tal modsættes,
+        hvis man ganger med _(-1_). 
+        En negering kan nu tegnes på to måder, og det tidligere eksempel kunne skrives som:
+        _($-1*-1*-1*-1*-1*-1*1_)
+        Man kan også tænke over det sådan her: 
+        <i>Hvis</i> _(-1*1=1_), ville _(1_)
+        pludselig have en magisk kraft: at lave negativt om til positivt. Det gider vi ikke have: 
+        Det burde ikke have nogen indflydelse at gange med _(1_). 
+        Det hænger bedre sammen med alt andet i vores nuværende matematiske system. 
+    </p>
+
+    <q-stion 1="35" 2="2" bigTop="true">
+    Udregn:
+    <ul>
+        <li>_(\underline{\textbf{A:}} \, \, \,_) _(-4*(2 - -1*(-5))_) </li>
+        <li>_(\underline{\textbf{B:}} \, \, \,_) _((-3)^2_) og _((-3)^3_) </li>
+        <li>_(\underline{\textbf{C:}} \, \, \,_) _((-2)^3*(-5)^2_) </li>
+    </ul>
+    <br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+   _((-3)^2_) svarer til:
+    _($(-3)*(-3)_)
+    Det kan vi omskrive som:
+    _($(-1*3)*(-1*3) = (-1)*(-1)*3*3 = 3*3 = 9_)
+    Negativ gange negativ giver positiv, så _((-3)^2_) er
+    positiv og lig _(3^2_). Situationen ved _((-3)^3_) er lidt anderledes:
+    _($(-3)^3 = (-3)*(-3)*(-3) = (-1)*(-1)*(-1)*3*3*3_)
+    _(3*3*3=27_) og _((-1)*(-1)*(-1)_) er lig _((-1)_). Helt generelt
+    ser vi at 
+    _($(-A)^n = (-1)^n*A^n_)
+    ... hvor _((-1)^n_) skifter negativitet, hver gang vi øger potensen _(n_) 
+    med _(1_). 
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Her opløfter vi en negativ base til et negativt tal. Det er der intet specielt udfordrende ved:
+    _($(-3)^{-4}=\frac{1}{(-3)^4}=\frac{1}{(-1*-1*-1*-1)*3^4}=\frac{1}{1*81} = \frac{1}{81}_)
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{C}}_)#" tabColour="rgb(171,96,147)">
+    Vi siger: 
+    _($\begin{eqnarray}
+    && (-2)^3*(-5^2)= \\ \\
+    && (-2)*(-2)*(-2)*(-5)*(-5)= \\ \\
+    && (-1*-1*-1*-1*-1)*(2^3*5^2)=  \\ \\
+    && -200
+    \end{eqnarray}_)
+    <br></answer-box>
+
+    <!--  -->
+
+    <p class="tt"> 
+    _(A^n_) har vi defineret som tallet du får, hvis du ganger _(A_) med sig selv
+    "_(n_) gange". I denne kontekst giver det selvfølgelig kun mening, hvis
+    _(n_) er et helt, positivt tal. Man kan ikke gange noget med sig selv
+    "_(3_) en halv" gange, og man kan ikke gange noget med sig selv 
+    en "negativ mængde". 
+    </p>
+    <p class="t">
+    Det er rigtigt! Man <i>kan</i> ikke gange noget med sig selv under _(0_) gange,  
+    men man 
+    kan heller ikke have negative temperature, og tiden går kun fremad. 
+    Negativitet er bare et praktisk værktøj <i>vi fandt på</i> der kan hjælpe os
+    med intuitive "modsætninger". 
+    Hvad virker intuitivt som det "modsatte" af at gange med sig selv _(3_) gange? At dividere med 
+    sig selv _(3_) gange! 
+    </p>
+    <p class="t">
+    <i>Vi</i> har defineret det her mærkelige "_(A^n_)"-noget, så <i>vi</i>
+    kan også bare bestemme, at man dividerer hvis _(n_) er negativt. Det er super
+    elegant og praktisk:   
+    _($\begin{eqnarray}
+    && 3 \cdot 4^{3} & + \\
+    && 1 \cdot 4^{2} & + \\
+    && 2 \cdot 4^{1} & + \\
+    && 3  & + \\
+    && 3 \cdot 4^{-1} & + \\
+    && 3 \cdot 4^{-2} & + \\
+    && 2 \cdot 4^{-3} & + \\
+    \end{eqnarray}_)
+    Bare lige for at hjælpe med ordentligheden, vil jeg også definere at 
+    _($A^0=1_)
+    Jeg har nu defineret en ny regel, der siger at 
+    <i>et hvilket som helst</i> tal opløftet til _(0_) giver _(1_). Selv
+    _(0_) opløftet til _(0_) giver _(1_)! 
+    Det virker totalt ulogisk og mærkeligt, men er dejligt fordi vi nu får:
+    _($\begin{eqnarray}
+    && 3 \cdot 4^{3} & + \\
+    && 1 \cdot 4^{2} & + \\
+    && 2 \cdot 4^{1} & + \\
+    && 3 \cdot 4^{0} & + \\
+    && 3 \cdot 4^{-1} & + \\
+    && 3 \cdot 4^{-2} & + \\
+    && 2 \cdot 4^{-3} & + \\
+    \end{eqnarray}_)
+    Nu ser det rigtig flot og homogent ud. Du vil se senere, at denne
+    mærkværdige regel _(A^0=1_) generelt viser sig som et praktisk valg. 
+    </p>
+
+    <!--  -->
+
+    <q-stion 1="35" 2="3" bigTop="true">
+    Omskriv de følgende stykker, så at der kun er én exponent: 
+    <div style="margin-left:-71%; margin-top:25px; margin-bottom: 15px;">
+    _($\begin{eqnarray}
+        && \underline{\textbf{A}}: \, \, \, \, \, \, 6^5*6^{-3} \\ \\
+        && \underline{\textbf{B}}: \, \, \, \, \, \, 7^{-3}*7^{-6} \\ \\
+        && \underline{\textbf{C}}: \, \, \, \, \, \, \frac{71^{33}}{71^{-35}} \\ \\
+        && \underline{\textbf{D}}: \, \, \, \, \, \, 5^2*\frac{5^4}{5^{-6}}*5^{-7} 
+    \end{eqnarray}_)
+    </div>
+    <br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    Vi bruger reglen vi kom frem til, og får:
+    _($6^{5}*6^{-3}=6^{5+(-3)} = 6^{2}_)
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Same deal:
+    _($7^{(-3) + (-6)}=7^{-13}_)
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{C}}_)#" tabColour="rgb(171,96,147)">
+    At dividere med _(71^{35}_) er det samme som at gange med _(71^{-1*35}_). Generelt:
+    _($\frac{A^a}{A^b}=A^a*A^{-b}=A^{a+(-b)}=A^{a-b}_)
+    I vores tilfælde er _(A=71,a=33,b=-35_), så vi får 
+    _($71^{33-(-35)}=71^{33+35}=71^{68}_)
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{D}}_)#" tabColour="rgb(175,128,161)">
+    Her siger vi: 
+    _($5^2*\frac{5^4}{5^{-6}}*5^{-7}=5^2*5^{4-(-6)}*5^{-7}=5^{2+10-7}=5^{5}_)
+    <br></answer-box>
+    

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+
+    <!--19.1 --> 
+
+    <h1 class="header"> </h1>
+    <h1 class="title">Sandsynlighedsteori runde 1:<br> Diskret</h1>
+
+    <p class="t">
+    Det selveste mest fundamentale grundprincip alt sandsynlighed er baseret på er simpelt og intuitivt:
+    Chancen for at noget sker, er lig: 
+    _($\frac{\text{Antal måder det kan ske på}}{\text{Samlet antal af mulige ting der kan ske}}_)
+    Så hvis du arbejder med en 6-sidet terning, hvor hver side har lige stor chance for
+    at lande, er der 6 udfald i alt, og kun 1 udfald, hvor du får 1, 2, 3, 4, osv.
+    _($\text{Chance for at den lander på 4: } \thinspace \frac{1}{6}_)
+    _($\text{Chance for at den lander på et lige tal: } \thinspace \frac{3}{6} = \frac{1}{2}_)
+    _($\text{Chance for at ikke lande på 4:} \thinspace \thinspace \thinspace \frac{6-1}{6} = \frac{5}{6}_)
+    Vi bruger ikke procent i sandsynlighed, men i stedet bare et tal mellem _(0_) og _(1._)
+    Det fortæller os præcist det samme, men er dejligere, siden vi ikke behøver at gange
+    og dividere med _(100_) hele tiden. Det ville også bare være meget arbitrært.
+    </p>
+
+    <p class="t">
+    Trods de begge er baseret på samme hoved-ide, er der på en måde to <i>skoler</i> af sandsynlighed:
+    Den <i>diskrete</i> og den <i>kontinuerlige</i>. Terningen kan <i>kun</i> have
+    6 værdier: _(1, \, 2, \, 3, \, 4, \, 5, \, 6_). Den kan ikke lande på "_(5.5_)" eller "_(4.023_)".
+    Det er i kontrast til et mål som f.eks regn. Det kan regne _(2mm_) på en
+    uge, men også _(2.0003mm_) eller _(3.4892mm_). Der er <i>uendelig mange udfald</i>, og
+    det er derfor en meget anden process at finde sandsynligheden for
+    f.eks. _(3.6mm_) regn. Chancen for at det regner <i>lige præcis</i> _(3.6mm_) er
+    praktisk talt uendelig lille, men chancen for at det regner <i>omkring</i> _(3.6mm_)
+    er straks meget højere. Det er i den kontinuerlige skole, hvor du tit ser diagrammer som:</p>
+    <img class='SpicXL' style='width:95%' src='../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\Histogram.png'> 
+    <p class="t">Den kontinuerlige er super vigtig, men vi vil fokusere specifikt på den
+    <i>diskrete</i> i dette afsnit og kapitel. 
+    Vi vil kort se på den kontinuerlige i en af bogens sidste afsnit</p>
+
+    <q-stion 1="1" 2="1">
+    En disk bliver sat i gang med et dreje rundt:
+    <img class='SpicBXL' style='width:65%' src='../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\SpinTheWheel.png'>
+        <!-- CROP DET HER BILLEDE: DER ER LIDT HVIDT ØVERST -->
+    <p class="t">
+    Der er lige stor chance for at lande på hver. Hvor stor er chancen for at lande
+    på sort?
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Vi kan tælle _(17_) pladser og _(6_) sorte, ergo:
+    _($\frac{6}{17}_)
+    Det svarer til _(0.3529_), en 
+    chance på omtrent _(35%_)
+    <br><br></answer-box>
+
+    <q-stion 1="1" 2="2">
+    Du trækker et kort fra et standard dæk (uden jokere). 
+    Hvad er chancen for, at det først og fremmest ikke er et spar,
+    heller ikke er et billedkort (hvor vi ikke tæller es som billedkort) <i>og</i> heller ikke ruder _(7_)?
+    <br><br></q-stion>
+    <answer-box>
+    Det her er meget simpelt, da vi 
+    meget ligesom før bare skal <i>tælle</i> mængden af kort.
+    Den totale mængde kort er _(13*4=52_). Der er _(13_) spar 
+    kort der skal fjernes. 
+    Der er _(3*4=12_) billedkort, men _(3_) af dem er en del af de _(13_) spar, så
+    _(12-3=8_) billedkort skal fjernes. Ruder _(7_) er der kun èn af. Alt i alt:
+    _($\frac{52-13-12-1}{52}=\frac{26}{52}=\frac{1}{2}_)
+    Bare èn halv! 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="1" 2="3">
+    Du er til en eller anden form for lotto. Der er tre slags billetter: 
+    _(B_) er dyrere men giver dig dobbelt så stor chance som _(A_), 
+    _(C_) er dyrest men giver dig triple så god chance som _(A_). Der
+    er _(23_) mennesker der har købt en _(A_) billet, _(17_) der har købt _(B_) billet, og _(15_) der har købt
+    _(C_) billet. Du har selv købt en _(B_) billet. Hvad er chancen for at du vinder en pris, hvis
+    der kun er èn vinder? 
+    <br><br></q-stion>
+    <answer-box>
+    Her forestiller jeg mig, at alle der købte _(B_) billetter faktisk 
+    købte _(2_) A billetter, og alle der købte _(C_) billetter faktisk købte
+    _(3_). Sådan har de henholdsvis dobbelt og tredobbelt så stor chance. 
+    Der er ikke længere _(23+17+15=55_) billetter i spil, men faktisk
+    på en måde _(23+17*2+15*3=102_) billetter. Du ejer _(2_), så din
+    chance er:
+    _($\frac{2}{102}=0.01960_)
+    Hvilket cirka svarer til en _(2_)% chance. 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="1" 2="4">
+    Du har læst, at der om tirsdagen er 4 gange så stor chance for regn som ikke-regn. 
+    Hvor stor chance er der, for at det regner?
+    <br><br></q-stion>
+    <answer-box>
+    Der er _(4_) udfald, hvor det regner, for hver udfald hvor det ikke regner. Den samlede mængde udfald
+    kan vi se som _(4+1=5_), og svaret er derfor:
+    _($\frac{4}{5}_)
+    Du kunne også have valgt at kalde 
+    chancen for regn _(p_a_) og chancen 
+    for ikke-regn 
+    _(p_b_). Det enten regner eller ikke-regner, så _(p_a+p_b=1_), og 
+    da _(p_b=p_a/4_) fås nu: 
+    _($p_a+\frac{1}{4}p_a=1_)
+    Du kan løse denne ligning og få _(p_a=4/5_), som forventet.
+    <br><br></answer-box>
+
+
+
+
+

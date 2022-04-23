@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+
+
+    <h2>Grænser med flere variabler</h2>
+
+    <p class="t">
+    Vi burde først studere <i>grænser</i> med flere variabler,
+    før vi studerer <i>calculus</i> med flere variabler. 
+    Sig f.eks. vi er interesserede i grænsen af:
+    _($f(x,y)=\frac{x-2}{\sqrt{(x-2)^2+(y-3.2)^2}}_)
+    ... ved _(x \to 2_), _(y \to 3.2_). Både tæller og nævner nærmer sig _(0_), men
+    vi kan ikke bruge L'Hopitals, da der nu er <i>to</i> variabler, der ændrer sig.
+    </p>
+    <p class="t">
+    En grænse af to variabler vil man ofte skrive som: 
+    _($\lim_{(x,y) \to (2, \, 3.2)} \frac{x-2}{\sqrt{(x-2)^2+(y-3.2)^2}} _)
+    Det forklarer lidt bedre, hvad der faktisk sker: <i>Punktet</i> _((x,y)_) 
+    nærmer sig <i>punktet</i> _((2, 3.2)_). 
+    Problemet er bare <i>hvordan</i>. Man kan "nærme sig" _((2, 3.2)_) på mange måder:
+    </p>
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter4\MultiVarCalc\MultivarLimitApproach.png'> 
+    <p class="t">
+    Èn af dem er i en lige linje, hvilket svarer til:
+    _($\VeC[x,y] = \VeC[2,3.2] + t*\VeC[Cos(\theta),Sin(\theta)]_)
+    Vi kan nu substituere og tage grænsen, når _(t \to 0_):
+    _($\begin{eqnarray}
+    && \lim_{t \to 0} \frac{(2+t Cos(\theta))-2}{\sqrt{((2+t Cos(\theta))-2)^2+((3.2+t Sin(\theta))-3.2)^2}} = \\ \\
+    && \lim_{t \to 0} \frac{t*Cos(\theta)}{t*\sqrt{Cos(\theta)^2+Sin(\theta)^2} } = \\ \\
+    && \lim_{t \to 0} \frac{Cos(\theta)}{1} = \\ \\
+    && Cos(\theta)
+    \end{eqnarray}_)
+    Huh. Det er et meget mærkeligt resultat. 
+    Grænsen er _(Cos(1.3)=0.2674_), 
+    hvis vi nærmer os i en lige linje med en retning på _(\theta=1.3_), 
+    men _(Cos(-2.5)=-0.801_) hvis vi nærmer 
+    os med en retning på _(-2.6_).
+    "Grænsen ved _((2, 3.2)_)" findes ikke på denne funktion,
+    da det afhænger af hvilken retning vi kommer fra! 
+    </p>
+    <img class='SpicXL' style='width:100%' src='../../../Assets/Chapter4\MultiVarCalc\DiscontinousGraphFinal.png'> 
+    <p class="t">
+    Vi så noget lignende i 2D: _(x_) ved grænsen 
+    _(\lim_{x \to a}[f(x)]_) kan både nærme sig _(a_) fra højre og venstre side, og de
+    var <i>ikke</i> altid identiske. Eksempelvis _(\lim_{x \to 0}[Arctan(1/x)]_):
+    </p>
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter4\Limits\Discontinuity3.png'> 
+    <p class="t">
+    Et andet eksempel på en multivariable grænse kunne være: 
+    _($\lim_{(x,y) \to (0,0)} \frac{x^3*y}{x^6+y^2} _)
+    Vi bruger samme trick som før, og ser på lige linjer,
+    der nærmer sig _((0,0)_) via _(x=t Cos(\theta)_) og 
+    _(y=t Sin(\theta)_). Det giver:
+    _($\lim_{t \to 0}  Cos(\theta)^3*Sin(\theta)*\frac{t^2}{Cos(\theta)^6*t^4+Sin(\theta)^2} _)
+    Det kan relativt let (dog lidt tricky ved _(\theta=0_)) vises, at denne grænse giver
+    _(0_) for enhver værdi af _(\theta_). Det er desværre ikke nok til
+    at bevise, at grænsen findes: Vi har kun nærmet os via <i>lige linjer</i>, 
+    men der findes tonsvis andre muligheder. Måske nærmer vi os via
+    formen af et polynomie _(y=x^3_)? 
+    _($\lim_{t \to 0} \frac{x^3*x^3}{x^6+(x^3)^2} = \lim_{t \to 0} \frac{1}{2} = \frac{1}{2} _)
+    Det matcher ikke _(0_) som ved lige linjer, så grænsen findes <i>ikke</i>. 
+    </p>
+    <p class="t">
+    Hvordan kan vi faktisk sikre os, at en grænse findes, hvis det ikke
+    engang er nok at tjekke hver eneste mulige lige retning? Det er let nok at give
+    <i>modbeviser</i>, men hvad med den anden vej rundt?
+    </p>
+    <p class="t">
+    Vi har to muligheder: Enten forsøger vi at beskrive enhver mulig vej _((x,y)_) kunne bruge til 
+    at nærme sig _((x_0,y_0)_) og viser, at de alle nærmer sig samme værdi,
+    <i>eller</i> 
+    observerer vi, at alle vejene har èn ting til fælles: <i>Afstanden</i> mellem 
+    _((x,y)_) og _((x_0,y_0)_) nærmer sig _(0_). Derfor kan vi sige, at
+    _($\lim_{(x,y) \to (x_0,y_0)} f(x,y) = L _)
+    ... hvis at:
+    _($0 \lt \sqrt{(x-x_0)^2 + (y-y_0)^2} \lt \delta \implies |f(x,y)-L| \lt \epsilon_)
+    Afstand er defineret i 3D, så samme argument virker:
+    _($\lim_{(x,y,z) \to (x_0,y_0,z_0)} f(x,y,z) = L_)
+    ... hvis at:
+    _($0 \lt \sqrt{(x-x_0)^2 + (y-y_0)^2 + (z-z_0)^2} \lt \delta \implies |f(x,y,z)-L| \lt \epsilon_)
+    Samme argument virker også med flere variabler end tre (højere dimensioner), men
+    grunden er en del mere kompliceret og involveret, da den geometriske intuition forsvinder. 
+    Vi vil ikke gennemgå det her. 
+    </p>
+    <p class="t">
+    Disse slags grænser af to eller flere variabler er i langt de fleste tilfælde
+    <i>meget</i> svære. Vi kommer ikke rigtig til at arbejde med det, 
+    men lad mig alligevel vise starten på èt eksempel (og hvorfor det er svært).
+    Sig vi gerne vil bevise at:
+    _($\lim_{(x,y) \to (2,3)} (x^2+y^2)*x y = 78_)
+    Vi har nu:
+    _($0 \lt \sqrt{(x-2)^2 + (y-3)^2} \lt \delta \implies |(x^2+y^2) x y-78| \lt \epsilon_)
+    Jeg antager først, at både _(x \gt 2_) og _(y \gt 3_). 
+    Så ved jeg med sikkerhed at
+    _((x^2+y^2) x y \gt 78_). Det lader mig fjerne den absolutte værdi:
+    _($0 \lt \sqrt{(x-2)^2 + (y-3)^2} \lt \delta \implies (x^2+y^2) x y-78 \lt \epsilon_)
+    Vi burde nok rent strategisk udnytte, at _(x^2+y^2_) i funktionen minder
+    en del om afstand. Vi kan udvide potenserne i første ulighed og få:
+    _($\begin{eqnarray}
+    && \sqrt{x^2+y^2-4x-6y+15} \lt \delta \to \\ \\
+    &&  x^2+y^2 \lt \delta^2 + 4x + 6y - 15
+    \end{eqnarray}_)
+    Ergo:
+    _($(x^2+y^2) x y-78 \lt (\delta^2 + 4x + 6y - 15) x y - 78_)
+    Antag, at _(\delta \le 1_). _((x,y)_) må maksimalt være
+    _(1_) væk fra _((2,3)_), så _(x_) er højest _(3_) og _(y_) er højest _(4_). 
+    Vi ved derfor at:
+    _($\begin{eqnarray}
+    && (\delta^2 + 4x + 6y - 15) x y - 78 & \lt (\delta^2 + 4*3 + 6*4 - 15)*3*4 - 78 \\ \\
+    && & =  12\delta^2 + 174
+    \end{eqnarray}_)
+    Vi gætter nu _(\delta=\sqrt{(\epsilon-174)/12}_) hvilket færdiggøre
+    beviset, <i>hvis</i> _(x \gt 2_), _(y \gt 3_). Vi skal nu vise, at 
+    gættet også virker ved _(x \lt 2, y \gt 3_), _(x \gt 2, y \lt 3_) og 
+    _(x \lt 2, y \lt 3_). 
+    Det vil jeg ikke vise, da det er relativt udfordrende og rodet. 
+    </p>
+    <p class="t">
+    Man får heller ikke rigtig <i>brug</i> for at evaluere grænser som denne. 
+    Præcis ligesom ved grænser af ét variable, burde vi i stedet fokusere på at bevise 
+    nogle <i>meget</i> generelle egenskaber og regler for,
+    hvornår en funktion er kontinuerlig. 
+    Det er nok for os at vide, at grænsen <i>findes</i>, selv hvis vi ikke ved
+    præcis, hvad den er lig. Vi kan bare vælge en hvilket som helst praktisk vej,
+    og beregne grænsens værdi som en "nem" grænse af kun _(1_) variable. 
+    </p>
+    <p class="t">
+    Meget af det her med grænser behøver vi ikke bekymre os om super meget, 
+    eftersom de fleste funktioner vi arbejder med er relativt "normale". 
+    </p>
+
+    <q-stion 1="2" 2="1">
+    Bevis at følgende grænse ikke findes:
+    _($\lim_{(x,y) \to (0,0)} \frac{Sin(x)}{\sqrt{x^2+2y^2}} _)
+    <br></q-stion>
+    <answer-box>
+    Du kan se mit svar her:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter4\MultiVarCalc\MultivariableLimitExercise.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="2">
+    Vi arbejdede tidligere med koniske sektioner, hvor vi så, at cirkler, 
+    ellipser, parabolaer og hyperbolaer alle kunne beskrives som:
+    _($FP = e*Pd_)
+    Hvor _(FP_) er afstanden fra et hvilket som helst punkt _(P_) til et
+    fokuspunktet _(F_), _(e_) er en konstant kaldt "excentriciteten" og 
+    _(Pd_) er afstanden fra _(P_) til en linje _(y=d_).
+    Hvis fokuspunktet _(F_) er lig _((a, b)_) kan det hele beskrives matematisk som:
+    _($\sqrt{(x-a)^2 + (y-b)^2} = e*|y-d|_)
+    Vi udvidede og omskrev denne definition til:
+    _($\frac{(x-a)^2}{1-e^2} + \left(y+\frac{e^2d-b}{1-e^2}\right)^2 = \frac{e^2d^2-b^2}{1-e^2}+\left(\frac{e^2d-b}{1-e^2}\right)^2_)
+    Herfra kunne det ses, at _(0 \lt e \lt 1_) gav ellipser og 
+    at _(1 \lt e_) gav hyperbolaer. Tilfældet med _(e=1_) og parabolaer er
+    trivielt, men hvad med _(e=0_)? Hvordan beviser vi helt matematisk og ordentligt, at det 
+    giver en cirkel? 
+    <p class="t">
+    Jeg anbefaler stærkt, at du ser tilbage på afsnittet, hvor vi originalt 
+    introducerede excentricitet (kapitel 2, afsnit 4, side 8). Simulationen
+    her hjælper nok lidt:
+    </p>
+    <p class="cent">
+        <a href="https://www.geogebra.org/m/wd7xq7m2" target="_blank">Endnu et link til geogebra simulation der ikke virkede på denne side!</a> 
+    </p>
+    <p class="t">
+    Udover _(e_) kan vi også ændre afstanden mellem 
+    linjen _(d_) og _(F_). Hvilken effekt har det? 
+    </p>
+    <p class="t">
+    Det her er en tricky opgave! 
+    </p>
+    <br></q-stion>
+    <answer-box t="h" n="1">
+    Når vi gør _(e_) mindre bliver vores ellipse, der nærmer sig formen af en cirkel, også mindre.
+    Hvis vi gør _(e_) helt _(0_) får vi en cirkel med radius _(0_):
+    _($FP = 0*Pd = 0_)
+    Men vi kunne vælge i stedet at <i>nærme</i> os _(e=0_) med en grænse, samtidig
+    med at vi med _(Pd_) nærmede os _(\infty_). Lyder det måske lidt som en multivariable grænse? 
+    <br><br></answer-box>
+    <answer-box t="h" n="2">
+    Vi er egentlig ret ligeglade med _(b_) i _(F=(a, b)_) og _(d_) i _(y=d_).
+    Det eneste der reelt har indflydelse på formen og størrelsen af den koniske
+    sektion er excentriciteten _(e_) og <i>afstanden</i> mellem _(F_) og linjen. 
+    Kald denne afstand for _(L_). Opdager du noget, hvis du erstatter alle
+    _(d_) med _(b+L_) i den omskrevne definition?
+    <br><br></answer-box>
+    <answer-box>
+    Du kan se mit svar her:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter4\MultivarCalc\TrickyConicMultilimit.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+
+
+    <h3>To definitioner på vinkler</h3>
+
+    <p class="t">
+    Alt det her med principielle og generelle værdier stammer fundamentalt
+    fra <i>vinkler</i>. Vi skelner derfor mellem to definitioner:
+    </p>
+
+    <div class="Definition">
+    <b> Definition: Argument af komplekst tal (principielt)</b> <br>
+    Det principielle argument af et komplekst tal _(z_), skrevet _(Arg(z)_), 
+    er lig vinklen mellem _(0_) og _(2\pi_) på _((0, 0)_) fra
+    den positive x-akse til _(z_). Intuitivt: Tallets mindste, positive vinkel. 
+    <p class="t">
+    Det skal noteres, at _(Arg_) også i nogle tilfælde bliver defineret
+    mellem vinklen _(-\pi_) og _(\pi_), i hvilket
+    tilfælde formlerne vil se en smule anderledes ud. 
+    </p>
+    </div>
+
+    <div class="Definition">
+    <b> Definition: Argument af komplekst tal (generelt)</b> <br>
+    Det generelle argument af _(z_) skrevet _(arg(z)_) (med lille i stedet for stort)
+    er lig følgende uendelige <i>sæt</i> af elementer:
+    _($ \{  \, \, \,\begin{eqnarray}
+    && \vdots \\
+    && Arg(z)-2*2\pi, \\
+    && Arg(z)-1*2\pi, \\
+    && Arg(z), \\
+    && Arg(z)+1*2\pi, \\
+    && Arg(z)+2*2\pi, \\
+    && \vdots
+    \end{eqnarray} \, \, \, \, \, \, \}_)
+    </div>
+
+    <p class="tt">
+    Det generelle argument kan også beskrives som en multivariable funktion _(arg(z,n)_), der tager 
+    et komplekst tal og en integer _(n_):
+    _($arg(z,n)=Arg(z)+n*2\pi_)
+    Vi skifter lidt løst mellem at bruge begge. Ofte vil _(arg(z,n)_) skrives
+    som bare _(arg(z)_).
+    </p>
+
+    <p class="t">
+    _(Arg_) kan også beskrives i forhold til _(arg_) som:
+    _($Arg(z)=arg(z) - 2\pi*Floor\left(\frac{arg(z)}{2\pi}\right)_)
+    Hvilket giver god nok mening, når man tænker over at _(Arg(z)_) bare er modulus af 
+    _(arg(z)_) med respekt til _(2\pi_). 
+    </p>
+
+    <p class="t">
+    Vinklen af produktet af to tal er summen af deres vinkler og 
+    vinklen af forholdet mellem to tal er forskellen mellem deres vinkler. <i>Intuitivt</i>:
+    _($\begin{eqnarray}
+    && v(z_1*z_2)=v(z_1)+v(z_2) \\ \\
+    && v\left(\frac{z_1}{z_2} \right) = v(z_1)-v(z_2)
+    \end{eqnarray}_)
+    Hvordan kan dette beskrives rigorisk i forhold til _(arg_) og _(Arg_)? 
+    </p>
+
+    <q-stion 1="5" 2="1" bigTop=true>
+    _(\underline{\textbf{A}}_): <br>
+    Beskriv de to regler via _(Arg(z)_). _(Arg(z)_) <i>skal</i> returnere en vinkel mellem _(0_) og _(2\pi_)
+    <p class="t">
+    _(\underline{\textbf{B}}_): <br>
+    Beskriv de to regler via _(arg(z)_). 
+    </p>
+    <p class="t">
+    I tilfældet af _(Arg(z)_) vil det ikke være muligt at beskrive det med èn simpel ligning, 
+    og du er nødt til at opdele det i nogle cases i forhold til _(z_1_) og _(z_2_). 
+    </p>
+    <br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    _(Arg(z)_) <i>skal</i> returnere en vinkel mellem _(0_) og _(2\pi_). 
+    Sig eksempelvis at _(Arg(z_1)=4.7_) og _(Arg(z_2)=5.2_). Her kan vi 
+    <i>ikke</i> sige at
+    _($Arg(z_1*z_2)=4.7+5.2=9.9_)
+    ...fordi _(9.9_) er højere end _(2\pi=6.283_). Vi er derfor nødt til at sige:
+    _($Arg(z_1*z_2)=9.9-2\pi = 3.616_)
+    Mere generelt:
+    _($Arg(z_1*z_2) = M_{2\pi}\left(Arg(z_1)+Arg(z_2) \right)_)
+    Det er helt fint og logisk at beskrive det i forhold til modolus, men 
+    ofte anvender vi en lidt anden konvention. Vi ved at
+    _(Arg(z_1)+Arg(z_2)_) altid er over _(0_) og under _(4\pi_). 
+    Det er enten under _(2\pi_) eller over, så vi siger:
+    _($Arg(z_1*z_2)= \left\{ \begin{eqnarray}
+    && Arg(z_1)+Arg(z_2), & \text{  } Arg(z_1)+Arg(z_2) \lt 2\pi \\
+    && Arg(z_1)+Arg(z_2)-2\pi, & \text{  } Arg(z_1)+Arg(z_2) \ge 2\pi
+    \end{eqnarray} \right. _)
+    Ved den anden regel med division vil _(Arg(z_1)-Arg(z_2)_) være mellem _(2\pi_) og _(-2\pi_). 
+    Vi siger derfor:
+    _($Arg(z_1/z_2)= \left\{ \begin{eqnarray}
+    && Arg(z_1)-Arg(z_2), & \text{  } Arg(z_1)+Arg(z_2) \gt 0 \\
+    && Arg(z_1)-Arg(z_2)+2\pi, & \text{  } Arg(z_1)+Arg(z_2) \le 0
+    \end{eqnarray} \right. _)
+    Disse to regler bliver også nogle gange skrevet som:
+    _($\begin{eqnarray}
+    && Arg(z_1*z_2) & = Arg(z_1)+Arg(z_2)-2\pi*N^{+} \\
+    && Arg(z_1/z_2) & = Arg(z_1)-Arg(z_2)+2\pi*N^{-}
+    \end{eqnarray}_)
+    Hvor _(N^{+}_) og _(N^{-}_) defineres som:
+    _($N^{+} = \left\{\begin{eqnarray}
+    && 0 & \text{  } Arg(z_1)+Arg(z_2) \lt 2\pi \\
+    && 1 & \text{  } Arg(z_1)+Arg(z_2) \ge 2\pi
+    \end{eqnarray} \right. 
+    _)
+    _($N^{-} = \left\{\begin{eqnarray}
+    && 0 & \text{  } Arg(z_1)-Arg(z_2) \gt 0 \\
+    && 1 & \text{  } Arg(z_1)-Arg(z_2) \le 0
+    \end{eqnarray} \right._)
+    Man kan også som en fjerde metode sige:
+    _($\begin{align}
+    & Arg(z_1*z_2) = \\ \\
+    & Arg(z_1)+Arg(z_2) - 2\pi*Floor\left(\frac{Arg(z_1)+Arg(z_2)}{2\pi} \right)
+    \end{align}_)
+    Det her er alt lidt pedantisk, men jeg viser dig lige alle formerne, så du er klar på det
+    hele. Forskellige former er brugbare i forskellige beviser. 
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Ved _(arg_) bliver det langt simplere. Her kan man se, at:
+    _($\begin{eqnarray}
+    && arg(z_1*z_2) & = \, arg(z_1)+arg(z_2) \\
+    && arg(z_1/z_2) & = \, arg(z_1)-arg(z_2)
+    \end{eqnarray}_)
+    For enhver _(n_) fra _(arg(z_1*z_2)_) vil der være 
+    et par _(n_1_), _(n_2_) fra _(Arg(z_1)_) og _(Arg(z_2)_) der passer, 
+    så dette er sandt. Samme slags argument kan laves med 
+    _(arg(z_1/z_2)_). 
+    <p class="t">
+    Man kan fremstille et lidt mere rigorisk bevis ved at omskrive _(arg_) i forhold til _(Arg_):
+    _($Arg(z_1*z_2)+n*2\pi = Arg(z_1)+n_1*2\pi + Arg(z_2)+n_2*2\pi_)
+    Vi bruger nu formlen for _(Arg(z_1*z_2)_), vi udledte i sidste opgave:
+    _($\begin{align}
+    & Arg(z_1)+Arg(z_2)+2\pi*N^{+} + n*2\pi = \\ \\
+    & Arg(z_1)+Arg(z_2) + (n_1+n_2) \pi
+    \end{align}_)
+    Denne ligning kan simplificeres til
+    _($n+N^{+} = n_1+n_2_)
+    ... hvilket tydeligvis er sandt for ethvert _(n_), hvis man vælger
+    de rigtige _(n_1_), _(n_2_). 
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="5" 2="2">
+    Vis at
+    _($Arg(1/z)=2\pi-Arg(z)_)
+    ... undtagens hvis _(Arg(z)=0_)
+    <br><br></q-stion>
+    <answer-box>
+    Vi anvender den tidligere regel, og sætter _(z_1=1_):
+    _($\begin{align}
+    Arg\left(\frac{1}{z} \right) & = Arg(1) - Arg(z) + 2\pi*N^{-} \\
+    & = 0 - Arg(z) + 2\pi*N^{-}
+    \end{align}_)
+    _(Arg(1+0i)-Arg(z)_) er altid mindre end _(0_) udover
+    ved _(z=0_), så _(N^{-}=1_) og:
+    _($-Arg(z)+2\pi*1 = 2\pi - Arg(z)_)
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="5" 2="3">
+    Hvorfor er _(arg(z^m)_) <i>ikke</i> nødvendigvis lig _(m*arg(z)_)?
+    <br><br></q-stion>
+    <answer-box>
+    Vi ved, at:
+    _($arg(z^m)=arg(z*z*z*\dots)=arg(z)+arg(z)+arg(z) \, + \,\dots_)
+    Problemet er bare, at:
+    _($arg(z)+arg(z)+arg(z) \, + \, \dots \text{ } m \text{ gange} \ne m*arg(z)_)
+    Det kan ses, hvis man omskriver hver _(arg(z)_) i forhold til _(Arg(z)_):
+    _($\begin{eqnarray}
+    && Arg(z)+n_1 2\pi + Arg(z) + n_2 2\pi + Arg(z) + n_3 2\pi \, + \, \dots \\ \\
+    && m*Arg(z) + (n_1 + n_2 + n_3 \, + \, \dots \, n_m)*2\pi
+    \end{eqnarray}_)
+    _(n_1+n_2+n_3 \, + \, dots_) kan tage alle værdier, så:
+    _($arg(z^m) = m*Arg(z) + n*2\pi_)
+    Dette matcher ikke med _(m*arg(z)_), som er lig:
+    _($\begin{eqnarray}
+    && m*\left(Arg(z) + n*2\pi  \right) = \\ \\
+    && m*Arg(z) + (m*n)*2\pi
+    \end{eqnarray}_)
+    Ved _(arg(z^m)_) er _(2\pi_) ganget med alle hele tal. Ved
+    _(m*arg(z)_) er _(2\pi_) kun ganget med multiplums af _(m_). 
+    Den ene svarer til sættet:
+    _($arg(z^m) = \{\, \, \, \begin{eqnarray}
+    && \vdots \\
+    && m*Arg(z) - 3*2\pi \\
+    && m*Arg(z) - 2*2\pi \\
+    && m*Arg(z) - 1*2\pi \\
+    && m*Arg(z) \\
+    && m*Arg(z) + 1*2\pi \\
+    && m*Arg(z) + 2*2\pi \\
+    && m*Arg(z) + 3*2\pi \\
+    && \vdots 
+    \end{eqnarray} \, \, \, \, \, \}_)
+    Den anden svarer til sættet:
+    _($arg(z^m) = \{ \, \, \, \begin{eqnarray}
+    && \vdots \\
+    && m*Arg(z) - 3m*2\pi \\
+    && m*Arg(z) - 2m*2\pi \\
+    && m*Arg(z) - 1m*2\pi \\
+    && m*Arg(z) \\
+    && m*Arg(z) + 1m*2\pi \\
+    && m*Arg(z) + 2m*2\pi \\
+    && m*Arg(z) + 3m*2\pi \\
+    && \vdots
+    \end{eqnarray} \, \, \, \, \, \}_)
+    Det er derfor kun sandt hvis _(m=1_). 
+    <br><br></answer-box>
+    
+    <!--  -->
+
+    <q-stion 1="5" 2="4">
+    Beskriv _(Arg(z^m)_). 
+    <br><br></q-stion>
+    <answer-box>
+    _(Arg(z^m)_) svarer til _(Arg(z*z*z*\dots)_), hvor vinklen _(Arg(z)_) bliver lagt sammen med sig selv 
+    _(m_) gange.
+    Det endelige resultat skal være mellem _(0_) og _(2\pi_), så vi siger:
+    _($Arg(z^m)=M_{2\pi}\left(m*Arg(z) \right)_)
+    Det kan også omskrives i forhold til _(Floor_)-funktionen som:
+    _($Arg(z^m)=m Arg(z) - 2\pi*Floor\left(\frac{m Arg(z)}{2\pi} \right)_)
+    <br></answer-box>
+
+    <p class="tt">
+    Som vi kan se, er der både fordele og ulemper ved henholdsvis
+    _(arg_) og _(Arg_). 
+    </p>
+

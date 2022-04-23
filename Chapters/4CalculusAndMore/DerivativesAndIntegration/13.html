@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+
+
+    <h2>Anvendelser af integraler</h2>
+    <h3>Arealer</h3>
+    <p class="t">
+    ... så lad os finde nogle arealer! Lad os i hvert fald starte med at forstå
+    hvorfor man nogensinde ville have brug for at beregne arealet under en kurve:
+    </p>
+
+    <p class="t">
+    Som ingeniør eller produkt-designer arbejder man ofte
+    med bl.a. metal- eller plastikplader der skal produceres
+    efter bestemte præcise former. 
+    Disse former er sjælen bestemt eksklusivt ud fra æstetik og design, men i stedet <i>matematik</i>. 
+    De skal have bestemte egenskaber så de f.eks.: 
+    </p>
+
+    <ul style="list-style:disc; margin-left:4%;">
+        <li>Passer perfekt ind i andre former, og derved sidder ordentligt og stabilt</li>
+        <li>Kan få en bestemt mekanisme til at virke. 
+            Måske en disk, der drejer rundt og midlertidigt
+            stopper tennisbolde i, at rulle forbi. </li>
+        <li>Har en bestemt - helst lav - vægt. </li>
+        <li>Følger sikkerhedsmæssige krav, f.eks. i forhold til skarpe eller bløde kanter.</li>
+    </ul>
+
+    <p class="t">
+    Lad os se på et lidt fjollet men konkret eksempel. 
+    Mit hold i gymnasiet skulle på et tidspunkt designe en maskine. 
+    Vi besluttede os for at designe en "automatisk ægge-knækker":
+    </p>
+
+    <img class='SpicBXL' style='width:80%' src='../../../Assets/Chapter4\DerivativesAndIntegrals\BudetBreaker.png'> 
+
+    <p class="t">
+    Den første udfordring var, at få ægge-knækkeren til at 
+    rotere æggene, så de alle vendte samme retning. 
+    Her lavede vi et design, hvor gulvet rykkede frem og tilbage, 
+    hvilket skubbede æggene ned i en cylinder. 
+    Gulvet var nødt til at have en ret specifik form, for
+    at ægget vendte sig ordentligt. 
+    Vi havde bl.a. brug for følgende metalstykke:
+    </p>
+
+    <img class='SpicBXL' style='width:65%' src='../../../Assets/Chapter4\DerivativesAndIntegrals\BudetBreaker2.png'> 
+
+    <p class="t">
+    Det definerede vi som (mål i mm):
+    </p>
+
+    <img class='SpicXL' style='width:35%' src='../../../Assets/Chapter4\DerivativesAndIntegrals\BudetBreaker3.png'> 
+
+    <q-stion 1="2" 2="1" 3="5">
+    Find arealet af vores stykke. Det havde vi bl.a. brug for,
+    til at estimere vægten.
+    <p class="t">
+    Lige nu fokuserer vi primært på <i>anvendelser</i> af integraler. Derfor
+    lader vi <i>Geogebra</i> gøre det hårde arbejde. I 
+    Geogebra svarer _(\int f(x)_) til 
+    _($\text{integral}(f(x))_) 
+    ... og 
+    _(\int_{a}^{b} f(x) dx_) til 
+    _($\text{integral}(f(x), x, a, b)_)
+    Det er helt fint, at du bruger computeren før vi
+    har set på integrationsteknikkerne:
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Lad os først se på den <i>nemme</i> del af denne figur. 
+    Den nedre del kan tydeligvis opdeles i et rektangel og en trekant:
+    _($4*80 + \frac{35*80}{2} = 1720 \text{mm}^2_)
+    Nu mangler vi bare arealet under parablen. Den kan modelleres
+    som _(y=ax^2_), hvis vi placerer _((0,0)_)-punktet i midten nederst på parablen. 
+    Parablen går _(127_) op efter _(x_) er gået _(40_) frem, så:
+    _($a=\frac{127}{40^2} = 0.079375_)
+    Vi kan nu regne arealet som:
+    _($2*\int_{0}^{40} 0.079375x^2 \text{ }dx = 2*\text{integral}(0.079375x^2, x, 0, 40) = 3388.67_)
+    Så det samlede areal er:
+    _($1720+3388.67 = 5108.67_)
+    Voila!
+    <br><br></answer-box>
+
+    <q-stion 1="13" 2="1">
+    Find arealet af følgende mærkelige metal-plade:
+    <img class='Spic' style='width:57%' src='../../../Assets/Chapter4\DerivativesAndIntegrals\MetalPlate2.png'> 
+    <p class="t">
+    De tre kurver er defineret, så at _((0,0)_) er i de respektive blå punkter, hvor hver kurve starter. 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Du kan se mit svar her:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter4\DerivativesAndIntegrals\MetalPlateAreaAnswer.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+
+    <p class="t">
+    Integraler kan selvfølgelig også være praktiske i landmåling. 
+    Mange former
+    passer ikke godt til firkanter, femkanter, eller generelt n-kanter. I de tilfælde
+    er det bedre og lettere at approximere formen via en funktion:
+    </p>
+
+    <img class='SpicBXL' style='width:40%' src='../../../Assets/Chapter4\DerivativesAndIntegrals\MotherfuckingRiver.png'> 
+    
+    <p class="t">
+    Hvis vi kun ville måle det grønne areal, kunne vi måske måle en rektangel, fjerne arealet
+    af søen som en sin-kurve, og fjerne noget af bjerget/stenen - måske som en _(x^2_) kurve og/eller
+    en eksponentiel kurve. Et eller andet. 
+    <p class="t"></p>
+
+
+
+
+

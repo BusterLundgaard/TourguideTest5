@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+
+
+    <h4>En generel strategi til substitutioner uafhængig fra Geometri</h4>
+    <p class="t">
+    Indtil videre har vi brugt Geometriske argumenter hver gang vi ændrede
+    variabler. Det er fint og intuitivt, men der findes en mere
+    generel og (nogle gange) langt nemmere metode. 
+    Sig at vi ændrer variablerne _((x,y,z)_) til
+    tre nye variabler _((a,b,c)_) hvor:
+    _($\VeC[x,y,z] = \begin{pmatrix} M(a,b,c) \\ N(a,b,c) \\ V(a,b,c) \end{pmatrix}_)
+    _(M(a,b,c)_), _(N(a,b,c)_), _(V(a,b,c)_) er funktioner. 
+    F.eks var _(M(a,b,c)_) ved torusen lig _((R+rCos(\theta))Cos(\phi)_). 
+    </p>
+    <p class="t">
+    Vi er interesserede i størrelsen _(dV_) af den lille volume, der bliver skabt, når vi 
+    står ved _((a,b,c)_), og bevæger os _(da_) langs _(a_), _(db_) langs _(b_) og _(dc_) langs _(c_).
+    En lille ændring _(da_) i _(a_) skaber følgende ændring i _((x,y,z)_):
+    _($\vec A = \begin{pmatrix} M_a(a,b,c) \\ N_a(a,b,c) \\ V_a(a,b,c) \end{pmatrix}_)
+    Samme ide gælder for ændringer i _(b_) og _(c_):
+    _($\vec B = \begin{pmatrix} M_b(a,b,c) \\ N_b(a,b,c) \\ V_b(a,b,c) \end{pmatrix}, \qquad
+    \vec C = \begin{pmatrix} M_c(a,b,c) \\ N_c(a,b,c) \\ V_c(a,b,c) \end{pmatrix}_)
+    _(\vec A_), _(\vec B_) og _(\vec C_) er alle <i>approksimationer</i> af ændringen
+    i _((x, y, z)_), men vi tager grænsen af _((da, db, dc) \to (0, 0, 0)_) senere alligevel.
+    </p>
+    <p class="t">
+    _(dV_) er
+    bare <i>volumen</i> mellem de tre vektorer:
+    </p>
+    <img class='Spic' style='width:30%' src='../../../Assets/Chapter4\MultiVarCalc\DoubleIntegrals\3DParalellogram.png'> 
+    <p class="t">
+    Dette kan regnes som areal gange højde. Arealet spændt
+    af _(\vec A_) og _(\vec B_) ved vi pr. krydsproduktets definition er 
+    _(|\vec A \times \vec B|_). Højden svarer til længden af _(\vec C_) ganget med 
+    _(Cos_) af vinkelforskellen til højdens retning:
+    _($|\vec A \times \vec B|*|\vec C|*Cos(\theta)_)
+    Men dette er bare et prikprodukt siden højdens retning <i>er</i>
+    _(\vec A \times \vec B_):
+    _($ (\vec A \times \vec B)*\vec C _)
+    Bum! Din funktion _(f(x,y,z)_) i integralet skal altså ganges med:
+    _($\left( 
+    \begin{pmatrix} M_a(a,b,c) \\ N_a(a,b,c) \\ V_a(a,b,c) \end{pmatrix} \times
+    \begin{pmatrix} M_b(a,b,c) \\ N_b(a,b,c) \\ V_b(a,b,c) \end{pmatrix}  
+    \right) *
+    \begin{pmatrix} M_c(a,b,c) \\ N_c(a,b,c) \\ V_c(a,b,c) \end{pmatrix}
+    _)
+    Et prikprodukt med et krydsprodukt af 9 forskellige hældninger af 3 forskellige funktioner
+    virker meget rodet og kompliceret, og <i>det er det</i>. I langt de fleste 
+    tilfælde får vi noget ubrugeligt, og geometrien er ofte en markant hurtigere strategi. 
+    I mange situationer <i>er</i> der bare ikke nogen intuitiv og nem geometri.  
+    Computeren har også langt nemmere ved at arbejde med en "objektiv formel" som denne. 
+    </p>
+    <p class="t">
+    Jeg viser også formlen fordi, det 2D tilfælde faktisk <i>er</i> brugbart og let.
+    Her søger vi ikke længere <i>volumen</i> af en 3D "parallelepiped", men
+    <i>arealet</i> af et 2D parallelogram. Det kan regnes som bare
+    _($|M_a(a,b)*N_b(a,b) - N_a(a,b)*M_b(a,b)|_)
+    Ved polære koordinater har vi eksempelvis:
+    _($\VeC[x,y]=\VeC[r*Cos(\theta),r*Sin(\theta)]_)
+    Så _(a=r_), _(b=\theta_) og
+    _($\begin{eqnarray}
+    && M_a(a,b) & = &  & Cos(\theta) \\
+    && N_a(a,b) & = &  & Sin(\theta) \\
+    && M_b(a,b) & = & -& r*Sin(\theta) \\
+    && N_b(a,b) & = &  & r*Cos(\theta)
+    \end{eqnarray}_)
+    Arealet af parallelogrammet _(dA_) er:
+    _($\begin{eqnarray}
+    && Cos(\theta)*\left(r*Cos(\theta) \right) - Sin(\theta)*\left(-r*Sin(\theta) \right) \, = \\ \\
+    && r*(Cos(\theta)^2 + Sin(\theta)^2) \, = \\ \\
+    && r
+    \end{eqnarray}_)
+    Og det er derfor vi ganger med _(r_), når vi ændrer til polar koordinater!
+    </p> 
+
+    <p class="t">
+    Lad os tage ét 3D eksempel også. Sig at vi skifter til koordinaterne på en kugle hvor:
+    _($\VeC[x,y,z]=\VeC[rCos(\theta)Cos(\phi),rCos(\theta)Sin(\phi),rSin(\theta)]_)
+    Her har vi følgende vektorer:
+    _($\begin{eqnarray}
+    && \vec A = \VeC[Cos(\theta)Cos(\phi), Cos(\theta)Sin(\phi), Sin(\theta)], \\ \\
+    && \vec B = \VeC[-rSin(\theta)Cos(\phi), -rSin(\theta)Sin(\phi), rCos(\theta)], \\ \\  
+    && \vec C = \VeC[-rCos(\theta)Sin(\phi), rCos(\theta)Cos(\phi), 0]
+    \end{eqnarray}_)
+    Vi tager krydsproduktet mellem _(\vec A_) og _(\vec C_):
+    </p>
+    <p class="t" style=margin-left:-5%;>
+    _($\left(\begin{align}
+    \left(Cos(\theta)Sin(\phi) \right)   &\, \cdot \, (0)                                    &-&& Sin(\theta)                         &\, \cdot \, (rCos(\theta)Cos(\phi) ) \\ \\
+    Sin(\theta)                          &\, \cdot \,  \left(-rCos(\theta)Sin(\phi) \right)  &-&& \left(Cos(\theta)Cos(\phi) \right)  &\, \cdot \, (0)   \\ \\
+    \left(Cos(\theta) Cos(\phi) \right)  &\, \cdot \, \left(r Cos(\theta) Cos(\phi) \right)  &-&& \left(Cos(\theta) Sin(\phi) \right) &\, \cdot \, \left(-rCos(\theta) Sin(\phi) \right) \\ \\
+    \end{align}\right)_)
+    </p>
+    <p class="t">
+    Det kan simplificeres en del til: 
+    _($\VeC[-rSin(\theta)Cos(\theta)Cos(\phi), -rSin(\theta)Cos(\theta)Sin(\phi), rCos(\theta)^2]_)
+    Nu prikker vi med _(\vec B_) og får:
+    _($\begin{eqnarray}
+    && -rSin(\theta)Cos(\theta)Cos(\phi)*(-r*Sin(\theta)Cos(\phi)) \, \, \, + \\
+    && -rSin(\theta)Cos(\theta)Sin(\phi)*(-r*Sin(\theta)*Sin(\phi)) \, \, \, + \\
+    && rCos(\theta)^2*r*Cos(\theta)
+    \end{eqnarray}_)
+    Og den sidste simplificering giver
+    _($r^2*Cos(\theta)_)
+    ... hvilket stemmer overens med 
+    den geometriske udledning. 
+    </p>
+
+    <!--  -->
+
+    <q-stion 1="17" 2="1" bigTop="true">
+    Sig at din densitetsfunktion er:
+    _($f(x,y)=x^2-y^2_)
+    Og at dit område er indersiden af ellipsen:
+    _($\frac{x^2}{9}+\frac{y^2}{25}=1_)
+    Find massen. 
+    <br><br></q-stion>
+    <answer-box>
+    Ellipsen svarer til en enhedscirkel der er udstrakt _(3_) på _(x_) og _(5_) på _(y_), så:
+    _($\VeC[x,y]=\VeC[3*rCos(\theta),5*rSin(\theta)], \qquad r \in [0, 1], \theta \in [0, 2\pi]_)
+    Vi skal regne _(dA_), før vi kan integrere med denne substitution. Vi har:
+    _($\begin{eqnarray}
+    && M_{r}(r,\theta)  = 3Cos(\theta) \\
+    && M_{\theta}(r,\theta)  = -3r*Sin(\theta) \\
+    && N_{r}(r,\theta)  = 5Sin(\theta) \\
+    && N_{\theta}(r,\theta)  = 5r*Cos(\theta) \\
+    \end{eqnarray}_)
+    Så
+    _($dA = 3*Cos(\theta)*5r*Cos(\theta) - (-3r*Sin(\theta))*5Sin(\theta) _)
+    ... det kan simplificeres til bare 
+    _($15r_)
+    Integralet bliver derfor til:
+    _($\int_{0}^{2\pi} \int_{0}^{1} f(x,y)*15r \text{ }dr \text{ }d\theta _)
+    Vi omskriver til sidst _(f(x,y)_) i forhold til den nye parameterisering, og får:
+    _($\int_{0}^{2\pi} \int_{0}^{1}r^2*\left(9 Cos(\theta)^2 - 25 Sin(\theta)^2 \right)*15r \text{ }dr \text{ }d\theta_)
+    Det kan regnes med en computer til _(-60 \pi_). Bum! 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="17" 2="2">
+    Sig at din densitetsfunktion er:
+    _($f(x,y) = -4x+7y_)
+    Og at dit område er defineret som området inde mellem alle fire følgende linjer:
+    _($\begin{eqnarray}
+    && -x+5y=36, \\
+    && -x+5y=50, \\ 
+    && -3x+y=-4, \\
+    && -3x+y=-18
+    \end{eqnarray}_)
+    Find massen.
+    <br><br></q-stion>
+    <answer-box>
+    Du kan se mit svar her:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter4\MultiVarCalc\DoubleIntegrals\ParalelloGramSmaller.mp4' type='video/mp4'>
+    </video>
+    <p class="t">
+    Skæringspunkterne mellem linjerne er lette at regne. Ud fra dem finder
+    man hurtigt
+    _($P=(4,8), \, \, \, \vec a = \VeC[5,1], \, \, \, \vec b = \VeC[1, 3]_)
+    Så vi har:
+    _($\VeC[x,y] = \VeC[4+5A+1B, 8 + 1A + 3B]_)
+    Herfra kan det let regnes at:
+    _($dA = 5*3-1*1 = 14_)
+    _(f(x,y)_) bliver til:
+    _($-4*(4+5A+1B)+7*(8 + 1A + 3B) = 40 - 13A + 17B_)
+    Så vi regner integralet:
+    _($\int_{0}^{1} \int_{0}^{1} 40 - 13A + 17B \text{ }dA \text{ }dB = 588_)
+    Bum! 
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <p class="cent">*</p>
+
+    <p class="tt">
+    Lige en kort note til sidst: Du vil ofte høre begrebet "Jakobian" i konteksten af
+    dobbelt, tre-dobbelt eller "højere" integraler. 
+    Det er en slags forkortelse af formlen for _(dA_) og _(dV_). 
+    </p>
+    <p class="t">
+    Sig at du ved en dobbelt-integral laver substitutionen _(x=M(u,v)_), _(y=N(u,v)_).
+    "Jakobianen" defineres nu som:
+    _($\begin{bmatrix} 
+    M_u & M_v \\
+    N_u & N_v
+    \end{bmatrix}_) 
+    Hvis du ved en tredobbelt-integral substituerer _(x=M(u, v, w)_), <br> _(y=N(u, v, w)_), 
+    _(z=Q(u,v,w)_) defineres Jakob som:
+    _($\begin{bmatrix} 
+    M_u & M_v & M_w \\
+    N_u & N_v & N_w \\
+    Q_u & Q_v & Q_w
+    \end{bmatrix}_)
+    Ved fire variabler _((x, y, z, p)_) med 
+    _(x=M(u,v,w,i)_), <br> _(y=N(u,v,w,i)_), _(z=Q(u,v,w,i)_), _(p=R(u,v,w,i)_) fås:
+    _($\begin{bmatrix} 
+    M_u & M_v & M_w & M_i \\
+    N_u & N_v & N_w & N_i \\
+    Q_u & Q_v & Q_w & Q_i \\
+    R_u & R_v & R_w & R_i
+    \end{bmatrix}_)
+    osv osv. Vi er interesseret i disse matrixer, fordi deres
+    determinanter er lig _(dA_), _(dV_) osv. Eksempelvis
+    _($Det \left(\begin{bmatrix} 
+    M_u & M_v \\
+    N_u & N_v
+    \end{bmatrix} \right) = M_u*N_v - M_v*N_u_)
+    ... hvilket passer perfekt til formlen vi udledte for parallelogrammets areal. 
+    Man kan vise (med stor besværlighed), at det samme gælder 
+    determinanten af Jakobianen med tre variabler. Dette trick gør det på ingen måde lettere at beregne, og du kan
+    helt fint bruge præcis samme strategi og proces som i de sidste par opgaver. Jeg nævner
+    det alligevel af to grunde:
+    </p>
+    <div style="text-align:center; margin-top:10px;">
+        <ul style="display: inline-block; text-align: left; padding-left:0%; list-style:none;">
+            <li><b> 1</b>: Det er hvad det typisk bliver anvendt, brugt, og refereret til i andre bøger</li>
+            <li><b> 2</b>: Selvom det til en grad bare er en forkortelse for formlerne, 
+            ligger der faktisk en hvis interessant matematisk intuition bag Jakobianen, der til en 
+            grad forklarer, hvorfor det virker med flere end tre variabler</li>
+        </ul>
+    </div>
+    <p class="t">
+    I det korte afsnit hvor matrixer blev introduceret gennemgik vi idéen
+    bag "lineære transformationer":
+    </p>
+    <img class='SpicXL' style='width:120%; margin-left:-10%;' src='../../../Assets/Chapter4\MultiVarCalc\DoubleIntegrals\LinearTransformationExample.png'> 
+    <p class="t">
+    Vi tænkte over hver kolonne i matrixen 
+    som en vektor og definerede følgende "produkt" mellem en matrix og en vektor (3D eksempel):
+    _($\begin{bmatrix}
+    a_x & b_x & c_x \\
+    a_y & b_y & c_y \\
+    a_z & b_z & c_z \\
+    \end{bmatrix} \cdot \VeC[x,y,z] = x*\VeC[a_x,a_y,a_z] + y*\VeC[b_x,b_y,b_z] + z*\VeC[c_x,c_y,c_z]_)
+    På en måde kan man altså sige, at vi ændrer koordinatsystemet ved at beskrive 
+    hvert punkt _((x,y,z)_) i forhold til nye vektorer. 
+    Det er en "lineær" transformation, da alle linjer stadig forbliver linjer.
+    </p>
+    <p class="t">
+    Jakobianen giver relativ god intuitiv mening, hvis vi forstår den som 
+    en <i>lineær transformation</i>. Sig f.eks du ganger den med følgende vektor:
+    _($\begin{bmatrix} 
+    M_u(u,v,m) & M_v(u,v,m) & M_w(u,v,m) \\
+    N_u(u,v,m) & N_v(u,v,m) & N_w(u,v,m) \\
+    Q_u(u,v,m) & Q_v(u,v,m) & Q_w(u,v,m)
+    \end{bmatrix} *
+    \VeC[du,dv,dw] 
+    _)
+    Det svarer til:
+    _($du*\begin{pmatrix} M_u(u,v,m) \\ N_u(u,v,m) \\ Q_u(u,v,m) \end{pmatrix} + 
+    dv*\begin{pmatrix} M_v(u,v,m) \\ N_v(u,v,m) \\ Q_v(u,v,m) \end{pmatrix} + 
+    dw*\begin{pmatrix} M_w(u,v,m) \\ N_w(u,v,m) \\ Q_w(u,v,m) \end{pmatrix} _)
+    Jakobianen er altså en lineær transformation der approximerer 
+    forskellen i _((x,y,z)_) omkring 
+    punktet _((x,y,z)_). 
+    Ændringen i hver af disse tre variabler skaber en <i>vektor</i>, 
+    og Jakobianen beskriver disse vektorer. Vi søger abstrakt og bredt sagt den "størrelse" 
+    vektorerne spænder, hvilket i 2D og 3D er determinanten af matrixen.
+    Det ville give <i>god intuitiv mening</i> hvis "størrelsen" i 4D, 5D eller højere også
+    var lig determinanten af denne matrix. 
+    </p>
+    <p class="t">
+    Et helt rigorisk og ordentligt bevis er meget tricky og abstrakt. 
+    </p>
+
+
+    <!-- <p class="tt">
+    Vi kan selvfølgelig også bruge de her tricks når vores dobbelt-integraler ikke er evaluerede:
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5" bigTop="true">
+    Løs følgende dobbelt-integral:
+    _($\int \int \frac{1}{Ln(x*y)+7} \text{ }dx \text{ }dy_)
+    Denne opgave er relativ tricky, og det tager måske lidt tid at finde frem til en 
+    god substitution der virker! 
+    <br><br></q-stion>
+    <answer-box t="h" n="1">
+    Du skal finde to funktioner _(M(u,v)_), _(N(u,v)_) og lave en eller anden substitution:
+    _($\VeC[x,y] = \begin{pmatrix} M(u, v), N(u, v) \end{pmatrix}_)
+    Dit mål er at gøre følgende integral simpel:
+    _($\int \int \frac{M_u N_v - M_v N_u}{Ln\left(M(u, v)*N(u,v) \right) + 7}_)    
+    Det kan virke svært at starte med så mange mulige substitutioner, og det <i>er det</i>. 
+    Lad os observere et par simple ting vi kan "fikse" ved integralet: _(7_) i nævneren skal helst
+    fjernes så vi har èt led. Du kunne være super fint hvis tælleren _(M_u N_v - M_v N_u_)
+    på en eller anden vis "fjernede" logaritmen _(Ln(M(u, v)*N(u,v))_) i nævneren
+    siden _(1/Ln_) ikke kan integreres. 
+    <br><br></answer-box>
+    <answer-box t="h" n="2">
+    Prøv med: 
+    _($x=\frac{u^{v+1}}{e^7}, \qquad y=u^{-v}_)
+   <br></answer-box>
+    <answer-box>
+    Du skal finde to funktioner _(M(u,v)_), _(N(u,v)_) og lave en eller anden substitution:
+    _($\VeC[x,y] = \begin{pmatrix} M(u, v), N(u, v) \end{pmatrix}_)
+    Dit mål er at gøre følgende integral simpel:
+    _($\int \int \frac{M_u N_v - M_v N_u}{Ln\left(M(u, v)*N(u,v) \right) + 7}_)    
+    Det kan virke svært at starte med så mange mulige substitutioner, og det <i>er det</i>. 
+    Lad os observere et par simple ting vi kan "fikse" ved integralet: _(7_) i nævneren skal helst
+    fjernes så vi har èt led. Du kunne være super fint hvis tælleren _(M_u N_v - M_v N_u_)
+    på en eller anden vis "fjernede" logaritmen _(Ln(M(u, v)*N(u,v))_) i nævneren
+    siden _(1/Ln_) ikke kan integreres. 
+    <p class="t">
+    Med en del arbejde, intuition, tests og gætning kommer man frem til:
+    _($x=u^{v+1}*e^{-7}, \qquad y=u^{-v}_)
+    _(e^{-7}_) i _(x_) fjerner _(7_) tallet og resten er valgt fordi at
+    _(x*y_) giver _(u_). Det viser sig at _(dA_) heldigvis indeholder
+    en faktor af _(Ln(u)_) hvilke løser problemet. 
+    _($\begin{eqnarray}
+    && M_u(u,v) & = -v*u^{v-1} \\ \\
+    && N_v(u,v) & = \frac{Ln(u)}{e^7}*u^{v+1} \\ \\
+    && M_v(u,v) & = -Ln(u)*u^{-v} \\ \\
+    && N_u(u,v) & = \frac{v+1}{e^7}*u^v 
+    \end{eqnarray}_)
+    Så _(dA_) er: 
+    _($\begin{eqnarray}
+    && dA & = \left(-v*u^{v-1} \right)* \left(\frac{Ln(u)}{e^7}*u^{v+1} \right) - \left(-Ln(u)*u^{-v} \right)* \left(\frac{v+1}{e^7}*u^v \right)  \\ \\
+    && & = \frac{Ln(u)}{e^7}*(-v+v+1) \\ \\
+    && & = Ln(u)*e^{-7} \\
+    \end{eqnarray}_)
+    Integralet vi skal regne er derfor:
+    _($\begin{eqnarray}
+    && \int \int \frac{1}{Ln(u)}*\frac{Ln(u)}{e^7} \text{ }du \text{ }dv  = \\ \\ 
+    && \frac{1}{e^7}*\int \int 1 \text{ }du \text{ }dv  = \\ \\
+    && \frac{u*v}{e^7}
+    \end{eqnarray}_)
+    Vi søger idéelt et svar i forhold til _(x_) og _(y_), så de skal isoleres i substitutionerne. 
+    _(y=u^{-v}_) giver:
+    _(u=y^{-1/v}_), hvilke så kan indsættes
+    i _(x=u^{v+1}*e^{-7}_):
+    _($x=y^{-\frac{v+1}{v}}*e^{-7}_)
+    Herfra kan _(v_) nu isoleres:
+    _($v=\frac{1}{1+Log_y(x*e^7)}_)
+    Hvilke så indsættes i _(u=y^{-1/v}_) og giver:
+    _($u=y^{-1-Log_y(x*e^7)}_)
+    Alt i alt får vi:
+    _($y^{-1-Log_y(x*e^7)}*\frac{1}{1+Log_y(x*e^7)}*e^{-7}_)
+    God damn! 
+    </p>
+    <br></answer-box>
+
+    <p class="tt">
+    .... men det er ret sjælen vi bruger denne strategi siden det meget hurtigt bliver
+    meget kompliceret som vi så i opgaven. 
+    </p> -->
+
+

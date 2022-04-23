@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+
+
+    <h3>Visualisering i 3D</h3>
+
+    <h4>Punkter og linjer</h4>
+
+    <p class="t">
+    Lad os kigge lidt på <i>3D</i>-koordinatsystemer, nu hvor vi alligevel er i gang med at plotte.
+    Flere (inklusiv mig) har svært ved rumlig forståelse og intuition, og 3D matematik
+    kan virke intimiderende. Hvis vi skal lære at <i>tænke</i> i 3D, 
+    er det nok en god ide at forstå hvordan vi overhovedet <i>tegner</i> i 3D. 
+    Hvordan vi visualiserer vores idéer. 
+    Sig jeg gerne vil tegne et koordinatsystem med et eller andet punkt _(P=(-3,4,-1)_):
+    </p>
+
+    <video class='SpicBXL' style="width:100%;" controls>
+        <source src='../../../Assets/Chapter2\Section4\Space\3DTutorial1.mp4' type='video/mp4'>
+    </video>
+
+    <p class="t">
+    Sig nu, at der er to andre punkter _(B=(3,1,1)_) og _(C=(-1,1,-2)_), og at jeg gerne vil
+    tegne trekanten _(\triangle ABC_):
+    </p>
+    
+    <video class='SpicBXL' style="width:100%;" controls>
+        <source src='../../../Assets/Chapter2\Section4\Space\3DTutorial2.mp4' type='video/mp4'>
+    </video>
+
+    <p class="t">
+    Sig igen, at der er et fjerde punkt _(D=(0,1,5)_), og at _(A_), _(B_), _(C_) hver især
+    er forbundet til _(D_), så der dannes en slags 3D trekant:
+    </p>
+    
+    <video class='SpicBXL' style="width:100%;" controls>
+        <source src='../../../Assets/Chapter2\Section4\Space\3DTutorial3.mp4' type='video/mp4'>
+    </video>
+
+    <p class="t">
+    Prøv du nu at gøre noget lignende:
+    </p>
+
+    <q-stion 1="9" 2="1">
+    _(\underline{\textbf{A}}_): <br>
+     Sig at 
+     \begin{eqnarray}
+     && A=(1,-4,-1) \\ 
+     && B=(4,-1,2) \\ 
+     && C=(-1,1,0) \\ 
+     && D=(1,-1, 5)
+     \end{eqnarray}
+     ... og 
+    at punkterne er forbundet med hinanden præcis ligesom i det eksempel jeg gennemgik. 
+    Skitser den 3D Trekant.
+    <p class="t">
+    _(\underline{\textbf{B}}_): <br>
+     Sig at 
+     \begin{eqnarray}
+     && A=(-1,2,1.5) \\ 
+     && B=(3,0,-0.5) \\ 
+     && C=(-2,-1,-2) \\ 
+     && D=(1,2,-1.5)
+     \end{eqnarray}
+     ... og at
+    punkterne er forbundet med hinanden så der dannes en 3D trekant. Tegn den. 
+    </p>
+    <p class="t">
+    Du behøver ikke lave eller læse opgave _(2_) hvis du følte du havde helt fint styr på opgave _(1_). 
+    </p>
+    <br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    Du kan se mit svar og process her: 
+    <video class='SpicB' style="width:95%;" controls>
+        <source src='../../../Assets/Chapter2\Section4\Space\Plot3DTriangle1.mp4' type='video/mp4'>
+    </video>
+    <p class="t">
+    Tegner man det i et 3D-program, ser det ud som:
+    </p>
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter2\Section4\Space\Plot3DPointsExercise1.png'> 
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Du kan se hvordan jeg gør det her:
+    <video class='SpicB' style="width:95%;" controls>
+        <source src='../../../Assets/Chapter2\Section4\Space\SkitserTrekant2.mp4' type='video/mp4'>
+    </video>
+    <p class="t">
+    Tegner man det i et 3D-program, ser det ud som:
+    </p>
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter2\Section4\Space\Plot3DPointsExercise2.png'> 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="9" 2="2">
+    _(\underline{\textbf{A}}_): <br>
+     Skitser en 3D pyramide. Den skal være _(5_) bred på begge sider, _(6_) høj, og skal lægge
+    på XY-planet med _(z_)-aksen som dens midte
+    <p class="t">
+    _(\underline{\textbf{B}}_): <br>
+     Skitser nu den samme pyramide, 
+    der nu lægger på YZ-planet, med _(x_)-aksen som dens midte.
+    </p>
+    <p class="t">
+    _(\underline{\textbf{C}}_): <br>
+     Sig at toppen af pyramiden fra opgave _(1_) bliver skåret af, så at alt over _(z=3.5_) forsvinder.
+    Tegn nu pyramiden igen / opdater den tidligere tegning. 
+    </p>
+    <br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    Du kan se mit svar her:
+    <video class='SpicB' style="width:95%;" controls>
+        <source src='../../../Assets/Chapter2\Section4\Space\Plot3DPyramid1.mp4' type='video/mp4'>
+    </video>
+    <p class="t">
+    Og et computergenereret billede her:
+    </p>
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter2\Section4\Space\3DPyramid1.png'> 
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Du kan se mit svar her:
+    <video class='SpicB' style="width:95%;" controls>
+        <source src='../../../Assets/Chapter2\Section4\Space\Plot3DPyramid2.mp4' type='video/mp4'>
+    </video>
+    <p class="t">
+    Og et computergenereret billede her:
+    </p>
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter2\Section4\Space\3DPyramid2.png'> 
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{C}}_)#" tabColour="rgb(171,96,147)">
+    Du kan se mit svar her:
+    <video class='SpicB' style="width:95%;" controls>
+        <source src='../../../Assets/Chapter2\Section4\Space\Plot3DPyramid3.mp4' type='video/mp4'>
+    </video>
+    <p class="t">
+    Og et computergenereret billede her:
+    </p>
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter2\Section4\Space\3DPyramid3.png'> 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="9" 2="3">
+    _(\underline{\textbf{A}}_): <br>
+     Sig at _(A=(-2,3,3)_) og at _(B=(5,1,0)_). Skitser linjen _(\Lin{AB}_)
+    <p class="t">
+    _(\underline{\textbf{B}}_): <br>
+     Sig at _(A=(1,2,-2)_) og at _(B=(5600,7200,-3000)_). Skitser linjen
+    _(\Lin{AB}_). 
+    </p>
+    <p class="t">
+    Du behøver ikke skitsere punkterne. Kun linjen. 
+    </p>
+    <br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    Du kan se mit svar her:
+    <video class='SpicB' style="width:95%;" controls>
+        <source src='../../../Assets/Chapter2\Section4\Space\3DPlotLineExercise1.mp4' type='video/mp4'>
+    </video>
+    <p class="t">
+    Og et computer-genereret billede her:
+    </p>
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter2\Section4\Space\DrawLine1.png'> 
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Du kan se mit svar her:
+    <video class='SpicB' style="width:95%;" controls>
+        <source src='../../../Assets/Chapter2\Section4\Space\3DPlotLineExercise2.mp4' type='video/mp4'>
+    </video>
+    <p class="t">
+    Og et computer-genereret billede her:
+    </p>
+    <img class='Spic' style='width:92%' src='../../../Assets/Chapter2\Section4\Space\DrawLine2.png'> 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="9" 2="4">
+    Skitser en kasse hvis center er _((1,2,1)_), og hvis sidelængder alle er _(12_)
+    <br><br></q-stion>
+    <answer-box>
+    Du kan se mit svar her:
+    <video class='SpicB' style="width:95%;" controls>
+        <source src='../../../Assets/Chapter2\Section4\Space\Plot3DKasseASS.mp4' type='video/mp4'>
+    </video>
+    <p class="t">
+    Og et computer-generet billede her:
+    </p>
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter2\Section4\Space\Plot3DKasse.png'> 
+    <br><br></answer-box>
+    
+    <!--  -->
+
+    
+    <q-stion 1="9" 2="5">
+    Hvad, geometrisk sagt, er:
+    _($\VeC[x,y,z]=\VeC[2,0,-1]+t*\Vec[1,2,0.5]_)
+    Prøv at tegn det
+    <br><br></q-stion>
+    <answer-box>
+    Vektoren
+    _($\VeC[2,0,-1]_)
+    ... kan vi bare se som et punkt. Hvad sker der, når vi ændrer på _(t_)? Well, hvis vi sætter
+    den til _(1_), får vi:
+    _($\VeC[2,0,-1]+1*\Vec[1,2,0.5]=\VeC[2+1*1,0+1*2,-1+1*0.5]=\VeC[3,2,-0.5]_)
+    Hvis vi sætter _(t_) til _(2_), får vi:
+    _($\VeC[2,0,-1]+2*\Vec[1,2,0.5]=\VeC[4,4,0]_)
+    Og ved _(3_):
+    _($\VeC[2,0,-1]+3*\Vec[1,2,0.5]=\VeC[5,6,0.5]_)
+    Vi kunne selvfølgelig også vælge et negativt _(t_):
+    _($\VeC[2,0,-1]-2*\Vec[1,2,0.5]=\VeC[0,-4,-2]_)
+    For hver _(t_)-værdi vi vælger, får vi altså et nyt punkt. Der er altid et bestemt forhold
+    mellem, hvor meget vi rykker frem på _(x_), _(y_) og _(z_), og det er bestemt
+    af _((1,2,0.5)_)-vektoren. Den beskriver derfor <i>retningen</i>. Vi bevæger os konstant langs denne retning, så
+    der er tale om en <i>linje</i>. En linje der bl.a. går gennem punktet _((2,0,-1)_). Det giver fuldkommen
+    mening, når man tænker over det generelt:
+    _($\VeC[2,0,-1]+t*\Vec[1,2,0.5] = \VeC[2+1t,0+2t,-1+0.5t]_)
+    _(x_), _(y_) og _(z_) er hver især linjer! 
+    <p class="t">
+    Lad mig nu forsøge at tegne denne linje:
+    </p>
+    <video class='SpicB' style="width:95%;" controls>
+        <source src='../../../Assets/Chapter2\Section4\Space\TegnLinje.mp4' type='video/mp4'>
+    </video>
+    <p class="t">
+    Med en ordentlig computer-genereret tegning ser det ud som:
+    </p>
+    <img class='Spic' style='width:50%' src='../../../Assets/Chapter2\Section4\Space\TegnLinje.png'> 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="9" 2="6">
+    Perspektiv kan nemt snyde. Skærer de to følgende linjer hinanden?
+    <img class='SpicXL' style='width:65%' src='../../../Assets/Chapter2\Section4\Space\ToLinjerSkærer.png'> 
+    <br><br></q-stion>
+    <answer-box>
+    Linjerne skærer hinanden, hvis der findes et sted hvor både _(x_), _(y_) og _(z_) er identiske 
+    samtidig. Vi skal altså nok opsætte en ligning. Lad os beskrive linjerne på samme
+    måde, det blev gjort i sidste opgave. Retningerne på dem er:
+    _($\vec{r_1} = \VeC[1,-2,0.75]-\VeC[2,-3,1.5]=\VeC[-1,1,-0.75]_)
+    _($\vec{r_2} = \VeC[-1,0,1]-\VeC[-2,2,2]=\VeC[1,-2,-1]_)
+    Så linjerne bliver:
+    _($\VeC[x_1,y_1,z_1] = \VeC[2,-3,1.5]+t*\VeC[-1,1,-0.75]_)
+    _($\VeC[x_2,y_2,z_2] = \VeC[-2,2,2]+t*\VeC[1,-2,-1]_)
+    Nu skal vi se, om der findes 1 enkelt _(t_) hvor:
+    _($\begin{eqnarray}
+    && 2   & + t*(-1)   & = -2 & +t*1 \\
+    && -3  & + t*1      & = 2  & + t*(-2) \\
+    && 1.5 & +t*(-0.75) & = 2  & +t*(-1) \\
+    \end{eqnarray}_)
+    Den første ligning har løsningen _(t=2_), den anden har løsningen _(t=5/3_). Linjerne skærer <i>ikke</i>.
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="9" 2="7">
+    Se følgende billede
+    <img class='Spic' style='width:95%' src='../../../Assets/Chapter2\Section4\Space\LinjeSkærerYZPlan.png'> 
+    <p class="t">
+    Sig at 
+    _($l: \VeC[x,y,z] = \VeC[2.75,7.5,3.5] + t*\VeC[-3.75,-6,-2.5]_)
+    Hvad er koordinaterne på _(P_). Altså, hvor skærer _(l_) _(YZ_)-planet? 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    _(YZ_)-planet er der hvor _(x=0_), ligesom _(x_)-aksen i 2D er der hvor _(y=0_). Vi
+    har altså ligningen:
+    _($2.75+t*(-3.75)=0_)
+    Som giver _(t=0.733_). Det vil sige at _(y_) og _(z_) bliver:
+    _($y=7.5+0.733*(-6)=3.1_)
+    _($z=3.5+0.733*(-2.5)=1.67_)
+    Ergo:
+    _($P=(0,3.1,1.67)_)   
+    <br></answer-box>
+   

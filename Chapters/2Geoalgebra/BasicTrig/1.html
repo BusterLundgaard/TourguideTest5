@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+    <h1 class="header"><u>Afsnit 1:</u></h1>
+    <h1 class="title">Trekanter, trekanter, <br>og flere trekanter ... </h1>
+
+    <p class="t">  
+    Noget af det allerførste folk brugte deres tal og matematik til,  
+    var at <i>måle</i>:
+    Længder, arealer, voluminer osv. Det blev nok meget hurtigt klart, 
+    at retninger kunne opdeles i tre. 
+    Ved at se på himlen indså man, at der var vest-øst aksen 
+    (mod/fra solen), nord-syd aksen
+    (til side for solen) og selvfølgelig op/ned aksen 
+    (med og mod tyngdekraften). 
+    Man kunne også let forstå begreber som "syd-øst", "nord-øst", "syd-vest" og "nord-vest",
+    men ellers var det ikke let at beskrive <i>retninger</i>.  
+    Hvis man skulle instruere en ven, ville "_(60_) favn mod nord og _(16_) favn mod øst" 
+    klare jobbet. 
+    Hvad ellers skulle man have sagt? "Gå _(60/15=3.75_) favn mod nord, 
+    hver gang du går _(1_) favn mod øst". 
+    Det ville være meget upraktisk:
+    <div style="display:flex; width:120%; text-align: center; margin-left:-50px; margin-top:35px; margin-bottom: 35px;">
+        <img style="outline: solid; width:50%;" src="../../../Assets/Chapter2\Section1\WalkPath1.png">  
+        <img style="outline: solid; width:50%;" src="../../../Assets/Chapter2\Section1\WalkPath2.png">  
+    </div>
+    Uanset hvor langt man går i nord/syd-aksen, 
+    vil man aldrig komme længere i vest/øst-aksen 
+    og vice versa. Den her opdeling er praktisk. F.eks. kan man ved hjælp af 
+    bare ét ret hjørne nemt danne et nyt:
+    <img class='SpicT' style='width:50%' src='../../../Assets/Chapter2\Section1\RetVinkel.png'> 
+    <p class="tt">
+    Man kan nemt forestille sig, at der var mange fordele
+    ved at gøre ting rektangulære:
+    Man kunne uden meget besvær beskrive dimensionerne af "noget" til andre mennesker,
+    man kunne skære èt rektangel op i mindre, man kunne lægge ting, der var 
+    formet som rektangler, tæt op ad hinanden
+    på kompakt vis, mm. 
+    Nok vigtigst af alt var det super nemt at måle stykkernes <i>arealer</i>.
+    </p>
+    <p class="t">
+    Arealer var vigtige selv i oldtiden, da man jo dengang virkelig kæmpede om <i>land</i>. 
+    Hvor meget <i>fylder</i>
+    et hus? Hvor meget <i>jord</i> ejer du? Hvor stort et <i>areal</i> er 
+    byen eller endda landet? 
+    Alt det her skulle måles og beregnes, da det
+    havde stor indflydelse på, hvordan ressourcer blev fordelt 
+    (eller rettere sagt stjålet af dem, der sad på magten).
+    Rektangulære huse var nemme: 
+    _($\text{bredde}*\text{længde}_)
+    Runde former som brønde eller bestemte tårne var lidt mere problematiske,
+    men kunne til en vis grad approximeres af kvadrater. 
+    Større landopdelinger var en del mere udfordrende: 
+    </p>
+    <img class="SpicT" style="width:80%" src="../../../Assets/Chapter2\Section1\LandOpdeling1 1.png"> 
+    <p class="tt"> Løsningen var at dele arealet op i en masse mindre trekanter: </p>
+    <img class="SpicT" style="width:80%" src="../../../Assets/Chapter2\Section1\LandOpdeling1 2.png"> 
+    <p class="tt">De her trekanter kunne man så hver dele op i to endnu mindre trekanter med <i>rette sider</i>:</p>
+    <img class="SpicT" style="width:80%" src="../../../Assets/Chapter2\Section1\LandOpdeling1 3.png"> 
+    <p class="tt">Sådan her bliver det nemt at regne, da disse hver bare er halvdelen af en rektangel: </p>
+    <img class="SpicT" style="width:55%" src="../../../Assets/Chapter2\Section1\TrekanterErRektangler.png"> 
+    <p class="tt">Nu med arealet opdelt i simple former, kan man "bare" sende folk ud og finde følgende mål:</p>
+    <img class="SpicXL" style="width:120%; margin-left: -10%;" src="../../../Assets/Chapter2\Section1\LandOpdeling1 4.png"> 
+    <p class="tt">
+    Arealet ville blive 
+    _($\frac{20*30}{2}+\frac{30*40}{2}+\frac{50*40}{2}+\frac{40*40}{2} \, + \, \dots \, \text{osv}_)
+    Man begyndte naturligvis at få et rigtigt godt kendskab til trekanter generelt. 
+    Man kendte jo praktisk talt <i>alle</i> former, hvis bare man kendte trekanterne! 
+    </p>
+    <p class="t">
+    Processen her skulle optimeres så meget som muligt, og ét problem man 
+    ofte stødte på var, at man 
+    havde <i>to</i> længder på en trekant, 
+    men manglede den tredje. 
+    F.eks hvis man skulle måle:
+    </p>
+    <img class="SpicBXL" style="width:50%" src="../../../Assets/Chapter2\Section1\LandOpdeling2.png">
+    <p class="tt">
+    Her kunne man nemt måle trekanten _((30*40)/2_) plus rektanglet _(90 \text{ } * \text{ } ?_), 
+    hvis bare man kendte denne ukendte længde! 
+    Det kunne også være praktisk, hvis
+    du f.eks. fortalte nogen at de skulle gå _(60_) favn nord, _(16_) favn øst.
+    Her svarer _(?_) til længden af gåturen, hvis man går <i>direkte</i>. 
+    I håndværk og byggeri fik man også hyppigt brug for _(?_):
+    </p>
+    <img class="SpicBXL" style="width:80%" src="../../../Assets/Chapter2\Section1\Rope.png">
+    <p class="tt">I dette eksempel har man <i>tre</i> distancer: syd, øst, og opad. 
+    Her søger man
+    længden af en <i>3D</i> trekant (som man nok bare ville dele op i to 2D-trekanter). </p>
+    <p class="t">
+    Man kunne nævne mange flere eksempler, men det burde være åbenlyst, at 
+    studiet af trekanter var vigtigt og relevant. Lad os derfor gå i gang med netop det. 
+    </p>
+
+
+

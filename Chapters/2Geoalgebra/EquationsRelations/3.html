@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+
+
+<h2>Logaritmer og eksponenter</h2>
+   <p class="t">
+   En vigtig modsat funktion vi endnu ikke har undersøgt er det modsatte
+   af eksponenter. Hvordan kan man f.eks. løse: 
+   _($4^x=256_) 
+   Tjo, i den her er det relativt nemt bare at gætte: _(x=2_) giver 
+   _(4*4=16_), _(x=3_) giver _(16*4=64_), og _(x=4_) giver _(64*4=256_). Voila: _(x=4_) er løsningen. 
+   Hvis _(f^{-1}_) er den modsatte funktion til _(4^x_), svarer der her også til:
+   _($f^{-1}(256)=4_)
+   Den her _(f^{-1}_) funktion kalder vi en <i>logaritme</i>.
+   En logaritme fortæller dig bare hvilken potens du skal opløfte et tal i, for at tallet får en bestemt værdi.
+   Eksempelvis er 
+   _($Log_{13}(2197)_) 
+   ... lig den potens man skal opløfte _(13_) i, for at få _(2197_). 
+    Det kan ses at:
+   _($Log_{13}(2197)=3_) 
+   Eftersom at:
+   _($13^3=13*13*13=2197_)
+   Logaritmen er ofte meget tricky at udregne, da det jo egentlig er en mærkelig form for ligning ligesom kvadratroden;
+   Men det stoppede os ikke i at bruge kvadratroden! Eller _(Sin_) og _(Arcsin_) for den sags skyld!
+   </p>
+
+   <p class="t">
+   I de følgende 3 opgaver forventer jeg, at du <i>ikke</i> bruger din lommeregner til at udregne logaritmer. 
+   Der vil være lidt tricky hovedregning, men alt er inden for rimelighedens grænser.
+   </p>
+
+    
+
+   <q-stion 1="3" 2="1">
+   _(\underline{\textbf{A}}_): <br>
+    I en tidligere opgave så vi på et træ og dets frø. 
+   Vi beregnede, at hvis hvert træ kun fik _(3_) frø i dets livstid, ville
+   mængden af træer efter _(d_) dage være: 
+   _($3^d/2 - 0.5_)
+   Hvornår er der _(1093_) træer i haven?
+   <p class="t">
+   _(\underline{\textbf{B}}_): <br>
+   Sig at mængden af bakterier i en bestemt koloni  
+   kan modelleres som 
+   _($3*2^{\frac{1}{5}*d}_)
+   ... hvor _(d_) er mængden af dage. Hvornår er der _(96_) bakterier?
+   </p>
+   <p class="t">
+   _(\underline{\textbf{C}}_): <br>
+    Hvis du sætter _(p_) penge ind i en bank med en rente på _(r_), og tager
+   dem tilbage efter et år, ender du med _(p*(1+r)_) kroner. Hvis du
+   tager det tilbage efter _(1/5_) år, men med det samme putter det ind igen
+   (_(5_) gange i alt), har du nu:
+   _($p*(1+r/5)^5_)
+   Renten er blevet
+   _(5_) gange så lille (_(r/5_)), men du gør det _(5_) gange (opløftet i _(5_)).
+   Hvis _(p=20kr_), hvad skal 
+   _(r_) så være, før du har _(4860 \text{kr}_)? 
+   Det er faktisk ikke en logaritme
+   du skal regne, for at løse denne, men tænkte den relevant alligevel.
+   </p>
+   <p class="t">
+   Lige en advarsel: Renten du får som svar på denne opgave er totalt urealistisk. 
+   Det er i hvert fald en sygt god deal. Det er bare lidt svært at få det til at passe med 
+   regnestykker der er nemme og samtidigt realistiske. 
+   </p>
+   <p class="t">
+   _(\underline{\textbf{D}}_): <br> 
+   Sig du har sat _(1000 \text{kr}_) ind i en bank, og at de hvert år stiger
+   med _(10%_). Hvor mange år skal der gå, før du har optjent _(1331 \text{kr}_)? 
+   </p>
+   <br></q-stion>
+   <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+   Vi opsætter og løser følgende ligning:
+   _($3^d/2 - 0.5 = 1093 \to_)
+   _($3^d=2187_)
+   Hvad for en potens skal man opløfte _(3_) til, for at få _(2187_)?
+   Well, lad os egentlig bare starte fra starten, og se hvornår vi kommer op til 
+   _(2187_). Vi regner:
+   _($\begin{eqnarray}
+   && 3^2 & = 3 &* \text{ } 3 & = 9 \\
+   && 3^3 & = 9 &* \text{ } 3 & = 27 \\
+   && 3^4 & = 27 &* \text{ } 3 & = 81 \\
+   && 3^5 & = 81 &* \text{ } 3 & = 243 \\
+   && 3^6 & = 243 &* \text{ } 3 & = 729 \\
+   && 3^7 & = 729 &* \text{ } 3 & = 2187
+   \end{eqnarray}_)
+   Det er selvfølgelig en del hovedregning at komme frem til, men vi ser nu, at
+   _(d_) skal være lig _(7_). Done!
+   <br><br></answer-box>
+   <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+   Vi skal løse ligningen: 
+   _($3*2^{\frac{1}{5} d}=96 \to 2^{\frac{1}{5} d} = 32_)
+   Hvad skal _(d/5_) være, for at _(2^{d/5}_) er lig _(32_)? 
+   Her kan vi igen starte fra starten, og regne indtil vi rammer målet:
+   _($\begin{eqnarray}
+   && 2^2 & = 2 &* \text{ } 2 & = 4 \\
+   && 2^3 & = 4 &* \text{ } 2 & = 8 \\
+   && 2^4 & = 8 &* \text{ } 2 & = 16 \\
+   && 2^5 & = 16 &* \text{ } 2 & = 32 
+   \end{eqnarray}_)
+   Så _(d/5_) skal være lig _(5_):
+   _($\frac{d}{5} = 5 \to d=5*5=25_)
+   Bum!
+   <br><br></answer-box>
+   <answer-box t="Answer _(\underline{\textbf{C}}_)#" tabColour="rgb(171,96,147)">
+   Her skal vi nu løse 
+   _($20*\left(1+\frac{r}{5}\right)^5=4860_)
+   Først dividerer vi selvfølgelig med _(20_) på begge sider, hvilket giver:
+   _($\left(1+\frac{r}{5}\right)^5 = 243 _)
+   Hvad skal opløftes i 5'te potens for at give _(243_)? 
+   Det ved vi heldigvis fra sidste opgave er _(3_), 
+   så:
+   _($1+r/5=3 \to r=10_)
+   Her skulle vi regne noget, der lidt mindede om en kvadratrod, 
+   men med _(5_)'te potens i stedet for anden. 
+   <br><br></answer-box>
+   <answer-box t="Answer _(\underline{\textbf{D}}_)#" tabColour="rgb(175,128,161)">
+   En stigning på _(10%_) svarer til at gange med _(1.1_). 
+   Sig at der går _(t_) år. Vi prøver nu at løse:
+   _($1000*1.1^t = 1331_)
+   Vi <i>kunne</i> dividere begge sider med _(1000_) ligesom før, hvilket giver:
+   _($1.1^t = 1.331_)
+   Men det er ærlig talt en del lettere at gange _(1000_) med _(1.1_), end det er 
+   at gange _(1.1_) med sig selv. Vi regner:
+   _($\begin{eqnarray}
+   && 1000*1.1 = 1100 \\
+   && 1100*1.1 = 1210 \\
+   && 1210*1.1 = 1331
+   \end{eqnarray}_)
+   Der skal altså gå _(3_) år. 
+   <br><br></answer-box>
+
+   <!--  -->
+
+    <q-stion 1="3" 2="2">
+    Regn følgende logaritmer, igen uden lommeregner:    
+    <div style="margin-left:-68%; margin-top:25px; margin-bottom: 10px;">
+    _($\begin{eqnarray}
+        && \underline{\textbf{A}}: \, \, \, \, \, \, Log_{9}(81) \\  \\
+        && \underline{\textbf{B}}: \, \, \, \, \, \, Log_{10}(10000000) \\  \\
+        && \underline{\textbf{C}}: \, \, \, \, \, \, Log_{7}(2401) \\  \\
+        && \underline{\textbf{D}}: \, \, \, \, \, \, Log_{1.5}(5.0625) \\  \\
+        && \underline{\textbf{E}}: \, \, \, \, \, \, Log_{20}(3200000) \\  \\
+        && \underline{\textbf{F}}: \, \, \, \, \, \, Log_{2}(2) \\  \\
+        && \underline{\textbf{G}}: \, \, \, \, \, \, Log_{5}(1) \\  \\
+        && \underline{\textbf{H}}: \, \, \, \, \, \, Log_{4}(0.25) \\  \\
+        && \underline{\textbf{I}}: \, \, \, \, \, \, Log_{7}(1/49) \\  \\
+        && \underline{\textbf{J}}: \, \, \, \, \, \, Log_{2}(1/128) 
+    \end{eqnarray}_)
+    </div>
+   <br></q-stion>
+   <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+   Det er relativt standard viden, at _(9*9=81_), så svaret på denne logaritme er _(2_). 
+   <br><br></answer-box>
+   <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+   _(10000000_) svarer til _(10^7_), så svaret er bare _(7_). 
+   <br><br></answer-box>
+   <answer-box t="Answer _(\underline{\textbf{C}}_)#" tabColour="rgb(171,96,147)">
+   Her er vi nødt til at starte fra starten og regne indtil vi rammer _(2401_). At gange med
+   _(7_) er selvfølgelig ikke nemt eller hurtigt, men det <i>er</i> absolut muligt: 
+   _($\begin{eqnarray}
+   && 7^2 & = 7   & * \text{ } 7 & = 49 \\
+   && 7^3 & = 49  & * \text{ } 7 & = 343 \\
+   && 7^4 & = 343 & * \text{ } 7 & = 2401
+   \end{eqnarray}_)
+   Så svaret er _(4_)
+   <br><br></answer-box>
+   <answer-box t="Answer _(\underline{\textbf{D}}_)#" tabColour="rgb(175,128,161)">
+   Her gør vi lidt det samme som i sidste opgave. _(1.5_) er heller ikke super nemt at gange med, men det går nok: 
+   _($\begin{eqnarray}
+   && 1.5^2 & = 1.5   & * \text{ } 1.5 & = 2.25 \\
+   && 1.5^3 & = 2.25  & * \text{ } 1.5 & = 3.375 \\
+   && 1.5^4 & = 3.375 & * \text{ } 1.5 & = 5.0625
+   \end{eqnarray}_)
+   Så svaret er igen _(4_).
+   <br><br></answer-box>
+   <answer-box t="Answer _(\underline{\textbf{E}}_)#" tabColour="rgb(171,96,147)">
+   Her kan vi være smarte, og omskrive _(3200000_) til:
+   _($32*100000 = 2^5*10^5 = (2*10)^5 = 20^5_)
+   Så svaret er _(5_). 
+   <br><br></answer-box>
+   <answer-box t="Answer _(\underline{\textbf{F}}_)#" tabColour="rgb(171,96,147)">
+   _(2_) skal opløftes i første potens for at være lig _(2_), så svaret er bare _(1_)
+   <br><br></answer-box>
+   <answer-box t="Answer _(\underline{\textbf{G}}_)#" tabColour="rgb(175,128,161)">
+   Kun _(5^0=1_), så _(0_) er svaret. 
+   <br><br></answer-box>
+   <answer-box t="Answer _(\underline{\textbf{H}}_)#" tabColour="rgb(171,96,147)">
+   _(0.25_) er _(1/4_), hvilke også svarer til _(4^{-1}_). Svaret er derfor _(-1_). 
+   <br><br></answer-box>
+   <answer-box t="Answer _(\underline{\textbf{I}}_)#" tabColour="rgb(175,128,161)">
+    _(49=7^2_), så _(1/49_) kan omskrives til _(7^{-2}_). Svaret er derfor _(-2_). 
+   <br><br></answer-box>
+   <answer-box t="Answer _(\underline{\textbf{J}}_)#" tabColour="rgb(171,96,147)">
+   _(128_) svarer til _(2^7_), så _(1/128_) er lig _(2^{-7}_). Svaret er derfor _(-7_)
+   <br><br></answer-box>
+
+    <!--  -->
+
+   <p class="t">
+   På følgende billede ser du et plot af nogle forskellige logaritmiske funktioner:
+   </p>
+   <img class='SpicXL' style='width:95%' src='../../../Assets/Chapter2\Section3\Logarithms\LogPlots.png'> 
+   <p class="t">
+    Som du kan se vokser en funktion som _(Log_{2}(x)_) meget langsomt, 
+    og begynder at flade ud når _(x_) bliver stor. Det giver mening nok, 
+    eftersom der er større og større forskel mellem potenserne på _(2_). 
+    _(Log_{1.2}(x)_)
+    vokser en del hurtigere end _(Log_{2}(x)_), netop fordi at 
+    _(1.2^x_) vokser meget langsommere end _(2^x_)
+   </p>
+   <p class="t">
+    Vi kan se, at _(Log_{0.32}(x)_) falder, og er negativt langt størstedelen af tiden. Det
+    er heller ikke overraskende, da _(0.32^x_) konstant bliver <i>mindre</i>, hvor 
+    _(2^x_) konstant bliver <i>større</i>. Den _(x_) hvor _(0.32^x_) er lig _(12_), er jo negativ!
+   </p>
+   <p class="t">
+    Vi kan se, at alle tre kurver skærer _((1,0)_). Det er fordi vi har valgt, 
+    at et hvilket som helst tal opløftet i _(0_) giver _(1_).
+   </p>
+   <p class="t">
+    Hvis _(x_) er mindre end _(1_), ser vi, at _(Log_{2}(x)_) og _(Log_{1.2}(x)_) bliver negative.
+    De bliver faktisk <i>meget</i> negative når _(x_) nærmer sig _(0_). 
+    Det giver god nok mening: Den eneste møde at løse _(2^x=a_) hvis 
+    _(a_) er mindre end _(1_), er gennem en negativ _(x_). 
+    Der er ingen potens der får noget tal til at være _(0_), men vi kan komme tæt på _(0_),
+    ved at vælge en meget negativ eksponent. 
+    _(0.33^x_) vil heller aldrig give _(0_), 
+    men _(0.33_) ganget med sig selv flere og flere gange kommer tæt på! 
+    Så _(Log_{2}(x)_) og _(Log_{1.2}(x)_) nærmer sig _(-\infty_), når
+    _(x \to 0_), og _(Log_{0.32}(x)_) nærmer sig _(+ \infty_), når _(x_) nærmer sig _(0_)
+   </p>
+ 

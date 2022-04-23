@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+
+
+    <h3><i>Globalt</i> min og maks</h3>
+    <p class="t">
+    Vi har lært og bevist hvordan man finder <i>lokale</i> maks- og min-punkter, men
+    tid tider søger vi det <i>globale</i> maksimum eller minimum i en
+    bestemt region: Den allerhøjeste eller mindste værdi _(f(x,y)_) kan 
+    tage inden for et bestemt område af _(x_) og _(y_).
+    </p>
+
+    <q-stion 1="10" 2="1" customWidth="600">
+    Se følgende:
+    <br><br>
+    <hover-video url="../../../Assets/Chapter4\MultivarCalc\NewGlobalMax1.mp4" ></hover-video>
+    <br><br>
+
+    <p class="t">
+    Hvor _(A=(1.77,2)_), _(B=(-0.5,-1)_) og _(C=(-0.5,2)_), og funktionen er 
+    _($f(x,y)=1.5y^3 + 4x^2y - 4.5x^2 - 5.5y^2 + 2_)
+    Som er den samme funktion, vi kiggede på tidligere. Find det globale maksimum
+    og minimum af 
+    _(f(x,y)_), hvis _((x,y)_) er inde i trekanten _(\triangle ABC_)
+    </p>
+    <br></q-stion>
+    <answer-box t="h" customWidth="600">
+    Tænk over hvordan 
+    du ville finde det globale maksimum på et område _(x \in [a,b]_) på en funktion _(f(x)_)
+    <img class='SpicXL' style='width:60%' src='../../../Assets/Chapter4\MultiVarCalc\GlobalMaximum2D.png'> 
+    <p class="t">
+    Det "eneste" du skal tjekke, for at finde det højeste og laveste punkt, 
+    er de aller yderste værdier _(x=a_), _(x=b_) og de lokale minimums og maksimums.
+    Ingen andre steder mellem _([a,b]_) kunne være maksimums eller minimums. Du sammenligner altså
+    bare alle de lokale maks- og min værdier samt _(f(a)_), _(f(b)_), og ser hvilken
+    en der er størst og mindst for at finde dit globale maks og min. 
+    </p>
+    <p class="t">
+    Kan du generalisere det her til 3D?
+    </p>
+    <br></answer-box>
+    <answer-box customWidth="600">
+    Hvis vi kan finde de lokale maksimums og minimums, 
+    burde det være relativt ligetil at finde det globale på et område. Tænk over hvordan
+    du ville finde det globale maksimum på et område _(x \in [a,b]_) på en funktion _(f(x)_)
+    <img class='SpicXL' style='width:60%' src='../../../Assets/Chapter4\MultiVarCalc\GlobalMaximum2D.png'> 
+    <p class="t">
+    Det "eneste" du skal tjekke for at finde det højeste og laveste punkt, 
+    er de aller yderste værdier _(x=a_), _(x=b_) og de lokale minimums og maksimums.
+    Ingen andre steder mellem _([a,b]_) kunne være maksimums eller minimums. Du sammenligner altså
+    bare alle de lokale maks- og min værdier samt _(f(a)_), _(f(b)_), og ser hvilken
+    en der er størst og mindst for at få dit globale maks og min.  
+    </p>
+    <p class="t" style="margin-bottom:35px;">
+    Lidt det samme kan vi sige i 3D. Det globale maks og min er enten ved
+    et lokalt maks og min eller i yderkanten. "Yderkanten" er bare langt mere kompliceret
+    i vores tilfælde:
+    </p>
+    <hover-video url="../../../Assets/Chapter4\MultivarCalc\NewGlobalMax2.mp4" ></hover-video>
+    <p class="t" style="margin-top:35px;">
+    Før bestod yderkanten af to punkter, nu består den af <i>tre grafer</i>. Vi skal sammenligne 
+    det lokale minimum og maksimumspunkt på funktionen (de røde punkter) med de lokale min- og maks-værdier
+    på graferne (de grønne punkter) samt med hjørnerne ved _(A_), _(B_) og _(C_) (de blå punkter). 
+    </p>
+    <p class="t">
+    Vi ved fra tidligere arbejde, at funktionen har èt lokalt maksimumspunkt ved _((0,0)_) og 
+    èt lokalt minimumspunkt ved _((0, 2.44)_). Minimumspunktet er uden for vores område, og 
+    værdien på maksimum er: 
+    _($f(0,0) = 2_)
+    Værdierne på de tre hjørner er:
+    _($\begin{eqnarray}
+    && f(1.77, 2) = 1.5(2)^3 + 4(1.77)^2(2) - 4.5(1.77)^2 - 5.5(2)^2 + 2     =  2.965 \\ \\
+    && f(-0.5, -1) = 1.5(-1)^3 + 4(-0.5)^2(-1) - 4.5(-0.5)^2 - 5.5(-1)^2 + 2 = -7.125 \\ \\
+    && f(-0.5, 2)  = 1.5(2)^3 + 4(-0.5)^2(2) - 4.5(-0.6)^2 - 5.5(2)^2 + 2    = -7.62 \\
+    \end{eqnarray}_)
+    Nu mangler vi de grønne punkter. Trekanten der definerer området består af tre linjer:
+    </p>
+    <p class="t">
+    Ved _(\Seg{BC}_) er _(x=-0.5_) og _(y_) går fra _(-1_) til _(2_)
+    </p>
+    <p class="t">
+    Ved _(\Seg{CA}_) er _(y=2_) og _(x_) går fra _(-0.5_) til _(1.77_)
+    </p>
+    <p class="t">
+    Ved _(\Seg{BA}_) er _(y=1.321x-0.339_) og _(x_) går fra _(-0.5_) til _(1.77_)
+    </p>
+    <p class="t">
+    Lad os illustrere _(\Seg{BC}_) som eksempel. Her substitueres _(x=-0.5_), hvilket giver:
+    _($z(y)=1.5y^3 + 4*(-0.5)^2y - 4.5*(-0.5)^2 - 5.5y^2 + 2_)
+    Vi søger de kritiske punkter, hvor _(z'(y)=0_), så vi differentierer og får ligningen:
+    _($3*1.5*y^2 + 4*(-0.5)^2 - 5.5*2*y = 0_)
+    ... hvilket giver _(y=0.09_), _(y=2.35_). Det ene kritiske punkt er ikke i 
+    området _([-1, 2]_), så det ignoreres. 
+    </p>
+    <p class="t">
+    Præcis samme strategi kan bruges til _(\Seg{BC}_) og _(\Seg{BA}_), hvor vi bare substituerer
+    henholdsvis _(y=2_) og _(y=1.321x-0.339_) efterfulgt af differentiering med _(x_). I den ene fås 
+    _((0, 2)_) og i den anden _((0.177, -0.105)_) samt _((1.203, 1.251)_). 
+    </p>
+    <p class="t">
+    Alle kritiske punkter er fundet, så vi regner nu deres værdi: 
+    _($\begin{eqnarray} 
+    && f(-0.5, 0.09) = 0.921 \\ \\
+    && f(0, 2) = -8.0 \\ \\
+    && f(0.177, -0.105) = 1.783 \\ \\
+    && f(1.203, 1.251) = 2.941 
+    \end{eqnarray}_)
+    Vi sammenligner alt, og ser at _((1.77, 2)_) er maksmimumspunktet med en værdi på _(2.965_), og
+    at _((0,2)_) er minimumspunktet med en værdi på _(-8_). Voila! 
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="10" 2="2">
+    Sig at dit område defineres af: 
+    _($(x-3)^2 + (y+2)^2 \lt 25_)
+    Hvad er, og hvor er, det globale maksimum og minimum på _(z=x*y_)?
+    Jeg giver dig med vilje <i>ikke</i> noget billede i den her, da formålet med mange
+    af de her optimeringsværktøjer netop er at hjælpe os, når vi <i>ikke</i> hurtigt
+    kan glimte et visuelt svar. 
+    I sidste opgave kunne du relativt troværdigt gætte ud fra billedet,
+    at det enten var størst ved _((0,0)_) eller _(A_)
+    <p class="t">
+    Du får brug for Geogebra til at løse en tricky ligning i denne. Jeg anbefaler,
+    at du laver en graf af ligningen, så du sikrer dig <i>alle</i> løsninger. 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Vi ved, at der ikke findes noget tidspunkt, ud over _((x,y)=(0,0)_) på _(z=x*y_),
+    hvor både _(z_x_) og _(z_y_) er lig _(0_). Det primære arbejde ligger derfor
+    i yderkanten, hvor det gælder at:
+    _($(x-3)^2+(y+2)^2 = 25_)
+    Det er upraktisk at arbejde med, så vi beskriver i stedet _(x_) og _(y_) parametrisk 
+    med èn variabel _(t_) som:
+    _($\VeC[x,y] = \VeC[3,-2] + 5*\VeC[Cos(t),Sin(t)]_)
+    Så _(z=x*y_) er lig:
+    _($z(t)=(3+5 Cos(t))*(-2 + 5 Sin(t))_)
+    Vi søger de kritiske _(t_)-værdier, så vi differentierer og får: 
+    _($z'(t) = 15 Cos(t) + 10 Sin(t) - 25 Sin(t)^2 + 25 Cos(t)^2_)
+    Plottes dette i Geogebra fås:
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter4\MultiVarCalc\PerimeterCurveSolutions.png'> 
+    <p class="t">
+    Hvor _(t_1=1.12_), _(t_2=2.47_), _(t_3=3.53_) og _(t_4=5.45_). Det bliver
+    selvfølgelig ved, men vi er kun interesserede i de kritiske punkter mellem _(0_) og _(2\pi_). 
+    _($\begin{align}
+    \left(3+5*Cos(1.12), -2 + 5*Sin(1.12) \right) & = \left(5.178, 2.500 \right) \\
+    \left(3+5*Cos(2.47), -2 + 5*Sin(2.47) \right) & = \left(-0.914, 1.111 \right) \\
+    \left(3+5*Cos(3.53), -2 + 5*Sin(3.53) \right) & = \left(-1.627, -3.893 \right) \\ 
+    \left(3+5*Cos(5.45), -2 + 5*Sin(5.45) \right) & = \left(6.362, -5.700 \right) 
+    \end{align}_)
+    Endeligt regner vi punkternes værdier:
+    _($\begin{align}
+     5.178*2.500 &= 12.94 \\ 
+    -0.914*1.111 &= -1.01 \\
+    -1.627*-3.893 &= 6.33 \\
+    6.362*-5.700 &= -36.26
+    \end{align}_)
+    Så _((5.178, 2.500)_) er maks-punktet og 
+    _((6.362, -5.700)_) er min-punktet. 
+    </p>
+    <br></answer-box>
+
+

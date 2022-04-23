@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+
+
+    <h2>Koniske kurver</h2>
+
+    <p class="t"> 
+    At se en cirkel som _(r=R_), svarer bare til at sige: "Hvert punkt er _(R_) væk fra centeret _((0,0)_)".
+    Det er ret praktisk, nemt og intuitivt. Kan vi gøre noget lignende for ellipser eller andre kurver?
+    </p>
+    <p class="t">
+    Det viser sig, at en ellipse også kan defineres som følgende:
+    </p>
+    <img class='Spic' style='width:50%' src='../../../Assets/Chapter2\Section4\Conics\Ellipse1.png'> 
+    <p class="t">
+    For et hvilket som helst punkt _(X_), skal afstanden fra _(P_1_) til _(X_) plus
+    afstanden fra _(P_2_) til _(X_) være konstant: 
+    _($P_1 X + P_2 X = \text{Konstant}_)
+    Lidt ligesom en cirkel, men nu bare med to punkter. Vi kalder de her punkter <i>brændpunkterne</i>
+    </p>
+
+    <br>
+
+    <q-stion 1="3" 2="1" customWidth="665">
+    Sig du har følgende opsætning:
+    <img class='Spic' style='width:88%' src='../../../Assets/Chapter2\Section4\Conics\EllipseExercise1.png'> 
+    <p class="t">
+    Punkterne _(F_1_), _(F_2_) er ved koordinaterne
+    _((3,0)_) og _((-3,0)_). Du tegner en kurve, hvor det for alle
+    punkter _(X_) gælder at _(F_1X+F_2X_) er lig _(8_). 
+    Vis at den færdige kurve faktisk er en ellipse. Med andre ord,
+    vis, at det for hvert punkt gælder at:
+    _($\frac{x^2}{a^2}+\frac{y^2}{b^2}=1_)
+    Der er en god del algebra i den her!
+    </p> <br>
+    </q-stion>
+    <answer-box customWidth="665">
+    Den samlede afstand er hele tiden _(8_). Ellipsens ligning
+    er meget algebraisk, så lad os gøre noget lignende med det geometriske
+    faktum, vi er givet: 
+    _($\begin{align}
+    P_1X+P_2X & =8 &\to \\ \\
+    \sqrt{(x+3)^2+y^2}+\sqrt{(x-3)^2+y^2} & =8
+    \end{align}_)
+    Vi skal få denne ligning til at passe _(x^2/a^2+y^2/b^2=1_).
+    Først af alt, vil jeg nok fjerne kvadratroderne:
+    _($\begin{align}
+    \sqrt{(x+3)^2+y^2}&=8-\sqrt{(x-3)^2+y^2} &\to \\ \\
+    (x+3)^2+y^2 &= 8^2 - 2*8*\sqrt{(x-3)^2+y^2} + (x-3)^2+y^2 &\to \\ \\
+    (x+3)^2+y^2 - (x-3)^2 - y^2 - 64 &= -16*\sqrt{(x-3)^2+y^2} &\to  \\ \\
+    12x - 64 &= -16*\sqrt{(x-3)^2+y^2} &\to \\ \\
+    4-0.75x &= \sqrt{(x-3)^2+y^2} &\to \\ \\
+    0.5625x^2 - 6x + 16 &= (x-3)^2 + y^2 
+    \end{align}_)
+    Nu skal jeg bare udvide _((x-3)^2_) og omskrive en smule:
+    _($\begin{align}
+    0.5625x^2 - 6x + 16 &= x^2 - 6x + 9 + y^2 &\to \\ \\
+    0.5625x^2 - x^2 + 7 - y^2 &= 0 &\to \\ \\
+    0.4375x^2 + y^2 &= 7
+    \end{align}_)
+    Boom! Allerede nu kan vi se, at det er en ellipse. Endnu mere hvis
+    vi lige dividerer med _(7_) på begge sider:
+    _($0.0625x^2 + 0.1428y^2 = 1_)
+    Det vil altså sige, at _(0.0625 = 1/a^2_) og _(0.1428 = 1/b^2_).
+    Ergo 
+    _($a=\sqrt{1/0.0625}=4, \qquad b=\sqrt{1/0.1428}=2.64_)
+    Det betyder, at ellipsen har en bredde på _(4_) og en højde
+    på _(2.64_). Voila!
+    <br><br></answer-box>
+
+    <br>
+
+    <p class="t" style="margin-bottom:15px;">
+    I sidste opgave beviste du èt eksempel på, at den nye definition
+    skabte en ellipse. Hvis du skal være helt ordentlig, burde du
+    udføre beviset generelt, med fokuspunkterne "_(d_)" væk og summen
+    _(k_) i stedet for _(8_). Du er velkommen til at prøve selv, men
+    det eneste sted i beviset, hvor man reelt bliver bekymret om hvor vidt
+    det generaliserer, er da vi fik _(-6x_) på begge sider. Resten siger sig selv, og
+    det er et nemt (men langt og rodet) bevis.
+    </p>
+    <br> 
+    <answer-box t="a" tabColour="rgb(168, 237, 168)" bodyColour="rgb(220, 252, 220)">
+    Alrighty:
+    _($\sqrt{(x-d)^2+y^2}+\sqrt{(x+d)^2+y^2}=k \to_)
+    _($(x-d)^2 + y^2 = k^2 - 2*k*\sqrt{(x+d)^2+y^2}+(x+d)^2+y^2 \to_)
+    _($(x-d)^2-(x+d)^2=k^2 - 2*k*\sqrt{(x+d)^2+y^2} \to_)
+    _($-4dx-k^2=-2*k*\sqrt{(x+d)^2+y^2} \to_)
+    _($\frac{k}{2} - \frac{2 d}{k} x = \sqrt{(x+d)^2+y^2} \to_)
+    _($\frac{k^2}{4} + \frac{4 d^2}{k^2} x^2 - 2 d x = x^2 + d^2 - 2 d x + y^2 \to_)
+    _($\frac{k^2}{4} - d^2 = \left(1 - \frac{4d^2}{k^2} \right) x^2 + y^2_)
+    Og voila, nu passer det formen _(Ax^2+By^2=C_), hvilket nemt
+    kan laves om til en ellipse. 
+    <br><br></answer-box>
+
+    <p class="t">
+    Lad os i stedet gå videre med et mere interessant spørgsmål:
+    </p>
+    
+    <q-stion 1="3" 2="2">
+    Vi har set, at den her nye definition faktisk skaber ellipser,
+    men kan den skabe <i>alle</i> ellipser? 
+    Hvis jeg vælger en ellipse med højde _(b_) og _(a_), er det så altid muligt
+    at finde de rigtige fokuspunkter og rigtige sum af deres afstande? 
+    <br><br></q-stion>
+    <answer-box>
+    Kald fokuspunkternes afstand til midten for _(d_), og kald den konstante _(F_1X+F_2X_) for _(k_). 
+    Vi vil gerne finde _(b_), og følgende opsætning kan hjælpe:
+    <img class='SpicXL' style='width:90%' src='../../../Assets/Chapter2\Section4\Conics\EllipseExercise2.png'> 
+    <p class="t">
+    Her er punktet _(X_) lige over midten. Det betyder at _(F_1X=F_2X_), så
+    _(F_1X=k/2_). Nu er 
+    _($b=\sqrt{(k/2)^2 - d^2}_)
+    _(a_) kan beregnes med en lignende opsætning:
+    </p>
+    <img class='SpicXL' style='width:90%' src='../../../Assets/Chapter2\Section4\Conics\EllipseExercise3.png'> 
+    <p class="t">
+    Bredden er lig med det _(x_)-koordinat _(X_) har lige nu. 
+    Afstanden fra _(F_1_) til _(X_) er lig _(x-d_), og afstanden fra 
+    _(F_2_) til _(X_) er lig _(x+d_). 
+    _($F_1X+F_2X=k \to (x-d) + (x+d) = k \to x=\frac{k}{2} _)
+    Nu har vi _(b=\sqrt{(k/2)^2 - d^2}_) og _(a=k/2_). 
+    Kan jeg skabe <i>alle</i> mulige positive _(a_), _(b_) ved at vælge
+    de rigtige _(k_), _(d_)? 
+    </p>
+    <p class="t">
+    _(k_) <i>skal</i> være _(2*a_) pr. _(a=k/2_), hvilket betyder at
+    _(b=\sqrt{(k/2)^2 - d^2}_) bliver til _(b=\sqrt{a^2-d^2}_).
+    Det kan omskrives til 
+    _($d=\sqrt{a^2-b^2}_)
+    Det her er interessant: 
+    _(d_) er veldefineret så længe _(a^2-b^2_) er positiv. 
+    Definitionen virker derfor kun på ellipser der er bredere end 
+    høje, hvor _(a^2_) er større end _(b^2_). 
+    </p>
+    <p class="t">
+    En ellipse der er højere end bred svarer bare til fokuspunkter på
+    _(y_)-aksen i stedet for _(x_).
+    </p>
+    <br></answer-box>
+
+    <q-stion 1="3" 2="3">
+    Hvad sker der med brændpunkterne/fokuspunkterne når _(a_) nærmer sig _(b_) på _(x^2/a^2+y^2/b^2=1_)?
+    <br><br></q-stion>
+    <answer-box>
+    Intuitivt kan man se, at brændpunkterne vil nærme sig hinanden og danne en cirkel.
+    Det passer også rent matematisk: Vi så i sidste opgave at:
+    _($a=\frac{k}{2}, \qquad b=\sqrt{(k/2)^2 - d^2}_)
+    Det her kunne omskrives til:
+    _($d=\sqrt{a^2-b^2}_)
+    Hvis _(b_) nærmer sig _(a_), nærmer _(a^2-b^2_) sig _(0_), så 
+    _(d=\sqrt{0}=0_). 
+    <br><br></answer-box>
+
+    <p class="t"> 
+    Der findes også to andre kurver med lignende definitioner. 
+    Bl.a. en andengradsfunktion _(Ax^2+Bx+C_)! 
+    </p>
+    <img class='SpicXL' style='width:73%' src='../../../Assets/Chapter2\Section4\Conics\AndengradsPolynomium2.png'> 
+    <p class="t">
+    Det er ikke lige stor motivation til at beskrive den med afstande, men hvem ved!
+    Eventuelt resulterer det i interessante og brugbare egenskaber! 
+    Man kan vise at:
+    </p>
+    <img class='SpicXL' style='width:55%' src='../../../Assets/Chapter2\Section4\Conics\AndengradsPolynomium3.png'> 
+    <p class="t">
+    ... for et hvilket som helst punkt _(X_) på et parabel/andetgradspolynomie, skal
+    afstanden fra _(X_) til linjen _(d_) <i>være lig</i> afstanden fra _(X_) til punktet _(P_).
+    </p>
+    <p class="t">
+    Den linje der er med til at definere en parabel sammen med fokuspunktet hedder
+    parablens <i>directrix</i>
+    </p>
+
+    <q-stion 1="3" 2="4">
+    Vis at den her definition stemmer overens med et andengradspolynomie _(Ax^2+Bx+C_). Hvor ligger fokuspunktet _(P_) på parablen?
+    <br><br></q-stion>
+    <answer-box>
+    Lad os sige, at _(P=(a,b)_), og at linjen ligger ved _(y=d_). Nu ved vi, at
+    _($\begin{align}
+    \sqrt{(y-d)^2}&=\sqrt{(x-a)^2+(y-b)^2} &\to \\ \\
+    (y-d)^2&=(x-a)^2+(y-b)^2 &\to \\ \\
+    y^2 + d^2 -  2d*y &= x^2 - 2a*x + a^2 + y^2 - 2b*y + b^2 &\to \\ \\
+    2b*y-2d*y &= x^2-2a*x+a^2+b^2-d^2 &\to
+    \end{align}_)
+    _($y= \left(\frac{1}{2(b-d)} \right)x^2 + \left(-\frac{a}{b-d} \right)x + \frac{a^2+b^2-d^2}{2(b-d)}  _)
+    Det her passer nu til formen _(y=Ax^2 + Bx + C_), med:
+    _($A=\frac{1}{2(b-d)}, \, \, B=-\frac{a}{b-d}, \, \, C = \frac{a^2+b^2-d^2}{2(b-d)} _)
+    Bum!
+    <br><br></answer-box>
+
+    <q-stion 1="3" 2="5">
+    Kan vi med denne definition skabe enhver parabel? 
+    Er det altid muligt, at vælge det korrekte _(P_)
+    og den rigtige højde _(y=d_), til et hvilket som helst sæt koefficienter
+    på _(Ax^2+Bx+C_)? 
+    <br><br></q-stion>
+    <answer-box>
+    Her bruger vi resultaterne fra sidste opgave:
+    _($A=\frac{1}{2(b-d)}, \qquad B=-\frac{a}{b-d}, \qquad C=\frac{a^2-d^2+b^2}{2(b-d)} _)
+    _(b-d_) kan være alt fra negativ til positiv uendelig, så _(A_) kan også. Lad os kalde
+    den valgte _(b-d_) for _(m_1_). 
+    _(B=-a/m_1_) har også frie tøjler, da vi uden konsekvens kan vælge _(a_).
+    Kald den valgte _(a_) for _(m_2_), så:
+    _($C=\frac{m_2^2+b^2-d^2}{2m_1}_)
+    Hvis _(b-d=m_1_) så
+    er _(b=m_1+d_) og _(b^2=m_1^2+d^2+2m_1d_), hvilket lader os omskrive _(C_) til
+    _($\frac{m_2^2+m_1^2+d^2+2m_1d-d^2}{2m_1}=\frac{m_2^2+m_1^2+2m_1d}{2m_1}=\frac{m_2^2+m_1^2}{2m_1} + d_)
+    Her er _((m_2^2+m_1^2)/(2m_1)_) bare en konstant, og _(d_) er
+    et tal vi helt selv kan vælge. _(C_) kan derfor være alt det, vi har lyst til, og
+    beviset er færdigt _(\blacksquare_).
+    <p class="t">
+    Man kunne også have bevist det ved at løse systemet
+    _($\begin{eqnarray}
+    && A=\frac{1}{2(b-d)} \\ \\
+    && B=-\frac{a}{b-d} \\ \\
+    && C=\frac{a^2-d^2+b^2}{2(b-d)}
+    \end{eqnarray}_)
+    ... for _(a_), _(b_) og _(d_). Alle _(A_), _(B_) og _(C_) er mulige så længe
+    det findes en løsning. Man ville få:
+    _($\begin{eqnarray}
+    && a = -\frac{B}{2A} \\ \\
+    && d = C - \frac{B^2+1}{4A} \\ \\
+    && b = C - \frac{B^2+1}{4A} + \frac{1}{2A}
+    \end{eqnarray}_)
+    Jeg viser denne "alternative løsning", fordi formlerne er ret praktiske, 
+    hvis du søger linjen og fokuspunktet til en bestemt parabel. 
+    </p>
+    <p class="t">
+    Samme mål kan opnås med lidt geometri:
+    </p>
+    <img class='SpicXL' style='width:88%' src='../../../Assets/Chapter2\Section4\Conics\AndengradsPolynomium4.png'> 
+    <p class="t">
+    Kald toppunktet på kurven for _(T_y_). Vi kan se, at _(d-T_y=T_y-b_), ergo:
+    _($b=2T_y - d_)
+    y-koordinatet skal man lige finde _(d_) for at beregne:
+    _($B=-\frac{a}{b-d}=-\frac{T_x}{2T_y - d - d} \qquad \to d = \frac{2B*T_y + T_x}{2B}_)
+    Så det er nemt at finde en linje og et fokuspunkt, så længe
+    toppunktet er beregnet. 
+    </p>
+    <br></answer-box>
+
+    <p class="t">
+    Til sidst har vi <i>hyperbolaen</i>:
+    _($\frac{x^2}{a^2} - \frac{y^2}{b^2} = 1_)
+    Den kan tegnes op som:
+    </p>
+    <img class='SpicXL' style='width:80%' src='../../../Assets/Chapter2\Section4\Conics\Hyperbola1.png'> 
+    <p class="t">
+    Matematisk set minder den meget om ellipsen, trods den overhovedet ikke ligner rent visuelt. 
+    Den kan defineres som punkterne _(X_), hvor afstanden fra _(F_1_) til _(X_) <i>minus</i> afstanden
+    fra _(F_2_) til _(X_), er konstant:</p>
+    <img class='SpicXL' style='width:50%' src='../../../Assets/Chapter2\Section4\Conics\Hyperbola2.png'> 
+    <p class="t">
+    Så:
+    _($XF_2 - XF_1 = \text{Konstant}_)
+    Beviset for at denne definition stemmer overens med _(x^2/a^2 - y^2/b^2 = 1_),
+    er stort identisk med ellipsens bevis. Det vil ikke fremføres her. 
+    </p>
+
+    <p class="t">
+    På de næste 3 sider er der simulationer hvor du kan lege rundt med ellipser, parabler, og hyperbolaer.
+    </p>
+
+    
+
+
+

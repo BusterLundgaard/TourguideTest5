@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+
+    <h3>Den overordnede plan til at finde hældning</h3>
+    <p class="t">
+    Alright, vi har fundet hældningen på nogle forskellige funktioner:
+    _(Sin(x)_), _(Cos(x)_), _(x^2_), _(x^3_), _(x^n_). Indtil videre virker det relativt ... svært? 
+    Det er en ret lang, kompliceret proces vi skal igennem for hver, og vi har endda kun set
+    på meget nemme funktioner. Det ville være dejligt, hvis vi kunne gøre det på en eller anden hurtigere,
+    nemmere måde. Lige meget hvad: 
+    Vi har brug for en <i>strategi</i> hvis vores mål er, at finde hældningen på <i>alle</i> funktioner. 
+    Lad os undersøge en meget avanceret funktion som eksempel:
+    _($Arcsin \left(3.4^{Sin(x)} \right)*Arctan \left(x^{1.42} + Log_{7.8} \bigl(Cos(x)+Log_{x}(5.6) \bigr) \right) _)
+    Når man tænker lidt over det, er denne sindssyge funktion bare en "kombination" af følgende slags funktioner:
+    </p>
+    <div style="text-align:center; margin-top:-10px; margin-bottom:-10px;">
+        <ul style="display: inline-block; list-style:disc;">
+            <li>_(x^A_)</li>
+            <li>_(A^x_)</li>
+            <li>_(Cos(x),Sin(x)_)</li>
+            <li>_(Log_{A}(x) _)</li>
+            <li>_(Log_{x}(A) _)</li>
+            <li>_(Arccos(x), Arcsin(x)_)</li>
+            <li>_(Arctan(x)_)</li>
+        </ul>
+    </div>
+    <p class="t">
+    Den kæmpe funktion består kun af de her <i>slags</i> funktioner, plusset, ganget og kombineret med hinanden. 
+    Lad mig lige illustrere. Sig jeg definerede følgende funktioner:
+    </p>
+    <ul style="margin-left:3%;">
+        <li>_(f(x)=Arcsin(x)_)</li>
+        <li>_(g(x)=Arctan(x)_)</li>
+        <li>_(h(x)=3.4^x_)</li>
+        <li>_(m(x)=x^{1.42}_)</li>
+        <li>_(n(x)=Log_{7.8}(x)_)</li>
+        <li>_(d(x)=Sin(x)_)</li>
+        <li>_(e(x)=Cos(x)_)</li>
+        <li>_(b(x)=Log_{x}(5.6)_)</li>
+    </ul>
+    <p class="t">
+    Nu kunne jeg skrive vores kæmpe-funktion som: 
+    _($f \biggl(h \Bigl(d(x) \Bigr) \biggr)*g \biggl(m(x)+n \Bigl(e(x)+b(x) \Bigr) \biggr) _)
+    Vores "crazy-funktion" kan konstrueres ud fra 
+    et sæt af ret få <i>typer</i> funktioner, plusset, ganget, og "kombineret"
+    med hinanden. Med "kombineret" 
+    mener jeg f.eks. _(3.4^{Sin(x)}_). 
+    Det svarer til, at man har erstattet _(x_) i _(3.4^x_) med _(Sin(x)_) eller _(d(x)_). 
+    Intuitivt: "Funktioner inde i funktioner".
+    </p>
+
+    <p class="t">
+    Pointen er, at hvis vi kan finde hældningen på bare de _(7_) slags
+    funktioner på listen, og 
+    hvis vi kan udlede et par generelle regler for hældningen af to funktioner plusset,
+    ganget og kombineret med hinanden, kan vi derefter finde
+    hældningen på <i>pretty much alting</i>. Lad os gå igang! 
+    </p>
+
+
+
+
+

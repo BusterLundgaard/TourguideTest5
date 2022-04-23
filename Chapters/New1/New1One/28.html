@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+
+    <h4>Division</h4>
+
+    <br>
+
+    <q-stion 1="29" 2="1"> 
+        Fra hvor du står og til dit hus er der _(4m_):
+        <img class="SpicBT" style="width:60%;" src="../../../Assets/Chapter1\Talopgaver og intuition\Misc\F\divisionRundtOmJorden.png">
+        <p class="tt">... men du <i>kunne</i> (teoretisk) set også gå hele vejen rundt om jorden, til du ankom på den anden side.
+        Jorden har en omkreds på omkring _(40075km_). Hvor mange gange længere ville du skulle gå?
+        (det her er bare en normal divisionsopgave med et alt for fancy setup)
+        </p>
+    <br></q-stion>
+    <answer-box> 
+        Du skal lige først fjerne _(4m+8m=12m_) fra omkredsen, da det er hvor langt der 
+        er fra hvor du står til den anden side af huset:
+        _($40075000m - 12m = 40074988m_)
+        Vi skal dividere dette med _(4_), da det er længden på den korte vej:
+        _($\frac{40074988}{4} = \frac{40004088+70000+900}{4} = \frac{40004088}{4}+\frac{70000}{4}+\frac{900}{4}_)
+        Jeg har delt det op som jeg gjorde her, fordi _(40004088_) nemt divideres med _(4_)
+        som:
+        _($1001022_)
+        Hvert ciffer divideres bare med fire, da de alle går op. 
+        <p class="t">
+        _(70000/4_) og _(900/4_) er også relativt nemme. Alt i alt får vi:
+        _($10001044+17500+225=10018769_)    
+        Bum!
+        </p>
+    <br></answer-box>
+
+    <!--  -->
+    
+    <q-stion 1="29" 2="2"> 
+        Løs de følgende opgaver:
+        <br>
+        <p class="t">
+            _(\underline{\textbf{A}}:_) <br> 
+            Du har lige købt en scooter der vejer _(256375_) gram. Læderet på sædet 
+            vejer _(5_) gram. Hvad er forholdet mellem scooterens samlede vægt og lederens vægt?
+        </p>
+        <p class="t">
+            _(\underline{\textbf{B}}:_) <br> 
+            Et meget stort højhus der bliver bygget har en højde på _(0.564km_). Dit 
+            (pænt store!) hus har en højde på _(0.02km_). Hvor mange gange højere er højhuset end dit hus?
+        </p>
+        <p class="t">
+            _(\underline{\textbf{C}}:_) <br> 
+            Efter en skiulykke er dit ben desværre brækket, og med stolper går du 
+            _(0.35 m/s_). Imens du var i hospitalet, blev der bygget en ultra avanceret 
+            rumraket, der kan bevæge sig med _(264.6 m/s_). Hvor meget hurtigere er denne rumraket end dig? 
+        </p>
+        <p class="cent">*</p>
+        <p class="t">
+        Det her er egentlig bare fire helt normale divisionsopgaver med lidt for lange beskrivelser.
+        </p>
+    <br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    Her skal vi regne _(256375/5_). Jeg tænker, at vi omskriver det til:
+    _($\frac{50005}{5}+\frac{370}{5}+\frac{206000}{5}_)
+    _(50005_) er nem at dividere med _(5_), og giver tydeligvis bare _(10001_). 
+    _(370/5_) kan også relativt let findes til _(74_). Det sidste stykke kan vi omskrive til:
+    _($\frac{206000*2}{10} = \frac{412000}{10} = 41200_)
+    Så det endelige resultat er:
+    _($10001+74+41200=51275_)
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}:_)#" tabColour="rgb(175,128,161)">
+    I denne her skal vi regne _(0.564/0.02_). Først får jeg lige fjernet kommatallene:
+    _($\frac{0.564}{0.02} = \frac{564}{20}*\frac{1/1000}{1/1000} = \frac{564}{20}_)
+    Det er nemt at dividere med både _(2_) og _(10_), så jeg omskriver til:
+    _($\frac{564}{2}/10 = \left(\frac{500}{2} + \frac{64}{2} \right)/10 = \left(250 + 32 \right)/10_)
+    _(250+32_) er _(282_), så det endelige svar er _(28.2_). 
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{C}}:_)#" tabColour="rgb(171,96,147)">
+    Jeg starter igen med at fjerne kommatallene:
+    _($\frac{264.6}{0.35} = \frac{2646}{35}*\frac{1/10}{1/100} = \frac{2646}{35}*10_)
+    Vi <i>kunne</i> regne _(2646/35_) først og gange med _(10_) til sidst. 
+    Jeg tænker dog, at det er nemmere at gå til det mere direkte: 
+    _($\frac{26460}{35}_)
+    Vi ved nemlig at _(35_) aldrig vil gå op i _(2646_), da _(35_) gange et tal altid vil ende på
+    _(0_) eller _(5_), aldrig _(6_) som i _(2646_). 
+    <p class="t">
+    Hvordan kan vi effektivt dividere _(26460_) med _(35_)? Jeg ser umiddelbart intet smart "trick" vi kan 
+    bruge ligesom før. Derfor bør vi nok gøre det på den gammeldags måde, vi lærte allerførst: 
+    Gætte os frem strategisk.
+    </p>
+    <p class="t">
+    _(26460_) er en del større end _(35_), så vores gæt skal være relativt stort. 
+    _(35*10=350_) er for lille, og det samme kan siges om _(35*100=3500_). Dog
+    er _(35*1000=35000_) for <i>stort</i>. Vores gæt skal derfor være imellem _(100_) og _(1000_).
+    </p>
+    <p class="t">
+    Vi prøver os frem med de forskellige _(100_), _(200_), _(300_) osv, og ser hvilke en er tættest på, men mindre
+    end _(26460_). Med lidt arbejde kan man se, at det er _(700_), da _(35*700=24500_). Vores gæt er altså mellem
+    _(700_) og _(800_). Vi kommer langsomt tættere på.
+    </p>
+    <p class="t">
+    Forskellen mellem _(26460_) og _(24500_) er _(1960_). Det er hvor meget "ekstra" vi mangler. 
+    Vi ved at et gæt på _(10_) giver _(35*10=350_), og at et gæt på _(100_) giver
+    _(35*100=3500_). Det resterende ekstra vores gæt mangler, er derfor mellem _(10_) og _(100_).
+    </p>
+    <p class="t">
+    Vi prøver nu 
+    de forskellige _(10_), _(20_), _(30_), osv. Her ser vi, at _(50_) er bedst, da _(35*50=1750_), og 
+    _(35*60=2100_). Så den "ekstra" del er mellem _(50_) og _(60_)
+    </p>
+    <p class="t">
+    Vi mangler _(1960-1750=210_). Vi ser relativt let, at _(35*6=210_), så vi skal bare tilføje _(6_) ekstra til vores gæt. 
+    Samlet set kan man nu se, at vores gæt er:
+    _($700+50+6=756_)
+    Boom!
+    </p>
+    <p class="t">
+    Den metode du lærte i folkeskolen til at regne divisionsstykker i hånden, er til 
+    en høj grad bare en formalisering af denne strategi og proces!
+    </p>
+    <br></answer-box>
+   
+    <!--  -->
+
+    <q-stion 1="29" 2="3">
+    Regn _(580488/456_)
+    <br><br></q-stion>
+    <answer-box>
+    Endnu engang ser jeg intet smart "trick" vi kan bruge.
+    Vi er nødt til at gange med store tal for at indsnævre de mulige
+    gæt hurtigt, finde forskellen på det bedste gæt og målet, og  
+    blive ved indtil det går op:
+    <div style="text-align:center;">
+        <ul style="display: inline-block; text-align: left; list-style:none;">
+            <li> Gæt i brede træk af _(1000_): _(456*(1*1000) = 456000, \, \, \,  \text{forskel:}\, \, \,   580488-456000=124488_)</li>
+            <li> Gæt i brede træk af _(100_): _(456*(2*100)=91200, \, \, \,  \text{forskel:}\, \, \,   124488-91200=33288_)</li>
+            <li> Gæt i knap så brede træk af _(10_): _(456*(7*10)=31920, \, \, \,  \text{forskel:}\, \, \,   33288-31920=1368_) </li>
+            <li> Gæt i træk af _(1_): _(456*(3*1)=1368, \, \, \, \text{forskel:} \, \, \, 1368-1368=0 \qquad \qquad \qquad \qquad_)</li> 
+        </ul>      
+    </div>
+    <p class="t">
+        Vi kan derved se på listen, at det rigtige gæt skal være: 
+        _($1*1000+2*100+7*10+3=1273_)
+        Fantastisk!
+    </p>
+    <p class="t">
+        Læg mærke til hvad vi gjorde her og i det sidste spørgsmål,
+        da vi ikke havde andre valgmuligheder:
+        Vi gangede vores tal med noget større (satte flere nuller på), kom tættere på et gæt, fandt
+        en forskel og gentog indtil det gik op. Det her er effektivt, 
+        men kun som "den sidste udvej"
+    </p>   
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="29" 2="4"> 
+        _(1_) fod er _(30.48_) cm. Et bestemt hus er _(3.81_) meter højt. Hvad er 
+        dets højde i fod? 
+    <br><br></q-stion>
+    <answer-box> 
+        _(1_) fod er _(30.48cm=0.3048m_), så huset er derfor 
+        _($3.81/0.3048=12.5_)
+        Herfra vil jeg ikke gå i dybden med, hvordan jeg dividerer længere. Det betyder 
+        dog <i>ikke</i>, at jeg forventer du bruger en lommeregner (endnu!)
+    <br><br></answer-box>
+
+    <q-stion 1="29" 2="5"> 
+    _(\underline{\textbf{A}}:_) <br>
+    Du skærer et æble i _(7_) lige store stykker. Hver stykke vejer nu _(6.5_) gram. Hvor meget vejede 
+    det originale æble? 
+    <p class="t">
+    _(\underline{\textbf{B}}:_) <br>
+    Du skærer et æble på _(31.5_) gram ud i _(9_) lige store stykker. Hvor meget vejer hvert stykke?
+    </p> 
+    <br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    Et super simpelt gangestykke: _(6.5*7=45.5_).
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Nu bare modsat hvad vi gjorde før - division:
+    _($31.5/9=3.5_)
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="29" 2="6"> 
+    Følgende figurer har et samlet areal på _(31.5_):
+    <img class="SpicT" style="width:35%;" src="../../../Assets/Chapter1\Talopgaver og intuition\Misc\F\Fire små arealer\6.png">
+    <p class="tt">
+    Figuren består af tre identiske og én halvt så stor figur. Hvad er
+    den ukendte højde _(?_) på hver?
+    </p>
+    <br></q-stion>
+    <answer-box> 
+    Vi ved, at arealet her i vores tilfælde kan regnes som:
+    _($\text{Højde}*\text{Bredde}*3.5_)
+    _(\text{Bredde}_) er givet til _(4_), så: 
+    _($\text{Højde}*4*3.5=31.5_)
+    _(4*3.5=14_), så _(14_) gange højden er lig _(31.5_). Det betyder pr. definition at 
+    højden er lig 
+    _($31.5/14=2.25_)
+    Så det er svaret!
+    <br><br></answer-box>
+
+    <q-stion 1="29" 2="7"> 
+        Hver etage på et bestemt højhus er _(7.5m_) høj. Lobbyen er _(8m_), og huset i alt _(75.5_).
+        Hvor mange etager er der?
+    <br><br></q-stion>
+    <answer-box> 
+       Lad os først fjerne lobbyens højde fra husets: 
+       _($75.5-8=67.5m_) 
+       Hver etage er _(7.5m_) høj, så vi skal finde et tal vi kan 
+       gange _(7.5_) med, som giver _(67.5_). 
+       Det svarer til en simpel division der giver
+       _($67.5/7.5=9_) 
+       ... etager. 
+    <br><br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5"> 
+        Hver etage på et højhus er _(6m_) høj. Lobbyen er _(7m_) høj. Huset i alt er _(82m_) højt. Ligesom før, 
+        er der intet der tilføjer til højden ud over etagerne og lobbyen. 
+        <p class="t">
+        Er det her et umuligt højhus?
+        </p> 
+    <br></q-stion>
+    <answer-box> 
+    Med simplere ord: Har dette højhus et <i>helt</i> antal etager?
+    "_(3.5_) etager" ville nok anses som "umuligt".
+    <p class="t">
+    Setuppet er det samme som før, så vi kan 
+    bare regne _((82-7)/6_). Det giver _(12.5_), 
+    så højhuset er umuligt.
+    </p>
+    <br></answer-box>
+
+    <q-stion 1="29" 2="8"> 
+    _(\underline{\textbf{A:}}_) <br>
+    Du er endelig færdig på arbejdet, og skal til at få din månedlige løn. 
+    Din chef vil lige lave en sjov "prank", og giver dig dine _(1237_) kr. i kontante <br>
+    5-øre mønter. 
+    Hvor mange mønter får du? 
+    <p class="t">
+    _(\underline{\textbf{B:}}_) <br>
+    En joke er først sjov anden gang, så din chef forsøger med samme trick igen næste måned.
+    Denne gang får du dog _(1237.68_) kr i løn, hvilke 
+    ikke går op i 5-øre mønter! Henholdsvis hvor mange 
+    5-øre og 1-øre mønter skal han give dig, for at det går op?
+    (nej, hverken 5-øre eller 1-øre mønter findes længere).
+    </p>
+    <p class="t">
+    _(\underline{\textbf{C:}}_) <br> 
+    Lad os sige, at der findes følgende pengesedler og mønter:
+    </p>
+    <div style="text-align:center; margin-left:-10%; margin-top:-5px;">
+        <ul style="display: inline-block; text-align: left; list-style:disc; margin-bottom: 0px">
+            <li> 500kr seddel </li>
+            <li> 200kr seddel </li>
+            <li> 100kr seddel </li>
+            <li> 50kr seddel </li>
+            <li> 20kr mønt </li>
+            <li> 5kr mønt </li>
+            <li> 2kr mønt </li>
+            <li> 1kr mønt </li>
+            <li> 50-øre mønt </li>
+            <li> 20-øre mønt </li>
+            <li> 5-øre mønt </li>
+            <li> 1-øre mønt </li>
+        </ul>
+    </div>
+    <p class="t">
+    Din chef giver dig <i>endnu</i> en gang din løn i kontanter, men denne gang er han mere gavmild. 
+    Han sørger for at give dig så få sedler/mønter som muligt, og du får endda en højere løn på
+    _(8429.37_) kr. Hvor mange af hver seddel/mønt type får du? 
+    </p>
+    <br></q-stion>
+    <answer-box t="Answer _(\textbf{A}_)#" tabColour="rgb(171,96,147)">
+    Hver kr. indeholder _(100/5=20_) _(5_)-øre mønter, så svaret er bare:
+    _($1237*20=24740_)
+    <br></answer-box>
+    <answer-box t="Answer _(\textbf{B}_)#" tabColour="rgb(175,128,161)">
+    Da din løn næsten er det samme, ved du, at du i hvert fald skal have 
+    over _(24740_) _(5_)-øre mønter. De sidste _(68_) ører kan vi skrive som 
+    _($65+3_)
+    I de _(65_) er der _(13_) _(5_)-øre mønter, og de sidste _(3_) går ikke op. 
+    Du ender derfor ud med:
+    _($\begin{eqnarray}
+    && \bullet \, \, \, 24740+13=24753 \, \, \text{5-øre mønter} \\
+    && \bullet \, \, \, 3 \, \, \text{1-øre mønter}
+    \end{eqnarray}_)
+    <br></answer-box>
+    <answer-box t="Answer _(\textbf{C}_)#" tabColour="rgb(171,96,147)">
+    Her kan vi egentlig gøre meget det samme som divisionsstrategien vi 
+    tidligere gennemgik: først gæt i brede træk, så find forskellen, så gæt i mindre brede træk osv.
+    <p class="t">
+    Vi starter med at dividere med _(500_), hvilke med _(16_) sedler bedst nærmer sig _(8000kr_).
+    Der er nu 
+    _($8429.37-8000=429.37kr_)
+    ... tilbage. Der er tydeligvis plads til _(2_) og ikke flere 
+    _(200kr_)-sedler. Nu er der så 
+    _($429.37-2*200 = 29.37kr_) 
+    ... tilbage. Her er _(100kr_)- og _(50kr_) sedler for meget,
+    og der er lige plads til _(1_) _(20kr_) mønt. 
+    </p>
+    <p class="t">
+    Osv. osv. 
+    </p>
+    <p class="t">
+    Denne proces bliver ved, og til sidst får vi:
+    </p>
+    <div style="text-align:center; margin-top:-20px;">
+        <ul style="display: inline-block; text-align: left; padding-left:0%; list-style:disc;">
+            <li> 500kr seddel: _(\text{16}_) </li>
+            <li> 200kr seddel: _(\text{2}_) </li>
+            <li> 100kr seddel: _(\text{0}_) </li>
+            <li> 50kr seddel: _(\text{0}_) </li>
+            <li> 20kr mønt: _(\text{1}_) </li>
+            <li> 5kr mønt: _(\text{1}_) </li>
+            <li> 2kr mønt: _(\text{2}_) </li>
+            <li> 1kr mønt: _(\text{0}_) </li>
+            <li> 50-øre mønt: _(\text{0}_) </li>
+            <li> 20-øre mønt: _(\text{1}_) </li>
+            <li> 5-øre mønt: _(\text{3}_) </li>
+            <li> 1-øre mønt: _(\text{2}_) </li>
+        </ul>
+    </div>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="29" 2="9">
+    Konverter tallet _(3571_) fra base-_(10_) til binær (altså base-_(2_))
+    <br><br></q-stion>
+    <answer-box>
+    Det her er jo stort set præcist den samme slags strategiske gættestrategi, vi brugte i sidste opgave.
+    I stedet for sedler har vi nu bare
+    <div style="text-align:center; margin-top:25px;">
+        <ul style="display: inline-block; text-align: left; padding-left:0%; margin-top:-15px; margin-bottom:0px; list-style:disc;">
+            <li>_(1_)</li>
+            <li>_(2_)</li>
+            <li>_(2*2=4_)</li>
+            <li>_(2*2*2=8_)</li>
+            <li>_(2*2*2*2=16_)</li>
+        </ul>
+    </div>
+    <p class="tt">
+    ... osv. 
+    </p>
+    <p class="t">
+    Hvis vi bliver ved sådan her, får vi:
+    </p>
+    <div style="text-align:center; margin-top:25px;">
+        <ul style="display: inline-block; text-align: left; padding-left:0%; margin-top:-15px; margin-bottom:0px; list-style:disc;">
+            <li>_(1_)</li>
+            <li>_(2_)</li>
+            <li>_(4_)</li>
+            <li>_(8_)</li>
+            <li>_(16_)</li>
+            <li>_(32_)</li>
+            <li>_(64_)</li>
+            <li>_(128_)</li>
+            <li>_(256_)</li>
+            <li>_(512_)</li>
+            <li>_(1024_)</li>
+            <li>_(2048_)</li>
+        </ul>
+    </div>
+    <p class="tt">
+    Vi behøver ikke gå længere, da _(2048*2=4096_) er højere end _(3571_)
+    </p>
+    <p class="t">
+    Der kan være _(1_) af _(2048_) (i modsætning til _(0_)). Vi står nu
+    tilbage med
+    _($3571-2048=1523_)
+    Der kan også være _(1_) af _(1024_) med en rest på
+    _($1523-1024=499_)
+    Der kan være kun _(0_) af _(512_), da det er større end resten.
+    </p>
+    <p class="t">
+    _(256_) kan der være _(1_) af, hvor
+    _($499-256=243_)
+    _(128_) kan der også være _(1_) af, med
+    _($243-128=115_)
+    Vi får også _(1_) af _(64_):
+    _($115-64=51_)
+    ... Og _(1_) af _(32_):
+    _($51-32=19_)
+    ... Vi fortsætter med _(1_) af _(16_) hvor:
+    _($19-16=3_)
+    Både _(8_) og _(4_) er større end resten, så dem har vi begge _(0_) af. 
+    </p>
+    <p class="t">
+    _(3_) er lig _(2+1_), så vi har _(1_) af både _(2_) og _(1_). All in all ...
+    _($110111110011_)
+    "♪ ... you're just another brick in the wall ♪". 
+    </p>
+    <br></answer-box>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+
+
+
+    <h2>Forhold mellem omkreds og areal</h2>
+
+    <!-- I DEN HER TÆNKER JEG DU KAN GØRE FØLGENDE BUSTER:
+    HAV STARTEN AF BEVISET, MEN SÅ BARE SIG AT VI "ANTAGER" AT DEN FALDER KONSTANT FOR SIMPLICITETENS SKYLD. 
+    SIG SÅ AT DE KAN SE BEVISET HVIS DE VIL, OG SÅ BARE HAV DET I SÅDAN EN OPTIONAL POP-UP BOX. -->
+
+    <p class="t">
+    Hvad er det <i>største</i> areal en firkant med et bestemt sæt længder kan have? 
+    Spørgsmål angående forhold mellem areal og omkreds  
+    eller volumen og overfladeareal har konkrete anvendelser i den virkelige verden. Eksempelvis
+    er der mikroorganismer og celler, hvis form forsøger at maksimere overfladeareal og minimere volumen, 
+    eftersom det øger mængden af stof de kan absorbere. 
+    Det bliver hurtigt avanceret, så vi begrænser os til trekanter og firkanter. 
+    </p>
+
+    <p class="t">
+    Lad os se på det aller simpleste tilfælde først: en trekant med grundlængde og højde på _(1_):
+    </p>
+    <img class="Spic" style="width:50%" src='../../../Assets/Chapter2\Section2\Quads\TrekantOmkreds1.png'> 
+    <p class="t">
+    Forholdet mellem arealet og omkredsen er 
+    _($\frac{1*1}{\sqrt{x^2+1}+\sqrt{(1-x)^2+1}+1}_)
+    Det er altså størst, når _(\sqrt{x^2+1}+\sqrt{(1-x)^2+1}+1_) er mindst.
+    Mere specifikt når _(\sqrt{x^2+1}+\sqrt{(1-x)^2+1}_) er mindst, siden _(1_) jo bare er konstant.
+    </p>
+    <p class="t">
+    Hvis _(x=0_), fås:
+    _($\sqrt{1}+\sqrt{1^2+1}=1+\sqrt{2}=2.414_)
+    Det er nemt at se, at omkredsen vil blive større uden, at der sker noget til arealet, 
+    hvis _(x_) herfra bliver mindre (bliver negativt). 
+    Vi ved derfor pr. symmetri, at _(x_) skal være mellem _(0_) og _(1_). 
+    Igen via symmetri ved vi også, at 
+    hvis _(x_) er en af de steder, hvor 
+    _($\sqrt{x^2+1}+\sqrt{(1-x)^2+1}_) 
+    er mindst, vil det samme gælde _(1-x_).
+    </p>
+    <p class="t">
+    Vi har derfor kun grund til at tjekke værdierne hvor _(x_) er mellem _(0_) og _(0.5_). _(x=0_) gav os _(2.414_).
+    _(x=0.5_) kan vi regne til 
+    _($\sqrt{0.5^2+1}+\sqrt{0.5^2+1}=2.236_)
+    Omkredsen bliver altså større, når vi 
+    går fra _(x=0.5_) til _(x=0_). Det er ikke nok til at vise _(x=0.5_) er der, hvor den er <i>mindst</i> dog.
+    Det ved vi kun, hvis den på intet tidspunkt fra _(x=0.5_) til _(x=0_) bliver mindre:</p>
+    <img class="Spic" style="width:60%" src='../../../Assets/Chapter2\Section2\Quads\AnalysisArgument1.png'> 
+    <p class="t">
+    I det tilfælde - i den hypotese -  kan vi nemt se, at _(x=0.5_) vil være punktet, hvor værdien er lavest. 
+    Hvis det <i>ikke</i> var tilfældet, ville det måske se ud som:</p>
+    <img class="Spic" style="width:80%" src='../../../Assets/Chapter2\Section2\Quads\AnalysisArgument2.png'> 
+    <p class="t">
+    Måske bliver den større og mindre? 
+    For at bevise at _(x=0.5_) er det mindste punkt, skal vi 
+    altså bevise, at _(\sqrt{x^2+1}+\sqrt{(1-x)^2+1}_) konstant falder
+    mellem _(x=0_) og _(x=0.5_). 
+    </p>
+    <p class="t">
+    Kig på hypotese 2. Det kan let ses, at 
+    kurven vil have den samme værdi flere gange, hvis den først falder og så stiger. 
+    På hypotese 2 bliver alle værdier under _(0.2236_) gentaget to gange. Hvis _(\sqrt{x^2+1}+\sqrt{(1-x)^2+1}_) 
+    konstant faldt, ville hver værdi kun ramme èn gang mellem _(x=0_) og _(x=0.5_) (og derfor to gange mellem 
+    _(x=0_) og _(x=1_) pr. symmetri). 
+    Det er idéen bag beviset: Vi siger at _(\sqrt{x^2+1}+\sqrt{(1-x)^2+1}_) er lig 
+    en eller anden tilfældig værdi "_(a_)":
+    _($\sqrt{x^2+1}+\sqrt{(1-x)^2+1}=a_)
+    Vi viser så, at det her enten vil have to løsninger eller ingen løsninger, lige meget hvilken _(a_) vi vælger.
+    Det involverer en del omskrivning og 
+    noget lidt tricky isolering af _(x_). I dette kapitel er vi primært interesserede i geometri, så jeg tænker
+    ikke at processens konkrete konkrete gennemgang er super relevant lige nu. Hvis du aktivt er nysgerrig, kan du 
+    se processen i følgende pop-up box: 
+    </p>
+
+    <!--  -->
+
+    <br> 
+
+    <answer-box t="a" tabColour="rgb(135, 222, 158)">
+    Alright, så vi har:
+    _($\sqrt{x^2+1}+\sqrt{(1-x)^2+1}=a_)
+    Jeg sagde, at vi skulle bevise at dette enten havde ingen løsninger eller to løsninger, for en hvilket som helst _(a_). 
+    Det kan gøres lidt simplere. Se følgende billede:
+    <img class='Spic' style='width:38%' src='../../../Assets/Chapter2\Section2\Quads\TrekantOmkreds2.png'> 
+    <p class="t">
+    Her er der vist trekanten ved en bestemt negativ _(x_)-værdi _(-x_) (i sort), og dens positive modsætning _(x_) (i rød).
+    Kald den venstre linje i det negative tilfælde for _(a_1_), og den højre _(b_1_).
+    Samme for det positive tilfælde, men nu 
+    _(a_2_) og _(b_2_). Man kan se, at omkredsen altid vil være mindre i det positive tilfælde, da 
+    _(a_1=a_2_), men _(b_1_) altid er større end _(b_2_). 
+    Vi ved derfor nu, at værdierne mellem _(x=0_) og _(x=1_) er mindre
+    end alle værdierne udenfor. Derfor behøver vi kun se på de _(a_) mellem _(2.414_) og _(2.236_), og 
+    kun bevise at der er to og præcis to løsninger. Det er lidt nemmere end at bevise, at der er to <i>eller</i> ingen.
+    </p>
+    <p class="t">
+    I hvert fald: Vi har en _(x_) der skal isoleres. Det her er ikke just simpelt, grundet alle de irriterende 
+    kvadratrødder der er opstået grundet pythagoras. Dem vil vi gerne have fjernet, så vi starter med at isolere
+    èn af dem ved at minusse begge sider med _(\sqrt{(1-x)^2+1}_):
+    _($\sqrt{x^2+1}=a-\sqrt{(1-x)^2+1}_)
+    Hvis kvadratroden af _(x^2+1_) er lig _(a-\sqrt{(1-x)^2+1}_), må 
+    _(x^2+1_) i sig selv være lig:
+    _($x^2+1=\left(a - \sqrt{(1-x)^2+1} \right)^2_)
+    Vi udvider højre side, for at gøre det lidt simplere:
+    _($x^2+1=a^2 - 2a*\sqrt{(1-x)^2+1} + (1-x)^2 + 1 _)
+    Der er desværre stadig en kvadratrod i spil. Derfor er vi nødt til at gøre præcis samme trick igen.
+    Kvadratroden isoleres:
+    _($2a*\sqrt{(1-x)^2+1} = a^2 + (1-x)^2 + 1 - x^2 - 1_)
+    Og opløftes så i anden potens:
+    _($\left(2a*\sqrt{(1-x)^2+1} \right)^2 = \left(a^2 + (1-x)^2 + 1 - x^2 -1 \right)^2_)
+    Lad os simplificere højre side lidt før vi opløfter. 
+    _((1-x)^2_) kan udvides til _(1+x^2-2x_), så vi har:
+    _($a^2 + 1+x^2-2x+1-x^2-1 = a^2-2x+1_)
+    Vi regner nu:
+    _($\begin{eqnarray}
+    && (a^2-2x+1)^2 = \\  \\
+    && (a^2-2x+1)(a^2-2x+1) = \\ \\
+    &&  a^2 (a^2-2x+1) - 2x (a^2-2x+1) + 1 (a^2 -2x + 1) = \\ \\
+    &&  a^4 - 2a^2 x + a^2 - 2a^2 x + 4x^2 - 2x + a^2 - 2x +1
+    \end{eqnarray}_)
+    Det er lidt et kæmpe rod. Vi er interesseret i at finde/isolere _(x_), så 
+    lad os lige gruppere de led med _(x^2_), _(x_), osv: 
+    _($4x^2 - 4(a^2 + 1)x + (a^4 + a^2 + 1)_)
+    Alt det her var lig _(\left(2a*\sqrt{(1-x)^2+1} \right)^2_), så:
+    _($4a^2 \left((1-x)^2+1 \right) = 4x^2 - 4(a^2 + 1)x + (a^4 + a^2 + 1)_)
+    Jeg tænker lige at vi dividerer begge sider med _(4a^2_), da vi bare er interesserede i _(x_):
+    _($(1-x)^2 + 1 = \frac{4}{4a^2} x^2 - \frac{4(a^2+1)}{4a^2}x + \frac{a^4+a^2+1}{4a^2}_)
+    _((1-x)^2_) kan vi udvide til _(x^2-2x+1_), så:
+    _($0 = \frac{1}{a^2} x^2 - x^2 - \left(1 + \frac{1}{a^2} \right)x + 2x + \frac{a^4+a^2+1}{4a^2} - 2_)
+    Hvis vi igen gruppere ledende kan dette omskrives til: 
+    _($0 = \left(\frac{1}{a^2} - 1 \right) x^2 + \left(2 - 1 - \frac{1}{a^2} \right)x + \left(\frac{a^4+a^2+1}{4a^2} - 2 \right) _)
+    Bum! Man kan sikkert simplificere det her mere end det er allerede, men det vigtigste er bare, at det lige nu passer til formen 
+    _($Ax^2 + Bx + C_)
+    Hvor:
+    _($A=\frac{1}{a^2} - 1, \qquad B=1 - \frac{1}{a^2}, \qquad C = \frac{a^4+a^2+1}{4a^2} - 2_)
+    Denne slags situation ved vi enten har _(0_), _(1_) eller _(2_) løsninger, da:
+    _($x=\frac{-B \pm \sqrt{B^2 - 4 A C}}{2 A}_)
+    </p>
+    <p class="t">
+    Vi ved fra den geometriske kontekst, at vores <i>i hvert fald</i> har _(2_) løsninger eller over. 
+    Dette fortæller os at den ikke har <i>mere end _(2_)</i>.
+    Så den har 2 eller flere løsninger, men ikke mere end _(2_): Ergo, den har _(2_)! 
+    Done! 
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <p class="t" style="margin-top:20px;">
+    Vi ved nu, at _(x_) skal være i midten ved _(0.5_). Vi kan lave præcist samme
+    argument med nogen som helst grundlængde og nogen som helst højde. 
+    Fordi _(x_) skal være halvdelen af grundlængden,
+    kan vi også nemt se, at to af siderne skal være lige lange. Det er altså vores primære resultat:
+    given en bestemt sidelængde og omkreds, har en trekant sit største areal, når de to andre sider
+    er lige store. Bevist på den mest uelegante og naive måde nogensinde! 
+    </p>
+
+    <q-stion 1="6" 2="1">
+    En <i>rhombus</i> er en firkant, hvor alle sider er lige lange. Et kvadrat er bare en rhombus med vinkler på 
+    90 grader overalt. 
+    Vis at den størst mulige rhombus har et areal på _(b^2_) hvis sidelængden
+    skal være _(b_). 
+    Bare rolig, det her er slet, slet ikke ligeså svært som det vi lige beviste.
+    <br><br></q-stion>
+    <answer-box>
+    En rhombus er jo bare en form for parallelogram. Dens areal kan derfor findes med _(Sin(v)*s_1*s_2_) hvor
+    _(v_) er vinklen imellem de to sider _(s_1,s_2_). Det giver i vores tilfælde _(Sin(v)*b*b=Sin(v)*b^2_). 
+    _(Sin_) har sin største værdi på _(1_) ved _(90_) grader: ergo _(1*b^2=b^2_). Vi kan
+    se, at rhombusens areal er størst, når den er en kvadrat.  
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="6" 2="2">
+    Vis at den største mulige firkant med omkreds _(s_), er et rent og simpelt kvadrat. 
+    <br><br></q-stion>
+    <answer-box t="h">
+    Prøv at start med en tilfældig firkant, og spørg så: Hvordan skal vi ændre på denne firkant,
+    for at forholdet mellem areal og omkreds er optimalt? Juster så på firkanten gradvist, indtil 
+    du endeligt står med et kvadrat. 
+    <br><br></answer-box>
+    <answer-box>
+    Den overordnede strategi er at tegne en helt tilfældig firkant, opdele den i trekanter, og sørge
+    for, at de trekanter har de største mulige forhold mellem omkreds og areal. 
+    Man får så eventuelt en rombe, og 
+    den rombe ved vi skal laves om til et kvadrat, hvis den skal have det størst mulige areal. 
+    <p class="t">
+    Tegn en eller anden tilfældig firkant _(ABCD_). Forbind de to modsatte punkter _(A_) og _(C_), så du nu har 
+    to trekanter _(\triangle ABC_) og _(\triangle ADC_). Omkredsen på vores firkant er:
+    _($AB+BC+AD+DC_)
+    ... hvor _(AB_), _(BC_) er en del af _(\triangle ABC_), og _(AD_), _(DC_) er en del af _(\triangle ADC_). 
+    Hvis vores samlede firkant skal have det størst mulige forhold mellem areal og omkreds, skal 
+    det også gælde for begge trekanter _(\triangle ABC_) og _(\triangle ADC_). Hvis det 
+    er tilfældet, ved vi fra vores tidligere arbejde at _(\triangle ABC_) skal være en trekant, hvor 
+    _(AB=BC_), og at _(\triangle ADC_) skal være en trekant hvor _(AD=DC_). Vi justerer begge trekanter - og derfor
+    også vores samlede firkant - så at dette gælder. 
+    </p>
+    <p class="t">
+    Du har nu en ny, justeret _(ABCD_). Gør nu præcis det samme igen, bare hvor du forbinder 
+    _(B_) og _(D_). Det skaber to trekanter _(\triangle DAB_) og _(\triangle DCB_). Du optimerer 
+    dem ligesom før ved at justere på firkanten, så at _(AB=AD_) og _(BC=DC_). Vi har nu samlet set 
+    en justeret firkant _(ABCD_) hvor:
+    _($AB=BC=DC=AD_)
+    Alle siderne er lig hinanden. Der er ikke <i>nødvendigvis</i> rette vinkler, så vi står tilbage med en rombe. 
+    Vi ved at denne rombe har det mest optimale forhold, hvis den laves om til et kvadrat, så det er hvor vi ender. 
+    </p>
+    <p class="t">
+    Bum! Bare et simpelt kvadrat! 
+    </p>
+    <br></answer-box>
+    
+    <q-stion 1="6" 2="3">
+    Hvad er det største mulige areal sidelængderne _(3, \, 6, \, 17, \, 19_) kan danne?  
+    <br><br></q-stion>
+    <answer-box>
+    Deres omkreds er _(3+6+17+9=45_). Kvadratet med det omkreds har en sidelængde på _(45/4=11.25_). Altså: 
+    _($11.25^2=126.5625_)
+    Boom! 
+    <br><br></answer-box>
+
+

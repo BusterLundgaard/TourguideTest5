@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+
+
+    
+    <p class="t">
+    Der er et smart trick vi kan bruge der gør det meget hurtigere at finde de
+    forskellige _(A_)-værdier. Sig f.eks. man havde:
+    _($\frac{3x+2}{(x+5)*(x+6)*(x-1)}_)
+    Hvis man nu gjorde som i de to sidste opgaver, så ville man få en ligning
+    der svarede til:
+    </p>
+
+    <p class="t" style="margin-left:-6%;">_($3x+2 = A_1*(x+6)*(x-1) + A_2*(x+5)*(x-1) + A_3*(x+5)*(x+6)_)</p>
+    
+    <p class="t">
+    Vi skal altså finde nogle _(A_) værdier der sørger for at de her
+    to udtryk er lig hinanden på hver mulig _(x_)-værdi. Hvis vi har det helt generelle tilfælde:
+    _($\frac{A_1}{x+B_1}+\frac{A_2}{x+B_2}+\frac{A_3}{x+B_3}_)
+    Så ved vi at det er <i>muligt</i> at repræsentere vores polynomial hvis bare vi vælger
+    de rigtige _(B_) og _(A_) værdier. Pointen er: I vores tilfælde er vi altså sikre på
+    at de her _(A_) værdier <i>findes</i>. Vi skal bare finde ud af <i>hvad</i> de er lig med. 
+    Hvis _(A_) værdierne opfylder kravet for <i>hvert</i> _(x_), så kan vi bare indsætte
+    et hvilket som helst _(x_) vi har lyst til, og så få en ny ligning de opfylder. Sig f.eks. jeg indsatte
+    _(x=3.5_)
+    </p>
+
+    <p class="t" style="margin-left:-22%;">_($3*(3.5)+2=A_1*(3.5+6)*(3.5-1)+A_2*(3.5+5)*(3.5-1)+A_3*(3.5+5)*(3.5+6) \to_)</p>
+    
+    <p class="t">
+    _($A_1 = -0.894 A_2 - 3.4 A_3 + 0.526_)
+    Så hvis bare vi indsætter et par vilkårlige _(x_)-værdier, så kan vi
+    nemt få nok ligninger til at finde vores ubekendte _(A_)-tal. Grunden til at
+    det her er praktisk, er fordi vi kan vælge nogle rigtig "dejlige" x-værdier. Som 
+    f.eks. _(x=-6_):
+    </p>
+   
+    <p class="t" style="margin-left:-17%">_($-6*x+2 = A_1*(-6+6)*(-6-1) + A_2*(-6+5)*(-6-1) + A_3*(-6+5)*(-6+6) =_) </p>
+    
+    <p class="t">
+    _($-6x + 2 = A_2*7_)
+    Vi vælger altså bare nogle _(x_)-værdier der får de forskellige led til at forsvinde, så vi
+    står tilbage med kun èt enkelt led: Det led der ikke bliver ganget med en bestemt
+    faktor. Det her er langt hurtigere end at udvide tælleren og løse et system.
+    Prøv det!
+    </p>
+    
+    <q-stion 1="2" 2="1" 3="5">
+    Simplificer følgende brøk: 
+    _($\frac{3}{(x+4)(x-1.5)(x+3)(x+2.5)}_)
+    <br></q-stion>
+    <answer-box>
+    Vi skal finde _(A_1, ... A_4_) hvis:
+    _($3 = \begin{eqnarray}   
+          && A_1*(x-1.5)(x+3)(x+2.5) & + \\
+          && A_2*(x+4)(x+3)(x+2.5) & + \\
+          && A_3*(x+4)(x-1.5)(x+2.5) & + \\
+          && A_4*(x+4)(x-1.5)(x+3) 
+    \end{eqnarray} _)
+    Vi starter med at sætte _(x_) til _(-4_) så det kun er _(A_1_) der overlever:
+    _($3=A_1*(-4-1.5)(-4+3)(-4+2.5) \to A_1=-0.363_)
+    Vi fortsætter med _(x=1.5_) så kun _(A_2_) overlever:
+    _($3=A_2*(1.5+4)(1.5+3)(1.5+2.5) \to A_2 = 0.0303_)
+    Samme trick gør vi med _(A_3_) og _(A_4_):
+    _($\begin{eqnarray} 
+    && 3 = A_3*(-3+4)(-3-1.5)(-3+2.5) \to A_3 = 1.333 \\
+    && 3 = A_4*(-2.5+4)(-2.5-1.5)(-2.5+3) \to A_4 = -1
+    \end{eqnarray}_)
+    Så svaret er:
+    _($\frac{-0.363}{x+4} + \frac{0.0303}{x-1.5} + \frac{1.333}{x+3} - \frac{1}{x+2.5} _)
+    <br><br></answer-box>
+    
+    <!--  -->
+    
+    <q-stion 1="2" 2="1" 3="5">
+    Simplificer følgende brøk:
+    _($\frac{10x^4-7x^2+x+3}{1.5x^2 - 1.05 x - 3.9}_)
+    <br></q-stion>
+    <answer-box>
+    Nu er tælleren faktisk højere end nævneren, så vi starter med at lave long division.
+    Jeg viser ikke lige processen her, men vi får:
+    _($6.66x^2 + 8.88x - 19.48 + \frac{-91.29x + 119.88}{1.5x^2 - 1.05 x - 3.9} _)
+    _(6.66x^2+8.88x-19.48_) kan vi ikke gøre særlig meget ved, men vi kan godt
+    lave partial fractions på resten. Først skal vi lige finde rødderne på nævneren:
+    _(1.5x^2 - 1.05 x - 3.9 = 0 \to x = -1.3, 2_)
+    Vi skal altså lave partial fractions på:
+    _($\frac{-91.29x + 119.88}{1.5*(x+1.3)*(x-2)}_)
+    Så:
+    _($-91.29x + 119.88 = A_1*(x-2)+A_2*1.5*(x+1.3)_)
+    Vi finder først _(A_1_) ved at sætte _(x=-1.3_):
+    _($-91.29*(-1.3)+119.88 = A_1*(-1.3-2) \to A_1 = -72.29_)
+    Og _(A_2_) ved at sætte _(x=2_):
+    _($-91.29*2+119.88 = A_2*1.5*(2-1.3) \to A_2 = -89.57_)
+    Alt i alt:
+    _($\frac{10x^4-7x^2+x+3}{1.5x^2 - 1.05 x - 3.9} = _)
+    _($ 6.66x^2 + 8.88x - 19.48 - \frac{72.29}{1.5*(x+1.3)} - \frac{89.57}{x-2}_)
+    _(72.29/1.5_) er _(48.19_), så:
+    _($6.66x^2 + 8.88x - 19.48 - \frac{48.19}{x+1.3} - \frac{89.57}{x-2}_)
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Simplificer følgende brøk:
+    _($\frac{2x+5}{(x-6)*(x+11)^2}_)
+    Nu har en af de faktorer nævneren består af altså en potens på _(2_). 
+    Kan du gøre det samme ved den her brøk som du har gjort ved de andre? 
+    Hvis nej, kan du så finde på en anden
+    strategi? 
+    <p class="t">
+    Den her opgave er ikke nødvendigvis lang, men den er måske relativt tricky! 
+    </p>
+    <br><br></q-stion>
+    <answer-box>
+    Vi <i>kunne</i> vælge at se _((x+11)^2_) som _((x+11)*(x+11)_), og så gøre som før:
+    _($\frac{2x+5}{(x-6)(x+11)(x+11)} = \frac{A_1}{x+11}+\frac{A_2}{x+11}+\frac{A_3}{x-6}_)
+    Men det ville <i>ikke</i> virke. Hvis vi faktisk lægger de her brøker sammen til èn, så får vi:
+    _($\frac{A_1*(x-6)}{(x+11)(x-6)}+\frac{A_2*(x-6)}{(x+11)(x-6)}+\frac{A_3*(x+11)}{(x-6)(x+11)} =_)
+    _($\frac{(x-6)*(A_1+A_2) + A_3*(x+11)}{(x-6)(x+11)}_)
+    For det første er nævneren forkert, eftersom _((x+11)_) kun har en potens på _(1_), og 
+    får det andet er tælleren forkert eftersom _(A_1+A_2_) svarer til bare èt tal _(C_), så vi
+    faktisk kun har to konstanter _(C_) og _(A_3_) til at styre _(3_) koefficienter. Vi 
+    har altså brug for en anden strategi i denne situation.
+    <p class="t">
+    Lad os starte med at fikse problemet med nævneren. Det burde virke hvis vi bare laver
+    begge _((x+11)_) om til _((x+11)^2_): 
+    _($\frac{A_1}{(x+11)^2}+\frac{A_2}{(x+11)^2}+\frac{A_3}{x-6} =_)
+    _($\frac{A_1*(x-6)}{(x+11)^2*(x-6)} + \frac{A_2*(x-6)}{(x+11)^2*(x-6)} + \frac{A_3*(x-11)^2}{(x+11)^2*(x-6)} =_)
+    _($\frac{(x-6)*(A_1+A_2)+A_3*(x-11)^2}{(x+11)^2*(x-6)}_)
+    Det virkede, men vi har stadig problemet med tælleren. Problemet er
+    at _(A_1_) og _(A_2_) funktionelt er identiske lige nu. De bliver begge to
+    divideret med _((x+11)^2_). Derfor er de heller ikke to "unikke" variabler, så
+    de kan kombineres i èn, hvilke betyder at vi kun har to variabler til tre ligninger/koefficienter. 
+    Èn mulig ide - bare for at gøre et eller andet der gør dem forskellige - kunne være at 
+    _(A_1_) bliver divideret med _((x+11)_), og at _(A_2_) bliver divideret med
+    _((x+11)^2_). Så får vi:
+    _($\frac{A_1}{x+11}+\frac{A_2}{(x+11)^2}+\frac{A_3}{x-6} =_)
+    _($\frac{A_1*(x-6)(x+11)}{(x+11)^2*(x-6)} + \frac{A_2*(x-6)}{(x+11)^2*(x-6)} + \frac{A_3*(x-11)^2}{(x+11)^2*(x-6)} =_)
+    _($\frac{A_1*(x-6)(x+11)+A_2*(x-6)+A_3*(x-11)^2}{(x+11)^2*(x-6)}_)
+    Fantastisk! Problem solved. Lad os udvide tælleren og finde _(A_1_), _(A_2_), _(A_3_):
+    _($\begin{eqnarray} 
+    && (A_1+A_3)*x^2 & + \\
+    && (5*A_1+A_2-22 A_3)*x^1 & + \\
+    && (-66A_1 - 6A_2 + 121 A_3)*x^0
+    \end{eqnarray}_)
+    Så vi skal løse:
+    _($\begin{eqnarray} 
+    && A_1+A_3 = 0 \\
+    && 5*A_1+A_2-22 A_3 = 2 \\
+    && -66A_1 - 6A_2 + 121 A_3 = 5
+    \end{eqnarray} \to_)
+    _($A_1 = -0.68, A_2 = 20.36, A_3 = 0.68_)
+    Ergo: 
+    _($\frac{2x+5}{(x-6)(x+11)^2} = \frac{-0.68}{x+11} + \frac{20.36}{(x+11)^2} + \frac{0.68}{x-6}_)
+    Det skal noteres, at vi ikke længere kan ligeså nemt kan bruge den 
+    "smarte" strategi til at finde _(A_1_), _(A_2_), _(A_3_), eftersom både _(A_1_) og 
+    _(A_2_) vil forsvinde hvis _(x+11=0_). Vi kan dog godt stadig indsætte x-værdier
+    for at opsætte smarte ligninger. 
+    Det eneste vi har brug for at vide er jo at _(A_1_), _(A_2_) og _(A_3_) <i>eksisterer</i>. 
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Simplificer:
+    _($\frac{x^2+3}{(x-6)^4}_)
+    <br></q-stion>
+    <answer-box>
+    Vi gør det som:
+    _($\frac{x^2+3}{(x-6)^4} = \frac{A_1}{x-6}+\frac{A_2}{(x-6)^2}+\frac{A_3}{(x-6)^3}+\frac{A_4}{(x-6)^4}_)
+    Tælleren giver os altså ligningen:
+    _($x^2 + 3 = A_1*(x-6)^3 + A_2*(x-6)^2 + A_3*(x-6)+A_4_)
+    Jeg tænker vi indsætter _(x=6_), så kun _(A_4_) overlever:
+    _($6^2+3=A_4 \to A_4 = 39_)
+    Tre andre lette muligheder kunne være _(x=7_), _(x=5_), og _(x=8_):
+    _($\begin{eqnarray} 
+    && 7^2 + 3 = A_1*(1)^3 + A_2*(1)^2 + A_3*1 + 39 \\ 
+    && 5^2 + 3 = A_1*(-1)^3 + A_2*(-1)^2 + A_3*(-1) + 39 \\
+    && 8^2 + 3 = A_1*(2)^3 + A_2*(2)^2 + A_3*2 + 39
+    \end{eqnarray}_)
+    Hvis vi løser det her system får vi:
+    _($A_1=0, A_2 = 1, A_3 = 12_)
+    Så alt i alt:
+    _($\frac{x^2+3}{(x-6)^4} = \frac{1}{(x-6)^2}+\frac{12}{(x-6)^3}+\frac{39}{(x-6)^4}_)
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Simplificer:
+    _($\frac{1.2x^2-2x+5}{(x-6)*(x^2+5)}_)
+    Nu har vi altså et ureducerbart kvadrat i nævneren. Her er du også
+    nødt til at ændre strategien lidt. 
+    <br><br></q-stion>
+    <answer-box>
+    Lad os først gøre som normalt, og så se om der går noget galt. Jeg tænker
+    vi kan omskrive til:
+    _($\frac{1.2x^2-2x+5}{(x-6)*(x^2+5)} = \frac{A_1}{x-6}+\frac{A_2}{x^2+5}_)
+    Hvis vi lægger de to brøker sammen, så får vi:
+    _($\frac{A_1*(x^2+5)+A_2*(x-6)}{(x-6)*(x^2+5)}_)
+    Nævneren er fin, men tælleren er ikke god nok. Vi har kun 
+    _(2_) variabler til at styre _(3_) koefficienter  (_(x^2_), _(x^1_), _(x^0_)). 
+    Det løser vi meget simpelt ved bare at tilføje en ekstra variabel. Vi siger:
+    _($\frac{1.2x^2-2x+5}{(x-6)*(x^2+5)} = \frac{A_1}{x-6}+\frac{B_2*x+A_2}{x^2+5}_)
+    Nu får vi:
+    _($\frac{A_1*(x^2+5)+(B_2*x+A_2)*(x-6)}{(x-6)*(x^2+5)}_)
+    Wholla! Vores tæller er stadig en polynomial med grad _(2_), men den har nu
+    faktisk _(3_) variabler vi kan justere på. Lad os udvide:
+    _($(A_1+B_2)*x^2 + (A_2 - 6 B_2)*x^1 + (5A_1 - 6A_2)*x^0_)
+    Vi løser altså nu:
+    _($\begin{eqnarray} 
+    && A_1+B_2 = 1.2
+    && A_2 - 6 B_2 = -2
+    && 5A_1 - 6A_2 = 5 
+    \end{eqnarray} \to_)
+    _($A_1 = 0.882, A_2 = -0.097, B_2 = 0.317_)
+    Så:
+    _($\frac{1.2x^2-2x+5}{(x-6)*(x^2+5)} = \frac{0.882}{x-6}+\frac{0.317*x-0.097}{x^2+5}_)
+    <br></answer-box>
+

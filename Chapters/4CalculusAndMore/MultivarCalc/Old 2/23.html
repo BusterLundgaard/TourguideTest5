@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+
+
+    <!-- 2D AND 3D DIVERGENCE THEOREM -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Du har følgende 4-sidede polygon (præcist samme som den tidligere):
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter4\MultiVarCalc\Vectorfields\PolygonRegion1.png'> 
+    <p class="t">
+    Vektor feltet er:
+    _($\vec f = \VeC[\frac{1}{3}x^2y,y^2x]_)
+    Find flux af dette område. 
+    </p>
+    <br><br></q-stion>
+    <answer-box>
+    Hvis vi skulle finde flux normalt, så ville vi skulle finde flux på fire separate sider, med 
+    fire forskellige integraler. Her kan vi bare tage følgende dobbelt-integral:
+    _($\begin{eqnarray}
+    && \int_R \int Div(\vec F) \text{ }dA = 
+    && \int_{1}^{5} \int_{0.25x + 1.75}^{x+3} \frac{8}{3}xy \text{ }dy \text{ }dx =
+    && 572.44
+    \end{eqnarray}_)
+    Så det er vores svar. 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Du arbejder med området under _(z=20-2x+y_), hvor _(x \in [-1,5]_), _(y \in [-3,3]_), hvilke ser ud som:
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter4\MultiVarCalc\Vectorfields\UnderPlane.png'> 
+    <p class="t">
+    Dit vektor-felt er:
+    _($\vec F = \VeC[-z*x^2,x,y*z]_)
+    Hvad er flux af dette område? 
+    </p>
+    <br><br></q-stion>
+    <answer-box>
+    Normalt ville vi her skulle tage flux af seks forskellige plader: Toppen (planet), bunden, og de fire sider.
+    Så er det meget nemmere bare at tage følgende trippel-integral:
+    _($\begin{eqnarray}
+    && \int_R \int \int Div(\vec F) \text{ }dV =
+    && \int_{-1}^{5} \int_{-3}^{3} \int_{0}^{20-2x+y} -2zx + 0 + yz \text{ }dz \text{ }dy \text{ }dx =
+    && \int_{-1}^{5} \int_{-3}^{3} (20-2*x+y)^2*\frac{y-2x}{2} \text{ }dy \text{ }dx =
+    && \int_{-1}^{5} -2x^3 + 480x^2 - 2454x + 360 \text{ }dx =
+    && -10872
+    \end{eqnarray}_)
+    Fantastisk!
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Du har følgende område (det samme som tidligere): 
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter4\MultiVarCalc\Vectorfields\PolygonRegion2.png'> 
+    Og en densitetsfunktion der er lig:
+    _($f(x,y)=2Sin(x)Cos(x) + 2Cos(y)Sin(y)_)
+    Find massen. 
+    <br><br></q-stion>
+    <answer-box>
+    Min pointe med den her opgave er egentlig bare at du både kan bruge Green's theorem og 
+    the divergence theorem til at regne en opgave som den her (måske) hurtigere. 
+    Begge involverer at finde _(\vec r'(t)_), så medmindre vi er i 3D, så kan man ikke
+    rigtig sige at den ene er særlig meget sværere end den anden. Vi vælger derfor, meget arbitrært, 
+    at bruge flux. Så skal vi finde et felt _(\vec F_) hvis divergence er lig _(f(x,y)_). 
+    Et meget simpelt bud er nok:
+    _($\VeC[-\frac{1}{2}Cos(2x),-\frac{1}{2}Cos(2y)]_)
+    Så vi skal nu regne de fire følgende integraler:
+    _($\begin{eqnarray}
+    && \int_{0}^{1} \VeC[-\frac{1}{2}Cos(2*(1+t(4-1))), -\frac{1}{2}Cos(2*(1+t(14-1)))]*\VeC[-(14-1),4-1] \text{ }dt \\
+    && \int_{0}^{1} \VeC[-\frac{1}{2}Cos(2*(4+t(3-4))), -\frac{1}{2}Cos(2*(14+t(7-14)))]*\VeC[-(7-14),3-4] \text{ }dt \\
+    && \int_{0}^{1} \VeC[-\frac{1}{2}Cos(2*(3+t(5-3))), -\frac{1}{2}Cos(2*(7+t(8-7)))]*\VeC[-(8-7),5-3] \text{ }dt \\
+    && \int_{0}^{1} \VeC[-\frac{1}{2}Cos(2*(5+t(1-5))), -\frac{1}{2}Cos(2*(8+t(1-8)))]*\VeC[-(1-8),1-5] \text{ }dt 
+    \end{eqnarray}_)
+    Hvilke giver:
+    _($0.12-2.25+0.61+0.46 = -1.06_)
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Bevis, at hvis vektor-feltet er konstant (samme vektor overalt) så er flux på en hvilket som helst mærkelig region du kunne
+    forestille dig lig _(0_). 
+    <br><br></q-stion>
+    <answer-box>
+    Hvis _(\vec F_) er konstant, så er _(Div(\vec F)_) jo tydeligvis _(0_). En dobbelt eller 
+    tredobbelt integral af _(0_) gider altid _(0_), lige meget hvilket område vi arbejder med. 
+    Ergo: flux på området er også _(0_). 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Du har følgende område:
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter4\MultiVarCalc\Vectorfields\Spiral3.png'> 
+    <p class="t">
+    Og vektor-feltet er:
+    _($\vec f = \VeC[\frac{1}{3}x^3+y^2x,y^2]_)
+    Find flux. 
+    </p>
+    <br><br></q-stion>
+    <answer-box>
+    Hvis vi skulle regne flux her normalt, så ville vi skulle til at tage flux af en polar kurve
+    (hvilke i sig selv sjælen bliver særlig elegant) to gange, plus også finde
+    flux hen ad den lige linje i slutningen. Så er det meget hurtigere bare at regne:
+    _($\int_R \int Div(\vec F) \text{ }dA_)
+    Divergence af vores vektor felt er:
+    _($x^2+y^2+2y_)
+    Hvis vi laver substitutionen _(x=rCos(\theta)_), _(y=rSin(\theta)_), så kan vores region
+    beskrives som:
+    _($\theta \in [0, 2\pi], r \in [\theta, 1.5\theta]_)
+    Derfor skal vi regne:
+    _($\int_{0}^{2\pi} \int_{\theta}^{1.5\theta} r^2+2rSin(\theta) \text{ }dr \text{ }d\theta _)
+    Hvilke giver _(259.11_), som så er svaret.
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Sig at du har en 3D trekant (en såkaldt "tetrahedron") dannet
+    af overfladerne _(\triangle ABC_), _(\triangle CBD_), _(\triangle ABD_), 
+    _(\triangle ACD_), hvor at:
+    _($\begin{eqnarray}
+    && A = & (3,4,3) \\
+    && B = & (6,8,3) \\
+    && C = & (7,1,2) \\
+    && D = & (5,4,6)
+    \end{eqnarray}_)
+    Din densitetsfunktion er:
+    _($f(x,y,z)=1+y_)
+    Hvad er massen? 
+    <br><br></q-stion>
+    <answer-box>
+    Lad os først lige skitsere vores område: 
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter4\MultivarCalc\Vectorfields\Tetrehedron.png'> 
+    <p class="t">
+    Jeg ved ikke med dig, men jeg syntes umiddelbart dette ligner et meget svært område at evaluere
+    en tredobbelt-integral på. Jeg ville i hvert fald nok være nødt til at dele den op i flere, hvilke
+    hurtigt kunne blive meget tricky. Jeg tænker derfor det er nemmere "bare" at finde den samlede flux gennem de 
+    fire flader, hvilke i hvert fald er langt nemmere at opsætte. 
+    </p>
+    <p class="t">
+    Vi skal finde et felt _(\vec F_) hvis divergence er lig _(2x-y^2+z_). Man kan relativt let 
+    se at 
+    _($\VeC[0,y+y^2,0]_)
+    gør jobbet. 
+    </p>
+    <p class="t">
+    Vi har allerede tidligere fundet flux gennem en trekant i et 3D rum. Hvis man generalisere
+    vores arbejde der lidt, så kan man se at flux gennem trekanten _(\triangle MNQ_) 
+    dannet af tre punkter _(M_), _(N_), _(Q_) er:
+    _($\int_{0}^{1} \int_{0}^{a} \vec F \left(M + a*\Ray{MN} + b*\Ray{NQ} \right)*(\Ray{MN} \times \Ray{NQ}) \text{ }db \text{ }da_)
+    Vores _(\vec F_) har intet x- eller z-komponent, så vi behøver kun at bekymre os omkring _(y_). 
+    Denne formel bliver derfor til:
+    _($\int_{0}^{1} \int_{0}^{a} \left(M_y+a*\Ray{MN}_y + b*\Ray{NQ}_y + (M_y+a*\Ray{MN}_y + b*\Ray{NQ}_y)^2 \right)*(\Ray{MN}_z*\Ray{NQ}_x - \Ray{MN}_x*\Ray{NQ}_z) \text{ }db \text{ }da _)
+    Så lad os finde de forskellige forskelsvektorer:
+    _($\begin{eqnarray}
+    && \Ray{AB} = \VeC[6,4,0]  & \Ray{BC} = \VeC[1,-7,-1] \\
+    && \Ray{AB} = \VeC[6,4,0]  & \Ray{BD} = \VeC[-1,-4,3] \\
+    && \Ray{AC} = \VeC[4,-3,-1]  & \Ray{CD} = \VeC[-2,3,4] \\
+    && \Ray{CB} = \VeC[-1,7,1]  & \Ray{BD} = \VeC[-1,-4,3] \\
+    \end{eqnarray}_)
+    Så vi skal regne de fire følgende integraler: 
+    _($\begin{eqnarray}
+    && \int_{0}^{1} \int_{0}^{a} \left(4+a*4 + b*(-1) + (4+a*4 + b*(-1))^2 \right)*(0*1 - 6*(-1)) \text{ }db \text{ }da \\ 
+    && \int_{0}^{1} \int_{0}^{a} \left(4+a*4 + b*3 + (4+a*4 + b*3)^2 \right)*(0*(-1) - 6*3) \text{ }db \text{ }da \\
+    && \int_{0}^{1} \int_{0}^{a} \left(4+a*(-3) + b*4 + (4+a*(-3) + b*4)^2 \right)*(-1*(-2) - 4*4) \text{ }db \text{ }da \\
+    && \int_{0}^{1} \int_{0}^{a} \left(7+a*7 + b*3 + (7+a*7 + b*3)^2 \right)*(1*(-1) - (-1)*3) \text{ }db \text{ }da \\
+    \end{eqnarray}_)
+    Hvilke giver: 
+    _($141.5-616.5-106.17+177.5 = -403.66_)
+    Dette burde ikke give noget negativt, da massen kun kan være positiv eftersom 
+    _(f(x,y,z)=1+y_) og det ikke på noget tidspunkt er negative _(y_)-værdier. 
+    Det her betyder nok bare at vi har vendt vores normalvektor forkert da
+    vi regnede flux, hvilke gjorde alle værdier negative. Derfor er massen faktisk lig:
+    _($403.66_)
+    </p>
+    <br><br></answer-box>
+
+
+
+

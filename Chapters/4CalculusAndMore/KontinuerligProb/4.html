@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+
+
+    <h2>Hvordan bliver sandsynlighedsfunktioner <br> udledt?</h2>
+
+    <p class="t">
+    Alright: hvordan præcis finder vi faktisk de her <br> 
+    sandsynlighedsdensitetsfunktioner, vi nu kan bruge 
+    til at løse så mange problemer? Hvordan beregnede vi f.eks. funktionen,
+    der approksimerede sandsynligheden for _(n_) storme?
+    </p>
+
+    <table style="border-collapse: collapse; border: 1px solid black; margin-left: 32%; margin-top:35px; background-color: rgb(209,233,230);" >
+        <tr>
+            <td> <b> År  </b> </td>
+            <td> <u> Antal stærke storme </u> </td>
+        </tr>
+        <tr><td> 1990 </td><td> 2 </td></tr>
+        <tr><td> 1991 </td><td> 1 </td></tr>
+        <tr><td> 1992 </td><td> 3 </td></tr>
+        <tr><td> 1993 </td><td> 3 </td></tr>
+        <tr><td> 1994 </td><td> 4 </td></tr>
+        <tr><td> 1995 </td><td> 1 </td></tr>
+        <tr><td> 1996 </td><td> 2 </td></tr>
+        <tr><td> 1997 </td><td> 5 </td></tr>
+        <tr><td> 1998 </td><td> 3 </td></tr>
+        <tr><td> 1999 </td><td> 1 </td></tr>
+        <tr><td> 2000 </td><td> 1 </td></tr>
+        <tr><td> 2001 </td><td> 6 </td></tr>
+        <tr><td> 2002 </td><td> 2 </td></tr>
+        <tr><td> 2003 </td><td> 3 </td></tr>
+        <tr><td> 2004 </td><td> 3 </td></tr>
+        <tr><td> 2005 </td><td> 2 </td></tr>
+        <tr><td> 2006 </td><td> 4 </td></tr>
+        <tr><td> 2007 </td><td> 3 </td></tr>
+        <tr><td> 2008 </td><td> 1 </td></tr>
+        <tr><td> 2009 </td><td> 4 </td></tr>
+        <tr><td> 2010 </td><td> 3 </td></tr>
+        <tr><td> 2011 </td><td> 5 </td></tr>
+        <tr><td> 2012 </td><td> 1 </td></tr>
+        <tr><td> 2013 </td><td> 2 </td></tr>
+        <tr><td> 2014 </td><td> 2 </td></tr>
+        <tr><td> 2015 </td><td> 3 </td></tr>
+        <tr><td> 2016 </td><td> 4 </td></tr>
+        <tr><td> 2017 </td><td> 4 </td></tr>
+        <tr><td> 2018 </td><td> 5 </td></tr>
+        <tr><td> 2019 </td><td> 2 </td></tr>
+        <tr><td> 2020 </td><td> 4 </td></tr>
+    </table>
+
+    <p class="tt" style="margin-top:35px;">
+    Ideen er, at vi har såkaldte "sandsynligheds distributioner", 
+    som er <i>familier</i> af pdf'er med 
+    bestemte <i>parametre</i>. Det klassiske og vigtigste 
+    eksempel er nok en "normal distribution":
+    _($f(x)=\frac{1}{a \sqrt{2\pi}}*e^{(x-b)^2 / 2a^2}_)
+    Her har vi en <i>type</i> af funktion _(f(x)_)
+    med to <i>parametre</i> _(a_), _(b_). Idéen er
+    generelt, at disse parametre har bestemte, intuitive 
+    betydninger vi kan regne ud fra 
+    vores data/situation. Funktionen er konstrueret, så at 
+    den vil passe dataet/situationen <i>bedst muligt</i>, hvis
+    parametrene er valgt korrekt. Bestemte distributioner 
+    passer bedst til bestemte datasæt/situationer, så man skal også
+    vurdere, hvilken type distribution der bedst beskriver ens tilfældige variabel. 
+    </p>
+    <p class="t">
+    De to parametre _(a_) og _(b_) på en normalfordeling har følgende betydninger:
+    _($\begin{eqnarray}
+    && a: \text{ Standardfordelingen af dataet} \\ 
+    && b: \text{ Gennemsnittet af dataet}
+    \end{eqnarray}_)
+    Vi kan regne, at gennemsnittet _(\mu_) på vores data er:
+    _($\frac{2+1+3+3+4+1 \, + \, \dots}{30}=2.83_)
+    Og at variansen er:
+    _($\frac{6*(1-2.83)^2 + 7*(2-2.83)^2 + 8*(3-2.83)^2 \, + \,  \dots}{30} = 1.917_)
+    Hvor _(6_), _(7_), _(8_), _(6_) osv altså er mængden af 
+    år med henholdsvis _(1_) storm, _(2_) storme, _(3_) storme osv. 
+    Standardfordeling _(\sigma_) er kvadratroden af variansen, så _(\sqrt{1.917}=1.384_). 
+    </p>
+    <p class="t">
+    Den pdf, der bedst passer vores data, er altså
+    _($f(x)=\frac{1}{\sqrt{2\pi}*1.384}*e^{-(x-2.38)^2 / (2*1.39^2)} = 0.2865*0.7725^{-(x-2.83)^2}_)
+    Hvordan ved vi, at lige denne <i>distribution</i> passer vores data,
+    og at det måske ikke er bedre at bruge en anden? 
+    Svaret er, at en normaldistribution har en meget intuitiv betydning, der
+    let kan ses, hvis man plotter vores pdf:
+    </p>
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter4\KontinuerligProb\NormalDistribution3.png'> 
+    <p class="t">
+    På denne funktion er dataet "fordelt" 
+    omkring gennemsnittet _(b=\mu_) i den forstand,
+    at de største sandsynligheder ligger helt op ad 
+    _(\mu_), og at sandsynlighederne
+    falder lige meget til begge sider, hvis afstanden 
+    dertil stiger. _(b_) er lig 
+    standardfordelingen _(\sigma_), og bliver derfor 
+    brugt til at beskrive hvor "spredt" dataet er 
+    omkring _(\mu_)
+    </p>
+    <div style="margin-top:35px; margin-left:-33%;">
+        <iframe scrolling="no" title="NormalDistribution" src="https://www.geogebra.org/material/iframe/id/e3gjsxrn/width/1247/height/601/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/false/ctl/true" width="831px" height="400px" style="border:solid;"> </iframe>
+    </div>
+    <p class="tt" style="margin-top:35px;">
+    Rigtig mange kvantiteter fra virkeligheden er normal fordelt. 
+    Det er der navnet "normal" kommer fra. Regn, 
+    vægte på æbler, hvor langt nogle kaster i en konkurrence, 
+    hvor meget græs gror, mm. Det giver god mening:
+    <i>Selvfølgelig</i> har æbler en gennemsnitlig vægt, 
+    og <i>selvfølgelig</i> er de ikke <i>præcist</i> lig den vægt, 
+    men <i>spreder</i> sig omkring den. Samme argument 
+    kunne vi fint lave med antallet af stærke storme. Baseret på dataet
+    ser det ikke ud til, at sandsynligheden f.eks. direkte 
+    falder med antallet af storme, men at der er størst chance for 
+    en bestemt værdi 3. Normalfordeling er nok et godt gæt. 
+    </p>
+    <p class="t">
+    Et eksempel på en tilfældig variabel, der <i>ikke</i> 
+    ville passe en normal distribution, er nok tiden _(T_) imellem 
+    to nye folk går ind i butikken:
+    </p>
+    <table style="border-collapse: collapse; border: 1px solid black; margin-left: 32%; margin-top:35px; background-color: rgb(209,233,230);" >
+        <tr>
+            <td> <b> Minutter  </b> </td>
+            <td> <u> Antal folk </u> </td>
+            <td> <u> Frekvens </u> </td>
+        </tr>
+        <tr>
+            <td> <u> 0-1 min </u></td>
+            <td> 56 </td>
+            <td> 0.373 </td>
+        </tr>
+        <tr>
+            <td> <u> 1-2 min </u></td>
+            <td> 35 </td>
+            <td> 0.233 </td>
+        </tr>
+        <tr>
+            <td> <u> 2-3 min </u></td>
+            <td> 22 </td>
+            <td> 0.146 </td>
+        </tr>
+        <tr>
+            <td> <u> 3-4 min </u></td>
+            <td> 14 </td>
+            <td> 0.093 </td>
+        </tr>
+        <tr>
+            <td> <u> 4-5 min </u></td>
+            <td> 9 </td>
+            <td> 0.060 </td>
+        </tr>
+        <tr>
+            <td> <u> 5-6 min </u></td>
+            <td> 5 </td>
+            <td> 0.033 </td>
+        </tr>
+        <tr>
+            <td> <u> 6-7 min </u></td>
+            <td> 3 </td>
+            <td> 0.020 </td>
+        </tr>
+        <tr>
+            <td> <u> 7-8 min </u></td>
+            <td> 2 </td>
+            <td> 0.0133 </td>
+        </tr>
+        <tr>
+            <td> <u> 8-9 min </u></td>
+            <td> 1 </td>
+            <td> 0.0066 </td>
+        </tr>
+    </table>
+    <p class="tt" style="margin-top:35px;">
+    I denne situation giver det ikke engang rigtig mening 
+    at tænke over noget "gennemsnit". Jo større _(T_), jo større er chancen for 
+    at <i>nogen</i> er gået ind mellem _(0_) og den værdi _(T_). 
+    Èt minut betyder præcist ligeså meget som det næste: 
+    Der er altid lige stor chance for, at nogen går ind, 
+    så jo flere minutter der går, jo større er chancen.
+    Chancen begynder dog at <i>vokse</i> mindre ved højere minutter, da 
+    chancen for at være mellem f.eks. 9 og 10 er markant mindre, end
+    chancen for at være mellem 2 og 3. Den samlede chance fra _(0_) til _(\infty_) skal 
+    være _(1_), så den begynder at vokse langsomt ved høje <br>
+    _(t_). All in all: Normal distribution 
+    passer <i>ikke</i> her. 
+    </p>
+    <p class="t">
+    Den type distribution der faktisk passer 
+    kaldes "eksponentiel distribution":
+    _($f(x)=\lambda*e^{-\lambda*x}_)
+    ... hvor betydningen af _(\lambda_) er:
+    _($\lambda: \text{ Raten af "begivenheder" pr. enhed kvantitet}_)
+    I vores tilfælde er "kvantiteten" lig <i>tid</i>, 
+    enheden er "minutter", og begivenheden er "en person går ind i butikken". 
+    Der er _(14_) personer, der går ind hver halve time. 
+    Det svarer til _(14/30=0.466_) personer pr. minut. Så 
+    _(\lambda=0.466_), og vi ser at 
+    _($f(x)=0.466*e^{-0.466x}_)
+    ... er pdf'en på vores tilfældige variable _(T_): 
+    "Tid det tager før en ny person går ind". 
+    </p>
+    <p class="t">
+    En tredje distribution vi også brugte i opgaverne 
+    er den såkaldte "kontinuerlige Bernoulli distribution"
+    _($f(x)=C(p)*p^x*(1-p)^{1-x}, \qquad C(p)=\frac{2 Arctanh(1-2p)}{1-2p}_)
+    ... hvor:
+    _($p: \text{Chancen for at den gentagne ja/nej begivenhed er ja}_)
+    Den her kunne som sagt ses som en <i>approksimation</i> 
+    af en diskret Bernoulli distribution, hvis
+    der var en stor mængde identiske begivenheder _(n_), 
+    og vi undersøgte <i>procentdelen</i> af
+    rigtige begivenheder _(x_) i stedet for den 
+    konkrete <i>mængde</i> begivenheder _(k_).
+    Distributionen kan også hjælpe med at løse
+    problemer, vi slet ikke kunne have løst før: 
+    F.eks. hvis vi ikke kender _(n_) og 
+    bare er interesseret i procentdelen (som i opgaven med havdyret). 
+    </p>
+    <p class="t">
+    I det her mini-kapitel har vi ikke tænkt os 
+    at se på andre end disse tre distributioner. 
+    Langt de fleste distributioner er meget mere komplicerede, og kræver
+    baggrundsviden om andre koncepter inden for sandsynlighed
+    og statistik, vi ikke har tid til at gennemgå her. 
+    Det bliver hurtigt ret specialiseret. 
+    </p>
+    <p class="pageSplitter">*</p>
+    <p class="t">
+    Vi ved nu, at den generelle strategi er først at finde 
+    en distribution, der passer ens tilfældige variable.
+    Det <i>kan</i> gøres meget matematisk og teknisk
+    ved hjælp af statistik, dog i flere tilfælde også intuitivt.
+    Derefter bestemmer man de rigtige værdier til parametrene der passer ens data/situation.
+    Men præcis hvor kommer de her generelle familier af distributioner <i>fra</i>? 
+    Hvordan fandt man f.eks. frem til normal distributionen?
+    </p>
+    <p class="t">
+    Svaret er, at det er er svært og varierer meget. 
+    Lad os dog alligevel se på to eksempler,
+    så vi ved, at det hele ikke er trolddom og magi men faktisk giver mening
+    </p>
+    <p class="t">
+    <i> Normal distribution:</i> <br>
+    Vi vil her gerne konstruere en funktion _(f(x)_), der 
+    intuitivt kan beskrive <i>data</i> fordelt med <i>spredning</i> omkring et <i>gennemsnit</i>. 
+    For nemhedens skyld ses der på det specielle tilfælde, 
+    hvor gennemsnittet er lig _(0_). Funktionen burde 
+    i det tilfælde være <i>symmetrisk</i>, så at _(f(x)=f(-x)_), 
+    da spredningen på begge sider af gennemsnittet skal matche. Dens varians burde
+    passe til dataets varians _(V_), for at den intuitivt 
+    spreder sig lige meget omkring gennemsnit. 
+    </p>
+    <p class="t">
+    _(x_) modellerer en eller anden kvantitet/værdi. 
+    Tricket er, at forestille sig at denne værdi er <i>radius</i>:
+    </p>
+    <img class='SpicXL' style='width:80%' src='../../../Assets/Chapter4\KontinuerligProb\TheDartDeriviation1.png'> 
+    <p class="t">
+    Så _(f(r)_) er præcist det samme uanset _(\theta_). 
+    På billedet er der vist to eksempler. _(r_2_) er en <i>negativ</i> radius,
+    hvilket giver mening siden _(x=r_) er normalfordelt omkring _(0_). 
+    </p>
+    <p class="t">
+    Det her trick giver egentlig god intuitiv mening. 
+    Det minder meget om dart, hvilket nok er det prototypiske 
+    eksempel på normalfordeling: 
+    </p>
+    <img class='SpicXL' style='width:80%' src='../../../Assets/Chapter4\KontinuerligProb\TheDartDeriviation2.png'>
+    <p class="t">
+    _(x_) og _(y_) er bare radiusen i retning af henholdsvis _(x_) og _(y_) aksen, 
+    så vi kan også tænke over _(f(x)_) og _(f(y)_): 
+    </p>
+    <img class='SpicXL' style='width:80%' src='../../../Assets/Chapter4\KontinuerligProb\TheDartDeriviation3.png'>
+    <p class="t">
+    Vi antager, at _(f(r)_) er en pdf, ved at antage at 
+    _(f(r)*dr_) er chancen for, at radiusen er mellem 
+    _(r_) og _(r+dr_). Så må _(f(x)*dx_) være chancen 
+    for, at _(x_) er mellem _(x_) og _(x+dx_), og 
+    _(f(y)*dy_) chancen for, at _(y_) er mellem _(y_) 
+    og _(y+dy_). Sig nu, at vi står et bestemt sted _(P_)
+    med  radius _(r_), vinkel _(\theta_) og koordinater 
+    _((x,y)_). Sig at vi gerne vil finde sandsynligheden
+    for, at dartpilen rammer en lille rektangel med længde _(dx_) og højde _(dy_) som:
+    </p>
+    <img class='Spic' style='width:45%' src='../../../Assets/Chapter4\KontinuerligProb\TheDartDeriviation4.png'>
+    <p class="t">
+    På rektanglet er _(x_) mellem _(x_) og _(x+dx_), og _(y_)
+    mellem _(y_) og _(y+dy_). 
+    Det svarer til to selvstændige begivenheder, 
+    så den samlede sandsynlighed 
+    er to sandsynligheder ganget med hinanden:
+    _($f(x)*dx*f(y)*dy=f(x)*f(y)*dA_)
+    Vi har nu en multivariable funktion _(F(x,y)_), 
+    der giver os <br> <i>sandsynlighedsdensiteten</i> for et lille <i>areal</i>:
+    _($F(x,y)=f(x)*f(y)_)
+    Vores mål er at beskrive _(f_). Det er nok lettest at gøre i dette tilfælde ved at 
+    opstille en <i>differentialligning</i>.  Vi finder 
+    frem til differentialligningen ved først at opstille nogle normale og praktiske ligninger.
+    Herfra kan vi differentiere, lave lidt algebraisk 
+    magi og få fat i en brugbar differentialligning.
+    </p>
+    <p class="t">
+    Vi opstiller disse ligninger ved at regne èn sandsynlighed på to måder.
+    Sig du har følgende lille rektangel centreret på _(P_):
+    </p>
+    <img class='Spic' style='width:45%' src='../../../Assets/Chapter4\KontinuerligProb\TheDartDeriviation5.png'>
+    <p class="t">
+    Hvis arealet af denne rektangel er _(A_), ved vi pr. 
+    densitetsfunktionen at sandsynligheden for at være derinde er:
+    _($f(x)*f(y)*A_)
+    Dette kan også regnes manuelt, hvis man opdeler 
+    rektanglet i fire mindre: 
+    </p>
+    <img class='Spic' style='width:60%' src='../../../Assets/Chapter4\KontinuerligProb\TheDartDeriviation6.png'>
+    <p class="t">
+    Her er _(\perp_{\theta}_) retningen vinkelret på _(\theta_). 
+    Radius langs _(\perp_{\theta}_) er 
+    _(0_) på _(P_). På det ene rektangel går _(\perp_{\theta}_) 
+    fra _(0_) til _(d\perp_{\theta} _), på 
+    den anden fra _(0_) til _(-d\perp_{\theta}_). Radiusen går enten 
+    fra _(r_) til _(r+dr_), eller
+    fra _(r_) til _(r-dr_). Så sandsynligheden er:
+    _($\begin{eqnarray}
+    && (f(r)* dr)   &* (f(0)*d\perp_{\theta})  & \, + \\
+    && (f(r)*-dr)  &* (f(0)*d\perp_{\theta})  & \, + \\
+    && (f(r)* dr)   &* (f(0)*-d\perp_{\theta}) & \, + \\
+    && (f(r)*-dr)  &* (f(0)*-d\perp_{\theta}) & \, = 
+    \end{eqnarray}_)
+    _($4*dr*d\perp_{\theta}*f(0)*f(r) =_)
+    _($A*f(0)*f(r)_)
+    Denne sandsynlighed vi har regnet, er lig _(f(x)*f(y)*A_), så:
+    _($f(x)f(y)A = f(0) f(r) A \to f(x) f(y) = f(0)f(r)_)
+    Vi ved nu, at _(f(x)*f(y)_) kun er en funktion af radiusen _(r_). 
+    Kald denne funktion for _(g_), så:
+    _($f(x) f(y) = g(r)_)
+    Hvis _(f(x)f(y)_) er en funktion af radiusen, er det 
+    også en funktion af radiusen i anden. Ergo:
+    _($f(x) f(y) = g(x^2+y^2)_)
+    Differentieres denne ligning i forhold til _(x_) fås:
+    _($f'(x) f(y) = g'(r^2)*2x \to g'(r^2) = \frac{f'(x) f(y)}{2x}_)
+    Og i forhold til _(y_):
+    _($f(x) f'(y) = g'(r^2)*2y \to g'(r^2) = \frac{f(x) f'(y)}{2y}_)
+    Så:
+    _($\frac{f'(x) f(y)}{2x} = \frac{f(x) f'(y)}{2y}_)
+    Det kan omskrives til:
+    _($\frac{f'(x)}{f(x) x} = \frac{f'(y)}{f(y) y}_)
+    Vi er tæt på målet, siden vi har en ligning med både _(f'_) og _(f_).
+    Differentialligningen kan kun løses, hvis der er èt variable: _(x_) eller _(y_). 
+    Det sørger vi for via følgende tricky argument:
+    </p>
+    <p class="t">
+    Hver side er en funktion af enten kun _(x_) eller kun _(y_). 
+    Disse to variabler er uafhængige, så begge sider 
+    er nødt til at være <i>konstante</i>. 
+    Ergo: 
+    _($\frac{f'(x)}{f(x) x} = c_)
+    En differentialligning! Den er endda let og seperable, og kan løses som:
+    _($f(x)=D*e^{C*x^2}_)
+    Hvor _(D_) og _(C_) er to konstanter. 
+    Det her er en pdf hvor _(x_) går fra _(-\infty_) til _(\infty_), så vi ved at
+    _($\int_{-\infty}^{\infty} D*e^{C*x^2} \text{ }dx = 1_)
+    Spredningen skal ligne vores data, så ved vi også at:
+    _($\int_{-\infty}^{\infty} (x-0)^2*D*e^{C*x^2} \text{ }dx = V_)
+    Jeg vil ikke gennemgå processen her, men man kan se
+    fra disse to ligninger at:
+    _($C=-\frac{1}{2V}, \qquad D=\frac{1}{\sqrt{2\pi} \sigma}_)
+    _(\sigma_) er defineret som _(\sqrt{V}_), så den endelige pdf bliver:
+    _($f(x)=\frac{1}{\sqrt{2\pi}\sigma}*e^{-x^2 / 2\sigma^2}_)
+    Det er hvis gennemsnittet er centreret omkring _(0_). At 
+    erstatte _(f(x)_) med _(f(x-\mu)_) svarer bare til at "rykke" funktionen. 
+    Det ændrer ingen andre egenskaber udover
+    gennemsnittet, så:
+    _($f(x)=\frac{1}{\sqrt{2\pi}\sigma}*e^{-(x-\mu)^2 / 2\sigma^2}_)
+    Voila!
+    </p>
+
+    <p class="t">
+    <i> Eksponentiel distribution</i>: <br> 
+    Denne er langt nemmere at udlede. 
+    Her skal vi indse, at eksponentiel distribution er  
+    tæt relateret til <i>poisson distribution</i>.
+    Vi stødte kort på poisson distribution i 
+    kapitlet om grænser, hvor distributionen gav os chancen
+    for _(k_) begivenheder på et tidsinterval, hvis den
+    gennemsnitlige mængde begivenheder på dette interval er _(\lambda_). 
+    Poisson bruges specifikt, hvis disse begivenheder er <i>selvstændige</i>:
+    Èn begivenhed har ingen indflydelse på, hvornår den næste begivenheder finder sted, og de
+    følger alle en gennemsnitlig rate. 
+    </p>
+    <p class="t">
+    Butikken er et godt eksempel. 
+    Èn person der går ind har ingen indflydelse på den næste, og der
+    går ca. _(14_) ind pr. halve time. Det ville være retfærdigt at sige,
+    at der på et kvarter gik _(14*0.5=7_) personer ind gennemsnitligt. 
+    Samme argument gælder også meget små intervaller, og det brugte vi til
+    at udlede vores formel for _(k_) begivenheder: Vi opdelte 
+    intervallet (i vores tilfælde en halv time) i uendelig mange små intervaller og 
+    beregnede chancen for en begivenhed på _(k_) af disse. Det involverede
+    en grænse, og resultatet var:
+    _($P(k)=\frac{\lambda^k}{k!*e^{\lambda}}_)
+    Sig, at der på en given _(1_) tidsenhed i gennemsnittet er _(\lambda_1_) begivenheder. 
+    Det svarer i vores tilfælde til _(\lambda_1=14/30=0.466_). 
+    På en given tid _(t_), kan det nu ses, at _(\lambda_t = \lambda_1*t_), så 
+    chancen for 
+    _(k_) begivenheder på en tid _(t_) er:
+    _($\frac{(\lambda_1*t)^k}{k!*e^{\lambda_1*t}}_)
+    Sig at den tilfældige variable _(T_) er lig afstanden mellem to begivenheder. 
+    Vi er interesserede i _(P(T \le t)_), da det er 
+    cdf'en. Den kan omskrives til _(1-P(T \gt t)_) hvilket er praktisk,
+    siden _(P(T \gt t)_) svarer til chancen for _(0_) begivenheder på en afstand _(t_)
+    (det sker senere):
+    _($\text{cdf} = 1-\frac{(\lambda_1*t)^0}{0!*e^{\lambda_1*t}} = 1-e^{-\lambda_1*t}_)
+    Vi differentierer og får:
+    _($pdf(t)=\lambda_1*e^{-\lambda_1*t}_)
+    Og det er vores distribution! Voila! 
+    </p>
+
+    <p class="pageSplitter">*</p>
+    
+    <p class="t">
+    Der vil ikke være nogle opgaver hvor i selv skal finde frem til distributioner,
+    da det er alt for svært og kompliceret. På næste side træner vi 
+    os i at vælge de rigtige distributioner og parametre til de rigtige situationer.
+    </p>
+

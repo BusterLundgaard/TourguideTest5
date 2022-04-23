@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+
+    <h3>Praktiske tricks til multivariable hældning</h3>
+    <h4>Clairaut's theorem</h4>
+    <p class="t">
+    På den her side har vi tænkt os at se på nogle tricks, der gør 
+    differentiering og integration af flere variabler lidt lettere: 
+    Clairaut's theorem, og multivariable chain rule. 
+    </p>
+
+    <div class="Theory">
+    <b> Teori: Clairaut's theory</b>. <br>
+    Rækkefølgen hvorpå du differentierer en funktion _(f_) har ingen indflydelse. Eksempelvis er:
+    _(f_{a^2bc^3}=f_{cbcaca}_)
+    </div>
+
+    <p class="tt">
+    Sig f.eks. jeg skal regne _(f_{yxx}_) når:
+    _($f(x,y)=x*\frac{Sin(y^y)^y}{y^2}_)
+    Det er lidt tricky at differentiere med _(y_) her, 
+    eftersom _(Sin(y^y)^y/y^2_) nok ikke er det nemmeste at arbejde med i verden. 
+    Det ville være meget nemmere, hvis vi i stedet regnede _(f_{xxy}:_)
+    _($\begin{align} 
+    ¤x\left[x*\frac{Sin(y^y)}{y^2}\right] & = \frac{Sin(y^y)}{y^2} \\ \\
+    ¤x\left[\frac{Sin(y^y)}{y^2}\right] & = 0 \\ \\
+    ¤y\left[0\right] & = 0
+    \end{align}_)
+    Det er i alt ærlighed dog sjælen at Clairaut's theory 
+    virkelig hjælper os med at differentiere. Ofte
+    er det lige nemt, lige meget hvilken rækkefølge vi tager. 
+    Clairaut's theory er vigtig, både af teoretiske årsager, men især
+    grundet en konsekvens der følger deraf:
+    </p>
+
+    <div class="Corollary">
+    <b> Corollary: Clairaut's theory for integraler. </b> <br>
+    Rækkefølgen hvorpå du integrerer en funktion _(f_) har ingen indflydelse. Eksempelvis er:
+    _($ \int \int \int \int f(a,b,c) \text{ }db \text{ }db \text{ }da \text{ }dc = \int \int \int \int f(a,b,c) \text{ }da \text{ }db \text{ }dc \text{ }db_)
+    </div>
+
+    <q-stion 1="6" 2="1" bigTop="true">
+    Løs følgende dobbelt integral:
+    _($\int \int y*Sin(y*x) \text{ }dx \text{ }dy_)
+    Prøv at tænk over hvad for en rækkefølge, der er nemmest at integrere.
+    <br><br></q-stion>
+    <answer-box>
+    Det er nok nemmest først at integrere med _(x_), hvilket giver:
+    _($\int -Cos(yx) \, dy_)
+    Som man derfra let kan få til:
+    _($-\frac{1}{x} Sin(yx)_)   
+    <br></answer-box>
+    
+    <!--  -->
+
+    <p class="tt">
+    Tid til at bevise det. Det fulde bevis er enten relativt svært eller meget rodet, så lad os bare
+    bevise at _(f_{yx} = f_{xy}_). Vores bevis for dette er
+    både meget lige til og meget uelegant: Vi omskriver simpelthen hele molevitten til grænser!
+    </p>
+
+    <div class="Proof">
+    <b> Bevis af Clairaut's theorem ved _(n=2_):</b> <br>
+    _($\begin{eqnarray} 
+    && f_{yx} \, = \\ \\ 
+    && \lim_{\triangle x \to 0} \frac{f_y(x+\triangle x, y) - f_y(x,y)}{\triangle x} \, = \\ \\
+    && \lim_{\triangle x \to 0} \frac{\lim_{\triangle y \to 0} \frac{f(x+\triangle x, y + \triangle y) - f(x+\triangle x, y)}{\triangle y} - \lim_{\triangle y \to 0} \frac{f(x, y + \triangle y) - f(x, y)}{\triangle y}}{\triangle x} \, = \\ \\ 
+    && \lim_{\triangle x \to 0} \lim_{\triangle y \to 0} \frac{f(x+\triangle x, y + \triangle y) - f(x + \triangle x,y) - f(x, y + \triangle y) + f(x,y)}{\triangle x \triangle y}   
+    \end{eqnarray}_)
+    Man får et stort set identisk resultat, hvis man udvider _(f_{xy}_) på samme maner:
+    _($\lim_{\triangle y \to 0} \lim_{\triangle x \to 0} \frac{f(x+\triangle x, y + \triangle y) - f(x + \triangle x,y) - f(x, y + \triangle y) + f(x,y)}{\triangle x \triangle y}_)
+    Rækkefølgen af grænser er ligegyldige, så _(f_{yx} = f_{xy}_) _(\blacksquare_)
+    </div>
+
+    <p class="tt">
+    Man kan relativt let se hvordan et lignende (men rodet) argument kan fremstilles, når vi differentier flere 
+    end to gange. Sig vi har noget, der virker meget komplekst som:
+    _($f_{cbcaca}_)
+    Det faktum at vi tager nogle variabler flere gange forvirrer os mere end det burde, så omskriv til:
+    _($f_{x_1 x_2 x_3 ... x_n} _)
+    Du antager bare, at hver af de _(n_) variabler du differentierer 
+    med <i>muligvis</i> er unikke, men også godt kan være identiske. Måske svarer
+    både _(x_1_), _(x_3_) og _(x_4_) til "_(y_)". Vi differentierer nu en funktion med _(n_) variabler _(n_) 
+    gange, og skal
+    vise at en hvilken som helst rækkefølge giver samme udvidelse. 
+    </p>
+    <p class="t">
+    Lad os se lidt udvidelsen af _(f_{xy}_):
+    Først bliver der taget grænsen af alle variabler _(x_1=x_) og _(x_2=y_).
+    I tælleren plusses/minusses alle mulige kombinationer af _(f(x_1,x_2)_) i forhold til, om variablet _(x_i_) er plusset
+    med _(\triangle x_i_), hvilket i vores tilfælde svarer til:
+    _($\begin{eqnarray}
+    && f(x,y) \\ 
+    && f(x+\triangle x, y) \\
+    && f(x,y+\triangle y) \\
+    && f(x+\triangle x, y+\triangle y)
+    \end{eqnarray}_)
+    I nævneren er alle variabler ganget med hinanden. 
+    </p>
+    <p class="t">
+    Man kan let se, hvis man gennemgår det i hovedet, at man får en udvidelse med præcis
+    de samme egenskaber, hvis der er flere variabler. 
+    </p>
+
+    <q-stion 1="6" 2="2" bigTop="true">
+    Bevis corollariet. Altså at:
+    _($\int \int f \text{ }dx \text{ }dy = \int \int f \text{ }dy \text{ }dx_)
+    <br></q-stion>
+    <answer-box>
+    Det kan let ses at: 
+    _($\begin{eqnarray}
+    && ¤x ¤y \left[\int \int f \text{ }dx \text{ }dy \right] & = f \\ \\
+    && ¤y ¤x \left[\int \int f \text{ }dy \text{ }dx \right] & = f \\ \\
+    \end{eqnarray}_)
+    Så:
+    _($ ¤x ¤y \left[\int \int f \text{ }dx \text{ }dy \right] = ¤y ¤x \left[\int \int f \text{ }dy \text{ }dx \right]_)
+    ... hvilket med Clairaut's theorem kan laves om til:
+    _($¤x ¤y \left[\int \int f \text{ }dx \text{ }dy \right] = ¤x ¤y \left[\int \int f \text{ }dy \text{ }dx \right]_)
+    Begge sider af ligningen integreres nu bare med _(x_) og så _(y_), hvilket giver:
+    _($\int \int f \text{ }dx \text{ }dy = \int \int f \text{ }dy \text{ }dx_)
+    <p class="pageSplitter">
+        *
+    </p>
+    <p class="t">
+    Det her bevis kan let generaliseres til, 
+    når vi differentiere _(n_) gange med _(n_) variabler, så det beviser altså corrolariet. 
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+

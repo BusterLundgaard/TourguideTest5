@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+
+<h3>Diverse anvendelsesopgaver med differentialligninger</h3>
+<p class="t">
+<i>Du må også på denne side bruge Geogebra til at løse ligninger og integraler</i>
+</p>
+<p class="t">
+<i>Stort set alle formler nævnt på denne side er opfundne, og går ikke
+efter fuld fysik-realisme. Alt er forsimplet massivt, og der er mere lagt
+fokus på ideer og situationer, der kunne være intuitive. </i>
+</p>
+
+<p class="t">
+Tid til nogle anvendelser! 
+</p>
+
+<q-stion 1="28" 2="1">
+Der er en container med _(50L_) vand i. Der åbnes et lille hul i bunden, så vand kan flyde ud.
+Trykket (og derved hastigheden hvorpå vand bliver skudt ud) er større, jo mere
+vand der er over hullet. Vi kunne muligvis modellere situationen som
+_($V'=-0.05*\sqrt{V}_)
+... hvor enheden er liter _(l_). 
+<p class="t">
+Find en formel der beskriver, hvor lang tid det tager, før der er _(A_)
+liter tilbage i containeren. 
+</p>
+<br></q-stion>
+<answer-box>
+Denne differentialligning er meget nem at løse som en separable, og giver:
+_($\begin{align}
+\int \frac{1}{-0.05*\sqrt{V}} \text{ }dV &= \int 1 \text{ }dt & \to \\ \\
+-40*\sqrt{V}&=t+C
+\end{align}_)
+_(V=50_) når _(t=0_), så _(C=-40 \sqrt{50}_). 
+Hvis der er _(A_) liter tilbage, er _(t_):
+_($\begin{align}
+-40*\sqrt{A}&=t-40*\sqrt{50} \to 
+t&=40*(\sqrt{50}-\sqrt{A}) 
+\end{align}_)
+Voila! 
+<br><br></answer-box>
+
+<!--  -->
+
+<q-stion 1="28" 2="2">
+En varm suppe du stiller udenfor vil langsomt blive kold. 
+Mere generelt: Temperaturen på et varmt objekt placeret i en omgivelse vil
+langsomt nærme sig temperaturen <i>på</i> den omgivelse. Det studerede Newton.
+Han indsamlede data, lavede regression (kind of), og opdagede
+at hastigheden hvorpå temperatur ændrer sig er direkte proportionel med
+forskellen til omgivelsens temperatur. Så:
+_($T' = -k*(T-T_{omg})_)
+Konstanten _(k_) vil selvfølgelig blive større, jo mere overfladeareal 
+objektet har, men det bekymrer vi os ikke om lige nu. Lad os i stedet lave
+følgende opgave:
+<p class="t">
+Du har lige taget et brød ud af ovnen, og det er for varmt til at spise.
+_(90_) grader, for at være præcis. Dit køkken har standard stuetemperatur (_(24_) grader).
+Du går på toilet og tager et bad, hvilket tager dig _(17_) minutter. Er brødet koldt
+nok til at spise, når du kommer tilbage (sig, under _(35_) grader)? Vi sætter
+koefficienten _(k_) til _(1.23*10^{-3}_). 
+</p>
+<br></q-stion>
+<answer-box>
+Vores differentialligning er:
+_($T' = -1.23*10^{-3}*(T-24)_)
+Vi kan let løse det som en separable ligning:
+_($\int \frac{1}{1.23*10^{-3}*(T-24)} \, dT = \int -1 \, dt_)
+Hvilket giver:
+_($813 Ln(T-24) = -t + C_)
+Vi ved, at _(T=90_) når _(t=0_), så:
+_($C = 813*Ln(90-24) = 3406.189_)
+Vi isolerer _(T_) og får:
+_($\begin{eqnarray}
+&& 813*Ln(T-24)=-t+3406.189 \to \\ \\
+&& T = 65.956*e^{-1.23*10^{-3} t}+24
+\end{eqnarray}_)
+Vi skal se hvor varmt det er, efter _(t=17*60=_) _(1020 \text{s}_), så vi regner:
+_($65.956*e^{-1.23*10^{-3}*1020}+24 = 42.82_)
+Brødet er desværre for varmt.
+<br><br></answer-box>
+
+<!--  -->
+
+<q-stion 1="28" 2="3">
+En bold falder ned gennem luften. Den vejer 
+_(5kg_), og koefficienten på luftmodstandskraften er _(3_), så
+_(F_{luft} = -3*v_). Hvor lang tid tager det for bolden at falde _(50m_), hvis den
+starter i stilstand? 
+<br><br></q-stion>
+<answer-box>
+Vi opsætter differentialligningen:
+_($a=9.8 - \frac{3*v}{5}_)
+Altså:
+_($y'' = 9.8 - 0.6 y'_)
+Den her er separable, med _(f(t)=1_):
+_($\begin{align}
+\int \frac{1}{9.8-0.6u} \text{ }du & = \int 1 \text{ }dx  &\to
+-\frac{1}{0.6} Ln(9.8-0.6 y') &= t + C
+\end{align}_)
+Vi ved at bolden starter med en hastighed på _(0_), altså _(t=0_) og _(y'=0_). Vi kan 
+nu let isolere, og se at _(C=-3.8_):
+_($-\frac{1}{0.6} Ln(9.8-0.6 y') = t - 3.8 \to_)
+_($y' = -16.28*e^{-0.59t} + 16.33_)
+Vi kan nu let integrere og få:
+_($y = 16.33t + 27.59*e^{-0.59t}+C_)
+Vi ved, at _(y(0)=0_), hvilke selvfølgelig giver _(C=-27.59_):
+_($y = 16.33t + 27.59*(e^{-0.59t}-1)_)
+Det er en kurve, der ser ud som:
+<img class='Spic' style='width:80%' src='../../../Assets/Chapter4\DerivativesAndIntegrals\DiffEquations\Applications\AirResistance1.png'> 
+<p class="t">
+Man kan se, at hastigheden stiger i starten, men flader ud. Det passer
+godt til, hvad vi gerne ville have. 
+</p>
+<p class="t">
+I hvert fald: Vi skal finde _(t_)
+hvis _(y(t)=50_):
+_($50=16.33t + 27.59*(e^{-0.59t}-1) \to 4.64s_)
+Det går meget hurtigt, selv med luftmodstand. 
+</p>
+<br></answer-box>
+
+<!--  -->
+
+<q-stion 1="28" 2="4">
+Samme bold og situation som før: Nu kaster du bare bolden lige opad nede fra jorden.
+Hvor højt når bolden hvis du kaster den med en hastighed på _(15 m/s_)?
+<br><br></q-stion>
+<answer-box>
+Vi ved fra sidste gang, at
+_($-\frac{1}{0.6} Ln(9.8-0.6 y') = t + C_)
+Denne gang er _(v'(0)=-15_), siden vi kaster den modsatte retning til tyngdekraften. 
+Det kan vi indsætte og få _(C_) til _(-4.88_). Nu isolerer vi _(y'_) og får:
+_($y'= 16.33 - 31.106*e^{-0.599t}_)
+Vi skal se, hvornår hastigheden er _(0_) for at finde boldens toppunkt:
+_($0 = 16.33 - 31.106*e^{-0.599t} \to t=1.075_)
+Det skal vi bare indsætte i _(y(t)_), som vi 
+får med integration: 
+_($y(t)=16.33t + 51.92*e^{-0.59t} + C_)
+_(y(0)=0_), så _(C_) bliver til _(-51.92_). 
+Vi indsætter nu _(t=1.075_) og får:
+_($y(1.075)=16.33*1.075 + 51.92*e^{-0.59*1.075} - 51.92 = -7.090m_)
+Vores koordinatsystem er i tyngdekraftens retning, så _(-7.09m_) er altså
+_(7m_) opad. Bum!
+<br><br></answer-box>
+
+<!--  -->
+
+<q-stion 1="28" 2="5">
+På en ubåd bliver der skudt en undervandstorpedo. Vandet har lidt samme
+effekt som luften, og hindrer acceleration. Fordi vand er et langt tættere
+og tungere medie en luft, er effekten stærkere. Det er derfor 
+ikke længere _(a = A - B*v_), men i stedet
+_($a = A - B*v^2_) 
+Sig, at det på en bestemt ubåd er:
+_($x'' = 12-0.06*(x')^2_)
+Torpedoen starter med en hastighed på _(3m/s_). En båd i prøver at ramme
+er _(100m_) væk. Hvor hurtigt rammer torpedoen båden? 
+<br><br></q-stion>
+<answer-box>
+Denne var lidt mere tricky i forhold til integrationsarbejdet det krævede.
+Vi skulle løse:
+_($\int \frac{1}{12-0.06*v^2} \text{ }dv = \int 1 \text{ }dx \to_)
+Integralet på venstre side kan omskrives som:
+_($\frac{1}{0.06} \int \frac{1}{200-v^2} \, dv = \frac{1}{0.06}*\int \frac{1}{(14.14 + v)*(14.14 - v)} \, dv_)
+Nu kan man lave partial fractions og få:
+_($\begin{eqnarray}
+&& \frac{1}{0.06} \int \frac{0.0353}{14.14+v} - \frac{0.0353}{14.14-v} \, dv = \\ \\
+&& 0.593*\left(Ln(14.14+v) - Ln(14.14-v) \right)
+\end{eqnarray}_)
+Så vi har:
+_($0.593*\left(Ln(14.14+v) - Ln(14.14-v) \right) = t + C_)
+_(C_) finder vi via _(v(0)=3_) til _(C=0.255_). Vi kan nu isolere _(v_):
+_($v = 14.14*\frac{1.531*e^{1.686t}-1}{1.531*e^{1.686t}+1}_)
+For at løse dette integral kan man substituere _(u=e^{1.697*t}_) efterfulgt
+af lidt partial fractions. Du må selvfølgelig også gerne bruge
+Geogebra, hvis du har lyst. Man får:
+_($x(t)=-14.139t - 3.577 + 16.77*Ln(1.532*e^{1.686t} + 1) + C_)
+Via _(x(0)=0_) finder man let _(C=-12.002_). Vi finder nu _(t_), hvis _(x=100_):
+_($100=-14.139t - 3.577 + 16.77*Ln(1.532*e^{1.686t} + 1) - 12.002_)
+_($\to t=7.67_)
+Hastigheden er derfor:
+_($14.14*\frac{1.531*e^{1.686*7.67}-1}{1.531*e^{1.686*7.67}+1} = 14.39 \text{m/s}_)
+Boom! (som nu både er sejren over opgaven <i>og</i> torpedoens eksplosion!)
+<p class="t">
+Krig er noget lort, btw. Det passede bare fint til en opgave. 
+</p>
+<br></answer-box>
+
+<!--  -->
+
+<q-stion 1="28" 2="6">
+I en tank med _(100m^3_) vand skal vandet udskiftes, fordi det er beskidt. 
+Tanken vil altid holde på _(100m^3_) vand, da der ligeså hurtigt
+strømmer rent vand ind som beskidt vand ud:
+<img class='SpicXL' style='width:60%' src='../../../Assets/Chapter4\DerivativesAndIntegrals\DiffEquations\Applications\DirtyAssTank.png'> 
+<p class="t">
+Sig at tanken starter med _(30 g_) organisk/beskidt
+materiale pr. _(m^3_), og at det nye rene vand vi strømmer ind kun 
+har _(6 g/m^3_) organisk materiale. Tanken er "ren nok", når koncentrationen
+er nede på _(10 g/m^3_). 
+Hvor lang ti d går der før vandet er rent nok, hvis 
+der strømmer _(3m^3_) vand ind og ud pr. sekund?
+</p>
+<br></q-stion>
+<answer-box>
+Sig at massen af det organiske materiale i tanken kaldes for _(M_). 
+På _(1_) sekund bliver _(M_) 
+_($6 \frac{g}{m^3}*3m^3 = 18g_) 
+... større fra det "rene" vand, der flyder ind, og
+_($\frac{M}{100}*3=0.03M_) 
+... mindre fra det beskidte vand, der flyder ud.
+_((M/100)_) er koncentrationen
+af organisk materiale i tanken, hvilket vi ganger med mængden af vand, der flyder ud. Vi har nu:
+_($M' = 18 - 0.03M_) 
+Det kan vi nemt løse som en separable ligning, hvilket giver:
+_($-33.33*Ln(18-0.03M) = t + C_)
+Ved _(t=0_) er der _(30 \frac{g}{m^3}*100 = _) _(3000g_) organisk materiale.
+Vi kan nu finde _(C_) som:
+_($C = -33.33*Ln(18-0.03*3000)_)
+Men vi støder på et problem: _(18-0.03*3000_) er et negativt tal, og man
+kan ikke tage _(Ln_) af negative værdier! Det her er slet ikke særlig slemt.
+Da vi skulle integrere
+_($\int \frac{1}{18-0.03M} \text{ }M_)
+... kunne vi også bare have sagt
+_($\int -\frac{1}{0.03M-18}_)
+... og <i>så</i> lavet substitutionen _(0.03M-18=u_). Det ville give os:
+_($-33.33*Ln(0.03M - 18) _)
+Begge muligheder er valide. _(C_) bliver nu til:
+_($C = -33.33*Ln(0.03*3000-18) = -142.54_)
+Vi isolerer nu _(M_) og får: 
+_($M = 2398.16*e^{-0.03t}+600_)
+Vi leder efter den _(t_), hvor koncentrationen er _(10 g/m^3_). Det
+svarer til at _(M=10*100=1000_), så:
+_($1000 = 2398.16*e^{-0.03t}+600 \to t=59.69_)
+Så ca. et minut!
+<br><br></answer-box>
+
+<!--  -->
+
+<q-stion 1="28" 2="7">
+Vi har set en smule på modellering af populationer som f.eks. bakterier. Der
+brugte vi eksponentiel vækst, hvilket også svarer til differentialligningen
+_($N' = r*N_)
+... hvor _(r_) er en eller anden konstant. _(N=e^{r*t}_) er derfor en løsning til denne
+differentialligning. Ligningen giver god mening, eftersom 
+mængden af bakterier, der bliver født øges med mængden af bakterier
+i populationen, der kan føde. Det er ikke helt realistisk nok dog: 
+Konkurrencen om mad bliver også større, hvis populationen stiger. 
+En bedre model er derfor den "logistiske vækst"
+_($N' = r*N*\left(1-\frac{N}{k} \right)_)
+... hvor _(k_) er populationens <i>kapacitet</i>. Hvis _(k=1000_), kan der
+ifølge ligningen ikke være mere end _(1000_) bakterier, eftersom
+væksten er lig _(r*1000*(1-\frac{1000}{1000})=_) _(0_).
+<p class="t">
+Der er flere faktorer, der har indflydelse på _(k_), men lad os forsimple situationen
+og sige,
+at det eneste vigtige, er mængden af daglig mad _(m_) (gram), og en koefficient _(A_) 
+der beskriver, hvor meget mad en 
+bestemt type bakterie har brug for:
+_($N' = r*N*\left(1-\frac{A}{m}*N \right)_)
+Sig nu, vi har to typer bakterier:
+</p>
+<table style="width:60%; border-collapse: collapse; margin-top:35px; margin-left:20%; background-color:rgb(203,230,228);">
+    <tr>
+      <th>Type 1</th>
+      <th>Type 2</th>
+    </tr>
+    <tr>
+      <td>_(r=2.3_)</td>
+      <td>_(r=1.9_)</td>
+    </tr>
+    <tr>
+      <td>_(N_0=7_)</td>
+      <td>_(N_0=9_)</td>
+    </tr>
+    <tr>
+      <td>_(A = 5.36*10^{-3}_)</td>
+      <td>_(A = 4.29*10^{-3}_)</td>
+    </tr>
+</table>
+<p class="t" style="margin-top:35px;">
+I begge populationer er _(m=30_). Hvilken population kommer hurtigst op på 99% af dens maksimale størrelse?
+De kommer aldrig <i>helt</i> op på deres maksimale størrelse, bare meget tæt på.
+</p>
+<br></q-stion>
+<answer-box>
+Lad os løse differentialligningen generelt, så vi nemt kan indsætte _(r_), _(N_0_) og _(A_) senere, og 
+derved sammenligne:
+_($N' = r*N*\left(1-\frac{A}{30}*N \right) \to_)
+_($\int \frac{1}{N*(1-\frac{A}{30}*N)} \text{ }dN = \int r \text{ }dt \to_)
+Højre side er bare _(r*t_), og venstre kan løses med partiale fractions.
+Vi får:
+_($Ln \left(\frac{N}{A N - 30} \right) = r*t + C_)
+Vi har _(N(0)=N_0_), så:
+_($C = Ln \left(\frac{N_0}{A N_0 - 30} \right)_)
+Man kan nu isolere _(N_), simplificere og få:
+_($N = \frac{30*N_0*e^{r*t}}{N_0*A*e^{r*t}-N_0*A+30}_)
+Den maksimale population, er når
+_($1-(A/30)*N=0 \to N=\frac{30}{A}_)
+Vi søger _(99_)% af dette, så vi skal løse: 
+_($0.99*\frac{30}{A} = 30*\frac{N_0*e^{r*t}}{N_0*A*e^{r*t}-N_0*A+30}_)
+Herfra kan vi bare indsætte værdierne og løse det i Geogebra. 
+Type 1 giver _(t=4.90_) dage, 
+og type 2 giver _(t=5.92_) dage. Første type vinder!
+<br><br></answer-box>
+
+<!--  -->
+
+<!-- 2370.5931747138734
+
+<q-stion 1="2" 2="1" 3="5" customWidth="540">
+To runde asteroider er midt ude i rummets ingenting, og tiltrækker hinanden:
+<img class='Spic' style='width:25%' src='../../../Assets/Chapter4\DerivativesAndIntegrals\DiffEquations\Applications\Asteroids.png'> 
+<p class="t">
+Den ene har en radius på _(5m_), og vejer _(950kg_), den anden _(7m_), _(1200kg_). 
+Afstanden mellem dem er _(112m_). 
+</p>
+<p class="t">
+I fysik har vi newtons tyngdekraftslov, der siger at tyngdekraften mellem to objekter der er
+_(r_) væk fra hinanden med med masser _(m_1, m_2_), er lig:
+_($F_t = G*\frac{m_1*m_2}{r^2}_)
+Hvor _(G_) kaldes "tyngdekrafts konstanten" ("the gravitational constant" på engelsk), og er lig
+_(6.67408*10^{-11}_).
+</p>
+<p class="t">
+Hvor lang tid tager det for de to asteroider at ramme hinanden?
+</p>
+<br><br></q-stion>
+<answer-box customWidth="540">
+<p class="t">
+ET ELLER ANDET ER FULDKOMMEN FORKERT HER, FORDI SVARET OG KURVEN DU FÅR GIVER INGEN MENING!
+</p>
+Lad os opstille en differentialligning med afstanden mellem dem _(r_). Den første asteroide oplever
+en acceleration mod den anden på _(F_t/950_), og den anden oplever en acceleration mod den første
+på _(F_t/1200_). Begge de accelerationer har samme effekt af at gøre _(r_) mindre, så:
+_($r'' = -\frac{F_t}{950} - \frac{F_t}{1200}_)
+Hvis vi indsætter _(F_t=G*950*1200/r^2_) og omskriver lidt, så får vi:
+_($r'' = -2150 G*\frac{1}{r^2}_)
+Det her er en anden-ordens differentialligning uden _(x_), så vi indsætter _(r'=u_) og _(r''=u'(r)*u_)
+hvilke giver:
+_($u'(r) = \frac{1}{u}*\frac{-2150 G}{r^2}_)
+Det her kan let løses som en separable:
+_($\int \frac{1}{1/u} \text{ }du = \int \frac{-2150 G}{r^2} \text{ }dr \to_)
+_($\frac{(r')^2}{2} = 2150 G \frac{1}{r} + C _)
+Vi ved at når _(r=112m_), så er _(r'=0_), så vi kan regne at 
+_(C_) er lig _(-19.196 G_). Vi isolerer nu _(r'_):
+_($r' = \sqrt{G}*4.381*\sqrt{224.005/r - 1}_)  
+Det her kan løses som en separable:
+_($\int \frac{1}{\sqrt{224.005/r - 1}} \text{ }dr = \int 4.381 \sqrt{G} \text{ }dt_)
+Det giver:
+_($175.92 - \sqrt{224r-r^2} + 112 Arcsin(\frac{r}{112}-1) = 4.381 \sqrt{G} t + C_)
+_(r=112_) når _(t=0_), så _(C_) kan vi regne til:
+_($C= 175.92 - \sqrt{224*112-112^2} + 112 Arcsin(\frac{112}{112}-1) = 63.9199_)
+De to asteroider kolliderer når de er _(5+7=12m_) væk fra hinanden. Vi skal altså finde
+den _(t_) hvor:
+_($175.92 - \sqrt{224*12-12^2} + 112 Arcsin(\frac{12}{112}-1) = 4.381 \sqrt{G} t + 63.91 \to_)
+_($t=-1.733*10^6 s_)
+Der ser ud til at have været en negativitetsfejl fra Geogebras side, fordi det giver ingen mening at de kolliderede længere
+tilbage i tiden. Formen af grafen _(t(r)_) passer også helt fint:
+<img class='Spic' style='width:80%' src='../../../Assets/Chapter4\DerivativesAndIntegrals\DiffEquations\Applications\Asteroids 2.png'> 
+<p class="t">
+Det eneste problem er altså bare at den går den forkerte retning. Ergo, så er det nok en negativitetsfejl fra Geogebra da
+vi løste integralen, og svaret er derfor _(1.733*10^6_) sekunder. 
+</p>
+<br><br></answer-box> -->
+
+<!--  -->
+
+<q-stion 1="28" 2="8" >
+En lille kugle rugler ned af en parabel med formen _(y=x^2_):
+<img class='Spic' style='width:95%' src='../../../Assets/Chapter4\DerivativesAndIntegrals\DiffEquations\Applications\DownParable.png'> 
+<p class="t">
+_(\underline{\textbf{A}}_): <br>
+  Opstil en differentialligning der beskriver kuglens x-position i forhold til tiden.
+</p>
+<p class="t">
+_(\underline{\textbf{B}}_): <br>
+  Find _(x(t)_) hvis kuglen starter ved _(x=4_) med en hastighed på _(0_). 
+</p>
+<br></q-stion>
+<answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+Vi skal først af alt opsætte en differentialligning. Der er en del Geometri, så jeg gør det i videoen her:
+<video class='picB' controls>
+  <source src='../../../Assets/Chapter4\DerivativesAndIntegrals\DiffEquations\Applications\BallRollingDown.mp4' type='video/mp4'>
+</video>
+<p class="t">
+Vi skal nu løse:
+_($x'' = -2 g*x_)
+</p>
+<br><br></answer-box>
+<answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+Vi har:
+_($x'' = -2 g*x_)
+Ligesom den sidste opgave, indsætter vi _(x''=u'(x)*u_) og får:
+_($u'(x) = -2 g*\frac{1}{u}*x_)
+Det her kan let løses som en separable, og giver:
+_($\frac{(x')^2}{2} = -g*x^2 + C_)
+Vi ved, at _(x'=0_) når _(x=4_), så _(C_) kan findes til _(g*4^2_). 
+Nu isolerer vi _(x'_) og får:
+_($x'=4.427*\sqrt{4^2-x^2}_)
+Vi løser det som en separable: 
+_($\int \frac{1}{\sqrt{4^2-x^2}} \text{ }dx = \int 4.427 \text{ }dt \to_)
+_($Arcsin \left(\frac{x}{4} \right) = 4.427 t + C _)
+_(x=4_) når _(t=0_), så _(C_) kan regnes til _(\pi/2_). 
+Til sidst isolerer vi _(x_):
+_($x=4 Sin \left(4.427*t+\frac{pi}{2} \right)=4 Cos \left(4.427*t \right)_)
+Hvilket ser ud som:
+<img class='SpicXL' style='width:90%' src='../../../Assets/Chapter4\DerivativesAndIntegrals\DiffEquations\Applications\DownParableFunction.png'> 
+<p class="t">
+Det giver meget god mening. Kuglen starter ved _(x=4_), ruller den ned til bunden, og bruger dens fart til
+at komme op på _(x=-4_) igen. Sådan bliver den ved for evigt, fordi vi antager, at der ikke er nogen friktion. 
+</p>
+<br><br></answer-box>
+

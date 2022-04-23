@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+
+
+    <h3>Én, to, ingen, mange eller uendelig mange løsninger</h3>
+
+    <p class="t">
+    Vi har gennem bogen stødt på diverse eksempler af ligninger eller systemer med flere løsninger.
+    Tag for eksempel skæringspunkterne mellem to ellipser:
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter2\Section3\Solutions\Ellipseskæring0.png'> 
+    </p>
+    <p class="t">
+    Den ene ellipse her kan modelleres som _((x/2)^2 + (y/3)^2 = 1_), den anden 
+    _((x/4)^2 + (y/1.5)^2 = 1_). Vi skal finde de _((x,y)_) værdier hvor begge
+    ligninger holder. 
+    </p>
+
+    <q-stion 1="14" 2="1">
+    Find alle fire løsninger.
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter2\Section3\Solutions\Ellipseskæring.png'> 
+    <br></q-stion>
+    <answer-box>
+    Vores to ligninger kan omskrives til:
+    _($\begin{eqnarray}
+    && \frac{x^2}{4}  + \frac{y^2}{9} & = 1 \\ \\
+    && \frac{x^2}{16} + \frac{y^2}{2.25} & = 1
+    \end{eqnarray}_)
+    Jeg tænker nok, at det er nemmest at bruge elimination. _(x^2_) på 
+    første ligning er _(4_) gange større end på anden, så vi kan fjerne
+    den ved at minusse første ligning med anden ligning gange _(4_): 
+    _($\begin{align}
+    \left(\frac{1}{9} - 4*2.25 \right)*y^2 &= 1-4*1 &\to \\ \\
+    -1.666 y^2 &= -3 &\to \\ \\
+    y &= \pm \sqrt{3/1.666} = \pm 1.341 
+    \end{align}_)
+    Løsningerne til _(y_) kan både være positive og negative. Det matcher fint med hvad vi ser på
+    billedet, da løsningerne ser ud til at være symmetriske omkring både _(x_)- og _(y_)-aksen. 
+    <p class="t">
+    _(x_) kan nu let findes ved bare at indsætte _(y_): 
+    _($\frac{x^2}{4} + \frac{(\pm 1.341)^2}{9} = 1_)
+    Noter at _((\pm 1.341)^2_) bliver til bare _(1.341^2_), da anden potens fjerner
+    alt negativt. Vi får nu:
+    _($x = \pm \sqrt{4 \left(1- \frac{1.341^2}{9} \right)} = \pm 1.789_)
+    Som forventet er løsningerne til _(x_) både positive og negative, hvilket også passer til billedet.
+    Alt i alt har vi fire mulige løsninger:
+    _($(1.789,1.341), \, (-1.789,1.341), \, (1.789,-1.341), \, (-1.789, -1.341)_)
+    Voila!
+    </p>
+    <br></answer-box>
+
+    <q-stion 1="14" 2="2">
+    Hvor mange _((x,y)_) punkter findes der, hvor både 
+    _($\left(\frac{x}{13} \right)^2 + \left(\frac{y}{5} \right)^2=1_) 
+    ... og 
+    _($\left(\frac{x-20}{7} \right)^2 + \left(\frac{y}{3} \right)^2=1_)
+    Bare rolig: Du skal ikke til at gøre alt det møj du gjorde i sidste opgave igen. 
+    Du behøver kun svare på <i>hvor mange</i> løsninger der er, og der er muligvis
+    et smart trick til lige denne opgave.  
+    <br><br></q-stion>
+    <answer-box>
+    Jeg gennemgår svaret i følgende video: 
+    <video class='SpicB' style="width:95%;" controls>
+        <source src='../../../Assets/Chapter2\Section3\Solutions\ElllipsesAmount.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="14" 2="3">
+    Generelt hvornår har en ligning af formen 
+    _($ax^2+bx+c=0_)
+    _(2_) løsninger, _(1_) løsning, og _(0_) løsninger? 
+    Hvad skal gælde for koefficienterne _(a, \, b, \, c_)? 
+    <p class="t">
+    Det har har vi egentlig gennemgået tidligere, så det er bare lidt opfriskning. 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Vi ved at løsningen _(x_) er: 
+    _($\frac{-b \pm \sqrt{b^2 - 4ac}}{2a}_) 
+    Der er to løsninger (på grund af plus-minus) hvis tallet i kvadratroden
+    er positivt. _(1_) løsning hvis det er _(0_), da plus og minus med _(0_) er identisk.
+    _(0_) hvis det er negativt, da negative kvadratrødder ikke giver mening. 
+    Alt i alt:
+    _($\begin{eqnarray}
+    && 2 \text{ løsninger hvis: } & \, \, b^2 - 4ac \gt 0 \\ \\
+    && 1 \text{ løsning hvis: }   & \, \, b^2 - 4ac = 0 \\ \\
+    && 0 \text{ løsninger hvis:}  & \, \, b^2 - 4ac \lt 0
+    \end{eqnarray}_)
+    Kvantiteten _(b^2-4ac_) kalder vi nogle gange "determinanten".
+    <br><br></answer-box>
+
+    <q-stion 1="14" 2="4" customWidth="600">
+    Andengradsfunktioner kan modellere mange fænomener - både menneskeskabte og naturlige.
+    En andengradsfunktion er bare 
+    _($y=ax^2+bx+c_) 
+    ... som vi nu har set et par gange.
+    Ofte har man <i>noget</i> der stiger med én hastighed, og <i>noget</i> der falder med en anden.
+    Det kan også være to ting, der begge vokser eller begge falder, hvis _(a_) og _(b_) enten begge
+    er positive eller negative. 
+    <p class="t">
+    Sig f.eks. at _(x_) er mængden af arbejdere i en
+    virksomhed. Hver arbejder man tilføjer kan ideelt skabe måske
+    _(50000kr_)'s værdi om måneden (med deres løn trukket fra). 
+    Men hvis du begynder at tilføje alt for mange, går der penge spildt på folk
+    uden særlig meget at lave. 
+    Det har lille indflydelse (en lille koefficient), men stiger hurtigere og hurtigere,
+    jo flere arbejdere du tilføjer. Lad os sige vi repræsenterer det ved at
+    minusse med _(100*x^2_). Potensen på _(2_) for det til at stige hurtigere, men _(100_) 
+    er en meget lavere koefficient end _(50000_). 
+    </p>
+    <p class="t">
+    Du starter også det hele med at bruge _(20_) tusind på opsætning osv. 
+    Alt i alt:
+    _($\text{Penge} = -100x^2 + 50000x - 20000_)
+    Hvad er den ideelle mængde arbejdere? Du får nok et relativt højt svar, da vi forestiller os 
+    at dette er en temmelig stor virksomhed. 
+    </p>    
+    <br></q-stion>
+    <answer-box customWidth="600">
+    Der er mange måder vi kunne løse det her på, men her er èn, lidt primitiv løsning:
+    <img class='Spic' style='width:95%' src='../../../Assets/Chapter2\Section3\Solutions\ArbejdereToppunkt.png'> 
+    <p class="t">
+    Toppunktet er den eneste _(y_)-værdi, der kun kan findes èt sted på kurven: Alle de
+    mindre værdier som f.eks. _(5.039 \text{mil}_) eller _(2.955 \text{mil}_) findes både
+    til højre <i>og</i> venstre for toppunktet. Vi leder derfor efter en eller anden værdi
+    _(k_) hvor
+    _($-100x^2 + 50000x - 20000 = k_)
+    ... kun har èn løsning. Dette kan omskrives til:
+    _($-100x^2 + 50000x - (20000 + k) = 0 _)
+    Kald denne værdi for _(y_{top}_). Vi ved nu at
+    _($-100x^2 + 50000x - (20000 + y_{top}) = 0_)
+    .. kun har èn løsning. Det betyder at determinanten er lig _(0_), så hvis vi isolerer
+    _(x_) får vi: 
+    _($x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} = \frac{-b \pm \sqrt{0}}{2a} = \frac{-50000}{2*(-100)} = 250_)
+    Så _(250_) arbejdere er den optimale mængde. 
+    </p>
+    <p class="t">
+    En anden strategi til at finde toppunktets x-værdi
+    er, at se det som midten mellem de to punkter
+    hvor kurven skærer _(0_). Så kunne man bare løse og få _(x=500_), og derefter dividere med _(2_). 
+    Den tilgang valgte jeg dog ikke, da det ikke nødvendigvis er åbenlyst, hvorfor en parabel er symmetrisk omkring dens toppunkt. 
+    Det giver god nok mening med vores arbejde nu dog. Vi ved, at _(x_)-værdien til toppunktet kunne findes som:
+    _($x = \frac{-b}{2a}_)
+    ... siden determinanten var _(0_). I et hvilket som helst andet tilfælde hvor determinanten ikke er _(0_), vil
+    formlen blive til: 
+    _($x = \frac{-b}{2a} \pm \frac{\sqrt{b^2 - 4ac}}{2a}_)
+    Så alle _(x_)-værdierne er symmetriske omkring _(-b/2a_), hvilket er toppunktet. 
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="14" 2="5">
+    Sig at mængden af regn i Danmark i mm kan modelleres som:
+    _($3Cos \left(\frac{2\pi}{52}t \right)^2 + 5 Cos \left(\frac{2\pi}{52}t \right) + 4_)
+    Her er _(t_) hvor mange uger inde i året, vi er (der er _(52_) i alt), og 
+    formlen fortæller os, hvor meget regn der gennemsnitligt faldt den uge (i mm). Modellen anvender trig-funktioner, 
+    fordi deres bølgeform op og ned effektivt modellerer sæsoner. 
+    Kurven er visualiseret her:
+    <img class='SpicB' style='width:80%' src='../../../Assets/Chapter2\Section3\Solutions\Rain.png'> 
+    <p class="t">
+    Er der noget som helst tidspunkter (hvor halv-uger, kvart-uger, 0.1253 uger osv er tilladt) 
+    hvor det regner over eller lig _(13mm_)? 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Lad mig først af alt lave det her om til et meget nemmere problem:
+    Er funktionen nogen sinde lig _(13_)? _(13_) er tydeligvis ikke
+    <i>det laveste</i> punkt, da man nemt kan se at et andet
+    som _(t=25_) giver 
+    _($3Cos \left(\frac{2\pi}{52}25 \right)^2 + 5*Cos \left(\frac{2\pi}{52}25 \right) + 4 = 1.99_)
+    Der findes intet punkt hvor funktionen er over _(13_) hvis den aldrig er <i>lig</i> _(13_). Den kan umuligt
+    "springe over". 
+    <p class="t">
+    Vi skal altså se, om der er nogle løsninger til 
+    _($3Cos \left(\frac{2\pi}{52}t \right)^2 + 5*Cos \left(\frac{2\pi}{52}t \right) + 4 = 13_)
+    Hvilket kan omskrives til:
+    _($3Cos \left(\frac{2\pi}{52}t \right)^2 + 5*Cos \left(\frac{2\pi}{52}t \right) + -9 = 0_)
+    Dette passer lidt formen _(ax^2+bx+c=0_). Hvis bare vi kalder 
+    _(Cos(\frac{2\pi}{52}t)_) for _(x_), får vi: 
+    _($3x^2 + 5x - 9 = 0_)
+    Eftersom _(25-4*3*(-9) \gt 0_) <i>kan</i> _(x_) godt findes,
+    og når vi udregner den, får vi:
+    _($x=1.096, -2.76_)
+    _(Cos(\frac{2\pi}{52}t)_) skal være lig en af de to 
+    værdier. Det er umuligt, siden _(Cos_) har et range på _([-1,1]_). 
+    Svaret er derfor nej: Der er ingen uger, hvor det gennemsnitligt regner mere end eller lig _(13mm_). 
+    </p> 
+    <br></answer-box>
+
+    <q-stion 1="14" 2="6">
+    Hvis _(x_) er mellem _(0_) og _(3.5_), hvor mange løsninger
+    er der så til _(Sin(7x)=0.4_)? Vi bruger radianer her. 
+    <br><br></q-stion>
+    <answer-box>
+    "Well, _(Sin(7x)=0.4_), så _(7x=Arcsin(0.4)=0.41_), og 
+    _(x=0.41/7=0.058_), ergo der er én løsning. Boom"
+    <p class="cent">
+        Desværre
+    </p>
+    <p class="t">
+    _(0.0058_) er ikke nødvendigvis det <i>eneste</i> sted hvor _(Sin_) er lig _(0.4_).
+    Præcis samme gælder _(\pi - 0.058 = 3.08_). 
+    </p>    
+    <img class='Spic' style='width:45%' src='../../../Assets/Chapter2\Section3\Solutions\TilFlereLøsningerSin.png'> 
+    <p class="t">
+    _(7x_) går i alt fra _(0_) til _(7*3.5=24.5_) radianer. Det betyder at 
+    den kører hele vejen rundt om cirklen _(24.5/2\pi = 3.89_) gange. Det er
+    under _(4_), men over tre en halv. Den rammer _(0.4_) _(2*3=6_) gange
+    de tre første omgange, og rammer _(0.4_) to gange igen den sidste halve. 
+    Alt i alt ser vi, at der er
+    _($6+2=8 \text{ løsninger}_)
+    Det kan hurtigt blive kompliceret med de trigonometriske funktioner og deres antal af løsninger! 
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="14" 2="7">
+    En eller anden kasse skal være _(15cm_) længere end dens bredde. 
+    Hvor bred er kassen, hvis arealet skal være _(200cm^2_)? 
+    <p class="t">
+    Det her spørgsmål er
+    meget nemt, men følte alligevel, det havde en vis vigtighed. 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Easy: 
+    _($\begin{align}
+    b*(b+15) & = 200 & \to \\ \\
+    b^2 + 15b - 200 & = 0 & \to \\ \\
+    \end{align}_)
+    _($b=\frac{-15 \pm \sqrt{15^2 - 4*1*(-200)}}{2*1} = -23.5, 8.5_)
+    Den ene løsning er negativ, hvilket ikke giver nogen mening i vores kontekst. Derfor er det rigtige svar lig _(8.5_).
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="14" 2="8">
+    Find alle løsninger til 
+    _($(3x^2 + 4x - 5)*(7x+5)=0_)
+    <br></q-stion>
+    <answer-box>
+    Her kunne man nemt blive fristet til at dividere begge sider med _(3x^2+4x-5_), hvilket giver:
+    _($\begin{align}
+    && \frac{(3x^2 + 4x - 5)*(7x+5)}{3x^2 + 4x - 5} & = \frac{0}{3x^2 + 4x - 5} & \to \\ \\
+    && 7x+5 & =0
+    \end{align}_)
+    Og så løse denne nemme ligning og få _(x=-0.71_). Det <i>er</i> en rigtig løsning,
+    men ikke <i>alle</i> løsninger. Lad os tænke
+    over en anden strategi til at angribe samme problem.
+    <p class="t">
+    Sig du har en ligning som:
+    _(F_1(x)*F_2(x)*F_3(x)*\dots = 0_)
+    Højre side er _(0_), venstre side er en masse funktioner af _(x_) ganget med hinanden.
+    Det _(x_) hvor _(F_1(x)=0_) er én løsning, det _(x_) hvor _(F_2(x)=0_) er en anden,
+    det med _(F_3(x)=0_) en tredje osv. <i>Hele</i> siden forsvinder hvis
+    bare én faktor _(F_) er _(0_), og ligningen bliver opfyldt. 
+    Sig f.eks. vi indsætter _(x=-0.71_) i den originale ligning:
+    _($\begin{eqnarray}
+    && \left(3*(-0.71)^2 + 4*(-0.71)-5 \right)*\left(7*(-0.71) + 5 \right) = \\ \\
+    && -6.3277*0 = \\ \\
+    && 0
+    \end{eqnarray}_)
+    Du kan bare se på hver faktor for sig selv, se hvornår den er _(0_), og få <i>alle</i> 
+    dine svar sådan. 
+    Vi forsøger ofte at omskrive en ligning til denne dejlige form med produkter til venstre og til højre,
+    da det simpelt hen er så let at arbejde med. 
+    Du har allerede vist 
+    at den ene faktor _((7x+5)_) er _(0_) når _(x=-0.71_). Den anden faktor
+    _((3x^2+4x-5)_) er _(0_) når 
+    _($x=\frac{-4 \pm \sqrt{4^2 - 4*3*(-5)}}{2*3}= 0.78, -2.11_)
+    Vores tre løsninger til denne ligning er derfor:
+    _($x=-0.71, 0.78,-2.11_)
+    Voila!
+    </p>
+    <br></answer-box>
+
+    <q-stion 1="14" 2="9">
+    I kemi skal man ofte <i>balancere reaktioner</i>. Sig f.eks man havde følgende:
+    _($C_3H_8+O_2 \to CO_2 + H_20_)
+    Denne reaktion beskriver, at de to molekyler _(C_3H_8_) og _(O_2_) reagerer og bliver
+    til _(CO_2_) og _(H_2O_), på en eller anden måde. Reaktionen virker kun med
+    et bestemt forhold mellem _(C_3H_8_) og _(O_2_), og det
+    er heller ikke sikkert, at der bliver produceret lige meget _(CO_2_) og _(H_2O_).
+    <i>Lige nu</i> giver det i hvert fald ingen mening: eksempelvis er der på den ene
+    side _(3_) _(C_)-atomer, men på den anden kun _(1_). 
+    Forholdet mellem molekylerne skal være sådan, at der er lige mange af hver atom på 
+    begge sider. De kan jo ikke bare forsvinde eller dukke op ud af ingenting!
+    <p class="t">
+    Et blandingsforhold kunne måske se ud som:
+    _($2 C_3 H_8 + 3 O_2 \to 4 C O_2 + 2 H_2 O_)
+    Men det er desværre ikke rigtigt. Der er f.eks. _(2*3=6_) _(C_) atomer på venstre side,
+    men kun _(4_) _(C_) til højre. 
+    </p>
+    <p class="t">
+    Find et rigtigt blandingsforhold. 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Sig at jeg har _(k_0_) _(C_3H_8_) og _(k_1_) _(O_2_) molekyler. Det vil betyde,
+    at der på den ene side er: 
+    _($3*k_0 \text{ } C \text{ atomer}, \text{  } 8*k_0 \text{ } H \text{ atomer}, \text{  } 2*k_1 \text{ } O \text{ atomer}_)
+    Lignende, hvis vi har _(k_2_) _(CO_2_) molekyler, og 
+    _(k_3_) _(H_2O_) molekyler, er der på den anden side:
+    _($k_2 \text{ } C \text{ atomer}, \text{  } 2*k_3 \text{ } H \text{ atomer}, \text{  } 2*k_2+k_3 \text{ } O \text{ atomer}_)
+    Alt i alt kan vi altså opsætte ligningerne:
+    _($\begin{align}
+    3k_0 & = \text{ } k_2 \\
+    8k_0 & = \text{ } 2k_3 \\
+    2k_1 & = \text{ } 2k_2+k_3
+    \end{align}_)
+    Den ene resultere i, at _(k_0=k_2/3_), hvilket vi kan sætte ind i den anden og 
+    få _(8*k_2/3=2*k_3_). Det giver: 
+    _($k_3=\frac{4}{3}k_2_)
+    Den sidste ligning er 
+    _($\begin{eqnarray}
+    && 2k_1=2k_2+\frac{4}{3}k_2 \to \\ \\
+    && k_1=\frac{5}{3}k_2
+    \end{eqnarray}_)
+    Alt i alt har vi nu:
+    _($\frac{1}{3}k_2*C_3H_8 + \frac{5}{3}k_2*O_2 \to k_2*CO_2 + \frac{4}{3}k_2*H_2O_)
+    Man kan selvfølgelig ikke have tredjedele af molekyler, så vi ganger begge sider med _(3_) 
+    og får:
+    _($k_2*C_3H_8 + 5k_2*O_2 \to 3k_2*CO_2 + 4k_2*H_2O_)
+    Det kan vi godt, siden det ikke ændrer <i>forholdet</i>. 
+    Der er uendelig mange løsninger, da <i>mængden</i> 
+    er ligegyldig, så længe <i>forholdet</i> er korrekt. 
+    Vi kan bare vælge den mindste _(k_2_) som _(k_2=1_), og få:
+    _($C_3H_8 + 5*O_2 \to 3*CO_2 + 4*H_2O_)
+    Brillant!
+    <br><br></answer-box>
+

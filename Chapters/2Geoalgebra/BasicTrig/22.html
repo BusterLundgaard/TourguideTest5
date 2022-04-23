@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+
+
+    <h2>Matematiske egenskaber af Sin og Cos </h2>
+    <p class="t">
+    Vi har kigget en del på anvendelser nu, så lad os vende tilbage og 
+    studere nogle af trig-funktionernes matematiske egenskaber. 
+    Kan vi f.eks. finde praktiske formler, der kan hjælpe os med at omskrive 
+    udtryk?
+    </p>
+
+    <!--  -->
+
+    <q-stion 1="22" 2="1">
+    Sig at du på en eller anden måde ved, at _(Cos(1.2)=0.3623_). 
+    Prøv nu at beregn _(Sin \left(\frac{\pi}{2}-1.2 \right)_) <i>uden lommeregner</i> 
+    <br><br></q-stion>
+    <answer-box>
+    Vi ved fra tidligere, at
+    _($Sin \left(v+\frac{\pi}{2} \right)=Cos(v)_)
+    Så det er nok noget i den dur vi skal arbejde med. Jeg viser svaret i følgende video:
+    <video class='SpicB' style="width:95%;" controls>
+        <source src='../../../Assets/Chapter2\Section1\TrigProperties\TrigPropertyExercise1.mp4' type='video/mp4'>
+    </video>
+    <p class="t">
+    Der bliver lavet en ret stor fejl i videoen, hvor jeg af mystiske årsager
+    siger, at _(Cos(1.2)=0.93_), hvilket ikke er rigtigt. Processen er ordentlig, men
+    det korrekte svar er _(0.3623_), ikke _(0.93_) som i videoen. Sorry! 
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="22" 2="2">
+    Prøv at bevis de følgende egenskaber i stil af sidste opgave:
+    <div style="text-align:center; margin-top:-10px;">
+        <ul style="display: inline-block; text-align: left; padding-left:0%; list-style:disc;">
+            <li> _(Cos(\frac{\pi}{2}+v)=-Sin(v)_)</li>
+            <li> _(Cos(-v)=Cos(v)_)</li>
+            <li> _(Sin(-v)=-Sin(v)_)</li>
+            <li> _(Cos(\pi+v)=-Cos(v)_)</li>
+            <li> _(Sin(\pi+v)=-Sin(v)_)</li>
+        </ul>
+    </div>
+    <p class="t">
+    De her er alle relativt nemme og intuitive, så jeg viser svaret på dem alle i èt svar.
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Here you go: 
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter2\Section1\TrigProperties\TrigVinkelegenskaber.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="22" 2="3">
+    Da vi tidligere fandt frem til den såkaldte "cosinus-regel", brugte
+    vi på et tidspunkt det faktum, at _(cos(x)^2+sin(x)^2=1_). 
+    Brug det til at bevise:
+    <div style="margin-left:-17%; margin-top:25px; margin-bottom: -10px;">
+    _($\begin{eqnarray}
+        && \underline{\textbf{A}}: \, \, \, \, \, \, Cos(x)^2=1-Sin(x)^2 \, \, \text{ og } \ \,  Sin(x)^2=1-Cos(x)^2 \\  \\
+        && \underline{\textbf{B}}: \, \, \, \, \, \, Cos(x)^2-Sin(x)^2=2*Cos(x)^2-1=1-2*Sin(x)^2 \\  \\
+    \end{eqnarray}_)
+    </div>
+    Bare rolig, den her opgave burde være relativ nem. 
+    <br><br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    Hvis _(cos(x)^2_) er nødt til at blive plusset med _(sin(x)^2_) for at give _(1_), er det logisk at 
+    _(Cos(x)^2 = 1 - Sin(x)^2_). 
+    Det her slags argument har du jo lavet mange gange før. Samme argument kan man lave,
+    for at få _(Sin(x)^2=1-Cos(x)^2_)
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Her skal vi anvende hvad vi fandt ud af i sidste opgave:
+    _($\begin{eqnarray}
+    && Cos(x)^2-Sin(x)^2 & = Cos(x)^2-(1-Cos(x)^2) & = 2Cos(x)^2-1 \\ \\
+    && Cos(x)^2-Sin(x)^2 & = (1-Sin(x)^2)-Sin(x)^2 & = 1-2*Sin(x)^2 
+    \end{eqnarray}_)
+    Bum!
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="22" 2="4">
+    Sig at du ved at:
+    _($Tan(1.249)=3_)
+    Find nu en eller anden måde at beregne
+    _($Sin(1.249)*Cos(1.249)_)
+    ... <i>uden</i> at du bruger lommeregner. Den her opgave er ret tricky, så du får
+    nok brug for et hint / et sted at starte. Vi ved at:
+    _($Cos=\frac{a}{c}, \qquad Sin=\frac{b}{c}, \qquad Tan=\frac{b}{a}_)
+    og at
+    _($c^2=a^2+b^2_)
+    ... eftersom det jo er siderne på en retvinklet trekant. Kan du bruge det til noget smart? 
+    <br><br></q-stion>
+    <answer-box t="h">
+    Vi skal beregne _(Sin*Cos_), som vi ved kan omskrives til:
+    _($\frac{a}{c}*\frac{b}{c}=\frac{ab}{c^2}_)
+    Vi bruger nu _(c^2=a^2+b^2_) og får:
+    _($\frac{ab}{a^2+b^2}_)
+    Vi kender _(b/a_), da det svarer til _(Tan_). Vi kender også _(a/b_), hvilket så
+    er _(1/(b/a)=_) _(1/Tan_). Vi skal nu se, om vi kan
+    omskrive _(ab/(a^2+b^2)_) i forhold til _(a/b_) og _(b/a_) på nogen måde.
+    Så ville vi jo kunne omskrive det i forhold til _(Tan_)! 
+    <br><br>
+    </answer-box>
+    <answer-box>
+    Sig at jeg har en eller anden _(1.249_) graders retvinklet trekant med bredde _(a_), højde _(b_) og længde _(c_). 
+    Jeg ved nu at:
+    _($Sin(1.249)=\frac{b}{c}, \qquad Cos(1.249)=\frac{a}{c}, \qquad Tan(1.249)=\frac{b}{a}_)
+    Det betyder altså, at _(Sin(1.249)*Cos(1.249)_) kan omskrives til:
+    _($\frac{b}{c}*\frac{a}{c}=\frac{ab}{c^2}_)
+    Det her er en retvinklet trekant, så vi ved, at _(c^2=a^2+b^2_):
+    _($\frac{ab}{a^2+b^2}_)
+    Det er alt meget vel, men hvad præcis er vores mål her? Vi kender kun 
+    _(b/a_) som er lig _(3_), og vi skal på en eller anden måde beregne _(ab/(a^2+b^2)_). 
+    <p class="t">
+    Jeg tænker egentlig bare, at vi skal forsimple det så meget som muligt, og 
+    derefter <i>på en eller anden måde</i> beskrive det i forhold til _(a/b_). 
+    Det ville f.eks. være langt dejligere, hvis vi havde _((a^2+b^2)/ab_) i stedet. 
+    I det tilfælde ville vi faktisk kunne forsimple brøken ved at dele tælleren op 
+    som _(a^2/ab+b^2/ab_), hvilket yderligere kan omskrives til _(a/b+b/a_). Det er jo perfekt, 
+    da det svarer til _(1/(b/a)+b/a_), som er _(1/Tan+Tan_). 
+    </p>
+    <p class="t">
+    Vores brøk er desværre <i>ikke</i> _((a^2+b^2)/ab_), men vi kan lave følgende smarte trick:
+    _($\frac{ab}{a^2+b^2} = 1/\left(\frac{a^2+b^2}{ab} \right) = 1/\left(1/Tan+Tan \right)_)
+    Bum! Nu indsætter vi _(Tan=3_) og får:
+    _($\frac{1}{1/3+3} = \frac{1}{\frac{1+3*3}{3}} = \frac{1}{\frac{10}{3}} = \frac{3}{10} = 0.3_)
+    Sådan! 
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="22" 2="5">
+    Ved hjælp af den strategi vi brugte i sidste opgave, kan vi også vise at:
+    _($Sin(x)^2 = \frac{Tan(x)^2}{1+Tan(x)^2}_)
+    Og at:
+    _($Cos(x)^2 = \frac{1}{1+Tan(x)^2}_)
+    Bevis begge disse påstande. Der er kun èt svar, da det er stort set det samme vi gør 
+    i begge tilfælde. 
+    <br><br></q-stion>
+    <answer-box>
+    Vi ved at _(Sin=b/c_), så vi kan omskrive _(Sin^2_) til:
+    _($\left(\frac{b}{c} \right)^2 = \frac{b^2}{c^2} = \frac{b^2}{a^2+b^2}_)
+    Vi ville kunne simplificere _((a^2+b^2)/b^2_) en del, så vi laver
+    samme trick som i sidste opgave:
+    _($\frac{b^2}{a^2+b^2} = 1/\left(\frac{a^2+b^2}{b^2} \right) = \frac{1}{a^2/b^2 + b^2/b^2}_)
+    _(b^2/b^2_) bliver bare til _(1_), og _(a^2/b^2_) svarer til _((a/b)^2_), hvilke
+    er det samme som _((1/Tan)^2_). Vi får derfor:
+    _($\frac{1}{(1/Tan)^2+1}_)
+    Det her kan vi nu omskrive til:
+    _($\frac{1}{\frac{1}{Tan^2} + 1} = \frac{1}{\frac{1+Tan^2}{Tan^2}} = \frac{Tan^2}{1+Tan^2}_)
+    Boom! Ved _(Cos_) kan vi gøre præcist det samme, der får vi bare
+    _((b/a)^2_) i stedet, hvilke gør det lidt simplere. 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <!-- <q-stion 1="2" 2="1" 3="5">
+    _(Tan(1.373)=5_). Regn _(Sin(1.375)+Cos(1.375)_) uden at bruge _(Sin, Cos, Tan, Arcsin, Arcos, Arctan_) på din lommeregner. 
+    Du må gerne bruge andre funktioner på lommeregneren.
+    <br><br></q-stion>
+    <answer-box>
+    Vi siger:
+    _($\frac{b}{c}+\frac{a}{c}=\frac{a+b}{c}=\frac{a+b}{\sqrt{a^2+b^2}}=\frac{a}{\sqrt{a^2+b^2}}+\frac{b}{\sqrt{a^2+b^2}}=_)
+    _($\frac{1}{\frac{\sqrt{a^2+b^2}}{a}}+\frac{1}{\frac{\sqrt{a^2+b^2}}{b}}=
+    \frac{1}{\sqrt{\frac{a^2+b^2}{a^2}}}+\frac{1}{\sqrt{\frac{a^2+b^2}{b^2}}}=_)
+    _($\frac{1}{\sqrt{1+\frac{b^2}{a^2}}}+\frac{1}{\sqrt{\frac{a^2}{b^2}+1}}=_)
+    _($\frac{1}{\sqrt{1+Tan(1.375)^2}}+\frac{1}{\sqrt{1+(1/Tan(1.375))^2}}_)
+    Nu kan vi bare indsætte _(Tan(1.375)=5_) og regne det med vores lommeregner:
+    _($\frac{1}{\sqrt{1+5^2}}+\frac{1}{\sqrt{1+(1/5)^2}}=1.176_)
+    <br></answer-box> -->
+
+    <!--  -->
+
+    <q-stion 1="22" 2="6">
+    Vi støder meget ofte på _(1/Cos(v)_), _(1/Sin(v)_) og _(1/Tan(v)_), og
+    har derfor valgt at forkorte dem som henholdsvis _(Sec(v)_), _(Csc(v)_) og _(Cot(v)_):
+    _($Sec(v)=\frac{1}{Cos(v)}, \qquad Csc(v)=\frac{1}{Sin(v)}, \qquad Cot(v)=\frac{1}{Tan(v)}_)
+    De udtales "sekant", "cosekant", og "cotangent".
+    Så er det lidt nemmere at snakke om. 
+    <p class="t">
+    Bevis nu følgende egenskaber:    
+    </p>
+    <div style="margin-left:-45%; margin-top:25px; margin-bottom: -10px;">
+    _($\begin{eqnarray}
+        && \underline{\textbf{A}}: \, \, \, \, \, \, Tan(v)^2+1=Sec(v)^2 \\  \\
+        && \underline{\textbf{B}}: \, \, \, \, \, \, Cot(v)^2+1=Sec(v)^2 \\  \\
+        && \underline{\textbf{C}}: \, \, \, \, \, \, Sec(v)*Csc(v)*Cot(v)=Csc(v)^2 \\  \\
+    \end{eqnarray}_)
+    </div>
+    <br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    Vi skal jo egentlig bare bevise, at _(Sin(v)^2/Cos(v)^2+1_) er lig _(1/Cos(v)^2_), så:
+    _($\frac{Sin(v)^2}{Cos(v)^2}+1=\frac{Sin(v)^2+Cos(v)^2}{Cos(v)^2}=\frac{1}{Cos(v)^2}_)
+    Det er måske lidt lettere at huske denne egenskab, hvis man i stedet starter fra
+    _($Sin(v)^2 + Cos(v)^2 = 1_)
+    og dividerer med _(Cos(v)^2_), for at få
+    _($\frac{Sin(v)^2}{Cos(v)^2}+\frac{Cos(v)^2}{Cos(v)^2}=\frac{1}{Cos(v)^2}_)
+    ... hvilket svarer til:
+    _($Tan(v)^2 + 1 = Sec(v)^2_)
+    Bum!
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Her starter vi fra _(Sin(v)^2+Cos(v)^2=1_) og dividerer med 
+    _(Sin(v)^2_) i stedet:
+    _($\frac{Sin(v)^2}{Sin(v)^2} + \frac{Cos(v)^2}{Sin(v)^2} = \frac{1}{Sin(v)^2}_)
+    Vi kan let se, det giver:
+    _($1+Cot(v)^2 = Csc(v)^2_)
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{C}}_)#" tabColour="rgb(171,96,147)">
+    Her laver vi bare noget simpelt omskrivning:
+    _($\frac{1}{Cos(v)}*\frac{1}{Sin(v)}*\frac{Cos(v)}{Sin(v)}=\frac{Cos(v)}{Cos(v)*Sin(v)^2}=\frac{1}{Sin(v)^2}=_)
+    _($Csv(v)^2_)
+    <br></answer-box>
+

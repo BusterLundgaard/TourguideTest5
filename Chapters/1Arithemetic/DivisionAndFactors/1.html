@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!--9.1 -->
+
+    <p class="t"><i> Du er ikke endnu tilladt at bruge hverken CAS-værktøjer eller lommeregner</i></p>
+    
+    <p class="t">
+        _($3^4 + \left((31+22+97-13)*3 - \frac{14+55*2}{4} \right)*6+7^{Tan(\pi/4)}_)
+    </p>
+
+    <p class="t">
+    Vi så i sidste kapitel at et tal som _(1598547852_) i decimaltalssystemet svarer til:
+    </p>
+
+    <p class="cent">
+        _(1*(10*10*10) \text{  }+_)<br>
+        _(5*(10*10) \text{  }+_)<br>
+        _(9*(10) \text{  }+_)<br>
+        _(8 \text{  }+_)<br>
+        _(5/(10) \text{  }+_)<br>
+        _(4/(10*10) \text{  }+_)<br>
+        _(7/(10*10*10) \text{  }+_)<br>
+        _(8/(10*10*10*10) \text{  }+_)<br>
+        _(5/(10*10*10*10*10) \text{  }+_)<br>
+        _(2/(10*10*10*10*10*10) \text{  }+_)
+    </p>
+
+    <p class="t">
+    Er der ikke en lidt mere effektiv, kompakt 
+    måde at skrive de _(10_), _(10*10_), _(10*10*10 \dots_) på? 
+    Jeg ville nok umiddelbart 
+    finde på den regel at vi i stedet for _(7_) nuller
+    bare skriver _(10^7_) osv:
+    _($\begin{eqnarray}
+    && 1*10^3 & +  \\
+    && 5*10^2 & +  \\
+    && 9*10^1 & +  \\
+    && 8 & +       \\
+    && 5/10^1 &+  \\
+    && 4/10^2 &+  \\
+    && 7/10^3 &+  \\
+    && 8/10^4 & +  \\
+    && 5/10^5 & +  \\
+    && 2/10^6    
+    \end{eqnarray}_)
+    Det her er nu kompakt nok til at vi kan have det på én enkelt linje som 
+    _($1 \cdot 10^3+5 \cdot 10^2+9 \cdot 10^1+8+\frac{5}{10^1}+\frac{4}{10^2}+\frac{7}{10^3}+\frac{8}{10^4}+\frac{5}{10^5}+\frac{2}{10^6}_)
+    Gennem den her bog vil du se at der er rigtig mange ting i matematik vi har fundet på, 
+    primært fordi vi er for dovne til at skrive noget der fylder meget. Vi arbejder jo med alt det her 
+    via papir eller kridt, og det tager simpelt hen for lang tid og for meget mental kraft at 
+    skulle skrive _(100000000_) i stedet for _(10^8_). Det giver også
+    bare et langt bedre overblik og er letttere at arbejde med. 
+    </p>
+    <p class="t">
+    Lad os generalisere. Sig at _(3^5_) symboliserer _(3_) ganget med sig selv _(5_) gange, at
+    _(4^8_) er _(4_) ganget med sig selv _(8_) gange osv. Helt generelt siger
+    vi at 
+    _($A^n_) 
+    ... står for _(A_) ganget med sig selv _(n_) gange. 
+    </p>
+    <p class="t">
+    Eksempelvis:
+    _($23.46^3=23.46*23.46*23.46=12911.717736_) 
+    ... eller: 
+    _($\left(\frac{3}{5}\right)^4=\frac{3}{5} \cdot \frac{3}{5} \cdot \frac{3}{5} \cdot \frac{3}{5}=\frac{3 \cdot 3 \cdot 3 \cdot 3}{5 \cdot 5 \cdot 5 \cdot 5}=\frac{3^4}{5^4}=\frac{81}{625}=0.1296_) 
+    Det er egentlig ikke fordi jeg har noget vigtigt at sige omkring baser her:
+    Jeg brugte det bare lige som et eksempel på den her meget brugbare notation/måde at skrive ting på. 
+    Der er også mange andre tidspunkter hvor vi får brug for at gange noget med sig selv 
+    et vis antal gange. Her er to:
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5" bigTop="true"> 
+    Sig at du har valget mellem at trække et kort fra enten et rødt eller sort dæk:  
+    <img class='Spic' style='width:70%' src='../../../Assets/Chapter1\Talteori\Cards.png'> 
+    <p class="t">
+    På hvor mange forskellige måder kan du trække _(6_) kort?
+    </p>
+    <br>
+    </q-stion>
+    <answer-box> 
+    Det her diagram modellerer ret godt situationen:
+    <img class="SpicT" style="width:50%;" src="../../../Assets/Chapter1/Talteori/CardsChoice.png">
+    <p class="tt">
+    Du starter med ét valg af _(2_) muligheder (rød eller sort).
+    For hver af de _(2_) tilfælde skal du igen lave et valg med to muligheder,
+    så to grene opdeles i to og skaber _(2*2=4_) grene. 
+    De _(4_) dele bliver hver delt op da du igen laver et valg med _(2_) muligheder,
+    og sådan bliver vi ved _(6_) gange:
+    _($2^6=2*2*2*2*2*2=64_) 
+    </p>
+    <br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5"> 
+    I en dejlig idyllisk have har et flot træ lige fået _(3_) frø:
+   
+    <img class="picB" src="../../../Assets/Chapter1/Talteori/Seeds1.png">
+    
+    <p class="t">
+    Dejlig er den lige nu, men om få år vil denne have blive til et 
+    rent naturhelvede. 
+    Efter _(1_) år vil de _(3_) frø blive til 
+    hele træer, og også tabe _(3_) nye frø hver.
+    Efter _(2_) år vil de nye frø være blevet til træer, og 
+    også tabe nye frø, osv. 
+    Sådan her bliver det ved. <i>Alle</i> træer taber 
+    hvert år _(3_) nye frø: Ikke kun
+    de nye. 
+    </p>
+    <p class="t">
+    <b> 1</b>: <br> 
+    Hvor mange træer er der efter _(1_) år?
+    </p>
+    <p class="t">
+    <b> 2</b>: <br>
+    Hvor mange træer er der efter _(2_) år?
+    </p>
+    <p class="t">
+    <b> 3</b>: <br>
+    Hvor mange træer er der efter _(5_) år?
+    </p>
+    <p class="t">
+    <b> 4</b>: <br>
+    Helt generelt hvor mange træer er der efter "_(n_)" år, 
+     _(n_) er et eller andet helt tal.
+    </p>
+    <p class="t">
+    Mængden af træer du får i denne opgave vil ikke være særlig realistisk i 
+    forhold til hvor stor haven er på billedet. 
+    </p>
+    <br></q-stion>
+    <answer-box t="Answer 1#" tabColour="rgb(171,96,147)">
+    Det første træ står stadig, og de tre frø er blevet til tre nye træer. Der er altså i alt
+    _($1+3=4_)
+    ... træer. Disse _(4_) træer taber nu hver _(3_) frø. 
+    <br><br></answer-box>
+    <answer-box t="Answer 2#" tabColour="rgb(175,128,161)">
+    Der er _(4_) træer fra før og _(4*3_) frø der bliver til nye træer.
+    Alt i alt
+    _($4+4*3=16_)
+    ... træer. Disse _(16_) træer taber nu hver _(3_) frø.
+    <br><br></answer-box>
+    <answer-box t="Answer 3#" tabColour="rgb(171,96,147)">
+    Vi springer nu lidt fra år _(2_) til år _(5_). 
+    Lad os tænke over hvor mange der er i 
+    år _(3_) først. Her er der _(16_) træer fra før
+    og _(16*3_) frø, så:
+    _($16+16*3=64_)
+    Bemærk at dette også kan omskrives til:
+    _($16*(1+3)=16*4=4*4*4_)
+    Hver af disse _(4*4*4_) træer taber nu _(3_) frø, så på fjerde år får vi:
+    _($4*4*4+4*4*4*3 = 4*4*4*(1+3)=4*4*4*4=256_)
+    Vi kan let se et mønster her: Hvert nye år ganger vi antallet af træer med _(4_).
+    På det femte år må der være
+    _($256*4=1024_)
+    ... træer. Bum! 
+    <br><br></answer-box>
+    <answer-box t="Answer 4#" tabColour="rgb(175,128,161)">
+    Vi starter med _(1_) træ, 
+    og har set at vi hvert år skal gange antallet af træer med _(4_). Det 
+    betyder at vi efter _(n_) år skal gange med fire _(n_) gange, så svaret er:
+    _($4*4*4*4 \, * \, \dots \, \, \text{n gange} = 4^n_)
+    Voila!
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <p class="tt"> 
+    _(A^n_) har vi defineret som tallet du får hvis du ganger _(A_) med sig selv
+    "_(n_) gange". I denne kontekst giver det selvfølgelig kun mening hvis
+    _(n_) er et helt, positivt tal. Man kan ikke gange noget med sig selv
+    "_(3_) en halv" gange, og man kan ikke gange noget med sig selv 
+    en "negativ mængde". 
+    </p>
+    <p class="t">
+    Det er rigtigt! Man <i>kan</i> ikke gange noget med sig selv under _(0_) gange,  
+    men man 
+    kan heller ikke have negative temperature og tiden går kun fremad. 
+    Negativitet er bare et praktisk værktøj vi fandt på der kan hjælpe os
+    med intuitive "modsætninger". 
+    Hvad virker intuitivt som det "modsatte" af at gange med sig selv _(3_) gange? At dividere med 
+    sig selv _(3_) gange! 
+    </p>
+    <p class="t">
+    <i>Vi</i> har defineret det her mærkelige _(A^n_) noget, så <i>vi</i>
+    kan også bare bestemme at man dividerer hvis _(n_) er negativt. Det er super
+    elegant og praktisk:   
+    _($\begin{eqnarray}
+    && 3 \cdot 4^{3} & + \\
+    && 1 \cdot 4^{2} & + \\
+    && 2 \cdot 4^{1} & + \\
+    && 3  & + \\
+    && 3 \cdot 4^{-1} & + \\
+    && 3 \cdot 4^{-2} & + \\
+    && 2 \cdot 4^{-3} & + \\
+    \end{eqnarray}_)
+    Bare lige for at hjælpe min OCD vil jeg også definere at _(A^0=1_). 
+    Jeg har altså defineret en ny regel der siger at 
+    <i>et hvilket som helst</i> tal opløftet til _(0_) giver _(1_). Selv
+    _(0_) opløftet til _(0_) giver _(1_)! 
+    Det virker totalt ulogisk og mærkeligt, men er dejligt fordi vi nu får:
+    _($\begin{eqnarray}
+    && 3 \cdot 4^{3} & + \\
+    && 1 \cdot 4^{2} & + \\
+    && 2 \cdot 4^{1} & + \\
+    && 3 \cdot 4^{0} & + \\
+    && 3 \cdot 4^{-1} & + \\
+    && 3 \cdot 4^{-2} & + \\
+    && 2 \cdot 4^{-3} & + \\
+    \end{eqnarray}_)
+    Nu ser det rigtig flot og homogent ud. Du vil se senere hen at denne
+    regel _(A^0=1_) generelt viser sig som et praktisk valg. 
+    </p>
+    <p class="t">
+    Du har nok hørt begrebet før, 
+    men vi kalder _(4_) i _(5^4_) for en <i>potens</i>. 
+    Vi siger at _(5_) er "opløftet" til "potensen" _(4_).
+    På engelsk er potens bare "exponent" eller "power". 
+    Man kan til en vis diskutabel grad af grammatisk
+    korrekthed sige "_(5_) til potensen _(4_)" ligesom
+    man på engelsk siger "_(5_) to the power of _(4_)" (hvilke
+    <i>er</i> helt korrekt på det sprog)
+    </p>
+
+    
+
+</html>

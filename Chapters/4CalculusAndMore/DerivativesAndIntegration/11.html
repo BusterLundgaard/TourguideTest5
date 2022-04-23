@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+
+
+    <h2>Arealet under en kurve og <i>integraler</i>: <br> Et vildt kraftig værktøj</h2>
+    <p class="t">
+    Alright, det er tid til at finde arealer. Sig vi gerne vil regne arealet under 
+    _(Cos(x)_) fra _(x=0_) til _(x=\pi/2=_) _(1.5707_).
+    Det virker meget svært, så vi kunne vælge i stedet bare at <i>approximere</i> arealet ved hjælp
+    af nogle simple rektangler:
+    </p>
+
+    <img class='Spic' style='width:55%' src='../../../Assets/Chapter4\DerivativesAndIntegrals\IntegralCos2.png'> 
+
+    <p class="t">
+    Hvis vi siger, at hver rektangel er _(0.2_) bred, er det her areal lige nu lig:
+    _($\begin{eqnarray} 
+        && 0.2*Cos(0)+0.2*Cos(0.2)+0.2*Cos(0.4) \text{ } + \\  
+        && 0.2*Cos(0.6) + 0.2*Cos(0.8)+0.2*Cos(1) \text{ } + \\
+        && 0.2*Cos(1.2)+0.2*Cos(1.4) = 
+    \end{eqnarray}
+    _)
+    _($\begin{eqnarray} 
+        && 0.2*1+0.2*0.980+0.2*0.921 \text{ } + \\  
+        && 0.2*0.825 + 0.2*0.696+0.2*0.540 \text{ } + \\
+        && 0.2*0.362+0.2*0.169 = 
+    \end{eqnarray}
+    _)
+    _($\begin{eqnarray} 
+        && 0.2+0.196+0.184 \text{ } + \\  
+        && 0.165 + 0.139+0.108 \text{ } + \\
+        && 0.072+0.034 = 
+    \end{eqnarray}
+    _)
+    _($1.0991_)
+    Vi siger altså bare højde gange bredde en masse gange, hvor bredden altid er _(0.2_), og 
+    højden er værdien på funktionen. Det er meget interessant dog, fordi
+    tal som f.eks. _(0.2*Cos(0.6)_) har også en lidt anden betydning. 
+    Vi ved, at _(Cos(x)_)
+    er hældningen på _(Sin(x)_). Vi ganger altså en hældning _(Cos(0.6)_) med 
+    en lille forskel _(0.2_). Hældning gange forskel giver ændring, så 
+    _(0.2*Cos(0.6)_) kan også ses som en approksimation af ændringen i _(Sin(x)_)
+    fra _(0.6_) til _(0.8_). Samme gælder de andre rektangler: 
+    _(0.2*Cos(0)_) er en approksimation af ændringen fra _(0_) til _(0.2_), 
+    _(0.2*Cos(0.2)_) en approksimation af ændringen fra _(0.2_) til _(0.4_)
+    osv. Når vi plusser alle de her ændringer - når vi plusser alle arealerne - 
+    får vi en approksimation
+    af ændringen i _(Sin(x)_) fra _(x=0_) til _(x=1.6_). Vi ved, at
+    _($\text{Hældning}*\text{Forskel}=\text{Ændring}_)
+    ... er mere præcist, jo mindre _(\text{Forskel}_) er, siden hældningen
+    giver os forskellen i _(y_), når man går "uendeligt" lidt fremad fra et punkt. 
+    Lige nu svarer _(\text{Forskel}_) til _(0.2_), så 
+    hver rektangel skal gøres tyndere, hvis vi søger
+    en mere præcis _(\text{Ændring}_):
+    </p>
+
+    <img class='SpicXL' style='width:100%' src='../../../Assets/Chapter4\DerivativesAndIntegrals\IntegralCos5.png'> 
+
+    <p class="t">
+    En mindre bredde har gjort denne sum af rektangler til en bedre approksimation
+    af ændringen i _(Sin(x)_), men også en bedre approksimation af
+    arealet! Hvis den her approksimation var <i>uendelig</i> god - hvis 
+    bredden var <i>uendelig tynd</i> - ville
+    _($\text{Sum af rektangler} = \text{Forskel i Sin}_)
+    ... og
+    _($\text{Sum af rektangler} = \text{Areal under Cos}_)
+    Ergo:
+    _($\text{Areal under Cos} = \text{Forskel i Sin}_)
+    Bum! Så let er det at finde arealet under _(Cos_)!
+    Hvis vi f.eks. 
+    er interesserede i arealet mellem _(0_) og _(\pi/2_), regner vi bare forskellen:
+    _($Sin(\pi/2)-Sin(0) = 1-0 = 1_)
+    Bum igen! Vi kan også se, at vores tidligere approksimation var relativ tæt på _(1_). 
+    Hvis vi gerne ville finde arealet mellem _(x=-0.35_) og _(x=0.6_), siger vi:
+    _($Sin(0.6)-Sin(-0.35) = 0.564 - (-0.342) = 0.905_)
+    Lad os tænke over, hvad der lige skete her, lidt mere generelt: Det eneste
+    vi bruger til at regne arealet under _(Cos(x)_), er det faktum, at
+    _(Cos(x)_) er lig hældningen af _(Sin(x)_). Siden _(Sin(x)_) er lig
+    hældningen til _(-Cos(x)_), kan vi også regne
+    arealet under _(Sin(x)_) mellem f.eks. _(x=0.52_) og _(0.7_) som:
+    _($(-Cos(0.7))-(-Cos(0.52)) = (-0.764)-(-0.867) = 0.1029_)
+    Vi brugte ingen egenskaber specifikke til _(Cos(x)_) eller _(Sin(x)_), så
+    det præcist samme trick virker også med andre funktioner! Sig at vi
+    søger arealet under _(x^2_) mellem _(x=-0.56_) og _(x=0.8_):
+    </p>
+
+    <img class='SpicXL' style='width:100%' src='../../../Assets/Chapter4\DerivativesAndIntegrals\IntegralXSquared.png'> 
+
+    <p class="t">
+    Vi kan relativt nemt se, at _(x^2_) er hældningen af 
+    _($x^3*(1/3)_)
+    ... Siden hældningen
+    af _(x^3_) er lig _(3x^2_), så at _((1/3)_) kan fjerne _(3_)'et.     
+    Derfor er vores areal lig:
+    _($ 0.8^3*(1/3) - (-0.56)^3*(1/3) = 0.2292_)
+    Så nemt er det!
+    </p>
+
+    <q-stion 1="11" 2="1">
+    Find arealet under _(y=x^3_) fra _(x=0.5_) til _(x=3_)
+    <img class='SpicXL' style='width:80%' src='../../../Assets/Chapter4\DerivativesAndIntegrals\XCubedIntegral.png'> 
+    <br><br></q-stion>
+    <answer-box>
+    Vi skal finde ud af, hvilken funktion _(x^3_) er hældningen af. 
+    Hældningen af _(x^4_) er _(4x^3_), så svaret
+    er _(x^4/4_). Nu kan vi bare regne:
+    _($3^4/4 - 0.5^4/4 = 20.23_)
+    <i>Note</i>: <br>
+    I stedet for _(3^4/4-0.5^4/4_), ville vi til tider skrive:
+    _($x^4/4 \Bigr|_{4} - x^4/4 \Bigr|_{0.5}_)
+    Den lille bar _(f(x)|_{a}_) fortæller os: "Evaluer _(f(x)_) ved _(x=a_)".
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="11" 2="2">
+    Find arealet under:
+    _($y=\frac{1}{1+x^2}_)
+    Fra _(x=-2_) til _(x=3_):
+    <img class='SpicXL' style='width:95%' src='../../../Assets/Chapter4\DerivativesAndIntegrals\IntegralArctanSortof.png'> 
+    <br></q-stion>
+    <answer-box>
+    Vi ved, at _(1/(1+x^2)_) er hældningen af _(Arctan(x)_). Derfor regner vi:
+    _($Arctan(3) - Arctan(-2) = 1.249 - (-1.107) = 2.356_)
+    Voila! 
+    <br><br></answer-box>
+
+    <q-stion 1="11" 2="3">
+    Find arealet under 
+    _($y=1.1x^3 - 2.4x^2 + x + 0.7_) 
+    fra _(x=0.2_) til _(x=1.9_)
+    <img class='SpicXL' style='width:87%' src='../../../Assets/Chapter4\DerivativesAndIntegrals\PolynomialIntegral1.png'> 
+    <br><br></q-stion>
+    <answer-box>
+    Hvad er 
+    _($1.1x^3 - 2.4x^2 + x + 0.7_) 
+    hældningen af? Well, for at <i>differentiere</i> flere funktioner der er plusset
+    med hinanden, skal man bare differentiere hver funktion for sig. 
+    Der er en bestemt funktion der korresponderer til _(1.1x^3_), en 
+    bestemt der korresponderer til _(-2.4x^2_), en bestemt til _(x_) og en bestemt til _(0.7_).
+    Vi kan finde disse funktioner, plusse dem, og få vores svar!
+    <p class="t">
+    _(x^3_) er hældningen af _(x^4/4_), så _(1.1x^3_) er hældningen af _(1.1x^4 / 4_). 
+    Præcis samme logisk kan vi bruge på de andre led: _(x^3/3_) er hældningen af
+    _(x^2_), så _(-2.4x^3/3_) er hældningen af _(-2.4x^2_), osv. _(x_) er selvfølgelig
+    bare _(x^2/2_) og _(0.7_) er _(0.7x_). Alt i alt:
+    _($\frac{1.1x^4}{4} - \frac{2.4x^3}{3} + \frac{x^2}{2} + 0.7x_)
+    Arealet kan derfor regnes som forskellen i denne funktion mellem _(x=1.9_) og _(x=0.2_).
+    Derfor regner vi: 
+    _($\begin{eqnarray}
+    && & \frac{1.1(1.9)^4}{4} - \frac{2.4(1.9)^3}{3} + \frac{(1.9)^2}{2} + 0.7(1.9) & - \\ \\
+    && \Bigl( & \frac{1.1(0.2)^4}{4} - \frac{2.4(0.2)^3}{3} + \frac{(0.2)^2}{2} + 0.7(0.2) \Bigr) & = 
+    \end{eqnarray}_)
+    _($1.0775_)
+    Sådan!
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="11" 2="4">
+    Samme funktion som i sidste opgave, prøv nu bare at regne arealet mellem
+    _(x=-0.8_) og _(x=-0.2_): 
+    <img class='SpicXL' style='width:42%' src='../../../Assets/Chapter4\DerivativesAndIntegrals\PolynomialIntegral2.png'> 
+    <br><br></q-stion>
+    <answer-box>
+    Vi regner:
+    _($\begin{eqnarray} 
+    && (0.275*(-0.2)^4 - 0.8*(-0.2)^3 + 0.5*(-0.2)^2 + 0.7*(-0.2)) & - \\
+    && (0.275*(-0.8)^4 - 0.8*(-0.8)^3 + 0.5*(-0.8)^2 + 0.7*(-0.8)) & = \\
+    \end{eqnarray}_)
+    _($ -0.3953 _)
+    Et ... <i>negativt</i> areal? Et areal <i>under</i> x-aksen svarer til, at 
+    forandringen går <i>nedad</i>, siden vi har en <i>negativ</i> hældning
+    gange en lille forandring. Mellem _(-0.2_) og _(-0.8_) er der både
+    positivt og negativt areal, men mere negativt end det positive. Derfor
+    er det "samlede" areal lig _(-0.3953_). 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="11" 2="5">
+    Find arealet under _(y=e^x_) fra _(x=-1.2_) til _(x=2.3_)
+    <img class='SpicXL' style='width:61%' src='../../../Assets/Chapter4\DerivativesAndIntegrals\exponentialIntegral1.png'> 
+    <br><br></q-stion>
+    <answer-box>
+    _(e^x_) er lig hældningen af _(e^x_). Vi regner derfor:
+    _($e^{2.3}-e^{-1.2} = 9.672_)
+    Voila! 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="11" 2="6">
+    Find arealet under _(y=6*1.2^x_) fra _(x=-4.5_) til _(x=3.9_)
+    <img class='SpicXL' style='width:67%' src='../../../Assets/Chapter4\DerivativesAndIntegrals\exponentialIntegral2.png'> 
+    <br><br></q-stion>
+    <answer-box>
+    Når man differentierer _(1.2^x_) får man 
+    _($Ln(1.2)*1.2^x_)
+    Vi vil gerne gange med _(6_) i stedet for _(Ln(1.2)_), så vi siger bare:
+    _($\frac{6}{Ln(1.2)}*1.2^x_)
+    Nu forsvinder _(Ln(1.2)_) når vi differentierer, og vi står tilbage med _(6_). Det
+    her er funktionen vi leder efter! Vi kan nu regne:
+    _($\frac{6}{Ln(1.2)}*1.2^{3.9} - \frac{6}{Ln(1.2)}*1.2^{-4.5} = 52.519_)
+    Bum!
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="11" 2="7">
+    Find arealet under 
+    _($y=7/x_) 
+    Fra _(x=1.5_) til _(x=5_)
+    <img class='SpicXL' style='width:69%' src='../../../Assets/Chapter4\DerivativesAndIntegrals\1DividedByXIntegral.png'> 
+    <br><br></q-stion>
+    <answer-box>
+    Hvis vi husker tilbage, ved vi at hældningen af _(Ln(x)_) er _(1/x_).
+    Det betyder også, at _(7/x_) er hældningen til _(7Ln(x)_), så arealet kan regnes som:
+    _($7*Ln(5) - 7*Ln(1.5) = 8.427_)
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="11" 2="8">
+    Find arealet under 
+    _($y=e^x*(2x+x^2)_) 
+    Fra _(x=-6_) til _(x=0.5_)
+    <img class='SpicXL' style='width:98%' src='../../../Assets/Chapter4\DerivativesAndIntegrals\StrangeIntegral.png'> 
+    <br><br></q-stion>
+    <answer-box t="h">
+    Når vi differentierer _(f(x)*g(x)_) får vi 
+    _($f'(x)*g(x)+g'(x)*f(x)_)
+    Kan det bruges til noget i vores tilfælde?
+    <br><br></answer-box>
+    <answer-box>
+    Lad os se, om vi kan omskrive dette, til noget vi lettere kan genkende:
+    _($e^x*(2x+x^2) = e^x*2x + e^x*x^2 _)
+    Wild shot: Vi har to led, hvor to ret forskellige funktioner er ganget med hinanden.
+    Passer det her måske til
+    _($f'(x)*g(x) + g'(x)*f(x)_)
+    ... eller? Svaret er ja! _(2x_) er hældningen af _(x^2_), og _(e^x_) er hældningen af ... _(e^x_)! 
+    Så:
+    _($¤x[e^x*x^2] = e^x*2x + e^x*x^2_)
+    Det betyder, at vi skal regne:
+    _($e^{0.5}*0.5^2 - e^{-6}*(-6)^2 = 0.3229_)
+    Perfekt!
+    <br><br></answer-box>
+
+    <!--  -->
+
+
+    
+    
+    
+    
+    
+    
+
+
+
+
+
+
+
+
+

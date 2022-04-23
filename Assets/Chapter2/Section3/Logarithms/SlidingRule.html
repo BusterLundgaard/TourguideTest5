@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+
+    <body>
+
+        <div style="position: relative;">
+            <canvas id="BACK" width="1524" height="180" style="position: absolute; left: 0; top: 0; z-index: 1;"></canvas>
+            <!-- BACKGROUND -->
+            <canvas id="L1" width="1524" height="180" style="position: absolute; left: 0; top: 0; z-index: 2;"></canvas>
+            <!-- Slider 2 -->
+            <canvas id="L2" width="1524" height="180" style="position: absolute; left: 0; top: 0; z-index: 3;"></canvas>
+            <!-- Slider 3 -->
+            <canvas id="L3" width="1524" height="180" style="position: absolute; left: 0; top: 0; z-index: 4;"></canvas>
+        </div>
+
+        <script>
+            var BackCan = document.getElementById("BACK"); var BackCtx = BackCan.getContext("2d");
+            var SCan1 = document.getElementById("L1"); var SCtx1 = SCan1.getContext("2d");
+            var SCan2 = document.getElementById("L2"); var SCtx2 = SCan2.getContext("2d");
+            var SCan3 = document.getElementById("L3"); var SCtx3 = SCan3.getContext("2d");
+
+            //Set white background:
+            BackCtx.beginPath();
+            BackCtx.rect(0,0,1524,180);
+            BackCtx.fillStyle="#ffffff";
+            BackCtx.fill();
+
+            //Set images for canvas:
+            var sliderImg = document.createElement("img"); sliderImg.src = "LogRuler.png";           
+            sliderImg.onload = function() {
+                SCtx1.translate(0,0);   SCtx1.drawImage(sliderImg,0,0);
+                SCtx2.translate(0,90);  SCtx2.drawImage(sliderImg,0,0);
+                SCtx3.translate(0,180); SCtx3.drawImage(sliderImg,0,0);
+            }
+            var x1=0; var x2=0; var x3=0;
+
+            //Event input-system (for elegant removal):
+            var keyPairs = [];
+            var AddRemoveInput = function (inputType, addOrRemove, eventToExecute) {
+                if (addOrRemove) {
+                    keyPairs.push({ IType: inputType, Action: eventToExecute })
+                    SCan3.addEventListener(inputType, eventToExecute);
+                }
+                else {
+                    var indexesToRemove = [];
+                    for (let i = 0; i < keyPairs.length; i++) {
+                        if (keyPairs[i].IType == inputType) { indexesToRemove.push(i); }
+                    }
+                    if (indexesToRemove.length != 0) {
+                        for (let i = indexesToRemove.length - 1; i > -1; i--) {
+                            SCan3.removeEventListener(inputType, keyPairs[indexesToRemove[i]].Action);
+                            keyPairs.splice(indexesToRemove[i], 1)
+                        }
+                    }
+                }
+            }
+            var EmptyInputs = function () {
+                for (let i = 0; i < keyPairs.length; i++) {
+                    SCan3.removeEventListener(keyPairs[i].IType, keyPairs[i].Action);
+                }
+                keyPairs = [];
+            }
+
+            //Mouse input:
+            var cursor = {x:0, y:0};
+            var getCursorPosition = function (event) {
+                const rect = SCan3.getBoundingClientRect()
+                cursor.x = event.clientX - rect.left
+                cursor.y = event.clientY - rect.top
+            }
+            SCan3.addEventListener("mousemove", function (e) {
+                getCursorPosition(e);
+            })
+
+            //Set up states for state-machine:
+            var States = {
+                MAIN: 1,
+                toSLIDING: 2, SLIDING: 3,
+            }
+            var State = States.MAIN;
+
+            var chosenCTX; var movex; 
+            var movePoint; var oldx;
+
+            //Actual state-machine:
+            var step = function() {
+            switch(State) {
+                case States.MAIN:
+
+                    EmptyInputs();
+
+                    AddRemoveInput("mousedown",true,function() {
+                        if(cursor.y>180) {
+                            console.log("TO SLIDE X3");
+                            chosenCTX=SCtx3; movex=x3; 
+                            State=States.toSLIDING; step();
+                        }
+                        else if(cursor.y>90) {
+                            console.log("TO SLIDE X2");
+                            chosenCTX=SCtx2; movex=x2;
+                            State=States.toSLIDING; step();
+                        }
+                        else {
+                            console.log("TO SLIDE X1");
+                            chosenCTX=SCtx1; movex=x1;
+                            State=States.toSLIDING; step();
+                        }
+                    AddRemoveInput("mousedown",false,null);})
+
+                break;
+
+                case States.toSLIDING:
+
+                    movePoint = cursor.x;
+                    oldx=movex;
+
+                    AddRemoveInput("mouseup",true,function() {
+                        
+                        if(chosenCTX==SCtx1) {x1=movex;}
+                        if(chosenCTX==SCtx2) {x2=movex;}
+                        if(chosenCTX==SCtx3) {x3=movex;}
+
+                        State=States.MAIN; step();
+                    AddRemoveInput("mouseup",false,null);})
+
+                    State=States.SLIDING; step();
+
+                break;
+
+                case States.SLIDING:
+
+                    chosenCTX.clearRect(0,0,1524,270);
+                    movex=oldx + cursor.x - movePoint;
+                    chosenCTX.drawImage(sliderImg,movex,0);
+
+                    BackCtx.beginPath();
+                    BackCtx.rect(0,0,1524,180);
+                    BackCtx.fillStyle="#ffffff";
+                    BackCtx.fill();
+
+                    requestAnimationFrame(step);
+
+                break;
+            }
+            }
+
+            step();
+
+        </script>
+
+        </body>
+    
+
+    </html>

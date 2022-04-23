@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+
+
+  <p class="t">
+  De næste par opgaver er designede til at highlighte nogle problemer med den måde
+  vi har løst sandsynlighedsproblemer på indtil videre. Lav dem, og så skal
+  det nok give lidt mere mening hvordan de hænger sammen: 
+  </p>
+
+  <q-stion 1="2" 2="1" 3="5">
+  Lad os prøve at kigge på den her "spin-the-wheel" ting igen:
+  <img class='SpicB' style='width:80%' src='../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\SpinTheWheel.png'> 
+  <p class="t">Hvad er chancen for at man på _(7_) slag kun rammer de hvide? Hver gang du rammer 1 plads,
+  så er den <i>taget</i>. Du kan ikke lande på den igen. </p>
+  <br></q-stion>
+  <answer-box>
+  Der er i alt _(17_) pladser og _(7_) hvide. Chancen for at vi rammer en hvid <i>i første runde</i> er 
+  altså ligesom før _(\frac{7}{17}_). I _(\frac{6}{16}_) procent 
+  af de tilfælde hvor vi har slået hvid første gang, der slår vi også hvid anden gang. 
+  Nu er der jo kun _(16_) pladser tilbage, _(6_) af hvilke er hvide! 
+  Derfor er der _(\frac{7}{17}*\frac{6}{16}_) procent
+  chance for at ramme to hvide pladser itræk. I _(\frac{5}{15}_) procent af de tilfælde hvor vi lander på hvid to gange itræk
+  lander vi også der tredje gang. Samme gælder fjerde spin, femte spin, sjette spin, osv:
+  _($\frac{7}{17}*\frac{6}{16}*\frac{5}{15}*\frac{4}{14}*\frac{3}{13}*\frac{2}{12}*\frac{1}{11} = 0.00005141916_)
+  <br></answer-box>
+
+  <q-stion 1="2" 2="1" 3="5">
+  Sig at der nede i en pose er _(4_) røde kasser, _(6_) røde kugler, _(2_) gule kasser og _(9_) gule kugler.
+  Hvad er chancen for at du <i>enten</i> trækker en et rødt objekt op, <i>eller</i> trækker en kasse op? 
+  <br><br></q-stion>
+  <answer-box>
+  Det er <i>ikke</i> bare 
+  _($\frac{\text{mængden af røde objekter} + \text{mængden af kasser}}{4+6+2+9}_)
+  da der jo også findes <i>røde kasser</i> - objekter der har begge egenskaber. Derfor siger vi:
+  _($\frac{(4+6) + (4+2) - 4}{4+6+2+9} = \frac{12}{21}_) 
+  <br></answer-box>
+
+  <q-stion 1="2" 2="1" 3="5">
+  Hvad er chancen for at du først trækker et rødt kort, så trækker en ruder, og så trækker en konge? 
+  Efter hvert træk <i>lægger du ikke kortet tilbage igen</i>. Det her er en relativ svær opgave,
+  og der er en god del beregning til sidst (selvfølgelig i forhold til hvordan du går den an) i den. 
+  <p class="t">
+  Bare like en hurtig reminder: Der er _(52_) kort, med _(13_) af hver type. 
+  </p>
+  <br></q-stion>
+  <answer-box>
+  Det faktum at vi ikke lægger kortet tilbage gør alting mere kompliceret. Hvad hvis det første kort
+  vi trækker er en ruder? Så er der _(\frac{12}{55}_) og ikke _(\frac{13}{55}_) chance for at det næste
+  træk lykkedes. Hvad hvis det er en konge vi trækker? Eller en ruder-konge? I andet valg
+  kan vi også trække en konge hvilke forvirre sagen yderligere:
+  <img class='Spic' style='width:70%' src='../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\HardProbability1.png'> 
+  <p class="t">Vi er nødt til at regne alle de her tilfælde og lægge chancerne sammen:
+  _($\begin{eqnarray} 
+    && (t_{1,1})          & : & \frac{1}{52}*\frac{12}{51}*\frac{3}{50}  & = & 0.00027149 \\
+    && (t_{1,2}, t_{2,1}) & : & \frac{1}{52}*\frac{1}{51}*\frac{2}{50}   & = & 0.00001538 \\
+    && (t_{1,2}, t_{2,2}) & : & \frac{1}{52}*\frac{12}{51}*\frac{3}{50}  & = & 0.00027149 \\   
+    && (t_{1,3}, t_{2,1}) & : & \frac{12}{52}*\frac{1}{51}*\frac{3}{50}  & = & 0.00027149 \\ 
+    && (t_{1,3}, t_{2,2}) & : & \frac{12}{52}*\frac{11}{51}*\frac{4}{50} & = & 0.00398190 \\ 
+    && (t_{1,4}, t_{2,1}) & : & \frac{12}{52}*\frac{1}{51}*\frac{3}{50}  & = & 0.00027149 \\
+    && (t_{1,4}, t_{2,2}) & : & \frac{12}{52}*\frac{12}{51}*\frac{4}{50} & = & 0.00434390 
+  \end{eqnarray}_)
+  Hvis du ikke forstår hvordan jeg kom frem til de tal, så lad mig lige give et eksempel:
+  _(t_{1,3}, t_{2,1}_). Her trækker vi ved første træk et rødt kort, der også er en ruder,
+  men ikke er en konge. Ved andet træk får vi en ruder, som også skal være en konge. Ved
+  sidste træk får vi en konge. Der er _(13_) ruder kort, og de tæller alle sammen som
+  "røde". _(1_) af dem er konge, så _(12_) er "ikke-konge". Der er _(52_) kort i alt, så
+  første chance er _(12/52_). Ved næste træk skal vi få en konge som også er ruder.
+  Dem er der som sagt kun _(1_) af, så det bliver _(1/51_). Der er nu _(3_) konger tilbage i dækket
+  på nu _(50_) kort, så sidste chance er _(3/50_)
+  </p>
+  <p class="t">
+  Når vi lægger sandsynlighederne sammen får vi en chance på _(0.009427143406_) eller
+  mere intuitivt _(0.9427_)%. Så lidt under _(1_)% chance for at det sker. 
+  </p>
+  <br></answer-box>
+
+  <p class="t">
+  De sidste par opgaver har ærligt talt været lidt et rod. 
+  Generalt her med sandsyndlighedsopgaverne
+  virker det næsten som om vi er nødt til at opfinde en ny strategi hver opgave! 
+  Vi kommer aldrig tæt på at finde <i>en</i> måde at løse sandsyndlighedsopgaver, men vi
+  burde alligevel til en eller anden grad prøve at strukturere vores proces. Hvornår
+  kan man dele problemet op i mindre sandsyndligheder ganget med hinanden? Hvornår kan
+  man plusse sandsyndligheder? Vi tæller mange forskellige ting, men følger
+  de generelt nogle kategorier? Hvad gør vi hvis vi skal evaluere en svær og lang sum?
+  Udover at være rent praktisk, så vil det også hjælpe os med at forstå om vores svar 
+  <i>faktisk er korrekt</i>. Vi har brugt lidt intuitionsargumenter i nogle af de tidligere opgaver,
+  hvilke vi gerne vil undgå at skulle gøre hele tiden. 
+  Siden der er <i>så</i> mange situationer sandsyndlighedsteori kan modellere og arbejde med,
+  så er vores teori også nødt til at være ret abstrakt. 
+  </p>
+  <p class="t">
+  Som sagt så var det fundamentale sandsynlighedsprincip at:
+  _($p=\frac{\text{Antal måder det kan ske på}}{\text{Samlet antal af mulige ting der kan ske}}_)
+  Lad os sige at vi skriver ned alle de forskellige ting der muligt kan ske, og kalder
+  det for vores <i>udfaldsrum</i> ("sample space" på engelsk) _(S_). F.eks hvis vi kastede med terninger så ville 
+  _($S=\{\text{Slå 1}, \text{Slå 2}, \text{Slå 3}, \text{Slå 4}, \text{Slå 5}, \text{Slå 6} \}_)
+  Hvis vi træk et kort fra et dæk, så ville _(S_) være markant større som  
+  _($S=\{ \text{Træk spar 1}, \text{Træk spar 2}, \text{Træk spar 3}, ... \}_)
+  Et tredje eksempel kunne være:
+  _($S=\{\text{Plat}, \text{Krone}\}_) 
+  hvis vi slår plat eller krone. Hvis vi skal
+  fordele _(6_) personer (person 1, person 2, ...) på 4 stole og bekymre os om 
+  <i>kombinationerne</i>, så kunne vi sige at _(S_) var:
+  <div style="margin-left:-70px;">
+      _($S = \{1 2 3 4, 1 2 3 5, 1 2 3 6, 1 2 4 5, 1 2 4 6, 1 2 5 6, 1 3 4 5, 1 3 4 6, 1 3 5 6, 1 4 5 6, 2 3 4 5, 2 3 4 6, 2 3 5 6, 2 4 5 6, 3 4 5 6\}_)  
+  </div>
+  Hvis vi slog en terning to gange så ville _(S_) være
+  _($S =  
+  \begin{Bmatrix}
+  11 & 12 & 13 & 14 & 15 & 16 \\
+  21 & 22 & 23 & 24 & 25 & 26 \\
+  31 & 32 & 33 & 34 & 35 & 36 \\
+  41 & 42 & 43 & 44 & 45 & 46 \\
+  51 & 52 & 53 & 54 & 55 & 56 \\
+  61 & 62 & 63 & 64 & 65 & 66 \\
+  \end{Bmatrix} 
+  _)
+  <p class="t">
+  Det var den ene del af brøkken: "<i>Samlet antal af mulige ting der kan ske</i>". Den anden
+  del var "<i>Antal måder det kan ske på</i>". Her gør vi præcis det samme: Vi laver en liste over alle
+  de mulige måder "det" kan ske på. Vi kalder det for <i>begivenheder</i>.  
+  Hvis vi gerne vil slå et lige tal med en terning, så kunne den begivenhed _(A_) være 
+  _($A=\{\text{Slå 2}, \text{Slå 4}, \text{Slå 6} \}_)
+  Hvis vi gerne ville trække konger, så var begivenheden _(A_) lig 
+  _($\{\text{Konge spar}, \text{Konge ruder}, \text{Konge kløver}, \text{Konge hjerter} \}_)
+  I samme situation ville vi måske gerne også trække et billedekort fra spar. Det kunne
+  ses som en begivenhed  
+  _($B = \{\text{Knægt spar}, \text{Dronning spar}, \text{Konge spar}\}_)
+  Begivenheden for at du vinder hvis du har stemt på plat er:
+  _($A = \{\text{Plat}\}_)
+  Hvis vi, person 1, gerne vil side på en af de fire stole:
+  _($A = \{1 2 3 4, 1 2 3 5, 1 2 3 6, 1 2 4 5, 1 2 4 6, 1 2 5 6, 1 3 4 5, 1 3 4 6, 1 3 5 6, 1 4 5 6\}_)  
+  Man siger at begivenheden er et <i>subsæt</i> af udfaldsrummet. Udfaldsrummet har elementer begivenheden
+  ikke har, men begivenheden har kun elementer der er i udfaldsrummet. Sandsyndligheden
+  for at få en eller anden begivenhed _(A_) skriver vi _(P(A)_) (fra "probability"). 
+  Kigger vi tilbage på brøken, så er 
+  <i>"samlet antal af mulige ting der kan ske"</i> lig <i>antallet af elementer</i> i 
+  udfaldsrummet, og <i>"antal måder det kan ske på"</i> lig <i>antallet af elementer</i> i
+  begivenheden. Mængden af elementer i et eller andet sæt _(A_) skriver vi ofte _(|A|_), så: 
+  _($P(A)=\frac{|A|}{|S|}_)
+  En af fordelene ved at se på det sådan her i forhold til begivenheder er at vi
+  lettere kan dele et problem op i mindre dele. I problemet med røde og gule kasser og kugler, der kunne
+  vi nemt definere to begivenheder:
+  _($\begin{eqnarray} 
+  && A & = & \text{Objektet er rødt} \\
+  && B & = & \text{Objektet er en kasse} \\
+  \end{eqnarray}_)
+  I opgaven skulle vi finde chancen for at få et rødt objekt, <i>eller</i> en kasse. 
+  Ordet "eller" kan vi tyde som at man skal <i>sammensætte</i> begivenheds-sættene: 
+  _($\begin{eqnarray} 
+  && A & = & \{kasse_1,kasse_4,kasse_6,kasse_8\} \\
+  && B & = & \{kasse_2,kasse_7,kasse_9,kasse_8,kasse_{12},kasse_4\} 
+  \end{eqnarray}_)
+  _($"A \text{ eller } B " \text{ } = _)
+  _($\{kasse_1,kasse_6,kasse_2,kasse_7,kasse_9,kasse_8,kasse_12,kasse_4\}_)
+  Man kan så let tælle sig til at _("A \text{ eller } B "_) har _(8_)
+  elementer. I stedet for "eller" så plejer vi at bruge symbolet _(\cup_), kaldt
+  "union". Det er altså symbolet der refererer til sammensætning af sæts, 
+  og som du kan se så var der ingen gentagede elementer i _(A \cup B_). 
+  Det ville resultere i overtælning: </p> 
+  <img class='Spic' style='width:60%' src='../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\UnionIntersection.png'> 
+  <p class="t">
+  Hvis sammensætning kunne modellere "eller", så kan <i>skæring</i> ("intersection"), _(\cap_),
+  modellere "og". Her skal <i>begge</i> begivenheder ske, så det er altså et sæt af 
+  af de <i>delte</i> elementer i to begivenheder. Hvis _(A,B_) igen var "rødt objekt", "kasse", så ville
+  _(A \cap B_) være "rød kasse" lig _(\{kasse_4,kasse_8\} _).
+  </p>
+  <p class="t">
+  Siden fælleselementer ikke skal dobbelttælles, så er størrelsen af _(A \cup B_) logisk nok:
+  _($|A \cup B| = |A| + |B| - |A \cap B|_)
+  Hvilket også med det samme giver:
+  _($|A \cap B| = |A| + |B| - |A \cup B|_)
+  Sådan her kan man altså relativt hjerneløst finde sammensætningen givet man har fællesmængden,
+  eller fællesmængden givet man har sammensætningen. 
+  </p>
+
+  <q-stion 1="2" 2="1" 3="5">
+  Se følgende billede:
+  <img class='Spic' style='width:75%' src='../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\CircleIntersection1.png'> 
+  <p class="t">
+  Hvad er arealet af den fulde figur, hvis: cirkel _(A_) har et areal på _(78.53_), _(B_) et areal på _(63.617_), _(C_) et areal på _(411.511_),
+  skæringen mellem _(A_) og _(B_) er _(10.68_), _(A_) og _(C_) _(16.9_), _(B_) og _(C_) _(14_), og skæringen mellem alle cirklerne
+  er _(3.58_) stor. 
+  </p>
+  <br></q-stion>
+  <answer-box>
+  Du kan se princippet her:
+  <img class='Spic' style='width:80%' src='../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\CircleIntersection2.png'>
+  <p class="t">Det er altså bare _(A + B + C - (I_1 + I_2 + I_3) + S_), siden vi skal fjerne de dele vi overtæller 
+  med _(A+B+C_), men ikke "overfjerne" de dele _(I_1,I_2,I_3_) deler. 
+  Det bliver i vores tilfælde til 
+  _($78.53+63.617+411.511-(10.68+16.9+14)+3.58=_)
+  _($518.658_)
+  Det er fint og godt, men hvad har det her at gøre med sets?
+  Well, sæts kan nemt visualiseres på præcist samme måde jeg visualiserede de
+  tre cirkler _(A_), _(B_), _(C_). Det argument jeg brugte lige før ville jeg virke
+  lige meget hvordan _(A_), _(B_) og _(C_) så ud! Hvis du skal finde
+  mængden af elementer _(A \cup B \cup C_), så skal du først tælle 
+  alle elementer _(|A|+|B|+|C|_), så fjerne de overtalte elementer 
+  _(|A \cap B|+|A \cap C|+|B \cap C|_), og så plusse med det 
+  "over-fjernede" elementer _(|A \cap B \cap C|_). Bum! 
+  </p>
+  <p class="t">
+  Man kan nemt se hvordan man kan fortsætte argumentet når man arbejder med
+  fire sæts _(A_), _(B_), _(C_), _(D_), eller flere. 
+  </p>
+
+  <br></answer-box>
+
+  <q-stion 1="2" 2="1" 3="5">
+  I dit tøjskab ved du at du har følgende sokker:
+  <div style="text-align:center;">
+      <ul style="display: inline-block; text-align: left; padding-left:0%; list-style:none;">
+        <li> _(6_) Grønne ternede</li>
+        <li> _(4_) Grønne prikkede </li>
+        <li> _(3_) Grønne normale </li>
+        <li> _(6_) Røde ternede </li>
+        <li> _(7_) Røde prikkede </li>
+        <li> _(5_) Røde normale </li>
+        <li> _(4_) Blå ternede </li>
+        <li> _(9_) Blå prikkede </li>
+        <li> _(7_) Blå normale </li>
+      </ul>
+  </div>
+  Hvad er chancen for at du trækker en sok der enten er rød, grøn, eller prikket?
+  <br><br></q-stion>
+  <answer-box> 
+  Vi leder efter en sandsynlighed. Vi skal altså finde mængden af sokker der opfylder 
+  vores krav, divideret med den totale mængde sokker _(6+4+3+6+7+5+4+9+7_) _(=51_).
+  <p class="t">
+  Lad _(A_) være begivenheden at jeg trækker en sok der er rød, _(B_) begivenheden at jeg
+  trækker en sok der er grøn, og _(C_) begivenheden at jeg trækker en prikket sok.
+  Vi leder nu efter _(|A \cup B \cup C|_), som vi ved kan findes med formlen:
+  _($|A| + |B| + |C| - |A \cap B| - |A \cap C| - |B \cap C| + |A \cap B \cap C|_)
+  _(|A|_) er lig _(6+7+5=_) _(18_), _(|B|=_) _(6+4+3=_) _(13_), og _(|C|_) lig 
+  _(4+7+9=_) _(20_). Der findes ingen sokker som både er røde og grønne, så
+  _(|A \cap B|=_) 0. Siden _(|A \cap B|=_) _(0_), så er _(|A \cap B \cap C|_) også
+  _(0_). _(A \cap C_) er de røde prikkede sokker, så _(|A \cap C|_) er _(7_), og
+  _(|B \cap C|_) er antal grønne prikkede, ergo _(4_). Alt i alt:
+  _($18+13+20-0-7-4+0=40_)
+  Sandsynligheden bliver altså:
+  _($\frac{40}{51} = 0.7843_)
+  Så lidt under _(80_)% chance. 
+  </p>
+  <br></answer-box>
+
+  <q-stion 1="2" 2="1" 3="5" customWidth="600">
+  Du har _(32_) ternede, _(40_) røde, _(15_) prikkede sokker, _(50_) sokker
+  der enten er røde, ternede, eller prikkede, _(43_) der enten er prikkede eller ternede,
+  _(44_) der enten er røde eller ternede, og _(17_) der både er røde og prikkede. 
+  Hvor mange sokker har du der både er røde, prikkede, og ternede? 
+  <br><br></q-stion>
+  <answer-box customWidth="600">
+  Kald _(A_) begivenheden hvor vi får en rød sok, _(B_) prikket sok, og _(C_) ternet sok.
+  Vi leder nu efter _(|A \cap B \cap C|_). Det her vi ikke nogen direkte formel for,
+  men vi ved at:
+  _($|A \cup B \cup C| = |A| + |B| + |C| - |A \cap B| - |A \cap C| - |B \cap C| + |A \cap B \cap C|_)
+  Vi kunne nu prøve at isolere _(|A \cap B \cap C|_) og få:
+  _($|A \cap B \cap C| = |A \cup B \cup C| - |A| - |B| - |C| + |A \cap B| + |A \cap C| + |B \cap C|_)
+  Vi kender _(|A \cup B \cup C|_) som er lig _(50_). Vi 
+  kender også _(|A|=40_), _(|B|=15_) og _(|C|=32_). Til sidst så kender vi 
+  _(|A \cap B|_) _(=17_), da det svarer til "både røde og prikkede". Alt
+  det her giver os nu:
+  _($|A \cap B \cap C| = 50 - 40 - 15 - 32 + 17 + |A \cap C| + |B \cap C| \to_)
+  _($|A \cap B \cap C| = -20 + |A \cap C| + |B \cap C|_)
+  Vi har _(|A \cup C|_) og _(|B \cup C|_), da de svarer til
+  "enten røde eller ternede" _(=44_) og "prikkede eller
+  ternede" _(=43_). Vi kender dog ikke _(|A \cap C|_) eller 
+  _(|B \cap C|_). Vi kender formlen _(|a \cap b|=|a|+|b|-|a \cup b|_), så lad os
+  omskrive:
+  _($-20 + (|A|+|C|-|A \cup C|) + (|B|+|C|-|B \cup C|) = _)
+  _($-20+(40+32-44)+(15+32-43)=_)
+  _($12_)
+  Bum!
+  <p class="t">
+  Hvis vi går igennem processen her lidt mere generelt, så får vi formlen:
+  _($|A \cap B \cap C| = |A|+|B|+|C| - |A \cup B| - |A \cup C| - |B \cup C| + |A \cup B \cup C|_)
+  Ligesom den anden formel, så kan man let udvide den med flere begivenheder.
+  </p>
+  <br></answer-box>
+
+  <p class="t">
+  Vi har tænkt over "eller" og "og", men et andet vigtig element i mange opgaver er <i>tid</i>.
+  Nogle begivenheder sker <i>efter</i> andre begivenheder, og ofte har begivenheder
+  også <i>indflydelse på hinanden</i>. Et simpelt eksempel først kunne være at 
+  vi træk kort fra en bunke og <i>ikke</i> lagde dem tilbage. Det var jo hvad
+  den tredje opgave på denne side handlede om! Sig at vi træk fra
+  en bunke kort, og kiggede på to begivenheder:
+  _($\begin{eqnarray} 
+  && A & = & \text{Rødt kort i første træk} \\
+  && B & = & \text{Rødt kort i andet træk} \\
+  \end{eqnarray}_)
+  Begivenhed _(A_) har tydeligvis indflydelse på begivenhed _(B_): Hvis
+  vi trækker et rødt kort i første runde, så er der mindre chance for også 
+  at trække et rødt i anden runde, da der nu kun er _(25_) i stedet for
+  _(26_) kort at vælge imellem. Så i det éne tilfælde er
+  chancen _(\frac{26}{51}_), og i det andet tilfælde _(\frac{25}{51}_). 
+  Alt i alt så er chancen _(P(B)_) lig:
+  _($P(B) = \frac{26}{52}*\frac{25}{51}+\frac{26}{52}*\frac{26}{51} = 0.5_)
+  Det her giver super meget mening! Når èn begivenhed har indflydelse på en anden,
+  så deler vi det bare op i to tilfælde: Når begivenheden er sand, og 
+  når begivenheden ikke er sand! I dette tilfælde er chancen for at den er sand (rød i første runde) 
+  lig _(\frac{26}{52}_), og chancen for at den ikke er sand
+  (sort i første) er også lig _(\frac{26}{52}_). 
+  Helt generelt så kan man sige, at hvis en eller anden begivenhed _(A_) har indflydelse på 
+  den begivenhed vi prøver at beregne _(B_), så bruger vi formlen:
+  _($\begin{eqnarray} 
+  & P(B) = & P(A) & *P(B \text{ antaget at } A \text{ er sandt}) & + \\
+  &        & P(\text{ikke } A) & *P(B \text{ antaget at } A \text{ ikke er sandt}) 
+  \end{eqnarray}
+  _)
+  Så hvis f.eks:
+  _($\begin{eqnarray} 
+  && A & = & \text{Ruder i første træk} \\
+  && B & = & \text{Rødt i andet træk}
+  \end{eqnarray}_)
+  Så ville _(P(B)_) være:
+  _($P(B)=\frac{13}{52}*\frac{25}{51}+\frac{39}{52}*\frac{26}{51}=0.5049_)
+  Hvis jeg gerne vil finde chancen for at få både _(A_) og _(B_) samtidigt,
+  så er det selvfølgelig lidt simplere:
+  _($P(A \cap B)=P(A)*P(B \text{ antaget at } A \text{ er sandt})_)
+  I stedet for "_(B_) antaget at _(A_) er sandt" så skriver vi bare
+  _(B|A_). I stedet for "ikke", så plejer vi at skrive _(!_) eller 
+  _(\neg_). Formlerne er altså:
+  _($\begin{eqnarray} 
+  && P(B)        & = & P(A)*P(B|A)+P(\neg A)*P(B|\neg A) \\
+  && P(A \cap B) & = & P(A)*P(B|A)
+  \end{eqnarray}_)
+  Very noice!
+  </p>
+
+  <p class="t">
+  Kan vi med de her nye værktøjer mere struktureret gå til den rodede kort-opgave? Det kan vi absolut, 
+  men allerførst skal du lige hurtigt bevise noget:
+  </p>
+
+  <q-stion 1="2" 2="1" 3="5">
+  Vis at hvis _(A,B,C_) er begivenheder - som jo bare er en samling af ikke-gentagede <i>elementer</i> - så
+  er _( C \cap (A \cup B) = (C \cap A) \cup (C \cap B)_). Lidt ligesom med parenteser og plus og gange!
+  Jeg anbefaler at du prøver at kigge på det der diagram jeg havde lidt oppe der forklarede
+  _(\cap_) og _(\cup_), og at du tillader lidt intuition. 
+  <br><br></q-stion>
+  <answer-box>
+  Her er der _(6_) forskellige tegninger af forskellige _(A,B,C_) hvor _(C_) er gul, og _(A,B_) begge røde:
+  <img class='Spic' style='width:50%' src='../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\IntersectionDistribution.png'> 
+  <p class="t">På de her tegninger er der valgt forskellige _(A,B,C_) der skære eller slet ikke skære hinanden.
+  Trods hvor vidt forskellige de er, så kan vi alligevel nemt se at _(C \cap (A \cup B) = (C \cap A) \cup (C \cap B)_)
+  gælder for hver. _(a \cup b_) er jo bare to figure sat sammen, og _(a \cap c_) er hvad de deler. </p>
+  <br></answer-box>
+
+  <p class="t">
+  Lad begivenhederne _(A,B,C_) være henholdsvis situationenen hvor vi får et rødt kort ved første træk, for en
+  ruder ved andet træk, og for en konge ved tredje træk. Målet er altså at udregne _(P(A \cap B \cap C)_).
+  Sig at _(A_1_) er begivenheden hvor vi trækker en ruder ved første træk, og _(A_2_)
+  er begivenheden hvor vi ikke trækker en ruder. _(A=A_1 \cup A_2_) og:
+  _($P(A \cap B \cap C) =_)
+  _($P((A_1 \cup A_2) \cap (B \cap C) ) =_)
+  _($P( (A_1 \cap B \cap C) \cup (A_2 \cap B \cap C) ) = _)
+  _($P(A_1 \cap B \cap C) + P(A_2 \cap B \cap C) - P((A_1 \cap B \cap C) \cap (A_2 \cap B \cap C)) = _)
+  En skæring er en skæring, og rækkefølgen er ligegyldig. Vi kan derfor omskrive det sidste led:
+  _($P((A_1 \cap B \cap C) \cap (A_2 \cap B \cap C)) =_)
+  _($P(A_1 \cap B \cap C \cap A_2 \cap B \cap C) = _)
+  _($P((A_1 \cap A_2) \cap (B \cap C \cap B \cap C))_)
+  Grunden til at jeg gerne vil omskrive det, er fordi at _(A_1 \cap A_2 = \text{Ingenting}_).
+  Det er relativt åbenlyst, da der jo ikke er nogle kort der både er ruder og ikke-ruder.
+  Ergo:
+  _($P((A_1 \cap A_2) \cap (B \cap C \cap B \cap C)) = P(\text{Ingenting} \cap (B \cap C \cap B \cap C)) _)
+  Noget som helst har intet tilfældet med ingenting, og man kan ikke trække "intet kort", så:
+  _($P(\text{Ingenting} \cap (B \cap C \cap B \cap C)) = P(\text{Ingenting}) = 0_)
+  Nu står vi tilbage med bare:
+  _($P(A_1 \cap B \cap C) + P(A_2 \cap B \cap C)_)
+  Sig at
+  _(B_1_) er begivenheden hvor vi trækker en konge-ruder ved andet træk, og _(B_2_)
+  er begivenheden hvor vi trækker en ikke-konge ruder:
+  _($P((B_1 \cap A_1 \cap C) \cup (B_2 \cap A_1 \cap C)) + P((B_1 \cap A_2 \cap C) \cup (B_2 \cap A_2 \cap C)) _)
+  _($P(B_1 \cap A_1 \cap C) + P(B_2 \cap A_1 \cap C) + P(B_1 \cap A_1 \cap C) + P(B_2 \cap A_2 \cap C)_)
+  Vi kunne her lave præcist det samme argument som før, da _(B_1 \cap B_2 =_) _(\text{Ingenting}_).
+  </p>
+  <p class="t">
+  Til allersidst så kan vi nu dele det op èn gang til, ved at sige at _(A_1=A_{1,1} \cup A_{1,2}, A_2=A_{2,1} \cup A_{2,2}_)
+  hvor _(A_{1,1}_) så er begivenheden hvor vi får en konge ruder, _(A_{1,2}_) 
+  er begivenheden hvor vi får en ikke-konge ruder, _(A_{2,1}_) er 
+  begivenheden hvor vi får en ikke-ruder konge, og _(A_{2,2}_) er 
+  begivenheden hvor vi får en ikke-ruder ikke-konge. Omskriver vi nu på samme
+  måde som før, så får vi:
+  _($\begin{eqnarray} 
+    && P(A_{1,1} \cap B_1 \cap C) & + \\
+    && P(A_{1,2} \cap B_1 \cap C) & + \\
+    && P(A_{2,1} \cap B_1 \cap C) & + \\
+    && P(A_{2,2} \cap B_1 \cap C) & + \\
+    && P(A_{1,1} \cap B_2 \cap C) & + \\
+    && P(A_{1,2} \cap B_2 \cap C) & + \\
+    && P(A_{2,1} \cap B_2 \cap C) & + \\
+    && P(A_{2,2} \cap B_2 \cap C) &   \\ 
+  \end{eqnarray}_)  
+  Hver af de her led er nemme at finde. Især hvis vi omskriver. 
+  Tag det første led som et eksempel:
+  _($\begin{eqnarray} 
+  && P(A_{1,1} \cap B_1 \cap C) & = P((A_{1,1} \cap B_1) \cap C) &  \\
+  &&                            & = P(A_{1,1} \cap B_1)*P(C | A_{1,1} \cap B_1) \\
+  &&                            & = P(A_{1,1})*P(B_1 | A_{1,1})*P(C | A_{1,1} \cap B_1)
+  \end{eqnarray}_)
+  Det her kan vi relativt let se er:
+  _($\frac{1}{52}*\frac{12}{51}*\frac{3}{50}=0.000027149_)
+  Så alt skal vi altså regne:
+  _($\begin{eqnarray} 
+    && P(A_{1,1})*P(B_1 | A_{1,1})*P(C | A_{1,1} \cap B_1) & + \\
+    && P(A_{1,2})*P(B_1 | A_{1,2})*P(C | A_{1,2} \cap B_1) & + \\
+    && P(A_{2,1})*P(B_1 | A_{2,1})*P(C | A_{2,1} \cap B_1) & + \\
+    && P(A_{2,2})*P(B_1 | A_{2,2})*P(C | A_{2,2} \cap B_1) & + \\
+    && P(A_{1,1})*P(B_2 | A_{1,1})*P(C | A_{1,1} \cap B_2) & + \\
+    && P(A_{1,2})*P(B_2 | A_{1,2})*P(C | A_{1,2} \cap B_2) & + \\
+    && P(A_{2,1})*P(B_2 | A_{2,1})*P(C | A_{2,1} \cap B_2) & + \\
+    && P(A_{2,2})*P(B_2 | A_{2,2})*P(C | A_{2,2} \cap B_2) &   \\
+  \end{eqnarray}_)  
+  Som man kan se så skal vi stadig regne en del som sidst, men selve processen af at udlede det er lidt mere
+  struktureret, hjerneløs, sikker, og fejlfri. Det er dog helt forståeligt hvorfor mange nok
+  ville finde den første proces vi brugte i opgaven lidt nemmere. 
+  </p>
+
+  <p class="t">
+  Tid til nogle flere opgaver omkring de nye ting vi har lært!
+  </p>
+
+  <q-stion 1="2" 2="1" 3="5">
+  På et skema her er der blevet samlet nogle (meget falske) data omkring personers højde og hvor mange penge de tjener.
+  Tallet på en bestemt række og kolonne svarer altså til antallet af mennesker med 
+  den givne månedlige indkomst og højde:  
+  <br> <br>
+  <div style="width:100%; margin-top:15px; padding-left:72px;">
+    <table style="border-collapse: collapse; border-spacing: 10px; background-color: rgb(209,233,230);">
+      <tr>
+        <th>Indkomst (1000kr) <br>
+            og højde (cm) </th>
+        <td> <u> 10-20 </u> </td>
+        <td> <u> 20-30 </u> </td>
+        <td> <u> 30-40 </u> </td>
+        <td> <u> 40-70 </u> </td>
+      </tr>
+      <tr>
+        <td> <u> 90-110 </u></td>
+        <td> 500 </td>
+        <td> 600 </td>
+        <td> 800 </td>
+        <td> 300 </td>
+      </tr>
+      <tr>
+        <td> <u> 110-130 </u></td>
+        <td> 700 </td>
+        <td> 300 </td>
+        <td> 100 </td>
+        <td> 200 </td>
+      </tr>
+      <tr>
+        <td> <u> 130-160 </u> </td>
+        <td> 800 </td>
+        <td> 900 </td>
+        <td> 200 </td>
+        <td> 400 </td>
+      </tr>
+      <tr>
+        <td> <u> 160-180 </u> </td>
+        <td> 300 </td>
+        <td> 300 </td>
+        <td> 200 </td>
+        <td> 200 </td>
+      </tr>
+      <tr>
+        <td> <u> 180-200 </u> </td>
+        <td> 100 </td>
+        <td> 50 </td>
+        <td> 20 </td>
+        <td> 10 </td>
+      </tr>
+    </table>
+  </div>
+  <br>
+  <p class="t">Hvad er chancen for at et tilfældigt rigt (40-70 tusind) menneske vi vælger er over 160cm høj? </p>
+  <br></q-stion>
+  <answer-box>
+  Hvis vi sætter _(A_) til at være begivenheden af at et tilfældigt menneske vi vælger er rig, og 
+  B den begivenhed at han er over 160cm høj, så leder vi altså efter _(P(B|A)_). 
+  Vi ved at:
+  _($P(A \cap B) = P(A)*P(B|A)_)
+  Det kan vi bruge til at isolere og finde _(P(B|A)_):
+  _($P(B | A) = \frac{P(A \cap B)}{P(A)} = \frac{|A \cap B|/|S|}{|A|/|S|} = \frac{|A \cap B|}{|A|}_)
+  På skemaet kan vi se at _(200+10_) mennesker både er over 160 og er rige. 
+  Vi kan også nemt regne at der er _(300+200+400+200+10=_) _(1110_) rige 
+  mennesker i alt. Ergo: 
+  _($P(B|A) = \frac{210}{1110} = 0.1891_)
+  <br><br></answer-box>
+
+  <q-stion 1="2" 2="1" 3="5">
+  Sig at chancen for at du spiser morgenmad er _(0.84_).
+  Chancen for at du drikker juice efter du har spist morgenmad
+  er _(0.52_), og chancen for at du drikker juice hvis du ikke
+  vælger at spise morgenmad er _(0.23_). Hvad er chancen for at
+  du vælger at drikke juice?
+  <br><br></q-stion>
+  <answer-box>
+  Lad os lige prøve at forstå hvad præcist der sker her, fra
+  et sandsynlighedsteori-mæssigt synspunkt. Som altid så er 
+  er chancen for noget lig:
+  _($\frac{\text{Antal måder det kan ske på}}{\text{Samlet antal af mulige ting der kan ske}}_)
+  Vores "udfaldsrum" i dette tilfælde, er samlingen af de forskellige ting vi kunne vælge
+  at gøre om morgenen. Der er fire muligheder: Vi spiser hverken 
+  morgenmad eller drikker juice, vi spiser morgenmad men drikker ikke juice,
+  vi drikker juice men spiser ikke morgenmad, eller vi gør begge. <i>Tid</i>
+  har ingen indflydelse her: Opgaven siger intet om at vi gør den ène ting
+  efter den anden. 
+  <p class="t">
+  Vi søger chancen for at drikke juice. Det sker i <i>to</i> af 
+  de fire muligheder. Chancen for at du drikker juice når du også spiser morgenmad,
+  er ikke "det modsatte" af chancen for at du drikker juice når du ikke spiser morgenmad.
+  Det er simpelthen bare to helt forskellige situationer. I hvert fald så
+  definerer vi to begivenheder:
+  _($\begin{eqnarray} 
+  && A & = \text{Mad} \\
+  && B & = \text{Juice}
+  \end{eqnarray}_)
+  Vi beregner nu, som altid:
+  _($P(B)=P(A)*P(B|A)+P(\neg A)*P(B|\neg A) = _)
+  _($0.84*0.52+(1-0.82)*0.23 = 0.4782_)
+  Hvis du er lidt forvirret omkring hvorfor jeg har givet alt den her
+  forklaring, så er det bare fordi det nogen gange godt kan blive lidt forvirrende
+  og forstå hvad der er og ikke er en del af udfaldsrummet, og hvad for 
+  en indflydelse (eller mangel på indflydelse!) tiden og rækkefølge har.
+  Det er helt fint hvis det var åbenlyst til dig hvad du skulle gøre.
+  </p>
+  <br></answer-box>
+
+  <q-stion 1="2" 2="1" 3="5">
+  Chancen for at du drikker juice hvis du spiser morgenmad er _(0.5_).
+  <p class="t">Chancen for at du spiser morgenmad hvis du drikker juice er _(0.7_).</p>
+  <p class="t">Chancen for at du spiser morgenmad er _(0.8_).</p>
+  <p class="t">
+  Hvad er chancen for at du drikker juice?
+  </p>
+  <br></q-stion>
+  <answer-box>
+  Vi definerer de to begivenheder:
+  _($\begin{eqnarray} 
+  && A & = \text{Mad} \\
+  && B & = \text{Juice}
+  \end{eqnarray}_)
+  Du er måske forvirret omkring hvorfor _(P(A|B)_) ikke er det samme som _(P(B|A)_).
+  Chancen for at vi drikker juice <i>hvis</i> vi spiser morgenmad, burde
+  da være det samme som chancen for at vi spiser morgenmad <i>hvis</i>
+  vi drikker juice? Ikke nødvendigvis. Det hjælper at tænke over <i>tidslinjer</i>.
+  Når vi siger _(P(A|B)_) så siger vi: <i>hvis vi antager</i> at vi kun arbejder
+  med de tidslinjer hvor vi drikker juice, hvor stor er så chancen for at vi 
+  spiser morgenmad? Forestil dig at der var mange flere tidslinjer hvor vi 
+  spiste morgenmad end hvor vi drak juice. Så kunne vi have en masse tidslinjer
+  hvor vi spiste morgenmad men ikke drak juice, men kun ret få tidslinjer
+  hvor vi drak juice men ikke spiste morgenmad! Prøv at se på billedet her: 
+  <img class='Spic' style='width:80%' src='../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\GivenThat.png'> 
+  <p class="t">
+  Der er mange tidslinjer hvor vi spiser, og knap så mange hvor vi ikke spiser.
+  Der er tidslinjer hvor vi drikker juice, og en del flere tidslinjer hvor vi ikke drikker
+  juice. Vi kan lidt se "mængden af tidslinjer" som arealerne på dette diagram.
+  Så er chancen for at vi drikker juice <i>hvis</i> vi spiser morgenmad
+  lig _(A_1/(A_1+A_2)_), og chancen for at vi spiser <i>hvis</i> vi drikker
+  juice lig _(A_1/(A_1+A_3)_). Den ene her giver tydeligvis ikke det samme
+  svar som den anden!
+  </p>
+  <p class="t">
+  I hvert fald, lad os gå i gang med matematikken. Vi skal finde _(P(B)_).
+  Vi ved som altid at:
+  _($P(A \cap B) = P(B)*P(A|B) \to P(B)=\frac{P(A \cap B)}{P(A|B)}_)
+  Vi kender dog ikke _(P(A \cap B)_), så det kan ikke rigtig bruges.
+  Heldigvis kan vi bare omskrive den til:
+  _($\frac{P(A)*P(B|A)}{P(A|B)} = \frac{0.8*0.5}{0.7} = 0.5714_) 
+  Så cirka 60% chance for at vi drikker juice!
+  </p>
+  <br><br></answer-box>
+
+  <q-stion 1="2" 2="1" 3="5">
+  Sig at der er _(10_) mennesker, men kun _(6_) stole.
+  _(5_) er drenge, _(5_) er piger.
+  Hvad er chancen for at:
+  <p class="t">
+  <i>Dig og din bedste ven bliver valgt</i>
+  </p>
+  <p class="cent">
+    <b> og </b> 
+  </p>
+  <p class="t">
+  <i>Halvdelen af dem der bliver valgt er drenge, og den anden halvdel er piger</i>
+  </p>
+  <p class="cent">
+    <b> og </b> 
+  </p>
+  <p class="t">
+  <i>Mænd og kvinder sidder i deres egen gruppe. Der er altså f.eks noget sted hvor at 
+  der sidder en dreng mellem to piger</i>
+  </p>
+  <p class="t">
+  Altså, hvad er chancen for at alle de her ting sker samtidigt? 
+  </p>
+  <br></q-stion>
+  <answer-box>
+  Man <i>kunne</i> prøve at direkte tælle mængden af måder hvorpå 
+  alle de her tre ting sker samtidig, og så dividerer med den samlede mængde
+  af måder folk kan sætte på stolene. Det virker dog umiddelbart i mine
+  øjne lidt tricky, siden kravene både for os til at tænke over <i>hvem</i>
+  der bliver valgt, men også <i>hvordan</i> de sidder i forhold til hinanden.
+  Det er nok lidt nemmere at dele det her op i nogle mindre problemer.
+  Kald begivenheden hvor dig og din ven begge bliver valgt for _(A_), 
+  begivenheden for at halvdelen er drenge for _(B_), og begivenheden
+  hvor mænd og kvinder sider i deres egen gruppe for _(C_).
+  Vi leder nu efter _(P(A \cap B \cap C)_) som kan omskrives
+  til 
+  _($P(A)*P(B|A)*P(C|A\cap B)_) 
+  Nu skal vi bare finde hver af de her og gange dem!
+  <p class="t">
+  _(P(A)_) er den nemmeste. Hvis både dig og din ven er blevet valgt, 
+  så er der nu kun _(8_) mennesker og _(4_) stole tilbage. Det kan
+  altså ske på _(\Vec[8,4]_) måder. Den samlede mængde måder
+  folk kan blive valgt på er _(\Vec[10,6]_), så:
+  _($P(A)=\VeC[8,4]/\VeC[10,6] = 0.333_)
+  Det næste er _(P(B|A)_). Her antager vi at _(A_) er sandt, så både
+  dig og din ven er allerede blevet valgt. Nu er der _(4_) piger, _(4_) drenge og 
+  _(4_) stole tilbage. Du skal vælge _(2_) af de her _(4_) piger, og det samme
+  med drengene. Der er derfor _(\Vec[4,2]=_) _(6_) måder at vælge drenge og
+  _(6_) måder at vælge piger, så _(6*6=_) _(36_) måder i alt. 
+  Det samlede antal ting der kan ske når vi antager at _(A_) er sandt er
+  jo _(\Vec[8,4]_), som vi fandt ud af før. Altså:
+  _($P(B|A)=36/\VeC[8,4]=0.514_)
+  Nu til _(P(C|A \cap B)_) hvor vi antager at både _(A_) og _(B_) er
+  sande. De to tidligere spørgsmål handlede om <i>hvem vi valgte</i>. Det
+  her spørgsmål handler om <i>hvordan vi placere dem</i>. Vi ved 
+  rent logisk at stolenes udseende ikke vil ændre på chancen for at folk sidder
+  i en gruppe. Lad os derfor antage at de <i>ikke</i> er identiske:
+  Det gør faktisk matematikken en smule nemmere. Der er nu _(6!_) forskellige
+  måder de udvalgte folk kan sitte på stolene. Vi skal finde
+  antallet af de her måder hvor piger og drenge er delt op i to grupper.
+  Prøv at se følgende billede:
+  </p>
+  <img class='Spic' style='width:63%' src='../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\Six chairs groups.png'> 
+  <p class="t">
+  Der er _(6_) forskellige muligheder her. I hver af de muligheder kan de _(3_)
+  drenge rykkes rundt på _(3!_) måder, og samme med pigerne. Alt i alt
+  er der altså _(6*3!*3!=216_). Sandsynligheden bliver derfor til:
+  _($P(C|A \cap B) = 216/6! = 0.3_)
+  Så:
+  _($P(A \cap B \cap C) = 0.333*0.514*0.3 = 0.0513486_)
+  Så omkring 5% chance. 
+  </p>
+  <br></answer-box>
+
+  <q-stion 1="2" 2="1" 3="5" customWidth="500">
+  Præcis samme situation som før. Nu stiller jeg bare et lidt (simplere?) spørgsmål:
+  Hvad er chancen for at mænd og kvinder hver sidder i deres egen gruppe? Hvor
+  du før altså skulle regne _(P(A \cap B \cap C)_), så skal du nu bare
+  regne _(P(C)_). 
+  <br><br></q-stion>
+  <answer-box customWidth="500">
+  Vi ved fra sidste opgave at det
+  kan gøres på _(6*3!*3! =_) _(216_) måder <i>hvis</i> der er lige så mange
+  kvinder som mænd. Men hvad hvis der er kun 1 kvinde og 5 mænd, 2 kvinder
+  og 4 mænd, 4 kvinder og 2 mænd, eller 5 kvinder og 1 mand? 
+  Sig at _(D_1_) er begivenheden hvor der bliver valgt _(1_) kvinde og _(5_) mænd,
+  begivenheden _(D_2_) er hvor der bliver valgt _(2_) kvinder og _(4_) mænd, 
+  _(D_3_) osv. Nu kan vi altså se på det som:
+  _($P(C) = P((D_1 \cap C) \cup (D_2 \cap C) \cup (D_3 \cap C) \cup (D_4 \cap C) \cup (D_5 \cap C))_)
+  Der er ingen gentagende elementer mellem, f.eks. _((D_1 \cap C)_) og _((D_2 \cap C)_), da
+  der jo ikke både kan være 1 kvinde valgt og 2 kvinder valgt samtidig. Derfor kan vi sige:
+  _($P((D_1 \cap C) \cup (D_2 \cap C) \cup (D_3 \cap C) \cup (D_4 \cap C) \cup (D_5 \cap C)) =_)
+  _($P(D_1 \cap C) + P(D_2 \cap C) + P(D_3 \cap C) + P(D_4 \cap C) + P(D_5 \cap C) = _)
+  _($\begin{eqnarray} 
+  && P(D_1)*P(C | D_1) + \\
+  && P(D_2)*P(C | D_2) + \\
+  && P(D_3)*P(C | D_3) + \\
+  && P(D_4)*P(C | D_4) + \\
+  && P(D_5)*P(C | D_5) 
+  \end{eqnarray}_)
+  Det her er slet ikke lige så meget arbejde som det umiddelbart ser ud til.
+  Det midterste led _(P(D_3)*P(C | D_3)_) kender vi allerede, og de to første
+  led _(P(D_1)*P(C | D_1)_) og _(P(D_2)*P(C | D_2)_) er identiske med de to sidste
+  _(P(D_4)*P(C | D_4)_) og _(P(D_5)*P(C | D_5)_), da det er samme situation, 
+  bare med drenge og piger byttet rundt. Vi skal altså "bare"
+  beregne _(P(D_1)*P(C | D_1)_) og _(P(D_2)*P(C | D_2)_) og så bruge
+  formlen:
+  _($2*(P(D_1)*P(C | D_1) + P(D_2)*P(C | D_2)) + P(D_3)*P(C | D_3)_)
+  <p class="t">
+  _(P(D_1)_) er lig 
+  _($\VeC[5,1]*\VeC[5,5]/\VeC[10,6] = 5/210 = 0.0238 _) 
+  _(P(C | D_1)_) er selvfølgelig bare _(1_), da der altid vil være en "opdelt"
+  gruppe hvis der kun er èn enkelt pige. Altså: _(P(D_1)*P(C | D_1) =_) _(0.0238*1=_)
+  _(0.0238_). 
+  </p>
+  <p class="t">
+  _(P(D_2)_) er lig 
+  _($\VeC[5,2]*\VeC[5,4]/\VeC[10,6] =0.238_) 
+  _(P(C | D_2)_) kan vi regne lidt på same måde som vi regnede _(P(C | D_3)_).
+  Der er i alt _(6!_) måder vi kan rykke rundt på de udvalgte folk. Pigegruppen kan
+  sidde _(6_) forskellige steder, og internt kan den rykkes rundt på _(2!=2_) måder. 
+  Drengegruppen kan rykkes rundt på _(4!=24_) måder, så i alt får vi:
+  _(6*2*24/6!=_) _(0.4_). Ergo: _(P(D_2)*P(C | D_2) = _) _(0.238*0.4=_) _(0.0952_).
+  </p>
+  <p class="t">
+  _(P(D_3)_) er 
+  _($\VeC[5,3]*\VeC[5,3]/\VeC[10,6]=0.476_) 
+  Vi ved fra før _(P(C | D_3)_) er _(0.3_). Så: _(P(D_3)*P(C | D_3) =_)
+  _(0.476*0.3=_) _(0.1427_). 
+ </p>
+ <p class="t">
+  Vi kan nu lægge det hele sammen og få:
+  _($2*(0.0238+0.0952)+0.1427 = _)
+  _($0.3807_)
+  Der er altså overraskende stor chance for at det sker!
+ </p>
+  <br><br></answer-box>
+
+  <q-stion 1="2" 2="1" 3="5" customWidth="600">
+  Præcist samme opgaver som før, men nu i stedet for "og"
+  så siger vi "eller". Jeg spørger dig altså nu om at finde
+  _(P(A \cup B \cup C)_), hvor du før skulle finde
+  _(P(A \cap B \cap C)_). 
+  <br><br></q-stion>
+  <answer-box customWidth="600">
+  Ligesom før, så <i>kunne</i> vi selvfølgelig også prøve at tælle det
+  direkte, men det er ret tricky, især nu hvor vi ikke må have gentagelser
+  med. Problemet er bare, at hvor vi før kunne bruge den nogenlunde dejlige
+  formel _(P(A)*P(B|C)*P(C|A \cap B)_), så har vi ikke rigtig umiddelbart
+  noget alternativ for _(P(A \cup B \cup C)_). Vi ved dog som altid at:
+  _($|A \cup B \cup C| = _)
+  _($|A| + |B| + |C| - |A \cap B| - |A \cap C| - |B \cap C| + |A \cap B \cap C|_)
+  Kan vi måske bruge det til noget? Kald udfaldsrummet for _(S_), så det samlede
+  antal muligheder er _(|S|_). Sandsynligheden _(P(A \cup B \cup C)_) vi søger
+  er lig _(|A \cup B \cup C| / |S|_), så:
+  _($P(A \cup B \cup C)=_)
+  _($\frac{|A| + |B| + |C| - |A \cap B| - |A \cap C| - |B \cap C| + |A \cap B \cap C|}{|S|} =_)
+  _($\frac{|A|}{|S|} + \frac{|B|}{|S|} + \frac{|C|}{|S|} - \frac{|A \cap B|}{|S|} - \frac{|A \cap C|}{|S|} - \frac{|B \cap C|}{|S|} + \frac{|A \cap B \cap C}{|S|} =_)
+  _($P(A)+P(B)+P(C)-P(A \cap B) - P(A \cap C) - P(B \cap C) + P(A \cap B \cap C) =_)
+  _($\begin{eqnarray} 
+  && P(A)+P(B)+P(C) - \\
+  && P(A)*P(B|A) - P(A)*P(C|A) - P(B)*P(C|B) + \\
+  && P(A)*P(B|A)*P(C|A \cap B) 
+  \end{eqnarray} _)
+  Wholla! Nu er der ikke nogen _(\cap_) eller _(\cup_) længere!
+  Vi kender allerede _(P(A)=_) _(0.333_), _(P(C)=0.3807_) _(P(B|A)=_) _(0.514_) og
+  _(P(C|A \cap B) =_) _(0.3_). Nu skal vi "bare" finde
+  _(P(B)_), _(P(C|A)_), _(P(C|B)_), og så sætte
+  det ind i formlen!
+  <p class="t">
+  Først _(P(B)_). Hvis halvdelen er kvinder og mænd, så skal vi vælge _(3_) ud af 5 mænd og _(3_) ud af 5 kvinder,
+  hvilke kan gøres på _(\Vec[5,3]*\Vec[5,3]=_) _(100_) måder, ud af _(\Vec[10,6]=210_) kombinationer
+  af folk. Altså: _(P(B)=_) _(100/210=_) _(0.476_) 
+  </p>
+  <p class="t">
+  Nu _(P(C|A)_). Den er faktisk let, fordi _(A_) har ingen indflydelse på _(C_):
+  Det er kun <i>mængden</i> af piger der har indflydelse på sandsynligheden for 
+  at pigerne sidder i en gruppe for sig selv: Ikke <i>hvilke</i> piger det er. 
+  Altså: _(P(C|A)=_) _(P(C)=_) _(0.3807_). 
+  </p>
+  <p class="t">
+  _(P(C|B)_) er det samme som _(P(C|B \cap A)_) da _(A_) som sagt ikke
+  har nogen indflydelse. Det er altså lig _(0.3_). 
+  </p>
+  <p class="t">
+  Nu har vi alle tal vi har brug for! Så:
+  _($P(A \cup B \cup C) =_)
+  _($\begin{eqnarray} 
+  && P(A)+P(B)+P(C) - \\
+  && P(A)*P(B|A) - P(A)*P(C|A) - P(B)*P(C|B) + \\
+  && P(A)*P(B|A)*P(C|A \cap B) 
+  \end{eqnarray} = _)
+  _($\begin{eqnarray} 
+  && 0.333+0.476+0.3807 - \\
+  && 0.333*0.514 - 0.333*0.3807 - 0.476*0.3 + \\
+  && 0.333*0.514*0.3 
+  \end{eqnarray} = _)
+  _($0.8_)
+  Boom! Fandeme en mærkelig måde at tælle på!
+  </p>
+  <br><br></answer-box>
+  
+  <p class="t">
+  Lad os tage et nyt eksempel på sandsynlighed jeg har stjålet direkte fra <a href="https://www.youtube.com/watch?v=R13BD8qKeTg&t=94s">YouTube</a>: 
+  Du går til lægen og bliver tjekket for en slem, men sjælden sygdom. Omkring _(0.1_)% af befolkningen har den,
+  og testen blinker positivt ved dig. Du spørger bekymret lægen hvor akkurat testen er, og hun svarer
+  at <i>hvis</i> man har sygdommen så virker den _(99_)% af tiden. Her skal man passe meget på:
+  Bare fordi testen virker <i>hvis</i> man er syg, så betyder det ikke nødvendigvis at den <i>ikke</i> virker
+  hvis man <i>ikke</i> er syg. Du spørger hvad chancen er for en falsk positiv, og 
+  din læge svarer _(1.2_)%. Hvor stor chance er der nu for at du har virussen?
+  </p>
+  <p class="t">
+  Kald begivenheden at du har sygdommen for _(S_), og begivenheden at testen
+  har tjekket dig positiv for _(T_). Sandsynligheden for at 
+  <i>en tilfældig</i> person har virussen er _(P(S)_), som vi fik at vide
+  var lig _(0.001_). Sandsynligheden for at <i>du</i> har virussen svarer
+  til _(P(S|T)_): Chancen for at en person har virussen <i>givet at</i>
+  den person er blevet testet positivt. Det her er ikke det samme som
+  _(P(T|S)=0.99_), da det er chancen for at testen er positiv <i>hvis</i>
+  nogen har sygdommen. 
+  </p>
+  <p class="t">
+  Vi har ikke nogen direkte formel for _(P(S|T)_), men vi ved at:
+  _($P(S \cap T)=P(T)*P(S|T)_)
+  Vi kan nu isolere og få:
+  _($P(S|T)=\frac{P(S \cap T)}{P(T)}_)
+  Vi kender hverken _(P(S \cap T)_) eller _(P(T)_), men vi kan
+  relativt let beregne dem med lidt omskrivning.
+  _(P(S \cap T)_) er _(P(S)*P(T|S)_) (man kan jo omskrive det på to måder!), og
+  _(P(T)_) er _(P(S)*P(T|S)+P(\neg S)*P(T | \neg S)_). Vi ved
+  at _(P(S)=0.001_), at _(P(T|S)_) ("positiv test givet man har sygdommen") er
+  lig _(0.99_), at _(P(\neg S)=_) _(1-P(S)=0.999_), og at _(P(T |\neg S)_) svarer
+  til chancen for en falsk positiv på _(0.012_). Altså:
+  _($P(S|T)=\frac{P(S \cap T)}{P(T)}=\frac{0.001*0.99}{0.001*0.99+0.999*0.012}=_)  
+  _($0.076282_)
+  Det svarer til lidt over _(7.6%_) chance for at du faktisk har virussen. Det er ikke
+  <i>fantastisk</i>, men det er alligevel meget småt, og et ekstremt uintuitivt resultat!
+  De fleste ville nok sige at chancen for at have virussen er meget høj hvis testen 
+  virker _(99_)% af gangene, med kun _(1.2_)% falske positive. Man kan tænke
+  over det sådan her: Sig at du ude på gaden møder en person der er virkelig høj. 
+  Du ved at at _(90_)% af basketball spillere er "virkelig høje" (falsk statistik).
+  Er den person du mødte en basketball spiller? Højest sandsynligt ikke!
+  Chancen for at det er en basketball spiller er:
+  _($\frac{\text{Antal høje basketball spillere der kunne gå på gaden}}{\text{Antal høje personer der kunne gå på gaden}}_)
+  Lad os sige at "alle" folk ville kunne finde på at "gå på gaden", så vi får:
+  _($\frac{\text{Antal høje basketball spillere}}{\text{Antal høje personer}}_)
+  <i>Ja</i>, procentdelen af basketball spillere af langt oftere høje, men 
+  der er så få basketball spillere i forhold til ikke-basketball spillere, 
+  at _(\text{Antal høje personer}_) nok er meget større end _(\text{Antal høje basketball spillere}_)!
+  Sig at _(10_)% af alle ikke-basketball spillere er virkelig høje, og at
+  _(1_)% af alle personer er basketball-spillere. Hvis det er _(N_) personer
+  i verden, så er der altså _(N*0.01*0.9=0.009N_) der er høje basketball spillere,
+  og _(N*0.99*0.1=0.099N_) der er høje ikke-basketball spillere. Der er 
+  altså _(0.099N/0.009N=11_) gange større chance for at personen ikke spillede
+  basketball! Dette billede hjælper dig måske med at forstå det: 
+  </p>
+  <img class='Spic' style='width:80%' src='../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\BayesTheorem.png'> 
+  <p class="t">
+  Når vi tænker sådan her, så kan vi lettere forstå hvorfor vi fik det meget uintuitive
+  resultat omkring virussen og testen. Nu er vi ikke længere en person ude på gaden, 
+  men en læge inde i hans kontor. I stedet for at vi møder en tilfældig person ude på gaden
+  der er høj, så møder vi nu på tilfældig person på vores kontor der bliver testet positiv.
+  I stedet for at være interesserede i hvorvidt personen er en basketball spiller, 
+  så er vi nu interesseret i om han har virussen. _(0.1_)% af alle personer
+  der går ind i dit kontor har virussen, og _(99%_) af dem bliver
+  testet positiv. _(1.2_)% af dem der ikke har virussen bliver også 
+  testet positiv. Hvis der er _(N_) personer der kommer ind på dit kontor, så
+  er der _(N*0.001*0.99=_) _(0.00099N_) der er positive og har virussen, og 
+  _(N*0.999*0.012=_) _(0.011988N_) der er positive og <i>ikke</i> har virussen.
+  Der er altså _(0.011988N/0.00099N=_) _(12.1_) gange større chance for at en positiv
+  person <i>ikke</i> har virussen. Den "lille" falske positive på _(1.2_)% har altså
+  stor indflydelse!
+  </p>
+  <p class="t">
+  Den her slags måde at tænke på hedder "Bayesian thinking", hvilke kommer
+  fra en matematikker kaldt "Bayes". Da vi regnede sandsynligheden for at du
+  havde virussen brugte vi formlen:
+  _($P(S|T)=\frac{P(S \cap T)}{P(T)}_)
+  Den kaldes for "bayes rule". Samme navn bliver nogle gange brugt til at referere til 
+  den lidt udvidede version:
+  _($P(S|T)=\frac{P(S)*P(T|S)}{P(S)*P(T|S)+P(\neg S)*P(T| \neg S)}_)
+  </p>
+
+  <q-stion 1="2" 2="1" 3="5">
+  Inde i en butik ser du en ring der har "3 stjerner". Du kan ikke
+  se prisen, men du ved at:
+  _(90%_) af varerne i butikken der koster over 5000kr har 3 stjerner.
+  Kun _(2%_) af varerne under 5000kr har 3 stjerner, og 5% af varerne herinde
+  koster over 5000kr. 
+  <p class="t">
+  Er der størst chance for at ringen koster over eller under 5000kr? 
+  </p>
+  <br></q-stion>
+  <answer-box>
+  Alright, så lad os først og fremmest definere to begivenheder:
+  _($\begin{eqnarray} 
+  && S & = \text{Koster over 5000kr} \\
+  && T & = \text{Har 3 stjerner}
+  \end{eqnarray}_)
+  Vi ved at ringen opfylder _(T_), og er nu interesserede i chancen for at den også
+  opfylder _(S_). Vi prøver altså at finde ud af hvorvidt _(P(S|T)_) er større
+  eller mindre end _(0.5_). Vi bruger nu formlen:
+  _($P(S|T) = \frac{P(S)*P(T|S)}{P(S)*P(T|S)+P(\neg S)*P(T| \neg S)}_)
+  _(P(S)_) er _(0.05_), da det er chancen for at en tilfældig vare koster over 5000kr. 
+  _(P(T|S)_) er 0.9 og _(P(T| \neg S)_) er _(0.02_). _(P(\neg S)_) er _(1-0.05 = _)
+  _(0.95_), så:
+  _($ \frac{0.05*0.9}{0.05*0.9+0.95*0.02} = 0.7031 _)
+  Det er højere end _(0.5_) - endda en god del. Der 
+  er altså størst chance for at den koster over 5000kr. 
+  <br><br></answer-box>
+
+  <q-stion 1="2" 2="1" 3="5">
+  Sig at 0.5% af alle i Danmark var hjemløse (falsk statistik, ligesom praktisk talt
+  alt i denne bog), og at 0.003% af verdens hjemløse boede i Danmark. 
+  Hvis vi siger der bor _(7.5*10^9_) mennesker i verden, og _(5.5*10^6_)
+  mennesker i Danmark, hvor stor en procentdel af verdens befolkning er så hjemløse?
+  <br><br></q-stion>
+  <answer-box>
+  Lad os som vi ofte gør starte med at definere nogle begivenheder her:
+  _($\begin{eqnarray} 
+  && S & = \text{Er hjemløs} \\
+  && T & = \text{Bor i Danmark}
+  \end{eqnarray}_)  
+  Det faktum at _(0.5%_) alle danskere er hjemløse, svarer til at _(P(S|T)=_) _(0.005_),
+  og det faktum at _(0.003_)% af verdens hjemløse bor i Danmark svarer til at
+  _(P(T|S)=_) _(0.00003_). Danmarks befolkning er _(5.5*10^6 / 7.5*10^9 = _)
+  _(0.00073333_) af verdens befolkning, så _(P(T)=_) _(0.00073333_).
+  Vi leder efter _(P(S)_). Normalt ville
+  vi i en situation som denne nok bruge _(P(T)*P(S|T)+P(\neg T)*P(S | \neg T)_),
+  men det ser umiddelbart ikke ud til at vi har _(P(S | \neg T)_). 
+  Her er det nok en bedre ide at bruge bayes' ligning:
+  _($P(S|T) = \frac{P(S \cap T)}{P(T)} = \frac{P(S)*P(T|S)}{P(T)}_)
+  Den eneste værdi vi ikke kender her er _(P(S)_), så:
+  _($\to P(S) = \frac{P(S|T)*P(T)}{P(T|S)} = \frac{0.005*0.00073333}{0.00003} =_)
+  _($0.122_)
+  Så omkring 12%. Det her betyder selvfølgelig intet siden vi kun arbejde med 
+  helt fiktive tal.
+  <br><br></answer-box>
+

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+
+
+    <h3>Spreadsheets anvendelsesopgaver</h3>
+    <p class="t">
+    De sidste tre spreadsheets-opgaver her fokuserer lidt mere på statistik og anvendelser: 
+    </p>
+
+    <!--  -->
+    
+    <q-stion 1="6" 2="1">
+    Download følgende Geogebra-fil, hvor der er blevet indsat nogle data i spreadsheets:
+    <p class="cent">
+        <a href="../../../Assets/Chapter2\Geogebra\CAS\Spreadsheets Opgave 5.ggb" download>
+            Download!
+        </a>
+    </p>
+    <p class="t">
+    Hvis man plotter denne data, ser det cirka ud som:
+    </p>
+    <img class='SpicXL' style='width:80%' src='../../../Assets/Chapter2\Geogebra\CAS\RegressionExercisePlot1.png'> 
+    <p class="t">
+    Jeg spotter lidt, at det her en smule passer til formen af _(y=x^2_):
+    </p>
+    <img class='SpicXL' style='width:80%' src='../../../Assets/Chapter2\Geogebra\CAS\RegressionExercisePlot2.png'> 
+    <p class="t">
+    _(x^2_) passede O.K, men kunne der måske være andre funktioner, der passede endnu bedre?
+    Et andet muligt gæt er _(0.5*x^3_):
+    </p>
+    <img class='SpicXL' style='width:80%' src='../../../Assets/Chapter2\Geogebra\CAS\RegressionExercisePlot3.png'> 
+    <p class="t">
+    Min opgave til dig er nu: Hvilken èn af de her to funktioner, _(x^2_) og _(0.5*x^3_), 
+    passer bedst til dataen? Denne opgave er lidt "åben til fortolkning", men jeg kræver
+    egentlig bare, at du laver en vurdering ud fra matematik. Ikke ved at sige:
+    "Det ligner på billedet, at den ene passer bedre end den anden". 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Du kan se hvad jeg gjorde her:
+    <video class='SpicB' style="width:95%;" controls>
+        <source src='../../../Assets/Chapter2\Geogebra\CAS\regressionExercise.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="6" 2="2">
+    Download følgende Geogebra fil:
+    <p class="cent">
+        <a href="../../../Assets/Chapter2\Geogebra\CAS\Spreadsheets Opgave 6.ggb" download>
+            Download!
+        </a>
+    </p>
+    <p class="t">
+    Dataet viser det samlede antal YouTube videoer, der bliver set om dagen, på
+    alle årets ca. _(365_) dage. Man kan plotte dataet og få:
+    </p>
+    <img class='SpicBXL' style='width:80%' src='../../../Assets/Chapter2\Geogebra\CAS\YoutubeViews.png'> 
+    <p class="t">
+    Dataet er komplet falsk og opfundet af mig, men vi kunne måske forestille os, 
+    at folk så mange flere videoer i sommeren end resten af året, og at dataet derfor
+    gradvist går op og ned omkring midten af året (giver ikke super meget mening,
+    når man virkelig tænker over det, men eh). Vi kan se på dataet, at der er visse 
+    "hop": Dage hvor der blev set ekstraordinært mange YouTube videoer i forhold til normalt:
+    </p>
+    <img class='SpicBXL' style='width:80%' src='../../../Assets/Chapter2\Geogebra\CAS\YoutubeViewsMarked.png'> 
+    <p class="t">
+    Vi kan måske forestille os, at det her svarer til dage, hvor der udkom bestemte virale videoer
+    eller musik-videoer fra kendte stjerner. Det er de her specielle udsving
+    vi interesserer os i lige nu i denne opgave. Jeg vil gerne have, at du ved hjælp af 
+    dataet - og helst <i>uden</i> at plotte det - finder antallet af 
+    de her udsving. Du kan ikke bare se på billedet, fordi det passer med vilje
+    ikke til de data <i>du</i> har fået: Det repræsenterer kun <i>ideen</i> af, hvordan
+    dataet "kind of ser ud". 
+    </p>
+    <p class="t">
+    Det her kan gøres på mange måder, men èn Geogebra-kommando der nok er
+    god at kende (og jeg fortæller ikke hvorfor!) er _(\text{floor}(x)_). 
+    Den runder et decimaltal <i>ned</i> til det tætteste
+    hele tal. Så _(\text{floor}(0.75)=_) _(0_), eller _(\text{floor}(3.9999)=_) _(3_). Kommandoen
+    _(\text{ceil}(x)_) gør det modsatte, og runder <i>op</i> i stedet, så _(\text{ceil}(3.000001)=_) _(4_)
+    _(1_). 
+    </p>
+    <p class="t">
+    Der er et vist level af subjektivitet i denne opgave ligesom nogle af de andre. 
+    Hvad <i>præcist</i> mener jeg med et udsving? Du er nødt til selv at vurdere 
+    et par ting i denne, og det er helt fint, hvis dit svar ikke passer mit perfekt.
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Du kan se mit svar her:
+    <video class='SpicB' style="width:95%;" controls>
+        <source src='../../../Assets/Chapter2\Geogebra\CAS\UdsvingOpgave.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+
+    <!--  -->
+    
+    <q-stion 1="6" 2="3">
+    Hvis du gerne vil plotte din data via spreadsheets i Geogebra, kan du gøre følgende:
+    <video class='SpicBXL' style="width:95%;" controls>
+        <source src='../../../Assets/Chapter2\Geogebra\CAS\plotpoints.mp4' type='video/mp4'>
+    </video>
+    <p class="t">
+    Min opgave er nu:
+    </p>
+    <p class="t">
+    Forestil dig, at vi optager lyd via et digitalt instrument. 
+    Måske optager vi en fugl, der synger, og er interesserede i hvornår, 
+    tonelejet skifter. Lyd-data
+    kunne måske se ud som: 
+    </p>
+    <img class='SpicXL' style='width:95%' src='../../../Assets/Chapter2\Geogebra\CAS\Lyddata eksempel.png'> 
+    <p class="t">
+    Du behøver ikke bekymre dig om enhederne er lige nu, da vi primært fokuserer
+    på matematikken. Jeg har udfyldt et Geogebra dokument med
+    (falsk) data fra denne (fiktive) fugl.
+    </p>
+    <p class="cent">
+        <a href="../../../Assets/Chapter2\Geogebra\CAS\Opgave3.ggb" download>
+            Download!
+        </a>
+    </p>
+    <p class="t">
+    Dit mål er, at finde ud af ca. hvornår fuglen skifter tone, og ca. hvor 
+    mange gange større frekvensen bliver,
+    når den skifter. Det her er meget lige ud af landevejen i forhold til 
+    sidste lidt komplicerede opgave, og er til en stor grad baseret på intuition. 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Du kan se mit svar her:
+    <video class='SpicB' style="width:95%;" controls>
+        <source src='../../../Assets/Chapter2\Geogebra\CAS\frekvensOpgave.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+
+

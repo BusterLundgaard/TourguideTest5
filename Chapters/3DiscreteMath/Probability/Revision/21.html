@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+
+
+    <p class="t">
+    Lad os stille os selv et ret naturligt spørgsmål nu hvor vi er gået i gang med at
+    bruge gennemsnittet: Vi ved at gennemsnittet er en <i>approksimation</i>, 
+    men <i>hvor god</i> en approksimation er det? Vi ved også at jo flere "runder"
+    vi arbejder med, jo bedre bliver denne approksimation. Det er intuitivt, men
+    kan vi sætte nogle tal på? Kan vi på en eller anden måde beregne hvornår det
+    er "sikkert" at bruge gennemsnittet?
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Tilbage til skateboard. Vi siger at det er ligesom sidste skateboard-opgave:
+    _(20_)% af tiden får du _(0_) points, _(15_)% af tiden får du _(3_) points, _(20_)% _(7_) points, 
+    _(30_)% af tiden _(9_) points, og _(15_)% af tiden _(10_) points. 
+    Vores gennemsnit er nu 
+    _($0.2*0+0.15*3+0.2*7+0.3*9+0.15*10 = 6.05_) 
+    Nu er mit spørgsmål så: Hvis vi har en helt masse
+    runder, hvor mange points er du så <i>i gennemsnit</i>, fra gennemsnittet? 
+    Altså, hvad er "gennemsnitsforskellen" til _(6.05_)? 
+    <br><br></q-stion>
+    <answer-box>
+    Den her kan være lidt mærkeligt at fatte/forstå, men selve beregningen er faktisk meget nem. 
+    Bassicly: Sig at vi laver en <i>ny</i> stokastisk variabel:
+    _($Y = \text{Hvor langt væk er du fra gennemsnittet}_)
+    Den har i vores tilfælde _(5_) mulige værdier:
+    _($\begin{eqnarray}
+    && |6.05 - 0| = 6.05 \\
+    && |6.05 - 3| = 3.05 \\
+    && |6.05 - 7| = 0.95 \\
+    && |6.05 - 9| = 2.95 \\
+    && |6.05 - 10| = 3.95
+    \end{eqnarray}_)
+    Den ene værdi har en sandsynlighed på _(0.2_), 
+    den næste på _(0.15_), så _(0.2_), så _(0.3_) og til sidst _(0.15_). 
+    Nu finder vi bare gennemsnittet af denne nye stokastiske variabel, da det giver os,
+    hvor langt væk vi er fra gennemsnittet <i>i gennemsnittet</i>: 
+    _($6.05*0.2+3.05*0.15+0.95*0.2+2.95*0.3+3.95*0.15 = 3.335_) 
+    Du er altså <i>i gennemsnittet</i> _(3.335_) points væk fra 
+    _(6.05_), som er gennemsnittet. 
+    <p class="t">
+    Den her værdi fortæller os meget intuitivt hvordan
+    dataet "spreder sig ud" omkring gennemsnittet. Jo højere tal, jo mere spredning.
+    Gennemsnittet <i>vil</i> blive til en god approksimation efter
+    nok runder lige meget hvor meget den spreder sig ud dog: 
+    Forskellene vil eventuelt "gå op med hinanden" hvis dataet både
+    går til højre og venstre for gennemsnittet. 
+    En større spredning betyder bare at det vil
+    tage længere tid, og at det vil være en del mere "ustabilt". 
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Lad os sige vi havde et lidt simplere skater-tilfælde: _(35_)% chance får _(1_) point, _(0.65_)% chance for
+    _(2_) points. Gennemsnittet her er 
+    _($0.35*1+0.65*2 = 1.65_) 
+    Vi kan først rigtig bruge det her gennemsnit
+    som en approksimation når der er gået en god del runder. 
+    Prøv at vurder, på en eller anden måde med et tal,
+    hvor meget <i>bedre</i> det er at bruge gennemsnittet som en approksimation efter _(2_) runder, end en
+    approksimation efter kun _(1_) runde. 
+    <p class="t">
+    Den her opgave er lidt tricky. 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Alright, vi skal på en eller anden måde komme frem til ét tal der viser os hvor meget "bedre"
+    gennemsnittet er som en approksimation efter _(2_) runder. Her tænker jeg vi kunne arbejde med <i>spredning</i>.
+    Spredningen efter _(2_) runder <i>vil</i> værre større end efter _(1_) runde, men det er kun fordi alle
+    værdierne også er blevet større (siden vi lægger 2 runder sammen). Det vigtigste er altså ikke
+    bare hvor stor spredningen er, men hvor stor den er <i>i forhold til gennemsnittet</i>. Hvis den gennemsnitlige afstand
+    fra gennemsnittet kun er _(2_)% større eller mindre end gennemsnittet, så gør det en del mindre skade, end hvis
+    det f.eks. er _(53_)% større end gennemsnittet. I den ene kan du fint bruge gennemsnittet som approksimation: I den anden kan du ikke.
+    <p class="t">
+    Spredningen efter _(1_) runde kan vi regne på præcis samme måde som før:
+    _($|1-1.65|*0.35 + |2-1.65|*0.65 = 0.455_)
+    Hvilke er _(0.455/1.65=_) _(27_)% af gennemsnittet. Spredningen
+    efter _(2_) runder er lidt mere tricky. Der kan ske fire forskellige ting:
+    _($\begin{eqnarray} 
+    1, & \, 1 & : 2 \\
+    1, & \, 2 & : 3 \\
+    2, & \, 1 & : 3 \\
+    2, & \, 2 & : 4 \\
+    \end{eqnarray}_)
+    Vi kan regne at de forskellige sandsynligheder her er:
+    _($\begin{eqnarray}
+    && P(2) = 0.35*0.35 = 0.122 \\
+    && P(3) = 0.35*0.65+0.65*0.35 =  0.454 \\
+    && P(4) = 0.65*0.65 = 0.422
+    \end{eqnarray}_)
+    Den forudsagte værdi <i>hvis</i> vi brugte
+    gennemsnittet efter to runder ville være
+    _(1.65*2=3.3_). Det er denne "estimerede/forudsagte værdi"
+    vi skal teste spredningen omkring:
+    _($0.122 |2 - 3.3| + 0.454 |3- 3.3| + 0.422 |4-3.3| = 0.591_)
+    Hvilke er _(0.591/3.3=_) _(17_)% af den forudsagte værdi. Den procentmæssige
+    forskel er altså blevet _(27/17=_) _(1.58_) gange bedre!
+    </p>
+    <p class="cent">
+        *
+    </p>
+    <p class="t">
+    Man kan se at vi kunne fortsætte samme trick med f.eks. _(3_) runder:
+    _($\begin{eqnarray} 
+    && 1, & 1, & 1 & : 2 \\
+    && 1, & 1, & 2 & : 3 \\
+    && 1, & 2, & 1 & : 3 \\
+    && 2, & 1, & 1 & : 3 \\
+    && 1, & 2, & 2 & : 4 \\
+    && 2, & 2, & 1 & : 4 \\
+    && 2, & 1, & 2 & : 4 \\
+    && 2, & 2, & 2 & : 5 \\
+    \end{eqnarray}_)
+    </p>
+    Det bliver bare meget hurtigt, meget avanceret. Vi arbejder endda med en meget, meget simpel stokastisk variabel
+    hvor der kun er de to værdier _(1_) og _(2_). Det er det her med at finde de mulige værdier efter flere runder
+    der hurtigt bliver tricky, og det var det samme vi skulle gøre i opgaven hvor to skatere dystede mod hinanden.
+    Der var det faktisk bare lidt simplere, da de to værdier var _(0_) og enten _(5_) eller _(9_). _(0_) gjorde
+    det ret simpelt at arbejde med, da vi let kunne bruge _(\Vec[n,k]_). 
+    Det kunne man egentlig også have gjort i vores tilfælde her. 
+    I et tilfælde hvor den stokastiske variable har _(3_) eller flere værdier vil
+    det blive meget kompliceret dog: Selv får en computer.
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <p class="t">
+    Det vi er kommet frem til i de to sidste opgaver kaldes for <i>spredning</i>, og det defineres som:
+    _($|x_1 - m|*P(x_1) + |x_2-m|*P(x_2) \, + \, ... \, |x_n - m|*P(x_n) _)
+    Hvor _(m_) så er gennemsnittet på den stokastiske variabel. Hvis man skal være helt præcis, så kaldes
+    det faktisk for <i>varians</i>, og defineres som:
+    _($(x_1 - m)^2*P(x_1) + (x_2-m)^2*P(x_2) \, + \, ... \, (x_n - m)^2*P(x_n)_)
+    Den første definition her med "spredning" er lidt bare en jeg har fundet på: Det er
+    varians man faktisk bruger. 
+    Her opløfter man forskellene _(x_i-m_) i anden potens i stedet for at tage 
+    deres absolutte værdi. 
+    Den primære motivation er at 
+    absolutte værdier rent matematisk er et langt større helvede at
+    arbejde med end en simpel anden potens. Anden potens gør stadig lidt det samme, da det sørger for at alting 
+    bliver positivt; Alting bliver så bare <i>også</i> en del større. Varians har stadig 
+    den samme <i>intuitive</i> betydning, og vi kan stadig bruge det til at <i>sammenligne</i>.
+    Den har bare mistet den meget <i>præcise</i> betydning spredning havde, og kan ikke rigtig bruges
+    til <i>andet</i> end at sammenligne. Jeg anbefaler at du bare bruger spredning, da fordelen
+    af varians primært kommer i mere teoretisk matematik.  
+    </p>
+
+
+
+
+

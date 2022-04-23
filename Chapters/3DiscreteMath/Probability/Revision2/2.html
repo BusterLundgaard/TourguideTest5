@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+
+
+    <h2>Lad os tælle en masse ting!</h2>
+    <p class="t">
+    Hvis sandsynlighed virkelig er 
+    _($\frac{\text{Antal måder det kan ske på}}{\text{Samlet antal af mulige ting der kan ske}}_)
+    ... så handler det primært om at <i>tælle</i>. Tælle antal;
+    Sandsynligheden
+    kommer let derefter. 
+    </p>
+    <p class="t">
+    Det vil vi se senere <i>ikke</i> helt
+    er sandt, da definitionen bliver udvidet og udfordret, men
+    for nu skal vi øve os i at <i>tælle</i>. Tælle
+    tricky antal og mængder, der ikke er åbenlyse. 
+    Selv senere i kapitlet, vil det her altid være vores vigtigste
+    værktøj.
+    </p>
+
+    <q-stion 1="2" 2="1">
+    På hvor mange måder kan du dække bord til _(6_) personer, hvis dine _(6_) tallerkener hver er unikke?
+    Hver kombination af et bestemt sæt tallerkener uddelt til et bestemt sæt personer tæller. 
+    <br><br></q-stion>
+    <answer-box>
+    Lad mig starte med et identisk problem, på en mindre størrelse: Du har 4 unikke frugter.
+    På hvor mange måder kan du give _(4_) personer èn hver? Nu er det bare _(4_) i stedet for 
+    _(6_), og frugter i stedet for tallerkener (hvilket gør det nemmere at tegne):
+    <img class='SpicXL' style='width:80%' src='../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\FrugtChoice.png'> 
+    <p class="t">
+    Det kan være at person _(A_) får en appelsin. 
+    Nu, i denne "tidslinje", er der kun _(3_) frugter tilbage
+    til de resterende _(3_) personer, der ikke har fået frugter. 
+    Vi kan skabe endnu en tidslinje med _(2_) frugter og _(2_) personer, hvis
+    vi eksempelvis giver person _(B_) et æble. 
+    Vi laver en sidste tidslinje til sidst, hvor _(C_)
+    får enten pæren eller bananen, og _(D_) får den resterende frugt. 
+    Antallet af måder vi kan gennemgå denne process svarer til 
+    antallet af tidslinjer på 
+    "træet", hvilket let kan tælles til _(4*3*2=24_).
+    </p>
+    <p class="t">
+    Med _(6_) unikke tallerkener kan vi lave præcis samme argument:
+    Det bliver til _(6*5*4*3*2=720_) måder. Det er svaret. 
+    </p>
+    <p class="t">
+    Det her med at gange nedad som eksempelvis
+    _($8*7*6*5*4*3*2_) 
+    ... er noget vi konstant støder på i diskret sandsynlighedsregning. 
+    Man har derfor valgt at give det et navn:
+    "Fakultet" ("factorial" på engelsk). Man skriver det med _(!_), et udråbstegn:
+    _($8!=8*7*6*5*4*3*2_)
+    Hvis du gerne vil skrive et udtryk der <i>ikke</i> går hele vejen
+    ned til _(2_) som _(12*12*11*10*9*8_), kan du bare sige: 
+    _($\frac{12!}{7!}=\frac{12*11*10*9*8*7*6*5*4*3*2}{7*6*5*4*3*2}=12*11*10*9*8_)
+    </p>
+    <br></answer-box>
+
+    <q-stion 1="2" 2="2">
+    På hvor mange måder kan man sortere et dæk kort uden jokere? Du behøver ikke faktisk regne tallet,
+    da det er helt abnormalt stort. Bare skriv det symbolsk.
+    <br><br></q-stion>
+    <answer-box>
+    Forestil dig, at de forskellige pladser i bunken er forskellige "personer" vi giver
+    de _(52_) kort til. Hver kort er unik, og hver person er unik.
+    Vi kan derfor bruge 
+    præcis samme logik som i sidste opgave. Svaret er:
+    _($52!_)
+    <br></answer-box>
+
+    <q-stion 1="2" 2="3">
+    I en bestemt turnering skal hver spiller spille mod hver anden spiller. 
+    Find en formlen for antallet af matche i turneringen, hvis der er _(n_) spillere. 
+    <br><br></q-stion>
+    <answer-box>
+    Lad os egentlig bare starte med manuelt at tælle antallet ved _(3_), (4_) og
+    _(5_) spillere, og se om vi kan generalisere og finde nogen formel ud fra de tilfælde. 
+    <p class="t">
+    Sig vi har _(3_) spillere _(A_), _(B_), _(C_). De mulige kampe er:
+    </p>
+    <div style="text-align:center; margin-top:-10px; margin-bottom:-10px; margin-left:-5%;">
+        <ul style="display: inline-block;">
+            <li>_(AB_)</li>
+            <li>_(AC_)</li>
+            <li>_(BC_)</li>
+        </ul>
+    </div>
+    <p class="t">
+    Alright. De mulige kampe hvis vi har en ekstra spiller _(D_) er:
+    </p>
+    <div style="text-align:center; margin-top:-10px; margin-bottom:-10px;margin-left:-5%;">
+        <ul style="display: inline-block;">
+            <li>_(AB_)</li>
+            <li>_(AC_)</li>
+            <li>_(AD_)</li>
+            <li>_(BC_)</li>
+            <li>_(BD_)</li>
+            <li>_(CD_)</li>
+        </ul>
+    </div>
+    <p class="t">
+    Og hvis vi også har _(E_) så:
+    </p>
+    <div style="text-align:center; margin-top:-10px; margin-bottom:-10px;margin-left:-5%;">
+        <ul style="display: inline-block;">
+            <li>_(AB_)</li>
+            <li>_(AC_)</li>
+            <li>_(AD_)</li>
+            <li>_(AE_)</li>
+            <li>_(BC_)</li>
+            <li>_(BD_)</li>
+            <li>_(BE_)</li>
+            <li>_(CD_)</li>
+            <li>_(CE_)</li>
+            <li>_(DE_)</li>
+        </ul>
+    </div>
+    <p class="t">
+    Så ved _(3_) spillere er der _(2+1_) matches, ved _(4_) spillere er 
+    der _(3+2+1_) matches, og ved _(5_) spillere er der _(4+3+2+1_) matches. 
+    Et mønster former sig nemt: _(n_) personer
+    vil i alt have: 
+    _($1+2+3+4+...(n-1)_) 
+    matches. Formlen er altså:
+    _($\text{Matches}(n)=\frac{(n-1)n}{2}_)
+    Voila!
+    </p>
+    <br></answer-box>
+
+    <q-stion 1="2" 2="4">
+    På hvor mange måder kan 6 personer sætte sig rundt om et bord med _(6_) stole hvis:
+    <ul>
+        <li>_(\underline{\textbf{A}}: \, \, _) Stolene er unikke? </li>
+        <li>_(\underline{\textbf{B}}: \, \, _) Stolene er identiske? </li>
+        <li>_(\underline{\textbf{C}}: \, \, _) Stolene er identiske, og det har <i>ikke</i> indflydelse, om man sidder til højre eller venstre for nogen? </li>
+        <li>_(\underline{\textbf{D}}: \, \, _) Der er èn speciel, unik stol? </li>
+        <li>_(\underline{\textbf{E}}: \, \, _) Stolene er unikke, men du <i>skal</i> sidde ved siden af Kaj. Fucking Kaj, mand. </li>
+        <li>_(\underline{\textbf{F}}: \, \, _) Stolene er identiske, og du skal sidde ved siden af Kaj </li>
+    </ul>
+    <p class="t">
+    Du skal forestille dig at stolene sidder i en rundkreds som: 
+    </p>
+    <img class='Spic' style='width:25%' src='../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\SixChairs.png'> 
+    <br><br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#">
+    Her kan vi bruge præcis samme frugt-logik, vi har brugt mange gange før:
+    Det bliver altså _(6!=720_)
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(171,96,147)">
+    Der er irrelevant <i>hvilken stol</i> nogen sidder på, men det er ikke irrelevant
+    <i>hvem de sidder ved siden af</i>. Derfor er det aller første valg ligegyldigt, da det kun
+    bestemmer <i>hvilken stol</i> en af personerne sidder på. Resten af valgene (som der er _(5_) af) 
+    er vigtige, da
+    de alle har en indflydelse på hvem, der sidder ved siden af hvem. Svaret bliver altså _(5*4*3*2=120_)
+    med den samme frugt-logik vi har brugt før.
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{C}}_)#">
+    Prøv at se følgende diagram:
+    <img class='Spic' style='width:25%' src='../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\VenstreOgHøjreVedBord.png'> 
+    <p class="t">
+    Hvis stolene var identiske, var det som sagt ligegyldigt hvor den første person _(A_) satte sig. 
+    Diagrammet viser to måder at placere folk. Før ville vi skulle tælle dem begge, nu skal
+    vi kun tælle èn. Man kan se, at hvis man har fundet èn måde at placere folk, 
+    kan man bare "spejlvende" og få en ny. Det betyder, at antallet af konfigurationer
+    er dobbelt så stort, som hvis
+    venstre og højre er ligegyldigt. Vi siger derfor bare:
+    _($120/2=60_)
+    </p>
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{D}}_)#" tabColour="rgb(171,96,147)">
+    Hvis vi allerede har valgt rækkefølgen, kan vi rotere folk rundt om bordet så
+    _(6_) forskellige personer kunne side i den "specielle stol". Ergo _(6*120=720_).
+    Præcist det samme, som da alle stole var unikke!
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{E}}_)#">
+    Lad os først af alt vælge hvor <i>du</i> sider. Det kan vi gøre på _(6_) forskellige måder.
+    Derefter lad os vælge om _(\text{Kaj}_) sidder på din venstre eller højre side.
+    Nu er der _(4_) personer og _(4_) stole tilbage. De kan placeres på _(4*3*2=24_) måder.
+    Alt i alt _(6*2*24=288_).
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{F}}_)#" tabColour="rgb(171,96,147)">
+    Det er ligegyldigt hvor vi placerer den "første" person, når stolene er identiske.
+    Sig derfor at denne "første" person er dig. Vi vælger først om kaj sidder
+    til venstre eller højre for dig. Nu er der _(4_) pladser og _(4_) personer tilbage.
+    De resterende _(4_) personers rækkefølge i forhold til dig er vigtig, 
+    så de kan side på _(4!_) måder. Det endelige svar er altså: 
+    _($2*4!=48_)
+    <br></answer-box>
+
+    <q-stion 1="2" 2="5">
+    En klassiker af en opgave: På hvor mange måder kan du blande bogstaverne i "Missisippi"?
+    <p class="t">
+    <i>Hint</i>: Jeg kan ligeså godt nu afsløre at svaret <i>ikke</i> bare er _(10!_)
+    </p>
+    <br></q-stion>
+    <answer-box t="h">
+    Hvis vi ser på det lidt naivt, kan vi rykke rundt på bogstaverne på
+    _(10!_) måder, da der er _(10_) bogstaver. Men nogle metoder
+    giver identiske resultater. Der er eksempelvis ingen forskel 
+    på, ikke at rykke noget som helst, og at rykke
+    det tredje og første "i". 
+    Vi overtæller massivt ved at regne _(10!_), men kan vi måske
+    udregne <i>hvor mange gange</i> vi overtæller? 
+    På hvor mange måder er det f.eks. muligt at få: 
+    _($\text{"iimsisipps"}_)
+    ...? 
+    <br><br></answer-box>
+    <answer-box>
+    Vi kan rykke bogstaverne rundt på _(10!_) måder, da der er _(10_) bogstaver. 
+    Problemet er bare at vi overtæller. Se f.eks. på:
+    _($\text{"iimsisipps"}_)
+    Det er både muligt at få dette 
+    resultat ved at rykke den <i>første</i> _(i_) til _(m_)'s plads, men også ved 
+    at rykke den <i>fjerde</i> _(i_), eller den anden eller trejde. 
+    Og hvad med _(s_)'erne og _(p_)'erne? 
+    De to _(p_)'er står, hvor de stod før, men måske er det første _(p_) blevet rykket til det andet _(p_)'s plads
+    eller vice versa. Vi kan rykke rundt på de _(4_) _(i_)'ere på _(4!_) måder og få samme resultat.
+    _(s_)'erne kan vi rykke rundt på _(3!_) måder, og _(p_)'erne _(2_) måder. Dette resultat kan altså fås på:
+    _($4!*3!*2=288_)
+    måder. Det er intet specielt ved lige _(\text{"iimsisipps"}_). Et hvilket som helst resultat kan vi få 
+    på _(288_) måder. Der er _(10!_) "måder" i alt, så der må være:
+    _($\frac{10!}{288} = 12600_)
+    ... mulige resultater. Voila! 
+    <br><br></answer-box>
+
+
+
+
+

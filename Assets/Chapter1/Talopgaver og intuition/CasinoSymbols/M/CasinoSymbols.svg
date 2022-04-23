@@ -1,0 +1,1194 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="1130.5135mm"
+   height="1708.4707mm"
+   viewBox="0 0 1130.5135 1708.4707"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
+   sodipodi:docname="CasinoSymbols.svg">
+  <defs
+     id="defs2">
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="10.690781 : 458.53265 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_z="393.65107 : -6.092063 : 0"
+       inkscape:persp3d-origin="87.894748 : 156.73021 : 1"
+       id="perspective823" />
+    <path
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#f12853;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:30;stroke-opacity:1"
+       d="m -380.89253,-268.97118 c 0,0 195.03569,-181.42857 438.452361,1.51191"
+       id="path916-4"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <filter
+       style="color-interpolation-filters:sRGB"
+       inkscape:label="Drop Shadow"
+       id="filter977">
+      <feFlood
+         flood-opacity="0.498039"
+         flood-color="rgb(0,0,0)"
+         result="flood"
+         id="feFlood967" />
+      <feComposite
+         in="flood"
+         in2="SourceGraphic"
+         operator="in"
+         result="composite1"
+         id="feComposite969" />
+      <feGaussianBlur
+         in="composite1"
+         stdDeviation="3"
+         result="blur"
+         id="feGaussianBlur971" />
+      <feOffset
+         dx="6"
+         dy="6"
+         result="offset"
+         id="feOffset973" />
+      <feComposite
+         in="SourceGraphic"
+         in2="offset"
+         operator="over"
+         result="composite2"
+         id="feComposite975" />
+    </filter>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="2"
+     inkscape:cx="238.18123"
+     inkscape:cy="6404.5892"
+     inkscape:document-units="mm"
+     inkscape:current-layer="g855"
+     showgrid="false"
+     showborder="true"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:snap-global="false"
+     showguides="false" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(495.00761,912.78447)">
+    <g
+       id="g825"
+       style="fill-rule:evenodd;stroke:none;stroke-linejoin:round"
+       inkscape:export-filename="C:\Users\Buster\Google Drev\vigtigt\kreativt\Matematik\Min bog\Hjemmeside\Assets\Unity scener til animation\Assets\Aritmetik\Plus og minus\Casino\CasinoSprites.png"
+       inkscape:export-xdpi="130"
+       inkscape:export-ydpi="130">
+      <path
+         d="m 146.47997,166.38738 v 526.22746 l 122.76033,1.89981 V 168.28719 Z"
+         style="fill:#353564;fill-rule:evenodd;stroke:none;stroke-linejoin:round"
+         id="path839"
+         inkscape:connector-curvature="0" />
+      <path
+         d="m 146.47997,692.61484 16.0482,100.94711 137.26871,2.12434 -30.55658,-101.17164 z"
+         style="fill:#afafde;fill-rule:evenodd;stroke:none;stroke-linejoin:round"
+         id="path841"
+         inkscape:connector-curvature="0" />
+      <path
+         d="m 269.2403,168.28719 30.55658,38.97964 V 795.68629 L 269.2403,694.51465 Z"
+         style="fill:#e9e9ff;fill-rule:evenodd;stroke:none;stroke-linejoin:round"
+         id="path843"
+         inkscape:connector-curvature="0" />
+      <path
+         d="m 146.47997,166.38738 16.0482,38.75511 137.26871,2.12434 -30.55658,-38.97964 z"
+         style="fill:#4b2019;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-linejoin:round"
+         id="path845"
+         inkscape:connector-curvature="0" />
+      <path
+         d="m 162.52817,205.14249 v 588.41946 l 137.26871,2.12434 V 207.26683 Z"
+         style="fill:#5e2920;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-linejoin:round"
+         id="path847"
+         inkscape:connector-curvature="0" />
+      <path
+         d="m 146.47997,166.38738 16.0482,38.75511 v 588.41946 l -16.0482,-100.94711 z"
+         style="fill:#6e3024;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-linejoin:round"
+         id="path849"
+         inkscape:connector-curvature="0" />
+    </g>
+    <path
+       style="opacity:1;fill:#a14535;fill-opacity:1;stroke:none;stroke-width:0.80000001;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:4.71205187;stroke-opacity:0.77272728"
+       d="m 44.87909,-357.3482 c 0,0 -101.947563,-121.33976 -257.63922,-142.39415 l -9.97313,13.29751 z"
+       id="path870"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccc"
+       inkscape:export-filename="C:\Users\Buster\Google Drev\vigtigt\kreativt\Matematik\Min bog\Hjemmeside\Assets\Unity scener til animation\Assets\Aritmetik\Plus og minus\Casino\CasinoSprites.png"
+       inkscape:export-xdpi="130"
+       inkscape:export-ydpi="130" />
+    <g
+       transform="matrix(0.90772322,0,0,0.90772322,-473.30432,-256.19401)"
+       id="g855-0"
+       style="stroke-width:1.10165739"
+       inkscape:export-filename="C:\Users\Buster\Google Drev\vigtigt\kreativt\Matematik\Min bog\Hjemmeside\Assets\Unity scener til animation\Assets\Aritmetik\Plus og minus\Casino\CasinoSprites.png"
+       inkscape:export-xdpi="130"
+       inkscape:export-ydpi="130">
+      <g
+         id="g880"
+         transform="translate(428.45003,176.25116)"
+         style="stroke-width:1.10165739">
+        <rect
+           style="opacity:1;fill:#a14535;fill-opacity:1;stroke:none;stroke-width:3.30497217;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:6.60994447, 6.60994447;stroke-dashoffset:38.55118179;stroke-opacity:1"
+           id="rect815-4"
+           width="569.9881"
+           height="926.79761"
+           x="-452.05951"
+           y="-189.83333" />
+        <path
+           style="opacity:1;fill:#a14535;fill-opacity:1;stroke:none;stroke-width:3.30497217;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:6.60994458, 6.60994458;stroke-dashoffset:38.55118179;stroke-opacity:1"
+           id="path817-8"
+           sodipodi:type="arc"
+           sodipodi:cx="-167.76646"
+           sodipodi:cy="186.3735"
+           sodipodi:rx="283.75998"
+           sodipodi:ry="265.46451"
+           sodipodi:start="0.011475767"
+           sodipodi:end="3.148574"
+           d="M 115.97483,189.41985 A 283.75998,265.46451 0 0 1 -170.38512,451.82671 283.75998,265.46451 0 0 1 -451.51953,184.52022 l 283.75307,1.85328 z"
+           transform="scale(1,-1)" />
+      </g>
+    </g>
+    <g
+       id="g855"
+       transform="translate(-10.690784,-8.5526245)">
+      <path
+         transform="scale(1,-1)"
+         d="M 115.99352,182.0972 A 284.82904,265.46451 0 0 1 -26.995418,412.30447 284.82904,265.46451 0 0 1 -312.39655,411.37595 284.82904,265.46451 0 0 1 -453.65762,180.24391 l 284.82209,1.85329 z"
+         sodipodi:end="3.148574"
+         sodipodi:start="0"
+         sodipodi:ry="265.46451"
+         sodipodi:rx="284.82904"
+         sodipodi:cy="182.0972"
+         sodipodi:cx="-168.83553"
+         sodipodi:type="arc"
+         id="path817"
+         style="opacity:1;fill:#bc513e;fill-opacity:1;stroke:#f12853;stroke-width:2.99999976;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:6.00000006, 6.00000006;stroke-dashoffset:38.55118179;stroke-opacity:1"
+         inkscape:export-filename="C:\Users\Buster\Google Drev\vigtigt\kreativt\Matematik\Min bog\Hjemmeside\Assets\Unity scener til animation\Assets\Aritmetik\Plus og minus\Casino\CasinoSprites.png"
+         inkscape:export-xdpi="130"
+         inkscape:export-ydpi="130" />
+      <path
+         sodipodi:type="star"
+         style="opacity:1;fill:#ffbe2a;fill-opacity:1;stroke:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:6.00000009, 6.00000009;stroke-dashoffset:38.55118179;stroke-opacity:1"
+         id="path890"
+         sodipodi:sides="5"
+         sodipodi:cx="-323.54758"
+         sodipodi:cy="-368.23807"
+         sodipodi:r1="41.817219"
+         sodipodi:r2="20.908609"
+         sodipodi:arg1="0.70862627"
+         sodipodi:arg2="1.3369448"
+         inkscape:flatsided="false"
+         inkscape:rounded="0.3"
+         inkscape:randomized="0.146"
+         d="m -295.47305,-342.97121 c -6.16311,4.85207 -16.42378,-11.37022 -24.49763,-9.27814 -8.07385,2.09208 -13.8241,31.96425 -21.40319,28.03491 -7.57909,-3.92935 2.76177,-29.09196 -2.91281,-35.27143 -5.67458,-6.17948 -17.50852,-0.35251 -15.29452,-7.85622 2.214,-7.50372 14.97866,-3.34238 19.95821,-10.08307 4.97955,-6.7407 -1.72309,-30.41272 6.04019,-31.52299 7.76327,-1.11026 11.39479,11.5277 18.84853,15.8234 7.45374,4.2957 26.78475,-8.95909 32.46463,-2.42352 5.67989,6.53557 -25.29877,24.16669 -25.03706,32.71313 0.26171,8.54643 17.99677,15.01186 11.83365,19.86393 z"
+         transform="translate(50.000308,123.45739)"
+         inkscape:transform-center-x="4.515112"
+         inkscape:transform-center-y="0.44188691"
+         inkscape:export-filename="C:\Users\Buster\Google Drev\vigtigt\kreativt\Matematik\Min bog\Hjemmeside\Assets\Unity scener til animation\Assets\Aritmetik\Plus og minus\Casino\CasinoSprites.png"
+         inkscape:export-xdpi="130"
+         inkscape:export-ydpi="130" />
+      <path
+         sodipodi:type="star"
+         style="opacity:1;fill:#ffbe2a;fill-opacity:1;stroke:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:6.00000009, 6.00000009;stroke-dashoffset:38.55118179;stroke-opacity:1"
+         id="path892"
+         sodipodi:sides="5"
+         sodipodi:cx="-167.82143"
+         sodipodi:cy="-300.20239"
+         sodipodi:r1="52.916664"
+         sodipodi:r2="26.458332"
+         sodipodi:arg1="0.64350111"
+         sodipodi:arg2="1.2718196"
+         inkscape:flatsided="false"
+         inkscape:rounded="0.3"
+         inkscape:randomized="0.146"
+         d="m -123.85013,-273.25892 c -5.42881,8.84251 -29.77402,-0.26396 -39.71373,0.69849 -9.9397,0.96245 -6.84134,25.47403 -17.39964,22.32891 -10.55829,-3.14513 -8.34238,-25.18872 -12.78718,-34.69853 -4.4448,-9.50982 -28.41625,-2.34951 -25.89044,-13.04631 2.52581,-10.69681 21.79428,-7.40309 28.04925,-16.30328 6.25497,-8.9002 -0.55967,-29.08171 8.87311,-32.28839 9.43279,-3.20667 13.51343,11.00181 23.69735,14.49127 10.18392,3.48946 25.04268,-2.22433 30.97761,7.12831 5.93492,9.35264 -9.44432,7.69594 -7.5182,18.20023 1.92613,10.50429 17.14067,24.64678 11.71187,33.4893 z"
+         transform="translate(-33.154454,-56.45928)"
+         inkscape:transform-center-x="5.1665983"
+         inkscape:transform-center-y="-2.9184466"
+         inkscape:export-filename="C:\Users\Buster\Google Drev\vigtigt\kreativt\Matematik\Min bog\Hjemmeside\Assets\Unity scener til animation\Assets\Aritmetik\Plus og minus\Casino\CasinoSprites.png"
+         inkscape:export-xdpi="130"
+         inkscape:export-ydpi="130" />
+      <path
+         sodipodi:type="star"
+         style="opacity:1;fill:#ffbe2a;fill-opacity:1;stroke:none;stroke-width:2.27088237;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:4.54176485, 4.54176485;stroke-dashoffset:38.55118179;stroke-opacity:1"
+         id="path894"
+         sodipodi:sides="5"
+         sodipodi:cx="-361.34525"
+         sodipodi:cy="-250.30952"
+         sodipodi:r1="31.460697"
+         sodipodi:r2="15.73035"
+         sodipodi:arg1="0.61466295"
+         sodipodi:arg2="1.2429815"
+         inkscape:flatsided="false"
+         inkscape:rounded="0.3"
+         inkscape:randomized="0.146"
+         d="m -331.51352,-236.08165 c -3.70244,4.47853 -19.27904,-6.02551 -24.84681,-3.37087 -5.56776,2.65465 -4.42292,19.68351 -10.29361,18.86383 -5.87069,-0.81968 -8.56051,-11.86054 -11.12979,-17.26463 -2.56928,-5.40408 -13.66439,-5.6575 -13.91813,-11.66564 -0.25373,-6.00813 10.80659,-5.51089 13.42029,-11.31832 2.61369,-5.80743 4.2474,-13.55849 10.17703,-16.13733 5.92962,-2.57884 6.51101,9.67303 12.84396,10.59499 6.33295,0.92195 11.57023,-8.34649 15.92641,-3.51033 4.35618,4.83616 -5.22178,12.52058 -3.878,18.74975 1.34377,6.22918 15.40109,10.58002 11.69865,15.05855 z"
+         transform="matrix(1.3540821,0,0,1.2888673,149.96619,8.7223681)"
+         inkscape:transform-center-x="0.69920414"
+         inkscape:transform-center-y="2.0124803"
+         inkscape:export-filename="C:\Users\Buster\Google Drev\vigtigt\kreativt\Matematik\Min bog\Hjemmeside\Assets\Unity scener til animation\Assets\Aritmetik\Plus og minus\Casino\CasinoSprites.png"
+         inkscape:export-xdpi="130"
+         inkscape:export-ydpi="130" />
+      <path
+         sodipodi:type="star"
+         style="opacity:1;fill:#ffbe2a;fill-opacity:1;stroke:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:6.00000009, 6.00000009;stroke-dashoffset:38.55118179;stroke-opacity:1"
+         id="path896"
+         sodipodi:sides="5"
+         sodipodi:cx="-130.0238"
+         sodipodi:cy="-399.98807"
+         sodipodi:r1="47.810627"
+         sodipodi:r2="23.905313"
+         sodipodi:arg1="0.32175055"
+         sodipodi:arg2="0.95006909"
+         inkscape:flatsided="false"
+         inkscape:rounded="0.3"
+         inkscape:randomized="0.146"
+         d="m -83.812467,-384.55067 c -3.201246,9.6079 -22.528463,-6.35266 -31.278813,-1.14002 -8.75036,5.21263 -11.65526,36.84795 -21.57831,38.4156 -9.92304,1.56765 -1.88504,-25.12747 -10.46541,-29.35729 -8.58038,-4.22982 -21.33211,4.023 -24.70074,-5.25538 -3.36863,-9.27837 9.12977,-17.51609 13.56861,-25.54777 4.43885,-8.03168 -10.69139,-27.19529 -4.43713,-33.81984 6.25427,-6.62456 30.20055,9.69498 39.27089,11.73071 9.07033,2.03572 11.31696,-10.78282 19.23842,-4.64145 7.921458,6.14137 -1.716,18.83025 -0.27664,28.73581 1.43935,9.90556 23.860368,11.27173 20.659123,20.87963 z"
+         transform="translate(40.928879,26.695482)"
+         inkscape:transform-center-x="-2.6127387"
+         inkscape:transform-center-y="6.3177944"
+         inkscape:export-filename="C:\Users\Buster\Google Drev\vigtigt\kreativt\Matematik\Min bog\Hjemmeside\Assets\Unity scener til animation\Assets\Aritmetik\Plus og minus\Casino\CasinoSprites.png"
+         inkscape:export-xdpi="130"
+         inkscape:export-ydpi="130" />
+      <path
+         sodipodi:type="star"
+         style="opacity:1;fill:#ffbe2a;fill-opacity:1;stroke:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:6.00000009, 6.00000009;stroke-dashoffset:38.55118179;stroke-opacity:1"
+         id="path898"
+         sodipodi:sides="5"
+         sodipodi:cx="-13.607142"
+         sodipodi:cy="-263.91666"
+         sodipodi:r1="43.845242"
+         sodipodi:r2="21.922619"
+         sodipodi:arg1="0.76101275"
+         sodipodi:arg2="1.3893313"
+         inkscape:flatsided="false"
+         inkscape:rounded="0.3"
+         inkscape:randomized="0.146"
+         d="m 16.159536,-229.7987 c -6.8132991,6.15098 -20.9413334,-10.25112 -29.326188,-8.57112 -8.384854,1.68 -17.804298,19.88941 -25.277784,14.59042 -7.473487,-5.299 15.33349,-27.29406 10.521534,-33.99877 -4.811956,-6.7047 -31.649883,1.91187 -30.494337,-7.13614 1.155545,-9.04801 29.902926,-8.15381 35.190512,-15.33205 5.287585,-7.17823 -2.735582,-24.26179 5.293949,-26.01025 8.0295317,-1.74845 2.587036,20.7925 10.1735912,25.25286 7.58655497,4.46037 25.2672248,-14.73302 29.1915638,-7.25543 3.924339,7.4776 -15.6012563,14.32867 -16.3574148,23.02969 -0.7561585,8.70101 17.8978738,29.2798 11.0845738,35.43079 z"
+         transform="translate(27.321736,-27.73309)"
+         inkscape:transform-center-x="6.3977669"
+         inkscape:transform-center-y="-4.0038882"
+         inkscape:export-filename="C:\Users\Buster\Google Drev\vigtigt\kreativt\Matematik\Min bog\Hjemmeside\Assets\Unity scener til animation\Assets\Aritmetik\Plus og minus\Casino\CasinoSprites.png"
+         inkscape:export-xdpi="130"
+         inkscape:export-ydpi="130" />
+      <path
+         sodipodi:type="star"
+         style="opacity:1;fill:#ffbe2a;fill-opacity:1;stroke:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:6.00000009, 6.00000009;stroke-dashoffset:38.55118179;stroke-opacity:1"
+         id="path900"
+         sodipodi:sides="5"
+         sodipodi:cx="-238.88094"
+         sodipodi:cy="-194.36903"
+         sodipodi:r1="40.709278"
+         sodipodi:r2="20.354639"
+         sodipodi:arg1="0.54678884"
+         sodipodi:arg2="1.1751074"
+         inkscape:flatsided="false"
+         inkscape:rounded="0.3"
+         inkscape:randomized="0.146"
+         d="m -201.41331,-170.55588 c -4.90739,6.48795 -20.38262,-10.26274 -27.53238,-6.51711 -7.14975,3.74564 -11.60025,24.9736 -19.31526,21.8474 -7.715,-3.12621 -5.03331,-18.78425 -9.84001,-25.31307 -4.80669,-6.52882 -25.47963,-5.0519 -24.39,-13.65174 1.08962,-8.59984 27.03237,-6.76697 32.06881,-12.4296 5.03644,-5.66262 -14.97619,-16.94121 -8.25819,-21.10107 6.71801,-4.15985 19.87272,12.36448 27.29859,13.93824 7.42588,1.57376 18.8801,-7.63388 25.31294,-2.44445 6.43283,5.18943 -12.34627,14.07842 -11.19401,22.57543 1.15227,8.49701 20.75691,16.60803 15.84951,23.09597 z"
+         transform="translate(98.38126,-70.066423)"
+         inkscape:transform-center-x="6.1626646"
+         inkscape:transform-center-y="3.9194395"
+         inkscape:export-filename="C:\Users\Buster\Google Drev\vigtigt\kreativt\Matematik\Min bog\Hjemmeside\Assets\Unity scener til animation\Assets\Aritmetik\Plus og minus\Casino\CasinoSprites.png"
+         inkscape:export-xdpi="130"
+         inkscape:export-ydpi="130" />
+      <path
+         sodipodi:type="star"
+         style="opacity:1;fill:#ffbe2a;fill-opacity:1;stroke:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:6.00000009, 6.00000009;stroke-dashoffset:38.55118179;stroke-opacity:1"
+         id="path902"
+         sodipodi:sides="5"
+         sodipodi:cx="-400.65475"
+         sodipodi:cy="-158.08331"
+         sodipodi:r1="29.934185"
+         sodipodi:r2="14.967093"
+         sodipodi:arg1="0.78539816"
+         sodipodi:arg2="1.4137167"
+         inkscape:flatsided="false"
+         inkscape:rounded="0.3"
+         inkscape:randomized="0.146"
+         d="m -379.40421,-138.63642 c -3.27966,5.12394 -13.44482,-11.03888 -18.95581,-8.88525 -5.51099,2.15363 -8.74178,17.45981 -14.57402,14.93828 -5.83224,-2.52153 3.8744,-10.2282 0.90232,-15.0687 -2.97207,-4.84049 -21.87522,-11.7785 -22.09953,-17.46053 -0.22431,-5.68204 17.20308,-0.12191 21.77786,-3.90493 4.57478,-3.78301 -2.11848,-15.67867 3.94769,-16.21932 6.06618,-0.54065 7.65273,11.41361 12.58155,15.06208 4.92882,3.64847 21.81006,-9.59608 24.51709,-4.3874 2.70703,5.20867 -15.13713,17.85654 -16.92993,23.11583 -1.79279,5.25929 12.11244,7.68601 8.83278,12.80994 z"
+         transform="translate(0.10745067,-67.042614)"
+         inkscape:transform-center-x="-0.41475371"
+         inkscape:transform-center-y="-0.97931764"
+         inkscape:export-filename="C:\Users\Buster\Google Drev\vigtigt\kreativt\Matematik\Min bog\Hjemmeside\Assets\Unity scener til animation\Assets\Aritmetik\Plus og minus\Casino\CasinoSprites.png"
+         inkscape:export-xdpi="130"
+         inkscape:export-ydpi="130" />
+      <rect
+         y="-184.54173"
+         x="-454.17621"
+         height="926.79761"
+         width="569.9881"
+         id="rect815"
+         style="opacity:1;fill:#bc513e;fill-opacity:1;stroke:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:6.00000009, 6.00000009;stroke-dashoffset:38.55118179;stroke-opacity:1"
+         inkscape:export-filename="C:\Users\Buster\Google Drev\vigtigt\kreativt\Matematik\Min bog\Hjemmeside\Assets\Unity scener til animation\Assets\Aritmetik\Plus og minus\Casino\CasinoSprites.png"
+         inkscape:export-xdpi="130"
+         inkscape:export-ydpi="130" />
+      <path
+         sodipodi:type="star"
+         style="opacity:1;fill:#ffbe2a;fill-opacity:1;stroke:none;stroke-width:4.7644434;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:9.52888736, 9.52888736;stroke-dashoffset:38.55118179;stroke-opacity:1"
+         id="path904"
+         sodipodi:sides="5"
+         sodipodi:cx="-75.595238"
+         sodipodi:cy="-136.91666"
+         sodipodi:r1="56.91272"
+         sodipodi:r2="28.45636"
+         sodipodi:arg1="0.69133693"
+         sodipodi:arg2="1.3196555"
+         inkscape:flatsided="false"
+         inkscape:rounded="0.3"
+         inkscape:randomized="0.146"
+         d="m -30.973643,-106.26578 c -6.214011,9.036731 -34.265514,-8.55454 -45.790303,-6.61904 -11.524788,1.9355 -2.073466,33.008924 -12.674218,30.595092 -10.600756,-2.413833 -2.519652,-27.192952 -10.481106,-35.532432 -7.96145,-8.33948 -28.57424,-14.52147 -29.93999,-25.25303 -1.36576,-10.73156 28.65755,3.86361 35.336811,-6.17202 6.679264,-10.03564 -6.221971,-47.07143 4.82733,-49.50611 11.049304,-2.43468 9.12931,25.27235 19.643895,28.09443 10.514585,2.82208 27.97308,-3.01377 35.940116,6.09589 7.967036,9.10966 -17.990294,13.55981 -20.500558,25.35901 -2.510263,11.7992 29.852034,23.90149 23.638023,32.93821 z"
+         transform="matrix(0.71948968,0.02161929,-0.02827109,0.55020375,98.344156,-129.26905)"
+         inkscape:transform-center-x="0.38527124"
+         inkscape:transform-center-y="-4.3314184"
+         inkscape:export-filename="C:\Users\Buster\Google Drev\vigtigt\kreativt\Matematik\Min bog\Hjemmeside\Assets\Unity scener til animation\Assets\Aritmetik\Plus og minus\Casino\CasinoSprites.png"
+         inkscape:export-xdpi="130"
+         inkscape:export-ydpi="130" />
+      <path
+         style="opacity:1;fill:none;fill-opacity:1;stroke:#f12853;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:30;stroke-opacity:1"
+         d="m -381.9616,-266.83302 c 0,0 195.03569,-181.42857 438.452353,1.51191"
+         id="path916"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="cc"
+         inkscape:export-filename="C:\Users\Buster\Google Drev\vigtigt\kreativt\Matematik\Min bog\Hjemmeside\Assets\Unity scener til animation\Assets\Aritmetik\Plus og minus\Casino\CasinoSprites.png"
+         inkscape:export-xdpi="130"
+         inkscape:export-ydpi="130" />
+      <path
+         style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:113.38582611;stroke-opacity:1"
+         d="m -355.06048,-291.02349 -22.67856,-44.6012 c 245.68452,-145.89881 433.160715,16.63094 433.160715,16.63094 l -24.946427,34.01788 C 2.5050093,-292.5354 -152.46524,-421.0473 -355.06048,-291.02349 Z"
+         id="path999"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="ccccc"
+         inkscape:export-filename="C:\Users\Buster\Google Drev\vigtigt\kreativt\Matematik\Min bog\Hjemmeside\Assets\Unity scener til animation\Assets\Aritmetik\Plus og minus\Casino\CasinoSprites.png"
+         inkscape:export-xdpi="130"
+         inkscape:export-ydpi="130" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:25.39999962px;line-height:1;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1;filter:url(#filter977)"
+         id="text922"
+         transform="translate(-4.4653003,-11.514843)"
+         inkscape:export-filename="C:\Users\Buster\Google Drev\vigtigt\kreativt\Matematik\Min bog\Hjemmeside\Assets\Unity scener til animation\Assets\Aritmetik\Plus og minus\Casino\CasinoSprites.png"
+         inkscape:export-xdpi="130"
+         inkscape:export-ydpi="130"><textPath
+           xlink:href="#path916"
+           id="textPath924"
+           style="fill:#800080"><tspan
+   id="tspan918"
+   style="font-size:50.79999924px;fill:#800080;stroke-width:1"
+   y="-33.682171"
+   x="-350.65466">  <tspan
+   style="fill:#ff00ff"
+   id="tspan931">   </tspan><tspan
+   id="tspan935"
+   style="fill:#280b0b">C  A  S   I   N   O</tspan></tspan></textPath></text>
+      <path
+         style="opacity:1;fill:#939393;fill-opacity:1;stroke:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:113.38582611;stroke-opacity:1"
+         d="m 318.32573,-181.26951 -20.03274,-32.50596 0.75596,-68.79166 17.76488,21.16666 z"
+         id="path1005"
+         inkscape:connector-curvature="0" />
+      <rect
+         y="-157.3582"
+         x="-389.14444"
+         height="254.44058"
+         width="427.63123"
+         id="rect1032"
+         style="opacity:1;fill:#eaeaea;fill-opacity:1;stroke:#823c3c;stroke-width:14.30000019;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:113.38582611;stroke-opacity:1"
+         inkscape:export-filename="C:\Users\Buster\Google Drev\vigtigt\kreativt\Matematik\Min bog\Hjemmeside\Assets\Unity scener til animation\Assets\Aritmetik\Plus og minus\Casino\CasinoSprites.png"
+         inkscape:export-xdpi="130"
+         inkscape:export-ydpi="130" />
+      <rect
+         style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:113.38582611;stroke-opacity:1"
+         id="rect1034"
+         width="47.678722"
+         height="190.65196"
+         x="-343.76569"
+         y="-126.61497"
+         inkscape:export-filename="C:\Users\Buster\Google Drev\vigtigt\kreativt\Matematik\Min bog\Hjemmeside\Assets\Unity scener til animation\Assets\Aritmetik\Plus og minus\Casino\CasinoSprites.png"
+         inkscape:export-xdpi="130"
+         inkscape:export-ydpi="130" />
+      <rect
+         style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:113.38582611;stroke-opacity:1"
+         id="rect1034-1"
+         width="47.678722"
+         height="190.65196"
+         x="-201.76007"
+         y="-126.53297"
+         inkscape:export-filename="C:\Users\Buster\Google Drev\vigtigt\kreativt\Matematik\Min bog\Hjemmeside\Assets\Unity scener til animation\Assets\Aritmetik\Plus og minus\Casino\CasinoSprites.png"
+         inkscape:export-xdpi="130"
+         inkscape:export-ydpi="130" />
+      <rect
+         style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:113.38582611;stroke-opacity:1"
+         id="rect1034-1-5"
+         width="47.678722"
+         height="190.65196"
+         x="-59.118935"
+         y="-126.53296"
+         inkscape:export-filename="C:\Users\Buster\Google Drev\vigtigt\kreativt\Matematik\Min bog\Hjemmeside\Assets\Unity scener til animation\Assets\Aritmetik\Plus og minus\Casino\CasinoSprites.png"
+         inkscape:export-xdpi="130"
+         inkscape:export-ydpi="130" />
+      <path
+         style="opacity:1;fill:#6c583b;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:113.38582611;stroke-opacity:1"
+         d="m 242.19308,-405.37075 -35.77736,233.65612 -30.5663,20.96188 -34.72543,-14.14022 28.7131,-41.21496 -27.75989,-56.18626 46.03474,-126.79501 25.78804,-13.25837 6.53403,-24.74339 z"
+         id="path1130"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="cccccccccc"
+         inkscape:export-filename="C:\Users\Buster\Google Drev\vigtigt\kreativt\Matematik\Min bog\Hjemmeside\Assets\Unity scener til animation\Assets\Aritmetik\Plus og minus\Casino\CasinoSprites.png"
+         inkscape:export-xdpi="130"
+         inkscape:export-ydpi="130" />
+      <rect
+         style="opacity:1;fill:#f1ede6;fill-opacity:1;stroke:none;stroke-width:0.99999994;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:113.38582611;stroke-opacity:1"
+         id="rect1149"
+         width="228.22495"
+         height="92.135956"
+         x="-285.66095"
+         y="129.07664"
+         inkscape:export-filename="C:\Users\Buster\Google Drev\vigtigt\kreativt\Matematik\Min bog\Hjemmeside\Assets\Unity scener til animation\Assets\Aritmetik\Plus og minus\Casino\CasinoSprites.png"
+         inkscape:export-xdpi="130"
+         inkscape:export-ydpi="130" />
+      <rect
+         style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:3.99999976;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:113.38582611;stroke-opacity:1"
+         id="rect1149-7"
+         width="232.34631"
+         height="95.147957"
+         x="-287.66248"
+         y="127.55111"
+         inkscape:export-filename="C:\Users\Buster\Google Drev\vigtigt\kreativt\Matematik\Min bog\Hjemmeside\Assets\Unity scener til animation\Assets\Aritmetik\Plus og minus\Casino\CasinoSprites.png"
+         inkscape:export-xdpi="130"
+         inkscape:export-ydpi="130" />
+      <path
+         style="opacity:1;fill:#d8d8d8;fill-opacity:1;stroke:none;stroke-width:2.4000001;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:113.38582611;stroke-opacity:1"
+         d="m 339.26093,-202.04208 -15.86716,-74.6344 14.69181,-2.93836 17.23839,2.35069 19.78497,30.36308 6.26851,49.16858 z"
+         id="path1190"
+         inkscape:connector-curvature="0" />
+      <path
+         style="opacity:1;fill:none;fill-opacity:1;stroke:#171717;stroke-width:2.4000001;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:113.38582611;stroke-opacity:1"
+         d="m 336.61824,-261.25365 4.84805,8.865 2.35477,13.57454 -0.41555,19.53072 2.77032,10.25016 6.78727,5.12508 8.865,0.69258 5.2636,-4.57102 3.60141,-16.7604 -1.10813,-17.73001 -1.8007,-12.3279 -5.67915,-8.44946 -2.77031,-6.2332 -10.66571,-6.51024 -9.14204,-0.69258 -5.26359,1.66219 -0.8311,5.81766 z"
+         id="path1180"
+         inkscape:connector-curvature="0" />
+      <path
+         style="opacity:1;fill:#828282;fill-opacity:1;stroke:none;stroke-width:2.4000001;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:113.38582611;stroke-opacity:1"
+         d="m 367.66509,-181.27766 20.76442,0.39178 -1.76301,-77.76864 -24.38651,-21.06114 -38.69033,-2.24987 8.4233,5.09316 0.97946,1.56713 6.4644,-2.1548 10.38221,0.78356 10.21585,8.17989 8.58966,15.13112 2.41791,28.57629 -3.00558,17.65393 -0.97945,0.58768 z"
+         id="path1186"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="ccccccccccccccc" />
+      <path
+         style="opacity:1;fill:none;fill-opacity:1;stroke:#171717;stroke-width:28.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:113.38582611;stroke-opacity:1"
+         d="m 352.57628,-217.58398 c 11.45479,-155.62117 46.30083,-191.25321 39.06102,-277.14107"
+         id="path1013"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="cc"
+         inkscape:transform-center-x="-29.549162"
+         inkscape:transform-center-y="-144.18139" />
+      <g
+         id="g1020"
+         transform="rotate(0.46302198,51720.957,18914.579)">
+        <circle
+           r="35.814117"
+           cy="-103.46819"
+           cx="237.82213"
+           id="path1017"
+           style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:28.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:113.38582611;stroke-opacity:1" />
+      </g>
+      <path
+         style="opacity:1;fill:#828282;fill-opacity:1;stroke:none;stroke-width:2.4000001;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:113.38582611;stroke-opacity:1"
+         d="m 342.98996,-219.00636 2.6318,11.21977 7.84752,5.01237 8.63108,0.89866 5.49683,-4.78217 0.006,25.52336 -21.15026,-0.33423 h -27.98017 l -1.93922,-79.3695 -17.45298,-21.88548 25.20986,0.69257 8.03391,4.98657 0.83109,1.66219 0.13852,7.47984 7.0643,15.51376 2.49328,13.85158 z"
+         id="path1184"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="ccccccccccccccccc" />
+      <path
+         style="opacity:1;fill:#a14535;fill-opacity:1;stroke:none;stroke-width:0.80000001;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:4.71205187;stroke-opacity:0.77272728"
+         d="m -454.00565,742.92618 -30.31118,-163.09277 30.19066,-0.092 z"
+         id="path872"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="cccc"
+         inkscape:export-filename="C:\Users\Buster\Google Drev\vigtigt\kreativt\Matematik\Min bog\Hjemmeside\Assets\Unity scener til animation\Assets\Aritmetik\Plus og minus\Casino\CasinoSprites.png"
+         inkscape:export-xdpi="130"
+         inkscape:export-ydpi="130" />
+      <path
+         sodipodi:type="star"
+         style="opacity:1;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:2.73494625;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.63636361"
+         id="path876"
+         sodipodi:sides="6"
+         sodipodi:cx="-83.880142"
+         sodipodi:cy="-751.12677"
+         sodipodi:r1="153.36234"
+         sodipodi:r2="62.878559"
+         sodipodi:arg1="0.59000661"
+         sodipodi:arg2="1.1136054"
+         inkscape:flatsided="false"
+         inkscape:rounded="0"
+         inkscape:randomized="0"
+         d="m 43.554297,-665.8011 -99.678002,-28.90499 -37.933414,96.60362 -24.806551,-100.77618 -102.62789,15.45051 74.87146,-71.87119 -64.69448,-81.15311 99.678,28.90499 37.933414,-96.60362 24.806549,100.77618 102.62789,-15.45051 -74.871452,71.87119 z"
+         inkscape:transform-center-x="2.5899337"
+         inkscape:transform-center-y="-1.2455207"
+         transform="matrix(0.40177464,-0.02693083,0.02699499,0.40081973,-338.67449,-303.38286)"
+         inkscape:export-filename="C:\Users\Buster\Google Drev\vigtigt\kreativt\Matematik\Min bog\Hjemmeside\Assets\Unity scener til animation\Assets\Aritmetik\Plus og minus\Casino\CasinoSprites.png"
+         inkscape:export-xdpi="130"
+         inkscape:export-ydpi="130" />
+      <path
+         style="opacity:1;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1.10000002;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.63636361"
+         d="m -281.02038,-649.29089 a 49.307374,48.522447 0 0 0 -23.59085,6.12346 49.307374,48.522447 0 0 0 -19.10525,65.99239 49.307374,48.522447 0 0 0 67.05834,18.80658 49.307374,48.522447 0 0 0 19.11627,-65.98928 l -0.008,-0.0141 a 49.307374,48.522447 0 0 0 -43.4706,-24.91903 z m -0.54957,14.24464 a 34.135781,33.591416 0 0 1 30.09493,17.25104 l 0.005,0.01 a 34.135781,33.591416 0 0 1 -13.23416,45.68344 34.135781,33.591416 0 0 1 -46.42488,-13.0196 34.135781,33.591416 0 0 1 13.22668,-45.68553 34.135781,33.591416 0 0 1 16.33201,-4.23911 z"
+         id="path878"
+         inkscape:connector-curvature="0"
+         inkscape:export-filename="C:\Users\Buster\Google Drev\vigtigt\kreativt\Matematik\Min bog\Hjemmeside\Assets\Unity scener til animation\Assets\Aritmetik\Plus og minus\Casino\CasinoSprites.png"
+         inkscape:export-xdpi="130"
+         inkscape:export-ydpi="130" />
+      <path
+         style="opacity:1;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1.10000002;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.63636361"
+         id="path897"
+         sodipodi:type="arc"
+         sodipodi:cx="-279.96182"
+         sodipodi:cy="-602.55054"
+         sodipodi:rx="19.633707"
+         sodipodi:ry="19.587044"
+         sodipodi:start="5.7755388"
+         sodipodi:end="5.7752072"
+         sodipodi:open="true"
+         d="m -262.8041,-612.07223 a 19.633707,19.587044 0 0 1 -7.61193,26.63784 19.633707,19.587044 0 0 1 -26.70193,-7.59162 19.633707,19.587044 0 0 1 7.6075,-26.6391 19.633707,19.587044 0 0 1 26.70319,7.58721"
+         inkscape:export-filename="C:\Users\Buster\Google Drev\vigtigt\kreativt\Matematik\Min bog\Hjemmeside\Assets\Unity scener til animation\Assets\Aritmetik\Plus og minus\Casino\CasinoSprites.png"
+         inkscape:export-xdpi="130"
+         inkscape:export-ydpi="130" />
+      <rect
+         style="opacity:1;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1.10000002;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.63636361"
+         id="rect899"
+         width="100.84586"
+         height="20.477364"
+         x="-200.98077"
+         y="-629.26013"
+         inkscape:export-filename="C:\Users\Buster\Google Drev\vigtigt\kreativt\Matematik\Min bog\Hjemmeside\Assets\Unity scener til animation\Assets\Aritmetik\Plus og minus\Casino\CasinoSprites.png"
+         inkscape:export-xdpi="130"
+         inkscape:export-ydpi="130" />
+      <rect
+         style="opacity:1;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1.10000002;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.63636361"
+         id="rect901"
+         width="36.143867"
+         height="18.251562"
+         x="-170.19156"
+         y="-599.60699"
+         inkscape:export-filename="C:\Users\Buster\Google Drev\vigtigt\kreativt\Matematik\Min bog\Hjemmeside\Assets\Unity scener til animation\Assets\Aritmetik\Plus og minus\Casino\CasinoSprites.png"
+         inkscape:export-xdpi="130"
+         inkscape:export-ydpi="130" />
+      <rect
+         style="opacity:1;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1.10000002;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.63636361"
+         id="rect903"
+         width="102.18452"
+         height="21.812843"
+         x="-200.98079"
+         y="-572.27966"
+         inkscape:export-filename="C:\Users\Buster\Google Drev\vigtigt\kreativt\Matematik\Min bog\Hjemmeside\Assets\Unity scener til animation\Assets\Aritmetik\Plus og minus\Casino\CasinoSprites.png"
+         inkscape:export-xdpi="130"
+         inkscape:export-ydpi="130" />
+      <path
+         sodipodi:type="star"
+         style="opacity:1;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:2.2013011;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.63636361"
+         id="path905"
+         sodipodi:sides="3"
+         sodipodi:cx="402.38803"
+         sodipodi:cy="-725.8551"
+         sodipodi:r1="171.01076"
+         sodipodi:r2="51.303226"
+         sodipodi:arg1="0.45545107"
+         sodipodi:arg2="1.5026486"
+         inkscape:flatsided="false"
+         inkscape:rounded="0"
+         inkscape:randomized="0"
+         d="m 555.96642,-650.63304 -150.0849,-24.03792 -145.4269,44.20761 95.8599,-117.95837 34.42854,-148.0472 54.22499,141.99629 z"
+         inkscape:transform-center-x="-2.9125637"
+         inkscape:transform-center-y="-18.774747"
+         transform="matrix(0.50022737,0,0,0.49918213,-211.22503,-216.94304)"
+         inkscape:export-filename="C:\Users\Buster\Google Drev\vigtigt\kreativt\Matematik\Min bog\Hjemmeside\Assets\Unity scener til animation\Assets\Aritmetik\Plus og minus\Casino\CasinoSprites.png"
+         inkscape:export-xdpi="130"
+         inkscape:export-ydpi="130" />
+      <path
+         style="opacity:1;fill:#939393;fill-opacity:1;stroke:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:113.38582611;stroke-opacity:1"
+         d="m 368.66434,444.44599 -20.03274,-32.50597 0.75596,-68.79167 17.76488,21.16667 z"
+         id="path1005-7"
+         inkscape:connector-curvature="0" />
+      <path
+         style="opacity:1;fill:#d8d8d8;fill-opacity:1;stroke:none;stroke-width:2.4000001;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:113.38582611;stroke-opacity:1"
+         d="m 389.59954,423.67339 -15.86716,-74.63438 14.69181,-2.93836 17.23839,2.3507 19.78497,30.36308 6.26851,49.16858 z"
+         id="path1190-3"
+         inkscape:connector-curvature="0" />
+      <path
+         style="opacity:1;fill:none;fill-opacity:1;stroke:#171717;stroke-width:2.4000001;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:113.38582611;stroke-opacity:1"
+         d="m 386.95685,364.46184 4.84805,8.865 2.35477,13.57452 -0.41555,19.53072 2.77033,10.25017 6.78726,5.12509 8.865,0.69257 5.2636,-4.57102 3.60141,-16.7604 -1.10813,-17.72999 -1.8007,-12.32792 -5.67915,-8.44944 -2.77031,-6.23322 -10.6657,-6.51023 -9.14205,-0.6926 -5.26359,1.66219 -0.8311,5.81766 z"
+         id="path1180-2"
+         inkscape:connector-curvature="0" />
+      <path
+         style="opacity:1;fill:#828282;fill-opacity:1;stroke:none;stroke-width:2.4000001;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:113.38582611;stroke-opacity:1"
+         d="m 418.00371,444.43781 20.76445,0.3918 -1.763,-77.76864 -24.38656,-21.06115 -38.69033,-2.24986 8.4233,5.09315 0.97946,1.56713 6.4644,-2.15479 10.38221,0.78356 10.21585,8.17989 8.58966,15.13112 2.41791,28.5763 -3.00558,17.65392 -0.97945,0.58767 z"
+         id="path1186-8"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="ccccccccccccccc" />
+      <path
+         style="opacity:1;fill:none;fill-opacity:1;stroke:#171717;stroke-width:39.90000153;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:113.38582611;stroke-opacity:1"
+         d="M 405.49034,410.13907 C 508.75626,293.15485 472.65026,346.19762 527.46366,285.96629"
+         id="path1013-4"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="cc"
+         inkscape:transform-center-x="-103.64942"
+         inkscape:transform-center-y="-101.3418" />
+      <g
+         id="g1020-9"
+         transform="matrix(1.0773174,0.00870627,-0.00870627,1.0773174,290.6361,365.53385)"
+         style="stroke-width:0.92820126">
+        <circle
+           r="35.814117"
+           cy="-103.46819"
+           cx="237.82213"
+           id="path1017-4"
+           style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:26.45373535;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:113.38582611;stroke-opacity:1" />
+      </g>
+      <path
+         style="opacity:1;fill:#828282;fill-opacity:1;stroke:none;stroke-width:2.4000001;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:113.38582611;stroke-opacity:1"
+         d="m 393.32857,406.70913 2.6318,11.21976 7.84752,5.01237 8.63109,0.89866 13.66926,-6.30583 -8.16643,27.04702 -21.15026,-0.33422 h -27.98018 l -1.93922,-79.3695 -17.45298,-21.88548 25.20986,0.69257 8.03391,4.98658 0.83109,1.66219 0.13852,7.47982 7.0643,15.51377 2.49328,13.85157 z"
+         id="path1184-5"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="ccccccccccccccccc" />
+      <path
+         style="opacity:1;fill:#939393;fill-opacity:1;stroke:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:113.38582611;stroke-opacity:1"
+         d="m 392.29833,788.5026 -20.03274,-32.50596 0.75596,-68.79166 17.76488,21.16667 z"
+         id="path1005-7-5"
+         inkscape:connector-curvature="0" />
+      <path
+         style="opacity:1;fill:#d8d8d8;fill-opacity:1;stroke:none;stroke-width:2.4000001;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:113.38582611;stroke-opacity:1"
+         d="m 413.23353,767.73001 -15.86716,-74.63437 14.69181,-2.93836 17.23839,2.35069 19.78497,30.36307 6.26851,49.16858 z"
+         id="path1190-3-9"
+         inkscape:connector-curvature="0" />
+      <path
+         style="opacity:1;fill:none;fill-opacity:1;stroke:#171717;stroke-width:2.4000001;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:113.38582611;stroke-opacity:1"
+         d="m 410.59084,708.51846 4.84805,8.86499 2.35477,13.57453 -0.41555,19.53072 2.77033,10.25017 6.78726,5.12508 8.865,0.69258 5.2636,-4.57102 3.60141,-16.76041 -1.10813,-17.72999 -1.8007,-12.32791 -5.67915,-8.44944 -2.77031,-6.23321 -10.6657,-6.51023 -9.14205,-0.6926 -5.26359,1.66219 -0.8311,5.81766 z"
+         id="path1180-2-8"
+         inkscape:connector-curvature="0" />
+      <path
+         style="opacity:1;fill:#828282;fill-opacity:1;stroke:none;stroke-width:2.4000001;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:113.38582611;stroke-opacity:1"
+         d="m 441.6377,788.49443 20.76442,0.39179 -1.76302,-77.76862 -24.38651,-21.06115 -38.69033,-2.24986 8.4233,5.09315 0.97946,1.56713 6.4644,-2.1548 10.38221,0.78357 10.21585,8.17988 8.58966,15.13111 2.41791,28.5763 -3.00558,17.65393 -0.97945,0.58766 z"
+         id="path1186-8-9"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="ccccccccccccccc" />
+      <path
+         style="opacity:1;fill:none;fill-opacity:1;stroke:#171717;stroke-width:45.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:113.38582611;stroke-opacity:1"
+         d="m 423.82187,748.30811 c 56.05899,-14.40342 13.91539,6.65242 98.13439,-11.68578"
+         id="path1013-4-5"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="cc"
+         inkscape:transform-center-x="-146.73484"
+         inkscape:transform-center-y="12.271205" />
+      <g
+         id="g1020-9-9"
+         transform="matrix(1.09201,0.00882501,-0.00882501,1.09201,276.11796,844.73585)"
+         style="stroke-width:0.91571265">
+        <circle
+           r="35.814117"
+           cy="-103.46819"
+           cx="237.82213"
+           id="path1017-4-2"
+           style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:26.09781075;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:113.38582611;stroke-opacity:1" />
+      </g>
+      <path
+         style="opacity:1;fill:#828282;fill-opacity:1;stroke:none;stroke-width:2.4000001;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:113.38582611;stroke-opacity:1"
+         d="m 416.96256,750.76574 2.6318,11.21977 7.84752,5.01237 8.63109,0.89866 6.32792,-0.34966 -0.82509,21.09085 -21.15026,-0.33423 h -27.98018 l -1.93922,-79.36948 -17.45298,-21.88549 25.20986,0.69257 8.03391,4.98658 0.83109,1.66219 0.13852,7.47983 7.0643,15.51375 2.49328,13.85157 z"
+         id="path1184-5-3"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="ccccccccccccccccc" />
+      <path
+         style="opacity:1;fill:#939393;fill-opacity:1;stroke:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:113.38582611;stroke-opacity:1"
+         d="m 346.56222,159.6407 -20.0327,-32.50594 0.7559,-68.791669 17.7649,21.166672 z"
+         id="path1005-7-5-1"
+         inkscape:connector-curvature="0" />
+      <path
+         style="opacity:1;fill:#d8d8d8;fill-opacity:1;stroke:none;stroke-width:2.4000001;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:113.38582611;stroke-opacity:1"
+         d="m 367.49742,138.86813 -15.8672,-74.634379 14.6919,-2.93836 17.2383,2.35069 19.785,30.363062 6.2686,49.168577 z"
+         id="path1190-3-9-7"
+         inkscape:connector-curvature="0" />
+      <path
+         style="opacity:1;fill:none;fill-opacity:1;stroke:#171717;stroke-width:2.4000001;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:113.38582611;stroke-opacity:1"
+         d="m 364.85472,79.656553 4.8481,8.865 2.3547,13.574547 -0.4155,19.53072 2.7703,10.25017 6.7873,5.12506 8.865,0.6926 5.2636,-4.57102 3.6014,-16.76043 -1.1081,-17.729987 -1.8007,-12.32792 -5.6792,-8.44944 -2.7703,-6.23319 -10.6657,-6.510232 -9.1421,-0.6926 -5.2635,1.66219 -0.8311,5.817662 z"
+         id="path1180-2-8-9"
+         inkscape:connector-curvature="0" />
+      <path
+         style="opacity:1;fill:#828282;fill-opacity:1;stroke:none;stroke-width:2.4000001;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:113.38582611;stroke-opacity:1"
+         d="m 395.90162,159.63255 20.7644,0.39177 -1.763,-77.768607 -24.3865,-21.061152 -38.6904,-2.24986 8.4233,5.09315 0.9795,1.56713 6.4644,-2.15479 10.3822,0.78356 10.2159,8.179892 8.5896,15.13109 2.4179,28.576297 -3.0056,17.65395 -0.9794,0.58764 z"
+         id="path1186-8-9-7"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="ccccccccccccccc" />
+      <path
+         style="opacity:1;fill:none;fill-opacity:1;stroke:#171717;stroke-width:28.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:113.38582611;stroke-opacity:1"
+         d="M 381.87041,125.74195 C 429.84776,-22.741499 465.87147,-19.333926 479.1743,-104.49362"
+         id="path1013-4-5-1"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="cc"
+         inkscape:transform-center-x="-62.372163"
+         inkscape:transform-center-y="-133.20062" />
+      <g
+         id="g1020-9-9-9"
+         transform="matrix(1.0463774,0.00845623,-0.00845623,1.0463774,238.74342,-35.710578)"
+         style="stroke-width:0.95564693">
+        <circle
+           r="35.814117"
+           cy="-103.46819"
+           cx="237.82213"
+           id="path1017-4-2-8"
+           style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:27.23593712;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:113.38582611;stroke-opacity:1" />
+      </g>
+      <path
+         style="opacity:1;fill:#828282;fill-opacity:1;stroke:none;stroke-width:2.4000001;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:113.38582611;stroke-opacity:1"
+         d="m 371.22642,121.90384 2.6318,11.21979 7.8476,5.01237 8.631,0.89866 5.4969,-4.78216 0.01,25.52335 -21.1503,-0.33425 h -27.9802 l -1.9392,-79.369467 -17.453,-21.885482 25.2099,0.69254 8.0339,4.9866 0.8311,1.6622 0.1385,7.479822 7.0643,15.51374 2.4933,13.851567 z"
+         id="path1184-5-3-3"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="ccccccccccccccccc" />
+      <path
+         style="opacity:1;fill:#939393;fill-opacity:1;stroke:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:113.38582611;stroke-opacity:1"
+         d="m 1603.1766,199.53314 -20.0327,-32.50594 0.7559,-68.791698 17.7649,21.166668 z"
+         id="path1005-7-5-1-5"
+         inkscape:connector-curvature="0" />
+      <path
+         style="opacity:1;fill:#d8d8d8;fill-opacity:1;stroke:none;stroke-width:2.4000001;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:113.38582611;stroke-opacity:1"
+         d="m 1624.1118,178.76057 -15.8672,-74.63441 14.6919,-2.93836 17.2383,2.35069 19.785,30.36308 6.2686,49.16858 z"
+         id="path1190-3-9-7-5"
+         inkscape:connector-curvature="0" />
+      <path
+         style="opacity:1;fill:none;fill-opacity:1;stroke:#171717;stroke-width:2.4000001;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:113.38582611;stroke-opacity:1"
+         d="m 1621.4691,119.54896 4.8481,8.86502 2.3547,13.57456 -0.4155,19.53072 2.7703,10.25017 6.7873,5.12506 8.865,0.6926 5.2636,-4.57102 3.6014,-16.76043 -1.1081,-17.73 -1.8007,-12.32794 -5.6792,-8.44944 -2.7703,-6.23319 -10.6657,-6.51023 -9.1421,-0.6926 -5.2635,1.66219 -0.8311,5.81766 z"
+         id="path1180-2-8-9-2"
+         inkscape:connector-curvature="0" />
+      <path
+         style="opacity:1;fill:#828282;fill-opacity:1;stroke:none;stroke-width:2.4000001;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:113.38582611;stroke-opacity:1"
+         d="m 1652.516,199.52499 20.7644,0.39177 -1.763,-77.76864 -24.3865,-21.06115 -38.6904,-2.249858 8.4233,5.093148 0.9795,1.56713 6.4644,-2.15477 10.3822,0.78354 10.2159,8.17991 8.5896,15.13107 2.4179,28.57632 -3.0056,17.65396 -0.9794,0.58764 z"
+         id="path1186-8-9-7-4"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="ccccccccccccccc" />
+      <path
+         style="opacity:1;fill:none;fill-opacity:1;stroke:#171717;stroke-width:28.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:113.38582611;stroke-opacity:1"
+         d="m 1637.4272,163.21868 c 11.4547,-155.6212034 46.3007,-191.253263 39.061,-277.14111"
+         id="path1013-4-5-1-7"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="cc"
+         inkscape:transform-center-x="-29.549162"
+         inkscape:transform-center-y="-144.18139" />
+      <g
+         id="g1020-9-9-9-7"
+         transform="rotate(0.46302206,5241.8396,178095.64)">
+        <circle
+           r="35.814117"
+           cy="-103.46819"
+           cx="237.82213"
+           id="path1017-4-2-8-3"
+           style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:28.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:113.38582611;stroke-opacity:1" />
+      </g>
+      <path
+         style="opacity:1;fill:#828282;fill-opacity:1;stroke:none;stroke-width:2.4000001;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:113.38582611;stroke-opacity:1"
+         d="m 1627.8408,161.79628 2.6318,11.21979 7.8476,5.01237 8.631,0.89866 5.4969,-4.78216 0.01,25.52335 -21.1503,-0.33425 h -27.9802 l -1.9392,-79.3695 -17.453,-21.885458 25.2099,0.69252 8.0339,4.986598 0.8311,1.66222 0.1385,7.4798 7.0643,15.51376 2.4933,13.85158 z"
+         id="path1184-5-3-3-9"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="ccccccccccccccccc" />
+      <path
+         style="opacity:1;fill:#939393;fill-opacity:1;stroke:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:113.38582611;stroke-opacity:1"
+         d="m 1968.858,192.88429 -20.0327,-32.50594 0.7559,-68.791692 17.7649,21.166662 z"
+         id="path1005-7-5-1-5-0"
+         inkscape:connector-curvature="0" />
+      <path
+         style="opacity:1;fill:#d8d8d8;fill-opacity:1;stroke:none;stroke-width:2.4000001;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:113.38582611;stroke-opacity:1"
+         d="m 1989.7932,172.11172 -15.8672,-74.634412 14.6919,-2.93835 17.2383,2.35069 19.785,30.363082 6.2686,49.16858 z"
+         id="path1190-3-9-7-5-2"
+         inkscape:connector-curvature="0" />
+      <path
+         style="opacity:1;fill:none;fill-opacity:1;stroke:#171717;stroke-width:2.4000001;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:113.38582611;stroke-opacity:1"
+         d="m 1987.1505,112.90011 4.8481,8.86503 2.3547,13.57455 -0.4155,19.53072 2.7703,10.25017 6.7873,5.12506 8.865,0.6926 5.2636,-4.57102 3.6014,-16.76043 -1.1081,-17.72999 -1.8007,-12.32794 -5.6792,-8.44945 -2.7703,-6.23318 -10.6657,-6.510232 -9.1421,-0.6926 -5.2635,1.66219 -0.8311,5.817662 z"
+         id="path1180-2-8-9-2-6"
+         inkscape:connector-curvature="0" />
+      <path
+         style="opacity:1;fill:#828282;fill-opacity:1;stroke:none;stroke-width:2.4000001;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:113.38582611;stroke-opacity:1"
+         d="m 2018.1974,192.87614 20.7644,0.39177 -1.763,-77.76863 -24.3865,-21.061162 -38.6904,-2.24985 8.4233,5.09315 0.9795,1.56712 6.4644,-2.15476 10.3822,0.78353 10.2159,8.179922 8.5896,15.13107 2.4179,28.57632 -3.0056,17.65395 -0.9794,0.58764 z"
+         id="path1186-8-9-7-4-5"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="ccccccccccccccc" />
+      <path
+         style="opacity:1;fill:none;fill-opacity:1;stroke:#171717;stroke-width:28.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:113.38582611;stroke-opacity:1"
+         d="m 2003.1086,156.56983 c 11.4547,-155.62121269 46.3007,-191.253273 39.061,-277.14112"
+         id="path1013-4-5-1-7-9"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="cc"
+         inkscape:transform-center-x="-29.549162"
+         inkscape:transform-center-y="-144.18139" />
+      <g
+         id="g1020-9-9-9-7-3"
+         transform="rotate(0.46302206,6247.4014,223342.63)">
+        <circle
+           r="35.814117"
+           cy="-103.46819"
+           cx="237.82213"
+           id="path1017-4-2-8-3-4"
+           style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:28.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:113.38582611;stroke-opacity:1" />
+      </g>
+      <path
+         style="opacity:1;fill:#828282;fill-opacity:1;stroke:none;stroke-width:2.4000001;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:113.38582611;stroke-opacity:1"
+         d="m 1993.5222,155.14743 2.6318,11.21979 7.8476,5.01237 8.631,0.89866 5.4969,-4.78216 0.01,25.52335 -21.1503,-0.33425 h -27.9802 l -1.9392,-79.36949 -17.453,-21.885462 25.2099,0.69252 8.0339,4.9866 0.8311,1.66222 0.1385,7.479792 7.0643,15.51377 2.4933,13.85157 z"
+         id="path1184-5-3-3-9-4"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="ccccccccccccccccc" />
+      <path
+         style="opacity:1;fill:#939393;fill-opacity:1;stroke:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:113.38582611;stroke-opacity:1"
+         d="m 2354.4857,206.18179 -20.0327,-32.50594 0.7559,-68.79169 17.7649,21.16666 z"
+         id="path1005-7-5-1-5-7"
+         inkscape:connector-curvature="0" />
+      <path
+         style="opacity:1;fill:#d8d8d8;fill-opacity:1;stroke:none;stroke-width:2.4000001;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:113.38582611;stroke-opacity:1"
+         d="m 2375.4209,185.40922 -15.8672,-74.63441 14.6919,-2.93835 17.2383,2.35069 19.785,30.36308 6.2686,49.16858 z"
+         id="path1190-3-9-7-5-5"
+         inkscape:connector-curvature="0" />
+      <path
+         style="opacity:1;fill:none;fill-opacity:1;stroke:#171717;stroke-width:2.4000001;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:113.38582611;stroke-opacity:1"
+         d="m 2372.7782,126.19761 4.8481,8.86503 2.3547,13.57455 -0.4155,19.53072 2.7703,10.25017 6.7873,5.12506 8.865,0.6926 5.2636,-4.57102 3.6014,-16.76043 -1.1081,-17.72999 -1.8007,-12.32794 -5.6792,-8.44945 -2.7703,-6.23318 -10.6657,-6.51023 -9.1421,-0.6926 -5.2635,1.66219 -0.8311,5.81766 z"
+         id="path1180-2-8-9-2-5"
+         inkscape:connector-curvature="0" />
+      <path
+         style="opacity:1;fill:#828282;fill-opacity:1;stroke:none;stroke-width:2.4000001;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:113.38582611;stroke-opacity:1"
+         d="m 2403.8251,206.17364 20.7644,0.39177 -1.763,-77.76863 -24.3865,-21.06116 -38.6904,-2.24985 8.4233,5.09315 0.9795,1.56712 6.4644,-2.15476 10.3822,0.78353 10.2159,8.17992 8.5896,15.13107 2.4179,28.57632 -3.0056,17.65395 -0.9794,0.58764 z"
+         id="path1186-8-9-7-4-1"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="ccccccccccccccc" />
+      <path
+         style="opacity:1;fill:none;fill-opacity:1;stroke:#171717;stroke-width:28.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:113.38582611;stroke-opacity:1"
+         d="m 2388.7363,169.86733 c 11.4547,-155.621209 46.3006,-191.253264 39.061,-277.14111"
+         id="path1013-4-5-1-7-8"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="cc"
+         inkscape:transform-center-x="-29.549162"
+         inkscape:transform-center-y="-144.18139" />
+      <g
+         id="g1020-9-9-9-7-6"
+         transform="rotate(0.46302206,4794.7496,271067.79)">
+        <circle
+           r="35.814117"
+           cy="-103.46819"
+           cx="237.82213"
+           id="path1017-4-2-8-3-1"
+           style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:28.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:113.38582611;stroke-opacity:1" />
+      </g>
+      <path
+         style="opacity:1;fill:#828282;fill-opacity:1;stroke:none;stroke-width:2.4000001;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:113.38582611;stroke-opacity:1"
+         d="m 2379.1499,168.44493 2.6318,11.21979 7.8476,5.01237 8.631,0.89866 5.4969,-4.78216 0.01,25.52335 -21.1503,-0.33425 h -27.9802 l -1.9392,-79.36949 -17.453,-21.88546 25.2099,0.69252 8.0339,4.9866 0.8311,1.66222 0.1385,7.47979 7.0643,15.51377 2.4933,13.85157 z"
+         id="path1184-5-3-3-9-0"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="ccccccccccccccccc" />
+      <path
+         style="opacity:1;fill:#939393;fill-opacity:1;stroke:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:113.38582611;stroke-opacity:1"
+         d="m 385.04335,630.45987 -20.03274,-32.50597 0.75596,-68.79167 17.76488,21.16667 z"
+         id="path1005-7-8"
+         inkscape:connector-curvature="0" />
+      <path
+         style="opacity:1;fill:#d8d8d8;fill-opacity:1;stroke:none;stroke-width:2.4000001;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:113.38582611;stroke-opacity:1"
+         d="m 405.97855,609.68727 -15.86716,-74.63438 14.69181,-2.93836 17.23839,2.3507 19.78497,30.36308 6.26851,49.16858 z"
+         id="path1190-3-8"
+         inkscape:connector-curvature="0" />
+      <path
+         style="opacity:1;fill:none;fill-opacity:1;stroke:#171717;stroke-width:2.4000001;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:113.38582611;stroke-opacity:1"
+         d="m 403.33586,550.47572 4.84805,8.865 2.35477,13.57452 -0.41555,19.53072 2.77033,10.25017 6.78726,5.12509 8.865,0.69257 5.2636,-4.57102 3.60141,-16.7604 -1.10813,-17.72999 -1.8007,-12.32792 -5.67915,-8.44944 -2.77031,-6.23322 -10.6657,-6.51023 -9.14205,-0.6926 -5.26359,1.66219 -0.8311,5.81766 z"
+         id="path1180-2-9"
+         inkscape:connector-curvature="0" />
+      <path
+         style="opacity:1;fill:#828282;fill-opacity:1;stroke:none;stroke-width:2.4000001;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:113.38582611;stroke-opacity:1"
+         d="m 434.38272,630.45169 20.76442,0.3918 -1.76302,-77.76864 -24.38651,-21.06115 -38.69033,-2.24986 8.4233,5.09315 0.97946,1.56713 6.4644,-2.15479 10.38221,0.78356 10.21585,8.17989 8.58966,15.13112 2.41791,28.5763 -3.00558,17.65392 -0.97945,0.58767 z"
+         id="path1186-8-99"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="ccccccccccccccc" />
+      <path
+         style="opacity:1;fill:none;fill-opacity:1;stroke:#171717;stroke-width:39.90000153;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:113.38582611;stroke-opacity:1"
+         d="m 425.3234,596.46744 c 133.27026,-81.16769 50.16966,-23.95369 120.35758,-65.25722"
+         id="path1013-4-2"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="cc"
+         inkscape:transform-center-x="-77.0484"
+         inkscape:transform-center-y="-36.971824" />
+      <g
+         id="g1020-9-98"
+         transform="matrix(1.1082574,0.00895631,-0.00895631,1.1082574,313.28571,621.25587)"
+         style="stroke-width:0.90228802">
+        <circle
+           r="35.814117"
+           cy="-103.46819"
+           cx="237.82213"
+           id="path1017-4-4"
+           style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:25.71520805;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:113.38582611;stroke-opacity:1" />
+      </g>
+      <path
+         style="opacity:1;fill:#828282;fill-opacity:1;stroke:none;stroke-width:2.4000001;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:113.38582611;stroke-opacity:1"
+         d="m 409.70758,592.72301 2.6318,11.21976 7.84752,5.01237 8.63109,0.89866 13.66926,-6.30583 -8.16643,27.04702 -21.15026,-0.33422 h -27.98018 l -1.93922,-79.3695 -17.45298,-21.88548 25.20986,0.69257 8.03391,4.98658 0.83109,1.66219 0.13852,7.47982 7.0643,15.51377 2.49328,13.85157 z"
+         id="path1184-5-4"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="ccccccccccccccccc" />
+      <path
+         style="opacity:1;fill:#f2080a;fill-opacity:0.30917873;stroke:#fb2200;stroke-width:5.30000019;stroke-linecap:butt;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.89855077"
+         d="m -343.21571,-52.383501 46.81828,0.277032"
+         id="path1342"
+         inkscape:connector-curvature="0"
+         inkscape:export-filename="C:\Users\Buster\Google Drev\vigtigt\kreativt\Matematik\Min bog\Hjemmeside\Assets\Unity scener til animation\Assets\Aritmetik\Plus og minus\Casino\CasinoSprites.png"
+         inkscape:export-xdpi="130"
+         inkscape:export-ydpi="130" />
+      <path
+         style="opacity:1;fill:#00539d;fill-opacity:0.30917873;stroke:#fb3719;stroke-width:5.30000019;stroke-linecap:butt;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         d="m -343.12763,-12.315523 46.81828,0.277032"
+         id="path1342-0"
+         inkscape:connector-curvature="0"
+         inkscape:export-filename="C:\Users\Buster\Google Drev\vigtigt\kreativt\Matematik\Min bog\Hjemmeside\Assets\Unity scener til animation\Assets\Aritmetik\Plus og minus\Casino\CasinoSprites.png"
+         inkscape:export-xdpi="130"
+         inkscape:export-ydpi="130" />
+      <path
+         style="opacity:1;fill:#f2080a;fill-opacity:0.30917873;stroke:#fb2200;stroke-width:5.30000019;stroke-linecap:butt;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.89855077"
+         d="m -58.209057,-54.940696 46.81828,0.277032"
+         id="path1342-4"
+         inkscape:connector-curvature="0"
+         inkscape:export-filename="C:\Users\Buster\Google Drev\vigtigt\kreativt\Matematik\Min bog\Hjemmeside\Assets\Unity scener til animation\Assets\Aritmetik\Plus og minus\Casino\CasinoSprites.png"
+         inkscape:export-xdpi="130"
+         inkscape:export-ydpi="130" />
+      <path
+         style="opacity:1;fill:#00539d;fill-opacity:0.30917873;stroke:#fb3719;stroke-width:5.30000019;stroke-linecap:butt;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         d="m -59.229103,-14.847822 46.81828,0.277032"
+         id="path1342-0-3"
+         inkscape:connector-curvature="0"
+         inkscape:export-filename="C:\Users\Buster\Google Drev\vigtigt\kreativt\Matematik\Min bog\Hjemmeside\Assets\Unity scener til animation\Assets\Aritmetik\Plus og minus\Casino\CasinoSprites.png"
+         inkscape:export-xdpi="130"
+         inkscape:export-ydpi="130" />
+      <ellipse
+         style="opacity:1;fill:#d02ac1;fill-opacity:1;stroke:#242424;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:113.38582611;stroke-opacity:1"
+         id="path1166-7"
+         cx="173.01752"
+         cy="-42.685524"
+         rx="23.519718"
+         ry="21.916101"
+         inkscape:export-filename="C:\Users\Buster\Google Drev\vigtigt\kreativt\Matematik\Min bog\Hjemmeside\Assets\Unity scener til animation\Assets\Aritmetik\Plus og minus\Casino\CasinoSprites.png"
+         inkscape:export-xdpi="130"
+         inkscape:export-ydpi="130" />
+      <ellipse
+         style="opacity:1;fill:#49d02a;fill-opacity:1;stroke:#242424;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:113.38582611;stroke-opacity:1"
+         id="path1166-7-8"
+         cx="172.52161"
+         cy="-95.15921"
+         rx="23.519718"
+         ry="21.916101"
+         inkscape:export-filename="C:\Users\Buster\Google Drev\vigtigt\kreativt\Matematik\Min bog\Hjemmeside\Assets\Unity scener til animation\Assets\Aritmetik\Plus og minus\Casino\CasinoSprites.png"
+         inkscape:export-xdpi="130"
+         inkscape:export-ydpi="130" />
+      <ellipse
+         ry="39.154491"
+         rx="41.939533"
+         cy="26.410048"
+         cx="173.4093"
+         id="ellipse1462"
+         style="opacity:1;fill:#d02a80;fill-opacity:0.42512081;stroke:none;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:113.38582611;stroke-opacity:1"
+         inkscape:export-filename="C:\Users\Buster\Google Drev\vigtigt\kreativt\Matematik\Min bog\Hjemmeside\Assets\Unity scener til animation\Assets\Aritmetik\Plus og minus\Casino\CasinoSprites.png"
+         inkscape:export-xdpi="130"
+         inkscape:export-ydpi="130" />
+      <ellipse
+         style="opacity:1;fill:#2ad071;fill-opacity:0.42512081;stroke:none;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:113.38582611;stroke-opacity:1"
+         id="ellipse1464"
+         cx="174.04413"
+         cy="111.73573"
+         rx="41.939533"
+         ry="39.154491"
+         inkscape:export-filename="C:\Users\Buster\Google Drev\vigtigt\kreativt\Matematik\Min bog\Hjemmeside\Assets\Unity scener til animation\Assets\Aritmetik\Plus og minus\Casino\CasinoSprites.png"
+         inkscape:export-xdpi="130"
+         inkscape:export-ydpi="130" />
+      <flowRoot
+         xml:space="preserve"
+         id="flowRoot1470"
+         style="fill:black;fill-opacity:1;stroke:none;font-family:'Times New Roman';font-style:normal;font-weight:normal;font-size:96px;line-height:1;letter-spacing:0px;word-spacing:0px;-inkscape-font-specification:'Times New Roman, ';font-stretch:normal;font-variant:normal;"><flowRegion
+           id="flowRegion1472"
+           style="font-size:96px;"><rect
+             id="rect1474"
+             width="302.07285"
+             height="97.729454"
+             x="183.61292"
+             y="258.79529"
+             style="font-size:96px;" /></flowRegion><flowPara
+           id="flowPara1476"></flowPara></flowRoot>      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.69999981px;line-height:1;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+         x="-486.93332"
+         y="-886.875"
+         id="text1480"
+         inkscape:export-filename="C:\Users\Buster\Google Drev\vigtigt\kreativt\Matematik\Min bog\Hjemmeside\Assets\Unity scener til animation\Assets\Aritmetik\Plus og minus\Casino\Tal\tal.png"
+         inkscape:export-xdpi="130"
+         inkscape:export-ydpi="130"><tspan
+           sodipodi:role="line"
+           id="tspan1478"
+           x="-486.93332"
+           y="-886.875"
+           style="font-size:25.39999962px;stroke-width:0.26458332">1</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.69999981px;line-height:1;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+         x="-477.24335"
+         y="-886.86206"
+         id="text1480-6"
+         inkscape:export-filename="C:\Users\Buster\Google Drev\vigtigt\kreativt\Matematik\Min bog\Hjemmeside\Assets\Unity scener til animation\Assets\Aritmetik\Plus og minus\Casino\Tal\tal.png"
+         inkscape:export-xdpi="130"
+         inkscape:export-ydpi="130"><tspan
+           sodipodi:role="line"
+           id="tspan1478-2"
+           x="-477.24335"
+           y="-886.86206"
+           style="font-size:25.39999962px;stroke-width:0.26458332">2</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.69999981px;line-height:1;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+         x="-465.22116"
+         y="-886.73627"
+         id="text1480-7"
+         inkscape:export-filename="C:\Users\Buster\Google Drev\vigtigt\kreativt\Matematik\Min bog\Hjemmeside\Assets\Unity scener til animation\Assets\Aritmetik\Plus og minus\Casino\Tal\tal.png"
+         inkscape:export-xdpi="130"
+         inkscape:export-ydpi="130"><tspan
+           sodipodi:role="line"
+           id="tspan1478-3"
+           x="-465.22116"
+           y="-886.73627"
+           style="font-size:25.39999962px;stroke-width:0.26458332">3</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.69999981px;line-height:1;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+         x="-454.07602"
+         y="-887.12012"
+         id="text1480-6-2"
+         inkscape:export-filename="C:\Users\Buster\Google Drev\vigtigt\kreativt\Matematik\Min bog\Hjemmeside\Assets\Unity scener til animation\Assets\Aritmetik\Plus og minus\Casino\Tal\tal.png"
+         inkscape:export-xdpi="130"
+         inkscape:export-ydpi="130"><tspan
+           sodipodi:role="line"
+           id="tspan1478-2-8"
+           x="-454.07602"
+           y="-887.12012"
+           style="font-size:25.39999962px;stroke-width:0.26458332">4</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.69999981px;line-height:1;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+         x="-442.07019"
+         y="-887.13312"
+         id="text1480-7-9"
+         inkscape:export-filename="C:\Users\Buster\Google Drev\vigtigt\kreativt\Matematik\Min bog\Hjemmeside\Assets\Unity scener til animation\Assets\Aritmetik\Plus og minus\Casino\Tal\tal.png"
+         inkscape:export-xdpi="130"
+         inkscape:export-ydpi="130"><tspan
+           sodipodi:role="line"
+           id="tspan1478-3-0"
+           x="-442.07019"
+           y="-887.13312"
+           style="font-size:25.39999962px;stroke-width:0.26458332">5</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.69999981px;line-height:1;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+         x="-431.18951"
+         y="-886.98785"
+         id="text1480-6-2-9"
+         inkscape:export-filename="C:\Users\Buster\Google Drev\vigtigt\kreativt\Matematik\Min bog\Hjemmeside\Assets\Unity scener til animation\Assets\Aritmetik\Plus og minus\Casino\Tal\tal.png"
+         inkscape:export-xdpi="130"
+         inkscape:export-ydpi="130"><tspan
+           sodipodi:role="line"
+           id="tspan1478-2-8-6"
+           x="-431.18951"
+           y="-886.98785"
+           style="font-size:25.39999962px;stroke-width:0.26458332">6</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.69999981px;line-height:1;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+         x="-419.44824"
+         y="-887.33148"
+         id="text1480-7-9-3"
+         inkscape:export-filename="C:\Users\Buster\Google Drev\vigtigt\kreativt\Matematik\Min bog\Hjemmeside\Assets\Unity scener til animation\Assets\Aritmetik\Plus og minus\Casino\Tal\tal.png"
+         inkscape:export-xdpi="130"
+         inkscape:export-ydpi="130"><tspan
+           sodipodi:role="line"
+           id="tspan1478-3-0-6"
+           x="-419.44824"
+           y="-887.33148"
+           style="font-size:25.39999962px;stroke-width:0.26458332">7</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.69999981px;line-height:1;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+         x="-407.90619"
+         y="-886.92169"
+         id="text1480-6-2-9-6"
+         inkscape:export-filename="C:\Users\Buster\Google Drev\vigtigt\kreativt\Matematik\Min bog\Hjemmeside\Assets\Unity scener til animation\Assets\Aritmetik\Plus og minus\Casino\Tal\tal.png"
+         inkscape:export-xdpi="130"
+         inkscape:export-ydpi="130"><tspan
+           sodipodi:role="line"
+           id="tspan1478-2-8-6-6"
+           x="-407.90619"
+           y="-886.92169"
+           style="font-size:25.39999962px;stroke-width:0.26458332">8</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.69999981px;line-height:1;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+         x="-396.16489"
+         y="-886.86853"
+         id="text1480-7-9-3-7"
+         inkscape:export-filename="C:\Users\Buster\Google Drev\vigtigt\kreativt\Matematik\Min bog\Hjemmeside\Assets\Unity scener til animation\Assets\Aritmetik\Plus og minus\Casino\Tal\tal.png"
+         inkscape:export-xdpi="130"
+         inkscape:export-ydpi="130"><tspan
+           sodipodi:role="line"
+           id="tspan1478-3-0-6-8"
+           x="-396.16489"
+           y="-886.86853"
+           style="font-size:25.39999962px;stroke-width:0.26458332">9</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.69999981px;line-height:1;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+         x="-384.35828"
+         y="-886.72333"
+         id="text1480-6-2-9-6-3"
+         inkscape:export-filename="C:\Users\Buster\Google Drev\vigtigt\kreativt\Matematik\Min bog\Hjemmeside\Assets\Unity scener til animation\Assets\Aritmetik\Plus og minus\Casino\Tal\tal.png"
+         inkscape:export-xdpi="130"
+         inkscape:export-ydpi="130"><tspan
+           sodipodi:role="line"
+           id="tspan1478-2-8-6-6-5"
+           x="-384.35828"
+           y="-886.72333"
+           style="font-size:25.39999962px;stroke-width:0.26458332">0</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:23.83508301px;line-height:1;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458329"
+         x="-483.96469"
+         y="-868.91071"
+         id="text1598"
+         inkscape:export-filename="C:\Users\Buster\Google Drev\vigtigt\kreativt\Matematik\Min bog\Hjemmeside\Assets\Unity scener til animation\Assets\Aritmetik\Plus og minus\Casino\Tal\tal.png"
+         inkscape:export-xdpi="130"
+         inkscape:export-ydpi="130"><tspan
+           sodipodi:role="line"
+           id="tspan1596"
+           x="-483.96469"
+           y="-868.91071"
+           style="stroke-width:0.26458329">Points!</tspan></text>
+    </g>
+  </g>
+</svg>

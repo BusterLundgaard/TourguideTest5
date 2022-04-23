@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+
+
+    <h2>Geogebra til plotning af <br> funktioner og ligninger</h2>
+    <p class="t">
+    En anden ting der er ret vigtigt at kunne i Geogebra er, at konstruere/visualisere
+    grafer/funktioner.
+    Du kan se hvordan man gør det med Geogebra 6 i denne video: 
+    </p>
+
+    <p class="cent">
+        <a href="https://youtu.be/yUE4AjxMcuE">Link til Youtube video</a>
+    </p>
+
+    <p class="t">
+    Geogebra 5 kan præcist det samme (og lagger mindre!), men for at lave de justerbare
+    tal jeg brugte i videoen, skal du 
+    først trykke på symbolet langt oppe til højre, hvor der står "slider"/"skyder".
+    Det opretter et tal du let kan justere. Geogebra 6 gør det automatisk når du laver
+    en ny variabel. 
+    </p>
+
+    <p class="t">
+    Tid til nogle flere opgaver!
+    </p>
+
+    <q-stion 1="7" 2="1">
+    Lav en graf af 
+    _($y = 100 * \left(Sin(x)+Cos(x) \right)_) 
+    ... og zoom ud + udstræk 
+    akserne nok til, at man kan få en fornemmelse for grafen. Ændre egenskaberne
+    på grafen, så den er rød, stiplet, og så tyk som muligt. Navngiv den "spaghetti".
+    <br><br></q-stion>
+    <answer-box>
+    Du kan se hvordan jeg gjorde det her:
+    <video class='SpicB' style="width:95%;" controls>
+        <source src='../../../Assets/Chapter2\Geogebra\Grafer\opgave1.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+
+    <q-stion 1="7" 2="2">
+    Graf en andengradsfunktion _(y=ax^2+bx+c_) i Geogebra, hvor 
+    du kan justere på både _(a_), _(b_) og _(c_). 
+    <br><br></q-stion>
+    <answer-box>
+    Du kan se hvordan jeg gjorde det her:
+    <video class='SpicB' style="width:95%;" controls>
+        <source src='../../../Assets/Chapter2\Geogebra\Grafer\opgave2.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+
+    <q-stion 1="7" 2="3">
+    De frie og justerbare variabler du opretter i Geogebra
+    er normalt sat til intervallet _([-5, 5]_), men det kan
+    ændres til hvad end, du har brug for. 
+    Hvis du højreklikker på variablet, trykker på "settings"/"indstillinger", og
+    derefter går ind på menuen "slider", kan du justere på min, max, og "increment".
+    <p class="t">
+    Sørg for at vores andengradsfunktion altid vender nedad (ligner en sur smiley), 
+    og at _(c_) er mellem _(-1_) og _(1_). 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Du kan se hvordan, jeg gjorde det her:
+    <video class='SpicB' style="width:95%;" controls>
+        <source src='../../../Assets/Chapter2\Geogebra\Grafer\opgave3.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+
+    <q-stion 1="7" 2="4">
+    Vi havde ikke givet _(b_) nogle krav: Lad os nu sige, at den skal være
+    større end _(a_).
+    <br><br></q-stion>
+    <answer-box>
+    Du kan se hvordan, jeg gør det her:
+    <video class='SpicB' style="width:95%;"controls>
+        <source src='../../../Assets/Chapter2\Geogebra\Grafer\opgave4.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+
+    <q-stion 1="7" 2="5">
+    Lad os lave en helt ny justerbar parabel. Denne gang skal den gå
+    opad (ligne en glad smiley), og <i>aldrig skære</i> _(x_)-aksen. 
+    Det her er måske lidt tricky. 
+    <br><br></q-stion>
+    <answer-box>
+    Det er nemt at sørge for, at parablen går opad: _(a_) skal bare være positiv. 
+    Hvad gør vi for at den aldrig skærer _(0_) dog?
+    <p class="t">
+    Well, det svarer
+    til at 
+    _($ ax^2 + bx + c = 0_)
+    ... ikke har nogen løsninger. Vi ved, at den generelle løsning til sådan en ligning er:
+    _($x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}_)
+    Hvis _(b^2 - 4ac_) er under _(0_), kan vi ikke tage kvadratroden, og 
+    ikke finde nogle løsninger. Det er altså vores krav: _(b^2 - 4ac \lt 0_). Det
+    kan omskrives matematisk til:
+    _($b^2 \lt 4*a*c_)
+    _(b^2_) er altid positivt, så hvis _(4*a*c_) er større end det, er _(4*a*c_) 
+    <i>også</i> positivt. Det har to konsekvenser: A) _(c_) er nød til også at
+    være positiv, da _(4*a*c_) ellers bliver negativ, og B) vi kan tage kvadratroden
+    af begge sider, da de altid er positive:
+    _($\sqrt{b^2} \lt \sqrt{4*a*c} \to_)
+    _($ |b| \lt 2*\sqrt{a*c}_)
+   Her husker vi på, at _(\sqrt{b^2}_) ikke er lig bare _(b_), men 
+   specifikt _(|b|_) (den absolutte værdi). Så _(b_) kan godt være negativ, så længe
+   _(|b|_) er mindre end _(2*\sqrt{a*c}_). Vi kan derfor omskrive kravet til noget
+   mere intuitivt:
+   _($-2*\sqrt{a*c} \lt b \lt 2*\sqrt{a*c}_)
+    Vi har nu bare tre krav vi skal indføre i Geogebra: _(a_) og _(c_) skal være
+    positive, og _(b_) skal være mellem _(-2*\sqrt{a*c}_) og _(2*\sqrt{a*c}_). Lad
+    os se om det virker!
+    </p>
+    <video class='SpicB' style="width:95%;" controls>
+        <source src='../../../Assets/Chapter2\Geogebra\Grafer\opgave5.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+
+    <q-stion 1="7" 2="6">
+    Graf 
+    _($y=Sin(x)^n*Cos(x)^m_)
+    Sørg for at _(n_) og _(m_) begge er <i>hele</i>, <i>positive</i> tal. 
+    <br><br></q-stion>
+    <answer-box>
+    Du kan se hvordan jeg gjorde det her:
+    <video class='SpicB' style="width:95%;" controls>
+        <source src='../../../Assets/Chapter2\Geogebra\Grafer\opgave6.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+
+    <q-stion 1="7" 2="7">
+    Nogle gange vil du kun vise din graf ved bestemte _(x_) værdier. 
+    Primært hvis du skal præsentere grafen for andre; 
+    Det er for det meste ligegyldigt, hvis du eksklusivt bruger grafen til at løse
+    et problem eller forstå et koncept selv.
+    <p class="t">
+    Måske laver du en graf over profit
+    som funktion af arbejdere:
+    _($\text{Penge} = -100A^2 + 3000A_)
+    Grafen vil nu se ud som:
+    </p>
+    <img class='Spic' style='width:90%' src='../../../Assets/Chapter2\Geogebra\Grafer\ArbejderGraf.png'> 
+    <p class="t">
+    Men man kan ikke have en "negativ" mængde arbejdere, så vi 
+    vil kun vise grafen ved positive _(A_). Hvordan gør vi det i Geogebra?
+    </p>
+    <p class="t">
+    Vi bruger "If"-kommandoen (på dansk: "Hvis"). Her siger du til Geogebra: Vis denne graf, <i>hvis</i>
+    et eller andet er sandt. Vores "et eller andet" er så, at _(x \gt 0_). Vi ville nu skrive
+    _($\text{If}(x \gt 0, -100A^2 + 3000A)_)
+    ... og få:
+    </p>
+    <img class='Spic' style='width:90%' src='../../../Assets/Chapter2\Geogebra\Grafer\ArbejderGraf2.png'> 
+    <p class="t">
+    Prøv selv! Graf _(y=2^x_) mellem _(x=3_) og _(x=5_).
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Du kan se, hvordan jeg gjorde det her:
+    <video class='SpicB' style="width:95%;" controls>
+        <source src='../../../Assets/Chapter2\Geogebra\Grafer\If1.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+
+    <q-stion 1="7" 2="8">
+    Genskab følgende billede i Geogebra:
+    <img class='SpicBXL' style='width:95%' src='../../../Assets/Chapter2\Geogebra\Grafer\IfGraf2.png'> 
+    <p class="t">
+    Den tegnede graf (som er tegnet med to forskellige farver to forskellige steder) er en andengradsfunktion.
+    Mere siger jeg ikke. Den her opgave er måske en smule tricky! 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Lad os først og fremmest finde ud af <i>hvad</i> det er for en andengradsfunktion,
+    der er tegnet en graf af. 
+    Vi kan se, at den har dens to nulpunkter ved _(x=0_) og _(x=20_).
+    Vi ved, at _(c_) i _(ax^2+bx+c_) er _(0_), da den skærer y-aksen ved _(0_). 
+    _(y_) er _(0_) når _(x_) er _(20_), så: 
+    _($0=a*20^2 + b*20_)
+    ... hvorfra man let ser, at _(b=-20a_). Toppunktet er _(y_)-værdien
+    i midten af de to nulpunkter. Det ene nulpunkt er _(x=0_) og det
+    andet _(x=20_), så midten er _(x=10_). Det giver:
+    _($10=a*10^2+b*10 \to 1=a*10+b \to b = 1-10a_)
+    Nu har vi:
+    _($-20a = 1-10a \to a = -0.1_)
+    Og:
+    _($b=-20*(-0.1)=2_)
+    Det er meget fint, men hvordan præcis genskaber vi billedet? Vi har brug for, at 
+    plotte to versioner af _(y=-0.1x^2+2x_): Den <i>under</i> _(y=9_) - og over _(y=0_) - 
+    og den <i>over</i> _(y=9_). Vi <i>kunne</i> prøve at finde
+    de _(x_)-værdier hvor _(y_) er mellem _(0_) og _(9_) og lave to grønne grafer:
+    Èn før den har ramt den røde del og en <i>efter</i>. Vi
+    kunne <i>også</i> gøre noget markant simplere: Fortælle Geogebra direkte, at 
+    _(y_) skal være mellem _(0_) og _(9_)! Hvis vi skriver
+    _($If(0 \lt y \lt 9, -0.1x^2+2x)_)
+    ... sker der intet. Geogebra ved ikke, at _(0 \lt y \lt 9_)
+    specifikt refererer til <i>vores</i> _(y_) som følger _(-0.1*x^2+2x_). 
+    Derfor gør vi følgende: 
+    <video class='SpicB' style="width:95%;" controls>
+        <source src='../../../Assets/Chapter2\Geogebra\Grafer\If2.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+
+    <q-stion 1="7" 2="9">
+    Lad os sige jeg gerne ville tegne det følgende billede i Geogebra:
+    <img class='SpicBXL' style='width:90%' src='../../../Assets/Chapter2\Geogebra\Grafer\IfGraf3.png'> 
+    <p class="t">
+    Det er en graf af _(\sqrt{x}_) med et hul hvor _(x_) er mellem _(3_) og _(5_). 
+    _(x_) er enten mindre end _(3_), <i>eller</i> større end _(5_). Rent 
+    intuitivt, ville vi sige til Geogebra:
+    _($If(x \lt 3 \text{ eller } x \gt 5, \sqrt{x})_)
+    Det er faktisk også hvad man gør! I stedet for "eller"
+    skriver man bare "||". "|" er et symbol, man kan 
+    finde på ens computer. Dem laver man så to af:
+    _($If(x \lt 3 \text{ || } x \gt 5, \sqrt{x})_)
+    Super mærkeligt, i know, men det er en gammel programmeringstradition, der 
+    holdte ved. For at skrive "|" skal du holde ALT GR-knappen inde
+    (det samme du holder inde når du skriver } og { ), og trykke
+    på en knap, der ofte er til højre for spørgsmålstegnsknappen og over ^-knappen.
+    Hvis du er på Mac, skal du holde shift og alt inde, og
+    trykke på L. Det kan også godt være dit keyboard har "|" som
+    dedikeret knap. </p>
+    <p class="t">
+    Du kan bruge || så mange gange du har lyst. Det behøver altså 
+    ikke kun være èt eller to krav du laver: Det kan være 3, 4, 5, 6, osv. 
+    </p>
+    <p class="t">
+    Anyways, opgaven: Graf _(y=0.1x^2_) i Geogebra, men
+    med et hul mellem _(x=-2_) og _(x=4.5_). Sørg også for, 
+    at den ikke må blive mindre end _(x=-6_), eller større end _(x=10_).
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Du kan se, hvordan jeg gjorde det her:
+    <video class='SpicB' style="width:95%;" controls>
+        <source src='../../../Assets/Chapter2\Geogebra\Grafer\If3.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5" customWidth="700">
+    Ligesom Geogebra forstår "eller" forstår den også "og". 
+    Hvis du skriver:
+    _($If(x \gt 3 \text{ og } sin(x) \gt 0.5, sin(x))_)
+    ... skal _(x_) være større end _(3_), <i>og</i> _(y_) 
+    større end _(0.5_). Ligesom ved "eller" skriver man ikke
+    faktisk "og" i Geogebra: Man skriver "&&" - Bare "&"-tegnet to gange. 
+    Ergo: 
+    _($If(x \gt 3 \text{ && } sin(x) \gt 0.5, sin(x))_)
+    Man kan også bruge parenteser når man giver Geogebra de her krav. 
+    Sig f.eks. at jeg gerne vil lave _(Sin(x)_), hvor _(y \lt 0.5_),
+    <i>hvis</i> _(x \lt 3_), men _(y_) i stedet er _(\gt -0.5_), <i>hvis</i>
+    _(x \gt 3_). Her ville jeg skrive:
+    _($If \left((x \lt 3 \text{ && } sin(x) \lt 0.5) || (x \gt 3 \text{ && } sin(x) \gt -0.5), Sin(x) \right)_)
+    Opgaven: konstruer den <i>grønne</i> del af følgende _(Sin_) graf i Geogebra:
+    <img class='SpicBXL' style='width:95%' src='../../../Assets/Chapter2\Geogebra\Grafer\IfGraf5.png'> 
+    <br><br></q-stion>
+    <answer-box customWidth="700">
+    Man kan se, at farven er grøn når _(y_) er mellem _(-0.82_) og _(0.3_), <i>medmindre</i>
+    _(x_) er mellem _(3.45_) og _(10_). Det kan omformuleres: "<i>Så længe</i>
+    _(x_) er mindre end _(3.45_) <i>eller</i> større end _(1_)". Jeg ville nu skrive følgende i Geogebra:
+    _($If(-0.82 \lt sin(x) \lt 0.3 \text{ && } (x \lt 3.45 || x \gt 10), sin(x))_)
+    Det virker! 
+    <br><br></answer-box>
+
+
+

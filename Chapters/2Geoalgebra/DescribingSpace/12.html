@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+
+
+    <h2>Tilbage til 3D: Planer (og lidt ekstra)</h2>
+
+    <p class="t">
+    Hvis vektorer kan være praktiske til at beskrive todimensionelle retninger, er de næsten essentielle,
+    når vi skal beskrive retninger <i>i 3D</i>:
+    </p>
+    
+    <video class='SpicBXL' style="width:95%;" controls>
+        <source src='../../../Assets/Chapter2\Section4\Space\RetningerI3D.mp4' type='video/mp4'>
+    </video>
+
+    <p class="t">
+    Vektorer er helt essentielle for stort set alt 3D arbejde, faktisk. Lad os fortsætte, hvor vi slap 
+    i sidste kapitel, og undersøge <i>planer</i>. 
+    </p>
+
+    <q-stion 1="12" 2="1">
+    Sig at 
+    _($\begin{eqnarray}
+    && A=(3,2,1) \\
+    && B=(-2,-4,-2) \\ 
+    && C=(-4,5,1)
+    \end{eqnarray}_)
+    Find
+    arealet af _(\triangle ABC_)
+    <br><br></q-stion>
+    <answer-box>
+    Lad os lige tegne situationen og tænke over det:
+
+    <video class='SpicBXL' style="width:95%;" controls>
+        <source src='../../../Assets/Chapter2\Section4\Space\ArealAfTrekant.mp4' type='video/mp4'>
+    </video>
+
+    <p class="t">
+    For at finde vinklen _(\angle ABC_), kan vi finde vinklen
+    mellem _(\vec{BA}_) og _(\vec{BC}_). Vi gjorde noget lidt lignende
+    i opgaven med molekylet:
+    _($\begin{eqnarray}
+    && \vec{BA}=\VeC[3,2,1]-\VeC[-2,-4,-2]=\VeC[5,6,3] \\ \\
+    && \vec{BC}=\VeC[-4,5,1]-\VeC[-2,-4,-2]=\VeC[-2,9,3] 
+    \end{eqnarray}_)
+    Afstandene vi skal bruge i formlen _((1/2)*a*b*Sin(\theta)_) er 
+    _($ a = |\vec{BA}| = \sqrt{5^2+6^2+3^2} = 8.36 _)
+    _($ b = |\vec{BC}| = \sqrt{2^2+9^2+3^2} = 9.69 _)
+    Vi bruger formlen:
+    _($\theta = Arccos \left(\frac{\vec{a} \cdot \vec{b}}{|\vec{a}|*|\vec{b}|} \right) = \frac{5*(-2)+6*9+3*3}{8.36*9.69} = 0.858_)
+    Og får et areal på:
+    _($\frac{1}{2}*8.36*9.69*Sin(0.858)=30.7_)
+    Voila!
+    </p>
+    <br></answer-box>
+
+    <p class="t">
+    I sidste opgave brugte vi et såkaldt "plan". Det er et ord jeg har brugt før:
+    F.eks. ved de koniske sektioner som et "plan der skar en kegle", eller 
+    når jeg har sagt "XY-planet" eller "YZ"-planet. Hvad præcist <i>er</i> de her planer?
+    </p>
+    <p class="t">
+    Well, lidt ligesom vi så før, da jeg lavede et plan igennem trekanten, 
+    kan man lidt se et plan som en slags 
+    2D vindue i en 3D verden. XY-planet er et godt eksempel:
+    </p>
+    <img class='SpicXL' style='width:95%' src='../../../Assets/Chapter2\Section4\Space\XY plan.png'> 
+    <p class="t">
+    At tegne på et 2D koordinatsystem svarer til bare at tegne på planet _(z=0_) i 
+    et 3D koordinatsystem. Der er selvfølgelig intet
+    specielt omkring lige det plan. Du kunne også se på andre:
+    </p>
+    <img class='SpicXL' style='width:85%' src='../../../Assets/Chapter2\Section4\Space\Kegle og flade skæring.png'> 
+    <p class="t">
+    Den her skæring er nok ret svær at beskrive som en 3D sti, men det bliver til 
+    en relativ simpel 2D kurve, hvis vi ser direkte ned på planet:
+    </p>
+    <img class='SpicXL' style='width:70%' src='../../../Assets/Chapter2\Section4\Space\Kegle og flade skæring 2.png'> 
+    <p class="t">
+    Man finder ret hurtigt frem til en mere præcis matematisk definition hvis man tænker
+    over planer som "2D vinduer". Hvad gælder for alle punkterne
+    på XY-planet? Ingen af dem har et z-komponent! <i>Alle</i> retninger på XY-planet
+    er vinkelrette på
+    _($\VeC[0,0,1]_)
+    ... da:
+    </p>
+    <img class='SpicXL' style='width:70%' src='../../../Assets/Chapter2\Section4\Space\ExplainingPlans.png'> 
+    <p class="t">
+    Det giver fuldkommen mening at vektoren direkte opad mod _(z_) er vinkelret på
+    hver vektor i XY-planet: Når man bevæger sig på XY-planet, bevæger man sig ikke den
+    mindste del på _(z_), og når man kun bevæger sig opad med _(z_), bevæger
+    man sig ikke den mindste del på XY-planet!
+    </p>
+    <p class="t">
+    Sådan her kan vi <i>definere</i> planer: XY-planet er samlingen af punkter, hvor vektorerne mellem
+    de punkter er vinkelret på vektoren _((0,0,1)_) (eller nogen som helst vektor med samme retning).
+    Et andet tilfældigt plan er samlingen af punkter, hvor vektorerne mellem de punkter er 
+    vinkelrette på en eller anden ny vektor/retning. Du kan lidt se på det sådan her:
+    </p>
+
+    <video class='SpicBXL' style="width:100%;" controls>
+        <source src='../../../Assets/Chapter2\Section4\Space\Planer i 3D.mp4' type='video/mp4'>
+    </video>
+
+    <p class="t">
+    Prøv at leg lidt rundt med det i følgende simulation:
+    </p>
+
+    <div style="margin-top:35px;">
+        <iframe scrolling="no" title="Planes1" src="https://www.geogebra.org/material/iframe/id/ur2nyf6p/width/700/height/500/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/true/ctl/true" width="500px" height="357px" style="border:solid;"> </iframe>
+    </div>
+
+    <p class="t" style="margin-top:35px;">
+    Lad os se, om vi kan gøre det her krav lidt mere matematisk igen. Sig at 
+    den vektor det hele skal være vinkelret til hedder _(\vec{n}_) og er lig
+    _($\vec{n}=\VeC[n_x,n_y,n_z]_)
+    Sig yderligere, at planet går gennem et punkt _(P=(a,b,c)_). Hvad ved vi nu om punkterne i dette plan?
+    </p>
+    <p class="t">
+    Lad os gøre opgaven nemmere ved først at se på planer, der skærer _((0, 0, 0)_). 
+    Nu kan vi se et hvilket som helst punkt 
+    _((x,y,z)_) som en vektor fra _((0,0,0)_) til punktet - og den vektor skal
+    være vinkelret på _(\vec{n}_). Hvordan tjekker vi, om to vektorer er vinkelrette? 
+    </p>
+
+    <q-stion 1="12" 2="2">
+    Sig du har to vektorer:
+    _($\vec{v_1}=\VeC[2,-3,-5], \qquad \vec{v_2} = \VeC[6,7,-1.8]_)
+    Er de vinkelrette?
+    <br><br></q-stion>
+    <answer-box>
+    Hvis de er vinkelrette, er vinklen imellem dem lig _(\pi/2_). 
+    Det kan vi bruge til at opstille en ligning:
+    _($\begin{align}
+    \pi/2&=Arccos \left(\frac{\vec{v_1} \cdot \vec{v_2}}{|\vec{v_1}|*|\vec{v_2}|} \right) & \to \\ \\
+    0&=\frac{\vec{v_1} \cdot \vec{v_2}}{|\vec{v_1}|*|\vec{v_2}|} & \to \\ \\
+    0&=\vec{v_1} \cdot \vec{v_2}
+    \end{align}_)
+    Voila! For at tjekke om to vektorer er vinkelrette, skal vi bare tjekke om 
+    deres prikprodukt er lig _(0_)! Vi regner nu:
+    _($2*6+(-3)*7+(-5)*(-1.8)_)
+    ... hvilket faktisk giver _(0_). Ergo: Vores to vektorer er vinkelrette. 
+    <br><br></answer-box>
+
+    

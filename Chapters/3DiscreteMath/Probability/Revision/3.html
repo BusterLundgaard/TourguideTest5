@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+
+
+    <q-stion 1="2" 2="1" 3="5">
+    I er _(8_) folk, men der er desværre kun _(5_) stole tilbage. Hvor stor er chancen for at du får en stol
+    og ikke skal sidde på gulvet?
+    <br><br></q-stion>
+    <answer-box>
+    Vi skal finde en sandsynlighed, så vi skal både finde den totale mængde af måder man kan fordele folk på stolene,
+    samt mængden af måde man kan fordele dem på stolene hvor <i>du</i> er på. Det er ligegyldigt for
+    sandsynligheden i denne situation om stolene er unikke eller ej, så lad os bare sige at de <i>er</i>
+    unikke: Det gør det nemmere for os at regne. 
+    <p class="t">
+    Først det totale antal. Her bruger vi lidt frugt-logikken igen: 
+    På første stol kan vi vælge _(8_) forskellige mennesker. På næste stol, eller
+    næste "valg" har vi allerede valgt _(1_) menneske, så der er nu kun _(7_) personer vi
+    kan vælge. På næste valg igen er det _(6_), så _(5_) og så _(4_). Nu er alle 5 stole udfyldt. 
+    Alt i alt er der 
+    _($8*7*6*5*4=\frac{8!}{3!}=6720 \text{ måder}_)
+    Nu skal vi tælle de gange hvor du er med. Først har vi _(5_) valg: Hvad for 
+    en af de _(5_) unikke stole skal du sidde på? Efter det er der _(7_) folk og _(4_) unikke stole
+    tilbage, hvilke svarer til resterende _(7*6*5*4=840_) valg. Alt i alt: 
+    _($5*840=4200 \text{ måder}_) 
+    Nu regner vi så endelig sandsynligheden:
+    _($\frac{4200}{6720}=0.625_)
+    Så lidt over en _(62_)% chance. 
+    </p>
+    <p class="cent">*</p>
+    <p class="t">
+    Når jeg skal løse de her slags problemer, så hjælper det mig tit at visualisere
+    det på en bestemt måde. Jeg viser det lige hurtigt i følgende video:
+    </p>
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\ChoosingIntuition.mp4' type='video/mp4'>
+    </video>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Sig at vi er tilbage til bordet med _(6_) stole fra tidligere. Nu er i ikke _(6_) personer også, men 
+    i stedet _(10_). I vil gerne vide <i>hvor mange måder i kan udvælge</i> _(6_) af de _(10_) folk til 
+    at sidde på bordet. I er fuldkommen ligeglade med hvem der sidder ved siden af hvem: Det er nok
+    mindre vigtigt end hvem der overhovedet for lov til at sidde ned. 
+    <br><br></q-stion>
+    <answer-box>
+    Lad os igen antage at stolene alle er unikke: Det burde i denne situation ikke have nogen indflydelse på 
+    mængden af måder i kan udvælge _(6_) ud af 10 personer. Ved første stol kan i lave _(10_) valg, 
+    ved næste stol _(9_) valg, næste igen _(8_), osv indtil i er alle _(6_) stole igennem. Det giver
+    _($10*9*8*7*6*5 = 151200 \text{ måder}_)
+    Vi er fuldkommen ligeglad med rækkefølgen og hvem der sidder hvor:
+    Lad os derfor dividere med mængden af måder man kan rykke folk rundt på. Vi ved fra de mange tidligere opgaver
+    at mængden af måder man kan placere _(6_) folk på _(6_) unikke stole er _(6!=720_). 
+    Du kan tænke på det sådan her: Der vil være _(720_) måder at placere
+    hver sæt af folk vi har valgt skal side ved bordet. Vi
+    er kun interesseret i antallet af sæts, så vi regner: 
+    _($\frac{151200 \text{ måder}}{720 \text{ måder}/\text{sæts}} = 210 \text{ sæts}_)
+    Voila! _(210_)! 
+    <p class="t">
+    Lad os kigge på hvad vi gjorde her lidt mere generelt. Alt det æstetiske med bordet, personerne, og stolene
+    er egentlig ligegyldigt: Vi fandt mængden af måder man kunne vælge _(6_) ud af _(10_) ting. Man for meget ofte
+    brug for at løse lignende problemer, så vi har givet det et navn: <i>Binomialske koefficienter</i> (på engelsk: 
+    "Binomial coefficients").
+    </p>
+    <p class="t">
+    Man bruger lidt hyppigere navnet <i> n-choose-k</i>. 
+    n-choose-k er mængden af måder
+    man kan vælge _(k_) ud af _(n_) ting. Så 11-choose-8 er mængden af måder man kan vælge _(8_) ud af _(11_) ting. 
+    Vi skriver det ofte kort som:
+    _($\VeC[n,k]_)
+    Så f.eks:
+    _($\VeC[11,8]_)
+    Ved at generalisere hvad vi gjorde i denne opgave kan vi nemt komme frem til en dejlig formel:
+    Først fandt vi mængden af måder man kan placere _(n_) folk ved _(k_) unikke stole. 
+    Ved 12-choose-5 ville det være:
+    _($12*11*10*9*8=\frac{12!}{7!}=\frac{12!}{(12-5)!}_)
+    Så ved n-choose-k er det:
+    _($\frac{n!}{(n-k)!}_)
+    Bagefter dividerede vi med mængden af måder man kan rykke _(k_) folk rundt
+    på _(k_) stole. Det gav _(k!_), altså:
+    _($\VeC[n,k]=\frac{\left(\frac{n!}{(n-k)!}\right)}{k!}=\frac{n!}{k!*(n-k)!}_)
+    Bum! I den her formel er det vigtigt at huske på at _(n!/(n-k)!_) jo faktisk 
+    bare er en mere kompakt måde at skrive f.eks. _(12*11*10*9*8_). Du behøver ikke
+    faktisk finde både _(12!_) og _(7!_), som godt kan blive meget store tal. 
+    </p>  
+    <p class="t">
+    I Geogebra kan du regne n-choose-k med kommandoen _(\text{nCr}(n,k)_), hvor _(n_) så
+    er dit _(n_), og _(k_) er dit _(k_). Jeg anbefaler at du lige regner 
+    det en smule i hånden først. Så kan du for det første huske hvordan formlen
+    virker (hvis du måske får brug for at manipulere den algebraisk!), plus du får
+    også lige en god fornemmelse. 
+    </p>
+    <br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Svar på de følgende spørgsmål:
+    <p class="t">
+    <b> 1</b>: Hvor mange _(7_)-kort dæk kan man trække i et fuldt kortsæt uden jokere? Det er et ret stort tal, men
+    slet, slet ikke ligeså stort som _(52!_) fra tidligere. Husk at bruge lommeregner i den her!
+    </p>
+    <p class="t">
+    <b> 2</b>: Du spiser tapas på en restaurant. De har _(14_) retter, og det er tilfældigt hvilke _(5_)
+    du får (du kan dog ikke få flere af den samme ret). Du vil virkelig gerne have deres forårsruller, 
+    deres bagt brie, og deres butterdej med ost. Hvad er chancen for at du får dem alle sammen?  
+    </p>
+    <p class="t">
+    <b> 3</b>: På dit kollegie på _(43_) mennesker bliver _(39_) smittet med en sygdom. Alle
+    har lige stor chance for at blive smittet: Hvor stor er chancen for at du blev det? 
+    </p>
+    <br></q-stion>
+
+    <answer-box t="Answer 1#">
+    Det her er bare 
+    _($\VeC[7,52]=\frac{52*51*50*49*48*47*46}{7*6*5*4*3*2}=133784560_)
+    <br><br></answer-box>
+    <answer-box t="Answer 2#" tabColour="rgb(171,96,147)">
+    Det er en sandsynlighed, så vi skal både finde mængden af måder man kan få _(5_) ud af _(14_) retter på generelt,
+    og mængden af måder hvor tre af retterne er henholdsvis forårsruller, bagt brie, og butterdej. Første del svarer
+    til at udvælge _(5_) ting ud af _(14_), så:
+    _($\VeC[14,5]=\frac{14*13*12*11*10}{5*4*3*2} = 2002_)
+    Hvis du specifikt skal have dine ynglingsretter, så er der kun _(14-3=11_) retter tilbage, og 
+    vi skal kun lave _(5-3=2_) valg ved de resterende retter. Altså:
+    _($\VeC[11,2]=\frac{11*10}{2} = 55_)
+    Svaret er altså:
+    _($\frac{55}{2002}=0.0274725_)
+    Hvilke cirka svarer til lidt under 3%. En ret lille chance.
+    <br><br></answer-box>
+    <answer-box t="Answer 3#">
+    At finde hvor mange måder folk kan blive smittet på svarer til at se hvor mange måder
+    vi kan smitte kollegiet hvis vi "vælger" _(39_) af de _(43_) elever. Det 
+    er altså lig:
+    _($\VeC[43,39]=\frac{43!}{39!*(43-39)!}_)
+    Du <i>kunne</i> regne det sådan her, men du kunne også være lidt smartere. Der er
+    _(39_) der bliver smittede, men kun _(4_) der <i>ikke</i> bliver smittede. Blandt de _(43_) elever, på
+    hvor mange måder kan vi vælge de _(4_) der <i>ikke</i> smittes?
+    _($\VeC[43,4]=\frac{43!}{4!*(43-4)!}_)
+    Det her passer også til at _(39!*(43-39)!_) bliver til _(39!*4!_) og at
+    _(4!*(43-4)!_) bliver til _(4!*39!_). Generelt:
+    _($\VeC[n,n-k]=\VeC[n,k]_)
+    I hvert fald:
+    _($\frac{43*42*41*40}{4!}=123410_)
+    Hvis <i>du</i> skal være smittet, så er der nu _(42_) personer at vælge imellem, og 
+    _(3_) der mangler at blive smittede. Altså:
+    _($\VeC[42,3]=\frac{42*41*40}{3*2}= 11480_)
+    Chancen for at du <i>ikke</i> bliver smittet er altså:
+    _($\frac{11480}{123410} = 0.093 _)
+    Hvilke betyder at chancen for at du <i>bliver</i> smittet er _(1-0.093=0.907_) hvilke er
+    lidt over _(90%_). 
+    <br><br></answer-box>
+    
+    <p class="t">
+    FØLGENDE OPGAVE SKAL SLETTES
+    </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <q-stion 1="2" 2="1" 3="5" customWidth="700">
+    TILFØJ ET HINT TIL DEN HER!
+        Her er et kendt, og lidt tricky problem: Sig at du spiller mønt med en ven.
+    Hver gang man gætter rigtigt så får man èt point, og spilleren der først får _(10_) vinder.
+    Efter 6 runder har du _(4_) points, og din ven kun _(2_). Af en eller anden årsag så stopper spillet pludselig abrupt,
+    og i kan ikke spille videre. Hvad er <i>chancen</i> for at du ville have vundet hvis i havde spillet videre?
+    <p class="t">
+    Det her er en relativ svær opgave. Husk dog alligevel at sandsyndlighedsmæssigt så følger den det samme
+    princip som alle de andre: 
+    _($\frac{\text{mængden af udfald der opfylder krav}}{\text{mængden af udfald}}_)
+    Hvis bare du deler opgaven op i en god del tilfælde, og er villig til at regne et relativ langt
+    udtryk til sidst, så er den faktisk ikke <i>så</i> svær igen!
+    </p>
+    <br></q-stion>
+    <answer-box customWidth="700">
+    Lad os starte med at finde mængden af "tidslinjer" i alt. Du mangler _(6_) points, og din ven mangler _(8_). Nogle
+    runder vil gå meget hurtigere end andre: Allerhurtigst _(6_) hvis du får et point i hver runde, og aller-langsomst
+    _((6-1)+8=13_) hvis du ender ud _(1_) fra at vinde.  I runderne der er _(6,7_) lange er det selvfølgelig altid dig der vinder,
+    men i alle runder der er længere eller lig med _(8_) der kan i begge vinde.
+    Lad os for hver af rundelængderne se hvor mange mulige udfald der er, og i hvor mange udfald du vinder. Så kan vi
+    bare lægge det hele sammen til sidst.
+    <p class="t">
+    I runden med en længde på _(6_) der <i>skal</i> alle kast gå til dig, så der er kun èt udfald.
+    I runden med en længde på _(7_) der <i>skal</i> du have _(6_) af de _(7_) kast hvor du for et point.
+    Det er der _(\Vec[6,7]=\frac{7*6*5*4*3*2}{6*5*4*3*2}=7_) måder du kan gøre på. I de næste fra _(8_) til
+    _(12_) der skal vi både tælle mængden af udfald hvor <i>du</i> vinder, og mængden af udfald hvor <i>han</i> vinder.
+    Du kan få _(6_) points på _(8_) kast på _(\Vec[6,8]_) måder, og din ven kan få _(8_) points på _(8_) kast på _(\Vec[8,8]_) måder.
+    Ved rundelængde _(9_) kan du vinde på _(\Vec[6,9]_) måder, din ven _(\Vec[8,9]_) måder. Rundelængde _(10_)
+    dig _(\Vec[6,10]_) din ven _(\Vec[8,10]_) osv. Alt i alt kan vi se at din chance for at vinde er:
+    _($\frac{1+\Vec[6,7] + \Vec[6,8] + \Vec[6,9] + \Vec[6,10] + \Vec[6,11] + \Vec[6,12] + \Vec[6,13]}
+            {(1+\Vec[6,7] + \Vec[6,8] + \Vec[6,9] + \Vec[6,10] + \Vec[6,11] + \Vec[6,12]) + (\Vec[8,8] + \Vec[8,9] + \Vec[8,10] + \Vec[8,11] + \Vec[8,12] + \Vec[8,13])} =_)
+    _($\frac{3432}{3432+2002} = 0.6315_)
+    </p>
+    <br></answer-box>
+
+
+
+
+

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+
+    <p class="t">
+    Der er meget mere at snakke om hvad angår sandsynlighed og stokastiske variabler,
+    men vi har ikke tid til det hele, og rigtig meget af det omhandler den
+    mere <i>kontinuerte</i> skole af sandsynlighed: Der hvor man ikke nødvendigvis arbejder med hele tal.
+    Jeg har heller ikke her snakket særlig meget om hvordan det er vi arbejder med <i>data</i>, og når
+    vi skal tilpasse en stokastisk variabel til et eller andet data, men det er også mest kontinuerligt. 
+    Den her "anden del" af sandsynlighed skal vi nok kigge på i kapitel 4, men her i kapitel 3 fokuserer
+    vi mest på hele tal - såkaldt "diskret matematik". Terminologimæssigt, så er "diskret" og "kontinuerligt" er altså to modsætninger. 
+    </p>
+
+    <!-- DU HAVDE ENGANG TÆNKT DIG AT INTRODUCERE NORMAL-FORDELING HER, MEN DET DROPPEDE DU. -->
+    <!-- <p class="t">
+    Der er ikke rigtig nogen opgaver på den her side. Det er bare lige en "lille" note omkring noget terminologi og nogle
+    vigtige ting vi skal kigge videre på senere.
+    </p>
+
+    <p class="t">
+    Ofte når man arbejder med de her tilfældige/stokastiske variabler, så prøver man at finde en funktion
+    der generelt kan beskrive hvad tilfældigheden er på en bestemt værdi. Så f.eks. hvis værdien er 
+    "mængde af basketbolde du får skudt på _(7_) runder med en tilfældighed på _(0.3_)", så kunne tilfældighedsfunktionen
+    der passede til være:
+    _($\Vec[7,x]*0.3^x*(1-0.3)^{7-x}_)
+    Den her funktion kaldes tit for "probability density function", eller bare "PDF". Vi siger at forskellige stokastiske variabler
+    følger forskellige "fordelinger" i forhold til hvad for nogle slags PDF-er de passer til. Den fordeling der passer til 
+    basketball-tilfældet kaldes for "binomial fordeling", hvilket kommer fra at man har et antal "ja eller nej" valg, der ikke har
+    indflydelse på hinanden, og hver har en bestemt chance. En anden typisk fordeling er:
+    _($\frac{1}{\sigma*\sqrt{2*\pi}}*e^{-\frac{(x-\mu)^2}{2*\sigma^2}} _)
+    Den her kaldes for "normalfordeling", og er umiddelbart lige noget at tykke på, men den er slet, slet ikke ligeså kompliceret som den ser ud. 
+    Ligesom at hver binomial fordeling har en bestemt sandsynlighed _(p_), som ændrer på kurven,
+    så har hver normalfordeling to variabler man kan ændrer på: _(\sigma_) og _(\mu_). Den her funktion er
+    dejlig, fordi at den værdi man vælger til _(\mu_) vil blive til det stokastiske variables 
+    gennemsnit, og den værdi man vælger til _(\sigma_) vil blive til den stokastiske variables
+    varians (ikke spredning). Den her bliver brugt i statistik rigtig meget, da man kan prøve
+    at tilpasse en funktion noget data, ved bare at finde beregne gennemsnittet og variansen, og så
+    ændre på disse to variabler. Selve funktionen ser ud som:
+    </p>
+
+    <img class='Spic' style='width:95%' src='../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\Stokastisk\Normalfordeling.png'> 
+
+    <p class="t">
+    Som man kan se så er den fuldkommen symmetrisk omkring gennemsnittet. Rigtig mange variabler passer godt til denne funktion. Selve funktionen er ikke særlig kompliceret hvis man bare omskriver den lidt:
+    _($\to \left(\frac{1}{2.5} \right)*\frac{1}{\sigma}*\left(e^{-1/2} \right)^{ \left(\frac{(x-\mu)}{\sigma} \right)^2} _)
+    Hvilke bassicly passer til formen:
+    _($\frac{A}{\sigma}*B^{\left(\frac{(x-\mu)}{\sigma} \right)^2}_)
+    Det her med at få ens stokastiske variabler til at passe til funktioner - selv hvis det er approximalt, er rigtig
+    vigtigt når 
+    </p>
+ -->
+
+
+

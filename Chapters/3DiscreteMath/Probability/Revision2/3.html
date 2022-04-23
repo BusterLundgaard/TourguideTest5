@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+
+
+    <h3>Udvælgelse af objekter</h3>
+
+    <q-stion 1="3" 2="1">
+    I er _(8_) folk, men der er desværre kun _(5_) stole tilbage. Hvor stor er chancen for, at du får en stol
+    og ikke skal sidde på gulvet?
+    <br><br></q-stion>
+    <answer-box>
+    Vi skal finde en sandsynlighed, så vi skal både finde den totale mængde af måder, man kan 
+    fordele folk på stolene, og
+    mængden af måder man kan fordele folk på stolene, hvor <i>du</i> er med. Det er ligegyldigt for
+    sandsynligheden i denne situation om stolene er unikke eller ej, så lad os bare sige at de <i>er</i>: 
+    Det gør beregningerne nemmere. 
+    <p class="t">
+    Først det totale antal. Her bruger vi lidt frugt-logikken igen: 
+    På første stol kan vi vælge _(8_) forskellige mennesker. På næste stol - eller
+    næste "valg" - har vi allerede valgt _(1_) menneske, og der er nu kun _(7_) personer 
+    tilbage at vælge. På næste valg igen er det _(6_), så _(5_) og så _(4_). Nu er alle 5 stole udfyldt. 
+    Alt i alt er der 
+    _($8*7*6*5*4=\frac{8!}{3!}=6720 \text{ måder}_)
+    Hvor mange af de her gange er du med? Først har vi _(5_) valg: Hvad for 
+    en af de _(5_) unikke stole, skal du sidde på? Efter det er der _(7_) 
+    folk og _(4_) unikke stole, 
+    hvilket svarer til resterende _(7*6*5*4=840_) valg. Alt i alt: 
+    _($5*840=4200 \text{ måder}_) 
+    Vi regner nu endelig sandsynligheden:
+    _($\frac{4200}{6720}=0.625_)
+    En chance på lidt over _(62_)% 
+    </p>
+    <p class="cent">*</p>
+    <p class="t">
+    Når jeg skal løse de her slags problemer, hjælper det mig tit at visualisere
+    det på en bestemt måde. Jeg viser det lige hurtigt i følgende video:
+    </p>
+    <video class='SpicB' style="width:95%;" controls>
+        <source src='../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\ChoosingIntuition.mp4' type='video/mp4'>
+    </video>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="3" 2="2">
+    Sig vi er tilbage til bordet med _(6_) stole fra tidligere,
+    nu er i bare _(10_) personer.
+    I vil gerne vide <i>hvor mange måder i kan udvælge</i> _(6_) af de _(10_) folk til 
+    at sidde på bordet. I er fuldkommen ligeglade med, hvem der sidder ved siden af hvem: Det er nok
+    mindre vigtigt, end hvem der overhovedet for lov til at sidde ned. 
+    <br><br></q-stion>
+    <answer-box>
+    Lad os igen antage, at stolene alle er unikke: Det burde i denne situation ikke have nogen indflydelse på 
+    mængden af måder, i kan udvælge _(6_) ud af _(10_) personer. Ved første stol kan i lave _(10_) valg, 
+    ved næste stol _(9_) valg, næste igen _(8_), osv indtil i er alle _(6_) stole igennem. Det giver
+    _($10*9*8*7*6*5 = 151200 \text{ måder}_)
+    Vi er fuldkommen ligeglad med rækkefølgen, og hvem der sidder hvor:
+    Lad os derfor dividere mængden af måder man kan rykke folk rundt på. Vi ved fra de mange tidligere opgaver,
+    at man kan placere _(6_) folk på _(6_) unikke stole på _(6!=720_) måder. 
+    Du kan tænke på det sådan her: Der vil være _(720_) måder at placere
+    hver sæt, af folk vi har valgt skal side ved bordet. Vi
+    er kun interesseret i antallet af sæts, så vi regner: 
+    _($\frac{151200 \text{ måder}}{720 \text{ måder}/\text{sæts}} = 210 \text{ sæts}_)
+    Voila! _(210_)! 
+    <p class="t">
+    Lad os se på hvad vi gjorde her lidt mere generelt. Alt det æstetiske med bordet, personerne, og stolene
+    er egentlig ligegyldigt: Vi fandt mængden af måder man kunne vælge _(6_) ud af _(10_) ting. 
+    Man får meget ofte
+    brug for at løse lignende problemer, så vi har givet det et navn: <i>Binomialske koefficienter</i> (på engelsk: 
+    "Binomial coefficients").
+    </p>
+    <p class="t">
+    Man bruger lidt hyppigere navnet <i> n-choose-k</i>. 
+    n-choose-k er mængden af måder
+    man kan vælge _(k_) ud af _(n_) ting. Så 11-choose-8 
+    giver mængden af måder du kan vælge _(8_) ud af _(11_) ting. 
+    Vi skriver det ofte kort som:
+    _($\VeC[n,k]_)
+    F.eks:
+    _($\VeC[11,8]_)
+    Vi kan nemt få en dejlig formel ved at generalisere denne opgaves process. 
+    Vi fandt først mængden af måder man kan placere _(n_) folk ved _(k_) unikke stole. 
+    Ved 12-choose-5 ville det være:
+    _($12*11*10*9*8=\frac{12!}{7!}=\frac{12!}{(12-5)!}_)
+    Så ved n-choose-k er det:
+    _($\frac{n!}{(n-k)!}_)
+    Bagefter dividerede vi med antallet af måder, hvorpå man kan rykke _(k_) folk rundt
+    på _(k_) stole. Det gav _(k!_). Så:
+    _($\VeC[n,k]=\frac{\left(\frac{n!}{(n-k)!}\right)}{k!}=\frac{n!}{k!*(n-k)!}_)
+    Bum! I den her formel er det vigtigt at huske på, at _(n!/(n-k)!_) jo faktisk 
+    bare er en mere kompakt måde at skrive f.eks. _(12*11*10*9*8_). Du behøver 
+    i aktualiteten ikke regne både 
+    _(12!_) og _(7!_). Det kan hurtigt blive til meget hurtigt store tal. 
+    </p>  
+    <p class="t">
+    I Geogebra kan du regne n-choose-k med kommandoen _(\text{nCr}(n,k)_), hvor _(n_) 
+    er dit _(n_), og _(r_) er dit _(k_). Jeg anbefaler, at du lige regner 
+    det en smule i hånden først. Så husker du formlen, bliver
+    bedre til at manipulere den algebraisk, og får en god
+    fornemmelse af, hvordan det virker.
+    </p>
+    <br></answer-box>
+
+    <q-stion 1="3" 2="3">
+    Svar på de følgende spørgsmål:
+    <p class="t">
+    _(\underline{\textbf{A}}_): <br>
+     Hvor mange _(7_)-kort dæk kan man trække i et fuldt kortsæt uden jokere? 
+    Det er et ret stort tal, men
+    slet, slet ikke ligeså stort som _(52!_) fra tidligere. Husk at bruge lommeregner i den her!
+    </p>
+    <p class="t">
+    _(\underline{\textbf{B}}_): <br>
+    Du spiser tapas på en restaurant. De har _(14_) retter, og det er tilfældigt hvilke _(5_)
+    du får (du kan dog ikke få flere af samme ret). Du vil virkelig gerne have deres forårsruller, 
+    deres bagt brie, og deres butterdej med ost. Hvad er chancen for, at du får dem alle sammen?  
+    </p>
+    <p class="t">
+    _(\underline{\textbf{C}}_): <br>
+    På dit kollegie på _(43_) mennesker bliver _(39_) smittet med en sygdom. Alle
+    har lige stor chance for at blive smittet: Hvor stor er chancen for at du blev det? 
+    </p>
+    <br></q-stion>
+
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#">
+    Det her er bare 
+    _($\VeC[7,52]=\frac{52*51*50*49*48*47*46}{7*6*5*4*3*2}=133784560_)
+    <br></answer-box>
+    <answer-box t="Answer_(\underline{\textbf{B}}_)#" tabColour="rgb(171,96,147)">
+    Det er en sandsynlighed, så vi skal både finde mængden af måder 
+    man kan få _(5_) ud af _(14_) retter på generelt,
+    og mængden af måder, hvorpå tre af retterne er henholdsvis 
+    forårsruller, bagt brie, og butterdej. Første del svarer
+    til at udvælge _(5_) ting ud af _(14_), så:
+    _($\VeC[14,5]=\frac{14*13*12*11*10}{5*4*3*2} = 2002_)
+    Der er kun _(14-3=11_) retter tilbage hvis
+    du skal have dine tre ynglingsretter, og vi skal 
+    kun lave _(5-3=2_) valg ved de resterende retter. Ergo:
+    _($\VeC[11,2]=\frac{11*10}{2} = 55_)
+    Svaret er derfor: 
+    _($\frac{55}{2002}=0.0274725_)
+    En ret lille chance på lidt under 3%. 
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{C}}_)#">
+    At regne antallet af måder, hvorpå folk kan blive smittet,
+    svarer til at regne, hvor mange måder vi kan
+    smitte kollegiet, hvis vi "vælger" _(39_) af de _(43_) elever. Det 
+    kan ske på
+    _($\VeC[43,39]=\frac{43!}{39!*(43-39)!} = \frac{43*42*41*40}{4!}_)
+    ... måder. Hvis du <i>skal</i> smittes er der nu _(38_) resterende blandt de
+    _(42_) elever udover dig, der mangler at blive smittet. Det kan ske på
+    _($\VeC[42,38] = \frac{42!}{38!*(42-38)!} = \frac{42*41*40*39}{4!}_)
+    ... måder. Vi <i>kunne</i> regne begge disse antal og dividere, 
+    dog er det smartere at dividere direkte da en masse tal går ud med
+    hinanden:
+    _($\begin{align}
+    & \VeC[42,38]/\VeC[43,39] = \left(\frac{42*41*40*39}{4!} \right)/\left(\frac{43*42*41*40}{4!} \right) = \frac{39}{43} = \\ \\
+    & 0.9069
+    \end{align}_)
+    Vi kan se, at det passer helt fint med, hvad man forventer intuitivt:
+    Hvis du er i et _(43_)-persons kollektiv, og der er _(39_) der bliver
+    smittet, er der en _(39/43_)-chance for, at du er en af de personer. 
+    <p class="t">
+    Man kunne også formulere det alternativt: På et _(43_)-persons kollektiv
+    bliver _(4_) personer <i>ikke</i> smittede. Chancen for at du bliver
+    smittet, er _(1_) minus chancen for at du <i>ikke</i> bliver smittet,
+    og chancen for at du <i>ikke</i> bliver smittet, er bare
+    _(4_) ud af _(43_):
+    _($1 - \frac{4}{43} = 0.9069_)
+    Generelt kan man se at:
+    _($\VeC[n,n-k]=\VeC[n,k]_)
+    Det er ingen forskel mellem at vælge de _(39_) personer der bliver
+    smittet og de _(4_) der ikke bliver smittet.
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+     <q-stion 1="3" 2="4">
+    Når du udvider _((a+b)^2_) får du:
+    _($a^2 + 2*a*b + b^2_)
+    Her er der tre led: _(a^2 \, _), _(2*a*b \,_) og _(b^2_).
+    To af dem har en koefficient på _(1_), og _(a*b_) har en koefficient på _(2_). Vi kunne
+    også skrive det som:
+    <div style="text-align:center; margin-top:-10px; margin-bottom:-10px;">
+        <ul style="display: inline-block;">
+            <li>_(a^2*b^0_): 1</li>
+            <li>_(a^1*b^1_): 2</li>
+            <li>_(a^0*b^2_): 1</li>
+        </ul>
+    </div>
+    <p class="t">
+    Når du udvider _((a+b)^3_) får du:
+    _($a^3 + 3*a^2*b + 3*a*b^2 + b^3_)
+    Her kan man sige:
+    </p>
+    <div style="text-align:center; margin-top:-10px; margin-bottom:-10px;">
+        <ul style="display: inline-block;">
+            <li>_(a^3*b^0_): 1</li>
+            <li>_(a^2*b^1_): 3</li>
+            <li>_(a^1*b^2_): 3</li>
+            <li>_(a^0*b^3_): 1</li>
+        </ul>
+    </div>
+    <p class="t">
+    Udvider man _((a+b)^4_) fås:
+    _($a^4 + 4*a^3*b + 6*a^2*b^2 + 4*a*b^3 + b^4_)
+    Hvor:
+    </p>
+    <div style="text-align:center; margin-top:-10px; margin-bottom:-10px;">
+        <ul style="display: inline-block;">
+            <li>_(a^4*b^0_): 1</li>
+            <li>_(a^3*b^1_): 4</li>
+            <li>_(a^2*b^2_): 6</li>
+            <li>_(a^1*b^3_): 4</li>
+            <li>_(a^0*b^4_): 1</li>
+        </ul>
+    </div>
+    <p class="t">
+    Faktisk at udvide _((a+b)^4_) tager en del tid, siden man skal 
+    til at gange ind i parenteser en helt masse gange. Det kunne være praktisk
+    hvis vi havde en hurtig måde at finde koefficienterne de her led tager. 
+    Din opgave er nu at finde koefficienten på _(a^{16}b^7_) når _((a+b)^{23}_)
+    udvides.   
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Lad os starte småt: Hvordan kunne vi hurtig finde koefficienterne på 
+    _((a+b)^4_) hvis vi ikke gad til at gange ind i parenteser en helt masse gange?
+    For at svare på det, skal vi først forstå hvor præcis koefficienterne kommer
+    <i>fra</i>. Lad os tage _((a+b)^2_) som det mest simple eksempel:
+    _($(a+b)^2=(a+b)*(a+b)=a*a+a*b+b*a+b*b_)
+    Der er nu _(2_) led hvor både _(a_) og _(b_) har en potens på _(1_). 
+    <p class="t">
+    Sig nu at jeg
+    ved _((a+b)^4_) gerne vil have et led hvor _(a_) har en potens på _(3_). Det kunne
+    jeg se som:
+    _($(a+b)*(a+b)*(a+b)*(a+b)_)
+    Først vælger jeg at gange _(a_) i første parentes med _(a_) i anden parentes.
+    Det svarer til _(a*a_) i den udvidede version 
+    _($(a+b)*(a+b)=a^2 + 2*a*b + b^2_)
+    Derefter vælger jeg at gange med _(a_) i tredje parentes, 
+    hvilke svarer til _(a*a*a_) i den udvide
+    _($a^3 + 3*a^2*b + 3*a*b^2 + b^3_)
+    Ved den sidste parentes vælger jeg at gange med _(b_), da jeg allerede har en 
+    potens på _(3_). Det svarer til _(a*a*a*b_) i 
+    _($a^4 + 4*a^3*b + 6*a^2*b^2 + 4*a*b^3 + b^4_)
+    Processen af at komme frem til et led kan vi lidt se som en "udvælgelses"-proces:
+    Ved hvert parentes <i>vælger</i> jeg om jeg gerne vil gange med _(a_) eller _(b_). 
+    Hvis _(a_) skal have en potens på _(3_), vælger jeg den tre ud af fire gange. Det kan ske
+    på
+    _($\VeC[4,3] = 4_)
+    ... forskellige måder. Derfor er der _(4_) identiske led hvor _(a_) har en potens på _(3_), så
+    _(a^3*b_) får en koefficient på _(4_). Præcis samme argument kunne vi lave
+    hvis vi havde noget meget større som en potens på _(16_) ved _((a+b)^{23}_). Her 
+    <i>vælger</i> vi _(a_) _(16_) ud af _(23_) gange, så vi regner "bare":
+    _($\VeC[23, 16] = \frac{23!}{16!*(23-16)!} = 245157_)
+    Det er faktisk en super praktisk og simpel formel!        
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="3" 2="5">
+    Forklar hvorfor at:
+    _($(a+b)^n = \sum_{i=0}^n \Vec[n,i]*a^i*b^{n-i}_)
+    Det her kaldes "the binomial formula". 
+    Dette er super nemt med hvad vi viste i sidste opgave.
+    Sigma/_(\text{Sum}_) tegnet får det bare til at se
+    lidt skræmmende ud. 
+    <br><br></q-stion>
+    <answer-box>
+    Det her er super nemt at se med resultatet fra den tidligere opgave. 
+    Det er _(n_) faktorer samlet, hvilket passer med at _(i+(n-i)=n_).
+    Ledet hvor _(a_) har en potens på _(i_) får koefficienten _(n_)-choose-_(i_). 
+    Ved hjælp af _(i_) går vi gennem hvert enkel mulig potens på _(a_) - 
+    inklusiv _(0_) - 
+    og får derved alle led i udvidelsen af _((a+b)^n_).  
+    <br><br></answer-box>
+
+
+
+
+

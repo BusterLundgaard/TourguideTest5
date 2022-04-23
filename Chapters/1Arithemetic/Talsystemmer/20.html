@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <p class="t">
+    Alright, vi kan beskrive antal, længde, vægt, tid og hastighed. Hvordan
+    beskriver vi størrelsen af et område? Det var trods alt vores originale mål. 
+    De næste par opgaver beskriver processen meget fint: 
+    </p>
+
+    <q-stion 1="1" 2="1" 3="1" >
+    Der ligger et tæppe på dit gulv:
+    <img class="SpicB" style="width:80%" src="../../../Assets/Chapter1\Talopgaver og intuition\Misc\F\Areal og tæppe\areal og tæppe1.png">
+    <p class="t">
+    Du vil gerne finde ud af hvor meget dette tæppe fylder i forhold til andre ting i dit værelse - f.eks. et skrivebord.
+    For at gøre det så deler du dit gulv op i en masse lige store firkanter:
+    </p>
+    <img class="SpicB" style="width:80%" src="../../../Assets/Chapter1\Talopgaver og intuition\Misc\F\Areal og tæppe\areal og tæppe2.png">
+    <p class="t">
+    Firkanterne bliver ikke mindre på billedet - det er bare perspektiv. 
+    Ca hvor mange firkanter fylder tæppet (kig på billedet)?
+    </p>
+    <br></q-stion>
+    <answer-box >
+    Vi kan se at tæppet er omkring <p-m m=" 3"></p-m> firkanter bredt, og <p-m m=" A1"></p-m> firkanter langt. 
+    Altså, for hver firkant på bredden har vi <p-m m=" A1"></p-m> firkanter på længden. Det bliver altså bare 
+    <p-m m=" 3*A1=A3"></p-m> firkanter. Vi kunne selvfølgelig også nemt bare have slavisk tællet os frem til svaret fra det ene hjørne til det andet.
+    Det vi gør her er selvfølgelig også at tælle: bare på en mere effektiv måde. 
+    <br><br></answer-box>
+    
+    <q-stion 1="1" 2="1" 3="1" >
+    Du har nu delt gulvet op i nogle mindre, men stadig lige store firkanter. Nu kan 
+    du altså beskrive arealet i lidt større detalje:
+    <img class="SpicB" style="width:80%" src="../../../Assets/Chapter1\Talopgaver og intuition\Misc\F\Areal og tæppe\areal og tæppe3.png">
+    <p class="t">Endnu en gang, hvor mange firkanter fylder tæppet?</p>
+    <br></q-stion>
+    <answer-box >
+    Den her gang er de lidt mindre, men vi kan godt se at det på bredden er omkring <p-m m=" A1 2"></p-m> og på længden 
+    omkring <p-m m=" A2 2"></p-m> Altså, ligesom som før så tæller vi altså bare ved at gange hvor mange firkanter der på bredden, 
+    med hvor mange der er på længden. Altså: <p-m m=" A2 2*A1 2=B3 A3"></p-m> firkanter.
+    <p class="t">
+    Lad os tænke lidt over hvad præcis det er vi gør lige nu. Vi kunne måske
+    forestille os at hver firkant lige nu har en side-længde 
+    på <p-m m=" 1"></p-m> fod,
+    og at de større firkanter før havde en længde på <p-m m=" 1"></p-m> meter. 
+    Sig at hver firkant har en 
+    side-længde på <p-m m=" 1"></p-m> fod. Før kunne vi måske forestille os at hver
+    firkant havde en længde på <p-m m=" 1"></p-m> meter. Hvis nogen siger at
+    noget er <p-m m=" A3"></p-m> "kvadratmeter" stort, så mener de altså bare at man kan dække
+    det med <p-m m=" A3"></p-m> firkanter der hver har en sidelængde på <p-m m=" 1"></p-m>
+    meter!  Det er <i>sådan her</i> vi definerer areal, og areal er lig med
+    "længde gange bredde", egentlig bare fordi at det er en måde at tælle på! Selvfølgelig
+    er vi meget heldige at dette tæppe lige passede til at vi kunne udfylde det med disse
+    kvadrater i denne størrelse, og det vil ikke være tilfældet for langt de fleste former.  
+    Der er der hvor vi enten skal gøre vores firkanter meget små (ret upraktisk), eller
+    begynde at bruge tal der er mindre end <p-m m=" 1"></p-m> (hvilke vi kommer til meget
+    snart). 
+    </p>
+    <br><br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Du er land-ejeren. Vurder hvor stort følgende område er: 
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter1\Talsystemmer\Omskrivning\MeasureArea.png'> 
+    Tallene står i meter, så dit svar vil ende med at blive i kvadratmeter. 
+    <br><br></q-stion>
+    <answer-box>
+    Vi ved godt fra de tidligere opgaver hvordan vi "tæller" et firkant-areal: Vi skal bare gange længde
+    med bredde. Jeg deler derfor området op i to firkanter:
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter1\Talsystemmer\Omskrivning\MeasureArea2.png'> 
+    <p class="t">
+    Firkanten mest til højre kan vi se har side-længderne <p-m m=" A1 2"></p-m> og <p-m m=" A3"></p-m>.
+    Den mest til venstre har side-længderne <p-m m=" B1 A1 3 - A1 2 = B1 1"></p-m> og 
+    <p-m m=" A3 - A1 2 = A1 1"></p-m>:
+    </p>
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter1\Talsystemmer\Omskrivning\MeasureArea3.png'> 
+    <p class="t">
+    Arealet er altså <p-m m=" A1 2 * A3 + B1 1 * A1 1"></p-m> hvilke man kan 
+    regne er <p-m m=" C2 B1 A3 1"></p-m> kvadratmeter. 
+    </p>
+    <p class="t">
+    Nu har vi fundamentalt løst vores problem: Land-ejeren kan måle arealer. Vi kunne forestille os at
+    han udviklede et system hvor han måske sagde: "For hvert <p-m m=" B3"></p-m> kvadratmeter i har, skal
+    i betale mig <p-m m=" 1"></p-m> pose med hvede hver månede". Hvis systemet skulle være lidt
+    mere præcist end det, så kunne han sige: "For hvert kvadratmeter skal i betale
+    mig en bestemt mængde hvede". Her ville det nok være en god ide at bruge 
+    <i>vægt</i> i stedet for "antal poser". 
+    </p>
+    <br><br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Vi har løst problem <b> D</b>,
+    men før vi går videre til <b> E</b>, så er det værd lige hurtigt at kigge på
+    <i>volumen</i>. Hvordan måler vi hvor meget noget - en eller anden rumlig ting - "fylder"?
+    Well, hvis du skulle se hvor meget en kasse fyldte, så kunne du prøve at se hvor mange 
+    lige store poser med hvede du kunne fylde den op med. "Poser med hvede" er en ret mærkelig enhed,
+    så det ville nok være en god ide at gøre lidt det samme som du gjorde ved areal: Lav en masse
+    små, rumlige kvadrat-objekter der hver har en sidelængde på f.eks. <p-m m=" 1"></p-m> fod, og se
+    hvor mange af disse du kan fylde kassen op med:
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter1\Talsystemmer\Omskrivning\VolumenForklaret.png'> 
+    <p class="t">
+    Vi siger at hvis noget fylder f.eks. <p-m m=" 3"></p-m> "kubikmeter", så 
+    kan vi fylde det op med <p-m m=" 3"></p-m> kasser der hver har en side-længde
+    på <p-m m=" 1"></p-m> fod. På billedet der kan man se at kassen har 
+    en volumen på <p-m m=" 8"></p-m> "kubikfod". 
+    </p>
+    <p class="t">
+    Hvis en kasse er ca. <p-m m=" 3"></p-m> fod lang, 
+    <p-m m=" A1"></p-m> fod bred, og <p-m m=" A1 3"></p-m> fod høj,
+    hvor mange kubikfod er den så?
+    </p>
+    <br><br></q-stion>
+    <answer-box>
+    For hver <p-m m=" 1"></p-m> fod højde er der <p-m m=" 3*A1 = A3"></p-m> kasser, så
+    der er <p-m m=" A3*A1 3 = C1 B1 A1"></p-m> kasser i alt. Meget ligesom med
+    areal, så siger vi altså bare længde gange bredde gange højde. Igen, så er der
+    mange former vi ikke rigtig kan "fylde ud med kasser", og volumen 
+    er endnu en grund til at vi snart skal få introduceret et system til
+    tal der er mindre end <p-m m=" 1"></p-m>. Lige med volumen dog, så kan man
+    faktisk måle ret præcise volumen på objekter med meget former. Man kan bare sænke objektet
+    ned i vand, og så måle hvor meget vand der er blevet flyttet. Man vil nemt kunne
+    tage det flyttede vand ned i en kasse, hvor man så bare kunne sige længde gange bredde
+    gange højde. 
+    <p class="t">
+    Som en lille note, så er det faktisk også vand man bruger til at definere
+    en god enhed til vægt. Vand er ret let tilgængeligt for mange, så man kan 
+    bare sige "vægten af en bestemt volume vand". Det vil altid være
+    det samme, så det er ret præcist. Det er også meget nemt at arbejde med.
+    _(1_) kg er defineret til at være vægten af _(1_) "liter"
+    vand. _(1_) "liter" er defineret til at være volumen på en kasse hvor hver
+    side er _(10_) centimeter. _(1_) centimeter er _(1_) meter divideret
+    med _(100_).  
+    </p>
+    <br><br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    I har fået <p-m m=" 2"></p-m> blokke med metal: 
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter1\Talsystemmer\Omskrivning\ToSten1.png'> 
+    <p class="t">Den ène blok er tydeligvis lavet af en anden type metal end den anden. I vil gerne bruge den type metal der vejer <i>mindst</i>,
+    siden det skaber våben der er lettere at håndtere. <i>Hvis</i> i havde lige
+    meget af hver type metal, så kunne i bare veje hvilken blok var tungest. Det
+    er ikke tilfældet dog: Den ene blok er markant større end den anden. 
+    Den ene blok vejer <p-m m=" A2 1"></p-m> kg og fylder <p-m m=" 3"></p-m> liter.
+    Den anden vejer <p-m m=" B1 A1 2"></p-m> kg og fylder <p-m m=" A2 3"></p-m> liter. 
+    Hvad for en type metal er tungest?</p>
+    <br><br></q-stion>
+    <answer-box>
+    Da vi har meget <i>mere</i> af den ene type end den anden, så kan vi ikke bare se hvilken
+    metal-blok vejer mest. Vi <i>kunne</i> vælge at skære en lille mængde ud fra hver type
+    (f.eks. <p-m m=" 1"></p-m> liter), men det er lidt svært og tidskrævende. I stedet kan vi 
+    bare se hvor meget <p-m m=" 1"></p-m> liter vejer ved hjælp af lidt matematik. Hvis
+    f.eks. <p-m m=" 3"></p-m> liter vejede <p-m m=" 6"></p-m>kg, så ville <p-m m=" 1"></p-m>
+    liter veje <p-m m=" 3"></p-m> gange så lidt: Altså <p-m m=" 1"></p-m> liter
+    ville veje <p-m m=" 6/3=2"></p-m>kg. Vi skal altså bare dividere vægten med
+    volumen! Det her kaldes <i>densitet</i>. I hvert fald så kan vi se at den
+    mørke type metal har en densitet på: 
+    <p class="cent">
+        <p-m m=" 22/11=2"></p-m>
+    </p>
+    <p class="t">
+    Den lyse type metal har en densitet på:
+    </p>
+    <p class="cent">
+        <p-m m=" 9/3=3"></p-m>
+    </p>
+    <p class="t">
+    Vi skal altså bruge den mørke type metal!
+    </p>
+    <br><br></answer-box>
+
+
+
+</html>

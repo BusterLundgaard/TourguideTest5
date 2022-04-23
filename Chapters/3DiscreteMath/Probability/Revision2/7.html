@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+
+
+    <h4>Derangments</h4>
+    <p class="t">
+    Stirling tal er virkelig mest brugt i mellemregninger og i sammenhæng med mere teoretisk matematik (som <i>er</i> vigtigt).
+    Jeg undskylder meget, men jeg kan simpelt hen ikke finde eller finde på en god <i>direkte</i> 
+    anvendelse du kan øve dig på. 
+    Et lignende og mere øjeblikkeligt brugbart koncept findes dog i form af <i>derangments</i>.
+    </p>
+
+    <p class="t">
+    En derangments er en permutation, hvor alle elementer flytter sig hele tiden. 
+    Følgende er <i>ikke</i> en derangement, fordi _(c_) konstant forbliver på sin plads:
+    _($f((a,b,c,d))=(d,a,c,b)_) 
+    Så vi leder efter permutationer hvor <i>alt</i> bliver rykket rundt <i>hele</i> tiden.
+    </p>
+    <p class="t" style="margin-bottom:35px;">
+    Der er flere tidspunkter hvor vi kunne
+    få lyst til at tælle derangments. Et ret konstrueret eksempel er spillekort:
+    Hvis du blandede dine kort på hånden, hvad er så chancen for, at ingen endte samme
+    sted som før? "Blandingen" er tydeligvis en permutation, 
+    så den totale mængde udfald er _(7!_), hvis
+    du har _(7_) kort på hånden, og mængden af udfald, der opfylder vores krav er derangment-antallet af 
+    _(7_) elementer.  Et andet eksempel kunne være en træner, der 
+    satte elever til at vurdere hinandens arbejde.
+    Hver elev skal vurdere èn anden elevs arbejde, 
+    og denne anden elev skal helst ikke <i>være dem selv</i>. 
+    Chancen for at en helt tilfældig fordeling er ordentlig er:
+    _($\frac{Derangments(\text{antal elever})}{(\text{antal elever})!}_)
+    </p>
+
+    <q-stion 1="7" 2="1">
+    Find antallet af derangments for de første _(5_) tilfælde. Så ved _(1_) element, _(2_)
+    elementer, _(3_) elementer, _(4_) elementer og _(5_) elementer
+    <br><br></q-stion>
+    <answer-box>
+    Ved _(1_) element er der _(0_) mulige derangments, da der ikke er noget sted vi kan
+    bevæge det første element hen til. Ved _(2_) elementer er der èn derangment:
+    _($\{1,2\} \to \{2,1\} _)
+    Lad os skrive den transformation som en cyklus i stedet. Det er nok 
+    mere relevant i forhold til hvad vi har gang i:
+    _($f: (1 \to 2)_)
+    Ved _(3_) elementer er vi nødt til at have _(1_) _(3_)-lang cyklus. 
+    Der er to mulige _(3_)-lange cyklusser: 
+    _($\begin{eqnarray} 
+    && (1 \to 2 \to 3) \\ 
+    && (1 \to 3 \to 2) 
+    \end{eqnarray} _)
+    Så der er _(2_) derangments af _(3_) elementer. 
+    <p class="t">
+    Ved _(4_) har vi to muligheder: _(1_) _(4_)-lang cyklus, eller
+    to _(2_)-lange cyklusser. Antallet af unikke _(4_)-lange cyklusser
+    er bare _(3!_), da det giver antallet af måder, man kan bytte rundt på elementers rækkefølge
+    i forhold til hinanden (uden nogen absolut position). Vi kan nemt udvælge 
+    to _(2_)-lange cyklusser ved bare at vælge to elementer, der skal være sammen: De
+    to resterende bliver også sat sammen.
+    Alt i alt får vi
+    _($3! + \VeC[4, 2]/2 = 9_) 
+    Ved _(5_) elementer er der to muligheder: _(1_) _(5_)-lang cyklus, eller
+    _(1_) _(3_)-lang og _(1_) _(2_)-lang. Der er tydeligvis _(4!_) mulige
+    _(5_)-lange. Vi kan danne en _(3_)-lang og en _(2_)-lang ved at udvælge
+    _(3_) af de _(5_) elementer: _(2_)-cyklussen bliver bare dannet automatisk
+    ved at tage de resterende. For hver _(3_)-cyklus skal vi gange med _(2!=2_),    
+    da man kan danne flere mulige _(3_)-lange cykluser med de udvalgte elementer.
+    Alt i alt får vi:
+    _($4! + \VeC[5, 3]*2 = 44_)
+    Voila!
+    </p>
+    <p class="cent">
+        *
+    </p>
+    <p class="t">
+    Hvis du er nysgerrig, viser jeg i følgende video en alternativ strategi,
+    vi også kunne have brugt: 
+    </p>
+    <video class='SpicB' style="width:95%;" controls>
+        <source src='../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\EtApproachTilDerangements.mp4' type='video/mp4'>
+    </video>
+    <p class="t">
+    De næste opgaver kræver ikke at du har set denne video, hvis du ikke er interesseret. 
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="7" 2="2">
+    Find en formel for derangments, der minder lidt om dem vi lavede tidligere med
+    Pascals trekant og Stirling. 
+    <p class="t">
+    <i> Hint</i>: Tænk over hvordan du kan "bygge videre" på derangments
+    af _((n-1)_) elementer for at få derangements af _(n_) elementer.
+    Det virker ikke rigtig at bruge samme strategi som de to sidste gange, hvor vi 
+    "fokuserede på første element"
+    </p>
+    <br></q-stion>
+    <answer-box t="h">
+    Sig at der var en bestemt derangment af _(5_) elementer med
+    _(1_) _(3_)-lang og _(1_) _(2_)-lang cyklus.
+    Jeg kunne sætte det nye _(6_)'te element ind 
+    _(3_) forskellige steder i den første cyklus og _(2_) forskellige steder i den anden, så
+    _(3+2=5_) i alt. Præcist samme trick kunne jeg gøre lige meget hvor mange 
+    og hvor lange de forskellige cykluser var. Den her slags strategi 
+    burde give mig en god del af svarene, men det giver mig ikke <i>alle</i>. Hvad mangler jeg? 
+    <br><br></answer-box>
+    <answer-box>
+    Sig at _(D(n)_) er antallet af derangments for _(n_) elementer. Vi vil gerne på en
+    eller anden måde beskrive _(D(n)_) i forhold til tidligere værdier som
+    _(D(n-1)_) eller _(D(n-2)_). 
+    <p class="t">
+    Lad os konkret prøve at finde _(D(6)_) ved hjælp af _(D(5)_) og (måske) _(D(4)_).  
+    Sig vi havde en bestemt derangment af _(5_) elementer med
+    _(1_) _(3_)-lang og _(1_) _(2_)-lang cyklus. 
+    Jeg kunne sætte det nye _(6_)'te element ind 
+    _(3_) forskellige steder i den første cyklus og _(2_) forskellige steder i den anden.
+    Det er _(3+2=5_) måder, og præcist samme trick virker uanset 
+    hvor mange 
+    og hvor lange de forskellige cykluser er. For hver tidligere derangment kan jeg 
+    lave _(5_) nye. _(5*D(n-1)_) burde give mig en god del af svarene
+    </p>
+    <p class="t">
+    Det giver mig ikke <i>alle</i> svarene dog:
+    Det _(6_)'te element vil kun være en del af cyklusser der er _(3_) lange eller
+    længere, hvis jeg kun tilføjer det til andre eksisterende cyklusser der minimum
+    er _(2_)-lange. 
+    Jeg mangler de tilfælde, hvor mit _(6_)'te element er en del af en _(2_)-lang cyklus.
+    _(6_) kan vælge at være sammen med _(5_) andre elementer, og for
+    hver af de 
+    tilfælde, kan de _(4_) resterende elementer danne derangments som de har lyst.
+    _(5*D(4)_) giver mig derfor antallet af derangments med det _(6_)'te element er 
+    i en 2-lang cyklus. Alt i alt får vi 
+    _($D(6) = 5*D(5)+5*D(4) = 5 * \left(D(5)+D(4) \right) _)
+    Det her kan vi let generaliseres til:
+    _($D(n) = (n-1)*\left(D(n-1) + D(n-2) \right) _)
+    Bum! 
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="7" 2="3">
+    I modsætning til Stirling-tallene, kan man udover formlen vi kom frem til i sidste
+    opgave udlede en 
+    mere direkte formel: En formel der ikke refererer
+    tidligere elementer, men kan regne en hvilket som helst _(D(n)_) direkte. 
+    Det <i>er</i> i alt ærlighed ikke
+    en super dejlig formel, da det involverer en sum _(\sum_), 
+    men det <i>er</i> en sum der kan approksimeres <i>voldsomt</i> godt af en 
+    meget simpel formel. 
+    <p class="t">
+    Summen er lidt svær at udlede, så lad os starte med et simplere, lettere problem. 
+    Sig du har _(10_) elementer, og at _(1_) af dem 
+    <i>skal</i> bevæge sig. De andre <i>må</i> også gerne bevæge sig, men dette
+    element <i>skal</i> bevæge sig. I stedet for en normal derangment, hvor <i>alle</i>
+    elementer <i>skal</i> bevæge sig, har vi nu en "derangment"-light, hvor dette
+    kun behøver gælde for _(1_) element. Find dette antal.
+    Det er relativt simpelt. 
+    </p>
+    <p class="t">
+    Vi prøver ikke at tælle antallet af permutationer hvor i hvert fald _(1_) element
+    bevæger sig. Vi prøver at tælle antallet af permutationer, hvor ét <i>bestemt</i> element
+    altid bevæger sig. Det kunne f.eks. være det første. 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Det samlede antal permutationer er _(10!=3528800_). Jeg har tænkt mig at finde
+    antallet hvor første element bevæger, sig ved at fjerne det antal permutationer,
+    hvor det <i>ikke</i> bevæger sig. Det er lidt lettere. Hvis det skal stå på den
+    samme plads hele tiden, er det kun de resterende _(9_) pladser, der kan bevæge sig.
+    Det kan de på _(9!=362880_) måder, så svaret er 
+    _($3528800-362880=3165920_) 
+    ... måder. Bum! 
+    <br><br></answer-box>
+
+    <p class="tt">
+    Vi vender tilbage til Derangements når vi har redskaberne til at udvikle
+    en rigtig formel. I mellemtiden undskylder jeg for ikke at kunne finde flere 
+    anvendelser. Både Stirling numbers og derangements er ofte 
+    ét step i længere, komplicerede problemer. 
+    </p>
+
+
+
+
+
+

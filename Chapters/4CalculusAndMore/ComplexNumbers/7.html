@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+
+
+    <h3>Egenskaber af komplekse eksponenter og logaritmer</h3>
+
+    <p class="t">
+    Logaritmer og eksponenter har forskellige egenskaber. Lad os se hvilke, der holder når vi arbejder med komplekse tal.
+    </p>
+
+    <p class="t">
+    Logaritmer har følgende egenskaber normalt:
+    </p>
+
+    <table id="table1" style="border-collapse: collapse; margin-left: 25%; margin-top:10px;" >
+        <tr>
+            <td> <b> [1]: </b> </td>
+            <td> _(e^{Ln(x)}  =x_)  </td>
+        </tr>
+        <tr>
+            <td> <b> [2]: </b></td>
+            <td> _(Ln(e^x)  =x_) </td>
+        </tr>
+        <tr>
+            <td> <b> [3]: </b></td>
+            <td> _(Ln(xy)  =Ln(x)+Ln(y)_) </td>
+        </tr>
+        <tr>
+            <td> <b> [4]: </b> </td>
+            <td> _(Ln\left(\frac{x}{y} \right)  =Ln(x)-Ln(y)_) </td>
+        </tr>
+        <tr>
+            <td> <b> [5]: </b> </td>
+            <td> _(Ln\left(\frac{1}{x} \right)  = -Ln(x)_) </td>
+        </tr>
+        <tr>
+            <td> <b> [6]: </b> </td>
+            <td> _(Ln(x)^p  =p*Ln(x)_) </td>
+        </tr>
+    </table>
+
+    <p class="t">
+    Eksponenter har følgende egenskaber normalt:
+    </p>
+
+    <table id="table1" style="border-collapse: collapse; margin-left: 25%; margin-top:10px;" >
+        <tr>
+            <td> <b> [7]: </b> </td>
+            <td> _(a^x=e^{x Ln(a)}_)  </td>
+        </tr>
+        <tr>
+            <td> <b> [8]: </b></td>
+            <td> _(a^x a^y = a^{x+y}_) </td>
+        </tr>
+        <tr>
+            <td> <b> [9]: </b></td>
+            <td> _(\frac{a^x}{a^y}=a^{x-y}_) </td>
+        </tr>
+        <tr>
+            <td> <b> [10]: </b> </td>
+            <td> _(\frac{1}{a^x}=a^{-x}_) </td>
+        </tr>
+        <tr>
+            <td> <b> [11]: </b> </td>
+            <td> _((a^x)^y=a^{x*y}_) </td>
+        </tr>
+        <tr>
+            <td> <b> [12]: </b> </td>
+            <td> _((ab)^x=a^x b^x_) </td>
+        </tr>
+        <tr>
+            <td> <b> [13]: </b> </td>
+            <td> _(\left(\frac{a}{b} \right)^x = a^x b^{-x}_) </td>
+        </tr>
+    </table>
+
+    <p class="t">
+    Vi skal både se hvilke egenskaber der holder, når vi arbejder med de <i>generelle</i> og
+    de <i>principielle</i> funktioner. Følgende skemaer viser
+    hvilke logaritme- og eksponent egenskaber stadig holder. Det antages på skemaerne at alle
+    variabler er komplekse.
+    </p>
+
+    <br><br>
+    
+    <!-- <div style="display:flex; width:600px;">
+    <div style="width:200px; background-color:blue;">
+        Hej med dig!
+    </div>
+    <div style="flex-grow:1; background-color:teal;">
+        Nej! 
+    </div>
+    </div> -->
+
+    <div style="display:flex; margin-left:-33%;">
+        <div style=width:600px;>
+        <b> Egenskaber for den generelle komplekse logaritme:</b>
+        <table id="table2" style="border-collapse: collapse; border: 1px solid black; margin-top:10px; background-color: rgb(209,233,230);" >
+            <tr>
+                <td> <b>Egenskab</b>   </td>
+                <td> <b><i>Sand?</i></b>  </td>
+            </tr>
+            <tr>
+                <td> _(e^{ln(z)}  =z_) </td>
+                <td> <u>Altid</u>  </td>
+            </tr>
+            <tr>
+                <td>  _(ln(e^z)  =z_)  </td>
+                <td> Aldrig  </td>
+            </tr>
+            <tr>
+                <td> _(ln(z_1 z_2)  =ln(z_1)+ln(z_2)_)   </td>
+                <td> <u>Altid</u> </td>
+            </tr>
+            <tr>
+                <td> _(ln\left(\frac{z_1}{z_2} \right)  =ln(z_1)-ln(z_2)_)   </td>
+                <td> <u>Altid</u> </td>
+            </tr>
+            <tr>
+                <td> _(ln\left(\frac{1}{z} \right)  = -ln(z)_)   </td>
+                <td> <u>Altid</u>  </td>
+            </tr>
+            <tr>
+                <td> _(ln(z^p)  =p*ln(z) _) </td>
+                <td> Hvis _(p=1/n_) hvor _(n \in \mathbb{Z}_) _(\, \, \, \, \, \, _) </td>
+            </tr>
+        </table>
+        </div>
+
+        <div style="flex-grow:1; margin-left:20px;">
+        <b> Egenskaber for den principielle komplekse logaritme:</b>
+        <table id="table2" style="border-collapse: collapse; border: 1px solid black; margin-top:10px; background-color: rgb(209,233,230);" >
+            <tr>
+                <td> <b>Egenskab</b>   </td>
+                <td> <b><i>Sand?</i></b>  </td>
+            </tr>
+            <tr>
+                <td> _(e^{Ln(z)}  =z_) </td>
+                <td> <u>Altid</u>  </td>
+            </tr>
+            <tr>
+                <td>  _(Ln(e^z)  =z_)  </td>
+                <td> Kun hvis _(0 \lt Im(z) \lt 2\pi_)  </td>
+            </tr>
+            <tr>
+                <td> _(Ln(z_1 z_2)  =Ln(z_1)+Ln(z_2)_)   </td>
+                <td> Hvis _(Arg(z_1)+Arg(z_2) \lt 2\pi_)   </td>
+            </tr>
+            <tr>
+                <td> _(Ln\left(\frac{z_1}{z_2} \right)  =Ln(z_1)-Ln(z_2)_)   </td>
+                <td> Hvis _(Arg(z_1)-Arg(z_2) \ge 0_)   </td>
+            </tr>
+            <tr>
+                <td> _(Ln\left(\frac{1}{z} \right)  = - Ln(z)_)   </td>
+                <td> Aldrig. Dog så gælder <br> _(Ln\left(\frac{1}{z} \right)  = 2\pi i - Ln(z)_)  </td>
+            </tr>
+            <tr>
+                <td> _(Ln(z^{*p}) = p*Ln(z)_) </td>
+                <td> Hvis _(0 \lt Im(p*Ln(z)) \lt 2\pi_) </td>
+            </tr>
+        </table>
+        </div>
+
+    </div>
+
+    <!--  -->
+
+    <div style="display:flex; margin-left:-33%; margin-top:20px;">
+
+        <div>
+        <b> Egenskaber for den generelle komplekse eksponent:</b>
+        <table id="table2" style="border-collapse: collapse; border: 1px solid black; margin-top:10px; background-color: rgb(209,233,230);" >
+            <tr>
+                <td> <b>Egenskab</b>   </td>
+                <td> <b><i>Sand?</i></b>  </td>
+            </tr>
+            <tr>
+                <td> _(a^z=e^{z Ln(a)}_) </td>
+                <td> <u>Altid</u> </td>
+            </tr>
+            <tr>
+                <td>  _(a^{z_1} a^{z_2} = a^{z_1+z_2}_)  </td>
+                <td> Aldrig </td>
+            </tr>
+            <tr>
+                <td> _(\frac{a^{z_1}}{a^{z_2}}=a^{z_1-z_2}_)   </td>
+                <td> Aldrig </td>
+            </tr>
+            <tr>
+                <td>  _(\frac{1}{a^z}=a^{-z}_)   </td>
+                <td> <u>Altid</u>  </td>
+            </tr>
+            <tr>
+                <td> _((a^{z_1})^{z_2}=a^{z_1*z_2}_)   </td>
+                <td> Hvis _(z_1=\pm 1_) <br> eller hvis _(z_2 \in \mathbb{Z}_). <br> Der findes andre tilfælde også _(\qquad \, \, \, \, \, \, \, \, \, \, \, \, _)   </td>
+            </tr>
+            <tr>
+                <td> _((ab)^z=a^z b^z_)   </td>
+                <td> <u>Altid</u> </td>
+            </tr>
+            <tr>
+                <td>_(\left(\frac{a}{b} \right)^z = a^z b^{-z}_) </td>
+                <td> <u>Altid</u> </td>
+            </tr>
+        </table>
+        </div>
+
+        <div style="flex-grow:1; margin-left: 18px">
+        <b> Egenskaber for den principielle komplekse eksponent:</b>
+        <table id="table2" style="border-collapse: collapse; border: 1px solid black; margin-top:10px; background-color: rgb(209,233,230);" >
+            <tr>
+                <td> <b>Egenskab</b>   </td>
+                <td> <b><i>Sand?</i></b>  </td>
+            </tr>
+            <tr>
+                <td> _(a^{*z}=e^{*z Ln(a)}_) </td>
+                <td> <u>Altid</u>  </td>
+            </tr>
+            <tr>
+                <td>  _(a^{*z_1} a^{*z_2} = a^{*z_1+z_2}_)  </td>
+                <td> <u>Altid</u>  </td>
+            </tr>
+            <tr>
+                <td> _(\frac{a^{*z_1}}{a^{*z_2}}=a^{*z_1-z_2}_)   </td>
+                <td> <u>Altid</u> </td>
+            </tr>
+            <tr>
+                <td>  _(\frac{1}{a^{*z}}=a^{*-z}_)   </td>
+                <td> <u>Altid</u>  </td>
+            </tr>
+            <tr>
+                <td> _((a^{*z_1})^{*z_2}=a^{*z_1*z_2}_)   </td>
+                <td> 
+                    Hvis _(0 \lt Im(z_1 Ln(a)) \lt 2\pi_) <br> 
+                    eller hvis _(z_2 \in \mathbb{Z}_)    
+                </td>
+            </tr>
+            <tr>
+                <td> _((ab)^{*z}=a^{*z} b^{*z}_)   </td>
+                <td> Hvis _(Arg(a)+Arg(b) \lt 2\pi_) <br> eller hvis _(z \in \mathbb{Z}_) _(\qquad \qquad \qquad \qquad \qquad \, \, \, \, \, \, \, \,_) </td>
+            </tr>
+            <tr>
+                <td>_(\left(\frac{a}{b} \right)^{*z} = a^{*z} b^{*-z}_) </td>
+                <td> Hvis _(Arg(a)-Arg(b) \ge 0_) <br> eller hvis _(z \in \mathbb{Z}_) </td>
+            </tr>
+        </table>
+        </div>
+
+    </div>
+
+    <br>
+
+    <p class="tt">
+    Det skal pointeres, at en af fordelene ved at definere _(Arg(z)_) til at være
+    mellem _(-\pi_) og _(\pi_) i stedet for mellem _(0_) og _(2\pi_), er, at 
+    det vil gælde at _(Ln(1/z)=-Ln(z)_), så længe _(Arg(z) \ne \pi_). I 
+    vores system gælder det i stedet at _(Ln(1/z)=2\pi i - Ln(z)_).
+    </p>
+
+    <p class="t">
+    Lad mig vise fire eksempler på beviser af disse egenskaber. Resten er opgaver. 
+    </p>
+
+    <p class="t">
+    Lad os først bevise at _(ln(e^z)=z_) generelt ikke er sandt. Sig at _(z=x+yi_). Beviset går følgende:
+    _($\begin{eqnarray}
+    && ln(e^z) = \\ \\
+    && Ln|e^z|+arg(e^z)i = \\ \\
+    && Ln|e^x*e^{bi}|+arg(e^x*e^{bi})i = \\ \\
+    && x+(b+n*2\pi)i = \\ \\
+    && x+bi + n*2\pi*i = \\ \\
+    && z + n*2\pi*i
+    \end{eqnarray}_)
+    Vi kunne også have forstået hvorfor denne egenskab ikke virker på en langt simplere måde:
+    _(ln(e^z)_) referere til et <i>sæt</i> af uendeligt mange værdier, og _(z_) er bare èn enkelt værdi. Derfor kan
+    _(ln(e^z)_) selvfølgelig ikke være lig _(z_).
+    </p>
+    <p class="t">
+    Lad os nu bevise, at _(Ln(e^z)=z_) heller ikke generelt er sandt. Beviset går følgende:
+    _($\begin{eqnarray}
+    && Ln(e^z) = \\ \\
+    && Ln|e^z| + Arg(e^z)i = \\ \\
+    && Ln|e^x*e^{bi}| + Arg(e^x*e^{bi})i = \\ \\
+    && x+\left(b-2\pi*Floor\left(\frac{b}{2\pi} \right)\right)i = \\ \\
+    && x+bi - 2\pi*i*Floor\left(\frac{b}{2\pi} \right) = \\ \\
+    && z - 2\pi*i*Floor\left(\frac{b}{2\pi} \right)
+    \end{eqnarray}_)
+    Bemærk at <i>hvis</i> _(b_) er mellem _(0_) og _(2\pi_), så
+    er _(Floor(b/2\pi)=0_), og det ekstra led forsvinder, så vi står tilbage med bare _(z_).
+    Ergo:
+    _($Ln(e^z) = z, \qquad \text{Kun hvis } 0 \le Im(z) \lt 2\pi_)
+    Det skal siges, at både _(ln(e^z)=z+n*2\pi*i_) og <br> _(Ln(e^z)=z-2\pi*i*Floor(Im(z)/2\pi)_)
+    kan være brugbare egenskaber i sig selv i beviserne.
+    </p>
+    <p class="t">
+    Lad os som det næste vise, at _(z^{a+b}=z^{a}*z^{b}_) generelt ikke er sandt, hvis
+    _(z_), _(a_) og _(b_) er komplekse tal, og hvis der her refereres til den <i>generelle</i> 
+    (ikke principielle) eksponentialfunktion.
+    _($\begin{eqnarray}
+    && z^{a+b} = \\ \\
+    && e^{ln(z)*(a+b)} = \\ \\
+    && e^{(Ln(z)+n*2\pi*i)*(a+b)} = \\ \\
+    && e^{Ln(z)*a+Ln(z)*b+n*2\pi*(a+b)*i} = \\ \\
+    && e^{Ln(z)a}*e^{Ln(z)b}*e^{2\pi*n*(a+b)i} = \\ \\
+    && z^{*a}*z^{*b}*e^{2\pi*n*(a+b)i}
+    \end{eqnarray}_)
+    Beviset er ikke færdigt endnu, da vi mangler 
+    at bevise, at _(z^{*a}*z^{*b}*e^{2\pi*(a+b)i}_) ikke
+    potentielt kunne være lig _(z^{a}*z^{b}_). Vi starter derfor fra den anden retning,
+    og ser hvad vi får:
+    _($\begin{eqnarray}
+    && z^{a}*z^{b} = \\ \\
+    && e^{ln(z)a}*e^{ln(z)b} = \\ \\
+    && e^{(Ln(z)+n_1*2\pi*i)a}*e^{(Ln(z)+n_2*2\pi*i)b} = \\ \\
+    && e^{Ln(z)a+n_1*2\pi*a*i}*e^{Ln(z)*b+n_2*2\pi*b*i} = \\ \\
+    && e^{Ln(z)*a}*e^{Ln(z)*b}*e^{n_1*2\pi*a*i+n_2*2\pi*b*i} = \\ \\
+    && z^{*a}*z^{*b}*e^{2\pi*(n_1*a+n_2*b)*i}
+    \end{eqnarray}_)
+    Så hvis _(z^{a+b}=z^{a}*z^{b}_), skal
+    _($e^{2\pi*n*(a+b)i} = e^{2\pi*(n_1*a+n_2*b)*i}_)
+    Selvom at det er muligt, at der findes <i>nogle</i> værdier af _(n_1_) og _(n_2_), hvor
+    _(n*(a+b)_) matcher med _(n_1*a+n_2*b_), vil det på ingen måde <i>altid</i> være tilfældet.
+    </p>
+    <p class="t">
+    Vi kan lidt mere ordentligt argumentere, at sættet af _(n*(a+b)_) er et <i>subsæt</i> af
+    sættet af _(n_1*b+n_2*b_). Derfor kan sættet for _(z^{a+b}_) heller ikke være
+    lig sættet _(z^a*z^b_). 
+    </p>
+    <p class="t">
+    Bemærk at vi <i>ikke</i> kunne have lave følgende argument:
+    _($\begin{eqnarray}
+    && z^{a+b} = \\ \\
+    && e^{ln(z)*(a+b)} = \\ \\
+    && e^{ln(z)a+ln(z)b} = \\ \\
+    && e^{ln(z)a}*e^{ln(z)b} = \\ \\
+    && z^a*z^b
+    \end{eqnarray}_)
+    <i>Ja</i>, vi ved at _(e^{z_1+z_2}=e^{z_1}*e^{z_2}_), men
+    her er _(z_1_) og _(z_2_) <i>enkelte værdier</i> hvor
+    _(ln(z)a_) og _(ln(z)b_) begge repræsenterer <i>uendeligt mange</i>. Vi kan ikke 
+    bare antage, at egenskaben stadig virker.
+    </p>
+    <p class="t">
+    Vi <i>kan</i> dog bruge argumentet, hvis vi skal bevise, at _(z^{*a+b}=z^{*a}*z^{*b}_):
+    _($\begin{eqnarray}
+    && z^{*a+b} = \\ \\
+    && e^{Ln(z)*(a+b)} = \\ \\
+    && e^{Ln(z)a+Ln(z)b} = \\ \\
+    && e^{Ln(z)a}*e^{Ln(z)b} = \\ \\
+    && z^{*a}*z^{*b}
+    \end{eqnarray}_)
+    Voila!
+    </p>
+    <p class="t">
+    Præcis de samme argumenter kan bruges til _(z^a/z^b_) og _(z^{*a}/z^{*b}_),
+    så dem er der ikke opgaver til. 
+    </p>
+
+    <p class="t">
+    Før du går i gang med resten af egenskaberne, burde jeg også lige pointere, at egenskab [7] (_(a^x=e^{Ln(a)x}_))
+    er åbenlys ud fra definitionen af både den generelle og principielle eksponentielle funktion.
+    </p>
+
+    <q-stion 1="7" 2="1" bigTop=true>
+    _(\underline{\textbf{A}}_): <br>
+    Bevis at
+    _($ln(z_1 z_2)=ln(z_1)+ln(z_2)_)
+    ... altid er sandt.
+    <p class="t">
+    _(\underline{\textbf{B}}_): <br>
+    Bevis at
+    _($Ln(z_1 z_2)=Ln(z_1)+Ln(z_2)_)
+    ... kun er sandt, hvis
+    _($Arg(z_1)+Arg(z_2) \lt 2\pi_)
+    _(\underline{\textbf{C}}_): <br>
+    Bevis at
+    _($ln\left(\frac{z_1}{z_2} \right) = ln(z_1)-ln(z_2) _)
+    ... altid er sandt.
+    </p>
+    <p class="t">
+    _(\underline{\textbf{D}}_): <br> <br>
+    Bevis at
+    _($Ln\left(\frac{z_1}{z_2} \right) = Ln(z_1)-Ln(z_2) _)
+    ... kun er sandt, hvis
+    _($Arg(z_1)-Arg(z_2) \ge 0_)
+    _(\underline{\textbf{E}}_): <br> <br>
+    Bevis at
+    _($ln\left(\frac{1}{z} \right) = -ln(z)_)
+    ... altid er sandt.
+    </p>
+    <p class="t">
+    _(\underline{\textbf{F}}_): <br> <br>
+    Bevis at
+    _($Ln\left(\frac{1}{z} \right) = 2\pi i - Ln(z)_)
+    ... hvis _(Arg(z) \ne 0_)
+    </p>
+    <br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    Vi starter fra _(ln(z_1 z_2)_), og siger følgende:
+    _($\begin{eqnarray}
+    && ln(z_1 z_2) \, \, = \\ \\
+    && Ln|z_1 z_2| + arg(z_1 z_2)i \, \, = \\ \\
+    && Ln|z_1|+Ln|z_2|+\left(arg(z_1)+arg(z_2)\right)i \, \, = \\ \\
+    && \left(Ln|z_1|+arg(z_1)i \right) + \left(Ln|z_2|+arg(z_2)i \right) \, \, = \\ \\ 
+    && ln(z_1)+ln(z_2)
+    \end{eqnarray}_)
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Vi starter meget lignende fra _(Ln(z_1 z_2)_):
+    _($\begin{eqnarray}
+    && Ln(z_1 z_2) \, \, = \\ \\
+    && Ln|z_1 z_2| + Arg(z_1 z_2)i \, \, = \\ \\
+    && Ln|z_1| + Ln|z_2| + \left(Arg(z_1)+Arg(z_2)+2\pi N^{+} \right)i \, \, = \\ \\
+    && \left(Ln|z_1|+Arg(z_1)i \right)+\left(Ln|z_2|+Arg(z_2)i \right) + 2\pi N^{+}*i \, \, = \\ \\
+    && Ln(z_1)+Ln(z_2) + 2\pi N^{+}*i
+    \end{eqnarray}_)
+    For at det skal være rigtigt, skal _(N^{+}=0_), hvilket
+    netop gælder, når _(Arg(z_1)+Arg(z_2) \lt 2\pi_). Bum!
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{C}}_)#" tabColour="rgb(171,96,147)">
+    Vi gør stort præcist det samme som i opgave 1:
+    _($\begin{eqnarray}
+    && ln\left(\frac{z_1}{z_2} \right) \, \, = \\ \\
+    && Ln \left|\frac{z_1}{z_2} \right| + arg\left(\frac{z_1}{z_2} \right)i \, \, = \\ \\
+    && \left(Ln|z_1| + arg(z_1)i \right) - \left(Ln|z_2| + arg(z_2)i \right) \, \, = \\ \\
+    && Ln(z_1)-Ln(z_2)
+    \end{eqnarray}_)
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{D}}_)#" tabColour="rgb(175,128,161)">
+    ... og igen her det samme som i opgave 2:
+    _($\begin{eqnarray}
+    && Ln\left(\frac{z_1}{z_2} \right) \, \, = \\ \\
+    && Ln|z_1|-Ln|z_2| + Arg(z_1)-Arg(z_2) - 2\pi N^{-} i \, \, = \\ \\
+    && Ln(z_1)-Ln(z_2) - 2\pi N^{-} i
+    \end{eqnarray}_)
+    _(N^{-}_) er kun _(0_), ved _(Arg(z_1)-Arg(z_2) \gt 0_). Voila!
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{E}}_)#" tabColour="rgb(171,96,147)">
+    Vi bruger bare den tidligere egenskab, og sætter _(z_1=1_)
+    _($\begin{eqnarray}
+    && ln\left(\frac{1}{z} \right) \, \, = \\ \\
+    && ln(1)-ln(z) \, \, = \\ \\
+    && Ln(1)+n_1*2\pi i - Ln(z) - n_2*2\pi i \, \, = \\ \\
+    && Ln(1) - Ln(z) + (n_1-n_2)*2\pi i \, \, = \\ \\
+    && Ln(1) - Ln(z) - n*2\pi i \, \, = \\ \\
+    && Ln(1) - ln(z) \, \, = \\ \\
+    && 0 - ln(z) \, \, = \\ \\
+    && -ln(z)
+    \end{eqnarray}_)
+    Voila! 
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{F}}_)#" tabColour="rgb(175,128,161)">
+    Her kan vi ikke bruge formlen, da _(Arg(1) - Arg(z)_) aldrig
+    er større end eller lig _(0_), udover når _(z_) er et reelt og positivt tal. 
+    I stedet vælger vi at bruge egenskaben
+    _($Arg(1/z)=2\pi - Arg(z)_)
+    ... som vi tidligere udledte. Vi starter 
+    fra _(Ln(1/z)_):
+    _($\begin{eqnarray}
+    && Ln(1/z) \, \, = \\ \\ 
+    && Ln|1/z| + Arg(1/z)i \, \, = \\ \\
+    && -Ln|z| + \left(2\pi-Arg(z) \right)i \, \, = \\ \\
+    && -\left(Ln|z| - Arg(z) \right) + 2\pi i \, \, = \\ \\
+    && 2\pi i - Ln(z)
+    \end{eqnarray}_)
+     <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="7" 2="2">
+    _(\underline{\textbf{A}}_):  <br>
+    Bevis at
+    _($ln(z^p) = p*ln(z)_)
+    ... <i>generelt</i> ikke er sandt. 
+    <p class="t">
+    _(\underline{\textbf{B}}_):  <br>
+    Bevis at det <i>er</i> sandt, hvis
+    _($p=1/n, \qquad n \in \mathbb{Z}_)
+    Den her er relativ tricky!
+    </p>
+    <p class="t">
+    _(\underline{\textbf{C}}_):  <br>
+    Bevis at
+    _($Ln(z^{*p}) = p*Ln(z)_)
+    ... kun hvis
+    _($0 \lt Im(Ln(z)*p) \lt 2\pi_)
+    </p>
+    <br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    Først omskriver vi til:
+    _($ln(e^{p*ln(z)})_)
+    Vi ved fra tidligere arbejde, at _(ln(e^z)=z+n*2\pi i_), så:
+    _($p*ln(z)+n*2\pi i_)
+    Her kan vi altså se, at _(ln(z^p)_) generelt <i>ikke</i> er 
+    lig, grundet den ekstra _(n*2\pi*i_) vi plusser med.
+    <br><br></answer-box>
+    <answer-box t="h" tabColour="rgb(192,209,132)">
+    I mit bevis udnytter jeg _(ln(z)=Ln(z)+k*2\pi*i_), hvor _(k_)
+    kan være en hvilken som helst integer
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{C}}_)#" tabColour="rgb(175,128,161)">
+    Idéen er, at vi udnytter _(ln(z)=Ln(z)+k*2\pi*i_), hvor _(k_)
+    kan være en hvilken som helst integer:
+    _($\begin{eqnarray}
+    && p*ln(z) + n*2\pi i  \, \, = \\ \\
+    && p*\left(Ln(z)+k*2\pi i \right) + n*2\pi i  \, \, = \\ \\ 
+    && p*\left(Ln(z)+k*2\pi i + \frac{n*2\pi i}{p} \right)  \, \, = \\ \\
+    && p*\left(Ln(z)+2\pi i*\left(k+\frac{n}{p} \right) \right)
+    \end{eqnarray}_)
+    Antag nu, at _(p=1/n_2_). Det giver:
+    _($\begin{eqnarray}
+    && p*\left(Ln(z)+2\pi i*\left(k+n*n_2 \right) \right)  \, \, = \\ \\
+    && p*\left(Ln(z)+m*2\pi\right), m \in \mathbb{Z}  \, \, = \\ \\
+    && p*ln(z)
+    \end{eqnarray}_)
+    Voila! 
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{D}}_)#" tabColour="rgb(171,96,147)">
+     Først omskriver vi til:
+    _($Ln\left(e^{Ln(z)*p} \right)_)
+    Vi bruger nu vores tidligere arbejde, hvor vi så at
+    _($Ln(e^z)=z-2\pi i*Floor\left(\frac{Im(z)}{2\pi} \right)_)
+    Vi indsætter nu _(Ln(z)*p_), og får
+    _($Ln(z)*p - 2\pi i*Floor\left(\frac{Im(Ln(z)*p)}{2\pi} \right)_)
+    Så det er kun sandt, hvis:
+    _($Floor\left(\frac{Im(Ln(z)*p)}{2\pi} \right) = 0_)
+    Bum! Et brugbart use-case her, er hvis _(p \in \mathbb{R}_), hvor vi kan sige
+    _($Im\left(Ln(z)*p \right) = Im\left((Ln|z|+Arg(z)i)p \right) = Arg(z)p_)
+    I det tilfælde er det sandt hvis:
+    _($0 \lt Arg(z)p \lt 2\pi_)
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="7" 2="3">
+    _(\underline{\textbf{A}}_):  <br>
+    Bevis, at
+    _($\frac{1}{z^{*a}} = z^{*-a}_)
+    .. altid er sandt.
+    <p class="t">
+    _(\underline{\textbf{B}}_):  <br>
+    Bevis, at
+    _($\frac{1}{z^a} = z^{-a}_)
+    ... altid er sandt.
+    </p>
+    <br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    Denne er nem, da vi ved, at _(a^{*z_1}/a^{*z_2} = a^{*z_1-z_2}_). 
+    _(1/a^{*z}_) svarer til at _(z_1=0_) og _(z_2=z_), så 
+    _($a^{*0-z}=a^{*-z}_)
+    Bum!
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Fra vores tidligere arbejde ved vi, at
+    _($\begin{eqnarray}
+    && z^{a+b} = z^{*a}*z^{*b}*e^{2\pi*n*(a+b)*i} \\ \\
+    && z^a*z^b = z^{*a}*z^{*b}*e^{2\pi*(n_1 a + n_2 b) i}
+    \end{eqnarray}_)
+    Via præcis samme udledning som for _(z^a*z^b_), kan man se at
+    _($\frac{z^b}{z^a} = \frac{z^{*b}}{z^{*a}}*e^{2\pi*i*(b n_1 - an_1)}_)
+    _(a^{-z}_) svarer til _(b=0_), _(a=-a_) og _(1/a^z_) svarer til
+    _(b=0_), _(a=a_), så:
+    _($\begin{eqnarray}
+    && z^{-a} = z^{*-a}*e^{2\pi*n*(-a+0)*i} \\ \\
+    && \frac{1}{z^a} = \frac{1}{z^{*a}}*e^{2\pi*(0*n_1 - a*n_1)}
+    \end{eqnarray}_)
+    Vi ved fra sidste opgave, at _(1/z^{*a}=z^{*-a}_), så:
+    _($\begin{eqnarray}
+    && z^{-a} = z^{*-a}*e^{-2\pi*n*a*i} \\ \\
+    && \frac{1}{z^a} = z^{*-a}*e^{-2\pi*n_1*a*i} 
+    \end{eqnarray}_)
+    Der er ingen funktionel forskel på _(n_1_) og _(n_), så de er lig hinanden!
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="7" 2="4">
+    _(\underline{\textbf{A}}_):  <br>
+    Bevis at
+    _($(ab)^z = a^z b^z_)
+    ... altid er sandt.
+    <p class="t">
+    _(\underline{\textbf{B}}_):  <br>
+    Bevis at 
+    _($(ab)^{*z} = a^{*z} b^{*z}_)
+    ... kun hvis 
+    _($Arg(a)+Arg(b) \lt 2\pi_)
+    ... og/eller hvis _(z \in \mathbb{Z}_)
+    </p>
+    <p class="t">
+    _(\underline{\textbf{C}}_):  <br>
+    Bevis at:
+    _($\left(\frac{a}{b} \right)^z = a^z b^{-z}_)
+    ... altid er sandt. 
+    </p>
+    <p class="t">
+    _(\underline{\textbf{D}}_):  <br> 
+    Bevis at 
+    _($\left(\frac{a}{b} \right)^{*z} = a^{*z} b^{*-z}_)
+    ... kun hvis 
+    _($Arg(a)-Arg(b) \ge 0_)
+    ... og/eller hvis _(z \in \mathbb{Z}_)
+    </p>
+    <br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    I denne bruger vi 
+    _($ln(z_1*z_2)=ln(z_1)+ln(z_2)_)
+    Vi starter
+    først fra _((ab)^z_) og får:
+    _($\begin{eqnarray}
+    && (ab)^z  \, \, = \\ \\
+    && e^{z*ln(ab)}  \, \, = \\ \\
+    && e^{z*ln(a)+z*ln(b)}  \, \, = \\ \\
+    && e^{z*Ln(a)+z n_1*2\pi i + z*Ln(b) + z n_2*2\pi i}  \, \, = \\ \\
+    && e^{z*Ln(a)}*e^{z*Ln(b)}*e^{z n_1*2\pi i + z n_2*2\pi i}  \, \, = \\ \\
+    && a^{*z}*b^{*z}*e^{z(n_1+n_2)*2\pi i}
+    \end{eqnarray}_)
+    Vi kigger så bagefter på _(a^z*b^z_):
+    _($\begin{eqnarray}
+    && a^z*b^z  \, \, = \\ \\
+    && e^{z*Ln(a)+z n_1*2\pi i}*e^{z*Ln(b)+z n_1*2\pi i}  \, \, = \\ \\
+    && e^{z*Ln(a)}*e^{z*Ln(b)}*e^{z n_1*2\pi i+z n_2*2\pi i}  \, \, = \\ \\
+    && a^{*z}*b^{*z}*e^{z(n_1+n_2)*2\pi i}
+    \end{eqnarray}_)
+    Bevis færdig! Noter at vi <i>ikke</i> bare kunne sige
+    _($e^{z*ln(a)+z*ln(b)} = e^{z*ln(a)}*e^{z*ln(b)}_)
+    ... siden _(ln(a)_) og _(ln(b)_) faktisk repræsenterer uendelige sæts. 
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    I denne bruger vi:
+    _($Ln(a*b) = Ln(a)+Ln(b)_)
+    Vi siger:
+    _($\begin{eqnarray}
+    && (ab)^{*z}  \, \, = \\ \\
+    && e^{Ln(ab)z}  \, \, = \\ \\
+    && e^{(Ln(a)+Ln(b)-2\pi*N^{+})z}   \, \, = \\ \\
+    && a^{*z}*b^{*z}*e^{-2\pi*N^{+}}
+    \end{eqnarray}_)
+    _(N^{+}_) er _(0_) når _(Arg(a)+Arg(b) \lt 2\pi_), så det matcher.
+    <p class="t">
+    Tilfældet hvor _(z_) er en integer er trivielt. 
+    </p>
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{C}}_)#" tabColour="rgb(171,96,147)">
+    Her anvender vi _((ab)^z = a^z b^z_) som:
+    _($\left(a*(1/b) \right)^z = a^z*(1/b)^z_)
+    Vi beviste tidligere at _((1/b)^z=b^{-z}_), hvilket færdiggøre beviset. 
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{D}}_)#" tabColour="rgb(175,128,161)">
+    Det er igen trivielt i tilfældet af integer _(z_). Ellers siger vi:
+    _($\begin{eqnarray}
+    && (a/b)^{*z}  \, \, = \\ \\
+    && e^{Ln(a/b)z}  \, \, = \\ \\
+    && e^{(Ln(a)-Ln(b)+2\pi*N^{-})z}  \, \, = \\ \\
+    && a^{*z}*b^{*-z}*e^{2\pi*N^{-}}
+    \end{eqnarray}_)
+    _(N^{-}_) er _(0_) når _(Arg(a)-Arg(b) \gt 0_), så det matcher.
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="7" 2="5">
+    _(\underline{\textbf{A}}_):  <br>
+    Bevis at
+    _($(a^{z_1})^{z_2} = a^{z_1*z_2}_)
+    ... <i>generelt</i> ikke er sandt. Bevis at det <i>er</i> sandt, 
+    hvis _(z_1 = \pm 1_), og/eller hvis _(z_2 \in \mathbb{Z}_)
+    <p class="t">
+    _(\underline{\textbf{B}}_):  <br>
+    Bevis at
+    _($(a^{*z_1})^{*z_2} = a^{*z_1*z_2}  _)
+    ... kun hvis
+    _($0 \lt Im(Ln(a) z_1) \lt 2\pi_)
+    ... og/eller hvis _(z_2 \in \mathbb{Z}_)
+    </p>
+    <br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    Lad os starte fra _((a^{z_1})^{z_2}_):
+    _($\begin{eqnarray}
+    && (a^{z_1})^{z_2}  \, \, = \\ \\
+    && (e^{ln(a)z_1})^{z_2} \, \,  = \\ \\
+    && e^{ln(e^{ln(a)z_1})*z_2}  \, \, = \\ \\
+    && e^{(ln(a)z_1+n*2\pi i)z_2}  \, \, = \\ \\
+    && e^{ln(a) z_1 z_2}*e^{(n z_2) 2\pi i}  \, \, = \\ \\
+    && a^{z_1 z_2}*e^{(n z_2) 2\pi i}
+    \end{eqnarray}_)
+    Dette er selvfølgelig <i>ikke</i> lig _(a^{z_1 z_2}_), så vi kan se at 
+    det <i>generelt</i> ikke er sandt. Det er tydeligvis sandt, hvis 
+    _(z_2_) er integer, da _(e^{k*2\pi i}=1_)
+    <p class="t">
+    Vi kigger nu på tilfældet, hvor _(z_1=1_). Her er det ret trivielt:
+    _($(a^{1})^{z_2}=a^{z_2}=a^{z_2*1}_)
+    Tilfældet hvor _(z_1=-1_) er lidt mindre trivielt, og vi skal 
+    udnytte tidligere egenskaber vi beviste:
+    _($\begin{eqnarray}
+    && (a^{-1})^{z_2}  \, \, = \\ \\
+    && \left(\frac{1}{a} \right)^{z_2}  \, \, = \\ \\
+    && 1^{z_2}*b^{-z_2}  \, \, = \\ \\
+    && b^{-z_2}  \, \, = \\ \\
+    && b^{(-1)*z_2}
+    \end{eqnarray}_)
+    Bum!
+    </p>
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Vi starter fra _((a^{*z_1})^{*z_2}_) og gør meget det samme, som i sidste opgave:
+    _($\begin{eqnarray}
+    && (a^{*z_1})^{*z_2}  \, \, = \\ \\
+    && (e^{Ln(a)z_1})^{*z_2}  \, \, = \\ \\
+    && e^{Ln(e^{Ln(a)z_1})*z_2}  \, \, = \\ \\
+    && e^{(Ln(a)z_1+2\pi i*Floor\left(\frac{Im(Ln(a) z_1)}{2\pi} \right))z_2}  \, \, = \\ \\
+    && a^{*z_1 z_2}*e^{-2\pi i*z_2*Floor\left(\frac{Im(Ln(a) z_1)}{2\pi} \right)}
+    \end{eqnarray}_)
+    Man kan se, at det generelt <i>ikke</i> er sandt. Det 
+    er dog sandt, hvis _(z_2_) er integer eller hvis _(Floor_)-funktionen giver _(0_), hvilket
+    svarer til, at
+    _($0 \lt Im(Ln(a) z_1) \lt 2\pi_)
+    Færdig! 
+    <br><br></answer-box>
+
+

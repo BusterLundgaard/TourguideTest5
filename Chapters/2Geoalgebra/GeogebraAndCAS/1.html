@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+
+
+    <!--11.1 --> 
+    <h1 class="header">Afsnit 1:</h1>
+    <h1 class="title">CAS-programmer og Geogebra</h1>
+    
+    <p class="t">Previously, during the investigation ... </p>
+
+    <p class="t">"<i>Jeg, under absolut ingen omstændigheder (medmindre det er nævnt direkte), tillader at du bruger computerhjælp. 
+    Ingen Maple. Ingen MathCad. Ingen WolframAlpha. Ingen Ti-Nspire. Intet. I hele det første kapitel og lidt længere frem tillader 
+    jeg ikke engang lommeregnere! Det virker åndssvagt, men jeg kan virkelig ikke undervurdere, hvor vigtigt det her er!</i>" </p>
+    
+    <p class="t">
+    Sådan her sagde jeg i starten af bogen, men nu er det tid til, at 
+    jeg modsiger mig selv. Det var meget vigtigt for mig, at du ikke
+    brugte CAS-programmer i starten, da 
+    det er rigtig dårligt for en at bruge CAS-programmer, før man har udviklet sin
+    "matematiske modenhed". Uden særlig meget erfaring eller viden, vil man
+    potentielt ende med at bruge CAS-programmer <i>hele tiden</i>. Det har nogle negative 
+    konsekvenser hvis man skal lære matematik:
+    </p>
+
+    <p class="t">
+    <b> 1</b>: Man vil bruge CAS-programmet til at skrive ens mellemregninger i stedet for at gøre
+    det på papir. At gøre det på papir er hundrede gange mere fleksibelt og
+    hurtigt end på CAS. Du kan simpelthen nå at skrive mange flere mellemregninger
+    i en givet tidsramme, når du gør det med blyant end hvis du bruger et computerprogram!
+    Du bliver god til algebra og til at flytte rundt på symboler og tal,
+    når du bruger papir: Du behøver ikke tænke over, om du formaterer alting som 
+    et computerprogram siger du skal. Du kan skrive/tegne/skitsere hvad
+    end du har lyst til som hjælper dig, og du kan nemt kombinere det med tegninger og geometri. 
+    Man har simpelt hen brug for at kunne udtrykke sig selv så hurtigt og frit som muligt
+    i et fag som matematik hvor man løser mange, abstrakte og forskelligartede problemer. 
+    I et CAS-program skal du konstant bekymre dig om 
+    "hvordan" du udtrykker dig selv og tager noter, og 
+    det fjerner fokus fra selve matematikken. 
+    </p>
+
+    <p class="t">
+    <b> 2</b>: At bruge et CAS-program kan massivt øge ens <i>tvivl</i>. 
+    Uden CAS-programmer ved man at
+    der er noget galt med <i>matematikken</i>: Med CAS-programmer kan man
+    ikke ekskludere, at der måske faktisk bare er noget galt med
+    den måde, man brugte programmet! 
+    </p>
+
+    <p class="t">
+    <b> 3</b>: Man begynder at bruge CAS-programmet til at
+    løse alle "svære" problemer for èn. Man lærer ikke at lave ordentlig algebra
+    eller at løse ligninger, fordi det kan CAS-programmet jo bare gøre!
+    Algebra og ligninger er to ekstremt vigtige tænke-værktøjer man konstant
+    bruger i matematik, og CAS-programmet går kun <i>så</i> langt: Der er mange
+    situationer hvor et CAS-program ikke kan hjælpe dig med at løse en bestemt ligning
+    eller et bestemt algebraisk problem. Mere rigtigt: CAS-programmet <i>kan</i>
+    hjælpe dig i de situationer, men den kan ikke gøre <i>det hele</i>. 
+    </p>
+
+    <p class="t">
+    <b> 4</b>: Et fjerde problem er, hvis man ved, at bogen er <i>designet</i> omkring CAS.
+    I en svær opgave er du hele tiden i tvivl om, hvorvidt
+    det er meningen at du skal kunne løse den selv, eller om du
+    får brug for CAS: Nogle bøger vil selvfølgelig gøre det klart,
+    hvis man <i>skal</i> bruge CAS i en opgave, men andre vil ikke! 
+    </p>
+
+    <p class="t">
+    Så <i> ja</i>, det her er årsagerne til, at jeg ikke valgte at bruge CAS <i>i starten af bogen</i>.
+    Men vi er ikke i starten af bogen længere: Vi er tættere på midten! 
+    <b> CAS-programmer kan være super dejlige</b>, <i>hvis du bruger dem ordentligt</i>:
+    </p>
+    <p class="t">
+    <b> 1</b>: Sig du har et større lineært system: 
+    _($\begin{alignat}{4}
+    4x     & \, \, \, + \, \, \, & 7.9y & \, \, \, - \, \, \, & 13z     & \, \, \, + \, \, \, & 33w & \, \, \, \, = \, \, \, \, 22.6 \\
+    -58.3x & \, \, \, + \, \, \, & 12y  & \, \, \, + \, \, \, & 0.03z   & \, \, \, + \, \, \, & 54w & \, \, \, \, = \, \, \, \, 1 \\
+    29x    & \, \, \, + \, \, \, & 15y  & \, \, \, - \, \, \, & 18.888z & \, \, \, - \, \, \, & 2w  & \, \, \, \, = \, \, \, \, 3.14 \\
+    9x     & \, \, \, + \, \, \, & 99y  & \, \, \, - \, \, \, & 4.4z    & \, \, \, + \, \, \, & w   & \, \, \, \, = \, \, \, \, -19
+    \end{alignat}_)
+    Du <i>kunne</i> godt løse dette selv, men det ville tage lang tid, og
+    chancen for at du laver i hvert fald _(1_) mindre fejl undervejs er stor. 
+    Så kan computeren vel ligeså godt bare gøre det for dig! Et andet eksempel kunne være: 
+    _($3x-0.5+6*(5-13x)=22+8.3x-3+3*(9x-1.5x- 20)_)
+    Den her ligning <i>kunne</i> du tydeligvis godt selv løse i hånden hvis du ville. 
+    Det <i>er</i> en simpel lineær ligning, men den er også ret stor og kludret. Det ville
+    tage tid at gange ind parenteserne og samle alle _(x_)'erne, og igen
+    er der stor chance for <i>fejl</i>. Et tredje eksempel er:
+    _($\left(\left(7.7 \VeC[5.1,9.9,8.25] - \VeC[7.5,8.64,-12.6] \right) \times \VeC[-9.4,6.7,-13.3] \right)*\VeC[8.3,1.2,0.05]_) 
+    Måske fik du brug for at beregne dette udtryk i processen af et 3D problem. 
+    Det er intet <i>svært</i> her, det er bare stort og kedeligt. Det kan computeren gøre
+    langt bedre end os. 
+    </p>
+    <p class="t">
+    Fælles for alle de her eksempler er, at computeren skifter fokusset fra repetition og
+    kedelig beregning til matematikken og problemerne vi løser. Det 
+    mindsker også chancen for fejl markant. 
+    </p>
+    <p class="t">
+    <b> 2</b>: CAS-programmer kan hjælpe os med at tjekke, om en løsning er sand eller falsk, da 
+    de sjælen laver fejl ligesom os. Det er virkelig praktisk, at kunne definitivt og let tjekke, om
+    noget er rigtig eller forkert, eftersom udvikling og forståelse af matematik allerede er fyldt til
+    randen med usikkerhed. Du har måske mulighed for at tjekke påstande i CAS-programmet, hvis 
+    du er i tvivl om noget, i en tekst du læser, og du kan lettere <i>eksperimentere</i> med matematik. 
+    </p>
+    <p class="t">
+    <b> 3</b>: CAS-programmer er fantastiske til at visualisere matematik. 
+    De kan 
+    f.eks. nemt tegne grafer, så du let kan få en bedre fornemmelse for, hvordan en funktion
+    ser ud. Du kan endda ændre på funktionen og se resultatet med det samme. Vi tænker
+    ofte på computere som værktøjer, hvis primære formål er, at hjælpe os med spørgsmål, der har kolde, hårde svar. 
+    Men CAS-programmer kan virkelig hjælpe os med <i>intuitionen</i> også. De kan visualisere
+    en masse abstrakte koncepter hurtigt, og de giver os evnen til direkte at <i>interagere</i> med matematik:
+    Diverse interaktive simulationer i denne bog er èt eksempel. 
+    </p>
+    <p class="t">
+    <b> 4</b>: CAS-programmer åbner dørene til en helt ny verden af matematik, da de
+    "nemt" kan løse bestemte problemer, der ville være (praktisk talt) umulige for os
+    at løse i hånden. 
+    Det er ikke længere et problem at man skal plusse èt tusind forskellige tal med hinanden for
+    at få et svar. Det er ikke længere et problem, at man står med en mega svær ligning. 
+    Det er ikke længere et problem, at man skal beregne et super kompliceret areal: Computeren
+    kan gøre alt det her for os på et splitsekund. CAS-programmer er ikke en <i>erstatning</i>
+    af vores tidligere matematik-redskaber: Det er en udvidelse. Et nyt værktøj vi kan
+    bruge til at løse mange vigtige problemer og studere en masse interessant matematik. 
+    </p>
+    <p class="t">
+    Så her er planen: I dette mini-afsnit har jeg tænkt mig at lære dig et CAS-program.
+    Fremover i bogen må du godt bruge CAS-programmer, men du skal tænke lidt over <i>hvordan</i>
+    du bruger dem. Hvis man <i>skal</i> bruge CAS-programmer for at løse et spørgsmål,
+    vil jeg altid gøre det klart og tydeligt. 
+    CAS-programmet er et <i>værktøj</i> der kan hjælpe dig med beregninger, 
+    visualiseringer/intuition, fejltjekning osv. 
+    Hvis du lige har lært om hvordan man løser en bestemt slags ligning i hånden, 
+    skal du selvfølgelig 
+    ikke bruge computeren med det samme, <i>før</i> du er blevet god til at gøre det selv. 
+    Brug sund fornuft, bassicly:
+    <u>Du læser frivilligt en lærebog. Dit formål er altid at lære. </u>
+    </p>
+
+    <p class="pageSplitter">*</p>
+    
+    <p class="t">
+    Det CAS-program vi har tænkt os at bruge hedder Geogebra, og er gratis.
+    Det støtter både windows og mac, og selv om det ikke er det
+    kraftigste CAS-program i verden, er det super dejligt, simpelt, og kan
+    virkelig mange ting på èn gang.  
+    </p>
+    
+    <p class="t">
+    Geogebra kan downloades her:
+    <a href="https://www.geogebra.org/download">Geogebra forside</a>. Jeg
+    viser hvordan man gør det i denne video:
+    </p>
+
+    <video class='SpicB' style="width:95%;" controls>
+        <source src='../../../Assets/Chapter2\Geogebra\Intro.mp4' type='video/mp4'>
+    </video>
+
+

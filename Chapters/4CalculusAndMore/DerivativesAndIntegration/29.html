@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+
+    <h3>Numerisk approksimation af differentialligninger: Vigtigt og praktisk</h3>
+    <p class="t">
+    Rigtig mange differentialligninger, selv dem af første eller anden orden, kan ikke løses. 
+    Scratch that: <i>langt de fleste</i> differentialligninger kan ikke løses "normalt", hverken så
+    vi opnår en funktion _(y(x)_) eller for den sags skyld en ligning. 
+    Der er derfor vigtigt at kunne
+    approximere differentialligninger numerisk, hvilket heldigvis viser sig ret let i 
+    flere tilfælde. 
+    </p>
+
+    <p class="t">
+    Sig vi søger _(y(3)_) på _(y' = \sqrt{x} - \sqrt{y}_), hvis vi ved at _(y(0)=1_). 
+    Det kan approximeres med en smart og simpel ide: 
+    </p>
+
+    <video class='picB' style='margin-top:35px; margin-bottom: 35px;' controls>
+        <source src='../../../Assets/Chapter4\DerivativesAndIntegrals\DiffEquations\Applications\NumericalIntro.mp4' type='video/mp4'>
+    </video>
+
+    <p class="t">
+    En _(0.1_) længde mellem hvert punkt er sjælen godt nok. Prøv med
+    _(0.01_) i stedet (selvom det er upraktisk).
+    </p>
+
+    <q-stion 1="29" 2="1">
+    Find _(y(1)_) på _(y'=x^2 - Ln(y)*x_) hvis _(y(-1.5)=1_).
+    <br><br></q-stion>
+    <answer-box>
+    Du kan se mit svar her:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter4\DerivativesAndIntegrals\DiffEquations\Applications\Numerical1.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="29" 2="2">
+    Find _(y(-1)_) på _(y'=x^2+y^2_), hvis _(y(1.6)=1.8_)
+    <br><br></q-stion>
+    <answer-box>
+    Du kan se mit svar her:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter4\DerivativesAndIntegrals\DiffEquations\Applications\Numerical2.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="29" 2="3">
+    Find _(y(4)_) på _(y''=\sqrt{x}*Ln(y')_) hvis _(y'(2)=1.5_), og _(y(0.5)=3_)
+    <br><br></q-stion>
+    <answer-box>
+    Du kan se mit svar her:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter4\DerivativesAndIntegrals\DiffEquations\Applications\Numerical3.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="29" 2="4">
+    Find _(y(1.2)_) på _(y''=Ln(|Sin(y)|)_), hvis du ved at _(y'=3_) når _(y=1_), og _(y(0.7)=3_). 
+    <br><br></q-stion>
+    <answer-box>
+    Du kan se mit svar her:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter4\DerivativesAndIntegrals\DiffEquations\Applications\Numerical4.mp4' type='video/mp4'>
+    </video>    
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="29" 2="5">
+    Et pendul gav os differentialligningen:
+    _($\theta'' = -\frac{g}{R} Sin(\theta)_)
+    Kuglen starter ved _(\theta = 0.23_) med en hastighed på _(\theta' = 0.75_).
+    Hvad er dens toppunkt?
+    <p class="t">
+    <i>Hint</i>: I denne behøver du ikke bruge samme komplicerede trick som i sidste, da
+    begge vores startinformation er på samme punkt. Det gør alting lettere. 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    _(-g/R_) er _(-1.96_). Resten af svaret kan du se i følgende video:
+    Du kan se mit svar her:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter4\DerivativesAndIntegrals\DiffEquations\pendulum2.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <p class="t">
+    Geogebra har heldigvis en prebygget funktion, så vi ikke behøver at lave disse skemaer. Vi kan bruge:
+    _($\text{SolveODE}(f(x,y),\text{x startværdi}, \text{y startværdi}, \text{x slutværdi}, \text{Stepstørrelse} )_)
+    Her er _(f(x,y)_) den første-ordens 
+    differentialligning _(y'=f(x,y)_) vi prøver at løse. Det vil desværre ikke
+    virke, hvis ligningen er af anden orden. Via _(\text{x startværdi}_) og _(\text{y startværdi}_) fortæller
+    vi Geogebra, hvilket punkt på kurven, vi allerede kender, så den kan bestemme konstanten _(C_). 
+    _(\text{x slutværdi}_) fortæller
+    Geogebra, hvor langt den skal tegne differentialligningen. _(\text{Stepstørrelse}_) svarer til 
+    _(0.1_) eller _(0.01_) i vores eksempler: Det beskriver, hvor god en approksimation
+    Geogebra skal lave.
+    </p>
+    <p class="t">
+    Som et eksempel kunne vi også have løst anden opgave på denne side gennem kommandoen:
+    _($\text{SolveODE}(x^2+y^2,1.6,1.8,-2,0.1)_)
+    Det ville give os grafen: 
+    </p>
+    <img class='SpicXL' style='width:55%' src='../../../Assets/Chapter4\DerivativesAndIntegrals\DiffEquations\Applications\GeogebraNumericalDiffEq.png'> 
+    <p class="t">
+    Vi kunne så bare se, hvad denne graf var på _(x=-1_) ved at lave en linje:
+    </p>
+    <img class='SpicXL' style='width:55%' src='../../../Assets/Chapter4\DerivativesAndIntegrals\DiffEquations\Applications\GeogebraNumericalDiffEq2.png'>
+
+
+
+ 

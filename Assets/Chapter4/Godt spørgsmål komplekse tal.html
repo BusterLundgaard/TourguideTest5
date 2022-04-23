@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+
+    <q-stion 1="2" 2="1" 3="5">
+    Bevis at 
+    _($Cos(k*t)=\sum_{j=0}^{k/2}(-1)^j*Sin(t)^{2j}*Cos(t)^{k-j}_) 
+    hvor _(k_) er et helt tal.
+    <br><br></q-stion>
+    <answer-box>
+    Vi ved at _(e^{k*t*i}=Cos(kt)+Sin(kt)i_), ergo _(Cos(kt)=Rigtig(e^{k*t*i})_), hvor _(Rigtig()_) så 
+    refferere til at vi skal tage den "ikke-complexe del". Nu kan vi omskrive og bruge the binomial formula:
+    _($Rigtig(e^{k*t*i})=Rigtig((e^{ti})^k)=Rigtig((Cos(t)+Sin(t)i)^k)=_)
+    _($Rigtig(\sum{j=0}^k (Sin(t)i)^j*Cos(t)^{k-j})  _)
+    Delen uden complexe tal er alle de led uden nogen _(i_). Vi ved at hvis _(j_) på 
+    noget tidspunkt er et lige tal _(2n_), så får vi _((Sin(t)i)^{2n}=Sin(t)^{2n}*(i^{2})^n = Sin(t)^{2n}*(-1)^n_).
+    Fantastisk! Vi for bare vores summering til kun at gå over de lige tal:
+    _($\sum{j=0}^(k/2) (-1)^j*(Sin(t))^{2j}*Cos(t)^{k-j}_)
+    Det her giver dig altså en hurtig måde at omskrive _(Cos(kt)_) på i forhold til trig-funktioner
+    hvor _(t_) ikke er ganget med noget. 
+    <br><br></answer-box>
+

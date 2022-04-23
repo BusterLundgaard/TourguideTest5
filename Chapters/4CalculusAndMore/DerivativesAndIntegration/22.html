@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+
+
+    <h4>Substitution, men modsat kind of, og <i>trigonometriske substitutioner</i></h4>
+    <p class="t">
+    Indtil videre har vi substitueret ved at lave en eller anden del af funktionen - 
+    f.eks. _(Cos(x)_) - om til "_(u_)". Det er <i>også</i> muligt at substituere på en alternativ men
+    vigtig og brugbar måde. Sig vi skal integrere:
+    _($F(g) = \sqrt{1-g^2}_)
+    Tit gør vi vores udtryk <i>mindre</i> ved at erstatte dele af det med _(u_), men
+    i dette tilfælde ville et (midlertidigt) større udtryk faktisk være bedre. 
+    Alt ville blive meget simplere hvis _(g_) blev erstattet med _(Sin(x)_):
+    _($F(g(x)) = \sqrt{1 - Sin(x)^2} = \sqrt{Cos(x)^2} = Cos(x)_)
+    Så er spørgsmålet bare, hvordan vi kommer afsted med sådan en sneaky manøvre.
+    Er det her lovligt? Hvad skal vi integrere for at komme videre?
+    Det hjælper at se på kædereglen:
+    _($¤x[f(g(x))] = f'(g)*g'(x)_)
+    Før havde vi en funktion af _(x_), og erstattede bestemte udtryk af _(x_) med
+    _(g_) (eller _(u_) som vi kaldte det). Vores funktion var originalt 
+    af formen _(F(x)_), men vi lod som om, den var af formen _(F(g(x))_), eller
+    bare _(F(g)_). <i>Nu</i> har vi en funktion _(F(g)_), og vi lader som
+    om den faktisk er af formen _(F(g(x))_). 
+    </p>
+    <p class="t">
+    Tricket tidligere var at se ens originale funktion _(F(x)_) som 
+    _($¤x[f(g(x))]_)
+    ... og så finde _(f(g(x))_) ved at integrere _(f'(g)_) med _(g_). Tricket nu 
+    er, at se ens originale funktion _(F(g)_) som 
+    _($f'(g)_) 
+    ... og finde _(f(g)_) ved at integrere _(d/dx[f(g(x))]_) med _(x_): 
+    _($\begin{eqnarray}
+    && ¤x[f(g(x))] = f'(g)*g'(x) \\ \\
+    && f(g(x)) = \int f'(g(x))*g'(x) \, dx
+    \end{eqnarray}_)
+    Når man har fundet _(f(g(x))_), har man jo også fundet den _(f(g)_) man leder efter!
+    </p>
+    <p class="t">
+    I vores tilfælde siger vi, at:
+    _($f'(g(x)) = \sqrt{1-g^2}_)
+    Hvor vi har besluttet, at _(g_) er en funktion _(g(x)=Sin(x)_). Nu kan vi
+    finde _(f(g(x))_) som:
+    _($\begin{eqnarray}
+    && \int \sqrt{1-Sin(x)^2}*¤x[Sin(x)] \, dx = \\ \\
+    && \int \sqrt{1 - Sin(x)^2}*Cos(x) \, dx = \\ \\
+    && \int Cos(x)^2 \, dx
+    \end{eqnarray}_)
+    Bum! Nu skal vi bare integrere _(Cos(x)^2_)! Her udnytter vi
+    det faktum, at
+    _($Cos(2x) = 2 Cos(x)^2 - 1 \to Cos(x)^2 = \frac{Cos(2x)+1}{2}_)
+    Så:
+    _($\int Cos(x)^2 \, dx = \int \frac{Cos(2x)+1}{2} \, dx = \frac{1}{4} Sin(2x) + \frac{1}{2}x_)
+    Vi ved nu, at:
+    _($f(g(x)) = \frac{1}{4} Sin(2x) + \frac{1}{2}x_)
+    Vores mål er _(f(g)_): Ikke _(f(g(x))_). Her udnytter vi nu at:
+    _($g=Sin(x) \to x = Arcsin(g)_)
+    Så:
+    _($\int \sqrt{1-g^2} = \frac{1}{4} Sin \left(2*Arcsin(g) \right) + \frac{1}{2}*Arcsin(g)_)
+    Voila! Det er langt fra pænt, men dette er løsningen på integralet! Den generelle
+    strategi er altså, at du kan erstatte _(x_) i din funktion _(F(x)_) med
+    en eller anden funktion _(x=g(u)_), og integrere med _(u_) i stedet
+    for _(x_), så længe du husker at gange med _(g'(u)_).
+    </p>
+    <p class="t">
+    Igen er det
+    nok lettest at forklare med et par eksempler. Sig vi skal integrere:
+    _($x*\sqrt{1+x^2}_)
+    Fra _(Cos(x)^2+Sin(x)^2=1_) er det muligt at udlede:
+    _($1 + Tan(x)^2 = \frac{1}{Cos(x)^2} _)
+    Så vi kan være smarte og erstatte _(x_) med _(Tan(u)_):
+    _($Tan(u)*\sqrt{1+Tan(u)^2} = Tan(u)*\sqrt{1/Cos(u)^2} = \frac{Tan(u)}{Cos(u)} = \frac{Sin(u)}{Cos(u)^2}_)
+    Det her er ikke fantastisk, men det burde kunne løses en del nemmere end før. 
+    Vi husker at gange med _(x'(u)_):
+    _($\frac{Sin(u)}{Cos(u)^2}*¤u[Tan(u)] = \frac{Sin(u)}{Cos(u)^2}*\frac{1}{Cos(u)^2}_)
+    Nu skal vi regne integralet:
+    _($\int \frac{Sin(u)}{Cos(u)^4} \, du_)
+    Her er det nok praktisk at substituere _(Cos(u)=m_), siden det fjerner _(Sin(u)_) i tælleren
+    og giver:
+    _($\int \frac{1}{m^4} \, dm = -\frac{1}{3m^3} = -\frac{1}{3 Cos(u)^3}_)
+    Det sidste step er at omskrive det hele i forhold til _(x_) igen. 
+    _(x=Tan(u)_), så _(u=Arctan(x)_), hvilke giver:
+    _($-\frac{1}{3 Cos(Arctan(x))^3 }_)
+    Dette kan forsimples via omskrivningen _(Cos(x)=1/\sqrt{1+Tan(x)^2}_) til:
+    _($-\frac{(1+x^2)^{3/2}}{3}_)
+    Så:
+    _($\int x*\sqrt{1+x^2} = -\frac{(1+x^2)^{3/2}}{3}_)
+    Fantastisk! 
+    </p>
+
+    <p class="cent">*</p>
+
+    <p class="t">
+    Dette nye trick er ikke ligeså bredt anvendt som det tidligere. Det bliver <i>primært</i> brugt
+    til at fjerne kvadratrødder, som vi så i eksemplerne, og det døbes
+    ofte "trigonometrisk substitution". Der er <i>bredt</i> sagt tre
+    forskellige tilfælde:
+    _($\begin{eqnarray}
+    && \textbf{A:} \, \, & \sqrt{1-x^2} \\ \\
+    && \textbf{B:} \, \, & \sqrt{1+x^2} \\ \\
+    && \textbf{C:} \, \, & \sqrt{x^2-1} 
+    \end{eqnarray}_)
+    Ved hjælp af _(Sin(x)^2+Cos(x)^2=1_) kan man udlede:
+    _($\begin{eqnarray}
+    && 1 - Cos(x)^2 & = Sin(x)^2 \\ \\
+    && 1 - Sin(x)^2 & = Cos(x)^2 \\ \\
+    && 1 + Tan(x)^2 & = Sec(x)^2 \\ \\
+    && Sec(x)^2 - 1 & = Tan(x)^2 
+    \end{eqnarray}_)
+    De to første ligninger bruger vi i tilfælde _(\textbf{A}_), den 
+    tredje i tilfælde _(\textbf{B}_), og den fjerde
+    i tilfælde _(\textbf{C}_). 
+    </p>
+    <p class="t">
+    Før du selv går i gang, burde du nok lige vide at:
+    _($\begin{eqnarray}
+    && \int Sec(x) & =  & Ln(Sec(x)+Tan(x))  \\ 
+    && \int Csc(x) & = -& Ln(Csc(x)+Cot(x))  
+    \end{eqnarray}_)
+    Det er her på ingen måde åbenlyst, men du kan let selv tjekke
+    at det er rigtigt, ved at differentiere
+    henholdsvis _(Ln(Sec(x)+Tan(x))_) og <br> _(-Ln(Csc(x)+Cot(x))_).
+    Det er et mærkeligt tilfælde, hvor man ikke helt kan forklare
+    <i>hvordan</i> folk kom frem til disse bizarre formler, men det gjorde
+    de, og de virker. Du er bare nødt til at <i>huske</i> integralet
+    af _(Sec(x)_) og _(Csc(x)_), hvis du støder på det. 
+    </p>
+
+    <!--  -->
+
+    <q-stion 1="22" 2="1">
+    Find integralerne til de følgende funktioner:
+    <div style="margin-left:-67%; margin-top:25px; margin-bottom: -10px;">
+    _($\begin{eqnarray}
+        && \underline{\textbf{A}}: \, \, \, \, \, \, \frac{1}{\sqrt{1-x^2}} \\ \\
+        && \underline{\textbf{B}}: \, \, \, \, \, \, \frac{\sqrt{1+x^2}}{x^4} \\ \\
+        && \underline{\textbf{C}}: \, \, \, \, \, \, \frac{1}{x \sqrt{x^2-1}} \\ \\
+        && \underline{\textbf{D}}: \, \, \, \, \, \, \frac{1}{ \sqrt{x^2-1}} \\ \\
+        && \underline{\textbf{E}}: \, \, \, \, \, \, \frac{1}{\sqrt{3-5x^2}} \\ \\
+        && \underline{\textbf{F}}: \, \, \, \, \, \, \frac{1}{\sqrt{5x^2 + 2x + 6}}
+    \end{eqnarray}_)
+    </div>
+    <br><br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    I kvadratroden har vi _(1-x^2_), hvilket passer bedst til type _(\textbf{A}_).
+    Vi substituerer derfor _(x=Sin(u)_) og får: 
+    _($\int \frac{1}{\sqrt{1-Sin(u)^2}}*Cos(u) \, du = \int \frac{Cos(u)}{Cos(u)} \, du = u_)
+    _(x=Sin(u)_), så _(u=Arcsin(x)_). Det endelige svar er altså:
+    _($\int \frac{1}{\sqrt{1-x^2}} = Arcsin(x)_)
+    Voila! 
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Denne passer bedst til type _(\textbf{B}_), så vi substituerer _(x=Tan(u)_):
+    _($\int \frac{\sqrt{1+Tan(u)^2}}{Tan(u)^4}*Sec(u)^2 \, du_)
+    _(\sqrt{1+Tan(u)^2}_) bliver til _(Sec(u)_), og derfra kan udtrykket simplificeres en del til:
+    _($\int \frac{Cos(u)}{Sin(u)^4} \, du_)
+    Her er det nok bedst at substituere _(Sin(u)=m_) for at fjerne _(Cos_) i tælleren. Det giver:
+    _($\int \frac{1}{m^4} \, dm = -\frac{1}{3m^3} = -\frac{1}{3 Sin(u)^3}_)
+    _(u=Arctan(x)_), så:
+    _($-\frac{1}{3 Sin(Arctan(x))^3} = - \frac{(1+x^2)^{3/2}}{3x^3} _)
+    Boom!
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{C}}_)#" tabColour="rgb(171,96,147)">
+    Denne passer til type _(\textbf{C}_), så vi siger _(x=Sec(u)_).
+    Hældningen af _(Sec(u)_) kan man relativt let beregne er 
+    _(Sin(u)*Sec(u)^2_), så:
+    _($\int \frac{1}{Sec(u)*\sqrt{Sec(u)^2 - 1}}*Sin(u)*Sec(u)^2 \, du_)
+    _(\sqrt{Sec(u)^2 - 1}_) bliver til _(Tan(u)_) og det hele simplificeres på magisk
+    vis til bare _(1_). 
+    _($\int 1 \, du = u = Arcsec(x)_)
+    _(Arcsec(x)_) er simpelthen svaret. Det er lidt en mærkelig funktion, så vi kan
+    omskrive den hvis vi vil. Hvis _(y=Arcsec(x)_) er
+    _($\frac{1}{Cos(y)} = x_)
+    Og herfra kan det let ses, at:
+    _($Arcsec(x) = Arccos\left(\frac{1}{x} \right)_)
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{D}}_)#" tabColour="rgb(175,128,161)">
+    Vi gør præcis det samme som før. Denne gang bliver udtrykket dog ikke simplificeret
+    til _(1_), men i stedet:
+    _($\int Sec(u) \, du_)
+    Løsningen på dette, ved vi er:
+    _($Ln\left(Sec(u) + Tan(u) \right)_)
+    Vi indsætter _(u=Arcsec(x)_) og får:
+    _($Ln \Bigg(x + Tan(Arccos \left(\frac{1}{x} \right) ) \Biggl)_)
+    Bum! 
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{E}}_)#" tabColour="rgb(171,96,147)">
+    Du kan se svaret i følgende video:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter4\DerivativesAndIntegrals\Integrals\NewTrigSub1.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{F}}_)#" tabColour="rgb(175,128,161)">
+    Du kan se svaret i følgende video:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter4\DerivativesAndIntegrals\Integrals\NewTrigSub2.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="22" 2="2">
+    Brug substitution og omskriv 
+    _($\int \frac{x}{\sqrt{5x^2+2}*\sqrt{3x^2+7}}_)
+    ... til en integral der passer formen:
+    _($\int \frac{1}{\sqrt{\text{Andetgradspolynomie}}}_)
+    Med andre ord en integral, der kan løses på samme måde som
+    opgave _(6_) i sidste opgave. 
+    <br><br></q-stion>
+    <answer-box>
+    Tricket her er, at substituere:
+    _($u=x^2_)
+    _(x_)'et i tælleren forsvinder, eftersom vi skal dividere med _(2x_), og 
+    begge kvadratrødder er reduceret fra andengrads- til førstegradspolynomier:
+    _($\int \frac{1}{\sqrt{5u+2}*\sqrt{3u+7}} \, du_)
+    Nu kan vi bare gange kvadratrødderne ind i hinanden og få:
+    _($\int \frac{1}{\sqrt{(5u+2)*(3u+7)}} \, du = \int \frac{1}{u^2+8u+12} \, du_)
+    Voila! Det her ved vi, kan løses.
+    <br><br></answer-box>
+
+    <q-stion 1="22" 2="3">
+    Omskriv
+    _($\int \frac{1}{\sqrt{x}+\sqrt[3]{x}}_)
+    ... til et integral du ved, vi let kan løse. 
+    Du behøver ikke løse
+    det fulde integral, da der er mange led og,
+    det er lidt rodet. 
+    <br><br></q-stion>
+    <answer-box>
+    Hmmm. Jeg vil gerne af med "rødderne", da de
+    komplicerer alting. 
+    <p class="t">
+    Hvis jeg <i>kun</i> havde kvadratrødder,
+    ville _(x=u^2_) være en mulighed. Så bliver
+    hver _(\sqrt{x}_) til _(\sqrt{u^2}=u_), og vi skal bare gange med _(u_).
+    Hvis jeg <i>kun</i> havde kubikrødder
+    kunne jeg lignende sige _(x=u^3_) og få _(\sqrt[3]{u^3}=u_). Men jeg 
+    har <i>begge</i>
+    </p>
+    <p class="t">
+    Kan vi vælge en potens, der fjerner både kvadrat- og kubikrødder? Nemt! 
+    Vi vælger bare _(x=(u^2)^3=u^6_):
+    _($\frac{u^6}{\sqrt{u^6} + \sqrt[3]{u^6}}*6u^5 = 6 \frac{u^{11}}{u^3 + u^2} = 6 \frac{u^9}{1+u} _)
+    Vi står nu med _(u^9_) divideret med _(u+1_). Det kan let opløses til et polynomie
+    gennem long division:
+    _($6*\left(u^8 - u^7 + u^6 - u^5 + u^4 - u^3 + u^2 - u + 1 - \frac{1}{u+1} \right)_)
+    Og herfra er det let at løse. 
+    </p>
+    <br></answer-box>
+
+
+
+
+
+

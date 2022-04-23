@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+
+
+    <h2>Firkanter og deres arealer</h2>
+
+    <p class="t">
+    Vi går direkte til!
+    </p>
+
+    <q-stion 1="3" 2="1">
+    Find arealet af følgende firkant:
+    <img class="Spic" style="width:80%" src='../../../Assets/Chapter2\Section2\Quads\Exercise1.png'> 
+    <br><br></q-stion>
+    <answer-box>
+    Du kan se svaret i videoen her:
+    <video class='SpicB' style="width:100%;" controls>
+        <source src='../../../Assets/Chapter2\Section2\Quads\Firkant1.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+    
+    <q-stion 1="3" 2="2">
+    Find arealet af følgende firkant:
+    <img class="Spic" style="width:95%" src='../../../Assets/Chapter2\Section2\Quads\Exercise2.png'> 
+    <br><br></q-stion>
+    <answer-box>
+    Formen her er nok lidt speciel, men der er intet markant svært omkring opgaven. 
+    Man kan igen bare dele 
+    den op i to trekanter, og den her gang har den ene endda nok informationer! Luksus!
+    Svaret er i hvert fald omkring _(16.6_). 
+    <br><br></answer-box>
+
+    <p class="t">
+    Som du nok kan se, tager det en del tid, at finde arealet via siderne og 
+    vinklerne. Muligt, men lidt langsomt. Heldigvis er der jo mange andre længder og vinkler 
+    på firkanten, vi kan måle;
+    Nogle bedre til at give os visse informationer end andre. Hvis man er ude efter arealet som 
+    os lige nu,
+    er diagonalerne klart det bedste svar:
+    </p>
+
+    <q-stion 1="3" 2="3">
+    Find en formel for arealet af følgende firkant:
+    <img class="Spic" style="width:95%" src='../../../Assets/Chapter2\Section2\Quads\Exercise3.png'> 
+    <p class="t">
+    Det er super simpelt! 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Vi kan måle arealet som _(\triangle ABC + \triangle ADC_).
+    Hver kan vi nemt finde via _(\frac{1}{2}*\text{base}*\text{højde}_):
+    _($\triangle ABC + \triangle ADC =_)
+    _($\frac{1}{2}*(a+c)*Sin(v)*b + \frac{1}{2}*(a+c)*Sin(v)*d =_)
+    _($\frac{1}{2}*(a+c)*Sin(v)*(b+d)_)
+    Men tænk! _(b+d_) er jo faktisk bare afstanden fra _(D_) til _(B_), og
+    _(a+c_) afstanden fra _(A_) til _(C_)! Så hvis diagonal-længderne
+    på en firkant kaldes for henholdsvis _(s_1_) og _(s_2_), så er arealet:
+    _($\frac{1}{2}*Sin(v)*s_1*s_2_)
+    Super simpel og dejlig formel!
+    <br><br></answer-box>
+
+    <q-stion 1="3" 2="4" customWidth="500">
+    Brug linealen og vinkelmåleren i følgende opgave, til at regne endnu igen et firkants areal:
+    <br> <br>
+    <div style="text-align: center">
+        <iframe style="width:500px; height: 420px; margin-left:30px;" scrolling="no" src="../../../Assets/Chapter2/Section2/ConstructableMath/CompassEdge.html"></iframe>
+    </div>
+    <p class="t">Du kan tegne frit på baggrunden, tegne lige linjer ved at tegne op ad linealen og
+    tegne cirkler ved 
+    at dobbeltklikke passeren og trykke på dens spids. Du kan bevæge både lineal, 
+    vinkelmåler og passer,
+    igen ved at dobbeltklikke (lidt ligesom hvordan, du bevæger et billede i powerpoint). 
+    Du kan trykke på
+    genstart-knappen oppe i det venstre øvre hjørne, for at fjerne alt du har tegnet. </p>
+    <p class="t">
+    Der er en passer, men du behøver ikke nødvendigvis bruge den
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Du kan se en video af, hvad jeg gjorde her:
+    <video class='SpicB' style="width:95%;" controls>
+        <source src='../../../Assets/Chapter2\Section2\Quads\Constructable1.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+
+    <p class="t">
+    En anden mulighed kunne være "varigon parallelogrammet":
+    <img class="Spic" style="width:97%" src='../../../Assets/Chapter2\Section2\Quads\Varigon1.png'> 
+        <!-- CROP DET HER -->
+    <p class="t">
+    Et parallelogram er en bestemt form for firkant, hvor de modsatte sider er både lige 
+    lange og parallelle. Når man forbinder midtpunkterne på en firkant, får man
+    et parallelogram vi så kalder "varigon parallelogrammet". 
+    </p>
+
+    <q-stion 1="3" 2="5">
+    Vis at man får et parallelogram når man forbinder midtpunkterne på en firkant. 
+    <br><br></q-stion>
+    <answer-box>
+    Prøv at se følgende figur:
+    <img class="Spic" style="width:95%" src='../../../Assets/Chapter2\Section2\Quads\Varigon2.png'> 
+    <p class="t">Fra _(D_) til _(C_) er der _(DQ_2_) langs parallelt med diagonalen 
+    _(\Seg{AC}_) og _(Q_2C_) vinkelret med 
+    diagonalen _(\Seg{AC}_). _(M_3_) er <i>midtpunktet</i>, så der går vi halvvejs 
+    lige langt i begge retninger. 
+    Vi kan lave præcis samme argument med _(M_4_), og vi kan se, at _(M_4_) er 
+    præcis ligeså højt oppe
+    vinkelret _(\Seg{AC}_) som _(M_3_). Det betyder, at _(M_3, \, M_4_) må ligge i en linje 
+    langs _(\Seg{AC}_), ergo
+    _(\Seg{M_3M_4} || \Seg{AC}_). </p>
+    <p class="t">
+    Præcist det samme argument kan vi bruge til at vise, 
+    at _(\Seg{M_1M_2} || \Seg{AC}_), 
+    _(\Seg{M_1M_4} || \Seg{BD}_) og _(\Seg{M_2M_3} || \Seg{BD}_). Vi har tydeligt 
+    vist, at hver side
+    er parallel med en diagonal, og siden de modsatte sider er parallelle til samme 
+    side, er de også parallelle med hinanden. Færdig!
+    </p>
+    <br></answer-box>
+
+    <q-stion 1="3" 2="6">
+    "varigon parallelogrammet" er praktisk, primært fordi dets areal er halvdelen
+    af selve firkantens areal. Med varigon parralelogramets areal kan vi nemt
+    finde firkantets. Det er dejilgt, da varigon parallelogrammets areal ikke
+    kræver, vi finder nogen vinkler eller bruger _(Sin_), _(Cos_) osv. 
+    <p class="t">
+    Vis at det her er sandt. 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Igen se følgende figur:
+    <img class="Spic" style="width:100%" src='../../../Assets/Chapter2\Section2\Quads\Varigon3.png'>
+    <p class="t">En smule kompliceret, i know, men du må lige bære over med mig. Jeg har 
+    placeret en linje parallel med _(\Seg{M_1M_2}_) eller _(\Seg{M_4M_3}_) eller _(\Seg{AC}_) 
+    på _(B_) og <br> _(D_), og 
+    gjort meget det samme med _(\Seg{BD}_) på _(A_) og _(C_). Det er tydeligt, at 
+    _(\square Q_1Q_2Q_3Q_4_) også er et parallelogram, og at dets sider har samme retning som 
+    varigon parallelogrammet. 
+    Yderligere kan man med lidt tænkning vise, at _(Q_1Q_2=2*M_1M_2_) og _(Q_2Q_3=2*M_2M_3_).
+    </p>
+    <p class="t">
+    Man kan relativt nemt se, at arealet på et parallelogram bliver
+    dobbelt så stort, hvis èn side på parallelogrammet fordobles i længde. 
+    Så hvis <i>begge</i> sider skaleres med _(2_), bliver arealet skaleret
+    med _(4_). 
+    </p>
+    <p class="t">
+    Vi har nu arealet af det 
+    store parallelogram, men ikke af selve firkanten:
+    Arealet af trekanterne _(\triangle AQ_1B, \, \triangle BQ_2C, \, \triangle CQ_3D, \, \triangle DQ_4A_) skal fjernes. 
+    Man kan ret tydeligt se at _(\triangle AQ_1B \equiv \triangle AIC,_), _(\triangle BQ_2C \equiv \triangle BIC,_) ... osv. 
+    Vi <i>halvere</i> arealet ved at fjerne dem. Arealet er <i>fire</i> gange så stort. 
+    Det ender ud med at være <i>dobbelt</i> så stort! Bam!
+    </p>
+    <br></answer-box>
+
+    <q-stion 1="3" 2="7" customWidth="500">
+    Prøv så godt som du kan, at finde arealet af følgende figur:
+    <br> <br>
+    <div style="text-align: center">
+        <iframe style="width:500px; height: 420px; margin-left:30px;" scrolling="no" src="../../../Assets/Chapter2/Section2/ConstructableMath/CompassEdge2.html"></iframe>
+    </div>
+    <p class="t">Det er med vilje at jeg ikke har givet dig nogen vinkelmåler. 
+    Alle tricks er ellers tilladt (selvfølgelig dog ikke at tage 
+    et screencap af skærmen og tælle mængden af pixels med et værktøj, men 
+    det er vel egentlig også imponerende på egen vis, hvis du kan det). </p>
+    <p class="t">
+    Igen er der en passer, og igen behøver du ikke at bruge den for at løse opgaven. 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Du kan se en video af, hvad jeg gjorde her:
+    <video class='SpicB' style="width:95%;" controls>
+        <source src='../../../Assets/Chapter2\Section2\Quads\Constructable2.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+
+    <q-stion 1="3" 2="8" customWidth="500">
+    Tegn varigon parallelogrammet, nu hvor linealen ikke længere har mål:
+    <br> <br>
+    <div style="text-align: center">
+        <iframe style="width:500px; height: 420px; margin-left:30px;" scrolling="no" src="../../../Assets/Chapter2/Section2/ConstructableMath/CompassEdge3.html"></iframe>
+    </div>
+    <p class="t">
+    Du skal tænke lidt ud af boksen her! Der er èn "ide", og efter man har fået den 
+    burde resten være relativt nemt.
+    </p>
+    <p class="t">
+    <i>Hint:</i> Kan du bruge din passer på nogen smart måde for at finde midtpunkterne? 
+    </p>
+     <br></q-stion>
+    <answer-box>
+    Du kan se en video af hvad jeg gjorde her:
+    <video class='SpicB' style="width:95%;" controls>
+        <source src='../../../Assets/Chapter2\Section2\Quads\Constructable3.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+
+    
+    

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <p class="t">
+    <b> Rækkefølgen når vi ganger:</b>
+    Før vi endelig går videre til manden og hvorvidt han overlever eller ej, så skal jeg 
+    lige hurtigt lave en note omkring <i>rækkefølgen</i> når vi ganger.
+    Når vi regner f.eks. <p-m m=" 2*5"></p-m>, skal vi så sige:
+    </p>
+    <p class="cent">
+        <p-m m=" 2+2+2+2+2"></p-m>
+    </p>
+    <p class="t">
+    ... eller:
+    </p>
+    <p class="cent">
+        <p-m m="5+5"></p-m>
+    </p>
+    <p class="t">
+    Svaret er: Det er ligegyldigt. Hvis vi omskriver <p-m m=" 2"></p-m> til
+    <p-m m=" (5-3)"></p-m>, så får vi:
+    </p>
+    <p class="cent">
+        <p-m m=" (5-3)+(5-3)+(5-3)+(5-3)+(5-3)"></p-m>
+    </p>
+    <p class="t">
+    Det kan vi omskrive på følgende vis:
+    </p>
+    <p class="cent">
+        <p-m m=" (5-3)+(5-3)+(5-3)+(5-3)+(5-3) = "></p-m> <br>
+        <p-m m=" 5-3+5-3+5-3+5-3+5-3 = "></p-m> <br>
+        <p-m m=" 5+5+5+5+5-3-3-3-3-3 = "></p-m> <br>
+        <p-m m=" 5*5 - 5*3 = "></p-m> <br>
+        <p-m m=" 5*(5-3) = "></p-m> <br>
+        <p-m m=" 5*2 = "></p-m> <br>
+        <p-m m=" 5+5"></p-m> <br>
+    </p>
+    <p class="t">
+    Ergo:
+    </p>
+    <p class="cent">
+        <p-m m=" 2+2+2+2+2=5+5"></p-m>
+    </p>
+    <p class="t">
+    Det er super dejligt, og vi ved nu at f.eks. <p-m m=" 5*2=2*5"></p-m>. Hvad hvis vi havde
+    flere gangestykker dog? Kan vi f.eks. sige at:
+    </p>
+    <img class='Spic' style='width:70%' src='../../../Assets/Chapter1\Talsystemmer\Omskrivning\TimingOrder.png'> 
+    <p class="t">
+    Er rækkefølgen fuldkommen ligegyldig når vi ganger? Svaret er ja! Vi kan
+    nemt omskrive <p-m m=" A1 3*3*A1*2*A1 2"></p-m> til <p-m m=" 2*A1 3*A1 2*A1*3"></p-m>
+    ved bare at bruge den regel vi lige fandt frem til en masse gange: 
+    </p>
+
+    <p style="margin-top:10px; margin-left:29%">
+        <p-m m=" A1 3*3*A1*2*A1 2="></p-m> <br>
+        <p-m m=" A1 3*3*(A1*2)*A1 2="></p-m> <br>
+        <p-m m=" A1 3*3*(2*A1)*A1 2="></p-m> <br>
+        <p-m m=" A1 3*3*2*A1*A1 2="></p-m> <br>
+        <p-m m=" A1 3*(3*2)*A1*A1 2="></p-m> <br>
+        <p-m m=" A1 3*(2*3)*A1*A1 2="></p-m> <br>
+        <p-m m=" A1 3*2*3*A1*A1 2="></p-m> <br>
+        <p-m m=" (A1 3*2)*3*A1*A1 2="></p-m> <br>
+        <p-m m=" (2*A1 3)*3*A1*A1 2="></p-m> <br>
+        <p-m m=" 2*A1 3*3*A1*A1 2="></p-m> <br>
+        <p-m m=" 2*A1 3*(3*A1)*A1 2="></p-m> <br>
+        <p-m m=" 2*A1 3*(A1*3)*A1 2="></p-m> <br>
+        <p-m m=" 2*A1 3*A1*3*A1 2="></p-m> <br>
+        <p-m m=" 2*A1 3*A1*(3*A1 2)="></p-m> <br>
+        <p-m m=" 2*A1 3*A1*(A1 2*3)="></p-m> <br>
+        <p-m m=" 2*A1 3*A1*A1 2*3="></p-m> <br>
+        <p-m m=" 2*A1 3*(A1*A1 2)*3="></p-m> <br>
+        <p-m m=" 2*A1 3*(A1 2*A1)*3="></p-m> <br>
+        <p-m m=" 2*A1 3*A1 2*A1*3"></p-m> <br>
+    </p>
+
+    <p class="t">
+    Bum! Rækkefølgen er fuldkommen ligegyldig! Du kan sætte parenteser som du har lyst til,
+    og regne ting i den rækkefølge som der passer dig! 
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Regn følgende stykker så effektivt som du kan:
+    <div style="text-align:center;">
+        <ul style="display: inline-block; text-align: left; padding-left:0%; list-style:none;">
+            <li><b> A:</b> <p-m m=" 3*A1 3*A1 + A1 3*A1*2*3"></p-m>  </li>
+            <li><b> B:</b> <p-m m=" 2*B1 A1 1*A1*A3 3*A2*A3 1"></p-m>  </li>
+        </ul>
+    </div>
+    <p class="t">
+    Svaret på <b> B</b> er ret stort, så vi er lige nødt til at lave et nyt symbol.
+    Sig at der efter <p-m m=" G1"></p-m> kommer <p-m m=" H1"></p-m>
+    </p>
+    <br></q-stion>
+    <answer-box t="Answer A#" tabColour="rgb(171,96,147)">
+    Både <p-m m=" 3*A1 3*A1"></p-m> og <p-m m=" A1 3*A1*2*3"></p-m>
+    indeholder <p-m m=" 3"></p-m>, <p-m m=" A1"></p-m> og 
+    <p-m m=" A1 3"></p-m>. Den eneste forskel er
+    at  <p-m m=" A1 3*A1*2*3"></p-m> er ganget med et <p-m m=" 2"></p-m>, så vi kan derfor sige:
+    <p class="cent">
+        <p-m m=" 2*A1 3*A1 * (1+2) ="></p-m>
+        <p-m m=" 2*A1 3*A1*3"></p-m>
+    </p>
+    <p class="t">
+    Hvad er den mest effektive måde at regne det her gangestykke? Well, det
+    er ret nemt at gange med både <p-m m=" 2"></p-m> og <p-m m=" A1"></p-m>, så 
+    dem tænker jeg vi venter med til sidst. Vi ganger derfor først
+    <p-m m=" A1 3"></p-m> og <p-m m=" 3"></p-m> og får <p-m m=" B1 A1 1"></p-m>.
+    Ganges det med <p-m m=" 2"></p-m> fås bare <p-m m=" B2 A2 2"></p-m>, og 
+    endeligt med <p-m m=" A1"></p-m> fås <p-m m=" C2 B2 A2"></p-m> som så er
+    svaret. 
+    </p>
+    <br></answer-box>
+    <answer-box t="Answer B#" tabColour="rgb(175,128,161)">
+    Hvad er den hurtigste måde at regne dette gange-stykke på? Vi 
+    vil rigtig gerne gange med <p-m m=" A1"></p-m> en masse, da
+    det er aller nemmest. Jeg tænker derfor vi kan omskrive på følgende måde:
+    <p class="cent">
+        <p-m m=" 2*B1 A1 1*A1*A3 3*A2*A3 1 = "></p-m> <br>
+        <p-m m=" (2*A1*A2)*B1 A1 1*A3 3*A3 1 = "></p-m> <br>
+        <p-m m=" (2*A1*2*A1)*B1 A1 1*A3 3*A3 1 = "></p-m> <br>
+        <p-m m=" C1*(B1 A1 1*A3 3*A3 1) = "></p-m> <br>
+    </p>
+    <p class="t">
+    <p-m m=" C1"></p-m> er nem at gange med, så vi kan bare fokusere på
+    <p-m m=" B1 A1 1*A3 3*A3 1"></p-m> først. Her lægger jeg umiddelbart
+    mærke til at <p-m m=" A3 3="></p-m> <br> <p-m m=" 3*A1 1"></p-m>.
+    <p-m m=" B1 A1 1"></p-m> er ret nemt at gange med <p-m m=" 3"></p-m>, og
+    <p-m m=" A3 3"></p-m> er relativt let at gange med <p-m m=" A1 1"></p-m>, så det gør jeg:
+    </p>
+    <p class="cent"> 
+        <p-m m=" (B1 A1 1 * 3)*(A3 3 * A1 1) = "></p-m> <br>
+        <p-m m=" B3 A3 3*C1 1 = "></p-m> <br>
+        <p-m m=" B3 A3 3*C1+B3 A3 3 = "></p-m> <br>
+        <p-m m=" E3 D3 C3+B3 A3 3 = "></p-m> <br>
+        <p-m m=" E3 D3 C3 B3 A3 3 "></p-m> <br>
+    </p>
+    <p class="t">
+    Vi husker at det her skal ganges med <p-m m=" C1"></p-m>:
+    </p>
+    <p class="cent">
+        <p-m m=" C1*E3 D3 C3 B3 A3 3 = "></p-m> <br>
+        <p-m m=" H3 G3 H3 E3 D3 C3 "></p-m> <br>
+    </p>
+    <p class="t">
+    Bum!
+    </p>
+    <br></answer-box>
+
+
+
+
+
+
+
+
+</html>

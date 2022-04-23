@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <q-stion 1="2" 2="1" 3="5">
+    Som sagt findes der ikke nogen super hurtig og simpel måde at tjekke hvorvidt et tal er primt eller ej.
+    Der er dog mange småtricks der kan effektivisere processen og hjælpe os i ny og næ.
+    Prøv f.eks. at udvide følgende udtryk:
+    <div style="text-align:center; margin-top:10px;">
+        <ul style="display: inline-block; text-align: left; padding-left:0%; list-style:none;">
+            <li><b> 1:</b>_((A-B)(A+B)_)</li>
+            <li><b> 2:</b>_((A+B)(A^2–A*B+B^2)_)</li>
+            <li><b> 3:</b>_((A-B)(A^2+A*B+B^2)_)</li>
+        </ul>
+    </div>
+    <br></q-stion>
+    <answer-box t="Answer 1#" tabColour="rgb(171,96,147)">
+    Når du ganger ind i parenteserne får du:
+    _($A^2-B^2_)
+    <br></answer-box>
+    <answer-box t="Answer 2#" tabColour="rgb(175,128,161)">
+    Når du ganger ind i parenteserne får du:
+    _(A^3+B^3_)
+    <br><br></answer-box>
+    <answer-box t="Answer 3#" tabColour="rgb(171,96,147)">
+    Når du ganger ind i parenteserne får du:
+    _(A^3-B^3_)
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Vi ved fra sidste opgave <b> (S P O I L E R S!)</b> nu at:
+    <div style="text-align:center; margin-top:10px;">
+        <ul style="display: inline-block; text-align: left; padding-left:0%; list-style:none;">
+            <li>_(A^2-B^2=(A-B)(A+B)_)</li>
+            <li>_(A^3+B^3=(A+B)(A^2–A*B+B^2)_)</li>
+            <li>_(A^3-B^3=(A-B)(A^2+A*B+B^2)_)</li>
+        </ul>
+    </div>
+    <p class="t">
+    Det virker måske meget uekstraordinært, men det er faktisk ret praktisk. 
+    Vi har fundet en måde at lave visse bestemte tal <i>plusset med hinanden</i> om til nogle andre
+    tal <i>ganget med hinanden</i>. Udover at vi til tider bruger det når 
+    vi skal ændre på formen af et udtryk (især den første med _(A^2-B^2_)), så kan det også hjælpe os med at finde primtal. At finde 
+    et primtal handler jo om at beskrive et tal i forhold til <i>andre tal ganget sammen</i>! 
+    </p>
+    <p class="t">De følgende tal er alle <i>ikke</i > primtal. Find en måde at bekræfte det på:</p>
+    <div style="text-align:center; margin-top:10px;">
+        <ul style="display: inline-block; text-align: left; padding-left:0%; list-style:none;">
+            <li><b> 1: </b> _(100 - 9_)</li>
+            <li><b> 2: </b> _(99_)</li>
+            <li><b> 3: </b> _(9999_) og _(9991_)</li>
+            <li><b> 4: </b> _(1008_)</li>
+            <li><b> 5: </b> _(1027+7*27_)</li>
+            <li><b> 6: </b> _(187_)</li>
+        </ul>
+    </div>
+    <p class="t"></p>
+    Som vi allerede har set så er der mange grunde til at det er praktisk at kunne bekræfte 
+    om noget er et primtal eller ej. Det er meget nemmere at vise at noget <i>ikke</i> er et 
+    primtal, end at vise at det <i>er</i> et primtal. I det tidligere scenario skal 
+    der bare være én strategi der virker, i det næste må <i>ingen</i> strategier virke. 
+    </p>
+    <p class="t">
+    Det var med vilje at jeg ikke fortalte dig <i>hvordan</i> de her formler kan hjælpe med at tjekke.
+    Du skal selv finde ud af det! Det er en pænt tricy opgave den her. 
+    </p>
+    <br></q-stion>
+    <answer-box t="Answer 1#" tabColour="rgb(171,96,147)">
+    Jeg lægger umiddelbart mærke til at 
+    _($100=10*10=10^2_)
+    samt også at 
+    _($9=3*3=3^2_)
+    Altså: 
+    _($91=100-9=10^2-3^2=A^2-B^2=(A-B)(A+B)_)
+    Bekræftet ikke-primtal! 
+    <br><br></answer-box>
+    <answer-box t="Answer 2#" tabColour="rgb(175,128,161)">
+    I <b> 1</b> der kunne man godt sige at _(A_) var sat på _(10_) og _(B_) var sat på _(3_). I den her er _(A_) det samme som før, 
+    men nu er _(B_) bare sat til _(1_) siden: 
+    _($99=100-1=10^2-1^2_)
+    Man kan sætte _(1_) til hvad end potens man ønsker, og den
+    vil aldrig blive andet end _(1_). Hvis vores tal er kun _(1_) mindre end et andet tal ganget med sig selv, så ved vi 
+    altså at det ikke er primt. Lignende, fra 
+    _(A^3+B^3_) og _(A^3-B^3_) kan vi se at hvis et tal er _(1_) større eller mindre 
+    end et tal ganget med sig selv tre gange, så er det heller ikke primt. 
+    <br><br></answer-box>
+    <answer-box t="Answer 3#" tabColour="rgb(171,96,147)">
+    I den første kan vi sige:
+    _($10000-1=100^2-1^2_)
+    I den anden kan vi sige:
+    _($10000-9=100^2-3^2_)
+    Så de er begge ikke-prim. 
+    <br><br></answer-box>
+    <answer-box t="Answer 4#" tabColour="rgb(175,128,161)">
+    I de 3 sidste opgaver har vi brugt _(A^2-B^2_), men nu skal vi til at bruge _(A^3+B^3_). 
+    _(1008_) kan omskrives til 
+    _($1000+8=10^3+2^3_)
+    som passer formen _(A^3+B^3_). Det er derfor ikke et primtal.
+    <br><br></answer-box>
+    <answer-box t="Answer 5#" tabColour="rgb(171,96,147)">
+    Den her er tricky. _(1027+7*27_) kan omskrives til 
+    _($1000+27+7*27_)
+    som vi så yderligere kan omskrive til 
+    _($10^3+8*27_)
+    To ting vi plusser samt _(10^3_) er nok et hint til at vi skal bruge _(A^3+B^3_). Det passer også fint, da 
+    _(8=2^3_) og _(27=3^3_), så: 
+    _($8*27=2^3*3^3=(2*3)^3=6^3_)
+    Nu står vi med _(10^3+6^3_) som passer formen.
+    <br><br></answer-box>
+    <answer-box t="Answer 6#" tabColour="rgb(175,128,161)">
+    Den her er til en vis grad lidt bullshit, eller i hvert fald bare ret svær. Jeg kan ikke <i>ummidelbart</i> 
+    se noget _(A^2,B^2_) eller _(A^3,B^3_) jeg nemt kan opdele _(187_) i. Derfor kan det måske være en god ide
+    at spørge mig selv og teste: Hvad er nogle _(A^2_) eller _(A^3_) der ligger tæt på _(187_)?
+    _(A^2_) er nok nemmest, så lad os kigge på det først. Vi laver en liste over tal opløftet
+    i anden potens der er nogenlunde omkring _(187_): 
+    _($\begin{eqnarray}
+    && 10^2 & = 100 \\
+    && 11^2 & = 121 \\
+    && 12^2 & = 144 \\
+    && 13^2 & = 169 \\
+    && 14^2 & = 196 \\
+    && 15^2 & = 225
+    \end{eqnarray}_)
+    _(187_) ser ud til at være tæt på _(196_). Man kan se at forskellen mellem de to er _(9_), hvilke er præcis hvad vi leder efter. Så:
+    _($187=196-9_)
+    _(9=3*3_), så vi har _(14^2-3^2_) hvilket passer _(A^2-B^2_). 
+    <br><br></answer-box>
+
+
+</html>

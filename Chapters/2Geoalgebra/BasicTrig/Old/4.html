@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <p class="t">
+    Lad os gå på et hurtigt lille sidespor og snakke om <i>cirkler</i>. Vi ved 
+    at vi kan opdele mange komplekse forme i trekanter. Men hvad med en cirkel?
+    Den har slet ikke rigtig nogen "sider" eller "hjørner". Hvordan finder vi så 
+    dens omkreds og areal?
+    </p>
+    <p class="t">Ved omkredsen laver vi et simpelt og lidt fjollet argument. Prøv at se på en cirkel her:</p>
+    <img class="Spic" style="width:40%" src="../../../Assets/Chapter2\Section1\Cirkler\Cirkel.png">
+    <p class="t">Hvad er <i>forholdet</i> mellem diameter _(d_), og cirklens omkreds? Har ingen anelse,
+    men jeg ved i hvert fald at det <i>ikke ændre sig med størrelsen</i>. Hvis jeg 
+    gør _(d_) større, så skalere jeg jo bare hele den her figur. Det har jo ikke 
+    nogen indflydelse på forhold mellem nogle længder! Hvis det havde, så ville forholdet mellem _(d_) 
+    og omkredsen ændre sig, bare fordi du zoomede mere ind på billedet i din web-browser! </p>
+    <p class="t">
+    Der er altså ét enkelt konstant forhold. Det kan vi bare måle én gang meget præcist, og så bruge det ved alle andre cirkler. 
+    Vi kan komme tæt på omkredsen manuelt ved bare at dele den op i en masse linjer. Resultatet er _(\pi_). 
+    _(\pi =_) omkring _(3.141529265359 ..._) er forholdet mellem omkreds og diameter, og det er derfor at _(omkreds=\pi*(2*r)_). 
+    </p>
+    <p class="t">Arealet er mere tricky. Vi kan kun <i>approximere</i> det med rektangler:</p>
+    <img class="Spic" style="width:50%" src="../../../Assets/Chapter2\Section1\Circles\Subdiv1.png">
+    <p class="t">Her har jeg delt cirklen op i _(4_) lige store trekanter. Jeg kunne også gøre det med _(5,6,7,8_) osv:</p>
+    <img class="Spic" style="width:50%" src="../../../Assets/Chapter2\Section1\Circles\Subdiv2.png">
+    <p class="t">Mit resultat kommer logisk nok tættere og tættere på cirklen, jo flere trekanter jeg deler den op i. 
+    Til mig virker det derfor ret intuitivt at jeg <i>får</i> cirklens areal hvis jeg bare deler den op i 
+    <i>uendelig</i> mange trekanter. Lad os finde arealet på én trekant:</p>
+    <img class="Spic" style="width:75%" src="../../../Assets/Chapter2\Section1\Circles\Archimedes.png">
+   <p class="t"> Det er tydeligvis _(0.5*L*d_). Hvis vi har delt cirklen op i _(n_) trekanter, så bliver approximationen
+    altså i alt _(n*0.5*L*d_). Vi kan se at hvis vi laver uendelig mange trekanter, så bliver _(n*L_) bare til 
+    cirklens omkreds! Distancen _(d_) bliver også lig _(r_). Så:
+    _($n*0.5*L*d=0.5*(n*L)*d=0.5*(2*r*\pi)*r=r^2*\pi_)
+    Wholla! Vi har fundet cirklens areal! </p>
+    
+    <p class="t">
+    Som vi vil se en del senere, så er det her ikke et <i>helt</i> lydtæt argument, men det her 
+    var altså den første ide man fik, og det endte tydeligvis med at virke. Det har virket
+    rigtig fint indtil videre, men det skal noteres at det på ingen måde altid er 
+    en <i>god</i> ide at opdele en form i trekanter. Det er ikke <i>altid</i> effektivt 
+    at bryde ting ned til deres "atomer" i matematik - kun nogle gange. Vi så f.eks. på
+    sidste side hvordan det hjalp at kigge på <i>vilkårlige</i> trekanter, fordi de gav os et bedre
+    overblik. Man skal både kunne beskrive koncepter, tal, former - hvad end vi arbejder med - på 
+    et højt og lavt niveua. 
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Find følgende areal:
+    <img class="Spic" style="width:40%" src="../../../Assets/Chapter2\Section1\Circles\CircleSection.png">
+    <p class="t">Du må godt bruge lommeregner.</p>
+    <br></q-stion>
+    <answer-box>
+    Hele cirklens areal er _(\pi*23^2=1661.9m^2_). Vi arbejder med _(\frac{360-94}{360}=0.73_) af cirklen, så 
+    svaret er _(1661.9*0.73=1213.18_)
+    <br><br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Ofte når man udformer figurer i fabrikker, så kan man lave komplicerede kurver og former ved at <i>udskære cirkler</i>.
+    Se f.eks. følgende jernplade:
+    <img class="Spic" style="width:40%" src="../../../Assets/Chapter2\Section1\Circles\CutoutPure.png">
+    <p class="t">Den kunne vi fint beskrive som</p>
+    <img class="Spic" style="width:80%" src="../../../Assets/Chapter2\Section1\Circles\Cutout.png">
+    <p class="t">Hvad er pladens areal? Du må godt bruge lommeregner.</p>
+    <br></q-stion>
+    <answer-box>
+    Du kan se svaret her:
+    <video class="picB" controls>
+        <source src="../../../Assets/Chapter2\Section1\Circles\Cutout.mp4" type="video/mp4">
+    </video>
+    <br><br></answer-box>
+
+    <p class="t">
+    Lige en hurtig "sidebemærkning" / definition / ting der er relevant og vigtigt at vide. 
+    Se følgende billede:
+    </p>
+    <img class="Spic" style="width:55%" src="../../../Assets/Chapter2/Section1/Circles/Tangenter1.png">
+    <p class="t">
+    De streger / linjer der er tegnet op ad cirklen her kalder vi <i>tangenter</i>. 
+    Hvis du har en eller anden kurve:
+    </p>
+    <img class="Spic" style="width:100%" src="../../../Assets/Chapter2/Section1/Circles/Tangenter3.png">
+    <p class="t">
+    Så er ideen med en tangent at den kun skærer kurven èn enkelt gang omkring et punkt. Følgende ville
+    <i>ikke</i> være en tangent:
+    </p>
+    <img class="Spic" style="width:100%" src="../../../Assets/Chapter2/Section1/Circles/Tangenter2.png">
+    <p class="t">
+    En kurves tangent på et punkt, er altså en linje der på en måde følger kurvens "retning" ved det punkt.
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5">
+    På følgende billede er der blevet tegnet en tangent ved et punkt på en cirkel:
+    <img class="Spic" style="width:55%" src="../../../Assets/Chapter2/Section1/Circles/Tangenter4.png">
+    <p class="t">
+    Der er også blevet tegnet en streg fra cirklens center til dette punkt på dens omkreds.
+    Det ligner lidt at vinklen _(\theta_) mellem linjen til center og tangenten er 90 grader. Er det sandt?
+    </p>
+    <br><br></q-stion>
+    <answer-box>
+    Det er sandt ja! Lad os antage at det <i>ikke</i> var sandt. Antag at du har lavet en tangent 
+    - altså en linje der skærer kun 1 punkt på cirklen - og at den tangent ikke er vinkelret:
+    <img class="Spic" style="width:80%" src="../../../Assets/Chapter2/Section1/Circles/Tangenter5.png">
+    <p class="t">
+    Hvis tangenten ikke er vinkelret, så kan man se at der vil være en eller anden vinkel _(v_).
+    En cirkel er symmetrisk, så den går nedad på begge sider af symmetriaksen.
+    Hvis der er en vinkel _(v_), så vil den være asymmetrisk: Den vil gå nedad i èn af retningerne.
+    Derfor ved vi at den vil skære 1 gang mere end den allerede gør. Nu skærer vores såkaldte "tangent"
+    to gange. Det er en selvmodsigelse! En tangent kan <i>umuligt</i> have en vinkel!
+    </p>
+    <br><br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Hvis vi skyder en kugle på en cirkelformet billiardplade, så vil den reflekteres på følgende måde:
+    <img class="Spic" style="width:45%" src='../../../Assets/Chapter2\Section2\BilliardsAndProperties\Billiards3.png'> 
+    <p class="t">Altså, du skal tegne en linje der <i>lige</i> rører det punkt på cirklen (en "tangent" linje) og så finde vinklen relativ til den linje. 
+    Lad os sige vi skyder ude fra en af siderne som følgende:</p>
+    <img class="Spic" style="width:45%" src='../../../Assets/Chapter2\Section2\BilliardsAndProperties\Billiards4.png'> 
+    <p class="t"> Er det muligt at skyde bolden ind i hulet i midten uden at gøre det direkte i starten? 
+    Den her opgave er relativt nem, så du behøver ikke at overkomplicere det. </p>
+    <br></q-stion>
+    <answer-box>
+    Lad os prøve at finde ud af hvad vinklen er næste gang bolden bliver reflekteret:
+    <img class="Spic" style="width:80%" src='../../../Assets/Chapter2\Section2\BilliardsAndProperties\BilliardsCircle.png'> 
+    <p class="t">
+    Vi leder efter vinklen _(w_1_). Vi kan se at _(v_2=90-20=70^o_).
+    _(a=b_) fordi det er en cirkel, og det betyder at _(w_2=v_2=70_).
+    Nu kan vi så se at _(w_1=90-w_2=90-70=20^o_). Altså, vinklen
+    ændrer sig aldrig, og hvis ikke man rammer midten første gang, så vil
+    man aldrig ramme den!
+    </p>
+    <br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Find følgende areal:
+    <img class="Spic" style="width:80%" src="../../../Assets/Chapter2/Section1/Circles/Hanger7.png">
+    <p class="t">Print billedet ud i A4 størrelse, og find en eller anden måde at måle arealet, så præcist som muligt.</p>
+    <p class="t">
+        For at printe billedet (hvis du ikke ved det) skal du højreklikke og trykke "Gem billede som". 
+        Derfra kan du så printe billedet ved at højreklikke og trykke "print". <b>Sørg for at de sorte kanter matcher med papirets kanter</b>.
+        Det sørger for at formen for den rigtige størrelse så du kan tjekke dit svar med mit. 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Du kan se hvordan jeg gjorde det her:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter2/Section1/Circles/Hanger8.mp4' type='video/mp4'>
+    </video>
+    Nu har vi altså følgende situation:
+    <img class="Spic" style="width:80%" src="../../../Assets/Chapter2/Section1/Circles/Hanger9.png">
+    Det minder meget om anden opgave på den her side, så jeg har ikke tænkt mig at gennemgå processen yderligere.
+    Svaret er:
+    _($7.51cm^2_)
+    <br><br></answer-box>
+
+    DROP DET HER SPØRGSMÅL. DET ER UNØDVENDIGT. PRØV I STEDET BARE AT HAVE DEN SIDSTE DEL AF SPØRGSMÅLET DER HVOR DE SKAL FINDE AREALET PÅ ET BILLEDE DE PRINTER.
+    HAV EN SMULE TEORI FØRST OMKRING DET MED TANGENTER PÅ CIRKLER. FOKUSER OPGAVEN SÅ DEN PRIMÆRE UDFORDRING ER HVORDAN MAN FINDER UD AF HVOR CIRKLEN ER OG HVAD DENS RADIUS ER.
+
+    =========================
+
+    RESTEN HERFRA SKAL DROPPES
+
+
+    <q-stion 1="2" 2="1" 3="5">
+    Lad os prøve at bruge ideen fra sidste opgave til at beskrive en ret kompliceret form fra virkeligheden. 
+    Prøv at tag et kig på den her bøjle:
+    <img class="Spic" style="width:80%" src="../../../Assets/Chapter2\Section1\Circles\Hanger1.png">
+    <img class="Spic" style="width:80%"" src="../../../Assets/Chapter2\Section1\Circles\Hanger2.png">
+    <img class="Spic" style="width:80%" src="../../../Assets/Chapter2\Section1\Circles\Hanger3.png">
+    <p class="t">
+        Sig at vi skulle finde dens areal. Den er symmetrisk, så vi behøver kun kigge på den ene halvdel:
+    </p>
+    <img class="Spic" style="width:80%" src="../../../Assets/Chapter2\Section1\Circles\Hanger4.png">
+    <p class="t">
+        For at finde arealet kunne man i brede træk dele formen op som:
+    </p>
+    <img class="Spic" style="width:80%" src="../../../Assets/Chapter2\Section1\Circles\Hanger5.png">
+    <p class="t">
+        Både form A og form B ville være relativt nemme at finde:
+    </p>
+    <img class="Spic" style="width:95%" src="../../../Assets/Chapter2\Section1\Circles\Hanger6.png"> 
+    <p class="t">
+        Men hvad med form C? Her er nu min opgave: Print følgende billede ud, og beregn hvor stort arealet er:
+    </p>
+    <img class="Spic" style="width:80%" src="../../../Assets/Chapter2\Section1\Circles\Hanger7.png"> 
+    <p class="t">
+        Prøv at se om du kan gøre det <i>kun</i> ved hjælp af at bruge lineal og lommeregner! Ingen vinkelmåler!
+    </p>
+    <p class="t">
+        For at printe billedet (hvis du ikke ved det) skal du højreklikke og trykke "Gem billede som". 
+        Derfra kan du så printe billedet ved at højreklikke og trykke "print". <b>Sørg for at de sorte kanter matcher med papirets kanter</b>.
+        Det sørger for at formen for den rigtige størrelse så du kan tjekke dit svar med mit. 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Du kan se svaret her:
+    <video class="picB" controls>
+        <source src="../../../Assets/Chapter2\Section1\Circles\Clothes.mp4" type="video/mp4">
+    </video>
+    <br><br></answer-box>
+

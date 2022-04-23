@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+
+    <h2>Opgaver!</h2>
+    <p class="t">
+    Det er meget simpelt at lave regression i Geogebra. I følgende video viser jeg hvordan man gør:
+    </p>
+    
+    <video class='SpicBXL' style="width:95%;" controls>
+        <source src='../../../Assets/Chapter2\Regression\HowToGeogebra.mp4' type='video/mp4'>
+    </video>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1">
+    Følgende opgave løste vi tidligere ret uformelt, men nu har vi bedre værktøjer.
+    <p class="t">
+    Se følgende datasæt over XY-værdier:
+    </p>
+    <p class="cent">
+        <a href="../../../Assets/Chapter2\Geogebra\CAS\Spreadsheets Opgave 5.ggb" download>
+            Download!
+        </a>
+    </p>
+    <p class="t">
+    Hvad passer bedst til denne data? Funktionen _(y=x^2_), eller funktionen 
+    _(y=\frac{1}{2}x^3_)?
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Du kan se mit svar her:
+    <video class='SpicB' style="width:95%;" controls>
+        <source src='../../../Assets/Chapter2\Regression\Opgaver\Opgave1.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="2">
+    Download følgende datasæt over XY-værdier:
+    <p class="cent">
+        <a href="../../../Assets/Chapter2\Regression\Opgaver\Opgave2.ggb" download>
+            Download!
+        </a>
+    </p>
+    <p class="t">
+    Find <i>en eller anden</i> funktion, der passer godt til dette datasæt, og regn inde på 
+    Geogebra, <i>hvor</i> godt den passer.
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Du kan se mit svar her:
+    <video class='SpicB' style="width:95%;" controls>
+        <source src='../../../Assets/Chapter2\Regression\Opgaver\Opgave2.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="3">
+    Præcis samme opgave som den sidste, nu bare et nyt sæt:
+    <p class="cent">
+        <a href="../../../Assets/Chapter2\Regression\Opgaver\Opgave3.ggb" download>
+            Download!
+        </a>
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Du kan se mit svar her:
+    <video class='SpicB' style="width:95%;" controls>
+        <source src='../../../Assets/Chapter2\Regression\Opgaver\Opgave3.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="4">
+    Et objekt med modstand/resistans (f.eks. en pære) er sat op i et kredsløb. 
+    Strømstyrken bliver gradvist hævet, mens
+    potentialefaldet over modstanden måles. Dataet kan ses i følgende dokument:
+    <p class="cent">
+        <a href="../../../Assets/Chapter2\Regression\Opgaver\OhmsOpgave.ggb" download>
+            Download!
+        </a>
+    </p>
+    <p class="t">
+    Der står, at pæren maks kan tage _(12V_). Hvor meget kan i hæve strømstyrken, før den bliver ødelagt?
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Vi ved, at den her data følger Ohm's lov:
+    _($U=R*I_)
+    Vores _(U_) må max være _(12_), så den højest tilladte _(I_) er:
+    _($I_{max} = \frac{12}{R}_)
+    Konstanten _(R_) kan vi finde, ved at lave regression på dataet inde i Geogebra. Vi prøver
+    at tilpasse dataet til funktionen _(a*x_), hvor Geogebra så finder _(a_), som er vores
+    værdi på _(R_). Vi får:
+    _($R=0.8_)
+    Så:
+    _($I_{max}=\frac{12}{0.8} = 15_)
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="5">
+    Sig du er en arbejdsgiver. Du kontrollerer et arbejde, hvor en 
+    relativ stor mængde folk alle laver det samme. 
+    En arbejder både producerer og koster penge. Ofte producerer de 
+    selvfølgelig mere end de koster (ned med bourgeoisiet!), 
+    men er der for mange
+    arbejdere, ender det med, at folk står tilbage uden meget at lave. 
+    Mængden af arbejdere kan have stor indflydelse på 
+    arbejdernes <i>produktivitet</i>. Du skal derfor bestemme den 
+    optimale mængde arbejdere, for at profitten er højest.
+    <p class="t">
+    Lige nu har du 23 arbejdere. Arbejderne er tilføjet gradvist,
+    og for hver antal arbejdere har du mål på, hvor meget profit du tjente om måneden. 
+    Dataet er i følgende dokument:
+    </p>
+    <p class="cent">
+        <a href="../../../Assets/Chapter2\Regression\Opgaver\OptimerAntalArbejdere.ggb" download>
+            Download!
+        </a>
+    </p>
+    <br><br></q-stion>
+    <answer-box>
+    Du kan se mit svar her:
+    <video class='SpicB' style="width:95%;" controls>
+        <source src='../../../Assets/Chapter2\Regression\Opgaver\OptimerAntalArbejdere.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Sig at de forskellige uddannelsesniveauer er:
+    <ul style="margin-left:5%;">
+        <li>Ingen folkeskole _(\to_)</li>
+        <li>Folkeskole uddannelse _(\to_)</li>
+        <li>Gymnasial uddannelse _(\to_)</li>
+        <li>Bachelor _(\to_)</li>
+        <li>Kandidat _(\to_)</li>
+        <li>Doktor _(\to_)</li>
+    </ul>
+    <p class="t">
+    Der findes selvfølgelig mange andre muligheder, som at blive <br> erhvervsuddannet, 
+    men vi tillader lige denne grove simplificering. 
+    </p>
+    <p class="t">
+    Sig du læser en artikel med overskriften:
+    </p>
+    <p class="cent">"<i>Klogere folk drikker mere rødvin!</i>"</p>
+    <p class="t">
+    Deres data er:
+    </p>
+    <p class="cent">
+        <a href="../../../Assets/Chapter2\Regression\Opgaver\RedWine.ggb" download>
+            Download!
+        </a>
+    </p>
+    <p class="t">
+    Her står _(0_) for ingen folkeskole, _(1_) for folkeskole, _(2_) for gymnasial, _(3_) for bachelor osv. Sådan 
+    kan det laves om til et matematisk problem. 
+    </p>
+    <p class="t">
+    Mit spørgsmål er nu:
+    </p>
+    <p class="t">
+    _(\underline{\textbf{A}}_): <br>
+     Er der korrelation mellem rødvin drukket pr. måned og uddannelsesniveau? _(\text{             }_)
+    </p>
+    <p class="t">
+    _(\underline{\textbf{B}}_): <br>
+     Hvis ja: Kan det siges at påstanden er rigtig? Hvis ikke ja:
+    <i>Antag</i> at der var god korrelation og svar på samme spørgsmål.  
+    </p>
+    <br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    Du kan se mit svar her:
+    <video class='SpicB' style="width:95%;" controls>
+        <source src='../../../Assets/Chapter2\Regression\Opgaver\RedWine.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    <p class="t">
+    Der var ikke specielt god korrelation, men <i>hvis</i> der var god korrelation,
+    ville påstanden
+    være ... rigtig på en måde. 
+    </p>
+    <p class="t">
+    Den er <i>teknisk set rigtig</i>, men det <i>indtryk</i> langt de fleste
+    ville få er forkert. 
+    Hvis vi antager at "klogere" er "højere uddannelsesniveau
+    gennem den helt traditionelle akademiske uddannelseskariere", som 
+    artiklen tilsyneladende har gjort i overskriften, så <i>er</i> 
+    det rigtigt at "folk med højere uddannelsesniveau har en tendens til at drikke mere rødvin".
+    Men når overskriften er skrevet som: 
+    "Klogere folk drikker mere rødvin", giver det lidt implicit en betydning 
+    af at "de drikker mere rødvin <i>fordi</i> de er kloge", eller 
+    "kloghed får en til at drikke mere rødvin". Men det 
+    er en påstand omkring <i>årsag</i>, hvilke <i>ikke</i> kan 
+    laves eksklusivt ud fra korrelation. Højest sandsynligt 
+    opstår denne korrelation fordi, at folk med højere uddannelse gennemsnitligt
+    har flere penge, og derfor kan købe mere rødvin. 
+    Så deres kloghed forårsager at de drikker mere rødvin, 
+    men ikke <i>direkte</i>: Klogheden (uddannelsen) forårsager en højere
+    løn, som så forårsager mere rødvin. 
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="6" customWidth="600">
+    I et bestemt fysikforsøg "spalter" man lys gennem et gitter:
+    <img class='SpicXL' style='width:98%' src='../../../Assets/Chapter2\Regression\Opgaver\GitterLigning.png'> 
+    <p class="t">
+    Hertil følger hypotesen:
+    _($Sin(\theta_n)=\left(\frac{\lambda}{d} \right)*n_)
+    Ideen er, at lyset bliver splittet op i nogle vinkler, og at de vinkler 
+    rammer væggen som "prikker". 
+    Denne hypotese giver os vinklen _(\theta_n_) på den _(n_)'te prik. _(\lambda_) er bølgelængden 
+    af bølgen, da dette fænomen virker på andre bølger end just lys. _(d_) er bredden af 
+    gitteret.
+    </p>
+    <p class="t">
+    Sig vi laver et forsøg med grønt lys, hvor  _(\lambda=5.32*10^{-7}_). 
+    Vores _(d_) er lig _(6.63*10^{-6}m_). I et forsøg har vi målt vinklen ved så mange prikker vi kunne:
+    </p>
+    <p class="cent">
+        <a href="../../../Assets/Chapter2\Regression\Opgaver\GitterOgLys.ggb" download>
+            Download!
+        </a>
+    </p>
+    <p class="t">
+    Til hvor god grad kan vi sige, at hypotesen er sand?
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Hvis vi isolerer _(\theta_n_) får vi:
+    _($\theta_n = Arcsin \left(\frac{\lambda}{d}n \right)_)
+    Vores _(\lambda/d_) bliver til _(5.32*10^{-7}/6.63*10^{-6} = 0.08_), så vi skal 
+    tjekke hvor godt dataet passer følgende funktion:
+    _($\theta_n=Arcsin(0.08n)_)
+    Vi laver en liste af punkter i Geogebra, med _(\theta_n_) 
+    som _(y_) og _(n_) som _(x_). Derefter bruger vi kommandoen:
+    _($\text{RSquare(Listenavn, arcsin(0.08}*\text{x))} = 0.97_)
+    Det er en relativ fin korrelation. 
+    For at vi kan bekræfte en hypotese i fysik, skal korrelationen
+    helst være bedre end  _(0.99_), men i et amatør-eksperiment som 
+    dette er _(0.97_) en god korrelation. 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="7">
+    En rigtig vigtig ligning i fysik og kemi er den såkaldte "ideelle gas ligning":
+    _($p*V = R*n*T_)
+    Her forestiller vi os, at vi har en såkaldt "ideal gas" - en gas der har den egenskab, at 
+    dens individuelle partikler ikke rammer ind i hinanden -  
+    lukket og ligeligt fordelt i en container
+    med volumen _(V_). Gassen har et tryk _(p_) og en temperatur _(T_). _(n_) er 
+    <i>mængden</i> af gasen i "mol", hvilket bare er en meget stor enhed for antal. 
+    _(1 \text{ mol}_) svarer til:
+    _($6.0221409*10^{23} \text{ molekyler af gassen}_)
+    _(R_) er bare en konstant lig ca. _(8.314_). 
+    <p class="t">
+    Antag at <i>mængden</i> _(n_) er konstant. Nu har vi tre 
+    variabler, der relateres i ligningen:
+    _(p_), _(V_) og _(T_). Jeg vil nu gerne have at du:
+    </p>
+    <p class="t">
+    _(\underline{\textbf{A}}_): <br>
+     Tænker over hvordan vi ville bevise denne ligning eksperimentelt. Du behøver ikke
+    tænke over <i>hvordan</i> præcist vi skal indsamle dataet (siden det kræver lidt viden i fysik),
+    men bare <i>hvilke</i> data vi vil få brug for at indsamle.
+    </p>
+    <p class="t">
+    _(\underline{\textbf{B}}_): <br>
+     I bunden af svaret på opgave 1 er der vedlagt den nødvendige data. 
+    Brug det, og forsøg - så godt som muligt - at bevise idealgasligningen.
+    
+    </p>
+    <br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    Vi <i>kunne</i> isolere èn af variablerne som:
+    _($p=(RnT)*\frac{1}{V}_)
+    Og lave et eksperiment hvor _(T_) blev holdt konstant, mens vi
+    målte _(p_) og ændrede på _(V_) (eller modsat). 
+    Vi ville så skulle tjekke, at korrelationen på dataet 
+    passede funktionen _(y=(RnT)/x_). 
+    Det ville være O.K, men vi har kun tjekket hvordan _(p_) 
+    ændrer sig med respekt til _(V_). Vi har ikke set på:
+    <ul style="list-style: disc; margin-left:5%;">
+        <li>Hvordan _(p_) ændrer sig med respekt til _(T_)</li>
+        <li>Hvordan _(V_) ændrer sig med respekt til _(T_)</li>
+    </ul>
+    <p class="t">
+    Vi skal tjekke alle de forskellige måder hvorpå "noget" 
+    ændrer sig med noget andet. Vi skal derfor lave to yderligere eksperimenter:
+    I det første holdes _(V_) konstant, og vi ændrer på _(T_) imens 
+    vi måler _(p_). Vi tjekker derefter, hvorvidt dataet
+    passer til funktionen _(y=(Rn/V)*x_). I det andet
+    holdes _(p_) konstant, imens vi ændrer på _(T_) og 
+    måler _(V_). Det skal så tjekkes, at dataet har god korrelation 
+    til _(y=(Rn/p)*x_). 
+    </p>
+    <p class="cent">*</p>
+    <p class="t">
+    Sig vi har lavet disse tre eksperimenter. I alle de tre eksperimenter 
+    var vores _(n=2.3_). I de tre eksperimenter har vi selvfølgelig også målt 
+    de variabler vi holdte konstante, da de er en del af funktionen vi 
+    skal tjekke korrelation på:
+    </p>
+    <p class="cent">
+        <a href="../../../Assets/Chapter2\Regression\Opgaver\Idealgasligning.ggb" download>
+            Download!
+        </a>
+    </p>
+    <p class="t">
+    Enhederne på dokumentet er _(V [m^3]_), _(p [N/m^2]_), _(T [K]_)  _(n [Mol]_), og _(R_) 
+    er tilpasset disse enheder. _(K_) står for "kelvin", som 
+    er en anden enhed man bruger i fysik for temperatur. 
+    (x_) celcius svarer til _(x+273_) kelvin, da 
+    kelvin er sat til _(0K_) som den mindst mulige temperatur
+    (absolut nulpunkt). 
+    </p>
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Vi skal lave tre eksperimenter. I det første skal vi tjekke hypotesen:
+    _($p=\frac{(RnT)}{V}_)
+    Her er _(T=295K_) (hvilket svarer til en stuetemperatur på _(22C^o_)), så
+    _(RnT_) er _(8.314*2.3*295=_) _(5461_). Vi skal tjekke, hvor godt dataet passer til
+    _(y=5641/x_). Vi laver en liste af punkter i Geogebra, bruger kommandoen _(RSquare_), og 
+    får _(0.9992_). Det er meget god korrelation.
+    <p class="t">
+    I det andet eksperiment skal vi tjekke:
+    _($p=\left(\frac{Rn}{V} \right)*T_)
+    Her er _(V=0.3m^3_), så _(Rn/V_) kan regnes til _(63.74_). 
+    Vi laver igen en liste af punkter, tjekker korrelationen til funktionen
+    _(y=63.74*x_), og får _(0.9971_). Også meget godt. 
+    </p>
+    <p class="t">
+    I det sidste eksperiment tjekker vi:
+    _($V=\left(\frac{Rn}{p} \right)*T_)
+    Nu er _(p=7230 N/m^2_), så _(Rn/p_) bliver 
+    _(0.00264_). Vi tjekker korrelationen til _(y=0.00264x_), og får _(0.9933_). 
+    </p>
+    <p class="t">
+    Alle forsøg er bekræftede. Hypotesen er sand! 
+    </p>
+    <br></answer-box>
+

@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+
+
+    <h2>Serier: Uendelig mange ting plusset <br> med hinanden?</h2>
+    <p class="t">
+    Vi har nu rigorisk gennemgået både differentiering og integration i forhold til grænser. 
+    Resten af det her kapitel vil fokusere på <i>uendelige summe</i>, 
+    med et mindre fokus på <i>Taylor summe</i> / <i>Taylor serier</i>. 
+    </p>
+    <p class="t">
+    En uendelig sum er noget som:
+    _($\lim_{n \to \infty} \left[\sum_{k=1}^{n} \frac{1}{k!} \right] _)
+    Eller måske:
+    _($\lim_{n \to \infty} \left[\sum_{k=1}^{n} \sqrt{k} \right] _)
+    Vi gider ikke til at skrive grænsen hver gang, så vi bruger følgende forkortelser:
+    </p>
+
+    <div class="Definition">
+    <b> Definition:</b> <br>
+    En uendelig sum
+    _($\lim_{n \to \infty} \left[\sum_{k=1}^{n} F(k) \right]_)
+    ... skrives i stedet bare som:
+    _($\sum_{k=1}^{\infty} F(k)_)
+    Det er mere kompakt. 
+    </div>
+
+    <div class="Definition">
+    <b> Definition:</b> <br>
+    En integral med uendelige bounds:
+    _($ \lim_{n \to \infty} \left[\int_{a}^{n} f(x) \text{ }dx \right]_)
+    Skrives i stedet bare som:
+    _($\int_{a}^{\infty} f(x) \text{ }dx _)
+    Da det er mere kompakt. 
+    </div>
+    
+    <p class="t">
+    En "uendelig sum" virker umiddelbart som et ubrugeligt og mærkeligt koncept, men vi
+    har anvendt det flere gange allerede. I forklaringen af Zenos paradoks 
+    arbejdede vi med:
+    _($\left[\sum_{k=1}^{\infty} \frac{1}{2^k} \right]_)
+    I beviset for at _(e_) var bounded støtte vi på:
+    _($\lim_{n \to \infty} \left[\sum_{k=1}^{\infty} \Vec[n,k] (1/n)^k \right]_)
+    ... og:
+    _($\left[\sum_{k=1}^{\infty} 1/k! \right]_)
+    Vi møder ofte uendelige summe i matematikken samt fysikken. 
+    Vi har også (næsten) 
+    arbejdet med det, da vi så på <i>Taylor serier</i>.
+    Her deducerede vi, at en funktion _(f(x)_) kunne approksimeres som:
+    _($\begin{align} 
+    f(x) & \approx f(a) + f'(a) (x-a)^1 + f^{'2}(a) \frac{(x-a)^2}{2!} +  f^{'3}(a) \frac{(x-a)^3}{3!} \text{ } \, + \, ... \\ \\
+    & = \sum_{k=0}^n f^{'k}(a)\frac{(x-a)^{k}}{k!}
+    \end{align}_)
+    ... hvor at højere _(n_) giver bedre approksimationer af _(f(x)_) omkring _(x=a_). 
+    Man kan f.eks. se at:
+    _($e^x \approx \sum_{k=0}^n \frac{x^k}{k!}_)
+    Det bliver rigtig interessant, da man kan bevise at:
+    _($e^x = \left[\sum_{k=0}^{\infty} \frac{x^k}{k!} \right]_)
+    _(e^x_) kan fuldkommen omskrives i forhold til en uendelige sum! 
+    Højre side er ikke længere en approksimation af _(e_): Det <i>er</i> _(e_). 
+    </p>
+    <p class="t">
+    Denne teknik virker ikke kun på en speciel funktion som _(e^x_). 
+    Også en mere tilfældig funktion som:
+    _($5 Ln(6-7x) = -5*\left[\sum_{k=0}^{\infty} \frac{(8-7x)^k}{k} \right]_)
+    Faktisk kan det bevises, at <i>alle</i> elementære funktioner kan omskrives til uendelige
+    Taylor serier <i>i et område</i> - det her med <i>området</i> er ret vigtigt, og
+    bliver uddybet senere.
+    </p>
+    
+    <div class="Definition">
+    <b> Definition: Elementær funktion</b> <br>
+    En elementær funktion _(f(x)_) er en funktion, der er dannet som en komposition af
+    _(+_), _(-_), _(*_), _(/_), potenser, trig funktioner, samt alle disse funktioners 
+    modsætninger. 
+    </div>
+
+    <p class="t">
+    Et eksempel kunne være:
+    _($Arccos \left(3^{Sin(Ln(x))}*x^{3} + Tan \left(\frac{x}{x+1} \right) \right)_)
+    Så en rigtig stor del af de "normale" funktioner du arbejder med kan omskrives til "uendelige" 
+    polynomier. Det hænger godt sammen med, at alle elementære funktioner er kontinuerlige, hvilket
+    et polynomie tydeligvis også er. 
+    </p>
+    <p class="t">
+    Denne egenskab er super praktisk, da den bl.a. giver os et sprog, til 
+    at snakke om <i>alle </i> elementære funktioner generelt. 
+    Sig som eksempel, at du gerne ville bevise en bestemt egenskab for <i>alle</i> elementære funktioner. 
+    Du <i>kunne</i> beskrive hver funktion på en kompliceret måde som en 
+    komposition af bestemte funktioner og deres modsætninger. F.eks:
+    _($+(*(Ln,3),Tan)_)
+    Men det er besværligt og bøvlet. I stedet kunne du bare sige: 
+    _($\lim_{n \to \infty} \left[\sum_{k=1}^{\infty} a_k*x^k \right]_)
+    Det her kan du faktisk arbejde med matematisk! 
+    Jeg kan ikke rigtig give noget godt eksempel på 
+    en konkret egenskab, da de alle er ret teoretiske, specifikke og komplicerede.
+    Brugbarheden snakker for sig selv: Vi kan bevise, at noget gælder for
+    <i>alle</i> funktioner, bare ved at bevise, at det gælder for (uendelige) polynomier!
+    </p>
+    
+    <p class="t">
+    Egenskaben er også vigtig, hvis vi faktisk planlægger at anvende et taylor-polynomie
+    som approksimation. Hvis det <i>ikke</i> var sandt at
+    _($e^x = \left[\sum_{i=0}^{\infty} \frac{x^i}{i!} \right]_)
+    ... ville det være en ret upraktisk approksimation! Vi vil ikke selv
+    kunne kontrollere hvor præcis approksimationen skal være, hvis den
+    ikke nærmer sig _(e^x_) ved højere _(n_). 
+    Det kan være den er bedst ved _(n=37_) og bliver dårlig derefter. Det ville være ret upraktisk. 
+    </p>
+    <p class="t">
+    At forsøge at regne
+    _(Cos(0.6789)_) i hånden, er nok både svære og mindre præcist
+    end bare at gøre det med en Taylor serie. 
+    Det kan vises at:
+    _($Cos(x) = \left[\sum_{k=0}^{\infty} (-1)^k \frac{x^{2k}}{(2k)!} \right]_)
+    Så:
+    _($\begin{eqnarray}
+    && Cos(0.6789) = \\ \\
+    && \left[\sum_{k=0}^{\infty} (-1)^k \frac{0.6789^{2k}}{(2k)!} \right] \approx \\ \\
+    && \frac{0.6789^{2*0}}{(2*0)!} - \frac{0.6789^{2*1}}{(2*1)!} + \frac{0.6789^{2*2}}{(2*2)!} - \frac{0.6789^{2*3}}{(2*3)!} = \\ \\
+    && 0.77826
+    \end{eqnarray}_)
+    Det er også praktisk for computere. Hvis de skal regne _(Cos(0.6789)_), tegner
+    de ikke en trekant med vinkel _(0.6789_) og måler den hosliggende katete. 
+    De regner bare _(\sum_{k=0}^{n} (-1)^k \frac{3.6789^{2k}}{(2k)!}_) med et relativt stort _(n_). 
+    Vores _(n_) var _(4_). Det svar en computer giver er:
+    _($Cos(0.6789) = 0.7782639205064136_)
+    De første _(5_) decimaler matcher, så selv på små _(n_) er det 
+    meget akkurat. 
+    </p>
+    <p class="t">
+    Taylor polynomier kan også bruges til at 
+    approximere størrelser,  
+    vi slet ikke <i>har</i> nogen anden måde at regne!
+    De kan endda approximere de størrelser med teoretisk set uendelig god præcision!  
+    Sig f.eks. vi var interesseret i arealet under _(Sin(x^2)_) fra _(0_) til _(\sqrt{\pi}_):
+    </p>
+    <img class='Spic' style='width:77%' src='../../../Assets/Chapter4\Limits\Sin x squared area.png'> 
+    <p class="t">
+    Der findes ikke noget anti-derivative til _(Sin(x^2)_) <i>i forhold til elementære funktioner</i>. 
+    Vi kan dog beskrive integralet af _(Sin(x^2)_) som en uendelig sum. Det kan vises at
+    _($Sin(x)=\sum_{k=0}^{\infty} (-1)^k*\frac{x^{2k+1}}{(2k+1)!} _)
+    Det gælder for <i>hver _(x_)</i>, så substituer _(x=u^2_):
+    _($Sin(u^2) =  \sum_{k=0}^{\infty} (-1)^k*\frac{u^{4k+2}}{(2k+1)!} _)
+    Begge sider er kontinuerlige overalt, hvis vi undtager _(x=0_), så vi integrerer og får:
+    _($\begin{eqnarray} 
+    && \int Sin(u^2) \text{ }du & = & \int & \sum_{k=0}^{\infty} (-1)^k*\frac{u^{4k+2}}{(2k+1)!} \text{ }du \\ \\
+    && & = & & \sum_{i=0}^{\infty} (-1)^k*\frac{\int u^{4k+2} \text{ }du }{(2k+1)!} \\ \\
+    && & = & & \sum_{i=0}^{\infty} (-1)^k*\frac{u^{4k+3} }{(2k+1)!*(4k+3)} 
+    \end{eqnarray}_)
+    Arealet vi søger svarer til _(F(\sqrt{\pi}) - F(0)_) så:
+    _($\int_{0}^{\sqrt{\pi}} Sin(x^2) \text{ }dx \, = 
+    \begin{eqnarray}  
+    && \sum_{k=0}^{\infty} (-1)^k*\frac{\sqrt{\pi}^{4k+3} }{(2k+1)!*(4k+3)}  & \, \, \, - \\
+    && \sum_{k=0}^{\infty} (-1)^k*\frac{0^{4k+3} }{(2k+1)!*(4k+3)} 
+    \end{eqnarray}_)
+    ... hvilket let kan simplificeres til:
+    _($\sum_{k=0}^{\infty} (-1)^k*\frac{\sqrt{\pi}^{4k+3} - 0^{4k+3}}{(2k+1)!*(4k+3)}_)
+    _(n=5_) burde være et godt estimat, og det giver os _(0.8948_)
+    </p>
+    <p class="t">
+    En anden mulige anvendelse af uendelige summe/serier er <br> 
+    <i>differentialligninger</i>. Sig vi har: 
+    _($y''(x) + y(x) = 0_)
+    Lad os fuldkommen droppe noget forsøg på
+    at beskrive 
+    _(y(x)_) i forhold til elementære funktioner, og
+    bare med det samme forestille os, at 
+    _(y(x)_) er en uendelig sum:
+    _($y(x) = \sum_{i=0}^{\infty} a_i*x^i _)
+    Hvor _(a_i_) svarer til _(=f^{'i}/i!_). Det kan let ses, at 
+    _($y''(x) = \sum_{i=0}^{\infty} i (i-1) a_i*x^{i-2}_)
+    Så differentialligningen er nu:
+    _($ \sum_{i=0}^{\infty} a_i*x^i + \sum_{i=0}^{\infty} i (i-1) a_i*x^{i-2} = 0_)
+    Det virker ikke bedre overhovedet, men vi kan skifte indekset i den ene sum, så de begge har samme
+    potens på _(x_):
+    _($\sum_{i=0}^{\infty} a_i*x^i = \sum_{i=2}^{\infty} a_{i-2}*x^{i-2} _)
+    Indekset på den anden sum burde matche, før vi kan lægge dem sammen:
+    _($\begin{eqnarray}
+    && \sum_{i=0}^{\infty} i (i-1) a_i*x^{i-2} = \\ \\
+    && \sum_{i=2}^{\infty} i (i-1) a_i*x^{i-2} + 0*(0-1)*a_{0}*x^{0-2} + 1*(1-1)*a_{0}*x^{1-2} 
+    \end{eqnarray}_)
+    Vi er heldige, og de to ekstra led, der bliver introduceret, går begge til _(0_).
+    Nu kan _(y''(x)+y(x)_) omskrives til:
+    _($\begin{eqnarray}
+    && \sum_{i=2}^{\infty} i (i-1) a_i*x^{i-2} + \sum_{i=2}^{\infty} a_{i-2}*x^{i-2} = \\ \\
+    && \sum_{i=2}^{\infty} a_{i-2}*x^{i-2} + i (i-1) a_i*x^{i-2} = \\ \\
+    && \sum_{i=2}^{\infty} (a_{i-2} + i (i-1) a_i)*x^{i-2}
+    \end{eqnarray}_)
+    Dette polynomial skal være lig _(0_), hvilket 
+    betyder, at alle dets koefficienter 
+    _(a_{i-2} + i (i-1) a_i_) også er _(0_). 
+    Vi har nu ændret problemet til "bare" at finde
+    en række tal _(a_i_), der løser
+    _($a_{i-2} + i (i-1) a_i=0_) 
+    ... for hver _(a \ge 2_). Det viser sig
+    relativt nemt at finde. Med lidt arbejde vi ikke gennemgår her, kan man vise
+    at:
+    _($a_{2k} = \frac{a_0}{(2k)!}, \qquad a_{2k+1} = \frac{-a_1}{(2k+1)!}  _)
+    Du kan selv teste det, hvis du er skeptisk. 
+    Vi sætter vores fund tilbage i summen og får:
+    _($y(x) = \sum_{i=0}^{\infty} a_i*x^i = a_0 - a_1 x + \frac{a_0}{2!} x^2 - \frac{a_1}{3!}x^3 + \frac{a_0}{4!}x^4_)
+    Det kan simplificeres til: 
+    _($y(x) \, = 
+    \begin{eqnarray} 
+    && a_0*\left(1+\frac{1}{2!}x^2 + \frac{1}{4!}x^4 \text{ } + ... \right) & \, \, \, - \\ \\
+    && a_1*\left(x + \frac{1}{3!}x^3 + \frac{1}{5!}x^5 \text{ } + ... \right) 
+    \end{eqnarray} _)
+    ... hvor _(a_0_) og _(a_1_) er konstanter vi selv kan vælge.
+    Vi har derved fundet en hel <i>familie</i> af løsninger, og de
+    er alle uendelige summe. F.eks. svarer <br> _(a_0=2.1_), _(a_1=-5.3_) til:
+    _($y(x) = 2.1*\sum_{k=0}^{\infty} \frac{x^{2k}}{(2k)!} + 5.3*\sum_{k=0}^{\infty} \frac{x^{2k+1}}{(2k+1)!} _)
+    Nu støder vi på et interessant problem:
+    Det her er en funktion, så hvad er domænet? På hvilke _(x_) giver den uendelige sum overhovedet mening? 
+    Det
+    er <i>ret vigtigt at vide</i>, især når vi arbejder med en funktion 
+    der er så abstrakt og speciel som denne. 
+    Dette problem oplever vi <i>også</i>, når vi arbejder med 
+    Taylor serier. Jeg sagde, at hver
+    elementær funktion havde en Taylor serie <i>på et område</i>. 
+    Et <i>interval</i> af _(x_). På 
+    en funktion som _(Sin(x)_), _(Cos(x)_), eller _(e^x_) er området
+    alt mellem (men ikke lig) _(-\infty_) og _(\infty_). Det er meget intuitivt,
+    men ved en funktion som f.eks. _(Ln(x)_) opdager man noget specielt. 
+    Sig vi gerne vil regne _(Ln(1.65)_). Man kan vise at:
+    _($Ln(1-x) = \sum_{k=1}^{\infty} -\frac{x^n}{n}_)
+    _(Ln(1.65)_) svarer til _(x=-0.65_), så vi approximerer ved at regne:
+    _($\frac{0.65^1}{1} - \frac{0.65^2}{2} + \frac{0.65^3}{3} - \frac{0.65^4}{4} = 0.4856_)
+    _(Ln(1.65)_) giver _(0.5007_) på en computer, så dette er en <i>o.k</i> approksimation. 
+    Lad os nu forsøge at regne _(Ln(13.1)_). Vi siger:
+    _($\frac{12.1^1}{1} - \frac{12.1^2}{2} + \frac{12.1^3}{3} - \frac{12.1^4}{4} = -6010_)
+    Ingen computer behøver fortælle dig, at det tydeligvis er
+    fuldkommen forkert. Her er problemet:
+    Det kan vises, at summen
+    _($\sum_{k=1}^{\infty} -\frac{(-0.65)^k}{k} _)
+    faktisk nærmer sig <i>et tal</i>. Ikke uendelighed eller 
+    negativ uendelighed. Det kan også vises at summen
+    _($\sum_{k=1}^{\infty} -\frac{(-12.1)^k}{k} _)
+    ... <i>ikke</i> nærmer sig et tal. 
+    Vi kan ikke engang sige at den bliver til _(\infty_) eller _(-\infty_), da
+    den slet ikke <i>har</i> nogen grænse  - den skifter mellem positiv og negativ ligesom
+    _(\lim_{x \to \infty} \left[Sin(x) \right]_). 
+    Det her giver <i>noget</i> intuitiv mening,
+    eftersom hvert led i _(\sum_{k=1}^{\infty} -(-0.65)^k/k _) bliver mindre, og hvert led i 
+    _(\sum_{k=1}^{\infty} -(-12.1)^k/k_) bliver større. 
+    _(A^k_) dominerer _(k_), så ledende i den anden sum 
+    bliver <i>uendelig</i> store og negative, og det samme sker med summen!
+    Men vi farer os ud i dybe vande, hvor intuition ikke længere er
+    tilstrækkeligt: Vi har brug for en præcis 
+    matematisk proces til at se, om en uendelig serie nærmer sig 
+    et tal eller ej. Om den <i>converger</i> eller <i>diverger</i>:
+    </p>
+
+    <div class="Definition">
+    <b> Definition: Divergence og convergence</b> <br>
+    Hvis en uendelig sum nærmer sig _(\infty_) eller _(-\infty_), 
+    eller slet ikke har nogen grænse, siges den at <i>diverge</i>. 
+    Hvis den nærmer sig et konstant tal, siges den at <i>konverge</i>.
+    </div>
+
+    <p class="t">
+    Lad mig give èt eksempel på et bevis af convergence, så
+    du ved, hvad det kommer til at handle om. Sig 
+    jeg gerne vil tjekke divergence / convergence af:
+    _($\sum_{k=1}^{\infty} \frac{11^k}{k}_)
+    Jeg ved, at _(11^k/k \gt 1_) (jeg kunne have valgt et hvilke som helst andet tal også), så:
+    _($\sum_{k=1}^{\infty} \frac{11^k}{k} \gt \sum_{k=1}^{\infty} 1_)
+    Summen _(\sum_{k=1}^{\infty} 1_) er lig: 
+    _($\lim_{n \to \infty} \left[\sum_{k=1}^{n} 1 \right] = \lim_{n \to \infty} \left[n*1 \right] = \infty_)
+    Vores serie er større end noget, der nærmer sig _(\infty_), 
+    og nærmer sig derfor <i>også</i> infinity. Den <i>diverger</i>. 
+    </p>
+    <p class="t">
+    Vi kunne let få lyst til at lave en lignende test på:
+    _($2.1*\sum_{k=0}^{\infty} \frac{x^{2k}}{(2k)!} + 5.3*\sum_{k=0}^{\infty} \frac{x^{2k+1}}{(2k+1)!}_)
+    Her ville vi skulle teste om serien diverger eller converger
+    ved <i>hver</i> _(x_)-værdi, og helst nok i processen opdage et <i>interval</i> hvor
+    summen converger. Det interval er funktionens domæne. 
+    </p>
+    <p class="t">
+    Divergence og convergence er koncepter, der også til tider
+    har mere reelle og praktisk anvendelser. 
+    Sig f.eks. vi skulle stable blokke:
+    </p>
+
+    <img class='Spic' style='width:40%' src='../../../Assets/Chapter4\Limits\StackingBlocks.png'> 
+
+    <p class="t">
+    Du har måske gjort noget lignende som barn: Hvor langt til 
+    siden, kan du stable blokke på tårnet, før det kollapser?
+    Tricket er, at man ikke starter med at bygge tårnet fra bunden og opad, men fra toppen og nedad:
+    </p>
+
+    <img class='Spic' style='width:45%' src='../../../Assets/Chapter4\Limits\StackingBlocks1.png'> 
+
+    <p class="t">
+    Sig at dette er den øverste blok på tårnet, og 
+    at den har en længde på _(2_) (fordi det er lettere at arbejde med).
+    Dens massemidtpunkt _(c_1_) er dens midte, og figurens samlede massemidtpunkt
+    med _(1_) blok _(C_1_) er også lig _(c_1_), siden ingen andre brikker har indflydelse.
+    </p>
+    <p class="t">
+    Den næste blok vi sætter må ikke være længere end _(C_1_) fremme, da
+    strukturen vælter, hvis der ikke er support under  
+    massemidtpunktet. 
+    Vi søger det længst mulige tårn, og sætter derfor
+    den næste blok <i>præcis</i> ved _(C_1_):
+    </p>
+
+    <img class='Spic' style='width:62%' src='../../../Assets/Chapter4\Limits\StackingBlocks2.png'> 
+
+    <p class="t">
+    Nu er der to massemidtpunkter _(c_1_), _(c_2_). 
+    Det ene massemidtpunkt _(c_1_) er lig _(1_), og det andet _(c_2_) er lig _(1+1=2_). 
+    Massemidtpunktet for den samlede struktur med 
+    _(2_) blokke _(C_2_) er bare gennemsnittet af _(c_1_) og _(c_2_), da 
+    de hver har samme vægt:
+    _($C_2=\frac{c_1+c_2}{2} = \frac{1+2}{2} = 1.5_)
+    Vi placerer nu den næste blok præcis _(1.5_) fremme:
+    </p>
+
+    <img class='Spic' style='width:75%' src='../../../Assets/Chapter4\Limits\StackingBlocks3.png'> 
+
+    <p class="t">
+    Dens massemidtpunkt _(c_3_) er lig _(C_2+1_). Det samlede massemidtpunkt er igen lig gennemsnittet 
+    af hvert individuelt massemidtpunkt:
+    _($\begin{eqnarray}
+    C_3 & = \frac{c_1+c_2+c_3}{3} \\ \\
+    & = \frac{2}{3}C_2 + \frac{1}{3}(C_2+1) \\ \\
+    & = \frac{2}{3}C_2 + \frac{1}{3}C_2 + \frac{1}{3} \\ \\
+    & =  C_2 + \frac{1}{3}
+    \end{eqnarray}_)
+    Samme argument kan vi lave med _(C_4_), _(C_5_), osv. Generelt ser vi at:
+    _($C_n = C_{n-1} + \frac{1}{n}_)
+    Så ud fra det kan vi let se, at
+    _($C_n = 1 + \frac{1}{2} + \frac{1}{3} + \frac{1}{4} \text{ } \, + \, ... \, = \sum_{k=1}^{n} \frac{1}{k} _)
+    Tårnets maksimale længde er derfor: 
+    _($L = \sum_{k=1}^{\infty} \frac{1}{k}_)
+    Nu er spørgsmålet: Diverger eller konvergerer denne sum? Har tårnet en maksimal længde,
+    eller kan det (i teorien) blive uendeligt langt?
+    </p>
+
+    <p class="t">
+    Det er lidt tricky, men man kan bevise, at serien af _(1/k_) <i>diverger</i>. 
+    Lad os skrive nogle af de første led op:
+    _($\frac{1}{1}+\frac{1}{2}+\frac{1}{3}+\frac{1}{4}+\frac{1}{5}+\frac{1}{6}+\frac{1}{7}+\frac{1}{8} \text{ } \, + \, \dots_)
+    Vi ændrer nu leddende så vi (praktisk talt)
+    bare plusser _(1/2_) med sig selv mange gange:
+    _($\begin{eqnarray}
+    && \frac{1}{1}+\frac{1}{2}+\frac{1}{4}+\frac{1}{4}+\frac{1}{8}+\frac{1}{8}+\frac{1}{8}+\frac{1}{8} = \text{ } \, + \, \dots = \\ \\
+    && 1+\frac{1}{2} + \frac{2}{4} + \frac{4}{8} \text{ } \, + \, \dots = \\ \\
+    && 1 + \frac{1}{2} + \frac{1}{2} + \frac{1}{2} \text{ } \, + \, \dots 
+    \end{eqnarray}_)
+    Det kan vi blive ved med, så det svarer til, at man plusser
+    _(1/2_) med sig selv uendelig mange gange. Efter
+    de fire _(1/8_) vil der være otte _(1/16_), så seksten _(1/32_) osv. Vi gør hvert led <i>mindre</i> for at 
+    lave dette trick, så den samlede sum er også <i>mindre</i> end vores:
+    _($\sum_{k=1}^{\infty} \frac{1}{k} \gt \sum_{k=1}^{\infty} \frac{1}{2}_)
+    Men _(1/2_) plusset med sig nærmer sig uendelig, så det gør vores også.
+    Ergo: Den diverger!
+    </p>
+
+    <p class="t">
+    Langt de fleste beviser af convergence og divergence er heldigvis
+    markant lettere end dette. Beviset her er et lidt "specielt case" kaldt
+    "den harmoniske serie", og er ret kendt. 
+    </p>
+
+    <p class="cent">*</p>
+
+    <p class="t">
+    I resten af afsnittet vil vi primært engagere os med to ting:
+    </p>
+    <p class="t">
+    _(\underline{\textbf{A}}:_) Hvordan ved vi, om en funktion perfekt kan approksimeres af en Taylor serie, og hvordan
+    finder vi hurtigt et mønster til denne approksimation? (Som f.eks. _(e^x=\sum_{k=1}^{\infty} x^n/n! _))
+    </p>
+    <p class="t">
+    _(\underline{\textbf{B}}:_) Hvordan tester vi om en uendelig serie divergerer eller konvergerer, og hvordan bruger vi
+    det til at finde dens domæne? 
+    </p>
+<!-- 
+    <p class="t">
+    Så for at sige at f.eks: 
+    _($Ln(1-x) = \sum_{k=1}^{\infty} -x^k/k, \qquad |x| \lt 1_) 
+    ... skal vi <i>både</i>
+    bevise at _(Ln(1-x)_) perfekt kan approksimeres af sin Taylor serie på dette interval, <i>og</i> at 
+    denne Taylor serie konvergerer på intervallet. Som vi vil se så har man dog sjælen brug for at bevise
+    begge: Often medfører den ene den anden. 
+    </p> -->
+
+
+    
+
+
+
+
+

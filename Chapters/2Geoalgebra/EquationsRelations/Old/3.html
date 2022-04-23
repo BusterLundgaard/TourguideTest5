@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+
+
+    <p class="t">
+    Hvordan kan man løse _(4^x=256_)? Tjo, i den her er det relativt nemt bare at gætte. _(x=2_) giver _(16_), _(x=3_) giver _(64_), _(x=4_) giver
+    _(256_). Wholla: _(x=4_). Hvis _(f(x)=4^x_), så må _(f_{modsat}(256)=4_). Den her _(f_{modsat}_) funktion kalder vi en <i>logaritme</i>.
+    Altså, helt nede på jorden så fortæller en logaritme dig bare hvilken potens man skal opløfte et tal i for at det får en bestemt
+    værdi. _(Log_{13}(2197)_) er den potens man skal opløfte _(13_) i for at få _(2197_). _(Log_{13}(2197)=3_) eftersom _(13^3=13*13*13=2197_). 
+    Med store tal kan det være en smule tricky at udregne logaritmen, men det stoppede os ikke fra at bruge _(sin,arcsin_) eller
+    for den sags skyld kvadratroder. 
+    </p>
+
+    <p class="t">
+    I de følgende 3 opgaver forventer jeg at du <i>ikke</i> bruger din lommeregner til at udregne logaritmer. 
+    Der vil være nogen hovedregninger der er en smule tricky, men intet burde
+    være forfærdeligt svært.
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5">
+    <b> 1</b>: I en tidligere opgave for noget tid siden nu,
+    der kiggede vi på nogle bestemte træer. Vi fandt ud af at hvis 
+    hvert træ kun fik _(3_) frø i dets livstid, så ville
+    mængden af træer efter _(d_) dage være _(3^d/2 - 0.5_).
+    Hvornår er der _(1093_) træer i haven?
+    <p class="t">
+    <b> 2</b>: Sig at mængden af bakterier i en bestemt koloni  
+    bliver modelleret som _(3*2^{\frac{1}{5}*d}_), hvor _(d_)
+    er mængden af dage. Hvornår er der _(96_) bakterier?
+    </p>
+    <p class="t">
+    <b> 3</b>: Hvis du sætter _(p_) penge ind i en bank med en rente på _(r_), og tager
+    det tilbage efter et år, så ender du med _(p*(1+r)_) kroner. Hvis du
+    tager det tilbage efter _(\frac{1}{5}_) år, men så med det samme putter det ind igen
+    (5 gange i alt), så har du _(p*(1+r/5)^5_). Renten er altså blevet
+    5 gange så mindre (_(r/5_)), men du gør det 5 gange (opløftet i _(5_)).
+    Hvis _(p=20kr_), hvad skal 
+    _(r_) så være for at du har _(4860kr_)? Du behøver ikke nødvendigvis
+    regne en logaritme for at løse denne opgave, men den er relevant alligevel. 
+    </p>
+    <p class="t">
+    Lige en advaring: Svaret (altså renten) du får på denne opgave er 
+    totalt urealistisk. Det er i hvert fald en sygt god deal. Det er bare lige svært at få det til at passe med 
+    regnestykker der er nemme samtidigt med at det bliver realistisk. 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    <b> 1</b>: Vi opsætter og løser følgende ligning:
+    _($3^d/2 - 0.5 = 1093 \to 3^d=2187_)
+    Hvad for en potens skal man opløfte _(3_) til for at det giver _(2187_)?
+    Lidt experimentation og gætning viser at det er _(d=7_).
+    <p class="t">
+    <b> 2</b>: Vi skal løse ligningen _(3*2^{\frac{1}{5}*d}=96_). For at
+    gøre det en smule nemmere starter jeg lige med at kalde _(\frac{1}{5}d_) for
+    bare _(x_):
+    _($3*2^x=96 \to 2^x=32 \to x=5 \to_)
+    _($d/5=5 \to d=25_)
+    </p>
+    <p class="t">
+    <b> 3</b>: Her skal vi nu løse _(20*(1+r/5)^5=4860 \to (1+r/5)^5=243_). 
+    Hvad opløftet i 5'te potens giver _(243_)? Lidt gætning viser at det er _(3_). Så:
+    _($1+r/5=3 \to r=10_)
+    </p>
+    <br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Du har nok hørt ordet "halveringstid" eller "half-life" før. Ideen er 
+    først og fremmest at du modellere et eller andet der bliver mindre.
+    Det kunne være en døende population (som i bakterier, ikke mennesker, din nazist), mængden af atomer i et stykke stof, 
+    mængden af farlig stråling, osv. Alle de her kan på en eller anden måde
+    modelleres som _(a/r^t_). Vis at der er <i>en</i> halveringstid. Altså,
+    at det konstant tager ligeså lang tid for _(a/r^t_) at blive dobbelt
+    så lille som den var tidligere. Vis også at det samme gælder
+    for en stigende kvantitet som _(a*r^t_), og at det ikke kun nødvendigvis
+    er halveringstid, men faktisk bare en nogen som helst procentdel 
+    det er blevet større eller mindre (f.eks _(70%, 66%, 1%_) osv.)
+    <br><br></q-stion>
+    <answer-box>
+    Lad os starte med half-life. Hvis der på et eller andet tidspunkt
+    _(t_0_) går _(d_) tid før _(a/r^t_) er blevet dobbelt så småt
+    som _(a/r^{t_0}_), så må det altså gælde at _((\frac{a}{r^{t_0}})/(\frac{a}{r^{t_0+d}})=2_).
+    Det kan nemt forsimples og omskrives til _(r^d=2_) hvilke betyder at
+    _(d=Log_r(2)_). Bam! Tiden _(d_) er komplet uafhængig af hvor vi starter _(t_0_)!
+    Præcist det samme kan vi gøre med fordoblingstid hvor
+    _(\frac{a*r^{t_0+d}}{a*r^{t_0}}=2 \to d=Log_r(2)_). 
+    Vi kan også bruge et noget som helst tal på den anden side: det behøver ikke nødvendigvis være lige 
+    _(2_). Derfor virker det på alle procenter.
+    <br><br></answer-box>
+
+    <p class="t">
+    Sig igen at man har nogle bakterier. Bakterierne vil, når de får mad, nok 
+    dele sig op i to. Hver af de dele bliver så til nye bakterier, der også kan dele sig op osv.
+    Hvis vi prøver at gøre det ultra simpelt og siger at de tager 1 dag før et bakterie splitter,
+    så vil der efter _(x_) dage være _(2^x_) bakterier. Intet nyt her. Lad os nu, lidt ligesom vi gjorde før, 
+    finde ud af hvornår der er en bestemt mængde bakterier. Sig: Hvornår er der _(1897_) bakterier?
+    Aldrig! _(2^{10}=1024_) og _(2^{11}=2048_). Det er en smule fjollet dog er det ikke? I alt
+    realiteten opdeler bakterierne sig jo ikke absolut samme tidspunkt. Der vil nok intuitivt
+    være <i>et eller andet tidspunkt</i> hvor der er _(1897_) bakterier. Alternativt:
+    Hvor mange bakterier er der efter _(12_) en halv dag? Matematikken og 
+    de rigide definitioner fortæller os at det bare må være _(2^{12}=4096_), da
+    _(2^{12.5}_) jo ikke giver mening samt at bakteriene i den her forsimplede model
+    kun får børn på bestemte tidspunkter. Men <i>selvfølgelig</i> er der kommet
+    flere bakterier siden klokken ramte _(12:00_) og en ny dag begyndte. Så, øh, hvad
+    præcist sætter vi _(2^{12.5}_) til at være? Mere generelt: hvordan opløfter
+    vi noget til en potens med kommatal?
+    </p>
+    <p class="t">Vi skal lave et <i>valg</i>. Det er <i>os</i> der <i>bestemmer</i>
+    hvad, f.eks, _(4^{3.5}_) betyder. Helt overordnet kan vi dog opstille to krav til vores valg:</p>
+    <div style="text-align:center; margin-top:15px;">
+        <ul style="display: inline-block; text-align: left; list-style:none;">
+            <li><u> 1</u>: Det skal virke intuitiv med rigtige situationer, og give gode logiske resultater</li>
+            <li><u> 2</u>: Det skal hænge flydende sammen med vores tidligere definitioner.</li>
+        </ul>
+    </div>
+    <p class="t">Med 2 mener jeg at vores nye 
+    definition ikke skal lede til kontradiktioner. Vi kan jo også godt <i>se</i> på f.eks. _(2_) som
+    et kommatal _(2.00_). _(a^{2.00}_) burde give det samme svar som _(a^2_). De tidligere 
+    regler som _(a^{b+c}=a^b*a^c_) eller _((a^b)^c=a^{b*c}_) skal også stadig gælde når
+    _(b,c_) er kommatal.  </p>
+
+    <p class="t">
+    Vores nye definition skal ifølge 1 være "intuitiv": 
+    <img class='Spic' style='width:95%' src='../../../Assets/Chapter2\Section3\Logarithms\GrafIntuition.png'> 
+    Jeg har tegnet en kurve ud fra hvordan jeg forventer at _(a^x_) vil se ud hvis _(x_) også kan være kommatal.
+    Kurven skal selvfølgelig stige i hastighed/hældning hele tiden, da der konstant er flere, sig bakterier der kan få børn,
+    end før. Derfor er den meget smooth på billedet. Hvis vi stiller os på et eller andet specifikt helt tal som _(x=5_), så
+    er _(x=6_) bare værdien ved _(x=5_), ganget med _(a_). Altså _(a^6=a^5*a_). 
+    Det præcis samme burde intuitivt gælde hvis vi startede på _(x=3.4_) og gik til _(x=4.4_): når vi 
+    går _(1_) frem så har hvert bakterie fra _(3.4_) jo opdelt sig til _(a_) dele! Det er præcist det samme argument som med hele tal,
+    bare nu et nyt sted. Generelt: _(a^{b+1}_) burde være lig _(a^b*a_) <i>selv</i> hvis _(b_) er et kommatal. Det er et nyt krav
+    der kan gøre det lettere at finde mange potenser: 
+    _($a^{6.7}=a^{5.7}*a=a^{4.7}*a^2=a^{3.7}*a^3=a^{2.7}*a^4=a^{1.7}*a^5=a^{0.7}*a^6_)
+    Hvis vi kan intuitivt og ordentlig definere potenserne mellem _(0_) og _(1_), så kan vi altså også finde alle andre. 
+    </p>
+
+    <p class="t">Prøv at se følgende billede:</p>
+    <img class='Spic' style='width:40%' src='../../../Assets/Chapter2\Section3\Logarithms\ExponentMidpoints.png'> 
+    <p class="t">Hvis vi skal finde _(a^x_) på _(x=2_), så udregner vi bare _((a^1)^2_). Skal vi udregne _(a^x_) på _(x=4_) så 
+    siger vi vi _((a^2)^2_). Altså, generelt så hvis vi ganger en _(a^x_) med sig selv, så får vi _(a^{2x}_).
+    Det der er halvvejst mellem to punkter skal altså i anden potens give det forrest. Det ser ud til at
+    gjælde i potentielt selv meget store skalaer, som man kan se på billedet med _(k_) og _(2k_). Derfor burde
+    det intuitivt også holde ved små skalaer! Så lad os bestemme at _((a^{0.5})^2=a^1_) 
+    hvilke betyder at _(a^{0.5}=\sqrt{a}_). Bam! _(0.5_) er defineret! Vi kan lave meget 
+    det samme argument med noget som _(a^{1/3}_). Her ved vi at _(a^{3k}=(a^{k})^3_), så det
+    virker intuitivt at _((a^{1/3})^3=a_). _(a^{1/3}_) er altså et eller andet
+    tal som opløftet i tredje potens giver _(a_). Det kalder vi for "3-roden", og ligesom kvadratroden
+    kan det være relativt svært at udregne. Vi ville skrive det som _(\sqrt[3]{a}_). Meget lignende
+    så giver _(a^{1/4}=\sqrt[4]{a}_) hvor _(\sqrt[4]{a}_) er "4-roden" som du nok selv kan regne ud hvordan
+    fungerer. Helt generelt nu: _(a^{1/n}=\sqrt[n]{a}_). </p>
+
+    <p class="t">
+    Vi mangler lige en sidste ting: hvordan regner vi noget som _(a^{5*\frac{1}{8}}_)? Well, altså
+    vi har ganget _(a_) med sig selv _(5_) gange så meget som _(a^{\frac{1}{8}}_), hvilke intuitivt
+    burde være _((a^{\frac{1}{8}})^5_). Det her passer også godt med en af de tidligere egenskaber
+    fra exlusivt hele tal: _(a^{b*c}=(a^b)^c_). Nu kan vi udregne alle _(a^{b/c}_) som _((a^{1/c})^b=(\sqrt[c]{a})^b_).
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Udregn _(243^{0.6}_) uden lommmeregner. Brug hvad end strategi du har lyst til: bare ikke lommeregner!
+    <br><br></q-stion>
+    <answer-box>
+    _(0.6_) er lig _(3/5_). Altså vi skal regne _((\sqrt[5]{243})^3_). _(\sqrt[5]{243}_) kan man relativt nemt
+    med lidt strategisk gætning se er lig _(3_), så: _((\sqrt[5]{243})^3=3^3=27_). Done!
+    <br><br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Vi er næsten færdige med vores definition, men mangler lige at vise at _(a^{b+c}=a^b*a^c_) også
+    holder når _(b,c_) ikke nødvendigvis er hele tal. Bevis det.    
+    <br><br></q-stion>
+    <answer-box>
+    Lad os skrive _(b_) og _(c_) som brøkerne _(b_1/b_2,c_1/c_2_), hvilke vi via sidste opgave ved vi kan.
+    Nu er det bare:
+    _($a^{\frac{c_1}{c_2}+\frac{b_1}{b_2}}=a^{\frac{a_1*b_2+b_1*a_2}{c_2*b_2}}=(\sqrt[c_2*b_2]{a})^{c_1*b_2+b_1*c_2}=(\sqrt[c_2*b_2]{a})^{c_1*b_2} * (\sqrt[c_2*b_2]{a})^{b_1*c_2}=_)
+    _($a^{\frac{c_1*b_2}{c_2*b_2}} * a^{\frac{b_1*c_2}{c_2*b_2}} = a^{c_1/c_2}*a^{b_1/b_2}=_)
+    _($(\sqrt[c_2]{a})^{c_1}*(\sqrt[b_2]{a})^{b_1}_)
+    Bam!
+    <br><br></answer-box>
+
+    <p class="t">
+    Det var vist lidt noget af en "sidebemærkning" med exponenter, så lad os endelig gå tilbage til logaritmer igen:
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Find _(Log_{16}(128)_) 
+    <br><br></q-stion>
+    <answer-box>
+    Vores svar er tydeligvis mellem _(1_) og _(2_), da _(16^1=16_) og _(16^2=16*16=256_).
+    Det mest logiske næste gæt er nok i midten: _(1.5_). Her skal vi så regne
+    _(16^{1.5}=16^{3/2}=\sqrt{16}^3=4^3=4*4*4=64_). Der er for lavt, så svaret må 
+    altså være højere end _(1.5_) og lavere end _(2_). Jeg prøver derfor nu _(1.75_).
+    _(16^{1.75}=16^{7/4}=\sqrt[4]{16}^7=2^7=128_). Perfekt! 
+    _($Log_{16}(128)=1.75_)
+    <br><br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Prøv at tegn grafen af en eller anden log-funktion. 
+    Du skal altså bare få en generel god ide omkring hvordan de ser ud. 
+    <br><br></q-stion>
+    <answer-box>
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter2\Section3\Logarithms\LogGraf.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Hvad er _(a^{Log_a(b)}_) og _(Log_a(a^b)_)? Det her er super simpelt. 
+    <br><br></q-stion>
+    <answer-box>
+    Super simpelt: bare _(b_). At opløfte _(a_) til en potens _(b_), er det modsatte af at sige _(Log_a(b)_),
+    så du gør først noget, og så gør du det modsatte. _(f_{modsat}(f(x))_) er jo selvfølgelig lig _(x_), og 
+    samme gælder _(f(f_{modsat}(x))_). 
+    Vi kan også tænke over det helt intuitivt: Hvad sker der når man opløfter _(a_) til den potens _(a_) skal
+    opløftes til for at være _(b_)? Well: det bliver _(b_)! Hvad for en potens skal
+    _(a_) opløftes til for at blive _(a^b_)? _(b_) selvfølgelig!  
+    <br><br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Find en måde at regne _(Log_c(a*b)_) kun ved hjælp af _(Log_c(a)_) og _(Log_c(b)_). Det
+    kunne være meget praktisk. 
+    <br><br></q-stion>
+    <answer-box>
+    _(Log_c(a*b)_) ved jeg er løsningen til:
+    _($c^x=a*b_)
+    Jeg vil gerne gøre det her i forhold til _(Log_c(a)_) og _(Log_c(b)_).
+    De er løsningerne til:
+    _($c^{x_a}=a, \qquad c^{x_b}=b_)
+    Hvis det er tilfældet, så kan vi jo meget logisk omskrive
+    _(a*b_) til bare:
+    _($a*b=c^{x_a}*c^{x_b}=c^{x_a+x_b}_)
+    Altså:
+    _($c^{x_a+x_b} = a*b_)
+    Så _(x_a + x_b_) er den potens vi skal opløfte _(c_) til
+    for at få _(a*b_). Altså: _(x_a+x_b=Log_c(a*b)_), så:
+    _($Log_c(a*b)=Log_c(a)+Log_c(b)_)
+    Når vi har et produkt inde i en logaritme, så kan vi altså
+    bare plusse to logaritmer i stedet (eller modsat!)
+    <br><br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Find en måde at regne _(Log_c(a^b)_) kun ved hjælp af _(Log_c(a)_). Det kunne endnu engang være praktisk,
+    og gøre livet med logaritmer (lyder som en dårlig sitcom!) nemmere. 
+    <br><br></q-stion>
+    <answer-box>
+    Præcist samme ide som før! Vi ved at _(Log_c(a^b)_) er løsningen til:
+    _($c^x = a^b_)
+    Vi vil gerne gøre det i forhold til _(Log_c(a)_) som er løsningen til:
+    _($c^{x_a} = a_)
+    Nu kan vi let omskrive _(a^b_) til:
+    _($a^b=\left(c^{x_a}\right)^b=c^{x_a*b}_) 
+    Så:
+    _($c^{(x_a*b)}=a^b_)
+    Hvilket betyder at _(x_a*b=Log_c(a^b)_), altså:
+    _($Log_c(a^b)=b*Log_c(a)_)
+    Wholla!
+    <br><br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5" customWidth="820">
+    I lang, lang tid før man havde lommmeregnere, så brugte man noget kaldt "sliding-rules". De kom
+    i mange forskellige varianter, og kunne mange forskellige ting. Èn ting de praktisk talt 
+    altid kunne var at <i>gange</i>. Det gjorde de ved hjælp af den logaritme-egenskab vi lige 
+    kom frem til: _(Log_a(b)+Log_a(c)=Log_a(b*c)_). I den følgende simulation er der tre linealer
+    man kan glide op ad hinanden. På hver af dem er der en <i>logaritmisk skala</i>. _(1_) og _(2_)
+    er altså f.eks. ligeså langt væk fra hinanden på skalaen som _(Log_{10}(2)_) er fra _(Log_{10}(1)_).
+    <p class="t">
+    Prøv ved hjælp af den følgende simulation at approximere _(2356*3777_). Jeg vil ikke fortælle dig 
+    mere om hvordan præcis man bruger værktøjet til at gange: det må du selv finde ud af. 
+    </p> <br>
+    <iframe style="width:800px; height:210px;" src="../../../Assets/Chapter2/Section3/Logarithms/SlidingRule.html"></iframe>
+    <br><br></q-stion>
+    <answer-box>
+    Du kan se mit svar her:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter2\Section3\Logarithms\SliderRule.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Jeg har hidtil slet ikke vist dig hvordan vi faktisk regner logaritmer på en lommeregner.
+    Du har måske lagt mærke til at din lommeregner enten slet ikke har en log-funktion, eller
+    at den har en log-funktion der kun tager <i>et</i> input. Er det så _(Log_2_), _(Log_3_), log hvad præcist?
+    Jo, grunden til alt det her er at vi faktisk kun behøver at kunne regne <i>en</i> slags log-funktion.
+    Der findes en formel der lader os regne èn slags log-funktion i forhold til en anden. F.eks. 
+    regne _(Log_{23}(47)_) ved hjælp af _(Log_{10}_). Find en eller anden måde at omskrive
+    _(Log_a(x)_) til et udtryk der ikke involvere _(Log_a_), men gerne må involvere 
+    en anden _(Log_b(x)_). F.eks: Find en formel så du kan udregne _(Log_3_) kun via _(Log_5_). 
+    <br><br></q-stion>
+    <answer-box>
+    _(Log_a(x)_) er jo løsningen _(y_) på ligningen _(a^y=x_). Først omskriver jeg til
+    _(Log_b(a^y)=Log_b(x)_) ved at tage _(Log_b_) på begge sider, så den på
+    en eller anden måde kommer ind i billedet. Nu kan jeg meget simpelt bare
+    isolere _(y_):
+    _($Log_b(a^y)=Log_b(x) \to y*Log_b(a)=Log_b(x) \to_)
+    _($y=\frac{Log_b(x)}{Log_b(a)}_) 
+    Bam! En pænt dejlig formel. 
+    <br><br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Det er ikke helt alle lommeregner der har en _(Log_{10}_) funktion, men det <i>er</i> alle
+    lommeregnere der har en "naturlig logaritme"-funktion. Den naturlige logaritme er omkring
+    _(Log_{2.718}_). Obviously. Det her virker måske lidt tilfældigt, men tallet 
+    _(2.718 ... _) er kendt som "eulers konstant" _(e_) og er meget kendt og vigtigt,
+    på grund af to specielle egenskaber: 
+    <p class="t">
+    <b> 1</b>: Hvis man tegner en kurve af _(y=e^x_), og vælger et eller andet tilfældigt punkt, som
+    når _(x=6.4_), så er hældningen ved det punkt lig med _(e^x_) - altså _(2.718^(6.4) =_)
+    _(601.4457 \text{y pr x}_). Man kan altså sige at _(e^x_)'s hældning er lig med
+    sig selv. 
+    </p>
+    <p class="t">
+    <b> 2</b>: Den måde tallet _(e_) først blev opdaget på kommer fra et helt andet sted.
+    Bassicly, når man sætter penge ind i banken, så kan man tage dem tilbage senere, men
+    få flere penge end man startede med. Det kaldes <i>rente</i> eller "interesse", og 
+    jeg ved meget lidt om det siden jeg er elendig til økonomi. Jeg ved dog 
+    nok til at jeg kan forklare matematikken: Hvis du har sat _(30kr_) ind i banken, og
+    det er en interesse _(r_) på f.eks. _(1.23_), så får du _(30kr*1.23=_) _(36.9kr_)
+    når du tager pengene ud efter èt år. Efter to år ville du få _(36.9kr*1.23=_)
+    _(45.387kr_), tre år _(45.387kr*1.23=_) _(55.82601 osv_). Du gør altså beløbet 23% større
+    hvert år, i dette tilfælde. Men hvad hvis man ikke gider til at vente et helt år?
+    Well, hvis man vil have pengene allerede efter et halvt år, så vælger bankerne 
+    at sige at renten bliver halvt så lav. Det er i vores tilfælde _(23\text{%}/2=11.5\text{%}_),
+    så _(1.15_). Efter et halvt år har du nu _(30kr*1.15=_) _(34.5kr_). Efter ét år 
+    - 2 halve år - har du _(34.5kr*1.15=_) _(39.675kr_). Men vent <i>lige</i> et sekund:
+    Ved at få dele renten op i to perioder kom du på èt år op på _(39.675kr_). 
+    Det er <i>mere</i> end ved èn periode, som gav dig _(36.9kr_)! Hvad hvis vi delte
+    det op i tre perioder, eller fire? Ville vi så bare tjene endnu flere penge? Svaret
+    er ja! Jo flere perioder renten bliver delt op i, jo flere penge får man! 
+    Man kan ikke bare blive ved og ved dog: Jo flere perioder man opdeler i, jo mindre
+    bliver forskellen. Ved _(12395_) tjener man <i>teknisk set</i> flere
+    penge end _(12394_), men kun med en forskel på mindre end _(0.000001_).
+    _(e_) er hvor meget man kan gange ens penge med efter èt år, hvis man opdeler det år
+    i "uendelig" mange perioder, og hvis man har en rente på 100%. 
+    </p>
+    <p class="t">
+    Det virker umiddelbart som om de her to definitioner ikke har noget
+    som helst at gøre med hinanden, men som vi vil se (en del senere) i bogen,
+    så kan man godt vise at de er identiske. 
+    </p>
+    <p class="t">
+    Alt det her er egentlig ret irrelevant for dig lige nu, men jeg ville bare gerne lige forklare
+    hvor det kom fra. På din lommeregner hedder den naturlige logaritme funktion _(Ln(x)_). 
+    Prøv at brug det til at regne _(Log_{23}(47)_) ligesom før. 
+    </p>
+    <br><br></q-stion>
+    <answer-box>
+    Meget simpelt: _(Ln(47)/Ln(23)= 3.85/3.15 = 1.222_)
+    <br><br></answer-box>
+
+
+    <p class="t">Du har prøvet at lave lidt grafer af _(Log_), og har måske lagt mærke til at 
+    den meget hurtigt flader ud. Den vokser altså meget <i>langsomt</i>, i stor
+    opposition til visse andre funktioner (f.eks. exponentielle) der vokser ekstremt
+    <i>hurtigt</i>. Problemet med funktioner der vokser hurtigt - eller langsomt for den sags
+    skyld - er at de kan være ret svære at visualisere. Grafen begynder meget hurtigt
+    at gå rigtigt højt op eller rigtig langt ud til den ene side. Derfor så kan det af
+    rent kommunikationsmæssige og praktiske årsager være en fordel at tage logaritmen af en
+    kvantitet når vi skal vise den til andre. Her er èt eksempel: Sig at vi gerne
+    vil vise og forstå hvor hurtigt en eller anden viral youtube-video fik views. 
+    Lavede vi en helt normal graf så ville vi få noget som:</p>
+    <img class='SpicB' style='width:100%' src='../../../Assets/Chapter2\Section3\Logarithms\NotLogarithmicScale.png'> 
+    <p class="t">Det her er vel fint nok, men stort set det eneste det faktisk intuitivt fortæller mig er:
+    "Wow! Den her blev godt nok virkelig stor omkring den 16'ne dag!". I stedet kunne
+    jeg vælge at tage logaritmen på _(y_)-aksen:</p>
+    <img class='SpicB' style='width:100%' src='../../../Assets/Chapter2\Section3\Logarithms\LogarithmicScale.png'> 
+    <p class="t">Her har jeg taget _(Log_{10}_): det vil jo faktisk fortælle os hvor mange cifre der er i view-tallet.
+    Snakker vi hundrede, tusinder, millioner, milliarder? Er det ikke også det første du ville kigge på
+    hvis du skulle se hvor mange views in populær video havde? Det er <i>intuitivt</i>. Den første million
+    betyder rigtig meget, men der gør den anden nødvendigvis ikke. Når man er oppe 
+    på _(10_) millioner, så er _(1_) million slet ikke specielt længere. På den her graf
+    kan vi også meget bedre se hvordan videon klarede sig helt i starten hvor den ikke havde mange views.</p>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Omkring hvornår får videon 1 million views? (meget nemt spørgsmål).
+    <br><br></q-stion>
+    <answer-box>
+    På den logaritmiske skala kan vi nemt se at det er omkring 23, da det er hvor den når op på _(6_) ved y-aksen: _(6_) cifre.
+    <br><br></answer-box>
+
+    <p class="t">
+    Lidt ligesom at det <i>indtryk</i> størrelsen af et tal har på dig nok mest er bestemt af mængden af cifre,
+    så har man fundet at det <i>indtryk</i> en lyd har på os også stiger logaritmisk med lydbølgens styrke.
+    Lydintensitet måler man i _(watts/m^2_) - watts er energi over tid, og _(m^2_) er areal. Altså, 
+    hvor meget energi giver lyden (som jo består af bølger i luften) et bestemt areal. Lyden af et fly
+    der letter måler mere en million gange højere _(watts/m^2_) end lyden af en vandråbe i en håndvask. 
+    Den lyd vi <i>føler</i> - den sensation vores hjerne oplever - føltes dog overhovedet ikke <i>tæt</i>
+    på _(1_) million gange så stærk som sensationen af en vanddråbe. Vi vil gerne 
+    i stedet have et intuitivt tal der fortæller os hvor "høj" en lyd er som vi oplever den. Det 
+    her er hvad "<i>decibells</i>"" eller bare "<i>bells</i>" kan hjælpe med. _(1_) "bell" er
+    lig _(Log_{10}(I/I_0)_) hvor _(I_) er lydstyrken i _(watts/m^2_), og _(I_0_) er den 
+    laveste lydstyrke et menneske kan høre. _(I_0_) ligger normalt omkring _(10^{-12} watts/m^2_), så
+    hvis _(I=10^{-12}_) så er sensationen intuitivt nok _(Log_{10}(10^{-12}/10^{-12})=Log_{10}(1)=0_). 
+    Lydindtrykket af et fly der letter er omkring 14 bells. Man kan se at lydstyrken altså skal stige
+    en del for at vi mennesker høre forskellene. 
+    </p>
+
+    <p class="t">
+    "Decibells" er pænt pointløse, og er bare bells ganget med 10. Den eneste grund til vi bruger dem er at de er praktiske i nogle beregninger.
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Hvis du har en bestemt lydstyrke på _(A watts/m^2_), hvor meget gange højere skal den blive for at lydsensationen 
+    bliver dobbelt så stor? Er det konstant og uafhængig af selve styrken ligesom half-life?
+    <br><br></q-stion>
+    <answer-box>
+    Lad os kalde det vi ganger _(A_) med for _(k_). Så:
+    _($\frac{Log_{10}(kA/I_0)}{Log_{10}(A/I_0)}=2 \to_)
+    _($Log_{10}(kA/I_0) - 2*Log_{10}(A/I_0) = 0 \to_)
+    _($Log_{10}(kA/I_0) - Log_{10}(A^2/I_0^2) = 0 \to _)
+    _($Log_{10}\left(\frac{kA/I_0}{A^2/I_0^2}\right)=0_)
+    Hvis selve log-funktionen giver _(0_), så ved vi at dens input skal være _(1_): 
+    _($\frac{kA/I_0}{A^2/I_0^2} = 1 \to_)
+    _($\frac{k*I_0}{A}=1 \to _)
+    _($k=\frac{A}{I_0}_)
+    Lydstyrken skal altså blive _(A/I_0_) gange så stor. Dette fordoblingsspring 
+    <i>er</i> afhængig af den originale lydstyrke _(A_).
+    <br><br></answer-box>
+
+
+
+
+    DÅRLIG OPGAVE SOM DU DROPPEDE:
+    <q-stion 1="2" 2="1" 3="5">
+    <b> 1</b>: Vis at noget som helst helt tal kan skrives som _(a/b_) hvor både _(a_) og _(b_) er andre hele tal, og hvor _(b_) ikke er _(1_). 
+    Altså, bevis at alle hele tal kan skrives som brøker af andre hele tal. <b> 2</b>: Bevis derefter at et
+    hvis et tal kan skrives i et eller andet basesystem uden uendelig mange cifre, så kan det også skrives som en brøk af
+    andre tal. Intuitivt: et hvilket som helst tal vi faktisk kan skrive ned er en brøk af andre tal.
+    Det her lyder lidt teknisk, men er ikke specielt svært overhovedet. 
+    <br><br></q-stion>
+    <answer-box customWidth="570">
+    Hele tal er super nemme: hvis jeg vælger et eller andet tal som _(25468937_) så kan jeg bare
+    sige _(\frac{25468937*2}{25468937}_). <u> 2</u> er også relativ nem. Sig 
+    at jeg har et tilfældigt tal som _(6234.1645_) i base _(7_). Så er
+    det lig 
+    _($6*7^3+2*7^2+3*7^1+4*7^0+1*7^{-1}+6*7^{-2}+4*7^{-3}+5*7^{-4}_)
+    Det kan jeg nemt lave om til èn brøk:
+    _($6*7^3+2*7^2+3*7^1+4*7^0+1*7^{-1}+6*7^{-2}+4*7^{-3}+5*7^{-4} =_)
+    _($\frac{7^4*6*7^3 + 7^4*2*7^2 + 7^4*3*7^1 + 7^4*4*7^0 + 7^3*1 + 7^2*6 + 7*4 + 5}{7^4} = _)
+    _($\frac{5237251}{2401}_)
+    Præcist det samme argument kan jeg tydeligvis lave med noget som helst tal, skrevet i nogen som helst base.
+    <br><br></answer-box>
+    
+

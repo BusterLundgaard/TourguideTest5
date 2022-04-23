@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+
+
+    <h4>Øvelser i Stokes'</h4>
+    <p class="t">
+    Lad os til aller sidst prøve lidt opgaver med Stokes'
+    </p>
+
+    <q-stion 1="31" 2="1" bigTop="true">
+    Find flux gennem den del af paraboloiden _(y=6-x^2-z^2_), hvor _(y \gt 0_).
+    Vektor feltet er:
+    _($\vec f = \VeC[2z,x^2,6y^2]_)
+    Husk at vi ikke arbejder med et lukket 3D område, kun flux på denne <i>overflade</i>.
+    <br><br></q-stion>
+    <answer-box>
+    Denne del af denne paraboloid kan ses som en flade, der stikker ud af følgende cirkel:
+    <img class='SpicXL' style='width:80%' src='../../../Assets/Chapter4\MultiVarCalc\Vectorfields\StokesQuestion1.png'> 
+    <p class="t">
+    Cirklen svarer til  _(x^2+z^2=6_), og har en radius på _(\sqrt{6}=2.449_). 
+    Vejen kan derfor beskrives som:
+    _($\VeC[x,y,z] = \VeC[2.449 Cos(t),0,2.449 Sin(t)]_)
+    Stokes theorem siger:
+    _($\int_U \int \vec{\text{curl}}(\vec F)*\vec n \text{ }dA = \int_C \vec F*r'(t) \text{ }dt _)
+    Den flux vi forsøger at regne, svarer til _(\int_U \int \vec{Curl}(\vec F)*\vec n \text{ }dA_).
+    For at regne arbejdet _(\int_C \vec F*r'(t) \text{ }dt_) i stedet,
+    skal vi finde et vektor felt _(\vec F_), hvis curl er lig vores felt. Formlen for curl er:
+    _($\vec{\text{curl}}(\vec F) = \VeC[Q_y-N_z,M_z-Q_x,N_x-M_y]_)
+    ... hvor _(\vec F = (M, N, Q)_). Det er normalt ret tricky at finde
+    frem til den rigtige _(\vec F_), siden vi skal matche tre ligninger, men i vores tilfælde
+    er det relativt nemt, siden hvert element i vores _(\vec f_) kun indeholder èt variable. 
+    Vi sørger for, at _(N_z = -2z_), _(Q_x = x^2_) og _(M_y = 6y^2_) ved at sige:
+    _($\vec F = \VeC[-2y^3, -z^2, -x^3/3]_)
+    De andre _(Q_y_), _(M_z_) og _(N_x_) er bare _(0_) i dette tilfælde. 
+    </p>
+    <p class="t">
+    Substituerer vi _(x(t)_), _(y(t)_), _(z(t)_) ind i _(\vec F_) fås:
+    _($\vec F = \VeC[-2*(0)^3, -(2.449 Sin(t))^2, -(2.449 Cos(t))^3/3]_)
+    Vi skal prikke med:
+    _($\VeC[-2.449 Sin(t), 0, 2.449 Cos(t)]_)
+    I prikket mellem _(\vec F_) og _(\vec r'(t)_) er det kun z-komponentet der overlever.
+    Begge andre komponenter indeholder et _(0_). Vi får:
+    _($\int_{0}^{2\pi} -\frac{(2.449 Cos(t))^3}{3}*2.449 Cos(t) \, dt = -42.37_)
+    Bum! Det er i alt ærlighed diskutabelt, hvorvidt dette er hurtigere end den normale strategi,
+    men integralet vi får til sidst er i hvert fald nemmere (hvis man regner med hånden). 
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <p class="tt">
+    "Fladen" vi arbejder med i stokes behøver ikke være kontinuerlig. Brug dette til at løse følgende opgave:
+    </p>
+
+    <q-stion 1="31" 2="2" bigTop="true">
+    Sig at du har:
+    _($\begin{eqnarray}
+    && A = & (3,4,3) \\
+    && B = & (6,8,3) \\
+    && C = & (7,1,2) \\
+    && D = & (5,4,6)
+    \end{eqnarray}_)
+    Det er samme tetrehedron som i en af de tidligere opgaver. Find den samlede mængde flux, der går gennem 
+    _(\triangle ABD_), _(\triangle ACD_) og 
+    _(\triangle CBD_) hvis vektor feltet er:
+    _($\vec f = \VeC[-1,4,y]_)
+    <br></q-stion>
+    <answer-box>
+    Her er ideen:
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter4\MultivarCalc\Vectorfields\StokesCanGoFuckItself.png'> 
+    <p class="t">
+    Vi kan se med stokes, at flux gennem alle andre flader end _(\triangle ABC_) kan regnes som
+    arbejdet rundt omkring _(\triangle ABC_). Tre simple linjeintegraler virker markant simplere
+    end tre relativt komplekse overfladeintegraler! 
+    </p>
+    <p class="t">
+    Vi ved fra tidligere, at arbejdet langs en lige linje fra punktet _(N_) til punktet _(M_) kan 
+    beskrives som:
+    _($\int_{0}^{1} \vec F(N+t*\Ray{NM})*\Ray{NM} \, dt_)
+    Vi skal finde en _(\vec F_), hvis curl er lig vores _(\vec f_). Via samme strategi som 
+    sidste opgave kommer vi frem til: 
+    _($\vec F=\VeC[-y^2/2, z, -4x]_)
+    I vores tre linjer har vi:
+    _($\begin{eqnarray}
+    && \boldsymbol{\Ray{AB}:} \, \, \, N = \VeC[3,4,3], \qquad \Ray{NM} = \VeC[3,4,0] \\ \\
+    && \boldsymbol{\Ray{BC}:} \, \, \, N = \VeC[6,8,3], \qquad \Ray{NM} = \VeC[1,-7,-1] \\ \\
+    && \boldsymbol{\Ray{CA}:} \, \, \, N = \VeC[7,1,2], \qquad \Ray{NM} = \VeC[-4,3,1] \\ \\
+    \end{eqnarray}_)
+    Så de tre integraler er:
+    _($\begin{eqnarray}
+    && \int_{0}^{1} \VeC[-(4+4t)^2 / 2, (3), -4*(3+3t)]*\VeC[3,4,0] \text{ }dt = -44\\ \\
+    && \int_{0}^{1} \VeC[-(8-7t)^2 / 2, (3-t), -4*(6+t)]*\VeC[3,4,0] \text{ }dt = -3.666 \\ \\
+    && \int_{0}^{1} \VeC[-(1+3t)^2 / 2, (2+t), -4*(7-4t)]*\VeC[3,4,0] \text{ }dt = 1.5
+    \end{eqnarray}_)
+    Svaret er derfor et flux på _(-44-3.666+1.5=-46.166_). Bum! 
+    </p>
+    <p class="cent">*</p>
+    <p class="t">
+    På sidste side regnede vi det samlede antal flux gennem samme via fire overfladeintegraler. 
+    Stokes kunne potentielt have regnet tre af dem for os, men den sidste,
+    fladen der i dette tilfælde svarer til _(\triangle ABC_), skal stadig regnes manuelt. 
+    Alligevel er det lidt sjovt hvordan, at et tredobbelt integral kan reduceres til overfladearealer 
+    via the divergence theorem, og de overfladearealer kan yderligere forsimples
+    til bare linjeintegraler via Stokes. 
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="31" 2="3">
+    Sig, at du løber rundt med et sommerfuglenet som følgende:
+    <img class='SpicXL' style='width:65%' src='../../../Assets/Chapter4\MultiVarCalc\Vectorfields\SommerfugleStokes.png'> 
+    <p class="t">
+    Der er en vind i luften, hvilket vi modellerer som vektor-feltet:
+    _($\vec f = \VeC[-3,z,-2]_)
+    Hvor meget flux flyver gennem sommerfuglenettet? 
+    Det er med vilje, at jeg intet har fortalt dig om dets præcise form. 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Stokes' behøver ikke at vide noget om fladens specifikke form: Kun vejen omkring.
+    Flux gennem det avancerede net kan derfor regnes 
+    som arbejdet omkring den simple plastikring!
+    <p class="t">
+    Vi finder først et felt _(\vec F_), hvis curl er lig _(\vec f_):
+    _($\vec F = \VeC[z^2 / 2, -2x, -3y]_)
+    Vores _(\vec r'(t)_) er:
+    _($\VeC[-1.06 Sin(t) - 1.57 Cos(t), 0.51 Sin(t) + 0.42 Cos(t), -1.62 Sin(t) + 1.16 Cos(t)]_)
+    Så vi skal regne:
+    _($\int_{0}^{2\pi} \VeC[(1.62 Cos(t) + 1.16 Sin(t))^2 / 2, -2*(1.06 Cos(t) - 1.57 Sin(t)), -3*(-0.51 Cos(t) + 0.42 Sin(t))] \, dt = 14.221_)
+    Voila! Flux er positiv, så vind flyver "ud" mod nettet og udvider det, som forventet. 
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="31" 2="4">
+    Et objekt rejser hele vejen rundt om cirklen, der går gennem x-aksen ved _(x=3_)
+    med en radius på _(4_).
+    Vektor feltet er:
+    _($\vec F = \VeC[y+3x^3, -zy^2 + \frac{1}{3}x, yz^2]_)
+    Find arbejdet. 
+    <br><br></q-stion>
+    <answer-box>
+    I langt de fleste tilfælde
+    bruger vi Stokes' til 
+    at finde flux, men i nogle få tilfælde kan det være praktisk at gøre det omvendt. 
+    Vi skal finde arbejdet omkring en cirkel, men vi kunne også vælge
+    at finde fluxen gennem
+    <img class='SpicXL' style='width:60%; margin-top:25px;' src='../../../Assets/Chapter4\MultivarCalc\Vectorfields\StokesFinal.png'> 
+    <p class="t" style="margin-top:25px;">
+    Det er praktisk primært fordi, at _(\vec{\text{curl}}(\vec F)_) i nogle tilfælde
+    er simplere end _(\vec F_), siden vi differentierer. Stokes siger:
+    _($\int_C \vec F*\vec r'(t) \text{ }dt = \int_U \int \vec{\text{curl}}(\vec F)*\vec n \text{ }dA_)
+    Så det vektor felt vi skal regne fluxen af er
+    _($\begin{pmatrix} 
+    ¤y[yz^2] - ¤z[-zy^2 + (1/3)x] \\ 
+    ¤z[y+3x^3] - ¤x[yz^2] \\ 
+    ¤x[-zy^2 + (1/3)x] - ¤y[y+3x^3] 
+    \end{pmatrix} =
+    \VeC[y^2+z^2, 0, -2/3]_)
+    Det er markant simplere. <i>Især</i> hvis vi bruger polære koordinater. 
+    </p>
+    <p class="t">
+    Der er mange forskellige områder vi kunne vælge, men jeg tænker, at en paraboloid burde 
+    være nemmest. Noget af formen 
+    _($x=a*r^2_)
+    Radius skal være _(4_) når _(x=3_), så vi løser og får _(a=0.1888_). Ergo:
+    _($x=f(y,z) = 0.188 (y^2 + z^2)_)
+    Flux over _(\vec F_) af en flade _(U_) defineret via en funktion _(x=f(y,z)_), kan regnes via
+    _($\int_U \int \vec F*\VeC[-1, f_y, f_z]_)
+    Hvilket i vores tilfælde er:
+    _($\int_U \int \VeC[y^2+z^2, 0, -2/3]*\VeC[-1, 0.376y, 0.376z]_)
+    Området er nok nemmest at beskrive med polære koordinater, så:
+    _($\int_{0}^{2\pi} \int_{0}^{4} \VeC[r^2, 0, -2/3]*\VeC[-1, 0.376*r*Cos(t), 0.376*r*Sin(t)]*r \, dr \, d\theta_)
+    Dette giver _(-402.123_), og så er vi fandme færdig med det her kapitel! Boo-yah!
+    </p>
+    <br></answer-box>
+

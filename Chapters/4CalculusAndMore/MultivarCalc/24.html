@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+
+
+    <h3>Vektor felter og <i>flux</i></h3>
+    <p class="t">
+    Nok arbejde! Videre til det andet vigtige koncept vi skulle studere
+    relateret til vektor felter: Flux. 
+    Flux måler hvor meget et vektor felt "går ind i" kontra "går ud af" et område:
+    </p>
+
+    <img class='SpicXL' style='width:80%; margin-top:25px;' src='../../../Assets/Chapter4\MultiVarCalc\Vectorfields\FluxIllustrated.png'> 
+
+    <p class="tt">
+    På dette billede har jeg prikket overfladen grøn, hvor vektor-feltet går "ind i" området _(R_) (negativ flux), og 
+    rød hvor den går "ud af" _(R_) (positiv flux). Vi kan definere flux som: 
+    </p>
+
+    <div class="Definition">
+    <b> Definition: Flux</b> <br>
+    Sig at en linje med længde _(L_) bliver ramt overalt af den samme vektor _(\vec F_).
+    Mængden af flux defineres nu som
+    _($|\vec F|*Cos(\theta)*L_)
+    ... hvor _(\theta_) er vinklen til linjens normalvektor:
+    <img class='Spic' style='width:55%' src='../../../Assets/Chapter4\MultiVarCalc\Vectorfields\FluxDefinition.png'> 
+    <br></div>
+
+    <p class="tt">
+    Hvis den er lige på, og 
+    vinklen bliver stor, er der mere der "går igennem", og flux bliver større. Hvis 
+    den er _(90_) grader, er der intet der går igennem, og flux bliver _(0_). Jo 
+    stærkere _(\vec F_) og jo længere _(L_), jo mere "går der igennem". Hvis 
+    _(\vec F_) har modsat retning til normalvektoren, siger vi at flux er negativt. 
+    </p>
+    
+    <p class="t">
+    Vi er primært interesseret i at regne den samlede 
+    flux i et lukket område. Sig f.eks. vi havde følgende rektangel:
+    </p>
+    <img class='SpicXL' style='width:80%' src='../../../Assets/Chapter4\MultiVarCalc\Vectorfields\FluxExample1.png'> 
+    <p class="t">
+    Her er vektor feltet lig:
+    _($\vec F = \VeC[-3x^2,5]_)
+    Lad os starte med at regne flux på den venstre vertikale side. Dens normalvektor er lig:
+    _($\VeC[-1,0]_)
+    _(x=-1_) overalt på denne linje, så:
+    _($\vec F = \VeC[-3*(-1)^2,5] = \VeC[-3,5]_)
+    Vores længde er _(L=3_). Vi <i>kunne</i> finde vinklen _(\theta_) mellem
+    _((-3,5)_) og _((-1,0)_), men lige i dette tilfælde er det nemt at 
+    se geometrisk, at vi bare skal fokusere på den del, der går langs _(x_), hvilket i 
+    vores tilfælde er _(-3_). Det er samme retning som normalvektoren, så flux 
+    er <i>positiv</i> og lig:
+    _($3*3=9_)
+    Jeg tænker, jeg lader dig regne flux på de andre sider. 
+    </p>
+
+    <q-stion 1="23" 2="1" bigTop="true">
+    Regn den samlede flux på rektanglen.
+    <br><br></q-stion>
+    <answer-box>
+    Lad os starte med den højre vertikale side. Her er _(x=5_), så _(\vec F_) er lig 
+    _($\VeC[-3*(5^2),5] = \VeC[-75,5]_)
+    Normalvektoren er:
+    _($\VeC[1,0]_)
+    Igen er vi kun interesseret i den del af _(\vec F_) der går <i>langs</i> normalvektoren,
+    som er _(-75_). _(-75_) har modsatte retning som _(1_), så flux er <i>negativt</i>, og lig:
+    _($-75*3=-225_)
+    Det er nu tid til de to horisontale sider. Her ændrer _(\vec F_) sig i forhold til, 
+    hvor vi er på siden. Det er intet problem, siden det geometrisk kan ses,
+    at kun _(\vec F_)'s y-komponent har indflydelse. Den er lig en simpel konstant _(5_), så
+    flux på den øvre linje er:
+    _($5*6=30_)
+    Flux på den nedre linje hvor retning er modsat til normalvektoren bliver:
+    _($-5*6=-30_)
+    Den samlede flux på de horisontale sider er bare _(0_). Rektanglets samlede flux er lig: 
+    _($9-225+0=-216_)
+    Bum!
+    <br><br></answer-box>
+
+    <p class="tt">
+    Flux generelt på et lukket område _(R_) over et vektor felt _(\vec F_) kan regnes på meget samme måde som arbejde:
+    </p>
+
+    <img class='SpicXL' style='width:80%; margin-top:25px;' src='../../../Assets/Chapter4\MultivarCalc\Vectorfields\FluxExample3.png'> 
+
+    <p class="tt">
+    Sig at området _(R_) kan beskrives af _(\vec r(t)_) hvor _(t \in [a, b]_). Man kan let bevise, at
+    _($\text{Flux} = \int_{a}^{b} \vec F(\vec r(t))*\VeC[-y'(t), x'(t)] \, dt_)
+    Man opstiller præcis samme argument som ved arbejde, og ser at 
+    flux på et lille interval _([t_{i-1}, t_i]_) kan tilnærmes af
+    _($|\vec F(\vec r(t_i)|*Cos(\theta)*\sqrt{x'(t)^2 + y'(t)^2}*\triangle t_i_)
+    ... hvor _(\theta_) er vinklen til kurvens normalvektor ved _(t_i_). 
+    Denne normalvektor kan beskrives som _((-y'(t), x'(t))_), så vi har to længder ganget
+    med cos af vinklen imellem:
+    _($\vec F(\vec r(t_i))*\VeC[-y'(t), x'(t)]*\triangle t_i_)
+    Man tager derefter en sum, der med en grænse kan transformeres til et integral - som vi plejer. 
+    </p>
+    <p class="t">
+    Lad os tage et eksempel. Sig at vores vektor felt er:
+    _($\vec F = \VeC[-3x + 2y, x^2]_)
+    Og at vores område er:
+    </p>
+
+    <img class='Spic' style='width:70%' src='../../../Assets/Chapter4\MultiVarCalc\Vectorfields\FluxExample2.png'> 
+
+    <p class="t">
+    Her skal vi nok først regne flux på parabel-delen, og så den lige linje.
+    Parabel-delen kan vi beskrive parametrisk som:
+    _($\vec r(t) = \VeC[t, t^2 - 4t + 2]_)
+    Det vil sige at:
+    _($\VeC[-y'(t),x'(t)] = \VeC[-2t+4,1]_)
+    Vores vektor felt bliver til:
+    _($\VeC[-3x + 2y, x^2] = \VeC[-3*(t) + 2*(t^2 - 4t + 2), (t)^2] = \VeC[2t^2-7t+4,t^2]_)
+    Vores _(t_) går fra _(0_) til _(4_), så vi skal regne:
+    _($\begin{eqnarray}
+    && \int_{0}^{4} \VeC[2t^2-7t+4,t^2]*\VeC[-2t+4,1] \text{ }dt = \\ \\
+    && \int_{0}^{4} (2t^2-7t+4)*(-2t+4) + t^2*1 \text{ }dt = \\ \\
+    && \int_{0}^{4} -4t^3 + 23t^2 - 36t + 16 \text{ }dt = \\ \\
+    && 10.66
+    \end{eqnarray}_)
+    Vi skal nu regne flux på den lige del. Her kan det let geometrisk ses at:
+    _($\VeC[-y'(t),x'(t)] = \VeC[0,1]_)
+    Vektor feltet bliver til:
+    _($\VeC[-3t+2*2,t^2]_)
+    Så vi skal regne:
+    _($\begin{eqnarray}
+    && \int_{0}^{4} \VeC[-3t+2*2,t^2]*\VeC[0,1] \text{ }dt = \\ \\
+    && \int_{0}^{4} t^2 \text{ }dt = \\ \\
+    && 21.33 
+    \end{eqnarray}_)
+    Den samlede flux er altså:
+    _($10.66+21.33=31.99_)
+    Det er lidt svært at give èt enkelt eksempel på en anvendelse af flux, men 
+    det kan bruges til at <i>beskrive</i> rigtig mange forskellige ting. 
+    Flux kunne beskrive, hvor meget vand der flød ind eller ud af et område, hvis vektor-feltet
+    modellerede strømmen af vand. Flux kunne beskrive, hvor intenst et område
+    bliver ramt af lys, hvis det var vektor-feltet. Flux kunne beskrive, hvor meget varme der bliver
+    overført ind kontra ud af et område, eller hvor meget radioaktiv masse, der forsvinder.
+    Der findes også mere teoretiske anvendelser i fysik i form af bl.a. andet magnetisme. 
+    Mange fysiske regler inden for magnetisme bliver beskrevet i forhold til den mængde af flux, 
+    det magnetiske felt tilføjer et bestemt område. Alle de her 
+    anvendelser kræver for meget baggrundsviden i fysik til, at jeg kan vise jer 
+    konkrete opgaver. Pointen er, at flux effektivt kan modellere
+    mange - primært fysiske, ofte lidt abstrakte - størrelser. 
+    </p>
+    <p class="t">
+    Tid til nogle opgaver!
+    </p>
+

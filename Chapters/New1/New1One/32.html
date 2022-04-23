@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+
+    <h2>Problem F: Internationalt samarbejde. </h2>
+
+    <p class="t">
+    <i>Vi spoler en del fremad i tiden. Folk fra forskellige dele af verden beskriver alle
+    sammen størrelser og lignende på forskellige måder. Der er brug for èt accepteret system, så alle kan arbejde
+    sammen. Hvad gør man? </i>
+    </p>
+
+    <p class="t">
+    Svaret er simpelt: Man bruger <i>SI</i>-enhederne. Vi har allerede brugt dem en smule gennem kapitlet, men jeg
+    tænker det vigtigt at give dem en ordentlig introduktion:
+    </p>
+
+    <p class="t">
+    Vi har set, at man nemt kan "kombinere" enheder. Med længde får
+    man areal, med areal og længde får man rumfang osv. 
+    Der er massere eksempler på det her: <i>Hastighed</i> er tid og længde. <i>Kraft</i> er masse, tid og længde. 
+    <i>Pres</i> er kraft over et 
+    areal, osv. Specialiserer vi os lidt mere, ser vi måske enheder som 
+    "<i>varmekonduktivitet</i>", der er dannet af både strøm, længde og temperatur. 
+    </p>
+
+    <p class="t">
+        Hvad er "baseenhederne" så? De enheder alle andre enheder er lavet af? 
+    </p>
+    <br>
+    <table style="width:100%">
+        <tr>
+            <td><b>Kvantitet navn</b></td>
+            <td><b>Enhed navn</b></td>
+            <td><b>Kvantiet symbol</b></td>
+            <td><b>Enhed symbol</b></td>
+        </tr>
+        <tr>
+            <td>Tid</td>
+            <td>Sekund</td>
+            <td><i>T</i></td>
+            <td><i>s</i></td>
+        </tr>
+        <tr>
+            <td>Længde</td>
+            <td>Meter</td>
+            <td><i>L</i></td>
+            <td><i>m</i></td>
+        </tr>
+        <tr>
+            <td>Masse</td>
+            <td>Kilo</td>
+            <td><i>m</i></td>
+            <td><i>kg</i></td>
+        </tr>
+        <tr>
+            <td>Elektrisk strøm</td>
+            <td>Amdere</td>
+            <td><i>I</i></td>
+            <td><i>A</i></td>
+        </tr>
+        <tr>
+            <td>Temperatur</td>
+            <td>Celcius</td>
+            <td><i>T</i></td>
+            <td><i>C</i></td>
+        </tr>
+        <tr>
+            <td>Intensitet af lys</td>
+            <td>Candela</td>
+            <td><i>J</i></td>
+            <td><i>cd</i></td>
+        </tr>
+        <tr>
+            <td>Antal</td>
+            <td>Mol</td>
+            <td><i>N</i></td>
+            <td><i>mol</i></td>
+        </tr>
+    </table>
+    <br>
+    <p class="t">
+        Vi kalder dem for <i>SI-enheder</i>, og du kan se dem på skemaet. 
+        Skemaet viser de forskellige basekvantiteter og deres associerede <i>enheder</i>.
+        Hvis vi snakker 
+        om tid generelt, bruger vi _(T_). Hvis vi snakker om en <i>bestemt mængde</i>
+        af tid, bruger vi _(s_). F.eks. kunne man godt finde på at sige:
+    </p>
+    <p class="t" style="color:rgb(90,90,90);">
+        "Prisen kan regnes af
+        _($\frac{T*m}{L}*23.7_)
+        I eksperimentet målte vi tiden _(T_) til _(300_) _(s_),
+        massen _(m_) til _(2_) _(kg_) og længden _(L_) til _(10_) _(m_)"
+    </p>
+    <p class="t">
+        <i>Antal?</i> <br>
+        Udover de meget normale kvantiteter på skemaet finder man også
+        "antal" i bunden. 
+        Vi kan godt sige, at "antal" er en slags kvantitet! 
+        Baseenhederne fortæller os, hvad vi kan <i>måle</i> i verden. 
+        Hvad vi kan kvantificere.
+        Andre enheder måler vi ikke direkte: for at finde hastighed 
+        måler vi afstand og tid og <i>udregner</i> farten. 
+        En kraftmåler beregner, hvordan masse bevæger sig en 
+        bestemt distance over tid. <i>Det</i> er hvad der kendetegner baseenhederne. 
+        Derfor er det naturligt, at "antal" også er på listen: Vi kan jo 
+        nemt <i>tælle</i> og
+        derfor <i>kvantificere</i>, at der nogle gange er bestemte mængder af "noget". 
+    </p>
+    <p class="t">
+        <i>Størrelser og prefixes: </i> <br>
+        Vi ændrer ofte størrelsen af en enhed, som vi f.eks. 
+        så tidligere med "ultra-korn".
+        Du kender nok centi- og mili- 
+        og mega- og kilo-. Dem kalder vi <i>prefixes</i>, og SI-standarden
+        kommer med en lang række officielle valgmuligheder:
+    </p>
+    <div style="margin-top:25px;">
+    _($\begin{eqnarray}
+    && \text{yotta } [Y]:    & \, \, \, 10^{24} \\
+    && \text{zetta } [Z]:    & \, \, \, 10^{21} \\
+    && \text{exa } [E] :    & \, \, \, 10^{18} \\
+    && \text{peta } [P]:    & \, \, \, 10^{15} \\
+    && \text{tera } [T]:    & \, \, \, 10^{12} \\
+    && \text{giga } [G]:    & \, \, \, 10^9 \\
+    && \text{mega } [M]:    & \, \, \, 10^6 \\
+    && \text{kilo } [k]:    & \, \, \, 10^3 \\
+    && \text{hecto } [h]:    & \, \, \, 10^2 \\
+    && \text{deka } [da]:    & \, \, \, 10 \\
+    && \text{deci } [d]:    & \, \, \, 1/10 \\
+    && \text{centi } [c]:    & \, \, \, 1/10^2 \\
+    && \text{mili } [m]:    & \, \, \, 1/10^3 \\
+    && \text{micro } [\mu]:  & \, \, \, 1/10^6 \\
+    && \text{nano } [n]:     & \, \, \, 1/10^9 \\
+    && \text{pico } [p]:     & \, \, \, 1/10^{12} \\
+    && \text{femto } [f]:    & \, \, \, 1/10^{15} \\
+    && \text{atto } [a]:     & \, \, \, 1/10^{18} \\
+    && \text{zepto } [z]:    & \, \, \, 1/10^{21} \\
+    && \text{yocto } [y]:    & \, \, \, 1/10^{24} 
+    \end{eqnarray}_)
+    </div>
+
+    <p class="tt">  
+    <i>Koefficienter:</i> <br>
+    Ofte ganger vi et mål med et mindre tal, der ikke markant ændrer på enheden eller karakteren. Det
+    kaldes en <i>koefficient</i>. 
+    Det kunne 
+    måske være en "vindkoefficient" lig _(1.24_), der gjorde din hastighed langsommere eller 
+    større, når du cyklede. Det kunne være en koefficient _(0.34_), der beskrev, hvor effektiv din 
+    elkeddel var til at bruge dens energi. 
+    Det kunne være en koefficient, der justerede for alle de dårlige
+    rådne æbler, du samler fra dit træ. 
+    Du kommer til at møde dette ord
+    ofte i matematik, men <i>konstant</i> i de naturvidenskabelige fag. Koefficienter
+    hjælper os ofte med at approximere noget, der er for svært at måle perfekt.
+    </p>
+
+    <q-stion 1="1" 2="1" 3="10" bigTop="true">
+    Hvad er _(12 Mm_) i _(µm_)? Du får nok et meget stort tal!
+    <br><br></q-stion>
+    <answer-box>
+    For hver _(m_) har vi _(10^6 \mu m_). De _(12 Mm_) svarer til _(12*10^6 m_), så alt i
+    alt har vi:
+    _($12*10^6*10^6 \mu m = 1.2*10^{13}_)
+    Bum!
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="33" 2="1" h="160">
+    Lav _(24m^2_) om til _(mm^2_).
+    <br><br></q-stion>
+    <answer-box>
+    Her laver mange den fejl, at de bare ganger _(24_) med _(1000_), da det er hvad prefixen siger. 
+    Det er forkert! _(m^2_) er ikke en baseenhed. Det er en udledt enhed der stammer fra at gange
+    <i>to</i> længdemål. 
+    Hvad end form det beskrives i, symboliserer dette mål en masse kvadrater. 
+    Hver kvadrat kan regnes som længde gange bredde, og <i>begge</i> disse mål skal ændre enhed.
+    Vi siger:
+    _($24m^2=24m*m=24*(10^3 mm)*(10^3 mm)=24*10^6 mm^2_)
+    Samme ide gælder selvfølgelig volumen samt alle ændre
+    "kombinerede enheder". 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="33" 2="2">
+    Hvad er _(90 km/t_) i _(m/s_)?
+    <br><br></q-stion>
+    <answer-box>
+    Vi gør meget det samme som i sidste opgave: 
+    _($90*(km)/(t)=90*(1000m)/((60*60)s)=25 m/s_)
+    <br></answer-box>
+
+    <!--  --> 
+
+
+    <q-stion 1="33" 2="3">
+    Hvor meget koster _(300mkg_) chokolade, hvis _(6 µkg_) chokolade koster _(0.000095$_)? 
+    Sig at _(1$_) er lig _(7_)kr. 
+    <br><br></q-stion>
+    <answer-box>
+    Der er _(1000µkg_) pr _(mkg_), så _(6 mkg_) chokolade koster 
+    _($0.000095$*1000=0.095$_) 
+    Vi skal have _(300mkg_), hvilket er _(300/6=_) _(50_) gange så meget, så prisen bliver:
+    _($0.095$*50=4.75$_)
+    Det svarer til _(7*4.75=33.25kr_).
+    <br><br></answer-box>
+    

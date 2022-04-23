@@ -1,0 +1,752 @@
+*{padding:0;margin:0;border:0;}
+
+mjx-container[display="true"] {
+    margin: 1.5em 0 ! important
+}
+mjx-container[display="block"] {
+    display: block;
+    margin: 200em 0;
+}
+
+body{
+    background-color: rgb(230, 255, 253); 
+    line-height: 23px;
+    overflow-x: hidden;
+}
+#master{
+    position:relative;
+    font-family:'Computer Modern Serif';
+    font-size: 15px;
+    width:500px;
+    /* height:234px; */
+    /* min-height: 934px; */
+    margin-left:calc(50% - 250px);
+    padding: 0; 
+    margin-top:100px;
+    margin-bottom:150px;
+    z-index:1;
+}
+
+.t{
+    font-family:'Computer Modern Serif';
+    font-size: 15px;
+    line-height: 23px;
+
+    word-wrap: break-word;
+    padding: 0; 
+    text-align:justify;
+}
+.tt{
+    font-family:'Computer Modern Serif';
+    font-size: 15px;
+    line-height: 23px;
+
+    word-wrap: break-word;
+
+    padding: 0; 
+    text-align:justify;
+}
+
+
+/* Vertical spacing of elements (top-margin): */
+/* The paragraph element following a non-paragraph element  */
+:not(p)+p { 
+    margin-top:25px;
+}
+
+.Proof + p {
+    margin-top: 35px;
+}
+
+/* The paragraph element following a paragraph */
+p+p {
+    margin-top: 15px;
+}
+
+answer-box + :not(answer-box) {
+    margin-top: 65px;
+}
+answer-box + .Proof {
+    margin-top: 45px;
+}
+
+
+
+/* Lists and tables: */
+li{
+    margin-top: 15px;
+}
+ul{
+    margin-top:25px;
+    margin-bottom:15px;
+    margin-left:10px;
+    display: block; 
+    text-align: left; 
+    padding-left:0%; 
+    list-style:none;
+}
+ul.exercise{
+    margin-top:20px;
+    margin-bottom:5px;
+    margin-left:10px;
+    display: block; 
+    text-align: left; 
+    padding-left:0%; 
+    list-style:none;
+}
+th, td {
+    border: 1px solid black;
+    padding: 5px;
+}
+table#table1 td { padding:10px; border:none; }
+table#table2 td { padding:10px; border:solid; white-space: nowrap; }
+
+
+/* Pictures and videos: */
+.pic {
+    width: 500px;
+    margin-top:15px;
+    margin-bottom:0px;
+}
+.picB {
+    margin-top:25px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border:solid;
+    border-width:1px;
+    width:95%;
+}
+.Spic {
+    margin-top:25px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.SpicB {
+    margin-top:25px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border:solid;
+    border-width:1px;
+}
+.SpicT {
+    margin-top:25px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.SpicBT {
+    margin-top:25px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border:solid;
+    border-width:1px;
+}
+.SpicXL {
+    margin-top:35px;
+    margin-bottom:40px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.SpicBXL {
+    margin-top:35px;
+    margin-bottom:40px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border:solid;
+    border-width:1px;
+}
+
+
+/* A few rarely used classes for special ocassions */
+.cent{
+    margin-top:12px; margin-bottom:0px;
+    padding: 0; 
+    text-align:center;
+    margin-left:auto;
+}
+.unity{
+    margin-top:15px;
+    margin-bottom:0px;
+    position:relative;
+    left:-45%;
+    border:solid;
+}
+.unitySmall{
+    position:relative; 
+    right:25%; 
+    width:600px; 
+    height:375px; 
+    margin-top:20px; 
+    border:solid
+}
+.pageSplitter {
+    margin-top:30px; margin-bottom:30px;
+    padding: 0; 
+    text-align:center;
+    margin-left:auto;
+    font-weight:bold;
+}
+
+
+/* Def, theory, lemma ext. */
+.Definition {
+    background-color: rgb(231, 200, 200); 
+    padding:10px; 
+    margin-top: 35px; 
+    margin-bottom:35px;
+    width:90%; 
+    margin-left:2.5%;
+}
+.Theory {
+    background-color: rgb(161, 174, 230); 
+    padding:10px; 
+    margin-top: 35px; 
+    margin-bottom:35px;
+    width:90%; 
+    margin-left:2.5%;
+}
+.Lemma {
+    background-color:rgb(200, 207, 238);
+    padding:10px; 
+    margin-top: 35px; 
+    margin-bottom:35px;
+    width:90%; 
+    margin-left:2.5%;
+}
+.Corollary {
+    background-color:rgb(143, 161, 231);
+    padding:10px; 
+    margin-top: 35px; 
+    margin-bottom:35px;
+    width:90%; 
+    margin-left:2.5%;
+}
+.Axiom {
+    background-color:rgb(102, 173,142);
+    padding:10px; 
+    margin-top: 35px; 
+    margin-bottom:35px;
+    width:90%; 
+    margin-left:2.5%;
+}
+.Proof {
+    margin-top: 25px; 
+    width:98%; 
+    border-left: solid;
+    border-width: 1.5px; 
+    padding-top:0%; 
+    padding-bottom:0%; 
+    padding-left:2%;
+}
+
+.Definition + .Definition{
+    margin-top:-15px;
+}
+.Theory + .Theory{
+    margin-top:-15px;
+}
+.Theory + .Lemma{
+    margin-top:-15px;
+}
+.Theory + .Corollary{
+    margin-top:-15px;
+}
+
+
+/* Titles and sections */
+h1.title {
+    text-align: left;
+    line-height: 43px;
+
+    background-color: rgb(176, 239, 255); 
+
+    width:400%;
+    margin-left:-200%;
+    padding-left:200%;
+
+    padding-top:10px;
+    margin-top:-10px;
+    margin-bottom:35px;
+    padding-bottom:10px;
+
+    border:solid;
+    border-top:0px;
+    border-color:rgb(104, 171, 187); 
+
+}
+
+h1.header{
+    text-align: left;
+    line-height: 43px;
+
+    width:400%;
+    margin-left:-200%;
+    padding-left:200%;
+
+    text-decoration: underline;
+}
+
+h2 {
+    text-align: left;
+    line-height: 33px;
+
+    background-color: rgb(201, 241, 235); 
+
+    width:400%;
+    margin-left:-200%;
+    padding-left:200%;
+
+    padding-top:10px;
+    margin-top:-10px;
+    margin-bottom:35px;
+    padding-bottom:10px;
+
+    border:solid;
+    border-bottom:0px;
+    border-color:rgb(194, 194, 194); 
+    border-width: 2px;
+}
+
+h2+p{
+    margin-top:15px;
+}
+
+h3 {
+    margin-bottom:-15px;
+    margin-top:25px;
+    /* text-decoration: underline; */
+    /* text-decoration-thickness: 0.01em; */
+}
+
+h4 {
+    margin-top:35px;
+    margin-bottom:-15px;
+    font-style: italic;
+}
+
+
+
+/* UI ELEMENTS */
+/* Arrow buttons */
+#leftButton{
+    position:fixed;
+    z-index:5;
+    height:15px;
+    right:calc(2.5% + 45px);
+    top:35px;
+    opacity:0.5;
+    transition:opacity,50ms;
+}
+#rightButton{
+    position:fixed;
+    z-index:5;
+    height:15px;
+    right:2.5%;
+    top:35px;
+    opacity:0.5;
+    transition:opacity,50ms;
+}
+
+
+/* Page displayer */
+#pageDisplayer{
+    font-family:'Computer Modern Serif';    
+    font-size:15px;
+    position:fixed;
+    top:10px;
+    right:2.5%;
+    opacity:0.5;
+    z-index:5;
+    transition:opacity, 200ms;
+}
+#pageTotalDisplayer{
+    margin-left:-5px;
+}
+/* #setPage{
+    width:2.2em;
+} */
+
+
+/* Scroll bar */
+#scrollBar{
+    position: fixed;
+    display:flex;
+    width: max(80%, 600px); 
+    height: 2%;
+    
+    bottom: 0%; 
+    left: calc(50% - max(80%, 600px)/2);
+    
+    line-height: 0px;
+    z-index:2;
+}
+#secSplitCont{
+    pointer-events: none;
+    display:flex;
+    position: fixed;
+    width: max(80%, 600px); 
+    height: 2%;
+    
+    bottom: 0%; 
+    left: calc(50% - max(80%, 600px)/2);
+    
+    line-height: 0px;
+    z-index:3;
+}
+
+#sectionTitleCont{
+    pointer-events: none;
+    position: fixed;
+    width: max(80%, 600px); 
+    height: 2%;
+    
+    bottom: 0%; 
+    left: calc(50% - max(80%, 600px)/2);
+    
+    pointer-events: none;
+    z-index:2;
+}
+#sectionTitle{
+    position: relative;
+
+    font-size:1.6vh;
+    text-decoration: underline;
+
+    bottom: 2.55%; 
+    
+    opacity:1;
+    transition:opacity, 200ms; 
+}
+
+#scrollSelectorCont{
+    margin-top:0vh;
+    position: fixed;
+    width: max(80%, 600px); 
+    height: 5%; 
+    
+    bottom: 2%; 
+    left: calc(50% - max(80%, 600px)/2);
+
+    line-height: 1.9vh;
+    
+    z-index:2;
+    opacity:1;
+}
+#scrollSelector{
+
+    display: block;
+    -webkit-user-drag: none;
+    height: 2vh;
+    margin-top:-0.2vh;
+    opacity:0;
+
+    transition:opacity, 100ms; 
+    transition:bottom, 100ms; 
+}
+#scrollPage{
+    display:block;
+    font-size:1.6vh;
+
+    margin-top:0.5vh;
+    padding-left:1.5px;
+
+    opacity:0;
+
+    transition:opacity, 100ms; 
+    transition:bottom, 100ms; 
+}
+
+#subScrollBar{
+    position: fixed;
+    display:flex;
+    width: 70%; height: 2%;
+    bottom: 4%; left: 15%;
+    line-height: 0px;
+    z-index:2;
+    opacity:0;
+    transition:bottom, 150ms;
+    transition:opacity, 100ms; 
+}
+#subSectionTitle{
+    position: fixed;
+    display:block;
+
+    pointer-events: none;
+    
+    font-size:1.4vh;
+
+    line-height: 1.65vh;
+
+    bottom: 11.2%; left: 15%;
+    z-index:2;
+    opacity:1;
+    transition:opacity, 200ms; 
+}
+#subSubSectionTitle{
+    position: fixed;
+    display:block;
+
+    pointer-events: none;
+    
+    font-size:1.12vh;
+    line-height: 1.45vh;
+
+    bottom: 9.5%; left: 15%;
+    z-index:2;
+    opacity:1;
+    transition:opacity, 200ms; 
+}
+#scrollCover{
+    position: fixed;
+    
+    width: max(82%, 610px);
+    min-width:500px;
+    left:min(50% - 250px, 49% - max(80%, 600px)/2);
+    height: 20%;
+    bottom: 0%;
+
+    background: linear-gradient(0deg, rgba(230,255,253,1) 0%, rgba(230,255,253,1) 40%, rgba(230,255,253,0) 100%);
+    z-index:4;
+    opacity:0.98;
+    transition:opacity,35ms;
+}
+
+
+/* Breadcrumps: */
+#breadcrumpContainer{
+    position:fixed; left: 15px; top: 15px;
+    line-height: 1em;
+    font-family:'Computer Modern Serif';    
+    opacity:0;
+    z-index:0;
+    height:100%;
+    transition:opacity,250ms;
+}
+#breadcrumpDropdown{
+    transition:opacity,100ms;
+    background-color: rgba(205, 247, 243, 0.92);
+    margin-top:5px;
+}
+.breadcrumpTitle{
+    margin-top:2px;
+    margin-bottom:4px;
+    max-width: 200px;
+    transition:opacity,50ms;
+    cursor:pointer;
+}
+.breadcrumpTitle:hover{
+    padding-bottom:0.5em;
+    background-color: rgba(205, 247, 243, 0.589);
+}
+.dropdownItem{
+    padding-top:5px;
+    padding-bottom:5px;
+    transition:opacity, 100ms;
+    cursor:pointer;
+}
+.dropdownItem:hover{
+    padding-top:8px;
+    padding-bottom:8px;
+    background-color: rgb(191, 250, 244);
+}
+
+
+/* Table of contents */
+#TocBackground{
+    position:fixed;
+    width:1%;
+    height: 30%;
+    top:37.5%;
+    background-color: darkorange;
+
+    font-family:'Computer Modern Serif';
+    
+    border:solid;
+    border-width: 2px;
+    border-left-width: 0px;
+
+    line-height: 1;
+
+    z-index:5;
+    
+    transition: width, 150ms;
+}
+#TocBackground:hover{
+    /* max-width: max(50%, 300px); */
+    width:max(55%, 620px);
+    height: 75%;
+    top:12.5%;
+
+    border-width: 2px;
+    border-left-width: 0px;
+}
+
+#TocTitle{
+    padding-left:max(2vh, 10px);
+    padding-top:max(3vh, 15px);
+    padding-bottom:max(2vh, 10px);
+
+    font-size: max(2.7vh, 18px);
+
+    font-weight: bold;
+    /* text-decoration: underline; */
+
+    background-color: rgb(196, 100, 4);
+    border-bottom:solid;
+
+    opacity:0;
+    transition:opacity,100ms;
+    pointer-events: none;
+}
+#TocBackground:hover #TocTitle{
+    opacity:1;
+}
+#TocBackground:hover #Toc{
+    opacity:1;
+}
+
+#Toc{
+    padding-left: max(2vh, 10px);
+    padding-right:max(1.4vh, 14px);
+
+    padding-top: max(1.5vh, 7.5px);
+
+    width:calc(96% - 7px);
+    height:calc(100% - max(3vh, 15px) -  max(2.7vh, 18px) - max(2vh, 10px) - max(1.5vh, 7.5px) - 2px);
+
+    font-size: max(1.9vh, 10.9px);
+
+    overflow:auto;
+
+    opacity:0;
+    transition:opacity, 150ms;
+}
+
+.TocNode{
+    padding-top: max(0.5vh, 3px);
+    padding-bottom: max(0.5vh, 3px);
+    padding-left: 0px;
+    color:rgb(75, 41, 0);
+    transition:opacity, 100ms;
+}
+.TocNode:hover{
+    color:rgb(0, 0, 0);
+    padding-top: max(0.3vh, 2px);
+    padding-bottom: max(0.3vh, 2px);
+}
+.TocNodeText:hover{
+    cursor:pointer;
+}
+
+.TocDiv{
+    transition:opacity, 300ms;
+}
+
+.TocExpand{
+    height:0.85em;
+    margin-left:5.5px;
+    opacity:0.6;
+    transition:opacity, 100ms;
+}
+.TocExpand:hover{
+    opacity:1;
+}
+
+/* .TocNode:hover{
+    color:blue;
+}
+.TocDiv:hover{
+    color:red;
+} */
+
+
+
+/* .TocNode:hover{
+    background-color: yellow;
+} */
+
+
+/* Custom vertical scrollbar: */
+/* width */
+::-webkit-scrollbar {
+width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+background: #f1f1f1; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+background: rgb(79, 79, 79); 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+background: rgb(43, 43, 43); 
+}
+
+
+
+
+
+/* MOBILE SUPPORT */
+@media only screen and (max-width: 600px) {
+    #master{
+        margin-left:calc(83.5% - 250px);
+    }
+    #TocBackground{
+        position:fixed;        
+        top:0vh;
+        left:10%;
+        height:0.5vh;
+        width:80%;
+    }
+    #TocBackground:hover{
+        position:fixed;    
+        top:0px;    
+        left:0vw;
+        width:100%;
+        height:90vh;
+
+        /* width:max(40%, 300px);
+        height: 75%;
+        top:12.5%; */
+    }
+    #Toc{
+        font-size:2.6vh;
+    }
+
+    #breadcrumpContainer{
+        display:none;
+    }
+    #scrollBar{
+        display:none;
+    }
+    #scrollCover{
+        display:none;
+    }
+    #secSplitCont{
+        display:none;
+    }
+
+}
+
+@media only screen and (max-width: 380px) {
+    #master{
+        margin-left:calc(87.5% - 250px);
+    }
+}
+
+
+
+
+
+        

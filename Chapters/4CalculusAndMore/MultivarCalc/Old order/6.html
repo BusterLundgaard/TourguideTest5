@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+
+
+    <p class="t">
+    På den her side har vi tænkt os at kigge på nogle tricks der gør 
+    differentiering og integration af flere variabler lidt lettere: Clairaut's theorem, og multivariable chain rule. 
+    </p>
+
+    <div class="Theory">
+    <b> Teori: Clairaut's theory</b>. <br>
+    Rækkefølgen hvorpå du differentierer en funktion _(f_) har ingen indflydelse. Eksempelvis så er:
+    _(f_{a^2bc^3}=f_{cbcaca}_)
+    </div>
+
+    <p class="t">
+    Sig f.eks. at jeg skal regne _(f_{yxx}_) når:
+    _($f(x,y)=x*\frac{Sin(y^y)^y}{y^2}_)
+    Det er lidt tricky at differentiere med _(y_) her, eftersom _(Sin(y^y)^y/y^2_) nok ikke er det nemmeste at arbejde med i verden. 
+    Det ville være meget nemmere hvis vi i stedet regnede _(f_{xxy}:_)
+    _($\begin{eqnarray} 
+    && ¤x\left[x*\frac{Sin(y^y)}{y^2}\right] & = & \frac{Sin(y^y)}{y^2} \\
+    && ¤x\left[\frac{Sin(y^y)}{y^2}\right] & = & 0 \\
+    && ¤y\left[0\right] = 0
+    \end{eqnarray}_)
+    I alt ærlighed så er det dog sjælen at Clairaut's theory virkelig hjælper os med at differentiere. Ofte
+    er det lige nemt lige meget hvilken rækkefølge vi tager. Clairaut's theory er mere brugbar og vigtig både på grund af teoretiske 
+    anvendelser, men også især på grund af en konsekvens der let følger deraf:
+    </p>
+
+    <div class="Corollary">
+    <b> Corollary: Clairaut's theory for integraler. </b> <br>
+    Rækkefølgen hvorpå du integrerer en funktion _(f_) har ingen indflydelse. Eksempelvis så er:
+    _($ \int \int \int \int f(a,b,c) \text{ }db \text{ }db \text{ }da \text{ }dc = \int \int \int \int f(a,b,c) \text{ }da \text{ }db \text{ }dc \text{ }db_)
+    </div>
+
+    <p class="t">
+    Lad os lige hurtigt lave nogle opgaver før vi beviser Clairaut's theory og dens corollary: 
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Løs følgende dobbelt integraler:
+    <div style="text-align:center; margin-top:10px;">
+        <ul style="display: inline-block; text-align: left; padding-left:0%; list-style:none;">
+            <li><b> 1</b>: _($\int \int y*Sin(y*x) \text{ }dx \text{ }dy_)</li>
+            <li><b> 2</b>: _($\int \int \frac{1}{\sqrt{y^2-x^2}} \text{ }dx \text{ }dy_)</li>
+        </ul>
+    </div>
+    Du skal altså tænke over hvad for en rækkefølge der ville være nemmest at integrere.
+    <br><br></q-stion>
+    <answer-box t="Answer 1#" tabColour="rgb(171,96,147)">
+    s
+    <br><br></answer-box>
+    <answer-box t="Answer 2#" tabColour="rgb(175,128,161)">
+    s
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <p class="t">
+    Tid til at bevise det. Det fulde bevis er enten relativt svært eller meget rodet, så lad os bare
+    bevise at _(f_{yx} = f_{xy}_). Vores bevis for dette er relativt lige til, og meget uelegant, da vi 
+    bare omskriver hele molevitten til grænser:
+    </p>
+
+    <div class="Proof">
+    <b> Bevis af Clairaut's theorem ved _(n=2_):</b> <br>
+    _($\begin{eqnarray} 
+    && f_{yx} & = & \lim_{\triangle x \to 0} \frac{f_y(x+\triangle x, y) - f_y(x,y)}{\triangle x} \\ \\
+    && & = & \lim_{\triangle x \to 0} \frac{\lim_{\triangle y \to 0} \frac{f(x+\triangle x, y + \triangle y) - f(x+\triangle x, y)}{\triangle y} - \lim_{\triangle y \to 0} \frac{f(x, y + \triangle y) - f(x, y)}{\triangle y}}{\triangle x}  \\ \\ 
+    && & = & \lim_{\triangle x \to 0} \lim_{\triangle y \to 0} \frac{f(x+\triangle x, y + \triangle y) - f(x + \triangle x,y) - f(x, y + \triangle y) + f(x,y)}{\triangle x \triangle y}   
+    \end{eqnarray}_)
+    Det kan let vises at hvis _(f_{xy}_) udvides på samme maner, så fås:
+    _($\lim_{\triangle y \to 0} \lim_{\triangle x \to 0} \frac{f(x+\triangle x, y + \triangle y) - f(x + \triangle x,y) - f(x, y + \triangle y) + f(x,y)}{\triangle x \triangle y}_)
+    Rækkefølgen af grænser er ligegyldige, så _(f_{yx} = f_{xy}_) _(\blacksquare_)
+    </div>
+
+    <p class="t">
+    Man kan relativt let se hvornår et lignende argument kan bruges når vi differentier flere gange end to. 
+    For det første sig at vi har noget der virker meget komplekst som:
+    _($f_{cbcaca}_)
+    Det faktum at vi tager nogle variabler flere gange forvirrer os faktisk lidt, så omskriv bare til:
+    _($f_{x_1 x_2 x_3 ... x_n} _)
+    Du antager altså bare at hver af _(n_) variabler du differentierer <i>muligvis</i> er unik, men
+    det kan også godt være at f.eks. _(x_2=x_4_), eller lignende. Vores funktion tager nu _(n_) variabler, 
+    og vi differentierer _(n_) gange. Hvis skal vise at lige meget hvilken rækkefølge vi differentierer 
+    de _(n_) variabler, så giver udvidelsen i alle tilfælde det samme. 
+    </p>
+    <p class="t">
+    Lad os kigge lidt på den udvidelse af _(f_{xy}_) vi er kommet frem til:
+    Først bliver der taget grænsen af alle variabler _(x_1=x_) og _(x_2=y_). Derefter
+    i tælleren plusses/minusses alle mulige kombinationer af _(f(x_1,x_2)_) i forhold til om variablet _(x_i_) er plusset
+    med _(\triangle x_i_). Det er altså i vores tilfælde _(f(x,y)_), _(f(x+\triangle x, y)_), _(f(x,y+\triangle y)_) og _(f(x+\triangle x, y+\triangle y)_).
+    I nævneren er alle variabler ganget med hinanden. Hvis man bare lige går gennem det i hovedet, og kigger på den proces
+    vi gik igennem for at udvide _(f_{xy}_), så kan man relativt let se at vi vil komme frem til en udvidelse der
+    har præcis samme egenskaber når vi har flere variabler. 
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Bevis corollariet. Altså at:
+    _($\int \int f \text{ }dx \text{ }dy = \int \int f \text{ }dy \text{ }dx_)
+    <br><br></q-stion>
+    <answer-box>
+    Det kan let ses at: 
+    _($¤x ¤y \left[\int \int f \text{ }dx \text{ }dy \right] = f_)
+    Clairaut's theorem giver os nu at:
+    _($¤x ¤y \left[\int \int f \text{ }dx \text{ }dy \right] = ¤x ¤y \left[\int \int f \text{ }dy \text{ }dx \right]_)
+    Begge sider af ligningen integreres nu bare med _(x_) og så _(y_), hvilke giver:
+    _($\int \int f \text{ }dx \text{ }dy = \int \int f \text{ }dy \text{ }dx_)
+    <p class="cent">
+        *
+    </p>
+    <p class="t">
+    Det her bevis kan let generaliseres til når vi differentiere _(n_) gange med _(n_) variabler, så det beviser altså corrolariet. 
+    </p>
+    <br><br></answer-box>
+
+    <!--  -->
+    
+    <p class="cent">
+        *
+    </p>
+
+    <p class="t">
+    Kædereglen virker også når vi har flere variabler, på en måde:
+    </p>
+
+    <div class="Theory">
+    <b> Teori: Multivariable chain rule (to variabler):</b> <br>
+    Hvis _(F_) er differentiabelt på _((x,y)_), og _(f_) og _(g_) er differentiable på _(t_), så er _(x=f(t)_) og _(y=g(t)_), så er:
+    _($¤t[F(x,y)] = F_x x'(t) + F_y y'(t)_)
+    </div>
+
+    <div class="Theory">
+    <b> Teori: Multivariable chain rule (generelt):</b> <br>
+    Hvis _(x_1=f_1(t), x_2=f_2(t), ... x_n=f_n(t)_), så er:
+    _($¤t[F(x_1,x_2,...x_n)] = F_{x_1} x_1'(t) + F_{x_2} x_2'(t) + \dots F_{x_n} x_n'(t)_)
+    </div>
+
+    <p class="t">
+    Vi laver lige først nogle opgaver før vi går i gang med beviset: 
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Sig at:
+    _($z=Tan(x^2-y^2)_)
+    hvor _(x=Cos(t)_) og _(y=Sin(t)_). Find nu _(z'(t)_)
+    <br><br></q-stion>
+    <answer-box>
+    Du kan se mit svar her:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter4\MultiVarCalc\MultiChainRule1.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Regn:
+    <div style="text-align:center; margin-top:10px;">
+        <ul style="display: inline-block; text-align: left; padding-left:0%; list-style:none;">
+            <li><b> 1</b>: _($¤t\left[Sin \left((3t+Sin(t))*(t^2 - 5) \right) \right]_)</li>
+            <li><b> 2</b>: _($¤t\left[\sqrt{Ln(\sqrt{t}+1)+Ln(\sqrt{t}-1)} \right]_) </li>
+        </ul>
+    </div>
+    <br><br></q-stion>
+    <answer-box t="Answer 1#" tabColour="rgb(171,96,147)">
+    Du kan se mit svar her:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter4\MultiVarCalc\MultiChainRule2.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+    <answer-box t="Answer 2#" tabColour="rgb(175,128,161)">
+    Du kan se mit svar her:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter4\MultiVarCalc\MultiChainRule3.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Find _(w'(t)_) hvis:
+    _($w=Sin(x)*Sin(y)*Sin(z)_)
+    hvor _(x=3t+5_), _(y=t^2-5_), _(z=t+t^3_).
+    <br><br></q-stion>
+    <answer-box>
+    Du kan se mit svar her:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter4\MultiVarCalc\MultiChainRule4.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Regn _(y'(x)_) hvis:
+    _($y=(x^3+5x-3)(7x+15)(8x^2+3x-4)_)
+    <br><br></q-stion>
+    <answer-box>
+    Du kan se mit svar her:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter4\MultiVarCalc\MultiChainRule5.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+
+    <p class="t">
+    Vi har tænkt os at bevise det for tilfældet med to variabler, men det kan relativt nemt generaliseres til flere.
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5" customWidth="560">
+    Bevis multivariable chain rule for to variabler. Jeg giver dig to store hints:
+    <p class="t">
+    <i> 1</i>: Brug definitionen af differentiabilitet 
+    </p>
+    <p class="t">
+    <i> 2</i>: Du får måske (eller måske ikke!) brug for et smart trick hvor 
+    du på et tidspunkt både dividerer og ganger med _(\sqrt{\triangle x^2 + \triangle y^2}_)
+    </p>
+    <br><br></q-stion>
+    <answer-box customWidth="550">
+    Du kan se beviset her:
+    <div class="Proof">
+    Der søges et bedre udtryk for _(d/dt[f(x(t),y(t))]_), så det omskrives til en grænse:
+    _($\lim_{k \to 0} \frac{f(x(t+k),y(t+k))-f(x(t),y(t))}{k}_)
+    _(f_) er differentiabel på _((x,y)_), så 
+    forskellen 
+    _($f(x(t+k),y(t+k))-f(x(t),y(t))_) 
+    kan omskrives til:
+    _($f_x \triangle x + f_y \triangle y + E(\triangle x, \triangle y)_)
+    hvor at:
+    _($\begin{eqnarray} 
+    && \triangle x & = & x(t+k)-x(t) \\
+    && \triangle y & = & y(t+k)-y(t) 
+    \end{eqnarray}_)
+    Men det er givet at _(x_) og _(y_) begge er differentiable på _(t_), så disse forskelle kan omskrives til:
+    _($\begin{eqnarray} 
+    && \triangle x & = & x'(t) k + E_x(k)  \\
+    && \triangle y & = & y'(t) k + E_y(k) 
+    \end{eqnarray}_)
+    Alt substitueres nu tilbage i hældningen:
+    _($\lim_{k \to 0} \frac{f_x (x'(t) k + E_x(k)) + f_y (y'(t) k + E_y(k)) + E(\triangle x, \triangle y)}{k} = _)
+    _($f_x*x' + f_y*y' + \lim_{k \to 0} f_x \frac{E_x(k)}{k} + f_y \frac{E_y(k)}{k} + \frac{E(\triangle x, \triangle y)}{k}_)
+    Pr. definition af differentiabilitet kan det ses at _(E_x(k)/k_) og _(E_y(k)/k_) nærmer sig _(0_), hvilke giver:
+    _($f_x*x' + f_y*y' + \lim_{k \to 0} \frac{E(\triangle x, \triangle y)}{k}_)
+    Nu skal det bare bevises at _(\lim_{k \to 0} E(\triangle x, \triangle y)/k = 0_). Pr definitionen af differentiabilitet
+    vides det at:
+    _($\lim_{(\triangle x, \triangle y) \to (0,0)} \frac{E(\triangle x, \triangle y)}{\sqrt{\triangle x^2 + \triangle y^2}} = 0_)
+    Derfor omskrives grænsen til:
+    _($\lim_{k \to 0} \frac{E(\triangle x, \triangle y)}{k}*\frac{\sqrt{\triangle x^2 + \triangle y^2}}{\sqrt{\triangle x^2 + \triangle y^2}} = _)
+    _($\lim_{k \to 0} \frac{E(\triangle x, \triangle y)}{\sqrt{\triangle x^2 + \triangle y^2}}*\lim_{k \to 0} \frac{\sqrt{\triangle x^2 + \triangle y^2}}{k} _)
+    Den ene faktor nærmer sig _(0_), så hvis det kan bevises at den anden faktor <i>ikke</i> nærmer sig _(\infty_), så er beviset færdigt. 
+    Det kan gøres relativt nemt hvis der substitueres _(\triangle x=x'(t) k + E_x(k)_) og _(\triangle y = y'(t) k + E_y(k)_) eftersom begge disse
+    led kan fjerne den _(k_) der bliver divideret med:
+    _($\lim_{k \to 0} \frac{\sqrt{x'^2 k^2 + y'^2 k^2 + E_x(k)^2 + E_y(k)^2 + 2x' k E_x(k) + 2y' k E_y(k) }}{k} = _)
+    _($\lim_{k \to 0} \sqrt{\frac{x'^2 k^2}{k^2} + \frac{y'^2 k^2}{k^2} + \left(\frac{E_x(k)}{k}\right)^2 + \left(\frac{E_y(k)}{k}\right)^2 + \frac{2x'}{k} \frac{E_x(k)}{k} + \frac{2y'}{k} \frac{E_y(k)}{k} } = _)
+    _($\sqrt{x'^2 + y'^2 + 0^2 + 0^2 + 0*0 + 0*0} = _)
+    _($\sqrt{x'(t)^2 + y'(t)^2}_)
+    Da _(x_) og _(y_) er differentiable på _(t_) kan det med sikkerhed siges at 
+    _(x'(t)_) og _(y'(t)_) begge findes og er hele tal. Derfor er _(\sqrt{x'(t)^2 + y'(t)^2}_) også et 
+    helt tal _(\blacksquare_). 
+    </div>
+    <br><br></answer-box>
+

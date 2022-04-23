@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <p class="t">To begreber der kan være rigtig praktiske til at kommunikere matematik lidt mere effektivt er <i>led</i> og <i>faktor</i>.</p>
+    <p class="t">
+        Stykket _(23*4+45*2+6_) siger vi har _(3_) led: _(23*4,45*2,6_) eller hvis vi havde regnet dem så: _(92,90,6_).
+        Hver led består af én eller nogle <i>faktore</i>. _(23*4_) har faktorene _(23,4_). _(45*2_) har _(45,2_), og _(6_) 
+        har kun _(6_). Hvis vi på et tidspunkt skulle regne _(5*(12+13)_), så kunne jeg godt måske finde på at 
+        sige at vi skulle "plusse ledende i parentesen, og så gange med faktoren _(5_)", eller gik vi med en anden strategi så 
+        "gange hvert led i parentesen med faktoren 5, og så lægge de nye led sammen". En anden ting du også lige 
+        skal være obs på er at man (og jeg) lidt bruger "udtryk" og "regnestykke" synonymt. 
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5">
+        Prøv at beskriv gange-ind-i-parenteser-reglen 
+        _($A*(B+C)=A*B+A*C_) 
+        mundtligt uden nogle tegn. 
+    <br><br></q-stion>
+    <answer-box>
+        "Ganger man en faktor/tal tal med en parentes, så kan man også bare gange tallet med hver led i stedet"
+    <br><br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+        Hvor mange led har: 
+        _($1*a+2*a+3*a+...(n-1)*a+n*a_)
+        Hvor mange faktorer har hvert led?
+    <br><br></q-stion>
+    <answer-box>
+        Der er tydeligvis _(n_) led, og hvert led har kun _(2_) faktore. 
+    <br><br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+        Omskriv _(180_) til de mindst mulige hele faktore du kan finde.
+    <br><br></q-stion>
+    <answer-box>
+        Det her har du gjort før mange gange! Det bliver altså _(2*2*3*3*5_). 
+    <br><br></answer-box>
+
+    <p class="t">
+        Nu da vi er igang så kan vi lige så godt også introducere nogle andre begreber, ideer, og konventioner vi ofte bruger. 
+        Meget af det vi finder på - som potenser - hjælper os med at beskrive den <i>virkelige verden</i>. 
+        Det hjælper os med at modellere situationer så vi kan arbejde med dem lidt mere teoretisk. Flere gange så 
+        er vi dog også nødt til at finde på begreber og ting der hjælper os med at beskrive <i>matematikkens verden</i>.
+        Når vi nemmere kan beskrive og studere matematik, så kan vi også nemmere beskrive mere komplicerede situationer i virkeligheden.
+    </p>
+    <p class="t">
+        Noget du sikkert har hørt om i en eller anden sammenhæng før er <i>primtal</i>. Primtal er bare de tal 
+        vi ikke kan lave om til andre, mindre hele tal ganget med hinanden. Du har altså allerede fundet en del 
+        primtal i mange tidligere opgaver. _(60=2*2*3*5_) er ikke et primtal, men det er _(2,3_) og _(5_). 
+        I sidste opgave kunne jeg have valgt at sige: "Opløs _(180_) til primtal ganget med hinanden". 
+    </p>
+    <q-stion 1="2" 2="1" 3="5">
+    I har idræt i klassen, og skal til at spille rundbold. Læreren vil gerne dele klassen ind 
+    i lige store hold. Vil det være muligt givet i er henholdsvis
+    <div style="text-align:center; margin-top:10px;">
+        <ul style="display: inline-block; text-align: left; padding-left:0%; list-style:none;">
+            <li><b> 1: </b>_(4 _) personer?</li>
+            <li><b> 2: </b>_(7 _) personer?</li>
+            <li><b> 3: </b>_(11 _) personer?</li>
+            <li><b> 4: </b>_(12 _) personer?</li>
+            <li><b> 5: </b>_(31 _) personer?</li>
+            <li><b> 6: </b>_(33 _) personer?</li>
+            <li><b> 7: </b>_(57 _) personer?</li>
+        </ul>
+    </div>
+    <br></q-stion>
+    <answer-box t="Answer 1#" tabColour="rgb(171,96,147)">
+    Vi bliver jo praktisk talt her bare spurgt om hvorvidt tallene er primtal! Et primtal 
+    kan <i>ikke</i> laves om til <i>nogle</i> andre hele tal ganges med hinanden. Det har 
+    vi brug for hvis vi skal danne lige store grupper, fordi så kan f.eks. _(6_) personer 
+    deles op i _(3*2_) eller _(9_) personer måske deles op i _(3*3_). Altså: hvis det er 
+    et primtal så kan vi ikke dele klassen op, ellers så kan vi helt fint. 
+    <p class="t">
+    _(4_) personer er tydeligvis muligt, da _(4=2*2_) ikke er primtal.
+    </p>
+    <br><br></answer-box>
+    <answer-box t="Answer 2#" tabColour="rgb(175,128,161)">
+    Denne er <i>ikke</i> mulig, da _(7_) er et primtal. Hvis man er virkelig usikker, så kan man tjekke om noget er 
+    et primtal ved at dividere det med alle primtallene under. Hvis ingen virker, så indeholder vores tal
+    altså ikke nogle faktorere af andre primtal, og er derfor <i>selv</i> et primtal. 
+    <br><br></answer-box>
+    <answer-box t="Answer 3#" tabColour="rgb(171,96,147)">
+    Er også umulig siden _(11_) er prim.
+    <br><br></answer-box>
+    <answer-box t="Answer 4#" tabColour="rgb(175,128,161)">
+    _(12=3*2^2_) ergo denne er <i>mulig</i>.  
+    Du ved selvfølgelig at ingen primtal er lige, så du behøvede faktisk ikke at opløse _(12_) der: du vidste jo det endte på _(2_). 
+    <br><br></answer-box>
+    <answer-box t="Answer 5#" tabColour="rgb(171,96,147)">
+    Denne er ikke muligt, da det er et primtal. Der er man nok bare nødt til at tjekke med rå kraft. 
+    <br><br></answer-box>
+    <answer-box t="Answer 6#" tabColour="rgb(175,128,161)">
+    Er lig _(11*3_), så det er ikke et primtal. 
+    <br><br></answer-box>
+    <answer-box t="Answer 7#" tabColour="rgb(171,96,147)">
+    Er <i>ikke</i> et primtal. Hvis du ikke lige kunne genkende nogle faktore du kunne dividere med, så kunne du også omskrive:
+    _(57=60-3=3*10*2-3=3*(10*2-1)=3*19_). Tallet er altså nu to hele tal ganget med hinanden, og kan derfor ikke være prim. 
+    _(59_) må tjekkes igen med rå kraft, og er et primtal. 
+    <br><br></answer-box>
+    <answer-box t="Answer 8#" tabColour="rgb(175,128,161)">
+    Denne må igen tjekkes med rå kraft, og er et primtal. 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <p class="t">
+        Der er uendelig mange primtal. Det er på ingen måde åbenlyst, og beviset er relativt avanceret.
+        Jeg er ikke så vild med bare at smide "facts" mod dit ansigt sådan, men lige her må du stole på mig. 
+        Som du nok så deroppe, så kan det tage lidt tid at finde ud af hvorvidt noget er et primtal. Selve strategien er 
+        nem, men det bliver langsomt som tallet gror større. Der <i>er</i> visse bedre strategier, men de virker kun i 
+        få situationer, til bestemte tal. Rigtig meget kommer ned til viden og tidligere erfarning. 
+    </p>
+    <p class="t">
+        Udover at de tydeligvis har praktisk brug som vi så i opgaven, så er primtal et perfekt eksempel på 
+        en af de ideer matematikere virkelig studere intensivt. De <i>er</i> bare mystiske og mærkelige. Vi 
+        har bl.a. svært ved at beskrive og forudsige hvornår noget er et primtal, eller hvor langt der er 
+        mellem dem. Hvis vi kan finde en eller anden ny egenskab vi ved der gælder for alle <i>primtal</i>,
+        så kan vi let se hvorvidt den også virker for alle de andre tal. Primtal er <i>byggeblokkene</i>, og 
+        man studerer logisk nok atomer før man går videre til molekyler. 
+    </p>
+
+
+</html>

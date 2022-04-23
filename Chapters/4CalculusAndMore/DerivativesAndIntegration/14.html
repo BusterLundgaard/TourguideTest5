@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+
+
+    <h3>Massecentre</h3>
+    <p class="t">
+    Integraler kan bruges til, at beregne og måle en helt masse andre ting udover
+    arealer. Èt godt eksempel er <i>massecentre</i>:
+    _($x_{\text{massecenter}} = \frac{m_1*x_1+m_2*x_2+...m_n*x_n}{\text{Samlet masse}} _)
+    _($y_{\text{massecenter}} = \frac{m_1*y_1+m_2*y_2+...m_n*y_n}{\text{Samlet masse}} _)
+    Vi så tidligere, at man ofte skulle beregne massecenteret på en geometrisk
+    figur med uniform densitet. F.eks: 
+    </p>
+    <img class='Spic' style='width:50%' src='../../../Assets/Chapter2\Section2\BilliardsAndProperties\NewExercise2.png'> 
+    <p class="t">
+    I de her situationer svarer "masserne" til arealer, og den
+    "samlede masse" er figurens samlede areal. Her skal vi opdele 
+    figuren i flere mindre figurer hvis massemidtpunkter er mulige at regne: 
+    </p>
+    <img class='Spic' style='width:40%' src='../../../Assets/Chapter2\Section2\BilliardsAndProperties\NewExercise2 2.png'> 
+    <p class="t">
+    Vi kan let se at:
+    _($\begin{eqnarray}
+    && m_1 & = (4.5, 1.625) \\
+    && m_2 & = (11.5, 4.625) \\
+    && m_3 & = (15.5, 6) 
+    \end{eqnarray}_)
+    Arealerne er henholdsvis:
+    _($\begin{eqnarray}
+    && 9*3.25 & =  29.25 \\
+    && 5*(6+3.25) & = 46.25 \\
+    && 3*12 & = 36 & 
+    \end{eqnarray}_)
+    Så vi kan regne massemidtpunktet som:
+    _($\begin{eqnarray}
+    && x_{\text{massecenter}} = \frac{4.5*29.25 + 11.5*46.25 + 15.5*36}{29.25+46.25+36} = 10.955 \\ \\
+    && y_{\text{massecenter}} = \frac{1.625*29.25 + 4.625*46.25 + 6*36}{29.25+46.25+36} = 4.281
+    \end{eqnarray}_)
+    Dette eksempel var relativt åbenlyst, men hvad ville vi gøre med en "simpel" form
+    som en retvinklet trekant? 
+    </p>
+    <img class='SpicXL' style='width:80%' src='../../../Assets/Chapter2\Section2\BilliardsAndProperties\JustSimpleTriangle.png'> 
+    <p class="t">
+    Her fandt vi ud, at vi kunne opdele trekanten i <i>uendeligt mange små arealer</i>:
+    </p>
+    <img class='SpicXL' style='width:80%' src='../../../Assets/Chapter2\Section2\BilliardsAndProperties\CenterOfMassRightTriangle2.png'> 
+    <p class="t">
+    Hvert uendeligt lille rektangel gangede vi med henholdsvis dens _(x_)-center og 
+    _(y_)-center. 
+    Hvis hver rektangel er _(dx_) tynd, og vi er _(x_) fremme fra _(A_) henad mod _(B_), 
+    vil rektanglets areal gange dens x-center være lig
+    _($(Tan(v)*x*dx)*x_)
+    ... hvilket også let kan omformuleres til:
+    _($Tan(v) x^2 * dx_)
+    Vi skal plusse uendelig mange af de her led med _(x_) værdier fra _(0_) til længden _(AB_). Det
+    svarer derfor til at regne integralet:
+    _($\begin{eqnarray}
+    && \int_{0}^{L} Tan(v)*x^2 dx \, = \\ \\
+    && Tan(v)*\frac{x^3}{3} \Biggl|_{L} - Tan(v)*\frac{x^3}{3} \Biggl|_{0} \, = \\ \\
+    && \frac{Tan(v)*L^3}{3} 
+    \end{eqnarray}_)
+    Som vi så, skal vi dividere med trekantens samlede areal for at få massecenterets x-koordinat:
+    _($\frac{Tan(v)*L^3/3}{L^2*Tan(v)*(1/2)} = (2/3)L_)
+    Ved _(y_)-koordinatet skal vi regne integralet:
+    _($\begin{eqnarray}
+    && \int_{0}^{L} (Tan(v)*x*dx)*(Tan(v)*x/2) \, = \\ \\ 
+    && \frac{Tan(v)^2}{6} x^3 \Biggl|_{L} - \frac{Tan(v)^2}{6} x^3 \Biggl|_{0} \, = \\ \\
+    && \frac{Tan(V)^2*l^3}{6}
+    \end{eqnarray}_)
+    Som vi igen skal dividere med arealet: 
+    _($\frac{Tan(v)^2*L^3/6}{L^2*Tan(v)*(1/2)} = Tan(v)*L*(1/3) = h*(1/3)_)
+    Prøv nu selv at gøre noget lignende!
+    </p>
+
+    <q-stion 1="14" 2="1">
+    Find massecenteret af følgende figur:
+    <img class='Spic' style='width:25%' src='../../../Assets/Chapter4\DerivativesAndIntegrals\Applications\OtherThingsToCount\QuarterCircle.png'> 
+    <p class="t">
+    Det er altså én kvartdel af en cirkel med en radius på _(5_). Husk at du godt
+    må bruge Geogebra i de her opgaver til at regne integraler! 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Jeg tænker vi kan dele cirklen op som:
+    <img class='Spic' style='width:35%' src='../../../Assets/Chapter4\DerivativesAndIntegrals\Applications\OtherThingsToCount\QuarterCircleStrategy1.png'> 
+    <p class="t">
+    Cirklen er defineret som:
+    _($x^2+y^2=5^2_)
+    Så en rektangel der er _(x_) fremme har en højde på:
+    _($\sqrt{25-x^2}_)
+    Den højde skal ganges med en lille bredde _(dx_) for at få arealet, og det areal
+    skal ganges med henholdsvis _(x_)-koordinatet og _(y_)-koordinatet:
+    _($\begin{align}
+    x_m & =  \frac{\int_{0}^{5} (\sqrt{25-x^2}*dx)*x}{\pi*5^2/4} \\ \\
+    & = \frac{\text{integral}(\sqrt{25-x^2}*x, x, 0, 5)}{\pi*5^2/4} = 2.122 
+    \end{align}_)
+    Cirklen er symmetrisk gennem _(y=x_), så massecenteret har samme _(x_)-position som
+    _(y_)-position. Vi får endeligt:
+    _($\text{massecenter} = (2.122, 2.122)_)
+    Det ser ud som: 
+    </p>
+    <img class='Spic' style='width:25%' src='../../../Assets/Chapter4\DerivativesAndIntegrals\Applications\OtherThingsToCount\QuarterCircleWithMassCenter.png'> 
+    <p class="t">
+    Hvilket vel virker meget intuitivt. 
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="14" 2="2">
+    Find massecenteret af følgende figur:
+    <img class='SpicXL' style='width:65%' src='../../../Assets/Chapter4\DerivativesAndIntegrals\Applications\OtherThingsToCount\SpiralShape.png'> 
+    <p class="t">
+    Det er en spiral-form, hvor dens ydre kant følger _(r=5+\theta_), 
+    hvor _(\theta_) er vinklen, og _(r_) radiusen væk
+    fra _((0,0)_). Den er defineret på polær form. 
+    </p>
+    <p class="t">
+    Du får nok brug for en antagelse i denne opgave: _(Sin(x)_) nærmer sig
+    _(x_) når _(x_) nærmer sig _(0_). Det er <i>ikke</i> åbenlyst, men er
+    relativt intuitivt, eftersom både vinklen og højden på cirklen bliver meget
+    små. Det kan også forstås i forhold til Taylor serier:
+    _($Sin(x) = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} + \frac{x^9}{9!} \, - \, \dots_)
+    Hvis _(x_) nærmer sig _(0_) er "_(x_)" klart det største led, da
+    alle de andre led ganges med den mikroskopiske _(x_)-værdi <i>flere gange</i>. 
+    Derfor begynder _(Sin(x)_) at nærme sig _(x + \text{meget små led}_), som
+    næsten bare er _(x_). 
+    </p>
+    <p class="t">
+    <i>Hint</i>: Hvis du har svært ved denne opgave, så prøv at løs den tidligere opgave, men hvor
+    du definerer cirklen polært. Se om du kan dele den op i forme, der passer en cirkel lidt bedre. 
+    </p>
+    <p class="t">
+    Den her opgave er relativt lang og tricky!
+    </p>
+    <br></q-stion>
+    <answer-box t="h">
+    Lad os følge hintet, og finde cirklens massecenter igen, men på en anden måde. 
+    Jeg tænker vi kan dele cirklen op som:
+    <img class='Spic' style='width:35%' src='../../../Assets/Chapter4\DerivativesAndIntegrals\Applications\OtherThingsToCount\QuarterCircleStrategy2.png'> 
+    <p class="t">
+    Vi deler den op i en masse små trekanter der hver har vinklen _(d\theta_): 
+    </p>
+    <img class='Spic' style='width:10%' src='../../../Assets/Chapter4\DerivativesAndIntegrals\Applications\OtherThingsToCount\PolarIntegration1.png'> 
+    <p class="t">
+    Vi ved, at en trekants areal kan regnes med formlen:
+    _($\frac{1}{2}*a*b*Sin(v)_)
+    Prøv at udnyt det. Målet er selvfølgelig ikke at finde <i>cirklens</i> massecenter,
+    men du kan nok lave en meget lignende opdeling af spiralen. 
+    </p>
+    <br></answer-box>
+    <answer-box>
+    Lad os følge hintet, og finde cirklens massecenter igen, men på en anden måde. 
+    Jeg tænker, vi kan dele cirklen op som:
+    <img class='Spic' style='width:35%' src='../../../Assets/Chapter4\DerivativesAndIntegrals\Applications\OtherThingsToCount\QuarterCircleStrategy2.png'> 
+    <p class="t">
+    Vi deler den op i en masse små trekanter, der hver har vinklen _(d\theta_): 
+    </p>
+    <img class='Spic' style='width:10%' src='../../../Assets/Chapter4\DerivativesAndIntegrals\Applications\OtherThingsToCount\PolarIntegration1.png'> 
+    <p class="t">
+    Vi ved, at en trekants areal kan regnes med formlen:
+    _($\frac{1}{2}*a*b*Sin(v)_)
+    Så arealet af denne lille trekant er lig:
+    _($\frac{1}{2}*R^2*Sin(d\theta)_)
+    Det kan omskrives til bare _(0.5*R^2*d\theta_), siden _(d\theta_) nærmer sig _(0_),
+    hvilket betyder, at _(Sin(d\theta)_) nærmer sig _(d\theta_). 
+    Vi har ikke nødvendigvis brug for massecenterets koordinater, men vi <i>har</i> brug for
+    massecenterets radius væk fra _((0,0)_). Vi ved, hvordan man finder massecenteret på en <i>retvinklet</i> trekant,
+    så lad os dele vores trekant op i to:
+    </p>
+    <img class='Spic' style='width:15%' src='../../../Assets/Chapter4\DerivativesAndIntegrals\Applications\OtherThingsToCount\PolarIntegration2.png'> 
+    <p class="t">
+    Vi ved, at massecenteret er _((1/3)*L_) fremme henad den sorte linje, og derfor
+    _((2/3)*L_) væk fra _((0,0)_). _(L_) nærmer sig _(R_) som
+    _(d\theta_) bliver virkelig lille. 
+    Massecenteret er altså _((2/3)*R_) væk fra center, så dets koordinater
+    kan regnes som: 
+    _($\left(((2/3)*R)*Cos(\theta), ((2/3)*R)*Sin(\theta) \right)_)
+    Vi ganger nu arealet af hver trekant med dets x-koordinat og får:
+    _($\left(\frac{1}{2}*R^2*d\theta\right)*(2/3)*R*Cos(\theta) = \frac{1}{3}*R^3*Cos(\theta)*d\theta_)
+    _(y_)-koordinatet giver meget lignende:
+    _($\left(\frac{1}{2}*R^2*d\theta\right)*(2/3)*R*Sin(\theta) = \frac{1}{3}*R^3*Sin(\theta)*d\theta_)
+    Vi skal derfor integrere langs vinklen _(\theta_), som i vores tilfælde går fra _(0_) til _(\pi/2_). 
+    Vores radius er _(5_), så vi regner integralet:
+    _($\int_{0}^{\pi/2} \frac{1}{3}*5^3*Cos(\theta) d\theta = 41.67_)
+    Vi dividerer nu med arealet og får:
+    _($x_m = \frac{41.67}{\pi*5^2 / 4} = 2.12_)
+    Det passer! Strategien virker!
+    </p>
+    <p class="cent">
+        *
+    </p>
+    <p class="t">
+    Lad os generalisere hvad vi lige gjorde. Vi integrerede langs _(\theta_), og ved
+    hver trekant regnede vi:
+    _($\frac{1}{3}*R^3*Cos(\theta)*d\theta \, \, \text{ og } \, \, \frac{1}{3}*R^3*Sin(\theta)*d\theta _)
+    Ved cirklen var _(R=5_), men ved spiralen er _(R=5+\theta_). Hver trekant er nu:
+    _($\frac{1}{3}*(5+\theta)^3*Cos(\theta)*d\theta \, \, \text{ og } \, \, \frac{1}{3}*(5+\theta)^3*Sin(\theta)*d\theta_)
+    Spiralen går en hel cirkel rundt, hvilket betyder, at _(\theta_) går fra _(0_) til _(2\pi_). Vi skal nu
+    regne integralerne:
+    _($\begin{eqnarray}
+    && \int_{0}^{2\pi} \frac{1}{3}*(5+\theta)^3*Cos(\theta) d\theta = 102.31 \\ \\
+    && \int_{0}^{2\pi} \frac{1}{3}*(5+\theta)^3*Sin(\theta) d\theta = -424.59
+    \end{eqnarray}_)
+    Vi skal også dividere med arealet. Før kunne vi let regne det geometrisk
+    som _(\pi*5^2 / 4_), men nu har vi brug for en integral: 
+    _($\int_{0}^{2\pi} \frac{1}{2}*(5+\theta)^2 d\theta = 218.58_)
+    Så:
+    _($\text{massecenter} = \left(\frac{102.31}{218.58}, \frac{-424.59}{218.58} \right) = (0.46, -1.94)_)
+    Voila! Dette ser visuelt ud som:
+    </p>
+    <img class='Spic' style='width:65%' src='../../../Assets/Chapter4\DerivativesAndIntegrals\Applications\OtherThingsToCount\SpiralShapeWithMassCenter.png'> 
+    <p class="t">
+    Fantastisk! 
+    </p>
+    <br></answer-box>
+
+    <p class="t">
+    Der er generelt en del ting i fysik vi regner ved hjælp af integraler. Et andet eksempel er
+    et objekts såkaldte <i>inertimoment</i>. Inertimoment er på en måde "rotations-versionen" af masse/vægt.
+    Når det oplever en kraft, vil et objekt accelerere mindre, jo mere
+    masse det har. Vi siger, at
+    _($\text{Acceleration} = \frac{\text{Kraft}}{\text{Masse}}_)
+    Der sker noget lignende, når vi forsøger at <i>rotere</i> et objekt:
+    _($\text{Rotations-acceleration} = \frac{\text{Rotations-kraft}}{\text{Inertimoment}}_)
+    Inertimomentet fortæller os, hvor nemt det er at rotere et objekt: Specifikt hvor nemt
+    det er at rotere objektet omkring dets massemidtpunkt. Jo højere inertimoment, jo mere kraft
+    skal der til for at skabe en acceleration i rotationen. 
+    Et objekts <i>form</i> har stor indflydelse på intertimomentet:
+    </p>
+
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter4\DerivativesAndIntegrals\Applications\OtherThingsToCount\MomentOfInertia1.png'> 
+
+    <p class="t">
+    De her to pinde med vægte ude på enderne vejer cirka det samme.
+    Den lange pind har dog et markant højere inertimoment. Det giver relativ god mening: 
+    </p>
+
+    <img class='SpicXL' style='width:80%' src='../../../Assets/Chapter4\DerivativesAndIntegrals\Applications\OtherThingsToCount\MomentOfInertia2.png'> 
+
+    <p class="t">
+    Vægtene ude på enderne skal bevæge sig meget længere, når vi roterer den lange pind,
+    end hvis vi roterer den korte!
+    Hvis en rotation på _(1_) grad på den korte svarer til at vi bevæge kuglerne _(5mm_) langs omkredsen,  
+    svarer det måske til, at vi bevæger dem _(15mm_) på den lange. Det kræver simpelthen bare mere kraft! 
+    </p>
+
+    <p class="t">
+    Vi har hverken tid eller forståelse til at få den præcise fysik-forklaring, men vi kan regne inertimoment som:
+    _($m*r^2_)
+    Vi ganger bare massen med radius i anden: Det giver intuitiv mening, fordi det sørger for 
+    at både vægten og afstanden fra massemidtpunkt (hvor langt de bevæger sig når vi roterer) har indflydelse. Hvis
+    den korte pind er _(0.5m_) lang, er dens inertimoment lig 
+    _($(0.5/2)^2*3kg+(0.5/2)^2*2kg = 0.3125_) 
+    Hvis den lange pind er _(1.7m_) lang, er dens inertimoment lig 
+    _($(1.7/2)^2*3kg+(1.7/2)^2*2kg = 3.6124_)  
+    Inertimoment er tydeligvis nemt at regne på simple "punkt-masser" som disse, men
+    hvad gør vi, hvis vi har
+    </p>
+    <br>
+    <img class='Spic' style='width:100%' src='../../../Assets/Chapter4\DerivativesAndIntegrals\Applications\OtherThingsToCount\HeavyMetalStick.png'> 
+    <br>
+    <p class="t">
+    ... en simpel, tynd og tung stang? Det kræver overraskende nok
+    integraler at regne inertimomentet i dette tilsyneladende utroligt simple tilfælde. 
+    </p>
+
+    <q-stion 1="14" 2="3">
+    Sig du har en metalstang der er _(1.3m_) lang. Lige nu behøver du ikke bekymre dig omkring stangens <i>bredde</i>:
+    Bare forestil en "uendelig" tynd stang. Vores 
+    situation er derfor 1-dimensionel: Stangen har <i>kun</i> længde, ikke
+    nogen bredde eller tykkelse. 
+    <p class="t">
+    Hvad er stangens inertimoment, hvis den 
+    har samme densitet overalt og vejer _(12kg_)?
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Jeg ville nok starte med at dele stangen op i en masse små dele:
+    <br><br>
+    <img class='Spic' style='width:100%' src='../../../Assets/Chapter4\DerivativesAndIntegrals\Applications\OtherThingsToCount\HeavyMetalStick2.png'> 
+    <br>
+    <p class="t">
+    Hvor meget vejer den, hvis hver del er _(dx_) lang? Well, stangen har en "densitet" på:
+    _($ 12kg/1.3m = 9.230 \frac{kg}{m} _)
+    Pr. _(1m_) stang er der altså
+    _($9.230 kg/m * 1m = 9.230 \text{kg} _) 
+    Det betyder, at der på 
+    _(dx_) meter er _(9.23*dx_) vægt. 
+    </p>
+    <p class="t">
+    Placer _(x=0_) i stangens midte / massemidtpunkt. De to yderste bokse er ved _(-1.3/2 = _) _(-0.65_)
+    og _(0.65_). Inertimoment regnes som masse gange radius i anden, så
+    kassen ved _(x_) tilføjer et inertimoment på:
+    _($(9.23*dx)*x^2_)
+    Hvilket let kan omformuleres til:
+    _($9.23x^2*dx_)
+    Vi skal regne en uendelig sum af en masse små led, der hver bliver ganget med _(dx_). 
+    Det lyder som et job for integraler! 
+    _($\int_{-0.65}^{0.65} 9.23*x^2 dx = 1.689_)
+    Bum! Vi har et svar! 
+    </p>
+    <br></answer-box>
+
+    <q-stion 1="14" 2="4">
+    Sig nu, at du i stedet havde en hel metalplade:
+    <img class='SpicXL' style='width:85%' src='../../../Assets/Chapter4\DerivativesAndIntegrals\Applications\OtherThingsToCount\MomentOfInertiaSquare1.png'> 
+    <p class="t">
+    Vores situation er nu todimensionel: Igen forestiller vi os, at tykkelsen er "uendelig" lille. 
+    Hvad er inertimomentet, hvis pladen er _(1.3m_) lang, _(0.8m_) bred, vejer
+    _(28kg_) og har uniform densitet? 
+    </p>
+    <p class="t">
+    <i>Spoilers:</i> Du får nok brug for at integrere to gange. 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Jeg tænker, at jeg aller først opdeler den ligesom før:
+    <img class='SpicXL' style='width:85%' src='../../../Assets/Chapter4\DerivativesAndIntegrals\Applications\OtherThingsToCount\MomentOfInertiaSquare2.png'> 
+    <p class="t">
+    Jeg kan nemt se, at vægten af hver del er 
+    _($(28kg/1.3m)*dx = 21.53 dx_)
+    Dette er <i>ikke</i> nødvendigvis nok dog: 
+    Hver del har konkret <i>tykkelse</i> nu, så jeg kan ikke <i>bare</i> regne inertimomentet som 
+    massen gange radiusen i anden. Forskellige steder på hver del har forskellige radiuser væk fra
+    massemidtpunktet, og jeg er nødt til at dele hver kasse op i mindre kasser:
+    </p>
+    <img class='SpicXL' style='width:85%' src='../../../Assets/Chapter4\DerivativesAndIntegrals\Applications\OtherThingsToCount\MomentOfInertiaSquare3.png'>
+    <p class="t">
+    Vi skal derfor både bruge _(x_) og _(y_)-koordinater: 
+    </p> 
+    <img class='SpicXL' style='width:95%' src='../../../Assets/Chapter4\DerivativesAndIntegrals\Applications\OtherThingsToCount\MomentOfInertiaSquare4.png'>
+    <p class="t">
+    Kassen ved _(x_) og _(y_) har en radius væk fra _((0,0)_) på _(\sqrt{x^2+y^2}_). 
+    Hver kasse
+    har et areal på _(dx*dy_). Vægten pr. areal på hele pladen er:
+    _($28kg/(1.3m*0.8m) = 26.923 \frac{kg}{m^2} _)
+    Så hver kasse vejer _(26.923*(dx*dy)_). Inertimomentet på kassen ved
+    _((x, y)_) er lig:
+    _($(26.923*(dx*dy))*(x^2+y^2)_)
+    Her er min strategi: Vi regner først inertimomentet af èn "linje":
+    På en bestemt _(x_)-værdi går vi gennem alle 
+    _(y_)-værdierne og lægger inertimomenter fra kasserne sammen.
+    Vi får
+    nu et <i>udtryk</i>: en funktion _(F(x)_), der fortæller os hvad inertimomentet af 
+    "linjen" ved _(x_) er. Nu går vi gennem alle _(x_)-værdier og lægger
+    alle "linjernes" inertimomenter sammen via _(F(x)_). Så er vi færdige! Begge
+    summe kan let regnes med integraler. 
+    </p>
+    <p class="t">
+    For at få inertimomentet af linjen ved _(x_), skal vi integrere med _(y_) fra
+    _(y=-0.8/2=-0.4_) til _(y=0.4_)
+    _($F(x) = \int_{-0.4}^{0.4} 26.923*dx*\left(x^2+y^2 \right)  \, dy = (21.538x^2 + 1.148) \, dx _)
+    Vi integrerer nu _(F(x)_) fra _(x=-0.65_) til _(x=0.65_):
+    _($\int_{-0.65}^{0.65} (21.538x^2 + 1.148) \, dx = 5.436 _)
+    Bum! Det er simpelthen svaret! 
+    </p>
+    <br></answer-box>
+
+
+
+
+
+

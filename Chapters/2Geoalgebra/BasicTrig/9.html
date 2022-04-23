@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+
+
+    <!-- NORMAL ONE -->
+    <!-- <iframe scrolling="no" title="AmbigiousMoreThan90" src="https://www.geogebra.org/material/iframe/id/b8yfzh5v/width/685/height/326/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/false/ctl/false" width="342px" height="163px" style="border:solid; margin-left:  15.8% "> </iframe> -->
+
+    <!-- CASE 1 -->
+    <!-- <iframe scrolling="no" title="AmbigiousCase2" src="https://www.geogebra.org/material/iframe/id/cxp5zvwf/width/785/height/379/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/false/ctl/true" width="392px" height="189px" style="border:solid; margin-left:  10.8% "> </iframe> -->
+
+    <!-- CASE 2 -->
+    <!-- <iframe scrolling="no" title="AmbigiousCase3" src="https://www.geogebra.org/material/iframe/id/j45ujdxt/width/700/height/500/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/false/ctl/true" width="350px" height="250px" style="border:solid; margin-left: 15% "> </iframe> -->
+
+    <!-- CASE 3 -->
+    <!-- <iframe scrolling="no" title="AmbigiousCase4" src="https://www.geogebra.org/material/iframe/id/djcsvq56/width/700/height/500/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/false/ctl/true" width="350px" height="250px" style="border:solid; margin-left: 15% "> </iframe> -->
+
+    <!-- CASE MORE THAN 90: -->
+    <!-- <iframe scrolling="no" title="AmbigiousCaseMoreThan90" src="https://www.geogebra.org/material/iframe/id/k5u9tcdt/width/878/height/697/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/false/ctl/true" width="439px" height="348px" style="border:solid; margin-left:  6.1% "> </iframe> -->
+    <!-- DENNE HER ER SÅ HØJT OPPE BUSTER, FORDI AT DEN NEDRE HALVDEL AF GEOGEBRA-SKÆRMEN AF MYSTISKE ÅRSAGER IKKE ER RESPONSIVE OVERHOVEDET.  -->
+
+    <!-- CASE LONGER -->
+    <!-- <iframe scrolling="no" title="AmbigiousLonger" src="https://www.geogebra.org/material/iframe/id/erhrstsg/width/865/height/498/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/false/ctl/true" width="432px" height="249px" style="border:0px;"> </iframe> -->
+
+    <h3>Første trick til at finde sider og vinkler</h3>
+
+    
+    <q-stion 1="9" 2="1" bigTop="true">
+    _(\underline{\textbf{A}}_): <br> 
+    Find længden _(?_) i følgende trekant:
+    <img class="Spic" style="width:50%" src="../../../Assets/Chapter2\Section1\RandomExercises\Exercise 2 1.png">
+    <p class="tt">
+    _(\underline{\textbf{B}}_): <br> 
+    Find vinklen _(?_) her:</p>
+    <img class="Spic" style="width:50%" src="../../../Assets/Chapter2\Section1\RandomExercises\Exercise 3 1.png">
+    <p class="tt">
+    Formålet med disse to opgaver er ikke, at du skal finde _(?_) uden at opdele trekanten i to retvinklede:
+    Det må du godt. Formålet er at udvikle nogle praktiske formler til vilkårlige trekanter. 
+    </p>
+    <br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    Vi opdeler bare trekanten i to:
+    <img class="Spic" style="width:50%" src="../../../Assets/Chapter2\Section1\RandomExercises\Exercise 2 2.png">
+    <p class="t">
+    Denne nye højde-linje er _(Sin(25)*10=4.2261_) lang. 
+    Nu dividerer vi bare med _(Sin(70)_) i trekanten til højre, og får: 
+    _($?=4.2261/Sin(70)=4.497_)
+    </p>
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Vi opdeler endnu engang:
+    <img class="Spic" style="width:50%" src="../../../Assets/Chapter2\Section1\RandomExercises\Exercise 3 2.png">
+    <p class="t">
+    Højden er _(8*Sin(70)=7.51_). Nu i trekanten til venstre har vi både højden og længden,
+    så vi siger bare 
+    _($Arcsin\left(\frac{7.51}{15} \right)=30.07^o_)
+    </p>
+    <br></answer-box>
+
+    <p class="tt">
+    Hvis vi er skarpe, kan vi lige undersøge hvad der skete i sidste opgave mere generelt:
+    Du havde en vinkel _(70^o_) og længden <i>over for</i> den vinkel _(10m_). Du havde en 
+    ekstra vinkel _(25_), som du søgte længden <i>over for</i>.
+    </p>
+    <p class="t">
+    Kald _(70_) for _(v_2_), _(10_) for _(a_2_) og _(25_) for _(v_1_). Nu bliver højden til:
+    _($Sin(v_1)*a_2_)
+    Og så _(?_) til:
+    _($\frac{Sin(v_1)*a_2}{Sin(v_2)}_)
+    I opgave _(2_) skulle du nu finde en ukendt vinkel, med ellers præcis de samme informationer.
+    Kald _(15_) for _(a_2_), _(8_) for _(a_1_), _(70_) for _(v_2_). Højden bliver:
+    _($Sin(v_2)*a_1_)
+    Og vinklen bliver:
+    _($Arcsin\left(\frac{Sin(v_2)*a_1}{a_2}\right)_)
+    Så helt generelt, når man har følgende trekant
+    </p>
+    <img class="Spic" style="width:45%" src="../../../Assets/Chapter2/Section1/TrigProperties/Sinusregel.png">
+    <p class="St">
+    ... ved vi at:
+        _($? = Sin(A)*\left(\frac{b}{Sin(B)}\right) = Sin(A)*\left(\frac{c}{Sin(C)}\right)_)
+    Og ved
+    </p>
+    <img class="Spic" style="width:45%" src="../../../Assets/Chapter2/Section1/TrigProperties/Sinusregel2.png">
+    <p class="t">
+    ... der er:
+    _($? = Arcsin\left(a*\frac{Sin(B)}{b}\right)=Arcsin\left(a*\frac{Sin(C)}{c}\right)_)
+    Det er to praktiske formler, man kan bruge. 
+    </p>
+
+    <q-stion 1="9" 2="2" bigTop="true">
+    Find vinklen _(?_) på følgende trekant:
+    <img class='Spic' style='width:55%' src='../../../Assets/Chapter2\Section1\TrigProperties\Sinusregel opgave 0.png'> 
+    <br><br></q-stion>
+    <answer-box>
+    Vi regner:
+    _($? = Arcsin\left(7*\frac{Sin(60)}{12} \right) = 30.34^o_)
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="8" 2="3">
+    Find _(?_) på følgende vilkårlige trekant:
+    <img class="Spic" style="width:50%" src="../../../Assets/Chapter2/Section1/TrigProperties/Sinusregel opgave.png">
+    <br><br></q-stion>
+    <answer-box>
+    Vi kan ikke beregne _(?_) <i>direkte</i> ved hjælp af den formel vi lærte, da
+    vi mangler vinklen på den modsatte side. Vi er nødt til at bruge
+    sinusreglen og vinkelsummen i en trekant først. Vinklen til højre kan regnes som:
+    _($\begin{eqnarray}
+    && \text{vinkel til højre} & = Arcsin\left(a*\frac{Sin(B)}{b}\right) \\ \\
+    && & = Arcsin\left(5*\frac{Sin(8)}{70}\right) & = 35^o 
+    \end{eqnarray}_)
+    Så den øverste vinkel modsat siden _(?_) er _(180-70-35=75^o_). Nu kan vi finde _(?_) som:
+    _($\begin{eqnarray}
+    && ? & = Sin(A)*\left(\frac{b}{Sin(B)}\right) \\ \\
+    && & = Sin(75)*\left(\frac{8}{Sin(70)}\right) & = 8.22
+    \end{eqnarray}_)
+    Bum!
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <p class="tt">
+    Det er vigtigt at pointere, 
+    at der ét tilfældige hvor vi <i>ikke</i> kan bruge formlen/reglen her. 
+    Prøv at se på følgende trekant: 
+    </p>
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter2\Section1\RandomExercises\AmbigiousCase1.png'> 
+    <p class="tt">
+    Her kan vi regne vinklen _(v_) som:
+    _($Arcsin\left(5*\frac{Sin(30)}{3.2} \right) = 51.37^o_)
+    Hmm. Det virker ret spøjst. 
+    Vi skal selvfølgelig ikke vurdere alt for hårdt ud fra øjemål, 
+    men på billedet ligner det virkelig <i>ikke</i>, at _(v_) er lig _(51.37^o_). 
+    Den er jo tydeligvis
+    større end _(90_) grader, så hvorfor får vi noget, der er mindre?
+    </p>
+    <p class="t">
+    Problemet er, at vores givne informationer faktisk ikke fortæller os nok om trekanten. 
+    Der er nemlig to mulige tilfælde:
+    </p>
+    <video class='SpicBXL' style="width:100%;" controls>
+        <source src='../../../Assets/Chapter2\Section1\RandomExercises\AmbigiousCaseVideo1.mp4' type='video/mp4'>
+    </video>
+    <p class="tt">
+    Du kan lige selv lege lidt rundt med det i simulationen her:
+    </p>
+    <iframe scrolling="no" title="AmbigiousMoreThan90" src="https://www.geogebra.org/material/iframe/id/b8yfzh5v/width/685/height/326/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/false/ctl/false" width="342px" height="163px" style="border:solid; margin-left: 15.8%; margin-top:25px;"> </iframe>
+    <p class="tt">
+    Det naturlige første spørgsmål er nok <i>hvornår</i> det her sker: 
+    Hvornår kan vi ikke bruge formlen,
+    fordi der er to mulige trekanter? 
+    </p>
+    <p class="t">
+    Først af alt, skal man kun være oplyst med en vinkel, 
+    en sidelængde ved siden af den vinkel og en sidelængde over for den vinkel. 
+    I alle andre tilfælde er det kun muligt at lave én trekant, 
+    som du kan se i de følgende
+    simulationer:
+    </p>
+
+    <p class="t">
+    <i>Èn vinkel og to sider ved siden af:</i> 
+    </p>
+    <iframe scrolling="no" title="AmbigiousCase2" src="https://www.geogebra.org/material/iframe/id/cxp5zvwf/width/785/height/379/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/false/ctl/true" width="392px" height="189px" style="border:solid; margin-left: 10.8%; margin-top:25px;"> </iframe>
+    <p class="tt">
+    <i>To vinkler og siden imellem:</i>
+    </p>
+    <!-- CASE 2 -->
+    <iframe scrolling="no" title="AmbigiousCase3" src="https://www.geogebra.org/material/iframe/id/j45ujdxt/width/700/height/500/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/false/ctl/true" width="350px" height="250px" style="border:solid; margin-left: 15%; margin-top:25px;"> </iframe>
+    <p class="tt">
+    <i>To vinkler og siden ved èn af dem:</i>
+    </p>
+    <!-- CASE 3 -->
+    <iframe scrolling="no" title="AmbigiousCase4" src="https://www.geogebra.org/material/iframe/id/djcsvq56/width/700/height/500/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/false/ctl/true" width="350px" height="250px" style="border:solid; margin-left: 15%; margin-top:25px;"> </iframe>
+
+    <p class="tt">
+    For det andet skal den kendte vinkel være under _(90_) grader. 
+    Ellers er det kun muligt at lave 
+    èn trekant. Det er nemmest bare at tjekke intuitivt via følgende simulation: 
+    </p>
+    <iframe scrolling="no" title="AmbigiousCaseMoreThan90" src="https://www.geogebra.org/material/iframe/id/k5u9tcdt/width/878/height/697/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/false/ctl/true" width="439px" height="348px" style="border:solid; margin-left: 6.1%; margin-top:25px;"> </iframe>
+    <!-- DENNE HER ER SÅ HØJT OPPE BUSTER, FORDI AT DEN NEDRE HALVDEL AF GEOGEBRA-SKÆRMEN AF MYSTISKE ÅRSAGER IKKE ER RESPONSIVE OVERHOVEDET.  -->
+    <p class="tt">
+    Til sidst skal siden overfor være mindre end siden ved vinklen. 
+    Ellers er den ukendte side nødt til at "gå gennem" den kendte vinkel, 
+    for at man kan lave to trekanter:
+    </p>
+    <iframe scrolling="no" title="AmbigiousLonger" src="https://www.geogebra.org/material/iframe/id/erhrstsg/width/865/height/498/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/false/ctl/true" width="432px" height="249px" style="border:solid; margin-left: 6.8%; margin-top:25px;"> </iframe>
+    <p class="tt">
+    Alt i alt sker det kun når man er givet en vinkel under _(90_) grader, siden ved siden af,
+    og siden overfor som er mindre. Ellers kan man sikkert bruge formlen som man har lyst! 
+    </p>
+
+    <!--  -->
+
+    <q-stion 1="9" 2="4" bigTop="true">
+    Vurder i hver af de følgende tilfælde om det er muligt at bestemme _(?_) via de givne informationer:
+    <p class="t">
+    _(\underline{\textbf{A}}_): 
+    </p>
+    <img class='Spic' style='width:35%' src='../../../Assets/Chapter2\Section1\RandomExercises\AmbigiousCaseExercise1.png'> 
+    <p class="tt">
+    _(\underline{\textbf{B}}_): 
+    </p>
+    <img class='Spic' style='width:35%' src='../../../Assets/Chapter2\Section1\RandomExercises\AmbigiousCaseExercise2.png'> 
+    <p class="tt">
+    _(\underline{\textbf{C}}_): 
+    </p>
+    <img class='Spic' style='width:40%' src='../../../Assets/Chapter2\Section1\RandomExercises\AmbigiousCaseExercise3.png'> 
+    <p class="tt">
+    _(\underline{\textbf{D}}_): 
+    </p>
+    <img class='Spic' style='width:20%' src='../../../Assets/Chapter2\Section1\RandomExercises\AmbigiousCaseExercise4.png'> 
+    <p class="tt">
+    _(\underline{\textbf{E}}_): 
+    </p>
+    <img class='Spic' style='width:40%' src='../../../Assets/Chapter2\Section1\RandomExercises\AmbigiousCaseExercise5.png'> 
+    <p class="tt">
+    _(\underline{\textbf{F}}_): 
+    </p>
+    <img class='Spic' style='width:40%' src='../../../Assets/Chapter2\Section1\RandomExercises\AmbigiousCaseExercise6.png'> 
+    <p class="tt">
+    Du behøver ikke faktisk at finde _(?_) hvis det er muligt. 
+    </p>
+    <br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    Informationerne passer ikke til det tilfælde, hvor vi er i problemer, 
+    da vi har en vinkel og to sider ved siden af. 
+    Derfor <i>er</i> det muligt at finde _(?_) i dette tilfælde.
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    På denne er det umuligt. Vi har en vinkel, en side ved siden af, 
+    og en side over for. 
+    Yderligere er vores kendte vinkel under _(90^o_), 
+    og siden over for er mindre end den ved siden af.
+    Informationerne matcher.
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{C}}_)#" tabColour="rgb(171,96,147)">
+    Her har vi ikke de rigtige slags informationer, så på denne <i>er</i> det muligt.
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{D}}_)#" tabColour="rgb(175,128,161)">
+    Her har vi de rigtige informationer, men den kendte vinkel er over _(90_) grader. 
+    Det er altså muligt.
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{E}}_)#" tabColour="rgb(171,96,147)">
+    Her har vi de rigtige informationer, vinklen er under _(90_) grader, 
+    men siden over for er længere end den ved siden af.
+    Det er altså muligt.
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{F}}_)#" tabColour="rgb(175,128,161)">
+    Her har vi de rigtige de informationer, vinklen er under _(90^o_), 
+    og siden over for er kortere. 
+    I dette tilfælde er det umuligt. 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="9" 2="5">
+    Sig at du har en trekant hvor en af vinklerne er _(66^o_), en af siderne ved siden
+    af vinklen er _(4_) lang og siden overfor er _(3.7_) lang. Find nu 
+    begge mulige størrelser, de to andre ukendte vinkler kan have, og begge mulige længder,
+    den ene ukendte side kan have. 
+    <br><br></q-stion>
+    <answer-box>
+    Se først følgende video der forklarer idéen:
+    <video class="SpicB" style="width:90%;" controls>
+        <source src='../../../Assets/Chapter2\Section1\RandomExercises\AmbigiousCaseVideo2.mp4' type='video/mp4'>
+    </video>
+    <p class="t">
+    Den ene mulige vinkel ved vi kan findes som:
+    _($Arcsin\left(4*\frac{Sin(66)}{3.7} \right) = 80.9^o_)
+    Så den anden mulige vinkel er:
+    _($180-80.9=99.1^o_)
+    I den ene situation vil den tredje mulige vinkel være _(180-66-80.9=_) _(33.09^o_), og 
+    i den anden situation vil den være _(180-66-99.1 = _) _(14.9^o_). I situationen med
+    _(33.09_) grader vil den tredje ukendte side være:
+    _($Sin(33.09)*\frac{3.7}{Sin(66)} = 2.21_)
+    I det andet tilfælde vil den tredje ukendte side være:
+    _($Sin(14.9)*\frac{3.7}{Sin(66)} = 1.04_)
+    Færdig!
+    </p>
+    <br></answer-box>
+
+

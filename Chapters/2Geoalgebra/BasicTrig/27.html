@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+
+
+    <h3>Produkt til sum og sum til produkt</h3>
+
+    <q-stion 1="27" 2="1">
+    Prøv at bevis følgende:
+    _($Cos(a) Cos(b) = \frac{1}{2} Cos(a+b) + \frac{1}{2} Cos(a-b)  _)
+    Det her kan være en praktisk formel, hvis vi gerne vil omskrive, 
+    to cos-funktioner ganget med hinanden, til to cos-funktioner plusset med hinanden. 
+    <p class="t">
+    Den her er ret tricky, så du for nok brug for et stort hint til at starte:
+    </p>
+    <p class="t">
+    _(Cos(a+b)_) og _(Cos(a-b)_) minder meget om hinanden:
+    _($Cos(a+b)=Cos(a)*Cos(b) - Sin(a)*Sin(b)_)
+    _($Cos(a-b)=Cos(a)*Cos(b) + Sin(a)*Sin(b)_)
+    Hvis man kalder _(Cos(a)*Cos(b)_) for _(A_) og 
+    _(Sin(a)*Sin(b)_) for _(B_), ser man:
+    _($Cos(a+b)=A-B_)
+    _($Cos(a-b)=A+B_)
+    Kunne man måske bruge det til noget smart?
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Hvis vi gerne vil have et simpelt udtryk når vi plusser
+    to _(Cos_) af forskellige vinkler, kan vi bruge det faktum at:
+    _($(A-B)+(A+B)=A+A-B+B=2A_)
+    Altså:
+    _($Cos(a+b)+Cos(a-b) = 2A_)
+    Hvor vi jo havde sat _(A_) til _(Cos(a)*Cos(b)_), så:
+    _($Cos(a+b)+Cos(a-b)=2*Cos(a)*Cos(b)_)
+    Vi dividerer med _(2_) på begge sider, og får endeligt: 
+    _($Cos(a) Cos(b) = \frac{1}{2} Cos(a+b) + \frac{1}{2} Cos(a-b)_)
+    Voila! En relativ praktisk og nem formel 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="27" 2="2">
+    Find nu frem til nogle lignende formler for:
+    <div style="margin-left:-71%; margin-top:25px; margin-bottom: -10px;">
+    _($\begin{eqnarray}
+        && \underline{\textbf{A}}: \, \, \, \, \, \, Sin(a)*Sin(b) \\  \\
+        && \underline{\textbf{B}}: \, \, \, \, \, \, Sin(a)*Cos(b) \\  \\
+    \end{eqnarray}_)
+    </div>
+    <p class="t">
+    Altså, nu hvor det er to _(Sin_) ganget i stedet for to _(Cos_) som før, og nu 
+    hvor èn _(Cos_) er ganget med èn _(Sin_). 
+    </p>
+    <br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    Vi ved at: 
+    _($Cos(a) Cos(b) = \frac{1}{2} Cos(a+b) + \frac{1}{2} Cos(a-b)_)
+    Det gælder for en hvilket som helst _(a_) og _(b_). Vi vil 
+    gerne have _(Sin_) i stedet, så vi vælger 
+    _($a=\frac{\pi}{2} - v_1, \qquad b=\frac{\pi}{2} - v_2_) 
+    Hvor _(v_1_), _(v_2_) bare er to vilkårlige tal ligesom _(a_) og _(b_):
+    _($\begin{eqnarray}
+    && Cos\left(\frac{\pi}{2}-v_1 \right)*Cos\left(\frac{\pi}{2} - v_2 \right) = \\
+    && \frac{1}{2} Cos\left(\frac{\pi}{2} - v_1 + \frac{\pi}{2} - v_2 \right) + \frac{1}{2} Cos\left(\frac{\pi}{2}-v_1 - (\frac{\pi}{2} - v_2) \right)
+    \end{eqnarray}_)
+    Den venstre side bliver nu til:
+    _($Sin(v_1)*Sin(v_2)_)
+    På den højre kan man let se, at _(\pi/2 - v_1 - (\pi/2 - v_2)_) bliver til 
+    bare _(v_2-v_1_), og _(Cos_) af _(\pi/2-v_1+\pi/2-v_2_) bliver
+    til _(\pi-(v_1+v_2)_). Vi ved at _(Cos(\pi-v)=-Cos(v)_), så vi får endeligt:
+    _($Sin(v_1) Sin(v_2) = \frac{1}{2} Cos(v_2 - v_1) - \frac{1}{2} Cos(v_2+v_1) _)
+    Bum!
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Vi gør præcis det samme trick i denne som i den sidste:
+    _($\begin{align}
+    & Cos\left(\frac{\pi}{2} - v_1 \right) Cos(v_2) = \\ \\
+    & \frac{1}{2} Cos\left(\frac{\pi}{2} - v_1 + v_2 \right) + \frac{1}{2}*Cos \left(\frac{\pi}{2} - v_1 - v_2 \right)
+    \end{align}_)
+    Venstre side bliver nu til:
+    _($Sin(v_1)*Cos(v_2)_)
+    På højre side kan vi se, at _(\pi/2-v_1+v_2_) kan omskrives til
+    _(\pi/2 - (v_1-v_2)_), så den _(Cos_) funktion bliver lavet 
+    om til  _(Sin_). Lignende kan _(\pi/2-v_1-v_2_) laves om
+    til _(\pi/2-(v_1+v_2)_), så her bliver _(Cos_) også lavet om til _(Sin_). Alt i alt får vi:
+    _($Sin(v_1) Cos(v_2) = \frac{1}{2} Sin(v_1-v_2) + \frac{1}{2} Sin(v_1+v_2)_)
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="27" 2="3">
+    Vi har lige nu en formel, der kan lave to trig-funktioner ganget med hinanden, 
+    om til to trig-funktioner plusset med hinanden. 
+    Det viser sig, at det ikke er særlig brugbart i specielt mange tilfælde, 
+    og vi er tit mere interesserede i at gøre det modsatte:
+    Lave to trig-funktioner plusset med hinanden, om til to trig-funktioner 
+    ganget med hinanden. Det kan f.eks. være
+    brugbart, hvis vi har en nævner med to led, der ville være langt 
+    simplere hvis den kun havde ét. 
+    Man bruger det også til at bevise resultatet vi kom frem til ang. stående bølger. 
+    <br>
+    <p class="t">
+    _(\underline{\textbf{A}}_): <br> Omskriv _(Cos(0.4)+Cos(1.6)_) til to trig-funktioner ganget med hinanden. 
+    </p>
+    <p class="t">
+    _(\underline{\textbf{B}}_): <br> Find nu en mere generel formel, hvis du har _(Cos(v_1)+Cos(v_2)_). 
+    </p>
+    <p class="t">
+    _(\underline{\textbf{C}}_): <br> Find en lignende formel for _(Sin(v_1)+Sin(v_2)_)
+    </p>
+    <br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    Vi ved at:
+    _($Cos(a) Cos(b) = \frac{1}{2} Cos(a+b) + \frac{1}{2} Cos(a-b)_)
+    Hvilket også kan omskrives til:
+    _($Cos(a+b)+Cos(a-b) = 2 Cos(a) Cos(b)_)
+    Vi har _(Cos(0.4)+Cos(1.6)_), så i vores tilfælde er 
+    _(a+b=0.4_) og _(a-b=1.6_) (det kunne også være omvendt, men det ville ikke gøre nogen forskel). Så:
+    _($\begin{eqnarray}
+    && a & + b & = 0.4 \\
+    && a & - b & = 1.6
+    \end{eqnarray}_)
+    Vi kan se ud fra det første krav, at _(a=0.4-b_), og ud fra det andet at _(a=1.6+b_). 
+    Derved fås:
+    _($0.4-b=1.6+b \to 0.4-1.6 = 2b \to b = -0.6_)
+    Vi indsætter nu dette i _(a+b=0.4_), og får:
+    _($a+(-0.6)=0.4 \to a=1_)
+    Så:
+    _($Cos(0.4) + Cos(1.6) = 2*Cos(1)*Cos(-0.6)_)
+    Voila! 
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Vi gør nu præcist det samme som i sidste opgave, bare lidt mere generelt med _(v_1, v_2_) i stedet for 
+    _(0.4, 1.6_):
+    _($\begin{eqnarray}
+    && a & + b & = v_1 \\
+    && a & - b & = v_2
+    \end{eqnarray}_)
+    Vi kan se, at _(a_) er lig både _(v_1-b_) og _(v_2+b_) så:
+    _($v_1-b=v_2+b \to v_1 - v_2 = 2b \to b = \frac{v_1-v_2}{2}_)
+    Vi kan også se, at _(b_) er lig både _(v_1-a_) og _(a-v_2_), så:
+    _($v_1 - a = a - v_2 \to v_1+v_2 = 2a \to a = \frac{v_1+v_2}{2}_)
+    Alt i alt får vi:
+    _($Cos(v_1) + Cos(v_2) = 2 Cos\left(\frac{a+b}{2} \right)*Cos\left(\frac{a-b}{2} \right)_)
+    Bum!
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{C}}_)#" tabColour="rgb(171,96,147)">
+    Vi ved at:
+    _($Sin(a) Cos(b) = \frac{1}{2} Sin(a-b) + \frac{1}{2} Sin(a+b)_)
+    Så:
+    _($Sin(a+b) + Sin(a-b) = 2 Sin(a) Cos(b)_)
+    Ligesom før har vi:
+    _($\begin{eqnarray}
+    && a & + b & = v_1 \\
+    && a & - b & = v_2
+    \end{eqnarray}_)
+    Hvilket giver:
+    _($a=\frac{v_1+v_2}{2}, \qquad b=\frac{v_1-v_2}{2}_)
+    Så vi får:
+    _($Sin(v_1) + Sin(v_2) = 2*Sin\left(\frac{v_1+v_2}{2} \right)*Cos\left(\frac{v_1-v_2}{2} \right)_)
+    Bum!
+    <p class="cent">*</p>
+    <p class="t">
+    Det skal siges, at vi med meget den samme strategi kan komme frem til: 
+    _($\begin{eqnarray}
+    && Cos(v_1) - Cos(v_2) = -2 Sin\left(\frac{v_1+v_2}{2} \right)*Sin\left(\frac{v_1-v_2}{2} \right) \\ \\
+    && Sin(v_1) - Sin(v_2) = 2 Cos\left(\frac{v_1+v_2}{2} \right)*Sin\left(\frac{v_1-v_2}{2} \right)
+    \end{eqnarray}_)
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="27" 2="4">
+    Find _(v_) hvis
+    _($Sin(v)+Sin(2v)=Cos(v)+Cos(2v)_)     
+    <br></q-stion>
+    <answer-box>
+    Vi omskriver begge sider, så trig-funktionerne er ganget med hinanden i stedet for plusset:
+    _($2 Sin\left(\frac{v+2v}{2} \right) Cos\left(\frac{v-2v}{2} \right) = 2 Cos\left(\frac{v+2v}{2} \right) Cos\left(\frac{v-2v}{2} \right)_)
+    Dette bliver til:
+    _($2 Sin\left(\frac{3}{2}v \right) Cos \left(-\frac{1}{2}v \right) = 2 Cos\left(\frac{3}{2} v \right)*Cos\left(-\frac{1}{2}v \right)_)
+    Begge sider er ganget med _(2*Cos(-0.5v)_), så det kan let fjernes:
+    _($Sin\left(\frac{3}{2}v \right) = Cos\left(\frac{3}{2} v \right)_)
+    Jeg tænker, at strategien nu er, at beskrive det hele i forhold til _(Tan_), så vi kan bruge
+    _(Arctan_). Derfor dividerer vi begge sider med _(Cos((3/2)v)_) og får:
+    _($\frac{Sin\left(\frac{3}{2}v \right)}{Cos\left(\frac{3}{2} v \right)} = \frac{Cos\left(\frac{3}{2} v \right)}{Cos\left(\frac{3}{2} v \right)} \to Tan\left(\frac{3}{2}v \right) = 1_)
+    Så:
+    _($\frac{3}{2}v = Arctan(1) = 0.785_)
+    Endeligt:
+    _($v=0.785/\left(\frac{3}{2} \right) = 0.523_)
+    Bum!
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="27" 2="5" customWidth="570">
+    Da vi arbejdede med akustik og bølger, anvendte vi det faktum at:
+    _($A*Sin(Bx - Bv*t) + A*Sin(Bx + Bv*t)=_)
+    _($2A*Sin(Bx) Cos(Bv*t)_)
+    Prøv nu endelig at bevise det. 
+    <br><br></q-stion>
+    <answer-box customWidth="570">
+    Begge led er ganget med _(A_), så vi kan først af alt omskrive til:
+    _($A*\left(Sin(Bx - Bv*t) + Sin(Bx + Bv*t) \right)_)
+    Nu anvender vi at det faktum, at
+    _($Sin(a) + Sin(b) = 2*Sin\left(\frac{a+b}{2} \right)*Cos\left(\frac{a-b}{2} \right)_)
+    Vi har _(a=Bx - Bv*t_) og _(b=Bx + Bv*t_), så:
+    _($2*Sin\left(\frac{Bx - Bv*t + Bx + Bv*t}{2} \right)*Cos\left(\frac{Bx - Bv*t - (Bx + Bv*t)}{2} \right)_)
+    I den ene forsvinder _(Bv*t_) i tælleren, og vi står med _(2_) af _(Bx_), som
+    bliver divideret med _(2_). I
+    den anden forsvinder _(Bx_) i tælleren, og vi står med _(2_) af _(Bv*t_), som 
+    bliver divideret med _(2_). 
+    Alt i alt ender vi ud med:
+    _($2*Sin(Bx)*Cos(Bv*t)_)
+    Det var alt ganget med _(A_), så endeligt får vi:
+    _($2A*Sin(Bx) Cos(Bv*t)_)
+    Boom! 
+    <br><br></answer-box>
+

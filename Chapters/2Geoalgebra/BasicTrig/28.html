@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+
+
+    <h3>Hældningen af en trig-kurve</h3>
+
+    <p class="t">
+    Det kan meget ofte være praktisk at vide hvor <i>stærkt</i> 
+    en kurve går op eller ned - med andre ord dens <i>hældning</i>, dens <i>forandring</i>.
+    </p>
+    <img class="SpicB" style="width:65%" src="../../../Assets/Chapter2\Section1\TrigProperties\Bakke.png">
+    <p class="t">
+    Eksempelvis: Hvor stejlt går denne _(Sin_)-agtige bakke op eller ned ved _(x=15_) eller _(x=24_)?
+    </p>
+    <img class="SpicB" style="width:65%" src="../../../Assets/Chapter2\Section1\TrigProperties\Bakke2.png">
+    <p class="t">
+    Hældning er jo bare forholdet mellem hvor meget én og en anden
+    værdi bliver større.
+    _(a=2.3*b_) er et forhold med en <i>konstant</i> hældning på _(2.3_), 
+    men det er også bare en simpel lige kurve:
+    </p>
+    <img class='SpicXL' style='width:80%' src='../../../Assets/Chapter2\Section1\TrigProperties\GraphRegardingTangents.png'> 
+    <p class="t">
+    Ved langt de fleste kurver vil denne hældning ændre sig 
+    baseret på <i>hvad</i> _(b_) er. _(Sin(b)_) eller _(0.3b^2_) er jo tydeligvis
+    ikke lige stejle overalt:
+    </p>
+    <img class='SpicXL' style='width:155%; margin-left:-27.5%' src='../../../Assets/Chapter2\Section1\TrigProperties\GraphRegardingTangentsTogether.png'> 
+    <p class="t">
+    Hvordan finder vi de her hældninger? Lad os f.eks. 
+    finde _(y_)'s hældning i forhold til _(x_)
+    på _(y=Sin(x)_) ved _(x=2.3_):
+    </p>
+    
+    <video class='SpicBXL' style="width:100%;" controls>
+        <source src='../../../Assets/Chapter2\Section1\TrigProperties\IdeaBehindSlope.mp4' type='video/mp4'>
+    </video>
+
+    <q-stion 1="28" 2="1">
+    Prøv at beregn hældningen af kurven _(y=0.3*x^2_) ved _(x=3.2_) så godt/præcist som du nu kan.
+    <br><br></q-stion>
+    <answer-box>
+    Sig vi vælger et punkt, der er _(0.000001_) væk fra _(3.2_) på _(x_)-aksen. 
+    Så bliver vores forskel i _(y_) til:
+    _($0.3*(3.2+0.000001)^2 - 0.3*3.2^2 = 0.0000019200003_)
+    Vi regner nu forskellen i _(y_), divideret med forskellen i _(x_):
+    _($\frac{0.0000019200003}{0.000001} = 1.920_)
+    Nice!
+    <br><br></answer-box>
+
+    <p class="t">
+    Den her strategi til at finde hældningen er funktionel, men ikke nødvendigvis særlig praktisk. 
+    Senere i bogen vil vi udvikle en langt smartere strategi, 
+    der virker for alle funktioner (hvilket bliver
+    en meget vigtig del af kapitel 4). 
+    For nu vil vi dog eksklusivt undersøge _(Sin_) og _(Cos_), 
+    da vi kan udnytte deres geometriske baggrund og intuition til en meget effektiv formel
+    for hældningen: 
+    </p>
+
+    <video class='SpicBXL' style="width:100%;" controls>
+        <source src='../../../Assets/Chapter2\Section1\TrigProperties\SinCosDerivative.mp4' type='video/mp4'>
+    </video>
+
+    <q-stion 1="28" 2="2">
+    Find hældnigen af
+    <ul>
+        <li>_(\underline{\textbf{A}}:_) <br> _(Sin(x)_) ved _(x=2.3_)</li>
+        <li>_(\underline{\textbf{B}}:_) <br> _(Cos(x)_) ved _(x=1.4_) </li>
+        <li>_(\underline{\textbf{C}}:_) <br> _(Sin(3.1x)_) ved _(x=3.2_)</li>
+        <li>_(\underline{\textbf{D}}:_) <br> _(6.2*Cos(5.4x)_) ved _(x=6.1_)</li>
+    </ul>
+    <br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    Hældningen af _(Sin(x)_) er _(Cos(x)_). Derfor er svaret bare 
+    _($Cos(2.3)=-0.66_) 
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Hældningen er _(Cos(x)_) er _(-Sin(x)_), så vi regner:
+    _($-Sin(1.4)=-0.985_) 
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{C}}_)#" tabColour="rgb(171,96,147)">
+    Denne er lidt mere tricky. Her skal jeg finde hældningen af 
+    _(Sin(3.1*x)_). Når vi ganger _(x_) med noget, har det samme
+    effekt som at forkorte / skrumpe kurven indad. Hvis kurven er 
+    _(3.1_) gange ekstra skrumpet indad, vil man logisk nok gå _(3.1_) gange
+    så stejlt opad! Prøv lige selv at tegn situationen, 
+    så du kan se hvor meget mening det giver. Det var
+    jo også hvad vi opdagede da vi arbejde med bølger, 
+    hvor _(B_) i _(A*Cos(Bx)_) kontrollerede formen. 
+    <p class="t">
+    Ved _(x=3.2_) er _(3.1*x_) lig _(3.1*3.2=_) _(9.92_). Hældningen 
+    på en normal _(Sin_)-kurve på dette punkt ville være _(Cos(9.92)_), men vores
+    kurve er _(3.1_) gange så stejl, så:
+    _($3.1*Cos(9.92) = -2.727_)
+    Bum!
+    </p>
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{D}}_)#" tabColour="rgb(175,128,161)">
+    Her gør vi meget det samme som i den sidste. _(5.4x_) gør kurven _(5.4_) gange
+    så stejl, _(6.2_) gør den _(6.2_) gange så stejl, så kurven er
+    samlet set _(5.4*6.2=_) _(33.48_) gange så stejl. 
+    <p class="t">
+    Ved _(x=6.1_) er
+    _(5.4*x_) lig _(5.4*6.1=_) _(32.94_). Normalt ville hældningen her
+    være lig _(-Sin(32.94)_), men vores kurve er _(33.48_) gange så stejl, så:
+    _($33.48*\left(-Sin(32.94)\right) = -33.44_)
+    Bum! 
+    </p>
+    <br></answer-box>
+    
+    <!--  -->
+
+    <q-stion 1="28" 2="3">
+    Hvad er hældningen på bakken fra før ved _(x=13_)?
+    <br><br></q-stion>
+    <answer-box>
+    Lad os først modellere bakken ved hjælp af _(Sin_). Dens højeste punkt er _(10_), så 
+    _(A_) i _(A Sin(Bx)_) skal være _(10_). Vi kan yderligere se, at 
+    èn halv bølgelængde er _(40 \text{m}_). En hel bølgelængde er derfor _(80_), så:
+    _($\frac{2\pi}{B}=80 \to B = \frac{2\pi}{80} = 0.0785_)
+    Alt i alt:
+    _($y=10 Sin(0.0785x)_)
+    Bakken er _(10*0.0785=_) _(0.785_) gange så stejl som bare _(Sin(x)_). Ved
+    _(x=13_) er _(0.0785*x_) lig _(1.0205_), så den ville normalt have
+    en hældning på _(Cos(1.0205)_). Den er _(0.785_) gange så stejl, så: 
+    _($0.785*Cos(1.0205) = 0.4105 \frac{\text{Højde}}{x}_)
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="28" 2="4" customWidth="600">
+    Se følgende billede:
+    <img class='SpicB' style='width:95%' src='../../../Assets/Chapter2\Section1\TrigProperties\FlyvehopVinkel.png'> 
+    <p class="t">En cykel kører ned af en bakke og op ad et flyvehop. Vi antager, 
+    at bakken er formet som en _(Sin_)/_(Cos_) kurve, og at cyklen kører med 
+    en konstant hastighed hele tiden. Flyvehoppet har en vinkel på
+    _(30_) grader</p>
+    <p class="t">
+    Cyklen prøver at lave det længst mulige hop. For at gøre
+    det, skal den gerne opnå en vinkel ved flyvehoppet til vandret på 
+    _(45^o_) (som vi jo så var det bedst mulige). Hvor langt
+    væk _(d_) skal flyvehoppet være fra bunden, for at vinklen
+    bliver _(45_)? 
+    </p>
+    <br></q-stion>
+    <answer-box customWidth="600">
+    Du kan se mit svar her:
+    <video class='SpicB' style="width:95%;" controls>
+        <source src='../../../Assets/Chapter2\Section1\TrigProperties\BakkeCykelOpgave.mp4' type='video/mp4'>
+    </video>
+    <br></answer-box>
+
+    <q-stion 1="28" 2="5" customWidth="700">
+    Sig at du er på en research-orienteret safari-tur i Afrika:
+    <img class='SpicB' style='width:95%' src='../../../Assets/Chapter2\Section4\Vectore\Safari1.png'> 
+    <p class="t">
+    I prøver at få et billede af den meget sjældne og farverige "drondilidon"-fugl. 
+    Den er ved at passe sine æg, så i står med den perfekte chance til at fange
+    et skud. Desværre bliver i også jagtet af en sur elefant, så i er
+    nødt til at tage billedet <i>imens</i> i kører. Langdistance kameraet
+    har en meget smal synsvidde for at sikre den bedst mulige kvalitet, og
+    det sidder <i>fast</i> monteret til bilen (så det kan ikke roteres). Fuglen er på
+    positionen _((600,700)_), og vejen kan modelleres som 
+    _($y=15*Cos(\frac{\pi}{20}*x)_)
+    Kan man tage et billede af fuglen når _(x_) er lig _(x=41m_)? Det er intet specielt
+    omkring det tal, det er bare som eksempel.  </p>
+    <p class="t">
+    Jeg skal lige notere, at billedet ikke er helt akkurat, og mere
+    bare illustrerer ideen. Fuglen har et x-koordinat på _(600_), som er
+    en del længere fremme end det ser ud på billedet. 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Vores _(x_) koordinat er _(41_), så vores _(y_)-koordinat bliver 
+    _($15*Cos(\frac{\pi}{20}*41)=14.81_)
+    Hældningen på _(15*Cos(x*\pi/20)_) er _(-15*\pi/20*Sin(x*\pi/20)_), så hældningen
+    ved punktet _((41,14.81)_) er
+    _($-\frac{15*\pi}{20}*Sin(\frac{\pi}{20}*41)=-0.36_)
+    Prøv nu at se følgende billede:
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter2\Section4\Vectore\Safari2.png'> 
+    <p class="t">
+    Her er min plan for hvordan vi skal regne, om man kan se fuglen eller ej:
+    Det område hvor kameraet kan se, kan modelleres som to linjer _(l_1_), _(l_2_).
+    Hvis et punkt _((x,y)_) kan ses af kameraet, så skal 
+    _($l_1(x) \lt y \lt l_2(x)_)
+    Målet er altså bare, at finde de to linjer _(l_1, \, l_2_). Så kan vi derefter
+    se, om _(y_) opfylder kravet på _(x=600_). 
+    </p>
+    <p class="t">
+    Vi har brug for hældningerne for at finde de to linjer, hvilket er 
+    nemt, hvis vi har deres vinkel til vandret. 
+    Tangenten
+    på _((41,14.8)_) har lige nu en vinkel på _(Arctan(-0.36) =_) _(-19.8^o_).
+    _(l_1_) er _(10_) grader til en linje, der er ret med tangenten,
+    så den har en vinkel på _(-19.8+(90-10)=60.2_). 
+    _(l_2_) har _(20_) grader mere end _(l_1_), så det bliver _(80.2_).
+    Det her svarer til hældningerne _(Tan(60.2)=1.76_) og _(Tan(80.2)=5.79_). 
+    Nu får vi linjerne:
+    _($l_1: y=1.76*(x-41)+14.8_)
+    _($l_2: y=5.79*(x-41)+14.8_)
+    Vi tjekker så kravet:
+    _($\begin{alignat}{2}
+    l_1(x) &\le &y &\le l_2(x) \\ \\
+    1.76*(600-41)+14.8 &\le & \, 700 &\le 5.79*(600-41)+14.8  \\ \\
+    998.64 &\le & \, 700  &\le 3251.4
+    \end{alignat}_)
+    Det <i>er</i> rigtigt at _(700_) er mindre end _(3251.4_), men
+    det er ikke rigtigt at _(998.64_) er mindre end _(700_), ergo man 
+    kan ikke se fuglen. Trist. 
+    </p>
+    <br></answer-box>
+   

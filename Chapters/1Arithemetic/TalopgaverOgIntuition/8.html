@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+  
+    <q-stion 1="2" 2="1" 3="5"> 
+        Du kører i en rød bil hen til den nærmeste parkeringsplads:    
+        <img class="picB" src="../../../Assets/Chapter1\Talopgaver og intuition\ShortestPath\F\Shortest1.png">
+        Hvad er, og hvor lang er den korteste rute?
+    <br><br></q-stion>
+    <answer-box> 
+        Du kan se den korteste rute her:
+        <img class="picB" src="../../../Assets/Chapter1\Talopgaver og intuition\ShortestPath\F\Shortest1S.png">
+        Den er altså _(2+6.5+1+2+1=12.5m_) lang.
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5"> 
+        Hvad er, og hvor lang er den korteste rute?
+        <img class="picB" src="../../../Assets/Chapter1\Talopgaver og intuition\ShortestPath\F\Shortest2.png">
+    <br><br></q-stion>
+    <answer-box> 
+    Du kan se den korteste rute her:
+    <img class="picB" src="../../../Assets/Chapter1\Talopgaver og intuition\ShortestPath\F\Shortest2S.png">
+    Den er altså _(1+3+2+1+10+6+0.4=23.4m_) lang.
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5"> 
+        Hvad er, og hvor lang er den korteste rute?
+        <img class="picB" src="../../../Assets/Chapter1\Talopgaver og intuition\ShortestPath\F\Shortest3.png">
+    <br><br></q-stion>
+    <answer-box> 
+        Man <i>kunne</i> på samme måde man gjorde de to tidligere. Man kunne dog også observere at alle 
+        vejene er præcis de samme som i sidste spørgsmål, nu bare dobbelt så lange. Ruten er derfor også 
+        den samme, og da 
+        _(2*vej_1 + 2*vej_2 + 2*vej_3 + ... = 2*(vej_1 + vej_2 + vej_3 + ...)_) så kan vi 
+        også bare gange længden fra sidst ganget med _(2_). Altså, _(23.4*2=46.8m_)
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5"> 
+        Hvor lang er den korteste rute? Du behøver ikke finde den. Jeg vil bare gerne have at vide hvor lang den er. 
+        <img class="SpicB" style="width:80%;" src="../../../Assets/Chapter1\Talopgaver og intuition\ShortestPath\F\Shortest4.png">
+    <br><br></q-stion>
+    <answer-box> 
+        Det her er endnu en prank-opgave. Selvom dette vejnet ikke ligner det fra første opgave, så er der funktionelt 
+        faktisk identisk. Der er den samme mængde knudepunkter, der leder til veje med de samme længder. 
+        Det er altså i sin essens det samme som vejnettet i første spørgsmål: bare tegnet på en anden måde. 
+        Prøv at sammenligne de to billeder hvis du ikke fik den med. I hvert fald, så må det fortælle os at 
+        den korteste rute endnu en gang er _(11.5m_).
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5"> 
+        Se følgende rute:
+        <img class="SpicB" style="width:60%;" src="../../../Assets/Chapter1\Talopgaver og intuition\ShortestPath\F\Longest1.png">
+        <br> 
+        Hvad er den <i>længste</i> rute du kan tage? Du kan ikke køre på nogen individuel del af vejen flere gange.
+        Du må gerne røre "knudepunkter" (altså der hvor du faktisk vælger) flere gange, bare ikke selve vejene 
+        mellem knudepunkter.  
+    <br><br></q-stion>
+    <answer-box> 
+        Du kan se den længste rute her:
+        <img class="SpicB" style="width:60%;" src="../../../Assets/Chapter1\Talopgaver og intuition\ShortestPath\F\Longest1S.png">
+        <br> 
+        Vi vælger altså at gå mod højre i starten, fordi så kan vi bagefter tage den rute der er _(3m_) lang 
+        trods for den der kun er _(1m_).
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5"> 
+        Hvad er, og hvor lang er den længste rute?
+        <img class="picB" src="../../../Assets/Chapter1\Talopgaver og intuition\ShortestPath\F\Longest2.png">
+        Den lange vej på billedet går altså <i>over</i> de andre og direkte ind i målet. 
+    <br><br></q-stion>
+    <answer-box> 
+        I starten har vi to muligheder: går vi direkte til målet med den lange rute på 
+        _(68m_), eller går vi ud i vejnettet og finder den længst mulige rute? Vi skal 
+        altså tjekke om den længste rute i vejnettet er længere eller kortere end _(68_). 
+        <img class="picB" src="../../../Assets/Chapter1\Talopgaver og intuition\ShortestPath\F\Longest2Temp.png">
+        Det her er den rute man ville skulle tage. Vi kan se at det har en længde på <br>
+        _(1+7+7+7+5+5.5+6+6+5.5+6+8+1=65m_). Den enkle rute direkte til parkeringspladsen vinder altså. 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5"> 
+        Hvad er, og hvor lang er den længste rute?
+        <img class="SpicB" style="width:70%;" src="../../../Assets/Chapter1\Talopgaver og intuition\ShortestPath\F\Longest3.png">
+    <br><br></q-stion>
+    <answer-box> 
+        Du kan se den længste rute her:
+        <img class="SpicB" style="width:70%;" src="../../../Assets/Chapter1\Talopgaver og intuition\ShortestPath\F\Longest3S.png">
+        <p class="t">
+        I selve den rektangulære struktur vi går ind i ved starten, der har vi to valg der begge giver os lige 
+        meget vej-længde: højre eller venstre. Vi vælger venstre da det leder til en vej der er _(13.5m_)
+        kontra en der er _(12.5m_). Længden bliver i alt <br>
+        _(3+(2+5+2+5+5+2+2+5+5+2)+13.5=3+35+13.5=51.5_)
+        </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5" customWidth="760"> 
+        Hvad er, og hvor lang er den længste rute?
+        <img style="width: 700px; margin-top:15px; margin-left:17px; margin-bottom:0px; border:solid;" src="../../../Assets/Chapter1\Talopgaver og intuition\ShortestPath\F\Longest4.png">
+        Det er nok lidt stort, men det er helt fint og muligt at finde ud af!
+    <br><br></q-stion>
+    <answer-box> 
+        På grund af størrelsen af dette vejnet, er vi nødt til at gøre et eller andet for at forsimple det 
+        så vi kan have bedre overskud. Ideen er at vi flere steder går ind i de her rektangulære 
+        strukturer vi så i sidste opgave. Der udregnede vi at den længste rute man kunne tage i en af dem 
+        var _(35_) omend man gik til venstre eller højre. Med det her kan vi nu omtegne vejnettet 
+        til noget simplere:
+        <img class="pic" src="../../../Assets/Chapter1\Talopgaver og intuition\ShortestPath\F\Longest4Simple.png">
+        <p class="t">Vi kan se her at vi nok skal prioritere at ramme så mange af strukturene som muligt, 
+            da de giver en del i forhold til de fleste veje. Vi kommer frem til:</p>
+        <img class="pic" src="../../../Assets/Chapter1\Talopgaver og intuition\ShortestPath\F\Longest4S.png">
+        <p class="t">Ved hjælp af det her kommer vi så endeligt frem til at den længste rute er _(330m_). Man 
+            skal lige passe på med to af de rektangel-strukture vi går ind i, da det faktisk ikke er _(35m_)
+            når man går ind fra siden - kun når man går ind i dem direkte. 
+        </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5"> 
+        De blå pile på følgende billede indikerer at man på den vej kun kan køre <i>en</i> bestemt retning:
+        <img class="picB" src="../../../Assets/Chapter1\Talopgaver og intuition\ShortestPath\F\Longest5.png">
+        Hvad skal den midterste vej mindst være for at den er med i den længste rute?
+    <br><br></q-stion>
+    <answer-box> 
+        Den skal bare være over _(23.5_) fordi så kan vi sige:
+        <img class="picB" src="../../../Assets/Chapter1\Talopgaver og intuition\ShortestPath\F\Longest5S.png">
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5" customWidth="670"> 
+        Hvad er den længste rute? De blå pile fungerer på samme måde som før:
+        <img style="width: 600px; margin-top:15px; margin-left:17px; margin-bottom:0px; border:solid;" src="../../../Assets/Chapter1\Talopgaver og intuition\ShortestPath\F\Longest6.png">
+    <br><br></q-stion>
+    <answer-box> 
+        Hvis vi vil gå mod venstre - modsat de blå pile - så er den længste rute:
+        <img class="picB" src="../../../Assets/Chapter1\Talopgaver og intuition\ShortestPath\F\Longest6S1.png">
+        Hvis vi vil gå i samme retning som pilene mod højre, så er den længste rute:
+        <img class="picB" src="../../../Assets/Chapter1\Talopgaver og intuition\ShortestPath\F\Longest6S2.png">
+        Ruten mod højre er i dette tilfælde den længste på _(5+2+2+5+5+2+5+5=31m_) mod venstres _(2+5+2+5+5+2=21m_).
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5" customWidth="760"> 
+        Hvad er den længste rute? Igen en lidt stor en her!
+        <img style="width: 700px; margin-top:15px; margin-left:17px; margin-bottom:0px; border:solid;" src="../../../Assets/Chapter1\Talopgaver og intuition\ShortestPath\F\Longest7.png">
+    <br><br></q-stion>
+    <answer-box> 
+        Tricket er lidt ligesom før hvor vi kiggede på de her "rektangulære-strukture", og brugte dem til at 
+        tegne en meget simplere version af netværket. De er også i denne skitse, nu har de bare også en 
+        bestemt retning som man får mere længde af at tage:
+        <img class="Spic" style="width:50%;" src="../../../Assets/Chapter1\Talopgaver og intuition\ShortestPath\F\Longest7Simplified.png">
+        <p class="t">Vi så i sidste opgave at det gav _(31_) længde hvis man gik samme vej som pilene, og _(21_) hvis man gik den modsatte.
+        Nu med et godt overblik kan vi relativt nemt komme frem til følgende rute:</p>
+        <img class="Spic" style="width:50%;" src="../../../Assets/Chapter1\Talopgaver og intuition\ShortestPath\F\Longest7S.png">
+        <p class="t">
+        Vi skal passe lidt på der hvor vi går ind fra en af rektanglernes sider! Der giver det kun _(14m_). 
+        Længden af den endelige rute er _(3+31+10+21+10+14+10+31+20=150m_). 
+        </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5" customWidth="670"> 
+        Hvad er, og hvor lang er den længste rute?
+        <img style="width: 600px; margin-top:15px; margin-left:17px; margin-bottom:0px; border:solid;" src="../../../Assets/Chapter1\Talopgaver og intuition\ShortestPath\F\Longest8.png">
+        Vi siger at rundkørslen virker på en lidt speciel måde: du kan max køre én runde af gangen, men du 
+        må gerne gå tilbage til rundkørslen og bruger den flere gange i én rute. Du kan altså ikke 
+        køre rundt i den forevigt, men du kan godt bruge den og få ekstra distance flere steder. 
+        Den er her delt op i fire lige stor dele, der som man kan se hver er _(10m_) lange. 
+    <br><br></q-stion>
+    <answer-box> 
+        Jeg for ummidelbart to ideer til de længst mulige ruter:
+        <img class="picB" src="../../../Assets/Chapter1\Talopgaver og intuition\ShortestPath\F\Longest8Ide1.png">
+        Og:
+        <img class="picB" src="../../../Assets/Chapter1\Talopgaver og intuition\ShortestPath\F\Longest8Ide2.png">
+        <p class="t">
+        Den første har en længde på _(16+16+3+10*2+16+16=87_), den anden på _(3+3*10+16+3*10+3=80_).
+        Det må altså blive første ide der vinder. 
+        </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5"> 
+        Hvad er, og hvor lang er den længste rute?
+        <img class="picB" src="../../../Assets/Chapter1\Talopgaver og intuition\ShortestPath\F\Longest9.png">
+    <br><br></q-stion>
+    <answer-box> 
+        Her skal vi se rundkørslen lidt som et trade-off. Jo længere rundt vi går i den, jo mere længde for vi, men 
+        vejen vi er nødt til at gå er potentielt ikke lige så lang. Hvis jeg stopper efter de første _(5m_), så 
+        er vejen bagefter hele _(17_) til parkeringspladsen. Hvis jeg stopper _(5m_) længere i stedet så er 
+        der _(13_), og hvis jeg først stopper efter den tredje _(5_)'te meter så er der _(6_). Det er altså 
+        _(17+5_) vs _(13+5*2_) vs _(6+5*3_). Her vinder den midterste som er på _(23m_) i alt.  
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5"> 
+        Hvad er, og hvor lang er den længste rute?
+        <img class="picB" src="../../../Assets/Chapter1\Talopgaver og intuition\ShortestPath\F\Longest10.png">
+        Den her er som du kan se også ret stor. Du er her nødt til at få et overblik og være systematisk.
+    <br><br></q-stion>
+    <answer-box> 
+        Jeg gennemgår svaret her:
+        <video class="picB" controls>
+            <source src="../../../Assets/Chapter1\Talopgaver og intuition\ShortestPath\F\Longest10S.mp4" type="video/mp4">
+       </video>
+    <br><br></answer-box>
+    
+    <q-stion 1="2" 2="1" 3="5"> 
+        Se følgende:
+        <img class="SpicB" style="width:50%;" src="../../../Assets/Chapter1\Talopgaver og intuition\ShortestPath\F\Ligning1.png">
+        <br>
+        Hvad skal den ukendte længde være, for at den del af vejen bliver en del af den længste rute?
+    <br><br></q-stion>
+    <answer-box customWidth="600"> 
+        Der er konkret to mulige måder man kan tage den her rute på: 
+        <div style="text-align:center; margin-top:15px;">
+            <img style="display:inline; outline: solid;" src="../../../Assets/Chapter1\Talopgaver og intuition\ShortestPath\F\Ligning1Ide1.png">  
+            <img style="display:inline; outline: solid;" src="../../../Assets/Chapter1\Talopgaver og intuition\ShortestPath\F\Ligning1Ide2.png">  
+        </div>        
+        <p class="t">
+        Den ene kan vi se er _(2+bro+12=14m_) lang. Den anden er _(? + bro + 5m_). 
+        Broens længde kan vi godt bare ignorere, da den er med på begge ruter alligevel.
+        Derfor er det en kamp mellem _(14_) og _(?+5_) som vi gerne vil have skal være højere.
+        Det her er præcis ligesom med bageren før: når vi har gået de første _(5m_), så 
+        er vi _(5_) tættere på _(14_). Vi mangler derefter stadig naturligt _(14-5=9m_) for at 
+        ruten med _(?_) bliver ligeså lang som den anden. Derfor skal _(?_) altså bare være
+        højere end _(9m_).
+        </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5"> 
+        Se:
+        <img class="SpicB" style="width:70%;" src="../../../Assets/Chapter1\Talopgaver og intuition\ShortestPath\F\Ligning2.png">
+        <br>
+        Inden for hvilke værdier (f.eks, "mellem 20 og 30") er den ukendte vej
+        hverken med i den korteste eller længste rute?
+    <br><br></q-stion>
+    <answer-box customWidth="520"> 
+        Vi har tænkt os at svare på spørgsmålet ved først at
+        finde ud af hvornår den er med i den korteste og længste rute. 
+        Så kan vi bare vælge de værdier der ikke passer til nogle af de to tilfælde. 
+        <br> <br>
+        <div style="display:flex; width:80%; text-align: center; margin:auto;">
+            <div style="flex:50%;padding:5px;">
+                <img style="outline: solid; width:100%;" src="../../../Assets/Chapter1\Talopgaver og intuition\ShortestPath\F\Ligning2Kort.png">  
+                <br> <i>To mulige korteste ruter</i>
+            </div>
+            <div style="flex:50%;padding:5px;">
+                <img style="outline: solid; width:100%;" src="../../../Assets/Chapter1\Talopgaver og intuition\ShortestPath\F\Ligning2Lang.png">
+                <br> <i>To mulige længste ruter</i>
+            </div>
+        </div>
+        <p class="t">
+        De to mulige korteste ruter er _(3+2+sidsteVej=5+sidsteVej_) og _(?+1+2+sidsteVej=?+3+sidsteVej_).
+        Da den sidste vej er en del af dem begge, så kan vi bare fjerne den fra stykket - der er man 
+        jo praktisk talt i mål. Det er altså _(?+3_) der skal være kortere end _(5_). Meget samme argument 
+        som før: efter _(3_) meter så er der _(5-3=2m_) tilbage eller vores rute er for lang. Derfor skal _(?_) altså 
+        være mindre end _(2_). 
+        </p>
+        <p class="t">
+        De to mulige længste ruter er _(3+2+2+1+5+sidsteVej=13+sidste vej_) og _(?+5+sidsteVej_). Den sidste vej 
+        kan vi ignorere igen, og det samme gælder faktisk det _(5m_) lange vejstykke de begge slutter med. 
+        I den forstand er det altså nu _(3+2+2+1=8m_) mod _(?m_). Den ukendte længde _(?_) skal altså være 
+        længere end _(8m_).
+        </p>
+        <p class="t">
+        Alt i alt kan vi sige at _(?_) skal være højere end _(2_), men lavere end _(8_). Det kunne man altså 
+        skrive som _(2 \lt ? \lt 8_)
+        </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <!--DE HER KRÆVER FAKTISK AT MAN TÆNKER OG LØSER DEN!-->
+    <q-stion 1="2" 2="1" 3="5"> 
+        Lad os et kort sekund antage at du <i>ikke</i> var en sykotisk billist der lavede en mærkelig leg 
+        ud af at køre så lange eller korte (lidt mere logisk) ruter som muligt. Du kører igennem et vejnet som vist her:
+        <img class="picB" src="../../../Assets/Chapter1\Talopgaver og intuition\ShortestPath\F\Ligning3Path.png">
+        Både vejene ind til rundkørslen, samt selve kvartlængden af rundkørslen er ukendt. 
+        De er nemlig afhængige af hinanden: Jo større rundkørslen er,
+        jo mindre bliver <i>vejen ind til rundkørslen</i>. Altså, jo større _(?_2_) jo mindre _(?_1_) og vice versa. 
+        Specifikt så kan vi sige at _(?_2 = 4*(8-?_1)_) hvor _(8_) altså så er den største længde _(?_1_) kan have.
+        Lad os sige at den totale længde af ruten er _(124m_). Hvor lang er vejen ind til rundkørslen? 
+        <p class="t"> Det kan godt være at de tal du for er lidt urealistiske i forhold til størrelserne på billedet! Det behøver du ikke bekymre dig om!</p>
+    <br></q-stion>
+    <answer-box> 
+        <u> 1</u>: Præcis ligesom vi gjorde med husene og bageren, så starter vi med at udregne hvor lang turen er 
+        i forhold til _(?_1_) og _(?_2_). Det giver: 
+        <p class="cent">
+            _(7+15*2+?_1+3*?_2+?_1+15+4=_)<br>
+            _(7+30+?_1+3*?_2+?_1+15+4=_)<br>
+            _((7+30+15+4)+?_1+3*?_2+?_1=_)<br>
+            _(56+?_1+3*?_2+?_1=_)<br>
+            _(56+2*?_1+3*?_2_)<br>
+        </p> 
+        <p class="t">
+            Vi ved som sagt at  _(?_2 = 4*(8-?_1)_), så det indsætter vi bare i stedet for _(?_2_) i stykket:
+        </p>
+        <p class="cent">
+            _(56+2*?_1+3*(4*(8-?_1))=_)<br>
+            _(56+2*?_1+12*(8-?_1)=_)<br>
+            _(56+2*?_1+12*8-12*?_1=_)<br>
+            _((56+12*8)+(2*?_1-12*?_1)=_)<br>
+            _(152-10*?_1_)<br>
+        </p>
+        <p class="t">
+            Den totale længde er _(124_). _(?_1_) skal altså være stort nok til at _(152m_)
+            bliver trukket ned til _(124m_). Der skal altså trækkes _(152-124=28m_) fra. 
+            Det vil sige at _(?_1_) er nødt til at være _(28/5=5.6m_). 
+        </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5"> 
+        Tilbage til at være sindsyg igen og finde de længste ruter! 
+        <img class="picB" src="../../../Assets/Chapter1\Talopgaver og intuition\ShortestPath\F\Ligning3.png">
+        <p class="t">
+        Du kører i samme vejnet som før. Alle reglerne omkring _(?_2_) og _(?_1_) gælder stadig. Naturligvis 
+        som _(?_2_) bliver større, så vil du være mere motiveret til i din længste rute at køre ind til rundkørslen. 
+        Når _(?_2_) er lille så vil du i stedet hellere prioritere mere rute ude i kanterne. Sig f.eks at 
+        _(?_2_) kun var _(4_). Den længste rute i det tilfælde ville være: </p>
+        <img class="picB" src="../../../Assets/Chapter1\Talopgaver og intuition\ShortestPath\F\Ligning4 2.png">
+        <p class="t">
+        Denne optimale, længste rute vil altså logisk ændre sig baseret på hvor lang rundkørslen er. I eksemplet deroppe 
+        er _(?_2=4_) og man kører i alt _(\frac{2}{4}_) af rundkørslens omkreds. Din opgave er nu simpel, men ret udfordrende:
+        Gør sådan at jeg kan give dig en hvilken som helst størrelse på _(?_2_) - og der uendelig mange! - og så kan du med det samme fortælle mig hvor mange 
+        gange jeg optimelt burde kørre rundt i rundkørslen - altså hvor mange kvartdele totalt. 
+        Du skal altså lave en praktisk resource for andre, lignende psykopater! F.eks: 
+        "hvis _(?_2_) er under _(3_) meter, så er det bedst at 
+        køre _(\frac{3}{4}_) af rundkørslen. Hvis det er over, så skal man altid vælge at køre 
+        så meget som muligt: altså _(\frac{6}{4}_)."</p> 
+        
+        <p class="t">
+        Bemærk at det stadig tæller som _(3_) kvartdele i en rute, hvis du først køre _(1_), så køre ude ved kanterne, og så senere 
+        køre _(2_) igen. Det er altså bare i alt.
+        </p>
+
+        <p class="t">
+        Den her opgave er markant sværrere end den før, men jeg forventer altså at du virkelig prøver!
+        </p>
+    <br></q-stion>
+    <answer-box t="h" n="1">
+        Tænk: Lige meget hvilken (mulig) værdi af _(?_2_) du vælger, så har du altid omtrent _(7_) mulige ruter du kan tage:
+        Den hvor du slet ikke kører på rundkørslen, den hvor du kører _(1/4_) af den, den med _(2/4_), _(3/4_), _(4/4_), _(5/4_), _(6/4_) osv.
+        Du kan selv lige tjekke hvor mange muligheder der faktisk er. På nogle værdier for _(?_2_) vil èn rute være bedre, og på nogle andre værdier vil en anden rute være bedre.
+    </answer-box>
+    <answer-box t="h" n="2">
+        Lad mig give dig - uden kontext - et billede der bliver brugt i det endelige svar:
+        <img class="picB" src="../../../Assets/Chapter1\Talopgaver og intuition\ShortestPath\F\LængsteRuteGraf.png">
+    </answer-box>
+    <answer-box> 
+        Vi arbejder konkret med at finde forholdet mellem størrelsen af _(?_2_) og så hvilken rute vi tager. 
+        Noget der kan gøre det en del lettere er at indse at der faktisk ikke er super mange forskellige ruter vi behøver 
+        at tænke over. Man må max køre _(3_) kvartdele pr indgang ind til rundkørslen. Hver gang man opbruger en af 
+        de _(4_) veje til at komme ind, så skal man også opbruge en på at komme ud. Man kan altså maksimalt gå ind til 
+        rundkørslen _(4/2=2_) gange. Man kan ikke køre mere end _(3_) i hver, så over _(\frac{6}{4}_) er ikke muligt. 
+        <p class="t">
+        Min strategi er ummidelbart at tjekke alle _(6_) tilfælde igennem, og i hver udregne den længste rute <i>i forhold 
+        til _(?_2_)</i>. F.eks. hvis en rute meget hurtige blev længere da _(?_2_) blev længere, så ville det nok være et tegn på 
+        at det var den rute vi ville skulle tage på høje værdier af _(?_2_). Hvis en rute startede ud med at være ret lang, 
+        men ikke blev særlig meget større med _(?_2_), så ville det nok være en vi ville skulle vælge i starten. 
+        </p>
+        <p class="t">Første situation er når vi kun skal køre _(\frac{1}{4}_). Her er den længste rute: </p>
+        <img class="picB" src="../../../Assets/Chapter1\Talopgaver og intuition\ShortestPath\F\Ligning4 1.png">
+        <p class="t">
+            I forhold til _(?_2_) <i>og</i> _(?_1_) så kan man se at den samlede længde er <br>
+            _(7+15*3+?_1+?_2+?_1+4=56+2*?_1+?_2_). <br>Jeg ved hvad _(?_2_) er i forhold til _(?_1_), men 
+            hvad er _(?_1_) i forhold til _(?_2_)? Jo _(?_2=4*(16-?_1)=?_2=4*16-4*?_1=?_2=64-4*?_1_) fortæller 
+            os at _(?_2_) bliver _(4_) mindre hver gang _(?_1_) bliver _(1_) større. Derfor, logisk nok, så 
+            bliver _(?_1_) altså _(1/4_) mindre hver gang _(?_2_) bliver _(1_) større! Yderligere kan vi se at når 
+            _(?_2=0_), så er _(?_1=16_). Derfor ved vi altså nu at _(?_1=16-\frac{1}{4}*?_2_). Det kan vi indsætte 
+            i den længden vi lige fandt frem til og få:  
+        </p>
+        <p class="cent">
+            _(56+2*(8-\frac{1}{4}*?_2)+?_2 = _) <br>
+            _(56+2*8-\frac{2}{4}*?_2+?_2 = _) <br>
+            _(56+2*8-0.5*?_2+?_2 = _) <br>
+            _(72+0.5*?_2 _)
+        </p>
+        <p class="t">
+            Det er altså det korteste vi kan lave det om til. Tid til at gøre det ved alle de andre ruter!
+        </p>
+        <p class="t">_(\frac{2}{4}_):</p>
+        <img class="picB" src="../../../Assets/Chapter1\Talopgaver og intuition\ShortestPath\F\Ligning4 2 2.png">
+        Her er ruten <br>_(7+4+4*15+2*?_1+2*?_2=71+2*(8-\frac{1}{4}*?_2)+2*?_2=_)<br>
+        _(71+2*8-0.5*?_2+2*?_2=87+1.5*?_2_).
+        <p class="t">_(\frac{3}{4}_):</p>
+        <img class="picB" src="../../../Assets/Chapter1\Talopgaver og intuition\ShortestPath\F\Ligning4 3.png">
+        _(7+4+3*15+2*?_1+3*?_2=56+2*8-0.5*?_2+3*?_2=_)<br>_(72+2.5*?_2_)
+        <p class="t">_(\frac{4}{4}_):</p>
+        <img class="picB" src="../../../Assets/Chapter1\Talopgaver og intuition\ShortestPath\F\Ligning4 4.png">
+        _(7+4+2*15+4*?_1+4*?_2=41+4*8-\frac{4}{4}*?_2+4*?_2=_)<br>
+        _(73-?_2+4*?_2=73+3*?_2_)
+        <p class="t">
+        _(\frac{5}{4}_): Der er slet ikke nogen! Det er umuligt at lave nogen som helst rute 
+        der tager _(\frac{5}{4}_) af rundkørslens omkreds!
+        </p>
+        <p class="t">_(\frac{6}{4}_):</p>
+        <img class="picB" src="../../../Assets/Chapter1\Talopgaver og intuition\ShortestPath\F\Ligning4 6.png">
+        _(7+4+2*15+4*?_1+6*?_2=41+4*8-\frac{6}{4}*?_2+6*?_2=_)<br>
+        _(73-1.5*?_2+6*?_2=73+5.5*?_2_)
+        <p class="t"> Phew. Okay alt i alt har vi altså lige nu:</p>
+        <div style="text-align:center;">
+            <ol style="display: inline-block; text-align: left; list-style:none; margin-bottom: 0px;">
+                <li> _(\frac{1}{4}_): _(72+0.5*?_2_) </li>
+                <li> _(\frac{2}{4}_): _(87+1.5*?_2_) </li>
+                <li> _(\frac{3}{4}_): _(72+2.5*?_2_) </li>
+                <li> _(\frac{4}{4}_): _(73+3*?_2_) </li>
+                <li> _(\frac{6}{4}_): _(73+5.5*?_2_) </li>
+            </ol>                     
+        </div>
+        <p class="t">
+        Alt det her kan visualiseres sådan her:
+        </p>
+        <img class="picB" src="../../../Assets/Chapter1\Talopgaver og intuition\ShortestPath\F\LængsteRuteGraf.png">
+        <p class="t">
+        Vi kan se at i hvert fald fra starten der er _(\frac{2}{4}_) den største, da 
+        den bliver plusset med _(87_), hvor de andre kun bliver plusset med enten 
+        _(72_) eller _(73_). I forhold til nogle af de andre, så bliver _(\frac{1}{4}_) ret 
+        langsomt større med stigende værdier af _(?_2_). _(\frac{6}{4}_) tager nok 
+        snart dens plads da _(?_2_) ved den rute er ganget med _(5.5_) kontra _(\frac{2}{4}_)'s 
+        lave _(1.5_). Hvornår præcis begynder _(\frac{6}{4}_) med  _(73+5.5*?_2_) at blive 
+        højere end _(\frac{2}{4}_) med _(87+1.5*?_2_)? 
+        </p>
+        <p class="t">
+        Et godt punkt er nok at starte med at finde ud af hvornår de har <i>samme</i> værdi. Vi ved jo 
+        allerede godt hvem der kommer til at være størst bagefter! _(73+5.5*?_2_) starter med at 
+        være _(87-73=14_) mindre end _(87+1.5*?_2_). Hver gang _(?_2_) bliver _(1_) større, så 
+        kommer _(73+5.5*?_2_) tættere på med _(5.5-1.5=4_). Altså, _(?_2_) skal bare blive så stor 
+        at _(4*?_2=14_). Det bliver altså _(14/4=3.5m_). 
+        </p>
+        <p class="t">
+            Så det kan altså konkluderes at hvis _(?_2_) er under _(3.5_) meter, så er det bedst at 
+            køre _(\frac{2}{4}_) af rundkørslen. Hvis det er over, så skal man altid vælge at køre 
+            så meget som muligt: altså _(\frac{6}{4}_). Alle andre anddele man kan køre 
+            er ligegyldige, fordi alle er for korte.  
+        </p>
+    <br></answer-box>
+
+
+
+</html>

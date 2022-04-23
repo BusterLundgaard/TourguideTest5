@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <!--7.1 -->
+    <p class="t">
+    I den her sektion vil vi kigge på, studere, og klassificere en helt masse forskellige
+    geometriske former. Hvis vi skal gøre det 
+    effektivt, så er vi nødt til at have et mere præcist sprog, og en udvidet terminologi. 
+    Vi skal kunne <i>snakke</i> om visuelle ting, og ikke behøve at vise
+    alting i en video. Det kan virke irriterende at vi finder på så mange 
+    begreber og definitioner, men <i>nogle gange</i> så hjælper det os i den 
+    lange ende. Nogle af de her ting kan ikke hjælpe dig super meget med at løse problemer:
+    Det er primært bare kommunikation.
+    </p>
+    
+    <p class="t">
+    Vi siger at der er <i>linjer</i>, <i>linjestykker</i> og <i>rays</i>. 
+    </p>
+    <img class="Spic" style="width:80%" src="../../../Assets/Chapter2\Section2\Definitions\LinSegRay.png">
+    <p class="t">En linje _(\Lin{AB}_) gennem _(A_) og _(B_) fortsætter uendeligt i begge retninger.
+    Et linjestykke _(\Seg{AB}_) starter ved _(A_) og slutter ved _(B_). 
+    En ray _(\Ray{AB}_) starter ved _(A_) og går uendeligt ud i retningen af _(B_). Hvis vi 
+    refferer til <i>længden</i> mellem _(A_) og _(B_), så siger vi bare _(AB_). </p>
+
+    <p class="t">
+    Som med linjerne lige før så kan det være praktisk at reffere til noget ud fra de punkter der bestemmer det. 
+    Se følgende billede:
+    </p>
+    <img class="Spic" style="width:80%" src="../../../Assets/Chapter2\Section2\Definitions\QuadTriAngle.png">
+        <!-- CROP DET HER -->
+    <p class="t">I stedet for her at sige: "Vinklen _(v_) på trekanten _(B_) inde i firkanten i _(A_)" så kunne jeg også bare
+    sige _(\angle EAB_) på _(\triangle EAB_) inde i _(\square ABCD_). Altså, vi bruger _(\square_) og fire punkter til at vise en firkant,
+    _(\triangle_) og tre punkter til at vise en trekant, og _(\angle_) og tre punkter til at vise en vinkel. Ved
+    _(\angle EAB_) der skal du forestille dig at du <i>starter ved </i> _(A_), kigger mod _(E_), og så <i>drejer</i> dig mod _(B_).</p>
+
+    <p class="t">
+    I stedet for at sige at to linjer "har samme retning" så kan jeg også lidt mere kompakt sige at de er <i>parallele</i>. 
+    Hvis den ene vinkel er _(90_) (rettere _(\pi/2_)) grader oven på den anden, så kalder vi linjerne vinkelrette eller <i>perpendikulære</i>. 
+    Hvis linje _(A_) og _(B_) parallele så skriver vi _(A \parallel B_), og _(A \bot B_) når de er vinkelrette.
+    </p>
+
+    <p class="t">
+    Hvordan ville du finde vinklerne _(v_1, v_2, v_3_) i følgende billede?
+    </p>
+    <img class="Spic" style="width:60%" src="../../../Assets/Chapter2\Section2\Definitions\SupCompAngles.png">
+        <!-- CROP DET HER -->
+    <p class="t">Ved _(v_1_) ville du sige _(90-a_), ved _(v_2_) _(180-b_), og ved _(v_3_) _(360-c_). Hver
+    af de her tricks brugte vi da vi kikkede på vilkårlige trekanter: nu giver vi dem bare et navn.
+    Et sæt vinkler der tilsammen giver _(90_) kalder vi <i>komplimentare</i> (engelsk "complimentary").
+    Et sæt vinkler der tilsammen giver _(180_) kalder vi for <i>suplementare</i> (engelsk "suplementary").
+    Et sæt vinkler der tilsammen giver _(360_) kalder vi for <i>fuldendte</i> (findes ikke på engelsk fordi jeg lige fandt på det).
+    En vinkel kaldes for "stump" hvis den er over _(90_) grader, og "spids" hvis den er under. 
+    </p>
+
+    <p class="t">
+    Prøv at kig på følgende figur:
+    <img class="Spic" style="width:80%" src="../../../Assets/Chapter2\Section2\Definitions\ExteriorIntertiorAngles.png">
+        <!-- CROP DET HER -->
+    </p>
+    <p class="t">
+    Udover dens vinkler - dens <i>indre vinkler</i> - så har den også <i>ydre</i> vinkler. De er markeret på billedet.
+    Når man har fundet vinkelsummen af de indre vinkler, så kan man selvfølgelig også nemt finde summen af de ydre og vice versa (siden hver ydre jo bare er _(360-indre_)).
+    Det variere måske lidt hvilken sum der er lettest at finde, men ellers så er der intet specielt interresant omkring "ydre vinkler".
+    Endnu engang bare et begreb der gør det nemmere for dovne mig at kommunikere mine ideer til dig (samt lettere for dig at læse fra andre resourcer!) 
+    </p>
+
+
+    <p class="t">
+    Hvis to figurer er de samme så kalder vi dem <i>kongruente</i>. Det virker måske lidt fjollet at 
+    lave sådan et fancy ord for sådan en simpel ting, men det er faktisk ret praktisk. Nogle
+    gange kan man <i>ikke</i> sådan lige med det samme se at to figurer er identiske. Måske
+    er den ene blevet roteret og spejlvendt! Vi bruger lidt mere "identiske" hvis de 
+    også er placeret på samme måde. Det er altså en lidt stærkere, mere præcis relation. 
+    Kongruens mellem figuren _(A_) og figuren _(B_) viser vi med symbolet _(\equiv_). Så: _(A \equiv B_).
+    </p>
+
+    <p class="t">
+    Udover at rotere, rykke og spejlvende, så kan vi også <i>skalere</i>. Hvis én figur <i>næsten</i>
+    er kongruent med en anden, men bare er forstøret eller formindsket, så siger vi at de to er <i>similair</i>. 
+    Det siger sig selv at praktisk talt alt der gælder i en figur, gælder også når man har skaleret den op eller ned. 
+    Få af de teorier og regler vi laver i geometri kommer frem til absolutte størrelser: Langt mere ofte
+    studere vi <i>forhold</i>. Vi viser "similair"-relationen med symbolet "_(\sim_)"
+    </p>
+
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter2\Section2\Definitions\Congruency.png'> 
+
+    <q-stion 1="2" 2="1" 3="5">
+    I en bestemt _(\square ABCD_) er _(\Seg{CB} \bot \Seg{AB}_), I hvert fald _(1_) af vinklerne er stump, og i hvert fald _(1_) af vinklerne er spids.
+    Er det muligt med de givne informationer at finde ud af hvor mange spidse og stumpe vinkler der er i alt?
+    <br><br></q-stion>
+    <answer-box>
+    _(\Seg{CB} \bot \Seg{AB}_) er bare en overfancy måde at fortælle os at _(\angle CBA_) er _(90_) grader. Så vi har
+    _(1_) ret, _(1_) spids, _(1_) stump. Vi skal altså bare se om den fjerde vinkel er større eller mindre end _(90_) grader.
+    <p class="t">
+    Vores fire vinkler skal i alt give _(360_) grader.
+    Er 
+    _($360-90-(\gt 90)-(\lt 90)_) 
+    større eller mindre end _(90_)? Det kan vi ikke vide. Det kan både være tilfældet at _((\gt 90)-(\lt 90)_) giver over _(180_)
+    og under _(180_), så vi kan simpelt hen ikke være sikre. Hvis 
+    vi tager et ekstremt tilfælde som eksempel, så kunne vi forestille
+    os at den stumpe vinkel var lig _(90.00001 \approx 90_) og den spidse var lig 
+    _(0.00001 \approx 0_) hvor den sidste vinkel så ville blive til
+    _($360-90-90-0=180_) 
+    som tydeligvist er stump. Vi kunne også forestille
+    os at den stumpe var _(160_) og den spidse _(80_), hvilket ville give
+    _($360-90-160-80=30_) 
+    hvilke jo er spids. 
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Prøv at se følgende to former:
+    <img class="Spic" style="width:95%" src="../../../Assets/Chapter2\Section2\Definitions\RegularPolygonExercise.png">
+    <p class="t">Figuren _(BAFEDC_) har de samme vinkler og sidelængder overalt.  
+    Den er hvad vi kalder en "<i>regulær polygon</i>". Jeg vil ikke fortælle dig om _(BCNMLK_) er en regulær polygon eller ej. 
+    Er 
+    _($BAFEDC \equiv BCNMLK_)
+    eller?
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Du ved <i>ikke</i> om de er kongruente eller ej bare fordi de ligner hinanden. Det er jo bare hvordan <i>jeg</i> har 
+    valgt at tegne figurene, hvilke er helt arbitrært. Det eneste billedet fortæller dig som jeg ikke gjorde, er størrelsen
+    af _(\angle KBA_). De to figurer deler _(\angle KBA_). Lad os se om vi kan finde _(\angle ABC_) og _(\angle KBC_). Hvis de ikke 
+    matcher så kan de to figurer umuligt være kongruente.
+    <p class="t">
+    Vi ved at alle vinklerne på den regulære polygon _(BAFEDC_) er
+    identiske. Kan vi bruge det til at finde ud af hvad de konkret faktisk
+    er lig med? Prøv at kig på følgende billede:
+    </p>
+    <img class='Spic' style='width:95%' src='../../../Assets/Chapter2\Section2\Definitions\RegularPolygonExercise2.png'> 
+    <p class="t">
+    Som man kan se her, hvis man tegner hver vinkels <i>supplerende</i> vinkel 
+    (som selvfølgelig alle er identiske siden de normale vinkler er identiske) 
+    så opdager man noget interessant: Hvis man sætter de her vinkler sammen,
+    så danner de en cirkel! Altså: _(6_) af de supplerende vinkler tilsammen
+    er lig _(360_), så hver supplerende vinkel er lig _(360/6=60_), hvilket
+    betyder at hver vinkel er lig _(180 - 60 = 120_). Perfekt!
+    </p>
+    <p class="t">
+    Vi kan se at de tre vinkler _(\angle ABC_), _(\angle KBA_), _(\angle KBC_) er fuldendende.
+    Det betyder at 
+    _($\angle KBC = 360 - \angle KBA - \angle ABC = 360 - 125 - 120 = 115_)
+    De er altså <i>ikke</i> kongruente, siden _(\angle ABC \neq \angle KBC_)
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Du har en trekant _(\triangle ABC_) med _(AB=40.56,BC=40.56,\angle CAB = 20.7^o_) 
+    og en anden _(\triangle EDF_) hvor _(ED=21.3, EF=33.26, \angle EDF = 138.6_). 
+    Er de similair? 
+    <br><br></q-stion>
+    <answer-box>
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter2\Section2\Similair.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Du har to figure _(\square ABCD_) og _(\square EFGH_). _(\angle HEF_) og _(\angle ADC_) er vertikale, _(\Seg{FG} || \Seg{BA}_),
+    _(\triangle EHG \equiv \triangle BCD_) og _(\angle CDA, \angle DAB, \angle ABC, \angle DHG_) er fuldendte. Er de kongruente? 
+    <br><br></q-stion>
+    <answer-box>
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter2\Section2\Definitions\Kongruens.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Kan man lave en <u>retvinklet</u> trekant der har sidelængderne _(7,5,3_)?
+    Det her behøver du ikke bruge en lommeregner for at svare på.
+    <br><br></q-stion>
+    <answer-box>
+    _(7_) er den længste side, og skal derfor være lig _(\sqrt{5^2+3^2}=\sqrt{34}_). Man kan 
+    nemt se at _(34_) i hvert fald ikke er et helt tal. Det her kan altså <i>ikke</i> være
+    længderne af en retvinklet trekant. _(3,5,7_) er ikke en "pythagorean triple" hvis vi skulle være
+    fancy. 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Kan man lave en nogen som helst <u>vilkårlig</u> trekant der har sidelængderne _(8,14,5_)?
+    Det her behøver du ikke bruge en lommeregner for at svare på.
+    <br><br></q-stion>
+    <answer-box>
+    Lad os sige vi lavede to af siderne:
+    <img class="Spic" style="width:70%" src="../../../Assets/Chapter2\Section2\Definitions\MaxSideLength.png">
+    <p class="t">Den tredje længde _(?_) bliver tydeligvis større som vinklen nærmer sig _(180_). Når den tredje
+    vinkel <i>er</i> _(180_) så er _(?=8+5=13_). _(14_) er altså simpelt hen for stort! Man kan
+    ikke lave en trekant hvor én side er længere end de to andre sider plusset sammen! </p>
+    <br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Hvis vi tegner en linje fra et hjørne på en trekant til den modsattes sides midtpunkt, så kalder vi det for <i>medianen</i>.
+    En trekant har altså tre medianer, og jeg vil nu gerne prøve at vise at de skære hinanden i ét punkt. Det
+    er slet ikke åbenlyst, og heller ikke ultra let lige sådan at komme frem til. Det er ikke konkret nogen <i>opgave</i> 
+    her, og heller ikke noget svar. "Opgaven", det jeg gerne vil have dig til at prøve her, er bare at læse og
+    forstå mit bevis. Trods at teorien er så visual, så har jeg  ikke lavet <i>nogen</i> billeder.
+    Pointen med det, og de to næste opgaver, er egentlig bare at du lige kort skal øve dig i et forstå matematik
+    kommunikeret på en lidt mere teknisk måde. Fokuset på de næste sider er mere på logiken og ideerne, men
+    det her er også værd lige kort at kigge på!  
+
+    <p class="t">
+    <b> Beviset:</b> <br>
+    Vi har en eller anden trekant _(\triangle ABC_). Hvis _(M_1_), _(M_2_), _(M_3_), er midtpunkterne mellem henholdsvis _(AB_), _(BC_), _(CA_).
+    så er målet altså at vise at _(\Seg{AM_2}, \Seg{BM_3}, \Seg{CM_1}_) alle skære hinanden i ét punkt. Vi ved at <i> i hvert fald </i> _(2_) af
+    medianerne mødes: Det kan man jo nemt se nogen som helst to linjer gør <i>et eller andet tidspunkt</i> (medmindre selvfølgelig de går i samme retning).
+    Lad os kalde det punkt hvor _(\Seg{AM_2}_) skære _(\Seg{BM_3}_) for _(I_).
+    </p>
+    <p class="t">
+    Hmm. Det er ikke nogen ummidelbar åbenlys strategi der lige kommer i hovedet. Jeg vil nok her i
+    starten derfor bare lige prøve at notere noget som helst interresant og potentielt brugbart info jeg lægger
+    mærke til. Det ligner intuitivt at _(\Seg{AC}_) er parralelt med _(\Seg{M_1M_2}_).
+    Det kan vi bevise: Som begge punkter nærmer sig _(B_), så går de både 
+    <i>langs</i> _(\Seg{AC}_) og <i>vinkelret</i> _(\Seg{AC}_). Selvfølgig!
+    Det ville nogen som helst retning (undtagens direkte parralel eller vinkelret) gøre. 
+    Både _(M_1_) og _(M_2_) er  <i>midtvejs</i>, så de er også <i>midtvejs</i> i at gå 
+    langs _(\Seg{AC}_) og <i>midtvejs</i> i et gå retvinklet
+    _(\Seg{AC}_). Der er altså ingen forskel mellem dem i den vinkelrette retning, og derfor bliver retningen identisk (parralel)!
+    </p>
+    <p class="t">
+    Nu da vi ved de her to linjer er parallelle kan vi se en del nye ting:
+    Vinklen _(\angle CAM_2_) er dannet af linjerne _(\Seg{CA}_) og _(\Seg{AM_2}_).
+    Vinklen _(\angle AM_2M_1_) er dannet af _(\Seg{M_1M_2}_) og igen _(\Seg{AM_2}_). 
+    Siden de er dannet af identiske linjer, så er de lig hinanden. Samme argument 
+    kan vi lave med vinklen _(\angle BM_2M_1_) og _(\angle BCA_)
+    </p>
+    <p class="t">
+    Kald det punkt hvor _(\Seg{M_1M_2}_) skærer medianen _(\Seg{BM_3}_) for _(D_). 
+    Vi kan nu se at _(\triangle BDM_2 \sim \triangle BM_3C_). De deler nemlig
+    vinklen _(\angle CM_3B_) og _(\angle BM_2D = \angle BCM_3_). Hvis to vinkler
+    er ens, så er den tredje vinkel også ens på grund af vinkelsummen på 180 grader,
+    ergo, similair. Vi kan også se at _(\triangle M_2DI \sim AM_3I_). Det er 
+    tydeligt at _(\angle M_3IA = \angle DIM_2_) gyldent vertikale vinkler. Udover
+    det så vi jo før at _(\angle CAM_2 = \angle AM_2M_1_) _(= \angle AM_2D_), ergo 
+    trekanterne deler to vinkler og er similair. 
+    </p>
+    <p class="t">
+    Vi har fundet to par trekanter der er similair, men med hvilken faktor, præcist?
+    Ved _(\triangle BDM_2 \sim \triangle BM_3C_) er det tydeligvis _(1:2_), da 
+    _(BC = 2*BM_2_). Vi kan nu se at det også er _(1:2_) ved 
+    _(\triangle AM_3I \sim \triangle M_2DI_) da _(M_3C = 2*DM_2_), og 
+    _(M_3C=M_3A_), så _(M_3A=2*DM_2_). 
+    </p>
+    <p class="t">
+    Nu kan vi se noget der faktisk er meget interessant:
+    Hvor langt henne ad medianen _(\Seg{AM_2}_) er skæringspunktet _(I_)?
+    Well, _(AI=2*IM_2_), så det er _(2/3_) inde! Det her er faktisk fantastisk,
+    fordi det har kun noget at gøre med medianen _(\Seg{AM_2}_): <i>Intet</i> at gøre
+    med medianen _(\Seg{BM_3}_). Derfor ved jeg at hvis jeg i stedet valgte skæringen mellem
+    _(\Seg{AM}_) og _(\Seg{CM_1}_), så ville samme argument virke, og _(AI=\frac{2}{3}*AM_2_).
+    Altså, lige meget hvad, så er _(AI=\frac{2}{3}*AM_2_), hvilke betyder at _(I_) kun 
+    kan lægge èt enkelt sted: Ergo, de 3 linjer skærer hinanden det samme sted!  
+    </p>
+    <br></q-stion>
+    
+

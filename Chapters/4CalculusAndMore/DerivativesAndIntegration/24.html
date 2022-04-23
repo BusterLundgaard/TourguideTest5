@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+
+
+    <h3>Anden teknik: Integration by parts</h3>
+
+    <p class="t">
+    Det er nu tid til at lære den anden teknik til at omskrive integraler:
+    Integration by parts (eller på dansk: "Partial integration").
+    </p>
+    <p class="t">
+    Partial integration stammer fra produktreglen i differentiation: 
+    _($¤x[f(x)*g(x)]=f'(x)*g(x)+f(x)*g'(x)_)
+    Ideen er, at vi <i>forestiller os</i>, at vores funktion _(F(x)_)
+    passer til formen _(f'(x)*g(x)_). Sig eksempelvis, at
+    _($F(x)=Cos(x)*x_)
+    Vi leder efter _(\int f'(x)*g(x)_), så vi minusser
+    begge sider med _(f(x)*g'(x)_), integrerer og får: 
+    _($\int f'(x)*g(x) = f(x)*g(x) - \int f(x)*g'(x) \, dx_)
+    Vi kan nu <i>forestille os</i> at 
+    _($\begin{align}
+    f'(x) & = Cos(x) \\
+    g(x) & = x 
+    \end{align}_)
+    <i>Hvis</i> _(f'(x)=Cos(x)_), så er _(f(x)=Sin(x)_), og 
+    <i>hvis</i> _(g(x)=x_), så er <br>_(g'(x)=1_). Ergo:
+    _($\int Cos(x) x \, dx = Sin(x) x - \int Sin(x)*1 \, dx _)
+    Voila! Det er nemt at regne, siden _(\int Sin(x)_) bare er _(-Cos_). 
+    Vi får endeligt:
+    _($\int Cos(x) x \, dx = Sin(x) x + Cos(x)_)
+    Så: en hvilket som helst funktion, der kan opdeles i to mindre funktioner ganget med
+    hinanden, kan vi vælge at lave 
+    om til (ca.) en ny integral, hvor den ene funktion er integreret og den 
+    anden differentieret. Denne nye integral vil ikke altid være simplere! 
+    Det virkede effektivt i vores tilfælde, fordi
+    _(Cos(x)_) <i>ikke</i> blev mere kompleks af, at vi integrerede den, og _(x_) 
+    differentieret <i>blev</i> simplere.
+    Det <i>samlede produkt</i> blev derfor mindre komplekst.
+    Partial integration ville være en <i>dårlig</i> strategi
+    hvis vi skulle integrere noget som:
+    _($\sqrt{x+1}*\sqrt[3]{x-1}_)
+    Her bliver både 
+    _(\sqrt{x+1}_) og _(\sqrt[3]{x-1}_) mere
+    komplekse når de enten integreres eller differentieres. 
+    </p>
+
+    <p class="t">
+    Din tur: 
+    </p>
+
+    <q-stion 1="24" 2="1">
+    Løs de følgende integraler: 
+    <div style="margin-left:-71%; margin-top:25px; margin-bottom: -10px;">
+    _($\begin{eqnarray}
+        && \underline{\textbf{A}}: \, \, \, \, \, \, x*Ln(x) \\ \\ 
+        && \underline{\textbf{B}}: \, \, \, \, \, \, x*2.3^x \\ \\ 
+        && \underline{\textbf{C}}: \, \, \, \, \, \, \frac{x}{1.2^x} \\ \\ 
+        && \underline{\textbf{D}}: \, \, \, \, \, \, Arctan(x)*x^2 
+    \end{eqnarray}_)
+    </div>
+    <br><br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    Den her integral er nok god at løse med partial integration:
+    Den kan let opdeles i to funktioner _(x_) og _(Ln(x)_), og 
+    de bliver <i>begge</i> simplere, hvis de differentieres.
+    Èn skal selvfølgelig også integreres, men _(x_) bliver
+    ikke <i>super meget mere kompleks</i>: Bare _(x^2/2_). 
+    Lad os teste:
+    _($\int x*Ln(x) \, dx = \frac{x^2}{2} Ln(x) - \int \frac{x^2}{2}*\frac{1}{x} \, dx_)
+    Bum! _(x^2/2_) og _(1/x_) bliver til bare _(x/2_), så svaret er:
+    _($\int x*Ln(x) \, dx = \frac{1}{2}x^2 Ln(x) - \frac{1}{4} x^2_)
+    Fantastisk! Man kan endda se, at strategien let kan generaliseres til
+    en hvilken som helst potens af _(x_) ganget med _(Ln(x)_). 
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Igen skal vi først vælge: Hvad integrerer vi, og hvad differentierer vi? Her er det ret åbenlyst, da
+    _(2.3^x_) forbliver lige simpel, både når vi integrerer og differentierer, og _(x_) bliver <i>mere</i>
+    simpel, når vi differentierer. Ergo:
+    _($\int x*2.3^x \text{ }dx = \frac{2.3^x*x}{Ln(2.3)} - \int \frac{2.3^x*1}{Ln(2.3)} \text{ }dx = \frac{2.3^x*x}{Ln(2.3)} - \frac{2.3^x}{Ln(2.3)^2}_)
+    Bum! 
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{C}}_)#" tabColour="rgb(171,96,147)">
+    Det er faktisk præcist det samme som i sidste opgave. Vi kan omskrive funktionen til:
+    _($x*(1/1.2)^x = x*0.833^x_)
+    Så integralet er:
+    _($\frac{0.833^x*x}{Ln(0.833)} - \frac{0.833^x}{Ln(0.833)^2}_)
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{D}}_)#" tabColour="rgb(175,128,161)">
+    Partial integration kan godt være en god ide i denne, da hældningen
+    af _(Arctan(x)_) er:
+    _($\frac{1}{1+x^2}_)
+    Der er ikke <i>simpelt</i>, men det er stadig ret dejligt eftersom
+    det "bare" er algebraisk. Alle mærkelige trig-funktioner er 
+    blevet fjernet, hvilke også går fint
+    sammen med produktet _(x^2_). Lad os prøve: 
+    _($\int Arctan(x)*x^2 \text{ }dx = \frac{x^3*Arctan(x)}{3} - \frac{1}{3}*\int \frac{x^3}{1+x^2} \text{ }dx_)
+    Den nye integral kan løses på mange måder, men den
+    er især dejligt nem hvis vi substituerer _(u=x^2_). 
+    Det er smart, siden _(x^3_) bliver til _(x^2_), når den divideres med 
+    _(2x_). Nu kan alting beskrives i forhold til _(u_) som:
+    _($\frac{1}{6} \int \frac{u}{1+u} \, du_)
+    Vi siger _(1+u=m_) da vi hellere vil have to led i tælleren end to led i nævneren:
+    _($\begin{eqnarray}
+    && \frac{1}{6} \int \frac{m-1}{m} \text{ }dm = \\ \\
+    && \frac{1}{6} \left(\int 1 \text{ }dm - \int \frac{1}{m} \text{ }dm \right) = \\ \\
+    && \frac{x^2}{6} - \frac{Ln(1+x^2)}{6}
+    \end{eqnarray}_)
+    Alt i alt:
+    _($\frac{x^3*Arctan(x)}{3} - \frac{x^2}{6} + \frac{Ln(1+x^2)}{6}  _)
+    Bum!
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="24" 2="2">
+    Løs de følgende integraler: 
+    <div style="margin-left:-73.5%; margin-top:25px; margin-bottom: -10px;">
+    _($\begin{eqnarray}
+        && \underline{\textbf{A}}: \, \, \, \, \, \, x^3*Cos(x) \\ \\
+        && \underline{\textbf{B}}: \, \, \, \, \, \, x^3*e^{-x}
+    \end{eqnarray}_)
+    </div>
+    <br><br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    Du kan se svaret her:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter4\DerivativesAndIntegrals\Integrals\LongByParts1.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Du kan se svaret her:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter4\DerivativesAndIntegrals\Integrals\LongPartial1.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="24" 2="3">
+    Beskriv ved hjælp af en sum _(\sum_) en generel formel for
+    integralet af 
+    _($x^n*e^{x}_)
+    <br></q-stion>
+    <answer-box>
+    Du kan se mit svar her:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter4\DerivativesAndIntegrals\Integrals\LongPartial3.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="24" 2="4">
+    Ved hjælp af partial integration kan vi lave et ret smart trick. 
+    Det er meget brugbart, men ideen bag det er ret fjollet og dum. 
+    Jeg vil ikke vise dig tricket, men jeg kan sige, at du skal bruge det til at løse de følgende integraler:
+    <div style="margin-left:-73.5%; margin-top:25px; margin-bottom: -10px;">
+    _($\begin{eqnarray}
+        && \underline{\textbf{A}}: \, \, \, \, \, \, Ln(x)  \\  \\
+        && \underline{\textbf{B}}: \, \, \, \, \, \, Arctan(x)  \\  \\
+        && \underline{\textbf{C}}: \, \, \, \, \, \, Arccos(x)  \\  \\
+    \end{eqnarray}_)
+    </div>
+    <br></q-stion>
+    <answer-box t="h">
+    _(Ln(x)_)? More like: _(Ln(x)*1_).
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    Lad os trække lidt inspiration fra da vi integrerede _(Ln(x)*x_). Her differentierede vi 
+    _(Ln(x)_), og integrerede _(x_). Vi ville kunne gøre præcist det samme, hvis _(x_) var opløftet til en hvilket som
+    helst anden potens:
+    _($\begin{eqnarray}
+    && \int Ln(x)*x^{273} \text{ }dx = \\ \\
+    && \frac{x^{274}*Ln(x)}{274} - \int \frac{x^{274}}{274}*\frac{1}{x} \text{ }dx = \\ \\
+    && \frac{x^{274}*Ln(x)}{274} - \int \frac{x^{273}}{274}\text{ }dx = \\ \\
+    && \frac{x^{274}*Ln(x)}{274} - \frac{x^{274}}{274^2} 
+    \end{eqnarray}_)
+    <i>Bare</i> _(Ln(x)_) svarer til _(Ln(x)*x^0_). Lad os for sjov se, hvad der sker, hvis vi 
+    differentierer _(Ln(x)_) og integrerer _(x^0_):
+    _($\begin{eqnarray}
+    && \int Ln(x)*x^0 \text{ }dx = \\ \\
+    && x^{1}*Ln(x) - \int x*\frac{1}{x} \text{ }dx = \\ \\
+    && x^{1}*Ln(x) - x
+    \end{eqnarray}_)
+    Bum! Det virkede sku! Grunden til, at det her er fjollet, er at vi jo egentlig
+    bare ser _(Ln(x)_) som
+    _($Ln(x)*1_)
+    ... og så differentierer _(Ln(x)_) og integrerer _(1_). Men det virker! 
+    Tricket giver en del mening når man tænker over det. 
+    Sig at vi skal integrere _(F(x)_):
+    _($\int F(x) \text{ }dx_)
+    Vi omskriver til:
+    _($\int F(x)*1 \text{ }dx = x*F(x) - \int F'(x)*x \text{ }dx_)
+    Så vi kan vælge at fokusere på integralet af _(F'(x)*x_), 
+    hvis det af forskellige årsager er nemmere at arbejde med <i>hældningen</i> af en funktion.
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Vi ved ikke særlig meget om hvordan man arbejder med _(Arctan(x)_), men vi ved, at
+    _($¤x[Arctan(x)] = \frac{1}{1+x^2}_)
+    Den hældning er bare beskrevet i forhold til simple funktioner, vi ved hvordan man arbejder med:
+    Plus, division, potens, osv. Lad os derfor bruge tricket:
+    _($\int Arctan(x)*1 \text{ }dx =  x*Arctan(x) - \int \frac{1}{1+x^2}*x \text{ }dx_)
+    Nu skal vi bare integrere _(x/(1+x^2)_), 
+    hvilket relativ let kan gøres med substitutionen _(y=1+x^2_):
+    _($\frac{1}{2} \int \frac{1}{u} = \frac{1}{2} Ln(1+x^2)_)
+    Alt i alt:
+    _($\int Arctan(x) = Arctan(x)*x - \frac{1}{2} Ln(x^2+1)_)
+    Voila! 
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{C}}_)#" tabColour="rgb(171,96,147)">
+    Vi gør præcist det samme, som med _(Arctan(x)_). Hældningen af _(Arccos(x)_) er
+    _($-\frac{1}{\sqrt{1-x^2}}_)
+    Så:
+    _($Arccos(x)*x - \int -\frac{1}{\sqrt{1-x^2}}*x _)
+    Vi kan relativt let løse integralet ved at substituere _(x=Sin(u)_):
+    _($\begin{eqnarray}
+    && \int -Cos(u)*\frac{Sin(u)}{\sqrt{1-Sin(u)^2}} \, du = \\ \\
+    && \int -Sin(u) \, du = \\ \\
+    && Cos(Arcsin(x)) = \\ \\
+    && \sqrt{1-x^2}
+    \end{eqnarray}_)
+    Alt i alt:
+    _($\int Arccos(x) \text{ }dx = Arccos(x)*x - \sqrt{1-x^2} _)
+    <br></answer-box>
+
+    <q-stion 1="24" 2="5" customWidth="540">
+    Der er et andet ret smart trick vi kan lave med partial integration. Sig at vi skal integrere:
+    _($Cos(x)*e^x_)
+    Vi kan ikke rigtig finde noget smart at gøre med substitution, eftersom _(Cos(x)_) og _(e^x_) 
+    er meget forskellige, og partial integration hjælper heller ikke, da _(Cos(x)_) og _(e^x_) begge
+    hverken bliver simplere eller mere komplicerede, enten når man integrerer eller differentierer. _(Cos_)
+    går bare rundt i en cyklus, og _(e^x_) forbliver _(e^x_), lige meget hvad vi gør. 
+    <p class="t">
+    Vi opdager dog noget interessant, hvis vi alligevel <i>prøver</i> at 
+    bruge partial integration:
+    _($\begin{eqnarray}
+    && \int Cos(x)*e^x \text{ }dx =   \\ \\
+    &&  e^x*Cos(x) - \int e^x*(-Sin(x)) \text{ }dx = \\ \\
+    &&  e^x*Cos(x) - \left(e^x*(-Sin(x)) - \int e^x*(-Cos(x)) \text{ }dx \right)  = \\ \\
+    &&  e^x*(Cos(x) + Sin(x)) - \int e^x*Cos(x) \text{ }dx 
+    \end{eqnarray}_)
+    Vi ender sku tilbage hvor vi startede!
+    Den forbandede integral _(\int e^x*Cos(x) \text{ }dx_) viser sit
+    grimme ansigt igen. <i>Men det er faktisk godt</i>.
+    Det svarer nemlig til, at
+    _($\int e^x*Cos(x) \text{ }dx = e^x*(Cos(x) + Sin(x)) - \int e^x*Cos(x) \text{ }dx _)
+    Vi er interesserede i at finde _(\int e^x*Cos(x) \text{ }dx_), så
+    lad os bare kalde den for "_(A_)". Nu har vi <i>en ligning</i>!
+    _($A = e^x*(Cos(x) + Sin(x)) - A \to_)
+    Vi kan let isolere _(A_) og få:
+    _($A = \frac{e^x}{2}*(Cos(x)+Sin(x)) _)
+    Så vi har vores svar:
+    _($\int e^x*Cos(x) \text{ }dx = \frac{e^x}{2}*(Cos(x)+Sin(x)) _)
+    Fuldkommen genialt! 
+    </p>
+    <p class="t">
+    Samme strategi kan hjælpe os med de to næste integraler: 
+    </p>
+    <div style="margin-left:-71%; margin-top:25px; margin-bottom: 0px;">
+    _($\begin{eqnarray}
+        && \underline{\textbf{A}}: \, \, \, \, \, \, Sin(x)*e^x \\ \\
+        && \underline{\textbf{B}}: \, \, \, \, \, \, Cos(3x)*7^{-x}
+    \end{eqnarray}_)
+    </div>
+    <p class="t">
+    Det er ikke en strategi vi bruger <i>super ofte</i>, men 
+    det er godt lige at have det på hjernen som en mulighed.
+    </p>
+    <br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)" customWidth="540">
+    Du kan se svaret her:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter4\DerivativesAndIntegrals\Integrals\Rekursion1.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)" customWidth="540">
+    Det her er <i>egentlig</i> stort det samme som før, bare med lidt koefficienter:
+    _($Cos(3x)*e^{-Ln(7)x}_)
+    Vi kan forsimple det lidt i starten gennem 
+    _(u=-Ln(7)x_):
+    _($-\frac{1}{Ln(7)} \int Cos \left(\frac{3}{-Ln(7)} u \right)*e^u_)
+    Hvilket er endnu simplere, siden _(Cos_) er ligeglad med negativitet:
+    _($-\frac{1}{Ln(7)} \int Cos \left(\frac{3}{Ln(7)} u \right)*e^u_)
+    Lad os finde integralet først, og dividere med 
+    _(-Ln(7)_) til sidst. Gennem gentaget brug af partial integration kan 
+    integralet omskrives til:
+    _($\begin{eqnarray}
+    && e^u*Cos\left(\frac{3}{Ln(7)}u \right) \, \, \, + \\ \\ 
+    && \frac{3}{Ln(7)} e^u*Sin\left(\frac{3}{Ln(7)}u \right) \, \, \, - \\ \\
+    && \left(\frac{3}{Ln(7)} \right)^2*\int e^u*Cos\left(\frac{3}{Ln(7)u} \right)
+    \end{eqnarray}_)    
+    Kald nu 
+    _($\int Cos \left(\frac{3}{Ln(7)} u \right)*e^u_)
+    ... for _(A_). Det kan ses at:
+    _($A = e^u*Cos\left(\frac{3}{Ln(7)}u \right) + \frac{3}{Ln(7)} e^u*Sin\left(\frac{3}{Ln(7)}u \right) - \left(\frac{3}{Ln(7)}\right)^2*A_)
+    Man kan nu isolere _(A_) og få:
+    _($A = \frac{e^u*Cos\left(\frac{3}{Ln(7)}u \right) + \frac{3}{Ln(7)} e^u*Sin\left(\frac{3}{Ln(7)}u \right)}{1+\left(\frac{3}{Ln(7)}\right)^2}_)
+    _((3/Ln(7))^2+1_) kan regnes til _(3.376_), så:
+    _($\int Cos \left(\frac{3}{Ln(7)} u \right)*e^u = \frac{e^u*Cos\left(\frac{3}{Ln(7)}u \right) + \frac{3}{Ln(7)} e^u*Sin\left(\frac{3}{Ln(7)}u \right)}{3.376} _)
+    Vi skal nu til sidst dividere med _(-Ln(7)_) og indsætte _(u=-Ln(7)x_). Det giver:
+    _($-\frac{e^u*Cos(3x) - 1.541e^u*Sin(3x)}{6.569}_)
+    Voila!
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="24" 2="6">
+    Find en måde at integrere:
+    _($Sec(x)^3_)
+    Det er relativt tricky.
+    <br><br></q-stion>
+    <answer-box>
+    Jeg ser ingen umiddelbare strategier hvis jeg leger rundt med 
+    _(Sec(x)^2=Tan(x)^2+1_) og substitutioner, så det er måske godt at eksperimentere
+    med lidt partial integration. Den mest åbenlyse ide er nok at 
+    opdele _(Sec(x)^3_) i to funktioner:
+    _($Sec(x)*Sec(x)^2_)
+    Lad os teste det! Det er nok bedst at integrere _(Sec(x)^2_) og 
+    differentiere _(Sec(x)_), siden integralet af _(Sec(x)_) i sig selv
+    er ret grimt. Vi får:
+    _($Tan(x) Sec(x) - \int Tan(x)^2 Sec(x) \, dx _)
+    Det nye integral virker ikke specielt meget bedre. Måske
+    bliver det bedre, hvis vi omskriver _(Tan(x)^2_) til _(Sec(x)^2-1_)?
+    Det er i hvert fald en mulighed, og det giver:
+    _($Tan(x) Sec(x) - \int Sec(x)^3 \, dx + \int Sec(x) \, dx   _)
+    Huh. Vi er tilbage til hvor vi startede, men det er jo faktisk et godt tegn! 
+    Nu kan vi bruge "tricket":
+    _($\begin{eqnarray}
+    && A = Tan(x) Sec(x) - A + \int Sec(x) \, dx \to \\ \\
+    && A = \frac{1}{2} Tan(x) Sec(x) + \frac{1}{2} \int Sec(x) \, dx
+    \end{eqnarray}_)
+    Bum! Vi kender integralet af _(Sec(x)_), så alt i alt får vi:
+    _($\int Sec(x)^3 = \frac{1}{2} Tan(x) Sec(x) + \frac{1}{2} Ln(Sec(x)+Tan(x))_)
+    Voila! 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="24" 2="7" customWidth="540">
+    Sig du skal integrere
+    _($\int Sec(x)^{2n+1}_)
+    ... og at du på en eller anden måde kender:
+    _($\int Sec(x)^{2(n-1)+1}_)
+    _(\underline{\textbf{A}}_): <br> 
+    Hvad gør du? 
+    <p class="t">
+    Sagt med andre ord: Find en strategi til 
+    at beregne integralet af en ulige potens af _(Sec(x)_), hvis
+    du kender integralet af den ulige potens lige under. Sådan kan
+    vi (i teorien) finde integralet på en hvilket som helst ulige _(Sec_). 
+    </p>
+    <p class="t">
+    _(\underline{\textbf{B}}_): <br> 
+    Brug dit resultat og regn integralet af _(Sec(x)^5_)
+    </p>
+    <br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)" customWidth="540">
+    Jeg tænker vi bruger samme strategi som sidste opgave. Vi skal integrere
+    _(Sec(x)^n_) hvor _(n_) er et ulige, positivt helt tal. Lad
+    os igen opdele det i _(Sec(x)^{2}_) og _(Sec(x)^{n-2}_),
+    da _(2_) er klart den nemmeste potens at integrere. Vi får:
+    _($Tan(x) Sec(x)^{n-2} - \int Tan(x)*(n-2)*Sec(x)^{n-3}*Tan(x)*Sec(x) \, dx_)
+    Hvilket kan simplificeres til:
+    _($Tan(x) Sec(x)^{n-2} - (n-2) \int Tan(x)^2 Sec(x)^{n-2} \, dx_)
+    Vi laver igen _(Tan(x)^2_) om til _(Sec(x)^2-1_) og støder 
+    igen på vores originale integral:
+    _($A = Tan(x) Sec(x)^{n-2} - (n-2) A + \int Sec(x)^{n-2} \, dx _)
+    Nu isolerer vi _(A_) og får:
+    _($\int Sec(x)^n = \frac{Sec(x)^{n-2}*Tan(x)}{n-1} + \frac{n-2}{n-1} \int Sec(x)^{n-2} \, dx_)
+    Bum! _(\int Sec(x)^n_) er beskrevet i forhold integralet af det tidligere
+    ulige potens _(\int Sec(x)^{n-2}_)
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)" customWidth="540">
+    Vores _(n=5_). _(n-1=4_) og _(n-2=3_), så vi får:
+    _($\frac{Sec(x)^{3} Tan(x)}{4} + \frac{3}{4} \int Sec(x)^{3} \, dx_)
+    Integralet af _(\int Sec(x)^{3}_) kender vi fra tidligere, så:
+    _($\frac{Sec(x)^{3} Tan(x)}{4} + \frac{3}{4} \left(\frac{1}{2} Tan(x) Sec(x) + \frac{1}{2} Ln(Sec(x)+Tan(x)) \right)_)
+    Det kan skrives lidt pænere som:
+    _($\frac{Tan(x)}{4} \left(Sec(x)^3 + \frac{3}{2} Sec(x) \right)  + \frac{3}{4} \frac{1}{2} Ln(Sec(x)+Tan(x)) _)
+    Bum!
+    <br><br></answer-box>
+
+
+
+    <!--  -->
+
+    <q-stion 1="24" 2="8" customWidth="520">
+    Beregn følgende integraler:
+    <div style="margin-left:-66%; margin-top:25px; margin-bottom: 10px;">
+    _($\begin{eqnarray}
+        && \underline{\textbf{A}}: \, \, \, \, \, \, Tan(x)^2*Sec(x) \\ \\
+        && \underline{\textbf{B}}: \, \, \, \, \, \, \frac{Sin(x)^6}{Cos(x)^3} \\ \\
+        && \underline{\textbf{C}}: \, \, \, \, \, \, Sec(x)^4*Csc(x)^3
+    \end{eqnarray}_)
+    </div>
+    <p class="t">
+    Det her er nogle af de "svære tilfælde" som vi nu endelig har evnerne til at integrere. 
+    </p>
+    <br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)" customWidth="520">
+    Vi bruger _(Tan(x)^2=Sec(x)^2-1_) og får med det samme:
+    _($\begin{eqnarray}
+    && \int Sec(x)^3 \, dx - \int Sec(x) \, dx = \\ \\
+    && \frac{1}{2} Tan(x) Sec(x) + \frac{1}{2} Ln(Sec(x)+Tan(x)) - Ln(Sec(x)+Tan(x)) 
+    \end{eqnarray}_)
+    Hvilket kan simplificeres til:
+    _($\frac{1}{2} Tan(x) Sec(x) - \frac{1}{2} Ln(Sec(x)+Tan(x))_) 
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)" customWidth="520">
+    Min ide er, at omskrive _(Sin(x)^6_) til:
+    _($\frac{(1-Cos(x)^2)^3}{Cos(x)^3}_)
+    Nu kan vi udvide tælleren, dividere gennem med nævneren, og få 
+    en masse led, der alle svarer til bestemte potenser på _(Cos_). Det
+    ved vi, er muligt at integrere:
+    _($\begin{eqnarray}
+    && \int \frac{1 - 3 Cos(x)^2 + 3 Cos(x)^4 + Cos(x)^6}{Cos(x)^3} = \\ \\
+    && \int Sec(x)^3 - 3 \int Sec(x) + 3 \int Cos(x) - \int Cos(x)^3
+    \end{eqnarray}_)
+    _(\int Cos(x)^3_) kan vi relativt let regne er _(Sin(x) - Sin(x)^3/3_), 
+    de andre kender vi fra tidligere opgaver. Vi får:
+    _($\begin{eqnarray}
+    && \frac{1}{2} Tan(x) Sec(x) + \frac{1}{2} Ln(Sec(x)+Tan(x)) \, - \\ \\
+    && 3 Ln(Sec(x)+Tan(x)) \, + \\ \\
+    && 3 Sin(x) \, - \\ \\
+    && Sin(x) + \frac{Sin(x)^3}{3}
+    \end{eqnarray}_)
+    Hvilket kan simplificeres til:
+    _($2 Sin(x) + \frac{Sin(x)^3}{3} - 2.5 Ln(Sec(x)+Tan(x)) + \frac{Tan(x) Sec(x)}{2}_)
+    Bum!
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{C}}_)#" tabColour="rgb(171,96,147)" customWidth="520">
+    Jeg tænker, at jeg omskriver til:
+    _($\begin{eqnarray}
+    && \int (Tan(x)^2+1)^2*Csc(x)^3 \, dx = \\ \\
+    && (1 + 2 Tan(x)^2 + Tan(x)^4) * \frac{1}{Sin(x)^3} \, dx = \\ \\
+    && \int Csc(x)^3 \, dx + 2  \int Sec(x)^2 Csc(x) \, dx + \int \frac{Sin(x)}{Cos(x)^4} \, dx 
+    \end{eqnarray}_)
+    Integralet af _(Csc(x)^3_) er bare det samme som integralet af 
+    _(Sec(x)^3_), men negativt og med _(Tan_) og _(Sec_) byttet til
+    _(Cot_) og _(Csc_). Integralet af _(Sin(x)/Cos(x)^4_) kan nemt
+    regnes, siden potensen på _(Sin_) er _(1_). Nu står vi tilbage med kun midter-integralet,
+    hvilket jeg tænker vi omskriver til:
+    _($\int (Tan(x)^2+1) Csc(x) \, dx = \int \frac{Sin(x)}{Cos(x)^2} \, dx + \int Csc(x) \, dx_)
+    Begge disse integraler er nemme. Alt i alt får vi:
+    _($\begin{eqnarray}
+    && -\frac{1}{2} Cot(x) Csc(x) - \frac{1}{2} Ln(Csc(x)+Cot(x)) \, + \\ \\
+    && Sec(x) - Ln(Csc(x) + Cot(x)) \, + \\  \\
+    && \frac{1}{3} Sec(x)^3 
+    \end{eqnarray}_)
+    ... hvilket kan simplificeres til:
+    _($Sec(x) + \frac{1}{3} Sec(x)^3  - \frac{1}{2} Cot(x) Csc(x) - \frac{3}{2} Ln(Csc(x)+Cot(x))_)
+    Voila!
+    <br><br></answer-box>
+
+    <!-- <q-stion 1="2" 2="1" 3="5">
+    På sidste side fandt vi en relativ hurtig strategi til at integrere _(Sec(x)_) opløftet til lige potenser.
+    Prøv at find en lignende effektiv strategi til at integrere _(Sec(x)_) opløftet til ulige potenser, og
+    brug det til at integrere en høj potens som _(Sec(x)^{13}_). Du får
+    brug for det trick vi lærte i sidste opgave. 
+    <br><br></q-stion>
+    <answer-box customWidth="650">
+    Lad os tage _(Sec(x)^{9}_) som et eksempel, så generalisere processen så vi nemt kan finde _(Sec(x)^{13}_).
+    Det er et ret stort hint at vi skal bruge tricket fra sidste opgave. Vi skal på en eller anden måde
+    opdele _(Sec(x)^{9}_) i to produkter, så at når vi integrerer den ene og differentierer den anden, så 
+    får vi _(Sec(x)^{9}_) <i>igen</i>. Jeg tænker umiddelbart:
+    _($\int Sec(x)^2*Sec(x)^7 \text{ }dx_)
+    Det her er jo faktisk stort set den <i>eneste</i> måde vi kunne opdele det på, fordi _(Sec(x)^2_) er
+    den eneste potens af _(Sec(x)_) der faktisk er let at integrere, og giver noget praktisk: _(Tan(x)_).
+    Hældningen af _(Sec(x)^7_) er _(7*Sec(x)^6*Sec(x)*Tan(x)_), eller bare _(7*Tan(x)*Sec(x)^7_), så:
+    _($Tan(x)*Sec(x)^7 - 7*\int Tan(x)*Tan(x)*Sec(x)^7 \text{ }dx_)
+    Integralet bliver til _(Tan(x)^2*Sec(x)^7_), hvilke faktisk er virkelig godt. 
+    _(Sec(x)^7_) er det vi startede med, og _(Tan(x)^2_) kan vi omskrive
+    til _(Sec(x)^2_) ved at sige _(Tan(x)^2=Sec(x)^2-1_):
+    _($Tan(x)*Sec(x)^7 - 7*\int (Sec(x)^2-1)*Sec(x)^7 \text{ }dx = _)
+    _($Tan(x)*Sec(x)^7 - 7*\int Sec(x)^9 \text{ }dx + 7*\int Sec(x)^7 \text{ }dx_)
+    Wholla! _(\int Sec(x)^9 \text{ }dx_) er der, og vi kan nu løse ligningen:
+    _($\int Sec(x)^9 \text{ }dx = Tan(x)*Sec(x)^7 - 7*\int Sec(x)^9 \text{ }dx + 7*\int Sec(x)^7 \text{ }dx \to_)
+    _($\int Sec(x)^9 \text{ }dx = \frac{1}{8}*Tan(x)*Sec(x)^7 + \frac{7}{8}*\int Sec(x)^7 \text{ }dx_)
+    Vi har stadig nu _(\int Sec(x)^7 \text{ }dx_) som jo også er ulige. Det er ikke
+    noget problem dog, fordi man kan ret nemt spotte et mønster i hvad der lige skete.
+    Sig at _(9_) i stedet bare var "_(n_)". Så ville vi kunne se at:
+    _($\int Sec(x)^n \text{ }dx = \frac{1}{n-1}*Tan(x)*Sec(x)^{n-2} + \frac{n-2}{n-1}*\int Sec(x)^{n-2} \text{ }dx_)
+    Så vi kan bare gøre præcis det samme med _(\int Sec(x)^7 \text{ }dx_), hvilke så giver os _(\int Sec(x)^5 \text{ }dx_),
+    så _(\int Sec(x)^3 \text{ }dx_), og så til sidst _(\int Sec(x) \text{ }dx_) som vi allerede ved hvordan man integrerer. 
+    Vi burde så relativt nemt kunne finde et mønster efter vi har gjort det hele. 
+    _($\frac{1}{8}*Tan(x)*Sec(x)^7 + \frac{7}{8}*\int Sec(x)^7 \text{ }dx = _)
+    _($\frac{1}{8}*Tan(x)*Sec(x)^7 + \frac{7}{8}* \left(\frac{1}{6}*Tan(x)*Sec(x)^5 +  \frac{5}{6}*\int Sec(x)^5 \text{ }dx \right) = _)
+    _($\frac{1}{8}*Tan(x)*Sec(x)^7 + \frac{7}{8*6}*Tan(x)*Sec(x)^5 + \frac{7*5}{8*6}*\int Sec(x)^5 \text{ }dx  = _)
+    _($\begin{eqnarray} 
+    && \frac{1}{8}*Tan(x)*Sec(x)^7 & + \\
+    && \frac{7}{8*6}*Tan(x)*Sec(x)^5 & +\\
+    \end{eqnarray} 
+    \frac{7*5}{8*6}*\left(\frac{1}{4}*Tan(x)*Sec(x)^3 +  \frac{3}{4}*\int Sec(x)^3 \text{ }dx \right) =_)
+    _($\begin{eqnarray} 
+    && \frac{1}{8}*Tan(x)*Sec(x)^7 & + \\
+    && \frac{7}{8*6}*Tan(x)*Sec(x)^5 & + \\
+    && \frac{7*5}{8*6*4}*Tan(x)*Sec(x)^3 & +
+    \end{eqnarray} 
+    \frac{7*5*3}{8*6*4}*\left(\frac{1}{2}*Tan(x)*Sec(x) + \frac{1}{2}*\int Sec(x) \text{ }dx \right) =_)
+    _($\begin{eqnarray} 
+    && \frac{1}{8}*Tan(x)*Sec(x)^7 & + \\
+    && \frac{7}{8*6}*Tan(x)*Sec(x)^5 & + \\
+    && \frac{7*5}{8*6*4}*Tan(x)*Sec(x)^3 & + \\
+    && \frac{7*5*3}{8*6*4*2}*Tan(x)*Sec(x) & + \\
+    && \frac{7*5*3}{8*6*4*2}*Ln(Sec(x)+Tan(x)) \\
+    \end{eqnarray}_)
+    Der er et relativt tydeligt mønster her: 
+    _($\frac{1}{8}*Tan(x)*\left(\begin{eqnarray} 
+    && Sec(x)^7 & + \\
+    && \frac{7}{6}*Sec(x)^5 & + \\
+    && \frac{7}{6} \frac{5}{4}*Sec(x)^3 & + \\
+    && \frac{7}{6} \frac{5}{4} \frac{3}{2}*Sec(x) & \\
+    \end{eqnarray} \right) + \frac{1}{8} \frac{7}{6} \frac{5}{4} \frac{3}{2}*Ln(Sec(x)+Tan(x))_)
+    Potenserne på _(Sec(x)_) går ned med _(2_), alt (udover det sidste led)
+    er ganget med _(Tan(x)_), og på koefficienterne
+    der ganger vi tæller og nævner med flere og flere _(7/6_), _(5/4_), _(3/2_) osv, 
+    helt ned til _(1_). Vi kan altså ret let se at _(\int Sec(x)^{13} \text{ }dx_) ville være:
+    _($\frac{1}{12}*Tan(x)*\left(\begin{eqnarray} 
+    && Sec(x)^{11} & + \\
+    && \frac{11}{10} Sec(x)^{9} & + \\
+    && \frac{11}{10} \frac{9}{8} Sec(x)^{7} & + \\
+    && \frac{11}{10} \frac{9}{8} \frac{7}{6} Sec(x)^5 & + \\
+    && \frac{11}{10} \frac{9}{8} \frac{7}{6} \frac{5}{4} Sec(x)^3 &  + \\ 
+    && \frac{11}{10} \frac{9}{8} \frac{7}{6} \frac{5}{4} \frac{3}{2} Sec(x)^3 & \\
+    \end{eqnarray} \right) + \frac{1}{12} \frac{11}{10} \frac{9}{8} \frac{7}{6} \frac{5}{4} \frac{3}{2}*Ln(Sec(x)+Tan(x))_)
+    Bum!
+    <br><br></answer-box> -->
+

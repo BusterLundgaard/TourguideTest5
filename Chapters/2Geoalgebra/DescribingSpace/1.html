@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+
+
+    <!--22.17 -->   
+
+    <h1 class="header">Afsnit 4:</h1>
+    <h1 class="title">Kunsten af at beskrive rum</h1>
+
+    <h2>Polære koordinater</h2>
+
+    <p class="t">
+    Sig jeg står udenfor og møder dig på en gåtur. Du spørger 
+    om retninger til en bestemt lokation, og jeg svarer:
+    "5360m nord, 920m syd". Det ville være ret irriterende: du er jo primært interesseret i 
+    <i>retningen</i> og hvor <i>langt</i> du skal gå. Sure, 
+    du kan regne _(\sqrt{Arctan(5360/920)}_) og _(\sqrt{5360^2+920^2}_), men
+    det er hverken hurtigt eller nemt. <i>Radius</i> og <i>vinkel</i> er ofte mere intuitive
+    end <i>koordinater</i>. 
+    </p>    
+
+    <p class="t">
+    Her er et andet eksempel: solsystemet. I rummet er det meget 
+    sværere at tænke over "absolut position". Ja, vi kan sætte
+    solen som vores _((0, 0, 0)_) punkt, men hvad præcis er nord, vest, øst, op og ned osv.? 
+    Det er nemmere og mere effektivt at beskrive alting i forhold 
+    til relative vinkler og distancer til solen. 
+    <i>Især</i> noget som 
+    bevægelse, hvor vi kan bruge planetens rotation omkring solen. 
+    </p>
+
+    <p class="t">
+    En cirkel med radius _(R_) centreret på _((0,0)_) kan skrives som:
+    _($x^2+y^2=R^2_)
+    Hvis vi skriver den i <i>polære koordinater</i> får vi:
+    _($r=R_)
+    Et andet eksempel kunne være formen på en blomst:
+    </p>
+    <img class='SpicXL' style='width:80%' src='../../../Assets/Chapter2\Section4\Polar\2.png'> 
+    <p class="t">
+    Denne er relativt avanceret rektangulært, men 
+    kan skrives med polære koordinater som bare: 
+    _($r=Cos(4*\theta)_)
+    Så: "Radiusen fra _((0,0)_) er _(Cos(4\theta)_), når vinklen på punktet er _(\theta_)".
+    I videoen her forklarer jeg mere præcist, hvordan det virker:
+    </p>
+   
+    <video class='SpicBXL' style="width:100%;" controls>
+        <source src='../../../Assets/Chapter2\Section4\Polar\Polar forklaret.mp4' type='video/mp4'>
+    </video>
+
+    <q-stion 1="1" 2="1">
+    _(\underline{\textbf{A}}_): <br>
+     Blomsterformen du så lige før svarede til _(r=Cos(4*\theta)_).
+    Hvad svarer følgende kurve til?
+    <img class='Spic' style='width:70%' src='../../../Assets/Chapter2\Section4\Polar\2 2.png'> 
+    <p class="t">
+    _(\underline{\textbf{B}}_): <br>
+     Igen, hvad svarer følgende kurve til?
+    </p>
+    <img class='Spic' style='width:70%' src='../../../Assets/Chapter2\Section4\Polar\2 3.png'> 
+    <p class="t">
+    Der er kun 1 svar, da svarene på begge spørgsmål er givet i èn video.
+    De minder meget om hinanden.  
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Du kan se mit svar på begge opgaver her:
+    <video class='SpicB' style="width:95%;" controls>
+        <source src='../../../Assets/Chapter2\Section4\Polar\Polar opgave 1.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="1" 2="2">
+    _(\underline{\textbf{A}}_): <br>
+    Hvad er hældningen på den røde linje, jeg har tegnet på kløver formen?
+    <img class='Spic' style='width:60%' src='../../../Assets/Chapter2\Section4\Polar\Exercise1.png'> 
+    <p class="t"> 
+    _(\underline{\textbf{B}}_): <br>
+    Hældningerne på denne?
+    </p>
+    <img class='Spic' style='width:70%' src='../../../Assets/Chapter2\Section4\Polar\Exercise2.png'> 
+    <br><br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    Man kan se, at vi går nedad fra _(r=1_) til _(r=0_). 
+    Det ville normalt tage en vinkel på _(-\pi/2_), men eftersom vi 
+    arbejder med _(r=Cos(3\theta)_) sker alting _(3_) gange så hurtigt.
+    Vinklen på en røde linje er derfor _((-\pi/2)/3_), så hældningen er:
+    _($Tan\left(\frac{\pi}{2}/3 \right) = -0.577_)
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Man kan se denne form som en samling af "blade". Lad os finde
+    vinklen på èt halvt blad. Det svarer til, at gå fra _(r=1_) i starten til 
+    _(r=0_). Det er en vinkel på _((\pi/2)/6_), via præcist samme argument 
+    vi brugte i sidste opgave. På den røde linje har man gået
+    _(3_) halve blade ned, og på den blå _(5_) blade ned. 
+    Vi regner derfor:
+    _($-Tan\left(3*\frac{\pi}{2}/6 \right) = -1, \qquad  -Tan\left(5*\frac{\pi}{2}/6 \right) = -3.73_)
+    Voila!
+    <br><br></answer-box>
+
+
+    <p class="t">
+    En anden form vi nemt kan beskrive med polære koordinater, er den såkaldte <i>cardioid</i>. 
+    </p>
+    <img class='SpicXL' style='width:35%' src='../../../Assets/Chapter2\Section4\Polar\Cardiod.png'>
+    <p class="t">
+    Den ligner intuitivt lidt et hjerte eller en bagdel. 
+    </p>
+
+
+    <q-stion 1="1" 2="3">
+    Skyd et intuitivt gæt ud fra billedet på, hvordan en cardioid kan beskrives med polære koordinater!
+    <br><br></q-stion>
+    <answer-box>
+    Her vil jeg nok først observere, at en cardioid er symmetrisk omkring x-aksen.
+    Det hentyder, at _(Cos(\theta)_) måske er involveret,
+    eftersom _(Cos(-\theta)=Cos(\theta)_). 
+    <p class="t">
+    Ved _(\theta=\pi_) er _(Cos(\theta)=-1_), men
+    alligevel går cardioiden i vinklens retning. 
+    På denne kurve er udtrykket for radiusen <i>altid</i> positivt, i modsætning
+    til blomsten hvor det skiftede. En simpel _(r=Cos(\theta)_) er derfor ikke en mulighed. 
+    </p>
+    <p class="t">
+    Radius er <i>størst</i> ved _(\theta=pi_) med en værdi på _(2_), og mindst ved _(\theta=0_)
+    med en værdi på _(0_). Så radius <i>stiger</i> mens _(Cos(\theta)_) falder. 
+    _(Cos(\theta)_) falder med _(2_) fra _(1_) til _(-1_) mellem _(\theta=0_) og _(\theta=\pi_), 
+    præcis ligesom vores radius <i>stiger</i> med _(2_). Måske kan man sige:
+    _($r=1-Cos(\theta)_)
+    Det her passer til _(1-Cos(0)=0_) og _(1-Cos(\pi)=2_), er positivt overalt, og minder
+    lidt om en cirkel, som _(r=Cos(\theta)_).
+    Prøv at følg grafen med hånden, og se om det passer til
+    det her gæt. Spoilers: det gør det. 
+    </p>
+    <br></answer-box>
+
+    <p class="t">
+    I den virkelig verden har man brug for at beskrive ukonventionelle former 
+    som disse matematisk, bl.a. i forhold til udskæringer og 
+    automatisering ved fabriksarbejde, i relation til at løse andre svære problemer som 
+    indpakning af vare, pladsbesparing, beskrivelser af produkter, mm.
+    Et konkret eksempel på polære koordinater i den virkelig verden er <i>mikrofoner</i></p>
+    <img class='SpicXL' style='width:60%' src='../../../Assets/Chapter2\Section4\Polar\Microphone1.png'> 
+    <p class="t">Mikrofoner er ofte runde, og optager lyd fra alle _(360_) grader. De er
+    dog også designet til at optage <i>mere</i> på nogle grader end andre:</p>
+    <img class='SpicXL' style='width:80%' src='../../../Assets/Chapter2\Section4\Polar\Microphone2.png'> 
+    <p class="t">Man kalder dette en mikrofons <i>mønster</i>. Det jeg har tegnet deroppe
+    kalder man en <i>shotgun</i> form. Her er mirkofonen ekstra sensitiv til lyd på to smalle områder:</p>
+    <img class='Spic' style='width:90%' src='../../../Assets/Chapter2\Section4\Polar\Shotgun.png'> 
+    <!-- CROP DET HER: FJERN OGSÅ DEN HVIDE BAGGRUND! -->
+    <p class="t">
+    Kurven her viser forholdet mellem lydsensitivitet og vinkel. 
+    Det giver klart bedst mening at beskrive med en polær kurve som:
+    _($\text{Lydsensitivitet}(\theta)_)
+    F.eks. er et hyppigt mønster til mikrofoner en cardioid! 
+    </p>
+    <p class="t">
+    Nogle kurver der <i>ser ud til</i> bedst at kunne beskrives med polære koordinater,
+    er faktisk bedre med normale rektangulære koordinater. 
+    Ellipsen er et godt eksempel. Den ser "rund" ud, men 
+    er svær at definere i forhold til radius og vinkel. 
+    Med rektangulære koordinater fås:
+    _($\left(\frac{x}{a} \right)^2 + \left(\frac{y}{b} \right)^2 = 1_)
+    _(x_)-koordinatet på et punkt er lig radius til _((0, \, 0)_) ganget med _(Cos_) af punktets vinkel.
+    Samme gælder _(y_) og _(Sin_). Vi kan derfor substituere _(x=r Cos(\theta)_) og 
+    _(y = r Sin(\theta)_), for at beskrive kurven med polære koordinater: 
+    _($\frac{r^2*Cos(\theta)^2}{a^2} + \frac{r^2*Sin(\theta)^2}{b^2}  = 1 \to_)
+    _($r = \pm \sqrt{\frac{1}{\frac{Cos(\theta)^2}{a^2}+\frac{Sin(\theta)^2}{b^2}}}_)
+    Det er langt fra pænt.
+    </p>
+
+    <q-stion 1="1" 2="4">
+    Vurder om de følgende kurver er nemmest at beskrive med polære eller rektangulære koordinater:
+    <img class='SpicXL' style='width:45%' src='../../../Assets/Chapter2\Section4\Polar\WhichBest.png'> 
+    <p class="t">
+    Svaret vil selvfølgelig indeholde en vis del subjektivitet.
+    </p>
+    <br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    Det her er bare en linje, og den er ekstrem nem at modellere rektangulært som _(y=ax+b_).
+    Jeg gider ikke engang til at omskrive det polært: Det bliver nok bare værre. 
+    _($r Sin(\theta) = a*r Cos(\theta) + b \to r=\frac{b}{Sin(\theta)-a*Cos(\theta)}_)
+    Det blev værre. 
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Den her cirkel er <i>ikke</i> placeret med centeret på _((0,0)_). Den er i stedet flyttet med _(r_) på
+    _(x_) som: _((x-R)^2 + y^2 = R^2_). 
+    Er den stadig nem at gøre polar? 
+    _($\begin{eqnarray}
+    && (rCos(\theta)-R)^2+r^2Sin(\theta)^2=R^2 \to \\ \\
+    && r^2Cos(\theta)^2+R^2-2RrCos(\theta)+r^2 Sin(\theta)^2=R^2 \to \\ \\
+    && r^2 \left(Cos(\theta)^2 + Sin(\theta)^2 \right) + R^2 - R^2 - 2 R r Cos(\theta) = 0 \to  \\ \\
+    && r^2 - 2Rr Cos(\theta) = 0 \to \\ \\
+    && r-2R Cos(\theta) = 0 \to  \\ \\
+    && r = 2 R Cos(\theta)  
+    \end{eqnarray}_)
+    Super dejlig formel! Bare diameter ganget med _(Cos(\theta)_). 
+    Det kunne man også have set med lidt geometri:
+    </p>
+    <img class='Spic' style='width:50%' src='../../../Assets/Chapter2\Section4\Polar\Shifted circle.png'> 
+    <p class="t">
+    Vi vil gerne finde _(r_), og kender _(R_) og _(\theta_). Trekanten
+    der er markeret har to lige lange sider, 
+    og kan opdeles i to kongruente trekanter. 
+    Herfra ser vi, at halvdelen af _(r_) er _(R*Cos(\theta)_), så <i>hele</i>
+    _(r_) bliver _(2*R*Cos(\theta)_)
+    </p>
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{C}}_)#" tabColour="rgb(171,96,147)">
+    Endnu en cirkel! 
+    Nu er den placeret mere generelt ved _((a, b)_), hvilket rektangulært svarer til:
+    _($(x-a)^2+(y-b)^2=R^2_)
+    Vi substituerer igen _(x=rCos(\theta)_) og _(y=rSin(\theta)_):
+    _($(rCos(\theta)-a)^2+(rSin(\theta)-b)^2=R^2 \to_) 
+    _($(1)r^2 - 2(Cos(\theta)a + Sin(\theta)*b)r + (a^2 + b^2 - R^2) = 0_)
+    Så:
+    _($\begin{align}
+    r & = \frac{2(Cos(\theta)a + Sin(\theta)*b)}{2*1} \, \, \pm \\ \\
+      & = \frac{\sqrt{4(Cos(\theta)a + Sin(\theta)*b)^2 - 4*(a^2 + b^2 - R^2)}}{2*1}
+    \end{align}_)
+    Vi var nødt til at løse en andengradsligning, og det ser virkelig ikke godt ud. 
+    Det <i>kunne</i> være, det bliver simplificeret til noget dejligt til sidst, men
+    - spoilers - det gør det ikke. 
+    <br><br></answer-box>
+
+    <q-stion 1="1" 2="5">
+    Her er fire kurver, der ikke er placeret på _((0,0)_), men alle har et punkt på deres omkreds der
+    skærer _((0,0)_):
+    <img class='Spic' style='width:60%' src='../../../Assets/Chapter2\Section4\Polar\ModelThis5.png'>
+    <p class="t">Hvad er den generelle ligning/funktion/model for sådan en cirkel? Gør 
+    det både polært og rektangulært, og se hvad der virker bedst
+    (hvilket i dette tilfælde er ret subjektivt). </p>
+    <br></q-stion>
+    <answer-box>
+    Lad os starte rektangulært: Vi har en cirkel _((x-a)^2+(y-b)^2=R^2_), hvor _((a, \, b)_)
+    skal være _(R_) væk fra _((0,0)_). Det betyder
+    at _(R^2=a^2+b^2_), så vi får:
+    _($(x-a)^2+(y-b)^2=a^2+b^2_)
+    Det er vel egentlig fint og simpelt, og undersøgte det endda tidligere i bogen. Lad os nu se det polære tilfælde.
+    Det har jeg tænkt mig at undersøge med geometri: 
+    <img class='Spic' style='width:70%' src='../../../Assets/Chapter2\Section4\Polar\TangentCirclesFamily.png'> 
+    <p class="t">
+    Sig at _(R_)-radius cirklen er positioneret med en vinkel til _((0, 0)_) på _(\phi_), og 
+    punktet med en vinkel på _(\theta_). 
+    Det er bedre at beskrive positionerne med vinkel end koordinater,
+    da det højest sandsynligt vil give simplere resultater i det polære tilfælde. 
+    </p> 
+    <p class="t">
+    Man kan se en trekant med to identiske sider, og to vinkler på 
+    _(\theta-\phi_), så:
+    _($r=2*R*Cos(\theta-\phi)_)
+    Det er en super dejlig formel! 
+    Jeg syntes, det er en smule simplere
+    end det rektangulære tilfælde, men det kommer 
+    meget an på situationen. 
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="1" 2="6">
+    Prøv at tegn noget af _(r=Ln(\theta)_). Det er helt fint, hvis det er upræcist og grovt.
+    <p class="t">
+    Du må gerne bruge en lommeregner, 
+    bare ikke et CAS-program. 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Strategien er egentlig meget simpel: find nogle punkter på _(r=Ln(\theta)_), tegn dem, forbind dem.
+    _(\theta=0_) er upraktisk, da radiusen er uendelig negativ. 
+    Ved _(\theta=\frac{1}{4}_) 
+    får vi _(Ln(\frac{1}{4})=-1.386_). Derfor måler vi en vinkel ved _((0,0)_) på 
+    _((1/4)*180/\pi = 14.3239_) grader, og går bagud med _(1.386cm_), eller
+    et andet målestoksforhold, der er mere praktisk. Vi sætter nu et punkt:
+    <img class='Spic' style='width:50%' src='../../../Assets/Chapter2\Section4\Polar\PolarDraw1.png'> 
+    <p class="t">Det her bliver vi ved med lidt tid. 
+    Lad os sige, du først gør det fra _(\theta=0_) til _(\theta = 2\pi_):</p>
+    <img class='Spic' style='width:95%' src='../../../Assets/Chapter2\Section4\Polar\PolarDraw2.png'> 
+    <p class="t">Hvis du er mere ivrig og bliver ved til, sig _(\theta=6\pi_), fås:</p>
+    <img class='Spic' style='width:95%' src='../../../Assets/Chapter2\Section4\Polar\PolarDraw3.png'> 
+    <p class="t">
+    Bare rolig: Jeg forventer ikke, at du har gået så langt og sat alle de punkter.
+    I hvert fald kan man se, at det i højere og højere grad
+    ligner en spiral. Det er nok fordi, at _(Ln(\theta)_) gror langsommere
+    ved større _(\theta_).
+    </p>
+    <p class="t">
+    Hvis kurven bliver tegnet helt præcist af en computer fås:
+    </p>
+    <img class='SpicXL' style='width:95%' src='../../../Assets/Chapter2\Section4\Polar\PolarDraw4.png'> 
+    <p class="t">
+    Ret flot faktisk!
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="1" 2="7">
+    Prøv at modeller de to følgende kurver:
+    <img class='Spic' style='width:65%' src='../../../Assets/Chapter2\Section4\Polar\ModelExercise1.png'> 
+    <p class="t">
+    De er faktisk begge del af samme slags kurve, så jeg har kun lavet èt svar.
+    </p>
+    <br></q-stion>
+    <answer-box>
+    _(r_) er aldrig negativ, da kurven hele tiden går ud til den vej vi peger vinklen. 
+    Yderligere kan vi se, at radiusen bliver større i det samme, konstante tempo hele tiden. 
+    Derfor er følgende gæt nok en god ide:
+    _($r=a*\theta_) 
+    Her er _(a_) bare en eller anden konstant.
+    <p class="t">
+    Den store spiral er <i>også</i> lig _(r=a*\theta_), nu bare hvor _(\theta_)
+    fortsætter til længere end _(2\pi_). Denne spiral går rundt
+    _(6_) gange, så den fortsætter helt til _(6*2\pi_). 
+    </p>
+    <br></answer-box>
+

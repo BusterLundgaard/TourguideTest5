@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+
+
+    <h3>"-a hvad for en potens?": Potenser med tal, <br> der ikke er hele</h3>
+   <p class="t">
+   Sig igen at man har nogle bakterier. Bakterierne vil begynde at splitte sig i to, hvis de
+   får mad nok. Hver af de dele bliver så til nye bakterier, der også kan splitte osv.
+   Lad os gøre situationen meget simpel, og sige det tager 1 dag før et bakterie splitter. 
+   I det tilfælde vil der være _(2^x_) bakterier efter _(x_) dage. Intet nyt her. 
+   Lad os nu, lidt ligesom vi gjorde før, finde ud af hvornår der er en bestemt mængde bakterier. 
+   Sig
+   </p>
+   <p class="cent"> 
+   Hvornår er der _(1897_)? 
+   </p>
+   <p class="t">
+   Aldrig! Man kan regne at:
+   _($\begin{eqnarray}
+   && 2^{10}=1024 \\
+   && 2^{11}=2048 
+   \end{eqnarray}_)
+   Så _(1897_) er mellem _(2^{10}_) og _(2^{11}_). Det er en smule fjollet dog, er det ikke? I alt
+   realiteten opdeler bakterierne sig jo ikke på præcis det samme tidspunkt. Der vil nok intuitivt
+   være <i>et eller andet tidspunkt</i> hvor der er _(1897_) bakterier. Alternativt:
+   Hvor mange bakterier er der efter _(10_) en halv dag? Matematikken og 
+   de rigide definitioner fortæller os, at det bare må være _(2^{10}=1024_), da
+   bakterierne i vores forsimplede model 
+   kun får børn på bestemte tidspunkter. Men <i>selvfølgelig</i> er der kommet
+   flere bakterier siden klokken ramte _(24:00_) og en ny dag begyndte. Så, øh, hvad
+   præcist sætter vi _(2^{10.5}_) til at være? Mere generelt: hvordan opløfter
+   vi noget til en potens med kommatal?
+    </p>    
+   <p class="t">Vi skal lave et <i>valg</i>. Det er <i>os</i> der <i>bestemmer</i>
+   hvad f.eks _(4^{3.5}_) betyder. Helt overordnet kan vi dog opstille to krav til vores valg:</p>
+   <ul>
+    <li>_(\textbf{A}_): Det skal virke intuitiv med rigtige situationer, og give gode logiske resultater</li>
+    <li>_(\textbf{B}_): Det skal hænge flydende sammen med vores tidligere definitioner.</li>
+    </ul>
+   <p class="t">Med _(\textbf{B}_) mener jeg, at vores nye 
+   definition ikke burde indføre nogle selvmodsigelser. 
+   Eksempelvis kan man vælge at se på _(2_) som et kommatal _(2.00_), og her
+   burde _(a^{2.00}_) med vores regler give samme svar som _(a^{2}._)
+   De tidligere 
+   regler som _(a^{b+c}=a^b*a^c_) eller _((a^b)^c=a^{b*c}_) skal helst stadig også gælde, når
+   _(b, \, c_) er et kommatal (det er dog ikke <i>absolut</i> nødvendigt) </p>
+
+   <p class="t">
+   Vores nye definition skal ifølge <u> 1</u> være "intuitiv": 
+   </p>
+   <img class='SpicXL' style='width:95%' src='../../../Assets/Chapter2\Section3\Logarithms\GrafIntuition.png'> 
+   <p class="t">
+   Jeg har tegnet en kurve ud fra hvordan jeg forventer _(a^x_) vil se ud, hvis _(x_) også kan være kommatal.
+   Kurven skal selvfølgelig stige i hastighed/hældning hele tiden: Eksempelvis i konteksten af bakterier
+   vil der konstant være nye bakterier, der opdeler sig. Kurven er derfor 
+   ret <i>smooth</i>, da vi antager, at den konstant vokser. 
+   Hvis vi stiller os på et <i>helt</i> tal som _(x=5_), så
+   er _(x=6_) bare værdien ved _(x=5_), ganget med _(a_). Altså: 
+   _($a^6=a^5*a_)
+   Det præcis samme burde intuitivt gælde, hvis vi startede på _(x=3.4_) og gik til _(x=4.4_): når vi 
+   går _(1_) frem, har hvert bakterie fra _(3.4_) jo opdelt sig i _(a_) dele! 
+   Generelt: _(a^{b+1}_) burde være lig _(a^b*a_) <i>selv</i> hvis _(b_) er et kommatal. Det er et nyt krav,
+   der kan gøre det lettere at finde mange potenser: 
+   _($a^{6.7}=a^{5.7}*a=a^{4.7}*a^2=a^{3.7}*a^3=a^{2.7}*a^4=a^{1.7}*a^5=a^{0.7}*a^6_)
+   Nu mangler vi bare at definere potenserne mellem _(0_) og _(1_). 
+   </p>
+
+   <p class="t">Se følgende billede:</p>
+   <img class='SpicXL' style='width:40%' src='../../../Assets/Chapter2\Section3\Logarithms\ExponentMidpoints.png'> 
+   <p class="t">
+   For at finde _(a^x_) på _(x=2_) udregner vi bare _((a^1)^2_). 
+   Skal vi udregne _(a^x_) på _(x=4_) siger vi _((a^2)^2_). 
+   Generelt får vi _(a^{2x}_), hvis vi ganger _(a^x_) med sig selv. 
+   Det der er halvvejs mellem to punkter, skal i anden potens give det forreste. 
+   Det gælder på selv meget store skalaer, som man kan se på billedet med _(k_) og _(2k_). Derfor burde
+   det intuitivt også holde ved små skalaer! Lad os derfor bestemme at: 
+   _($(a^{0.5})^2=a^1_) 
+   ... hvilket betyder at 
+   _($a^{0.5}=\sqrt{a}_)
+   Bam! _(0.5_) er defineret! Vi kan lave meget 
+   samme argument med noget som _(a^{1/3}_). Her ved vi at: 
+   _($a^{3k}=(a^{k})^3_)
+   Så det virker intuitivt, at _((a^{1/3})^3=a_). _(a^{1/3}_) er "et eller andet
+   tal som opløftet i tredje potens giver _(a_)". 
+   Det kalder vi for "_(3_)-roden", og ligesom kvadratroden
+   kan det være relativt svært at udregne. Vi vil skrive det som _(\sqrt[3]{a}_). 
+   Meget lignende
+   giver _(a^{1/4}=\sqrt[4]{a}_), hvor _(\sqrt[4]{a}_) er "_(4_)-roden", som du nok selv kan regne ud hvordan
+   fungerer. 
+   I en af de tidligere opgaver på sidste side udregnede vi _(5_)-roden af _(243_).
+   Helt generelt ser vi at:  
+   _($a^{1/n}=\sqrt[n]{a}_)
+   Vi mangler lige én sidste ting: hvordan regner vi noget som 
+   _($a^{5*\frac{1}{8}}_)
+   Well, vi har ganget _(a_) med sig selv _(5_) gange så meget som _(a^{\frac{1}{8}}_), hvilket intuitivt
+   burde være: 
+   _($(a^{\frac{1}{8}})^5_)
+   Det her passer også godt med en af de tidligere egenskaber
+   fra hele tal: _(a^{b*c}=(a^b)^c_). Nu kan vi udregne alle _(a^{b/c}_) som: 
+   _($(a^{1/c})^b=(\sqrt[c]{a})^b_)
+   Voila!
+   </p>
+
+   <!--  -->
+
+   <q-stion 1="4" 2="1">
+   Udregn _(243^{0.6}_) uden lommmeregner. Brug hvad end strategi du har lyst til: bare ikke lommeregner!
+   <br><br></q-stion>
+   <answer-box>
+   _(0.6_) kan omskrives til _(3/5_), så vi skal regne:
+   _($243^{\frac{3}{5}} = (\sqrt[5]{243})^{3}_)
+   Vi ved fra tidligere, at _(\sqrt[5]{243}=3_), da _(3^5=243_), så
+   det endelige svar er _(3^3=27_). Done!
+   <br><br></answer-box>
+
+   <!--  -->
+
+   <q-stion 1="4" 2="2">
+    Vi er næsten færdige med vores definition, men mangler lige at vise, at _(a^{b+c}=a^b*a^c_) også
+    holder, når _(b, \, c_) ikke nødvendigvis er hele tal. Bevis det.    
+    <br><br></q-stion>
+    <answer-box>
+    Lad os skrive _(b_) og _(c_) som brøkerne _(b_1/b_2, \, c_1/c_2_), hvilket vi fra sidste opgave ved vi kan.
+    Nu er det bare:
+    _($a^{\frac{c_1}{c_2}+\frac{b_1}{b_2}}=a^{\frac{a_1*b_2+b_1*a_2}{c_2*b_2}}=(\sqrt[c_2*b_2]{a})^{c_1*b_2+b_1*c_2}=(\sqrt[c_2*b_2]{a})^{c_1*b_2} * (\sqrt[c_2*b_2]{a})^{b_1*c_2}_)
+    Og så:
+    _($a^{\frac{c_1*b_2}{c_2*b_2}} * a^{\frac{b_1*c_2}{c_2*b_2}} = a^{c_1/c_2}*a^{b_1/b_2}=(\sqrt[c_2]{a})^{c_1}*(\sqrt[b_2]{a})^{b_1}_)
+    Bam!
+    <br><br></answer-box>
+
+    <!--  -->
+
+   <q-stion 1="4" 2="3">
+   Regn følgende rødder:
+   <div style="margin-left:-79%; margin-top:25px; margin-bottom: -10px;">
+   _($\begin{eqnarray}
+       && \underline{\textbf{A}}: \, \, \, \, \, \, \sqrt[3]{8} \\  \\
+       && \underline{\textbf{B}}: \, \, \, \, \, \, \sqrt[4]{81} \\  \\
+       && \underline{\textbf{C}}: \, \, \, \, \, \, \sqrt[3]{125} \\  \\
+       && \underline{\textbf{D}}: \, \, \, \, \, \, \sqrt[7]{128} \\  \\
+       && \underline{\textbf{E}}: \, \, \, \, \, \, \sqrt[3]{216} \\  \\
+       && \underline{\textbf{F}}: \, \, \, \, \, \, \sqrt[3]{3.375} \\  \\
+       && \underline{\textbf{G}}: \, \, \, \, \, \, \sqrt[3]{1.331} 
+   \end{eqnarray}_)
+   </div>
+   <br><br></q-stion>
+   <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+   Hvilket tal har den egenskab, at det er lig _(8_), når det ganges med sig selv _(3_) gange? 
+   Det her er meget en gætte-sag ligesom kvadratrødder og logaritmer, men man kan se, at 
+   _(2_) giver svaret, da _(2*2*2=8_). 
+   <br><br></answer-box>
+   <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+   _(2_) er for småt, da _(2^4=16_). Vi prøver _(3_) som det næste, hvilket giver:
+   _($3^4=9*3^3=27*3=81_)
+   _(3_) er svaret. 
+   <br><br></answer-box>
+   <answer-box t="Answer _(\underline{\textbf{C}}_)#" tabColour="rgb(171,96,147)">
+   Her skal man lidt bare vide, at _(5*5=25_), og at _(25*5=125_), så 
+   _(5_) er svaret. 
+   <br><br></answer-box>
+   <answer-box t="Answer _(\underline{\textbf{D}}_)#" tabColour="rgb(175,128,161)">
+   Alt bliver meget stort, når det opløftes til _(7_)'ne potens, og vores tal på _(128_) er lige. 
+   Det er derfor nok meget logisk at starte med _(2_) som vores første gæt. Man kan regne at:
+   _($2^7=128_)
+   Det virkede! Så _(\sqrt[7]{128}=2_)
+   <br><br></answer-box>
+   <answer-box t="Answer _(\underline{\textbf{E}}_)#" tabColour="rgb(171,96,147)">
+   Vores svar skal i hvert fald være større end _(5_), givet at _(5^3_) var lig _(125_), som
+   er mindre end _(216_). Lad os prøve _(6_):
+   _($6^3=216_)
+   Voila! _(6_) er svaret. 
+   <br><br></answer-box>
+   <answer-box t="Answer _(\underline{\textbf{F}}_)#" tabColour="rgb(175,128,161)">
+   Nu har vi pludselig et kommatal! Den her ville være næsten umulig, hvis vi ikke
+   løste _(Log_{1.5}(5.0625)_) på sidste side. Der så vi at 
+   _($1.5^3=3.375_)
+   Så _(1.5_) er svaret. 
+   <br><br></answer-box>
+   <answer-box t="Answer _(\underline{\textbf{G}}_)#" tabColour="rgb(171,96,147)">
+    Den her ville <i>også</i> være meget svær, hvis ikke vi arbejdede med _(1000*1.1^x=1331_)
+    i sidste opgave. Her så vi, at _(1.1^3=1.331_), så _(1.1_) er svaret.
+    <br><br></answer-box>
+
+   <!--  -->
+
+   <q-stion 1="4" 2="4">
+    Ligesom at _(\sqrt{a*b}=\sqrt{a}*\sqrt{b}_), så er 
+    _($\sqrt[n]{a*b}=\sqrt[n]{a}*\sqrt[n]{b}_)
+    _(\underline{\textbf{A}}_): <br>
+     Hvorfor? (prøv at bevis det)
+    <p class="t">
+    _(\underline{\textbf{B}}_): <br>
+     Brug det til at regne:
+    _($\sqrt[3]{125000}_)
+    </p>
+   <br><br></q-stion>
+   <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    Her gør vi præcist det samme, som da vi originalt skulle bevise _(\sqrt{ab}=\sqrt{a} \sqrt{b}_). 
+    Sig at _(A=\sqrt{a}_) og _(B=\sqrt{b}_). Det kan let omskrives til:
+    _($\begin{eqnarray}
+    && A^2 & = a \\
+    && B^2 & = b 
+    \end{eqnarray}_)
+    Man kan nu let se at:
+    _($A^2*B^2=a*b_)
+    Hvilket kan omskrives til:
+    _($(A*B)^2 = a*b_)
+    Så: 
+    _($\sqrt{a*b}=A*B=\sqrt{a}*\sqrt{b}_)
+   <br></answer-box>
+   <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+   _(125000_) kan omskrives til:
+   _($125*1000=5^3*10^3=(5*10)^3 = 50^3_)
+   Så svaret er _(50_). 
+   <br><br></answer-box>
+
+   <!--  -->
+
+   <q-stion 1="4" 2="5">
+    Regn følgende:
+    _($\sqrt[1.5]{125}_)
+    Nu er det altså et kommatal!
+   <br><br></q-stion>
+   <answer-box>
+   Hvad er lig _(125_), når det bliver opløftet til potensen _(1.5_)? Well, 
+   _(1.5_) svarer til _(3/2_). Vi skal altså finde et tal _(x_), hvor
+   _($(\sqrt{x})^3=125_)
+   Vi ved, at _(5^3=125_), så ligningen kan omskrives til:
+   _($\sqrt{x}=5 \to x=5^2=25_)
+   _(25_) er svaret. 
+   <br><br></answer-box>
+
+   <!--  -->
+
+   <q-stion 1="4" 2="6">
+   Regn følgende potenser:
+    <div style="margin-left:-82%; margin-top:25px; margin-bottom: -10px;">
+    _($\begin{eqnarray}
+        && \underline{\textbf{A}}: \, \, \, \, \, \, 16^{0.75} \\  \\
+        && \underline{\textbf{B}}: \, \, \, \, \, \, 25^{2.5} \\  \\
+        && \underline{\textbf{C}}: \, \, \, \, \, \, 32^{2.4} \\  \\
+    \end{eqnarray}_)
+    </div>
+   <br></q-stion>
+   <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+   _(0.75_) svarer til _(3/4_), så:
+   _($\left(\sqrt[4]{16} \right)^3_)
+   Man kan let se, at _(\sqrt[4]{16}=2_), så svaret er _(2^3=8_). Bum!
+   <br><br></answer-box>
+   <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+   Den her ville jeg nok omskrive til:
+   _($25^2*25^{0.5}=25^2*\sqrt{25} = 625*5 = 3125_)
+   Voila!
+   <br><br></answer-box>
+   <answer-box t="Answer _(\underline{\textbf{C}}_)#" tabColour="rgb(171,96,147)">
+   Først omskriver jeg til:
+   _($32^2*32^{2/5}_)
+   _(32^{2/5}_) kan omskrives til _((\sqrt[5]{32})^2_), hvilket vi relativt
+   let kan regne er _(2^2=4_). Det endelige svar er derfor:
+   _($32^2*4=4096_)
+   <br></answer-box>
+
+   <!--  -->
+
+   <q-stion 1="4" 2="7">
+   _(\underline{\textbf{A}}_): <br> 
+    Regn:
+   _($Log_{16}(64)_) 
+   _(\underline{\textbf{B}}_): <br> 
+    Regn: 
+   _($Log_{16}(1/64)_) 
+   <br><br></q-stion>
+   <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    Hvad skal _(16_) opløftes til, for det er lig _(64_)?
+    _(16^2=256_) er for stort. Vi prøver med _(16^{1.5}_):
+    _($16^{1.5} = \left(\sqrt{16} \right)^3 = 4^3 = 64_)
+    _(1.5_) er svaret! 
+   <br><br></answer-box>
+   <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+   Til ingens overraskelse er dette lig _(-1.5_), eftersom:
+    _($\frac{1}{64}=\frac{1}{16^{1.5}} = 16^{-1.5}_)
+   <br></answer-box>
+
+    
+
+
+   <!--  -->
+
+   <q-stion 1="4" 2="8">
+   _(\underline{\textbf{A}}_): <br> Tilbage til træerne. 
+   Sig at mængden af træer efter _(d_) år er: 
+   _(2*9^d_)
+   Hvor mange år skal der gå, før der er _(6_) træer? 
+   <p class="t">
+   _(\underline{\textbf{B}}_): <br> Sig at mængden af bakterier i en bestemt koloni
+   bliver modelleret som
+   _($6*4^d_)  
+   ... hvor _(d_) er antallet af dage. Hvor mange dage før populationen når 
+   _(768_) bakterier?
+   </p>
+   <br></q-stion>
+   <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+   Vi har ligningen:
+   _($2*9^d = 6 \to 9^d = 3_)
+   Hvad skal _(9_) opløftes til for at give _(3_)? Well, 
+   _(3=\sqrt{9}_), så _(d=0.5_) giver:
+   _($9^{0.5}=\sqrt{9}=3_)
+   Der skal derfor gå <i>cirka</i> et halvt år. 
+   <br><br></answer-box>
+   <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+   Vi har:
+   _($6*4^d = 768 \to 4^d = 128_)
+   _(4^3=64_) er for småt, men _(4^4=256_) er for stort.
+   Vi prøver derfor med _(4^{3.5}_):
+   _($4^{3.5}=4^3*\sqrt{4}=64*2=128_)
+   Voila! _(3.5_) dage. 
+   <br><br></answer-box>
+
+   <!--  -->
+
+   <q-stion 1="4" 2="9">
+    Du har nok hørt ordet "halveringstid" eller "half-life" før. 
+    Sig du modellerer <i>noget</i> der bliver mindre over tid. 
+    Det kunne være en døende population (som i bakterier, ikke mennesker, din nazist), 
+    mængden af atomer i et stykke stof, 
+    mængden af farlig stråling, osv. Alle disse kvantiteter kan på en eller anden måde 
+    modelleres som: 
+    _($a/r^t_)
+    Hvor _(a_) er kvantitetens mængde i starten, og _(r_) bestemmer hvor
+    mange gange mindre den bliver hver _(t_) tidsenhed. 
+    Vis, at der findes <i>en</i> halveringstid. 
+    Lige meget om vi er på _(1000_) bakterier eller _(4_), vil mængden altid halveres
+    med samme hastighed. Det tager ligeså lang tid 
+    for _(32/1.5^t_) at gå fra _(32_) til _(16_) som 
+    fra _(16_) til _(8_) osv. 
+    <p class="t">
+    Vis også, at det samme gælder
+    for en stigende kvantitet som _(a*r^t_), og at det ikke kun nødvendigvis
+    er halveringstid, men faktisk en nogen som helst procentdel 
+    det er blevet større eller mindre (f.eks _(70%, 66%, 1%_) osv.)
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Lad os starte med half-life. Hvis der på et eller andet tidspunkt
+    _(t_0_) går _(d_) tid før _(a/r^t_) er dobbelt så lille
+    som _(a/r^{t_0}_), må det gælde at:
+    _($\frac{\frac{a}{r^{t_0}}}{\frac{a}{r^{t_0+d}}} = 2_)
+    Det kan nemt forsimples og omskrives til _(r^d=2_), hvilket betyder at
+    _($d=Log_r(2)_)
+    Bam! Tiden _(d_) er komplet uafhængig af hvor vi starter _(t_0_)!
+    Præcist det samme kan vi gøre med fordoblingstid, hvor
+    _($\frac{a*r^{t_0+d}}{a*r^{t_0}}=2 \to d=Log_r(2)_)
+    Vi kan også bruge et noget som helst tal på den anden side: Og det behøver ikke nødvendigvis være 
+    _(2_)! Derfor virker det på alle procenter.
+    <br><br></answer-box>
+
+    <!--  -->
+
+   <q-stion 1="4" 2="10">
+    _(n_)-rødder er ligesom kvadratrødder generelt meget svære at regne, og 
+    de giver sjælen pæne tal. De _(n_)-rødder du regnede i de sidste par opgaver var 
+    special-udvalgt, så at de kunne regnes uden lommeregner.
+    Fremover forventer jeg at du bruger lommeregner til det ligesom ved kvadratrødder. 
+    Det er ikke alle lommeregnere der har en _(n_)-rods funktion, men hvis de har én,
+    markeres den ofte med _(\text{sqrt[y]{x}}_). 
+    Hvis lommeregneren ikke har en dedikeret _(sqrt[y]{x}_)-knap, er det næsten altid
+    muligt at bruge deres potens i stedet ved at opløfte _(x_) til den _(1/y_)'ne potens. 
+    <p class="t">
+    Brug din lommeregner til at regne følgende: 
+    </p>
+    <div style="margin-left:-77.5%; margin-top:25px; margin-bottom: -10px;">
+    _($\begin{eqnarray}
+        && \underline{\textbf{A}}: \, \, \, \, \, \, \sqrt[6]{9.4}  \\  \\
+        && \underline{\textbf{B}}: \, \, \, \, \, \, \sqrt[122]{1568.9}  \\  \\
+        && \underline{\textbf{C}}: \, \, \, \, \, \, \sqrt[0.66]{12.83}  \\  \\
+    \end{eqnarray}_)
+    </div>
+   <br></q-stion>
+   <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+   Svaret er _(1.4527402_)
+   <br><br></answer-box>
+   <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+   Svaret er _(1.06216_)
+   <br><br></answer-box>
+   <answer-box t="Answer _(\underline{\textbf{C}}_)#" tabColour="rgb(171,96,147)">
+   Svaret er _(47.767366_)
+   <br><br></answer-box>
+
+   <!--  -->
+
+   <q-stion 1="4" 2="11">
+    Regn følgende potenser med din lommeregner:
+    <div style="margin-left:-75%; margin-top:25px; margin-bottom: -10px;">
+    _($\begin{eqnarray}
+        && \underline{\textbf{A}}: \, \, \, \, \, \, 12.6^{2.346}  \\  \\
+        && \underline{\textbf{B}}: \, \, \, \, \, \, 0.668^{4.85}  \\  \\
+        && \underline{\textbf{C}}: \, \, \, \, \, \, 19.001^{-3.22}  \\  \\
+    \end{eqnarray}_)
+    </div>
+   <br></q-stion>
+   <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    Svaret er _(381.477825_)
+   <br><br></answer-box>
+   <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Svaret er _(0.14130770_)
+   <br><br></answer-box>
+   <answer-box t="Answer _(\underline{\textbf{C}}_)#" tabColour="rgb(171,96,147)">
+    Svaret er _(0.00007626_)
+   <br><br></answer-box>
+
+ 

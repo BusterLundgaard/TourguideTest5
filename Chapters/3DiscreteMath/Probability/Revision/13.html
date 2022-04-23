@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+
+
+    <p class="t">
+    På de sidste par sider kiggede vi meget på hvordan vi kunne opdele svære sandsyndlighedsproblemer.
+    De næste 3 sider bliver lidt mindre abstrakte. En stor del af sandsynlighedsregning er selvfølgelig
+    at tælle antal/muligheder, så vi vil nu kigge på tre ting man ofte skal tælle der ikke er helt åbenlyse.
+    </p>
+
+    <p class="t">
+    <b> 1</b>: <br>
+    Du står på en strand fyldt med tusindvis af sten. Hver sten kommer 
+    i èn af _(5_) typer: 1, 2, 3, 4, og 5. Hvor mange kombinationer
+    af _(17_) sten kan du tage med hjem? 
+    </p>
+
+    <p class="t">
+    Vi tager _(17_) sten af _(5_) forskellige typer.
+    Det kan være en god ide at visualisere valg som disse
+    ved hjælp af tomme pladser der bliver udfyldt:
+    </p>
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\Multiset1.png'> 
+    <p class="t">
+    På hvor mange måder kan man udfylde de her _(17_) pladser med de _(5_) 
+    forskellige typer sten? Rækkefølgen er ligegyldig da vi kun tænker over
+    kombinationer. Det er altså kun <i>mængden af hver sten</i> der er vigtig.
+    </p>
+    <p class="t">
+    Det smarte trick kommer fra den måde vi visualisere mængden af hver sten. 
+    Vi gør det ved at indsætte _(5-1=4_) nye pladser der fungerer som en
+    slags "stop-punkter":
+    </p>
+    <img class='Spic' style='width:100%' src='../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\Multiset2.png'> 
+    <p class="t">
+    Det første stop-punkt bestemmer hvornår vi ikke længere skal 
+    udfylde med _(\text{Sten}_1_), det næste med _(\text{Sten}_2_), så _(3_) osv.
+    Du kan se der er _(0 \, \text{Sten}_4_) fordi de to pladser er placeret lige ved siden af hinanden. 
+    </p>
+    <p class="t">
+    Nu skal vi bare tælle hvor mange måder man kan placere disse stop-punkter for 
+    at finde antallet af kombinationer! Efter de _(4_) tomme pladser er indsat
+    er der _(17+4=21_) valgmuligheder. _(4_) af disse skal være stop-punkter, så vi 
+    regner:
+    _($\VeC[21, 4] = 5985_) 
+    Den her logik kan let generaliseres. At udvælge _(n_) objekter 
+    fra _(m_) typer svarer til at udvælge _(m-1_) stop-punkter på 
+    _(n+(m-1)_) pladser, så:
+    _($\VeC[n+m-1, m-1]_)
+    Her antager vi selvfølgelig at der er nok af hver type. Dette virker
+    <i>ikke</i> hvis antallet af en bestemt type er begrænset. 
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Hvor mange løsninger har ligningen 
+    _($x_1+x_2+x_3+x_4+x_5=13_)
+    hvis _(x_1_), _(x_2_), ... _(x_5_) alle er hele, positive tal? 
+    <br><br></q-stion>
+    <answer-box>
+    Det her er jo praktisk talt det problem vi lige løste! Hvordan kan man vælge nogle bestemte mængder - mængder af typer - 
+    der sammenlagt giver et eller andet bestemt totalt antal? Du kan forestille dig at
+    _(x_1_) er sten af type _(1_), _(x_2_) er sten af type _(2_), osv. "Mængden af løsninger" er
+    så mængden af forskellige kombinationer af sten. Vi skal have _(13_) objekter af _(5_) 
+    forskellige typer, så vi siger:
+    _($\VeC[13+5-1,5-1] = 2380_)
+    Voila!
+    <br><br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Hvor mange løsninger har ligningen 
+    _($x_1+x_2+x_3+x_4+x_5=13_)
+    hvis _(x_1 \gt -4, x_2 \gt 0, x_3 \gt 5, x_4 \gt -10, x_5 \gt 7_),
+    og de alle er hele tal?
+    <br><br></q-stion>
+    <answer-box>
+    Svaret ville være nemt <i>hvis</i> _(x_1,x_2,x_3,x_4,x_5_) alle startede
+    fra _(0_):
+    _($\VeC[5-1+13,5-1]_)
+    ...men det gør de ikke. De starter fra henholdsvis _(-4_), _(0_), _(5_), 
+    _(-10_) og _(7_). Vi vil gerne få det her problem til at minde om det
+    sidste, så vi skal på en eller anden måde få introduceret nogle 
+    variable der er positive og hele. Her kan vi være smarte: Hvis _(x_1_)
+    er alle hele tal mellem _(-4_) og _(\infty_), så kan den beskrives som:
+    _($x_1 = -4 + u_1_)
+    Hvor _(u_1_) er et helt <i>og</i> positivt tal. Bum! Nu kan vi lave det om til 
+    en ligning præcis ligesom i sidste opgave! Vi gør det samme
+    ved _(x_2_), _(x_3_), _(x_4_), _(x_5_) og får: 
+    _($(-4 + u_1) + (0 + u_2) + (5 + u_3) + (-10 + u_4) + (7 + u_5)=13_)
+    Hvilke let kan simplificeres til:
+    _($u_1 + u_2 + u_3 + u_4 + u_5 = 15_)
+    Hvilke vi ved har
+    _($\VeC[15+5-1, 5-1] = 3876 \text{ løsninger}_)
+    Bum! 
+    <br><br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Sig at din mand er ude at købe ind. Han er komplet hjælpeløs, og det eneste du kan sige 
+    med sikkerhed er at han køber imellem _(8_) og _(12_) frugter. Der er fire typer
+    han kan vælge, og supermarkedet har langt over 12 af hver. Til en bestemt dessert
+    du laver har du brug for i hvert fald _(2_) af hver frugt. Hvad er chancen for at han kommer
+    hjem og dit ønske er opfyldt? 
+    <br><br></q-stion>
+    <answer-box>
+    Vi skal finde tò tal: Mængden af måder din mand kan købe frugt på, og mængden af måder han kan købe
+    frugt på hvor der er over to af hver. 
+    Man kan nemt se at et simplere spørgsmål som "hvor mange måder
+    kan han købe _(10_) frugter af _(4_) typer" 
+    let kan laves om til det samme problem 
+    vi lige løste før:
+    _($\VeC[10+4-1, 4-1]_)
+    Det skal vi bare gøre ved både _(8_), 
+    _(9_), _(10_), _(11_) og _(12_). Samlet set kan han købe frugt på:
+    _($\VeC[8+3,3]+\VeC[9+3,3]+\VeC[10+3,3]+\VeC[11+3,3]+\VeC[12+3,3]=_)
+    _($1490_)
+    måder. Hvis han <i>skal</i> købe _(2_) eller over af hver, så har vi problemet 
+    _($\begin{eqnarray}
+    && x_1+x_2+x_3+x_4=\text{mængden af frugt han køber} \\ \\
+    && x_1 \ge 2, x_2 \ge 2, x_3 \ge 2, x_4 \ge 2
+    \end{eqnarray}_)
+    Her gør vi ligesom i sidste opgave, og erstatter hver _(x_) med _(u + 2_). Det giver:
+    _($(u_1+2)+(u_2+2)+(u_3+2)+(u_4+2) =_)
+    _($u_1+u_2+u_3+u_4+8_)
+    Så der er 
+    _($\VeC[\text{mængden af frugt han køber} - 8 + 3, 3]_)
+    løsninger. Vi regner altså:
+    _($\VeC[8-5,3] + \VeC[9-5,3] + \VeC[10-5,3] + \VeC[11-5,3] + \VeC[12-5,3] =_)
+    _($70_)
+    Så sandsynligheden er:
+    _($\frac{70}{1490} = 0.04698_)
+    Så der er desværre cirka kun _(4.5_)% chance for at din ubrugelige mand opfylder
+    dine kage-ønsker. 
+    <br><br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Hvor mange led vil 
+    _($(a+b+c+d+e+f)^{14}_) 
+    have når vi udvider det helt? "Helt"
+    i den forstand at hvert led følger 
+    _($k*a^{p_1}b^{p_2}c^{p_3}d^{p_4}e^{p_5}f^{p_6}_) 
+    hvor _(k_) er en coefficient og _(p_1,...p_6_) er potenser der godt kan være _(0_). 
+    <br><br></q-stion>
+    <answer-box>
+    Som vi så der med the binomial theorem på sidste-sidste side, så kan ledene 
+    ved f.eks _((A+B+C)*(A+B+C)*(A+B+C) \,* \, ..._) intuitivt ses som os der ved
+    hver parentes frit <i>vælger</i> en faktor. "Her vil jeg gerne have _(A_), her _(B_), her _(A_) igen, måske _(C_) her, osv".
+    Rækkefølgen er ligegyldig, fordi ledende alligevel til sidst kan sættes sammen med en koefficient. 
+    Der er altså bare <i>mængden</i> af _(A_), <i>mængden</i> af _(B_) osv der er vigtigt. Spørgsmålet
+    kan derfor omformuleres til mængden af løsninger på 
+    _($p_1+p_2+p_3+p_4+p_5+p_6=14_)
+    Hvilket er:
+    _($\VeC[14+6-1,6-1] = 11628_)
+    En del led! 
+    <br><br></answer-box>
+    
+    <q-stion 1="2" 2="1" 3="5">
+    Hvor mange løsninger har _(x_1+x_2+x_3+x_4=12_), hvis _(x_1 \lt 7_), og alle
+    andre er hele, positive tal? 
+    <br><br></q-stion>
+    <answer-box>
+    Hvis bare vi siger 
+    _($\VeC[12+4-1,4-1]=455_) 
+    så får vi også alle de løsninger med hvor _(x_1_) er lig med eller højere end _(7_). Hvis bare
+    vi kan finde mængden af de her "falske løsninger", så kan vi fjerne dem fra _(455_)
+    og få vores svar! Det er meget nemt faktisk: Hvis det er en "falsk" løsning, så er
+    _(x_1_) større eller lig med _(7_). Det svarer nu til ligningen:
+    _($x_1+x_2+x_3+x_4 = 12, \, \, x_1 \ge 7_)
+    Det har vi løst flere gange før:
+    _($(u_1+7)+x_2+x_3+x_4 = 12 \to_)
+    _($u_1+x_2+x_3+x_4 = 5_)
+    Så der er
+    _($\VeC[5+4-1,4-1] = 56_)
+    falske løsninger. Der er altså:
+    _($455-56=399_)
+    rigtige løsninger. 
+    <br><br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Hvor mange løsninger har _(x_1+x_2+x_3+x_4=12_) hvis _(x_1 \lt 7_) <i>og</i> 
+    _(x_2 \lt 3_)? Her anbefaler jeg at du tænker over <i>sæts</i> som vi brugte
+    meget på sidste side. 
+    <br><br></q-stion>
+    <answer-box>
+    Det man umiddelbart tænker man kan gøre i denne opgave er simpelt:
+    Man finder ligesom før først <i>alle</i> løsninger (inklusiv de falske), så fjerner
+    man antallet af løsninger hvor _(x_1_) er lig med eller større end _(7_) <i>og</i>
+    fjerner antallet af løsninger hvor _(x_2_) er lig med eller større end _(3_).
+    Simpelt! Det er <i>næsten</i> rigtigt, men ikke helt: Der findes også løsninger
+    hvor <i>både</i> _(x_1_) bryder kravet <i>og</i> _(x_2_) bryder kravet. Så når vi 
+    fjerner både dem med _(x_1_) der bryder <i>og</i> dem med _(x_2_) der bryder, så 
+    <i>overfjerner</i> vi, da de også har noget tilfældes. Det er i et tilfælde
+    som dette at det kan være godt at tænke over <i>sæts</i>, da de fjerner 
+    meget af vores tvivl.
+    <p class="t">
+    Sig at _(U_1_) er alle de løsninger hvor _(x_1_) bryder kravet, og at
+    _(U_2_) er alle de løsninger hvor _(x_2_) bryder kravet. Det samlede antal
+    "falske løsninger" er altså 
+    _($|U_1 \cup U_2|_)
+    Det kan omskrives til:
+    _($|U_1|+|U_2|-|U_1 \cap U_2 |_)
+    _(|U_1|_) ved vi fra sidste opgave er _(56_), _(|U_2|_) er 
+    _($\VeC[12-3+4-1,4-1]=220_)
+    _(|U_1 \cap U_2|_) svarer til at <i>begge</i> krav opfyldes samtidig, så:
+    _($(u_1 + 7) + (u_2 + 3) + x_3 + x_4 = 12 \to_)
+    _($u_1+u_2+x_3+x_4 = 2_)
+    Hvilke har
+    _($\VeC[2+4-1,4-1]=10 \text{ løsninger}_)
+    Alt i alt er der altså:
+    _($56+220-10 = 266_)
+    falske løsninger. Så:
+    _($455-266=189_)
+    _(189_) rigtige løsninger. 
+    </p>
+    <br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Du slår _(3_) terninger. Hvad er chancen for at deres sum er over _(13_)? 
+    Den her er relativ lang, og der er en god del repetitive beregninger 
+    <br><br></q-stion>
+    <answer-box>
+    Det mindste slag ud kan få er _(3_), hvis du slår
+    _(1, 1, 1_). Det er største er _(18_), hvis du får _(6, 6, 6_). 
+    Man kan samlet set slå med de _(3_) terninger på _(6*6*6=_) _(216_) måder. 
+    Vi skal regne hvor mange måder man kan få en sum på henholdsvis
+    _(14_), _(15_), _(16_), _(17_) og _(18_). Lad os starte med _(14_).
+    <p class="t">
+    Sig at _(x_1_) er tallet på første terning, _(x_2_) på den anden og _(x_3_) på den tredje.
+    Vi har nu:
+    _($x_1+x_2+x_3 = 14, \, \, 1 \lt x_1, x_2, x_3 \lt 7_)
+    Hver terning er større eller lig med _(1_), så vi ændrer lige ligningen til:
+    _($u_1+u_2+u_3 = 11, \, \, u_1, u_2, u_3 \lt 6_)
+    Hvor _(11_) jo er _(14-3_). Hvis vi ignorerer størrelseskravet, så har denne ligning
+    _($\VeC[11+2, 2] = 78_)
+    løsninger. Nogle af disse er falske dog. Vi bruger samme strategi som i sidste opgave
+    og definerer 3 sæts:
+    _($\begin{eqnarray}
+    && F_1 & = u_1 \text{ er over eller lig } 6 \\
+    && F_2 & = u_2 \text{ er over eller lig } 6 \\
+    && F_3 & = u_3 \text{ er over eller lig } 6 
+    \end{eqnarray}_)
+    Antallet af falske løsninger kan altså findes som:
+    _($|F_1 \cup F_2 \cup F_3| =_)
+    _($|F_1| + |F_2| + |F_3| - |F_1 \cap F_2| - |F_1 \cap F_3| - |F_2 \cap F_3| + |F_1 \cap F_2 \cap F_3|_)
+    Terningerne er identiske, så 
+    _($|F_1|=|F_2|=|F_3|, \, \, |F_1 \cap F_2| = |F_1 \cap F_3| = |F_2 \cap F_3| _)
+    De falske løsninger er altså:
+    _($3 |F_1| - 3 |F_1 \cap F_2| + |F_1 \cap F_2 \cap F_3|_)
+    _(|F_1|_) kan regnes som:
+    _($\VeC[11-6+2,2] = 21_)
+    _(|F_1 \cap F_2|_) og _(|F_1 \cap F_2 \cap F_3|_) er begge _(0_) i vores tilfælde, 
+    da 
+    _($(u_1+6)+(u_2+6)+u_3=11_)
+    giver et negativt tal på højre side. Så der
+    er alt i alt:
+    _($78-3*21=15_)
+    muligheder for at få _(14_). Ved _(15_) har vi nu:
+    _($u_1 + u_2 + u_3 = 12, \, \, u_1, u_2, u_3 \lt 6 _)
+    Her er _(|F_1 \cap F_2|_) ikke _(0_) længere. Vi kan regne antallet af falske løsninger som:
+    _($3*\VeC[12-6+2, 2] - 3*\VeC[12-12+2, 2] = 81_)
+    Så antallet af løsninger er:
+    _($\VeC[12+2, 2] - 81 = 10_)
+    Vi kan let generalisere denne proces ved _(16_), _(17_) og _(18_) ved bare
+    at ændre _(12_) til henholdsvis _(13_), _(14_) og _(15_), så:
+    _($\begin{eqnarray}
+    && \VeC[13+2,2] & - 3*\VeC[13-6+2,2] & + 3*\VeC[13-12+2,2] & = 6 \\
+    && \VeC[13+2,2] & - 3*\VeC[13-6+2,2] & + 3*\VeC[13-12+2,2] & = 3 \\
+    && \VeC[13+2,2] & - 3*\VeC[13-6+2,2] & + 3*\VeC[13-12+2,2] & = 1
+    \end{eqnarray}_)
+    Endeligt får vi:
+    _($\frac{15+10+6+3+1}{216} = 0.162_)
+    Så en chance på omkring 16%. Ret crazy avanceret at regne når man
+    tænker over hvor simpelt formuleret spørgsmålet er!
+    </p>
+    <br></answer-box>
+
+
+
+
+

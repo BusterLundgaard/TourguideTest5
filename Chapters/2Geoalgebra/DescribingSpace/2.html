@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+
+
+    <h2>Parametriske beskrivelser</h2>
+
+    <p class="t"> 
+    Sig at du skyder en billiardkugle:
+    </p>
+    <img class='SpicXL' style='width:40%' src='../../../Assets/Chapter2\Section4\Parameterization\Billiards1.png'> 
+    <p class="t">
+    Den vil nu ramme og rikochettere siderne: 
+    </p>
+    <img class='SpicXL' style='width:40%' src='../../../Assets/Chapter2\Section4\Parameterization\Billiards2.png'> 
+    <p class="t">
+    Hvordan præcis skal vi beskrive 
+    billiardkuglens rute? Den 
+    ser meget avanceret ud, og der er intet bestemt forhold mellem _(x_) og _(y_):
+    Hver _(x_) værdi har flere korresponderende _(y_) værdier og vice versa. 
+    Hvad gør vi?
+    </p>
+    <p class="t">
+    Løsningen er at se på _(x_) og _(y_), hver for sig, i forhold til <i>tiden</i>. 
+    Måske er det muligt at finde to funktioner 
+    _(f_) og _(g_), og sige: 
+    _($\left(x,y \right)=\left(f(t),g(t) \right)_)
+    Det <i>er</i> højest sandsynligt muligt, eftersom _(x_)-komponentet
+    og _(y_)-komponentet er ret simple i denne situation. 
+    _(x_) rammer en højre væg, skifter retning, rammer venstre, skifter retning, osv. 
+    Det samme sker med _(y_). De følger begge en zig-zag bevægelse: 
+    </p>
+    <img class='SpicXL' style='width:80%' src='../../../Assets/Chapter2\Section4\Parameterization\RicochetPath.png'> 
+    <p class="t">
+    Det er ikke åbenlyst, elegant eller nemt, men disse zig-zag bevægelser kan 
+    beskrives som:
+    _($x=|b - v_x*M_{2T_x}(t-t_x)|, \qquad y=|h-v_y*M_{2T_y}(t-t_y|)_)
+    Hvor _(x_) og _(y_) beskriver afstanden fra venstre nedre hjørne, _(b,h_) er bredden og højden, _(v_x,v_y_) er x og y-hastigheden 
+    på kuglen, _(T_x,T_y_) er henholdsvis tiden det tager for kuglen at
+    gå fra den ene side til den anden, og fra toppen til bunden, og 
+    _(t_x,t_y_) er henholdsvis tiden det tager før kuglen først rammer
+    højre side og toppen. 
+    </p>
+    <p class="t">
+    Det er selvfølgelig ikke dedikeret "simple" formler, men det er
+    ret, dejligt når man tænker over hvor kompleks bevægelsen er! 
+    </p>
+
+    <p class="t">
+    Vi har beskrevet denne rute/kurve <i>parametrisk</i>, i forhold til et nyt <br> variable _(t_). 
+    </p>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" customWidth="530">
+    Hvor langt væk fra venstre nedre hjørne er billardkuglen efter
+    _(3_) minutter? Den formel jeg viste, antog at kuglen ikke mistede
+    nogen form for hastighed, og du skal antage det samme
+    <img class='Spic' style='width:70%; margin-right:90px;' src='../../../Assets/Chapter2\Section4\Parameterization\Billiards3.png'> 
+    <br><br></q-stion>
+    <answer-box customWidth="530">
+    Se følgende billede af situationens opsætning:
+    <img class='Spic' style='width:70%; margin-right:80px;' src='../../../Assets/Chapter2\Section4\Parameterization\Billiards4.png'> 
+    <p class="t">
+    Jeg har valgt at se på det som et koordinatsystem med _((0, \, 0)_) ved
+    venstre nedre hjørne. Nu skal jeg bare finde kuglens _(x, y_) efter
+    _(3 min = 180s_). Formlerne jeg skal bruge involverer konstanterne
+    _(b_), _(h_), _(v_x_), _(v_y_), _(t_x_), _(t_y_), _(T_x_), _(T_y_). 
+    De skal nu alle findes. 
+    </p>
+    <p class="t">
+    _(b_) og _(h_) er selvfølgelig bare
+    _(170_) og _(80_).
+    </p>
+    <p class="t">
+    Hvis jeg på _(1_) sekund rejser _(130cm_) med
+    en vinkel på _(30^o_), kan jeg se med trigonometri at jeg på det 
+    ène sekund går _(130*Cos(30)=112_) frem på _(x_), og _(130*Sin(30)=65_)
+    frem på _(y_). Så _(v_x=112,_), _(v_y=65_).
+    </p>
+    <p class="t">
+    _(t_x_) er hvor
+    lang tid det tager, før jeg rammer den højre side. Det bliver
+    bare _(140cm / (112 cm/s) = 1.25_), og _(t_y=30/65=0.46_). Endelig
+    bliver _(T_x,T_y_) til henholdsvis _(170/112=1.51_) og _(80/65=1.23_).
+    </p>
+    <p class="t">
+    Vi kan nu sætte alting ind i formlerne og få: 
+    _($\begin{eqnarray}
+    && x=|b - v_x*M_{2T_x}(t-t_x)|=|170-112*M_{2*1.51}(180-1.25)|=106.16 \\ \\
+    && y=|h-v_y*M_{2T_y}(t-t_y|)=|80-65*M_{2*1.23}(180-0.46|)=77.3
+    \end{eqnarray}_)
+    Så:
+    _($\sqrt{106.16^2 + 77.3^2}=131.32cm_)
+    Voila! 
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <p class="t">
+    Vi siger, at vi beskriver noget "parametrisk". Vi introducerer et "parameter"
+    _(t_), og beskriver så _(x_) og _(y_) (måske endda _(z_) hvis vi arbejder i 3D) i forhold
+    til _(t_). Lad mig lige vise nogle ekstra eksempler,
+    så vi alle er på samme side og forstår hvordan det virker. 
+    </p>
+    <p class="t">
+    Sig du har en linje, der går gennem et punkt _((3,2)_) med hældningen _(-1.6_):
+    </p>
+    <img class='Spic' style='width:76%' src='../../../Assets/Chapter2\Section4\Parameterization\JustALine.png'> 
+    <p class="t">
+    Den kunne vi beskrive parametrisk som:
+    _($x=3+t, y=2-1.6t_)
+    _(x_) stiger med _(1_) og _(y_) stiger/falder med _(-1.6_), hver gang vi 
+    gør _(t_) _(1_) større i dette tilfælde. Hældningen passer altså til linjen,
+    og hvis _(t=0_) er vi på punktet _((3,2)_). 
+    </p>
+    <p class="t">
+    Et andet eksempel kunne være en parabel som:
+    _($y=-3x^2+5x+6_)
+    Den kunne vi beskrive parametrisk som:
+    _($\left(x,y \right) = \left(t,-3t^2+5t+6 \right)  _) 
+    Du kan se, at en hvilket som helst værdi af _(t_), giver dig et punkt på 
+    denne parabel. 
+    </p>
+    <p class="t">
+    Lad os som det sidste eksempel se på en cirkel centreret på 
+    punktet _((a,b)_) med radius _(R_). Den kunne vi beskrive som: 
+    _($\left(x,y \right)=\left(a+R Cos(t), b+ R Sin(t) \right)_)
+    Hvor _(t_) i dette tilfælde går fra _(0_) til _(2\pi_) for
+    at vise hele cirklen. Hvis vi ville vise et cirkeludsnit 
+    med en vinkel på _(v_), skulle _(t_) gå fra _(0_) til _(v_): 
+    </p>
+    <img class='Spic' style='width:60%' src='../../../Assets/Chapter2\Section4\Parameterization\ParametriskCirkeludsnit.png'> 
+    <p class="t">
+    Hvis vores parameterisering i stedet så ud som
+    _($\left(x,y \right) = \left(a+R Cos(347.9t), b+ R Sin(347.9t) \right)_)
+    ... ville _(t_) kun behøve at gå fra _(0_) til _(2\pi/349.9_) for at vise
+    hele cirklen. Der er selvfølgelig intet galt med at den gentager sig selv et par gange efter dog.
+    </p>
+    <p class="t">
+    Det er nok nemmest at forstå ved bare at lave en masse opgaver!
+    </p>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="2">
+    Beskriv følgende linjestykke mellem _(A=(-2,1)_) og _(B=(3,3)_) parametrisk:
+    <img class='Spic' style='width:82%;' src='../../../Assets/Chapter2\Section4\Parameterization\LinjestykkeParameter.png'> 
+    <br><br></q-stion>
+    <answer-box>
+    Super simpelt! Hvis man går fra _(A_) til _(B_) skal man
+    bevæge sig _(5_) på _(x_)-aksen og _(2_) på _(y_)-aksen, så:
+    _($(x, y) = (-2+5t, 1+2t)_)
+    ... hvor _(t_) går fra _(0_) til _(1_).
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="3">
+    Skitser følgende parametriske kurve:
+    _($\left(x,y \right) = \left(2-38t, -3+23t \right)_)
+    _(t_) går fra _(-\infty_) til _(\infty_), så du tegner
+    bare en arbitrær del af kurven. 
+    <br><br></q-stion>
+    <answer-box>
+    Vi kan se at denne kurve i hvert fald indeholder punktet _((2,-3)_). 
+    Den går både bag om og foran dette punkt, eftersom _(t_) både kan være negativ
+    og positiv. Der er ingen reel forskel mellem denne parametriske kurve og:
+    _($\left(2+38t, -3-23t \right)_)
+    Da vi bare har erstattet _(t_) med _(-t_). 
+    <p class="t">
+    Anyways: Hver gang vi gør _(t_) 1 _(større_), går vi _(38_) fremad på _(x_) 
+    og _(-23_) opad på _(y_). Det svarer til en hældning på _(-23/38=_) _(-0.605_). 
+    Så kurven kan nemt visualiseres som en linje, der går gennem punktet _((2,-3)_) med en hældning
+    på _(-0.605_): 
+    </p>
+    <img class='Spic' style='width:68%' src='../../../Assets/Chapter2\Section4\Parameterization\JustALine2.png'> 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="4">
+    Beskriv følgende ellipse-udsnit parametrisk: 
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter2\Section4\Parameterization\EllipseUdsnit.png'> 
+    Den her er en smule mere tricky, end man lige skulle tro!
+    At beskrive ellipsen er nemt, men at finde det rigtige
+    område til _(t_) er måske en smule tricky. 
+    <br><br></q-stion>
+    <answer-box>
+    Vi ved, at en ellipse bare er en udstrakt cirkel. En cirkel
+    med radius på _(1_) omkring _((-1,2)_) ville vi beskrive som:
+    _($\left(-1+1*Cos(t), 2+1*Sin(t) \right)_)
+    Den går altså _(1_) væk fra _(-1_) på _(x_), og _(1_) væk 
+    fra _(2_) på _(y_). Vores skal gå _(8/2=4_) væk fra 
+    _(-1_), og _(3_) væk fra _(y_), så:
+    _($\left(-1+4 Cos(t), 2 + 3 Sin(t) \right)_)
+    Nu skal vi bare beskrive, hvor _(t_) starter og slutter ved dette udsnit. 
+    Vi skal finde det punkt på ellipsen, hvor vinklen til
+    _((-1, 2)_) er _(49.03^o_). Det er nok nemmest
+    ved at se, hvornår ellipsen skærer en tangent, der går gennem
+    _((-1, 2)_) med hældningen _(Tan(49.03*pi/180)=1.151_).
+    Det svarer til en linje hvor:
+    _($y=1.151*(x+1)+2_)
+    Så vi har ligningen:
+    _($2 + 3 Sin(t) = 1.151*(-1+4 Cos(t)+1)+2_)
+    Det kan simplificeres til bare
+    _($3*Sin(t)=4.6*Cos(t)_)
+    Dette løser vi ved at omskrive til:
+    _($Tan(t) = 1.533_)
+    Så: 
+    _($t=Arctan(1.533)=0.992794_) 
+    Linjen skærer faktisk ellipsen to steder. Vi har fundet den første, men skal 
+    have den anden. Derfor plusser vi med _(\pi_) og får:
+    _($t=0.992794+pi=4.134_)
+    Endeligt ser vi nu, at
+    _($t \in [-\frac{\pi}{2}, 3.856]_)
+    Phew!
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="5" customWidth="530">
+    Beskriv følgende kurve parametrisk:
+    <img class='Spic' style='width:95%' src='../../../Assets/Chapter2\Section4\Parameterization\TheSinLine.png'> 
+    <br><br></q-stion>
+    <answer-box customWidth="530">
+    Først og fremmest har vi en linje, der går gennem _((4,-3.36)_) med en hældning på _((4.73-3.36)/(4-1.87)=_) _(0.643_).
+    Det kan i sig selv beskrives som:
+    _($(4+t,-3.36+0.643t)_)
+    Vi har så en sinus kurve, der går rundt omkring den linje. 
+    Vi kan se, at sinuskurven har en amplitude på
+    _($\sqrt{(2.57-1.87)^2 + (-5.82-(-4.73))^2} = 1.295_)
+    og en bølgelængde på
+    _($2*\sqrt{(4-1.87)^2 + (-3.36-(-4.73))^2} = 5.065_)
+    Denne sinuskurve er til en stor grad beskrevet i forhold til <i>længder</i>. Lad os derfor
+    gøre lidt det samme med linjen. Lige nu har _(t_) i _((4+t,-3.36+0.643t)_) ingen bestemt
+    geometrisk intuition. Lad os omskrive det så _(t_) beskriver længden, vi har gået langs linjen. 
+    En hældning på _(0.643_) svarer til en vinkel på _(Arctan(0.643)=0.571_). En længde på _(t_) langs
+    denne retning svarer til en x-forandring på _(Cos(0.571)*t_) og en y-forandring på _(Sin(0.571)*t_).
+    Derfor kan vi omskrive til:
+    _($\left(4+Cos(0.571)t, -3.36+Sin(0.571)t \right)_)
+    Sinuskurvens amplitude er vinkelret på denne linje, så den har en vinkel på _(0.571+\pi/2=_) _(2.141_). 
+    Vi burde nok bruge en _(Cosinus_) kurve i stedet for, eftersom den <i>starter</i> på den højeste
+    amplitude ved _((-1.87,-4.73)_) (hvor _(Sin_) starter ved _(0_)). Alt i alt får vi:
+    _($x=4+Cos(0.571)t + 1.295*Cos(2.141)*Cos\left(\frac{2\pi}{5.065}t \right)_)
+    ... og:
+    _($y=-3.36 + Sin(0.571)t + 1.295*Sin(2.141)*Cos\left(\frac{2\pi}{5.065}t \right)_)
+    Bum! Det her kan forkortes lidt til:
+    _($\Bigl(4+0.8413t-0.699 Cos(1.2405t), 3.36+0.5404t+1.090Cos(1.2405t)\Bigr)_)
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="6">
+    Prøv at skitser følgende parametriske kurve:
+    _($(3*Sin(4t)+2, t^2)_)
+    Igen er det helt fint, hvis du kun får en grov ide.
+    <br><br></q-stion>
+    <answer-box>
+    Jeg gennemgår kort svaret i følgende video: 
+    <video class='SpicB' style="width:95%;" controls>
+        <source src='../../../Assets/Chapter2\Section4\Parameterization\SketchCurve1.mp4' type='video/mp4'>
+    </video>
+    <p class="t">
+    Og du kan se et computergenereret billede af kurven her: 
+    </p>
+    <img class='SpicXL' style='width:70%' src='../../../Assets/Chapter2\Section4\Parameterization\SketchCurve1.png'> 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="7">
+    Indtil videre har det være relativt nemt at skitsere den parametriske kurve "intuitivt" 
+    ud fra den matematiske beskrivelse. Det er selvfølgelig ikke altid tilfældet. 
+    I mange tilfælde er man nødt til at regne en masse punkter på kurven, forbinde
+    dem, og så se hvad man får. Helt manuelt og lavpraktisk.
+    <p class="t">
+    Prøv at skitser
+    _($\left(t^2+5 Cos(t), t^2 + 2t \right)_)
+    ... fra _(t=-3.5_) til _(t=3_). Det er fint, hvis du ikke laver super mange punkter, da
+    det jo alligevel tager en del tid at indtaste det hele på en lommeregner.
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Vi skal skitsere fra _(t=-3.5_) til _(t=3_). Jeg 
+    har valgt at opdele det i _(13_) punkter, men det er helt fint,
+    hvis du har valgt mindre, da det tager en del tid at regne. 
+    Forskellen fra 
+    _(-3.5_) til _(3_) er _(3+3.5=_) _(6.5_), så den opdeler vi i _(12_) som _(6.5/12=_) _(0.541_). 
+    Vi skal altså regne punkterne på 
+    _($t=-3.5_)
+    ... og
+    _($t=-3.5+0.541_)
+    ... og 
+    _($t=-3.5+2*0.541_) 
+    ... osv. Vi regner nu:
+    _($\begin{eqnarray}
+    && x=(-3.5+0*0.541 )^2 + 5*cos(-3.5+0*0.541)=7.56 \\ \\
+    && y=(-3.5+0*0.541 )^2 + 2*(-3.5+0*0.541) = 5.25
+    \end{eqnarray}_)
+    Så det første punkt er _((7.56, 5.25)_). Vi kan regne, at det næste punkt er:
+    _($\begin{eqnarray}
+    && x=(-3.5+1*0.541 )^2 + 5*cos(-3.5+1*0.541)=3.83 \\ \\
+    && y=(-3.5+1*0.541 )^2 + 2*(-3.5+1*0.541) = 2.83
+    \end{eqnarray}_)
+    Sådan kan vi blive ved. Hvis vi gør det her _(13_) gange og plotter
+    alle punkter får vi:
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter2\Section4\Parameterization\PlotParametricManually.png'> 
+    <p class="t">
+    Og forbinder dem med hånden:
+    </p>
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter2\Section4\Parameterization\PlotParametricManually2.png'> 
+    <p class="t">
+    Voila! Hvis man plotter denne kurve med en computer får man:
+    </p>
+    <img class='SpicXL' style='width:80%' src='../../../Assets/Chapter2\Section4\Parameterization\PlotParametricManually3.png'> 
+    <br><br></answer-box>
+    
+    <!--  -->
+
+    <q-stion 1="2" 2="8">
+    Prøv at skitser følgende kurve:
+    _($\left(Tan(t)^2 - e^t + 5, Sin(Tan(t)^2 - e^t + 5) \right)_)
+    Der er et smart trick i denne. 
+    <br><br></q-stion>
+    <answer-box>
+    Husk på at:
+    _($\left(x,y \right)=\left(a+R Cos(t), b+ R Sin(t) \right)_)
+    Faktisk er identisk med:
+    _($\left(x,y \right) = \left(a+R Cos(347.9t), b+ R Sin(347.9t) \right)_)
+    Det er egentlig for vores vedkommende ret ligegyldigt hvor hurtigt _(t_) vokser: 
+    Kurven ser identisk ud, så længe _(t_) når gennem alle dens værdier. 
+    Vi kan 
+    vælge at kalde _(Tan(t)^2 - e^t + 5_) for "_(s_)", og få:
+    _($\left(s, Sin(s) \right)_)
+    Vi ved, at _(s_) går gennem alle værdier fra _(-\infty_) til _(\infty_), eftersom den indeholder
+    _(Tan(t)_). Vi ender derfor ud med en helt normalt sinuskurve!
+    <img class='Spic' style='width:90%' src='../../../Assets/Chapter2\Section4\Parameterization\JustGodDamnSinMan.png'> 
+    <p class="t">
+    Voila!
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="9">
+    Skitser følgende kurve:
+    _($\left(t^2,t^4 \right)_)
+    <br></q-stion>
+    <answer-box>
+    Den her kan vi omskrive til:
+    _($(t^2,(t^2)^{2})_)
+    Vi kalder nu _(t^2_) for _(s_) og får:
+    _($(s, s^2), \qquad s \gt 0_)
+    Det her svarer til at plotte _(y=x^2_) ved alle de positive _(x_), så:
+    <img class='SpicXL' style='width:60%' src='../../../Assets/Chapter2\Section4\Parameterization\ParableTrick.png'> 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="10">
+    Du kunne være praktisk at have formen af en fjeder. Både i 
+    2D som her:
+    <img class='Spic' style='width:95%' src='../../../Assets/Chapter2\Section4\Parameterization\Fjeder2D.png'> 
+    <p class="t">Og 3D som her:</p>
+    <img class='SpicXL' style='width:25%' src='../../../Assets/Chapter2\Section4\Parameterization\DownwardsSpiral.png'> 
+    <p class="t">
+    Beskriv den. I 3D skal _(z_) også beskrives i forhold til _(t_). 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Vi ved, at _((RCos(t),RSin(t)_) giver en cirkel. 
+    Normalt slutter cirklen samme sted den starter, 
+    men hvis _(x_) hele tiden rykkes fremad som
+    _($(RCos(t)+0.1t,RSin(t))_),
+    ... vil næste cirkel tegnes lidt længere fremme. 
+    Den generelle
+    form er derfor
+    _($(RCos(t)+kt,RSin(t))_) 
+    ... hvor _(k_) er en slags "udstrækningsfaktor". 
+    Det 3D tilfælde er meget lignende:
+    _($(RCos(t),RSin(t),kt)_). 
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="11">
+    Beskriv følgende spiral-form parametrisk:
+    <img class='SpicXL' style='width:80%' src='../../../Assets/Chapter2\Section4\Parameterization\Uzumaki.png'> 
+    <p class="t">
+    _(t_) skal gå fra hvad til hvad, for at vise lige denne spiral? 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    En spiral generelt kan man beskrive med polære koordinater som:
+    _($r=k*\theta_)    
+    Vi kan se, at radius på vores er _(2_) efter _(2_) omgange, så:
+    _($k*(2*2\pi)=2 \to k = \frac{1}{2 \pi}_)
+    Spiralen går èn halv omgang mere efter _(2_), så den går i alt fra _(\theta=0_) til _(\theta=5 \pi_).
+    Det kan beskrives som:
+    _($r=\frac{\theta}{2\pi}, \qquad \theta \in [0, 5 \pi]_)
+    Vi ved, at _(x=r*Cos(\theta)_), _(y=r*Sin(\theta)_), så vi kan nemt
+    beskrive denne polære kurve parametrisk:
+    _($\left(\frac{t}{2\pi}*Cos(t), \frac{\theta}{2\pi}*Sin(t) \right), \qquad t \in [0, 5 \pi]_)
+    Voila!
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="12">
+    Vi fandt tidligere en formel, der kunne rotere
+    et punkt _((a,b)_) _(\theta_) omkring _((0,0)_):
+    _($\left(Cos(\theta)x - Sin(\theta)y, Sin(\theta)x + Cos(\theta)y \right)_)
+    Find nu en måde at beskrive _(y=0.1x^2 - x_) roteret _(30_) grader omkring _((0,0)_), 
+    parametrisk:
+    <img class='SpicXL' style='width:70%' src='../../../Assets/Chapter2\Section4\Parameterization\RotatedParabola.png'> 
+    <br></q-stion>
+    <answer-box>
+    Parablen _(y=0.1x^2-x_) kan beskrives parametrisk som _((t,0.1t^2-t)_). Vi roterer nu bare dette punkt
+    med _(30=0.523_) radianer:
+    _($\VeC[Cos(0.523)t - Sin(0.523)*(0.1t^2-t), Sin(0.523)t + Cos(0.523)*(0.1t^2-t)] = _)
+    _($\left(-0.0499t^2 + 1.365t, 0.0866t^2 - 0.3668t \right) _)
+    Voila!
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="13">
+    Beskriv parablen _(y=0.1x^2-x_) roteret med _(45_) grader omkring _((0,0)_), men forsøg
+    denne gang at beskrive den som en ligning i forhold til _(x_) og _(y_). 
+    (hvor "plottet" er alle løsningerne på ligningen, ligesom ved _(x^2+y^2=R^2_)).
+    <br><br></q-stion>
+    <answer-box>
+    Først regner vi den roterede parametriske kurve præcist ligesom før:
+    _($\VeC[Cos(\pi/4)t - Sin(\pi/4)*(0.1t^2-t), Sin(\pi/4) + Cos(\pi/4)*(0.1t^2-t)] = _)
+    _($\left(1.414t - 0.07t^2, 0.07t^2 \right)_)
+    Så vi har:
+    _($\begin{eqnarray}
+    && x = 1.414t - 0.07t^2 \\
+    && y = 0.07t^2
+    \end{eqnarray}_)
+    Vi kan fjerne _(0.07t^2_) ved at plusse de to ligninger med hinanden, hvilket giver:
+    _($x+y=1.414t \qquad \to t = \frac{x+y}{1.414}_)
+    Dette kan vi nu indsætte i anden ligning og få:
+    _($y=0.07*\left(\frac{x+y}{1.414} \right)^2_)
+    Hvilke relativt let kan forsimples til: 
+    _($0.035x^2 + 0.035y^2 + 0.07*xy-y=0_)
+    Boom!
+    <p class="cent">*</p>
+    <p class="t">
+    Faktisk kan man relativt nemt rotere en hvilket som helst funktion omkring _((0,0)_) og beskrive
+    den som ligning. Sig du gerne vil rotere _(y=f(x)_) med _(\theta_) grader. Vi bruger
+    formlen på _((t,f(t))_) og får:
+    _($\begin{eqnarray}
+    && x = Cos(\theta)t - Sin(\theta) f(t) \\
+    && y = Sin(\theta)t + Cos(\theta) f(t) 
+    \end{eqnarray}_)
+    Dette er et system, og tricket er at bruge elimination for at fjerne _(f(t)_). 
+    Hvis vi ganger den første ligning med _(Cos_) og den anden med _(Sin_), kommer
+    de begge til at indeholde leddet _(Sin(\theta) Cos(\theta) f(t)_):
+    _($\begin{align}
+    x Cos(\theta) & = Cos(\theta)^2 t - Sin(\theta) Cos(\theta) f(t) \\
+    y Sin(\theta) & = Sin(\theta)^2 t + Cos(\theta) Sin(\theta) f(t) 
+    \end{align}_)
+    Nu plusser vi de to ligninger med hinanden og får:
+    _($x Cos(\theta) + y Sin(\theta) = Cos(\theta)^2 t + Sin(\theta)^2 t_)
+    _(Cos(\theta)^2 t + Sin(\theta)^2 t_) bliver bare til _(t_), så:
+    _($t = x Cos(\theta) + y Sin(\theta)_)
+    Vi kan nu indsætte dette i første ligning og få:
+    _($x = Cos(\theta)*\left(x Cos(\theta) + y Sin(\theta) \right) - Sin(\theta) f \left(x Cos(\theta) + y Sin(\theta) \right)_)
+    Hvilket kan simplificeres en smule til:
+    _($x = Cos(\theta)^2 x + \frac{1}{2} Sin(2\theta) y - Sin(\theta)*f \left(x Cos(\theta) + y Sin(\theta) \right)_)
+    Bum! Det her ser måske avanceret ud, 
+    men rigtig meget bliver til konstanter, når vi indsætter en bestemt værdi til _(\theta_). 
+    F.eks ved _(\theta=0.87_) hvor _(Cos(\theta)=0.644_) og _(Sin(\theta)=0.764_):
+    _($0=-1.41473x + 0.4928y - 0.764*f\left(0.644 x + 0.764 y \right)_)
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="14">
+    _(\underline{\textbf{A}}_): <br>
+     Plot følgende parametriske kurve:
+    _($\left(-2t^2+3t+5, 5t+6 \right)_)
+    _(\underline{\textbf{B}}_): <br>
+     Plot følgende parametriske kurve:
+    _($\left(Ln(t), \frac{1}{t}+t \right)_)
+    <br></q-stion>
+    <answer-box t="Answer_(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    Vi ved at:
+    _($\begin{eqnarray}
+    && x & = -2t^2+3t+5 
+    && y & = 5t+6
+    \end{eqnarray}_)
+    Via anden ligning kan vi let isolere _(t_) og få:
+    _($t=0.2y-1.2_)
+    Det kan vi nu indsætte i første ligning, hvilket giver:
+    _($x = -2*(0.2y-1.2)^2 + 3(0.2y-1.2)+5_)
+    Hvis vi udvider og simplificerer højre side, får vi:
+    _($x=-0.08y^2 + 1.56y - 1.48_)
+    Det er bare en parabel! Den skærer _(y_)-aksen ved 
+    _($-0.08y^2 + 1.56y - 1.48 = 0 \to y=1, 18.5_)
+    og har sit toppunkt ved _((1+18.5)/2=_) _(9.75_), hvor
+    _(x_) er lig:
+    _($-0.08*9.75^2 + 1.56*9.75 - 1.48 = 6.125_)
+    Med disse tre punkter kan vi relativt let plotte resten af parablen og få:
+    <img class='SpicXL' style='width:65%' src='../../../Assets/Chapter2\Section4\Parameterization\PlotByIsolatingX.png'> 
+    <p class="t">
+    Bum!
+    </p>
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Den her er egentlig lidt bare en lettere version af den tidligere opgave. Via første ligning kan vi 
+    let få _(t=e^x_), hvilket indsættes i anden ligning og giver:
+    _($y=\frac{1}{e^x}+e^x_)
+    Hvilket kan omskrives til:
+    _($y=e^{x}+e^{-x}_)
+    Nu handler det bare om, at skitsere denne kurve. Ved _(x=0_) er _(y_)
+    _(1+1=2_). Lad os dele grafen op i det positive og negative tilfælde. 
+    <p class="t">
+    Ved positive _(x_) bliver _(e^x_) meget stor, og _(e^{-x}_) meget lille. Her skal vi 
+    praktisk talt bare tegne en graf af _(e^x_) der starter lidt højere oppe, eftersom
+    _(e^{-x}_) stort set ikke har nogen indflydelse
+    </p>
+    <p class="t">
+    Ved negative _(x_) gør vi præcist det modsatte. Vores graf kommer til at se symmetrisk ud.
+    Alt i alt får vi noget, der cirka ser ud som: 
+    </p>
+    <img class='SpicXL' style='width:65%' src='../../../Assets/Chapter2\Section4\Parameterization\PlotByIsolatingX2.png'> 
+    <p class="t">
+    Voila!
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="15">
+    Hvem siger, vi kun må introducere èn ny variabel? Èn variabel kan beskrive en <i>sti</i>, men 
+    hvis du vil beskrive et <i>areal</i> eller <i>flade</i> får du brug for to.
+    <p class="t">
+    _(\underline{\textbf{A}}_): <br>
+     Beskriv følgende donut-form:
+    </p>
+    <img class='Spic' style='width:60%' src='../../../Assets/Chapter2\Section4\Parameterization\Donut2D.png'> 
+    <p class="t"> 
+    _(\underline{\textbf{B}}_): <br>
+     Beskriv også denne donut-form i 3D (kaldt en torus):
+    </p>
+    <img class='SpicXL' style='width:80%' src='../../../Assets/Chapter2\Section4\Parameterization\Torus.png'> 
+    <p class="t">
+    Her skal du altså sørge for, at jeg kan vælge to tal og få et punkt på fladen. F.eks. 
+    svarer 
+    _($\VeC[x,y,z] = \VeC[t+s,t+s, sin(t+s)]_)
+    ... til:
+    </p>
+    <img class='SpicXL' style='width:90%' src='../../../Assets/Chapter2\Section4\Parameterization\ParametricSurfaceExample1.png'> 
+    <p class="t">
+    ... ved positive _(t_) og _(s_), og 
+    _($\VeC[x,y,z] = \VeC[t,Sin(s), Cos(s)]_)
+    ... svarer til:
+    </p>
+    <img class='SpicXL' style='width:80%' src='../../../Assets/Chapter2\Section4\Parameterization\ParametricSurfaceExample2.png'> 
+    <p class="t">
+    ... hvor _(t \in [0, 10]_) og _(s \in [0, 2\pi]_). 
+    </p>
+    <br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    Du kan se hvordan, jeg har valgt at gøre det her:
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter2\Section4\Parameterization\Donut2DAnswer.png'> 
+    <p class="t"> 
+    Jeg bruger parametrene _(\theta_) og _(0 \lt r \lt d_) og får 
+    _($(Cos(\theta)*(R+r),Sin(\theta)*(R+r))_)
+    </p>
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Torusen har jeg parameteriseret sådan her:
+    <img class='Spic' style='width:85%' src='../../../Assets/Chapter2\Section4\Parameterization\TorusAnswer.png'> 
+    <p class="t">
+    Jeg deler den op i en masse cirkler med radius _(R_2_) langs en anden cirkel med radius _(R_1_).
+    Mine to parametre er _(\theta_) og _(\phi_). Man kan nemt se, at jeg kan danne alle punkter
+    sådan her. _(x_) og _(y_) kan man relativt nemt se bliver til henholdsvis 
+    _($x=Sin(\theta)*(R_1 + R_2*Cos(\phi))_)
+    og 
+    _($y=Cos(\theta)*(R_1 + R_2*Cos(\phi))_) 
+    ... hvor _(z_) super simpelt bare er 
+    _($R_2*Sin(\phi)_) 
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <p class="t">
+    Lad os til sidst se på èn anvendelse af parametriske kurver. I digital
+    kunst bruger man ofte "bezier curves". 
+    Idéen forklarer
+    ret godt sig selv via følgende simulation:
+    </p>
+    <iframe scrolling="no" title="BezierCurve" src="https://www.geogebra.org/material/iframe/id/ug4kamxb/width/763/height/493/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/true/ctl/true" width="508px" height="328px" style="border:solid; margin-top:35px;"> </iframe>
+    <p class="t" style="margin-top:35px;">
+    Du har altså tre punkter _(A_), _(B_) og _(C_) du frit kan justere. _(M_1_) er
+    det punkt, hvor du har gået _(t_) procent af vejen fra _(A_) til _(B_), 
+    _(M_2_) er det punkt, hvor du har gået _(t_) procent af vejen fra _(B_) til _(C_), og 
+    et hvilket som helst punkt på kurven _(P_) svarer til, at du har gået
+    _(t_) procent af vejen fra _(M_1_) til _(M_2_). Det her er rigtig smart, da det lader os
+    frit kontrollere både start- og slutpositionen via _(A_) og _(C_), samt kontrollere
+    kurvens "look" via _(B_). Man kan også let generalisere konceptet til endnu flere punkter, 
+    hvilket giver større kontrol over kurven. 
+    </p>
+
+    <q-stion 1="2" 2="16">
+    Sig at _(A=(2,3)_), _(B=(5,6)_) og _(C=(8,5)_). Beskriv bezier kurven disse tre punkter danner ved
+    hjælp af en parametrisk kurve: 
+    <br><br></q-stion>
+    <answer-box>
+    Lad os først finde _(M_1_) og _(M_2_). At trække èt tal _(a_) _(t_) procent tættere på
+    et tal _(b_) svarer til:
+    _($a+t(b-a)_)
+    Hvilket kan simplificeres til _(a(t-1)+bt_). Så:
+    _($M_1 = \VeC[2(1-t)+5t, 3(1-t)+6t], \qquad M_2 = \VeC[5(1-t)+8t, 6(1-t)+5t]_)
+    For at finde _(P_) bruger vi præcis samme formel, nu bare på _(M_1_) og _(M_2_):
+    _($P=\VeC[\left(2(1-t)+5t \right)(1-t)+\left(5(1-t)+8t \right)t, \left(3(1-t)+6t \right)(1-t)+\left(6(1-t)+5t \right)t]_)
+    Hvis vi udvider dette får vi:
+    _($\VeC[2t^2 - 2*5*t^2 + 8*t^2 - 2*2*t + 2*5*t+2, 3t^2 - 2*5*t^2 + 5t^2 - 2*3*t + 2*6*t + 3]_)
+    Hvilket kan simplificeres til:
+    _($\VeC[6t + 2, -4t^2 + 6t + 3]_)
+    Bum! Det er ret tilfældigt, at _(x_) ikke også er et andengradspolynomie her. 
+    <br><br></answer-box>
+
+    
+<!-- 
+
+
+
+
+    <p class="t">
+    Det kan vises at:
+    _($x=|b - v_x*M_{2T_x}(t-t_x)|, \qquad y=|h-v_y*M_{2T_y}(t-t_y|)_)
+    Hvor _(b,h_) er bredden og højden, _(v_x,v_y_) er x og y-hastigheden 
+    på kuglen, _(T_x,T_y_) er henholdsvis tiden det tager for kuglen at
+    gå fra den ene side til den anden, og fra toppen til bunden, og 
+    _(t_x,t_y_) er henholdsvis tiden det tager før kuglen først rammer
+    højre side og toppen. 
+    </p> 
+    <p class="t">
+    Det er selvfølgelig ikke dedikeret "simple" formler, men det er
+    ret dejligt når man tænker over hvor complex bevægelsen er! 
+    </p>
+    <p class="t">
+    Det her med bare at beskrive _(x_) og _(y_) for sig kan virke rigtig fint i mange sammenhænge. Især
+    når man skal beskrive stier/veje/paths. En cirkel bliver f.eks. til 
+    _($(R*Cos(t),R*Sin(t))_)
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Beskriv en ellipse på den her måde.
+    <br><br></q-stion>
+    <answer-box>
+    Hvis man har _((x=f_1(t),y=f_2(t))_) så har _((k*f_1(t),f_2(t))_) effekten af 
+    at udstrække x-aksen med en faktor af _(k_). En cirkel med radius
+    _(1_) er _((Cos(t),Sin(t))_), så hvis ellipsen er _((x/a)^2+(y/b)^2_) så 
+    siger vi bare meget simpelt 
+    _($(a*Cos(t),b*Sin(t))_) 
+    Done. 
+    <p class="t">
+    Det vi lige gjorde her - og det den her side handler om - kalder vi at <i>parameterisere</i>. Vi 
+    "introdu-cere" nogle "parametre".
+    </p>
+    <br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    <b> 1</b>: Hvor langt væk fra venstre nedre hjørne er billardkuglen efter
+    _(3_) minutter? Den formel jeg viste antog at kuglen ikke mistede
+    nogen form for hastighed, så du skal antage det samme
+    <img class='Spic' style='width:70%; margin-right:90px;' src='../../../Assets/Chapter2\Section4\Parameterization\Billiards3.png'> 
+    <br>
+    <p class="t">
+    <b> 2</b>: Bevis, eller i hvert fald prøv at forstå, hvorfor
+    den formel jeg viste faktisk virker. 
+    </p>
+    <br></q-stion>
+    <answer-box customWidth="600">
+    <b> 1</b>: Se følgende billede af hvordan jeg har opsat situationen:
+    <img class='Spic' style='width:70%; margin-right:110px;' src='../../../Assets/Chapter2\Section4\Parameterization\Billiards4.png'> 
+    <p class="t">
+    Jeg har valgt at kigge på det som et koordinatsystem med _((0,0)_) ovre ved
+    venstre nedre hjørne. Nu skal jeg så bare finde kuglens _(x,y_) efter
+    _(3 min = 180s_). Formlerne jeg skal bruge involverer konstanterne
+    _(b_), _(h_), _(v_x_), _(v_y_), _(t_x_), _(t_y_), _(T_x_), _(T_y_). 
+    De skal nu alle findes. _(b_) og _(h_) er selvfølgelig bare
+    _(170_) og _(80_). Hvis jeg på _(1_) sekund rejser _(130cm_) med
+    en vinkel på _(30^o_), så kan jeg se med trigonometri at jeg på det 
+    ène sekund går _(130*Cos(30)=112_) frem på _(x_), og _(130*Sin(30)=65_)
+    frem på _(y_). Så _(v_x=112,_), _(v_y=65_). _(t_x_) er hvor
+    lang tid det tager før jeg rammer den højre side. Det bliver
+    bare _(140cm / (112 cm/s) = 1.25_), og _(t_y=30/65=0.46_). Endelig
+    bliver _(T_x,T_y_) til henholdsvis _(170/112=1.51_) og _(80/65=1.23_).
+    Endelig kan vi indsætte i formlen og få:
+    _($x=|b - v_x*M_{2T_x}(t-t_x)|=|170-112*M_{2*1.51}(180-1.25)|=_)
+    _($106.16_)
+    _($y=|h-v_y*M_{2T_y}(t-t_y|)=|80-65*M_{2*1.23}(t-0.46|)=_)
+    _($77.3_)
+    Og så:
+    _($\sqrt{106.16^2 + 77.3^2}=131.32cm_)
+    Wholla!
+    </p>
+    <p class="t">
+    <b> 2</b>: Hvis vi tager x som eksempel, så vil vi helt ideelt gerne lave
+    en kurve der ser ud som:
+    </p>
+    <img class='Spic' style='width:95%' src='../../../Assets/Chapter2\Section4\Parameterization\Billiards5.png'> 
+    <p class="t">
+    x-skal nå over til den største bredde efter _(t_x_) sekunder. Den skal så skifte
+    retning til at gå bagud indtil den rammer den modsatte side.
+    Så skifter den retning igen, osv. Hældningen skal enten
+    være _(v_x_) eller _(-v_x_). Det er negativt når man
+    går fra højre til venstre side, og positivt når man går fra
+    venstre til højre side (eller omvendt, i forhold til hvor
+    man har sat koordinatsystemet, selvfølgelig). Der skal
+    altså gå _(T_x_) før grafen skifter retning hver gang. I starten
+    skal der kun gå _(t_x_), da bolden jo starter forskudt til den ene side.
+    </p>
+    <p class="t">
+    Nu er spørgsmålet så bare hvordan vi laver denne graf? Hvis
+    den skal gentage sig selv en masse gange, så er det nok en god 
+    ide at bruge modulus. Specifikt gentager den sig selv
+    hver _(2*T_x_), som vi kan se på billedet. Det hurtige
+    drastisk skift fra at gå opad til at gå nedad passer også umiddelbart
+    til _(y=|x|_) som jo ser ud som:
+    </p>
+    <img class='Spic' style='width:20%' src='../../../Assets/Chapter2\Section4\Parameterization\Billiards6.png'> 
+    <p class="t">
+    Hvis man tegner kurven _(x=|b-v_x*M_{2T_x}(t-t_x)|_) bare uden
+    det hele bliver gjort positivt, og uden vi minusser med _(t_x_)
+    så begynder det at give en del mening: 
+    </p>
+    <img class='Spic' style='width:40%' src='../../../Assets/Chapter2\Section4\Parameterization\Billiards7.png'> 
+    <p class="t">
+    Det her har også den rigtige hældning, da vi ganger med _(v_x_). 
+    Man kan godt se hvordan at hvis vi gør alle de negative værdier positive,
+    så tager det formen vi gerne vil have. Nu skal kurven så bare rykkes
+    _(t_x_) til siden for at det hele passer, hvilke man nemt kan gøre
+    ved at erstatte _(x_) med _(x-t_x_). Wholla!
+    </p>
+    <br><br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Du kunne være praktisk at have formen af en fjeder. Både i 
+    2D som her:
+    <img class='Spic' style='width:95%' src='../../../Assets/Chapter2\Section4\Parameterization\Fjeder2D.png'> 
+    <p class="t">Og 3D som her:</p>
+    <img class='Spic' style='width:25%' src='../../../Assets/Chapter2\Section4\Parameterization\DownwardsSpiral.png'> 
+    <p class="t">Beskriv den. I 3D der kan du jo bare sige et eller andet som _(z=f(t)_). </p>
+    <br></q-stion>
+    <answer-box>
+    Vi ved at _((RCos(t),RSin(t)_) giver en cirkel. Normalt så slutter den cirkel det samme sted som den
+    starter, men hvis vi hele tiden rykker den en smule fremad som _((RCos(t)+0.1t,RSin(t))_) så
+    vil den næste cirkel blive lavet lidt længere fremme. Den generelle
+    form er altså 
+    _($(RCos(t)+kt,RSin(t))_) 
+    hvor _(t_) så er et eller andet tal mellem _(0_) og _(1_). 
+    På den _(3D_) form gør vi meget det samme: 
+    _($(RCos(t),RSin(t),kt)_). 
+    <br><br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Hvem siger vi kun må introducere èn ny variabel? Det virker fint til en <i>sti</i>,
+    men også nogle gange et <i>areal</i>/<i>flade</i>. 
+    <p class="t"><b> 1</b>: Beskriv følgende donut-form:</p>
+    <img class='Spic' style='width:60%' src='../../../Assets/Chapter2\Section4\Parameterization\Donut2D.png'> 
+    <p class="t"> <b> 2</b>: Beskriv også denne donut-form i 3D (kaldt en torus):</p>
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter2\Section4\Parameterization\Torus.png'> 
+    <p class="t">Du skal altså gøre sådan at jeg kan vælge to tal, og så får jeg et punkt på kurven. </p>
+    <br></q-stion>
+    <answer-box>
+    <u> 1</u>: Du kan se hvordan jeg har valgt at gøre det her:
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter2\Section4\Parameterization\Donut2DAnswer.png'> 
+    <p class="t"> Jeg bruger altså parameterene _(\theta_) og _(0 \lt r \lt d_) og får 
+    _($(Cos(\theta)*(R+r),Sin(\theta)*(R+r))_)</p>
+
+    <p class="t"><u> 2</u>: Torusen har jeg parameteriseret sådan her:</p>
+    <img class='Spic' style='width:85%' src='../../../Assets/Chapter2\Section4\Parameterization\TorusAnswer.png'> 
+    <p class="t">Jeg deler den altså op i en masse cirkler med radius _(R_2_) langs en anden cirkel med radius _(R_1_).
+    Mine to parametre er _(\theta_) og _(\phi_). Man kan nemt se at jeg kan danne alle punkter
+    sådan her. _(x_) og _(y_) kan man relativt nemt se bliver henholdsvis 
+    _($x=Sin(\theta)*(R_1 + R_2*Cos(\phi))_)
+    og 
+    _($y=Cos(\theta)*(R_1 + R_2*Cos(\phi))_) 
+    Hvor _(z_) super simpelt bare er 
+    _($R_2*Sin(\phi)_) </p>
+    <br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Vi har beskrevet en cirkel som _(x=R^2*Cos(t),y=R^2*Sin(t)_).
+    Her er _(t_), rent geometrisk intuitivt, lig vinklen vi har til origo _((0,0)_).
+    Det er èn måde at parameterisere denne kurve på, men vi
+    også gøre det på alle mulige andre måder.
+    _($x=R^2*Cos \left(\frac{t}{39208590} \right), y=R^2*Sin \left(\frac{t}{39208590} \right)_)
+    er også helt validt, _(t_) skal bare blive virkelig stor før vi kommer
+    hele vejen rundt om cirklen!
+    <p class="t">
+    Prøv at parameteriser en cirkel ikke i forhold til vinklen, men 
+    i forhold til hvor langt du har bevæget dig langs kurven, hvis du 
+    starter ved _((R,0)_). Det her er ret nemt, bare rolig. 
+    </p>
+    <p class="t">
+    Det her samme problem er exceptionelt svært nærmere praktisk talt umuligt på en ellipse, så jeg
+    anbefaler stærkt ikke at du prøver. På mange andre kurver kan man godt dog! (Trods at
+    det godt kan kræve lidt værktøjer vi ikke helt har lært endnu).
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Siden _(t_) er vinklen, så er omkredsen - længden langs cirklen - lig _(t*R_) hvis vi 
+    arbejder i radianer. _(s=t*R \to t=s/R_) så _((R*Cos(a),R*Sin(a)) \to_) 
+    _($(R*Cos(s/R),R*Sin(s/R))_)
+    <br><br></answer-box>
+    
+    <q-stion 1="2" 2="1" 3="5">
+    Hvor langt væk er du fra _((0,0)_) når du har gået _(32745512m_) langs følgende kurve?
+    <img class='Spic' style='width:95%' src='../../../Assets/Chapter2\Section4\Parameterization\HardQuestion1.png'> 
+    <p class="t">Det her er relativt tricky spørgsmål, og ok langt. </p>
+    <br></q-stion>
+    <answer-box>
+    Først af alt: Den her opgave handler fundamentalt om at finde punktets
+    <i>lokation</i> efter vi har gået _(32745512m_) langs kurven. Altså,
+    koordinaterne _(x_) og _(y_). Derefter kan vi simpelt bare bruge
+    Pythagoras til at få distancen.  
+    <p class="t">
+    For at gøre det lidt simplere, har jeg opdelt kurven ved at sætte
+    nogle punkter:
+    </p>
+    <img class='Spic' style='width:95%' src='../../../Assets/Chapter2\Section4\Parameterization\HardQuestion2.png'> 
+    <p class="t">
+    Jeg har gjort det her, fordi jeg tænker at der er en del gentagelse
+    mellem stien fra _(P_0_) til _(P_1_), stien fra _(P_1_) til _(P_2_), osv.
+    Hvis bare jeg kan finde ud af hvilke to _(P_)-punkter vores punkt
+    er imellem, så burde det være nemt at finde dets lokation.
+    </p>
+    <p class="t">
+    Kald afstanden mellem _(P_n_) og _(P_{n+1}_) for _(s_n_). Så 
+    afstanden mellem _(P_1,P_2_) er _(s_1_), afstanden mellem _(P_2,P_3_) 
+    er _(s_2_), osv. Jeg prøver at finde det <i>største</i> _(n_) hvor at:
+    _($32745512 \gt s_1+s_2+s_3+...s_{n-1}_)
+    For at gøre det burde jeg først og fremmest finde en eller
+    anden formel for _(s_1+...s_{n-1}_) i forhold til _(n_). Lad os gøre det nu
+    </p>
+    <img class='Spic' style='width:95%' src='../../../Assets/Chapter2\Section4\Parameterization\HardQuestion3.png'> 
+    <p class="t">
+    Jeg deler lidt hver _(s_n_) op i to: Èn rød del, og så èn grøn del.
+    Kald den røde del for _(r_n_) og den grønne for _(g_n_). Jeg opdeler
+    det sådan her, fordi jeg relativt tydeligt kan se at _(r_n=n*r_1_),
+    og _(g_n=g_{n-1}+2_). _(r_1=6_), og _(g_1=3_), så:
+    _($r_n=6n, \qquad g_n=3+2*(n-1)_)
+    Så:
+    _($s_n=r_n+g_n=6n+3+2*(n-1)=8n+1_)
+    Nu med en formel for _(s_n_) så kan vi relativt let finde 
+    formlen for _(s_1+...s_{n-1}_):
+    _($s_1+s_2+...s_{n-1}=_)
+    _($(8*1+1)+(8*2+1)+...(8*(n-1)+1)=_)
+    _($(8*1+8*2+8*3+...8*(n-1))+(1+1+1+...\text{n - 1 gange}) =_)
+    _($8*(1+2+3+...(n-1))+(n-1)_)
+    Nu husker vi på at vi for en del tid siden fandt
+    en formel for _(1+2+3+...m_) som var lig _(m*(m+1)/2_), ergo:
+    _($8*\frac{(n-1)*n}{2}+(n-1)=_)
+    _($4n^2 - 3n - 1_)
+    For at finde det største _(n_) (som jo er et helt tal!) hvor denne sum er mindre end _(32745512_),
+    så kan jeg bare se hvilket ikke-helt _(n_) hvor _(4n^2-3n-1_) er lig
+    _(32745512_), og så runde ned derefter. 
+    _($4n^2 - 3n - 1=32745512 \to 4n^2 - 3n - 32745513 = 0_)
+    Dette er en andengradsligning. Vi kan altså nemt løse den. Svaret
+    er _(n=2861.55_), så _(n=2861_). Den totale afstand til
+    dette _(n_) er _(4*(2861)^2 - 3*(2861)-1=32732700_), så vi
+    har en ekstra afstand _(32745512-32732700=12812_) tilbage.
+    </p>
+    <p class="t">
+    Ved _(n=2861_) står vi ved _((2861,0)_). Som vi kan se på billedet, så
+    går de første _(2861_) på at gå opad til _((2861,2861)_). Det er
+    nu så _(12812-2861=9951_) tilbage. De næste _(2*2861=5722_) går på at
+    gå til venstre over mod _((-2861,2861)_). Nu er der _(9951-5722=4229_)
+    tilbage. De næste igen _(5722_) tager os nedad. Det endelige _(y_)
+    koordinat er altså _(2861-4229=-1368_), og det endelige _(x_) bare
+    lig _(2861_). Altså:
+    _($\text{Afstand til origo } = \sqrt{2861^2 + (-1368)^2} = 3171_)
+    Bam!
+    </p>
+    </answer-box> -->
+

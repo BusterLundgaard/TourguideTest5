@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <p class="t"><i>På den her side må du godt, medmindre eksplicit sagt, bruge lommeregner. IKKE CAS-værktøjer. Aldrig dem.</i></p>
+
+    <p class="t">
+    Indtil videre har vi meget kigget på ideerne om trekanter og trigonometri i forhold til deres brug og anvendelse.
+    Vi har gjort det lettere at modellere og beregne på mange situationer i den virkelige verden. Vores studie 
+    af de her nye koncepter har fokuseret på at gøre dem hurtige og effektive til at <i>løse problemer</i>. 
+    F.eks. "sinus-loven" og "cosinus-loven" der helt konkret hjælper os med at finde ukendte tal vi har brug for på en vilkårlig trekant.
+    Logisk nok som vi begynder at bruge f.eks. _(sin,cos,tan,arcsin,_) så bliver der en del arbejde med 
+    dem på papiret i den <i>matematiske verden</i>. Trigonometriske ideer er praktiske i virkeligheden, men de skal helst også 
+    være praktiske i <i>matematikken</i> - især fordi vi kommer til at bruge dem i mange sammenhænge vi slet 
+    ikke havde tænkt over originalt! Hvis vi forstår _(sin,cos,osv_) mere teoretisk og matematisk, så kan vi potentielt
+    langt nemmere modellere en bred vifte af situationer. Der er <i>grund</i> til vi nogen gange 
+    bliver så teoretiske i matematik - en ide er ikke ubrugelig bare fordi den ikke <i>direkte</i> kan anvendes. Matematik er ét
+    stort værktøj vi mennesker har opfundet, som hjælper os med at beskrive ideer i høj præcished. Teoretisk matematik hjælper os 
+    med at håndtere denne maskine. 
+    </p>
+    
+    <p class="t">
+    Da vi originalt lavede _(sin_), _(cos_) og _(tan_), der definerede vi dem til at beskrive ratioer der
+    korresponderede til bestemte grader. Derfor kan vi bare give en eller anden vinkel fra _(0_) til _(360_), og så 
+    få det tal vi har brug for. _(Sin(370)_) eller _(Cos(-5)_) er udtryk der ikke giver særlig meget <i>mening</i>. 
+    Det <i>var</i> jo bare et skema engang, og _(Sin(30)_) blev lavet som en forkortelse der indikerede
+    at man skulle kigge i ens håndbog. Det er rigtig fint, men tiderne har ændret sig: _(sin,cos,tan_) bliver brugt overalt nu 
+    - ikke kun i håndværk. Især i de situationer hvor vi plusser eller minuser vinkler, kunne det være praktisk
+    hvis vi lidt udvidede definitionerne. _(Sin(v)_) er _(højde/længde_) og _(Cos(v)_) er _(bredde/længde_). <i>Hvis</i>
+    _(længde=1_) så er _(sin=højde_) og _(cos=bredde_):
+    </p>
+    <img class="Spic" style="width:80%; margin-top:25px;margin-bottom: 25px;" src="../../../Assets/Chapter2\Section1\TrigProperties\UnitCircle.png">
+    <p class="t">Vi kan altså se på _(Sin(v)_) som <i>højden</i> af en retvinklet trekant med en længde på _(1_) og vinkel på _(v_).
+    _(Cos(v)_) er så denne trekants bredde. De forskellige vinkler vores trekant kan have kan nemt visualiseres i en cirkel (med radius _(1_) selvfølgelig).
+    Sådan kan man også se at hvis vi går <i>over</i> _(360_), så ville det virke intuitivt at det bare 
+    var det samme som at gå hele vejen rundt tilbage til _(0_) grader hvor man startede. _(370_) grader burde altså 
+    give det samme som _(10_) grader. Hvis vi prøver at finde _(Sin_) eller _(Cos_) på en "negativ grad",
+    så kan vi bare sige at det er når vi går den <i>modsatte</i> retning fra _(0_). Ergo ville
+    det være dejligt hvis _(-15_) og _(360-15=345_) udbyttede samme resultat. </p>
+    <img class="Spic" style="width:80%; margin-top:25px;margin-bottom: 25px;" src="../../../Assets/Chapter2\Section1\TrigProperties\OverUnder.png">
+    <p class="t">Det her med at gå rundt i cirkler passer perfekt til <i>modulos/remainder</i>. Vi kan sige at 
+    _(Sin(v_1)_) fremover faktisk udregner _(Sin(Mod_{360}(v_1))_). Modulos ligger altså bare implicit fordi vi er for dovne. </p>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Regn følgende:
+    <div style="text-align:center;">
+        <ul style="display: inline-block; text-align: left; list-style:none;">
+            <li>_(Sin(-80)_)</li>
+            <li>_(Cos(400)_)</li>
+            <li>_(Cos(-385)_)</li>
+            <li>_(Sin(-180)_)</li>
+        </ul>
+    </div>
+    Du må godt bruge din lommeregner, men prøv at regn dem <i>kun</i> ved at bruge vinkler fra _(0_) til _(360_) som før.
+    <br><br></q-stion>
+    <answer-box customWidth="650">
+    <div style="text-align:center;">
+        <ul style="display: inline-block; text-align: left; list-style:none;">
+            <li>_(Sin(-80)=Sin(360-80)=Sin(280)=-0.98_)</li>
+            <li>_(Cos(400)=Cos(360+60)=Cos(60)=0.5_) </li>
+            <li>_(Cos(-385)=Cos(-360-25)=Cos(-25)=Cos(360-25)=Cos(335)=0.9_)</li>
+            <li>_(Sin(-180)=0_) </li>
+        </ul>
+    </div>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Hvad er det mindste hele _(n_) vi kan vælge, hvor at _(sin(400n)=0_)?
+    <br><br></q-stion>
+    <answer-box>
+    Vi skal vælge et _(n_) hvor _(400n_) bliver et multiplum af _(180_), fordi sin af 
+    _(k*180_) er selvfølgelig altid _(0_). Hver _(n_) går vi én hel omgang i form af _(360_),
+    og går så _(40_) vinkler fremad derefter. De her hele omgange har ingen indflydelse, så 
+    dem kan vi bare ignorere. Kravet er altså: 
+    <p class="cent">
+        _(40*n=180*k \Rightarrow n=\frac{180*k}{40}=\frac{2^2*3^2*5*k}{2*2*2*5}=_)
+        _(\frac{9*k}{2}_)
+    </p>
+    <p class="t">
+    Ligesom da vi lærte om modulo, så sætter vi bare nu _(k_) til _(2_) og får:
+    _($n=\frac{9*2}{2}=9_) 
+    </p>   
+    <br></answer-box>
+
+    <p class="t">Sin og cos kan nu bl.a. fungere som rigtig effektive måder at beskrive ting der går op og ned, frem og tilbage, bliver store og små, osv, osv. 
+    Det kunne altså være bølger i havet, en fjeder, en vibrerende snor eller bestemte geometriske former.
+    Vi <i>kunne</i> definere et eller andet som _(y=BustersSejeKurve(x)_) der gik <i>direkte</i> op, og <i>direkte</i> ned som:</p>
+    <img class="SpicB" style="width:140%; margin-left:-100px;" src="../../../Assets/Chapter2\Section1\TrigProperties\CustomDiscreteCurve'.png">
+    <p class="t">Det kunne måske hjælpe med at beskrive bevægelsen af en airhockey-disk der rikochettere fra væg til væg.
+    Studerer vi noget der ikke ændre sig i så hårde og diskrete træk, så vil _(Sin_) og _(Cos_) nok være bedre. 
+    Den kurve jeg lige definerede er måske heller ikke super nem at arbejde med rent matematisk. Sin og cos
+    har hver intuitive geometriske principper bag sig, og vi kan "nemt" finde og opdage nye egenskaber.</p>
+
+    <p class="t">
+    Én ting der måske kan hjælpe os med at finde de her egenskaber, er at ændre vores enhed til 
+    noget mere logisk. Babyloniernes _(360_) grader er praktiske til hovedregning, men bliver
+    frusterende i teoretisk matematik. Vi har jo alligevel tænkt os at bruge en masse tegn og symboler!
+    For at finde omkredsen af et cirkeludsnit på _(\theta_) skal vi lige nu sige _(\frac{\theta}{360}*2*r*\pi_). 
+    Klamt! Forfærdeligt! Hvad hvis vi bare sagde at der var _(2*\pi_) vinkler på én hel cirkel i stedet for _(360_)? 
+    Formlen ville nu blive _(\frac{\theta}{2*\pi}*2*r*\pi=\theta*r_) hvilket er meget bedre. Nu går et
+    cirkeludsnits areal også fra _(\frac{\theta}{360}*r^2*\pi_) til <br>
+    _(\frac{\theta}{2\pi}*r^2*\pi=\frac{\theta}{2}*r^2_). Den her nye enhed for vinkler kalder vi for en <i>radian</i>. 
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5">
+        Omregn:
+        <div style="text-align:center;">
+            <ul style="display: inline-block; text-align: left; list-style:none;">
+                <li> <u> 1</u>: _(2\pi_) radianer til grader </li>
+                <li> <u> 2</u>: _(1.2_) radianer til grader </li>
+                <li> <u> 3</u>: _(310_) vinkler til radianer</li>
+                <li> <u> 4</u>: _(456_) vinkler til radianer</li>
+                <li> <u> 5</u>:  _(-3.5_) radianer til grader</li>
+                <li> <u> 6</u>:  _(-7_) radianer til grader </li>
+            </ul>
+        </div>
+        Du må gerne bruge lommeregner.
+    <br><br></q-stion>
+    <answer-box>
+        Lad os først og fremmest finde ud af hvor mange grader _(1_) radian er. 
+        Vi ved at _(2\pi_) radianer er en fuld omgang: Altså _(360_) grader. Så:
+        _($ 2\pi r = 360 g_)
+        Det vil sige at bare _(1_) radian er lig _(\frac{360}{2\pi}g_), hvilke kan simplificeres
+        til _(\frac{180}{\pi}g_). Altså, for at lave radianer om til grader skal vi gange med _(\frac{180}{\pi}_).
+        For at gøre det modsatte skal vi bare gange med den modsatte brøk, altså: _(\frac{\pi}{180}_). 
+        <div style="text-align:center;">
+            <ul style="display: inline-block; text-align: left; list-style:none;">
+                <li> <u> 1</u>: _(2\pi*\frac{180}{\pi} = 360_) grader </li>
+                <li> <u> 2</u>: _(1.2*\frac{180}{\pi} = 68.24_) grader </li>
+                <li> <u> 3</u>: _(310*\frac{\pi}{180}=5.4095_) radianer</li>
+                <li> <u> 4</u>: _(456*\frac{\pi}{180}=7.957_) radianer</li>
+                <li> <u> 5</u>:  _(-3.5*\frac{180}{\pi}=-200.515_) grader</li>
+                <li> <u> 6</u>:  _(-7*\frac{180}{\pi}=-401.03_) grader </li>
+            </ul>
+        </div>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Herfra vil alle vinkler pr definition være skrevet i radianer. Brug din lommeregner til at udregne:
+    <div style="text-align:center;">
+        <ul style="display: inline-block; text-align: left; list-style:none;">
+            <li>_(Sin(2.7)_)</li>
+            <li>_(Cos(1.2)_)</li>
+            <li>_(Sin(8.5)_)</li>
+            <li>_(Sin(-7)_)</li>
+        </ul>
+    </div>
+    Du skal måske skifte hvilken lommeregner du bruger, så du nemmere kan regne radianer
+    uden først at skulle konvertere dem. På nogle lommeregnere, f.eks. windows, der kan man 
+    selv vælge om den skal regne i grader eller radianer.
+    <br><br></q-stion>
+    <answer-box customWidth="615">
+    Svarene er:
+    <div style="text-align:center;">
+        <ul style="display: inline-block; text-align: left; list-style:none;">
+            <li>_(Sin(2.7)=0.42_)</li>
+            <li>_(Cos(1.2)=0.36_)</li>
+            <li>_(Sin(8.5)=Sin(2\pi + 2.21)=Sin(2.21)=0.79_)</li>
+            <li>_(Sin(-7)=Sin(-2\pi - 0.71)=Sin(-0.71)=Sin(2\pi - 0.71)=Sin(5.57)=-0.65_)</li>
+        </ul>
+    </div>
+   <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+        Der er _(2\pi_) radianer på én omgang omkring cirklen; ikke _(2*3.14=6.28_). 
+        Vi ville sjælendt skrive radianer som <i>bare</i> et kommatal. Det er 
+        meget mere foretrækket at skrive vinklen som et kommatal <i>ganget med </i> _(\pi_).
+        Man får en bedre ide omkring hvor langt rundt om cirklen man er (siden man bare skal sammenligne
+        tallet vi ganger med _(2_)), det er mere <i>præcist</i>, og det er også langt nemmere 
+        at lave aritmetik med - plusse, minuse, gange, osv. 
+        <p class="t">
+        Find ud af hvilken kvartdel af cirklen du er i ved: 
+        </p>
+        <div style="text-align:center;">
+            <ul style="display: inline-block; text-align: left;">
+                <li>_(\frac{\pi}{4}_)</li>
+                <li>_(\frac{\pi}{2}+0.1_)</li>
+                <li>_(\frac{5}{4}\pi_)</li>
+                <li>_(-\frac{\pi}{8}_)</li>
+                <li>_(3.77\pi_)</li>
+                <li>_(-56.7\pi_)</li>
+                <li>_(\frac{6}{4}\pi + \frac{2}{8}\pi_)  </li>
+            </ul>
+        </div>
+        <p class="t">
+        <b>Lav denne opgave uden lommeregner!</b>
+        </p>
+    <br></q-stion>
+    <answer-box>
+        _(\frac{\pi}{4}_) er selvfølgelig mindre end _(\frac{\pi}{2}_), så det må være første kvartdel
+        <p class="t"> <u> 2</u>: 
+            _(\frac{\pi}{2}+0.1 > \frac{\pi}{2}_) ergo anden kvartdel 
+        </p>
+        <p class="t"> <u> 3</u>: 
+            _(\frac{5}{4}\pi=1\pi+\frac{1}{4}\pi_) så det er altså bare en smule større end _(pi_) radianer. 
+            Derfor må det være i tredje kvartdel. 
+        </p>
+        <p class="t"> <u> 4</u>: 
+            Med _(-\frac{1}{8}_) går vi _(\frac{1}{16}_) af cirklen bagud. Hvis vi gik så lidt fremad ville 
+            vi være i første kvartdel. Vi går bagud, så vi ender i fjerde bagdel. 
+        </p>
+        <p class="t"> <u> 5</u>: 
+            _(3.77\pi = 2\pi + 1.77\pi_). De første _(2\pi_) er vi ligeglade med, da det bare er 
+            en helt omgang omkring cirklen. _(1.77\pi=1\pi + 0.77\pi_), og _(1\pi_) er en halv omgang.
+            Vi er altså enten i tredje eller fjerde kvartdel. _(0.77 > 0.5_), så det er fjerde kvartdel. 
+        </p>
+        <p class="t"> <u> 6</u>: 
+            Hvor mange omgange rundt om cirklen er _(56.7\pi_)? Well, _(\frac{56\pi}{2\pi}=28_), så vi
+            har kun _(-0.3\pi_) tilbage. Det er mere bagud end _(0.5\pi_), så vi må være i tredje kvartdel.  
+        </p>
+        <p class="t"> <u> 7</u>: 
+            _(\frac{6}{4}\pi + \frac{2}{8}\pi=\frac{12+2}{8}\pi = \frac{7}{4}\pi_). Nu kan vi let se
+            at det er i fjerde kvartdel (vi er _(\frac{1}{8}_) fra at være hele vejen rundt). 
+        </p>. 
+    <br><br></answer-box>
+
+    <!--  -->
+    
+    <q-stion 1="2" 2="1" 3="5">
+    Du køre _(36.7_) radianer rundt i en rundkørsel med en radius på _(15m_). Hvor langt ender du med at køre i alt? 
+    <br><br></q-stion>
+    <answer-box>
+    Super simpelt! Det eneste vi har brug for er bare at regne _(36.7*(2*15)=1101m_). 
+    Hvis du køre f.eks. _(380_) grader rundt, så skal du jo også bare sige _(\frac{380}{360}*2r_). Med 
+    radierne behøver vi ikke at dividere med nogen _(360_).
+    <br></answer-box>
+
+    

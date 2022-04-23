@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+
+    <h3>Tilbage til landmanden!</h3>
+    <br>
+
+    <q-stion 1="2" 2="1" 3="5" bigTop="true">
+    Sig at der dagligt bliver brugt <p-m m=" A1 2"></p-m> poser med hvede. Denne daglige
+    hvede bliver ligeligt fordelt blandt manden, hans kone og hans barn. Hvor meget får de hver? 
+    <br><br></q-stion>
+    <answer-box>
+    Vi har èn bunke med en størrelse på <p-m m=" A1 2"></p-m>, som vi gerne
+    vil opdele i tre lige store bunker. De tre bunker lagt sammen, burde give den originale bunke:
+    Så vi leder efter et tal, der ganget med <p-m m=" 3"></p-m> giver <p-m m=" A1 2"></p-m>. 
+    <p class="t">
+    Èn mulighed i et simpelt tilfælde som dette er at gætte. Bare gætte. 
+    Jeg kunne gætte at det måske er
+    <p-m m=" 1"></p-m>. Det er forkert, da <p-m m=" 1*3=3"></p-m>, hvilket ikke er lig <p-m m=" A1 2"></p-m>.
+    Et andet gæt er måske <p-m m=" 2"></p-m>, som faktisk er rigtigt siden <p-m m=" 2*3=3+3=A1 2"></p-m>. 
+    Hver person får altså <p-m m=" 2"></p-m> poser med hvede. 
+    </p>
+    <p class="t">
+    Som du nok kan regne ud <i>dividerede</i> vi lige. Det skriver man med
+    symbolet <p-m m=" /"></p-m>. 
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Sig at en familie med far, mor og <p-m m=" 2"></p-m> børn spiser <p-m m=" A3"></p-m>
+    poser hvede hver dag.  Hvor mange poser hvede får hver person? (hvis vi antager, at de alle spiser
+    lige meget)
+    <br><br></q-stion>
+    <answer-box>
+    Dette svarer til <p-m m=" A3/4"></p-m> eller <p-m m=" A3/A1"></p-m>. 
+    Vi leder efter et tal der ganget med <p-m m=" A1"></p-m> giver <p-m m=" A3"></p-m>: Det
+    er jo bare <p-m m=" 3"></p-m>! Det er hvor mange poser, de hver spiser. 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="11" 2="1">
+    Regn <p-m m=" B1 A2 1/A1 1"></p-m>
+    <br><br></q-stion>
+    <answer-box customHeight="820">
+    Vi skal finde et tal <b> A</b>, hvor
+    <p class="cent">
+        <b> A</b> <p-m m=" *A1 1=B1 A2 1"></p-m>
+    </p>
+    <p class="t">
+    I de sidste to opgaver har vi bare gættet. Vi har testet forskellige <b> A</b>-værdier,
+    ganget dem med et bestemt tal og tjekket, om de gav det rigtige resultat. Ofte
+    er det bedre med en anden tilgang: Se hvor mange kopier du skal lave,
+    før du når resultatet. I sidste opgave kunne vi f.eks. have sagt:
+    </p>
+    <video class='SpicBT' style="width:80%;" controls>
+        <source src='../../../Assets/Chapter1\Talsystemmer\Omskrivning\DivisionIdea.mp4' type='video/mp4'>
+    </video>
+    <p class="tt">
+    Lad os i denne opgave se hvor mange kopier af <p-m m=" A1 1"></p-m> vi skal lave,
+    før vi når <p-m m=" B1 A2 1"></p-m>. Først starter vi med:
+    </p>
+    <p class="cent">
+        <p-m m=" A1 1*2=A1 1+A1 1=A2 2"></p-m>
+    </p>
+    <p class="t">
+    Vi går videre:
+    </p>
+    <p class="cent">
+        <p-m m=" A1 1*3=A2 2+A1 1 = A3 3"></p-m>
+    </p>
+    <p class="t">
+    ... og videre:
+    </p>
+    <p class="cent">
+        <p-m m=" A1 1*A1 = A3 3+A1 1 = B1 A1"></p-m>
+    </p>
+    <p class="t">
+    ... og endnu mere videre:
+    </p>
+    <p class="cent">
+        <p-m m=" A1 1*A1 1 = B1 A1 + A1 1 = B1 A2 1"></p-m>
+    </p>
+    <p class="t">
+    Bum! Svaret er <p-m m=" A1 1"></p-m>!
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="11" 2="2">
+    Regn de følgende divisionsstykker: 
+    <ul>
+        <li> _(\textbf{A:}_) <p-m m=" D1 / A1"></p-m> </li>
+        <li> _(\textbf{B:}_) <p-m m=" B3 A3 3 / B1 A1 1"></p-m> </li>
+        <li> _(\textbf{C:}_) <p-m m=" B3 2 / A1 1"></p-m> </li>
+        <li> _(\textbf{D:}_) <p-m m=" B1 A1 1/3"></p-m> </li>
+    </ul>
+    <p class="t">
+    De her er alle relativt lette, og deres formål er primært at tjekke, om du forstår,
+    hvordan det funker at dividere. 
+    </p>
+    <br></q-stion>
+    <answer-box t="Answer _(\textbf{A}_)#" tabColour="rgb(171,96,147)">
+    Den her er super dejlig. Hvad skal vi gange <p-m m=" A1"></p-m> med, for at få
+    <p-m m=" D1"></p-m>? 
+    <p-m m=" D1"></p-m> er <p-m m=" 3"></p-m> symboler
+    længere fremme, så vi skal gange med <p-m m=" A1"></p-m> <p-m m=" 3"></p-m> gange. 
+    Svaret er derfor bare <p-m m=" A1*A1*A1=C1"></p-m>.
+    <br><br></answer-box>
+    <answer-box t="Answer _(\textbf{B}_)#" tabColour="rgb(175,128,161)">
+    Vi kan let se, at <p-m m=" B3 A3 3"></p-m> kan omskrives til bare <p-m m=" 3*B1 A1 1"></p-m>, så
+    svaret er <p-m m=" 3"></p-m>. 
+    <br><br></answer-box>
+    <answer-box t="Answer _(\textbf{C}_)#" tabColour="rgb(171,96,147)">
+    Lad os i den her tilføje flere og flere <p-m m=" A1 1"></p-m>, indtil vi når <p-m m=" B3 2"></p-m>.
+    For at spare lidt tid, burde vi nok starte med lidt flere end <p-m m=" 2"></p-m> kopier, siden
+    <p-m m=" B3 2"></p-m> er en del større end <p-m m=" A1 1"></p-m>. Lad os starte med ca. 
+    <p-m m=" A2"></p-m>, og se hvad der sker:
+    <p class="cent">
+        <p-m m=" A1 1*A2 = B2 A2"></p-m>
+    </p>
+    <p class="t">
+    Det er en del for lavt, så lad os gå en hel <p-m m=" A1"></p-m> opad: 
+    </p>
+    <p class="cent">
+        <p-m m=" A1 1*A3 = B3 A3"></p-m>
+    </p>
+    <p class="t">
+    For højt. Specifikt for højt med 
+    </p>
+    <p class="cent">
+        <p-m m=" B3 A3 - B3 2 = A2 2"></p-m>. 
+    </p>
+    <p class="t">
+    Denne forskel i resultatet svarer til <p-m m=" 2"></p-m> kopier af 
+    <p-m m=" A1 1"></p-m>, siden <p-m m=" A2 2"></p-m> tydeligvis
+    er lig <p-m m=" 2*A1 1"></p-m>, så vi skal lave <p-m m=" 2"></p-m> mindre
+    end <p-m m=" A3"></p-m> kopier. Det er: 
+    </p>
+    <p class="cent">
+        <p-m m=" A3-2=A2 2"></p-m>
+    </p>
+    <p class="t">
+    Voila!
+    </p>
+    <br></answer-box>
+    <answer-box t="Answer _(\textbf{D}_)#" tabColour="rgb(175,128,161)" customHeight="340">
+    <p-m m=" 3"></p-m> er igen relativt langt væk fra <p-m m=" B1 A1 1"></p-m>, så jeg tænker måske vi starter
+    med et relativt højt gæt som <p-m m=" A1"></p-m>. Det giver 
+    <p class="cent">
+        <p-m m=" 3*A1 = A3"></p-m>
+    </p>
+    <p class="t">
+    ... hvilket stadigvæk er en god del for lavt. Hvis vi i stedet gætter
+    <p-m m=" A2"></p-m> får vi
+    </p>
+    <p class="cent">
+        <p-m m=" 3*A2 = B1 A2"></p-m>
+    </p>
+    <p class="t">
+    ... hvilket er for højt. Vores gæt er altså mellem <p-m m=" A1"></p-m> og <p-m m=" A2"></p-m>, så
+    lad os prøve <p-m m=" A1 2"></p-m> først:
+    </p>
+    <p class="cent">
+        <p-m m=" 3*A2 2 = B1 2"></p-m>
+    </p>
+    <p class="t">
+    Der mangler bare en ekstra <p-m m=" 3"></p-m>, så svaret er <p-m m=" A1 3"></p-m>. Bum!
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="11" 2="3">
+    Landmanden har <p-m m=" C1 A1 1"></p-m> poser hvede,  
+    og i vinteren er der <br> <p-m m=" B1 A1 3"></p-m> dage. Hvor meget hvede kan ham og hans familie spise hver dag? 
+    <br><br></q-stion>
+    <answer-box>
+    Vi skal regne <p-m m=" C1 A1 1 / B1 A1 3"></p-m>. To kopier af <p-m m=" B1 A1 3"></p-m> giver:
+    <p class="cent">
+        <p-m m=" B1 A1 3+B1 A1 3 = B2 A3 2 "></p-m>
+    </p>
+    <p class="t">
+    Tre giver:
+    </p>
+    <p class="cent">
+        <p-m m=" B2 A3 2 + B1 A1 3 = C1 A1 1"></p-m>
+    </p>
+    <p class="t">
+    De kan altså fordele <p-m m=" 3"></p-m> poser hvede hver dag. 
+    </p>
+    <br></answer-box>
+
+    <p class="tt">
+    Lad os se på nogle vigtige detaljer omkring division, før vi går videre til det næste problem. 
+    </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

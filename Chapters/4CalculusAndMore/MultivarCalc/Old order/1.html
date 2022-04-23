@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+
+
+    <!--18.8 -->
+
+    <p class="t">
+    Det her kapitel har hovedsageligt handlet om <i>calculus</i>, og dets mange anvendelser. 
+    Lad os se et lille overblik af hvad vi har brugt vores ideer om grænser, hældninger, og integraler til indtil videre:
+    </p>
+
+    <div style="text-align:center; margin-top:10px;">
+        <ul style="display: inline-block; text-align: left; padding-left:0%; list-style:disc;">
+            <li>Kunne helt ordentligt og stringent tænke over fænomener hvor ting kom meget tæt på, blev meget små, eller blev meget store.
+                F.eks. svare på hvad _(Sin(x)/x_) var når _(x_) nærmede sig _(0_), eller se hvad der skete med en uendelig sum </li>
+            <li>Kunne finde hældningen af en funktion ved et punkt, og derved vurdere hvor meget den ændre sig  </li>
+            <li>Approximere funktioner ved hjælp af Taylor-serier</li>
+            <li>Kunne optimere (finde minimum og maksimum) funktioner ved at se hvornår hældningen var _(0_)  </li>
+            <li>Kunne finde arealet under en funktion  </li>
+            <li>Kunne regne mange nye størrelser via integraler, som længden af en kurve, masse center, revolutionsoverflader, og mere. </li>
+            <li>Lettere arbejde med position, hastighed og acceleration i fysik.  </li>
+            <li>Løse og arbejde med differentialligninger, så vi kunne modellere og beskrive mange fysiske situationer </li>
+        </ul>
+    </div>
+    
+    <p class="t">
+    Calculus er nogle gange kaldt "studiet af forandring", og hvis vi tænker i den boldgade så lægger vi mærke til noget:
+    Stort set alle de her anvendelser involverer kun én ting der ændrer sig. Ét variable der nærmer sig en bestemt værdi. Hældninger
+    af funktioner der tager èt variable, men ikke to:
+    </p>
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter4\MultiVarCalc\Derivatives3D.png'> 
+    <p class="t">
+    Og når vi ser på det sådan her, så kan man jo slet ikke sige at funktioner med to variabler har èn hældning ved et punkt: De har uendeligt mange
+    i forhold til hvilken retning _(d \text{?}_) vi bevæger os. Og hvem siger vi behøver at begrænse os til funktioner med kun <i>to</i> variabler? Vi kunne nemt 
+    have endnu flere!
+    </p>
+    <p class="t">
+    Vi ved hvordan man finder Taylor-approksimationer af funktioner med èt variable, men hvad med af funktioner med to?
+    </p>
+    <img class='Spic' style='width:120%; margin-left:-10%' src='../../../Assets/Chapter4\MultiVarCalc\LinearApproximations.png'> 
+    <p class="t">
+    Og hvordan finder vi minimums-punkter og maksimums-punkter på funktioner med to eller flere variabler? F.eks. ser følgende eksempler relativt komplekse ud:
+    </p>
+    <hover-video url="../../../Assets/Chapter4\MultiVarCalc\fixedPoints.mp4" ></hover-video>
+    <p class="t">(hold musen over billedet for at rotere det), og: </p>
+    <hover-video url="../../../Assets/Chapter4\MultiVarCalc\OptimizationExample2.mp4" ></hover-video>
+    <p class="t">
+    Vi ved hvordan man finder arealet under en 2D kurve, men hvad med <i>volumet</i> under en 3D flade? 
+    </p>
+    <hover-video url="../../../Assets/Chapter4\MultiVarCalc\VolumeUnderSurfaceHover.mp4" ></hover-video>
+    <p class="t">
+    Og ligesom vi kunne finde <i>længden</i> af en 2D kurve, så er vi måske også interesserede i <i>overfladearealet</i> af 
+    en 3D flade. Vi så at man også kunne bruge integraler til at regne masse-centeret af et objekt, samt mange andre ting. F.eks. 
+    regnede vi moment of intertia:
+    </p>
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter4\MultiVarCalc\MetalInertia1.png'> 
+    <p class="t">
+    Moment of inertia var defineret som _(m*r^2_), hvor _(r_) er afstand til objektets massecenter.
+    Hvis man havde et objekt som en tynd stang, så skulle man altså opdele det i mange små 
+    længder, hvis masse man så kunne regne som _(p(x)*dx_), hvor _(p(x)_) er densiteten ved 
+    _(x_), og _(dx_) er ændringen i afstanden fra massecenteret _(x_). Hvis man havde en hel plade, så ville
+    man have brug for <i>to</i> integraler: Èn integral der regnede det samlede inertimoment af en uendelig tynd linje, og
+    så en anden integral der lagde alle de uendelig tynde linjer sammen til en hel plade. Hvad ville vi gøre i 3D?
+    </p>
+    <img class='Spic' style='width:65%' src='../../../Assets/Chapter4\MultiVarCalc\MetalInertia2.png'> 
+    <p class="t">
+    Der er også nogle helt komplet nye ting vi skal kigge på i dette afsnit: Specifikt <i>vektor felter</i>, både i 2D:
+    </p>
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter4\MultiVarCalc\windField.png'> 
+    <p class="t">
+    Og i 3D:
+    </p>
+    <hover-video customWidth="70%" style="margin-left:15%;" url="../../../Assets/Chapter4\MultiVarCalc\VectorField3D.mp4" ></hover-video>
+    <p class="t">
+    Det første 2D vektor felt her svarer til:
+    _($\vec F(x,y) = \VeC[2-0.1x+0.3Ln(y), 0.5+0.2x-0.1Ln(y)]_)
+    Og det andet 3D vektor felt svarer til: 
+    _($\vec F(x,y,z) = \VeC[x-y, 0.1z^2, y/z]_)
+    Det er intet i sig selv specielt interessant omkring de her vektor felter: Det er bare noget vi har defineret som associerer
+    hvert punkt i et koordinatsystem med en vektor. Der er dog flere ting der kan beskrives af vektor felter, og der er mange vigtige
+    anvendelser især inden for fysik, hvor vi jo f.eks snakker om "magnetiske felter", "elektriske felter", eller "tyngdekraft felter". 
+    Vi skal nok gå mere i dybden når vi når dertil, men helt overordnet så er der primært to problemer vi er interesserede i 
+    hvad angår vektor felter: 
+    </p>        
+    <img class='Spic' style='width:120%; margin-left:-10%' src='../../../Assets/Chapter4\MultiVarCalc\VectorFieldApplications.png'> 
+    <p class="t">
+    Først problem kaldes ofte for "flux". Hvis vi har et eller andet område _(R_) i vores vektor felt, hvor meget kommer så "ind" i det vektor felt?
+    Forestil dig at vektor feltet viser hastigheden af vand-molekyler på forskellige punkter. Som vi kan se så er der nogen vandmolekyler der går 
+    <i>ind</i> i _(R_), men der er også nogle der går <i>ud</i>. Vi er ret interesserede i denne forskel. Vand er ét eksempel, men vi kunne måske også
+    bruge dette til at beskrive hvor meget varme der bliver overført til et område, eller hvor mange radioaktive stoffer tilføjes til et område. 
+    </p>
+    <p class="t">
+    I det andet problem forestiller vi os at et objekt bevæger sig langs en vej _(\vec r(t)_) (hvor _(\vec r_) giver en position som funktion
+    af _(t_), hvor _(\vec r(t_0)_) så er vejens start, og _(\vec r(t_1)_) så er vejens slut). Vi er nu interesserede i hvor stor 
+    <i>indflydelse</i> vektor feltet har haft på det. F.eks. hvor stor indflydelse tyngdekraften har haft, hvor stor indflydelse magnetfeltet har haft, osv. 
+    Vi skal nok gå mere i dybden med hvad vi mener med "indflydelse".
+    </p>
+
+    <p class="cent">
+        *
+    </p>
+
+    <p class="t">
+    Så her er planen: Calculus er fundamentalt opbygget på <i>grænsen</i>, så vi starter med at forstå hvordan vi kan tænke over en grænse hvor der
+    er flere variabler der ændrer sig samtidig. Det næst-vigtigste i calculus er nok hældningen, så vi går direkte videre til at forstå
+    hvad vi mener med "hældning" når der er flere variabler, og finder ud af hvordan vi regner hældningen langs en hvilken som helst retning.
+    Vi opbygger også et relativt vigtigt teoretisk grundlag i form af <i>differentiabilitet</i>, som bruges i flere beviser.
+    Alt det her bliver der også kort kigget på i tilfældet hvor der er tre variabler, og i tilfældet hvor der er <i>flere</i> end tre. 
+    Vi går videre med hældning ved mere lavpraktisk at kigge på <i>Clairaut's theorem</i> og <i>multivariable chain rule</i> som er to praktiske
+    teorier der kan gøre vores liv lidt nemmere når vi finder hældninger af funktioner med flere variabler. 
+    </p>
+
+    <p class="t">
+    Når man har hældningen på et punkt af en 2D funktion, så kan man i et lille område omkring det punkt approximere funktionen. 
+    Det ville være en <i>lineær</i> approksimation, men med flere hældninger så kan man gøre approksimationen bedre. Det her med 
+    at approximere er faktisk en ret vigtig del af calculus (især på det teoretiske plan), så det næste punkt på listen efter hældninger
+    er at kigge på Taylor-approksimationer af funktioner med flere variabler. 
+    </p>
+
+    <p class="t">
+    Det næste vi kigger på er optimering, hvor vi både ser på hvordan man finder <i>lokale</i> minimum/maksimum-værdier, samt
+    <i>globale / absolutte</i> minimum/maksimum værdier på et område. 
+    </p>
+
+    <p class="t">
+    Vi går nu videre til at kigge mere på integration og geometri. Først hvordan vi finder volumen under en overflade, derefter lidt 
+    mere generelt dobbelt-integraler og tredobbelt-integraler. Vi kigger også på hvordan man finder den vinkelrette vektor til en overflade
+    på et punkt
+    </p>
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter4\MultiVarCalc\NormalVectorExample2.png'> 
+    <p class="t">samt hvordan man finder overfladearealet af et område af en flade. </p>
+
+    <p class="t">
+    Det sidste punkt er de her vektor felter, og deres forskellige anvendelser. 
+    </p>
+
+    <p class="t">
+    Lad os komme igang!
+    </p>
+
+
+
+    <!--  -->
+
+    
+    RESTEN HER ER DÅRLIGT, OG SKAL FJERNES, MEN NOGET AF DET KAN MÅSKE GODT BRUGES:
+
+    <p class="t">
+    Indtil videre har vi primært kun brugt differentiation og integration på funktioner med <i>ét</i> variable.
+    F.eks. position som funktion af tid, profit som funktion af antal arbejdere, strømstyrke som funktion af en ledning
+    tykkelse, osv. Det er selvfølgelig ikke nødvendigvis svært at differentiere en funktion med to variabler.
+    Sig f.eks. at:
+    _($\text{Bakterier}(t,P_0) = P_0*1.1^t_)
+    Hvis jeg gerne vil vide hvor hurtigt denne population vokser generelt, så behandler
+    jeg jo bare _(P_0_) (startpopulationen) som en konstant:
+    _($¤t\left[P_0*1.1^t \right] = P_0*Ln(1.1)*1.1^t_)
+    Det her er bare også et meget simpelt eksempel. Der kan nemt komme nogle interessante
+    spørgsmål frem når man arbejder med funktioner af flere variable. Sig f.eks. at 
+    en restaurant har to typer arbejdere: Køkkenfolk og tjenere. Chefen vil gerne
+    finde den optimale mængde af hver arbejder, så han tjener så mange penge som muligt. 
+    Han beregner at hvis han har _(x_) køkkenfolk og _(y_) tjenere, så er profitten: 
+    _($P(x,y)=10+11 (0.3x - 0.01x^2) Ln(0.4y - 0.01y^2)_)
+    Hvor _(x \in [10,20], b \in [15,25]_). Han vil altså nu gerne finde den højeste værdi på denne funktion, 
+    i dette interval. Det bliver meget interessant når vi tænker over det som et geometrisk problem: 
+    </p>
+    <img class='Spic' style='width:65%' src='../../../Assets/Chapter4\MultiVarCalc\3DGraphExample1.png'> 
+    <p class="t">
+    At finde det optimale antal af køkkenfolk og tjenere svarer til at finde toppunktet på denne overflade
+    i dette område. Det kan vi se på denne graf svarer til at finde det område hvor <i>det tangente plan</i> er fladt:
+    </p>
+    <img class='Spic' style='width:65%' src='../../../Assets/Chapter4\MultiVarCalc\3DGraphExample2.png'> 
+    <p class="t">
+    Normalvektoren der er vinkelret med det punkt på overfladen skal altså kun gå opad i _(z_)-retningen. 
+    Heldigvis så behøver vi kun i dette tilfælde at vise at hældningen langs to forskellige
+    retninger (f.eks. hældningen af _(z_) langs _(x_) og hældningen 
+    på _(z_) langs _(y_) ) begge er _(0_), eftersom plan kan defineres af to
+    ikke-parallelle vektorer. Alligevel så er det stadig et meget interessant spørgsmål at 
+    finde denne normalvektor _(\vec n_), og det kan uden tvivl hjælpe os i mange geometriske sammenhænge. 
+    </p>
+
+    <p class="t">
+    At finde den største/mindste værdi på lige denne funktion i dette interval var måske relativt nemt, men
+    det kan let blive tricky på andre funktioner med <i>flere</i> flade områder, og på andre intervaller hvor det største punkt måske
+    slet ikke er fladt. Det her område af matematik kaldes for <i>optimering</i>, og 
+    calculus af flere variabler vil virkelig kunne hjælpe os. 
+    </p>
+
+    <p class="t">
+    Vi kan tage hældningen langs _(x_), vi kan tage hældningen langs _(y_), men vi kan også tage
+    hældningen langs alle mulige andre retninger! Sig f.eks. vi arbejdede med en bakke modelleret af:
+    _($f(x,y)=5+(x-0.1x^2)(y-0.2y^2)_)
+    på området _(x \in [-1,7], y \in [-2.5, 6]_). Det her svarer til:
+    </p>
+    <img class='Spic' style='width:70%' src='../../../Assets/Chapter4\MultiVarCalc\DirectionalDerivative1.png'> 
+    <p class="t">
+    Hvis vi stod på bakken der hvor _(x=1.3_), _(y=1.25_) og gik langs sydøst, hvor stejlt nedad ville der så være?
+    </p>
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter4\MultiVarCalc\DirectionalDerivative2.png'> 
+    <p class="t">
+    Det kan altså bruges i mange interessante geometriske problemer. Vi ved f.eks. at dråber af
+    vand altid tager den hurtigste vej nedad de kan. Så hvis vi står med en bestemt flade, og skal
+    finde den vej en dråbe vil tage, så skal vi ved hvert punkt på turen finde den retning som
+    giver den største hældning når vi differentiere:
+    </p>
+    <img class='Spic' style='width:70%' src='../../../Assets/Chapter4\MultiVarCalc\DirectionalDerivative3.png'> 
+    <p class="t">
+    Det er ikke kun brugbart til Geometriske problemer dog. Sig f.eks. at vi var ved at udvikle
+    et eller andet kemikalie der skal producere flammer. I det kemikalie skal der bl.a. tilføjes
+    både stof A og stof B. Kald _(x_) for mængden af stof A du tilføjer (og vi tænker ikke lige over enhederne siden dette bare er et eksempel), _(y_) for mængden af
+    stof B du tilføjer, og at flammens størrelse kan modelleres som:
+    _($f(x,y)=x*y^2_)
+    Det her svarer til fladen:
+    </p>
+    <img class='Spic' style='width:65%' src='../../../Assets/Chapter4\MultiVarCalc\FlameGraph.png'> 
+    <p class="t">
+    Den retning hvis hældning er størst, vil fortælle os noget (i hvert fald i starten) omkring 
+    det bedst mulige forhold af stof _(A_) og stof _(B_). 
+    </p>
+    <p class="t">
+    Multivariable calculus kan også hjælpe os når vi arbejder med vind, magnetfelter og tyngdekraftsfelter, 
+    strømmen af vand, og lignende. Alle de her kan modelleres som såkaldte "vector fields". Sig at
+    du havde en mark hvor det blæste. Hvis du stod på den mark forskellige steder, så ville du nok opleve
+    forskellige vindstyrker, og forskellige vindretninger. Vi kan beskrive det som et "vektor felt", da
+    hver position på marken (hvert position på "feltet") er associeret med en vektor der beskriver vinden 
+    på det felt. Sig f.eks. at vinden var modelleret som:
+    _($F(x,y) = \VeC[2-0.1x+0.3Ln(y), 0.5+0.2x-0.1Ln(y)]_)
+    Det kan visualiseres som:
+    </p>
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter4\MultiVarCalc\windField.png'> 
+    <p class="t">
+    Det er mange interessante spørgsmål man kan stille i denne situation. 
+    Hvis vi stillede et objekt på et bestemt punkt i dette felt, hvor ville det så være 
+    efter _(1_) minut, med den den indflydelse vinden har? Eller: Hvis vi cykler rundt i 
+    en omkreds med konstant acceleration, hvor hurtig vil èn omgang så være med vinden? 
+    </p>
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter4\MultiVarCalc\windField2.png'> 
+    <p class="t">
+    Især det her spørgsmål med turen langs en bane i et vektor felt er meget vigtigt i fysik. 
+    Eksempelvis har du måske en elektron inde i et magnetisk felt. Hvis den accelererer i en eller anden bane, 
+    så skal du kunne analysere dens bevægelse hvis der <i>også</i> er et magnetisk felt der har indflydelse på den. 
+    Samme gælder tyngdekraft. 
+    </p>
+    <p class="t">
+    Et andet problem vektor felter også kan hjælpe os med, er at bestemme hvor meget
+    vand der flyder ind og ud af et bestemt område. Forestil dig at vektorerne præsenterede strømmen af vand (så f.eks. en 
+    vektor _(\vec(1,1.5) _)på _((3,2)_) ville betyde at vandet havde en hastighed på 
+    _((1,1.5)_) ved punktet _((3,2)_)). Sig nu at vi havde en eller anden bestemt region _(R_) på feltet:
+    </p>
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter4\MultiVarCalc\windField3.png'> 
+    <p class="t">
+    Hvor meget vand ville så flyde ind (eller ud) af denne region?
+    </p>
+    <p class="t">
+    Når vi skal studere vektor felter, der vil vi støde på to ideer der bl.a. kan hjælpe os med
+    at løse nogle af disse problemer: <i>divergence</i> og <i>curl</i>. Ignorer ordet "divergence": Det 
+    har intet at gøre med divergence af serier. Intuitivt så fortæller divergence os hvor meget 
+    der "kommer ud" af et bestemt punkt på vektor feltet. Hvis vi bruger vand-analogien, så er det 
+    altså mængden af vand der forlader et uendeligt lille punkt, minus mængden af vand der kommer ind 
+    i det uendeligt lille punkt:
+    </p>
+    <img class='Spic' style='width:60%' src='../../../Assets/Chapter4\MultiVarCalc\DivergenceExample1.png'> 
+    <p class="t">
+    Dette vektor felt har samme retning hele tiden, men bliver gradvist stærkere. Man kan se at dette 
+    resultere i positiv divergence, eftersom der uendelig tæt på punktet er mere vand der forlader end der
+    kommer ind. Et andet eksempel kunne være:
+    </p>
+    <img class='Spic' style='width:50%' src='../../../Assets/Chapter4\MultiVarCalc\DivergenceExample2.png'>
+    <p class="t">
+    Det her er nok det prototypiske eksempel på negativ divergence. Der er intet vand der forlader det røde punkt.
+    Det er <i>kun</i> vand der kommer deri. 
+    </p>
+    <p class="t">
+    Det prototypiske eksempel på curl ville nok være:
+    </p>
+    <img class='Spic' style='width:50%' src='../../../Assets/Chapter4\MultiVarCalc\CurlExample2.png'> 
+    <p class="t">
+    Dette eksempel viser curl på punktet _((0,0)_) i vektor-feltet _(\vec v= (-y,x)_). Vi kan 
+    se at dette vector field fuldkommen <i>hjælper</i> os med at komme rundt omkring den uendeligt lille cirkel.
+    Det ville være som om vi gik rundt om cirklen med medvind hele vejen. Der er altså stærk <i>positiv</i>
+    curl her. 
+    </p>
+    <p class="t">
+    Et mere kompliceret eksempel kunne være:
+    </p>
+    <img class='Spic' style='width:110%; margin-left:-5%;' src='../../../Assets/Chapter4\MultiVarCalc\CurlExample1.png'> 
+    <p class="t">
+    Det forklarer jeg i denne video:
+    </p>
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter4\MultiVarCalc\CurlExample2.mp4' type='video/mp4'>
+    </video>
+    <p class="t">
+    Det viser sig at curl og divergence af punkter er ret nemme at regne, og at der findes nogle 
+    praktiske formler der finder en sammenhæng mellem curl og divergence af <i>punkter</i>, og 
+    curl og divergence af <i>regioner</i>. Problemet med cyklen svarer jo lidt til at finde "curl" af 
+    af en cirkel-region i vind vektor-feltet, og mængden af vand der flyder ind og ud i en region, svarer
+    lidt til "divergence" af den region. 
+    </p>
+    <p class="t">
+    Udover at hjælpe os med disse problemer, så er curl og divergence også bare brugbare ideer i sig selv.
+    Sig f.eks. at vi gerne ville bevise at en bestemt væske var inkompressibel (at dens volume kan hverken blive
+    mindre eller større). Så ville vi "bare" skulle modellere den som et vektor felt, og bevise at divergence
+    overalt var _(0_). Hvis der kom mere vand <i>ind</i> i et punkt end der kom ud, så ville 
+    væsken jo blive mindre, og dens volume vil derfor have ændret sig. Curl kan også bare ret intuitivt 
+    hjælpe os med at forstå hvor meget "rotation" en vektor felt skaber. Hvis du sætter en stang ned i jorden
+    der frit kan rotere, så vil dens rotationshastighed ikke nødvendigvis fortælle dig særlig meget om vindstyrken, 
+    men i stedet fortælle dig om hvor meget <i>curl</i> i vinden der er på det punkt. 
+    </p>
+    <p class="t">
+    Til sidst skal det nævnes at mange af de ting vi har snakket om her, og mange af de ting vi kommer til at 
+    lære, også virker i <i>højere dimensioner</i>. Det er altså principper der også virker når du f.eks. 
+    har en funktion der tager _(46_) variabler. Vi vil primært fokusere på bare _(2_) dog. 
+    </p>
+    <p class="t">
+    Så der er massere af spændende sager at glæde sig til! 
+    </p>
+

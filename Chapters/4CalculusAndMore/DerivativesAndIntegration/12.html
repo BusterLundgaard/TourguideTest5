@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+
+
+    <h3>Integraler fagterminologi <i>zzz</i></h3>
+    <p class="t">
+    På sidste side introducerede vi en masse nye, vigtige og interessante idéer. 
+    Lad os kort lige se på den aktuelle faglige terminologi og notation, vi bruger. 
+    </p>
+    <p class="t">
+    For at finde arealet under _(f(x)_), var man nødt til at
+    finde en funktion _(F(x)_) hvor 
+    _($F'(x)=f(x)_)
+    Man skal gøre lidt det
+    modsatte af at differentiere: Man skal <i>integrere</i>, som det kaldes. 
+    Vi siger, at _(F(x)_) er <i>integralet</i> af _(f(x)_), ligesom at _(f(x)_)
+    er <i>hældningen</i> til _(F(x)_). For at finde _(f(x)_) via _(F(x)_), skal vi differentiere,
+    for at finde _(F(x)_) via _(f(x)_) skal vi integrere. 
+    Integration skrives med symbolet _(\int_), så:
+    _($¤x[F(x)] = f(x), \qquad \int f(x) = F(x)_)
+    For at finde arealet under _(f(x)_) mellem _(x=a_) og _(x=b_) så vi,
+    at man skulle regne
+    _($F(b)-F(a)_)
+    En anden måde at skrive det på, er:
+    _($\int_{a}^{b} f(x)_)
+    _(\int_{a}^{b}_) er bare en mere kompakt måde at sige "arealet under _(f(x)_) mellem 
+    _(a_) og _(b_)".
+    </p>
+    <p class="t">
+    Vi skriver sjælen en integral som <i>bare</i> _(\int f(x)_). Ofte tilføjer vi en lille "_(dx_)" som:
+    _($\int f(x) dx_)
+    Hvilket også nogle gange skrives:
+    _($\int f(x)*dx_)
+    Det her har ingen betydning, og er bare lidt en konvention / standard. 
+    <i>Ideen</i> er, at det skal minde os om, hvad
+    det er vi faktisk laver: Vi tager en stor sum af mange rektangler med
+    arealet _(f(x)*dx_), hvor _(dx_) så er bredden. Du kan <i>ikke</i> behandle _(dx_) som
+    et tal i integralet: _(\int f(x)_) betyder præcist det samme som _(\int f(x) dx_). Det er 
+    kun noget vi skriver rent symbolsk. 
+    Det <i>er</i> dog ret praktisk, da 
+    _(dx_) fortæller os, at vi integrere <i>med x</i>. Sig f.eks. du havde 
+    _($\int \frac{a^2+b}{Cos(a)+b^2}_)
+    Hvad integrerer du med her? Er det med _(a_) eller med _(b_)? Hvis vi skulle specificere
+    at det var med _(a_), ville vi altså skrive
+    _($\int \frac{a^2+b}{Cos(a)+b^2} da_)
+    ... og lignende
+    _($\int \frac{a^2+b}{Cos(a)+b^2} db_)
+    ... hvis det var med _(b_). Så det er egentlig en meget fin konvention. 
+    </p>
+
+    <q-stion 1="12" 2="1">
+    Regn følgende integral:
+    _($\int \frac{a^2+b}{Cos(a)+b^2} dc_)
+    <br></q-stion>
+    <answer-box>
+    Her integrerer vi i forhold til variablen _(c_),
+    der slet ikke er del af udtrykket! I vores øjne er det kæmpe
+    udtryk beskrevet via _(a_) og _(b_) egentlig bare en konstant. Dette
+    svarer lidt til at regne:
+    _($\int 23 \, dx_)
+    Hvilket vi jo ved giver:
+    _($23x_)
+    Så i vores tilfælde får vi:
+    _($\int \frac{a^2+b}{Cos(a)+b^2} dc = \left(\frac{a^2+b}{Cos(a)+b^2} \right)*c_)
+    Bum!
+    <br><br></answer-box>
+
+    <p class="t">
+    Det er markant sværere at integrere end at differentiere, præcis ligesom
+    det er markant sværere at dividere end at gange. Når du f.eks. regner
+    _(91/7_), løser du jo faktisk ligningen:
+    _($7*x=91_)
+    Gangestykker kan regnes efter en relativt slavisk proces, men 
+    division involverer at <i>gætte</i> sig strategisk frem til et
+    _(x_), der virker. For overhovedet at <i>kunne</i> dividere,
+    er man nødt til gange en masse for at teste ligningen. 
+    Præcist det samme gælder integration! Du prøver at
+    strategisk gætte dig frem til en eller funktion, der 
+    har lige den rigtige egenskab. 
+    Mere matematisk sagt forsøger du at løse ligningen:
+    _($F'(x)=f(x)_)
+    Hvor du søger funktionen _(F_). 
+    Der er <i>strategier</i> du kan bruge til, at vurdere et gæt
+    (præcis ligesom division), men det er slet ikke ligesom
+    differentiation hvor du "bare" følger bestemte procedurer, indtil du
+    er færdig. At integrere kræver lidt en mærkelig form for intuition,
+    der kun kan opnås ved at træne på en helt masse opgaver. 
+    Det er simpelthen ikke muligt
+    at fremstille en liste af steps eller formler du skal følge for at løse et integral:
+    Hvert integral er sin egen opgave / sit egen mysterie! 
+    </p>
+
+    <p class="t">
+    Vi kan differentiere 
+    en stort set hvilken som helst funktion, men det er mange funktioner
+    der <i>ikke</i> kan integreres. 
+    Mange integraler <i>har</i> slet ikke løsninger, eller ... det er kompliceret:
+    De <i>har</i> løsninger _(F(x)_), men de løsninger
+    kan ikke nødvendigvis opskrives som normale funktioner i forhold til plus, gange, eksponenter, 
+    logaritmer, Cos og Sin osv. Eksempelvis ligner 
+    _($f(x)=\frac{Sin(x)}{x}_) 
+    ... en relativ nem og simpel funktion. Alligevel findes
+    der ingen "simpel" _(F(x)_) hvis hældning er lig 
+    _(Sin(x)/x_). Man <i>kan</i> dog bevise at funktionen
+    _($F(x)=\sum_{n=0}^{\infty} (-1)^n*x^{2n+1}*\frac{1}{(2n+1)*(2n+1)!} _)
+    ... har den rigtige hældning, så:
+    _($¤x \left[\sum_{n=0}^{\infty} \frac{(-1)^n*x^{2n+1}}{(2n+1)*(2n+1)!} \right] = f(x)_)
+    Løsningen på dette integral kommer altså i form af
+    en avanceret funktion, der kun kan beskrives som en <i>uendelig</i> sum.
+    Vi vil senere se, at dette er tæt relateret til Taylor serier -
+    denne uendelig sum er jo faktisk et polynomie, der let kan differentieres.
+    </p>
+    
+    <p class="t">
+    <i>Hvis</i> en integral har èn løsning, har den faktisk uendelig mange løsninger. Hear me out: 
+    Sig vi leder efter integralet til _(f(x)_), og har fundet en funktion _(F(x)_) der virker. Vi ved at.
+    _($¤x[F(x)]=f(x)_)
+    Men hvad hvis vi f.eks. sagde _(F(x)+23.94_)?
+    _($¤x[F(x)+23.94] = ¤x[F(x)] + ¤x[23.94] = f(x) + 0 = f(x)_)
+    Præcist det samme gælder! Ofte skriver vi:
+    _($\int f(x) dx = F(x)+k_)
+    ... eftersom vi kan plusse _(F(x)_) med et hvilket som helst konstant tal _(k_), og stadig få et tal der virker. 
+    </p>
+
+    <p class="t">
+    På sidste side øvede vi os i at løse integraler, og
+    fik en generel ide om hvordan systemet virkede. 
+    Normalt ville man nu gå i gang med en masse integrationsteknikker og opgaver,
+    men jeg tænker, at vi først burde øve os i
+    hvordan man <i>bruger</i> og <i>anvender</i> dem. Det 
+    <i>er</i> meget vigtigt selv at kunne integrere i hånden, men
+    det bliver også ret hurtigt abstrakt og kedeligt. Jeg tror
+    virkelig det vil hjælpe både med forståelsen og motivationen at 
+    se på nogle konkrete eksempler. Lad mig allerede sige det nu: Integraler kan bruges
+    til <i>meget</i> mere, end bare at finde arealer ... 
+    </p>
+
+
+
+
+

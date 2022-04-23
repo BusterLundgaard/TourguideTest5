@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+
+    <h4>Øvelser i the Divergence Theorem</h4>
+
+    <p class="t"><i>Helt fint hvis du bruger Geogebra i denne</i></p>
+
+    <q-stion 1="30" 2="1">
+    Du har følgende 4-sidede polygon (præcist samme som den tidligere):
+    <img class='Spic' style='width:60%' src='../../../Assets/Chapter4\MultiVarCalc\Vectorfields\PolygonRegion1.png'> 
+    <p class="t">
+    Vektor feltet er:
+    _($\vec f = \VeC[\frac{1}{3}x^2y,y^2x]_)
+    Find flux af dette område. 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    At regne flux normalt kræver fire integraler på fire separate sider. 
+    Følgende dobbelt-integral gennem 
+    the divergence theorem er langt nemmere:
+    _($\begin{eqnarray}
+    && \int_R \int \text{div}(\vec F) \text{ }dA = 
+    && \int_{1}^{5} \int_{0.25x + 1.75}^{x+3} \frac{8}{3}xy \text{ }dy \text{ }dx =
+    && 572.44
+    \end{eqnarray}_)
+    Så det er vores svar. 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="30" 2="2">
+    Du arbejder med området under _(z=20-2x+y_), hvor _(x \in [-1,5]_) og _(y \in [-3,3]_), hvilket ser ud som:
+    <img class='Spic' style='width:60%' src='../../../Assets/Chapter4\MultiVarCalc\Vectorfields\UnderPlane.png'> 
+    <p class="t">
+    Dit vektor-felt er:
+    _($\vec F = \VeC[-z*x^2,x,y*z]_)
+    Hvad er flux af dette område? 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Her ville vi normalt skulle regne flux på seks forskellige plader:
+    Toppen (planet), bunden, og de fire sider.
+    Det er meget nemmere at regne følgende tredobbelts-integral:
+    _($\int_R \int \int Div(\vec F) \text{ }dV = \int_{-1}^{5} \int_{-3}^{3} \int_{0}^{20-2x+y} -2zx + 0 + y \text{ }dz \text{ }dy \text{ }dx  _)
+    Det giver _(-12492_). Bum!
+    <br><br></answer-box> 
+
+    <!--  -->
+
+    <!-- <q-stion 1="2" 2="1" 3="5">
+    Du har følgende område (det samme som tidligere): 
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter4\MultiVarCalc\Vectorfields\PolygonRegion2.png'> 
+    Og en densitetsfunktion der er lig:
+    _($f(x,y)=2Sin(x)Cos(x) + 2Cos(y)Sin(y)_)
+    Find massen. 
+    <br><br></q-stion>
+    <answer-box>
+    Min pointe med den her opgave er egentlig bare at du både kan bruge Green's theorem og 
+    the divergence theorem til at regne en opgave som den her (måske) hurtigere. 
+    Begge involverer at finde _(\vec r'(t)_), så medmindre vi er i 3D, så kan man ikke
+    rigtig sige at den ene er særlig meget sværere end den anden. Vi vælger derfor, meget arbitrært, 
+    at bruge flux. Så skal vi finde et felt _(\vec F_) hvis divergence er lig _(f(x,y)_). 
+    Et meget simpelt bud er nok:
+    _($\VeC[-\frac{1}{2}Cos(2x),-\frac{1}{2}Cos(2y)]_)
+    Så vi skal nu regne de fire følgende integraler:
+    _($\begin{eqnarray}
+    && \int_{0}^{1} \VeC[-\frac{1}{2}Cos(2*(1+t(4-1))), -\frac{1}{2}Cos(2*(1+t(14-1)))]*\VeC[-(14-1),4-1] \text{ }dt \\
+    && \int_{0}^{1} \VeC[-\frac{1}{2}Cos(2*(4+t(3-4))), -\frac{1}{2}Cos(2*(14+t(7-14)))]*\VeC[-(7-14),3-4] \text{ }dt \\
+    && \int_{0}^{1} \VeC[-\frac{1}{2}Cos(2*(3+t(5-3))), -\frac{1}{2}Cos(2*(7+t(8-7)))]*\VeC[-(8-7),5-3] \text{ }dt \\
+    && \int_{0}^{1} \VeC[-\frac{1}{2}Cos(2*(5+t(1-5))), -\frac{1}{2}Cos(2*(8+t(1-8)))]*\VeC[-(1-8),1-5] \text{ }dt 
+    \end{eqnarray}_)
+    Hvilke giver:
+    _($0.12-2.25+0.61+0.46 = -1.06_)
+    <br><br></answer-box> -->
+
+    <!--  -->
+
+    <q-stion 1="30" 2="3">
+    Bevis, at hvis vektor-feltet er konstant (samme vektor overalt), 
+    er flux på en hvilket som helst mærkelig region du kunne
+    forestille dig _(0_). 
+    <br><br></q-stion>
+    <answer-box>
+    _(\text{div}(\vec F)_) er tydeligvis _(0_), hvis _(\vec F_) er konstant, så 
+    det er tredobbelt-integralet også uanset hvilken region du vælger. 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="30" 2="4">
+    Du har følgende område:
+    <img class='Spic' style='width:95%' src='../../../Assets/Chapter4\MultiVarCalc\Vectorfields\Spiral3.png'> 
+    <p class="t">
+    Og vektor-feltet er:
+    _($\vec f = \VeC[\frac{1}{3}x^3+y^2x,y^2]_)
+    Find flux. 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Normalt ville vi skulle regne tre integraler: en for hver af de to spiraler,
+    og èn for linjen imellem. Så er det langt hurtigere bare at regne
+    _($\int_R \int \text{div}(\vec F) \text{ }dA_)
+    ... siden området fint kan beskrives polært som _(\theta \in [0, 2\pi]_), _(r \in [\theta, 1.5\theta]_). 
+    <p class="t">
+    Divergence af vores vektor felt er:
+    _($x^2+y^2+2y_)
+    Det bliver til _(r^2 + 2r Sin(\theta)_), hvis man substituerer
+    _(x=r Cos(\theta)_), _(y=r Sin(\theta)_) og simplificerer. Vi regner derfor:
+    _($\int_{0}^{2\pi} \int_{\theta}^{1.5\theta} \left(r^2 + 2r Sin(\theta) \right)*r \, dr \, d\theta _)
+    Det giver _(1656_), som så er svaret 
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="30" 2="5">
+    Sig du har en 3D trekant (en såkaldt "tetrahedron") dannet
+    af overfladerne _(\triangle ABC_), _(\triangle ABD_), _(\triangle ACD_) og  _(\triangle BCD_)
+    hvor:
+    _($\begin{eqnarray}
+    && A = & (3,4,3) \\
+    && B = & (6,8,3) \\
+    && C = & (7,1,2) \\
+    && D = & (5,4,6)
+    \end{eqnarray}_)
+    Normalvektorerne er:
+    _($\begin{eqnarray}
+    && \vec n_{\triangle ABC} = \VeC[-0.157,0.118,-0.981] \\ \\
+    && \vec n_{\triangle ABD} = \VeC[-0.705,0.529,0.470] \\ \\
+    && \vec n_{\triangle ACD} = \VeC[-0.508,-0.791,0.339] \\ \\
+    && \vec n_{\triangle BCD} = \VeC[0.912,0.073,0.401] 
+    \end{eqnarray}_)
+    Din densitetsfunktion er:
+    _($f(x,y,z)=1+y_)
+    Hvad er massen? 
+    <p class="t">
+    Denne opgave er relativ lang og tricky! Der er lidt repetitivt beregning, i
+    hvert fald. 
+    </p>
+    <br></q-stion>
+    <answer-box t="h">
+    Husk tilbage på hvordan du fandt fluxen gennem én trekant i et 3D rum. 
+    Generaliser dit resultat og find en O.K praktisk formel. 
+    <br><br></answer-box>
+    <answer-box>
+    Lad os først lige skitsere vores område: 
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter4\MultivarCalc\Vectorfields\Tetrehedron.png'> 
+    <p class="t">
+    Jeg ved ikke med dig, men 
+    denne region virker meget svær at beskrive. 
+    Den skal opdeles flere gange, hvis vi skal have nogen chance for at beskrive den
+    med et tredobbelt integral, og der er stor chance for, at vi laver fejl.
+    Jeg tænker det nemmere "bare" at finde den samlede flux
+    gennem de fire flader. 
+    </p>
+    <p class="t">
+    Vi skal finde et felt _(\vec F_), hvis divergence er lig _(1+y_). Man kan relativt let 
+    se at 
+    _($\VeC[x,y^2/2,0]_)
+    ... gør jobbet. 
+    </p>
+    <p class="t">
+    Vi fandt tidligere en formel for flux gennem en trekant i 3D rum.
+    Vores arbejde kan generaliseres til tre punkter _(M_), _(N_), _(Q_) på
+    et vektor <br> felt _(\vec F_):
+    _($\int_{0}^{1} \int_{0}^{a} \vec F \left(M + a*\Ray{MN} + b*\Ray{NQ} \right)*(\Ray{MN} \times \Ray{NQ}) \, db \, da_)
+    På vores fire forskellige sider har vi
+    _($\begin{eqnarray}
+    && \boldsymbol{\triangle ABC:} \, \, \, M = \VeC[3,4,3] \qquad & \Ray{MN} = \VeC[3,4,0] \qquad   & \Ray{NQ} = \VeC[1,-7,-1] \\ \\
+    && \boldsymbol{\triangle ABD:} \, \, \, M = \VeC[3,4,3] \qquad & \Ray{MN} = \VeC[3,4,0] \qquad & \Ray{NQ} = \VeC[-1,-4,3] \\ \\
+    && \boldsymbol{\triangle ACD:} \, \, \, M = \VeC[3,4,3] \qquad & \Ray{MN} = \VeC[4,-3,-1] \qquad   & \Ray{NQ} = \VeC[-2,3,4] \\ \\
+    && \boldsymbol{\triangle BCD:} \, \, \, M = \VeC[6,8,3] \qquad & \Ray{MN} = \VeC[1,-7,-1] \qquad  & \Ray{NQ} = \VeC[-2,3,4] \\ \\
+    \end{eqnarray}_)
+    ... og:
+    _($\begin{eqnarray}
+    && \boldsymbol{\triangle ABC:} & \, \, \, \Ray{MN} & \times \Ray{NQ} & = \VeC[-4,3,-25] \\ \\   
+    && \boldsymbol{\triangle ABD:} & \, \, \, \Ray{MN} & \times \Ray{NQ} & = \VeC[12,-9,-8] \\ \\  
+    && \boldsymbol{\triangle ACD:} & \, \, \, \Ray{MN} & \times \Ray{NQ} & = \VeC[-9,-14,6] \\ \\
+    && \boldsymbol{\triangle BCD:} & \, \, \, \Ray{MN} & \times \Ray{NQ} & = \VeC[-25,-2,-11] 
+    \end{eqnarray}_)
+    Vi skal passe virkelig på med <i>retningen</i> her. 
+    Disse krydsprodukter burde vende samme retning som de givne normalvektorer, ellers
+    bliver flux ganget med _(-1_). Ved at se på negativiteten
+    af hvert element i vektoren, kan vi se at krydsproduktet ved
+    _(\triangle ABD_) og _(\triangle BCD_) vender forkert. De skal lige modsættes.
+    </p>
+    <p class="t">
+    Det nu tid til at regne integralerne:
+    _($\begin{align}
+    \int_{0}^{1} \int_{0}^{a} \VeC[(3+3a+b), (4+4a-7b)^2 / 2, 0]*\VeC[-4,3,-25] \text{ }db  \text{ }da & =  4.958  \\ \\
+    \int_{0}^{1} \int_{0}^{a} \VeC[(3+3a-b),(4+4a-4b)^2 / 2, 0]*\VeC[-12,9,8] \text{ }db  \text{ }da & =  38 \\ \\ 
+    \int_{0}^{1} \int_{0}^{a} \VeC[(3+4a-2b), (4-3a+3b)^2 / 2, 0]*\VeC[-9,-14,6] \text{ }db  \text{ }da & = -  55.75 \\ \\
+    \int_{0}^{1} \int_{0}^{a} \VeC[(6+a-2b),  (8-7a+3b)^2 / 2, 0]*\VeC[25,2,11] \text{ }db  \text{ }da & =  85.416  \\ \\
+    \end{align}_)
+    Svaret er derfor:
+    _($4.958+38-55.75+85.416=72.625_)
+    God damn! 
+    </p>
+    <br></answer-box>
+

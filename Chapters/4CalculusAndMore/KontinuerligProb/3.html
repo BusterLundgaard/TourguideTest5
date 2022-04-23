@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+
+
+    <h2>Gennemsnit og spredning på PDF'er</h2>
+
+    <p class="t">
+    Da vi undersøgte diskrete variabler, studerede vi 
+    bl.a. deres gennemsnit og spredning. Hvordan
+    ville vi finde gennemsnittet (ofte kaldt _(\mu_)) og 
+    spredningen af en kontinuerlig variable beskrevet af <br> 
+    sandsynlighedsdensitetsfunktionen 
+    _(f(x)_)? Egentlig meget simpelt:
+    _($\text{ Gennemsnit} = \int_{a}^{b} x*f(x) \text{ }dx_)
+    ... hvor _(a_) og _(b_) er min og maks værdierne 
+    på den stokastiske variable. 
+    Gennemsnittet på en diskret variable definerede vi 
+    som _(\sum x*P(X=x)_), og vi gør præcist det samme
+    med en kontinuerlig: Nu er _(P(X=x)_) bare blevet til _(P(X \in [x, x+dx])_), og kan
+    regnes som _(f(x)*dx_), hvilket håndteres med en integral.
+    </p>
+    <p class="t">
+    Spredning er meget det samme. For en diskret variable 
+    var det defineret som _(\sum |x-\mu|*P(x=X)_),
+    så det kontinuerlige tilfælde giver:
+    _($\text{Spredning} = \int_{a}^{b} |x-\mu|*f(x) \text{ }dx_)
+    Absolutte værdier kan ikke integreres, så vi er faktisk 
+    nødt til at opdele integralet i to, for at regne spredningen:
+    _($\int_{a}^{\mu} (\mu-x)*f(x) \text{ }dx + \int_{\mu}^{b} (x-\mu)*f(x) \text{ }dx _)
+    Da vi originalt så på diskrete variabler, differentierede 
+    vi mellem <i>spredning</i> og <i>varians</i>. 
+    Spredning giver os meget konkret og præcist _(X_)'s 
+    gennemsnitlige forskel 
+    til gennemsnittet _(\mu_). Vi kunne også regne
+    _(X_)'s gennemsnitlige forskel til en hvilken som helst anden værdi _(c_) som 
+    _(\sum |x-c| P(X=x) _). Varians, på den anden hånd, 
+    er defineret som _(\sum (x-\mu)^2 P(X=x)_), hvilket
+    for en kontinuerlig variable bliver:
+    _($\text{ Varians} = \int_{a}^{b} (x-\mu)^2 f(x) \text{ }dx_)
+    Varians fortæller os også <i>noget</i> om variablets 
+    spredningen omkring gennemsnittet, 
+    men har mistet den præcise matematiske betydning. 
+    Det kan stadig fint bruges komparativt, og varians vil stort
+    set altid blive anvendt i stedet for spredning, fordi det matematisk
+    set er simplere og mere praktisk. 
+    </p>
+    <p class="t">
+    Udover varians defineres også <i>standard fordeling</i> ("standard deviation"), som
+    bare er kvadratroden af variansen:
+    _($\text{ Standard-fordeling} = \sqrt{\text{Varians}} _)
+    Det er en ret arbitrær definition, men flere formler 
+    ser lidt flottere
+    ud med standard-fordeling i stedet for spredning. 
+    Standard-fordeling skrives som _(\rho_). 
+    </p>
+    <p class="t">
+    Et koncept vi ikke rigtig kiggede på i diskrete 
+    variabler var den såkaldte <i>median</i>:
+    </p>
+    <div class="Definition">
+    <b> Definition: Median</b>. <br>
+    Medianen er det tal _(M_), hvor
+    _($P(X \lt M) = P(X \gt M)_)
+    </div>
+    <p class="tt">
+    Så du har lige stor chance for at være større, som du har for at være mindre.
+    </p>
+
+    <p class="t">
+    Tid til opgaver!
+    </p>
+
+    <q-stion 1="3" 2="1" bigTop="true">
+    Følgende er fire sandsynlighedsfunktioner vi tidligere har brugt:
+    _($\begin{align}
+    & \underline{\textbf{A}}: \, \, \, \, f(x)=0.3984*0.6065^{(x-4)^2}, && x \in [-\infty, \infty] \\ \\ 
+    & \underline{\textbf{B}}: \, \, \, \, f(x)=0.0476*e^{-0.0476x}      && x \in [0, \infty] \\ \\ 
+    & \underline{\textbf{C}}: \, \, \, \, f(x)=2.027*0.6^x*0.4^{1-x}    && x \in [0, 1] \\ \\ 
+    & \underline{\textbf{D}}: \, \, \, \, f(x)=1/360,                   && x \in [0, 360]
+    \end{align}_)
+    <p class="t">
+    Find for hver af disse funktioner 
+    </p>
+    <div style="text-align:center; margin-top:-10px; margin-bottom:-10px;">
+        <ul style="display: inline-block; list-style:disc;">
+            <li>Gennemsnit</li>
+            <li>Spredning</li>
+            <li>Standard fordeling</li>
+            <li>Median</li>
+        </ul>
+    </div>
+    <br><br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    <i>Gennemsnit:</i> <br>
+    Vi regner:
+    _($\begin{eqnarray}
+    && \int_{-\infty}^{\infty} x*f(x) \text{ }dx = \\ \\
+    && \int_{-\infty}^{\infty} x*(0.3984*0.6065^{(x-4)^2}) \text{ }dx = \\ \\
+    && 4 \\
+    \end{eqnarray}_)
+    Det er på ingen måde tilfældigt, at det lige er _(4_),
+    som også er en del af _(f(x)_) oppe i potensen:
+    Denne slags pdf er en såkaldt "normalfordeling". En familie
+    af sandsynligheder, vi nok skal gå mere i dybden med snart. Det kan bevises,
+    at tallet oppe i potensen altid er lig gennemsnittet for sådan en slags pdf. 
+    <p class="t">
+    <i>Spredning</i>: <br>
+    Vi regner:
+    _($\int_{-\infty}^{4} (4-x)*f(x) \text{ }dx + \int_{4}^{\infty} (x-4)*f(x) \text{ }dx _)
+    Vi kan se, at vores funktion _(f(x)_) er symmetrisk omkring _(x=4_), så vi kan bare regne:
+    _($\begin{eqnarray}
+    && 2*\int_{-\infty}^{4} (4-x)*f(x) \text{ }dx = \\ \\ 
+    && 2*\int_{-\infty}^{4} (4-x)*0.3984*0.6065^{(x-4)^2} \text{ }dx = \\ \\
+    && 0.8
+    \end{eqnarray}_)
+    <i>Normalfordeling:</i> <br>
+    Vi regner nu:
+    _($\begin{eqnarray}
+    && \int_{-\infty}^{\infty} (x-4)^2*f(x) \text{ }dx = \\  \\ 
+    && \int_{-\infty}^{\infty} (x-4)^2*0.3984*0.6065^{(x-4)^2} \text{ }dx = \\  \\
+    && 0.998
+    \end{eqnarray}_)
+    Vi husker at tage kvadratroden og får _(\sqrt{0.998}=0.998999_). 
+    </p>
+    <i>Median:</i> <br>
+    Denne funktion er symmetrisk omkring _(x=4_), så det må medianen også være
+    (arealet til begge sider er lige stort). Ergo _(M=4_). 
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Følgende bliver der regnet gennemsnit og varians:
+    _($\begin{eqnarray}
+    && \int_{0}^{\infty} x*0.0476*e^{-0.0476x} \text{ }dx = 21.106 \\ \\
+    && \int_{0}^{\infty} (x-21.106)^2*0.0476*e^{-0.0476x} \text{ }dx = 444.43
+    \end{eqnarray}_)
+    Standardfordelingen er lig _(\sqrt{444.43} = 21.0815_). Spredning regner vi som
+    _($\begin{eqnarray}
+    && \int_{0}^{21.106} (21.106-x)*0.0476*e^{-0.0476x} \text{ }dx \, + \\ \\
+    && \int_{21.106}^{\infty} (x-21.106)*0.0476*e^{-0.0476x} \text{ }dx
+    \end{eqnarray}_)
+    ... hvilket giver _(15.59_). 
+    <p class="t">
+    For at regne medianen skriver vi følgende kommando i Geogebra:
+    _($\text{NSolve}(\text{integral}(x*0.0476*2.172^{-0.0476x}, x, 0, M) = 0.5, M) = 4.86_)
+    </p>
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{C}}_)#" tabColour="rgb(171,96,147)">
+    Følgende bliver der regnet gennemsnit og varians:
+    _($\begin{eqnarray}
+    && \int_{0}^{1} x*\left(2.027*0.6^x*0.4^{1-x}\right) \text{ }dt = 0.533 \\ \\ 
+    && \int_{0}^{1} (x-0.533)^2*\left(2.027*0.6^x*0.4^{1-x}\right) \text{ }dt = 0.0826 \\ \\ 
+    \end{eqnarray}_)
+    Normalfordelingen er lig _(\sqrt{0.0826} = 0.2874_). Spredning giver
+    _($\begin{eqnarray}
+    && \int_{0}^{0.53} (0.53-x)*(2.027*0.6^x*0.4^{1-x}) \text{ }dx \, + \\ \\
+    && \int_{0.53}^{1} (x-0.53)*(2.027*0.6^x*0.4^{1-x}) \text{ }dx
+    \end{eqnarray}_)
+    _(=0.248_). Medianen regnes i Geogebra som:
+    _($NSolve(integral(2.027*0.6^x*0.4^{1-x}, 0, M)=0.5) = 0.5504_)
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{D}}_)#" tabColour="rgb(175,128,161)">
+    Både gennemsnit, spredning, og median er meget svært at tænke over 
+    på en helt flad funktion som denne, men vi kan vel godt regne det:
+    _($\int_{0}^{360} x*\frac{1}{360} \text{ }dx = \frac{1}{360}*\frac{360^2}{2} = 180_)
+    Spredningen bliver:
+    _($\int_{0}^{180} \frac{180-x}{360} \text{ }dx + \int_{180}^{x} \frac{x-180}{360} \text{ }dx = 90_)
+    Variansen bliver:
+    _($\int_{0}^{360} \frac{(x-180)^2}{360} \text{ }dx = 10800_)
+    ... så standardfordelingen er _(\sqrt{10800} = 103.923_). 
+    <p class="t">
+    Medianen er tydeligvis bare _(180_). 
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="3" 2="2">
+    Præcis samme opgave som en af de tidligere i bogen, 
+    nu bare med kontinuerlige variabler: <br>
+    <p class="t">
+    Sig vi har to energi-firmaer. Det ene firma står 
+    i lidt en akut situation, og skal producere
+    _(16MJ_) inden _(4_) dage. Det er numero priori uno.
+    Det andet firma skal egentlig bare
+    <i>i længden</i> producere
+    så meget strøm som muligt. Det er ikke vigtigt at nå det <i>lige nu</i>.
+    </p>
+    <p class="t">
+    Sig nu, at vi har to strøm-generatorer. De er begge beskrevet i forhold til en pdf 
+    af sandsynligheden for at producere _(x_) _(MJ_) strøm på en dag:
+    _($\begin{eqnarray}
+    && f_1(x) = 0.09973*0.9692^{(x-6)^2} \\
+    && f_2(x) = 0.33245*0.7066^{(x-7)^2}
+    \end{eqnarray}_)
+    Hvilken maskine passer hvilken virksomhed bedst?
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Vi ved, at den ene maskine har et gennemsnit på _(6_), 
+    og den anden et gennemsnit på _(7_). Vi regner nu 
+    begge varianser: 
+    _($\begin{eqnarray}
+    && \int_{-\infty}^{\infty} (x-6)^2*0.09973*0.9692^{(x-6)^2} \text{ }dx = 1.2 \\ \\
+    && \int_{-\infty}^{\infty} (x-7)^2*0.33245*0.7066^{(x-7)^2} \text{ }dx = 4
+    \end{eqnarray}_)
+    Det er virkelig vigtigt for den ene virksomhed at de får 
+    produceret _(16MJ_). Det vil de gerne være <i>sikre</i> på 
+    sker. Derfor er det nok bedst at vælge den med det 
+    lavere gennemsnit på _(6_), da den også har en ret lav 
+    spredning i forhold til den anden: Deres chance for at 
+    få produceret _(16MJ_) er højere med denne maskine end den anden. 
+    <p class="t">
+    Den anden virksomhed burde vælge den med det højeste 
+    gennemsnit stort set lige meget hvad. Vi ved 
+    jo, at den samlede mængde efter mange _(n_) "runder" 
+    af den stokastiske variable _(X_) vil nærme sig 
+    _(n*\mu(X)_), så _(\mu(X)_) skal helst være så høj som mulig. 
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <!-- <q-stion 1="2" 2="1" 3="5">
+    Sig at det er 6 uger inden året slutter og at 
+    man har spottet et lille meteor nedslag i Danmark. Sig at 
+    chancen for at der er _(t_) uger mellem to nedslag kan modelleres af:
+    _($f(t)=0.1154 e^{-0.1154t}_)
+    En af dine venner beter dig 100kr på at der kommer èt ekstra 
+    meteor-nedslag inden året er omme. Burde du stemme ja eller nej? 
+    Burde du stemme overhovedet?
+    <br><br></q-stion>
+    <answer-box>
+    Vi regner:
+    _($\int_{0}^{6} 0.1154 e^{-0.1154t} \, dt = 0.4996_)
+    Chancen for at det sker er stort set identisk med chancen for 
+    at det ikke sker. Man kan også beregne medianen til _(6.1_). 
+    Det er nok ikke en god ide at stemme. 
+    <br><br></answer-box> -->
+
+    <!--  -->
+
+    <q-stion 1="3" 2="3">
+    Tilbage til dit græs. Igen er chancen for at det gror med _(x_) centimeter på en måned lig
+    _($f(x)=0.3984*0.6065^{(x-4)^2}_)
+    Sig at græssets vækst bliver ved med at følge denne fordeling i _(3_) år, og 
+    at du aldrig klipper det. Hvor stor en volume græs ville du ca. skulle
+    fjerne, hvis græsplænen er _(50m^2_)? 
+    <br><br></q-stion>
+    <answer-box>
+    Lad os først estimere hvor højt dit græs er blevet efter _(36_) måneder.
+    Her er _(n_) relativt højt, så gennemsnittet burde være en fin approksimation. Vi ved,
+    at gennemsnittet på _(f(x)_) er _(4_), så vi skal bare regne 
+    _($36*4=144cm_)
+    Den samlede volume bliver:
+    _($1.44*50=72m^3_)
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="3" 2="4">
+    Sig at havdyret vi undersøgte tidligere udskyder sporer _(56_)
+    gange i dens livstid. Hvor mange levende væsener vil den skabe i dens livstid,
+    hvis den udskyder _(35_) tusind hver gang med en 
+    leveprocent på _(20_)%? 
+    <br><br></q-stion>
+    <answer-box>
+    Vi ved, at chancen for at _(p_) procent af de 35 tusind mikroorganismer lever, er
+    _($f(p)=C(0.2)*0.2^p*0.8^{1-p}_)
+    ... hvor vi kan regne _(C(0.2)_) til _(2.31_). Vi vil gerne regne den gennemsnitlige mængde 
+    af mikroorganismer, der overlever, hver gang. Gennemsnittet regner vi som "værdi" gange 
+    chance for, at den værdi sker. Vores "værdi" er bare _(35000*p_), så:
+    _($\int_{0}^{1} (35000*p)*(2.31*0.2^p*0.8^{1-p}) \text{ }dp = 13577_)
+    I dens levetid udskyder havdyret derfor
+    _($56*13577=760312_)
+    ... mikroorganismer. 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="3" 2="5">
+    Sig at chancen for, at en bestemt dartspiller rammer _(x_) væk fra bullseye, er
+    _($0.03989*0.995012^{x^2}_)
+    ... hvor _(x_) godt kan være negativt. 
+    <p class="t">
+    Sig at mængden af points man får på et skud er lig _(100/r_), hvor 
+    _(r_) er radius (altid positiv) til bullseye. Dartspilleren kaster _(28_) gange. 
+    Estimer hvor mange points hun/han i gennemsnittet får.
+    </p>
+    <br></q-stion>
+    <answer-box t="h">
+    Spredning my friend! 
+    <br><br></answer-box>
+    <answer-box>
+    Gennemsnit vil ikke rigtig hjælpe os her, eftersom vi faktisk interessere os i <i>pointsne</i>, ikke
+    den "samlede afstand fra bullseye". Vi skal beregne den 
+    <i>gennemsnitslige afstand fra gennemsnittet</i>, eftersom gennemsnittet ligger på bullseye. Det
+    svarer til at regne <i>spredningen</i>:
+    _($\begin{eqnarray}
+    && \int_{-\infty}^{0} (0-x)*0.03989*0.995012^{x^2} \text{ }dx \, + \\ \\
+    && \int_{0}^{\infty} (x-0)*0.03989*0.995012^{x^2} \text{ }dx = 7.98
+    \end{eqnarray}_)
+    Det giver _(7.98_), så i gennemsnittet for dartspilleren
+    _($\frac{100}{7.98} = 12.5313_)
+    ... points. Efter de _(28_) runder burde de have omkring
+    _($12.5313*28=350.87_)
+    Bum!
+    <br><br></answer-box>
+
+
+
+
+
+

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1D0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <p class="t">
+    Det her med at gange ind i parenteser kaldes for <i>distributivitet</i>. Èn ting man kan bruge det til som
+    jeg har anvendt i flere mellemregninger, er at regne bestemt gangestykker hurtigere. 
+    Se eksempelvis _(18*23_). Jeg <i>kunne</i> vælge at følge 
+    den metode jeg lærte i folkeskolen, og det ville egentlig virke fint nok. Jeg kunne også vælge at omskrive dog:
+    _($\begin{eqnarray}
+    && 18*23 = \\
+    && (20-2)*23 = \\ 
+    && 2*23*10 - 2*23 = \\ 
+    && 46*10 - 46 = \\
+    && 460 - 46 = \\
+    && 414
+    \end{eqnarray}_)
+    Boom! Vi vil ikke i denne bog kige på den metode man bruger i folkeskolen, da vi ikke er specielt interesserede i at 
+    bruge super lang tid på at kunne regne meget store gangestykker. Eventuelt skal vi jo alligevel bruge en lommeregner. 
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Regn følgende gangestykker. Du behøver ikke bekymre dig om at du gør det på "min" måde: Bare gør hvad end du tænker
+    virker nemmest og mest effektivt. 
+    <div style="text-align:center; margin-top:10px;">
+        <ul style="display: inline-block; text-align: left; padding-left:0%; list-style:none;">
+            <li><b> 1</b>: _(37*54_)</li>
+            <li><b> 2</b>: _(26*25_)</li>
+            <li><b> 3</b>: _(9*224697.64_)</li>
+            <li><b> 4</b>: _(5*224697.64_)</li>
+        </ul>
+    </div>
+    <br></q-stion>
+    <answer-box t="Answer 1#" tabColour="rgb(171,96,147)">
+    Svaret er _(1998_).
+    <p class="t">
+    Det første valg jeg nok ville vurdere er hvorvidt vi gerne vil udregne det som _((40-3)*54_) eller 
+    som _(37*(50+4)_). I den ene skal vi gange _(54_) med _(3_) og _(4_), i den anden skal vi gange
+    _(37_) med _(4_) og _(5_). _(4_) er nemt at gange med, da det bare er _(2*2_). _(5_) er nok lidt
+    nemmere end _(3_) da det er lig _(10_) divideret med _(2_). Alligevel så er _((40-3)*54_) nok bedre, da _(54_) 
+    er en del lettere at gange med end _(37_): _(54_) er lige, og involverer _(50_) som er halvdelen af _(100_). 
+    </p>
+    <p class="t">
+    At blive god til at regne handler ikke om at blive god til at følge regler og helt bestemte 
+    procedurer. Det handler om at tænke, lave valg, og være strategisk i forhold til hvad
+    men ved der virker bedst for en selv (og så også være god til hovedregning).
+    </p> 
+    <p class="t">
+    Herfra er det relativt nemt:
+    _($\begin{eqnarray}
+    && (40-3)*54 = \\
+    && 4*54*10-3*54 = \\
+    && 216*10 - 162 = \\
+    && 2160 - 162 = \\
+    && 1998
+    \end{eqnarray}_)
+    Bum!
+    </p>
+    </answer-box>
+    <answer-box t="Answer 2#" tabColour="rgb(175,128,161)">
+    Svaret er _(650_).    
+    <p class="t">
+    I denne situation <i>kunne</i> vi gøre ligesom før, og enten udregne _((30-4)*25_) eller _(26*(20+5)_).
+    Det ville virke O.K, og jeg ville nok i det tilfælde vælge _((30-4)*25_), da _(25_) er ret 
+    nemt at gange med. Vi kunne dog også i stedet omskrive det til 
+    _($(25+1)*25=25*25+25_)
+    Jeg ved at _(25*25_) er ret nemt at udregne da _(25=5*5_) så 
+    _($25*25=25*5*5_)
+    _(25*5_) kan jeg nemt få i hovedet til _(125_). Nu skal jeg bare gange _(125_) med 
+    _(5_), som også er relativt nemt at få til _(625_). Så:
+    _($625+25=650_)
+    Og vi har vores svar!
+    <p class="t">
+    Alternativt så kunne man også se på _(25*25_) som
+    _($\begin{eqnarray}
+    && 25*25 = \\
+    && 5*5*5*5 = \\
+    && (10/2)*(10/2)*(10/2)*(10/2) = \\ \\
+    && \frac{10000}{2*2*2*2} = \frac{5000}{2*2*2} = \frac{2500}{2*2} = \frac{1250}{2} = \\ \\
+    && 625
+    \end{eqnarray}_)
+    Det ville nok være nemmere hvis man var god til at dividere med _(2_)
+    </p>
+    <br></answer-box>
+    <answer-box t="Answer 3#" tabColour="rgb(171,96,147)">
+    Svaret er _(2022278.76_).
+    <p class="t">
+    Den her ser nok en smule hård ud, da _(2022278.76_) ikke ligefrem er et dejligt eller nemt tal. 
+    For bare at gøre dårligt værre så skal vi endda gange med _(9_)! Det har du måske har oplevet er 
+    det "sværreste" tal at gange med.  
+    </p>
+    <p class="t">
+    Du har ret i din første antagelse, men ikke den anden. _(9_) er super nemt at gange med, da 
+    det jo selvfølgelig bare er _(10 - 1_)! Altså: 
+    </p>
+    <p class="cent">
+        _((10-1)*224697.64=_)<br>
+        _(10*224697.64-224697.64=_)<br>
+        _(2246976.4-224697.64_)
+    </p>
+    <p class="t">
+    Nu står du med _(2246976.4-224697.67_). Det er ikke ligefrem et <i>nemt</i> minusstykke, 
+    men det er også bare et minusstykke. Det giver _(2022278.76_).
+    </p>
+    <br></answer-box>
+    <answer-box t="Answer 4#" tabColour="rgb(175,128,161)">
+    Svaret er _(1123488.2_)
+    <p class="t">
+    Det er ikke umiddelbart specielt læt at gange med _(5_), så jeg tænker at vi omskriver det til 
+    _(10/2_), og regner:
+    _($\frac{224697.64*10}{2} = \frac{2246976.4}{2}_)
+    Dette er en god ide, da det er relativt nemt at dividere med _(2_). Vi kan gøre det ekstra nemt ved at omskrive til:
+    _($\frac{2246006.4+970}{2}_)
+    _(2246006.4_) er nemt at dividere med _(2_), da det kun indeholder lige tal. Det kan let
+    ses at hver af dets symboler bare skal divideres med _(2_), hvilke giver
+    _(1123003.2_). _(970/2_) kan regnes som 
+    _($900/2+70/2=450+35=485_)
+    Så svaret er:
+    _($1123003.2+485=1123488.2_)
+    Fantastisk! 
+    </p>
+    <br></answer-box>
+
+    
+
+<p class="t">
+FØLGENDE OPGAVE DROPPEDE DU FORDI DEN VAR UNØDVENDIG:
+</p>
+
+<q-stion 1="2" 2="1" 3="5"> 
+    Udregn _(123456789*987654321_). Det her kræver en god del overskud. Der er 
+    ikke noget énkelt genialt trick man kan bruge der løser det hele nemt. 
+    Man er bare nødt til at være så smart, effektiv, og systematisk!  
+<br><br></q-stion>
+<answer-box customWidth="550"> 
+    Overordnet så er min strategi her at dele _(987654321_) op som: <br>
+    _((900000000+80000000+7000000+600000+50000+4000+300+20+1)_)<br> og så gange ind 
+    i den parentes med _(123456789_) og få:
+    <div style="text-align:center;">
+        <ul style="display: inline-block; text-align: left; list-style:none; margin-bottom:0px"">
+            <li> _(900000000*123456789 +_) </li>
+            <li> _(80000000*123456789 +_) </li>
+            <li> _(7000000*123456789 +_) </li>
+            <li> _(600000*123456789 +_) </li>
+            <li> _(50000*123456789 +_) </li>
+            <li> _(4000*123456789 +_) </li>
+            <li> _(300*123456789 +_) </li>
+            <li>_(20*123456789 +_)</li>
+            <li>_(1*123456789_)</li>
+        </ul>
+        <br> _(=_)  <br>     
+        <ul style="display: inline-block; text-align: left; list-style:none; margin-top:0px; margin-bottom:0px">
+            <li> _(100000000*(123456789*9) +_) </li>
+            <li> _(10000000*(123456789*8) +_) </li>
+            <li> _(1000000*(123456789*7) +_) </li>
+            <li> _(100000*(123456789*6) +_) </li>
+            <li> _(10000*(123456789*5) +_) </li>
+            <li> _(1000*(123456789*4) +_) </li>
+            <li> _(100*(123456789*3) +_) </li>
+            <li>_(10*(123456789*2) +_)</li>
+            <li>_(1*(123456789*1)_)</li>
+        </ul>  
+    </div>
+    <p class="t">
+    Jeg kan "nemt" (det tager alligevel lidt arbejde) sætte ekstra nuller på, og bagefter ligge det sammen. 
+    Det "sværre" er nu at udregne _(123456789*2_), _(123456789*3_), _(123456789*4_), _(123456789*5_),
+    _(123456789*6_), _(123456789*7_), _(123456789*8_), _(123456789*9_). Da det bare er at gange med 
+    tallene fra _(2_) til _(9_), så er der egentlig ingen grund til at bruge noget 
+    bestemt smart trick. Vi kan ligeså godt bare plusse _(123456789_) med sig selv _(9_) gange.
+    </p>
+    <p class="cent">
+        _(123456789*2=123456789+123456789=246913578_)<br>
+        _(123456789*3=246913578+123456789=370370367_)<br>
+        _(123456789*4=370370367+123456789=493827156_)<br>
+        _(123456789*5=493827156+123456789=617283945_)<br>
+        _(123456789*6=617283945+123456789=740740734_)<br>
+        _(123456789*7=740740734+123456789=864197523_)<br>
+        _(123456789*8=864197523+123456789=987654312_)<br>
+        _(123456789*9=987654312+123456789=1111111101_)
+    </p>
+    <p class="t">
+        Phew. Vi har nu "bare" et stort plusstykke tilbage:
+    </p>
+    <div style="text-align:center;">
+    <ul style="display: inline-block; text-align: right; list-style:none; margin-bottom: 0px;">
+        <li>_(111111110100000000+_)</li>
+        <li>_(9876543120000000+_)</li>
+        <li>_(864197523000000+_)</li>
+        <li>_(74074073400000+_)</li>
+        <li>_(6172839450000+_)</li>
+        <li>_(493827156000+_)</li>
+        <li>_(37037036700+_)</li>
+        <li>_(2469135780+_)</li>
+        <li>_(123456789_)</li>
+    </ul>
+    </div>
+    <p class="t">
+        Resultatet af det her er _(121932631112635269_). Tillyke! 
+    </p>
+    <br></answer-box>
+
+
+</html>

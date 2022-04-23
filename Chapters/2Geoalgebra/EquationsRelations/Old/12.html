@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+
+
+    <p class="t">
+    I de ligninger vi har løst indtil videre har de ukendte - x, a, b, y, whatever - 
+    haft ret frie tøjler til at være hvad end de havde lyst til: Positive, negative, kommatal - you name it.
+    Hvad hvis vi f.eks. siger at de skal være <i>hele</i> tal? Så bliver matematikken
+    pludselig meget anderledes, og meget svære. Det område af matematikken hvor man kun tillader
+    hele tal kaldes "Discrete math", og ligninger hvor løsningerne skal være hele tal kaldes
+    for "Diophantine equations" (meget fancy navn!). Lad os kigge lidt på det.  
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Løs ligningen 
+    _($35x + 22y = 52_)
+    Løsningerne _(x, y_) <i>skal</i> være hele tal! Det her 
+    er ret tricky, og meget anderledes fra noget andet du har gjort.
+    Der er teknisk set faktisk uendelig mange løsninger til denne
+    (hvilke vi kigger på snart) men det er fint hvis du bare finder 1 enkelt.
+    <br><br></q-stion>
+    <answer-box>
+    Det er nok en god og logisk ide hvis vi starter med at isolere
+    èn af variablerne. Vælger vi _(y_) så får vi:
+    _($y=\frac{52-35x}{22}_)
+    For hver _(x_) værdi vi vælger får vi nu et par _((x,y)_) der er en løsning på ligningen.
+    Men kun få af de par vil faktisk være hele tal: Det er nemt at vælge et helt tal til _(x_),
+    men _(y_) afhænger af _(x_), og vi kan ikke være sikre på at det også bliver helt. 
+    Problemet kan altså omformuleres: Vælg den rigtige værdi til _(x_) så _(y_) bliver
+    til et helt tal!
+    <p class="t">
+    Brøken _((52-35x)/22_) kan umiddelbart ikke simplificeres yderligere. 
+    Vi <i>kunne</i> prøve bare at gætte os frem på forskellige _(x_) indtil
+    vi fik èt tal der var helt, men vi har ingen ide om hvor lang tid det
+    måske ville tage. Lad os se om vi kan finde en mere systematisk måde at 
+    gøre det på. Jeg har umiddelbart èn ide:
+    _($\frac{52-35x}{22}=\frac{44+8-22x-13x}{22}=\frac{44-22x}{22}+\frac{8-13x}{22}_)
+    Så nu har vi:
+    _($y=2-x+\frac{8-13x}{22}_)
+    _(2-x_) er fuldkommen ligegyldigt: Det ved vi jo er et helt tal!
+    Selve brøken vi er i tvivl om er altså nu blevet simplere. Den skal 
+    være lig et eller andet helt tal _(k_), så:
+    _($k=\frac{8-13x}{22}_)
+    Intet nyt der, men vi kan nu omskrive:
+    _($\to 22k=8-13x \to x = \frac{8-22k}{13}_)
+    Det her er genialt, fordi nu har vi gjort nævneren mindre:
+    Fra _(22_) til _(13_). Og hvis vi så bare blive ved med 
+    at gøre det samme trick med at forsimple tælleren, bytte
+    rundt på tæller og nævner ved at skifte til et nyt variable, 
+    forsimple tælleren igen, skifte, så bliver både tæller og nævner
+    gradvis mindre begge to! 
+    _($x=\frac{13-5-26k+4k}{13}=1-2k+\frac{4k-5}{13}_)
+    Nu skal _((4k-5)/13_) være et helt tal _(k_2_), så:
+    _($k_2=\frac{4k-5}{13} \to k=\frac{13k_2+5}{4}_)
+    _($k=\frac{12k_2+k_2+4+1}{4}=3k_2+1+\frac{k_2+1}{4}_)
+    Boom! Hvis bare vi nu vælger _(k_2=3_) så bliver _((k_2+1)/4_) 
+    til _(4/4=1_) og vi har et helt tal!
+    _($k=3*(3)+1+\frac{3+1}{4}=11_)
+    _($x=\frac{8-22*11}{13}=-18_)
+    _($y=\frac{52-35*(-18)}{22}=31_)
+    ... og wholla! _(x=-18_), _(y=31_)! 
+    Det er lidt noget "Inception"-agtigt shit at vi går
+    ned gennem så mange lag, men det er virkelig cool 
+    at det hele bare virker til sidst!
+    </p>
+    <p class="t">
+    Det du lige løste her var hvad man kalder en <i>linear</i>
+    Diophantine equation. Generelt så bliver "linear" brugt når
+    potensen af noget kun er _(1_). Det er altså denne lidt
+    involverede proces vi gennemgik som man bruger generelt til at finde
+    løsninger til disse slags ligninger. 
+    </p>
+    <br><br></answer-box>
+
+    <p class="t">
+    I sidste opgave fandt vi èn enkelt løsning på ligningen _(35x + 22y=52_), 
+    men mange af de her linear diophantine equations har faktisk uendelig mange løsninger.
+    Lad os illustrere dét med et lidt simplere eksempel:
+    _($14x+17y=13_)
+    Den her kan vi løse som:
+    _($y=\frac{13-14x}{17}=\frac{17-4-17x+3x}{17}=1-x+\frac{3x-4}{17}_)
+    _($k_1=\frac{3x-4}{17} \to x=\frac{17k_1+4}{3}=\frac{18k_1-k_1+3+1}{3}=6k_1-1+\frac{1-k_1}{3}_)
+    _(k_1=-4_) <i>ville</i> være en løsning, da _((1-4)/3=-3/3=-1_), men det ville kun være
+    én løsning. Der er uendelig mange løsninger! Hvis vi siger at _(k_1=-2 - 3k_2_) så får vi:
+    _($\frac{1-(-2 - 3k_2)}{3}=\frac{3+3k_2}{3}=1+k_2_)
+    Altså _(k_1=-2 - 3k_2_) er den <i>generelle</i> løsning.
+    Nu får vi:
+    _($x=\frac{17*(-2 - 3k_2) + 4}{3} = -10 -17k_2_)
+    _($y=\frac{13-14*(-10-17k_2)}{17}=9+14k_2_)
+    Så endeligt:
+    _($(x=-17k_2 - 10, y=14k_2 + 9)_)
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Find løsningerne til _(2.5x+\frac{5}{3}y=20_). Måske er der uendelig mange, og måske er
+    der slet ikke nogle overhovedet. 
+    <br><br></q-stion>
+    <answer-box>
+    _(2.5=5/2_), så vi starter bare med at gange begge sider af ligningen med _(2*3=6_):
+    _($6*2.5x+6*\frac{5}{3}y=6*20 \to_)
+    _($15x + 10y = 120_)
+    Nu kan vi "bare" løse den normalt:
+    _($y=\frac{120-15x}{10}=\frac{12*10-10x-5x}{10}=12-x-\frac{5x}{10}_)
+    Man kan se at _(x_) bare skal være lig _(2k_), fordi så bliver
+    _((5x)/10_) til _((5*2k)/10=5k_). Nu fås:
+    _($y=\frac{120-15*2k}{10}=12-3k_)
+    Altså, det generelle sæt af løsninger er:
+    _($(x=2k,y=12-3k)_)
+    Wholla!
+    <br><br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Find løsningerne til _(35x+42y=120_). Måske er der uendelig mange, og måske er
+    der slet ikke nogle overhovedet. 
+    <br><br></q-stion>
+    <answer-box>
+    Der er ingen løsninger! Det kan vi se når vi går igang med processen som normalt:
+    _($x=\frac{-42y+120}{35} = \frac{105+15-35y-7y}{35} = 3-y+\frac{15-7y}{35}_)
+    _($k_1=\frac{15-7y}{35} \to y=\frac{15-35k}{7}=\frac{14+1-35k}{7} _)
+    Det er så lige tilfældet, at _(35=5*7_), så:
+    _($\frac{14+1-35k}{7}=2-5k+\frac{1}{7}_)
+    Det her bliver aldrig helt, fordi der er intet det hele
+    tal _(2-5k_) kan gøre ved det ikke-hele tal _(\frac{1}{7}_)!
+    <br><br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    En typisk computerskærm er _(1080_) pixels bred og _(720_) pixels høj. På nogle systemer der vil der spille en slags 
+    vagt gentagende animation hvis man lader computeren stå for længe. Det heder en "screensaver" og du kender dem nok godt.
+    I èn er der et _(150x150px_) DVD-logo der bevæger sig lige skråt opad til højre med _(45_) grader. Den starter i midten af skærmen og 
+    går 10px både op/ned på y-aksen og venstre/højre på x-aksen pr sekund (så f.eks. efter _(2_) sekunder har den bevæget sig _(20px_) opad og _(20px_) fremad).
+    Hvornår rammer screensaveren først hjørnet? Den her opgave er ret på den tricky (Og lange!) side! 
+    <br><br></q-stion>
+    <answer-box>
+    Lad os starte med lige at tegne situationen:
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter2\Section3\ModOgDianphintine\DVD Case 1.png'> 
+    <p class="t">Skærmen er _(1080px_) bred og _(720px_) høj. Hvis DVD-logoet er i midten, så er midten af DVD-logoet
+    lig _((1080/2=540,720=2)=_) _((540,360)_). Det vil sige at det hjørne af DVD-logoet nederst til venstre
+    (som jeg vælger fordi det er standard i et koordinatsystem) er ved _(x=540-150/2=465_) og _(y=360-150/2=285_).
+    DVD-Logoet bevæger sig skråt opad: Altså ligeså meget op som fremad. Det kolliderer ind i siden og skifter retning.
+    Når det rammer toppen begynder det gå nedad, bunden opad, højre side til venstre, og venstre side til højre. </p>
+    <p class="t">
+    Det er svært at tænke over logoet som en massiv ting med areal, så lad os gøre noget smartere i stedet:
+    </p>
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter2\Section3\ModOgDianphintine\DVD Case 2.png'>
+    <p class="t">
+    Når hjørnet af logoet har en x-værdi større end _(1080-150=930_) så vil den ramme ind i den højre væg, og 
+    når y-værdien er højere end _(720-170=570_) så rammer den ind i toppen. Nu kan vi bare behandle
+    logoet som èt enkelt punkt hvilket er meget dejligere. 
+    </p> 
+    <img class='Spic' style='width:95%' src='../../../Assets/Chapter2\Section3\ModOgDianphintine\DVD Case 3.png'>
+    <p class="t">
+    Det her punkt rammer eventuelt ind i enten _((0,0)_), _((930,0)_), _((0,570)_) eller _((930,570)_). Vi
+    <i>kunne</i> prøve at beskrive dets position _((x,y)_) i forhold til en tidsvariable _(t_) der var lig
+    mængden af sekunder. Så kunne vi se f.eks. hvornår _((x,y)=(0,0)_). Logisk ide, men nok også ret
+    svært når man tænker over hvordan logoet bevæger sig. Vi <i>kunne</i> beskrive
+    _((x(t),y(t))_) nok ved hjælp af noget modulus, men jeg tror ikke det bliver elegant. 
+    </p>
+    <p class="t">
+    Lad os i stedet gøre noget smartere: Vi er enige om at _(y_) har ingen indflydelse på _(x_) i vores situation.
+    Logoet bevæger sig _(10px_) fremad pr sekundet. Efter _((930-465)/10=46.5_) sekunder rammer det
+    ind i den højre væg, og skifter retning. Der går så _(930/10=93_) sekunder før det rammer ind 
+    i venstre væg og skifter retning, _(93_) sekunder igen til højre væg, osv. Ved _(y_) sker
+    der meget det samme: efter _((570-285)/10=28.5_) sekunder rammer den toppen, så går der _(570/10=57_)
+    sekunder før den rammer bunden, så _(57_) sekunder til toppen, osv. I stedet for at spørge:
+    "Hvornår er positionen ligmed et eller andet", så lad os spørge "hvornår kolliderer både x og y 
+    med vægge samtidig!". Lad os prøve at beskrive <i>tiden</i> i forhold til <i>mængden af kollisioner</i> 
+    for henholdsvis _(x_) og _(y_), og så se hvornår det er identisk! 
+    </p>
+    <p class="t">
+    Sig at mængden af gange logoet har kollideret med en væg via x er _(n_). Nu ved vi at:
+    _($t=93n + 46.5_)
+    Hvis y-kollisionerne er _(m_), så ved vi at:
+    _($t=57m + 28.5_)
+    Nu er spørgsmålet så bare hvordan vi vælger de rigtige _(n,m_) så:
+    _($93n + 46.5 = 57m + 28.5_)
+    Wholla! Det her er en linear diophantine equation, som er noget vi lærte
+    i sidste opgave hvordan man løser!
+    _($\to m=\frac{93n+18}{57}_)
+    _($m=\frac{114n - 21n + 18}{57}=2n + \frac{21n+18}{57}_)
+    _($k_1=\frac{21n+18}{57} \to n=\frac{57k_1 - 18}{21}_)
+    _($n=\frac{63k_1 - 6k_1 - 21 + 3}{21} = 3k_1 - 1 + \frac{3-6k_1}{21}_)
+    _($k_2 = \frac{3-6k_1}{21} \to k_1 = \frac{3-21k_2}{6}_)
+    _($k_1 = \frac{3-24k_2 + 3k_2}{6} = 3k_2 + \frac{3k_2+3}{6}=\frac{k_2+1}{2}_)
+    Så _(k_2=1_) er en løsning, da _((1+1)/2_) bliver til _(2/2=1_). Nu får vi så:
+    _(k_1 = \frac{3-21*1}{6} = -3_),
+    _(n=\frac{57*(-3) - 18}{21} = -9_).
+    Hmmm. Hvis _(n=-9_) så bliver tidspunktet:
+    _($93*(-9)+46.5=-790.5s_)
+    Men det er negativt! Vi vil gerne have et positivt svar!
+    </p>
+    <p class="t">
+    Forvirringen kommer fra at _(k_2=1_) kun er èn af uendelig mange løsninger.
+    Den generelle løsning er _(k_2=1+2k_3_) da 
+    _($\frac{k_2+1}{2} \to \frac{1+2k_3+1}{2}=\frac{2+2k_3}{2}=1+k_3_)
+    Så hvis vi nu bruger den her generelle løsning i stedet og så går op i lagene:
+    _($k_1 = \frac{3-21*(1+2k_3)}{6} = -3 - 7k_3_)
+    _($n = \frac{57*(-3 - 7k_3) - 18}{21} = -9 - 19k_3_)
+    Hvis vi nu bare vælger _(k_3=-1_) så får vi _(n=-9+19=10_) så:
+    _($t=93*10+46.5=976.5s_)
+    And boom-bada-bam! Kæmpe omega-lang opgave i know!
+    </p>
+    <br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Findes der nogle _(x,y_) hvor <i>både</i> _(16x+19y=64_) <i>og</i> _(25x+10y=15_)?
+    Et system of linear diophantine equations! Hell yeah!  
+    <br><br></q-stion>
+    <answer-box CustomWidth="500">
+    _(16x+19y=64_) har løsningerne 
+    _($y=16k, x=4-19k_)
+    _(25x+10y=15_) har løsningerne:
+    _($x=1+2m, y=1-5m_)
+    Hvor _(k,m_) så begge to bare er hele tal der kan være
+    hvad end vi har lyst til. Vi skal altså nu finde et par _(k,m_)
+    hvor _(x=x_) og _(y=y_) så:
+    _($4-19k=1+2m_)
+    _($16k=1-5m_)
+    Lad os prøve ved hjælp af begge disse ligninger at isolere èn af
+    variablerne, og så se om vi får et helt tal:
+    _($m=\frac{3-19k}{2}, m=\frac{16k-1}{5} \to \frac{3-19k}{2} = \frac{16k-1}{5} \to_)
+    _($5*(3-19k)=2*(16k-1) \to 15-95k=32k-2_)
+    _($ 127k=17 \to k=\frac{17}{127}=0.1338 _)
+    _(k_) er <i>ikke</i> et helt tal, så det er umuligt!
+    <br><br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Find alle løsninger til _(3x+4y-5z=23_). Nu har vi altså
+    3 variabler! 
+    <br><br></q-stion>
+    <answer-box>
+    Når vi kun har 2 variabler, så har vi enten haft ligninger
+    der slet ikke havde nogen løsninger, eller havde uendelig mange
+    løsninger. Der har stort set altid været et "frit variabel"
+    som løsning blev beskrevet i forhold til. Nu da vi 
+    har kun èn ligning men 3 variabler, så får vi nok <i>to</i> 
+    "frie variabler" løsningen er beskrevet i forhold til. 
+    Anyways, lad os prøve at se om vi kan gøre lidt det samme
+    som de andre gange. Jeg tænker nok vi skal isolere _(x_), 
+    da den har den laveste koefficient på kun _(3_) (hvilket
+    kommer sørger for at nævneren bliver så lille som muligt):
+    _($x=\frac{23+5z-4y}{3}_)
+    Nu gør vi lidt det samme som vi plejer, bare med 
+    en ekstra variabel _(z_):
+    _($x=\frac{21+2+3z+2z-3y-y}{3}=y+z-y+\frac{2+2z-y}{3}_)
+    Brøken skal være et helt tal, så:
+    _($k=\frac{2+2z-y}{3}_)
+    Nu kan jeg enten at isolere _(y_) eller _(z_). 
+    Jeg vælger _(y_), da den har en koefficient på kun _(1_):
+    _($y=2+2z-3k_)
+    Wholla! _(y_) er altså et helt tal nu. Vi kan se
+    både _(z_) og _(k_) kan være hvad end de har lyst til.
+    _($x=\frac{23+5z-4y}{3}=\frac{23+5z-4*(3k-2-2z)}{3}=k_)
+    Så alt i alt:
+    _($z=\text{frit}, \qquad y=2+2z-3k, \qquad x=k_)
+    Bum!
+    <br><br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Beskriv alle løsninger til _(M_5(3k)+M_6(4k)=6_). Husk at der muligvis ikke er nogle overhovedet. 
+    Det her er en lidt længere, og måske O.K udfordrende opgave. 
+    <br><br></q-stion>
+    <answer-box>
+    Vi skal have <i>alle</i> løsninger med, så her er min strategi:
+    kald _(M_5(3k)_) for _(x_) og _(M_6(4k)_) for _(y_).
+    _(x+y=6_), _(x_) er mellem _(0_) og _(4_) og _(y_) er mellem _(0_) og _(5_).
+    Det giver altså _(3_) muligheder:
+    _($(x=1,y=5), (x=2,y=4), (x=3,y=3), (x=4,y=2)_)
+    Lad os starte med _((x=1,y=5)_) som et eksempel. Det svarer til
+    at _(M_5(3k)=1_) og _(M_6(5k)=5_), hvilke kan omskrives til 
+    to linear diophantine equations:
+    _($3k=5m+1, \qquad 5k=6n+5_)
+    Hvor _(n,m_) er hele tal. Hvis vi faktisk løser de her to
+    diophantine equations, så får vi:
+    _($k=5a_1+2, \qquad k=6a_2+1_)
+    Vi skal nu vælge de rigtige hele tal _(a_1,a_2_) så at
+    de her er lig hinanden: Så sikrer vi os at de _(k_) vi finder
+    vil få begge led _(M_5(3k)_) og _(M_6(5k)_) til at være det 
+    rigtige <i>samtidig</i>:
+    _($5a_1+2=6a_2+1 \to_)
+    _($6a_2-5a_1=1_)
+    Det er en ny linear diophantine equation! Svaret på den er:
+    _($a_2=-4-5b_)
+    Hvor _(b_) er et eller andet helt tal. Hvis vi nu sætter
+    den her _(a_2_) ind i den tidligere løsning:
+    _($k=6a_2+1=6*(-4-5b)+1=-23-30c_)
+    Altså 
+    _($k=-23-30c_) 
+    hvor _(c_) er et helt tal
+    er èt sæt af uendelig mange løsninger til denne ligning. 
+    Hvis du går gennem samme process med de andre situationer
+    _((x=2,y=4)_), _((x=3,y=3)_), _((x=4,y=2)_) så får du først
+    og fremmest ligningerne:
+    
+    <div style="text-align:center;">
+        <ul style="display: inline-block; text-align: left; list-style:none;">
+            <li>_(3k=5m+2, 5k=6n+4_)</li>
+            <li>_(3k=5m+3, 5k=6n+3_)</li>
+            <li>_(3k=5m+4, 5k=6n+2_)</li>
+        </ul>
+    </div>
+
+    Med løsningerne:
+
+    <div style="text-align:center;">
+        <ul style="display: inline-block; text-align: left; list-style:none;">
+            <li>_(k=-5a_1-1, k=6a_2-4_)</li>
+            <li>_(k=5a_1+1, k=-6a_2-3_)</li>
+            <li>_(k=5a_1+2, k=6a_1+4_)</li>
+        </ul>
+    </div>
+
+    Hver af de her par giver så en ny diophantine equation der skal løses:
+
+    <div style="text-align:center;">
+        <ul style="display: inline-block; text-align: left; list-style:none;">
+            <li>_(6a_2+5a_1=5_)</li>
+            <li>_(-6a_2-5a_1=4_)</li>
+            <li>_(6a_2-5a_1=-2_)</li>
+        </ul>
+    </div>
+
+    Løsningerne på disse ligninger er:
+
+    <div style="text-align:center;">
+        <ul style="display: inline-block; text-align: left; list-style:none;">
+            <li>_(a_2=-3-5b_)</li>
+            <li>_(a_2=-4-5b_)</li>
+            <li>_(a_2=3+5b_)</li>
+        </ul>
+    </div>
+
+    Som så endeligt, endeligt, giver:
+
+    <div style="text-align:center;">
+        <ul style="display: inline-block; text-align: left; list-style:none;">
+            <li>_(k=-22-30b_)</li>
+            <li>_(k=21+30b_)</li>
+            <li>_(k=22+30b_)</li>
+        </ul>
+    </div>
+
+    Så alt i alt er der _(4_) forskellige løsningssæt, som 
+    hver i sig selv har uendelig mange løsninger:
+
+    _($k=-23-30c_1, k=-22-30c_2, k=21+30c_3, k=22+30c_4_)
+
+    <br></answer-box>
+    
+
+    <!-- PYTHAGOREAN TRIPLE -->
+
+
+    <p class="t">
+    Den allerførste diophantine equation vi kiggede på var _(a^2+b^2=c^2_). 
+    Trepar _((a,b,c)_) der både er siderne på en trekant og alle sammen er hele tal, kalder
+    vi som sagt tidligere for "pythagorean triples". Vi fandt et par eksempler der virkede,
+    men det kunne være praktsik at beskrive løsningerne <i>generelt</i>. At kunne hjerneløst 
+    finde nye. Problemet kan formuleres som: hvad skal gælde
+    for _(a_) og _(b_) for at man kan tage kvadratroden af _(a^2+b^2_)?  
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Hvad ved du omkring uligheden/ligheden af _(a_) og _(b_)? 
+    Er det f.eks. overhovedet muligt nogensinde at tage kvadratroden af 
+    _(a^2+b^2_) hvis både _(a_) og _(b_) er ulige? Det her kunne være 
+    et godt simpelt startpunkt før vi begynder at specificere hvad præcist
+    _(a_) og _(b_) skal være generelt. 
+    <p class="t">
+    Hint: Når du i hvert tilfælde (to ulige, èn ulige, ingen ulige) prøver at finde
+    ud af hvorvidt det er muligt at tage kvadratroden, prøv at del det op i to
+    cases: Kan du tage kvadratroden og få et <i>lige tal</i>, og kan du
+    tage kvadratroden og få et <i>ulige</i> tal. 
+    </p>
+
+    <br><br></q-stion>
+    <answer-box customWidth="500">
+    Lad os prøve at dele det her op i tre tilfælde: Ingen lige tal, èt lige tal, kun lige tal.
+    <p class="t">
+    Hvis begge tal er ulige, som _(a=2k_0+1,b=2k_1+1_), så får vi 
+    _((2k_0+1)^2+(2k_1+1)^2=_) _(4k_0^2 + 4k_0 + 1 + 4k_1^2+4k_1+1_). Altså: 
+    _($4*(k_0^2+k_0+k_1^2+k_1)+2=z^2_) hvilket i lidt simplere
+    form kan skrives som bare _(z^2=2+4n_). Er det her muligt?
+    Well, hvis _(z=2q_) så får vi 
+    _($4q^2=2+4n \to 4q^2 - 4n=2 \to q^2-n=0.5_)
+    hvilket ikke giver mening. Hvis _(z=2q+1_) så giver det 
+    _($4q^2+4q+1=2+4n \to q^2+q-n=0.25_)
+    Det er altså <i>ikke</i> muligt.
+    </p>
+    <p class="t">
+    Hvis èt tal, sig _(y_) er lige, så får vi _(4k_1^2 + 4k_0^2 + 4k_0 + 1=1+4n_). 
+    Er _(z_) lige så skal 
+    _($4q^2=1+4n \to q^2-n=1/4_)
+    Er _(z_) ulige så må
+    _($4q^2+4q+1=1+4n \to_)
+    _($4*(q^2+q-n)=0 \to_)
+    _($q^2+q-n=0 \to_)
+    _($q^2+q=n_)
+    hvilket <i>er</i> muligt. Det er altså fint hvis vi har èt lige tal. 
+    </p>
+    <p class="t">
+    Hvis begge tal er lige så bliver det _(4k_1^2+4k_0^2=4n_) og
+    en lige _(z_) giver _(4q^2=4n \to q^2=n_) hvilket er godkendt.
+    </p>
+    <p class="t">
+    Konklusion: alt er muligt ud over at <i>begge</i> tal er ulige.
+    </p>
+    <br></answer-box>
+ 
+    <q-stion 1="2" 2="1" 3="5">
+    Okay, vi ved nu lidt mere om hvordan _(a_) og _(b_) skal se ud.
+    Det vi nu kan gøre for at specificere dem yderligere er at introducere
+    to nye variabler. Sig at _(m_) og _(n_) er hele tal. Vi kan nu
+    prøve at beskrive _(a_) og _(b_) i forhold til _(m_) og _(n_), 
+    og sådan introducere et bestemt forhold i mellem dem. Et 
+    eksempel kunne være _(a=m-n_) og _(b=m+n_). Her ville
+    _(a^2+b^2_) så blive _(m^2 - 2mn + n^2 + m^2 + 2mn + n^2 = 2(m^2 + n^2)_) hvilket
+    ikke er super meget bedre end det vi startede med - bare to andre konstanter
+    i anden potens. Her er to ideer jeg har der måske kunne virke: 1) Kan vi 
+    vælge det rigtige forhold mellem  _(a,b_) og _(m,n_), så _(a^2+b^2_) er lig med
+    to eller flere faktore vi nemt kan tage kvadratroden af? Hvis det er tilfældet,
+    f.eks et eller andet _(A^2*B^2*C^2_) så ville den fulde kvadratrod jo også være et helt tal.
+    2) Kan vi vælge et forhold så når vi udvider _(a^2+b^2_) så får vi i alt 
+    tre led der følger _(A^2 + 2AB + B^2_)? Så ville vi kunne omskrive til _((A+B)^2_) 
+    hvilket man jo nemt kan tage kvadratroden af. 
+    <p class="t">
+    Jeg har hjulpet dig lidt igang her med nogle overvejelser. Prøv nu 
+    at vælg et godt forhold mellem _(a,b_) og _(m,n_) (hvor min ide med _(a=m-n,b=m+n_) altså
+    viste sig at være dårlig) hvor man altid kan tage kvadratroden og få et helt tal. Bare leg
+    lidt rundt og lav nogle kvalificerede gæt. 
+    Der kan måske/måske-ikke godt være flere rigtige svar i denne! 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Der er egentlig ikke super meget jeg kan sige her andet end "leg rundt" og "prøv nogle forskellige
+    kvalificerede gæt". Der er flere mulige svar man kunne komme frem til, men den bedste er nok
+    _(y=m^2-n^2,x=2mn_). Det giver 
+    _($y^2+x^2=(m^2-n^2)^2 + (2mn)^2 = m^4+n^4-2m^2n^2+4m^2n^2=_)
+    _($m^4 + n^4 + 2m^2n^2_)
+    Det her passer formen _(A^2+2AB+B^2_) med _(A=m^2,B=n^2_), så vi kan omskrive til
+    _((m^2+n^2)^2_). Nu kan man altså nemt tage kvadratroden og få 
+    et helt tal i form af _(m^2+n^2_).
+    <p class="t">
+    Lad mig give et eksempel. Sig jeg vælger _(m=5,n=4_). Det var
+    bare to helt tilfældige hele tal jeg lige fandt på. Nu får vi:
+    _($ y=5^2-4^2=9, \qquad x=2*5*4=40_)
+    Og vi tester:
+    _($\sqrt{9^2+40^2}=\sqrt{1681}=41_)
+    Wholla! Det virker faktisk!  
+    </p>
+    <br><br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Vi har nu en praktisk form der altid virker. Vi ved dog ikke om den
+    form dækker <i>alle</i> løsninger. På alle _(a,b_) der følger
+    formen der er det nemt at tage kvadratroden og få et helt tal.
+    Gælder det også den anden vej rundt: hvis jeg vælger et tilfældigt _(a,b_)
+    hvor _(\sqrt{a^2+b^2}_) er et helt tal, vil _(a,b_) så også følge formen
+    vi kom frem til i sidste opgave? Spoilers: Det gør det ikke, og 
+    du egentlig er det nok bedst at du bare finder et modeksempel. Du kan
+    se en liste over de første triples 
+    <a href="http://www.tsm-resources.com/alists/trip.html">her</a>
+    HJEMMESIDEN VIRKER IKKE! LAV EN POP-UP BOX MED LISTEN! DÅRLIGT
+    AT REFERERER TIL EN HJEMMESIDE, FORDI SÅ KAN DET VÆRE AT DET FORSVINDER
+    <br><br></q-stion>
+    <answer-box>
+    Lad os som mod-eksempel kigge på den hvor _(a=9_) og _(b=12_).
+    Vi er nødt til at vælge _(12_) til at være _(2mn_), da _(9_) er ulige.
+    Hvis _(2mn=12_) så er _(mn=6_), hvilke giver os fire muligheder:
+    _($(m=6,n=1),(m=1,n=6),(m=3,n=2),(m=2,n=3)_)
+    I ingen af de her er _(m^2-n^2=9_) da 
+    _($6^2-1^2=35,1^2-6^2=-35,3^2-2^2=5,2^2-3^3=-5_)
+    Done. 
+    <br><br></answer-box>
+
+    <p class="t">
+    Vi har bevist med et modeksempel at vores form ikke kan generere <i>alle</i> triples. Det kan den dog
+    næsten: den kan generere alle <i>ikke-skalerede</i> triples. Hvis vi har èn triple som
+    _(3,4,5 \to 3^2+4^2=5^2_), så kan vi nemt finde uendelig mange flere bare ved 
+    at gange hver side: man kan let se at _((3*9)^2+(4*9)^2=(5*9)^2_) så
+    _(27^2+36^2=45^2_) er altså også en løsning. For lang tid siden 
+    der kiggede vi på noget vi kaldte "greatest common divisor" - skrevet _(GCD_). 
+    Vi siger at _(GCD(a,b,c)_) er den største faktor tallene _(a,b,c_) deler. 
+    Den faktor kan vi altså "dividere væk" og få en mindre skaleret version.  
+    Så hvis _(a,b,c_) er 3 tal der danner en såkaldt "primitiv løsning", så skal _(GCD(a,b,c)=1_).
+    Vi laver altså nu kravet at _(a,b,c_) slet ikke må have nogle delte faktore.  
+    </p>
+    <p class="t">
+    Vi ved fra før at _(a,b_) ikke <i>begge</i> kan være ulige. Nu med vores
+    nye krav så kan vi yderligere sige at de heller ikke <i>begge</i> kan være lige:
+    Hvis både _(a_) og _(b_) er lige, så er _(c^2=a^2+b^2_) også lige, og hvis _(c^2_) er
+    lige så er _(c_) også lige (som man relativt nemt kan tjekke). Nu er alle 
+    _(3_) sider lige, hvilke betyder at de deler en faktor af _(2_)! Det er ulovligt
+    hvis _(GCD(a,b,c)=1_). Vi kan altså med sikkerhed sige at præcis <i>1</i> af
+    _(a,b_) er lige: lad os gøre det _(a_). 
+    </p>
+    <p class="t">
+    Hvis _(a_) er lige og _(b_) ulige, så ved vi at det er _(a_) vi gerne vil 
+    have til at følge formen _(2*m*n_). Det er nok det simpleste sted at starte:
+    vise at et hvilket som helst _(a_) i denne kontekst, så længe det 
+    er lige, kan omskrives til _(2_) gange produktet af to hele tal. 
+    _(a^2+b^2_) er jo _(c^2_), så det kan vi omskrive til _(a^2=c^2-b^2_). 
+    Vi ved at hvis noget følger formen _(A^2-B^2_) så kan det omskrives til _((A+B)(A-B)_).
+    Nu har vi introduceret to faktorer! _(a^2=(c+b)(c-b)_). Vi er dog stadig langt fra færdige, 
+    da vi jo ikke ved om _(\sqrt{(c+b)}_) og 
+    _(\sqrt{c-b}_) er hele tal. Hvis _(a=2mn_) så er vi også nød til at
+    vise at i hvert fald èn af dem er lige. 
+    </p>
+    <p class="t">
+    Lige nu sidder vi lidt fast, så vi gør noget mærkeligt:
+    _($a^2=(c+b)(c-b) \to \frac{a}{c-b}=\frac{c+b}{a}_) 
+    Brøker kan være en god måde at introducere to konstanter på, eftersom brøker jo kan <i>reduceres</i>
+    og derfor skrives på forskellig vis. F.eks er _(\frac{6}{12}=\frac{1}{2}_). Sig at
+    _(\frac{m}{n}_) er den reducerede brøk af _(\frac{c+b}{a}_). Altså: _(\frac{m}{n}=\frac{c+b}{a}_).
+    Siden _(\frac{c+b}{a}=\frac{a}{c-b}_) så er _(\frac{a}{c-b}_) også lig _(\frac{m}{n}_), hvilket kan omskrives
+    til _(\frac{c-b}{a}=\frac{n}{m}_). Nu har vi:
+    _($\frac{c+b}{a}=\frac{c}{a}+\frac{b}{a}=\frac{m}{n}_)
+    _($\frac{c-b}{a}=\frac{c}{a}-\frac{b}{a}=\frac{n}{m}_)
+    Det her virker lidt tilfældigt, men er faktisk ret smart. Man kan på 
+    en måde sige at vi nu har to "ubekendte": _(\frac{c}{a}_) og _(\frac{b}{a}_). 
+    Vi har også to ligninger, så det her giver os faktisk muligvis en chance for 
+    at beskrive dem begge <i>i forhold</i> til _(n,m_). Kald lige for
+    nemhedens skyld _(\frac{c}{a}_) for _(A_), _(\frac{b}{a}_) for _(B_) og 
+    _(\frac{n}{m}_) for _(C_):
+    _($A+B=C, \qquad A-B=1/C_)
+    _($A=C-B, \qquad A-B=1/C \to (C-B)-B=1/C \to C-2B=1/C \to_) 
+    _($B=\frac{C^2-1}{2C}, \qquad A=C-\frac{C^2-1}{2C}=\frac{C^2+1}{2C}_)
+    _($\to_)
+    _($\frac{b}{a}=\frac{n^2/m^2-1}{2n/m}=\frac{m^2-n^2}{2nm}_)
+    Okay. Vi har nu beskrevet _(\frac{b}{a}_) (og vi kan også beskrive _(\frac{c}{a}_) hvis vi har lyst) 
+    i forhold til <i>en eller anden</i> anden form med 
+    _(m,n_). Faktisk er det bedre end det dog: kigger vi på formen så ser vi at der er et _(m^2-n^2_) og 
+    et _(2nm_). Det her <i>må</i> kunne bruges til et eller andet. Vi vil ideelt gerne både
+    beskrive _(b_) <i>og</i> beskrive _(a_) i forhold til _(m,n_). De skal på en eller anden måde
+    isoleres selvom vi kun har èn ligning. Her kan vi bruge det faktum at 
+    vi arbejder med brøker. Hvis både _(\frac{b}{a}_) er på dens mest reducerede form,
+    <i>og</i> _(\frac{m^2-n^2}{2nm}_) er på dens mest reducerede form, så er
+    _(b_) nødt til at være lig med _(m^2-n^2_) og _(a_) nødt til at være lig med _(2nm_)!
+    Boom! Genialt!
+    </p>
+    <p class="t">
+    Det er altså vores nye mål nu: Vi skal vise at _(b/a_) er reduceret, og at 
+    _((m^2-n^2)/(2nm)_) er reduceret. Så vil vi vide at _(b=m^2-n^2_) og at _(a=2nm_),
+    og så vil vi pludselig være helt færdig med beviset! 
+    </p>
+    <p class="t">
+    Lad os starte først med _(b/a_) da det er mest simpelt. 
+    Hvis _(GCM(a,b,c)=1_) så er _(GCM(a,b)_) også lig _(1_). Ellers ville man få en
+    kontradiktion da - sig at _(a=kA_) og _(b=kB_) - 
+    _($c=\sqrt{(kA)^2+(kB)^2}=\sqrt{k^2*(A^2+B^2)}=k*\sqrt{A^2+B^2}_)
+    Hvis _(a,b_) ingen delte faktorer har, så er _(\frac{a}{b}_) også så reduceret som mulig! Bum!
+    </p>
+    <p class="t">
+    Lad os nu kigge på _(\frac{m^2-n^2}{2nm}_). Vi <i>definerede</i> _(m/n_) var så reduceret som mulig.
+    Derfor er _(GCD(m,n)=1_). Der er altså to muligheder: både _(m,n_) er ulige, eller enten _(m_) eller _(a_) 
+    er ulige. Lad os starte med der hvor de begge er ulige. Hvis _(m=2k_0+1,n=2k_1+1_) så 
+    kan vi skrive:
+    _($\frac{(2k_0+1)^2-(2k_1+1)^2}{2*(2k_0+1)*(2k_1+1)}=_)
+    _($\frac{4(k_0^2+k_0+k_1^2+k_1)}{2*(2*(2k_0k_1+k_0+k_1)+1)}=\frac{2*(k_0^2+k_0+k_1^2+k_1)}{2*(2k_0k_1+k_0+k_1)+1}_)
+    _($\to_)
+    _($\frac{b}{a}=\frac{2*(k_0^2+k_0+k_1^2+k_1)}{2*(2k_0k_1+k_0+k_1)+1} \to a=\frac{2*(2k_0k_1+k_0+k_1)+1}{2*(k_0^2+k_0+k_1^2+k_1)}*b_)
+    Lige nu er _(a_) ligmed _(\frac{ulige*ulige}{lige}_). To ulige tal ganget med hinanden giver altid
+    et ulige tal. Et ulige tal divideret med et lige tal giver også et ulige tal. Ergo _(a_) er ulige,
+    hvilket vi jo har sagt den <i>ikke</i> må være. Derfor kan _(m,n_) ikke begge være ulige. 
+    </p>
+    <p class="t">
+    Lad os nu i stedet prøve hvor <i>en</i> af dem er ulige, sig _(m_). Hvis det er tilfældet
+    så er tælleren _(m^2-n^2_) ulige, og nævneren _(2mn_) er som altid lige. Sig nu 
+    at vi skrev _(m^2-n^2_) som et produkt af nogle primtal der <i>ikke</i> var _(2_) (ellers ville
+    den jo være lige): 
+    _($\frac{p_0*p_1*p_2*...p_i}{2mn}_) 
+    Hvis vi vælger et hvilket som helst af de her primtal _(p_j_), så er det <i>muligt</i> at det dividere _(n_), og <i>muligt</i>
+    at det dividere _(m_), men selvfølgelig <i>umuligt</i> at det dividere <i>både</i> _(m_) <i>og</i> _(n_) 
+    (siden det er et primtal). Det her skaber dog en kontradiktion: hvis _(p_j_) er en faktor af _(m^2-n^2_),
+    så skal det kunne dividere _(m^2-n^2_) som _(\frac{m^2-n^2}{p_j}_). Det kan vi omskrive
+    til 
+    _($\frac{m^2}{p_j}-\frac{n^2}{p_j}_) 
+    Faktoren er altså <i>nødt til</i> at kunne dividere
+    <i>både</i> _(m_) <i>og</i> _(n_). Det her beviser at _(\frac{m^2-n^2}{2mn}_) er reduceret. Man kan 
+    simpelt hen ikke udvælge nogle faktore der dividere noget af nævneren. Bam. Færdig.  
+    </p>
+    <p class="t">
+    Puh. Det var relativt svært. Der er mange problemer i matematik der 
+    <i>ser</i> ekstremt nemme ud og er simple at forklare, men faktisk er
+    meget svære at løse. F.eks. kunne man måske få lyst til at 
+    generalisere sidste spørgsmål: hvad skal gælde
+    ved tre tal _(a,b,c_) for at _(a^3+b^3=c^3_)? Ingenting!
+    Det er simpelt hen umuligt og vælge tre _(a,b,c_) hvor _(a^3+b^3=c^4_).
+    Samme gælder _(a^4+b^4=c^4_) og faktisk alle
+    potenser højere end _(2_) generelt. Det her - at vise at
+    _(a^n+b^n=c^n_) ikke har nogle løsninger hvis _(n>2_), er
+    et <i>sindsygt</i> svært problem. I 1637 blev det angiveligt "bevist"
+    af en brilliant matematiker kaldt Fermat, men han "gad ikke lige til at
+    skrive det ned pænt". Det ène lille træk af dovenhed ledte til et
+    _(357_) års helvede for matematikkere der simpelt hen ikke
+    kunne bevise det. Selve Friedrich Gauss - en mand der
+    casually kunne skrive/producere omkring _(700_) sider tykt og
+    revolutionært matematikresearch hvert år - måtte give op. Det tog
+    et vidunderbarn kaldt Andrew Wiles 7 års fritid i toppen af hans
+    karriere at endelig bevise det. Det rettede bevis fyldte i alt 
+    121 sider og brugte mange moderne teknikker, så Fermat
+    havde i alt sandsyndlighed nok <i>ikke</i> faktisk bevist
+    det rigtigt. 
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Hvad skal gælde for _(a,b,c,d_) hvis _(a*b=c*d_)? Så altså, prøv at 
+    skriv _(a,b,c,d_) i forhold til nogle variabler der er lidt nemmere at arbejde med,
+    sådan at man <i>relativt</i> hjerneløst kunne generere en ny løsning. Den her
+    er ikke super lang, bare rolig! <i>Hint</i>: Tænk reducerede brøker! 
+    <br><br></q-stion>
+    <answer-box>
+    Jeg vil nok omskrive ligningen til _(\frac{a}{c}=\frac{d}{b}_) så vi kan lave en 
+    lignende trick som før med en reduceret brøk. Sig at _(\frac{m}{n}_) er _(\frac{a}{c}_) og 
+    _(\frac{d}{b}_)'s reducerede brøk. _(a_) og _(c_) er skaleret med en eller anden faktor _(k_), og
+    _(d,b_) med en faktor _(q_). Nu har vi:
+    _($a=\frac{m}{n}c_)
+    _($d=\frac{m}{n}b_)
+    _($a=km_)
+    _($d=qm_)
+    _($ \to_)
+    _($c=kn,b=qn,a=km,d=qm_)
+    Bam! Alle fire variabler er udtrykket i forhold til nogle nye. Det eneste der skal gælde er 
+    at _(m,n_) ikke har nogle delte faktore. Ellers er der frit spil med positive hele tal. 
+    <br><br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Hvad skal gælde for de hele tal _(a,b,c_) hvis 
+    _($(a+b)*(a+c)=(b+c)*(a+b+c)_)
+    <br></q-stion>
+    <answer-box>
+    Hvis _(a,b,c_) alle er hele tal, så er _(a+b_), _(a+c_), _(b+c_), og _(a+b+c_) også
+    hele tal. Det betyder at vi kan bruge den formel vi kom frem til 
+    i sidste opgave:
+    
+    <div style="text-align:center;">
+        <ul style="display: inline-block; text-align: left; list-style:none;">
+            <li>_(a+b=k*m_)</li>
+            <li>_(a+c=q*n_)</li>
+            <li>_(b+c=k*n_)</li>
+            <li>_(a+b+c=q*m_)</li>
+        </ul>
+    </div>
+
+    Vi har her et system af ligninger: Nu vil vi gerne isolere henholdsvis _(a_), _(b_), _(c_). 
+    Jeg vil nok starte med at sætte _(a+b=k*m_) ind i _(a+b+c=q*m_) og få:
+    _($k*m+c=q*m \to c=m*(q-k)_)
+    Nu da jeg har _(c_), kan jeg finde _(b_) i ligningen _(b+c=k*n_), så:
+    _($b+m*(q-k)=k*n \to b=k*n - m*(q-k)_)
+    Og med _(b_) så kan jeg let finde _(a_):
+    _($a+k*n-m*(q-k)=k*m \to a=k*(m-n)+m*(q-k)_)
+    Og Wholla! Vi får alt i alt:
+
+    _($c=m*(q-k), b=k*n - m*(q-k), a=k*(m-n)+m*(q-k)_)
+    <br><br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Hvad skal gælde for de hele tal _(a,b,c_) hvis:
+    _($(a^2+b)*(a^2+c)=c*b_)
+    Den her er ret svær! Man skal virkelig tænke ud af boksen! 
+    <br><br></q-stion>
+    <answer-box>
+    Lidt ligesom før: hvis _(a,b,c_) er hele tal, så er
+    _(a^2+b_), _(a^2+c_), _(c_), og _(b_) også alle hele, og 
+    vi kan bruge formlen:
+    <div style="text-align:center;">
+        <ul style="display: inline-block; text-align: left; list-style:none;">
+            <li>_(a^2+b=k*m_)</li>
+            <li>_(a^2+c=q*n_)</li>
+            <li>_(c=k*n_)</li>
+            <li>_(b=q*m_)</li>
+        </ul>
+    </div>
+    Det her er lidt interessant: Vi har praktisk talt <i>fået</i>
+    _(c_) og _(b_) nu. De er lig henholdsvis _(k*n_) og _(q*m_). Nu
+    mangler vi egentlig bare en formel for _(a_). Hvor svært kan det være? 
+    
+    <p class="t">
+    Well, hvis _(a^2+b=k*m_), og _(b=q*m_), så kan vi sige:
+    _($a^2+q*m=k*m \to a^2=m*(k-q)_)
+    Vi kunne også have valgt og bruge _(a^2+c=q*n_) og _(c=k*n_) i stedet:
+    _($a^2+k*n=q*n \to a^2=n*(q-k)_)
+    Før vi lige prøver at finde _(a_), så er det i hvert fald interessant at
+    notere at:
+    _($a^2=a^2 \to m*(k-q)=n*(q-k) \to m=-n_)
+    Så nu er _(b_) faktisk ikke længere _(q*m_) men _(-q*n_). 
+    </p>
+    <p class="t">
+    Anyways, hvordan finder vi _(a^2_)? Well, her skal vi gøre noget virkelig dumt,
+    og virkelig genialt. Prøv at kig på følgende ligning:
+    _($a^2=m*(k-q)_)
+    Det kan omskrives til:
+    _($a*a=m*(k-q)_)
+    Både _(a_) er et helt tal, _(a_) igen er et helt tal, _(m_) er et helt tal,
+    og _(k-q_) er et helt tal. Vi kan altså bruge formlen/tricket <i>igen</i>:
+    </p>
+    <div style="text-align:center;">
+        <ul style="display: inline-block; text-align: left; list-style:none;">
+            <li>_(a=k_2*m_2_)</li>
+            <li>_(a=q_2*n_2_)</li>
+            <li>_(m=k_2*n_2_)</li>
+            <li>_(k-q=q_2*m_2_)</li>
+        </ul>
+    </div>
+    Det her har først og fremmest en indflydelse på formlerne for _(b,c_).
+    På ligningen _(m=-n=k_2*n_2_) ser vi at _(n=-k_2*n_2_), så 
+    _($c=-k*k_2*n_2, \qquad b=q*k_2*n_2_)
+    Ligningen _(k-q=q_2*m_2_) fortæller os også at _(k=q_2*m_2+q_), altså:
+    _($c=-(q_2*m_2+q)*k_2*n_2_)
+    Det er altså allerede blevet en god del mere kompliceret. Nu kommer
+    det mærkelig spørgsmål så: Hvad er _(a_), præcist? Er det _(k_2*m_2_), 
+    eller _(q_2*n_2_)? Well, det er begge! Vi skal altså sørge for at 
+    _(k_2*m_2=q_2*n_2_), ergo:
+    _($k_2*m_2=q_2*n_2_)
+    Det her det er <i>endnu</i> en slags ligning der passer til typen med fire
+    hele tal. Vi skal altså bruge formlen / tricket <i>igen igen</i>:
+    <div style="text-align:center;">
+        <ul style="display: inline-block; text-align: left; list-style:none;">
+            <li>_(k_2=k_3*m_3_)</li>
+            <li>_(m_2=q_3*n_3_)</li>
+            <li>_(q_2=k_3*n_3_)</li>
+            <li>_(n_2=q_3*m_3_)</li>
+        </ul>
+    </div>
+    Så _(a_) er lig _(k_2*m_2=k_3*m_3*q_3*n_3_). Vi skal også
+    huske at opdatere _(b_) og _(c_), som bliver til:
+    _($b=q*k_2*n_2=q*k_3*m_3*q_3*m_3=_)
+    _($q*k_3*q_3*m_3^2_)
+    _($c=-(k_3*n_3*q_3*n_3+q)*k_3*m_3*q_3*m_3=_)
+    _($(k_3*q_3*n_3^2+q)*k_3*q_3*m_3^2_)
+    Phew! Der er alt i alt altså konstanterne _(q,k_3,n_3,m_3,q_3_). Det er lidt 
+    mærkeligt navne, så lad os kalde dem _(A,B,C,D,E_) i stedet. Nu kan vi
+    beskrive formlen som følgende:
+    <div style="text-align:center;">
+        <ul style="display: inline-block; text-align: left; list-style:none;">
+            <li>_(a=B*C*D*E_)</li>
+            <li>_(b=A*B*D*C^2_)</li>
+            <li>_(c=(B*D*E^2+A)*B*D*C^2_)</li>
+        </ul>
+    </div>
+    Pænt nice! 
+    <br><br></answer-box>
+
+
+
+
+    DÅRLIG OPGAVE DER IKKE ER RELEVANT:
+
+    <q-stion 1="2" 2="1" 3="5">
+    Lad os sige vi skyder èn billiard kugle i en simpel kvadratisk container:
+    <img class="Spic" style="width:50%" src='../../../Assets/Chapter2\Section2\BilliardsAndProperties\Billiards1.png'> 
+    <p class="t">Hver gang den rammer en væg, så vil dens retning altså blive reflekteret. 
+    Sig at bolden ruller med en konstant hastighed på _(5cm_) pr sekund. For nemhedens 
+    skyld så kan vi bare modellere den som èt simpelt punkt der bevæger sig (altså vi 
+    behøver ikke bekymre os om at den har en bestemt radius). Vi skyder bolden 
+    med en vinkel til vandret på _(20_) grader, og hver side er _(40cm_) lang. 
+    Bolden bliver skudt fra nede langs en af kanterne, _(7cm_) væk fra det nærmeste hjørne:</p>
+    <img class="Spic" style="width:50%" src='../../../Assets/Chapter2\Section2\BilliardsAndProperties\Billiards2.png'> 
+    <p class="t">
+    Prøv at find to formler så jeg kan give dig et bestemt tidspunkt _(t_), og du kan
+    fortælle mig hvilken _((x,y)_) position kuglen har. Bare sæt _((0,0)_) hvor end du har lyst
+    og syntes at det er mest praktisk.  
+    </p>
+    <p class="t">
+    Uden at spoile alt for meget så får du nok brug for _(Modulus_) funktionen! 
+    </p>
+    <p class="t">
+    Du kommer ikke nødvendigvis til at bruge dette resultat, og det her burde heller ikke være en specielt svær opgave.
+    </p>
+    <br></q-stion>
+    <answer-box>
+    <video class="SpicB" style="width:80%" controls>
+        <source src='../../../Assets/Chapter2\Section2\BilliardsAndProperties\Billiards.mp4' type='video/mp4'>
+    </video>
+    <br></answer-box>
+
+

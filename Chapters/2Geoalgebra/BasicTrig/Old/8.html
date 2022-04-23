@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    Jeg ved godt vi faktisk ikke helt har fundet _(Sin(A+B)_) endnu, 
+    men nu efter alt den teori tænker jeg vi først lige skal lave nogle opgaver:
+
+    <q-stion 1="2" 2="1" 3="5">
+    I den opgave bruger vi lige midlertidigt grader i stedet for radianer.
+
+    <p class="t">
+    _(Cos(16)=0.961_) og _(Cos(21)=0.933_). Lignende
+    så er _(Sin(16)=0.275_) og _(Sin(21)=0.358_).
+    Find nu:</p>
+    <div style="text-align:center;">
+        <ul style="display: inline-block; text-align: left; list-style:none;">
+            <li><b> 1</b>: _(Cos(37)_)</li>
+            <li><b> 2</b>: _(Cos(32)_)</li>
+            <li><b> 3</b>: _(Sin(53)_)</li>
+        </ul>
+    </div>
+    <p class="t">
+    Du må gerne bruge lommeregner, bare ikke _(Sin_) og _(Cos_) funktionerne på den. 
+    </p>
+    <br><br></q-stion>
+    <answer-box>
+    <b> 1</b>: _(37=21+16_), så:
+    _($Cos(37)=Cos(21+16)=Cos(21)*Cos(16) - Sin(21)*Sin(16) =_)
+    _($0.933*0.961 - 0.358*0.275 = _)
+    _($ 0.798_)
+    <b> 2</b>: Hvis man er skarp, så kan man måske
+    huske at _(32=16*2_), som jo er _(16+16_). Altså:
+    _($Cos(32)=Cos(16+16)=Cos(16)*Cos(16)-Sin(16)*Sin(16)=_)
+    _($0.961^2 - 0.275^2 = 0.847_)
+    <b> 3</b>: Her skal man se at _(53=90-37_), så:
+    _(Sin(53)=Sin(90-37)=Cos(37) = 0.798_)
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Find _(v_), hvis du ved at:
+    _($Cos(v) + Cos(v + 0.15) = 0_)
+    Vi har nu skiftet tilbage til <i>radianer</i>.
+    <p class="t">
+    Du må <i>gerne</i> bruge din lommeregner i den her.
+    Også til trig-funktioner. Det må du i alle opgaver medmindre det explicit bliver
+    sagt som i den sidste.
+    </p>
+    <br><br></q-stion>
+    <answer-box>
+    Først af alt omskriver vi _(Cos(v+0.65)_) og får:
+    _(Cos(v)+Cos(v)*Cos(0.65)-Sin(v)*Sin(0.65) = 0_)
+    Både _(Cos(0.65)_) og _(Sin(0.65)_) kan vi godt faktisk regne:
+    _($Cos(v)+0.796*Cos(v) - 0.605*Sin(v)=0_)
+    Jeg har en ide: Hvis vi kan få samlet alle _(Cos, Sin_) 
+    funktioner til bare èn _(Tan_) funktion for sig selv, så
+    burde jeg kunne bruge _(Arctan_) og få svaret:
+    _($Cos(v)*(1+0.796) - Sin(v)*0.605 = 0 \to_)
+    _($1.796*Cos(v) = 0.605*Sin(v) \to_)
+    _($\frac{1.796}{0.605}=\frac{Sin(v)}{Cos(v)} \to_)
+    _($2.96 = Tan(v) \to_)
+    _($Arctan(2.96) = 1.24 = v_)
+    Perfekt!
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5" customWidth="760">
+    Da vi skulle finde _(Cos(a+b)_) der gjorde vi noget lidt specielt. Vi havde kravet:
+    _($Cos(a+b)^2*1+2*(*Sin(b)*Sin(a))*Cos(a+b)+(Sin(a)^2-Cos(b)^2)=0_)
+    Vi <i>ledte</i> efter _(Cos(a+b)_) her. Det var vores "ubekendte". På intet tidspunkt 
+    var vi interesseret i at kende _(a+b_). For at spare os selv lidt plads og tid, så kunne 
+    vi altså ligesågodt kalde _(Cos(a+b)_) for et eller andet som "_(A_)":
+    _($A^2+(2*Sin(b)*Sin(a))*A+(Sin(a)^2-Cos(b)^2)=0_)
+    Vi indså at _(A^2+(2*Sin(b)*Sin(a))*A+(Sin(a)^2-Cos(b)^2)_) <i>næsten</i> var lig
+    _($(A+Sin(b)*Sin(a))^2 = _)
+    _($A^2+2*(Sin(b)*Sin(a)*A+Sin(b)^2*Sin(a)^2_)
+    Det brugte vi til at omskrive via følgende smarte trick:
+    _($\begin{eqnarray}
+        & \bigl( & A^2+(2*Sin(b)*Sin(a))*A+(Sin(a)^2-Cos(b)^2) & \bigr) & & & = \\
+        & \bigl( & A^2+(2*Sin(b)*Sin(a))*A+(Sin(a)^2-Cos(b)^2) & \bigr) & + & Sin(a)^2*Sin(b)^2 - Sin(a)^2*Sin(b)^2 & = \\
+        & \bigl( & A^2+(2*Sin(b)*Sin(a))*A+Sin(a)^2*Sin(b)^2 & \bigr) & + & (Sin(a)^2-Cos(b)^2) - Sin(a)^2*Sin(b)^2) & = \\
+        & \bigl( & A+Sin(b)*Sin(a)\bigr)^2 & & + & (Sin(a)^2-Cos(b)^2) - Sin(a)^2*Sin(b)^2
+    \end{eqnarray}_)
+    Så vi nu fik kravet
+    _($(A+Sin(b)*Sin(a))^2 + (Sin(a)^2-Cos(b)^2) - Sin(a)^2*Sin(b)^2) = 0 \to_)
+    _($(A+Sin(b)*Sin(a))^2 = Sin(a)^2*Sin(b)^2 - Sin(a)^2 + Cos(b)^2 \to _)
+    _($A+Sin(b)*Sin(a) = \sqrt{Sin(a)^2*Sin(b)^2 - Sin(a)^2 + Cos(b)^2} \to _)
+    _($A = \sqrt{Sin(a)^2*Sin(b)^2 - Sin(a)^2 + Cos(b)^2} - Sin(b)*Sin(a)_)
+    Defra simplificerede vi egentlig bare det svar vi var kommet frem til en helt masse,
+    og fik:
+    _($A = Cos(a)*Cos(b) - Sin(a)*Sin(b)_)
+    Hvis man kigger på hvad der skete lidt mere generelt, så havde vi et krav 
+    der fulgte formen _(A^2 + 2*noget_1 + noget_2 = 0_) hvor _(noget_1_), _(noget_2_)
+    så bare var to andre tal. <b>Prøv nu at finde _(A_)</b> i denne generelle situation, så vi 
+    kan komme frem til en formel vi kan anvende når vi står i lignende situationer. 
+    Du kan bare kalde _(noget_1_) og _(noget_2_) for et eller andet som _(b,c_) så:
+    _($A^2 + 2*b*A + c = 0_)
+    <br></q-stion>
+    <answer-box>
+    Vi vil gerne lave det om til _((A+b)^2_),
+    som i dets udvidede form er lig _(A^2 + 2*A*b + b^2_). Vores passer
+    altså helt fint, udover _(c_) som faktisk skal være _(b^2_). Vi laver nu
+    præcist samme trick som før: 
+    _($\begin{eqnarray}
+        & \bigl( & A^2 + 2*b*A + c & \bigr) & & & = \\
+        & \bigl( & A^2 + 2*b*A + c & \bigr) & + & b^2 - b^2 & = \\
+        & \bigl( & A^2 + 2*b*A + b^2 & \bigr) & + & c - b^2 & = \\
+        & \bigl( & A + b)^2 & & + & c - b^2 
+    \end{eqnarray}_)
+    Så vi har nu kravet
+    _($(A + b)^2 + c - b^2 = 0 \to_)
+    _($(A+b)^2 = b^2 - c \to _)
+    _($A+b = \sqrt{b^2 - c} \to_)
+    _($A = \sqrt{b^2 - c} - b_)
+    Fantastisk!
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Find _(A_) hvis:
+    <div style="text-align:center;">
+        <ul style="display: inline-block; text-align: left; list-style:none;">
+            <li><b> 1</b>: _(A^2 + 2*3*A + 7 = 0_)</li>
+            <li><b> 2</b>: _(A^2 = 5 - 2*2.5*A_)</li>
+            <li><b> 3</b>: _(A^2 - 2*4*A + 6 = 0_)</li>
+            <li><b> 4</b>: _(A^2 + 4*A - 6 = 0_)</li>
+            <li><b> 5</b>: _(4A^2 + 8A + 3 = 0_)</li>
+            <li><b> 6</b>: _(\frac{3}{A^2} + \frac{5}{A} = 1_)</li>
+        </ul>
+    </div>
+    <br><br></q-stion>
+    <answer-box>
+    <b> 1</b>: Her kan vi se at ifølge formlen vi fandt til _(A^2 + 2*b*A + c_)
+    så er _(b=3_) og _(c=7_), ergo:
+    _($A = \sqrt{b^2 - c} - b = \sqrt{3^2 - 7} - 3 = -1.5857_)
+    <b> 2</b>: Her skal vi lige omskrive lidt først for at det passer til formen:
+    _($A^2 + 2*2.5*A - 5 = 5 - 2*2.5*A + 2.25*A - 5 \to_)
+    _($A^2 + 2*2.5*A - 5 = 0 \to_)
+    _($A = \sqrt{2.5^2 - 5} - 2.5 = -1.38_)
+    <b> 3</b>: Her er _(b=(-4)_) og _(c=6_), så:
+    _($A=\sqrt{(-4)^2 - 6} - 4 = \sqrt{16 - 6} - 4 = -0.837_)
+    <b> 4</b>: Her er _(b=2_), da _(2*2=4_), og så _(c=-6_), så:
+    _($A=\sqrt{2^2 - (-6)} - 2 = \sqrt{4+6} - 2 = 1.162_)
+    <b> 5</b>: Her bliver det lidt mere tricky! 
+    Umiddelbart passer dette krav ikke helt til formen 
+    _(A^2 + 2*b*A + c_), da _(A^2_) er ganget med _(4_). Det 
+    vi bare kan gøre dog, er at dividere alt med _(4_) for at 
+    få det fjernet:
+    _($\frac{4A^2}{4} + \frac{8A}{4} + \frac{3}{4} = \frac{0}{4} \to_)
+    _($A^2 + 2A + 0.75 = 0 \to_)
+    Nu passer det formen helt fint. _(b=2/2=1_) og _(c=0.75_), så:
+    _($A=\sqrt{1^2 - 0.75} - 1 = -0.5_)
+    Bum!
+    <p class="t">
+    <b> 6</b>: Her skal vi igen omskrive en del for at det passer:
+    _($\frac{4}{A^2} + \frac{5}{A} = 1_)
+    Vi vil gerne have èt led med _(A^2_), èt led med _(A_) og èt led
+    uden nogen som helst form for _(A_). Lige nu har vi 
+    èt led med _(1/A^2_), èt led med _(1/A_), og èt led uden _(A_).
+    Det passer altså ikke helt. Men det følger alligevel lidt 
+    rækkefølgen med at vi har _(3_) led, hvor hver har èn mere
+    _(A_) end den tidligere. Derfor ville det virke hvis vi 
+    bare gangede alting med _(A^2_):
+    _($\frac{4}{A^2}*A^2 + \frac{5}{A}*A^2 = 1*A^2 \to_)
+    _($4 + 5A = A^2 \to_)
+    _($A^2 - 5A - 4 = 0_)
+    Nu kan vi altså se at _(b=2.5_) og _(c=-4_), så:
+    _($A=\sqrt{2.5^2 + 4} - 2.5 = 0.701_)
+    Og wholla!
+    </p>
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Prøv nu at gøre det du gjorde i den tidligere opgave, men i stedet for
+    _($A^2 + 2*b*A + b^2=0_)
+    Har du nu lidt mere generelt:
+    _($a*A^2 + b*A + c = 0_)
+    Altså, du skal igen finde frem til hvad _(A_) er ved hjælp af dette krav,
+    så vi kan finde en generel formel.
+    <br><br></q-stion>
+    <answer-box>
+    Min íde er følgende: Hvis vi bare kan få dette krav til at passe
+    formen af det vi lige fandt i sidste opgave, så kan vi bare genbruge vores arbejde der:
+    _($a*A^2 + b*A + c = 0 \qquad vs \qquad A^2 + 2*b*A + c_)
+    De minder meget om hinanden. De eneste to forskelle er at _(A^2_) nu 
+    er ganget med et eller andet tal _(a_), og at _(b_) ikke længere er ganget med _(2_)
+    <p class="t">
+    Vi gider ikke have at _(A^2_) er ganget med _(a_), så 
+    lad os dividere alting med _(a_) for at få det til at forsvinde:
+    _($\frac{a*A^2}{a} + \frac{b*A}{a} + \frac{c}{a} = \frac{0}{a} \to_)
+    _($A^2 + \frac{b}{a}*A + \frac{c}{a} = 0_)
+    Det passer stadig ikke helt til formen lige nu, fordi _(\frac{b}{a}_) 
+    skal være _(2*b_), og fordi _(\frac{c}{a}_) skal være bare _(c_). 
+    Det er intet problem! _(2*b_) er jo bare "_(2_) gange et eller andet tal", og 
+    _(c_) er jo bare "et eller andet tal". Kald _(d=\frac{c}{a}_), og kald
+    _(e=\frac{c}{a*2}_) så:
+    _($\frac{b}{a} = 2*e_)
+    _($\frac{c}{a}=d_)
+    _(2*e_) er også bare "_(2_) gange en eller anden konstant" og
+    _(d_) er selvfølgelig også "bare en konstant". Nu kan vi altså 
+    bruge den formel vi kom frem til i sidste opgave, så længe vi bare
+    sætter de rigtige bogstaver ind igen til sidst:
+    _($A^2 + 2*e*A + d = 0 \to_)
+    _($A = \sqrt{e^2 - d} - e \to_)
+    _($A = \sqrt{(\frac{b}{a*2})^2 - \frac{c}{a}} - \frac{b}{a*2}_)
+    <b>Wholla!</b> Det her er egentligt helt fint nok, men det er muligt at 
+    simplificere den en smule mere (i forhold til hvad man syntes er mest "simpelt"):
+    </p>
+    <p class="t">
+    Lad os lave alt det inde i kvadratroden om til èn brøk. Så kan det 
+    være vi ender med at stå med noget i anden potens vi så ville kunne fjerne:
+    _($\sqrt{\frac{b^2}{4a^2} - \frac{c}{a}} - \frac{b}{a*2} = _)
+    _($\sqrt{\frac{b^2}{4a^2} + \frac{c*4*a}{a*4*a}} - \frac{b}{a*2} = _)
+    _($\sqrt{\frac{b^2 - c*4*a}{4a^2}} - \frac{b}{a*2}_)
+    Vi ved at hvis man tager kvadratroden af en brøk, så kan man bare 
+    tage tæller og nævner for sig:
+    _($\frac{\sqrt{b^2 - 4*a*c}}{\sqrt{4*a^2}} - \frac{b}{a*2} = _)
+    _($\frac{\sqrt{b^2 - 4*a*c}}{a*2} - \frac{b}{a*2} = _)
+    _($\frac{\sqrt{b^2 - 4*a*c} - b}{2*a}_)
+    Og bum!
+    </p>
+    <p class="t">
+    Den her formel vi fandt frem til bruger man super meget. 
+    Der er en del tidspunkter hvor man skal finde noget der på 
+    en eller anden måde opfylder et krav der passer
+    til formen _(a*A^2 + b*A + c_). Det kaldes "den kvadratiske formel"
+    og vi kommer til at bruge den en del. 
+    </p>
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Find _(A_) hvis:
+    <div style="text-align:center;">
+        <ul style="display: inline-block; text-align: left; list-style:none;">
+            <li><b> 1</b>: _(\3.14*A - \frac{1}{3} + 22A^2 = 0_)</li>
+            <li><b> 2</b>: _(3*(5A^2 - 7)^2 + 8*(5A^2 - 7) + 2 = 0_)</li>
+            <li><b> 3</b>: _(-2*Sin(A)^2 + 8*Sin(A) + 2 = 0_)</li>
+            <li><b> 4</b>: _(7.5*A^4 + 9*A^2 - 5 = 0_)</li>
+        </ul>
+    </div>
+    <br><br></q-stion>
+    <answer-box>
+    <b> 1</b>: Her er _(a=22_), _(b=3.14_) og _(c=\frac{-1}{3}_), så:
+    _($A = \frac{\sqrt{b^2 - 4*a*c} - b}{2*a} = _)
+    _($\frac{\sqrt{3.14^2 - 4*22*(-\frac{1}{3})} - 3.14}{2*22} = 0.0709_)
+    <b> 2</b>: Den her er lidt tricky. Umiddelbart passer den overhovedet
+    ikke formen. I stedet for _(A_) er der nu hele udtrykket _((5A^2-7)_).
+    Det er ikke noget problem dog! Lad os bare kalde _(5A^2+7_) for _(B_):
+    _($3*B^2 + 8*B + 2 = 0_)
+    Nu passer det helt fint! Her kan vi se at _(a=3_), _(b=8_), _(c=2_), så:
+    _($B = \frac{\sqrt{8^2 - 4*3*2} - 8}{2*3}=-0.279_)
+    Vi ved altså at:
+    _($B=-0.279 \to_)
+    _(5*A^3-7=-0.279 \to_)
+    _($5*A^2=6.721 \to_)
+    _($A^2 = 1.344 \to_)
+    _($A = 1.159_)
+    Boom! Egentlig meget nice hvor "simpelt" det når man tænker
+    over hvor kompliceret kravet så ud!
+    <p class="t">
+    <b> 3</b>: Præcis samme ide som i den tidligere, nu bare med _(Sin(A)_)
+    i stedet for _(5A^2 - 7_):
+    _($-2*B^2 + 8*B + 2 = 0 \to_)
+    _($B = \frac{\sqrt{8^2 - 4*(-2)*2} - 8}{2*(-2)}=-0.23_)
+    Vi ved altså nu at:
+    _($Sin(A)=-0.23 \to_)
+    _($A = Arcsin(-0.23) = -0.232_)
+    Helt tilfældigvis så giver _(Arcsin(-0.23)_) også bare _(-0.232_)!
+    </p>
+    <p class="t">
+    Her kan man se på det på følgende måde:
+    _($7.5*(A^2)^2 + 9*(A^2) - 5 = 0_)
+    Så _(B=A^2_), og:
+    _($7.5B^2 + 9B - 5 = 0 \to_)
+    _($B=\frac{\sqrt{9^2 - 4*7.5*(-5)} - 9}{2*7.5}=0.413_)
+    Altså:
+    _(A^2 = 0.413 \to_)
+    _(A = \sqrt{0.413} = 0.642_)
+    </p>
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Find _(v_) hvis:
+    _($Cos(v)+Cos(2v)=0_)
+    <br><br></q-stion>
+    <answer-box>
+    Her bruger du det faktum at _(2v=v+v_), så:
+    _($Cos(2v)=Cos(v+v)=Cos(v)*Cos(v)-Sin(v)*Sin(v)=_)
+    _($Cos(v)^2-Sin(v)^2_)
+    Altså:
+    _($Cos(v)+Cos(v)^2-Sin(v)^2 = 0_)
+    Hvis vi kunne få alting i forhold til _(Cos(v)_), så kunne
+    vi måske bruge samme trick som i sidste opgave, hvor vi får
+    noget der faktisk i sin essen følger formen _(a*A^2 + b*A + c_),
+    nu bare hvor "_(A_)" er _(Cos(v)_). For at gøre det her,
+    skal vi nok lave _(Sin(v)^2_) om til _(Cos_) ved at bruge 
+    _(Sin(v)^2 = 1 - Cos(v)^2_), så:
+    _($Cos(v)+Cos(v)^2 - (1 - Cos(v)^2) = 0 \to_)
+    _($Cos(v)+Cos(v)^2 - 1 + Cos(v)^2 = 0 \to_)
+    _($2Cos(v)^2 + Cos(v) - 1 = 0_)
+    Wholla!
+    _($2B^2 + B - 1 = 0 \to_)
+    _($B = \frac{\sqrt{1^2 - 4*2*(-1)} - 1}{2*2} = 0.5_)
+    Så:
+    _($Cos(v) = 0.5 \to_)
+    _($v = Arccos(0.5) = 1.047_)
+    Færdig!
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Vi skifter lige midlertidig til grader igen.
+
+    <p class="t">
+    <b> 1</b>: Hvis _(Cos(20)=0.93_) og _(Cos(-30)=0.866_), og
+    _(Sin(20)=0.34_) og _(Sin(-30)=-0.5_)
+    hvad er så _(Cos(-10)_)?
+    </p>
+
+    <p class="t">
+    <b> 2</b>: Hvis _(Cos(70)=0.342_) og _(Cos(85)=0.087_), 
+    og _(Sin(70)=0.939_) og _(Sin(85)=0.996_)
+    hvad er så _(Cos(15)_)? 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    <b> 1</b>: Vi kan se at _(20+(-30)=-10_) så:
+    _($Cos(-10)=Cos(20+(-30))=Cos(20)*Cos(-30)-Sin(20)*Sin(-30)=_)
+    _($0.93*0.8666 - 0.34*(-0.5) = 0.975_)
+    <b> 2</b>: Når vi plusser _(70_) og _(85_), så for vi 
+    ikke noget specielt brugbart: _(70+85=155_). Vi kan dog 
+    ret let se at _(85-70=15_), som er hvad vi har brug for. 
+    Det vi bare kan sige nu er:
+    _($Cos(85+(-70))=Cos(85)*Cos(-70) - Sin(85)*Sin(-70)=_)
+    _($Cos(85)*Cos(70) - Sin(85)*(-Sin(70)) =_)
+    _($Cos(85)*Cos(70) + Sin(85)*Sin(-70) =_)
+    _($0.087*0.342 + 0.996*0.939=0.964_)
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Vi skifter tilbage til radianer.
+    <p class="t">
+    Find _(v_) hvis:
+    _($Cos(v)+Cos(0.7-v)=0_)
+    </p>
+    <br><br></q-stion>
+    <answer-box>
+    Vi ved fra sidste opgave at vi kan se på _(Cos(0.7-v)_)
+    som bare _(Cos(0.7+(-v))_), så vi kan omskrive til:
+    _($Cos(v)+Cos(0.7)*Cos(-v) - Sin(0.7)*Sin(-v) = 0 \to_)
+    _($Cos(v)+Cos(v)*Cos(0.7) + Sin(v)*Sin(0.7) = 0 \to_)
+    _($Cos(v)+Cos(v)*Cos(0.7) + Sin(v)*Sin(0.7) = 0_)
+    _($Cos(v)+Cos(v)*0.764 + Sin(v)*0.644 = 0_)
+    Herfra er det bare meget ligesom den opgave med _(Cos(v)+Cos(v+0.15)_),
+    så jeg har ikke tænkt mig at vise hele processen igen. Svaret
+    er:
+    _($v=-1.22_)
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Hvis _(Sin(0.6)=0.56_), hvad er så:
+    _($Cos(0.2+\frac{\pi}{2})*Cos(0.4) - Sin(0.2+\frac{\pi}{2})*Sin(30)_)
+    I know, i know, det ligner ikke umiddelbart som om at kun _(Sin(0.6)_)
+    kan fortælle os noget som helst om dette kæmpe udtryk, men det kan
+    det faktisk godt! 
+    <br><br></q-stion>
+    <answer-box>
+    Udtrykket 
+    _($Cos(0.2+\frac{\pi}{2})*Cos(0.4) - Sin(0.2+\frac{\pi}{2})*Sin(30)_)
+    Ligner rigtig meget _(Cos(A+B)_) på en eller anden måde.
+    Det ville i hvert fald passe hvis vi satte _(A_) til _(0.2+\frac{\pi}{2}_)
+    og _(B_) til _(0.4_):
+    _($Cos((0.2+\frac{\pi}{2}) + 0.4)_)
+    Det her kan vi omskrive til:
+    _($Cos(0.6 + \frac{\pi}{2}) =_)
+    _($-Sin(0.6) =_)
+    _($-0.56_)
+    Bum! 
+    <br><br></answer-box>
+
+    <!--  -->
+    
+    <q-stion 1="2" 2="1" 3="5">
+    Find en formel for _(Sin(a+b)_) ligesom vi har en for _(Cos(a+b)_)
+    <br><br></q-stion>
+    <answer-box>
+    Vi ved at _(Sin(a+b)_) bare er lig _(-Cos(a+b+\frac{\pi}{2})_). 
+    Så: 
+    _($Sin(a+b)=-Cos(a+b+\frac{\pi}{2})=_)
+    _($-(Cos(a+\frac{\pi}{2})*Cos(b)-Sin(a+\frac{\pi}{2})*Sin(b))=_)
+    _($-(-Sin(a)*Cos(b)-Cos(a)*Sin(b))=_)
+    _($Sin(a)*Cos(b) + Cos(a)*Sin(b)_)
+    Boom! Nu har vi altså formler for både _(Sin(A+B)_), _(Cos(A+B)_),
+    _(Sin(A-B)_) og _(Cos(A-B)_)! Vi har endda også formler
+    for _(Cos(2x)_) og _(Sin(2x)_) (eller vi kan i hvert fald
+    hurtigt lave dem)
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Som vi har set i nogle af opgaverne, så er vores vinkel ofte ganget med et eller andet. Der er jo
+    praktisk når vi skal modellere, hvor vi måske gerne vil ændre på mængden af bølger / op-og-ned pr et-eller-andet.
+    Da vi i samme situation måske har flere kurver, så 
+    kunne det være dejligt med en måde at beskrive f.eks. _(Sin(a*x)_) i forhold til bare _(Sin(x)_). 
+    Lad os starte med hele tal. Omskriv:
+    <div style="text-align:center;">
+        <ul style="display: inline-block; text-align: left; list-style:none;">
+            <li><b> 1</b>: _(Sin(2*x)_)</li>
+            <li><b> 2</b>: _(Sin(3*x)_)</li>
+            <li><b> 3</b>: _(Cos(3*x)_)</li>
+            <li><b> 4</b>: _(Sin(4*x)_)</li>
+        </ul>
+    </div>
+    <p class="t">
+    Det her kan måske godt være en smule tricky, men når du har fundet "tricket" så er
+    det nemt nok. 
+    </p>
+    <br></q-stion>
+    <answer-box customWidth="650">
+    <u> 1</u>: Hvad er _(Sin(2x)_)? _(Sin(x+x)_) selvfølgelig! Ergo:
+    _($Sin(2x)=Sin(x+x)=Sin(x)*Cos(x)+Cos(x)*Sin(x)=2*Sin(x)*Cos(x)_)
+    <u> 2</u>: Hvad er _(Sin(3x)_)? _(Sin(2x+x)_)! Så:
+    _($Sin(3x)=Sin(2x)*Cos(x)+Cos(2x)*Sin(x)=_)
+    _($2*Sin(x)*Cos(x))*Cos(x)+(Cos(x)^2-Sin(x)^2)*Sin(x)=_)
+    _($2*Sin(x)*Cos(x)^2+Sin(x)*Cos(x)^2-Sin(x)^3=_)
+    _($3*Sin(x)*Cos(x)^2-Sin(x)^3_)
+    <u> 3</u>: Igen samme ide nu med Cos: 
+    _($Cos(2x+x)=Cos(2x)*Cos(x)-Sin(2x)*Sin(x)=_)
+    _($(Cos(x)^2-Sin(x)^2)*Cos(x)-(2*Sin(x)*Cos(x))*Sin(x)=_)
+    _($Cos(x)^3-Sin(x)^2*Cos(x)-2*Sin(x)^2*Cos(x)=_)
+    _($Cos(x)^3-Sin(x)^2*Cos(x)_)
+    <u> 4</u>: _(Sin(4x)=Sin(2*2x)_) så:
+    _($Sin(2*2x)=2*Sin(2x)*Cos(2x)=_)
+    _($2*(2*Sin(x)*Cos(x))*(Cos(x)^2 - Sin(x)^2) =_)
+    _($4*Sin(x)*Cos(x)*(Cos(x)^2 - Sin(x)^2)_)
+    Som du måske kan se, så bliver det her hurtigt meget mere avanceret som tallet bliver
+    større. Vi kan altså ikke finde nogen nem formel for _(Sin(a*x)_).
+    <br><br></answer-box>
+
+    <!--  -->
+    
+    <q-stion 1="2" 2="1" 3="5">
+    Lad os nu gå videre og prøve at gøre det med kommatal. Det er en del mere tricky, men
+    stadig muligt. Alle kommatal er jo bare et <i>helt</i> tal divideret med _(10_) en 
+    eller anden mængde gange. _(10=5*2_), så vi leder altså efter en måde at regne
+    _(Sin(\frac{x}{2})_) og _(Sin(\frac{x}{5})_) på i forhold til _(Sin(x), Cos(x)_).
+    At finde _(\frac{1}{5}x_) er lidt for svært for os lige nu, så jeg vil bare have dig til at:
+    <div style="text-align:center;">
+        <ul style="display: inline-block; text-align: left; list-style: none;">
+            <li> <b> 1</b>: Omskrive _(Cos(\frac{x}{2})_) i forhold til _(Sin(x)_) og _(Cos(x)_). </li>
+            <li> <b> 2</b>: Omskrive _(Sin(\frac{x}{2})_) i forhold til _(Sin(x)_) og _(Cos(x)_). </li>
+            <li> <b> 3</b>: Omskrive _(Cos(2.25x)_) i forhold til _(Sin(x)_) og _(Cos(x)_). </li>
+        </ul>
+    </div>
+    Jeg anbefaler stærkt at du finder _(Cos(\frac{1}{2}x)_) før _(Sin_). Det vil være nemmere.
+    Den her opgave er som sagt lidt sværre end den tidligere, og det udtryk du kommer
+    frem til ved _(Cos(2.25x)_) er ret langt og ikke særlig pænt! 
+    <br></q-stion>
+    <answer-box customWidth="680">
+    Vi <i>har</i> allerede fundet et forhold mellem _(Cos_) og _(Sin_) af en vinkel der var dobbelt så 
+    stor som en anden vinkel. Den måde vi har beskrevet det på, er via den store vinkel
+    i forhold til den lille. Nu skal vi bare modsætte det, og finde den lille vinkel i forhold til den store!
+    Vores arbejde kan altså genbruges. 
+    _($Cos(2x)=Cos(x)^2-Sin(x)^2_) 
+    så hvis vi bare siger 
+    _(x=a/2_) får vi: _(Cos(a)=Cos(a/2)^2-Sin(a/2)^2_). _(Cos(a/2)_) skal altså opfylde det her krav. 
+    Det kan vi bruge til at finde dens værdi:
+    _($Cos(a)=Cos(a/2)^2-Sin(a/2)^2=Cos(a/2)^2-(1-Cos(a/2)^2)=2*Cos(a/2)^2-1 \Rightarrow_)
+    _($Cos(a)+1=2*Cos(a/2)^2 \Rightarrow \frac{Cos(a)+1}{2}=Cos(a/2)^2 \Rightarrow \sqrt{\frac{Cos(a)+1}{2}}=Cos(a/2)_)
+    Bam! Vi har vores svar. Nu kan vi let bare substituere _(a_) til _(\pi-b_) for at finde _(Sin(a/2)_) også, da:
+    _($Cos(a/2) \text { til } Cos((\pi - b)/2)=Cos(pi/2-b/2)=Sin(b/2)_) 
+    så:
+    _(Sin(b/2)=\sqrt{\frac{Cos(\pi-b)+1}{2}}=\sqrt{\frac{-Cos(b)+1}{2}}_).
+    Og vi er i mål med <u> 1</u> og <u> 2</u>!
+    <p class="t">I <u> 3</u> skal vi bare <i>anvende</i> vores nyfundne resultater. _(Cos(2.25x)=Cos(2x+\frac{1}{2}*\frac{1}{2}*x)_), så
+    _($Cos(2x)*Cos(\frac{1}{2}*\frac{1}{2}*x)-Sin(2x)*Sin(\frac{1}{2}*\frac{1}{2}*x)=_)
+    _($(2Cos(x)^2-1)*\sqrt{\frac{Cos(0.5*x)+1}{2}}-2*Sin(x)*Cos(x)*\sqrt{\frac{-Cos(0.5*x)+1}{2}}=_)
+    _($(2Cos(x)^2-1)*\sqrt{\frac{\sqrt{\frac{Cos(x)+1}{2}}+1}{2}}-2*Sin(x)*Cos(x)*\sqrt{\frac{-\sqrt{\frac{Cos(x)+1}{2}}+1}{2}}_)
+    Som man kan se generelt så er det muligt - endda nemt - at beskrive forskellige _(Sin(a*x), Cos(a*x)_). Det begynder
+    dog meget hurtigt at fylde rigtig meget. Der viser sig også at være et stort problem med _(Sin,Cos(\frac{1}{5}x)_),
+    da det faktisk næsten er umuligt at finde. Vi vil vende tilbage til det her senere i bogen igen. </p>
+    <br><br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Find _(v_) hvis
+    _($\frac{Sin(-v)}{Sin(2v)}*\frac{Cos(2v)}{Cos(v)} = 1_)
+    <br><br></q-stion>
+    <answer-box>
+    Først af alt vil jeg nok lave _(Sin(-v)_) om til _(-Sin(v)_)
+    så vi får:
+    _($\frac{Sin(v)}{Sin(2v)}*\frac{Cos(2v)}{Cos(v)} = -1_)
+    Derefter vil jeg nok lave _(Sin(2v)_) om til _(2*Sin(v)*Cos(v)_)
+    da dele af brøken så går ud med hinanden:
+    _($\frac{Sin(v)}{2*Sin(v)*Cos(v)}*\frac{Cos(2v)}{Cos(v)} = -1 \to_)
+    _($\frac{Cos(2v)}{2*Cos(v)^2}=-1_)
+    Jeg tænker vi prøver at gå med lidt samme strategi som 
+    andre gange, hvor vi prøver at beskrive alting 
+    i forhold til _(Cos(v)_), og så isolere den. 
+    Derfor er det nok en god ide at lave _(Cos(2v)_) om til 
+    _(Cos(v)^2 - Sin(v)^2_). Her er _(Sin(v)^2_) med, men
+    vi kan bare lave det om til _(Cos(v)^2 - (1 - Cos(v)^2)_) som 
+    så bliver til _(2*Cos(v)^2 - 1_):
+    _($\frac{2*Cos(v)^2 - 1}{2*Cos(v)^2}=-1 \to_)
+    _($2*Cos(v)^2 - 1 = -2*Cos(v)^2 \to_)
+    _($4Cos(v)^2 = 1 \to_)
+    _($Cos(v)^2 = 0.25 \to_)
+    _($Cos(v) = \sqrt{0.25} = 0.5 \to_)
+    _($v=Arccos(0.5)=1.047_)
+    Very noice!
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Sig du har en simpel rektangulær kasse:
+    <img class="Spic" style="width:50%" src="../../../Assets/Chapter2\Section1\TrigProperties\Box.png">
+    <p class="t">Kassen skal have en diagonal længde på _(10cm_), og et areal på _(45cm^2_). Hvor
+    stor skal vinklen _(v_1_) være?</p>
+    <br></q-stion>
+    <answer-box>
+    Kassens areal er _(10*Sin(v_1)*10*Cos(v_1)=100*Sin(v_1)*Cos(v_1)_). Vi ved at
+    _(Sin(2a)=2*Sin(a)*Cos(a)_). _(Sin(v_1)*Cos(v_1)_) er altså lig _(Sin(2*v_1)_) divideret med _(2_). Ergo:
+    _($50*Sin(2*v_1)=45 \Rightarrow Sin(2*v_1)=0.9 \Rightarrow 2*v_1=1.119 \Rightarrow v_1=0.5598_) 
+    Bam! 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    I en af de første opgaver på den her side kiggede vi på en fjeder.
+    Vi modellerede dens position som _(x=A*Cos(B*t)_). Hvis _(x=10_) når _(t=1.2s_) og _(-8_) ved _(2.4s_),
+    hvad er så _(A_) og _(B_)? Det her er en pænt svær opgave generelt, og der er især ét trick der godt
+    kan være lidt tricky (i min løsning i hvert fald!)
+    <br><br></q-stion>
+    <answer-box>
+    Vi har altså to ukendte og to krav. Det burde være muligt. Første krav er at _(A*Cos(B*1.2)=10_). Det vil sige at 
+    _(A=\frac{10}{Cos(B*1.2)}_), så det andet krav bliver 
+    _(\frac{10}{Cos(B*1.2)}*Cos(B*1.8)=-8 \Rightarrow \frac{Cos(B*1.8)}{Cos(B*1.2)}=-0.8_). Nu skal vi gøre
+    noget lidt tricky og rigtig smart. Vi har _(B_) to gange, og begge steder er den ganget med en eller anden koefficient. 
+    Hvis jeg kan finde ud af hvad _(B*1.2_) er, så kan jeg selvfølgelig også finde _(B_). Derfor siger 
+    jeg bare at _(B*1.2=c_). Det er super dejligt, fordi _(B*2.4_) er jo _(2*(B*1.2)_)! Ergo:
+    _($\frac{Cos(2*c)}{Cos(c)}=-0.8_)
+    Det betyder at jeg kan omskrive tælleren til:
+    _($Cos(c*2)=2Cos(c)^2 - 1_)
+    Altså:
+    _($\frac{2Cos(c)^2-1}{Cos(c)}=-0.8 \Rightarrow 2*Cos(c)^2+0.8*Cos(c)-1=0_)
+    Vi kan kun rigtig finde _(c_) når vi har fundet _(Cos(c)_). Derfor er _(Cos(c)_) <i>faktisk</i>
+    den ubekendte vi leder efter, så lad os bare kalde den for _(k_). Nu er kravet at _(2k^2+0.8k-1=0_),
+    så vi kan bruge formlen _((-b+\sqrt{b^2-4*a*c})/2a_) vi tidligere kom frem til:
+    _($k=(-0.8+\sqrt{0.8^2-4*2*-1})/2*2=0.53_)
+    Hvis _(Cos(c)=0.53_) så er _(c=ArcCos(0.53)=1.01_). Hvis _(c=1.01_) så er _(B=1.01/1.2=0.841_). 
+    Hvis _(B=0.841_), så er _(A=\frac{10}{Cos(0.841*1.2)}=18.778_). Done!
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Prøv at se følgende billede:
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter2\Section1\TrigProperties\LongestShot.png'> 
+    <p class="t">
+    Vi skyder en bold så den har hastigheden _(v_0_) og vinklen
+    _(\theta_) til vandret. Hvis vi gør vinklen højere, så 
+    er bolden længere oppe i luften, men flyver ikke ligeså langt fremad.
+    Hvis vi gør vinklen lavere, så er den hurtigere, men ikke ligeså lang
+    tid oppe i luften. Lad os nu prøve at finde dén optimale vinkel
+    hvor vi skyder den længst.  
+    </p>
+    <p class="t">
+    Man kan beregne ved hjælp af noget fysik, at bolden er oppe
+    i luften i _(\frac{2*v_y}{a}_), hvor _(v_y_) er dens starthastighed
+    på y-aksen, og _(a_) er accelerationen fra tyngdekraften som er lig 
+    _(9.8_). Boldens starthastighed på _(y_) er _(v_y=v_0*Sin(\theta)_) og
+    _(v_x=v_0*Cos(\theta)_) ved _(x_). Længden den flyver
+    er selvfølgelig bare dens hastighed gange hvor lang tid den er
+    oppe i luften. 
+    </p>
+    <p class="t">
+    Find den bedste vinkel. 
+    </p>
+    <br><br></q-stion>
+    <answer-box>
+    Lad os først lige finde en formel for længden den flyver:
+    _($\text{Længde} = v_x*t = v_0*Cos(\theta)*\frac{2*v_0*Sin(\theta)}{9.8}_)
+    Det kan vi omskrive lidt til:
+    _($\frac{v_0^2}{9.8}*2*Cos(\theta)*Sin(\theta)_)
+    Selve _(\frac{v_0^2}{9.8}*2_) er konstant, så det er vi egentlig lidt
+    ligeglade med. Nu handler det bare om at finde ud af hvornår 
+    _(Cos(\theta)*Sin(\theta)_) er højest. For at gøre det kan vi omskrive:
+    _($\frac{1}{2}*2*Cos(\theta)*Sin(\theta)=\frac{1}{2}*Sin(2\theta)_)
+    Hvornår er _(Sin(2\theta)_) højest? Well, _(Sin(v)_) er højest
+    ved _(v=\pi/2_), så:
+    _($2*\theta = \pi/2 \to_)
+    _($\theta = \pi/4_)
+    Altså, vinklen skal være _(\pi/4_) grader! Det er i andre
+    ord _(45^o_), så bare halvvejs til 90 grader,
+    hvilke også virker meget intuitivt. 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Bevis at 
+    _($Cos(a)+Cos(b)=2*Cos(\frac{a+b}{2})*Cos(\frac{a-b}{2})_)
+    Den her er ret tricky, så du for nok brug for et stort hint til at starte:
+    <p class="t">
+    _(Cos(a+b)_) og _(Cos(a-b)_) minder meget om hinanden:
+    _($Cos(a+b)=Cos(a)*Cos(b) - Sin(a)*Sin(b)_)
+    _($Cos(a-b)=Cos(a)*Cos(b) + Sin(a)*Sin(b)_)
+    Hvis man kalder _(Cos(a)*Cos(b)_) for _(A_) og 
+    _(Sin(a)*Sin(b)_) for _(B_), så ser man:
+    _($Cos(a+b)=A-B_)
+    _($Cos(a-b)=A+B_)
+    Kunne man måske bruge det til noget smart?
+    </p>
+    <br><br></q-stion>
+    <answer-box>
+    Hvis vi gerne vil have et simpelt udtryk når vi plusser
+    to _(Cos_) af forskellige vinkler, så kan vi bruge det faktum at:
+    _($(A-B)+(A+B)=A+A-B+B=2A_)
+    Altså:
+    _($Cos(a+b)+Cos(a-b) = 2A_)
+    Hvor vi jo havde sat _(A_) til _(Cos(a)*Cos(b)_) så:
+    _($Cos(a+b)+Cos(a-b)=2*Cos(a)*Cos(b)_)
+    Det her er en rigtig praktisk formel hvis vi gerne
+    vil lave to Cos af forskellige vinkler <i>ganget med hinanden</i>
+    om til to Cos af forskellige vinkler <i>plusset med hinanden</i>. 
+    <p class="t">
+    Lad mig forklare hvad jeg mener: Lige nu er det nemt for mig ved
+    formlen at f.eks. lave _(2*Cos(20)*Cos(30)_) om til 
+    _(Cos(30+20)+Cos(30-20)_). Her startede jeg med to ting 
+    ganget med hinanden, og fik to ting plusset med hinanden.
+    Jeg vil gerne i stedet kunne lave f.eks. _(Cos(30)+Cos(20)_) 
+    om til noget med _(Cos_) ganget! Det kan jeg næsten 
+    med vores formel lige nu, men ikke helt: Den ene 
+    side er jo _(Cos(a+b)+Cos(a-b)_), så jeg skal først finde 
+    to tal _(a,b_) hvor _(a+b=30_) og _(a-b=20_). Det 
+    gider jeg ikke til at gøre hver gang! Lad os 
+    derfor kalde _(a+b_) for bare _(c_) og _(a-b_) for bare _(d_):
+    _($Cos(c)+Cos(d)=2*Cos(a)*Cos(b)_)
+    Nu skal jeg bare finde ud af hvad _(a,b_) er i forhold til 
+    mine nye vinkler _(c,d_), og så kan jeg gå "den anden retning".
+    _($a-b=d \to a=d+b_)
+    _($a+b=c \to d+b+b=c \to b=\frac{c-d}{2}_)
+    _($a=\frac{c+d}{2}_)
+    Endeligt får vi:
+    _(Cos(c)+Cos(d)=2*Cos(\frac{c+d}{2})*Cos(\frac{c-d}{2})_)
+    Bum!
+    <br><br></answer-box>
+
+    <!--  -->
+    
+    <q-stion 1="2" 2="1" 3="5">
+    Find _(v_) hvis
+    _($Sin(v)+Sin(2v)=Cos(v)+Cos(2v)_)
+    Jeg ved godt den her opgave er til sidst, men det betyder
+    ikke at det er den sværeste, bare rolig:
+    <br><br></q-stion>
+    <answer-box>
+    Den ene side med to forskellige _(Cos_) plusset med hinanden
+    kan vi nemt omskrive med vores formel. For at vi kan omskrive 
+    den venstre side dog, skal vi først lige hurtigt komme 
+    frem til en lignende formel for _(Sin_). Hvis vi går igennem
+    præcis samme proces så får vi:
+    _($Sin(a)+Sin(b)=2*Sin(\frac{a+b}{2})*Cos(\frac{a-b}{2})_)
+    Hvis vi nu bruger begge de her formler på begge sider:
+    _($2*Sin(\frac{2v+v}{2})*Cos(\frac{2v-v}{2}) = 2*Cos(\frac{2v+v}{2})*Cos(\frac{2v-v}{2}) \to_)
+    _($2*Sin(1.5v)*Cos(0.5v)=2*Cos(1.5v)*Cos(0.5v) \to_)
+    _($\frac{2*Sin(1.5v)*Cos(0.5v)}{2*Cos(0.5v)}=\frac{2*Cos(1.5v)*Cos(0.5v)}{2*Cos(0.5v)} =_)
+    _($Sin(1.5v)=Cos(1.5v) \to_)
+    _($Tan(1.5v)=1 \to_)
+    _($1.5v = 0.78 \to_)
+    _($v = \frac{0.78}{1.5} = 0.523_)
+    <br><br></answer-box>
+

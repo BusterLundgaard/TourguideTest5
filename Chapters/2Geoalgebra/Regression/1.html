@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+
+
+    <h1 class="header">Afsnit 2:</h1>
+    <h1 class="title">Regression</h1>
+    <p class="t">
+    <i> Regression</i> er et meget vigtigt værktøj indenfor stort 
+    set hvilken som helst fag, der involverer data:
+    Fysik, biologi, økonomi, samfundsfag, mm. Helt simpelt 
+    handler det om at <i>tilpasse en funktion til data</i>, samt 
+    at <i>vurdere hvor godt data passer til en bestemt funktion</i>.
+    Sig f.eks du havde følgende punkter i et XY-koordinat:
+    </p>
+    <img class='SpicXL' style='width:80%' src='../../../Assets/Chapter2\Regression\FirstExample.png'> 
+    <p class="t">
+    Dette ligner måske lidt en tredjegradskurve _(y=ax^3+bx^2+cx+d_):
+    </p>
+    <img class='SpicXL' style='width:80%' src='../../../Assets/Chapter2\Regression\FirstExample2.png'> 
+    <p class="t">
+    Regression handler om at tilpasse disse _(a, \, b, \, c, \, d_) til 
+    dataet så godt som muligt. Vi bruger en computer for at gøre det, og den finder 
+    at _(a=-1.3_), _(b=-4.9_), _(c=-3.7_) og _(d=4.1_) skaber 
+    den bedst mulige tilpasning:
+</p>
+    <img class='SpicXL' style='width:80%' src='../../../Assets/Chapter2\Regression\FirstExample3.png'> 
+    <p class="t">
+    Den anden vigtige del af regression er så at vurdere <i>hvor godt</i> 
+    dataet passer til denne 
+    bedst-mulige tredjegradskurve. Det viser sig, at computere 
+    kan regne et tal hyppigt kaldt
+    _(R^2_), som er mellem _(0_) og _(1_), hvor _(1_) er den 
+    bedst mulige sammenhæng (alle datapunkterne
+    er <i>på</i> kurven), og _(0_) den værst mulige sammenhæng 
+    (der er kæmpe spredning omkring kurven):
+</p>
+    <img class='SpicXL' style='width:100%' src='../../../Assets/Chapter2\Regression\RSquaredIllustrated.png'> 
+    <p class="t">
+    Regression er enormt vigtigt af mange årsager. For det første 
+    kan vi bruge det til at opbygge modeller, og 
+    derved forsøge at forudse noget, der vil ske i fremtiden. 
+    Et simpelt eksempel kunne være længden af en kø med biler. 
+    Sig at du tidligere har observeret, hvor lang tid du brugte
+    på at køre gennem en _(L_) km lang kø:
+</p>
+    <img class='SpicXL' style='width:67%' src='../../../Assets/Chapter2\Regression\CarQueueWaitTime.png'> 
+    <p class="t">
+    Det ligner umiddelbart lidt en linje, så vi forsøger nu at tilpasse _(t=a*L+b_):
+</p>
+    <img class='SpicXL' style='width:67%' src='../../../Assets/Chapter2\Regression\CarQueueWaitTime2.png'> 
+    <p class="t">
+    Hvis du nu støder ind i en kø der er _(18km_) lang, 
+    har du nu en ide om, at den vil tage
+    _($8.2*18 = 147.6min_)
+    Regression kan også hjælpe os en del med at estimere 
+    værdien på noget, der
+    er <i>svært</i>, men muligt at måle. Sig f.eks. vi er 
+    interesserede i kroppens fedtprocent på 40-årige mænd. 
+    Fedtprocenten svarer til _(\text{Vægt af fedt}/\text{Vægt af krop}_). 
+    Det er relativt dyrt og måle, da det kræver
+    avancerede maskiner. Heldigvis kan det estimeres 
+    ved hjælp af personens
+    BMI: Vægt divideret med højde i anden. Sig 
+    f.eks, at der på _(90_) 40-årige mænd er 
+    blevet målt (via maskine) deres fedtprocent, samt deres BMI: 
+</p>
+    <img class='Spic' style='width:60%' src='../../../Assets/Chapter2\Regression\BodyFatPercent1.png'> 
+    <p class="t">
+    Det ligner lidt, at det passer til følgende kurve:
+</p>
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter2\Regression\BodyFatPercent2.png'> 
+    <p class="t">
+    Den kurve kunne godt ligne en del af en parabel/andengradsligning 
+    _(ax^2+bx+c_), så det prøver vi at tilpasse. Vi
+    får nu:
+    _($\text{BFP} = -0.0399*\text{BMI}^2 + 3.286*\text{BMI} - 23.2_)
+    Hvis en bestemt 40-årig mand nu f.eks vejer _(60kg_) og er _(1.65m_) 
+    høj, med BMI på _(60/1.65^2=22.03_), kan vi nu 
+    estimere hans fedtprocent som:
+    _($-0.0399*22.03^2+3.286*22.03 - 23.2 = 29.826_)
+    Det er selvfølgelig et <i>estimat</i>, men man må 
+    alligevel indrømme, at det er meget praktisk og hurtigt! 
+    </p>
+    <p class="t">
+    Andre eksempler kunne være: 
+    At forudse profit som funktion af antal arbejdere, 
+    hvor hurtigt en sygdom spreder sig som funktion af 
+    populationsdensitet, 
+    antal af arbejdsløse som funktion af forskellige 
+    samfundsøkonomiske faktorer der har indflydelse,
+    vejrudsigten (stærkt forsimplet), mm. Det er også 
+    ved hjælp af regression at vi kan programmere følgende tegne-program: 
+    </p>
+    <iframe style="width:500px; height:500px; border:solid; margin-top:35px; margin-bottom:10px; overflow:hidden;" scrolling="no" src="../../../Assets/Chapter2/Regression/DrawingWebsite/DrawingRegression.html"></iframe>
+    <p class="t" style="margin-top:35px;">
+    Programmet optager musens position, når du 
+    holder venstreklik nede, og begynder at tegne. 
+    Sådan får den en masse
+    _((x,y)_)-datapunkter. Den bruger så regression 
+    til at bestemme den bedst passende linje, og voila! 
+    Den finder de _(a, \, b_) i _(y = ax + b_) der bedst passer dataet, og tegner linjen. 
+    </p>
+    <p class="t">
+    Nogle gange laver vi regression eksklusivt fordi, vi er 
+    interesserede i selve konstanterne. Sig f.eks. vi 
+    har position som funktion af tid:
+    </p>
+    <img class='SpicXL' style='width:100%' src='../../../Assets/Chapter2\Regression\PositionHastighed.png'> 
+    <p class="t">
+    Vi <i>kunne</i> tilnærme os den gennemsnitlige hastighed bare 
+    via første og sidste punkt som _(\triangle x/ \triangle t_), men det ville
+    være langt mere akkurat at bruge regression til at få funktionen:
+</p>
+    <img class='SpicXL' style='width:100%' src='../../../Assets/Chapter2\Regression\PositionHastighed2.png'> 
+    <p class="t">
+    Hældningen på _(t_) er _(1.4_), så hastigheden
+    er _(1.4 \text{ m}/\text{s}_).  
+    Et andet eksempel kunne måske være bakterievækst. 
+    Her er vi nok interesserede i at se, hvor hurtigt bakterierne 
+    føder nye. Det svarer til _(b_) i _(\text{Bakterier}(t)=a*b^t_). 
+    </p>
+    <p class="t">
+    Regression kan også hjælpe os med at forsimple en 
+    meget kompliceret funktion, der <i>ligner</i>
+    en meget simpel funktion. Eksempelvis skulle jeg 
+    i mit fysik eksamensprojekt arbejde med følgende situation:
+</p>
+    <img class='SpicXL' style='width:80%' src='../../../Assets/Chapter2\Regression\Teori illustration 1.png'> 
+    <p class="t">
+    Mit mål var at finde _(h(t)_): Højdestanden af 
+    vandet som funktion af tiden. Jeg <i>fandt</i> frem til en slags 
+    "funktion", men den var meget kompliceret. 
+    Den var dog god nok til, at jeg via en computer kunne plotte 
+    en del af dens punkter:
+</p>
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter2\Regression\VandstandCurve.png'> 
+    <p class="t">
+    Rent visuelt ligner det ikke en specielt kompliceret kurve, 
+    og jeg kunne relativt fint approximere den med 
+    følgende funktion:
+</p>
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter2\Regression\VandstandCurve2.png'> 
+    <p class="t">
+    Det er meget lettere at arbejde med. 
+    Koefficienterne _(14.4_), _(1_), _(-52_) og _(-11_) er er så fundet via 
+    regression til _(a Ln(bt - c)+d_). 
+    </p>
+    <p class="cent">*</p>
+    <p class="t">
+    Den anden vigtige del af regression var vurderingen 
+    af <i>hvor godt</i> data passer til en bestemt funktion. 
+    Det her lægger <i>grundlaget</i> for at kunne bevise
+    <i>noget som helst</i> om den virkelige verden ved hjælp af data. Tag
+    fysik som et eksempel. Her laver vi <i>hypoteser</i> 
+    omkring den virkelige verden, som vi ofte beskriver gennem matematiske ligninger.
+    Det kunne måske være hypotesen:
+    _($U=R*I_)
+    Den er kendt som "Ohm's lov", og siger at faldet i 
+    potentiale / volt over en modstand med resistans _(R_) er lig 
+    _(I*R_), hvor _(I_) er strømstyrken. "Resistans" 
+    er ikke nogen bestemt egenskab af en modstand. Faktisk 
+    er Ohm's lov nogle gange skrevet som:
+    _($U \propto I_)
+    Hvor _(\propto_) betyder "er direkte proportionel med". 
+    Så Ohm's lov siger bare, at potentialefaldet er direkte proportionelt
+    med strømstyrken. Vi vælger at kalde proportionalitetsfaktoren 
+    _(R_). 
+    </p>
+    <p class="t">
+    Sig vi har optaget og målt både _(I_) og _(U_) og fået følgende datapunkter:
+    </p>
+    <img class='Spic' style='width:100%' src='../../../Assets/Chapter2\Regression\OhmsLaw.png'> 
+    <p class="t">
+    Vi laver regression til _(U=k*I_), og tjekker med hjælp fra computeren
+    <i>hvor god</i> den regression er. Ohm's lov er bevist, hvis _(R^2_) er
+    tæt nok på _(1_). 
+    </p>
+    <p class="t">
+    Et andet lidt mere kompliceret eksempel kunne være følgende hypotese: 
+    </p>
+    <img class='Spic' style='width:55%' src='../../../Assets/Chapter2\Regression\Indfaldsvinkel.png'> 
+    <p class="t">   
+    Denne hypotese beskriver vinklen på lys, når det skifter fra ét 
+    materiale til et andet. _(n_1_) er det såkaldte 
+    "brydningsindeks" på det ene materiale,  
+    _(n_2_) på det andet. Det er en konstant for materialet, 
+    der beskriver, hvor hurtigt lys rejser igennem. 
+    Vi kan isolere _(b_) og få:
+    _($b(i)=Arcsin(\frac{n_1}{n_2}Sin(i))_)
+    Denne hypotese ville vi bevise ved at kende _(n_1_), _(n_2_) 
+    på vores materialer, og 
+    optage/måle en masse værdier til _(i_) og _(b_). Vi ville derefter skulle tjekke, om 
+    dataet godt passer til denne funktion _(b(i)_)
+    </p>
+    <p class="t">
+    Regression kan ikke <i>kun</i> hjælpe os med at 
+    tjekke hårde, konkrete hypoteser som denne.
+    Det kan mere generelt hjælpe os med at tjekke om 
+    der er <i>korrelation</i> mellem to 
+    kvantiteter: Hænger de på nogen måde sammen? 
+    Er der sammenhæng mellem 
+    ens styrke og hvor hårdt man kaster? Har ens højde indflydelse 
+    på ens vægt? Osv. 
+    Vi kan definitivt sige at to kvantiteter er relaterede hvis der findes
+    <i>en eller anden funktion</i> der relaterer de to, og 
+    hvis dataet <i>passer godt til funktionen</i>. 
+    Denne relation er ofte lineær, men ikke altid. 
+    </p>   
+    <p class="t">
+    Det er vigtigt at pointere, at der er stor 
+    forskel på, om en kvantitet _(A_) er <i>relateret</i> til en kvantitet _(B_), eller om 
+    en kvantitet _(A_) <i>forårsager</i> en kvantitet _(B_).
+    _($\text{"Correlation } \ne \text{ Causation"}_)
+    ... som det ofte udtrykkes på engelsk. 
+    </p>
+    <p class="t">
+    Sig f.eks. du ud fra noget data har bevist, at der 
+    findes en lineær relation mellem 
+    hvor meget fast food folk spiser, og hvor meget de vejer. 
+    Ergo: "Fast food gør folk tykke!". Ikke nødvendigvis:
+    Hvad hvis der findes en tredje faktor, vi slet ikke har tænkt over? 
+    Måske er folk med lav månedlig 
+    indkomst ofte <i>nødt til</i> at spise fast food, <i>samt</i> 
+    komme ind i <i>flere andre</i> dårlige
+    vaner, der har indflydelse på ens kropslige helbred, og hvor 
+    meget man vejer. Der findes altså en tredje faktor _(C_), som 
+    højest sandsynligt er hvad der både forårsager _(A_) og 
+    _(B_). Så hvis _(C_) bliver mindre,
+    bliver både _(A_) og _(B_) højere, hvilket uden for 
+    konteksten for det til at ligne, at 
+    den ene forårsager den anden. 
+    </p>
+    <p class="t">
+    Og hvis du ved at _(A_) og _(B_) er relaterede, kan du umuligt ud fra <i>kun</i> dataet 
+    bestemme, om det er _(A_) der forårsager _(B_), eller _(B_) der forårsager _(A_). 
+    Hvis _(A_) er "hvor meget vindmøller drejer rundt" og _(B_) er "hvor meget det blæser", vil 
+    <i>dataet i sig selv</i> ikke kunne fortælle dig hvorvidt 
+    </p>
+    <p class="cent">Vind forårsager at vindmøller drejer rundt</p>
+    <p class="t">
+    ... eller
+    </p>
+    <p class="cent">Vindmøller der drejer rundt forårsager vind</p>
+    <p class="t">
+    Så <i>data i sig selv</i> er aldrig nok. At bevise at _(A_) forårsager _(B_) kræver altid 
+    en ekstern <i>logik</i> du ikke kan få fra <i>selve dataet</i>. Teori <i>er</i> altså vigtigt, og 
+    det er derfor at vi skal begrunde og bevise hypoteser i fysik matematisk, selvom 
+    det kunne virke som om, det var nok "bare at lave forsøget"
+    </p>
+    <p class="t">
+    Tid til nogle opgaver!
+    </p>
+
+

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+
+
+    <h4>De tre tests</h4>
+    <p class="t">
+    Ratio test og root test funker begge på præcist samme måde, som de gjorde med grænser:
+    </p>
+
+    <div class="Theory">
+    <b> Teori: Ratio test for serier</b> <br>
+    Hvis _(f(k)_) er en funktion, konvergerer serien _(\sum_{k=1}^{\infty} f(k) _) hvis at:
+    _($ \lim_{k \to \infty} \left[\left|\frac{f(k+1)}{f(k)} \right| \right] \lt 1_)
+    Den divergerer hvis samme grænse er større end _(1_), og testen kan intet konkludere,
+    hvis grænsen er lig <i>præcis</i> 1. 
+    </div>
+
+    <div class="Theory">
+    <b> Teori: Root test for serier</b> <br>
+    Hvis _(f(k)_) er en funktion, konvergerer serien _(\sum_{k=1}^{\infty} f(k)_), hvis at
+    _($\lim_{k \to \infty} \left[f(k)^{1/k} \right] \lt 1_)
+    Den divergerer, hvis samme grænse er større end _(1_), og testen kan intet konkludere,
+    hvis grænsen er lig <i>præcis</i> 1. 
+    </div>
+
+    <p class="tt">
+    At bruge disse teorier på serier er præcis samme process, som at bruge dem på 
+    grænser.
+    To små opgaver burde være fint: 
+    </p>
+
+    <q-stion 1="16" 2="1" bigTop="true">
+    Divergerer eller konvergerer de følgende serier?
+    <div style="margin-left:-63%; margin-top:25px; margin-bottom: -10px;">
+    _($\begin{eqnarray}
+        && \underline{\textbf{A}}: \, \, \, \, \, \, \sum_{k=1}^{\infty} \frac{k!*k^k}{k^{2k}}  \\  \\
+        && \underline{\textbf{B}}: \, \, \, \, \, \, \sum_{n=1}^{\infty} \frac{2^{n^2}}{Ln(n)^{10n}*n^{4n}}  \\  \\
+    \end{eqnarray}_)
+    </div>
+    <br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    Vi bruger ratio testen med denne. Antallet af _(k!_) og _(k^k_) er
+    _(2_) i både tæller og nævner, men konstanten i nævneren er _(e^2_) og kun _(e_) i tælleren.
+    Grænsen nærmer sig _(0_), så serien <i>konvergerer</i>.
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Først bruger vi root test, hvor vi skal teste:
+    _($\lim_{n \to \infty} \left[\frac{2^n}{Ln(n)^{10}*n^4} \right]_)
+    Vi kan nu let bruge ratio testen, og se at grænsen nærmer sig _(\infty_).
+    Der er ingen _(k!_) eller _(k^k_) hverken i tæller eller nævner, men
+    tælleren har en konstant på _(2_) på grund af _(2^n_), imens nævneren
+    kun er _(1_). _(\infty_) er større end _(1_), så root-testen fortæller
+    os, at serien diverger.
+    <br><br></answer-box>
+
+    <p class="tt">
+    Lad os lige få bevist det. Beviserne minder relativ meget om dem, vi fremstillede for grænser.
+    </p>
+
+    <p class="t">
+    Ved root testen gør vi det samme som ved grænser og beviser i stedet, 
+    at hvis _(\lim_{k \to \infty} \left[f(k) \right] \lt 1_), så
+    konvergerer _(\sum_{k=1}^{\infty} f(k)^k _)
+    </p>
+
+    <div class="Proof">
+    <b> Bevis: Root testen for serier</b> <br>
+    Med samme argumentation som i beviset for grænser, ved vi, at der findes et tal _(\delta_), hvor at
+    _($f(k) \lt 1_)
+    ... for alle _(k \gt \delta_). Summen deles nu op:
+    _($\sum_{k=1}^{\delta} f(k)^k + \sum_{k=\delta+1}^{\infty} f(k)^k _)
+    Sæt _(L_) til det least upper bound på _(f(k)_), hvis _(k \gt \delta_). Vores
+    sum er nu mindre end:
+    _($\sum_{k=1}^{\delta} f(k)^k + \sum_{k=\delta}^{\infty} L^k_)
+    Summen _(\sum_{k=\delta}^{\infty} L^k_) konvergerer til et tal, 
+    da det er en geometrisk serie med _(L \lt 1_). Summen op til
+    _(\delta_) er bare en eller anden konstant _(A_) _(\blacksquare_). 
+    </div>
+    
+    <br>
+    
+    <q-stion 1="16" 2="2" bigTop="true">
+    Bevis ratio-testen for serier
+    <br><br></q-stion>
+    <answer-box>
+    Her:
+    <div class="Proof">
+    <b> Bevis: Ratio testen for serier</b> <br>
+    Med samme argumentation som i beviset for grænser, vides det, at der findes
+    et tal _(\delta_) hvor
+    _($\left|\frac{f(k+1)}{f(k)} \right| \lt 1_)
+    ... for alle _(k \gt \delta_). Opdel nu summen:
+    _($\sum_{k=1}^{\delta} f(k) + \sum_{k=\delta+1}^{\infty} f(k)_)
+    Summen op til _(\delta-1_) er bare en konstant _(A_). Den anden sum kan omskrives til:
+    _($\begin{eqnarray}
+    && f(\delta)*\left(\frac{f(\delta+1)}{f(\delta)} \right) + f(\delta)*\left(\frac{f(\delta+1)}{f(\delta)} \frac{f(\delta+2)}{f(\delta+1)} \right) \text{ } \, + \, ... \, = \\ \\
+    && f(\delta)*\left(\frac{f(\delta+1)}{f(\delta)} + \frac{f(\delta+1)}{f(\delta)} \frac{f(\delta+2)}{f(\delta+1)} \text{ } \, + \, ...  \right)
+    \end{eqnarray}_)
+    Sig at det least upper bound på _(f(k+1)/f(k)_) er _(L_). Vi ved nu at:
+    _($\frac{f(\delta+1)}{f(\delta)} + \frac{f(\delta+1)}{f(\delta)} \frac{f(\delta+2)}{f(\delta+1)} \text{ } \, + \, ... \, \lt \sum_{k=1}^{\infty} L^k_)
+    Vores sum er derfor mindre end:
+    _($\sum_{k=1}^{\delta} f(k) + f(\delta)*\sum_{k=1}^{\infty} L^k_)
+    Summen _(\sum_{k=1}^{\infty} L^k_) nærmer sig en konstant, da _(L \lt 1_), og
+    da den første sum op til _(\delta_) bare er en konstant _(A_). _(\blacksquare_)
+    </div>
+    <br></answer-box>
+
+    <p class="tt">
+    Den tredje test er ny, og kaldes "integral testen":
+    </p>
+
+    <div class="Theory">
+    <b> Teori: Integral bound af en sum</b> <br>
+    Sig at funktionen _(f(k)_) er monotont faldende fra _(k \gt M_). Det gælder nu at:
+    _($\int_{M}^{n+1} f(x) \text{ }dx \le \sum_{k=M}^{n} f(k) \le f(M) + \int_{M}^{n} f(x) \text{ }dx_)
+    </div>
+
+    <div class="Corollary">
+    <b> Corollary: Integral testen</b> <br>
+    Serien _(\sum_{k=M}^{\infty}_) konvergerer hvis integralet
+    _($\int_{M}^{\infty} f(x) \, dx _)
+    ... konvergerer, og divergerer hvis det divergerer. 
+    </div>
+
+    <p class="tt">
+    Det kan let ses, hvordan man kommer frem til testen, ved at 
+    tage grænsen af _(n \to \infty_) på uligheden. _(f(M)_) har ingen
+    indflydelse, da det bare er en konstant _(A_).
+    </p>
+
+    <p class="t">
+    Der er super god intuition bag det her bevis. Sig at vi har en eller anden faldende funktion _(f(n)_):
+    </p>
+
+    <img class='Spic' style='width:70%' src='../../../Assets/Chapter4\Limits\IntegrationTest.png'> 
+
+    <p class="t">
+    Vi tager nu summen _(\sum_{k=N}^{M} f(k) _), som svarer til:
+    _($f(M)*1+f(M+1)*1+f(M+2)*1 \text{ } + \dots f(n-1)*1 + f(n)*1_)
+    Det kan ses som en masse rektangler med bredde _(1_):
+    </p>
+
+    <img class='Spic' style='width:70%' src='../../../Assets/Chapter4\Limits\IntegrationTest2.png'> 
+
+    <p class="t">
+    Denne sum er tydeligvis <i>større</i> end arealet under kurven, så:
+    _($\int_{M}^{n+1} f(x) \text{ }dx \le \sum_{k=M}^{n} f(k)_)
+    Vi kunne også regne summen på en anden måde:
+    </p>
+
+    <img class='Spic' style='width:70%' src='../../../Assets/Chapter4\Limits\IntegrationTest3.png'> 
+
+    <p class="t">
+    Lidt visuel inspektion viser, at dette areal kan regnes som summen fra _(M_) til _(n-1_), 
+    minus _(f(M)_):
+    _($\begin{eqnarray}
+    && \sum_{k=M}^{n} - f(M) \le \int_{M}^{(n-1)+1} f(x) \text{ }dx \to  \\ \\
+    && \sum_{k=M}^{n} \le f(M) + \int_{M}^{n} f(x) \text{ }dx 
+    \end{eqnarray}_)
+    Alt i alt:
+    _($\int_{M}^{n+1} f(x) \text{ }dx \le \sum_{k=M}^{n} f(k) \le f(M) + \int_{M}^{n} f(x) \text{ }dx_)
+    Det er muligt at fremstille et mere rigorisk bevis, men dette er relativt
+    tilfredsstillende og ordentligt. 
+    </p>
+
+    <p class="t">
+    Tid til opgaver!
+    </p>
+
+    <q-stion 1="16" 2="3" bigTop="true">
+    Konvergerer eller divergerer følgende serie?
+    _($\sum_{k=1}^{\infty} \frac{1}{k Ln(k)} _)
+    Hvorfor kan ratio testen eller root-testen ikke hjælpe dig her?
+    <br><br></q-stion>
+    <answer-box>
+    Ratio test kan ikke hjælpe, fordi både _(k_) og _(Ln(k)_) bliver til _(1_), så vi får
+    _(1/(1*1)=1_), hvilket er inconclusive. Root test hjælper heller ikke, da
+    både _(k^{1/k}_) og _(Ln(k)^{1/k}_) også giver _(1_). Vi prøver derfor med integral testen:
+    _($\int \frac{1}{k*Ln(k)} \, dk = Ln(Ln(k))_)
+    Vi regner nu integralet fra _(k=1_) til _(k=\infty_), som testen siger:
+    _($\lim_{k \to \infty} \left[Ln(Ln(k)) - Ln(Ln(1)) \right] = \infty - (-\infty) = \infty_)
+    Integralet divergerer, og det gør serien også. 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="16" 2="4">
+    Konvergerer eller diverger følgende serie?
+    _($\sum_{k=2}^{\infty} \frac{1}{k Ln(k)^2} _)
+    Bemærk, at vi starter ved _(k=2_)
+    <br><br></q-stion>
+    <answer-box>
+    Igen giver ratio og root test bare _(1_). Integralet er lig 
+    _(-1/Ln(k)_), så vi regner:
+    _($\left(-\frac{1}{Ln(\infty)} \right) - \left(-\frac{1}{Ln(2)} \right) = 0 - (-1.442) = 1.442_)
+    Integralet diverger, og det gør vores serie også.
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="16" 2="5">
+    Bevis at serien
+    _($\sum_{k=1}^{\infty} \frac{1}{k^p} _)
+    kun konvergerer, hvis _(p \gt 1_). 
+    <br><br></q-stion>
+    <answer-box>
+    Root og ratio test kan igen ikke hjælpe, da de giver _(1_). 
+    Integralet af _(1/k^p_) er _(k^{1-p}/(1-p)_), så vi skal regne:
+    _($\int_{1}^{\infty} \frac{1}{k^p} \text{ }dx = \frac{\infty^{1-p}}{1-p} - 1^{1-p}/(1-p)_)
+    <i>Hvis _(p \gt 1_) </i>: <br>
+    Potensen på _(\infty_) bliver negativ, så ledet går mod _(0_). Det resterende led er bare
+    en konstant, så integralet konvergerer.
+    <p class="t">
+    <i>Hvis _(p=1_)</i>: <br>
+    Dette er bare den harmoniske serie, som vi ved divergerer.
+    </p>
+    <p class="t">
+    <i>Hvis _(p \lt 1_)</i>: <br>
+    Summen er nu <i>større</i> end den en harmonisk serie, og diverger derfor også. 
+    </p>
+    <br></answer-box>
+
+
+
+
+

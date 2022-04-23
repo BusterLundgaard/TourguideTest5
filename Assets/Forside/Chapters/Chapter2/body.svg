@@ -1,0 +1,18 @@
+<svg width="900.3" height="989.2" version="1.1" viewBox="0 0 238.2 261.7" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <pattern id="Wavywhite" width="30.066020" height="5.1805778" patternUnits="userSpaceOnUse">
+   <path d="m7.597 0.061c-2.518-0.248-4.941 0.241-7.607 1.727v1.273c2.783-1.63 5.183-2.009 7.482-1.781 2.298 0.228 4.497 1.081 6.781 1.938 4.567 1.713 9.551 3.458 15.81-0.157l-4e-3 -1.273c-6.44 3.709-10.82 1.982-15.37 0.273-2.278-0.854-4.576-1.75-7.094-2z" fill="#fff"/>
+  </pattern>
+  <linearGradient id="a" x1="181.5" x2="280.7" y1="1041" y2="792" gradientTransform="matrix(.9 0 0 .9 -199.8 -668.3)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#9ba9c3" offset="0"/>
+   <stop stop-color="#7aade0" offset=".6388"/>
+   <stop stop-color="#737ff9" offset="1"/>
+  </linearGradient>
+ </defs>
+ <g transform="translate(90.21 -42.11)">
+  <path d="m-90.21 42.11 238.2 4.422v257.3l-238.2-6.4z" fill="url(#a)" opacity=".979"/>
+ </g>
+ <g transform="matrix(.7378 0 0 .7378 66.56 37.54)" fill="url(#Wavywhite)" opacity=".054">
+  <path d="m-90.21-50.89 322.8 5.993v348.7l-322.8-6.4z" fill="url(#Wavywhite)" opacity=".979"/>
+ </g>
+</svg>

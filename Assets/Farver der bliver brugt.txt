@@ -1,0 +1,18 @@
+Normal: 230, 255, 253,
+Spørgsmål: 113,187,183 
+Svar: 211, 219, 179
+
+For rigtige farver:
+OBS -> Advanced -> Video -> 
+	Color space: 709
+	Color range: Partial
+	Color format: NV12
+	
+NVIDIA Control panel -> Video -> Adjust video colour settings -> Advanced
+	Dynmaic range: Full (0-255)
+
+Sony vegas -> project settings -> Video
+	Pixel format: 32-but floating point (full range)
+	View transform: Off
+
+

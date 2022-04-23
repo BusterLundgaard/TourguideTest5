@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+
+
+    <p class="t">
+    <i> Note 1: Hvis du har brug for, at Geogebra evaluerer en integral fra f.eks. _(-\infty_) til
+    _(\infty_), kan du bare skrive "_(\text{infinity}_)" i Geogebra. F.eks:
+    _($\int_{-\infty}^{5} 3^{-x^2} \text{ }dx = \text{integral}(3^{-x^2}, x, -\text{infinity}, 5)  _)
+    </i>
+    </p>
+
+    <p class="t">
+    <i> Note 2</i>: I de her opgaver antager jeg, at du bruger Geogebra.
+    Du får absolut brug for det til flere integraler og ligninger. 
+    </p>
+
+    <br><br>
+
+    <h2>Træning i at anvende <br> sandsynlighedsdensiteter til <br> diverse problemer</h2>
+
+    <q-stion 1="2" 2="1" bigTop="true">
+    Du har lige klippet dit græs. Sig at chancen for, at det efter en måned har groet til en
+    længde _(x_) kan beskrives af følgende pdf:
+    _($f(x)=0.3984*0.6065^{(x-4)^2}_)
+    Det ser ud som:
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter4\KontinuerligProb\NormalDistribution2.png'> 
+    <p class="t">
+    Hvad er chancen for, at græsset har groet mellem _(4.2_) og _(5.5_)cm?
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Vi skal finde chancen for, at _(X_) er i intervallet _([4.2,5.5]_), hvilket
+    kan beregnes med følgende integral:
+    _($\int_{4.5}^{5.5} 0.3984*0.6065^{(x-4)^2} \, dt_)
+    Den kan beregnes med computeren og giver _(0.35_). 
+    Der er _(35_)% chance for, at græsset har en vækst mellem disse to højder.
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="2">
+    Du drejer en snurretop hurtigt rundt. Dens endelige rotation, når den vælter
+    er <i>teknisk set</i> bestemt af dens starthastighed, men vi kan praktisk talt
+    sige, at det er tilfældigt, hvis starthastigheden er stor pga. friktion fra gulvet og luften.
+    <p class="t">
+    Hvad er chancen for, at den stopper inden for _(8_) grader af, hvor den startede?
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Sig at vores stokastiske variable _(X_) er lig "graden snurretoppen lander på". Man kan
+    se, at _(X_) går fra _([0,360]_). Chancen for en hvilken som helst værdi af _(x_) skal være
+    det samme, så sandsynlighedsfunktionen er:
+    _($f(x) = k_)
+    Vi ved også, at chancen for at den lander på en grad mellem _(0_) og _(360_) er _(1_), så:
+    _($\int_{0}^{360} k \text{ }dx = 1 \to k*360 = 1 \to k=\frac{1}{360}_)
+    Vi ved ikke <i>hvor</i> den startede, men det er 
+    også ligegyldigt, siden sandsynligheden er identisk overalt.
+    "_(8_) grader inden for hvor den startede" svarer til _(8_) grader til den ene side
+    og _(8_) grader til den anden. Vi regner derfor:
+    _($\int_{0}^{16} \frac{1}{360} \text{ }dx = \frac{16}{360} = 0.0444_)
+    Så en _(4.44_)% chance.
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="3">
+    Du arbejder på et hospital. Sig at akuthjælp
+    til en bestemt sygdom kun kan håndteres af en bestemt maskine i kun har èn af.
+    Det tager jer generelt _(23_) min pr. patient,
+    men der er virkelig pres på for nyligt, så
+    chancen for, at der går _(t_) min mellem to patienter ankommer, kan modelleres
+    af pdf'en
+    _($P(t) = 0.0476*e^{-0.0476t}_)
+    Hvad er chancen for, at en ny patient er nødt til at vente lidt?
+    <br><br></q-stion>
+    <answer-box>
+    Det her svarer til chancen for, at _(t_) er mellem _(0_) og _(23_). Så vi regner:
+    _($\int_{0}^{23} 0.0476*e^{-0.0476t} \text{ }dt = 0.67_)
+    En _(67_)% chance.
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="4">
+    I diskret sandsynlighed brugte vi hyppigt følgende formel:
+    _($\VeC[n,k]*p^k*(1-p)^{n-k}_)
+    Den gav os chancen for, at der blandt _(n_) sandt/falsk-begivenheder med chance _(p_)
+    var _(k_) <i>sande</i>. Vi ved, at
+    _($\VeC[n,k] = \frac{n!}{k! (n-k)!}_)
+    Det kan meget hurtigt blive svært at regne ved store _(n_).
+    Hvis _(n_) netop er <i>meget</i> stor, findes der dog en kontinuerlig approksimation
+    af samme sandsynlighed:
+    _($f(x) = C(p)*p^x*(1-p)^{1-x}_)
+    Her er _(p_) stadig sandsynligheden, men _(x_) er nu <i>procentdelen</i> af
+    sande begivenheder. _(C(p)_) er bare en konstant faktor, der skal regnes ved hjælp af
+    _(p_):
+    _($C(p)=\frac{2 Arctanh(1-2p)}{1-2p}_)
+    Det ser slemt ud, men den skal bare regnes èn gang ved den givne _(p_). 
+    _(Arctanh_) er den såkaldte "modsatte hyperbolske tangent", hvilket er
+    en funktion, vi ikke har tid til at forklare lige nu: Geogebra kan nemt regne den.
+    <p class="cent">*</p>
+    <p class="t">
+    Sig, at du har kastet med en terning _(1233_) gange. Hvad er chancen for,
+    at du slår højere end _(4_) mellem _(500_) og _(600_) gange?
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Chancen for, at du slår højere end _(4_) er  
+    _(p=2/6=1/3_). Det er vores "ja-nej" spørgsmål. 
+    _(500_) ud af _(1233_) gange svarer til, at vi får "ja" på
+    _(500/1233 = 0.405_) af begivenhederne, og _(600_) svarer til _(600/1233=0.486_).
+    Vi ved nu, at vi skal regne:
+    _($\int_{0.405}^{0.486} C(1/3)*(1/3)^x*(1-1/3)^{1-x} \text{ }dx_)
+    Vi regner lige konstanten _(C(1/3)_):
+    _($C(1/3)=\frac{2 Arctanh(1-2/3)}{1-2/3} = 2.08_)
+    Så:
+    _($\int_{0.405}^{0.486} 2.08*(1/3)^x*(1-1/3)^{1-x} \text{ }dx = 0.08_)
+    En lille chance på kun _(8_)%
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="5">
+    Sig at et dyr i havet udløser en masse mikroskopiske æg. Tonsvis af dem.
+    Hver af de her æg har _(70_)% chance for at overleve (resten bliver spist).
+    Hvor stor er chancen for, at over _(90_)% af æggene overlever?
+    <br><br></q-stion>
+    <answer-box>
+    Vi behøver ikke vide <i>hvor</i> stort _(n_) er, for at bruge formlen i sidste opgave da
+    vi alligevel arbejder med procenter: Det eneste vigtige er, at _(n_) er <i>stort</i>.
+    <p class="t">
+    Vores _(p=0.7_), så
+    _($C(0.7)=\frac{2 Arctanh(1-2*0.7)}{1-2*0.7} = 2.1182_)
+    Og sandsynlighedsfunktionen for at _(x_) procent af æggene overlever er
+    _($P(x) = 2.1182*0.7^x*0.3^{1-x}_)
+    <i>Over</i> _(90_)% svarer til at _(x_) er mellem _(0.9_) og _(1_), så:
+    _($\int_{0.9}^{1}  2.1182*0.7^x*0.3^{1-x} \text{ }dx = 0.142_)
+    En chance på kun _(14_)% 
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="6">
+    Der spilles dart:
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter4\KontinuerligProb\Darts.png'> 
+    <p class="t">
+    Sig at chancen for, at en dartspiller rammer en afstand _(x_) _(cm_)
+    væk fra bullseye kan beskrives af
+    _($f(x)=0.02573*0.99792^{x^2}_)
+    ... hvor _(x_) både kan være positiv og negativ,
+    i forhold til om man skyder til venstre eller højre
+    for bullseye. 
+    </p>
+    <p class="t">
+    Dartpladen er _(46_)cm lang. Hvad er chancen for, at en dartspiller rammer uden for
+    pladen?
+    </p>
+    <br></q-stion>
+    <answer-box>
+    "Uden for pladen" svarer til, at _(x_) enten er mellem _(-\infty_) og _(-46/2=-23_), eller
+    mellem _(23_) og _(\infty_). Det <i>kunne</i> vi fint godt regne, men en lidt nemmere
+    strategi ville bare være at regne:
+    _($1-P(\text{Dart rammer plade})_)
+    Det svarer til _(x \in [-23,23]_), så:
+    _($1-\int_{-23}^{23} 0.02573*0.99792^{x^2} \text{ }dx = 1-0.8618 = 0.1382_)
+    En lille _(14_)% chance.
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="7">
+    Du arbejder på et "customer service" center, hvor du skal modtage opkald
+    fra utilfredse kunder. Du har arbejdet her i lang 
+    tid, og har lagt mærke til / modelleret, at
+    chancen for _(t_) minutter mellem èt 
+    opkald slutter til det næste starter er:
+    <p class="t">
+    _($f(t)=0.3*e^{-0.3t}_)
+    </p>
+    <p class="t">
+    Du er lige blevet færdig med et opkald og skal virkelig på toilet. Du ved,
+    det tager dig 2.5 minutter, hvis du virkelig "presser den". Din
+    arbejdsgiver bliver sur, hvis du ikke er klar ved telefonen, når nogen ringer.
+    Hvad er chancen for, at du når at færdiggøre din tur, før telefonen bipper? 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Vi ved, at _(t_) går fra _(0_) til _(\infty_). 
+    Du når at færdiggøre din tur på toilettet,
+    hvis _(t \gt 2.5_), ergo hvis _(t \in [2.5, \infty]_).
+    Det <i>kunne</i> vi godt regne, men vi kunne også i stedet bare sige:
+    _($1-P(t \in [0,2.5])=1-\int_{0}^{2.5} 0.3*e^{-0.3t} \text{ }dt = 0.472_)
+    Så det er cirka 50/50 om du når det eller ej.
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="8">
+    Et bestemt universitet har hvert år en "kaste-konkurrence" med de nye elever.
+    Baseret på alt data fra tidligere år har universitetet analyseret, at 
+    chancen for, at en tilfældig elev kaster bolden _(x_) meter er:
+    _($P(x)=0.01329*0.9994445^{(x-35)^2}, \qquad x \in [-\infty, \infty]_)
+    I universitets lange historie sidder rekorden på _(99m_).
+    Hvad er chancen for, at en tilfældig elev slår rekorden?
+    <p class="t">
+    Det giver selvfølgelig ikke rigtig mening, at _(x_) 
+    i formlen kan være negativ (hvem kaster baglæns?),
+    men det er praktisk rent matematisk set, da det 
+    sørger for, at den samlede integral på intervallet af 
+    _(x_) bliver _(1_). 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    _(x_) skal være større end _(99_), hvilket svarer til _(x \in [99, \infty]_):
+    _($\begin{eqnarray}
+    && \int_{99}^{\infty} 0.01329*0.9994445^{(x-35)^2} \text{ }dx = \\ \\
+    && \text{integral}(0.01329*0.9994445^((x-35)^2), x, 99, \text{infinity}) = \\ \\
+    && 0.01642
+    \end{eqnarray}_)
+    Som forventet er chancen meget lille. 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="9">
+    Sig at et studie har testet
+    hvor meget kraft en masse forskellige typer telefoner kunne holde til, før de
+    blev ødelagt. Studiet har fundet pdf'en, hvis man vælger en tilfældig telefon
+    på markedet, og ser om den kan holde til _(x_) newton kraft:
+    _($P(x) =  0.0035619*0.9999601^{(x-311.16)^2}, \qquad x \in [-\infty, \infty]_)
+    Du arbejder i en telefonbutik, og kommer ved et uheld til at vælte
+    et stort skab ned i en kasse med tre telefoner. Den rammer telefonerne med
+    en kraft på _(250N_). Hvor stor (cirka) er 
+    chancen for, at alle tre telefoner overlever, hvis du ikke
+    ved noget som helst om, hvilke telefoner der er i kassen?
+    <br><br></q-stion>
+    <answer-box>
+    Telefonerne er nede i en kasse. Vi ved praktisk 
+    talt intet om dem, så vi kan fint modellere
+    dem alle som "tilfældige". Nu skal vi regne 
+    chancen for, at èn telefon overlever
+    en kraft på _(250N_), <i>tre gange</i>. Disse "tre gange" betyder bare, at
+    vi skal finde chancen for, at én tilfældig telefon overlever, og opløfte
+    det i tredje potens. Tre ødelagte telefonen svarer til den samme selvstændige begivenhed,
+    tre gange i streg.
+    <p class="t">
+    Chancen for at en tilfældig telefon overlever 
+    svarer til chancen for, at en tilfældig
+    telefon kan overleve _(250N_) eller mere. _(x_) går fra _([-\infty, \infty]_), så vi skal
+    regne
+    _($\begin{eqnarray}
+    && \int_{250}^{\infty} 0.0035619*0.9999601^{(x-311.16)^2} \text{ }dx = \\ \\
+    && 0.71
+    \end{eqnarray}_)
+    Så chancen for at tre tilfældigt udvalgte telefoner overlever er:
+    _($0.71^3 = 0.357_)
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="10">
+    Vi går tilbage til vores yndlingsmaskine, der stikker huller i ting:
+    <img class='Spic' style='width:70%' src='../../../Assets/Chapter4\Limits\Needle.png'>
+    <p class="t">
+    Sig, at chancen for _(x_) cm mellem hvert stik, er
+    _($f(x)=0.35*e^{-0.35x}_)
+    Hvad er den afstand _(x_), hvor der er 50/50 chance for om maskinen stikker
+    eller ikke stikker? 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Kald denne _(x_) værdi for _(M_). Chancen for 
+    at maskinen stikker på denne afstand er
+    _($\int_{0}^{M} 0.35*e^{-0.35x} \, dx _)
+    "Ligeså stor chance for at stikke som for ikke at stikke" 
+    svarer til en sandsynlighed på _(0.5_):
+    _($\int_{0}^{M} 0.35*e^{-0.35x} \, dx = 0.5_)
+    Lad os løse denne ligning! Integralet kan let evalueres til
+    _($-e^{-0.35M} - (-e^{-0.35*0}) = -e^{-0.35M} + 1_)
+    Så:
+    _($-e^{-0.35M} + 1 = 0.5 \to M = 1.98_)
+    Bum! Svaret er _(1.98_) centimeter mellem. 
+    <p class="pageSplitter">*</p>
+    <p class="t">
+    Det skal noteres, at vi også kunne have løst denne 
+    ligning direkte i Geogebra ved at skrive:
+    _($\text{NSolve}(\text{Integral}(0.35*2.718^{-0.35*x}, x, 0, M) = 0.5, M)_)
+    Bemærk, at jeg bruger _(\text{NSolve}_) i stedet 
+    for _(\text{Solve}_), da den nok er nødt til 
+    at løse en avanceret ligning som denne <i>numerisk</i>. 
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="11" customWidth="540">
+    Det er lidt en tradition at man drikker _(20_) shots på ens 
+    _(20_)'ne fødselsdag. Sig du har en bestemt person kaldt Ib.
+    Ib har en relativt lille kropsvægt, og pdf'en 
+    for at han dør, hvis han indtager
+    _(x_) mikrogram ethanol (alkohol) er:
+    _($p(x)=0.0797884*0.980198^{(x-13.58)^2}, \qquad x \in [-\infty, \infty]_)
+    Denne pdf er lidt tricky at forstå konceptuelt. Den stokastiske variable
+    _(X_) er lig "Mængde ethanol Ib indtager, før han dør". Hvis _(X \in [a, b]_), 
+    dør Ib imellem _(a_) og _(b_) mikrogram. _(X \in [a, \infty]_) giver
+    chancen for at Ib kan indtage mere end _(a_), før han dør. 
+    <p class="t">
+    Sig at der i hver shotglas er _(0.23_) mikrogram ethanol. I fortsætter
+    traditionen: Ib skal drikke 21 shots, når han bliver 21, 22 når han bliver
+    22, osv. Hvor mange år kan i blive ved, hvis chancen for at Ib dør hvert år skal
+    være <i>under</i> 90%? Den <i>samlede</i> 
+    chance behøver ikke være _(90_)%, bare hvert individuelt år.
+    </p>
+    <p class="t">
+    Jeg skal notere, at i til denne opgave skal løse en ligning, der <i>måske</i> ikke virker i 
+    Geogebra 5,
+    men virker i Geogebra 6. 
+    </p>
+    <br></q-stion>
+    <answer-box customWidth="540">
+    Hvad er chancen for at Ib dør, hvis han drikker _(a_) liter ethanol? 
+    _(P(X \in [a, \infty])_) giver chancen for, at han dør på et interval 
+    <i>efter</i> _(a_), så det er hvad vi leder efter. Ergo:
+    _($\int_{a}^{\infty} 0.0797884*0.980198^{(x-13.58)^2} dx = 0.9_)
+    _(a_) kan løses via Geogebras _(\text{NSolve}_):
+    _($\text{NSolve}\left(\text{Integral}\left(0.0797884*0.980198^{(x-13.58)^2}, x, a, \text{infinity} \right) = 0.9 \right)_)
+    Det giver _(7.17_). Ib tager _(n_) shots, så:
+    _($n*0.23=7.17 \to n = 30.86_)
+    I kan blive ved i ca. 10 år mere før traditionen bliver for sundhedsfarlig, selv for Sønderjylland. 
+    <br><br></answer-box>
+
+
+
+

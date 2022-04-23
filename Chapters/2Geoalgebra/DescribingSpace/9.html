@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+
+    <h2>En retning med en længde: <br> Fysik og vektorer</h2>
+    <p class="t">
+    I en tidligere opgave i trigonometri-sektionen arbejdede vi med følgende scenarie:
+    </p>
+    <img class='SpicBXL' style='width:80%' src='../../../Assets/Chapter2\Section1\TrigProperties\LongestShot.png'> 
+    <p class="t">
+    Vi forsøgte at finde den bedst mulige vinkel til bolden. Den vinkel hvor den fløj
+    længst. For at løse opgaven opdelte vi boldens bevægelse i to: Den horisontale 
+    og vertikale retning. Den vertikale hastighed ville 
+    ændre sig med tyngdekraften, mens
+    den horisontale forblev konstant. 
+    </p>
+    <p class="t">
+    Lad os kigge på et andet, lignende eksempel. Sig du
+    er ved at kaste en bold udover en _(50m_) høj klippe med en hastighed på _(3m/s_) 
+    og en vinkel på _(30^o_) 
+    over horisontalen. Hvis tyngdekraften accelerer bolden nedad med _(9.8 m/s_) pr sekundet,
+    med hvilken vinkel vil bolden så ramme vandet? Hvor? Hvor hurtigt?
+    </p>
+    <img class='SpicBXL' style='width:65%' src='../../../Assets/Chapter2\Section4\Vectore\KastKlippe1.png'> 
+    <p class="t">
+    Vi kan starte med at opdele boldens hastighed i to vinkelrette dele: 
+    langs tyndekraften og vinkelret tyngdekraften. Intuitivt
+    horisontalt og vertikalt, som vi er vant til. Bolden oplever ingen <i>horisontale</i> 
+    krafter, så den bliver ved med at
+    bevæge sig fremad med en konstant hastighed på _(3*Cos(30)=2.598 m/s_). 
+    Vertikalt starter den med 
+    en hastighed på _(3*Sin(30)=1.5 m/s_), men bliver hurtigt mindre. 
+    Man kan bevise, at et objekts position som funktion af tid under en konstant acceleration
+    _(a_) er:
+    _($\text{Position} = \frac{a}{2}t^2 + v_0 t_)
+    Hvor _(a_) er acceleration, _(v_0_) starthastighed og _(t_) tiden. Det skal vi nok
+    bevise eventuelt, men vi har ikke helt værktøjerne lige nu. 
+    </p>
+    <p class="t">
+    Anyways: 
+    _(y_)-positionen af vores bold bliver til
+    _($y=4.9t^2+v_0*t_)
+    ... hvor _(y=0_) er 
+    positionen hvorfra vi kaster bolden. 
+    Den simple andengradsligning 
+    _($4.9t^2-1.5t=50_)
+    ... med løsningen _(t=3.3_), fortæller os,
+    hvornår bolden rammer vandet.  
+    </p>
+    <img class='SpicBXL' style='width:90%' src='../../../Assets/Chapter2\Section4\Vectore\KastKlippe2.png'> 
+    <p class="t">
+    Den horisontale hastighed når vi rammer vandet 
+    ved _(x=_) _(2.598*3.3=_) _(8.57m_) er som altid bare _(2.598_). 
+    Den vertikale er _(v_y - t*a=_) _(3.5-3.3*9.8=_) _(-28.84_). Vinklen bliver derfor 
+    _(Arctan(28.84/2.598)=_) _(84.79_) grader 
+    under horisontalen. </p>
+    <img class='SpicB' style='width:25%' src='../../../Assets/Chapter2\Section4\Vectore\KastKlippe3.png'> 
+    <p class="t">
+    Den samlede hastighed af bolden er bare pilens længde, så: 
+    _($\sqrt{28.84^2+2.598^2}=28.95 m/s_)
+    </p>
+
+    <p class="t">
+    Lad os se på endnu et eksempel, også fra fysik: 
+    </p>
+    <img class='SpicXL' style='width:80%' src='../../../Assets/Chapter2\Section4\Vectore\InclinedPlane1.png'> 
+    <p class="t">
+    Her får vi brug for et kort lynkursus i et vigtigt begreb i 
+    fysik kaldt "<i>kræfter</i>". 
+    </p>
+    <p class="t">
+    Intuitivt er der "kræfter" overalt omkring os.
+    De her kræfter er med til at <i>ændre hastigheder</i> på objekter. 
+    Hjulene på bilen der
+    får energi fra olie/diesel fungerer som en <i>kraft</i> på bilen, der øger dens hastighed. Vind
+    er en kraft, der får os til at gå langsommere eller hurtigere. 
+    Hvis du støder en kugle langt, har
+    du anvendt en stor <i>kraft</i> på kuglen over en kort periode. 
+    </p>
+    <p class="t">
+    Vi kan <i>ikke</i>
+    beskrive kræfterne i forhold til, hvor meget de ændrer hastigheden på andre objekter, eftersom
+    det varierer baseret på objektets vægt/masse. 
+    Hjulene på en bil anvender måske samme kraft hele tiden, 
+    men den kraft resulterer i større acceleration, hvis 
+    der kun er _(1_) passager og ingen bagage. 
+    Hvis du støder en tung kugle med samme
+    kraft som en let kugle, flyver den jo ikke ligeså langt. 
+    Vi definerer derfor "kraft" _(F_) som 
+    _($F=\text{Årsaget acceleration}*\text{Masse}_)
+    ... fordi nu er
+    _($\text{Årsaget acceleration} = \frac{F}{\text{Masse}}_) 
+    Det er meget simpelt, det er meget generelt, og det er meget abstrakt:
+    Men det er også en super effektiv måde at beskrive, 
+    hvad vi ser i verden rundt omkring os - både i simple
+    og avancerede situationer. 
+    </p>
+
+    <p class="t">
+    Groft simplificeret er der tre krafter på billedet deroppe: 
+    Bilens kraft, tyngdekraften, og en friktionskraft. 
+    </p>
+    <img class='SpicXL' style='width:80%' src='../../../Assets/Chapter2\Section4\Vectore\InclinedPlane2.png'> 
+    <p class="t">
+    Hver kraft har selvfølgelig en <i>styrke</i> 
+    - hvor stor indflydelse den har på accelerationen - og en <i>retning</i>. 
+    Bilens kraft er opad langs _(\theta_)-vinkel bakken,
+    friktionen modsat nedad bakken og tyngdekraften direkte ned. 
+    Hvis ikke du ved, hvad friktion er, forklarer følgende billede ideen:
+    </p>
+    <img class='SpicXL' style='width:80%' src='../../../Assets/Chapter2\Section4\Vectore\Friction.png'> 
+    <p class="t">
+    Få flader er faktisk flade på et mikroskopisk niveau. 
+    Hastigheden på et objekt sænkes, hvis det bevæger sig langs et andet objekt med denne
+    "grove" flade, da en masse molekyler ender med at side fast i små huller. Så hvis
+    et objekt bevæger sig langs et andet objekt, vil det opleve en "friktionskraft" 
+    i den modsatte retning af bevægelsen. Det er faktisk sådan her, det virker at gå! 
+    Du bevæger dine føder <i>bagud</i>, og den store
+    friktion (plus din motorik og meget andet) får dig til at gå <i>fremad</i>. Jo
+    mere vi presser ind mod fladen, jo større effekt har friktionen. Vi siger 
+    derfor, at 
+    _($F_{\text{Friktion}} = \mu*F_{\text{Indad}}_)
+    ... hvor _(\mu_) bare er en eller anden konstant. 
+    Det er på ingen måde en perfekt beskrivelse af virkeligheden, men som en approksimation virker det fint.
+    </p>
+    <p class="t">
+    Sig at vores _(\mu_) i situationen er _(=0.09_).
+    Lige nu er det svært for tyngdekraften rigtigt at interagere med enten friktionen eller bilens kraft,
+    da den hverken er parallel med eller vinkelret på bakken. Lad os lige ændre det:
+    </p>
+    <img class='SpicXL' style='width:80%' src='../../../Assets/Chapter2\Section4\Vectore\InclinedPlane3.png'> 
+    <p class="t">
+    Den del af tyngdekraften der går langs med bakken er altså _(F_t*Sin(\theta)_), og den del
+    der går vinkelret mod bakken er _(F_t*Cos(\theta)_), så friktionskraften
+    er _(0.09*F_t*Cos(\theta)_). Der er nu 3 kræfter på bilen, der alle
+    går i samme retning: Bilens kraft fremad, friktionens kraft bagud og tyngdekraftens
+    kraft bagud. Hvis èn kraft _(F_1_) får os til at accelerere med _(F_1/m_) meter i 
+    sekundet pr sekundet, og 
+    en anden kraft _(F_2_) får os til at accelerere med _(F_2/m_), så får
+    de os samlet til at accelerere med:
+    _($\frac{F_1}{m}+\frac{F_2}{m}=\frac{F_1+F_2}{m}_)
+    Det her er super praktisk! Vi kan nemt bare plusse kræfter med hinanden,
+    for at få deres samlede effekt!  
+    </p>
+    <p class="t">
+    Lad os sige, at  _(F_{bilen}_) eksempelvis er _(9500_), _(F_{tyngdekraft}=7840_) og _(\theta=30_). 
+    _(F_{friktion}_) er derfor lig:
+    _($-7840*Cos(30)*0.09=-611.04_) 
+    Tyngdekraften deler vi op i _(-7840*Cos(30)=_) _(-6789_) og _(-7840*Sin(30)=_) _(-3920_):
+    </p>
+    <img class='SpicXL' style='width:80%' src='../../../Assets/Chapter2\Section4\Vectore\InclinedPlane4.png'>
+    <p class="t">
+    Jeg har introduceret en ny kraft på billedet her kaldt <i>normalkraften</i>. 
+    Bilen bevæger sig jo <i>ikke</i> vinkelret med bakken <i>trods</i> at tyngdekraften 
+    trækker i den retning. 
+    Derfor siger vi, at der er en "normalkraft" skabt af selve jorden/fladen, der har modsat retning
+    og samme størrelse som tyngdekraften. 
+    Der er jo også en "normalkraft" fra jorden, når du står op. 
+    Det er lidt pedantisk og hjælper os ikke rigtigt i denne situation, 
+    men kan alligevel blive praktisk på andre tidspunkter. 
+    </p>
+    <p class="t">
+    Vi kan sige, lidt kompakt, at bilen lige nu oplever krafterne
+    _($\VeC[9500,0], \VeC[-3920,0], \VeC[-611,0], \VeC[0,-6789], \VeC[0,6789]_)
+    ... hvor vi skriver _(0_) ved bilens og friktionens kraft, 
+    fordi de ikke har indflydelse på bevægelsen vinkelret med bakken. 
+    Elementerne repræsenterer de samme vinkelrette retninger, så kan vi nemt lægge dem sammen som:
+    _($\VeC[9500-3920-611+0+0, 0+0+0-6789+6789]=\VeC[4969,0]_)
+    Hvis bilen vejer, sig, _(800kg_), accelererer den altså med
+    _(4969/800=_) _(6.211 \frac{m}{s}_) pr sekundet (jeg er ikke særlig god til realistiske tal, okay?). 
+    </p>
+  
+    <p class="t">
+    Vi har brugt en del pile til at vise bevægelser 
+    og kræfter i de sidste par eksempler. Lad mig for både min og din 
+    skyld introducere en bedre sprog/notation. 
+    Kald en af de her
+    pile for en "<i>vektor</i>", og skriv den som f.eks. 
+    _($\VeC[3,7]_) 
+    ... hvis den går langs en bestemt retning med _(3_), og vinkelret den retning med _(7_). 
+    Siden vi kan lægge kræfter sammen bare ved
+    at plusse deres vinkelrette og parallelle dele, siger vi disse "vektorer" kan plusses sammen som:
+    _($\VeC[200,-15]+\VeC[-13,30]=\VeC[200+(-13),-15+30]=\VeC[187,15]_)
+    Det er intuitivt og nemt at skrive. Hvis jeg "ganger" en vektor med 
+    et tal som _(3.42 * \Vec[12.3,-3.2\pi]_), mener jeg bare
+    at vi ganger hver af dets elementer: 
+    _($3.42 * \VeC[12.3,-3.2\pi] = \VeC[12.3*3.42,-3.2\pi*3.42]_)
+    Det giver også intuitiv mening: At gange begge komponenter svarer til at
+    gange vektorens samlede længde. 
+    </p>
+    <p class="t">
+    Hvis _(A_) er en vektor, vil jeg sætte en lille pil over som _(\vec A_).
+    _(|\vec A|_) betyder <i>længden</i> af _(\vec A_).
+    </p>
+
+
+    <p class="t">
+    Et godt sprog som dette kan virkelig streamline, hvordan man tænker.
+    Følgende
+    problem <i>kunne</i> jeg helt fint løse uden, men det er hurtigere og nemmere med:
+    </p>
+    <img class='Spic' style='width:130%; margin-left: -60px;' src='../../../Assets/Chapter2\Section4\Vectore\CykelHop.png'> 
+    <p class="t">
+    Sig at du (_(60kg_)) cykler op af en rampe med din _(15kg_) tunge
+    cykel. Du starter _(15m_) væk fra rampen, rampen er 
+    _(2.5m_) lang, og du skal cykle hurtigt nok, til at komme op på en _(3m_) høj platform.
+    Udover tyngdekraften oplever du også en friktionskraft med _(\mu=0.02_). 
+    Klarer du hoppet, hvis du cykler med en kraft på _(F_), og tyngdekraften er _(-590_)?
+    </p>
+
+    <p class="t">
+    Lad os først og fremmest dele problemet op i tre faser: 
+    Før rampen, på rampen, og efter rampen i luften.
+    Det eneste vi rigtig har brug for at vide, er hastighedsvektoren 
+    for slutnigen af rampen. Derefter er det
+    nok relativt nemt at se, om man klarer hoppet eller ej. 
+    Hvis vi ignorerer normalkraften, så 
+    oplever cyklen i starten 
+    _($\VeC[500,0]+\VeC[0.02*(-590),0] = \VeC[488.2,0]_)
+    Den kommer nu op på rampen:
+    </p>
+    <img class='Spic' style='width:52%' src='../../../Assets/Chapter2\Section4\Vectore\CykelRampeKrafter.png'> 
+    <p class="t">
+    Vi kan let se med geometri, at
+    _($F_{\text{Cykel}} = \VeC[500*Cos(38), 500*Sin(38)] = \VeC[394, 307.8] _)
+    ... og det er selvfølgelig åbenlyst at
+    _($F_{\text{Tyngdekraft}} = \VeC[0,-590]_)
+    Størrelsen på normalkraften svarer til, hvor stor en del af tyngdekraften der går ind mod rampen. 
+    Det kan regnes som bare _(Cos(38)*590=_) _(464.9_), så:
+    _($F_{\text{Normalkraft}} = \VeC[-464.9*Sin(38), 464.9*Cos(38)] = \VeC[-286.2, 366.3]_)
+    Friktionskraften kan regnes som:
+    _($F_{\text{Friktion}} = \VeC[-464.9*0.02*Cos(38), -4649*0.02*Sin(38)] = \VeC[-7.3, -57.2]_)
+    Så alt i alt:
+    _($\VeC[394, 307.8] + \VeC[0,-590] + \VeC[-286.2, 366.3] + \VeC[-7.3, -57.2] = _)
+    _($\VeC[394+0-286.2-7.3, 307.8-590+366.3-57.2] =_)
+    _($\VeC[100.5, 26.9]_)
+    Ved springet i luften oplever jeg kun èn kraft: tyngdekraften. Så: 
+    _($\VeC[0,-590]_)
+    For at finde hastigheden jeg tager på de første 15 meter, skal jeg bruge formlen:
+    _($\text{Ændring i position}=\frac{a}{2}t^2 + v_0t_)
+    Vores _(a_) er lig
+    _($\vec F/m = \VeC[488.2,0]/60 = \VeC[488.2/60,0/60] = \VeC[8.13,0]_)
+    ... og vores _(v_0_) er lig _((0,0)_). Ergo går der
+    _($\frac{8.13}{2}t^2=15 \to t= 1.91_) 
+    ... sekunder, så hastigheden stiger til 
+    _($\VeC[8.13,0]*1.91 = \VeC[15.46,0]_)
+    Vi skal op ad bakken. Den er _(2.5*Cos(38)=_)
+    _(1.97m_) lang på x-aksen, og vores acceleration på _(x_) er _(100.5/60=_)
+    _(1.674_). Ergo
+    _($\frac{1.674}{2}*t^2+15.46*t = 1.97 \to t=0.12_)
+    ... sekunder, så sluthastigheden for enden af rampen er:
+    _($\VeC[15.46,0] + \VeC[100.5,26.9]*0.12 = _)
+    _($\VeC[15.46+100.5*0.12,0+26.9*0.12] =_)
+    _($\VeC[27.5, 3.2]_)
+    Nu skal vi bare se, om vi klarer springet. 
+    Vi starter med en højde på _(2.5*Sin(38)=_) _(1.53_),
+    og skal efter _(4m_) på _(x_) være _(3m_) oppe. Det tager
+    _($15.66*t=4 \to 0.255_)
+    ... sekunder før vi har rejst _(4m_) fremad. Accelerationen nedad er _(-590/60=_) _(-9.8_).   
+    Nu bruger vi formlen, for at finde for at finde ændringen efter _(0.255s_):
+    _($\frac{-9.8}{2}*0.255^2 + 3.2*0.255 = 0.497_)
+    Cyklen klarer altså <i>ikke</i> springet. Trist. 
+    </p>
+    <p class="t">
+    I alt ærlighed var det her ikke den <i>mest</i> effektive måde, at løse problemet.
+    Det ville måske have været mere overskueligt og effektivt at rotere
+    vores koordinatsystem med _(38_) grader, da vi kom op på rampen, og så rotere
+    tilbage, når vi nåde enden. Det ville dog kun være marginalt hurtigere, og 
+    jeg føler alligevel, at dette eksempel var en effektiv illustration af, hvorfor
+    denne abstrakte ide omkring "vektorer" kan være brugbar og effektiv: 
+    Både til kommunikation og løsning af problemer.
+    </p>
+

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+
+
+    <h3> Stokes theorem, Green's theorem og the divergence theorem</h3>
+    <p class="t">
+    Stokes theorem bliver ofte præsenteret i form af en lidt simplere 2D version 
+    kaldt <i>Green's</i> theorem:
+    </p>
+
+    <div class="Theory">
+    <b> Teori: Green's theorem </b> <br>
+    Sig at _(R_) er et 2D område, _(C_) er vejen _(\vec r(t)_) rundt omkring det område,
+    og _(\vec F_) er et vektor felt. Det gælder nu at:
+    _($\text{work}_{\vec F}(C) = \int_{R} \int \text{curl}_{\vec F}(x,y) \, dx \, dy_)
+    Dette siger med lidt løs notation, at _(\vec F_)'s arbejde omkring
+    _(C_) kan regnes som dobbelt-integralet af curl af _(\vec F_) på området
+    _(R_) inde i _(C_).
+    </div>
+
+    <p class="tt">
+    Sig vi skal finde arbejdet omkring en cirkel centreret på _((3,-7)_) med radius 
+    _(r=5_), hvis vektor feltet er:
+    _($\vec F = \VeC[5x+2xy, x^2 + 4x + 3y]_)
+    Vi <i>kunne</i> bruge den konventionelle strategi, hvor vi nok ville sige
+    _($\vec r(t) = \VeC[3+5Cos(t),-7+5Sin(t)], \qquad \vec r'(t) = \VeC[-5Sin(t),5Cos(t)]_)
+    ... og så regne integralet
+    _($\int_{0}^{2\pi} \VeC[5*\left(3+5Cos(t) \right) + 2 \left(3+5Cos(t) \right)*\left(-7+5Sin(t) \right), \left(3+5Cos(t)\right)^2 + 3 \left(3+5Cos(t) \right) + 3*\left(-7+5Sin(t)\right)]*\VeC[-5Sin(t),5Cos(t)] dt_)
+    I dette tilfælde er det en god del hurtigere at bruge Greens theorem. Vi skal regne dobbelt-integralet
+    af curl af _(\vec F_) på denne cirkel. Den generelle curl ved _((x, y)_) er:
+    _($¤x[x^2 + 3x + 3y] - ¤y[5x+2xy] = 2x + 3 - 2x = 3_)
+    Det er heldigvis en konstant, så 
+    dobbelt-integralet er:
+    _($\int_{R} \int 3 \text{ }dx \text{ }dy = 3*\int_{R} \int 1 \text{ }dx \text{ }dy_)
+    Et dobbelt-integral hvor densitetsfunktionen er lig _(1_), 
+    er bare et areal, så vores endelige svar er:
+    _($3*5^2 \pi  = 235.59_)
+    Bum! Markant hurtigere! Curl kan være dejligt, fordi
+    vi <i>differentierer</i> _(\vec F_), hvilket til tider
+    gør den meget simplere. 
+    </p>
+
+    <p class="t">
+    I dette eksempel brugte vi Green's Theorem til 
+    at regne en rodet linje-integral ved hjælp af en simplere dobbelt-integral.
+    Teorien bliver også brugt modsat til at regne tricky dobbelt-integraler
+    ved hjælp af nemmere linje-integraler. Her skal man
+    bare finde et felt _(\vec F_), hvis curl er lig densitetsfunktionen
+    _(f(x,y,z)_). 
+    </p>
+
+    <p class="pageSplitter">*</p>
+
+    <p class="t">
+    Green's Theorem er på ingen måde åbenlyst, men giver faktisk god intuitiv mening.
+    Sig du skal regne arbejdet _(W_) omkring følgende område:
+    </p>
+    <img class='Spic' style='width:40%' src='../../../Assets/Chapter4\MultivarCalc\Vectorfields\GreensTheorem1.png'> 
+    <p class="t">
+    Del nu området op i fire mindre stykker:
+    </p>
+    <img class='Spic' style='width:40%' src='../../../Assets/Chapter4\MultivarCalc\Vectorfields\GreensTheorem2.png'> 
+    <p class="t">
+    Man kan nu relativt let se, at det sammenlagte arbejde 
+    omkring alle fire områder matcher arbejdet omkring hele figuren:
+    </p>
+    <video class='picB' style="width:60%; margin-left:20%" controls>
+        <source src='../../../Assets/Chapter4\MultiVarCalc\DoubleIntegrals\GreensTheoremIdea.mp4' type='video/mp4'>
+    </video>
+    <p class="t">
+    Idéen er så, at vi opdeler vores form i uendelig mange små stykker, hvis arbejde alle kan
+    regnes via curl.
+    </p>
+    <p class="t">
+    Sig du havde et komplekst, mærkeligt areal som: 
+    </p>
+    <img class='Spic' style='width:50%' src='../../../Assets/Chapter4\MultivarCalc\Vectorfields\GreensTheorem3.png'>
+    <p class="t">
+    Opdel først arealet i en masse x-strimler: 
+    </p>
+    <img class='Spic' style='width:50%' src='../../../Assets/Chapter4\MultivarCalc\Vectorfields\GreensTheorem4.png'>
+    <p class="t">
+    Med præcis samme argument som i videoen kan vi let se, at det samlede arbejde omkring 
+    alle x-strimler lagt sammen, er lig arbejdet omkring hele figuren. Fokuser nu på
+    én bestemt x-strimmel og opdel den langs y:
+    </p>
+    <img class='Spic' style='width:50%' src='../../../Assets/Chapter4\MultivarCalc\Vectorfields\GreensTheorem5.png'>
+    <p class="t">
+    Arbejdet omkring denne x-strimmel er lig summen af 
+    arbejdet omkring alle dens kasser. 
+    </p>
+    <p class="t">
+    _(x_) og _(y_) har min- og maksværdier lige meget hvor mærkeligt området er. Sig
+    _(x \in [a,b]_) og _(y \in [c, d]_). Opdel nu _(x_) i subintervaller
+    _([x_0, x_1]_), _([x_1, x_2]_), _(\dots_) _([x_{k-1}, x_k]_) og _(y_) 
+    i _([y_0, y_1]_), _([y_1, y_2]_), _(\dots_) _([y_{q-1}, y_q]_). Lav et "slice" ved 
+    enden af hvert interval:
+    </p>
+    <img class='Spic' style='width:60%' src='../../../Assets/Chapter4\MultivarCalc\Vectorfields\GreensTheorem6.png'>
+    <p class="t">
+    Kald vores område for _(R_). Antag, at der findes et subområde på _(R_) i skæringen
+    mellem intervallet _([x_{i-1}, x_i]_) og _([y_{i-1}, y_i]_), og kald dette for 
+    _(R_{i, j}_). Kald vejen omkring _(R_) for _(C_), og vejen omkring
+    _(R_{i, j}_) for _(C_{i, j}_). Se nu på:
+    _($\text{work}_{\vec F}(C_{i, j})_)
+    Curl kommer ind i billedet, fordi det giver os <i>densiteten</i> af arbejde nær et punkt. Hvis
+    _(R_{i,j}_) er lille, kan _(\text{work}_{\vec F}(C_{i, j})_) approksimeres som
+    _($\text{curl}_{\vec F}(x_i, y_j)*|R_{i, j}|_)
+    ... hvor _((x_i, j_i)_) er et eller andet punkt på _(R_{i, j}_), og hvor _(|R_{i, j}|_) er arealet. 
+    _(|R_{i, j}|_) kan også approksimeres:
+    _($\text{curl}_{\vec F}(x_i, y_j)*\triangle x_i*\triangle y_j_)
+    Vi skal nu tage en sum af alle de _((i, j)_), hvor _(R_{i, j}_) faktisk findes. 
+    For hver _(i_) værdi findes der <i>i det mindste</i> _(1_) område _(R_{i, j}_). Kald
+    sættet over valide _(j_)-værdier ved _(i_) for _(J_{i}_). På det øvre billede kan man eksempelvis
+    se, at _(J_{2} = \{4, 7, 8, 9\}_). Summen bliver til:
+    _($\sum_{i=1}^{k} \sum_{j \in J_i} \text{curl}_{\vec F}(x_i, y_j)*\triangle x_i*\triangle y_j_)
+    Dette er nu en <i>approksimation</i> af arbejdet rundt om _(C_). Den bliver uendelig god,
+    hvis vi tager grænsen af de største intervaller _(\lambda_x_) og _(\lambda_y_), der nærmer sig _(0_): 
+    _($\lim_{(\lambda_x, \lambda_y) \to (0, 0)} \left[\sum_{i=1}^{k} \sum_{j \in J_i} \text{curl}_{\vec F}(x_i, y_j)*\triangle x_i*\triangle y_j \right]_)
+    Det kan omskrives til:
+    _($\lim_{\lambda_x \to 0}\left[\triangle x_i*\sum_{i=1}^{k} \lim_{\lambda_y \to 0} \left[\sum_{j \in J_i} \text{curl}_{\vec F}(x_i, y_j)*\triangle y_j \right] \right] _)
+    Hver _(J_i_) kan opdeles i en finit mængde af subintervaller uden nogle
+    "hop". På billedet
+    kan man eksempelvis se, at _(J_{12}_) er en samling af _(\{1, 2, 3, 4, 5, 6, 7\} _) og
+    _(\{9, 10, 11, 12\}_). Kald disse intervaller for _([a_{i, 1}, b_{i, 1}]_), 
+    _([a_{i, 2}, b_{i, 2}]_), _([a_{i, 3}, b_{i, 3}]_) osv. Eksempelvis
+    er _(a_{12, 1} = 1_), _(b_{12, 1} = 7_),  _(a_{12, 2} = 9_) og _(b_{12, 2} = 12_). 
+    Sig at der er _(m_i_) intervaller ved _(i_). Den indre sum kan nu omskrives til:
+    _($\lim_{\lambda_y \to 0} \left[\sum_{t=1}^{m_i} \sum_{j=a_{i, t}}^{b_{i, t}} \text{curl}_{\vec F}(x_i, y_j)*\triangle y_j \right] _)
+    _(\lambda_y_) <i>har</i> indflydelse på subintervallerne _([a_{i, t}, b_{i, t}]_) men ikke
+    <i>antallet</i> af subintervaller _(m_i_). Det er eksklusivt bestemt
+    af _(i_), _(\lambda_x_) og områdets form. Grænsen kan derfor omskrives til:
+    _($\begin{eqnarray}
+    && \sum_{t=1}^{m_i} \lim_{\lambda_y \to 0} \left[ \sum_{j=a_{i, t}}^{b_{i, t}} \text{curl}_{\vec F}(x_i, y_j)*\triangle y_j \right] = \\ \\
+    && \sum_{t=1}^{m_i} \int_{a_{i, t}}^{b_{i, t}} \text{curl}_{\vec F}(x_i, y) \, dy 
+    \end{eqnarray}_)
+    Den samlede sum er nu lig:
+    _($\lim_{\lambda_x \to 0} \left[\sum_{i=1}^{k} \sum_{t=1}^{m_i} \int_{a_{i, t}}^{b_{i, t}} \text{curl}_{\vec F}(x_i, y) \, dy \right]_)
+    Denne sum/integral dækker tydeligvis hele _(R_), så man kan <i>relativt </i> fint argumentere
+    for, at den er lig
+    _($\int_R \int \text{curl}_{\vec F}(x, y) \, dy \, dx  _)
+    Done! Bevis færdig! _(\blacksquare_)
+    </p>
+
+    <p class="cent">*</p>
+
+    <p class="tt">
+    Stokes Theorem er en meget naturlig 3D udvidelse/generalisering af Green's Theorem, og 
+    præcis samme ide og logik gælder. Sig 
+    vi forsøger at regne arbejdet omkring en eller anden <i>flade</i> i 3D:
+    </p>
+    <img class='SpicXL' style='width:80%; margin-top:25px;' src='../../../Assets/Chapter4\MultivarCalc\Vectorfields\Stokes1.png'> 
+    <p class="tt">
+    Fladen kan nemt opdeles i mindre arealer som på billedet.
+    Samme argument med arbejde holder, og igen kan vi opdele fladen på først på _(x_) derefter _(y_).
+    Nu står vi med uendelig mange små overflader, hvis arbejde skal summeres. i 2D approximerede vi som:
+    _($\text{curl}(x,y)*|R_{(x,y)}| = \text{curl}(x,y)*dx*dy_)
+    Nu i 3D skal det approksimeres som: 
+    _($\text{curl}_{\vec n}(x,y,z)*|A_{(x,y)}| = \vec{\text{curl}}(\vec F)*\vec n*dA_)
+    Her sørger vi for at tage curl om normal-vektoren på fladen, ved det lille område vi regner: 
+    </p>
+    <img class='SpicXL' style='width:80%; margin-top:25px;' src='../../../Assets/Chapter4\MultivarCalc\Vectorfields\StokesCurl.png'> 
+    <p class="tt">
+    Med _(dA_) mener jeg, at vi nu er nødt til at tage en <i>overfladeintegral</i>, 
+    da vi jo arbejder med en <i>flade</i>. 
+    </p>
+    <p class="t">
+    Alt i alt kan man se at:
+    </p>
+
+    <div class="Theory">
+    <b> Teori: Stokes' theorem </b> <br>
+    Sig at _(U_) er en del af en flade i et 3D rum, hvis yderkant _(C_) passer vejen _(\vec r(t)_),
+    og at _(\vec F_) er et vektor felt. 
+    Det gælder nu at:
+    _($\text{work}(C) = \int_{U} \int \vec{\text{curl}}(\vec F)(x,y,z) * \vec n \text{ }dA_)
+    </div>
+
+    <p class="tt">
+    Stokes' bliver i praksis slet ikke brugt til at løse de samme opgaver som Green's, trods
+    det bare er en "3D version". Dobbelt-integralet 
+    af curl var i flere tilfælde nemmere end linje-integralet omkring,
+    men det er sjælen tilfældet for <i>overfladeintegralet</i>, der ofte
+    er utrolig kompliceret og tungt at beregne. Stokes' bliver primært brugt til at regne flux ved hjælp af
+    arbejde, siden overfladeintegralet af _(\vec f*\vec n_)
+    jo faktisk regner flux. Man skal derfor "bare" finde et
+    vektor felt _(\vec F_) hvor _(\vec f* = \vec{\text{curl}}(\vec F)(x,y,z)_).
+    </p>
+    <p class="t">
+    Arbejdet omkring fladen _(U_) har stort set intet at gøre med _(U_):
+    </p>
+    <img class='SpicXL' style='width:140%; margin-left:-20%; margin-top:25px;' src='../../../Assets/Chapter4\MultivarCalc\Vectorfields\StokesAnySurface.png'> 
+    <p class="tt">
+    Det her tillader os at regne fluxen på flader, vi ikke engang ved hvordan ser ud!
+    </p>
+
+    <p class="pageSplitter">
+        *
+    </p>
+
+    <p class="t">
+    Den anden brugbare og vigtige teori udover Green's og Stokes' 
+    var <i>the divergence theorem</i>. 
+    </p>
+
+    <div class="Theory">
+    <b> Teori: The divergence theorem (2D):</b> <br>
+    Sig at _(R_) er et 2D område, at _(C_) er vejen _(\vec r(t)_) omkring det område, og at 
+    _(\vec F_) er et 2D vektor felt. Det gælder nu at:
+    _($\text{flux}_{\vec F}(C) = \int_{R} \int \text{div}_{\vec F}(x,y) \text{ }dx \text{ }dy_)
+    </div>
+
+    <div class="Theory">
+    <b> Teori: The divergence theorem (3D):</b> <br>
+    Sig at _(R_) er et 3D område, at _(U_) er fladen omkring det område, og at _(\vec F_) er et 3D vektor felt. 
+    Det gælder nu at:
+    _($\text{flux}_{\vec F}(U) = \int_{R} \int \int \text{div}_{\vec F}(x,y,z) \, dx \, dy \, dz_)
+    </div>
+
+    <p class="tt">
+    Så meget samme princip som Green's theorem, bare med flux i stedet for work og divergence i stedet for curl. 
+    Det 2D tilfælde kan relativt nemt algebraisk bevises via Green's Theorem: 
+    </p>
+
+    <div class="Proof">
+    <b> Bevis: The divergence Theorem (2D):</b> <br>
+    Sig at: 
+    _($\vec F = \begin{pmatrix} M(x,y) \\ N(x,y) \end{pmatrix}_)
+    Det kan ses at:
+    _($\begin{eqnarray}
+    && \text{flux}_{\vec F}(C) & = \int_{a}^{b} \begin{pmatrix} M(x(t),y(t)) \\ N(x(t),y(t)) \end{pmatrix}*\VeC[y'(t),-x'(t)] \text{ }dx \\ \\
+    && & = \int_{a}^{b} \begin{pmatrix} -N(x(t),y(t)) \\ M(x(t),y(t)) \end{pmatrix}*\VeC[x'(t),y'(t)] \text{ }dx \\
+    \end{eqnarray}_)
+    Integralet er nu i en form, hvor Green's Theorem på området _(R_) kan anvendes, så det omskrives til:
+    _($\begin{eqnarray}
+    && \int_{R} \int \text{curl} \begin{pmatrix} -N(x(t),y(t)) \\ M(x(t),y(t)) \end{pmatrix} \text{ }dx \text{ }dy = \\ \\
+    && \int_{R} \int ¤x[M(x(t),y(t))] - ¤y[-N(x(t),y(t))] \text{ }dx \text{ }dy = \\ \\
+    && \int_{R} M_x + N_y \text{ }dx \text{ }dy = \\ \\
+    && \int_{R} \text{div}(\vec F) \text{ }dx \text{ }dy 
+    \end{eqnarray}_)
+    _(\blacksquare_)
+    </div>
+
+    <p class="tt">
+    Beviset for den 3D version er lidt for langt til, at vi dækker det her <sup><a href="https://proofwiki.org/wiki/Gauss-Ostrogradsky_Theorem" title="proofwiki (feb 2021, 23). 'Gauss-Ostrogradsky Theorem'. https://proofwiki.org/wiki/Gauss-Ostrogradsky_Theorem" target="_blank">[F]</a></sup>. 
+    Det er ikke forfærdeligt svært dog, og du kan læse det i fodnoten deroppe. 
+    Man behøver kun bevise det for en rektangulær kasse, da alle andre 3D regioner
+    kan ses som samlinger af uendelig mange 3D kasser. 
+    </p>
+
+    <p class="t">
+    Anyways: Tid til faktisk at øve os i, at bruge disse teorier. 
+    </p>
+

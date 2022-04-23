@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+
+
+    <h3>Position, hastighed og acceleration i fysik</h3>
+    <p class="t">
+    I fysik bruger vi differentiering og integraler <i>konstant</i>. Det giver super god mening: Vi arbejder 
+    ofte med <i>hastighed</i> og <i>acceleration</i>. Hastighed er <i>position</i> differentieret med tid, og 
+    acceleration er <i>hastighed</i> differentieret med tid. Sig f.eks. vi vidste, at 
+    vores acceleration var 
+    _(2.3_) og vores starthastighed _(4 m/s_). Hvor langt ville vi bevæge os efter _(t_) sekunder?
+    </p>
+
+    <p class="t">
+    Well, en acceleration på _(2.3_) svarer til at:
+    _($a(t)=2.3_)
+    Acceleration er hastighed differentieret, så vi kan få hastigheden ved at integrere begge sider:
+    _($\begin{eqnarray}
+    && \int a(t) dt = \int 2.3 dt \to \\ \\
+    && v(t) = 2.3*t + k
+    \end{eqnarray}_)
+    Nu støder vi på denne integrations-konstant "_(k_)", jeg nævnte tidligere. Det
+    kan let ses, at
+    _($¤t[2.3t+k]=2.3_)
+    ... lige meget hvilken værdi _(k_) tager. Derfor er _(2.3t+k_) den generelle
+    løsning til integralet, som jo faktisk er en slags ligning. For at bestemme
+    _(k_) har vi brug for nogle eksterne informationer. Vi ved, at 
+    starthastigheden er _(4 m/s_). Det svarer til _(v(0)=4_), så:
+    _($4=2.3*0+k \to k = 4_)
+    Bum! Vi får nu:
+    _($v(t)=2.3t+4_)
+    Det giver super god intuitiv mening, og man kunne nemt nå samme konklusion
+    uden brug af integraler. Positionen dog -
+    _($\begin{eqnarray}
+    && \int v(t) dt = \int 4+2.3*t \, dt \to \\ \\
+    && x(t) = 4*t+\frac{2.3}{2}*t^2 + k
+    \end{eqnarray}_)
+    - det ville nok være tricky at komme frem til uden integraler! 
+    Vi ved, at _(k_) i dette tilfælde intuitivt er vores startposition.
+    Hvis vi starter ved 
+    _(x=23_), så er _(x(0)=23_) hvilket svarer til:
+    _($23 = 4*0 + \frac{2.3}{2}*0^2 + k \to 23=k_)
+    Alt i alt får vi:
+    _($x(t)=1.15t^2 + 4t + 23_)
+    Bum! Vi har vores svar. Nu kan vi se, at du efter f.eks. _(5_) sekunder har en position på:
+    _($x(5)=1.15*5^2 + 4*5 + 23 = 71.75m_)
+    Hvis vi generaliserer vores proces her, og kalder accelerationen for _(a_), starthastigheden for _(v_0_), og
+    startpositionen for _(x_0_), kan man let se at vi får:
+    _($x(t)=\frac{a}{2}*t^2 + v_0*t + x_0_)
+    Det er også den formel vi brugte, da vi snakkede lidt fysik og vektorer i kapitel 2. 
+    Jeg kunne ikke bevise formlen
+    dengang, siden det krævede integraler.  
+    </p>
+
+    <q-stion 1="18" 2="1">
+    En bil accelererer. Jo mere tid der er gået 
+    (og derfor jo højere hastighed man har), 
+    jo mindre accelerer bilen. Det giver god mening: 
+    Ellers ville
+    den begynde at køre hurtigere og hurtigere og hurtigere, 
+    som vi ved fra erfaring <i>ikke</i> er tilfældet. 
+    En O.K model ville måske være:
+    _($a(t)= 24*(t+1)^{-0.05} - 19.8_)
+    Det ser rent grafisk ud som:
+    <img class='Spic' style='width:86%' src='../../../Assets/Chapter4\DerivativesAndIntegrals\Applications\Physics\CarAcceleration.png'> 
+    <p class="t">
+    Den her model antager selvfølgelig at vi kører lige ud, og at 
+    intet er i vejen for bilen. Modellen nærmer sig logisk nok _(0_), da bilen jo har en tophastighed. 
+    Hvad er denne tophastighed? 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Vi når tophastigheden når accelerationen er lig _(0_). Det sker når:
+    _($\begin{align}
+    24*(t+1)^{-0.05} - 19.8 & = 0 & \to \\ \\
+    (t+1)^{-0.05} &= 19.8/24 & \to \\ \\
+    t+1 & = 0.825^{(1/-0.05)} & \to \\ \\
+     t &=45.87s
+    \end{align}_)
+    Hastigheden er accelerationen integreret. 
+    Arealet under accelerationskurven fra _(t=a_) til _(t=b_)
+    svarer til, hvor meget hastigheden har ændret sig mellem disse to tidspunkter.
+    Vores starthastighed ved _(a=0_) er _(0_), så vi kan regne
+    tophastigheden direkte som arealet mellem _(t=0_) og _(t=45.87_). 
+    _($\int_{0}^{45.87} 24*(t+1)^{-0.05} - 19.8 = 43.38 m/s_)
+    _(1 m/s_) er _(3.6 km/t_), så det her svarer til:
+    _($43.38*3.6 = 156.16 km/t_)
+    Dette var èn mulig strategi, og nok den bedste. En anden mulig 
+    strategi ville være, at finde funktionen _(v(t)_) ved
+    at integrere _(a(t)_): 
+    _($\int 24*(t+1)^{-0.05} - 19.8 \, dt = k - 19.8t + 25.26*(t+1)^{0.95}_)
+    _(v(0)=0_), så:
+    _($0 = k - 19.8*0 + 25.26*(0+1)^{0.95} \to k = -25.26_)
+    Vi får nu:
+    _($v(t)=-25.26 - 19.8t + 25.26*(t+1)^{0.95}_)
+    Så:
+    _($\begin{align}
+    v(45.87) & = -25.26 - 19.8*45.87 + 25.26*(45.87+1)^{0.95} \\ \\
+    & = 43.38 m/s
+    \end{align}_)
+    Bum!
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="18" 2="2">
+    Sig at bilen fra sidste opgave starter med en hastighed på _(0_), og begynder at accelerere.  
+    Hvor langt tid tager det, før den har kørt _(100m_)? 
+    <p class="t">
+    <i>Note</i>: I denne opgave må du gerne bruge Geogebras _(Solve_), eller _(NSolve_) funktion.
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Her er strategien: Ved hjælp af integration har vi tænkt os at finde
+    funktionen _(x(t)_). Den kan vi sætte lig _(100m_), og løse/isolere
+    _(t_). 
+    <p class="t">
+    Vi ved fra sidste opgave, at
+    _($v(t) = - 25.26 - 19.8t+25.26*(t+1)^{0.95}_)
+    Så vi integrerer: 
+    _($\begin{eqnarray}
+    && \int v(t) \text{ }dt = \int 25.26*((t+1)^{0.95}-1) - 19.8t \text{ }dt \to \\ \\
+    && x(t) = 12.95*(t+1)^{1.95} - 9.9t^2 - 25.26t + k
+    \end{eqnarray}_)
+    Vi ved, at _(x(0)=0_), så:
+    _($0 = 12.95*(0+1)^{1.95} - 9.9*0^2 - 25.26*0 + k \to_)
+    _($k = -12.95_)
+    Alt i alt har vi nu:
+    _($x(t) = 12.95*(t+1)^{1.95} - 9.9*t^2 - 25.26*t - 12.95_)
+    Vi skal nu løse ligningen:
+    _($\begin{eqnarray}
+    && x(t) = 100 \to \\ \\
+    && 12.95*(t+1)^{1.95} - 9.9*t^2 - 25.26*t - 12.95 = 100 \to \\ \\
+    && \text{NSolve}(12.95*(t+1)^{1.95} - 9.9*t^2 - 25.26*t - 12.95 = 100,t) \to \\ \\
+    && t=8.43s, \, t=201.78s
+    \end{eqnarray}_)
+    Den anden løsning _(t=201.78_) er falsk. Det er kun fordi matematikken bliver
+    lidt forvirret af, at accelerationen teknisk set bliver mindre end _(0_) efter _(45.7s_). 
+    </p>
+    <br></answer-box>
+
+    <p class="t">
+    Jeg tror vi har undersøgt nok anvendelser af integraler nu. 
+    Tid til at løse dem selv!
+    </p>
+
+
+
+
+

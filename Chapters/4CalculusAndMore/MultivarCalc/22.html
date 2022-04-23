@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+
+
+    <h4>Hvordan regner vi arbejde?</h4>
+    <p class="t">
+    Sig at vi bevæger os ruten _((x,y,z)=\vec r(t)_) fra _(t=a_) til _(t=b_), og at vektor feltet er 
+    _(\vec F(x,y,z)_). I følgende video forklarer jeg, hvordan vi finder arbejdet:
+    </p>
+
+    <video class='picB' style='margin-top:35px; margin-bottom: 35px;' controls>
+        <source src='../../../Assets/Chapter4\MultivarCalc\Vectorfields\WorkIntegralProof.mp4' type='video/mp4'>
+    </video>
+
+    <p class="t">
+    Så lad os tage et eksempel. Vi bevæger os følgende rute
+    </p>
+    <img class='SpicXL' style='width:65%' src='../../../Assets/Chapter4\MultiVarCalc\Vectorfields\WorkIntegral2.png'> 
+    <p class="t">
+    ... ogg vektor feltet er:
+    _($\vec F = \VeC[x-2y,x^2]_)
+    Først beskriver vi vores rute i forhold til et parameter _(t_). Det kan let ses at:
+    _($\VeC[x,y] = \VeC[1,2] + t*\VeC[6-1,4-2] \qquad t \in [0,1]_)
+    Vi skal nu regne:
+    _($\int_{0}^{1} \vec F * \VeC[x'(t),y'(t)] \text{ }dt _)
+    Vores tilfælde er en meget nem lige linje. Her 
+    er _(x'(t)_) konstant lig _(6-1=5_) og _(y'(t)_) konstant lig
+    _(2_). Ergo:
+    _($\begin{eqnarray}
+    && \int_{0}^{1} \VeC[x-2y,x^2] * \VeC[5,2] \text{ }dt = \\ \\
+    && \int_{0}^{1} \VeC[(1+5t)-2(2+2t),(1+5t)^2] * \VeC[5,2] \text{ }dt = \\ \\
+    && \int_{0}^{1} 5*\bigl((1+5t)-2(2+2t) \bigr) + 2*(1+5t)^2 \text{ }dt = \\ \\
+    && \int_{0}^{1} 50t^2 + 25t - 13 \text{ }dt = \\ \\
+    && 50*\frac{1^3}{3} + 25*\frac{1^2}{2} - 13*\frac{1^1}{1} =  \\ \\ 
+    && 16.166
+    \end{eqnarray}_)
+    Hvis objektet eksempelvis havde en masse på _(3kg_) og 
+    startede med en kinetisk energi på _(20_), ville det ende ud med
+    en hastighed på:
+    _($\frac{1}{2}*3*v^2 = 20+ 16.166 \to v=4.91 m/s_)
+    Fantastisk! Din tur: 
+    </p>
+
+    <q-stion 1="21" 2="1" bigTop="true">
+    Find arbejdet på et objekt, der bevæger sig langs
+    _($y=x^2-x_)
+    ... fra _(x=-2_) til _(x=3_), hvis vektor feltet er:
+    _($\vec F = \VeC[0.5y, 1.5x]_)
+    <br></q-stion>
+    <answer-box>
+    Vejen massen bevæger sig på, kan beskrives som:
+    _($\vec r(t) = \VeC[t, t^2 -t], \qquad t \in [-2, 3]_)
+    Så:
+    _($\vec r'(t) = \VeC[1, 2t-1]_)
+    Derfor skal vi regne følgende integral:
+    _($\begin{eqnarray}
+    && \int_{-2}^{3} \VeC[0.5*(t^2-t), 1.5*t]*\VeC[1,2t-1] \text{ }dt & = \\ \\
+    && \int_{-2}^{3} 0.5 t^2 - 0.5 t + 1.5 t*(2*t - 1) \text{ }dt &
+    \end{eqnarray}_)
+    Hvilket er relativt let og giver:
+    _($35.38_)
+    Det er hvor meget arbejde vektor feltet gør! Situationen er visualiseret her: 
+    <img class='SpicXL' style='width:100%' src='../../../Assets/Chapter4\MultivarCalc\Vectorfields\WorkVisualization2.png'> 
+    <p class="t">
+    Du kan se, at feltet generelt <i>hjælper</i>, hvilket forklarer hvorfor, at arbejdet er positivt. 
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="21" 2="2">
+    Find arbejdet på et objekt, der bevæger sig i 3D langs
+    _($\VeC[x,y,z]=\VeC[t,t^2,t^3]_)
+    ... fra _(t=0_) til _(t=1_):
+    <img class='SpicXL' style='width:80%' src='../../../Assets/Chapter4\MultiVarCalc\Vectorfields\Spacecurve1.png'> 
+    Vektor-feltet er:
+    _($\vec F = \VeC[3zy/x, Ln(y+1), -y]_)
+    <br></q-stion>
+    <answer-box>
+    Det kan let ses, at integralet vi skal regne her er
+    _($\begin{eqnarray}
+    && \int_{0}^{1} \VeC[3t^3 t^2 / t, Ln(t^2+1), -t^2]*\VeC[1,2t,3t^2] \text{ }dt & =  
+    && \int_{0}^{1} 2t Ln(t^2+1) \text{ }dt
+    \end{eqnarray}_)
+    ... hvilket giver _(0.3863_)
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="21" 2="3">
+    Find arbejdet på et objekt, der bevæger sig halvvejs rundt om ellipsen:
+    _($\frac{x^2}{3^2} + \frac{y^2}{5^2} = 1_)
+    Den starter i første og slutter i anden kvadrant. 
+    <p class="t">
+    Vektor-feltet er:
+    _($\vec F = \VeC[y^2,y*x]_)
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Denne vej kan beskrives som:
+    _($\vec r(t) = \VeC[3Cos(t),5Sin(t)], \qquad t \in [0, \pi]_)
+    Så:
+    _($\vec r'(t) = \VeC[-3Sin(t),5Cos(t)]_)
+    Derfor skal vi regne
+    _($\begin{eqnarray}
+    && \int_{0}^{\pi} \VeC[(5Sin(t))^2, 5Sin(t)*3Cos(t)]*\VeC[-3Sin(t),5Cos(t)] \text{ }dt = \\ \\
+    && \int_{0}^{\pi} 75*Sin(t)*(Sin(t)^2+Cos(t)^2) \text{ }dt = \\ \\
+    & 75 & \int_{0}^{\pi} Sin(t) \text{ }dt = \\
+    \end{eqnarray}_)
+    Hvilket man relativt let kan regne giver _(-50_). 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="21" 2="4">
+    Find arbejdet rundt omkring (mod uret) en rektangel centreret på _((0,0)_), der 
+    har en længde langs _(x_) på _(5_), og en længde langs _(y_) på _(4_), hvor vektor-feltet er:
+    _($\vec F = \VeC[e^y,Sin(x+y)]_)
+    <br></q-stion>
+    <answer-box>
+    Her er vi nødt til at regne fire forskellige integraler: èn for hver side af rektanglet. 
+    De forskellige veje kan beskrives som:
+    _($\begin{eqnarray}
+    && \vec r_1(t) = \VeC[-2.5+t, 2],    & \, \, t \in [0,5] \\ \\
+    && \vec r_2(t) = \VeC[-2.5+t, -2],   & \, \, t \in [0,5] \\ \\
+    && \vec r_3(t) = \VeC[-2.5, -2 + t], & \, \, t \in [0,4] \\ \\
+    && \vec r_4(t) = \VeC[2.5, -2 + t],  & \, \, t \in [0,4] \\
+    \end{eqnarray}_)
+    Det kan let ses, at 
+    _($r_1'(t)=r_2'(t)=\VeC[1,0], \qquad r_3'(t)=r_4'(t)=\VeC[0,1]_)
+    Så integralerne vi skal regne er: 
+    _($\begin{eqnarray}
+    && \int_{0}^{5} e^{2} \text{ }dt = 36.72 \\ \\
+    && \int_{0}^{5} e^{-2} \text{ }dt = 0.68 \\ \\
+    && \int_{0}^{4} Sin(-2.5-2+t) \text{ }dt = -1.08 \\ \\
+    && \int_{0}^{4} Sin(2.5-2+t) \text{ }dt = 1.08
+    \end{eqnarray}_)
+    Det endelige resultat er derfor:
+    _($36.72+0.68=37.4_)
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="21" 2="5">
+    Find arbejdet langs:
+    _($\VeC[x,y,z] = \VeC[2t-3,5+\frac{1}{2}|t-7|,|t-3| - t], \qquad t \in [2, 9]_)
+    Hvis vektor-feltet er:
+    _($\vec F = \VeC[2y,56x,3]_)
+    Hvordan håndterer du de absolutte værdier?
+    <br><br></q-stion>
+    <answer-box>
+    Vi håndterer de absolutte værdier ved at opdele ruten i tre: _([2, 3]_), _([3, 7]_) og 
+    _([7, 9]_). På det første interval er begge absolutte værdier negative:
+    _($\VeC[2t-3, 5 - \frac{1}{2}(t-7), -(t-3)-t]_)
+    På det næste interval er kun _(|t-7|_) negativ:
+    _($\VeC[2t-3, 5 - \frac{1}{2}(t-7), (t-3)-t]_)
+    Ved det sidste er de begge positive: 
+    _($\VeC[2t-3, 5 + \frac{1}{2}(t-7), (t-3)-t]_)
+    Vi kan let se, at _(\vec r'(t)_) ved henholdsvis _([2, 3]_), _([3, 7]_) og 
+    _([7, 9]_) er:
+    _($\VeC[2, -0.5, -2], \VeC[2, -0.5, 0], \VeC[2, 0.5, 0]_)
+    Så vi regner:
+    _($\begin{eqnarray}
+    && \int_{2}^{3} \VeC[2, -0.5, -2]*\VeC[2*\bigl(5-0.5 (t-7) \bigr), 56*(2t-3), 3] \text{ }dt = -33 \\ \\
+    && \int_{3}^{7} \VeC[2, -0.5, 0]*\VeC[2*\bigl(5-0.5 (t-7) \bigr), 56*(2t-3), 3] \text{ }dt = -688 \\ \\
+    && \int_{7}^{9} \VeC[2, 0.5, 0]*\VeC[2*\bigl(5+0.5 (t-7) \bigr), 56*(2t-3), 3] \text{ }dt = 772
+    \end{eqnarray}_)
+    Det endelige svar er:
+    _($-33+(-688)+772=51_)
+    Bum!
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="21" 2="6">
+    Sig at et objekt rejser langs følgende spiral imod uret:
+    <img class='Spic' style='width:75%' src='../../../Assets/Chapter4\MultiVarCalc\Vectorfields\Spiral1.png'> 
+    Vektorfeltet er 
+    _($\vec F = \VeC[-y/\sqrt{x^2+y^2},x/\sqrt{x^2+y^2}]_)
+    Find arbejdet. 
+    <br><br></q-stion>
+    <answer-box>
+    Der findes desværre ikke noget praktisk trick, der beregner arbejdet langs en polar vej. 
+    Formlen for arbejde langs en vej blev udledt gennem 
+    <i>længde</i> og <i>pythagoras</i>, og det er nemmere med rektangulære koordinater. 
+    <p class="t">
+    Vi ved, at _(x=rCos(\theta)_), _(y=rSin(\theta)_), så vejen bliver til
+    _($\vec r(t) = \VeC[(1+t)Cos(t),(1+t)Sin(t)], \qquad t \in [0, 2\pi]_)
+    ... og
+    _($\vec r'(t) = \VeC[Cos(t) - (1+t)Sin(t), Sin(t) + (1+t)Cos(t)]_)
+    Vores vektor-felt bliver til:
+    _($\vec F = \VeC[\frac{-(1+t)Sin(t)}{\sqrt{(1+t)^2*(Cos(t)^2+Sin(t)^2)}}, \frac{(1+t)Cos(t)}{\sqrt{(1+t)^2*(Cos(t)^2+Sin(t)^2)}}] = \VeC[-Sin(t),Cos(t)]_)
+    Så vi skal regne
+    _($\int_{0}^{2\pi} \VeC[-Sin(t),Cos(t)]*\VeC[Cos(t) - (1+t)Sin(t), Sin(t) + (1+t)Cos(t)] \text{ }dt _) 
+    Hvilket giver _(2\pi^2 + 2\pi = 26.022_). 
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="21" 2="7">
+    Paraboloiden _(z=9-x^2-y^2_) skærer fladen _(z=2xy_). 
+    Et objekt rejser langs skæringen ved de <i>positive</i> _(x_) og _(y_). 
+    Vektor feltet er:
+    _($\vec F=\VeC[y+x,x,6]_)
+    Find arbejdet. 
+    <br><br></q-stion>
+    <answer-box t="h">
+    Vi sætter de to flader lig hinanden:
+    _($9-x^2-y^2 = 2xy_)
+    Man kan omskrive til:
+    _($y^2 + 2xy + x^2 = 9_)
+    Kan venstre side forsimples eller omskrives på nogen smart måde?
+    <br><br></answer-box>
+    <answer-box>
+    Vi sætter de to flader lig hinanden:
+    _($9-x^2-y^2 = 2xy_)
+    Målet er at beskrive skæringen <i>parametrisk</i>. 
+    Det kan gøres på mange måder, men den simpleste strategi er nok 
+    bare at isolere enten _(x_) eller _(y_). Hvis
+    _(y_) for eksempel er lig _(F(x)_), kan _(x_) sættes til _(t_) og:
+    _($\vec r(t) = \VeC[t, F(t), 2*t*F(t)]_)
+    Tricket i vores tilfælde er at omskrive til:
+    _($y^2 + (2x)y + x^2 = 9_)
+    Bemærk at venstre side faktisk er lig _((y+x)^2_), så:
+    _($(y+x)^2 = 9 \to x+y = \pm 3_)
+    _(x_) og _(y_) er begge positive, så _(x+y_) kan umuligt være negativt:
+    _($x+y=3 \to y=3-x_)
+    Bum!
+    _($\vec r(t) = \VeC[t, 3-t, 2*t*(3-t)], \qquad t \in [0, 3]_)
+    Så arbejdet kan regnes som:
+    _($\int_{0}^{3} \VeC[(3-t)+t, t, 6]*\VeC[1, -1, 6-4t] \text{ }dt _)
+    Hvilket en computer får til _(4.5_). 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="21" 2="8">
+    Kuglen _(x^2+y^2+z^2=4^2_) bliver skåret af planet _(2x+3y-6z=-16_)
+    og skaber en roteret cirkel i rummet:
+    <img class='SpicXL' style='width:98%' src='../../../Assets/Chapter4\MultiVarCalc\Vectorfields\EllipsePlanSkæring.png'> 
+    <p class="t">
+    En masse bevæger sig hele vejen rundt om denne cirkel, og
+    vektor feltet er:
+    _($\vec F = \VeC[2,x,3]_)
+    Find arbejdet. 
+    </p>
+    <p class="t">
+    Denne opgave er en god del længere end de tidligere, og kræver lidt geometri-arbejde!
+    Jeg anbefaler stærkt, at du får hjælp af computeren til beregninger og integraler i denne! 
+    </p>
+    <br></q-stion>
+    <answer-box t="h" n="1">
+    Vi skal på en eller anden måde beskrive denne skæring i forhold til en vej _(\vec r(t)_). 
+    Se følgende billede:
+    <img class='Spic' style='width:100%' src='../../../Assets/Chapter4\MultiVarCalc\Vectorfields\EllipsePlanSkæring2.png'> 
+    <p class="t">
+    Her er _(P_) midten af cirklen, og _(\vec a_), _(\vec b_) to vektorer på planet, der også 
+    er vinkelrette på hinanden. I dette tilfælde kan vejen beskrives som: 
+    _($\VeC[x,y,z] = P + Cos(\theta) \vec a + Sin(\theta) \vec b, \qquad \theta \in [0, 2\pi]_)
+    Målet er bare at finde _(P_), _(\vec a_) og _(\vec b_). Resten burde være nemt. 
+    </p>
+    <br></answer-box>
+    <answer-box t="h" n="2">
+    Ved _(P_) bruger vi et smart geometrisk argument: _(P_) er på planet <i>og</i> i midten af cirklen, så
+    vektoren fra origo _(O_) til _(P_) er vinkelret på planet.
+    <br></answer-box>
+    <answer-box>
+    Vi skal på en eller anden måde beskrive denne skæring i forhold til en vej _(\vec r(t)_). 
+    Se følgende billede:
+    <img class='Spic' style='width:100%' src='../../../Assets/Chapter4\MultiVarCalc\Vectorfields\EllipsePlanSkæring2.png'> 
+    <p class="t">
+    Her er _(P_) midten af cirklen, og _(\vec a_), _(\vec b_) to vektorer på planet, der også 
+    er vinkelrette på hinanden. I dette tilfælde kan vejen beskrives som: 
+    _($\VeC[x,y,z] = P + Cos(\theta) \vec a + Sin(\theta) \vec b, \qquad \theta \in [0, 2\pi]_)
+    Målet er bare at finde _(P_), _(\vec a_) og _(\vec b_). Resten burde være nemt. 
+    </p>
+    <p class="t">
+    Ved _(P_) bruger vi et smart geometrisk argument: _(P_) er på planet <i>og</i> i midten af cirklen, så
+    vektoren fra origo _(O_) til _(P_) er vinkelret på planet:
+    _($\vec P - \VeC[0,0,0] = t*\VeC[2, 3, -6]_)
+    Vi vælger nu den _(t_), hvor _(x, y, z_) alle er på planet:
+    _($2*(t*2) + 3*(t*3) - 6*(t*-6) = -16 \to t = -0.326_) 
+    Så:
+    _($P=-0.326 \VeC[2, 3, -6] = \VeC[-0.653, -0.979, 1.959]_)
+    Vi kan nemt finde både _(\vec a_) og _(\vec b_), hvis vi kender bare èt punkt på
+    cirklen. _(\vec a=A-P_) og retningen på 
+    _(\vec b_) kan beregnes via 
+    et krydsprodukt mellem _(\vec a_) og planets normalvektor.
+    </p>
+    <p class="t">
+    Planet og kuglen skærer ved uendelig mange punkter. Vælg derfor fuldkommen arbitrært
+    og vilkårligt det punkt, hvor _(y=0_). Nu gælder _(2x-6z=-16_) eller
+    _(x=3z-8_), så:
+    _($(3z-8)^2 + 0^2 + z^2 = 4^2 \to z=3.379_)
+    _(x=3*3.379-8=2.139_), så:
+    _($\vec a = \VeC[2.139, 0, 3.379] - \VeC[-0.653, -0.979, 1.959] = \VeC[2.792, 0.979, 1.420]_)
+    _(\vec b_) skal følge retningen
+    _($\VeC[2, 3, -6] \times \VeC[2.792, 0.979, 1.420] = \VeC[10.134,-19.592, -6.418]_)
+    Den skal have samme længde som _(\vec a_), så:
+    _($\vec b = \frac{\sqrt{2.792^2 + 0.979^2 + 1.420^2}}{\sqrt{10.134^2 + 19.592^2 + 6.418^2}} \VeC[10.134,-19.592, -6.418] = \VeC[1.447, -2.798, -0.916]_)
+    Nu er vi klar! Vi har:
+    _($\vec r(t) = \VeC[-0.653, -0.979, 1.959] + Cos(t)  \VeC[2.792, 0.979, 1.420] + Sin(t) \VeC[1.447, -2.798, -0.916] _)
+    Herfra ses det let, at 
+    _($\vec r'(t) = Cos(t) \VeC[1.447, -2.798, -0.916] - Sin(t) \VeC[2.792, 0.979, 1.420]_)
+    ... og:
+    _($\vec F = \VeC[2, -0.653 + 1.447*cos(t) + 2.792*sin(t), 3]_)
+    Prikproduktet bliver:
+    _($\begin{eqnarray}
+    &- & 1.972*sin(t) + 9.204*cos(t) \, \, + \\ 
+    && 6.785*cos(t)*sin(t) + 1.417*cos(t)^2 + 7.814*sin(t)^2
+    \end{eqnarray}_)
+    And without further ado:
+    _($\int_{0}^{2\pi} \begin{eqnarray}
+    &- & 1.972*sin(t) + 9.204*cos(t) \, \, + \\ 
+    && 6.785*cos(t)*sin(t) + 1.417*cos(t)^2 + 7.814*sin(t)^2
+    \end{eqnarray} \text{ }dt_)
+    Det kan regnes i Geogebra til _(29.0023_). Bum! 
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <!-- <q-stion 1="2" 2="1" 3="5">
+    Du arbejder nu med en kurve der kan defineres i polære koordinater som:
+    _($r=Sin(t), \qquad \theta=Sin(t), \qquad t \in [0, 2\pi]_)
+    Vektor feltet er:
+    _($\vec f = \VeC[x^2+y^3,-x^7*y^5]_)
+    Find arbejdet. <i>Hint: </i>Det er muligt at lave et trick der gør dette meget nemt.
+    <br><br></q-stion>
+    <answer-box>
+    Hvis man tænker lidt over det, så kan man se at denne vej kan visualiseres som: 
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter4\MultivarCalc\Vectorfields\PolarWorkHorseshoe.png'> 
+    <p class="t">
+    Den går fra _(A_) til _(B_) ved _(t \in [0, \pi/2]_), fra _(B_) til _(A_) ved _(t \in [\pi/2, \pi]_), 
+    fra _(A_) til _(C_) ved _(t \in [\pi, (3/2)\pi]_), og fra _(C_) til _(A_) ved _(t \in [(3/2)\pi, 2\pi]_). 
+    Men arbejdet fra _(A_) til _(B_) er det modsatte af arbejdet fra _(B_) til _(A_), så de går ud mod hinanden!
+    Samme kan siges om arbejdet fra _(A_) til _(C_) og _(C_) til _(A_), så det endelige arbejde er bare _(0_)
+    </p>
+    <br></answer-box> -->
+

@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+
+
+    <h3>Hældningen af funktioner der er plusset eller ganget</h3>
+    <p class="t">
+    De resterende punkter på listen er:
+    </p>
+
+    <div style="text-align:center; margin-top:-10px; margin-bottom:-10px;">
+        <ul style="display: inline-block; list-style: disc;">
+            <li>_(x^A_), med _(A_) som komma-tal</li>
+            <li>_(Log_{A}(x) _)</li>
+            <li>_(Log_{x}(A) _)</li>
+            <li>_(Arccos(x), Arcsin(x)_)</li>
+            <li>_(Arctan(x)_)</li>
+        </ul>
+    </div>
+
+    <p class="t">
+    Hvad har mange af dem tilfælles? Well, udover _(x^A_) og _(Log_{x}(A)_) er
+    de alle sammen <i>det modsatte</i> af noget andet. _(Log_A(x)_) er det
+    modsatte af _(A^x_), og _(Arccos_) er det modsatte af _(Cos_). Vi kan bruge en
+    bestemt smart strategi til at finde hældningen af funktioner, vi ved er "modsat"
+    andre funktioner. Den strategi er dog også lidt tricky, så jeg vil først se
+    på tre andre punkter vi mangler:
+    </p>
+
+    <div style="text-align:center; margin-top:-10px; margin-bottom:-10px;">
+        <ul style="display: inline-block; list-style: disc;">
+            <li>_(f(x)+g(x)_)</li>
+            <li>_(f(x)*g(x)_)</li>
+            <li>_(f(g(x))_)</li>
+        </ul>
+    </div>
+
+    <p class="t">
+    Hvordan finder vi hældningen af funktioner, der er plusset, ganget, eller sammensat? Lad os starte med plus.
+    Hældningen af _(f(x)+g(x)_) svarer til:
+    _($\begin{eqnarray}
+    && \frac{\Bigl(f(x+k)+g(x+k) \Bigr) - \Bigl(f(x)+g(x) \Bigr)}{k} =  \\ \\
+    && \frac{f(x+k)-f(x)+g(x+k)-g(x)}{k} =  \\ \\
+    && \frac{f(x+k)-f(x)}{k}+\frac{g(x+k)-g(x)}{k} 
+    \end{eqnarray}_)
+    De her to brøker svarer til henholdsvis hældningen af _(f(x)_) og hældningen af _(g(x)_), så 
+    hældningen af _(f(x)+g(x)_) er bare de to hældninger lagt sammen. Super dejligt og simpelt!
+    </p>
+
+    <p class="t">
+    Man kunne også have fremstillet et mere visuelt argument.
+    Vi leder efter <i>hældningen</i> på en <i>graf</i>:
+    </p>
+
+    <img class='Spic' style='width:20%' src='../../../Assets/Chapter4\DerivativesAndIntegrals\PlussingDerivatives.png'> 
+
+    <p class="t">
+    Hældningen er, fundamentalt:
+    _($\frac{dy}{dx}_)
+    En forskel i _(y_) divideret med en forskel i _(x_). På billedet går vi _(dx_) fremad. 
+    _(f_) ændrer sig nu med _(dy_f_) og _(g_) med _(dy_g_). Den samlede ændring er 
+    _(dy_f+dy_g_), så:
+    _($\frac{dy}{dx} = \frac{dy_f+dy_g}{dx} = \frac{dy_f}{dx} + \frac{dy_g}{dx}_)
+    _(dy_f/dx_) er hældningen i _(f_) og _(dy_g/dx_) er hældningen i _(g_). Ergo:
+    Hældningerne skal bare plusses med hinanden!
+    </p>
+
+    <p class="t">
+    Lad mig introducere lidt terminologi før vi går videre til at gange. At
+    "finde hældningen" kalder vi at <i>differentiere</i> en funktion. Det ord kommer nok
+    fra "differens" - vi finder ud af, hvor meget den <i>ændrer</i> sig. 
+    </p>
+    <p class="t">
+    Hældningen af èn funktion kommer i form af en <i>ny funktion</i>: F.eks. er _(x^2_)'s hældning 
+    lig _(2x_). Denne "nye funktion" kalder vi en <i>derivative</i>, eller på dansk en "afledt".
+    Jeg kalder det også hyppigt "en hældning". Vi beskriver det ofte matematisk
+    ved hjælp af et lille apostrof tegn _('_). Hældningen af _(f(x)_) ville vi
+    skrive som:
+    _($f'(x)_)
+    En anden alternativ notation er: 
+    _($\frac{d}{dx}[f(x)]_)
+    Så i stedet for "hældningen af to plussede funktioner er de to funktioners hældninger plusset med hinanden", 
+    ville
+    man bare skrive: 
+    _($\frac{d}{dx}[f(x)+g(x)]=f'(x)+g'(x)_) 
+    _(\frac{d}{dx}_) <i>ligner</i> en brøk, men det har intet at gøre med brøker som vi kender. Du kan 
+    <i>ikke</i> behandle det og omskrive det som var det en brøk: 
+    Det er en fejl mange personer laver. Det er rent symbolsk, at
+    vi skriver det som vi gør! Det er bare for at <i>hentyde</i>, at det handler om en forandring
+    i et <i>et eller andet</i>, divideret med en forandring i _(x_). 
+    </p>
+    <p class="t">
+    Uden fuldkommen at tage sølvpapirshatten på, 
+    må jeg alligevel erkende og notere, at mange lærebøger til gymnasiet behandler 
+    _(\frac{d}{dx}_) som var det en brøk i flere af deres beviser. Disse beviser er <i>ikke valide</i>. 
+    De kommer frem til en rigtig <i>konklusion</i> ja, men selve beviset er ikke rigtigt. 
+    De bliver højest sandsynlig præsenteret enten pga. fjollede konventioner der har holdt ved, eller fordi
+    det rigtige bevis er for langt eller svært (<i>tror</i> lærerne. Ofte er det i realiteten
+    ikke meget sværere eller længere, bare mindre "elegant") 
+    </p>
+
+    <p class="t">
+    Anyways, vi skal have ganget nogle funktioner: 
+    _($\frac{f(x+k)*g(x+k)-f(x)*g(x)}{k}_)
+    Jeg kan umiddelbart ikke se noget vi kan gøre for at simplificere det. Jeg har derfor en lidt
+    alternativ ide. _(f(x+k)_) er det samme som _(f(x)_), men med en bitte smule
+    forandring efter man er gået _(k_) fremad. Hvor meget forandring? Well, _(f'(x)*dx_) forandring, selvfølgelig! 
+    Vi kan derfor omskrive _(f(x+k)_) til 
+    _($f(x)+f'(x)*k_)
+    Samme gælder _(g(x)_), så:
+    _($\begin{eqnarray}
+    && \frac{(f(x)+f'(x)*k)*(g(x)+g'(x)*k)-f(x)*g(x)}{k} = \\ \\
+    && \frac{f(x)*g(x)+f(x)*g'(x)*k+f'(x)*k*g(x)+f'(x)*g'(x)*k^2-f(x)*g(x)}{k} = \\ \\
+    && \frac{f(x)*g'(x)*k+f'(x)*k*g(x)+f'(x)*g'(x)*k^2}{k} = \\ \\
+    && f(x)*g'(x)+f'(x)*g(x)+f'(x)*g'(x)*k
+    \end{eqnarray}_)
+    Bum! Nu kan jeg sætte _(k_) til _(0_), så jeg får:
+    _($ ¤x[f(x)*g(x)] = f(x)*g'(x)+f'(x)*g(x)_)
+    Vi kan også lave et mere visuelt argument ligesom med addition: 
+    </p>
+
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter4\DerivativesAndIntegrals\timingDerivatives.mp4' type='video/mp4'>
+    </video>
+
+    <p class="t">
+    Tid til nogle opgaver! 
+    </p>
+
+    <q-stion 1="6" 2="1">
+    Differentier / find hældningen af følgende udtryk:
+    <div style="margin-left:-67%; margin-top:25px; margin-bottom: -10px;">
+    _($\begin{eqnarray}
+        && \underline{\textbf{A}}: \, \, \, \, \, \, 2^x*x^3 + Cos(x) \\  \\
+        && \underline{\textbf{B}}: \, \, \, \, \, \, \frac{Sin(x)+2^x}{x^2} 
+    \end{eqnarray}_)
+    </div>
+    <br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    Jeg differentierer på følgende måde:
+    _($\begin{eqnarray}
+    && ¤x[2^x*x^3 + Cos(x)] = \\ \\
+    && ¤x[2^x*x^3]+¤x[Cos(x)] = \\ \\
+    && 2^x*¤x[x^3]+¤x[2^x]*x^3 - Sin(x) = \\ \\
+    && 2^x*3*x^2 + Ln(2)*2^x*x^3 - Sin(x) = \\ \\
+    && 2^x*(3x^2 + 0.693*x^3) - Sin(x)
+    \end{eqnarray}_)
+    Bum!
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Først omskriver jeg, så vi ikke længere <i>dividerer</i> med _(x^2_), men i stedet <i>ganger</i> med _(x^{-2}_):
+    _($(Sin(x)+2^x)*x^{-2}_)
+    Nu kan vi differentiere som:
+    _($\begin{eqnarray}
+    && ¤x[(Sin(x)+2^x)*x^{-2}] \, \, = \\ \\
+    && (Sin(x)+2^x)*¤x[x^{-2}] + x^{-2}*¤x[Sin(x)+2^x] \, \, = \\ \\
+    && -2*(Sin(x)+2^x)*x^{-3} + x^{-2}*\left(¤x[Sin(x)]+¤x[2^x] \right) \, \, = \\ \\
+    && -2*(Sin(x)+2^x)*x^{-3} + x^{-2}*(Cos(x)+0.693*2^x) \, \, = \\ \\
+    && \frac{Cos(x)+0.693*2^x}{x^2}-\frac{2*Sin(x)+2*2^x}{x^3} 
+    \end{eqnarray}_)
+    Bum! 
+    <br><br></answer-box>
+
+    <q-stion 1="6" 2="2">
+    Igen står du oppe på en bygning og kaster en bold ned. Denne gang 
+    lader du ikke bare bolden falde, du <i>kaster</i> den nedad. 
+    Funktionen bliver derfor også lidt anderledes:
+    _($h(t)=30-(4.91*t^2 + 5*t)_)
+    Hvad er hastigheden når bolden rammer jorden?
+    <br><br></q-stion>
+    <answer-box>
+    Bolden rammer jorden når:
+    _($4.91*t^2 + 5*t = 30 \to t=2.01_)
+    Hældningen på boldens bevægelse er:
+    _($\begin{eqnarray}
+    && ¤t[4.91*t^2 + 5*t] \, \, = \\ \\
+    && ¤t[4.91*t^2]+¤t[5*t] \, \, = \\ \\
+    && 4.91*¤t[t^2]+5*¤t[t] \, \, = \\ \\
+    && 4.91*2*t+5*1 \, \, = \\ \\
+    &&  9.82t+5
+    \end{eqnarray}_)
+    Så hastigheden ved jorden er:
+    _($9.82*2.01+5=24.738 m/s_)
+    Bum! Nemt!  
+    <br><br></answer-box>
+
+    <q-stion 1="6" 2="3">
+    Sig du producerer og sælger et bestemt produkt. Du skal til at vælge prisen _(p_). Ud fra
+    kosten af hvert produkt samt en markedsanalyse, har du vurderet, at du med en pris på _(p_) dollars vil
+    tjene _(0.7^p*p^2_) millioner dollars. Denne kurve ser cirka ud som:
+    <img class='Spic' style='width:95%' src='../../../Assets/Chapter4\DerivativesAndIntegrals\MarketCurve.png'> 
+    <p class="t">
+    Hvad er den bedste pris _(p_)? På hvilken pris, tjener du flest penge? 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Vi skal finde ud af, hvornår _(0.7^p*p^2_) er højest. Den går op, når et toppunkt, 
+    og går ned. 
+    Ved toppunktet skifter den fra, at gå opad til at nedad: Hældningen ved toppunktet er derfor <i>fladt</i>.
+    <img class='Spic' style='width:95%' src='../../../Assets/Chapter4\DerivativesAndIntegrals\MarketCurve2.png'> 
+    <p class="t"> 
+    Vi skal altså finde hældningen og løse en ligning, hvor den er lig _(0_)! Først regner vi:
+    _($\begin{eqnarray}
+    && ¤p[0.7^p*p^2] \, \, = \\ \\
+    && ¤p[0.7^p]*p^2+0.7^p*¤p[p^2] \, \, = \\ \\
+    && Ln(0.7)*0.7^p*p^2+0.7^p*2*p \, \, = \\ \\
+    && 0.9^p*p*(-0.356p+2)
+    \end{eqnarray}_)
+    Hvornår er dette udtryk lig _(0_)? Èn mulighed er _(p=0_) helt i starten, men
+    det er vi ikke interesserede i. _(0.9^p_) bliver aldrig _(0_), så vi kan
+    bare fokusere på _(-0.356p+2_):
+    _($-0.356p+2=0 \to p = 5.617 \text{ Dollars}_)
+    Bum! Min- og makspunkter som disse er en af de vigtigste anvendelser
+    af differentiering. 
+    </p>
+    <br></answer-box>
+
+    <q-stion 1="6" 2="4">
+    Sig du har følgende dal:
+    <img class='Spic' style='width:65%' src='../../../Assets/Chapter4\DerivativesAndIntegrals\CrazyDamnDal.png'> 
+    <p class="t">
+    Sig at formen på den dal kan defineres som:
+    _($y=-0.9x^4 + 4.2x^3 - 4.6x^2 - 0.2x, 0 \lt x \lt 2.44_)
+    Hvor er dalen stejlest? 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Dalen er stejlest der, hvor den enten går hurtigst opad eller nedad. I sidste opgave
+    skulle vi finde toppunktet på en funktion: I denne skal vi finde minimumspunktet på
+    en funktions <i>hældning</i>:
+    <img class='SpicXL' style='width:55%' src='../../../Assets/Chapter4\DerivativesAndIntegrals\CrazyDamnDal2.png'> 
+    <p class="t">
+    Vi kan finde hældningen som:
+    _($\begin{eqnarray}
+    && ¤x[-0.9x^4 + 4.2x^3 - 4.6x^2 - 0.2x] \, \, = \\ \\
+    && -0.9*¤x[x^4] + 4.2*¤x[x^3] - 4.6*¤x[x^2] - 0.2*¤x[x]  \, \, = \\ \\
+    && -0.9*4*x^3 + 4.2*3*x^2 - 4.6*2*x - 0.2   \, \, = \\ \\
+    && -3.6x^3 + 12.6x^2 - 9.2x - 0.2
+    \end{eqnarray}_)
+    For at finde det højeste og laveste punkt skal vi se, 
+    hvornår hældningen af 
+    <i>denne</i> funktion er lig _(0_):
+    _($\begin{eqnarray}
+    && ¤x[-3.6x^3 + 12.6x^2 - 9.2x - 0.2] \, \, = \\ \\
+    && -3.6*3*x^2 + 12.6*2*x - 9.2 \, \, = \\ \\
+    && -10.8 x^2 + 25.2*x - 9.2
+    \end{eqnarray}_)
+    Vi skal nu løse: 
+    _($-10.8 x^2 + 25.2*x - 9.2 = 0 \to x=0.453, \, 1.88_)
+    _(x=0.453_) svarer til der, hvor kurven går stejlest nedad, og _(x=1.88_) der, hvor den går stejlest opad.
+    Vi <i>kunne</i> se dette intuitivt på billedet, men vi kunne også 
+    teste det ved, at indsætte _(x=0.453_) og _(x=1.88_) 
+    i hældningen:
+    _($\begin{align}
+    \text{0.453: }& \, \, \, \, -3.6(0.453)^3 + 12.6(0.453)^2 - 9.2(0.453) - 0.2 = -2.116 \\
+    \text{1.88: } & \,  \, \, \, -3.6(1.88)^3 + 12.6(1.88)^2 - 9.2(1.88) - 0.2 = 3.116
+    \end{align}_)
+    Ved den første er hældningen negativ, ved den næste er den positiv
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="6" 2="5" customWidth="600">
+    Sig at to bjerge/bakker kan modelleres af andengradsfunktioner:
+    <img class='SpicBXL' style='width:86%' src='../../../Assets/Chapter4\DerivativesAndIntegrals\MountainSlopeExercise.png'> 
+    <p class="t">
+    Vi skal bygge en bro mellem disse bjerge, og placere den, så at 
+    hældningen passer ved dem <i>begge</i>. Hvor lang bliver broen?
+    </p>
+    <p class="t">
+    Den her opgave er ret lang, og ret svær!
+    </p>
+    <br></q-stion>
+    <answer-box customWidth="600">
+    For at finde ud af hvor <i>lang</i> broen er, skal vi først finde ud af <i>hvor</i> broen
+    starter og slutter på de to bjerge. Derfra kan vi nemt regne længden via pythagoras. 
+    Egentlig skal vi kun finde èt punkt: Det ene punkt kan nemt bruges til at beregne det andet.
+    Vi skal finde et punkt hvor:
+    </p>
+    <p class="t">
+    Hvis du laver en tangentlinje på èn af bjergene, skal den også være en tangentlinje på det andet.
+    Linjen skal derfor skære det andet bjerg et sted hvor hældningerne er identiske.
+    </p>
+    <p class="t">
+    Lad os modellere situationen matematisk i forhold til andengradsfunktioner. Derfra burde det være lettere
+    at udlede en mere konkret strategi. Vi <i>kunne</i> fint placere vores _((0,0)_) punkt ved foden
+    for det lille bjerg, men jeg tror faktisk det er nemmere at 
+    placere den ved toppen, på hovedet:
+    </p>
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter4\DerivativesAndIntegrals\MountainSlopeExercise2.png'> 
+    <p class="t">
+    Det virker måske lidt mærkeligt, men det gør matematikken lettere og hurtigere. Nu kan vi nemt 
+    modellere det store bjerg som bare _(y=ax^2_), eftersom det er centreret på _((0,0)_). 
+    _(y_) er _(45_) når _(x_) er _(15_), så:
+    _($a=\frac{45}{15^2} = 0.2_)
+    Det lille bjerg kunne lignende beskrives som _(y=ax^2_) med _(a=10/10^2=_) _(0.1_), <i>hvis</i> 
+    koordinatsystemet var placeret på toppen af det lille bjerg. 
+    Vi ved, at _(y=0.1x^2_) har den rigtige <i>form</i>, den skal
+    bare rykkes _(15+15+10=_) _(40_) til siden og _(45-10=_) _(35_) opad. Det giver:
+    _($y-35 = 0.1*(x-40)^2 \to y = 0.1x^2 - 8x + 195_)
+    Lad os nu beskrive tangentlinjen ved _(x=d_). Hældningen er bare  
+    _($¤x[0.2x^2] = 0.4x_)
+    ... så hældningen ved punktet _((d, 0.2d^2)_) er _(0.4d_). Det giver linjen
+    _($y=0.4d*\left(x-d \right) + 0.2d^2_)
+    ... som kan simplificeres til:
+    _($y=0.4d*x - 0.2d^2_)
+    Vi <i>kunne</i> nu forsøge at regne skæringspunktet til det andet bjerg, og løse en ligning
+    hvor de to hældninger var identiske. Det <i>ville</i> virke, men det ville også være
+    ret besværligt, siden skæringen i sig selv beskrives af en andengradsligning. Lad os i stedet
+    lede efter det _(d_), hvor linjen <i>tangerer</i> det andet bjerg: Der, hvor den skærer kun _(1_) gang! 
+    Vi skal lede efter det _(d_), hvor linjens skæring med det andet bjerg kun har _(1_) løsning!
+    _($0.4d*x - 0.2d^2 = 0.1x^2 - 8x + 195 \to_)
+    _($-0.1x^2 + (0.4d+8)x - (195+0.2d^2) = 0_)
+    _(Ax^2+Bx+C_) har kun _(1_) løsning hvis _(B^2-4AC=0_), så:
+    _($(0.4d+8)^2 - 4*(-0.1)*(-195-0.2d^2) = 0_)
+    Dette er en andengradsligning. Den kan let løses, og giver:
+    _($d=2.1307, -82.13_)
+    _(-82.13_) giver ingen mening, så _(d=2.1307_) er svaret. Den ène position er altså
+    _($(2.1307, 0.2*2.1307^2) = (2.1307, 0.9079)_)
+    Den anden position finder vi ved at løse:
+    _($-0.1x^2 + (0.4*2.1307+8)x - (195+0.2*2.307^2) = 0_)
+    Hvilket giver _(x=44.2609_). Så det andet punkt er:
+    _($(44.2609, 0.1*(44.2609)^2 - 8*(44.2609) + 195) = (44.2609, 36.815)_)
+    Nu kan vi <i>endelig</i> regne længden som:
+    _($\sqrt{(44.2609-2.1307)^2 + (36.815-0.9079)^2} = 55.355 \text{m}_)
+    Voila! 
+    </p>
+    <br></answer-box>
+
+
+
+
+

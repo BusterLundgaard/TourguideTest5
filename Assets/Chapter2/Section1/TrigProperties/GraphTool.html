@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+
+    <body>
+
+        <div id = "MainCanvas" style="position: relative;">
+            <!-- For GUI -->
+            <canvas id="Graph" width="700" height="700" style="position: absolute; left: 0; top: 0; z-index: 2;"></canvas>
+            <canvas id="Coordinates" width="700" height="700" style="position: absolute; left: 0; top: 0; z-index: 1;"></canvas>
+            <canvas id="Background" width="700" height="700" style="position: absolute; left: 0; top: 0; z-index: 0;"></canvas>
+        </div>
+
+        <script>
+
+            //Adjustable variables:
+            var maxX = 20; var minX = -20;
+            var maxY = 20; var minY = -20; 
+
+            var Amplitude = new Slider(0,15,50,50,200, "m");
+            var freq1     = new Slider(0.05,0.3,50,100,200, "n");
+            var freq2     = new Slider(0,5,50,150,200, "v");  
+
+            var graphColour = "blue";
+
+            var graphFunction = function(x) {
+                if(-1.57/freq1.v < x && x < 1.57/freq1.v) {
+                    return Amplitude.v*Math.cos(x*freq1.v)*Math.cos(x*freq2.v);
+                }
+                else{
+                    return 0;
+                }
+            } 
+           
+           //Graphics and canvas setup:
+                var BCan = document.getElementById("Background"); var BCtx = BCan.getContext("2d");
+                var GCan = document.getElementById("Graph"); var GCtx = GCan.getContext("2d");
+                var CCan = document.getElementById("Coordinates"); var CCtx = CCan.getContext("2d");
+
+                //Fill background with color:
+                    BCtx.beginPath();
+                        BCtx.rect(0, 0, 700, 700);
+                        BCtx.fillStyle = "#ededed"
+                    BCtx.fill();
+
+                //Add coordinate system:
+                    //Figure out axis locations
+                    var yLinePos = (-minX)*(700/(maxX - minX));
+                    var xLinePos = (-minY)*(700/(maxY - minY)); 
+
+                    //Draw axis lines
+                    if(xLinePos > 0 && xLinePos < 700){
+                        CCtx.beginPath();
+                            CCtx.moveTo(0,700-xLinePos);
+                            CCtx.lineTo(700,700-xLinePos);
+                        CCtx.lineWidth = 3;
+                        CCtx.stroke()
+                    }
+                    if(yLinePos > 0 && yLinePos < 700){
+                        CCtx.beginPath();
+                            CCtx.moveTo(yLinePos,0);
+                            CCtx.lineTo(yLinePos,700);
+                        CCtx.lineWidth = 3;
+                        CCtx.stroke()
+                    }
+
+                    //Draw axis numbers:
+                    var partitions = 12;
+                    CCtx.font = "10px Arial";
+                    CCtx.strokeStyle = "red"
+                    CCtx.lineWidth = 0.5
+
+                    var xAxisGraphicY = 0;                    
+                    var yAxisGraphicX = 0;
+
+                    if(xLinePos < 0)      {xAxisGraphicY = 650;}
+                    else if(xLinePos < 0) {xAxisGraphicY = 50;}
+                    else                  {xAxisGraphicY = xLinePos;}   
+
+                    if(yLinePos < 0)      {yAxisGraphicX = 650;}
+                    else if(yLinePos < 0) {yAxisGraphicX = 50;}
+                    else                  {yAxisGraphicX = yLinePos;}   
+                    
+                    for(let i = 0; i < partitions; i++) {
+                        CCtx.strokeText(Math.floor(minX + i*((maxX - minX)/partitions)), i*(700/partitions), 700 - xAxisGraphicY - 5)
+                        CCtx.strokeText(Math.floor(minY + i*((maxY - minY)/partitions)), yAxisGraphicX - 20, 700-i*(700/partitions))
+                    }                                 //Y NEEDS TO BE REVERSED!
+                
+                //Style Graph
+                GCtx.strokeStyle = graphColour;
+
+            //Defining functions and classes
+
+                //Define slider class:
+                function Slider(Min, Max, X, Y, L, Name) {
+                    
+                    //Setup variables:
+                    this.min = Min; this.max = Max; this.x = X, this.y = Y, this.l = L
+                    this.percent = 0.5
+                    this.v = 0.5*(Min + Max)
+                    this.name = Name + " = ";
+
+                       //YOU NEED TO CREATE THE ELEMENT, AND THEN ADD IT!
+                    this.el = document.createElement("canvas");
+                    this.el.width = 700;
+                    this.el.height = 700;
+                    this.el.style.position = "fixed";
+                    document.getElementById("MainCanvas").appendChild(this.el);
+                    //z layer needs to be adjusted too!
+
+                    this.SCtx = this.el.getContext("2d");
+                    
+                    //Actually draw the slider:
+                        //Set opacity
+                    this.el.style.setProperty("opacity","0.6");
+
+                        //Draw main bar
+                    this.SCtx.beginPath();
+                        this.SCtx.moveTo(X,Y);
+                        this.SCtx.lineTo(X+L,Y);
+                    this.SCtx.lineWidth = 6;
+                    this.SCtx.stroke();
+
+                        //Draw dragable bar:
+                    this.SCtx.beginPath();
+                        this.SCtx.moveTo(X+0.5*L,Y+3);
+                        this.SCtx.lineTo(X+0.5*L,Y+16);
+                    this.SCtx.lineWidth = 10;
+                    this.SCtx.stroke();
+
+                        //Draw text:
+                    this.SCtx.font = "10px Arial";
+                    this.SCtx.lineWidth = 0.5;
+                    this.SCtx.strokeText(Min, X-10, Y+3);
+                    this.SCtx.strokeText(Max, X+L+6, Y+3);
+                    
+                    if(this.v.toString().length > 5) {
+                        this.SCtx.strokeText(this.name + this.v.toString().substr(0,5), X, Y - 8);
+                    }
+                    else{
+                        this.SCtx.strokeText(this.name + this.v, X, Y - 8);
+                    }
+
+                }
+                Slider.prototype.checkUpdate = function(Point){
+                    //Check if mouse in in rect:
+                    if(Point.x > this.x && Point.x < this.x + this.l && Point.y > this.y && Point.y < this.y + 35) {
+                        
+                        //Update percent and value:
+                        this.percent = (Point.x - this.x)/this.l;
+                        this.v = this.min + this.percent*(this.max - this.min);
+
+                        //Update graphics
+                        this.SCtx.clearRect(this.x - 10,this.y+3,700,20);
+                        this.SCtx.clearRect(this.x - 10,this.y-20,700,15);
+                            
+                        //Draggable bar:
+                            //Draw draggable bar:
+                        this.SCtx.beginPath();
+                            this.SCtx.moveTo(this.x+this.percent*this.l,this.y+3);
+                            this.SCtx.lineTo(this.x+this.percent*this.l,this.y+16);
+                        this.SCtx.lineWidth = 10;
+                        this.SCtx.stroke();
+
+                            //Draw text:
+                        this.SCtx.font = "10px Arial";
+                        this.SCtx.lineWidth = 0.5;
+
+                        if(this.v.toString().length > 5) {
+                            this.SCtx.strokeText(this.name + this.v.toString().substr(0,5), this.x, this.y - 8);
+                        }
+                        else{
+                            this.SCtx.strokeText(this.name + this.v, this.x, this.y - 8);
+                        }
+
+                        //this.SCtx.strokeText(this.name + this.v, this.x, this.y - 8);
+                        
+                        //Call the update graph function here
+                        updateGraph();
+                    }
+                }
+
+                // Set up mouse input:
+                cursor = { x: 0, y: 0 };
+
+                var getCursorPosition = function (event) {
+                    const rect = GCan.getBoundingClientRect()
+                    cursor.x = event.clientX - rect.left
+                    cursor.y = event.clientY - rect.top
+                }
+                GCan.addEventListener("mousemove", function (e) {
+                    getCursorPosition(e);
+                })
+
+                //Get event when holding and moving mouse:
+                GCan.addEventListener("mousedown", function() {
+                    GCan.addEventListener("mousemove", adjustSlider);
+                });
+                GCan.addEventListener("mouseup", function() {
+                    GCan.removeEventListener("mousemove", adjustSlider);
+                });
+
+                //Function to change sliders:
+                var adjustSlider = function(event) {
+                    Amplitude.checkUpdate(cursor);
+                    freq1.checkUpdate(cursor);
+                    freq2.checkUpdate(cursor);
+                }
+
+                //Update graph:
+                var updateGraph = function() {
+
+                    GCtx.clearRect(0,0,700,700);
+
+                    var aspectRatioY = 700/(maxY-minY);
+
+                    GCtx.beginPath();
+
+                        GCtx.moveTo(0,graphFunction(minX));
+        
+                        var fakeX = 0;
+                        var fakeY = 0;
+
+                        for (let i = 1; i < 700; i++) {
+                            fakeX = minX + (i/700)*(maxX - minX);
+                            fakeY = graphFunction(fakeX);
+
+                            GCtx.lineTo(i, (maxY - fakeY)*aspectRatioY); //YOU NEED TO ACTUALLY CENTER CORRECLTY!
+                        }
+                    GCtx.stroke();
+                }
+
+                updateGraph();
+
+
+        </script>
+
+    
+
+    </html>

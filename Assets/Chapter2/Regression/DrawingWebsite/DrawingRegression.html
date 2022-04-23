@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div style="position: relative;">
+        <canvas id="TempSketch" width="500" height="500" style="position: absolute; left: 0; top: 0; z-index: 9;"></canvas>
+        <canvas id="FinalDraw" width="500" height="500" style="position: absolute; left: 0; top: 0; z-index: 8;"></canvas>
+    </div>
+
+    <script>
+
+    var TCan = document.getElementById("TempSketch"); var TCtx = TCan.getContext("2d"); TCtx.lineWidth = 1; TCtx.strokeStyle = "black";
+    var FCan = document.getElementById("FinalDraw"); var FCtx = FCan.getContext("2d");
+
+    FCtx.fillStyle="white"; 
+    FCtx.fillRect(0,0,500,500);
+
+    //Cursor position
+    var cursor = { x: 0, y: 0 }; var pcursor = { x: 0, y: 0 };
+    var getCursorPosition = function (event) {
+        const rect = TCan.getBoundingClientRect()
+        cursor.x = event.clientX - rect.left
+        cursor.y = event.clientY - rect.top
+    }
+    TCan.addEventListener("mousemove", function (e) {
+        getCursorPosition(e);
+    })
+
+    // Draw sketch:
+    canDraw = false;
+    TCan.addEventListener("mousedown", function() {
+
+        xData = []; yData = [];
+
+        pcursor.x = cursor.x; pcursor.y = cursor.y;
+        canDraw = true; sketch();
+    })
+    TCan.addEventListener("mouseup", function() {
+        canDraw = false;
+
+        //Remove the sketching and the current line:
+        TCtx.clearRect(0,0,500,500);
+        FCtx.fillRect(0,0,500,500);
+
+        //FCtx.clearRect(0,0,500,500);
+
+        //Find the slope for regression:
+        sum1 = 0; sum2 = 0;
+        for (let i = 0; i < xData.length; i++) {
+            sum1 += (xData[i]-xData[0])*(yData[i]-yData[0]);
+            sum2 += (xData[i]-xData[0])*(xData[i]-xData[0]);
+        }
+        slope = sum1/sum2; 
+    
+        //Draw the line:
+        FCtx.beginPath(); 
+        FCtx.moveTo(xData[0],yData[0]); 
+        FCtx.lineTo(xData[xData.length-1], yData[0] + slope*(xData[xData.length-1]-xData[0])); 
+        FCtx.stroke();
+
+    })
+    var xData = []; var yData = []; 
+
+    var sketch = function() {
+        if(canDraw) {
+
+            if (Math.abs(cursor.x - pcursor.x) + Math.abs(cursor.y - pcursor.y) > 5) {
+                
+                TCtx.beginPath(); 
+                TCtx.moveTo(pcursor.x, pcursor.y); 
+                TCtx.lineTo(cursor.x, cursor.y); 
+                TCtx.stroke();
+                pcursor.x = cursor.x; pcursor.y = cursor.y;
+
+                xData.push(cursor.x); yData.push(cursor.y); 
+
+            }
+
+            requestAnimationFrame(sketch);
+        }        
+    }
+
+    </script>
+
+
+    <!-- SKETCHING: -->
+    <!-- if (Math.abs(cursor.x - pcursor.x) + Math.abs(cursor.y - pcursor.y) > 10) {
+        SCtx.beginPath(); SCtx.moveTo(pcursor.x, pcursor.y); SCtx.lineTo(cursor.x, cursor.y); SCtx.stroke();
+        pcursor.x = cursor.x; pcursor.y = cursor.y;
+    } -->
+
+

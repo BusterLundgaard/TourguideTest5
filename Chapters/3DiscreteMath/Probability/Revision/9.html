@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+
+
+    78.53 + 63.617 + 411.511 - 10.68 - 16.9 - 14 + 3.58
+
+    <q-stion 1="2" 2="1" 3="5">
+    Se følgende billede:
+    <img class='Spic' style='width:75%' src='../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\CircleIntersection1.png'> 
+    <p class="t">
+    Hvad er arealet af den fulde figur, hvis: cirkel _(A_) har et areal på _(78.53_), _(B_) et areal på _(63.617_), _(C_) et areal på _(411.511_),
+    skæringen mellem _(A_) og _(B_) er _(10.68_), _(A_) og _(C_) _(16.9_), _(B_) og _(C_) _(14_), og skæringen mellem alle cirklerne
+    er _(3.58_) stor. 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Du kan se princippet her:
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\CircleIntersection2.png'>
+    <p class="t">Det er altså bare _(A + B + C - (I_1 + I_2 + I_3) + S_), siden vi skal fjerne de dele vi overtæller 
+    med _(A+B+C_), men ikke "overfjerne" de dele _(I_1,I_2,I_3_) deler. 
+    Det bliver i vores tilfælde til 
+    _($78.53+63.617+411.511-(10.68+16.9+14)+3.58=515.65_)
+    Det er fint og godt, men hvad har det her at gøre med sets?
+    Well, sæts kan nemt visualiseres på præcist samme måde jeg visualiserede de
+    tre cirkler _(A_), _(B_), _(C_). Det argument jeg brugte lige før ville jeg virke
+    lige meget hvordan _(A_), _(B_) og _(C_) så ud! Hvis du skal finde
+    mængden af elementer _(A \cup B \cup C_), så skal du først tælle 
+    alle elementer _(|A|+|B|+|C|_), så fjerne de overtalte elementer 
+    _(|A \cap B|+|A \cap C|+|B \cap C|_), og så plusse med det 
+    "over-fjernede" elementer _(|A \cap B \cap C|_). Bum! 
+    </p>
+    <p class="t">
+    Man kan nemt se hvordan man kan fortsætte argumentet når man arbejder med
+    fire sæts _(A_), _(B_), _(C_), _(D_), eller flere. 
+    </p>
+    <br></answer-box>
+
+    40
+    51
+    
+    <q-stion 1="2" 2="1" 3="5">
+    I dit tøjskab ved du at du har følgende sokker:
+    <div style="text-align:center;">
+        <ul style="display: inline-block; text-align: left; padding-left:0%; list-style:none;">
+            <li> _(6_) Grønne ternede</li>
+            <li> _(4_) Grønne prikkede </li>
+            <li> _(3_) Grønne normale </li>
+            <li> _(6_) Røde ternede </li>
+            <li> _(7_) Røde prikkede </li>
+            <li> _(5_) Røde normale </li>
+            <li> _(4_) Blå ternede </li>
+            <li> _(9_) Blå prikkede </li>
+            <li> _(7_) Blå normale </li>
+        </ul>
+    </div>
+    Hvad er chancen for at du trækker en sok der enten er rød, grøn, eller prikket?
+    <br><br></q-stion>
+    <answer-box> 
+    Vi leder efter en sandsynlighed. Vi skal altså finde mængden af sokker der opfylder 
+    vores krav, divideret med den totale mængde sokker 
+    <p class="t">
+    Lad _(A_) være begivenheden at jeg trækker en sok der er rød, _(B_) begivenheden at jeg
+    trækker en sok der er grøn, og _(C_) begivenheden at jeg trækker en prikket sok.
+    Vi leder nu efter _(|A \cup B \cup C|_), som vi ved kan findes med formlen:
+    _($|A| + |B| + |C| - |A \cap B| - |A \cap C| - |B \cap C| + |A \cap B \cap C|_)
+    Vi ser let at:
+    _($\begin{eqnarray}
+    && |A| = 6+7+5 = 18 \\
+    && |B| = 6+4+3 = 13 \\
+    && |C| = 4+7+9 = 20 
+    \end{eqnarray}_)
+    Der findes ingen sokker som både er røde og grønne, og 
+    især ikke nogen der både er røde grønne <i>og</i> prikkede, så 
+    både _(|A \cap B|_) og _(|A \cap B \cap C|_) er lig 0. 
+    _(A \cap C_) er de røde prikkede sokker, så _(|A \cap C|_) er _(7_), og
+    _(|B \cap C|_) er antal grønne prikkede, ergo _(4_). Alt i alt:
+    _($18+13+20-0-7-4+0=40_)
+    Sandsynligheden bliver altså:
+    _($\frac{40}{51} = 0.7843_)
+    Så lidt under en _(80_)% chance. 
+    </p>
+    <br></answer-box>
+    
+    <q-stion 1="2" 2="1" 3="5" customWidth="600">
+    Du har _(32_) ternede, _(40_) røde, _(15_) prikkede sokker, _(50_) sokker
+    der enten er røde, ternede, eller prikkede, _(43_) der enten er prikkede eller ternede,
+    _(44_) der enten er røde eller ternede, og _(17_) der både er røde og prikkede. 
+    Hvor mange sokker har du der både er røde, prikkede, og ternede? 
+    <p class="t">
+    Ja, det er meget forvirrende, og jeg ved det godt. 
+    </p>
+    <br></q-stion>
+    <answer-box customWidth="600">
+    Kald _(A_) begivenheden hvor vi får en rød sok, _(B_) prikket sok, og _(C_) ternet sok.
+    Vi leder nu efter _(|A \cap B \cap C|_). Det har vi ikke nogen direkte formel for,
+    men vi ved at:
+    _($|A \cup B \cup C| = |A| + |B| + |C| - |A \cap B| - |A \cap C| - |B \cap C| + |A \cap B \cap C|_)
+    Vi kunne nu prøve at isolere _(|A \cap B \cap C|_) og få:
+    _($|A \cap B \cap C| = |A \cup B \cup C| - |A| - |B| - |C| + |A \cap B| + |A \cap C| + |B \cap C|_)
+    Vi kender _(|A \cup B \cup C|_) som er lig _(50_). Vi 
+    kender også _(|A|=40_), _(|B|=15_) og _(|C|=32_). Til sidst så kender vi 
+    _(|A \cap B|_) _(=17_), da det svarer til "både røde og prikkede". Alt
+    det her giver os nu:
+    _($|A \cap B \cap C| = 50 - 40 - 15 - 32 + 17 + |A \cap C| + |B \cap C| \to_)
+    _($|A \cap B \cap C| = -20 + |A \cap C| + |B \cap C|_)
+    Vi har _(|A \cup C|_) og _(|B \cup C|_), da de svarer til
+    "enten røde eller ternede" _(=44_) og "prikkede eller
+    ternede" _(=43_). Vi kender dog ikke _(|A \cap C|_) eller 
+    _(|B \cap C|_). Dem er vi nødt til at finde med formlen _(|a \cap b|=|a|+|b|-|a \cup b|_), så:
+    omskrive:
+    _($-20 + (|A|+|C|-|A \cup C|) + (|B|+|C|-|B \cup C|) = _)
+    _($-20+(40+32-44)+(15+32-43)=_)
+    _($12_)
+    Bum!
+    <p class="t">
+    Hvis vi går igennem processen her lidt mere generelt, så får vi formlen:
+    _($|A \cap B \cap C| = |A|+|B|+|C| - |A \cup B| - |A \cup C| - |B \cup C| + |A \cup B \cup C|_)
+    Ligesom den anden formel, så kan man let udvide den med flere begivenheder.
+    </p>
+    <br></answer-box>
+
+
+
+
+

@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+
+
+    <p class="t">
+    Lad os prøve lige at løse en ligning som vi nu har gjort det mange gange før:
+    _($Arctan(3x^2-5)=2_)
+    Vi vil gerne <i>isolere</i> _(x_). Få _(x_) over på sin egen side af ligningen helt for sig selv. Så ved vi jo dens værdi.
+    _(Arctan_) er en funktion: i vores tilfælde gør den et eller andet til _(3x^2-5_) så det på magisk vis pludselig
+    bliver _(2_) (i dette tilfælde i radianer). Great. For at fjerne Arctan så vi kommer tættere på en isoleret _(x_), så
+    bruger vi en anden funktion der gør det modsatte: _(Tan_)! 
+    _($Tan(Arctan(3x^2-5))=Tan(2) \to 3x^2 - 5=-2.18_) 
+    Hvis _(a=b_) så er _(Tan(a)_) jo selvfølgelig også lig _(Tan(b)_). Vi har nu _(3x^2-5=-2.18_).
+    Jeg gider ikke have at _(3x^2_) er minuset med _(5_), så jeg gør det <i>modsatte</i> af at minuse: jeg 
+    plusser:
+    _($3x^2-5+5=-2.18+5 \to 3x^2=2.82_)
+    Igen, selvfølgelig er _(a+c=b+c_) hvis _(a=b_). _(x^2_) er ganget med _(3_), så jeg gør nu - you guessed it -
+    det modsatte af at gange: dividere
+    _($\frac{3x^2}{3}=\frac{2.82}{3} \to x^2 = 0.94_)
+    Nu endelig vil jeg helst bare have _(x_) i stedet for _(x^2_), så jeg tager kvadratroden, hvilket
+    jo er det modsatte af at ophæve et tal i andet potens:
+    _(\sqrt{x^2}=\sqrt{0.94} \to x=0.969_).
+    Der er egentlig intet nyt der sker her. Du har gjort det her før flere gange, og det er alt meget logisk og simpelt.
+    Jeg vil dog bare gerne have dig til at observe <i>hvad</i> præcist det er du gør. Du har en ligning
+    hvor hver side består af nogle funktioner brugt på _(x_) (eller i tilfældet her hvor der bare står _(2_) på den ene side).
+    Du tager så på hver side af ligningen <i>den modsatte funktion</i>: her Tan, Plus, Divider, Kvadratrod.
+    Det her begreb kommer jeg nok til at bruge flere gange.
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Hvis der findes en funktion _(f'_) så _(f'(f(x))=x_) for et hvert _(x_), vil 
+    det så også gælde at _(f(f'(x))=x_) for et hvert _(x_)? Husk at det ikke nødvendigvis
+    behøver at være en funktion på tal! Det kan være på en form eller hvad end du har lyst til. Måske
+    en funktion der laver regulære polygoner om til engelske ord. 
+    Yderligere husk på at en funktion også kan skrives på mange måder: "_(1_) når _(x_) er _(2_), _(2_) når _(x_) er _(1_), _(0_) ellers"
+    er jo også en funktion. Funktion er et <i>meget</i> generelt begreb i matematik. 
+    <br><br></q-stion>
+    <answer-box>
+    Nej. Et nemt eksempel er _(x^2_) og _(\sqrt{x}_). Hvis _(f_) er _(x^2_) og _(f'_) er _(\sqrt{x}_),
+    så kan man nemt se at _(f(f'(x))=\sqrt{x}^2=x_). Det er <i>ikke</i> tilfældet den anden vej rundt,
+    da _(f'(f(x))=\sqrt{x^2}=\pm x_). Det betyder at _(f'(f(x))_) både kan være lig _(-x_) <i>og</i> _(x_),
+    så kravet er ikke blevet holdt. 
+    <p class="t">
+    Et andet mere abstrakt eksempel kunne være følgende:
+    Sig at _(f_) er en funktion der tager et helt tal som input, 
+    og som output giver os en regulær polygon der har så mange kanter. Sig at _(f'_) er 
+    en funktion der tager en hvilken som helst form, og så giver os mængden
+    af kanter på formen. Det er tydeligt at _(f'(f(x))=x_), men det er ikke
+    nødvendigvis altid tilfældet den anden vej rundt. Sig at _(x_) er en
+    figur med _(6_) kanter som <i>ikke</i> er en regulær polygon. _(f'(x)=6_), så
+    _(f(f'(x))_) bliver til en regulær polygon med _(6_) kanter. Vi ender altså
+    ikke ud med hvad vi startede med. Bam. Modbevis! 
+    </p>
+    <br></answer-box>
+
+
+
+    <q-stion 1="2" 2="1" 3="5">
+    Sig at _(a \sim b_) betyder at _(a_) <i>har samme enhed</i> som _(b_). Du står nu i et eller andet tilfælde
+    hvor du ved at _(7.5*\frac{A*B}{X} + 30 \sim \frac{X}{C}_). Yderligere ved du at _(A_) har enheden
+    _(m/kg_), _(B_) har enheden _(J/m_) og at _(C_) har enheden _(J*kg_). Hvilken enhed har _(X_)?
+    Du kommer ikke til at bruge det i denne opgave, men hvis du er i tvivl så står _(J_) for <i>joules</i> som 
+    er en enhed for energi.
+    <br><br></q-stion>
+    <answer-box customWidth="500">
+    Både at gange med _(7.5_) og at plusse med _(30_) kommer ikke til at ændre på enheden. Det kan vi nemt ignorere.
+    Hvis _(X_) har enheden _(e(X)_) så må 
+    _(\frac{A*B}{e(X)}_) må have enheden _(\frac{(m/kg)*(J/m)}{e(X)}=\frac{J/kg}{e(X)}_) og _(\frac{e(X)}{C}_) må være
+    _(\frac{e(X)}{J*kg}_). Altså: _(\frac{J/kg}{e(X)} = \frac{e(X)}{J*Kg} \to J/kg=e(X)^2/J*kg \to J^2=e(X)^2 \to e(X)=J_).
+    Her mener jeg altså bare enheden af _(X_) når jeg skriver _(e(X)_). _(X_) skal altså være i joules. 
+    <br><br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Lad os igen sige at _(\sim_) betyder "har samme enhed". Hvis du ved at _((3.5A)^n*B^n \sim 5*C_) og at
+    _(A=J*s^2,B=J/s,C=J^4*s^2_), hvad er så _(n_)?
+    <br><br></q-stion>
+    <answer-box>
+    Hvad angår enhederne (endnu engang ignorere vi konstanter som _(3.5_) eller _(5_)) der ved vi altså at 
+    _((J^n*s^{2n}*J^n/s^n = J^4*s^2_). Hvis vi simplificere den venstre side så får vi 
+    _(J^{2n}*s^n = J^4*s^2_) og det er herfra tydeligt at _(n=2_).     
+    <br><br></answer-box>
+
+    <!-- GEOMETRI LIGNINGER -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Sig at du har en eller anden firkant _(Y_) _(\square ABCD_) med 
+    _(A=(-2,-2), B=(-3,2), C=(2,3), D=(2,-1)_). Lad os sige 
+    at _(f_) er en shear-transformation/funktion der tager
+    et punkt _((a,b)_) til _((a+3b,b)_). Hvis _(f(X)=Y_), hvad
+    er så _(X_)? 
+    <br><br></q-stion>
+    <answer-box>
+    Den modsatte shear funktion _(f'_) må logisk nok være
+    _($(a,b) \to (a - 3*b,b)_)
+    Det gør vi altså bare på 
+    alle punkter og får
+    _($A_x = (-2-3*(-2),-2) = (4,-2)_)
+    _($B_x = (-3-3*2,2) = (-9,2) _)
+    _($C_x = (2-3*3,3) = (-7,3) _)
+    _($d_x = (2 - 3*(-1),-1) = (5,-1)_)
+    <br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Kan central projection transformationer modsættes? Altså, kan en 
+    central projection godt have en modsat funktion?
+    <br><br></q-stion>
+    <answer-box>
+    Centrale projection transformationer tager som en input en 3D scene, og giver som output et 2D billede.
+    Alt information omkring hvor langt væk punkterne er går tabt gennem transformationen, så
+    der kan umuligt være en modsat funktion der bare "finder dem frem" igen.  
+    <br><br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Sig at du har en eller anden trekant _(A_) med punkterne _(A_1=(-1,2),A_2=(-3,-2),A_3=(5,1)_), og
+    en anden trekant _(B_) med _(B_1=(-3,3),B_2=(1,-2),B_3=(2,4)_). Sig at _(f(X)_) er reflektionen
+    af _(X_) - enten en figur eller bare et punkt - omkring punktet _(P_). Hvis du ved at _(f(C)=B_), og 
+    at _(\Seg{f(A_1)f(A_3)} \equiv \Seg{A_1A_3}_), hvad er så punkterne på figuren _(C_)? I denne
+    sammenhæng betyder _(\equiv_) i altså at de har samme retning, samme længde, og ligger på samme position.  
+    <br><br></q-stion>
+    <answer-box>
+    Her er hovedstrategien: vi skal først og fremmest på en eller anden måde finde koordinaterne på punktet
+    _(P_). Når vi har det, så burde det være nemt at finde _(C_), siden vi bare kan bruge
+    den modsatte transformation på alle _(B_)'s punkter. 
+    <p class="t">
+    Hvis _(\Seg{f(A_1)f(A_3)} \equiv \Seg{A_1A_3}_) så må det enten I: være tilfældet at _(f_) slet ikke
+    har rykket punkterne overhovedet, eller II: at _(f_) byttet _(A_1_) og _(A_3_)'s positioner. 
+    Kald koordinaterne til _(P_) for _(p_x,p_y_). Via koordianterne på _(A_1_) og _(A_2_) kan vi 
+    se at hvis I er sand så må det gælde at 
+    _($2p_x + 1 = -1, 2p_y-2=2 \to p_x=-1, p_y=2 _)
+    _($2p_x -5 = 5, 2p_y - 1 = 1 \to p_x=5, p_y=1 _)
+    Det her er umuligt! _(p_x_) kan ikke både være _(-1_) og _(5_). Det giver også helt god mening:
+    den eneste måde reflektionen af _(P_1_) i _(P_2_) er lig _(P_1_), er hvis _(P_2=P_1_). 
+    _(P_) ville altså både skulle være lig _(A_1_) <i>og</i> _(A_3_). 
+    I hvert fald, hvis vi i stedet kigger på II så ser vi nemt med samme
+    logik at _(p_x=2,p_y=3/2 \to P=(2,3/2)_). 
+    </p>
+    <p class="t">
+    Transformationen _(f_) er altså _((x,y) \to (4-x,3-y)_) hvilke må 
+    betyde at den modsatte funktion _(f'_) er lig _((x,y) \to (4-x,3-y)_).
+    Den modsatte funktion er sig selv, hvilket er lidt mærkeligt, men
+    det giver mening nok siden _(4 - (4-x)=x_) og _(3-(3-y)=y_). 
+    Anyways, vi kan bruge den her funktion og få:
+    _($C_1=f'(B_1)=(4-(-3),3-3)=(7,-3)_)
+    _($C_2=(4-1,3-(-2))=(3,5)_)
+    _($C_3=(4-2,3-4)=(2,-1)_)
+    </p>
+    <br></answer-box>
+
+    <p class="t">
+    En rigtig vigtig relation der er meget interessant at arbejde med 
+    er større/lavere end: _(\gt_) og _(\lt_). Når vi har en ligning
+    med lighed _(A=B_), så er det tydeligt at vi kan gøre hvad vi har lyst til
+    på begge sider, fordi siderne _(A_) og _(B_) repræsenterer jo det præcis samme tal. 
+    Det her er ikke nødvendigvis tilfældet når man har noget som _(A \gt B_). Vi kan
+    ikke være sikker på at hvis _(A_) er større end _(B_), så kan vi gøre en hvilken som
+    helst operation på _(A_), og så vil den stadig være større! Et åbenlyst
+    modeksempel er _(Cos_) eller _(Sin_). Det er sandt at:
+    _($1.3 \gt 0.7_)
+    Men det er <i>ikke</i> sandt at:
+    _($Cos(1.3) \gt Cos(0.7)_)
+    Fordi det giver:
+    _($0.2674 \gt 0.7648_)
+    De her "ligninger" med større/mindre end kaldes for "uligheder". Lad os prøve
+    at se hvilke operationer/handlinger vi må og ikke må lave til begge
+    sider på en ulighed, og lad os derefter løse nogle lidt tricky eksempler. 
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Hvis _(A \gt B_), er det så også sandt at:
+    <div style="text-align:center;">
+        <ul style="display: inline-block; text-align: left; padding-left:0%; list-style:none;">
+            <li><b> 1</b>: _(A + C \gt B + C_), hvor _(C_) er et hvilket som helst tal</li>
+            <li><b> 2</b>: _(C*A \gt C*B_) hvor _(C_) er positivt. </li>
+            <li><b> 3</b>: _(C*A \gt C*B_) hvor _(C_) er negativt. </li>
+            <li><b> 4</b>: _(Tan(A) \gt Tan(B)_)</li>
+            <li><b> 5</b>: _(A^2 \gt B^2_)</li>
+            <li><b> 6</b>: _(\sqrt{A} \gt \sqrt{B}_)</li>
+            <li><b> 7</b>: _(A^3 \gt B^3_)</li>
+            <li><b> 8</b>: _(C^A \gt C^B_) hvor _(C_) er et positivt tal </li>
+            <li><b> 9</b>: _(1/A \gt 1/B_) </li>
+            <li><b> 10</b>: _(Floor(A) \gt Floor(B)_), hvor _(Floor(x)_) runder _(x_) <i>ned</i> til et helt tal</li>
+            <li><b> 11</b>: _(Ceil(A) \gt Ceil(B)_), hvor _(Ceil(x)_) så bare runder <i>op</i> i stedet</li>
+            <li><b> 12</b>: _(Mod_{C}(A) \gt Mod{C}(B)_) hvor _(C_) er positivt </li>
+            <li><b> 13</b>: _(Mod_A(C) \gt Mod_B(C)_) hvor _(C_) er positivt</li>
+        </ul>
+    </div>
+    Antag at både _(A_) og _(B_) kan være alt mellem _(-\infty_) og _(\infty_):
+    Altså, alle værdier. 
+    <br><br></q-stion>
+    <answer-box t="Answer 1#" tabColour="rgb(175,128,161)">
+    Hvis _(A_) er større end _(B_), så er der en eller anden forskel mellem
+    _(A_) lig _(A-B_) som er større end _(0_). Denne forskel ændrer
+    sig ikke når _(A_) bliver til _(A+C_) og _(B_) bliver til _(B+C_)
+    da 
+    _($(A+C)-(B+C)=A-B+C-C=A-B_)
+    Altså, ja, vi kan godt plusse begge sider med et hvilket som helst tal.
+    Det har vi også gjort før.
+    <br><br></answer-box>
+    <answer-box t="Answer 2#" tabColour="rgb(171,96,147)">
+    Lad os sige det med forskellen igen: Hvis _(A_) er større
+    end _(B_), så er _(A-B \gt 0_). Når _(A_) bliver til _(A*C_)
+    og _(B_) bliver til _(B*C_), så bliver denne forskel til
+    _($A*C-B*C=C*(A-B)_)
+    Vi kan antage at _((A-B)_) er større end _(0_), og _(C_) har
+    vi defineret til at være positiv. Vi har altså derfor
+    to positive tal ganget med hinanden, så forskellen er
+    absolut stadig større end _(0_) 
+    <br><br></answer-box>
+    <answer-box t="Answer 3#" tabColour="rgb(175,128,161)">
+    Hvis vi laver samme trick med forskellen så får vi:
+    _($C*(A-B)_)
+    _((A-B)_) er stadig positivt, men _(C_) er negativt! 
+    Positivt ganget negativt giver altid negativt, så forskellen
+    er ikke længere større end _(0_): Den er altid <i>mindre</i>
+    end _(0_). Det her er ret interessant: Når vi ganger begge
+    sider med et tal der er negativt, så skal vi altså 
+    "vende tegnet om": Større end bliver til mindre end, og mindre
+    end til større end. F.eks. hvis vi skulle løse:
+    _($15-3x \lt 5+2x_)
+    Vi kunne minuse begge sider med _(15+2x_) og få:
+    _($15-3x-15-2x \lt 5+2x-15-2x \to_)
+    _($-5x \lt -10_)
+    For at isolere _(x_) skal vi nu gange begge sider
+    med _(-5_). Det betyder dog at _(10_) nu ikke længere
+    er <i>større</i> end _(5x_), men <i>mindre</i> end _(5x_):
+    _($5x \gt 10 \to x \gt 2_)
+    Bum!
+    <br><br></answer-box>
+    <answer-box t="Answer 4#" tabColour="rgb(171,96,147)">
+    Som vi gør vinklerne _(A_) og _(B_) større, så bliver
+    hældningerne på linjerne med de vinkler også større. 
+    Så langt så godt, <i>indtil</i> vinklerne bliver større
+    end _(\pi/2_), hvor hældningen med det samme begynder at blive negativ.
+    Èt eksempel er:
+    _($1.77 \gt 1.07 \to Tan(1.77) \gt Tan(1.07) \to -4.953 \gt 1.827_)
+    Ergo, det er altså <i>ikke</i> sandt. 
+    <br><br></answer-box>
+    <answer-box t="Answer 5#" tabColour="rgb(175,128,161)">
+    Det her er rigtigt, <i>hvis</i> _(A_) og _(B_) begge er positive. 
+    Man kan lave et ret simpelt intuitivt geometrisk
+    argument: _(A^2_) og _(B^2_) er arealerne på kvadrater med siderne
+    _(A_) og _(B_). Når vi gør sidelængderne længere, så bliver
+    arealet selvfølgelig også større, så hvis _(A \gt B_), så 
+    er _(A^2_) også større end _(B^2_). 
+    <p class="t">
+    Hvis de er negative, så får vi et problem, da et negativt tal ganget
+    med sig selv bliver positivt. Sig f.eks. vi har:
+    _($2 \gt -4 \to 2^2 \gt (-4)^2 \to 4 \gt 16_)
+    Det er tydeligvis <i>ikke</i> rigtigt. 
+    </p>
+    <br><br></answer-box>
+    <answer-box t="Answer 6#" tabColour="rgb(171,96,147)">
+    Vi kan lave det samme argument som før, bare modsat: Hvis
+    èt kvadrat har et større areal end et andet, så har det kvadrat også
+    en større sidelængde! Kvadratroder tager slet ikke imod negative tal,
+    så der er intet problem der heller. 
+    <br><br></answer-box>
+    <answer-box t="Answer 7#" tabColour="rgb(175,128,161)">
+    Hvis begge tal er positive, så er det tydeligvis sandt, da _(x^3_)
+    _(A*A*A_) selvfølgelig er større end _(B*B*B_) hvis _(A_) er
+    større ned _(B_). Hvad med negative tal dog? Hvad hvis vi f.eks. har:
+    _($2 \gt -4 \to 2^3 \gt (-4)^3 \to 8 \gt -64_)
+    Stadig sandt! Hvad hvis begge er negative?
+    _($-2 \gt -4 \to (-2)^3 \gt (-4)^3 \to -8 \gt -64_)
+    Stadig sandt! Det vil faktisk være sandt for nogen som helst _(x^n_) hvor
+    _(n_) er et ulige tal, da kun de lige _(n_) laver negative _(x_) om til positive. 
+    <br><br></answer-box>
+    <answer-box t="Answer 8#" tabColour="rgb(171,96,147)">
+    I mange tilfælde vil det her tydeligvis være sandt: F.eks _(4 \gt 2_)
+    der bliver til _(3^4 \gt 3^2_) hvilke jo er rigtigt. Er det <i>altid</i>
+    sandt dog? Lad os lave testen med forskellen:
+    _($C^A - C^B \gt 0 _)
+    Det her <i>skal</i> være sandt hvis _(A \gt B_), lige meget hvilken positiv
+    _(C_) vi vælger. Sig at _(A=B+d_), hvor _(d_) er et positivt tal (hvilke
+    du ved siden _(A \gt B_)). Nu får du:
+    _($C^{B+d}-C^B \gt 0 \to C^B*C^d-C^B \gt 0 \to C^B*(C^d-1) \gt 0_)
+    Vi ved at _(C^B_) altid er positivt. Det er _(C^d-1_) ikke nødvendigvis 
+    dog. Ja, <i>hvis</i> _(C_) er større end _(1_), så <i>skal</i> _(d_) være negativt
+    for at _(C^d_) bliver mindre end _(1_) (som vi jo har defineret at den
+    ikke må være). Men hvis _(C_) er mindre end _(1_), så er _(C^d_) <i>aldrig</i>
+    større end _(1_) når _(d_) er positiv, da et tal der er mindre end _(1_) bliver
+    endnu mindre når vi ganger det med sig selv! 
+    <p class="t">
+    Konklusionen er altså at man kun kan gøre det på begge sider når _(C>1_)
+    </p>  
+    <br></answer-box>
+    <answer-box t="Answer 9#" tabColour="rgb(175,128,161)">
+    Dette er tydeligvis ikke sandt. Faktisk det modsatte: Det er altid falsk.
+    Jo større tal _(x_) man dividerer med, jo mindre bliver _(1/x_), så
+    _(1/A_) er altid <i>mindre</i> end _(1/B_) hvis _(A \gt B_). Man skal
+    altså bytte rundt på større-end tegnet. 
+    <br><br></answer-box>
+    <answer-box t="Answer 10#" tabColour="rgb(171,96,147)">
+    Et åbenlyst modeksempel er _(2.3 \gt 2.1_), hvor
+    _(Floor(2.3) \gt Floor(2.1)_), da de nu er lige store. 
+    <br><br></answer-box>
+    <answer-box t="Answer 11#" tabColour="rgb(175,128,161)">
+    Samme modeksempel som før: _(2.3 \gt 2.1_), men
+    _(Ceil(2.3)=3_) er lig med _(Ceil(2.1)=3_).
+    <br><br></answer-box>
+    <answer-box t="Answer 12#" tabColour="rgb(171,96,147)">
+    Nope:
+    _($8 \gt 4 \to Mod_6(8) \gt Mod_6(4) \to 2 \gt 4_)
+    Det er ikke sandt.
+    <br><br></answer-box>
+    <answer-box t="Answer 13#" tabColour="rgb(175,128,161)">
+    Nope:
+    _($7 \gt 6 \to$Mod_7(8) \gt Mod_6(8) \to 1 \gt 2_)
+    Det er ikke sandt. 
+    <br><br></answer-box>
+
+    <p class="t">
+    Overordnet kan man se at vi kan gøre en del ting til begge sider,
+    <i>hvis</i> både _(A_) og _(B_) er positive og også helst større end _(1_). 
+    </p>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Beskriv alle de _(A_) hvor:
+    _($A^3 \gt A^2_)
+    <br></q-stion>
+    <answer-box>
+    Det her kan vi omskrive til:
+    _($A^3 - A^2 \gt 0 \to A^2*(A-1) \gt 0_)
+    _(A^2_) er altid positiv. _(A-1_) er negativ
+    når _(A_) er under _(1_). Altså:
+    _($A \gt 1_)
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Beskriv alle de _(A_) mellem _(0_) og _(2.85_) hvor:
+    _($Sin(-A^2+0.7) \lt Cos(-A^2)_)
+    Du er nok nødt til at dele den her op i nogle tilfælde. Det er
+    en relativ tricky og lang opgave!
+    <br><br></q-stion>
+    <answer-box>
+    Jeg tænker nok at planen er at vi på en eller anden måde
+    for _(Tan_) på den ene side, og et tal på den anden side.
+    Så kan vi <i>måske</i> (eller måske ikke!) bruge _(Arctan_) 
+    til at finde _(A_).
+    <p class="t">
+    _(Tan_) er _(Sin/Cos_), så jeg skal nok dividere begge sider med
+    _(Cos(-A^2)_). <i>Hvis</i> _(Cos(-A^2)_) er negativt, så skal jeg
+    vende større-end tegnet om. Hvis det er positivt så skal jeg ikke.
+    Jeg burde derfor dele opgaven op i to cases: De _(A_) hvor
+    _(Cos(-A^2)_) er positiv. Lad os starte med den positive case:
+    _($\frac{Sin(-A^2+0.7)}{Cos(-A^2)} \lt 1_)
+    Da _(Sin(-x)=-Sin(x)_) og _(Cos(-x)=Cos(x)_) så kan vi omskrive til:
+    _($-\frac{Sin(A^2-0.7)}{Cos(A^2)} \lt 1 \to \frac{Sin(A^2-0.7)}{Cos(A^2)} \gt -1_)
+    Jeg kan ikke direkte omskrive det her til _(Tan_), da _(Sin_) og _(Cos_) jo
+    lige nu ikke tager samme vinkel. Jeg kan dog udvide _(Sin(A^2-0.7)_)
+    via formlen for _(Sin(v_1-v_2)_):
+    _($\frac{Sin(A^2)*Cos(0.7)-Sin(0.7)*Cos(A^2)}{Cos(A^2)} \gt -1 \to_)
+    _($Cos(0.7)*Tan(A^2)-Sin(0.7) \gt -1 \to_)
+    _($0.7648*Tan(A^2)-0.6442 \gt -1 \to_)
+    _($Tan(A^2) \gt -0.4652_)
+    Og det er nu hvor det bliver lidt tricky: Vi skal finde <i>alle</i> de
+    _(A_) hvor _(Tan(A^2)_) er større end _(-0.4652_). _(A_) var defineret
+    til at være mellem _(0_) og _(2.85_), så _(A^2_) er mellem _(0_) og _(2.85^2=8.1225_). 
+    Kald _(A^2_) for _(v_). Vi leder nu efter alle de vinkler _(v_) hvor
+    hældningen er større end _(-0.4652_) <i>og</i> _(Cos(v)_) er positiv
+    (siden vi lavede den antagelse). _(Arctan(0.4652)=0.435_). Prøv at se følgende tegning:
+    </p>
+    <img class='Spic' style='width:65%' src='../../../Assets/Chapter2\Section3\Solutions\CirkelLøsninger.png'>  
+    <p class="t">
+    Jeg har tegnet de steder hvor _(Tan(A^2) \gt -0.4652_) i lilla. Jeg har markeret den 
+    vej vi tager fra _(v=0_) til _(v=8.1225_) med rød. De lilla områder har jeg opdelt i fire:
+    _(a_), _(b_), _(c_), _(d_). Man kan se siden _((\pi-0.435)+2\pi=_) _(8.989_) at
+    vi går gennem _(a_), _(b_), _(c_), _(d_), og så _(a_) èn gang til. Siden _(Cos_)
+    skal være positiv, så er det kun ved _(a_) og _(d_) at det faktisk virker:
+    _($A^2 \in [0,\pi/2], [2\pi-0.435,\pi/2 + 2\pi]_)
+    Hvor _(\in_) betyder "er i intervallerne". Det her kan vi omskrive til:
+    _($A \in [0,\sqrt{\pi/2}],[\sqrt{2\pi-0.435},\sqrt{\pi/2 + 2\pi}] \to_)
+    _($A \in [0, 1.253],[2.418,2.802]_)
+    Det var ved positive _(Cos(A^2)_). Ved negative _(Cos(A^2)_) bliver
+    _(Tan(A^2) \gt -0.4652_) i stedet til _(Tan(A^2) \lt -0.4652_). Nu
+    ser situationen ud som:
+    </p>
+    <img class='Spic' style='width:65%' src='../../../Assets/Chapter2\Section3\Solutions\CirkelLøsninger2.png'>  
+    <p class="t">
+    Fra _(0_) til _(8.1225_) går _(v_) gennem både _(b_), _(a_), og så en
+    del af _(b_) igen. _(a_) kan fjernes, da det kun er ved _(b_) at  
+    _(Cos_) er negativ:
+    _($A^2 \in [\pi/2,\pi-0.435], [\pi/2+2\pi,8.1225] \to_)
+    _($A \in [1.253,1.645], [2.80,2.85]_)
+    Alt i alt når man samler begge cases så har vi:
+    _($A \in [0, 1.253], [1.253,1.645], [2.418,2.802], [2.80,2.85]_)
+    Hvilke kan laves om til:
+    _($A \in [0, 1.645], [2.418,2.85]_)
+    Bum! Ret crazy svær opgave, for noget der ellers virker relativt simpelt! 
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Sig at _(n_) kun kan være hele tal. Beskriv alle de _(n_) hvor:
+    _($(-1)^n*(-1.5+0.01*(n-20)^2) \lt 8 + (-1)^n*(10 - 0.02n^2)_)
+    Du er nok nødt til at dele den her op i en del tilfælde. Du kan
+    ikke rigtig beskrive svaret med èn formel/funktion eller èt interval.
+    <br><br></q-stion>
+    <answer-box>
+    Først omskriver jeg lidt. Jeg vil gerne have _((-1)^n_) så få steder som muligt,
+    da den er forvirrende at arbejde med. Den skifter jo hele tiden negativiteten!
+    _($(-1)^n*(-1.5+0.01*(n-20)^2) - (-1)^n*(10 - 0.02n^2) \lt 8 \to_)
+    _($(-1)^n*(-1.5+0.01*(n-20)^2 - 10 + 0.02n^2) \lt 8 \to_)
+    _($(-1)^n*(0.03n^2 - 00.4n - 7.5) \lt 8_)
+    _((-1)^n_) er positiv når _(n_) er lige og negativ når _(n_) er ulige. 
+    Hvis den er positiv, så skal _(0.03n^2 - 00.4n - 7.5_) være
+    mindre end _(8_). Hvis den er negativ, så
+    _($-(0.03n^2 - 00.4n - 7.5) \lt 8 \to_)
+    _($0.03n^2 - 0.4n - 7.5 \gt -8_)
+    skal det være større end _(-8_). Lad os prøve at skitsere _(0.03n^2 - 00.4n - 7.5_)
+    så vi har en ide om hvornår den opfylder kravene:
+    <img class='Spic' style='width:95%' src='../../../Assets/Chapter2\Section3\Solutions\ParabelGraf.png'> 
+    <p class="t">
+    Vi ved at den ved _(n=0_) er lig _(-7.5_). Så går den en smule nedad som
+    _(n_) stiger, da _(-0.4n_) har en højere koefficient end _(0.003n^2_). Efter lidt
+    tid begynder _(0.03n^2_) at stige hurtigere end _(-0.4n_), så derfor går grafen nu opad, og det
+    bliver den ved med. Den går opad med det samme når vi går bagud, siden både _(0.03n^2_) og
+    _(-0.4n_) er positive der (da negativ gange negativ ved _(-0.4n_) bliver positiv).
+    </p>
+    <p class="t">
+    Vi kan se at der er nogle bestemte områder hvor at _(0.03n^2 - 00.4n - 7.5_)
+    er inden for både _(-8_) og _(8_). Dem kan vi bestemme ved at se hvornår
+    den er lig med henholdsvis _(-8_) og _(8_):
+    _($0.03n^2 - 00.4n - 7.5 = -8_)
+    _($0.03n^2 - 00.4n - 7.5 = 8_)
+    Begge de her ligninger kan omskrives til formen _(Ax^2+Bx+C=0_), og
+    så kan vi løse dem med formlen _((-B \pm \sqrt{B^2 - 4AC})/2A_) og få:
+    _(n=1.396,11.937_) til den første, og _(n=-17.02,30.35_) til den anden.
+    Så når _(n_) er større end _(-17.02_) og mindre end _(1.396_), og 
+    når _(n_) er større end _(11.937_) og mindre end _(30.35_), der er vi
+    absolut sikre på at uligheden er sand.
+    </p>
+    <p class="t">
+    Den kan dog også godt være sandt andre steder: Når _(0.03n^2 - 00.4n - 7.5_) bliver
+    større end _(8_), så er den stadig større end _(-8_) ved ulige _(n_). Tag
+    f.eks. _(n=31_) hvor:
+    _($0.03*31^2 - 00.4*31 - 7.5 = 8.93 \gt -8_)
+    Så vi kan sige generelt at det er sandt også når _(n=31+2k_) (rækken af ulige
+    tal efter 31) og _(n=-17-2k_) (rækken af ulige tal før -17). Der sker
+    noget lignende når _(0.03n^2 - 00.4n - 7.5_) er mindre end _(-8_) mellem
+    _(n=1.396_) og _(n=11.937_). Her er de lige tal ved _(n=2,4,6,8,10_) alle
+    stadig under _(8_). 
+    </p>
+    <p class="t">
+    Tager vi det hele sammen, så kan vi altså sige at uligheden er sand når:
+    _($\begin{eqnarray} 
+    && n = 2,4,6,8,10 & \text{ eller } \\
+    && n = 31+2k, k \ge 0 & \text{ eller } \\
+    && n = -17-2k, k \ge 0 & \text{ eller } \\
+    && n \in [-17,1] & \text{ eller } \\
+    && n \in [12,30]
+    \end{eqnarray}_)
+    Hvor _(\in_) betyder "er en del af intervallet". 
+    </p>
+    <p class="t">
+    Bum!
+    </p>
+    <br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Sig at _(k_) er èt enkelt helt tal, og at du ved at:
+    _($0.7*k \lt 8.1 - 0.3k_)
+    _($7.8-0.3k \lt 0.7k + 0.7_)
+    Find _(k_). Bare rolig: Den her opgave er relativ hurtig og nem. 
+    <br><br></q-stion>
+    <answer-box>
+    Lad os prøve at isolere _(k_) på begge sider af ulighederne:
+    _($0.7k+0.3k \lt 8.1 \to k \lt 8.1_)
+    _($7.8 - 0.7 \lt 0.7k+0.3k \to k \gt 7.1_)
+    _(k_) skal altså være et hèlt tal der er større end _(7.1_) og mindre end _(8.1_).
+    Det eneste tal der passer dér er _(k=8_), så det er svaret. 
+    <br><br></answer-box>
+
+

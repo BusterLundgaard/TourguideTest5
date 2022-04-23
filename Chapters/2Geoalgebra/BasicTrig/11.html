@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+
+
+    <h3>Arealet på vilkårlige trekanter</h3>
+    <p class="t">
+    Udover side-længder og vinkler er vi også ofte interesserede i <i>areal</i>. 
+    Lad os se lidt mere på det: 
+    </p>
+    
+    <q-stion 1="11" 2="1" bigTop="true">
+    Find arealet af følgende figur: 
+    <img class='SpicXL' style='width:23%' src='../../../Assets/Chapter2\Section1\RandomExercises\AreaExampleExercise.png'> 
+    <br></q-stion>
+    <answer-box>
+    Vi opdeler den i to præcis ligesom tidligere:
+    <img class='SpicXL' style='width:23%' src='../../../Assets/Chapter2\Section1\RandomExercises\AreaExampleExercise2.png'> 
+    <p class="t">
+    Vi kan nu finde arealerne af begge disse retvinklede trekanter og lægge dem sammen. 
+    Højden i begge trekanter er tydeligvis _(20*Sin(25)=8.45_). 
+    Bredden i den første retvinklede
+    trekant tættest på vinklen er _(Cos(25)*20=18.12_), og bredden i den anden er 
+    _(30-18.12=11.87_). Vi får derfor:
+    _($\frac{1}{2}*8.45*18.12+\frac{1}{2}*8.45*11.87=126.7_)
+    </p>
+    <br></answer-box>
+
+    <p class="tt">
+    Lad os generalisere hvad vi gjorde i sidste opgave. 
+    Sig at _(20_) er _(a_), _(30_) er _(b_), og 
+    at vinklen _(25^o_) er _(v_). Vi så at højden var:
+    _($Sin(v)*a_)
+    Og at bredderne var:
+    _($Cos(v)*a, \qquad b-Cos(v)*a_)
+    Så det samlede areal blev regnet som:
+    _($\frac{1}{2}*Sin(v)*a*Cos(v)*a + \frac{1}{2}*Sin(v)*a*\left(b-Cos(v)*a \right) =_)
+    _($\frac{1}{2}*Sin(v)*a*\left(Cos(v)*a + (b - Cos(v)*a) \right)_)
+    _($\frac{1}{2}*Sin(v)*a*b_)
+    Nu har vi en super praktisk formel, til når man kender to sider og vinklen imellem. 
+    </p>
+
+    
+
+    <q-stion 1="11" 2="2" bigTop="true">
+    Find arealerne på de følgende trekanter: 
+    <br>
+    <p class="t">
+    _(\underline{\textbf{A}}_): 
+    </p>
+    <img class='Spic' style='width:50%' src='../../../Assets/Chapter2\Section1\RandomExercises\AreaExercise1.png'> 
+    <p class="tt">
+    _(\underline{\textbf{B}}_): 
+    </p>
+    <img class='Spic' style='width:50%' src='../../../Assets/Chapter2\Section1\RandomExercises\AreaExercise2.png'> 
+    <p class="tt">
+    _(\underline{\textbf{C}}_): 
+    </p>
+    <img class='Spic' style='width:50%' src='../../../Assets/Chapter2\Section1\RandomExercises\AreaExercise3.png'>  
+    <p class="t">
+    _(\underline{\textbf{D}}_): 
+    </p>
+    <img class='Spic' style='width:40%;' src='../../../Assets/Chapter2\Section1\RandomExercises\AreaExercise4New.png'> 
+    <br><br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    Her er _(a=5_), _(b=9_) og _(v=70_). Vi regner derfor arealet som:
+    _($\frac{1}{2}a b Sin(v) = \frac{1}{2}*5*9*Sin(70) = 21.14_)
+    Bum!
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Vi vil gerne have vinklen mellem _(11.6_) og _(10_), for at vi kan anvende formlen. 
+    Derfor regner vi 
+    _($180-32-40=108^o_)
+    ... og siger så:
+    _($\frac{1}{2}*11.6*10*Sin(108)=55.16_)
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{C}}_)#" tabColour="rgb(171,96,147)">
+    Her tænker jeg, at vi først finder vinklen mellem _(5_) og _(8_), og så anvender formlen.
+    Vi ved at vinklen overfor siden _(5_) kan regnes som:
+    _($Arcsin\left(5*\frac{Sin(70)}{8} \right) = 35.96^o_)
+    Vi er interesseret i vinklen overfor den ukendte side. Den kan vi regne via de to andre vinkler som
+    _($180-70-35.96=74.03^o_)
+    Så vi kan nu sige:
+    _($\frac{1}{2}*5*8*Sin(74.03) = 19.22_)
+    Sådan! 
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{D}}_)#" tabColour="rgb(175,128,161)">
+    Vinklen overfor _(14_) kan findes som:
+    _($Arccos\left(\frac{c^2+b^2-a^2}{2*b*c} \right)_)
+    Hvor _(14_) svarer til _(a_), og _(b, c_) til de to andre sider:
+    _($Arccos\left(\frac{20^2+18^2-14^2}{2*20*18} \right) = 42.83^o_)
+    Herfra bruger vi bare:
+    _($\frac{1}{2}*20*18*Sin(42.83) = 122.368_)
+    Voila! 
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="11" 2="3">
+    Find det blå areal på følgende figur:
+    <img class='Spic' style='width:95%' src='../../../Assets/Chapter2\Section1\RandomExercises\AreaExercise4.png'> 
+    <br><br></q-stion>
+    <answer-box>
+    Du kan se mit svar her: 
+    <video class='SpicB' style="width:95%;" controls>
+        <source src='../../../Assets/Chapter2\Section1\RandomExercises\AreaExerciseVideo1.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <p class="tt">
+    Lad os endelig regne det eksempel vi startede de her vilkårlige trekanter med!
+    </p>
+
+    <q-stion 1="11" 2="4" bigTop="true">
+    Find det blå areal på følgende figur:
+    <img class='SpicXL' style='width:90%' src='../../../Assets/Chapter2\Section1\RandomTriangleExample1 1.png'> 
+    <br></q-stion>
+    <answer-box>
+    Du kan se mit svar her:
+    <video class='SpicB' style="width:95%;" controls>
+        <source src='../../../Assets/Chapter2\Section1\RandomExercises\TrickyBlueArea.mp4' type='video/mp4'>
+    </video>
+    <p class="t">
+    Der blev lavet en lille regnefejl i starten af videoen ved
+    længden _(8.4_), der faktisk skal være _(8.23_). 
+    Det rigtige areal er _(15.51_) og ikke _(16.25_), men ellers
+    er processen i videoen korrekt. 
+    </p>
+    <br></answer-box>
+
+    <p class="tt">
+    Lad os til sidst lige slutte med to anvendelsesopgaver: 
+    </p>
+
+    <q-stion 1="11" 2="5" bigTop="true">
+    Du har et hus på _(80m^2_) og får snart en nabo, der lige nu planlægger byggeri:
+    <img class="SpicBXL" style="width:95%" src="../../../Assets/Chapter2\Section1\RandomTriangles\Huse.png">
+    <p class="tt">Naboen er en rigtig IBC-type. Udover det mærkelige "moderne" design, 
+    tror de så inderligt på det frie arbejdsmarkede og konkurrence, at deres hus <i>skal</i>
+    være dobbelt så stort som dit. Hvad skal længden _(a_) være, for at det er muligt?</p>
+    <br></q-stion>
+    <answer-box>
+    Du kan se videoen, hvor vi gennemgår svaret her:
+    <video class="SpicB" style="width:95%" controls>
+        <source src="../../../Assets/Chapter2\Section1\RandomTriangles\Huse.mp4" type="video/mp4">
+    </video>
+    <p class="tt">
+    Når man faktisk udregner arealet, får man _(31.86m^2_)
+    </p>
+    <br></answer-box>
+
+    <q-stion 1="11" 2="6">
+    Efter lidt indkøb i hjem og fix har du _(25m_) hegn. Du vil gerne stille det op 
+    i følgende form:
+    <img class="SpicB" style="width:40%" src="../../../Assets/Chapter2\Section1\RandomTriangles\Hegn.png">
+    <p class="tt">Hvor stort bliver arealet?</p>
+    <br></q-stion>
+    <answer-box>
+    Svaret:
+    <video class="SpicB" style="width:95%" controls>
+        <source src="../../../Assets/Chapter2\Section1\RandomTriangles\Hegn.mp4" type="video/mp4">
+    </video>
+    <br><br></answer-box>
+

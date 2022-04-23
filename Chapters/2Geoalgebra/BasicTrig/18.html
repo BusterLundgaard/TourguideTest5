@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+
+
+    <h3>En ny enhed til vinkler</h3>
+    
+    <p class="t">
+    Nu da vi er i gang med at ændre definitionerne på _(Sin_) og _(Cos_), 
+    bør vi også snakke lidt om 
+    den <i>enhed</i> vi bruger. 
+    _(1_) omgang er _(360_) grader. 
+    Det blev valgt af babylonierne grundet astronomiske og aritmetiske (hovedregning)  
+    årsager, hvilke ikke rigtig er i vores vigtigste interesse længere. 
+    _(360_) bliver hurtigt frustrerende i mere teoretisk matematik. 
+    Tag eksempelvis omkredsen af et cirkeludsnit:
+    Hvis udsnittet har _(\theta_) grader, skal vi lige nu sige
+    _($\frac{\theta}{360}*2*r*\pi_)
+    Klamt! Forfærdeligt! Hvad hvis vi bare sagde, der var _(2*\pi_) vinkler på én 
+    hel cirkel i stedet for _(360_)? 
+    Formlen ville nu blive: 
+    _($\frac{\theta}{2*\pi}*2*r*\pi=\theta*r_) 
+    Det er meget bedre! Nu går et
+    cirkeludsnits areal også fra 
+    _($\frac{\theta}{360}*r^2*\pi_) 
+    ... til:
+    _($\frac{\theta}{2\pi}*r^2*\pi=\frac{\theta}{2}*r^2_) 
+    Denne nye enhed for vinkler kalder vi <i>radianer</i>. 
+    </p>
+
+    <!--  -->
+    
+    <q-stion 1="18" 2="1">
+    Du kører _(36.7_) radianer rundt i en rundkørsel med en radius på _(15m_). 
+    Hvor langt ender du med at køre i alt? 
+    <br><br></q-stion>
+    <answer-box>
+    Det her svarer til at finde cirkelomkredsen på en cirkel vi kører 
+    _(36.7_) radianer rundt omkring.  
+    Formlen for cirkelomkredsen hvis man bruger radianer er bare _(\theta*r_), hvilket i vores tilfælde giver:
+    _($36.7*15=550.5 \text{m}_)
+    Så simpelt er det!
+    <br><br></answer-box>
+    
+    <!--  -->
+
+    <q-stion 1="18" 2="2">
+    Omregn:
+    <ul>
+        <li> _(\underline{\textbf{A}}_): _(2\pi_) radianer til grader </li>
+        <li> _(\underline{\textbf{B}}_): _(5.2_) radianer til grader </li>
+        <li> _(\underline{\textbf{C}}_): _(310_) vinkler til radianer</li>
+        <li> _(\underline{\textbf{D}}_): _(456_) vinkler til radianer</li>
+        <li> _(\underline{\textbf{E}}_):  _(-3.5_) radianer til grader</li>
+        <li> _(\underline{\textbf{F}}_):  _(-710_) grader til grader </li>
+    </ul>
+    <p class="t">Du må gerne bruge lommeregner.</p>
+    <br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    Vi satte _(2\pi_) radianer til at være _(1_) omgang. Det svarer altså til _(360_) grader. 
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Lad os først og fremmest finde ud af, hvor mange grader _(1_) radian er. 
+    Vi ved at _(2\pi_) radianer er en fuld omgang; _(360_) grader. Så:
+    _($ 2\pi \text{ radianer} = 360 \text{ grader}_)
+    Det vil sige, at bare _(1_) radian er lig _(360/(2\pi) \text{ grader}_), hvilket kan simplificeres
+    til _(180/\pi \text{ grader}_), som cirka er _(57.29^o_). Så i vores tilfælde skal vi regne:
+    _($5.2*57.29=297.9 \text{ grader}_)
+    Bum!
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{C}}_)#" tabColour="rgb(171,96,147)">
+    Hvis man konverterer fra radianer til grader ved at gange med _(180/\pi=57.29_), 
+    konverterer man fra
+    grader til radianer ved at <i>dividere</i> med _(57.29_). Ergo:
+    _($310/57.29=5.41 \text{ radianer}_)
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{D}}_)#" tabColour="rgb(175,128,161)">
+    Vi gør det samme igen:
+    _($456/57.29=7.95 \text{ radianer}_)
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{E}}_)#" tabColour="rgb(171,96,147)">
+    Negative radianer fungerer på præcist samme måde som negative grader, så vi ganger igen bare med _(57.29_):
+    _($-3.5*57.29=-200.51 \text{ grader}_)
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{F}}_)#" tabColour="rgb(175,128,161)">
+    Meget det samme, bare modsat:
+    _($-710/57.29=-12.39 \text{ radianer}_)
+    <br></answer-box>
+
+    <!--  -->
+
+    <!-- <q-stion 1="2" 2="1" 3="5">
+    Vinkler der er over _(2\pi_) og negative vinkler virker præcist ligesom før, nu bare med _(M_{2\pi}_) i stedet for _(M_{360}_).
+    Regn følgende: 
+    <div style="text-align:center; margin-top:10px;">
+        <ul style="display: inline-block; text-align: left; padding-left:0%; list-style:none;">
+            <li><b> 1:</b>_(Sin(7.22)_)</li>
+            <li><b> 2:</b>_(Cos(21.99)_)</li>
+            <li><b> 3:</b>_(Sin(-15.32)_)</li>
+        </ul>
+    </div>
+    <p class="t">
+    
+    </p>
+    <br><br></q-stion>
+    <answer-box t="Answer 1#" tabColour="rgb(171,96,147)">
+    Èn omgang rundt om cirklen er _(2\pi_), hvilke svarer til omtrent _(6.283_) radianer. 
+    Vi kan se at 
+    _($7.22=6.283*1 + 0.936_)
+    Så _(M_{2\pi}(7.22)_) er lig _(0.936_), og vi regner derfor:
+    _($Sin\left(0.936 \right)_)
+    <br><br></answer-box>
+    <answer-box t="Answer 2#" tabColour="rgb(175,128,161)">
+    s
+    <br><br></answer-box>
+    <answer-box t="Answer 3#" tabColour="rgb(171,96,147)">
+    s
+    <br><br></answer-box> -->
+    
+    <!--  -->
+
+    <q-stion 1="18" 2="3">
+    Herfra vil alle vinkler pr. definition være skrevet i radianer. Brug din lommeregner til at udregne:
+    <div style="margin-left:-76%; margin-top:25px; margin-bottom: -10px;">
+    _($\begin{eqnarray}
+        && \underline{\textbf{A}}: \, \, \, \, \, \, Sin(2.7) \\  \\
+        && \underline{\textbf{B}}: \, \, \, \, \, \, Cos(1.2) \\  \\
+        && \underline{\textbf{C}}: \, \, \, \, \, \, Sin(8.5) \\  \\
+        && \underline{\textbf{D}}: \, \, \, \, \, \, Sin(-7) \\  \\
+    \end{eqnarray}_)
+    </div>
+    <p class="t">
+    Du skal måske skifte hvilken lommeregner du bruger, så du nemmere kan regne radianer,
+    uden først at skulle konvertere dem. Mange lommeregnere (især videnskabelige) bruger
+    radianer som standard i stedet for grader, og flere lommeregnere giver dig også valgmuligheden.
+    Du kan f.eks. på windows-lommeregneren vælge mellem grader og radianer 
+    i venstre hjørne (husk at bruge den videnskabelige lommeregner, som du kan vælge oppe i [Vis _(\to_) Videnskabelig]).
+    </p>
+    <p class="t">
+    Vinkler der er over _(2\pi_) og negative vinkler virker præcist ligesom før, og du
+    kan bare lade lommeregneren håndtere det. 
+    </p>
+    <br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    _(Sin(2.7)=0.42_)
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    _(Cos(1.2)=0.36_)
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{C}}_)#" tabColour="rgb(171,96,147)">
+    _(Sin(8.5)=0.79_)
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{D}}_)#" tabColour="rgb(175,128,161)">
+    _(Sin(-7)=-0.65_)
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="18" 2="4"> 
+    Der er _(2\pi_) radianer på én omgang omkring cirklen; ikke _(2*3.14=6.28_). 
+    Vi ville sjælen skrive radianer som <i>bare</i> et kommatal, og foretrækker
+    at skrive vinklen som et kommatal <i>ganget med</i> _(\pi_). 
+    Det giver os et bedre overblik af hvor langt rundt om cirklen vi er, og 
+    ofte er det mere præcist og praktisk hvad angår hovedregning. 
+    <p class="t">
+    Find ud af hvilken kvartdel af cirklen du er i ved i de følgende vinkler: 
+    </p>
+    <div style="margin-left:-74%; margin-top:25px; margin-bottom: -10px;">
+    _($\begin{eqnarray}
+        && \underline{\textbf{A}}: \, \, \, \, \, \, \frac{\pi}{4}  \\  \\
+        && \underline{\textbf{B}}: \, \, \, \, \, \, \frac{\pi}{2}+0.1  \\  \\
+        && \underline{\textbf{C}}: \, \, \, \, \, \, \frac{5}{4}\pi  \\  \\
+        && \underline{\textbf{D}}: \, \, \, \, \, \, -\frac{\pi}{8}  \\  \\
+        && \underline{\textbf{E}}: \, \, \, \, \, \, 3.77\pi  \\  \\
+        && \underline{\textbf{F}}: \, \, \, \, \, \, -56.7\pi  \\  \\
+        && \underline{\textbf{G}}: \, \, \, \, \, \, \frac{6}{4}\pi + \frac{2}{8}\pi  \\  \\
+    \end{eqnarray}_)
+    </div>
+    <p class="t">
+    <i>Lav denne opgave uden lommeregner!</i>
+    </p>
+    <br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    _(\frac{\pi}{4}_) er selvfølgelig mindre end _(\frac{\pi}{2}_), så det må være første kvartdel
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    _(\frac{\pi}{2}+0.1 > \frac{\pi}{2}_), ergo anden kvartdel 
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{C}}_)#" tabColour="rgb(171,96,147)">
+    _(\frac{5}{4}\pi=1\pi+\frac{1}{4}\pi_), så det er bare en smule større end _(\pi_) radianer. 
+    Derfor må det være i tredje kvartdel. 
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{D}}_)#" tabColour="rgb(175,128,161)">
+    Med _(-\frac{1}{8}_) går vi _(\frac{1}{16}_) af cirklen bagud. Hvis vi gik så lidt fremad, ville 
+    vi være i første kvartdel. Vi går bagud, så vi ender i fjerde kvartdel. 
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{E}}_)#" tabColour="rgb(171,96,147)">
+    _(3.77\pi = 2\pi + 1.77\pi_). De første _(2\pi_) er vi ligeglade med, da det bare er 
+    en helt omgang omkring cirklen. _(1.77\pi=1\pi + 0.77\pi_), og _(1\pi_) er en halv omgang.
+    Vi er altså enten i tredje eller fjerde kvartdel. _(0.77 > 0.5_), så det er fjerde kvartdel. 
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{F}}_)#" tabColour="rgb(175,128,161)">
+    Hvor mange omgange rundt om cirklen er _(56.7\pi_)? Well, _(56\pi/2\pi=28_), så vi
+    har kun _(-0.7\pi_) tilbage. Det er mere bagud end _(0.5\pi_), så vi må være i tredje kvartdel.  
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{G}}_)#" tabColour="rgb(171,96,147)">
+    Vi omskriver lidt:
+    _($\frac{6}{4}\pi + \frac{2}{8}\pi=\frac{12+2}{8}\pi = \frac{7}{4}\pi_)
+    Nu kan vi let se,
+    at det er i fjerde kvartdel, da vi er _(1/8_) fra at være hele vejen rundt. 
+    <br><br></answer-box>
+

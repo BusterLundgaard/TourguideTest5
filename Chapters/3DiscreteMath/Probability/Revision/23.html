@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+
+    <p class="t">
+    I de tre sidste opgaver har vi meget brugt spredningen til at beskrive ting. Vi har brugt den til at hjælpe os med
+    at forstå ting intuitivt i en eller anden situation. Lad os nu prøve at bruge den til at approximere, og til at
+    løse nogle svære problemer. Her er èt eksempel:
+    </p>
+    <p class="t">
+    Sig at vi igen stod med skateboarderen: Den komplicerede version hvor du
+    _(20_)% af tiden får _(0_) points, _(15_)% af tiden _(3_) points, _(20_)% _(7_) points, 
+    _(30_)% af tiden _(9_) points, og _(15_)% af tiden _(10_) points. Hvis vi skal finde det mest hyppige samlede antal points efter
+    <i>mange</i> runder (nok i hvert fald sådan 20-30+ runder) så virker gennemsnittet fint. Hvad hvis der ikke er
+    gået særlig mange runder dog? F.eks. _(6_)? Det ville være meget svært at gøre uden nogen som helst form for approximation,
+    da _(6_) runder ville kræve at vi skulle finde alle mulige kombinationer af points efter _(6_) omgange, hvilket ville
+    være meget svært og tidskrævende. Her har jeg èn ide:
+    </p>
+    <p class="t">
+    Når vi kommer op på nok runder, så bliver spredningen relativ ligegyldig for vores gennemsnit. Jo mere spredning, jo 
+    flere runder skal der til for at det er akkurat. Hvis der <i>ikke</i> er gået særlig mange runder, så skal vi altså
+    på en eller anden måde i vores approksimation <i>tænke over spredningen</i>. Spredningen i denne situation kan 
+    regnes til _(3.335_), og det er både til venstre og til højre (mindre eller lavere). Gennemsnittet kan 
+    regnes til _(6.05_). Normalt når vi bruger
+    gennemsnittet, så tænker vi kun over én enkelt værdi. Den her ène værdi repræsentere i denne situation alle _(5_) værdier vores stokastiske
+    variabel kan tage. Det ville være mere akkurat hvis vi brugte <i>to</i> værdier, og her kommer spredningen i brug:
+    Den ene værdi repræsenterer de tilfælde hvor vi er <i>mindre</i> end gennemsnittet, og den anden værdi de tilfælde
+    hvor vi er <i>større</i> end gennemsnittet. Altså:
+    _($\text{Mindre: } 6.05-3.335=2.71, \qquad \text{Større: } 6.05+3.335 = 9.39 _)
+    Der er _(2_) værdier (_(0_) og _(3_)) der er mindre end gennemsnittet, 
+    og _(3_) værdier (_(7_), _(9_) og _(10_)) der er større, så der er _(0.2+0.15=_) _(0.35_) chance for at det er mindre, og
+    _(0.2+0.30.15=_) _(0.65_) chance for at det er højere. Lad os derfor sige vi laver en ny stokastisk variabel der på en måde
+    er en "simplere" version af den vi har lige nu. Dens ene værdi er _(2.71_), med en chance på _(0.35_). Dens anden værdi
+    er _(9.39_) med en chance på _(0.65_). <i>Ja</i>, vi har stadig en stokastisk variabel lige nu, og <i>ja</i>, vi skal stadig
+    finde alle mulige kombinationer i op til _(6_) runder, men det er markant simplere nu da vi kun har _(2_) værdier!
+    Lad os sige at der er _(4_) ud af _(6_) af gangende hvor vi får _(9.39_). 
+    Det kan ske på _(\Vec[6,4]_) måder, så chancen er:
+    _($\VeC[6,4]*0.65^4*0.35^2_)
+    Det er altså bare en basketball-agtig fordeling, som er super dejlig at arbejde med! 
+    </p>
+    
+    <!-- <p class="t">
+    På sådan en fordeling kan man også nemt regne den værdi med største sandsynlighed, som er et tal mellem 
+    _(p*(n+1)_) og _(p*(n+1)-1_), altså mellem _(7*0.65=_) _(4.55_) og _(3.55_), så _(4_). Der er altså størst
+    chance for at få _(7.717_) _(4_) gange og _(4.382_) _(2_) gange, ergo en score på 
+    _($4*7.717+2*4.382=39.632_) 
+    Hvis bare vi havde brugte gennemsnittet, så ville vi få _(6*6.05=_) _(36.3_), hvilke i alt ærlighed er relativt tæt på.
+    Vi kan alligevel være sikre på at det vi gjorde her var mere præcist dog: Der er mange mulige stokastiske variabler
+    med et gennemsnit på _(6.05_), men der er mindre med et gennemsnit på _(6.05_), og specifikt en spredning på
+    _(1.6675_). Vi brugte flere informationer omkring vores stokastiske variabel, så det burde være en bedre approximation. 
+    </p> -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Samme skater-situation som før. Nu er der bare også en anden skater som
+    _(15_)% af tiden får _(0_) points, _(30_)% af tiden _(4_) points, _(25_)% _(6_) points, 
+    _(10_)% af tiden _(7_) points, og _(20_)% af tiden _(8_) points. Hvor stor chance har du cirka for at vinde efter _(7_) runder? 
+    <br><br></q-stion>
+    <answer-box>
+    Vi har to stokastiske variabler:
+    _($\begin{eqnarray}
+    && A: \text{Antal points du får efter 7 runder} \\
+    && B: \text{Antal points din modstander får efter 7 runder}
+    \end{eqnarray}_)
+    Og vi skal finde:
+    _($P(A \gt B)_)
+    Vi løste tidligere en meget lignende opgave, men den var markant nemmere da
+    de to stokastiske variabler vi sammenlignede kun tog to værdier:
+    Fejl eller success. Vores tager <i> 5</i> forskellige værdier, og 
+    vi er nødt til at finde <i>alle</i> mulige samlede antal points efter _(7_) runder, 
+    så vi kan plusse de sandsynligheder hvor din sum er større end din modstanders.
+    Det er ekstremt tricky, så lad os approximere svaret ved at lave 
+    begge stokastiske variabler om til de "forsimplede stokastiske variabler" jeg
+    introducerede i teksten. Vi ved allerede godt at _(A_) kan approksimeres af
+    en stokastisk variable der tager værdierne _(2.71_) og _(9.39_) med sandsynlighederne
+    _(0.35_) og _(0.65_). Lad os transformere _(B_) på samme vis:
+    <p class="t">
+    Vi kan (relativt) let regne at _(B_) har et gennemsnit på _(5_), og en spredning på
+    _(2.1_). Dens forsimplede version tager altså værdierne:
+    _($5+2.1 = 7.1 \qquad 5-2.1=2.9_)
+    _(0.15+0.3=0.45_) af værdierne er mindre end _(5_), og _(1-0.45=0.55_) er større. 
+    _(B_) tager altså værdierne _(2.9_) og _(7.1_) med sandsynlighederne _(0.45_) og _(0.55_)
+    </p>
+    <p class="t">
+    Lad os nu nedskrive alle de mulige værdier de forsimplede _(A_) og _(B_) kan
+    tage efter _(7_) runder. Det kan vi regne som
+    f.eks. _($2*9.39+(7-2)*2.71_) eller _($6*7.1+(7-6)*2.9_) Vi får:
+    _($\begin{eqnarray} 
+        && \text{Dig}: & 18.97, & 25.65, & 32.33, & 39.01, & 45.69, & 52.37, & 59.05, & 65.73 \\
+        && \text{Modstander}: & 20.30, & 24.50, & 28.70, & 32.90, & 37.09, & 41.3, & 45.59, & 49.69
+    \end{eqnarray}_)
+    Vi har allerede etableret at chancen for at få de her værdier bare er binomiale fordelinger, og vi har løst den her slags opgave
+    før. Vi regner altså:
+    _($\begin{eqnarray} 
+    && \text{nCr}(7,0)*0.55^0*0.45^{7-0}*\text{Sum}(\text{nCr}(7,i)*0.65^i*0.35^{7-i},i,1,7) & + \\
+    && \text{nCr}(7,1)*0.55^1*0.45^{7-1}*\text{Sum}(\text{nCr}(7,i)*0.65^i*0.35^{7-i},i,1,7) & + \\
+    && \text{nCr}(7,2)*0.55^2*0.45^{7-2}*\text{Sum}(\text{nCr}(7,i)*0.65^i*0.35^{7-i},i,2,7) & + \\
+    && \text{nCr}(7,3)*0.55^3*0.45^{7-3}*\text{Sum}(\text{nCr}(7,i)*0.65^i*0.35^{7-i},i,3,7) & + \\
+    && \text{nCr}(7,4)*0.55^4*0.45^{7-4}*\text{Sum}(\text{nCr}(7,i)*0.65^i*0.35^{7-i},i,3,7) & + \\
+    && \text{nCr}(7,5)*0.55^5*0.45^{7-5}*\text{Sum}(\text{nCr}(7,i)*0.65^i*0.35^{7-i},i,4,7) & + \\
+    && \text{nCr}(7,6)*0.55^6*0.45^{7-6}*\text{Sum}(\text{nCr}(7,i)*0.65^i*0.35^{7-i},i,4,7) & + \\
+    && \text{nCr}(7,7)*0.55^7*0.45^{7-7}*\text{Sum}(\text{nCr}(7,i)*0.65^i*0.35^{7-i},i,5,7) &  
+    \end{eqnarray}_)
+    _($ = 0.9021_)
+    Så du har kun en ca. _(10_)% chance for at tabe. 
+    </p>
+    <br></answer-box>
+
+    
+
+
+
+
+
+

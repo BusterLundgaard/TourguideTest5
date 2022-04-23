@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <p class="t">
+    <b> At gange ind i parenteser:</b> Sig at der i et hus var <p-m m=" 2"></p-m> rum med store poser i:
+    </p>
+
+    <img class='SpicB' style='width:60%' src='../../../Assets/Chapter1\Talsystemmer\Omskrivning\TwoRooms.png'> 
+
+    <p class="t">
+    Hver stor pose svarer til <p-m m=" A1 1"></p-m> poser med hvede. Hvis vi skal finde den 
+    samlede mængde hvede i huset, så kan vi nu vælge at gøre to ting:
+    </p>
+
+    <p class="t">
+    <b> A</b>: <i>Regne mængden af hvede i det venstre rum (ved at tage antallet af poser og gange med <p-m m=" A1 1"></p-m>),
+    regne mængden af hvede i det højre rum (med samme proces), og så lægge de to tal sammen</i>. 
+    </p>
+    <p class="t">
+    <b> B</b>: <i>Finde det samlede antal store poser i huset, og så gange med</i> <p-m m=" A1 1"></p-m>
+    </p>
+
+    <p class="t">
+    Det burde give relativ god mening at begge disse strategier er rigtige/valide. Det er dog lidt interessant at kigge
+    på hvad de svarer til rent matematisk. <b> A</b> svarer til:
+    </p>
+
+    <p class="cent">
+        <p-m m=" A1 2*A1 1 + 4*A1 1 "></p-m>
+    </p>
+
+    <p class="t">
+    <b> B</b> svarer til:
+    </p>
+
+    <p class="cent">
+        <p-m m=" (A1 2 + 4)*A1 1"></p-m>
+    </p>
+
+    <p class="t">
+    Vi ved at <b> A</b> og <b> B</b> regner den samme ting, så:
+    </p>
+
+    <p class="cent">
+        <p-m m=" A1 1*(A1 2 + 4) = A1 1*A1 2 + A1 1*4"></p-m>
+    </p>
+
+    <p class="t">
+    Det her er super dejligt, da det på en måde fortæller os at vi kan "gange ind" i parenteser:
+    </p>
+
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter1\Talsystemmer\Omskrivning\TimeIntoParenthesis.mp4' type='video/mp4'>
+    </video>
+
+    <p class="t">
+    Så når en parentes bliver ganget med noget, så kan man bare gange hvert element inde i parentesen, og 
+    lægge dem sammen. Eller vice versa, hvis flere elementer bliver ganget med 
+    det samme, så kan vi bare samle dem i én parentes, og derefter gange. Vi brugte faktisk det her trick
+    da vi regnede følgende gangestykke:
+    </p>
+
+    <p class="cent"> 
+        <p-m m=" D1 C1 B1 A1 1 * B3 A3 3"></p-m> 
+    </p>
+
+    <p class="t">
+    Det her stykke omskrev vi til:
+    </p>
+
+    <p class="cent">
+        <p-m m=" D1 C1 B1 A1 1 * (C1 - 1)"></p-m>
+    </p>
+
+    <p class="t">
+    Så gangede vi ind i parentesen og fik et nemmere stykke: 
+    </p>
+
+    <p class="cent">
+        <p-m m=" D1 C1 B1 A1 1 * C1 - D1 C1 B1 A1 1 * 1"></p-m>
+    </p>
+
+    <p class="t">
+    Prøv at brug det her trick på smarte måder i de følgende regnestykker:
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Regn de følgende stykker:
+    <div style="text-align:center;">
+        <ul style="display: inline-block; text-align: left; padding-left:0%; list-style:none;">
+            <li><b> A</b>: <p-m m="2*B2 A1 2 + A1 2*B2 A1 2 "></p-m> </li>
+            <li><b> A</b>: <p-m m="A1*C1 2 + A1 1 * C1 2 + A1 3 * C1 2 "></p-m> </li>
+            <li><b> A</b>: <p-m m="C2 B1 A3 1 * B1 A1 "></p-m> </li>
+        </ul>
+    </div>
+    <br></q-stion>
+    <answer-box t="Answer A#" tabColour="rgb(171,96,147)">
+    Vi kan se at både <p-m m=" 2"></p-m> og <p-m m=" A1 2"></p-m> er ganget
+    med <p-m m=" B2 A1 2"></p-m>. Vi kan derfor samle dem i en parentes og få:
+    <p class="cent">
+        <p-m m=" B2 A1 2*(2 + A1 2) = "></p-m> <br>
+        <p-m m=" B2 A1 2*A2"></p-m>
+    </p>
+    <p class="t">
+    Det her gangestykke kan vi relativt let regne giver <p-m m=" D1 B3"></p-m>.
+    Det er altså svaret. 
+    </p>
+    <br></answer-box>
+    <answer-box t="Answer B#" tabColour="rgb(175,128,161)">
+    Jeg viste tricket hvis parentesen havde <p-m m=" 2"></p-m> ting der var plusset,
+    men hvad hvis den havde <p-m m=" 3"></p-m>? Well, det er intet problem!
+    Det svarer bare til at der er <p-m m=" 3"></p-m> rum med poser i huset, så
+    vi kan bruge præcist samme trick der. Vi kan altså se at
+    <p-m m=" A1"></p-m>, <p-m m=" A1 1"></p-m> og <p-m m=" A1 3"></p-m> alle
+    er ganget med <p-m m=" C1 2"></p-m>, så de kan samles i en parentes:
+    <p class="cent">
+        <p-m m=" C1 2*(A1 + A1 1 + A1 3) = "></p-m> <br>
+        <p-m m=" C1 2*B1 = "></p-m>
+        <p-m m=" E1 B2 "></p-m>
+    </p>
+    <p class="t">
+    Wholla!
+    </p>
+    <br></answer-box>
+    <answer-box t="Answer C#" tabColour="rgb(171,96,147)">
+    <p-m m=" C2 B1 A3 1 * B1 A1"></p-m> virker umiddelbart som et ret
+    stort regnestykke, så jeg tænker vi kan dele det op i to:
+    <p class="cent">
+        <p-m m=" C2 B1 A3 1 * (B1 + A1) = "></p-m> <br>
+        <p-m m=" C2 B1 A3 1*B1 + C2 B1 A3 1*A1 ="></p-m> <br>
+        <p-m m=" E2 D1 C3 B1 + D2 C1 B3 A1 ="></p-m> <br>
+        <p-m m=" E2 D3 C4 B4 A1 ="></p-m> <br>
+        <p-m m=" E3 C1 A1"></p-m> <br>
+    </p>
+    <p class="t">
+    Så har vi vores svar!
+    </p>
+    <br></answer-box>
+
+
+</html>

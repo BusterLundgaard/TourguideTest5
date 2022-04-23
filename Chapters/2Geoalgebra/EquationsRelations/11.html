@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+
+
+    <h4>Hvordan plotter man en "3D funktion"?</h4>
+
+    <p class="t">
+    Lad os lige lynhurtigt gå tilbage til 2D. Hvis man skulle 
+    tegne grafen af _(x=3_), ville man få:
+    </p>
+    <img class='SpicBXL' style='width:90%' src='../../../Assets/Chapter2\Section4\Space\x ligmed tre.png'> 
+    <p class="t">
+    Når vi tegner en eller anden graf som _(y=3x+2_), tegner vi faktisk alle 
+    de punkter hvor <i>ligningen</i> _(y=3x+2_) gælder. På hvilke _((x,y)_) punkter gælder
+    det, at _(y_) er lig _(3*x+2_)? Ligningen _(y=3x+2_) er sand for alle uendelig 
+    mange _(x_)-værdier. Ligningen _(x=3_) er kun sand, når _(x=3_): Dog er den 
+    sand på alle _(y_) værdier. Derfor får vi en lodret linje: <i>Alle</i> de
+    uendelig mange y-værdier skal med. 
+    </p>
+    <p class="t">
+    I 3D fungerer det på meget samme vis. Grafen af f.eks. _(y=2_) ser ud som:
+    </p>
+    <img class='SpicBXL' style='width:80%' src='../../../Assets/Chapter2\Section4\Space\y ligmed to.png'> 
+    <p class="t">
+    Igen <i>skal</i> _(y_) være lig _(2_), men _(x_) og _(z_) er frie til at være
+    hvad end de har lyst. Derfor kommer grafen - løsningen til denne ligning - i form
+    af et helt <i>plan</i>. 
+    </p>
+
+    <q-stion 1="11" 2="1">
+    Tegn en 3D-graf af 
+    _($x^2+z^2=4_)
+    <br></q-stion>
+    <answer-box>
+    Du kan se mit svar her:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter2\Section4\Space\GraphingWithAllYs.mp4' type='video/mp4'>
+    </video>
+    <p class="t">
+    En rettelse til videoen: Det er en cylinder med en radius på _(2_), ikke _(4_). 
+    </p>
+    <br><br></answer-box>
+    
+    <!--  -->
+
+    <q-stion 1="11" 2="2" customWidth="650">
+    Hvilken ligning/funktion passer til følgende billede:
+    <div style="margin-top:15px; width:90%; margin-left:5%; margin-top:35px;">
+        <hover-video url="../../../Assets/Chapter2\Section4\Space\3DSinAndCos.mp4" ></hover-video>
+    </div>
+    <p class="t" style="margin-top:35px;">
+    Jeg kan informere, at alle maksimum- og minimumspunkter er henholdsvis lige højt og lavt nede.
+    </p>
+    <p class="t">
+    Det er selvfølgelig et berettiget gæt du laver her, og du kan ikke være
+    100% sikker.
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Du kan se mit svar her:
+    <video class='SpicB' style="width:95%;" controls>
+        <source src='../../../Assets/Chapter2\Section4\Space\FindTheDamnCurveShinji.mp4' type='video/mp4'>
+    </video>
+    <p class="t">
+    Svaret var altså:
+    _($z=Cos(x)+Sin(y)_)
+    </p>
+    <br></answer-box>
+    
+    <!--  -->
+
+    <p class="t">
+    Nogle kurver i 3D virker ret svære at tegne. Der er 3 ting der bevæger sig på
+    èn gang, og èns papir har kun 2 dimensioner! Kugler og ellipsoids har været nemme
+    nok, fordi de var symmetriske og intuitive, men hvad gør vi med noget som
+    _($z=\frac{x^2}{3^2}-\frac{y^2}{4^2}_)
+    Hvordan skal vi overhovedet begynde at forestille os, hvad præcist det ligner? 
+    Well, èn kan ofte hjælpe:
+    </p>
+    <p class="t">
+    Sig at vi var tilbage i 2D og skulle lave en graf af _(y=Ln(x)_). Antag,
+    at vi ingen ide havde om, hvordan den graf så ud. Vi ville nu højest sandsynligt
+    bare udregne en masse punkter på grafen
+    </p>
+    <img class='SpicB' style='width:80%' src='../../../Assets/Chapter2\Section4\Space\Forklaring af z curves 1.png'> 
+    <p class="t">
+    ... forbinde dem
+    </p>
+    <img class='SpicB' style='width:80%' src='../../../Assets/Chapter2\Section4\Space\Forklaring af z curves 2.png'> 
+    <p class="t">
+    ... og få noget der var ret tæt på den aktuelle kurve:
+    </p>
+    <img class='SpicB' style='width:80%' src='../../../Assets/Chapter2\Section4\Space\Forklaring af z curves 3.png'> 
+    <p class="t">
+    Vi kan "nemt" finde de her punkter, fordi vi bare kan spørge: "Hvad er _(y_) når _(x=0_)?",
+    "Hvad er _(y_) når _(x=1_)?", "Hvad er _(y_) når _(x=2_)?" osv. Vi finder _(y_) ved bare at 
+    regne _(Ln(0)_), _(Ln(1)_), _(Ln(2), \, \dots_)  
+    </p>
+    <p class="t">
+    Efter jeg har lavet denne graf, har jeg en relativ intuitiv og god ide om hvordan
+    _(y=Ln(x)_) ser ud. Jeg kan nemt lave en hurtig, upræcis skitse af det, og jeg ville
+    endda godt kunne tegne variationer som _(y=2*Ln(x)_). Man kan sige, 
+    at vi i denne situation gik "1 dimension" nedad: Fra en <i>kurve</i> til <i>punkter</i>. 
+    Vi gør lidt det samme, når vi i 3D står med en 3D overflade vi ikke forstår: 
+    Vi går 1 dimension nedad fra <i>flade</i> til <i>kurver</i>:
+    </p>
+    <p class="t">
+    Tag som eksempel _(z=x^2+y^2_). 
+    Ligesom at jeg før fandt _(y_) ved en masse _(x_) værdier,
+    kan jeg nu finde ud af hvilke <i>kurver</i> _(z=x^2+y^2_) giver ved forskellige
+    _(z_) værdier. Det er tydeligvis ikke defineret for negative _(z_) siden potenserne gør dem eksklusivt positive.
+    Ved _(z=0_) er både _(x_) og _(y_) nødt til at være _(0_).
+    Ved _(z=1_) fås
+    _($1=x^2+y^2_)
+    ... hvilket tydeligvis er en cirkel med radius _(\sqrt{1}=1_). Ved _(z=2_) fås
+    _($2=x^2+y^2_)
+    ... hvilket er en cirkel med en radius på _(\sqrt{2}=1.41_). Ved _(z=3_)
+    _($3=x^2+y^2_)
+    ... som har radiusen _(\sqrt{3}=1.73_). _(z=4_) kan du nok regne ud er en cirkel med 
+    radiusen _(2_). Lad os tegne de her kurver: 
+    </p>
+    <img class='SpicXL' style='width:50%' src='../../../Assets/Chapter2\Section4\Space\Forklaring af z curves 4.png'> 
+    <p class="t">
+    Hvis jeg skulle lave en grov skitse indtil videre, kunne jeg måske sige:
+    </p>
+   
+    <video class='SpicBXL' style="width:80%;" controls>
+        <source src='../../../Assets/Chapter2\Section4\Space\3DGraph1.mp4' type='video/mp4'>
+    </video>
+    
+    <p class="t">
+    Lad os nu spørge lidt mere generelt: Hvad sker der med formen som _(z_) bliver højere?
+    _(x^2+y^2_) er jo en afstand til z-aksen opløftet i anden potens. Kald denne
+    afstand for _(d_). Vi har altså:
+    _($z=d^2_)
+    Ergo:
+    _($d=\sqrt{z}_)
+    Kurven _(y=\sqrt{x}_) kan vi godt finde ud af at tegne, så vi kan nemt
+    gøre noget lignende her i 3D:
+    </p>
+   
+    <video class='SpicBXL' style="width:80%;" controls>
+        <source src='../../../Assets/Chapter2\Section4\Space\3DGraph2.mp4' type='video/mp4'>
+    </video>
+
+    <p class="t">
+    Altså, vi kan vælge at se på denne komplicerede 3D kurve, som en masse variationer
+    af semi-let-forståelige 2D kurver stablet oven på hinanden. Tag f.eks.
+    _(y=z/x_). Du kender og kan let forstå den 2D kurve _(y=1/x_):
+    </p>
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter2\Section4\Space\Forklaring af z curves 5.png'> 
+    <p class="t">
+    Vi kan let også forstå variationer af den her kurve _(y=1/x_). F.eks. 
+    ville _(y=2/x_) tage lidt længere tid om at gå nedad, _(y=3/x_) tage 
+    endnu længere tid, osv. _(y=-1/x_) ville være negativt hele tiden, osv:
+    </p>
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter2\Section4\Space\Forklaring af z curves 6.png'> 
+    <p class="t">
+    Kurven _(y=1/x_) svarer til _(y=z/x_) når _(z=1_), og kurven _(y=-3/x_)
+    svarer til _(y=z/x_) når _(z=-3_), så vi kan altså tegne alle de her
+    variationer i 3D som:
+    </p>
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter2\Section4\Space\Forklaring af z curves 7.png'> 
+    <p class="t">
+    Og nu får vi så noget, der lidt ligner vores 3D flade! Det her kunne man altså gøre i hånden som:
+    </p>
+    
+    <video class='SpicBXL' style="width:80%;" controls>
+        <source src='../../../Assets/Chapter2\Section4\Space\3DGraph3.mp4' type='video/mp4'>
+    </video>
+
+    <p class="t">
+    Et andet lignende eksempel er måske _(z=y/x_). Den ser ud som:
+    </p>
+    <img class='SpicXL' style='width:100%' src='../../../Assets/Chapter2\Section4\Space\Forklaring af z curves 8.png'> 
+    <p class="t">
+    Prøv at se alle de sorte linjer her. Det er alle sammen forskellige
+    forhold mellem _(x_) og _(z_), og er alle sammen forskellige
+    variationer, af den samme slags kurve vi så før. I starten hvor _(y_) er lille,
+    går den hurtigt nedad, som _(y_) bliver større, går den langsommere nedad. 
+    Smukt! 
+    </p>
+
+    <!--  -->
+
+    <q-stion 1="11" 2="3">
+    Lav en skitse af:
+    _($\frac{x^2}{1^2}+\frac{y^2}{2^2}=z^2+5_)
+    <br></q-stion>
+    <answer-box>
+    Du kan se, hvordan jeg gjorde det her:
+    <video class='SpicB' style="width:95%;" controls>
+        <source src='../../../Assets/Chapter2\Section4\Space\GraphExercise1.mp4' type='video/mp4'>
+    </video>
+    <p class="t">
+    Og du kan se et computer-genereret billede her:
+    </p>
+    <div style="margin-top:35px; width:95%; margin-left:2.5%;">
+        <hover-video url="../../../Assets/Chapter2\Section4\Space\GraphExercise1Answer.mp4" ></hover-video>
+    </div>
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="11" 2="4">
+    _(\underline{\textbf{A}}_): <br>
+     Vi ved, at en hyperbola generelt tager formen
+    _($\frac{x^2}{a^2} - \frac{y^2}{b^2} = 1_)
+    ... eller 
+    _($\frac{y^2}{a^2} - \frac{x^2}{b^2} = 1_)
+    Rent intuitivt, hvilken effekt har _(a_) og _(b_)? 
+    Ved en ellipse ved vi f.eks.
+    at _(a_) er radiusen på _(x_), og at _(b_) er radiusen på _(y_). Det her
+    vil hjælpe dig med næste opgave.
+    <p class="t">
+    _(\underline{\textbf{B}}_): <br>
+     Plot følgende:
+    _($z=\frac{x^2}{1^2} - \frac{y^2}{2^2}_)
+    </p>
+    <br><br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    Du kan se mit svar her:
+    <video class='SpicB' style="width:95%;" controls>
+        <source src='../../../Assets/Chapter2\Section4\Space\GraphExercise3A.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Du kan se hvordan jeg gjorde det her:
+    <video class='SpicB' style="width:95%;" controls>
+        <source src='../../../Assets/Chapter2\Section4\Space\GraphExercise3B.mp4' type='video/mp4'>
+    </video>
+    <p class="t">
+    Og du kan se et computer-genereret billede her:
+    </p>
+    <div style="margin-top:35px; width:95%; margin-left:2.5%;">
+        <hover-video url="../../../Assets/Chapter2\Section4\Space\GraphExercise3Answer.mp4" ></hover-video>
+    </div>
+    <br><br></answer-box>
+
+    <!--  -->
+
+ 
+    <q-stion 1="11" 2="5">
+    Tegn en skitse af:
+    _($z=\frac{x^2}{1^2}-\frac{y^2}{2^2}_)
+    <br></q-stion>
+    <answer-box>
+    Du kan se hvordan jeg gjorde det her:</p>
+    <video class='SpicB' style="width:95%;" controls>
+        <source src='../../../Assets/Chapter2\Section4\Space\GraphExercise2.mp4' type='video/mp4'>
+    </video>
+    <p class="t">
+    Du kan se et 3D-genereret billede her:
+    </p>
+    <br><br>
+    <hover-video url="../../../Assets/Chapter2\Section4\Space\GraphExercise2Answer.mp4"></hover-video>
+    <br> <br>
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="11" 2="6">
+    Lav en skitse/graf over:
+    _($(x-4*Cos(z))^2 + (y-4*Sin(z))^2 = 4^2_)
+    Igen behøver du ikke fuldt ud at tegne det: Du skal bare nemt kunne
+    beskrive hvordan det ser ud, og forstå det. 
+    <br><br></q-stion>
+    <answer-box t="h">
+      Vi arbejder tydeligvis med et eller andet cirkel-agtigt, eftersom det lidt ligner:
+    _($(x-a)^2+(y-b)^2 = R^2_)
+    ... med _(R=4_), _(a=4*Cos(z)_), _(b=4*Sin(z)_).
+    <p class="t">
+    Hvad er der specielt omkring denne position _((4*Cos(z), 4*Sin(z))_)?
+    Hvad ville du få, hvis du tegnede positionen _((4*Cos(z), 4*Sin(z))_)
+    på en masse forskellige _(z_)-værdier? 
+    </p>
+    <br></answer-box>
+    <answer-box>
+    Vi arbejder tydeligvis med et eller andet cirkel-agtigt, eftersom det lidt ligner:
+    _($(x-a)^2+(y-b)^2 = R^2_)
+    ... med _(R=4_), _(a=4*Cos(z)_), _(b=4*Sin(z)_).
+    <p class="t">
+    Så på XY-planet er der cirkler. De har alle en radius på _(4_), men deres position 
+    ændrer sig med _(z_) som _((4*Cos(z), 4*Sin(z))_). Denne position
+    _((4*Cos(z), 4*Sin(z))_) er <i>også</i> en cirkelform.
+    En cirkel omkring _((0, 0)_) med radius _(4_). 
+    </p>
+    <p class="t">
+    Så cirklernes positioner er hele tiden _(4_) væk fra _((0,0)_), og alle 
+    cirklerne har en radius på _(4_). Det må betyde at de <i>lige</i> skærer _(z_)-aksen alle 
+    sammen. For hver _(z_) værdi vælger vi et center på _(x^2+y^2=4^2_) med
+    vinkel _(z_) til _((0, 0)_), og tegner cirklen fra dette center til _(z_)-aksen. 
+    Vi går rundt i en slags "spiral" af cirkler der  drejer rundt omkring _(z_)-aksen. 
+    </p>
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter2\Section4\Space\CircleFamily3D.png'> 
+    <p class="t">
+    Voila! 
+    </p>
+    <br></answer-box>
+
+    <p class="t">
+    Vi fortsætter med 3D i næste afsnit, men nu skal vi videre til noget mere algebra!
+    </p>
+   

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+
+
+    <h4>Pascals trekant: En genvej til _(n_)-choose-_(k_)</h4>
+    <p class="t">
+    Det er ret tidskrævende at regne n-choose-k værdier. 
+    Lad os se
+    på en brugbar ide, der kan hjælpe med at lindre denne smerte: "Pascals trekant".
+    </p>
+    <video class='SpicBXL' style="width:95%;" controls>
+        <source src='../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\PascalsTriangle1.mp4' type='video/mp4'> 
+    </video>
+    <p class="t"> 
+    Den her tilsyneladende urelevante konstruktion/ide er praktisk, fordi man
+    relativt nemt kan bevise, at
+    _($\begin{eqnarray} 
+    && \text{Den } m\text{'te værdi} \\ 
+    && \text{på den }n \text{'te række}
+    \end{eqnarray}
+    =
+    \VeC[n,m]
+    _)
+    Så jeg kan f.eks. finde _(8_)-choose-_(5_) ved at konstruere en del af Pascals trekant, og se
+    </p>
+    <img class='Spic' style='width:60%' src='../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\PascalsTrekant.png'> 
+    <p class="t">
+    ...at det er lig _(56_). Det vil selvfølgelig ikke hjælpe os, når _(n_) og _(k_)
+    ved _(n_)-choose-_(k_) har virkelig høje værdier, men det kan alligevel være ret praktisk i 
+    mange tilfælde. 
+    </p>
+    <p class="t">
+    Hvorfor er det her sandt? Well, de første værdier matcher:
+    _($\VeC[0,0]=1, \qquad \VeC[0,1]=1, \qquad \VeC[1,1]=1_)
+    Kald den _(k_)'te værdi på 
+    den _(n_)'te række af pascals trekant for _(Pa(k,m)_). Vi ved pr. definition at:
+    _($Pa(n,k)=Pa(n-1,k)+Pa(n-1,k-1)_)
+    Man kan relativt let bevise via matematik at:
+    _($\VeC[n,k]=\VeC[n-1,k]+\VeC[n-1,k-1]_)
+    n-choose-k og pascals trekant har både de samme start-værdier, og følger præcist
+    samme regel for, hvordan man genererer de næste tal. De er identiske!
+    </p>
+
+    <q-stion 1="4" 2="1">
+    Bevis at:
+    _($\VeC[n,k]=\VeC[n-1,k]+\VeC[n-1,k-1]_)
+    Det her er ikke <i>super</i> svært: 
+    Det er jo egentlig bare et algebra-problem, når man tænker over det!
+    <br><br></q-stion>
+    <answer-box>
+    Jeg tænker jeg går til det her rent algebraisk. Jeg starter
+    fra den mere komplicerede side _(\Vec[n-1,k]+\Vec[n-1,k-1]_) og prøver
+    at omskrive den til bare _(\Vec[n,k]_):
+    _($\VeC[n-1,k]+\VeC[n-1,k-1]=\frac{(n-1)!}{k!*(n-k-1)!}+\frac{(n-1)!}{(k-1)!*(n-k)!}_)
+    De her to led deler faktoren _((n-1)!_), og deler også <i>næsten</i>
+    _(k!_) og _((n-k)!_), der er bare lige en forskel på minus _(1_). Vi ved at:
+    _($\frac{1}{(A-1)!} = \frac{A}{A!}_)
+    Så vi kan være smarte og omskrive til:
+    _($\frac{(n-1)!*(n-k)}{k!*(n-k)!} + \frac{k*(n-1)!}{k!*(n-k)!}_)
+    Nu deler de stort set alting, så vi får:
+    _($\frac{(n-1)!}{k!*(n-k)!}*\left((n-k) + k \right) = \frac{n*(n-1)!}{k!*(n-k)!} = \frac{n!}{k! (n-k)!} = \VeC[n, k]_)
+    Voila! Det her var selvfølgelig kun nemt at bevise <i>fordi</i> vi allerede havde hypotesen. 
+    Hvis man skulle prøve at forestille sig <i>hvordan</i> præcist folk kom frem til denne
+    ligning, kunne man bruge et mere intuitivt argument:
+    <p class="t">
+    Sig jeg er interesseret i at finde en formel for _(\Vec[n,k]_) i forhold
+    til mindre _(n_). Det kunne være praktisk, da _(\Vec[n,k]_) jo kan
+    blive meget stort, meget hurtigt. Jeg skal tælle hvor mange måder
+    jeg kan vælge _(k_) af _(n_) objekter. Èn simpel måde at opdele
+    den opgave på, er ved at kigge på èt bestemt element. Det kunne f.eks. være
+    det "første" element, som vi måske kalder _(A_). Jeg ved, at hvis jeg vælger _(k_) ud 
+    af _(n_) objekter, er _(A_) enten med eller ikke-med. Hvis _(A_) <i>skal</i> være med, 
+    er der nu _(n-1_) objekter og _(k-1_) valg tilbage. Ergo: 
+    _($\VeC[n-1,k-1]_)
+    Hvis _(A_) ikke skal være med, har vi _(n-1_) objekter, men alle _(k_) valg. 
+    Altså: 
+    _($\VeC[n-1,k]_)
+    Derfor ved vi nu at:
+    _($\VeC[n,k]=\VeC[n-1,k-1]+\VeC[n-1,k]_)
+    Voila!
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+    
+    <q-stion 1="4" 2="2">
+    Udregn:
+    _($\VeC[10, 3] + \VeC[10, 4] + \VeC[10, 5] + \VeC[10, 6]_)
+    ... i hånden. Fremover har jeg intet problem med at du bare bruge Geogebra. 
+    <br><br></q-stion>
+    <answer-box>
+    Du kan se mit svar her:
+    <video class='SpicB' style="width:95%;" controls>
+        <source src='../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\PascalsTriangle2 2.mp4' type='video/mp4'> 
+    </video>
+    <br><br></answer-box>
+
+    <q-stion 1="4" 2="3">
+    Der findes desværre ingen lynhurtig teknik til at summere  
+    _($\VeC[n,0]+\VeC[n,1]+\VeC[n,2]+ \, ...\VeC[n,n-1]+\VeC[n,n]_)
+    Det bedste valg er simpelt hen bare at tegne Pascals trekant op til række _(n_), 
+    og lægge hvert element sammen.
+    Bassicly hvad vi gjorde i sidste opgave. 
+    Hvis det dog er <i>n</i> der bliver større som 
+    _($\VeC[n,n]+\VeC[n+1,n]+\VeC[n+2,n]+..\VeC[m,n]_) 
+    ... så har vi:
+    _($\VeC[n,n]+\VeC[n+1,n]+\VeC[n+2,n]+ \, ..\VeC[m,n]=\VeC[m+1,n+1]_)
+    Bevis at det er sandt. Pascals trekant vil hjælpe dig.
+    <br><br></q-stion>
+    <answer-box>
+    Du kan se mit svar her:
+    <video class='SpicB' style="width:95%;" controls>
+        <source src='../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\PascalsTriangle3.mp4' type='video/mp4'> 
+    </video>
+    <p class="t">
+    "... -å sandt."
+    </p>
+    <br></answer-box>
+
+    
+
+
+
+

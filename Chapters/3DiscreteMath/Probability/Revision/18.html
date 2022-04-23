@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+
+
+    <q-stion 1="2" 2="1" 3="5" customWidth="600">
+    Sig at du spiller et eller andet form for lottospil. Der er _(1010_) købte billetter, og 
+    _(200_) af dem er dine. Der bliver udgivet _(5_) premier, og èn person kan godt vinde flere.
+    Du har købt en del god damn billetter. Hvad for et antal premier er der størst chance for at du får?
+    <p class="t">
+    For at den her opgave ikke bliver super kompleks, så er du måske nødt til at tænke over om
+    der er nogle steder du kan approximere noget for at gøre matematikken meget simplere. Her refererer jeg 
+    ikke <i>bare</i> til at f.eks. tage en uendelig sum, men også faktisk at ændre en smule på matematikken
+    et sted. 
+    </p>
+    <br></q-stion>
+    <answer-box customWidth="600">
+    Her kan vi sige at vores stokastiske variabel er "antal af premier du får", og den har
+    _(6_) mulige værdier: _(0_), _(1_), _(2_), _(3_), _(4_) og _(5_). Det antal premier vi 
+    har størst chance for at få svarer til dèn værdi blandt disse med den største sandsynlighed. 
+    Lad os derfor bare regne sandsynligheden på hver af dem og se hvilken èn er størst.
+    (selvom det egentlig ikke er <i>helt</i> nødvendig. Vi kan nok regne os frem til
+    at sandsynligheden vil gå opad, nå et eller andet toppunkt, og så gå nedad derefter.
+    Sådan er langt de fleste tilfælde i hvert fald, når det kommer til sandsynlighed). 
+    <p class="t">
+    Vi starter med nok det nemmeste: Chancen for _(0_) premier. Det her er lig:
+    _($\frac{(1010-200)}{1010}*\frac{(1009-200)}{1009}*\frac{(1008-200)}{1008}*\frac{(1007-20)}{1007}*\frac{(1006-20)}{1006}_)
+    Det her (sammen med _(5_) premier) ved vi er det nemmeste af alle tilfælde, da det kun involverer
+    at tabe. Begge former for situationer er ikke med, og derfor behøver vi heller ikke
+    bekymre os omkring rækkefølge og alle de forskellige slags kombinationer på nogen måde. 
+    Det er et dårligt tegn hvis det allerede ser så avanceret ud som det gør lige nu, så vi er
+    nok nødt til at approximere lidt. Hvis bare vores approksimation er lille, så er
+    det intet problem i dette tilfælde, da vi jo prøver at udvælge _(1_) af kun _(6_) mulige
+    værdier. I hvert fald så tænker jeg at vi kunne sige:
+    _($\frac{1010-200}{1010}*\frac{1010-200}{1010}*\frac{1010-200}{1010}*\frac{1010-200}{1010}*\frac{1010-200}{1010}_)
+    _($\frac{(1010-200)^5}{1010^5} = 0.331_)
+    Det her er <i>fint</i>: Det gør ikke noget at _(1010_) bliver _(1_) mindre, siden
+    det allerede er så stort et tal. 
+    Det svarer til at den kun er blevet _(5/1010=_) _(0.4_)% mindre i det værste tilfælde. 
+    Vi skal også tænke over at <i>både</i>
+    tæller og nævner bliver større af vores approksimation, hvilke måske gør at 
+    de lidt modsætter hinandens effekter. Plus, hvis vi gør det her ved <i>alle</i>
+    vores sandsynligheder, så bliver de alle <i>omtrent</i> lige meget mindre. Vi er ligeglade
+    med nogle individuelle sandsynligheder, og bekymrer os kun om hvilke er <i>højest</i>. 
+    </p>
+    <p class="t">
+    Lad os som det næste eksempel se på 2 premier. Vi kan få _(2_) premier på 
+    _(\Vec[5,2]=_) _(10_) måder. Èn af dem kunne f.eks. være vind-tab-vind-tab-tab. 
+    Chancen for det ville være:
+    _($\frac{200}{1010}*\frac{(1009-199)}{1009}*\frac{199}{1008}*\frac{(1007-198)}{1007}*\frac{(1006-198)}{1006} \approx_)
+    _($ \frac{200^2*(1010-200)^3}{1010^5} _)
+    Denne approksimation sørger for at udtrykket er det samme lige meget hvilken rækkefølge vi vælger.
+    Derfor er den samlede chance for _(2_) premier lige: 
+    _($ \VeC[5,2]*\frac{200^2*(1010-200)^3}{1010^5} = 0.20226 _)
+    Og chancen for _(1_) premie:
+    _($ \VeC[5,1]*\frac{200^1*(1010-200)^4}{1010^5} = 0.40957_)
+    Og 3, 4, og 5:
+    _($ \VeC[5,3]*\frac{200^3*(1010-200)^2}{1010^5} = 0.04994_)
+    _($ \VeC[5,4]*\frac{200^4*(1010-200)^1}{1010^5} = 0.00617_)
+    _($ \VeC[5,5]*\frac{200^5*(1010-200)^0}{1010^5} = 0.0003_)
+    Så i følge vores beregninger er der størst chance for at du får _(1_) premie. 
+    </p>
+    <p class="t">
+    Vi kan teste hvor godt vores approksimation virker ved at tage summen af sandsynlighederne, og 
+    se hvor tæt på _(1_) vi kommer:
+    _($0.33175 + 0.40956 + 0.20226 + 0.04994 + 0.00617 + 0.00031 = 0.99999_)
+    Den er altså utrolig tæt på _(1_) inden for _(5_) decimaler. 
+    </p>
+    <br></answer-box>
+    
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Lad os sige at vi nu ikke længere
+    er en af dem der spiller lotto, men en arbejder for lotto-centeret hvis job netop er at tjekke at folk ikke
+    køber <i>alt</i> for mange billetter. Sig at man maks må købe _(250_) billetter, og at der er _(1000_).
+    _(250_) billetter er stadig fuldkommen absurd, men det er så højt for at vi lige kan gøre matematikken
+    og opgaven lidt mere interessant. Sig at en bestemt spiller (kald ham Peter) et spil vinder _(2_) priser. 
+    Hvad er chancen for at han har købt over _(250_) billetter? 
+    <p class="t">
+    Husk at du skal lave en <i>fair</i> vurdering: Du må ikke antage noget omkring spillerens psykologi, som
+    at "der nok er større chancen for at han havde lyst til at købe mange billetter" osv. Dit resultat
+    må kun være baseret på den objektive data du har fået, og du ved i teorien intet om spilleren: Kun hvor
+    mange priser han vandt. 
+    </p>
+    <p class="t">
+    Den her opgave er pænt svær og relativ lang! 
+    </p>
+    <br></q-stion>
+    <answer-box t="h">
+    Tidligere fandt vi (bl.a.) sandsynligheden for at få 2 priser, <i>givet at</i> vi havde købt _(200_) billetter. 
+    Nu skal vi finde sandsynligheden for at vi havde købt "over 250 billetter" <i>givet at</i> vi fik _(2_) priser.
+    Hvad svarer det her til rent matematisk hvis vi tænker over begivenheder? 
+    </answer-box>
+    <answer-box>
+    Tidligere fandt vi (bl.a.) sandsynligheden for at få 2 priser, <i>givet at</i> vi havde købt _(200_) billetter. 
+    Nu skal vi finde sandsynligheden for at vi havde købt "over 250 billetter" <i>givet at</i> vi fik _(2_) priser.
+    Det kan modelleres rigtig fint via begivenheder!
+    _($\begin{eqnarray}
+    && A: \text{Du får to priser} \\
+    && B: \text{Du køber over 250 billetter} \\
+    \end{eqnarray}_)
+    Vi kan beskrive begivenhed _(B_) lidt mere konkret via stokastiske variabler. 
+    Sig at:
+    _($X: \text{Antallet af billetter Peter købte}_)
+    Så lidt pseudo-matematisk kan vi skrive:
+    _($B = X \gt 250_)
+    Hvor vi før fandt (bl.a.):
+    _($P(A|X=200)_)
+    Skal vi nu finde:
+    _($P(X \gt 250|A)_)
+    Det her med _(X \gt 250_) virker meget svært, men vi kan nemt opdele det i mange tilfælde. 
+    Det svarer jo bare til:
+    _($P(X=251|A) + P(X=252|A) + P(X=253|A) \, + \, \dots_)
+    ... hele vejen op til _(X=1000_). Det kan let beregnes i Geogebra
+    <i>hvis</i> vi finder en formel for _(P(X=n|A)_). Vi ved fra sidste opgave
+    at man let kan finde en (semi-akkurat) formel for _(P(A|X=n)_) i form af:
+    _($\VeC[5, 2] \frac{n^2 (1000-n)^3}{1000^5}_)
+    Det kan vi bruge på smart vis til at regne _(P(X=n|A)_) siden de er modsætninger! 
+    Vi ved at en hvilket som helst _(P(c|d)_) kan omskrives til:
+    _($P(c|d) = \frac{P(c \cap d)}{P(d)} = \frac{P(d|c) P(c)}{P(d)}_)
+    Hvilke i vores tilfælde er:
+    _($P(X=n|A) = \frac{P(A|X=n)*P(X=n)}{P(A)}_)
+    Vi har en formel! Det eneste problem er _(P(X=n)_) og 
+    _(P(A)_) som vi hist ikke kender. _(P(X=n)_) er "chancen for at få _(n_) billetter".
+    Her skal vi huske: Vi må <i>intet antage om spilleren</i>. Så chancen for at Peter købte
+    _(100_) billetter <i>givet at</i> vi intet ved om mængden af priser er ligeså stor
+    som chancen for at han købte _(2_)! Derfor er _(P(X=n)_) bare _(1/1000_). 
+    <p class="t">
+    _(P(A)_) er lidt mere tricky. Det her er chancen for at få 2 priser, <i>hvis vi intet ved om
+    hvor mange billetter Peter købte</i>. Vi er nødt til at opdele dette i en sum:
+    _($\begin{eqnarray}
+    && P(A) = & P(A|X=2) P(X=2) \, + \\
+    && & P(A|X=3) P(X=3) \, + \\
+    && & P(A|X=4) P(X=4) \, + \\
+    && & \vdots \\
+    \end{eqnarray}_)
+    ... hele vejen op til og med _(X=1000_). Vi kender både _(P(A|X=n)_) og _(P(X=n)_) så dette kan let regnes i Geogebra som 
+    _($  (1/1000)*\text{Sum} \left( \VeC[5, 2] \frac{n^2 (1000-n)^3}{1000^5}, n, 2, 1000 \right) = 0.16667_)
+    Nu er vi endelig klar:
+    _($P(X=n|A) = \frac{1/1000}{0.16667}* \VeC[5, 2] \frac{n^2 (1000-n)^3}{1000^5}_)
+    Det kan simplificeres til:
+    _($0.0599988*10^{-15}*\left(n^2 (1000-n)^3 \right)_)
+    Vi skal regne _(P(X=n|A)_) fra _(n=251_) til _(n=1000_), så i Geogebra skriver vi:
+    _($0.0599988*10^{-15}*\text{Sum}\left(n^2 (1000-n)^3, n, 251, 1000 \right)_)
+    Hvilke giver:
+    _($0.82976_)
+    Så det er <i>ret</i> stor chance for at Peter købte mere end _(250_) billetter, og i burde
+    nok undersøge ham yderligere. 
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <!-- <q-stion 1="2" 2="1" 3="5">
+    Samme opgave, men nu har du fået data fra alle spillene på èt år:
+    <div style="margin-top: 10px; margin-left: 7px;">
+        <iframe style="width: 460px; height: 200px;" src="../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\Stokastisk\LottoData.html"> </iframe>
+    </div>
+    <p class="t">
+    God damn Peter har sku måske gang i noget igen!
+    </p>
+    <p class="t">
+    Igen så er du fri til at bruge Geogebra som du vil i den her. 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Okay, så Peter har fået præcist 2 priser hver eneste månede/spil. Det virker meget usandsynligt. 
+    Den klart største chance for at det ville ske, <i>hver eneste gang</i>, er hvis Peter har
+    købt det antal billetter der giver ham størst chance for at få _(2_) priser. Lad os derfor se
+    om vi kan finde det her antal billetter, og så se om det er markant større end _(250_). 
+    Hvis det kun ligger lige på grænsen af _(250_), så kan det jo selvfølgelig også godt være han bare blev heldig. 
+    <p class="t">
+    Chancen for at du har købt _(n_) billetter hvis du får to priser er:
+    _($\frac{0.001}{0.17}*nCr(5,2)*\frac{n^2*(1000-n)^3}{1000^5}_)
+    Det kan forsimples markant til:
+    _($5.88235*10^{-17}*n^2*(1000-n)^3_)
+    Vi skal finde ud af hvornår den her graf er størst mellem _(0_) og _(1000_), så 
+    vi tegner en graf af den i Geogebra:
+    <img class='Spic' style='width:90%' src='../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\Stokastisk\LottoSnyderi.png'> 
+    Vi husker at justere på akserne så vi faktisk kan se og få en fornemmelse af grafen.
+    Nu bruger vi så _(Max(f(x),0,1000)_) til at få Geogebra til at regne hvor værdien
+    er størst. Den giver os _(400_), som også cirka er hvad det ligner på billedet.
+    Vi kan altså med <i>ret god sikkerhed</i> sige at Peter er ret suspicious i denne omgang, og at vi
+    burde undersøge / kontakte ham.
+    </p>
+    <br><br></answer-box> -->
+
+
+
+
+

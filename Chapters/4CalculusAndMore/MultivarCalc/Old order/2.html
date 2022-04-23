@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+
+
+    <p class="t">
+    Hvis vi skal studere calculus med flere variabler, så burde vi først studere
+    <i>grænser</i> med flere variabler, eftersom calculus fundamentalt er bygget på grænser. 
+    Sig f.eks. at vi er interesserede i grænsen af:
+    _($\frac{x-2}{\sqrt{(x-2)^2+(y-3.2)^2}}_)
+    når _(x \to 2_) og _(y \to 3.2_). Her nærmer både tælleren og nævneren sig _(0_), så hvad gør vi? 
+    Vi kan ikke bare bruge L'Hopitals, eftersom der er <i>to</i> variabler der ændrer sig. En grænse
+    med flere variabler som denne ville vi ofte skrive som:
+    _($\lim_{(x,y) \to (2,3.2)} \frac{x-2}{\sqrt{(x-2)^2+(y-3.2)^2}} _)
+    Det her forklarer også lidt bedre hvad der faktisk sker: <i>Punktet</i> _((x,y)_) flytter sig tættere og 
+    tættere på <i>punktet</i> _((2,3.2)_). Problemet er bare <i>hvordan</i> fordi vi kan jo vælge at nærme os
+    _((2,3.2)_) på alle mulige forskellige måder:
+    </p>
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter4\MultiVarCalc\MultivarLimitApproach.png'> 
+    <p class="t">
+    Èn af de mange måder vi kan nærme os _((2,3.2)_) er i en lige linje. Det er der også et 
+    eksempel på i de højre venstre hjørne for punktet på billedet. En hvilket som helst lige linje der nærmer 
+    sig _((2,3.2)_) kan vi beskrive som:
+    _($\VeC[x,y] = \VeC[2,3.2] + t*\VeC[Cos(\theta),Sin(\theta)]_)
+    Hvor _(\theta_) så er en eller anden vinkel. Vi kan nu substituere, og tage grænsen når _(t \to 0_):
+    _($\lim_{t \to 0} \frac{(2+t Cos(\theta))-2}{\sqrt{((2+t Cos(\theta))-2)^2+((3.2+t Sin(\theta))-3.2)^2}} =_)
+    _($\lim_{t \to 0} \frac{t*Cos(\theta)}{t*\sqrt{Cos(\theta)^2+Sin(\theta)^2} } = \lim_{t \to 0} \frac{Cos(\theta)}{1} _)
+    _($Cos(\theta)_)
+    Huh. Så hvis vi nærmer os i en lige linje med en retning på _(\theta=1.3_), så er grænsen lig 
+    _(Cos(1.3)=0.2674_), og hvis vi nærmer os med en retning på _(-2.3_) så er grænsen lig 
+    _(Cos(-2.3)=-0.6667_). Denne specifikke grænse findes altså <i>ikke</i>, eftersom den ændrer sig i forhold til
+    hvad for en retning vi kommer fra: 
+    </p>
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter4\MultiVarCalc\DiscontinousGraphFinal.png'> 
+    <p class="t">
+    Det samme så vi jo også tidligere kunne ske med _(1_) variabel, efter som _(x_) kunne nærme sig _(a_)
+    både fra højre og venstre side.
+    </p>
+    <p class="t">
+    Lad os kigge på endnu et eksempel:
+    _($\lim_{(x,y) \to (0,0)} \frac{x^3*y}{x^6+y^2} _)
+    Vi prøver igen med samme trick som før, og kigger på lige linjer der nærmer sig _((0,0)_), 
+    via _(x=t Cos(\theta)_) og _(y=t*Sin(\theta)_). Det giver:
+    _($\lim_{t \to 0}  Cos(\theta)^4*Sin(\theta)*\frac{t^2}{Cos(\theta)^6*t^4+Sin(\theta)^2} _)
+    Det kan relativt let (dog lidt tricky ved _(\theta=0_)) vises at denne grænse giver
+    _(0_) for enhver værdi af _(\theta_). Vi kunne tænke at dette måske beviste at grænsen fandtes, men 
+    det er <i>ikke</i> nødvendigvis sandt. Vi har kun nærmet os _((0,0)_) via lige linjer, men man
+    kan også nærme sig på alle mulige andre måder. Sig at vi nærmer os gennem formen af en polynomial, 
+    så vi siger at _(y=x^3_):
+    _($\lim_{t \to 0} \frac{x^3*x^3}{x^6+(x^3)^2} = \lim_{t \to 0} \frac{1}{2} = \frac{1}{2} _)
+    Det matcher ikke med det resultat vi fik da vi nærmede os gennem lige linjer, så grænsen findes <i>ikke</i>. 
+    </p>
+    <p class="t">
+    Men hvis det ikke engang er nok at tjekke hver eneste mulige lige retning af en grænse af to variabler,
+    hvordan kan vi så sikre os at den faktisk findes? Det er nemt nok at vise at den <i>ikke</i> findes, da
+    vi bare skal have ét eksempel på to værdier der ikke matcher, men hvordan viser vi at den <i>findes</i>? 
+    </p>
+    <p class="t">
+    Vi har to muligheder: Enten forsøger vi at beskrive enhver mulig vej _((x,y)_) kunne bruge til 
+    at nærme sig _((x_0,y_0)_), og viser at de alle nærmer sig samme værdi. Eller så 
+    observere vi at alle de her veje har èn ting til fælles: <i>Afstanden</i> mellem 
+    _((x,y)_) og _((x_0,y_0)_) nærmer sig _(0_). Derfor kan vi sige at:
+    _($\lim_{(x,y) \to (x_0,y_0)} f(x,y) = L _)
+    Hvis at:
+    _($0 \lt \sqrt{(x-x_0)^2 + (y-y_0)^2} \lt \delta \implies |f(x,y)-L| \lt \epsilon_)
+    Hvis vi har en grænse af <i>tre</i> variabler _((x,y,z)_) der nærmer sig punktet
+    _((x_0,y_0,z_0)_) så kan vi lave samme argument med distance:
+    _($\lim_{(x,y,z) \to (x_0,y_0,z_0)} f(x,y,z) = L \qquad \text{ Hvis }_)
+    _($0 \lt \sqrt{(x-x_0)^2 + (y-y_0)^2 + (z-z_0)^2} \lt \delta \implies |f(x,y,z)-L| \lt \epsilon_)
+    Med flere end tre variabler (højere dimensioner) kan vi faktisk også lave samme argument, men 
+    grunden til at det virker er en del mere kompliceret og involveret. Vi vil ikke gennemgå det her. 
+    </p>
+    <p class="t">
+    Selv når vi kun arbejder med to variabler, så viser det sig at begge to muligheder i langt de fleste
+    tilfælde er <i>meget</i> svære. Vi kommer ikke rigtig til at arbejde med det særlig meget
+    i dette kapitel, men lad mig alligevel vise starten på èt eksempel (og hvorfor at det er komplekst).
+    Sig at vi gerne vil bevise at:
+    _($\lim_{(x,y) \to (2,3)} (x^2+y^2) x y = 78_)
+    Vi har nu:
+    _($0 \lt \sqrt{(x-2)^2 + (y-3)^2} \lt \delta \implies |(x^2+y^2) x y-78| \lt \epsilon_)
+    For at gøre det nemmere at arbejde med den absolutte værdi, så har jeg først af alt tænkt
+    mig at antage at både _(x \gt 2_) og _(y \gt 3_), så at jeg ved med sikkerhed
+    at _((x^2+y^2) x y \gt 78_), hvilke lader mig ignorere den absolutte værdi:
+    _($0 \lt \sqrt{(x-2)^2 + (y-3)^2} \lt \delta \implies (x^2+y^2) x y-78 \lt \epsilon_)
+    Jeg tænker rent strategisk at vi kan udnytte at vores funktion indeholder _(x^2+y^2_), siden det
+    minder meget om distance. Hvis vi udvider kvadratroden på den ene ulighed, så får vi:
+    _($\sqrt{x^2+y^2-4x-6y+15} \lt \delta \to x^2+y^2 \lt \delta^2 + 4x + 6y - 15_)
+    Ergo:
+    _($(x^2+y^2) x y-78 \lt (\delta^2 + 4x + 6y - 15) x y - 78_)
+    Antag at _(\delta \le 1_). Så kan _((x,y)_) højest være _(1_) væk fra 
+    _((2,3)_), hvilke betyder at _(x_) højest er _(3_), go _(y_) højest er _(4_). 
+    Vi ved derfor at:
+    _($(\delta^2 + 4x + 6y - 15) x y - 78 \lt (\delta^2 + 4*3 + 6*4 - 15) 3*4 - 78 =  12\delta^2 + 174_)
+    Vi gætter nu _(\delta=\sqrt{(\epsilon-174)/12}_), hvilket så vil færdiggøre
+    beviset <i>hvis</i> _(x \gt 2_), _(y \gt 3_). Vi skal nu vise at dette gæt også virker
+    i alle de andre mulige tilfælde - de andre <i>retninger</i> _((x,y)_) kunne komme fra. 
+    Det vil jeg ikke vise, da det er relativt udfordrende, og relativt rodet. 
+    </p>
+    <p class="t">
+    Det vi i realiteten gør, er at vi beviser nogle <i>meget</i> generelle egenskaber for hvornår en funktion er
+    kontinuerlig, og hvornår dens grænse findes. 
+    Det er nok for os at vide at grænsen <i>findes</i>, selv hvis vi ikke ved hvad 
+    præcis den er lig: Hvis den findes, så kan vi nemlig bare vælge en hvilken som helst vej at nærme sig 
+    grænsen, og derved evaluere dens værdi som en "nem" grænse med kun _(1_) variable. 
+    Meget af det her med grænse behøver vi heller ikke bekymre os super meget om, eftersom de fleste funktioner
+    vi arbejder med er relativt "normale". 
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Bevis at grænse til følgende grænse <i>ikke</i> findes:
+    _($\lim_{(x,y) \to (0,0)} \frac{Sin(x)}{\sqrt{x^2+2y^2}} _)
+    <br><br></q-stion>
+    <answer-box>
+    Du kan se mit svar her:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter4\MultiVarCalc\MultivariableLimitExercise.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+
+
+
+
+
+
+

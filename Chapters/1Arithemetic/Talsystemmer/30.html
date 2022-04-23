@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <p class="t">
+    Det allersidste problem var problem <b> G</b>:
+    </p>
+
+    <p class="t">
+    <b> G</b>: I laver en slags wrestling-konkurrence. Enten vinder man, det står lige, eller man taber. 
+    Det svarer til enten at få points, ikke få nogle points, eller få fjernet points. Flere folk får fjernet
+    flere points end de får. Hvem kan vi så sige er "taberen"?
+    </p>
+
+    <p class="t">
+    Lad os lige lave den opgave lidt mere konkret. Sig at vi har _(4_) wrestling-spillere, _(5_) runder, og 
+    de følgende resultater:
+    </p>
+
+    <table style="border-collapse: collapse; border: 1px solid black; margin-top: 15px; margin-left: 30px;">
+        <tr>
+            <td> <b> Person/Runder  </b> </td>
+            <td> <u> Runde 1 </u> </td>
+            <td> <u> Runde 2 </u> </td>
+            <td> <u> Runde 3 </u> </td>
+            <td> <u> Runde 4 </u> </td>
+            <td> <u> Runde 5 </u> </td>
+        </tr>
+        <tr>
+            <td> <u> Jan </u></td>
+            <td> _(3_) </td>
+            <td> _(0_) </td>
+            <td> _(-4_) </td>
+            <td> _(-4_) </td>
+            <td> _(0_) </td>
+        </tr>
+        <tr>
+            <td> <u> Niels </u> </td>
+            <td> _(3_) </td>
+            <td> _(0_) </td>
+            <td> _(0_) </td>
+            <td> _(0_) </td>
+            <td> _(3_) </td>
+        </tr>
+        <tr>
+            <td> <u> Anna </u></td>
+            <td> _(-4_) </td>
+            <td> _(-4_) </td>
+            <td> _(3_) </td>
+            <td> _(3_) </td>
+            <td> _(-4_) </td>
+        </tr>
+        <tr>
+            <td> <u> Klara </u> </td>
+            <td> _(-4_) </td>
+            <td> _(3_) </td>
+            <td> _(0_) </td>
+            <td> _(3_) </td>
+            <td> _(3_) </td>
+        </tr>
+    </table>
+
+    <p class="t">
+    Vi skal se hvem der har fået mindst og flest points. Lad os se hvor mange
+    points f.eks. Jan får:
+    _($3+0-4-4+0_)
+    Først kommer vi op på _(3_), så trækker vi _(4_) fra, og så står vi med? 
+    Vores tal bliver mindre end _(0_)! Men der er også andre som Anna
+    hvis tal <i>også</i> bliver "mindre end _(0_)", så hvordan vurdere vi hvem
+    der har klaret sig <i>værst</i>? 
+    </p>
+    <p class="t">
+    Well, her er min ide: Points er en fiktiv kvantitet <i>vi</i> har opfundet, så lad
+    os bare sige man godt kan have et "negativt" antal points. 
+    Når man har _(3_) points og trækker _(4_) fra, så står man tilbage med
+    "_(-1_) point". Når man så trækker yderligere _(4_) fra igen, så siger
+    vi at man har _(-1-4=_) _(-5_) points. Det er 100% bare noget vi har opfundet, men
+    det virker meget praktisk rent matematisk:
+    _($\begin{eqnarray} 
+    && \text{Jan:} & 3 + 0 - 4 - 4 + 0 & = & -5 \\
+    && \text{Neils:} & 3 + 3 + 0 + 0 - 4 & = & 2 \\
+    && \text{Anna:} & -4 - 4 + 3 + 3 - 4 & = & -6 \\
+    && \text{Klara:} & -4 + 3 + 0 + 3 + 3 & = & 5 
+    \end{eqnarray}_)
+    Vi kan altså se at bedste til værst går: Anna, Jan, Niels, Klara. 
+    <i>Kunne</i> vi godt have løst det her uden "negative tal"? Ja.
+    Var det mere effektivt bare at "forestille" os at der fandtes tal der
+    var mindre end _(0_)? Absolut. Negative tal er noget <i>vi</i> har
+    opfundet, og <i>vi</i> bestemmer selv hvad det skal betyde. Vi
+    kan også bruge det i alle mulige andre situationer: 
+    </p>
+    <p class="t">
+        Ind til videre har vi ofte kigget på afstand (L) i forhold til hvor langt noget er. Hvor langt er et 
+        træ, hvor højt er et hus, ladi lada. Vi kan selvfølgelig også bruge det til at beskrive <i>position</i>:
+    </p>
+    <img class="Spic" style="width:65%" src="../Assets/Chapter1/Talopgaver og intuition/DistanceToBaker/F/position1.png">
+    <p class="t">
+        Lad os sige vi starter fra det gule hus her - måske bor du der eller noget. Du er lige nu 
+        _(0m_) væk fra hvor du bor. Så begynder du at gå:
+    </p>
+    <img class="Spic" style="width:75%" src="../Assets/Chapter1/Talopgaver og intuition/DistanceToBaker/F/position2.png">
+    <p class="t">
+        Som vist så kan vi beskrive din position forskellige steder baseret på hvor langt væk du er fra dit hus. 
+        Det virker dog lidt fjollet at vi ikke rigtig kan se om du går mod eller væk fra bageren. Tabt, vigtig information!
+    </p>
+    <p class="t">
+        Du går enten mod bageren, eller væk fra bageren. Det er, rent intuitivt, to modsætninger. Derfor af ren og skær
+        praktikalitet sætter vi et lille _(-_) tegn foran talet baseret på hvad du gør. Hvorfor lige "_(-_)"? Ingen ide, og fuldkommen ligegyldigt! (højest sandsynligt nok bare fordi det er et tegn der er hurtigt og nemt at skrive)   
+        <i>Vi</i> bestemmer hvad et 
+        positivt tal skal betyde - i dette tilfælde afstand fra hus til bager. Hvis den ting vi måler har en naturlig 
+        "modsætning" vi tror vi kommer til at arbejde med, så kalder vi bare de modsætninger for "negative tal". 
+        Der er intet magi her - negativitet er bare en måde for os at kommunikere om og beskrive ting vi personligt 
+        føler virker som modsætninger.
+    </p>
+    <p class="t">
+        Præcis ligesom afstand og position deroppe, så har <i>vinkler</i> også en retning og derfor naturlig modsætning.
+        "Venstre eller højre", "Foran eller bagud", bliver nu til "med eller mod" uret. Vi kunne sige: 
+        "Først drej _(20_) grader med uret, gå ligeud _(15m_), drej _(45_) mod uret, og gå så bagud _(32m_)" 
+    </p>
+    <img class="SpicB" style="width:80%;" src="../../../Assets/Chapter1\Talopgaver og intuition\Misc\F\DesertMinusRoute.png">
+    <p class="t">
+        Eller vi kunne sige (_(20°,15m,-45°,-32m_)). Det er bare mere kompakt og præcist. Vi har her bare fundet 
+        på den regel at "_(-_)" før en afstand betød at man gik bagud, og at "_(-_)" før en vinkel betød at 
+        man gik <i>mod</i> uret.
+    </p>
+    <p class="t">
+        Du har helt sikkert nok prøvet at bruge en køkkenvægt før. Først sætter man en skål/holder på, 
+        så tænder man vægten, og derefter begynder man at hælde. Ligesom at huset før var stedet vi kaldte 
+        for "_(0m_)", så har vægten altså nu indstillet et _(0_)-punkt omkring vores skål. Vi er interesserede 
+        i <i>mængden af vægt vi tilføjer</i> - det er den mening vi har givet vores positive tal i lige dette 
+        tilfælde. Intuitivt så siger vi at "det modsatte" her er at fjerne vægt fra skålen. Prøv engang 
+        at gør det på din køkkenvægt derhjemme! Mange køkkenvægte kan godt vise negative tal. Måske er 
+        der noget der begynder at miste vægt over tid, eller måske har man brug for at fjerne en bestemt mængde 
+        fra en blandning. Begge praktiske tilfælde. 
+    </p>
+    <p class="t">
+        Ligesom at der ikke i virkeligheden (stort set) findes "negativ vægt", så findes der heller ikke "negativ temperatur".
+        Enten vejer det, eller så vejer det ikke. Enten ryster molekylerne, eller så bevæger dig sig overhovedet ikke. 
+        Alligevel så bruger vi <i>celcius</i> som den standard enhed for varme. _(0_) celcius er sat til at 
+        være _(273.15_) "kelvin". _(0_) kelvin er ligesom _(0_)kg: absolut ingenting. Celcius er centreret 
+        omrking lige denne temperatur, da det er der hvor vand begynder at fryse til is. Begge enheder 
+        er skaleret sådan at der er _(100_) fra hvornår vand smelter, til hvornår det koger. _(-4_) celcius er 
+        _(=-4+273.15=269.15_) kelvin. _(4_) celcius er _(4+273.15=277.15_). De to tal er på ingen måde "modsatte" 
+        temperature. Det koncept giver ikke engang mening! Den eneste grund til vi har tilføjet _(-_) tegnet til 
+        temperaturer, at for at tilføje lidt ekstra information til tallet. En dejlig lille måde at huske 
+        på hvorvidt vand er i solidform eller væskeform på en bestemt temperatur. I hvert fald nemmere end 
+        "Over _(273.15_)!". 
+    </p>
+    <p class="t">
+        <i>Tid</i> går kun fremad - selv intet hyperfysik rumrelativitet kan argumentere imod den påstand!
+        Alligevel så kunne vi nemt forestille os en _(100m_) løber der er ved at forbedre hans tid. Det 
+        er praktisk for ham/hende at have et gennemsnit han/hun kan sammenligne med. Var han/hun bedre eller dårligere end normalt?
+        Efter en masse løb ville han/hun nok få et skema hvor der stod tiderne <i>i forhold til gennemsnittet</i>. 
+        Det ville være det eneste vigtige hvad angik træning, og det ville give et meget bedre overblik! Under gennemsnit 
+        vil så nok naturligt og logisk bruge et "_(-_)" tegn, fordi det kan man nemt forstå hvad betyder. 
+    </p>
+    <p class="t">
+        Hvad angår sport og den kendte betydning af "_(-_)" så vil det nok også give intuitiv mening til de 
+        fleste at "negative points" betød at man havde klaret sig dårligt, i modsætning til "positive points" der symboliserede succes og evner. 
+        Sig at du skal til at spille hockey med nogle af dine venner. Ham der forklarer reglerne siger at 
+        man får -2 point som straf for at skyde med foden. Du vil i denne situationen selvfølgelige ikke 
+        blive sur og brokke dig over hvordan at man ikke kan få "mindre ind ingenting", og hvordan man ikke 
+        burde kunne komme under _(0_) points fordi det bryder naturen og logikkens love. Du vil bare accepetere 
+        at sådan er reglerne blev valgt, og sådan kan spillet virke og forklares effektivt. Samme gælder bræt- og kortspil.
+    </p>
+    
+    <q-stion 1="1" 2="1" 3="10">
+    Lad os kigge på en eller anden racerkørselsport. Billisterne her kæmper ikke side om side, men i stedet 
+    indivudelt om at få flest points. Man har _(15s_) til at gennemføre hver bane. Hvis man når målet før 
+    så får man positive points. Hvis man først når efter så får man negative. Ens point bliver altså regent som 
+    _(15-t_) hvor _(t_) er tiden i sekunder. Stiger _(t_) over _(15_) så kan man se at _(15-t_) ikke længere er positiv. 
+    <p class='t'>
+        Man kan få _(6_) ekstra positive points ved at hoppe på et flyvehop. Modsat så bliver 
+        man straffet med henholdsvis _(4_) og _(8_) hvis man kører ind i en kegle eller vejbeskyttelse. 
+        Se nu følgende klip:
+    </p>
+    <video class='pic' controls>
+        <source src='../../../Assets/Chapter1\Talopgaver og intuition\Racerkørsel\F\Racerbil.mp4' type='video/mp4'>
+    </video>
+    <p class='t'>
+    Hvor mange points får bilisten? 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Det tager ham _(20s_), så pointsne han får der er _(15-20=-5_). Det skal også lægges nogle negative points 
+    til fordi han vælter _(3_) kegler og _(8_) minuspoints fordi han ødelægger en vejbeskyttelse: _(-5-3*3-8=-22_).
+    Den tydeligvis elendige chauffør for dog _(6_) points for at tage flyvehoppet: _(-22+6=-16_) points. 
+    Han ender altså ud med <i>negative points</i> som nok indikerer at han er under standard. 
+    <br><br></answer-box>
+
+    <p class="t">
+        Man kunne nævne mange flere faglige- og dagligdagseksempler hvor vi bruger negative tal og fortegn. 
+        Elektricitet, lyd, lys, og vand i havet kommer alle i bølger:
+    </p>
+    <img class="Spic" style="width:65%" src="../Assets/Chapter1/Talsystemmer/Bølge.png">
+    <p class="t">
+        Bølgerne her bliver på en eller anden måde ved med at gå over og under en "_(0_)-værdi". I vandbølger er 
+        det højden, i lydbølger er det henholdsvist over- og undertryk i luften omkring os. Et andet 
+        eksempel kunne være hastighed: Selvfølgelig med både negative og positive tal i position, så kan vi også
+        få både negative og positive tal i hastighed der jo bare er positionsforskel over tid. Man 
+        kunne også måske sætte positive tal til tryk, og så negative til træk. Eller give "negative karaktere" 
+        fordi det er en praktisk måde at justere gennemsnittet på.  
+    </p> 
+
+    <p class="t">
+        Men jeg ved hvad du tænker. Jeg ved hvad du har haft i hovedet lige siden denne snak 
+        om negative tal begyndte:
+    </p>
+    <p class="cent">
+        ...<br>
+        Hvorfor fuck giver minus og minus plus?
+    </p>
+    <p class="t">
+        Ja, <i>hvorfor</i> er det at _(noget - (-7)=noget+7_) og at _(-1*-1=1_)? Der er ikke noget svar:
+        det er bare sådan vi har valgt det skulle være! Vi opfandt negativitet og _(-_) her og der da vi havde brug for det, og så 
+        kan vi naturligvis også selv vælge hvordan vi arbejder med det og hvilke regler det burde følge. 
+        Vi skal i stedet forstå <i>motivationen</i> bag de her regler? Hvorfor hjælper de os med at opstille
+        intuitive, logiske situationer? Hvorfor passer de til det man føler ville give mest mening?   
+    </p>
+    <p class="t">
+        Lad os kigge på position og bageren igen: 
+    </p>
+    <img class="Spic" style="width:75%" src="../Assets/Chapter1/Talopgaver og intuition/DistanceToBaker/F/Minus og minus.png">
+    <p class="t">
+        _(-_) er både som sagt den måde vi viser et tal er negativt på, men det er også noget vi <i>gør mellem to tal</i>.
+        I den forstand forventer vi at det <i>gør det modsatte af _(+_)</i>, og at det finder forskellen mellem to ting. 
+        Hvad sker der når vi siger _(9+(-6.02)_) i situationen deroppe? Den negative bevægelse væk fra 
+        bageren trækker fra den positive bevægelse mod bageren! Præcis som man ville forvente. _(9-(-6.02)_)
+        burde så gøre <i>det modsatte</i> og lægge bevægelsen væk <i>til</i> som et positivt tal. Lige meget 
+        hvad så ville det være ondsvagt hvis den gjorde <i>det samme</i> som _(+_) i tilfældet. Så ville vi have 
+        et helt minus tegn vi ikke brugte til dets fulde potentiale. Det ville også bare være iriterrende at have 
+        matematik hvor tog vidt forskellige ting gjorde det samme. Det giver tonsvis af mening både fra teknisk 
+        og intuitivt synspunkt at man valgte reglerne her som man gjorde. Det er også dejligt i forhold til det 
+        med <i>forskel</i>. Afstandenden mellem pungen og manden er _(9+6.02_) som er præcist hvad _(9-(-6.02)_) giver.
+    </p>
+    <p class="t">
+        I nogle situationer vil man arbejde med sammenhænge hvor positiviteten / negativiteten ændre sig en del. 
+        Det giver helt intuitivt mening at _(--1=1_) da vi "modsæter en modsætning". Men hvad hvis vi skal gøre 
+        det en helt masse gange? Vi gider ikke skrive _(-------1_). Det er lidt svært at se på og arbejde med. 
+        Derfor har man bare valgt - lidt arbitrært - og sige at man også kan modsætte noget ved at gange med _(-1_).
+        En negering kan altså tegnes på to måder, og det tidligere eksempel kunne skrives som _(-1*-1*-1*-1*-1*-1*1_). 
+        Man kan også tænke over det sådan her: hvis _(-1*1=1_), så ville _(1_)
+        pludselig altså have en magisk kraft: at lave negativt om til positivt. Det gider vi ikke have: _(1_)
+        skal helst gøre absolut intet når man ganger med den. Det hænger bedre sammen med alt det andet i matematik. 
+        Hvis _(-1*1=-1_) gjaldt, men ikke _(-1*-1=1_), så ville det være mærkeligt at _(-1_) lidt virkede som 
+        noget der modsatte negativitet, men så også lidt ikke. 
+    </p>
+
+    <q-stion 1="1" 2="1" 3="106">
+    Udregn:
+    <ul>
+        <li>_(-4*(2 - -1*(-5))_)</li>
+        <li>_(-1*-1*-1*-1*...._) et <i>lige</i> antal gange</li>
+        <li>_(-1*-1*-1*-1*...._) et <i>ulige</i> antal gange</li>
+    </ul>
+    <br></q-stion>
+    <answer-box>
+    Ved første der bliver _(-1*(-5)_) bare til _(5_), så _((2 - -1*(-5))_) er _(2-5=-3_). Det tager vi det 
+    negative af og ganger med _(4_), så det bliver til _(3*4=12_).
+    <p class='t'>
+        Hver gang vi ganger med _(-1_) så skifter vi fortegnet. _(1_) enkelt _(-1_) er <i>negativt</i>.
+        _(2_) er positivt da vi nu har ganget en negativ med en negativ. _(3_) er så negativ igen nu da vi tager 
+        det modsatte af det positive, osv osv. Altså, et lige antal giver _(1_), og et ulige antal giver _(-1_). 
+    </p>
+    <br><br></answer-box>
+
+    <p class="t">
+    Og nu er vi færdige med det her kapitel! 
+    </p>
+    
+
+</html>

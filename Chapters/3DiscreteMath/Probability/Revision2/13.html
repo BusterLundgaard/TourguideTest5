@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+
+
+    <h3>Anden innovation: Begivenheders indflydelse på hinanden (konditionel sandsynlighed)</h3>
+
+    <p class="t">
+    Vi har tænkt over "eller" og "og", men et andet vigtig element i mange opgaver 
+    er det faktum, at nogle begivenheder <i>har indflydelse på hinanden</i>. Især
+    hvis man arbejder med <i>tid</i>. Vi løste f.eks. en opgave,
+    hvor vi træk kort fra en bunke og <i>ikke</i> lagde dem tilbage. 
+    Den opgave var ret kompliceret, så sig i stedet vi havde en lidt simplere situation,
+    hvor vi træk to kort og undersøgte to begivenheder:
+    _($\begin{eqnarray} 
+    && A & = & \text{Rødt kort i første træk} \\
+    && B & = & \text{Rødt kort i andet træk} \\
+    \end{eqnarray}_)
+    Begivenhed _(A_) har tydeligvis indflydelse på begivenhed _(B_): 
+    Der er mindre chance for at trække et rødt kort i anden runde, hvis 
+    du allerede har trukket et i første! I det ene tilfælde
+    har du _(26_) kort at vælge imellem, i det andet tilfælde kun _(26-1=25_) kort. 
+    De to sandsynligheder er henholdsvis _(26/51_) og
+    _(25/51_). Den samlede sandsynlighed _(P(B)_) er derfor lig:
+    _($\frac{26}{52}*\frac{25}{51} + \frac{26}{52}*\frac{26}{51} = 0.5_)
+    Det her giver super meget mening! Når èn begivenhed _(A_) har indflydelse på en anden _(B_),
+    deler vi det bare op i to tilfælde: Når begivenheden _(A_) er sand, og 
+    når begivenheden _(A_) ikke er sand! I dette tilfælde er chancen for at den er sand (rød i første runde) 
+    lig _(26/52_), og chancen for at den ikke er sand
+    (sort i første) også lig _(26/52_).
+    Helt generelt kan man sige, at hvis en eller anden begivenhed _(A_) har indflydelse på 
+    den begivenhed, vi prøver at beregne _(B_), bruger vi formlen:
+    _($\begin{eqnarray} 
+    & P(B) = & P(A) & *P(B \text{ antaget at } A \text{ er sandt}) & + \\
+    &        & P(\text{ikke } A) & *P(B \text{ antaget at } A \text{ ikke er sandt}) 
+    \end{eqnarray}
+    _)
+    Så hvis f.eks
+    _($\begin{eqnarray} 
+    && A & = & \text{Ruder i første træk} \\
+    && B & = & \text{Rødt i andet træk}
+    \end{eqnarray}_)
+    ... ville _(P(B)_) være:
+    _($P(B)=\frac{13}{52}*\frac{25}{51}+\frac{39}{52}*\frac{26}{51}=0.5049_)
+    Hvis jeg gerne vil finde chancen for at få både _(A_) og _(B_) samtidigt,
+    er det selvfølgelig lidt simplere:
+    _($P(A \cap B)=P(A)*P(B \text{ antaget at } A \text{ er sandt})_)
+    Det kan også regnes som:
+    _($P(A \cap B)=P(B)*P(A \text{ antaget at } B \text{ er sandt})_)
+    I stedet for "_(B_) antaget at _(A_) er sandt" skriver vi bare
+    _(B|A_). I stedet for "ikke", plejer vi at skrive _(!_) eller 
+    _(\neg_). Formlerne er nu:
+    _($\begin{eqnarray} 
+    && P(B)         = P(A)*P(B|A)+P(\neg A)*P(B|\neg A) \\ \\
+    && P(A \cap B) = P(A)*P(B|A)
+    \end{eqnarray}_)
+    </p>
+     
+    <p class="cent">*</p>
+
+    <p class="t">
+    Lad os gå tilbage til den rodede kort-opgave med nye værktøjer i kassen. 
+    Lad begivenhederne _(A, \, B, \, C_) være henholdsvis 
+    situationen hvor vi får et rødt kort ved første træk, en
+    ruder ved andet træk, og en konge ved tredje. Målet er nu at udregne 
+    _($P(A \cap B \cap C)_).
+    Lad _(A_1_) være begivenheden, hvor vi trækker en ruder ved første træk, og _(A_2_)
+    begivenheden, hvor vi ikke trækker en ruder. _(A=A_1 \cup A_2_) og:
+    _($\begin{eqnarray}
+    && P(A \cap B \cap C) = \\
+    && P((A_1 \cup A_2) \cap (B \cap C) ) = \\
+    && P( (A_1 \cap B \cap C) \cup (A_2 \cap B \cap C) ) = \\
+    && P(A_1 \cap B \cap C) + P(A_2 \cap B \cap C) - P((A_1 \cap B \cap C) \cap (A_2 \cap B \cap C)) 
+    \end{eqnarray}_)
+    En skæring er en skæring, og rækkefølgen er ligegyldig. Vi kan derfor omskrive det sidste led:
+    _($P((A_1 \cap B \cap C) \cap (A_2 \cap B \cap C)) =_)
+    _($P(A_1 \cap B \cap C \cap A_2 \cap B \cap C) = _)
+    _($P((A_1 \cap A_2) \cap (B \cap C \cap B \cap C))_)
+    Grunden til at jeg gerne vil omskrive det, er fordi, at _(A_1 \cap A_2 = \text{Ingenting}_).
+    Det er relativt åbenlyst, da der jo ikke er nogle kort, der både er ruder og ikke-ruder.
+    Ergo:
+    _($P((A_1 \cap A_2) \cap (B \cap C \cap B \cap C)) = P(\text{Ingenting} \cap (B \cap C \cap B \cap C)) _)
+    Noget som helst har intet tilfældes med ingenting, og man kan ikke trække "intet kort", så:
+    _($P(\text{Ingenting} \cap (B \cap C \cap B \cap C)) = P(\text{Ingenting}) = 0_)
+    Nu står vi tilbage med bare:
+    _($P(A_1 \cap B \cap C) + P(A_2 \cap B \cap C)_)
+    Sig at
+    _(B_1_) er begivenheden, hvor vi trækker en konge-ruder ved andet træk, og _(B_2_)
+    begivenheden hvor vi trækker en ikke-konge ruder. Efter lidt omskrivning får vi nu:
+    _($P((B_1 \cap A_1 \cap C) \cup (B_2 \cap A_1 \cap C)) + P((B_1 \cap A_2 \cap C) \cup (B_2 \cap A_2 \cap C)) _)
+    Vi kan lave præcist samme argument med _(B_1 \cap B_2 = \text{Ingenting}_), så 
+    vi kan igen opdele sandsynlighederne i to summe: 
+    _($P(B_1 \cap A_1 \cap C) + P(B_2 \cap A_1 \cap C) + P(B_1 \cap A_1 \cap C) + P(B_2 \cap A_2 \cap C)_)
+    Vi skal nu bare dele det op èn gang til ved at sige 
+    _($\begin{eqnarray}
+    && A_1=A_{1,1} \cup A_{1,2} \\
+    && A_2=A_{2,1} \cup A_{2,2}
+    \end{eqnarray}_)
+    ... hvor _(A_{1,1}_) er begivenheden hvor vi får en konge ruder, _(A_{1,2}_) 
+    begivenheden hvor vi får en ikke-konge ruder, _(A_{2,1}_) 
+    begivenheden hvor vi får en ikke-ruder konge, og _(A_{2,2}_) 
+    begivenheden hvor vi får en ikke-ruder ikke-konge. 
+    Vi omskriver nu på præcis samme måde som før og får:
+    _($\begin{eqnarray} 
+        && P(A_{1,1} \cap B_1 \cap C) & \, \, + \\
+        && P(A_{1,2} \cap B_1 \cap C) & \, \, + \\
+        && P(A_{2,1} \cap B_1 \cap C) & \, \, + \\
+        && P(A_{2,2} \cap B_1 \cap C) & \, \, + \\
+        && P(A_{1,1} \cap B_2 \cap C) & \, \, + \\
+        && P(A_{1,2} \cap B_2 \cap C) & \, \, + \\
+        && P(A_{2,1} \cap B_2 \cap C) & \, \, + \\
+        && P(A_{2,2} \cap B_2 \cap C) &   \\ 
+    \end{eqnarray}_)  
+    Hver af de her led er nemme at finde. Især hvis vi omskriver. 
+    Tag det første led som et eksempel:
+    _($\begin{eqnarray} 
+    && P(A_{1,1} \cap B_1 \cap C) & = P((A_{1,1} \cap B_1) \cap C) &  \\
+    &&                            & = P(A_{1,1} \cap B_1)*P(C | A_{1,1} \cap B_1) \\
+    &&                            & = P(A_{1,1})*P(B_1 | A_{1,1})*P(C | A_{1,1} \cap B_1)
+    \end{eqnarray}_)
+    Det her kan vi relativt let se er:
+    _($\frac{1}{52}*\frac{12}{51}*\frac{3}{50}=0.000027149_)
+    Så alt skal vi altså regne:
+    _($\begin{eqnarray} 
+        && P(A_{1,1})*P(B_1 | A_{1,1})*P(C | A_{1,1} \cap B_1) & \, \, + \\
+        && P(A_{1,2})*P(B_1 | A_{1,2})*P(C | A_{1,2} \cap B_1) & \, \, + \\
+        && P(A_{2,1})*P(B_1 | A_{2,1})*P(C | A_{2,1} \cap B_1) & \, \, + \\
+        && P(A_{2,2})*P(B_1 | A_{2,2})*P(C | A_{2,2} \cap B_1) & \, \, + \\
+        && P(A_{1,1})*P(B_2 | A_{1,1})*P(C | A_{1,1} \cap B_2) & \, \, + \\
+        && P(A_{1,2})*P(B_2 | A_{1,2})*P(C | A_{1,2} \cap B_2) & \, \, + \\
+        && P(A_{2,1})*P(B_2 | A_{2,1})*P(C | A_{2,1} \cap B_2) & \, \, + \\
+        && P(A_{2,2})*P(B_2 | A_{2,2})*P(C | A_{2,2} \cap B_2) &   \\
+    \end{eqnarray}_)  
+    Vi skal stadig regne en del ligesom sidst, og det her var <i>ikke</i> nødvendigvis en bedre, 
+    mere <i>effektiv</i>
+    måde at finde frem til svaret. Overhovedet ikke. Det var dog meget struktureret,
+    sikkert, og fejlfrit. Man kunne næsten forestille sig, en computer gøre det. 
+    Det viser også hvor fleksibelt vores system nye system med sæts og begivenheder er, og 
+    at det tillader en slags algebra/omskrivning med sandsynligheder.
+    </p>
+    
+    <p class="t">
+    Tid til et par opgaver! 
+    </p>
+
+
+
+
+

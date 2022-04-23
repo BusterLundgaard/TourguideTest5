@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+
+
+    <h3>Polære koordinater og 3D voluminer</h3>
+    <p class="t">
+    Polære koordinater kan være praktiske, når man arbejder med dobbelt-integraler. 
+    _(z_) er ikke længere en funktion af _(x_) og _(y_) men af radius _(r_) og vinkel _(\theta_). 
+    Sig f.eks. vi har:
+    _($z=\frac{1}{\sqrt{x^2+y^2}}_)
+    ... og at området er inde i cirklen:
+    _($x^2+y^2=4_)
+    _(y=\pm \sqrt{4-x^2}_), så man er "inde i cirklen" hvis _(x \in [-2, 2]_) og 
+    _($-\sqrt{4-x^2} \lt y \lt \sqrt{4-x^2}_)
+    Derfor skal vi regne integralet:
+    _($\int_{-2}^{2} \int_{-\sqrt{4-x^2}}^{\sqrt{4-x^2}} \frac{1}{\sqrt{x^2+y^2}} \text{ }dy \text{ }dx _)
+    Denne integral er grim, uelegant, og højest sandsynlig svær.
+    Vi ville sætte pris på en bedre mulighed,
+    selv <i>hvis</i> den kan regnes af en computer.
+    Måske skal den eller lignende integraler
+    bruges i en mere generel og teoretisk kontekst, hvor 
+    problemet ikke kan løses numerisk? <i>Enter polære koordinater</i>. 
+    </p>
+    <p class="t">
+    Med polære koordinater kan vi beskrive fladen som 
+    _($z=1/r_)
+    ... og området som 
+    _($r=2_)
+    Så vi skal bare regne
+    _($\int_{0}^{2} \int_{0}^{2 \pi} \frac{1}{r} \text{ }d\theta \text{ }dr _)
+    ... right? Ikke nødvendigvis. Vores bevis for volumen under en overflade via dobbelt-integraler
+    var meget <i>geometrisk</i>, 
+    og vi har fuldkommen ændret geometrien ved at skifte til _(r_) og _(\theta_) i stedet for _(x_) og _(y_):
+    </p>
+    
+    <video class='picB' style='margin-top:35px; margin-bottom: 35px;' controls>
+        <source src='../../../Assets/Chapter4\MultiVarCalc\DoubleIntegrals\PolarDoubleIntegral.mp4' type='video/mp4'>
+    </video>
+
+    <p class="t">
+    I videoen refererede jeg til en metalplade. Det var fordi beviset originalt var vedlagt i den opgave,
+    men blev ændret. 
+    </p>
+
+    <q-stion 1="14" 2="1" customWidth="550" bigTop="true">
+    Som sagt i videoen, vil jeg nu gerne have at du finder (og rigorisk, ordentligt beviser) en formel
+    for volumen under en flade _(z(r,\theta)_), hvis området er en cirkel med radius _(R_). 
+    Ligesom ved mit bevis er det ikke muligt endnu med vores viden, at bevise det <i>helt</i> ordentligt, men
+    undvig at lav nogen antagelser, jeg ikke selv lavede i mit bevis. 
+    <p class="t">
+    Området <i>behøver</i> ikke at være en cirkel, men det lader jeg dig antage for
+    at gøre opgaven nemmere. 
+    </p>
+    <br></q-stion> 
+    <answer-box customWidth="550">
+    Volumen under et lille areal ved _((r, \theta)_) hvor radius og vinkel bliver henholdsvis
+    _(dr_) og _(d\theta_) større, kan approksimeres som:
+    _($V(r,\theta) = d\theta*dr*\left(r+\frac{dr}{2} \right)*z(r,\theta)_)
+    Opdel intervallet fra _(0_) til _(R_) i _(k_) intervaller _([r_0,r_1]_), _([r_1,r_2]_), _(..._) _([r_{k-1},r_k]_),
+    og intervallet fra _(0_) til _(2\pi_) i _(t_) intervaller 
+    _([\theta_0, \theta_1]_), _([\theta_1, \theta_2]_), _(\dots_) _([\theta_{k-1},\theta_{k}]_). 
+    Længden _(r_{j+1}-r_j_) på det _(j_)'te interval af _(r_) kaldes _(\triangle r_j_), og 
+    lignende _(\triangle \theta_i_) for det _(i_)'te interval af _(\theta_). 
+    Hele volumen under overfladen kan nu approksimeres som:
+    _($\sum_{j=0}^{k} \sum_{i=0}^{t} V(r_i, \theta_j) \approx \sum_{j=0}^{k} \sum_{i=0}^{t} \triangle \theta_j * \triangle r_i * \left(r_i+\frac{\triangle r_i}{2} \right) * z(r_i,\theta_j)_)
+    Dette er en approksimation, fordi de forskellige voluminer
+    _(V(r_i, \theta_j)_) alle er approksimationer. Vi kan antage
+    et "perfekt" mål, hvis det 
+    det størst mulige interval på både _(r_) og _(\theta_) nærmer sig _(0_), så følgende
+    grænse er "lig" volumen: 
+    _($\lim_{(\lambda_r, \lambda_{\theta}) \to (0,0)} 
+    \left[
+    \sum_{j=0}^{k} \sum_{i=0}^{t} \triangle \theta_j * \triangle r_i * \left(r_i+\frac{\triangle r_i}{2} \right) * z(r_i,\theta_j)
+    \right]_)
+    _(\triangle \theta_j_) kan trækkes ud af første sum. Man kan yderligere 
+    gange ind i parenteserne
+    og opdele grænsen i to: 
+    _($\begin{eqnarray}
+    && \lim_{(\lambda_r, \lambda_{\theta}) \to (0,0)}
+    \left[ 
+    \sum_{j=0}^{k} \triangle \theta_j * \sum_{i=0}^{t} \triangle r_i*r_i*z(r_i, \theta_j) 
+    \right] \, + \\ \\
+
+    && \lim_{(\lambda_r, \lambda_{\theta}) \to (0,0)}
+    \left[ 
+    \sum_{j=0}^{k} \triangle \theta_j * \sum_{i=0}^{t} \triangle r_i*\frac{\triangle r_i}{2}*z(r_i, \theta_j) 
+    \right]
+    \end{eqnarray}_)
+    Ved første grænse kan vi bruge præcis samme logik som ved rektangulære koordinater
+    og omskrive til:
+    _($\int_{0}^{2\pi} \int_{0}^{R} r*z(r, \theta) \text{ }dr \text{ }d\theta _)
+    Et intuitivt gæt til den anden grænse er _(0_), da
+    _(\triangle_j / 2_) gør summen markant mindre, siden
+    _(\triangle_j_) nærmer sig _(0_) sammen med _(\lambda_r_). Dette gæt kan bekræftes. Først
+    og fremmest omskriver vi til:
+    _($\lim_{\lambda_{\theta} \to 0} \left[\sum_{j=0}^{k} \triangle \theta_j * \lim_{\lambda_r \to 0} \left[ \sum_{i=0}^{t} \triangle r_i*\frac{\triangle r_i}{2}*z(r_i, \theta_j) \right] \right] _)
+    Vi fokuserer nu på den indre grænse:
+    _($\begin{eqnarray}
+    && \lim_{\lambda_r \to 0} \left[ \sum_{i=0}^{t} \triangle r_i*\frac{\triangle r_i}{2}*z(r_i, \theta_j) \right] \, \lt \\ \\
+    && \lim_{\lambda_r \to 0} \left[ \sum_{i=0}^{t} \triangle r_i*\frac{\lambda_r}{2}*z(r_i, \theta_j) \right] \, = \\ \\
+    && \lim_{\lambda_r \to 0} \left[ \frac{\lambda_r}{2} \sum_{i=0}^{t} \triangle r_i*z(r_i, \theta_j) \right] \, = \\ \\
+    && \lim_{\lambda_r \to 0} \left[\frac{\lambda_r}{2} \right] * \lim_{\lambda_r \to 0} \left[\sum_{i=0}^{t} \triangle r_i*z(r_i, \theta_j) \right] \, = \\ \\
+    && 0*\int_{0}^{R} z(r, \theta_j) \text{ }dr \, = \\ \\
+    && 0 
+    \end{eqnarray}_)
+    Boom! Bevis færdig _(\blacksquare_)!
+    <p class="t">
+    Volumen er altså lig:
+    _($\int_{0}^{R} \left(\int_{0}^{2\pi} r_j*z(r_j,\theta_i) \text{ }d\theta \right) \text{ }dr _)
+    Og lidt mere generelt:
+    _($\int_{\theta_A}^{\theta_B} \int_{g(\theta)}^{f(\theta)} r_j*z(r_j,\theta_i) \text{ }dr \text{ }d\theta _)
+    ... hvis _(\theta_) går fra _(\theta_A_) til _(\theta_B_) og hvis _(r_) er større end
+    _(g(\theta)_) og mindre end _(f(\theta)_). 
+    </p>
+    <p class="t">
+    Intuitivt: Vi gør <i>præcist</i> det samme som ved rektangulære koordinater, men
+    ganger vores funktion _(z(r, \theta)_) med _(r_). That's it!
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="14" 2="2">
+    Find volumen af det eksempel vi lige så på.
+    <br><br></q-stion>
+    <answer-box>
+    _(r_) er mellem _(0_) og _(2_), og _(\theta_) er mellem _(0_) og _(2\pi_). Vores funktion 
+    _(z(r,\theta)_) er lig _(1/r_), så vi regner:
+    _($\int_{0}^{2\pi} \int_{0}^{2} \frac{1}{r}*r \text{ }dr \text{ }d\theta =
+    \int_{0}^{2\pi} 2 \text{ }d \theta = 4 \pi_)
+    Og det er så svaret!
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="14" 2="3">
+    Find volumen under fladen 
+    _($z=x^3 y + y^3 x_) 
+    ... på følgende område:
+    <img class='Spic' style='width:56%' src='../../../Assets/Chapter4\MultiVarCalc\DoubleIntegrals\PolarRegion3.png'> 
+    <p class="t">
+    Hvor siderne _(s_1_), _(s_2_) begge er cirkeludsnit. 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Vinklerne i radianer er på _([0.40,1.78]_)
+    og radiusen er på _([1.3, 1.9]_). _(z_) kan omskrives til:
+    _($\begin{eqnarray}
+    && r^3*Cos(\theta)^3*r*Sin(\theta)+r^3*Sin(\theta)^3*r*Cos(\theta) \, \, \, = \\ \\
+    && r^4*Sin(\theta)*Cos(\theta)*\left(Cos(\theta)^2+Sin(\theta)^2 \right) \, \, \, = \\ \\
+    && r^4*Sin(\theta)*Cos(\theta)  \, \, \,= \\ \\
+    && \frac{1}{2} r^4 Sin(2\theta)
+    \end{eqnarray}_)
+    Så vi skal nu regne integralet:
+    _($\int_{0.40}^{1.78} \int_{1.3}^{1.9} \frac{1}{2} r^4 Sin(2\theta)*r \text{ }dr \text{ }d\theta _)
+    Det indre integral med respekt til _(r_) giver _(\frac{1}{12} Sin(2\theta) r^6_), så:
+    _($\frac{1}{12} Sin(2\theta)*1.9^6 - \frac{1}{12} Sin(2\theta)*1.3^6 = 3.518*Sin(2 \theta) _)
+    Nu regner vi bare integralet:
+    _($\int_{0.40}^{1.78} 3.518*Sin(2 \theta) \text{ }d\theta = 2.832 _)
+    Bum! 
+    <br><br></answer-box>
+
+    <!--  -->
+    
+    <q-stion 1="14" 2="4">
+    Dit område er den venstre, nedre kvartdel af ellipsen
+    _($\frac{1}{2}x^2 + y^2 = 1_)
+    <i>Hvis</i> vi antager at man bruger computere til at regne integralet,
+    er det så lettest at opsætte dette område
+    polært eller rektangulært? Hvad kræver mindst arbejde og er mest
+    praktisk? Den her er ret subjektivt. 
+    <br><br></q-stion>
+    <answer-box>
+    Sig vores funktion er _(f(x, y)_). Det kan let se at 
+    _(x_) går fra _(-\sqrt{2}_) til _(0_), og ved at 
+    isolere ser man at _(y_) går fra 
+    _($-\sqrt{1-\frac{1}{2}x^2}_)
+    ... til _(0_). Ergo:
+    _($\int_{-\sqrt{2}}^{0} \int_{\sqrt{1-0.5x^2}}^{0} f(x,y) \, dy \, dx _)
+    Hvis vi gør det polært er vi nødt til at omskrive en del, for
+    at isolere _(r_) som funktion af _(\theta_). 
+    Først omskriver vi ligningen til
+    _($x^2+2y^2 = 2_)
+    ... så indsætter vi _(x=r Cos(\theta)_), _(y=r*Sin(\theta)_) og 
+    forsimpler:
+    _($\begin{eqnarray}
+    && r^2 Cos(\theta)^2 + 2 r^2 Sin(\theta)^2 \, \, \, = \\ \\
+    && r^2 \left(Cos(\theta)^2 + 2 Sin(\theta)^2 \right) \, \, \, = \\ \\
+    && r^2 \left(1 - Sin(\theta)^2 + 2 Sin(\theta)^2  \right) \, \, \, = \\ \\
+    && r^2 \left(1 + Sin(\theta)^2 \right)
+    \end{eqnarray}_)
+    Så:
+    _($r=\sqrt{\frac{2}{1+Sin(\theta)^2}}_)
+    Den "nedre, venstre halvdel" svarer til, at _(\theta_) går fra _(\pi_) til _((3/2)\pi_), så
+    vi skal regne integralet:
+    _($\int_{\pi}^{\frac{3}{2} \pi} \int_{0}^{\sqrt{2/(1+Sin(\theta)^2)}} f(rCos(\theta), r*Sin(\theta)) \text{ }dr \text{ }d\theta _)
+    Så syntes jeg rektangulært var en del nemmere at opsætte i dette tilfælde.
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="14" 2="5">
+    Brug intuition og øjemål til at beskrive følgende spiral-figur på en
+    "matematisk" måde:
+    <img class='SpicXL' style='width:80%' src='../../../Assets/Chapter4\MultiVarCalc\DoubleIntegrals\SeashellRegion.png'> 
+    <p class="t">
+    Find derefter dens areal
+    </p>
+    <p class="t">
+    Ja, det her <i>har</i> noget med dobbelt-integraler og gøre. 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Figurens radius er _(2_) ved _(\theta=0_) og 
+    ca. _(5_) ved _(\theta=2\pi_). Radius ser ud til at stige lineært med vinkel, så
+    ét muligt gæt er:
+    _($r=2+0.4774 \theta_)
+    Her er _(2+0.4774*2\pi=5_).
+    <p class="t">
+    Hvordan bruger vi dobbelt-integraler til at finde <i>areal</i>? 
+    Volumen kan beregnes, så areal burde være let: Det svarer bare
+    til en volumen, hvor højden _(z_) er _(1_) overalt, så:
+    _($\int_{0}^{2\pi} \int_{0}^{2+0.4774\theta} (1)*r \text{ }dr \text{ }d\theta = \int_{0}^{2\pi} \frac{1}{2}*(2+4774\theta)^2 \text{ }d\theta = 40.8355_)
+    Voila! 
+    </p>
+    <br></answer-box>
+
+    
+

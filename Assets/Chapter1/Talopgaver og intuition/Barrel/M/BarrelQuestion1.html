@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script src="../../../../../libraries/anime.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <style>
+    #WeightIcon {-webkit-clip-path: inset(21% 0 27% 0); transition: -webkit-clip-path 0.4s;}
+    #WeightIcon:hover {-webkit-clip-path: inset(0% 0 0% 0);}
+    #BaloonIcon {-webkit-clip-path: inset(21% 0 27% 0); transition: -webkit-clip-path 0.4s;}
+    #BaloonIcon:hover {-webkit-clip-path: inset(0% 0 0% 0);}
+    #PullIcon {-webkit-clip-path: inset(21% 0 27% 0); transition: -webkit-clip-path 0.4s;}
+    #PullIcon:hover {-webkit-clip-path: inset(0% 0 0% 0);}
+    #PushIcon {-webkit-clip-path: inset(21% 0 27% 0); transition: -webkit-clip-path 0.4s;}
+    #PushIcon:hover {-webkit-clip-path: inset(0% 0 0% 0);}
+
+    body{margin:0;}
+    </style>
+
+</head>
+<body>
+
+    <div id="WeightIcon" style="position:fixed; width: 50px; height: 95px; top: 10px; left: 10px">
+        <div id="WeightAdd" style="background-color: pink; width: 50px; height: 20px; text-align: center;"> Tilføj </div>
+        <img src="WeightIcon.png" style="width: 50px; height: 50px"/>
+        <div id="WeightRemove" style="background-color: lightcoral; width: 50px; height: 20px; text-align: center; position:relative; top:-5px;"> Fjern </div>
+    </div>
+    <div id="BaloonIcon" style="position:fixed; width: 50px; height: 95px; top: 80px; left: 10px">
+        <div id="BaloonAdd" style="background-color: pink; width: 50px; height: 20px; text-align: center;"> Tilføj </div>
+        <img src="BalloonIcon.png" style="width: 50px; height: 50px"/>
+        <div id="BaloonRemove" style="background-color: lightcoral; width: 50px; height: 20px; text-align: center; position:relative; top:-5px;"> Fjern </div>
+    </div>
+    <div id="PullIcon" style="position:fixed; width: 50px; height: 95px; top: 80px; left: 70px">
+        <div id="PullAdd" style="background-color: pink; width: 50px; height: 20px; text-align: center;"> Tilføj </div>
+        <img src="PullIcon.png" style="width: 50px; height: 50px"/>
+        <div id="PullRemove" style="background-color: lightcoral; width: 50px; height: 20px; text-align: center; position:relative; top:-5px;"> Fjern </div>
+    </div>
+    <div id="PushIcon" style="position:fixed; width: 50px; height: 95px; top: 10px; left: 70px">
+        <div id="PushAdd" style="background-color: pink; width: 50px; height: 20px; text-align: center;"> Tilføj </div>
+        <img src="PushIcon.png" style="width: 50px; height: 50px"/>
+        <div id="PushRemove" style="background-color: lightcoral; width: 50px; height: 20px; text-align: center; position:relative; top:-5px;"> Fjern </div>
+    </div>
+
+    <svg id="BodySVG" viewBox="0 0 500 350" width="500" height="350" style="border: 1px solid #333333;">
+        
+        <style>
+            .lidButtonTop{fill:#423508;stroke-dashoffset:100;stroke-linejoin:round;stroke-width:5;}
+            .lidButtonBottom{fill:#7e6410;stroke-dashoffset:100;stroke-linejoin:round;stroke-width:5;}
+            .protectionRailButton{fill:#c4c4c4;stroke-dashoffset:100;stroke-linejoin:round;stroke-width:2;stroke:#585858;}
+        </style>
+        
+        
+        
+        <!--WEIGHT-->
+        <!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
+        <defs>
+            <g id="Weight">
+                <path style="opacity:1;fill:#050505;stroke:#565656;stroke-width:1.5;" 
+                    d="M 0.31655595,51.806336 C 5.913053,34.692988 14.412589,41.185082 17.106059,0.46629122 l 51.30121,0.471006 C 68.952579,20.387699 77.991429,36.384913 86.129499,52.748353 35.440879,59.16839 20.959219,54.548046 0.31655595,51.806336 Z"
+                ></path> 
+                <text x="16" y="37" fill="white" style="font-size:32px;font-family:'Times New Roman'; ">4kg</text>
+            </g> 
+            </defs>
+            <!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
+    
+        <!--BALOON-->
+        <!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
+        <defs>
+            <linearGradient id = "baloonGradient" x1="0" y1="0" x2="100%" y2="0">
+                <stop offset = 0 stop-color="#b50505"></stop>
+                <stop offset = 0.5 stop-color="#ec3030"></stop>
+                <stop offset = 1 stop-color="#b60606"></stop>
+            </linearGradient> 
+        </defs>
+
+        <defs>
+            <path id = "Baloon" fill="url(#baloonGradient)" style="stroke:#b02121;stroke-width:1.5;"
+                    d="M 44.201896,16.031819 A 23.113884,28.74419 0 0 1 35.24072,55.12313 23.113884,28.74419 0 0 1 3.8057279,43.982344 23.113884,28.74419 0 0 1 12.761692,4.8891856 23.113884,28.74419 0 0 1 44.198169,16.02349"
+            ></path>
+
+            <path id="BaloonString" style="fill:none;stroke:#be0000;stroke-width:1.5;" 
+                d="m 5,1.6 c -6.67,19.9 3.3,45 0,56.9"
+            ></path>
+        </defs>
+        <!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
+
+        <!--PULL-->
+        <!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
+        <defs>
+            <g id="PullGuyLeft">
+                <path id="PullLegsLeft"    style="fill:none;stroke:black;stroke-width:0.6" d="m 33.757182,153.14738 c 0,0 3.996742,-133.599921 49.888466,-0.0533"></path>
+                <path id="PullStomachLeft" style="fill:none;stroke:black;stroke-width:0.6" d="M 49.695771,92.928631 20.857155,30.103256"></path>
+                <path id="PullArm1Left"    style="fill:none;stroke:black;stroke-width:0.6" d="M 31.999422,55.15119 91.777888,50.808302"></path>
+                <path id="PullArm2Left"    style="fill:none;stroke:black;stroke-width:0.6" d="m 32.46391,56.548106 58.660488,1.34794"></path>
+                <ellipse id="PullHeadLeft" style="fill:none;stroke:black;stroke-width:0.6" cx="19" cy="12" rx="15" ry="18"></ellipse>
+            </g>
+            <g id="PullGuyRight">
+                <path id="PullLegsRight"    style="fill:none;stroke:black;stroke-width:0.6" d="m 60.397071,153.14738 c 0,0 -3.996742,-133.599921 -49.888466,-0.0533"></path>
+                <path id="PullStomachRight" style="fill:none;stroke:black;stroke-width:0.6" d="M 44.458482,92.928631 73.297098,30.103256"></path>
+                <path id="PullArm1Right"    style="fill:none;stroke:black;stroke-width:0.6" d="M 62.154831,55.15119 2.3763653,50.808302"></path>
+                <path id="PullArm2Right"    style="fill:none;stroke:black;stroke-width:0.6" d="M 61.690343,56.548106 3.0298553,57.896046"></path>
+                <ellipse id="PullHeadRight" style="fill:none;stroke:black;stroke-width:0.6" cx="75" cy="12" rx="15" ry="18"></ellipse>
+            </g>
+
+            <path id="PullString" style="fill:none;stroke:#83763d;stroke-width:2.5;" 
+                d="m 82.97292,55.193207 c 30.84689,-11.652337 73.38497,4.459728 101.34549,1.185325"
+            ></path>
+
+        </defs>
+        <!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
+
+        <!--PUSH-->
+        <!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
+        <defs>
+            <g id="PushGuyLeft">
+                <path id="PushLegs"    style="fill:none;stroke:black;stroke-width:0.6" d="m 2.4321967,126.75395 c 0,0 18.4214963,-105.609423 41.6263003,-1.63492"></path>
+                <path id="PushStomach" style="fill:none;stroke:black;stroke-width:0.6" d="M 23.050396,79.149777 41.295571,18.403002"></path>
+                <path id="PushArm1"    style="fill:none;stroke:black;stroke-width:0.6" d="M 33.35774,45.715418 C 48.513357,36.987069 64.499996,29.900887 83.11397,28.006609"></path>
+                <path id="PushArm2"    style="fill:none;stroke:black;stroke-width:0.6" d="m 33.376395,50.018901 c 15.706348,4.837414 32.251308,3.874695 48.80811,2.830083"></path>
+                <path id="PushHead"    style="fill:none;stroke:black;stroke-width:0.6" d="M 52.114351,0.71435402 A 10.691038,12.942161 0 0 1 47.969471,18.315338 10.691038,12.942161 0 0 1 33.429609,13.299165 10.691038,12.942161 0 0 1 37.572078,-4.3026511 10.691038,12.942161 0 0 1 52.112627,0.71060395"></path>
+            </g>
+            <g id="PushGuyRight">
+                <path id="PushLegs"    style="fill:none;stroke:black;stroke-width:0.6" d="m 81.937373,126.75395 c 0,0 -18.421497,-105.609423 -41.626301,-1.63492"></path>
+                <path id="PushStomach" style="fill:none;stroke:black;stroke-width:0.6" d="M 61.319173,79.149777 43.073998,18.403002"></path>
+                <path id="PushArm1"    style="fill:none;stroke:black;stroke-width:0.6" d="M 51.011829,45.715418 C 35.856212,36.987069 19.869573,29.900887 1.255599,28.006609"></path>
+                <path id="PushArm2"    style="fill:none;stroke:black;stroke-width:0.6" d="M 50.993174,50.018901 C 35.286826,54.856315 18.741866,53.893596 2.185064,52.848984"></path>
+                <path id="PushHead"    style="fill:none;stroke:black;stroke-width:0.6" d="m 48,0 a 10.691038,12.942161 0 0 1 -4.14488,17.600984 10.691038,12.942161 0 0 1 -14.53986,-5.016173 10.691038,12.942161 0 0 1 4.14247,-17.601816 10.691038,12.942161 0 0 1 14.54055,5.013255"></path>
+            </g>        
+        </defs>
+        <!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
+   
+        <!--BARREL-->
+        <!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
+        <defs>
+            <linearGradient id="barrelGradient" x="0%" y="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stop-color="#67520d"/>
+                    <stop offset="50%" stop-color="#ac8817"/>
+                    <stop offset="90" stop-color="#836711"/>
+                    <stop />
+            </linearGradient>
+            <linearGradient id="protectionGradient" x="0%" y="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stop-color="#232323"/>
+                    <stop offset="50%" stop-color="#737373"/>
+                    <stop offset="90" stop-color="#282828"/>
+                    <stop />
+            </linearGradient>
+        </defs>
+
+        <g transform="translate(150,170)" id="Barrel">
+        <!--First barrel-->
+            <!--Main component-->
+        <path id="BarrelMain" d="m37.5 151.8c0.3 1.3-14.4-48.8-6.3-133.9 16 11.5 87.6 13.7 107.3-0.4 0 0 14.3 83.1-1.6 136.1-12.9 15.1-80.8 21.9-99.4-1.8z" 
+            style="fill:url(#barrelGradient);stroke-dashoffset:100;stroke-linejoin:round;stroke-width:4;stroke:#624f0c"/>       
+
+            <!--Protection rails-->
+        <path id="rail1" d="M 54.403742,25.343096 C 50.940487,74.683116 52.729341,119.43881 57.869686,166.2015 L 46.085474,162.04843 C 40.613636,115.55464 36.249648,70.434746 41.926341,22.228296 Z" 
+            style="fill:url(#protectionGradient);stroke-dashoffset:100;stroke-linejoin:round;stroke:#2c2c2c"/>
+        <path id="rail2" d="m87.3 25.9c2.7 47.5 3.5 95 3 142.5l-9.6 0C77.7 120.9 75.7 73.3 76.2 25.7Z" 
+            style="fill:url(#protectionGradient);stroke-dashoffset:100;stroke-linejoin:round;stroke:#2c2c2c"/>
+        <path id="rail3" d="m 114.74032,24.188652 c 3.46326,49.34 1.58776,95.566578 -3.55259,142.329268 l 11.95751,-2.85523 c 5.47183,-46.4938 9.74917,-93.690218 4.07248,-141.896668 z" 
+            style="fill:url(#protectionGradient);stroke-dashoffset:100;stroke-linejoin:round;stroke-width:0.9;stroke:#1f1f1f"/>
+        
+            <!--Protection rail buttons-->
+        <ellipse id="button1" ry="1.9" rx="1.5" cy="35.6" cx="46.3" class="protectionRailButton"/>
+        <ellipse id="button2" ry="1.9" rx="1.5" cy="154.3" cx="50.5" class="protectionRailButton"/>
+        <ellipse id="button3" ry="1.9" rx="1.5" cy="36.1" cx="82.1" class="protectionRailButton"/>
+        <ellipse id="button4" ry="1.9" rx="1.5" cy="34.2" cx="122.2" class="protectionRailButton"/>
+        <ellipse id="button5" ry="1.9" rx="1.5" cy="155.7" cx="85" class="protectionRailButton"/>
+        <ellipse id="button6" ry="1.9" rx="1.5" cy="153.5" cx="118.6" class="protectionRailButton"/>
+
+            <!--Top and lid-->
+        <ellipse id="top" ry="10.8" rx="53.2" cy="15.9" cx="84.8"
+            style="fill:#ae8a16;stroke-dashoffset:100;stroke-linejoin:round;stroke-width:2;stroke:#876c11"/>
+
+        <g id="lid" transform="matrix(0.64839872 0 0 0.64745397 30.142129 5.0356635)" stroke-width="2">
+
+                <!--Lid-->
+            <ellipse cx="84.5" cy="14.7" rx="77.5" ry="15.7" style="fill:#4e3e0a;stroke-dashoffset:100;stroke-linejoin:round;stroke-width:4"/>
+            <ellipse cx="84.5" cy="8.9" rx="77.5" ry="15.7" style="fill:#67520d;stroke-dashoffset:100;stroke-linejoin:round;stroke-width:4"/>
+            
+                <!--The two buttons-->
+            <ellipse cx="30.8" cy="8.4" rx="5.5" ry="2.1" class="lidButtonTop"/>
+                <ellipse cx="30.5" cy="5.8" rx="6.5" ry="2.9" class="lidButtonBottom"/>
+            <ellipse cx="129.2" cy="7.5" rx="5.5" ry="2.1" class="lidButtonTop"/>
+                <ellipse cx="129" cy="4.9" rx="6.5" ry="2.9" class="lidButtonBottom"/>
+        </g>
+
+        <!--Second barrel
+        <path d="m37.8 152.8c0.3 1.3-75.6-60.1-6.5-116.1 16 11.5 87.4 12.5 107.1-1.6 0 0 77.7 46.8 3.6 118.8-12.9 15.1-85.7 22.5-104.3-1.1z" 
+            style="fill:url(#barrelGradient);stroke-dashoffset:100;stroke-linejoin:round;stroke-width:4;stroke:#624f0c"/>
+        
+        <path d="m51 44.7c-33.8 27-19.3 58.5 20.5 123l-11.8-1.8C18.7 122.3-4.3 81.8 40.1 42.4Z" 
+            style="fill:url(#protectionGradient);stroke-dashoffset:100;stroke-linejoin:round;stroke:#2c2c2c"/>
+        <path d="m87.3 47.2c20 73.6 11 83.3 3.1 121.7l-9.6 0c-7.6-39.9-22.8-44.9-4.6-121.8z" 
+            style="fill:url(#protectionGradient);stroke-dashoffset:100;stroke-linejoin:round;stroke:#2c2c2c"/>
+        <path d="m125.4 43.5c33.8 27 15 60.3-24.7 124.9l12.7-1.5c41-43.7 65.8-87.4 21.5-126.8z" 
+            style="fill:url(#protectionGradient);stroke-dashoffset:100;stroke-linejoin:round;stroke:#3a3a3a"/>
+            -->
+       
+        </g>
+
+        <!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
+
+
+    </svg>
+
+
+
+
+    <script>
+
+        //Various constants:
+        var weightLoad = 4;
+        var baloonLoad = -3;
+        var pushLoad = -4;
+        var pullLoad = 5;
+
+        //Defining the animation variables and parameters:
+        var maxLoad = 30;
+        var currentLoad = 0;
+        var oldLoad = 0;
+
+        var barrelSquash = anime.timeline({           
+            update: function() { 
+                if(stopCondition(this.progress)) {
+                    //this.pause();
+                    }
+            },
+        });
+
+        var stopDuration = 0;
+        var stopCondition = function() {};
+
+        var oldUpdateLoadDir;
+
+        var updateLoad = function() {
+
+            if(currentLoad >= 0) {
+                if(currentLoad > maxLoad) {currentLoad = maxLoad;}
+                stopDuration = 100*currentLoad/maxLoad;
+                console.log("StopDuration = " + stopDuration);
+                
+                if(currentLoad > oldLoad) {
+                    if (oldUpdateLoadDir != undefined && oldUpdateLoadDir == false) {barrelSquash.reverse();}
+                    stopCondition = function(x) {return x>stopDuration;}
+                    barrelSquash.play();
+                    oldUpdateLoadDir = true;
+                }
+                else if(currentLoad < oldLoad) {
+                    if (oldUpdateLoadDir != undefined && oldUpdateLoadDir == true) {barrelSquash.reverse();}
+                    stopCondition = function(x) {return x<stopDuration;}
+                    barrelSquash.play();
+                    oldUpdateLoadDir = false;
+                }
+                oldLoad = currentLoad;
+            } 
+            else {
+                adjustGraphicsToLoad();
+            }
+        }       
+
+        var adjustGraphicsToLoad = function() {
+
+            //Update weights
+            for(var i = 0; i < amountOfWeights; i++) {
+                    var newY = 125 + lidPos.y - i*30;
+                    document.getElementById("Weight" + (i + 1)).setAttribute("y",newY);
+                }
+
+            //Update baloons (baloon strings)
+            if(amountOfBaloons > 1) {
+                var newBaloonStringScale = "scale(1," + (1 + lidPos.y/26).toString().substring(0,4) + ")";
+                document.getElementById("BaloonString1").setAttribute("transform","translate(190, 110) " + newBaloonStringScale);
+                document.getElementById("BaloonString2").setAttribute("transform","translate(270, 110) " + newBaloonStringScale);
+            }
+
+            //Update pull (pull guy strings)
+            var newPullString1Scale = " scale(" + (1 - lidPos.y/156).toString().substring(0,4) + ", 1)";
+            var newPullString2Scale = " scale(" + (1.3 - lidPos.y/156).toString().substring(0,4) + ", 1)";
+            for(var i = 0; i < amountOfPullGuys; i++) {
+                document.getElementById("PullString1" + (i+1)).setAttribute("transform", pullString1Positions[i] + newPullString1Scale);
+                document.getElementById("PullString2" + (i+1)).setAttribute("transform", pullString2Positions[i] + newPullString2Scale)
+            }
+
+            //Update push
+            for(var i = 0; i < amountOfPushGuys; i++) {
+                document.getElementById("PushGuyLeft" + (i+1)).setAttribute("transform","translate(" + 
+                    (100 + pushPositionOffsets[2*i] - 20*lidPos.y/26).toString() + "," +
+                    (200 + pushPositionOffsets[2*i + 1]).toString() + 
+                ")");
+                document.getElementById("PushGuyRight" + (i+1)).setAttribute("transform","translate(" + 
+                    (280- pushPositionOffsets[2*i] + 20*lidPos.y/26).toString() + "," +
+                    (200 - pushPositionOffsets[2*i + 1]).toString() + 
+                ")");
+            }
+
+        }
+
+
+        //The actual animation data:
+        //-------------------------------------------------
+        barrelSquash.add({
+            targets:"#BarrelMain",
+            d: "m37.8 152.8c0.3 1.3-75.6-60.1-6.5-116.1 16 11.5 87.4 12.5 107.1-1.6 0 0 77.7 46.8 3.6 118.8-12.9 15.1-85.7 22.5-104.3-1.1z", 
+            duration:3000,
+            easing:"linear",
+            autoplay: false
+        });
+
+        barrelSquash.add({
+            targets:"#rail1",
+            d: "M 51.410323,44.800318 C 16.890349,77.115273 30.278701,98.671969 72.275514,168.25948 L 58.246238,165.97729 C 8.4343849,105.45185 2.5736876,85.963106 39.494188,41.498429 Z",
+            duration: 3000,
+            easing:"linear"
+        },0)
+        barrelSquash.add({
+            targets:"#rail2",
+            d:"m 87.442246,43.77047 c 18.409134,53.10728 10.424162,78.71254 3.606724,125.64589 l -10.701033,0.19409 C 72.197218,123.72283 64.071615,105.14996 76.351224,43.54673 Z",
+            duration:3000,    
+            easing:"linear"
+        },0);
+        barrelSquash.add({
+            targets:"#rail3",
+            d:"m 125.38602,43.502001 c 33.78889,27.01061 15.01413,60.317679 -24.69669,124.860409 l 12.66392,-1.46438 c 41.00342,-43.6724 65.82255,-87.397409 21.46662,-126.799399 z",           
+            duration:3000,  
+            easing:"linear"
+        },0);
+
+        var lidPos = {x: 0, y: 0};
+        var lidObject = document.getElementById("lid");
+        var lidObjectTransform = lidObject.getAttribute("transform");
+  
+        barrelSquash.add({
+            targets: lidPos,
+            y:26,
+            update: function(){lidObject.setAttribute("transform",lidObjectTransform + " translate(0," + lidPos.y + ")"); adjustGraphicsToLoad();},
+            duration:3000,
+            easing:"linear"
+        },0);    
+        barrelSquash.add({
+            targets:"#top",
+            translateY: 18,
+            duration:3000,
+            easing:"linear"
+        },0)
+
+        barrelSquash.add({
+            targets:"#button1",
+            keyframes: [
+                {translateX: -4, translateY: 12, duration:3000}
+            ],
+            easing: 'linear',
+            loop: true
+        },0)
+        barrelSquash.add({
+            targets:"#button2",
+            keyframes: [
+                {translateX: 4, translateY: -2, duration:3000}
+            ],
+            easing: 'linear',
+            loop: true
+        },0)
+        barrelSquash.add({
+            targets:"#button3",
+            keyframes: [
+                {translateY: 14, duration:3000}
+            ],
+            easing: 'linear',
+            loop: true
+        },0)
+        barrelSquash.add({
+            targets:"#button4",
+            keyframes: [
+                {translateX: 12, translateY: 12, duration:3000}
+            ],
+            easing: 'linear',
+            loop: true
+        },0)
+        barrelSquash.add({
+            targets:"#button5",
+            keyframes: [
+                {translateY: -3, duration:3000}
+            ],
+            easing: 'linear',
+            loop: true
+        },0)
+        barrelSquash.add({
+            targets:"#button6",
+            keyframes: [
+                {translateX: 2, translateY: -3, duration:3000}
+            ],
+            easing: 'linear',
+            loop: true
+        },0)
+        //---------------------------------------------------------------
+
+        //Logic:
+        //---------------------------------------------------------------
+        //barrelSquash.pause();
+
+        //Weights:
+        var amountOfWeights = 0;
+            //Add
+        document.getElementById("WeightAdd").addEventListener("click",function() {         
+
+            if(amountOfWeights < 8) {
+                var x = 190; var y = 125 + lidPos.y - amountOfWeights*30;
+                amountOfWeights++;
+
+                var Weight1 = document.createElementNS("http://www.w3.org/2000/svg","use");
+                Weight1.setAttributeNS("http://www.w3.org/1999/xlink", "xlink:href","#Weight");
+                Weight1.setAttribute("x",x.toString());
+                Weight1.setAttribute("y",y.toString());
+                Weight1.setAttribute("id","Weight" + amountOfWeights.toString())
+                document.getElementById("BodySVG").appendChild(Weight1);
+
+                currentLoad += weightLoad; updateLoad();
+            }
+
+        });
+            //Remove
+        document.getElementById("WeightRemove").addEventListener("click",function() {           
+            if(amountOfWeights > 0) {
+                document.getElementById("BodySVG").removeChild(document.getElementById("Weight" + amountOfWeights.toString()));
+                amountOfWeights--;
+
+                currentLoad -= weightLoad; updateLoad();
+            }
+        });
+
+
+        //Baloons:
+        var amountOfBaloons = 0;
+            //Add
+        document.getElementById("BaloonAdd").addEventListener("click",function() {         
+
+            if(amountOfBaloons < 8) {
+                amountOfBaloons++;
+
+                var Baloon1 = document.createElementNS("http://www.w3.org/2000/svg","use");
+                Baloon1.setAttributeNS("http://www.w3.org/1999/xlink", "xlink:href","#Baloon");
+                Baloon1.setAttribute("id","Baloon" + amountOfBaloons.toString());
+                var BaloonString1 =  document.createElementNS("http://www.w3.org/2000/svg","use");
+                BaloonString1.setAttributeNS("http://www.w3.org/1999/xlink", "xlink:href","#BaloonString");
+                
+                switch(amountOfBaloons) {
+                    case 1: Baloon1.setAttribute("transform","rotate(0)" + "translate(" + 170 + "," + 60 + ") "); break;
+                    case 2: Baloon1.setAttribute("transform","rotate(0)" + "translate(" + 250 + "," + 60 + ") "); break;
+                    case 3: Baloon1.setAttribute("transform","rotate(20)" + "translate(" + 215 + "," + -10 + ") "); break;
+                    case 4: Baloon1.setAttribute("transform","rotate(20)" + "translate(" + 280 + "," + -25 + ") "); break;
+                    case 5: Baloon1.setAttribute("transform","rotate(340)" + "translate(" + 150 + "," + 120 + ") "); break;
+                    case 6: Baloon1.setAttribute("transform","rotate(340)" + "translate(" + 230 + "," + 150 + ") "); break;
+                    case 7: Baloon1.setAttribute("transform","rotate(10)" + "translate(" + 190 + "," + 0 + ") "); break;
+                }
+
+                if(amountOfBaloons == 1) {
+                    BaloonString1.setAttribute("id","BaloonString1");
+                    BaloonString1.setAttribute("transform", "translate(" + 190 + "," + 110 + ") ");                   
+                    document.getElementById("BodySVG").appendChild(BaloonString1);
+                }
+                if(amountOfBaloons == 2) {
+                    BaloonString1.setAttribute("id","BaloonString2");
+                    BaloonString1.setAttribute("transform", "translate(" + 270 + "," + 115 + ") ");     
+                    document.getElementById("BodySVG").appendChild(BaloonString1);
+                }
+            
+                document.getElementById("BodySVG").appendChild(Baloon1);
+
+                currentLoad += baloonLoad; updateLoad();
+            }   
+
+        });
+            //Remove
+        document.getElementById("BaloonRemove").addEventListener("click",function() {           
+            if(amountOfBaloons > 0) {
+                document.getElementById("BodySVG").removeChild(document.getElementById("Baloon" + amountOfBaloons.toString()));
+                amountOfBaloons--;
+                
+                if(amountOfBaloons == 1) {document.getElementById("BodySVG").removeChild(document.getElementById("BaloonString2"));}
+                if(amountOfBaloons == 0) {document.getElementById("BodySVG").removeChild(document.getElementById("BaloonString1"));}
+
+                currentLoad -= baloonLoad; updateLoad();
+            }
+        });
+
+
+        //Pull:
+        var amountOfPullGuys = 0;
+        var pullString1Positions = ["translate(10,180)","translate(15,190)","translate(10,170)","translate(-5,180)","translate(-5,190)","translate(-5,170)","translate(20,180)"];
+        var pullString2Positions = ["translate(170,177)","translate(170,187)","translate(180,167)","translate(190,177)","translate(190,187)","translate(190,167)","translate(196,177)"];
+            //Add
+        document.getElementById("PullAdd").addEventListener("click",function() {
+
+            if(amountOfPullGuys < 8) {
+                amountOfPullGuys++;
+                
+                var pullGuyLeft = document.createElementNS("http://www.w3.org/2000/svg","use");
+                pullGuyLeft.setAttributeNS("http://www.w3.org/1999/xlink", "xlink:href","#PullGuyLeft");
+                var pullGuyRight = document.createElementNS("http://www.w3.org/2000/svg","use");
+                pullGuyRight.setAttributeNS("http://www.w3.org/1999/xlink", "xlink:href","#PullGuyRight");
+
+                pullGuyLeft.setAttribute("id","PullGuyLeft" + amountOfPullGuys.toString());
+                pullGuyRight.setAttribute("id","PullGuyRight" + amountOfPullGuys.toString());
+
+                var pullString1 = document.createElementNS("http://www.w3.org/2000/svg","use");
+                pullString1.setAttributeNS("http://www.w3.org/1999/xlink", "xlink:href","#PullString");
+                var pullString2 = document.createElementNS("http://www.w3.org/2000/svg","use");
+                pullString2.setAttributeNS("http://www.w3.org/1999/xlink", "xlink:href","#PullString");
+
+                pullString1.setAttribute("id","PullString1" + amountOfPullGuys.toString());
+                pullString2.setAttribute("id","PullString2" + amountOfPullGuys.toString());
+                                            
+                switch(amountOfPullGuys) {
+                    case 1: 
+                        pullGuyLeft.setAttribute("transform","translate(" + 20 + "," + 180 + ")");
+                        pullGuyRight.setAttribute("transform","translate(" + 380 + "," + 180 + ")");
+                        pullString1.setAttribute("transform","translate(" + 0 + "," + 180 + ")");
+                        pullString2.setAttribute("transform","translate(" + 210 + "," + 177 + ")");
+                    break; case 2: 
+                        pullGuyLeft.setAttribute("transform","translate(" + 20 + "," + 190 + ")");
+                        pullGuyRight.setAttribute("transform","translate(" + 385 + "," + 190 + ")");
+                        pullString1.setAttribute("transform","translate(" + 5 + "," + 190 + ")");
+                        pullString2.setAttribute("transform","translate(" + 215 + "," + 187 + ")");
+                    break; case 3: 
+                        pullGuyLeft.setAttribute("transform","translate(" + 20 + "," + 170 + ")");
+                        pullGuyRight.setAttribute("transform","translate(" + 380 + "," + 170 + ")");
+                        pullString1.setAttribute("transform","translate(" + 0 + "," + 170 + ")");
+                        pullString2.setAttribute("transform","translate(" + 210 + "," + 167 + ")"); 
+                    break; case 4: 
+                        pullGuyLeft.setAttribute("transform","translate(" + 5 + "," + 180 + ")");
+                        pullGuyRight.setAttribute("transform","translate(" + 395 + "," + 180 + ")");
+                        pullString1.setAttribute("transform","translate(" + -15 + "," + 180 + ")");
+                        pullString2.setAttribute("transform","translate(" + 225 + "," + 177 + ")");
+                    break; case 5: 
+                        pullGuyLeft.setAttribute("transform","translate(" + 5 + "," + 190 + ")");
+                        pullGuyRight.setAttribute("transform","translate(" + 395 + "," + 190 + ")");
+                        pullString1.setAttribute("transform","translate(" + -15 + "," + 190 + ")");
+                        pullString2.setAttribute("transform","translate(" + 225 + "," + 187 + ")");
+                    break; case 6: 
+                        pullGuyLeft.setAttribute("transform","translate(" + 5 + "," + 170 + ")");
+                        pullGuyRight.setAttribute("transform","translate(" + 395 + "," + 170 + ")");
+                        pullString1.setAttribute("transform","translate(" + -15 + "," + 170 + ")");
+                        pullString2.setAttribute("transform","translate(" + 225 + "," + 167 + ")");
+                    break; case 7: 
+                        pullGuyLeft.setAttribute("transform","translate(" + 35 + "," + 180 + ")");
+                        pullGuyRight.setAttribute("transform","translate(" + 365 + "," + 180 + ")");
+                        pullString1.setAttribute("transform","translate(" + 30 + "," + 180 + ")");
+                        pullString2.setAttribute("transform","translate(" + 185 + "," + 177 + ")");
+                    break;
+                }
+
+                $(pullGuyLeft).appendTo("#BodySVG");
+                $(pullGuyRight).appendTo("#BodySVG");
+                $(pullString1).prependTo("#BodySVG");
+                $(pullString2).prependTo("#BodySVG");
+
+                currentLoad += pullLoad; updateLoad();
+            }
+
+        })
+            //Remove
+        document.getElementById("PullRemove").addEventListener("click",function() {
+            if(amountOfPullGuys > 0) {
+                document.getElementById("BodySVG").removeChild(document.getElementById("PullGuyLeft"  + amountOfPullGuys.toString()));
+                document.getElementById("BodySVG").removeChild(document.getElementById("PullGuyRight" + amountOfPullGuys.toString()));
+                document.getElementById("BodySVG").removeChild(document.getElementById("PullString1" + amountOfPullGuys.toString()))
+                document.getElementById("BodySVG").removeChild(document.getElementById("PullString2" + amountOfPullGuys.toString()))
+                
+                amountOfPullGuys--;      
+                currentLoad -= pullLoad; updateLoad();
+            }
+        });
+
+
+        //Push:
+        var amountOfPushGuys = 0;
+        var pushPositionOffsets = [0,0, 10,8, 10,0, -5,-7, -5,7, -3,-3, 4,2];
+            //ADD
+        document.getElementById("PushAdd").addEventListener("click",function() {
+
+            if(amountOfPushGuys < 8) {
+                amountOfPushGuys++;
+
+                var pushGuyLeft = document.createElementNS("http://www.w3.org/2000/svg","use");
+                pushGuyLeft.setAttributeNS("http://www.w3.org/1999/xlink", "xlink:href","#PushGuyLeft");
+                var pushGuyRight = document.createElementNS("http://www.w3.org/2000/svg","use");
+                pushGuyRight.setAttributeNS("http://www.w3.org/1999/xlink", "xlink:href","#PushGuyRight");
+
+                pushGuyLeft.setAttribute("id","PushGuyLeft" + amountOfPushGuys);
+                pushGuyRight.setAttribute("id","PushGuyRight" + amountOfPushGuys);
+
+                if(amountOfPushGuys > 4) {
+                    $(pushGuyLeft).appendTo("#BodySVG"); $(pushGuyRight).appendTo("#BodySVG");
+                } else {
+                    $(pushGuyLeft).prependTo("#BodySVG"); $(pushGuyRight).prependTo("#BodySVG");
+                }
+
+                currentLoad += pushLoad; updateLoad(); 
+
+            }
+
+        });
+
+            //REMOVE
+        document.getElementById("PushRemove").addEventListener("click",function() {
+
+            if(amountOfPushGuys > 0) {
+                $("#PushGuyLeft" + amountOfPushGuys).remove();
+                $("#PushGuyRight" + amountOfPushGuys).remove();
+                amountOfPushGuys--;      
+                currentLoad -= pushLoad; updateLoad();
+            }
+
+        })
+
+        currentLoad = maxLoad;
+        updateLoad();
+
+    </script>
+
+
+
+
+
+
+
+
+
+</html>

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+
+
+    <h3>Første teknik: Substitution</h3>
+    <p class="t">
+    Indtil videre har vi primært løst integraler
+    ved at omskrive dem til èn eller flere lettere integraler, vi kender og kan huske.
+    Vi har brugt <i>algebra</i> til at omskrive, 
+    men der findes andre brugbare teknikker der kan 
+    "omskrive" et integral. 
+    Primært to:  
+    </p>
+
+    <div style="text-align:center; margin-top:-10px; margin-bottom:-10px;">
+        <ul style="display: inline-block; list-style:disc;">
+            <li>"Substitution"</li>
+            <li>"Integration by parts"</li>
+        </ul>
+    </div>
+
+    <p class="t">
+    Det er faktisk meget simpelt: Alle de regler vi har udledt om integraler, er bare regler 
+    vi udledte om hældninger, modsat. Så eksempelvis gav 
+    _($¤x[f(x)+g(x)]=f'(x)+g'(x)_) 
+    og 
+    _($¤x[k*f(x)]=k*f'(x)_)
+    ... os henholdsvis 
+    _($\int f(x)+g(x) = \int f(x) + \int g(x)_) 
+    og 
+    _($\int k*f(x) = k*\int f(x)_)
+    Og 
+    _($¤x[x^n]=n*x^{n-1}_) 
+    ... gav os 
+    _($\int x^n = \frac{x^{n+1}}{n+1} _)
+    Der er stadig to regler vi mangler at
+    finde de "modsatte" versioner af: gangereglen 
+    _($¤x[f(x)*g(x)]=f'(x)*g(x)+g'(x)*f(x)_)
+    (... Som bliver til "integration by parts") og kædereglen
+    _($¤x[f(g(x))]=f'(g(x))*g'(x)_)
+    (... Som bliver til "substitution"). Lad os starte med
+    substitution, da det er vigtigst. 
+    </p>
+
+    <p class="t">
+    Sig vi skal integrere:
+    _($\int x*(3x+1)^{100} \text{ }dx_)
+    Vi <i>kunne</i> godt udvide 
+    polynomiet _((3x+1)^{100}_) og integrere derfra, 
+    men det ville være et 
+    kæmpe helvede. 
+    Det ville være meget smartere, hvis vi bare kaldte _(3x+1_) for "_(u_)" (eller noget andet, hvad
+    end vi har lyst til), så vi fik:
+    _($\int \frac{u-1}{3}*u^{100} \text{ }dx = \frac{1}{3}*\int u^{101} \text{ }dx - \frac{1}{3}*\int u^{100} \text{ }dx_)
+    _((u-1)/3_) kommer fra at isolere _(x_) i _(u=3x+1_).
+    </p>
+    <p class="t">
+    Vi ville nemt kunne integrere dette <i>i forhold til _(u_)</i>, men det skal jo faktisk integreres <i>i forhold til _(x_)</i>.
+    Navnet "substitution" kommer fra, at vi "substituerer" noget (i vores tilfælde _(3x+1_))
+    med noget andet (i vores tilfælde _(u_)). 
+    Det er her <i>kædereglen</i> virkelig kan hjælpe,
+    da den jo egentlig følger meget samme princip.
+    Hvis vi skal differentiere
+    _($Sin(x^3+5x)_)
+    ... siger kædereglen: "Erstat _(x^3+5x_) med _(u_), differentier
+    _(Sin(u)_) i forhold til _(u_), indsæt _(u=x^3+5x_) igen og 
+    gang med _(u'(x)_)". Mere generelt:
+    _($¤x[f(u(x))] = f'(u)*u'(x)_)
+    Lad os derfor <i>forestille os</i> at vores funktion _(x*(3x+1)^{100}_) er lig 
+    _($¤x[f(u(x))]_)
+    Vores mål er nu, at finde _(f(u(x))_). Det passer
+    godt på mange vegne: Den er differentieret, da vi prøver at finde den <i>før</i> den blev differentieret, 
+    og den er lig _(f(u(x))_), ligesom vores kan omskrives til 
+    _($\frac{u(x)-1}{3}*u(x)^{100} \text{ }dx _)
+    Vi <i>kunne</i> finde
+    _(f(u(x))_) ved at integrere _(d/dx[f(u(x))]_) med _(x_), men
+    så er vi tilbage tilbage til start. Vi kunne <i>også</i>
+    finde _(f(u(x))_) ved at integrere _(d/du[f(u)]_) med _(u_):
+    _($\begin{align}
+    ¤x[f(u(x))] &= f'(u)*u'(x) &\to \\ \\
+    f'(u) &= \frac{¤x[f(u(x))]}{u'(x)} &\to \\ \\
+    f(u(x)) &= \int \frac{¤x[f(u(x))]}{u'(x)} \text{ }du
+    \end{align}_)
+    Voila! _(d/dx[f(u(x))]_) er bare
+    _($\frac{u-1}{3}*u^{100} _)
+    Og _(u'(x)_) er
+    _($¤x[3x+1]=3_)
+    Så:
+    _($\begin{align}
+    f(u(x)) & = \int \frac{\frac{u-1}{3}*u^{100}}{3} \, du \\ \\
+    & = \frac{1}{9} \int u^{101} - u^{100} \, du \\ \\
+    & = \frac{1}{9} \frac{u^{102}}{102} - \frac{1}{9} \frac{u^{101}}{101} \\ \\
+    & = 0.001089 u^{102} - 0.001100 u^{101}
+    \end{align}_)
+    Perfekt! Nu indsætter vi _(u=3x+1_) og får:
+    _($\int x*(3x+1)^{100} = 0.001089 (3x+1)^{102} - 0.001100 (3x+1)^{101}_)
+    Lad os tænke over, hvad der skete lidt mere generelt her. Vi skulle løse
+    _($\int x*(3x+1)^{100} \text{ }dx_)
+    ... vi substituerede _(3x+1=u_), fordi det virkede <i>praktisk</i>. 
+    Det gjorde udtrykket <i>simplere</i>. Vi 
+    dividerede nu med _(u(x)=3x+1_) differentieret med _(x_), og integrerede derefter med _(u_) 
+    for at få vores svar:
+    _($\int \frac{(1/3)*(u-1)*u^{100}}{¤x[3x+1]} \text{ }du _)
+    Så nemt er det! Et hvilket som helst integral 
+    kan omskrives ved at substituere _(u_), dividere med _(u'(x)_) og endeligt integrere 
+    med _(u_). Lad mig give et par ekstra eksempler:
+    _($\int Cos(-5x+4) \, dx_)
+    Ved denne integral er det nok en god ide at substituere _(u=-5x+4_), især
+    eftersom _(d/dx[-5x+4]_) bare er _(-5_). Jeg forsøger derfor at vælge et _(u_),
+    der giver mig et udtryk der er simpelt at integrere, og tænker over
+    hvorvidt _(u'(x)_) vil gøre udtrykket mere komplekst. Anyways:
+    _($\int \frac{Cos(u)}{-5} \, du = - \frac{Sin(u)}{5}_)
+    Super simpelt! Nu indsætter vi _(u=-5x+4_) og får:
+    _($\int Cos(-5x+4) = -\frac{Sin(-5x+4)}{5}_)
+    Et lidt mere avanceret eksempel er:
+    _($\int \frac{3x+5}{-6x+2} \text{ dx}_)
+    Jeg tænker vi siger _(-6x+2=u_). Vi regner
+    _(u'(x)=-6_), og får:
+    _($\int \frac{3x+5}{-6u} \text{ }du _)
+    Vi integrerer med _(u_), så alle _(x_)'er skal fjernes.
+    Fra _(u=-5x+4_) får man let:
+    _($x=1/3 - u/6_)
+    Vi indsætter dette og går i gang med at løse integralet:
+    _($\begin{eqnarray}
+    && \int \frac{3*(1/3 - u/6)+5}{-6u} = \\ \\
+    && \int \frac{6-0.5u}{-6u} = \\ \\
+    && \int 3 - \frac{1}{u} \text{ }du = \\ \\
+    && 3u - ln(u) = \\ \\
+    && 3*(-6x+2) - ln(-6x+2)
+    \end{eqnarray}_)
+    Bum! 
+    </p>
+
+    <p class="t">
+    Vi løste lige _(Cos(3x+5)_), men hvad med noget som _(Cos(3x^2 + 5x)_)? 
+    Det logiske og mest umiddelbare er nok at substituere _(u=3x^2+5x_). 
+    Hældningen _(u'(x)_) er nu lig _(6x+5_):
+    _($\int \frac{Cos(u)}{6x+5} \text{ }du_)
+    Igen skal vi fjerne alle _(x_)'er. 
+    Fra _(u=3x^2+5_) får man _(x=\sqrt{(u-5)/3}_), så:
+    _($\int \frac{Cos(u)}{6*\sqrt{(u-5)/3} } \text{ }du _)
+    Det er en relativ svær integral, og vi har ikke tænkt os at løse den lige nu. 
+    Pointen er bare, at denne substitutions-strategi på ingen måde
+    er en mirakelkur der altid kan bruges. Det er bare en omskrivning-teknik: Intet andet. 
+    Dén lille _(u'(x)_), vi dividerer med, resulterer ofte i at udtrykket bliver <i>mere</i> komplekst; Især
+    da _(x_)'er skal omskrives i forhold til _(u_). Modsat findes
+    der også flere tilfælde, hvor _(u'(x)_) gør udtrykket <i>simplere</i>. Vi 
+    kan bruge det på nogle smarte måder. 
+    Sig f.eks. vi skulle løse:
+    _($\int Cos(x)^{-5.67}*Sin(x) \text{ }dx_)
+    Hvis vi substituerer _(Cos(x)=u_), skal vi nu dividere med _(u'(x)=-Sin(x)_), hvilket
+    er super dejligt:
+    _($\int \frac{u^{-5.67}*Sin(x)}{-Sin(x)} = - \int u^{-5.67} = \frac{u^{4.67}}{4.67}_)
+    Genialt! Et andet, <i>ret</i> involveret eksempel kunne være:
+    _($\int \frac{2.5x+4}{2x^2+3x+5}_)
+    Det første instinkt her er nok partial fractions, og det var også
+    hvad vi brugte på sidste side. Problemet er at bare, at _(2x^2+3x+5_)
+    ikke har nogen 0-punkter: Det er <i>irreducable</i> og kan ikke omskrives til 
+    to lineære produkter. Partial fractions kan intet i denne situation, så vi
+    er nødt til at blive kreative.
+    </p>
+    <p class="t">
+    At gå fra _(2.5x_) til _(4x_) er nemt, da det svarer til at gange med _(1.6_):
+    _($\begin{eqnarray}
+    && \frac{1}{1.6}*1.6*\int \frac{2.5x+4}{2x^2+3x+5} \text{ }dx = \\ \\
+    && \frac{1}{1.6}*\int \frac{4x+6.4}{2x^2+3x+5} \text{ }dx
+    \end{eqnarray}_)
+    Vi skal plusse med _(3_), ikke _(6.4_). Det svarer til at minusse tælleren med _(3.4_), så vi kunne derfor måske sige: 
+    _($\begin{eqnarray}
+    && \frac{1}{1.6}*\int \frac{4x+6.4-3.4+3.4}{2x^2+3x+5} \text{ }dx = \\ \\
+    && \frac{1}{1.6}*\left(\int \frac{4x+3}{2x^2+3x+5} \text{ }dx + \int \frac{3.4}{2x^2+3x+5} \text{ }dx \right)
+    \end{eqnarray}_)
+    Vi har nu opdelt problemet i to integraler. Den ene integral er præcist, som vi gerne vil have den.
+    Her substituerer vi _(u=2x^2+3x+5_), tælleren forsvinder, og vi står tilbage 
+    med
+    _($\int \frac{1}{u} \, du = Ln(u) = Ln(2x^2+3x+5)_)
+    I vores proces har vi desværre også introduceret et nyt integral. 
+    Det var ikke en del af planen, men lad os alligevel se, om det er muligt. 
+    Én mulig ide er, at omskrive nævneren til formen _((x+A)^2+B_). 
+    Så kan vi substituere _(x+A=u_) og få et ret simpelt udtryk. 
+    Først skal vi have
+    fjernet koefficienten på _(x^2_):
+    _($\int \frac{1}{2x^2+3x-5} \text{ }dx = \frac{1}{2}*\int \frac{1}{x^2+1.5x-2.5} \text{ }dx_)
+    _(x^2+1.5x-2.5_) kan vi nu nu omskrive til _((x+0.75)^2+3.062_):
+    _($\frac{1}{2}*\int \frac{1}{(x+0.75)^2 + 3.062} \text{ }dx_)
+    Vi substituerer _(u=x+0.75_). Her behøver vi ikke dividere med noget siden _(d/dx[x+0.75]=1_):
+    _($\frac{1}{2} \int \frac{1}{u^2 + 3.062} \, dx_)
+    Nu bruger vi en lidt crazy strategi. 
+    Vi ved, fuldkommen tilfældigvis
+    fra tidligere arbejde, at _(Arctan_)'s hældning 
+    er 
+    _($\frac{1}{1+x^2}_)
+    Vores integral har <i>næsten</i> denne form, udover at _(1_) er _(3.062_), så
+    lad os prøve at omskrive: 
+    _($\frac{1}{2}*\frac{1}{3.062}*\int\frac{1}{u^2/3.062+1} \, du_)
+    Vi har _(u^2/3.062_) i stedet for _(x^2_). Det er intet problem 
+    en smule substitution ikke kan løse! _(u^2/3.062_) svarer også til:
+    _($\left(\frac{u}{1.749} \right)^2_)
+    Så vi substituerer _(u/1.749=m_), hvor _(m_) er <i>endnu</i> en ny variabel. 
+    _(m'(u)_) er lig _(1/1.749_), så integralet bliver:
+    _($\begin{eqnarray}
+    && \frac{1}{2}*\frac{1}{1.749*2}*\int \frac{1.749}{m^2+1} \, dm = \\ \\
+    && \frac{1}{4}*\int \frac{1}{1+m^2} \, dm = \\ \\
+    && \frac{1}{4} Arctan(m) = \\ \\
+    && \frac{1}{4} Arctan(u/1.749) = \\ \\
+    && \frac{1}{4} Arctan\left(\frac{x+0.75}{1.749} \right) \\ \\
+    \end{eqnarray}_)
+    Boom! Vi kan helt fint godt substituere <i>flere gange</i>. Vores endelige svar er:
+    _($\frac{1}{1.6}*\left(Ln(2x^2+3x+5) + Arctan\left(\frac{x+0.75}{1.749} \right) \right)_)
+    Bare rolig: De fleste integraler du kommer til at løse er 
+    <i>slet</i> ikke ligeså svære som den her. 
+    Der var en del crazy smarte "tricks"
+    vi skulle bruge. Men jeg viste den, fordi den meget fint illustrer hvor fleksibel
+    en strategi substitution er, og hvor <i>kaotiske</i> mange integraler er. 
+    Man skal omskrive en helt masse, tænke over former, og se
+    lidt fremad. 
+    </p>
+    <p class="t">
+    Din tur!
+    </p>
+
+
+
+
+

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+
+<p class="t">
+    Nogle gange når vi løser ligninger så kan vi få <i>for mange</i> løsninger. <i>Falske løsninger</i>. 
+    Værre endnu så er de her falske løsninger ikke nødvendigvis altid et resultat af fejl. Sig
+    at vi skulle løse _(\sqrt{2x - 1}=x-2_). Vi ville nok bare gøre følgende:
+    _($\sqrt{2x -1}^2=(x-2)^2  \to _)
+    _($2x - 1=x^2 - 4x + 4 \to_)
+    _($x^2 - 6x + 5 = 0 \to _)
+    _($x = \frac{6 \pm \sqrt{6^2 - 4*5}}{2} = 3 \pm 4 \to_)
+    _($x=-1,7_)
+    Det så egentlig ikke ud til at vi gjorde noget forkert, men 
+    det er også tydeligt at _(-1_) <i>ikke</i> er en løsning,
+    siden det ville involvere at regne _(\sqrt{2*(-1)-1}=\sqrt{-3}_)
+    hvilket er umuligt. Hvad skete der? 
+    </p>    
+    <p class="t">
+    Well, lad os tænke over hvad der sker når du opløfter begge sider af ligningen til en potens af _(2_).
+    Helt generelt har du _(a=b_), og det bliver til _(a^2=b^2_). Altså:
+    _(a=b_) skal have <i>de samme løsninger</i> som _(a^2=b^2_). Hvis _(a=b_), så 
+    er _(a^2_) tydeligvis også lig _(b^2_). Hvis _(a^2=b^2_), så er _(a_) <i>ikke nødvendigvis</i>
+    lig med _(b_), da _(a=-3,b=3_) jo stadig giver en rigtig _((-3)^2=3^2_).
+    Altså, så iriterrende som det er, så er der altid en chance for at vi får en falsk 
+    løsning når vi opløfter noget i anden potens. 
+    </p>
+    <p class="t">
+    Lad os kigge på et andet eksempel. Sig vi prøver at løse: 
+    _($\frac{1}{x-2}=\frac{3}{x-2}-\frac{6x}{(x-2)(x+2)} \to_)
+    _($\frac{1}{x-2}*(x-2)*(x+2) = \frac{3}{x-2}*(x-2)*(x+2) - \frac{6x}{(x-2)(x+2)}*(x-2)*(x+2) \to_)
+    _($x+2 = 3*(x-2) - 6x_)
+    Hvis vi løser _(x+2 = 3*(x-2) - 6x_) så får vi _(x=-2_). Det er endnu en falsk løsning dog!
+    Sætter vi _(x=-2_) ind i den originale ligning, så skal vi dividere med _(-2+2=0_) hvilke
+    er ulovligt. Der var ingen kvadratroder eller potenser, og vi lavede kun simple manipulationer,
+    så hvad gik galt? Jo:
+    _($\frac{1}{x-2}*(x-2)*(x+2) = \frac{3}{x-2}*(x-2)*(x+2) - \frac{6x}{(x-2)(x+2)}*(x-2)*(x+2) \to_)
+    har faktisk flere løsninger end 
+    _($\frac{1}{x-2}=\frac{3}{x-2}-\frac{6x}{(x-2)(x+2)}_)
+    Det vi gør til begge sider er at gange med _((x-2)(x+2)_).
+    Vi skal altså finde ud af hvorfor _(a=b_) ikke nødvendigvis har de 
+    samme løsninger som _((x-2)(x+2)a=(x-2)(x+2)b_). Hvis
+    _(a=b_) så er _((x-2)(x+2)a_) uden tvivl _((x-2)(x+2)b_). Hvis
+    _((x-2)(x+2)a=(x-2)(x+2)b_) så skal vi dividere begge sider som
+    _($\frac{(x-2)(x+2)a}{(x-2)(x+2)}=\frac{(x-2)(x+2)b}{(x-2)(x+2)}_)
+    Det her <i>kan vi ikke gøre</i>, hvis _(x=2_) eller _(x=-2_).
+    Operationen fra _((x-2)(x+2)a=(x-2)(x+2)b_) til _(a=b_) er ulovlig
+    på _(x=-2_), men operationen fra _(a=b_) til _((x-2)(x+2)a=(x-2)(x+2)b_)
+    er <i>altid</i> lovlig. Det er problemet.
+    </p>
+    <p class="t">
+    Så, like, shit. Matematikken er ødelagt. Alt håb er tabt. Farvel. 
+</p>
+

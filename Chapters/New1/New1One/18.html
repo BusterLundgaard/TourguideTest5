@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+
+    <h3> </h3>
+    
+    <p class="t">
+    Alright, vi kan beskrive antal, længde, vægt, tid og hastighed. Hvordan
+    beskriver vi størrelsen af et område? Det var trods alt vores originale mål. 
+    De næste par opgaver beskriver processen meget fint: 
+    </p>
+
+    <q-stion 1="19" 2="1" bigTop="true">
+    Der ligger et tæppe på dit gulv:
+    <img class="SpicBXL" style="width:80%" src="../../../Assets/Chapter1\Talopgaver og intuition\Misc\F\Areal og tæppe\areal og tæppe1.png">
+    <p class="tt">
+    Du vil gerne finde ud af, hvor meget dette tæppe fylder i forhold til andre objekter i dit værelse - f.eks. et skrivebord.
+    For at opnå dette opdeler du værelset i mange lige store kvadrater:
+    </p>
+    <img class="SpicBXL" style="width:80%" src="../../../Assets/Chapter1\Talopgaver og intuition\Misc\F\Areal og tæppe\areal og tæppe2.png">
+    <p class="tt">
+    Kvadraterne bliver ikke mindre på billedet - det er bare perspektiv. 
+    Ca. hvor mange kvadrater fylder tæppet? (kig på billedet)
+    </p>
+    <br></q-stion>
+    <answer-box >
+    Vi kan se at tæppet er omkring <p-m m=" 3"></p-m> kvadrater bredt og <p-m m=" A1"></p-m> kvadrater langt. 
+    For hver kvadrat på bredden har vi <p-m m=" A1"></p-m> kvadrater på længden. Det bliver bare 
+    <p-m m=" 3*A1=A3"></p-m> kvadrater. Vi <i>kunne</i> nemt have talt os frem til
+    svaret slavisk fra det ene hjørne til det andet, men det er hurtigere
+    at tælle ved at gange. 
+    <br><br></answer-box>
+
+    <!--  -->
+    
+    <q-stion 1="19" 2="2" >
+    Du har nu delt gulvet op i nogle mindre men stadig lige store kvadrater. Nu kan 
+    du beskrive arealet i lidt større detalje:
+    <img class="SpicBXL" style="width:80%" src="../../../Assets/Chapter1\Talopgaver og intuition\Misc\F\Areal og tæppe\areal og tæppe3.png">
+    <p class="tt">Hvor mange kvadrater fylder tæppet nu? (sådan ca.)</p>
+    <br></q-stion>
+    <answer-box >
+    Den her gang er de lidt mindre, men vi kan godt se, at det på bredden er omkring <p-m m=" A1 2"></p-m>, og på længden 
+    omkring <p-m m=" A2 2"></p-m>. Det betyder, at der er 
+    <p class="cent">
+        <p-m m=" A1 2*A2 2=B3 A3"></p-m>
+    </p>
+    <p class="t">
+    ... kvadrater i alt. 
+    </p>
+    <p class="t">
+    Lad os tænke lidt over hvad præcis det er vi gør lige nu. Vi kunne måske
+    forestille os, at hver af disse kvadrater har en side-længde 
+    på <p-m m=" 1"></p-m> fod,
+    og at de større kvadrater vi tidligere brugte havde en længde på <p-m m=" 1"></p-m> meter. 
+    Hvis nogen siger, at noget er <p-m m=" A3"></p-m> "kvadratmeter" stort, mener de bare, at man kan dække
+    det med <p-m m=" A3"></p-m> kvadrater, der hver har en sidelængde på <p-m m=" 1"></p-m>
+    meter! Det er <i>sådan her</i> vi definerer areal. Areal er lig 
+    "længde gange bredde", kun fordi det er en praktisk måde at tælle!
+    </p>
+    <p class="t">
+    Vi er heldige i dette tilfælde, da tæppet lige passer kvadraternes størrelse. 
+    Det vil ikke være tilfældet for langt de fleste former, og 
+    det er der, hvor vi enten skal gøre vores kvadrater meget små (ret upraktisk), eller
+    begynde at bruge tal der er mindre end <p-m m=" 1"></p-m> (hvilke vi kommer til 
+    snart). 
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="19" 2="3">
+    Du er duchebag land-ejeren. Vurder hvor stort følgende område er: 
+    <img class='SpicXL' style='width:84.32%; margin-left:10.5%;' src='../../../Assets/Chapter1\Talsystemmer\Omskrivning\MeasureArea.png'> 
+    <p class="tt">
+    Tallene står i meter, så dit svar bliver i kvadratmeter.
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Vi ved godt fra de tidligere opgaver, hvordan vi "tæller" et kvadrat-areal: Vi skal bare gange længde
+    med bredde. Jeg deler derfor området op i to kvadrater:
+    <img class='SpicXL' style='width:75%' src='../../../Assets/Chapter1\Talsystemmer\Omskrivning\MeasureArea2.png'> 
+    <p class="tt">
+    Kvadratet mest til højre kan vi se, har side-længderne <p-m m=" A1 2"></p-m> og <p-m m=" A3"></p-m>.
+    Den mest til venstre har side-længderne <p-m m=" B1 A1 3 - A1 2 = B1 1"></p-m> og <br>
+    <p-m m=" A3 - A1 2 = A1 1"></p-m>:
+    </p>
+    <img class='SpicXL' style='width:91.42%; margin-left:5.5%;' src='../../../Assets/Chapter1\Talsystemmer\Omskrivning\MeasureArea3.png'> 
+    <p class="tt">
+    Arealet er derfor lig:
+    </p>
+    <p class="cent">
+        <p-m m=" A1 2 * A3 + B1 1 * A1 2=C2 B2 A3 2"></p-m>
+    </p>
+    <p class="t">
+    ... kvadratmeter. 
+    </p>
+    <p class="t">
+    Nu har vi fundamentalt løst vores problem: Land-ejeren kan måle arealer. Vi kunne forestille os at
+    han udviklede et system, hvor han måske sagde: "For hvert <p-m m=" B3"></p-m> kvadratmeter i har, skal
+    i betale mig <p-m m=" 1"></p-m> pose hvede hver månede". 
+    </p>
+    <br></answer-box>
+
+    <q-stion 1="19" 2="4">
+    Vi har løst problem <b> D</b>,
+    men før vi går videre til <b> E</b>, er det værd hurtigt at se på
+    <i>volumen</i>. Hvordan måler vi hvor meget en eller anden rumlig ting "fylder"?
+    <p class="t">
+    Du <i>kunne</i> beskrive størrelsen i forhold til "antallet af poser du kan stoppe derned",
+    men det er nok bedre at generalisere strategien vi brugte ved areal: 
+    </p>
+    <img class='SpicXL' style='width:45%' src='../../../Assets/Chapter1\Talsystemmer\Omskrivning\VolumenForklaret.png'> 
+    <p class="tt">
+    Vi laver en masse små rumlige kvadrat-objekter
+    med sidelængder på eksempelvis <p-m m=" 1"></p-m> fod, og fylder kassen op. 
+    En volume på f.eks <p-m m=" 3"></p-m> "kubikfod" svarer
+    til, at man kan fylde størrelsen op med <p-m m=" 3"></p-m> kasser,
+    der hver har en sidelængde på <p-m m=" 1"></p-m> fod. 
+    </p>
+    <p class="t">
+    Hvor mange kubikfod fylder en kasse, der er 
+    ca. <p-m m=" 3"></p-m> fod lang, 
+    <p-m m=" A1"></p-m> fod bred og <p-m m=" A1 3"></p-m> fod høj?
+    </p>
+    <br></q-stion>
+    <answer-box>
+    For hver <p-m m=" 1"></p-m> fod højde er der <p-m m=" 3*A1 = A3"></p-m> kasser, så
+    der er 
+    <p class="cent">
+        <p-m m=" A3*A1 3 = C1 B1 A1"></p-m>
+    </p>
+    <p class="t">
+    ... kasser i alt. Vi siger bare længde gange bredde gange højde - meget
+    ligesom areal. 
+    </p>
+    <p class="t">
+    Igen findes der
+    mange former, vi ikke rigtig kan "fylde ud med kasser", og volumen 
+    er endnu en grund til, at vi snart skal få introduceret et ordentligt system til
+    tal, der er mindre end <p-m m=" 1"></p-m>. Lige med volumen er det dog muligt 
+    at måle ret præcise voluminer på objekter med meget komplicerede former. 
+    Man kan bare nedsænke objektet i vand, og måle hvor meget vand der flyttes. 
+    <p class="t">
+    Det er faktisk vand og volumen man bruger til at definere
+    enheden for vægt. Vand er ret let tilgængeligt for mange, så man kan 
+    bare sige "vægten af en bestemt volume vand". 
+    Det er altid det samme, det er præcist, og det er let arbejde med. 
+    _(1_) kg er defineret som vægten af _(1_) "liter"
+    vand. _(1_) "liter" er defineret som volumen på en kasse, hvor hver
+    side er _(10_) centimeter. _(1_) centimeter er _(1_) meter divideret
+    med _(100_).  
+    </p>
+    <br></answer-box>
+
+    <q-stion 1="19" 2="5">
+    I har fået <p-m m=" 2"></p-m> blokke med to forskellige typer metal: 
+    <img class='Spic' style='width:40%' src='../../../Assets/Chapter1\Talsystemmer\Omskrivning\ToSten1.png'> 
+    <p class="t">
+    I vil gerne vælge den letteste type metal for jeres værktøjer. 
+    Man kunne veje hvilken blok var tungest, <i>hvis</i> der var lige
+    meget af hver type metal, men 
+    den ene blok vejer <p-m m=" A2 1"></p-m> kg og fylder <p-m m=" 3"></p-m> liter, mens
+    den anden vejer <p-m m=" B1 A1 2"></p-m> kg og fylder <p-m m=" A2 3"></p-m> liter. 
+    Hvad for en type metal er lettest?</p>
+    <br></q-stion>
+    <answer-box>
+    Lad os skære en lille identisk volumen ud fra
+    hver type og sammenligne vægten. Det er svært og tidskrævende i virkeligheden, men
+    kan let udføres med lidt simpelt matematik. 
+    Hvis <p-m m=" 3"></p-m> liter vejer <p-m m=" 6"></p-m> kg,
+    så vejer <p-m m=" 1"></p-m>
+    liter <p-m m=" 3"></p-m> gange så lidt: 
+    <p-m m=" 1"></p-m> liter
+    ville derfor veje <br> <p-m m=" 6/3=2"></p-m>kg. Vi skal bare dividere vægten med
+    volumen! Det her kaldes <i>densitet</i>. 
+    <p class="t">
+    Den mørke type metal har en densitet på:
+    </p>
+    <p class="cent">
+        <p-m m=" 22/11=2"></p-m>
+    </p>
+    <p class="t">
+    Den lyse type metal har en densitet på:
+    </p>
+    <p class="cent">
+        <p-m m=" 9/3=3"></p-m>
+    </p>
+    <p class="t">
+    Vi skal bruge den mørke type metal!
+    </p>
+    <br></answer-box>
+
+
+

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <p class="t">
+    Alright, lad os starte med det her simple problem omkring længde: Hvilken sti er længst?
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5" customWidth="530">
+    I følgende simulation kan du rykke og rotere en pind, samt placere sten med højreklik:
+    <br>
+    <iframe src="../../../Assets/Chapter1\Talsystemmer\Omskrivning\PindSimulation\moveSticks.html" style="width:500px; height:547px; overflow:hidden;" scrolling="no"></iframe>
+    <p class="t">Find ud af hvilken sti er længst. </p>
+    <br></q-stion>
+    <answer-box customWidth="530">
+    Hvis jeg skulle gå flere skridt på den ene sti end den anden, så kunne
+    vi med god sikkerhed sige at den var længere. Skridt er bare meget upræcise,
+    så lad os bruge en pind i stedet: Den har præcis samme længde hver gang. 
+    Jeg lægger altså en pind, placere en sten ved dens ende, rykker pinden
+    hen til stenen, og bliver ved med det fra start til slut. Det gør jeg ved begge
+    stier:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter1\Talsystemmer\Omskrivning\LongestPath.mp4' type='video/mp4'>
+    </video>
+    <p class="t">
+    Vores resultat er altså:
+    </p>
+    <img class='SpicB' style='width:80%' src='../../../Assets/Chapter1\Talsystemmer\Omskrivning\LongestPath.png'> 
+    <p class="t">
+    Nu tæller jeg altså bare hvor mange sten der er ved den ene sti, og hvor mange
+    sten der er ved den anden. Det vil fortælle mig hvor mange "pinde" lange de er. 
+    Man kan tælle at rute <b> A</b> er
+    </p>
+    <p class="cent">
+        <p-m m=" A4"></p-m>
+    </p>
+    <p class="t">
+    pinde lang. Man kan også tælle at rute <b> B</b> er:
+    </p>
+    <p class="cent">
+        <p-m m=" A3 1"></p-m>
+    </p>
+    <p class="t">
+    pinde lang. Man kan altså se at rute <b> A</b> er <p-m m=" 3"></p-m>
+    pinde længere end rute <b> B</b>. Bum! Problem løst! 
+    </p>
+    <br><br></answer-box>
+
+    <p class="t">
+    Med vægt kan vi gøre noget meget lignende. Pinden kunne vi bruge fordi den havde
+    den samme længde lige meget hvor vi lagde den. Det kan vi ikke helt med vægt,
+    men vi kan måske gøre noget lignende med æbler. Der er mange af dem, og 
+    de vejer (hvis vi vælger ekstra store og ekstra små fra) <i>cirka</i> det samme hver. 
+    Vi kunne nu se hvor mange æbler der skulle til for at vægten var i balance ved
+    den ène pose: 
+    </p>
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter1\Talsystemmer\Omskrivning\AppleWeight1.png'> 
+    <p class="t">
+    Og så hvor mange æbler der skulle til for at vægten var i balance ved den anden pose:
+    </p>
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter1\Talsystemmer\Omskrivning\AppleWeight2.png'> 
+    <p class="t">
+    Den lille pose vejer <p-m m=" B1 1"></p-m> æbler, og den store pose vejer
+    <p-m m=" B2 1"></p-m> æbler. En vægt på <p-m m=" B1 1"></p-m> beskriver altså
+    intuitivt at det svarer til at gå rundt med <p-m m=" 17"></p-m>æbler. Ligesom at 
+    tegningen var det tætteste vi kunne komme på at give en "ide" omkring antallet,
+    så er det her det tætteste vi kan komme på at give en intuitiv "ide" omkring hvor tung
+    posen er. Vi beskriver følelsen af at bære denne pose i forhold til den mere velkendte
+    følelse af at bære et æble. Vi beskriver det på en måde der let kan kommunikeres, og 
+    let kan sammenlignes med andre. F.eks. kan vi se at den store poser næsten vejer dobbelt
+    så meget, da <p-m m=" B1 1*2 = B2 2"></p-m>. Vi kan se at vægt-forskellen mellem
+    de to poser er <p-m m=" B2 1 - B1 1 = B1"></p-m>.
+    </p>
+    
+
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+
+
+    _(ax^2+bx+c_) er en del af det vi kalder for <i>polynomialer</i>.
+    En polynomial generelt er et udtryk der følger 
+    formen 
+    _($a_0 + a_1 x + a_2 x^2 \text{ } + \text{ } ... \text{ } a_{n-1}x^{n-1} + a_nx^n_) 
+    hvor _(a_)'erne er koefficienter/tal, _(n_) er (obviously) et helt positivt tal, og _(x_) så er vores ukendte. 
+    Vi støder tit på polynomialer i matematik og i den rigtige verden, så de er ret vigtige at
+    kende og studere. 
+
+    <q-stion 1="2" 2="1" 3="5">
+    Hvilke er de følgende udtryk er polynomialer?
+    <div style="text-align:center;">
+        <ul style="display: inline-block; text-align: left; list-style:none; padding-left:0%;">
+            <li><b> 1:</b>  _(30x_)</li>
+            <li><b> 2:</b> _(-5_)</li>
+            <li><b> 3:</b> _(\pi*x^5 - 3.09x^2 + 234_)</li>
+            <li><b> 4:</b> _(12x^2 + 5x - 20 + 3x^{-1} + 6x^{-2}_)</li>
+        </ul>
+    </div>
+    <br></q-stion>
+    <answer-box t="Answer 1#" tabColour="rgb(171,96,147)">
+    Ja. Det passer til _(a_0+a_1*x_) hvor _(a_0=0_) og _(a_1=30_)
+    <br><br></answer-box>
+    <answer-box t="Answer 2#" tabColour="rgb(175,128,161)">
+    Ja, alle _(a_) undtagens _(a_0_) er bare sat til _(0_). 
+    <br><br></answer-box>
+    <answer-box t="Answer 3#" tabColour="rgb(171,96,147)">
+    Ja. Vi kan godt have mærkelige koefficienter som _(\pi_), og 
+    det er helt fint hvis nogen _(a_) som _(a_4,a_3,a_1_) er sat til _(0_).
+    <br><br></answer-box>
+    <answer-box t="Answer 4#" tabColour="rgb(175,128,161)">
+    Nej. Der kan ikke være negative exponenter.
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    De steder hvor en polynomial er _(0_) kalder vi - suprise suprise - nulpunkter.
+    Jeg har nu to opgaver:
+    <p class="t">
+    <b> 1</b>: Konstruer/lav en eller anden polynomial med nulpunkterne _($x=-42,-10.5,\pi^2,6_)
+    </p>
+    <p class="t">
+    <b> 2</b>: Lav nu, lidt mere specifikt, en polynomial med nulpunkterne _($x=-2,3,5,10,15,16_) hvor
+    kurven er negativ når den er bag _(-2_), positiv når den er mellem _(-2_) og _(5_),
+    negativ mellem _(5_) og _(15_), positiv efter _(15_). 
+    </p>
+    <p class="t">
+    Opgave 2 her er en smule på den tricky side!
+    </p>
+    <br></q-stion>
+    <answer-box t="Answer 1#" tabColour="rgb(171,96,147)">
+    Et simpelt eksempel kunne være 
+    _($(x+42)*(x+10.5)*(x-\pi^2)*(x-6)_)
+    Man kan nemt se at den her er _(0_) når _(x+42=0 \to x=-42_), osv. 
+    Et andet eksempel der følger præcist samme logik er 
+    _($-33*(x+42)^4*(x+10.5)*(x-\pi^2)^3*(x-6)^7_)
+    <br><br></answer-box>
+    <answer-box t="Answer 2#" tabColour="rgb(175,128,161)">
+    En simpel polynomial som før via 
+    _($(x+2)*(x-3)*(x-5)*(x-10)*(x-15)*(x-16)_)
+    opfylder kravet med nulpunkterne, men ikke nødvendigvis negativ. Lad os prøve at tegne 
+    en eller anden kurve, og tænke over hvad der sker med nulpunkterne: </p>
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter2\Section3\Solutions\KurveNulpunkter.png'> 
+    <p class="t" style='text-align: left'>
+    Hver gang vi når til et nulpunkt, så kan der ske to ting: positiviteten / negativiteten ændre sig, 
+    positivteten / negativiteten forbliver som den var før. Som vi har det lige nu,
+    der ændre negativiteten / positiviteten sig konstant. Sig at vi 
+    nærmer os nulpunktet hvor _(x=5_). Hvis _(x_) er lidt mindre - måske _(4.9_), 
+    så er de _(2_) faktore _((x+2)_), _((x-3)_) positive - det vil de blive
+    ved med at være så længe _(x_) er over henholdsvis _(-2_) og _(3_). Resten af faktorene
+    _((x-5)_), _((x-10)_), _((x-15)_), _((x-16)_) vil være negative, da _(x_) altså endnu 
+    er mindre end _(5,10,15_) og _(16_). Alt i alt har vi nu _(4_) negative, og
+    _(2_) positive. Så 
+    _($1*1*(-1)*(-1)*(-1)*(-1)=1_) 
+    Når vi nu bliver højere end _(5_)
+    så er der kun _(3_) negative: 
+    _($1*1*1*(-1)*(-1)*(-1)=-1_) 
+    Det her bliver altså ved med at ske.
+    Negativiteten vil <i>ikke</i> ændre sig ved _(x=5_) hvis vi i stedet
+    havde sagt 
+    _($(x+2)*(x-3)*(x-5)^2*(x-10)*(x-15)*(x-16)_)
+    Faktoren
+    _((x-5)^2_) er <i>aldrig</i> negativ, så der er ikke nogen negativitet
+    der skifter når vi går over _(5_). I vores krav fik vi at vide at negativiteten skiftede ved _(-2_),
+    forblev identisk ved _(3_), skiftede ved _(5_), forblev identisk ved _(10_), skiftede ved _(15_),
+    og forblev identisk ved _(16_). 
+    Ergo: 
+    _($(x+2)*(x-3)^2*(x-5)*(x-10)^2*(x-15)*(x-16)^2_) 
+    Lige nu når _(x \lt -2_) så 
+    er negativiteten _((-1)*(-1)*(-1)=-1_) hvilket passer perfekt. Done!</p>
+    <br><br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Løs:
+    _($(t-20)^3 + 8*(t-20)^2-\frac{1}{8}*(278)*(t-20)+65 = 0_)
+    Vi kender allerede godt ligninger hvor en andengradspolynomial er lig _(0_), men når det
+    er en tredjegradspolynomial så er det svært til umuligt at gøre det
+    i hånden (formlen er i hvert fald meget kompliceret). I visse bestemte
+    tilfælde kan vi godt løse en tredjegradspolynomium dog, og jeg 
+    har valgt koefficenterne lige sådan at det kan løses. 
+    <br><br></q-stion>
+    <answer-box>
+    Først af alt vil jeg nok lave _(t-20_) om til bare _(x_). Så står jeg med:
+    _($x^3 + 8x^2 - \frac{1}{8}*(278)*x + 65 - 343 = 0_)
+    Regner vi faktisk _(65-343_) så får vi _(-278_). Sikke et tilfælde! Det var opgaven slet
+    ikke special-lavet til ville ske! I hvert fald så kan vi 
+    omskrive til 
+    _($x^3 + 8x^2 - 278*(\frac{1}{8}x + 1)_) 
+    Hvad gør vi nu? Jeg tænker hvis der er noget mønster vi kan udnytte, så
+    involverer det nok _(8_), siden der i udtrykket lige nu både er _(8x_)
+    og _(\frac{1}{8}x_). Vi kan lave _(x^3 + 8x^2_) om til _(8x^2*(\frac{1}{8}x + 1)_) og få:
+    _($8x^2*(\frac{1}{8}x + 1) - 278*(\frac{1}{8}x + 1) = 0_)
+    _($(\frac{1}{8}x + 1)*(8x^2 - 278)=0_)
+    Ha-ha! Nu har vi to faktorer ganget med hinanden der giver _(0_).
+    Herfra kan det nemt ses at løsningerne er _(x=-8_), _(x=5.89_), _(x=-5.89_).
+    Det må betyde at 
+    _($t=-8+20=12, t=5.89+20=25.89, t=-5.89+20=14.11_)
+    Hurrah! 
+    <br><br></answer-box>
+
+
+
+    
+
+
+
+
+
+    ANVENDELSEN I DET HER SPØRGSMÅL ER LIGEGYLDIG: DET DISTRAHERER FRA FOKUSET PÅ POLYNOMIALER
+    <!-- <q-stion 1="2" 2="1" 3="5">
+    USA er ude og teste deres ny højteknologiske superfly. De flyver i 30
+    timer, og måler dets hastighed hele vejen igennem. De for efter
+    turen via dataen en computer til at generere en polynomial der sådan cirka 
+    approximere _(hastighed(\text{tid på turen})_):
+    _($m/s(t) = (t-20)^3 + 8*(t-20)^2-\frac{1}{8}*(278)*(t-20)+65_)
+    Hvor _(t_) er tid i timer, og talet den giver er hastigheden i _(m/s_). 
+    <p class="t">
+    Lydens hastighed er _(343 m/s_). Hvor mange gange og hvornår krydser flyet denne hastighed?  
+    Denne opgave er pænt urealistisk, og dine svar vil nok i alt ærlighed ikke giver super god logisk
+    mening hvis man faktisk tænker over situationen, men shhh. 
+    </p>
+    <p class="t">
+    Som du nok allerede lidt har gennemskuet, så kommer det her til at involvere
+    en ligning for en polynomial skal være lig _(0_). Vi kender allerede
+    godt ligninger hvor en andengradspolynomial er lig _(0_), men når det
+    er en tredjegradspolynomial så er det svært til umuligt at gøre det
+    i hånden (formlen er i hvert fald meget kompliceret). I visse bestemte
+    tilfælde kan vi godt løse en tredjegradspolynomium dog, og jeg 
+    har valgt koefficenterne lige sådan at det kan løses. 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Okay, så vi skal se hvor mange løsninger der er til 
+    _($(t-20)^3 + 8*(t-20)^2-\frac{1}{8}*(278)*(t-20)+65=343_)
+    Først af alt vil jeg nok lave _(t-20_) om til bare _(x_). Så står jeg med:
+    _($x^3 + 8x^2 - \frac{1}{8}*(278)*x + 65 - 343 = 0_)
+    Regner vi faktisk _(65-343_) så får vi _(-278_). Sikke et tilfælde! Det var opgaven slet
+    ikke special-lavet til ville ske! I hvert fald så kan vi 
+    omskrive til 
+    _($x^3 + 8x^2 - 278*(\frac{1}{8}x + 1)_) 
+    Hvad gør vi nu? Jeg tænker hvis der er noget mønster vi kan udnytte, så
+    involverer det nok _(8_), siden der i udtrykket lige nu både er _(8x_)
+    og _(\frac{1}{8}x_). Vi kan lave _(x^3 + 8x^2_) om til _(8x^2*(\frac{1}{8}x + 1)_) og få:
+    _($8x^2*(\frac{1}{8}x + 1) - 278*(\frac{1}{8}x + 1) = 0_)
+    _($(\frac{1}{8}x + 1)*(8x^2 - 278)=0_)
+    Haha! Nu har vi to faktore ganget med hinanden der giver _(0_).
+    Herfra kan det nemt ses at løsningerne er _(x=-8_), _(x=5.89_), _(x=-5.89_).
+    Det må betyde at 
+    _($t=-8+20=12, t=5.89+20=25.89, t=-5.89+20=14.11_)
+    Hurrah! Inden for de _(30_) timer krydser den altså _(3_) gange!
+    <br><br></answer-box> -->
+

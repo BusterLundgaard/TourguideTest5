@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+
+
+    <h2>Hvordan finder vi hældning?</h2>
+    <p class="t">
+    Lad os også starte med
+    en simpel funktion som _(y=x^2_):
+    </p>
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter4\DerivativesAndIntegrals\JustParabola.png'> 
+    <p class="t">
+    Sig vi gerne vil finde "hældningen" ved _(x=4.2_). Vi vil gerne intuitivt finde
+    ud af, hvor "stejlt" der er omkring det punkt:
+    </p>
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter4\DerivativesAndIntegrals\ParabolaWithTangent.png'> 
+    <p class="t">
+    Vi placerer en linje, der <i>lige</i> passer ved _(x=4.2_), 
+    og forsøger nu at beregne, hvor stejl linjen er. 
+    En simpel men ueffektiv strategi er, at tegne
+    _(y=x^2_) op pænt på papir
+    </p>
+    <img class='SpicBXL' style='width:80%' src='../../../Assets/Chapter4\DerivativesAndIntegrals\ApproxTangent1.png'> 
+    <p class="t">
+    ... markere punktet ved _(x=4.2_)
+    </p>
+    <img class='SpicBXL' style='width:80%' src='../../../Assets/Chapter4\DerivativesAndIntegrals\ApproxTangent2.png'> 
+    <p class="t">
+    ... bruge en lineal og tilpasse en linje til punktet
+    </p>
+    <video class='picB' style="margin-top:35px; margin-bottom:35px;" controls>
+        <source src='../../../Assets/Chapter4\DerivativesAndIntegrals\AproxThatTan.mp4' type='video/mp4'>
+    </video>
+    <p class="t">
+    ... og til sidst måle med vinkelmåler, hvor stejl linjen er. 
+    Tan af denne vinkel giver hældningen. 
+    </p>
+    <p class="t">
+    Det <i>er</i> en mulighed, men det er langsomt og upræcist. Det er selvfølgelig også
+    bare en approksimation, og vi kunne bruge en langt bedre og hurtigere
+    teknik, hvis vi alligevel tillader approksimationer:
+    </p>
+    <img class='SpicXL' style='width:62%' src='../../../Assets/Chapter4\DerivativesAndIntegrals\DerivativeIdea1.png'> 
+    <p class="t">
+    Vi kan let beregne hældningen mellem to punkter. Hældning er lig
+    _($\frac{\text{Forskel i y}}{\text{Forskel i x}}_)
+    ... så hældningen mellem to punkter som f.eks. _((4,4^2)=(4,16)_) og _((4.4,4.4^2)=(4,19.36)_)
+    er bare:
+    _($\frac{19.36-16}{4.4-4} = \frac{3.35}{0.4} = 8.39 _)
+    Linjen der gå gennem de her to punkter ligner <i>ret meget</i> linjen der går gennem _(x=4.2_), så
+    det burde være en fin approksimation. Hvis vi tog punkterne længere væk:
+    </p>
+    <img class='SpicXL' style='width:70%' src='../../../Assets/Chapter4\DerivativesAndIntegrals\DerivativeIdea2.png'> 
+    <p class="t">
+    ... ville approksimationen blive dårligere. Hvis vi tog dem tættere på
+    </p>
+    <img class='SpicXL' style='width:52%' src='../../../Assets/Chapter4\DerivativesAndIntegrals\DerivativeIdea3.png'> 
+    <p class="t">
+    ... ville approksimationen blive bedre. Vi får derfor en 
+    rigtig god approksimation, ved at tage punkterne meget tæt på. 
+    Faktisk har vi ikke brug for <i>to</i> punkter:
+    Kun ét der enten går fremad eller bagud.
+    </p>
+    <img class='SpicXL' style='width:90%' src='../../../Assets/Chapter4\DerivativesAndIntegrals\DerivativeIdea4.png'> 
+    <p class="t">
+    Sig at mit punkt går bitte _(0.001_) fremad. Hældningen er nu:
+    _($\frac{(4+0.001)^2-4^2}{0.001} = \frac{0.008001}{0.001} = 8.001 _)
+    Jeg kunne sige _(x_) kun gik _(0.0001_) fremad, hvis jeg ville
+    have en <i>endnu</i> bedre approksimation:
+    _($\frac{(4+0.0001)^2-4^2}{0.0001} = \frac{0.000800009}{0.0001} = 8.00009_)
+    Det her er relativt nemt at regne, og vi kan selv bestemme, hvor præcist det skal være. 
+    Men kan vi på nogen måde gøre det <i>helt</i>? 
+    </p>
+    <p class="cent">
+        Overraskende nok <i>ja</i>! 
+    </p>
+    <p class="t">
+    Lad os generalisere _(0.001_) eller _(0.0001_) til bare "_(k_)". 
+    Hældningen kan nu beskrives som:
+    _($\begin{align}
+    \frac{(4+k)^2-4^2}{k} & = \frac{4^2+2*4*k+k^2-4^2}{k} \\ \\
+    & = \frac{2*4*k+k^2}{k} \\ \\
+    & = \frac{k*(2*4+k)}{k} \\ \\
+    & = 2*4+k
+    \end{align}_)
+    Hældningen er derfor lig _(8+k_), hvis hældningen er _(k_) væk. 
+    <i>Så</i> ... hvis punktet var <i>uendelig</i> tæt på, ville _(k_) være lig _(0_)
+    og hældningen lig
+    _($8+0=8_)
+    ... eller? Svaret <i>er</i> faktisk ja, men det bliver hurtig til en ... <i>filosofisk</i> debat
+    Vi gør noget, der ikke rigtig giver særlig meget mening, når man tænker over det:
+    Vi finder hældningen på to punkter, der er "uendelig" tæt på hinanden. Svarer
+    det ikke til at finde hældningen på et punkt "gennem sig selv"? Og hvordan
+    er det overhovedet tilladt at sætte _(k_) til _(0_), fordi 
+    _($\frac{(4+0)^2-4^2}{0}_)
+    ... så dividerer vi med _(0_)? Det bryder vel den vigtigste mest hellige 
+    matematiske lov i universet? 
+    </p>
+    <p class="t">
+    For at svare på disse mærkværdige spørgsmål får vi brug 
+    for en ny ide kaldt <i>grænser</i>, men den vil vi <i>ikke</i> gennemgå i dette afsnit. 
+    Grænser <i>er</i> faktisk et spændende koncept, 
+    men det er også ret teoretisk og teknisk. Man kan komme meget
+    langt <i>uden</i> grænser gennem ens intuition og sunde fornuft. 
+    Jeg tror, at i læsere vil få markant
+    mere ud af, at se på en masse spændende anvendelser og lave en masse interessante opgaver,
+    <i>før</i> i dykker dybt ned i at retfærdiggøre og bekræfte med den mest
+    ordentlige og rigoriske matematiske argumentation, at det vi har gang i
+    "faktisk er ordentligt". Vi undersøger grænser næste afsnit. Formålet
+    med en stor del af næste afsnit er at bevise de mere filosofisk
+    tvivlsomme påstande, vi laver i <i>dette</i> afsnit. 
+    </p>
+    <p class="t">
+    .... Anyways. Vi kan let generalisere vores arbejde yderligere og finde hældningen
+    ved en generel _(x_): 
+    _($\begin{align}
+    \frac{(x+k)^2-x^2}{k} & = \frac{x^2+2*k*x+k^2-x^2}{k} \\ \\
+    & = \frac{k*(2*x+k)}{k} \\ \\
+    & = 2*x+k \\ \\
+    & \approx 2*x
+    \end{align}_)
+    Bum! Ligesom at hældningen ved _(Sin(x)_) er _(Cos(x)_), er hældningen ved 
+    _(x^2_) lig _(2*x_)! Den generelle strategi er altså, at omskrive
+    udtrykket algebraisk, så man ikke længere dividerer med _(0_), og 
+    <i>derefter</i> indsætte _(k=0_)
+    </p>
+
+    <q-stion 1="2" 2="1">
+    Find hældningen på den blå linje på følgende billede:
+    <img class='SpicXL' style='width:80%' src='../../../Assets/Chapter4\DerivativesAndIntegrals\x3 tangent.png'> 
+    <br><br></q-stion>
+    <answer-box>
+    Vi skal finde hældningen på _(y=x^3_) ved _(x=1.5_). Lad os
+    bare finde hældningen ved _(x_) generelt: Så kan vi 
+    nemmere genbruge vores resultater senere. 
+    <p class="t">
+    Strategien var at lave et punkt, der var _(k_) fremme. Vores
+    punkt er _((x,x^3)_) og punktet _(k_) fremme er
+    _((x+k, (x+k)^3)_), så:
+    _($\frac{(x+k)^3-x^3}{k}_)
+    Vi skal på en eller anden smart måde omskrive, så at vi ikke længere
+    dividerer med _(k_). Lad os udvide _((x+k)^3_) og se, om vi får noget dejligt: 
+    _($\begin{eqnarray}
+    && (x+k)^3 - x^3 = \\ \\
+    && (x^2+2kx+k^2) (x+k) - x^3 = \\ \\
+    && x^3 + 2kx^2 + k^2x + x^2 k + 2k^2 x + k^3 - x^3 = \\ \\
+    && 3kx^2 + 3k^2 x + k^3 
+    \end{eqnarray}_)
+    Ha-ha! _(x^3_) og _(-x^3_) går ud med hinanden, så nu er alle led ganget med _(k_):
+    _($\frac{k*(3x^2 + 3k x + k^2)}{k} = 3x^2 + 3k x + k^2_)
+    Vi indsætter nu _(k=0_), og alle led udover _(3x^2_) forsvinder:
+    _($3x^2 + 3*0*x + 0^2 = 3x^2_)
+    Hældningen på _(y=x^3_) ved _(x_) er _(3x^2_). Det betyder at
+    hældningen ved _(x=1.5_) er:
+    _($3*1.5^2 = 6.75_)
+    Voila! 
+    </p>
+    <br></answer-box>
+
+    <q-stion 1="2" 2="2">
+    Hvordan finder man hældningen på _(y=x^{23}_)? Du skal altså finde
+    en formel ligesom _(2*x_) ved _(x^2_). 
+    <br><br></q-stion>
+    <answer-box>
+    Vi starter på samme måde som sidste opgave:
+    _($\frac{(x+k)^{23}-x^{23}}{k}_)
+    Problemet er, at vi ikke længere kan udvide
+    _((x+k)^{23}_) ligesom før, da det meget hurtigt bliver meget kompliceret. 
+    Vi <i>behøver</i> heller ikke at udvide dog. Vi ved, at når vi udvider
+    _((x+k)^{23}_), vil der være èt enkelt led, der er lig _(x^{23}_):
+    _($\begin{align}
+    \frac{(x+k)^{23}-x^{23}}{k} & = \frac{(\text{En masse andre led}+x^{23})-x^{23}}{k} \\ \\
+    & = \frac{\text{En masse andre led}}{k}
+    \end{align}_)
+    Hvad mere ved vi, om de her "andre led"? Én af leddende er 
+    ganget med _(k_) kun _(1_) gang. Det er lig 
+    _($\VeC[23,1]*x^{22}*k=23*x^{22}*k_)
+    Dette led bliver til _(23*x^{22}_) når vi dividerer
+    hvert led med _(k_). _(x^{23}_) er det eneste led i _((x+k)^{23}_) der <i>ikke</i>
+    er ganget med _(k_), så alle de resterende led udover _(23 x^{22} k_) er
+    ganget med _(k_) to eller flere gange. De er derfor <i>stadig</i> ganget med _(k_) selv efter
+    vi har divideret: 
+    _($23 x^{22} + k*(\text{Andre led})_)
+    Vi sætter _(k_) til _(0_), og alle de "andre led" forsvinder:
+    _($23 x^{22} + 0*(\text{Andre led}) = _)
+    _($23*x^{22}_)
+    Bum! Vi har en formel! Vi kan endda bruge præcis samme argumenter på 
+    en generel _(y=x^n_) hvor _(n_) er et helt tal, og se, at 
+    dets hældning er lig:
+    _($n*x^{n-1}_)
+    Super dejligt! 
+    <p class="cent">
+        *
+    </p>
+    <p class="t">
+    Man <i>kunne</i>
+    også bevise det på en lidt mere "ordentlig"/rigorisk måde. Vi så i starten af sidste kapitel, at
+    _($(a+b)^n=\sum_{i=0}^n \Vec[n,i]*a^i*b^{n-i} _)
+    Lad os anvende det, med _(a=x_) og _(b=k_):
+    _($\begin{eqnarray}
+    && \frac{(x+k)^{n}-x^{n}}{k}= \\ \\
+    && \frac{\sum_{i=0}^n \left(\Vec[n,i]*k^i*x^{n-i}\right) - x^n}{k}= \\ \\
+    && \frac{\sum_{i=2}^{n} \left(\Vec[n,i]*k^i*x^{n-i}\right) + \Vec[n,0]*k^0*x^{n-0} + \Vec[n,1]*k^1*x^{n-1} - x^n}{k}= \\ \\
+    && \frac{\sum_{i=2}^{n} \left(\Vec[n,i]*k^i*x^{n-i}\right) + x^n + n*k*x^{n-1} - x^n}{k}= \\ \\
+    && \frac{\sum_{i=2}^{n} \left(\Vec[n,i]*k^i*x^{n-i}\right) + n*k*x^{n-1}}{k}= \\ \\
+    && \frac{\sum_{i=2}^{n} \left(\Vec[n,i]*k^i*x^{n-i}\right)}{k}+\frac{n*k*x^{n-1}}{k} = \\ \\
+    && \sum_{i=2}^{n} \left(\Vec[n,i]*k^{i-1}*x^{n-i}\right) + n*x^{n-1} 
+    \end{eqnarray}_)
+    Boom! Nu sætter vi _(k_) til _(0_):
+    _($\sum_{i=2}^{n} \left(\Vec[n,i]*0^{i-1}*x^{n-i}\right) + n*x^{n-1}_)
+    _($\sum_{i=2}^{n} (0) + n*x^{n-1}_)
+    _($n*x^{n-1}_)
+    Færdig! 
+    </p>
+    <br></answer-box>
+
+    <q-stion 1="2" 2="3">
+    Du lader en bold falde ned fra en bygning. Boldens højde i forhold til tiden kan beskrives som:
+    _($y=30-4.91*t^2 _)
+    Hvis bygningen er _(30m_) høj, hvor stor hastighed har bolden så, når den rammer jorden?
+    <br><br></q-stion>
+    <answer-box>
+    Vi skal finde hældningen på
+    _($y=30-4.91*t^2_)
+    Og se hvad den er, når bolden rammer jorden. Det sker når _(y=0_), altså når 
+    _($30-4.91*t^2 = 0 \to t=2.471_)
+    Vi kan omskrive funktionen en smule for
+    at finde hældningen: 
+    _($y=-(4.91*t^2)+30_)
+    Det har ingen indflydelse på hældningen, at vi plusser med _(30_). Hældningen handler om <i>forandring</i>,
+    og _(30_) er bare en <i>konstant</i> vi plusser med. 
+    <p class="t">
+    At tage det negative af _(4.91t^2_) betyder, at vi går nedad alle
+    de steder, hvor _(4.91t^2_) går opad. Hældningen er 
+    bare det negative af _(4.91*t^2_)'s hældning. 
+    </p>
+    <p class="t">
+    Vi ved at hældningen på
+    _(t^2_) er _(2*t_). Hvad er hældningen på _(4.91*t^2_)? 
+    Well, hvis hældning
+    er en lille forandring i _(y_) divideret med en forandring i _(t_), bliver 
+    denne lille forandring ganget med _(4.91_). Hældningen bliver derfor også 
+    _(4.91_) gange større overalt! Så:
+    _($\text{Hældning } = -4.91*2*t = -9.82*t_)
+    Hastigheden når bolden rammer jorden er:
+    _($9.82*2.471=24.26 m/s_)
+    Bum!
+    </p>
+    <br></answer-box>
+
+    <q-stion 1="2" 2="4">
+    Vi kan sige følgende om en bestemt bils position imens den accelererer:
+    _($x=0.9*t^2_)
+    Hvor hurtigt accelererer bilen? 
+    <br><br></q-stion>
+    <answer-box>
+    Lad os først finde ud af hvor <i>hurtigt</i> bilen kører:
+    _($0.9*2*t=1.8t_)
+    Det betyder, at bilen efter f.eks. _(3_) sekunder kører
+    med en hastighed på _(1.8*3=_) _(5.4 m/s_). Hvert sekund bliver
+    den _(1.8_) hurtigere: Det er accelerationen!
+    <p class="t">
+    Du kunne også have nået samme konklusion ved at 
+    <i>finde hældningen på _(1.8t_)</i>. Hældningen på position er hastighed.
+    Det svarer til en forandring i position over tid. Hældningen på hastighed er 
+    acceleration, da det svarer til en forandring i hastighed over tid. At finde
+    acceleration ved hjælp af position svarer til at finde hældning to gange!
+    </p>
+    <br></answer-box>
+
+
+
+
+

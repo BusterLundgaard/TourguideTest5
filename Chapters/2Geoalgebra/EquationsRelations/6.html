@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+
+    <h3>Logaritmer som et intuitivt visualiseringsværktøj</h3>
+
+    <p class="t">
+    Vi så tidligere på et plot af en log funktion, og observerede at
+    den voksede meget <i>langsomt</i>. Det er i stor
+    opposition til visse andre funktioner (f.eks. eksponentielle), der vokser ekstremt
+    <i>hurtigt</i>. 
+    Meget hurtige eller meget langsomme funktioner er problematiske
+    at visualisere, da de enten begynder at gå rigtig højt op, eller rigtig langt ud til den ene side.
+    Derfor kan det af
+    rent kommunikationsmæssige og praktiske årsager være en fordel at tage <i>logaritmen</i> af en
+    kvantitet vi skal vise til andre. Sig at vi gerne
+    vil vise og forstå, hvor hurtigt en viral YouTube-video fik views. 
+    En helt normal graf ville nok se ud som:</p>
+    <img class='SpicBXL' style='width:100%' src='../../../Assets/Chapter2\Section3\Logarithms\NotLogarithmicScale.png'> 
+    <p class="t">
+    Det er fint nok, men fortæller mig også kun:
+    "Wow! Den her blev godt nok virkelig stor omkring den 16'ne dag!". 
+    Hvis vi i stedet visualisere samme graf med <i>logaritmen</i> af _(y_)-aksen:
+    </p>
+    <img class='SpicBXL' style='width:100%' src='../../../Assets/Chapter2\Section3\Logarithms\LogarithmicScale.png'> 
+    <p class="t">
+    Her har jeg taget _(Log_{10}_): det vil fortælle os, hvor mange cifre der er i view-tallet.
+    Snakker vi hundrede, tusinder, millioner, milliarder? Er det ikke også det første, du ville kigge på,
+    hvis du hurtigt skulle vurdere, hvor mange en populær video havde? Det er <i>intuitivt</i>. Den første million
+    betyder meget, ikke nødvendigvis den anden. 
+    _(1_) million er slet ikke specielt længere, når man er oppe på _(10_). 
+    Denne graf giver os også en meget bedre ide om, hvordan videoen klarede sig <i>før</i> den eksploderede.
+    </p>
+    <q-stion 1="6" 2="1">
+    Omkring hvornår får videoen 1 million views? (meget nemt spørgsmål).
+    <br><br></q-stion>
+    <answer-box>
+    Vi kan nemt se, at det er omkring d. 23ne, da det, er hvor den når op på _(6_) ved _(y_)-aksen: _(6_) cifre, 1 million. 
+    <br><br></answer-box>
+
+    <p class="t">
+    Lidt ligesom at et tals <i>indtryk</i> på dig i høj grad bestemmes ud fra antallet af cifre, 
+    har man opdaget at det <i>indtryk</i> en lyd har på os også stiger <i>logaritmisk</i> med lydbølgens styrke:
+    Ikke lineært. En lyd med dobbelt så høj lydintensitet <i>opfattes</i> ikke som dobbelt så høj af din hjerne. 
+    Lyden af et fly
+    der letter måler mere en million gange højere _(w/m^2_) end lyden af en vanddråbe i en håndvask. 
+    Den lyd vi <i>føler</i> - den sensation vores hjerne oplever - er ikke <i>tæt</i>
+    på _(1_) million gange så stærk. 
+    </p>
+    <p class="t">
+    Vi vil gerne have et tal, der intuitivt fortæller os hvor "høj" en lyd er, som vi oplever den.
+    Det er formålet med <i>decibells</i> eller bare <i>bells</i>. _(1_) "bell" er 
+    lig: 
+    _($Log_{10}(I/I_0)_)
+    ... hvor _(I_) er lydstyrken i _(w/m^2_) og _(I_0_) den 
+    laveste lydstyrke, et menneske kan høre. _(I_0_) ligger normalt omkring _(10^{-12} \, w/m^2_).
+    </p>
+    <p class="t">
+    Formlen her er praktisk. Hvis _(I=10^{-12}_) vil sensationen ifølge formlen regnes til:
+    _($Log_{10}(10^{-12}/10^{-12}) = Log_{10}(1) = 0_)
+    Og det giver fin intuitiv mening! Den lavest mulige lyd er "_(0_) bells" præcis som forventet. 
+    Lydsensationen af en vanddråbe på jord måler ca. 3-4 bells (https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4936686/),
+    lydsensationen af et fly der letter omtrent 14. Lydstyrken skal stige
+    en del, før vi mennesker opfatter forskellen. 
+    </p>
+
+    <p class="t">
+    "Decibells" er bare bells ganget med 10. 
+    </p>
+
+    <q-stion 1="6" 2="2">
+    Givet en bestemt _(A \text{ w}/\text{m}^2 _), 
+    hvor meget skal <i>lydintensiteten</i> stige i forhold til _(A_), før <i>lydsensationen</i> bliver dobbelt så stor? 
+    Er det konstant og uafhængig af selve styrken ligesom half-life?
+    <br><br></q-stion>
+    <answer-box>
+    Lad os kalde det vi ganger _(A_) med for _(k_). Så:
+    _($\begin{eqnarray}
+    && \frac{Log_{10}(kA/I_0)}{Log_{10}(A/I_0)}=2 \to \\ \\
+    && Log_{10}(kA/I_0) - 2*Log_{10}(A/I_0) = 0 \to \\ \\
+    && Log_{10}(kA/I_0) - Log_{10}(A^2/I_0^2) = 0 \to \\ \\
+    && Log_{10}\left(\frac{kA/I_0}{A^2/I_0^2}\right)=0
+    \end{eqnarray}_)
+    Hvis selve log-funktionen giver _(0_), ved vi at dens input skal være _(1_): 
+    _($\frac{kA/I_0}{A^2/I_0^2} = 1 \to \frac{k*I_0}{A}=1 \to  k=\frac{A}{I_0}_)
+    Lydintensiteten skal derfor blive _(A/I_0_) gange så stor. Dette fordoblingsspring 
+    <i>er</i> afhængig af den originale lydstyrke _(A_).
+    <br><br></answer-box>
+ 

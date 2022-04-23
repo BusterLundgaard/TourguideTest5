@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+
+
+    <h2>Geogebra til algebra</h2>
+    <h3>Ligninger og systemer</h3>
+    <p class="t">
+    På sidste side brugte vi primært Geogebras CAS-funktion til at <i>beregne</i> ting. 
+    Lad os nu bruge CAS til at arbejde med algebra:
+    </p>
+
+    <p class="cent">
+        <a href="https://youtu.be/swLEDYTrAdA">Link til Youtube video</a>
+    </p>
+
+    <q-stion 1="3" 2="1">
+    Løs de følgende ligninger i Geogebra:
+    <ul>
+        <li>_(\underline{\textbf{A}}: \, \, \,_) _(1x^3 + 2.3x^2 + x - 0.2 = 0_)   </li>
+        <li>_(\underline{\textbf{B}}: \, \, \,_) _(x^x=3.4_)</li>
+        <li>_(\underline{\textbf{C}}: \, \, \,_) _(e^x + 2 = x + 2.5_)</li>
+    </ul>
+    <p class="t">
+    De har måske flere løsninger. Måske uendelig! Måske ingen! 
+    </p>
+    <p class="t">
+    Pas på, når du bruger _(e_) i Geogebra. 
+    Du er enten nødt til at skrive _(e_) som
+    dets værdi på omtrent _(2.71828_), eller
+    holde _(\text{ALT}_)-knappen inde, mens du
+    trykker på _(e_). På mac burde det være
+    _(\text{OPTION}_) i stedet for _(\text{ALT}_).
+    Geogebra er nødt til at vide, om vi mener
+    konstanten _(e_) eller en variable, vi kalder
+    _(\text{e}_).
+    </p>
+    <br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    I Geogebra skriver vi
+    _($\text{Solve}\left(1x^3 + 2.3x^2 + x - 0.2 = 0, x \right)_)
+    .. og får:
+    _($\{x=-1.5938, x=-0.853, x=0.1470 \}_)
+    Så der er tre løsninger. 
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Vi skriver:
+    _($\text{Solve}\left(x^x=3.4, x \right)_)
+    .. og får:
+    _($\{x=1.9052  \}_)
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{C}}_)#" tabColour="rgb(171,96,147)">
+    Vi skriver:
+    _($\text{Solve}\left(e^x+2=x+2.5, x \right)_)
+    .. og får:
+    _($\{ \}_)
+    Ingenting! Ingen løsninger! Ligningen ser ud som:
+    <img class='SpicXL' style='width:80%' src='../../../Assets/Chapter2\Geogebra\CAS\IngenSolutions.png'> 
+    <p class="t">
+    De skærer altså aldrig. 
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="3" 2="2" customWidth="700">
+    Løs følgende ligning:
+    _($Sin(x)+Cos(x)=0.43_)
+    <br></q-stion>
+    <answer-box customWidth="700">
+    Vi skriver:
+    _($\text{Solve}\left(sin(x)+cos(x)=0.43,x \right)_)
+    Og får:
+    _($\{x=6.283 k_1 - 0.476, x=6.283 k_1 + 2.047\}_)
+    Der er <i>uendelig</i> mange løsninger. Det giver også god nok
+    mening, hvis man visualiserer ligningen:
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter2\Geogebra\CAS\UendeligSvar.png'> 
+    <p class="t">
+    Faktisk er _(6.283_) jo også _(2\pi_), så:
+    _($x=-0.476 + 2\pi*k_1, \, \, 2.047+2\pi*k_1_)
+    Geogebra <i>ved</i>, at der er uendelig mange løsninger, så den prøver
+    at <i>beskrive</i> de ligninger for os generelt. 
+    Den siger: Vælg enten _(-0.476_) eller _(2.047_), og plus dem med et helt tal
+    ganget med _(2\pi_), så vil du altid få en løsning. F.eks kunne jeg sige:
+    _($x=-0.476+2\pi*(-3) = -18.373_)
+    Jeg tester nu:
+    _($Cos(-18.373)+Sin(-18.373) = 0.888 + (-0.458) = 0.430 _)
+    Boom! Geogebra forsøger altså at beskrive _(x_) i forhold til nogle frie konstanter _(k_),
+    hvis den støder på en ligning, med uendelig mange løsninger. 
+    Man skal dog passe på, da mange af disse slags ligninger er for svære til Geogebra. 
+    Eksempelvis kunne man se på:
+    _($Sin(Cos(x))=0.43_)
+    Hvilket ser ud som:
+    </p>
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter2\Geogebra\CAS\UendeligSvar2.png'> 
+    <p class="t">
+    Her giver Geogebra: 
+    </p>
+    <img class='Spic' style='width:95%' src='../../../Assets/Chapter2\Geogebra\CAS\GeogebraLigningSvar.png'> 
+    <p class="t">
+    Det kan formateres ordentligt til: 
+    _($\begin{eqnarray} 
+    && x = 2\pi*k_1 - Arccos(2\pi*k_2 + 0.52) \\
+    && x = 2\pi*k_1 + Arccos(2\pi*k_2 + 0.52) \\
+    && x = 2\pi*k_3 - Arccos(2\pi*k_2 + 2.62) \\
+    && x = 2\pi*k_3 + Arccos(2\pi*k_2 + 2.62) \\
+    \end{eqnarray}_)
+    Geogebra laver en ret stor fejl her. Sig at du eksempelvis vælger 
+    _(k_2=3_). Du ville nu skulle regne (bl.a.): 
+    _($Arccos(2\pi*3+0.52) = Arccos(19.369)_)
+    Men det er umuligt! Arccos tager kun inputs mellem _(-1_) og _(1_). Geogebra får det til 
+    at ligne, at du kan vælge _(k_2_) frit, men du skal vælge _(k_2=0_) ved 
+    de to første med _(0.52_) for at få et svar. Ved de to andre
+    med _(2.62_) er det ikke engang muligt at vælge en værdi til _(k_2_), hvor 
+    _(2\pi*k_2 + 2.62_) er mellem _(-1_) og _(1_). Der er derfor konkret kun to løsninger:
+    _($x=-Arccos(0.52)+2\pi*k, \, \, x=Arccos(0.52)+2\pi*k_)
+    Du skal derfor være meget ... skeptisk når du får svar på ligninger med uendelig mange løsninger. 
+    I dette eksempel var vi skeptiske, og kom eventuelt frem til et rigtigt resultat. 
+    Geogebra hjalp os dog stadig, da vi nok ikke var kommet frem til løsningen
+    selv i hånden. 
+    </p>
+    <p class="t">
+    I et mere tricky eksempel med uendelig mange løsninger som
+    _($\left(Cos(x)^2 \right)^{Sin(x)}=4.3_)
+    ... vælger Geogebra ofte fuldkommen at give op. Den giver:
+    _($\{ \}_)
+    Det får det til at ligne, at der ikke er nogen løsninger, men det er der pænt tydeligt:
+    </p>
+    <img class='Spic' style='width:90%' src='../../../Assets/Chapter2\Geogebra\CAS\UendeligSvar3.png'> 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="3" 2="3">
+    Som vi så i sidste opgave, er der tidspunkter hvor Geogebra
+    ikke kan finde ud af at løse en ligning trods
+    der tydeligvis findes svar. I sidste opgave
+    gav den os et <i>forkert</i> svar i form af _(\{ \}_). Ved
+    en anden ligning som _(Cos(x)=x_) kan den også finde på at sige: 
+    <img class='Spic' style='width:33%' src='../../../Assets/Chapter2\Geogebra\CAS\GeogebraIntetSvar.png'> 
+    <p class="t">
+    Læg mærke til at den ikke siger _(\{ \}_) - som om, der ikke
+    var nogen løsninger - men aktivt siger _(\{ \text{?} \}_),
+    hvilket betyder, at <i>den</i> ikke kunne finde nogen. 
+    Det her sker, fordi at Geogebra og mange andre CAS-programmer
+    bredt sagt kan løse ligninger på to måder: Analytisk og numerisk.
+    </p>    
+    <p class="t">
+    Hvis Geogebra arbejder analytisk, løser den ligningen lidt som
+    et menneske ville gøre det: Den omskriver begge sider, bruger smarte tricks, og
+    får eventuelt isoleret variablet eller variablerne. 
+    Her kan vi forestille os Geogebra som en person, der bare var virkelig god til
+    at løse ligninger. Den beregner ligningens <i>eksakte</i> værdi.
+    Den ville ikke skrive _(17.771_) men _(4*\pi*\sqrt(2)_).
+    </p>
+    <p class="t">
+    Den numeriske metode er meget simplere.
+    Her bruger Geogebra brute force, og 
+    går slavisk igennem
+    en helt masse x-værdier, indtil den finder noget, der virker
+    (groft sagt, det er lidt mere sofistikeret).
+    </p>
+    <p class="t">
+    _(\text{Solve}_) i
+    Geogebra er <i>analytisk</i>. Hvis du vil løse ligninger
+    numerisk skal du bruge kommandoen "_(\text{NSolve}_)". Prøv
+    at løs _(Cos(x)=x_) via Geogebra.
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Vi skriver:
+    _($\text{NSolve}\left(Cos(x)=x, x \right)_)
+    Og får:
+    _($\{x=0.73909 \}_)
+    Bum!
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="3" 2="4" customWidth="540">
+    Løs de følgende systemer af ligninger med Geogebra:
+    <br>
+    <p class="t">
+    _(\underline{\textbf{A}}_): 
+    _($\begin{eqnarray} 
+    && a & +2b & -4c & +d & =23, \\
+    &-& 3a & +5b & +23c & -2d & =12, \\
+    && 4a & + b & + 3c & + 15d & = 4, \\
+    && 10a & + 4b & - 6c & + 9d & = 7
+    \end{eqnarray}_)
+    </p>
+    <p class="t">
+    _(\underline{\textbf{B}}_): 
+    _($\begin{eqnarray} 
+    && m^{1.5}*2.4^{-n}=7 \\
+    && m^{2.3}*1.2^{-n}=4
+    \end{eqnarray}_)
+    </p>
+    <br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)" customWidth="540">
+    I Geogebra skriver vi:
+    _($\begin{eqnarray}
+    && \text{Solve}(\{ & a+2b-4c+d=23,-3a+5b+23c-2d=12, & \\ && &  4a+b+3c+15d=4,10a+4b-6c+9d=7 \}, & \{a,b,c,d \})
+    \end{eqnarray}_)
+    ... og får:
+    _($\{a=-5.745, b=9.336, c=-2.118, d=1.6  \}_)
+    Voila! 
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)" customWidth="540">
+    Hvis vi prøver at bruge _(\text{Solve}_) og skriver
+    _($\text{Solve}\left(\{m^{1.5}*2.4^{-n}=7, m^{2.3}*1.2^{-n}=4 \}, \{m,n\} \right)_)
+    ... får vi:
+    _($?_)
+    _(\text{Solve}_) kunne <i>ikke finde ud af</i> at finde nogle løsninger, men 
+    måske findes der alligevel nogle. Lad os derfor forsøge med _(\text{NSolve}_):
+    _($\text{NSolve}\left(\{m^{1.5}*2.4^{-n}=7, m^{2.3}*1.2^{-n}=4 \}, \{m,n\} \right)_)
+    Det giver: 
+    _($\{m=1.638, n=-1.377 \}_)
+    Bum!
+    <br><br></answer-box>
+    
+    <!--  -->
+
+    <q-stion 1="3" 2="5">
+    Vi så tidligere på en ligning med uendelig mange løsninger.
+    Ofte er man ikke interesserede i <i>alle</i> løsninger, men
+    kun et par bestemte. Det er Geogebra god til.
+    <p class="t">
+    Sig vi er interesserede i 
+    _(Sin(x)=Cos(x)_) 
+    ... men kun de løsninger
+    hvor _(x_) er mellem _(0_) og _(2\pi_): Èn omgang af en cirkel. 
+    For at gøre det, skriver vi følgende i Geogebra:
+    </p>
+    <img class='Spic' style='width:50%' src='../../../Assets/Chapter2\Geogebra\CAS\IntervalSolve.png'> 
+    <p class="t">
+    Vi sætter et komma efter _(x_), der beskriver hvilket interval
+    vi arbejder med: Hvad er _(x_) større eller mindre end? 
+    </p>
+    <p class="t">
+    Find løsningerne til 
+    _($Cos(x)=Sin(x)*x_)
+    ...mellem _(-3 \lt x \lt 10_).
+    </p>
+    <br></q-stion>
+    <answer-box>
+    I Geogebra skriver vi:
+    _($\text{Solve}\left(sin(x)=cos(x)*x, x, -3 \lt x \lt 10 \right)_)
+    Og får: 
+    _($\{-0.8603, 0.8603, 3.4256, 6.4373, 9.5293 \}_)
+    <br></answer-box>
+
+    <!--  -->
+    
+    <q-stion 1="3" 2="6" customWidth="550">
+    Se følgende system af ligninger:
+    _($\begin{eqnarray} 
+    && Cos(3a)+Sin(b)=0.75 \\
+    && Cos(-5a)+Sin(4b)=1.23
+    \end{eqnarray}_)
+    Find alle løsninger hvor _(a_) er mellem _(-2_) og _(5_), og _(b_) er 
+    mellem _(1_) og _(12_). 
+    <br><br></q-stion>
+    <answer-box t="h" customWidth="550">
+    Her er der <i>to</i> krav vi skal give Geogebra: _(a_) skal være
+    mellem _(0_) og _(5_), og _(b_) skal være mellem _(0_) og _(5_).
+    Vi skal altså give den en <i>liste</i> af krav, så ligesom alle
+    andre lister sætter vi _(\{_) og _(\}_) rundt omkring
+    <br><br></answer-box>
+    <answer-box customWidth="550">
+    Her er der <i>to</i> krav vi skal give Geogebra: _(a_) skal være
+    mellem _(0_) og _(5_), og _(b_) skal være mellem _(0_) og _(5_).
+    Vi skal altså give den en <i>liste</i> af krav, så ligesom alle
+    andre lister, sætter vi _(\{_) og _(\}_) rundt omkring. Vi skriver:
+    _($\begin{align}
+    \text{Solve}\bigl(&\{cos(3a)+sin(b)=0.75,cos(-5a)+sin(4b)=1.23 \}, \{a,b \}, \\
+    &\{-2 \lt a \lt 5, 1 \lt b \lt 12 \} \bigr)
+    \end{align}_)
+    Geogebra giver:
+    _($ \{ \begin{eqnarray}
+    && \{a=2.697, & b=1.739  \}, \\
+    && \{a=1.499, & b=1.839 \}, \\
+    && \{a=-1.499, & b=1.839 \}, \\
+    && \{a=1.52, & b=2.016 \}, \\
+    && \{a=-1.52, & b=2.016 \}, \\
+    && \{a=2.626, & b=2.258 \}
+    \end{eqnarray} \} _)
+    Bum! I dette område er der _(6_) <i>par</i> af løsninger. 
+    <p class="t">
+    Systemet kan visualiseres som:
+    </p>
+    <img class='Spic' style='width:60%' src='../../../Assets/Chapter2\Geogebra\CAS\SystemsOfEquationsVisualisation.png'> 
+    <p class="t">
+    Hvor det grønne er _(Cos(-5a)+Sin(4b)=1.23_) visualiseret, 
+    og det røde er _(Cos(3a)+Sin(b)=0.75_) visualiseret 
+    (hvor _(a_) så er _(x_) og _(b_) er _(y_)). Kassen
+    er _(0 \lt a \lt 5_), _(0 \lt b \lt 5_). Løsningerne er 
+    de steder inden for _(-2 \lt a \lt 5_), _(1 \lt b \lt 12_), hvor
+    den grønne "graf" skærer den røde. Grunden til at 
+    de skærer flere gange end antallet af løsninger vi fik, er bare en grafisk fejl, da
+    Geogebra har ret svært ved at visualisere så avancerede / mærkelige kurver.
+    </p>
+    <br></answer-box>
+
+    <p class="t">
+    Før vi går videre skal det siges, at CAS-funktionerne i geogebra generelt ikke
+    er fantastiske til at løse meget avancerede ligninger eller systemer.
+    Vi har set flere gange nu, at de let kan finde på at lave fejl.
+    Som sagt har
+    Geogebra flere "afdelinger", og det viser sig at dens <i>graf</i>-afdeling
+    (hvor man kan plotte grafer osv.) ofte er bedre til at løse ligninger
+    end dens CAS-afdeling. Her skal man bare plotte ens to udtryk, og trykke
+    der, hvor det ligner, at de skærer. Det er visuelt, det er intuitivt, og af 
+    mystiske årsager verden aldrig vil forstå kan Geogebra løse sværere 
+    ligninger herinde end i dens egen CAS-afdeling. 
+    Den er især bedre til det med at finde løsninger på et bestemt
+    område. Hvis du løser nogen som helst svær ligning med CAS i geogebra fremover,
+    så anbefaler jeg at du tjekker om svaret eller svarene faktisk er rigtige. Plot dem.
+    Vi skal nok gennemgå graf-afdelingen senere i kapitlet, men det her er
+    bare lige en vigtig heads-up og teaser.
+    </p>
+

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+    
+    <h4>Multivariable chain rule</h4>
+    <p class="tt">
+    Kædereglen virker også når vi har flere variabler, på en måde:
+    </p>
+
+    <div class="Theory">
+    <b> Teori: Multivariable chain rule (to variabler):</b> <br>
+    Hvis _(F_) er differentiabelt på _((x,y)_), _(x=f(t)_), _(y=g(t)_) og
+    _(f_) og _(g_) er differentiable på _(t_), så er:
+    _($¤t[F(x,y)] = F_x x'(t) + F_y y'(t)_)
+    </div>
+
+    <div class="Theory">
+    <b> Teori: Multivariable chain rule (generelt):</b> <br>
+    Hvis _(x_1=f_1(t), x_2=f_2(t), ... x_n=f_n(t)_), så er:
+    _($¤t[F(x_1,x_2,...x_n)] = F_{x_1} x_1'(t) + F_{x_2} x_2'(t) + \dots F_{x_n} x_n'(t)_)
+    </div>
+
+    <p class="tt">
+    Vi laver lige først nogle opgaver, før vi går i gang med beviset: 
+    </p>
+
+    <q-stion 1="6" 2="3" bigTop="true">
+    Sig at:
+    _($z=Tan(x^2-y^2)_)
+    ... hvor _(x=Cos(t)_) og _(y=Sin(t)_). Find nu _(z'(t)_)
+    <br><br></q-stion>
+    <answer-box>
+    Du kan se mit svar her:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter4\MultiVarCalc\MultiChainRule1.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="6" 2="4">
+    Regn:
+    _($¤t\left[Sin \left((3t+Sin(t))*(t^2 - 5) \right) \right]_)
+    Svaret er nok ret stort, men opgaven er ikke specielt svær. 
+    <!-- _($\begin{eqnarray}
+    && \textbf{1:} \, \, \, \, & ¤t\left[Sin \left((3t+Sin(t))*(t^2 - 5) \right) \right] \\ \\ 
+    && \textbf{2:} \, \, \, \, & ¤t\left[\sqrt{Ln(\sqrt{t}+1)+Ln(\sqrt{t}-1)} \right] 
+    \end{eqnarray}_) -->
+    <br><br></q-stion>
+    <answer-box>
+    Du kan se mit svar her:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter4\MultiVarCalc\MultiChainRule2.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <!-- <q-stion 1="2" 2="1" 3="5">
+    Find _(w'(t)_) hvis:
+    _($w=Sin(x)*Sin(y)*Sin(z)_)
+    hvor _(x=3t+5_), _(y=t^2-5_), _(z=t+t^3_).
+    <br><br></q-stion>
+    <answer-box>
+    Du kan se mit svar her:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter4\MultiVarCalc\MultiChainRule4.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box> -->
+
+    <!--  -->
+
+    <q-stion 1="6" 2="5">
+    Regn _(y'(x)_) hvis:
+    _($y=(x^3+5x-3)(7x+15)(8x^2+3x-4)_)
+    <br></q-stion>
+    <answer-box>
+    Vi vælger at se denne som:
+    _($f(a,b,c) = a*b*c_)
+    ... hvor:
+    _($\begin{align}
+    a(x) & = (x^3+5x-3) \\  
+    b(x) & = (7x+15) \\  
+    c(x) & = (8x^2+3x-4)   
+    \end{align}_)
+    Nu regner vi
+    _($f_a a'(x) + f_b b'(x) + f_c c'(x)_)
+    ... hvilket man let kan se giver:
+    _($\begin{eqnarray}
+    && (3x^2+5) (7x+15) (8x^2+3x-4) \, + \\
+    && 7 (x^3+5x-3) (8x^2+3x-4) \, + \\ 
+    && (16x+3) (x^3+5x-3) (7x+15)
+    \end{eqnarray}_)
+    Bum!
+
+    
+        <!-- Du kan se mit svar her:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter4\MultiVarCalc\MultiChainRule5.mp4' type='video/mp4'>
+    </video> -->
+    <br><br></answer-box>
+
+    <p class="tt">
+    Vi har tænkt os at bevise det for tilfældet med to variabler, 
+    men det kan relativt nemt generaliseres til flere.
+    </p>
+
+    <q-stion 1="6" 2="6" customWidth="640" bigTop="true">
+    Bevis multivariable chain rule for to variabler. Jeg giver dig to store hints:
+    <p class="t">
+    <i> 1</i>: Brug definitionen af differentiabilitet 
+    </p>
+    <p class="t">
+    <i> 2</i>: Du får måske (eller måske ikke!) brug for et smart trick, hvor 
+    du på et tidspunkt både dividerer og ganger med ... noget.
+    </p>
+    <p class="t">
+    Det er et OK langt bevis.
+    </p>
+    <br></q-stion>
+    <answer-box customWidth="640">
+    Du kan se beviset her:
+    <div class="Proof">
+    Der søges et bedre udtryk for _(d/dt[f(x(t),y(t))]_), så det omskrives til en grænse:
+    _($\lim_{k \to 0} \frac{f(x(t+k),y(t+k))-f(x(t),y(t))}{k}_)
+    _(f_) er differentiabel på _((x,y)_), så 
+    forskellen 
+    _($f(x(t+k),y(t+k))-f(x(t),y(t))_) 
+    ... kan omskrives til
+    _($f_x \triangle x + f_y \triangle y + E(\triangle x, \triangle y)_)
+    ... hvor at:
+    _($\begin{eqnarray} 
+    && \triangle x & = & x(t+k)-x(t) \\
+    && \triangle y & = & y(t+k)-y(t) 
+    \end{eqnarray}_)
+    _(x_) og _(y_) er begge differentiable på _(t_), så disse forskelle kan omskrives til:
+    _($\begin{eqnarray} 
+    && \triangle x & = & x'(t) k + E_x(k)  \\
+    && \triangle y & = & y'(t) k + E_y(k) 
+    \end{eqnarray}_)
+    Alt substitueres nu tilbage i hældningen:
+    _($\begin{eqnarray}
+    && \lim_{k \to 0} \frac{f_x (x'(t) k + E_x(k)) + f_y (y'(t) k + E_y(k)) + E(\triangle x, \triangle y)}{k} =  \\ \\
+    && f_x*x' + f_y*y' + \lim_{k \to 0} f_x \frac{E_x(k)}{k} + f_y \frac{E_y(k)}{k} + \frac{E(\triangle x, \triangle y)}{k} 
+    \end{eqnarray}_)
+    Vi ved pr. definition af differentiabilitet, at _(E_x(k)/k_) og _(E_y(k)/k_) nærmer sig _(0_):
+    _($f_x*x' + f_y*y' + \lim_{k \to 0} \frac{E(\triangle x, \triangle y)}{k}_)
+    Nu skal det bare bevises, at _(\lim_{k \to 0} E(\triangle x, \triangle y)/k = 0_). Vi ved at:
+    _($\lim_{(\triangle x, \triangle y) \to (0,0)} \frac{E(\triangle x, \triangle y)}{\sqrt{\triangle x^2 + \triangle y^2}} = 0_)
+    Derfor laver vi et smart trick og omskriver grænsen til:
+    _($\begin{eqnarray}
+    && \lim_{k \to 0} \frac{E(\triangle x, \triangle y)}{k}*\frac{\sqrt{\triangle x^2 + \triangle y^2}}{\sqrt{\triangle x^2 + \triangle y^2}} = \\ \\
+    && \lim_{k \to 0} \frac{E(\triangle x, \triangle y)}{\sqrt{\triangle x^2 + \triangle y^2}}*\lim_{k \to 0} \frac{\sqrt{\triangle x^2 + \triangle y^2}}{k} 
+    \end{eqnarray}_)
+    Den ene faktor nærmer sig _(0_), så beviset er færdigt 
+    hvis den anden faktor <i>ikke</i> nærmer sig _(\infty_). Det kan vises
+    relativt nemt, siden _(k_)'et i _(\triangle x=x'(t) k + E_x(k)_) og _(\triangle y = y'(t) k + E_y(k)_) kan
+    fjerne _(k_)'et i nævneren:
+    _($\begin{eqnarray}
+    && \lim_{k \to 0} \frac{\sqrt{x'^2 k^2 + y'^2 k^2 + E_x(k)^2 + E_y(k)^2 + 2x' k E_x(k) + 2y' k E_y(k) }}{k} = \\ \\
+    && \lim_{k \to 0} \sqrt{\frac{x'^2 k^2}{k^2} + \frac{y'^2 k^2}{k^2} + \left(\frac{E_x(k)}{k}\right)^2 k + \left(\frac{E_y(k)}{k}\right)^2 k + \frac{2x'}{k} \frac{E_x(k)}{k} + \frac{2y'}{k} \frac{E_y(k)}{k} } = \\ \\
+    && \sqrt{x'^2 + y'^2 + 0^2*0 + 0^2*0 + 0*0 + 0*0} = \\ \\
+    && \sqrt{x'(t)^2 + y'(t)^2}
+    \end{eqnarray}_)
+    Hverken _(x'(t)_) eller _(y'(t)_) er lig _(\infty_), siden de begge er differentiable på _(t_) _(\blacksquare_)
+    </div>
+    <br></answer-box>
+

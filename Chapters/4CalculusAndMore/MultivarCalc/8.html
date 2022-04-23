@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+
+
+    <h2>Approksimationer af multivariable <br> funktioner</h2>
+    <p class="t">
+    Et plan approximere en multivariable funktion nær et punkt, på samme måde som
+    en linje approximere en 1-variable funktion nær et punkt:
+    </p>
+    <img class='SpicXL' style='width:120%; margin-left:-10%' src='../../../Assets/Chapter4\MultiVarCalc\LinearApproximations.png'> 
+    <p class="t">
+    Men en linje er ikke en særlig <i>god</i> approksimation af funktionen nær et punkt. 
+    Det svarer til en Taylor-approksimation hvor _(n=1_), hvilket vi nemt kan gøre bedre:
+    </p>
+    <img class='SpicXL' style='width:80%' src='../../../Assets/Chapter4\MultiVarCalc\LinearApproximation2D 2.png'> 
+    <p class="t">
+    Det samme burde vi kunne gøre i 3D også:
+    </p>
+    <img class='SpicXL' style='width:80%' src='../../../Assets/Chapter4\MultiVarCalc\LinearApproximation3D 2.png'> 
+    <p class="t">
+    Så det er simpelthen målet på denne side: At lave Taylor-approksimationer af funktioner 
+    med flere variabler.
+    </p>
+
+    <p class="t">
+    Værdien og hældningen ved _(x=a_) på en funktion _(f(x)_) og dens Taylor-approksimation
+    evalueret ved _(a_) er identiske. Værdien og de <i>partiale hældninger</i>  
+    er identiske, hvis vi i stedet approximere en multivariable funktion
+    _(f(x,y)_) ved punktet _(A=(a_x, a_y)_). Nu skal vi både tænke over
+    hældningen med respekt til _(x_) <i>og</i> _(y_). Ved højere _(n_) på Taylor-polyomiet 
+    skal alle de _(n_)'th hældninger matche. Det svarer til
+    _(f_{xx}_), _(f_{yy}_), _(f_{yx}_) og _(f_{xy}_) ved _(n=2_) og 
+    _($\begin{eqnarray}
+    && f_{xxx} \\
+    && f_{xxy} \\
+    && f_{xyx} \\
+    && f_{yxx} \\
+    && f_{xyy} \\ 
+    && f_{yyx} \\ 
+    && f_{yxy} \\
+    && f_{yyy}
+    \end{eqnarray}_)
+    ... ved _(n=3_). Clairaut's theorem gør det selvfølgelig lidt nemmere. 
+    </p>
+
+    <q-stion 1="7" 2="1" bigTop="true">
+    Find en taylor-approksimation med _(n=2_) af 
+    _($f(x,y)=e^x*Ln(y+1)_) 
+    ... evalueret ved _((x,y)=(0,0)_). 
+    <p class="t">
+    Du skal altså selv komme frem til 
+    et udtryk, der virker og opfylder kravene! <u>Undvig at læse teksten under dette
+    spørgsmål, siden det lidt er en kæmpe spoiler!</u>
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Lad os lige udføre det generelt med _(f(x,y)_) først. 
+    Vi vælger at skrive _(f(0,0)_) som bare _(f(0)_). Samme gælder
+    f.eks. _(f_y(0,0)_), som vi skriver _(f_y(0)_). 
+    Det er bare en praktisk lille forkortelse, der gør det hurtigere at skrive.
+    <p class="t">
+    Vi har tre krav: Værdierne ved _(0_) hældninger skal være de samme, værdierne ved _(1_) hældning skal være
+    de samme, og værdierne ved _(2_) hældninger skal være de samme. De første to krav er allerede opfyldt 
+    af følgende plan:
+    _($T(x,y)=f(0) + f_x(0)*x + f_y(0)*y _)
+    Vi fokuserer nu eksklusivt på det tredje krav: 
+    Det her plan forsvinder alligevel fuldkommen når vi differentier to gange. 
+    Det trejde krav fortæller os, at _(T_{xx}_), _(T_{yy}_), _(T_{xy}_) og
+    _(T_{yx}_) skal matche med den originale funktion ved _((0,0)_). 
+    Clairaut's theorem reducerer det til kun _(T_{xx}_), _(T_{yy}_) og _(T_{xy}_).
+    Man kan relativt let se, at følgende udtryk opfylder kravet:
+    _($f_{xy}(0) x y + f_{xx}(0) \frac{x^2}{2} + f_{yy}(0) \frac{y^2}{2} _)
+    Det første led er det eneste led der overlever, hvis vi differentierer med _(x_) og _(y_),
+    det andet led er det eneste led der overlever, hvis vi differentierer med _(x_) to gange, og 
+    samme gælder det tredje led med _(y_). De forsvinder alle sammen, hvis ikke
+    vi har differentieret nok, siden de bliver ganget med _(0_). 
+    Alt i alt får vi:
+    _($\begin{align}
+    T(x,y) = \, \, & f(0)  \, \, + \\ \\
+    & f_x(0)x + f_y(0) y  \, \, + \\ \\
+    & f_{xy}(0)xy + f_{xx}(0) \frac{x^2}{2} + f_{yy}(0) \frac{y^2}{2}
+    \end{align}_)
+    Vi skal nu regne de forskellige _(f(0)_), _(f_x(0)_) osv. Først differentierer
+    vi og ser:
+    _($\begin{align}
+    f_x & = e^{x} Ln(y+1) \\ 
+    f_y & = e^x (y+1)^{-1} \\ 
+    f_{xy} & = e^x (y+1)^{-1} \\ 
+    f_{xx} & = e^x Ln(y+1)  \\ 
+    f_{yy} & = -e^x(y+1)^{-2} 
+    \end{align}_)
+    Vi indsætter nu _(x=0_), _(y=0_) og får:
+    _($\begin{align}
+    f_x & = 0 \\ 
+    f_y & = 1 \\ 
+    f_{xy} & = 1 \\ 
+    f_{xx} & = 0 \\ 
+    f_{yy} & = -1 
+    \end{align}_)
+    Vores approksimation er derfor lig: 
+    _($\begin{align}
+    T(x,y) = \, \, & 0 \, \, + \\ \\
+    & 0*x + 1*y \, \, + \\ \\
+    & 1*xy + 0*\frac{x^2}{2} + (-1)* \frac{y^2}{2}
+    \end{align}_)
+    ... hvilket kan simplificeres til:
+    _($T(x,y) = (1+x) y -\frac{y^2}{2}_)
+    Du kan følgende se et plot af den originale funktion og vores approksimation: 
+    <img class='SpicXL' style='width:95%' src='../../../Assets/Chapter4\MultiVarCalc\QuadraticApproximation1.png'> 
+    <p class="t">
+    Fantastisk! 
+    </p>
+    <br></answer-box>
+
+    <p class="tt">
+    Generaliserer vi arbejdet i sidste opgave, ser vi let
+    at Taylor-approksimation af _(f(x,y)_) ved _((x,y)=A_)
+    med _(n=2_) er: 
+    _($\begin{align}
+    T(x,y) = \, \, & f(A)  \, \, + \\ \\
+    & f_x(A)(x-A_x) + f_y(A) (y-A_y)  \, \, + \\ \\
+    & f_{xy}(A)(x-A_x)(y-A_y) + f_{xx}(A) \frac{(x-A_x)^2}{2} + f_{yy}(A) \frac{(y-A_y)^2}{2}
+    \end{align}_)
+    Processen kan let generaliseres til
+    højere _(n_) og flere variabler:
+    </p>
+    <p class="t">
+    Sig du har _(k_) variabler. For at beskrive din Taylor-approksimation
+    _(T_) ved _(n=m_), skal du tage summen af alle mulige tilfælde:
+    _(T_) differentieret _(0_) gange, _(1_) gang, _(2_) gange, _(3_) gange _(\dots_) op 
+    til _(m_). I hvert tilfælde
+    _(i, i \le m_) skal du gennemgå alle mulige kombinationer
+    (hvor rækkefølge er ligegyldig grundet Clairaut) af _(i_) af
+    de _(k_) variabler, hvor du godt kan vælge èn variable flere gange, så meget som du har lyst.
+    Sig at variablerne er _(x_1, x_2, ... x_k_), og at du i en bestemt kombination har 
+    _(j_1_) af _(x_1_), _(j_2_) af _(x_2_), ... _(j_k_) af _(x_k_), hvor de forskellige 
+    _(j_) er hele tal i intervallet _([0,i]_), hvis sum er _(i_). 
+    Det led, der i Taylor-approksimationen kommer til at repræsentere
+    denne kombination er nu:
+    _($ f_{x_1^{j_1}x_2^{j_2}...x_k^{j_k}}(A)*\frac{(x_1 - A_{x_1})^{j_1}*(x_2 - A_{x_2})^{j_2}*...(x_k - A_{x_k})^{j_k}}{j_1!*j_2!*...j_k!} _)
+    Dette er jo lig _(f_{x_1^{j_1}x_2^{j_2}...x_k^{j_k}}(A)_), hvis du 
+    differentierer det _(j_1_) gange med respekt til _(x_1_), _(j_2_) gange med respekt til _(x_2_), ... _(j_k_) gange
+    med respekt til _(x_k_), hvilket er målet. 
+    </p>
+    <p class="t">
+    Som du nok kan regne ud,  
+    bliver denne Taylor approksimation meget hurtigt meget stor
+    og kludret. Den er nok ikke super praktisk som en "hurtig lille approksimation" på samme måde
+    Taylor approksimationer var i 2D, men det er alligevel brugbart og vigtigt at vide. 
+    Det bliver også anvendt til flere numeriske metoder,
+    samt i mange teoretiske sammenhænge. 
+    Allerede på næste side ser vi et eksempel på en Taylor-approksimation, der bliver anvendt i et bevis. 
+    </p>
+    <p class="t">
+    En vigtig del af Taylor-approksimationer i 2D var selvfølgelig at bevise, hvornår de var 
+    "perfekte" hvis _(n \to \infty_). Det tilladte os
+    faktisk at bruge dem i beviser. Man <i>kunne</i> gøre det samme med flere
+    variabler, men det vil ikke beskrives i dette kapitel, da det er for kompliceret
+    og ikke tiden værd. Du må desværre bære over med, at vi på nogle tidspunkter
+    har tænkt os at <i>antage</i> at noget perfekt kan approksimeres, uden vi rigtig har bevist det ordentligt. 
+    </p>
+

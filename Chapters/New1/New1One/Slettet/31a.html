@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1D0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    Har du nogensinde undret dig over hvorfor vi siger at en hel cirkel har lige _(360_) grader?
+    Hvorfor er vinkler mellem _(0_) til _(360_), og ikke noget mere logisk som fra _(0_) til _(100_),
+    eller bare _(0_) til _(1_)? 
+    <p class="t">
+    Svaret er dumt, men ikke helt så dumt som man kunne tro. "Grader" som vi kender dem idag 
+    blev opfundet af en oldgammel civilisation kaldt "babylonierne". De var overbevidste om 
+    at bestemte tal som _(12,180,360_) var meget "runde" af natur. Til en vis grad havde 
+    de ret: _(12, 180, 360_) deler alle den egenskab at de er meget nemme at dividere med 
+    andre tal. Det er faktisk smart at have lige _(12_) timer om dagen, fordi det er nemt 
+    at lave hovedregninger med - samme gælder vinkler og _(360_)! 
+    </p>
+    <p class="t">
+    _(360_) kan man også skrive som 
+    _($2*2*2*3*3*5_) 
+    Et "simplere" tal som _(100_)
+    ville i stedet blive 
+    _($2*2*5*5_) 
+    _(360_) indeholder _(3_) som _(100_) ikke gør. Det betyder at vi f.eks. kan dividere det 
+    med noget som _(30=5*3*2_), da vi så bare skal udregne:
+    _($\frac{360}{30}=\frac{2*2*2*3*3*5}{2*3*5}=2*2*3_) 
+    kontra 
+    _($\frac{100}{30}=\frac{2*2*5*5}{2*3*5}=\frac{2*5}{3}=10/3_) 
+    Der er et mere varieret 
+    arsenal af ting vi kan "fjerne fra tælleren" når vi dividere, kan man vel sige. 
+    </p>
+    <p class="t">
+    Alt det her med hvor let og svært det er at dividere, hænger tæt sammen med 
+    ideen om <i>primtal</i>. Det vil vi snakke en helt masse om i næste afsnit. Det 
+    vigtige lige nu er at du forstår hvordan vi kan omskrive tal til nogle mindre tal 
+    ganget med hinanden som jeg gjorde deroppe. Det gjorde vi også i første afsnit, og 
+    ligesom der så er det super praktisk når vi dividerer. 
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5"> 
+    Omskriv de følgende tal til nogle mindre, hele tal ganget med hinanden. Der må ikke 
+    være <i>noget</i> tal man kan lave om til resultatet/produktet af to mindre hele tal ganget med hinanden. 
+    <div style="text-align:center; margin-top:10px;">
+        <ul style="display: inline-block; text-align: left; padding-left:0%; list-style:none;">
+            <li><b> 1:</b> _(108_) </li>
+            <li><b> 2:</b> _(90_) </li>
+            <li><b> 3:</b> _(140_) </li>
+            <li><b> 4:</b> _(98_) </li>
+            <li><b> 5:</b> _(110_) </li>
+        </ul>
+    </div>
+    <br></q-stion>
+    <answer-box t="Answer 1#" tabColour="rgb(171,96,147)">
+    Her skulle vi omskrive _(108_). Jeg lægger i hvert fald mærke til at det nemt kan divideres
+    med _(2_), altså 
+    _($108=2*54_)
+    _(2_) kan ikke gøres mindre, så jeg skal kigge på _(54_) nu. Det kan også 
+    divideres med _(2_): 
+    _($54=2*27_)
+    _(27_) kan tydeligvis ikke divideres med _(2_), men jeg kan se 
+    at det kan divideres med _(3_) siden det bare er _(3_) mindre end _(30_):
+    _($27=3*9_)
+    _(3_) kan ikke gøres mindre, og det er nemt at omskrive _(9_) til bare _(3*3_). Alt i alt har vi altså nu 
+    _($2*2*3*3*3_)
+    <br></answer-box>
+    <answer-box t="Answer 2#" tabColour="rgb(175,128,161)">
+    Nu _(90=9*10=(3*3)*(5*2)=3*3*5*2_)
+    <br><br></answer-box>
+    <answer-box t="Answer 3#" tabColour="rgb(171,96,147)">
+    Tid til _(140_). Først _(140=2*70_). _(70_) kan tydeligvis også divideres med 
+    _(10_) så _(70=7*10_). _(7_) kan faktisk ikke gøres mindre, men det kan _(10_), som jo bare 
+    er _(5*2_). Vi får altså endeligt _(2*2*5*7_)
+    <br><br></answer-box>
+    <answer-box t="Answer 4#" tabColour="rgb(175,128,161)">
+    _(98=2*49_). Jeg kan huske fra erfaring at _(49=7*7_). Det 
+    er lidt ligesom du nok også bare ved at _(5*5=25_). Svaret er altså derfor simpelt _(2*7*7_)
+    <br><br></answer-box>
+    <answer-box t="Answer 5#" tabColour="rgb(171,96,147)">
+    Til sidst så _(110_). Den er ret nem: _(110=11*10=11*5*2_). <br> 
+    _(11_) kan ikke gøres mindre, så vi er allerede færdige. 
+    <br><br></answer-box>
+    
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5"> 
+        Her er der et billede af et kvarter med to rækkehuse:
+        <img class="picB" src="../../../Assets/Chapter1\Talopgaver og intuition\Misc\F\rækkehuse.png">
+        <p class="t">Hver individuel bygning i det venstre rækkehus har en længde på _(6m_). I det højre rækkehus er 
+        hver bygning _(4m_). Hvor meget længere er det højre rækkehus end det venstre? Brug billedet til at tæle. </p>
+    <br></q-stion>
+    <answer-box> 
+       Du kan se mit svar her:
+       <video class="picB" controls>
+            <source src="../../../Assets/Chapter1\Talopgaver og intuition\Misc\F\Divisionsvideoer\House1.mp4" type="video/mp4">
+       </video>
+    <br><br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5"> 
+        Vi arbejder endnu en gang med rækkehuse. Nu er der _(7_), _(5m_) lange huse i det venstre rækkehus, 
+        og _(14_), _(25m_) lange bygninger i det højre. Hvor meget længere er det højre rækkehus end det venstre? 
+    <br><br></q-stion>
+    <answer-box> 
+        Her:
+        <video class="picB" controls>
+            <source src="../../../Assets/Chapter1\Talopgaver og intuition\Misc\F\Divisionsvideoer\House2Fix.mp4" type="video/mp4">
+       </video>
+    <br><br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5"> 
+    Udregn følgende divisions-stykker:
+    <div style="text-align:center; margin-top:10px;">
+        <ul style="display: inline-block; text-align: left; padding-left:0%; list-style:none;">
+            <li> <b> 1:</b> _(66/30_) </li>
+            <li> <b> 2:</b> _(98/42_) </li>
+            <li> <b> 3:</b> _(300/140_) </li>
+            <li> <b> 4:</b> _(910/78_) </li>
+        </ul>
+    </div>
+    <p class="t">
+    I opgave <b> 2</b> og <b> 4</b> vil jeg gerne have svaret i forhold til hvor mange hele tal og hvor mange _(1/3_)-dele 
+    der er. I opgave <b> 3</b> vil jeg gerne have svaret i forhold til hvor mange hele tal og hvor mange _(1/7_)-dele 
+    der er. Det kan som sagt være en stor hjælp her at dele både nævner og tæller op i flere dele. Hvis de begge
+    indholder et bestemt tal, så kan du jo bare fjerne det siden det bliver divideret væk. 
+    </p>
+    <br><br></q-stion>
+    <answer-box t="Answer 1#" tabColour="rgb(171,96,147)">
+    Du kan mit svar her:
+    <video class="picB" controls>
+        <source src="../../../Assets/Chapter1\Talopgaver og intuition\Misc\F\Divisionsvideoer\Opgave1.mp4" type="video/mp4">
+   </video>
+    <br><br></answer-box>
+    <answer-box t="Answer 2#" tabColour="rgb(175,128,161)">
+    Du kan mit svar her:
+    <video class="picB" controls>
+        <source src="../../../Assets/Chapter1\Talopgaver og intuition\Misc\F\Divisionsvideoer\Opgave2.mp4" type="video/mp4">
+    </video><br>
+    <br><br></answer-box>
+    <answer-box t="Answer 3#" tabColour="rgb(171,96,147)">
+    Du kan mit svar her:
+    <video class="picB" controls>
+        <source src="../../../Assets/Chapter1\Talopgaver og intuition\Misc\F\Divisionsvideoer\Opgave3.mp4" type="video/mp4">
+    </video> 
+    <br><br></answer-box>
+    <answer-box t="Answer 4#" tabColour="rgb(175,128,161)">
+    Du kan mit svar her:
+    <video class="picB" controls>
+        <source src="../../../Assets/Chapter1\Talopgaver og intuition\Misc\F\Divisionsvideoer\Opgave4.mp4" type="video/mp4">
+    </video>
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <p class="t">
+    DROP DENNE SIDSTE OPGAVE! DEN ER UNØDVENDIG!
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5"> 
+        <u> 1:</u> Et bestemt løg vejer _(3*3*3_) gram, et bestemt hvidløg vejer _(2*2*2*2_) gram. En bestemt pære 
+        vejer _(3*3_) gram, og et bestemt æble vejer _(2*2*2_) gram. Hvor meget større er forholdet mellem et løg 
+        og et hvidløg, end forholdet mellem en pære og et æble?
+        <p class="t">
+        <u> 2:</u> Løget vejer nu _(2*2*7_), hvidløget _(3*5_), pæren _(2*2*7*2*2_), og æblet _(5*5*3_). Hvad 
+        er forholdet mellem forholdende nu?
+        </p>
+    <br></q-stion>
+    <answer-box> 
+        <u> 1: </u><br>
+        <video class="pic" controls>
+            <source src="../../../Assets/Chapter1\Talopgaver og intuition\Misc\F\Divisionsvideoer\ForholdForhold1.mp4" type="video/mp4">
+       </video><br>
+       <u> 2: </u><br>
+       <video class="pic" controls>
+            <source src="../../../Assets/Chapter1\Talopgaver og intuition\Misc\F\Divisionsvideoer\ForholdForhold2.mp4" type="video/mp4">
+       </video>  
+    <br><br></answer-box>
+
+
+</html>

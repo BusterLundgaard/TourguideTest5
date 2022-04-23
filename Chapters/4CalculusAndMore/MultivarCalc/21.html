@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+
+
+    <h3>Arbejde og energi</h3>
+    <p class="t">
+    Sig at du cykler følgende vej _(\vec r(t)_):
+    </p>
+    <img class='SpicXL' style='width:90%' src='../../../Assets/Chapter4\MultiVarCalc\Vectorfields\WorkIntegralExample1.png'> 
+    <p class="t">
+    Det blæser faktisk, og vinden kan modelleres som et vektor felt
+    _($\vec F(x,y) = \begin{pmatrix} f(x,y) \\ g(x,y) \end{pmatrix}_)
+    Så:
+    </p>
+    <img class='SpicXL' style='width:95%; margin-top:25px;' src='../../../Assets/Chapter4\MultiVarCalc\Vectorfields\WorkIntegralExample1 2.png'> 
+    <p class="tt">
+    Antag at du altid cykler <i>præcist denne vej</i> fra _(t=a_) til _(t=b_) på _(\vec r(t)_) uanset
+    vindens styrke eller retning.
+    Kun din <i>hastighed</i> varierer: Modvind gør dig langsommere og medvind gør dig hurtigere. Spørgsmålet
+    er nu, hvor meget vinden har "hjulpet" dig i alt. Kan det kvantificeres på nogen smart måde?
+    </p>
+    <p class="t">
+    Det kan kvantificeres i form af et princip i fysik kaldt <i>arbejde</i>. For
+    at forstå "arbejde" får vi brug for de såkaldte "kinematiske formler". Antag
+    at et objekt med starthastigheden _(v_1_) bevæger sig en afstand _(s_) under konstant acceleration i 
+    _(t_) sekunder, og slutter med hastighed _(v_2_). Det kan nu bevises at:
+    </p>
+    <div style="margin-top:25px;">
+    _($\begin{eqnarray}
+    && \textbf{1:} \, \, \, \, v_2 = v_i+at \\ \\
+    && \textbf{2:} \, \, \, \, s = \left(\frac{v_1+v_2}{2} \right)t \\ \\
+    && \textbf{3:} \, \, \, \, s = \frac{a}{2}t^2 + v_1 t \\ \\
+    && \textbf{4:} \, \, \, \, v_2^2 = 2 a s + v_1^2
+    \end{eqnarray}_)
+    </div>
+    <p class="tt">
+    Den første og tredje har vi allerede bevist, men vi mangler den anden og fjerde: 
+    </p>
+    <div class="Proof">
+    <b> Bevis: Anden kinematiske formel.</b> <br>
+    Arealet under en graf af hastigheden som funktion af 
+    tiden fra _(t_0_) til _(t_1_) giver forskellen i position. 
+    Se nu følgende graf: 
+    <img class='Spic' style='width:55%' src='../../../Assets/Chapter4\MultiVarCalc\Vectorfields\SecondKinematicFormula.png'> 
+    <p class="t">
+    Det kan let ses, at arealet under _(v(t)_) er:
+    _($t*v_1 + \frac{1}{2}*t*(v_2-v_1)_)
+    Hvilket kan omskrives til
+    _($\left(\frac{v_1+v_2}{2} \right)t_)
+    _(\blacksquare_)
+    </p>
+    </div>
+
+    <div class="Proof">
+    <b> Bevis: Fjerde kinematiske formel</b> <br>
+    Start med den anden kinematiske formel: 
+    _($s = \left(\frac{v_1+v_2}{2} \right)t_)
+    Hvis _(t_) isoleres i _(v_2 = v_1 + at_) fås 
+    _(t=(v_2-v_1)/a_). Det substitueres ind: 
+    _($s = \frac{(v_2+v_1)}{2}*\frac{(v_2-v_1)}{a} = \frac{v_2^2-v_1^2}{2a}_)
+    Ligningen kan nu let omskrives til:
+    _($v_2^2 = 2 a s + v_1^2_)
+    _(\blacksquare_)
+    </div>
+
+    <p class="tt">
+    <i> Arbejde</i> i fysik definerer vi som
+    <i>kraft gange længde</i>, eller bare _(F*s_). Lad os forstå hvorfor:
+    </p>
+    <p class="t">
+    Sig at et objekt med en masse _(m_)
+    starter med hastigheden _(v_1_) og bevæger sig _(s_) fremad under
+    indflydelse af en konstant kraft _(F_) i samme retning. 
+    Vi ved nu fra fjerde kinematiske ligning, at: 
+    _($s=\frac{v_2^2-v_1^2}{2a}_)
+    Ergo:
+    _($F*s = ma*\frac{v_2^2-v_1^2}{2a} = \frac{1}{2}mv_2^2 - \frac{1}{2}mv_1^2_)
+    Sig nu at et objekt med 
+    en masse på _(3kg_) og starthastighed _(5m/s_)
+    rejser langs en vej imens den bliver påvirket af en kraft. 
+    Du er yderligt informeret om, at kraften udfører et samlet arbejde på 
+    _(31.4_). Det betyder at:
+    _($31.4 = \frac{1}{2}mv_2^2 - \frac{1}{2}mv_1^2_)
+    _(v_1 = 5_), _(m=3_), så:
+    _($\begin{eqnarray}
+    && 31.4 = \frac{1}{2}*3*v_2^2 - \frac{1}{2}*3*5^2 \to \\ \\
+    && v_2 = 6.78 m/s
+    \end{eqnarray}_)
+    Det er ret smart. Vi vil altid kunne finde ændringen i hastighed så længe vi kender
+    det påførte arbejde, uanset hvor kompleks eller mærkelig ruten er. 
+    Dette "samlede arbejde" kan beregnes som tonsvis af bittesmå _(f*s_) man lægger
+    sammen med et integral. Helt konkret skal man regne
+    _($\int_{r} |\vec F(s)|*ds*Cos(\theta(s)) _)
+    ... hvor _(\theta(s)_) er kraftens vinkel til massens bevægelse/rute _(s_) henne ad ruten _(r_). 
+    Man ganger altså kraftens styrke med en lille afstand _(ds_), og husker at
+    gange med _(Cos_) af vinklen. Man integrerer "langs afstand".
+    </p>
+    <p class="t">
+    _(\frac{1}{2}mv^2_) bliver helt generelt kaldt <i>kinetisk energi</i>.  
+    "Energi" er et meget tricky koncept at forklare og forstå. Idéen er bredt sagt, at alt
+    med "energi" har evnen til at "have indflydelse over noget andet":
+    </p>
+    <ul style="list-style:disc; margin-left:5%;" >
+        <li>
+        En tung lastbil med høj hastighed har en stor energi, den f.eks. kan bruge til at 
+        rykke eller smadre flere mindre biler
+        </li>
+        <li>
+        En udstrakt elastik, eller en fjeder, der er trykket sammen, indeholder begge
+        energi, de f.eks. kan bruge til at affyre et projektil med stor hastighed.
+        </li>
+        <li>
+        Varmt vand er fyldt med energi. Det kan opvarme andre objekter, eller få et hjul
+        til at dreje rundt i en dampmaskine. Det hjul har nu sin egen energi,
+        der bl.a. kan løfte kul op ad en mine. 
+        </li>
+        <li>
+        Det kul er fyldt med energi. Det kan nemlig afbrændes og skabe
+        <i>varme</i>.
+        </li> 
+        <li>
+        Sukker (glukose) indeholder energi. 
+        Dyr og mennesker har evnen til at transformere denne glukose 
+        til et slags "lager af energi", der kan anvendes til at 
+        bevæge muskler, opvarme kroppen, få hjertet til at slå, mm. 
+        </li>
+        <li>
+        Lys indeholder energi. Det er lidt svært at forklare præcist <i>hvorfor</i>, 
+        da det involverer general relativitet
+        (Einstein), men lys kan bl.a. opvarme flader
+        eller rykke små masser som elektroner. 
+        </li> 
+        <li>
+        Lyd kommer fra luftmolekyler, der bevæger sig frem og tilbage i luften
+        og <i>vibrerer</i> dine trommehinder. Lyd <i>overfører</i> dets energi gennem luften, og
+        en høj nok amplitude med den rigtige frekvens kan bl.a. ødelægge glas. 
+        </li>
+        <li>
+        Uranium-atomer (eller de langt bedre Thorium-atomer) indeholder energi.
+        Hvis atomet splittes, udløses der protoner og lys.
+        </li>
+        <li>
+        Et batteri kan dele dets elektroniske energi til ledninger i et kredsløb. 
+        Denne elektricitet kan alt muligt:
+        Få et lys til at tænde, få en motor til at dreje rundt, tænde en magnet, mm. 
+        </li>
+    </ul>
+    <p class="t">
+    Nøglen ligger i, at alle disse eksempler og alle former for "indflydelse" du kan forestille
+    dig, fundamentalt kan reduceres til en <i>kraft</i> over en <i>distance</i>: En ændring 
+    i hastigheden af et objekt med masse. 
+    </p>
+    <p class="t">
+    Kul? Et stykke kul kan brændes og skabe ild. Denne ild kan koge vand. Dampen fra vandet
+    kan dreje et møllehjul. Dette hjul kan rykke et stempel frem og tilbage. Dette stempel kan
+    overføre kraft til en masse over en distance. 
+    </p>
+    <p class="t">
+    Sukker? Kroppen kan bruge sukker til en bred vifte vidt forskellige funktioner. 
+    Alle disse involverer dog - på et eller andet plan - at <i>noget</i> giver kraft til
+    <i>noget</i> andet. Muskler der kan løfte og rykke objekter, et pumpende hjerte der transporter og 
+    accelerer blod
+    gennem kroppen, en mikropskopisk og avanceret kemisk proces, hvor flere molekyler skifter plads
+    og bevæger sig. 
+    </p>
+    <p class="t">
+    Lyd? Vibrationer i luften, hvor luftmolekyler påvirker kraft på dine øre over distancer frem og tilbage
+    </p>
+    <p class="t">
+    Strøm? Elektroner der rejser gennem en ledning og overfører kraft over distance gennem deres bevægelse.
+    (stærkt forsimplet).
+    </p>
+    <p class="t">
+    <i>Alt</i> kan laves om til arbejde _(F*s_), og _(F*s_) kan omskrives til ændringen i kinetisk energi 
+    _($\frac{1}{2}mv^2_)
+    Jeg tænker tit over kinetisk energi som "forandringens valuta": <i>Værdien</i> af en hvilken som helst fysisk handling
+    kan beskrives i dette sprog. 
+    </p>
+    <p class="t">
+    Sig eksempelvis du vejer _(10kg_) og har en hastighed på _(2m/s_). 
+    Du stopper pludselig op til _(0m/s_). Herfra ved vi, at du <i>må</i> have overført et arbejde på:
+    _($\frac{1}{2}*10*2^2 - \frac{1}{2}*10*0^2 = 20_)
+    Energien forsvinder jo ikke bare sådan! Din energi er højest sandsynligt gået tabt i 
+    varme og lyd imens du bremsede.
+    Det er to energiformer, der begge kan visualiseres og 
+    forstås som mange <i>millioner</i> bevægende molekyler.
+    Et varm objekts samlede "kinetiske energi" kan beregnes 
+    som en gigantisk sum af hver molekyle. Det kan bl.a. fortælle
+    os, hvor meget arbejde en flamme kan overføre. Energien 
+    der leveres fra et batteri kan også (stærkt forsimplet)
+    beregnes som en sum af de kinetiske energier på elektronerne i ledningen. 
+    </p>
+    <p class="t">
+    Men det er ikke nok bare at måle den kinetiske energi. Mange objekter har også <i>potentiel</i> energi.
+    Det er mængden af kinetisk energi de <i>kan</i> skabe. 
+    Et stykke kul, der flyver gennem luften, har høj 
+    kinetisk energi grundet dets hastighed, men <i>kæmpe</i> potential energi, fordi
+    det kan afbrændes og skabe varme! Kulstykket har også potentiel energi grundet dets position og højde over 
+    jorden. Dets hastighed stiger <i>hvis</i> det falder, hvilket svarer til ekstra kinetisk energi!
+    </p>
+    <p class="t">
+    Sukker har intet kinetisk energi, men er vigtigt grundet dets <i>potentiale</i>. 
+    Molekylerne reagerer på en bestemt måde i cellerne i en process
+    kaldt <i>glykolyse</i>, hvor der dannes et par nye molekyler kaldt <i>ATP</i>. 
+    Disse ATP-bindinger frigiver fotoner (lys) når de bliver brudt, hvilket kroppen bruger til
+    diverse processer. Planters fotosyntese handler fundamentalt om at "lagre" solens fotoner
+    og energi i kemiske bindinger gennem glukose. 
+    Vi spiser denne glukose, nedbryder den, og frigiver solens energi så <i>vi</i> kan bruge den. 
+    Alt liv kommer fra sol!
+    </p>
+    <p class="t">
+    Et lidt mere lavpraktisk eksempel kunne være en fjeder:
+    </p>
+    <img class='Spic' style='width:46%' src='../../../Assets/Chapter4\MultiVarCalc\Vectorfields\Spring.png'> 
+    <p class="t">
+    Massen for enden af denne fjeder har lige nu en hastighed på _(v_). 
+    Fjederen er trukket _(x_) sammen fra
+    dens nominale længde _(L_0_), og massen oplever en kraft henad mod 
+    _(x=0_) på:
+    _($F=-k*x_)
+    Hvor _(k_) er fjederens fjederkonstant. 
+    Massen har lige nu en kinetisk energi på _(\frac{1}{2}mv^2_), men hvad er dens <i>potentiale</i>? 
+    Hvor meget <i>mere</i> kinetisk energi kan den muligt få? 
+    </p>
+    <p class="t">
+    Den kinetiske energi er højest på _(x=0_). Her er potentialet _(0_) siden
+    hastigheden ikke stiger længere. Potentialet ved en arbitrær position _(x=a_) kan derfor regnes som 
+    ændringen i kinetisk energi fra _(x=a_) til _(x=0_), hvilket i sig selv kan
+    beregnes gennem en masse små _(F*s_) via et integral:
+    _($\int_{a}^{0} F(s) \, ds_)
+    _(F(s)=-k*s_), så:
+    _($\int_{a}^{0} -k*s \text{ } ds = -k\frac{0^2}{2} - \left(-k\frac{a^2}{2} \right) = \frac{1}{2}ka^2_)
+    Massen kan altså opnå en samlet kinetisk energi på:
+    _($\frac{1}{2}mv_0^2 + \frac{1}{2}ka^2_) 
+    ... hvis den starter ved _(x=a_) med en hastighed på _(v_0_). 
+    </p>
+    <p class="t">
+    Teorien der får alt det her til at hænge sammen er <i>konservation af energi</i>. 
+    Den samlede mængde energi 
+    (kinetisk + potential) af hele universet ændrer sig aldrig. 
+    Den samlede mængde energi forbliver konstant, hvis der ikke tilføjes eller fjernes
+    energi fra et bestemt område (et <i>system</i> som man siger i fysik), og 
+    samme regel gælder universet som helhed. Energi kan ikke
+    fjernes eller skabes: Kun transformeres. 
+    Det frigiver energi at <i>skabe</i> en kemisk binding, fordi det kræver energi
+    at <i>bryde</i> en kemisk binding. 
+    </p>
+    <p class="t">
+    Denne teori er <i>intuitiv</i> men på ingen måde <i>åbenlys</i>. Det blev <i>anvendt</i> langt før,
+    men først rigorisk bevist i 1918 af den tyske matematiker Emmy Noether ved hjælp af "Noethers theorem"
+    <sup><a href="https://en.wikipedia.org/wiki/Noether%27s_theorem" title="Ja okay, jeg citerer fucking Wikipedia, undskyld, jeg er en dårlig akademiker" target="_blank">[F]</a></sup>. 
+    Det er en meget generel og abstrakt teori, der kan bevise flere fysiske fænomener
+    udover energiens konservation, men jeg er ærlig talt alt for dum til rigtig at forstå den. 
+    </p>
+
+    <p class="cent">*</p>
+
+    <p class="t">
+    Det her er altså grunden til, at vi skal se på arbejde. 
+    Specifikt siden vi lægger fokus på multivariable calculus:
+    Arbejde over et felt. I fysik bearbejder man tit situationer hvor
+    en masse _(m_) rejser en bestemt vej _(\vec r(t)_) gennem et felt _(\vec F(x,y)_). 
+    Det kunne være en kugle, der ruller ned af følgende bakke:
+    </p>
+    <img class='Spic' style='width:95%' src='../../../Assets/Chapter4\MultiVarCalc\Vectorfields\GravityVectorField.png'> 
+    <p class="t">
+    Vi kan beregne dens sluthastighed, ved bare at måle
+    det samlede arbejde tyngdekraften har gjort på den gennem dens
+    rejse. Det virker overraskende "nemt", når man tænker over
+    hvor kompliceret problemet egentligt ser ud. Det er <i>lidt</i> mere kompliceret, da en hård kollision
+    med gulvet nok overfører kinetisk energi i form af varme, men det er en mindre detalje. 
+    </p>
+    <p class="t">
+    Et andet eksempel kunne være strøm og magnetisme, hvor vi ofte
+    arbejder med elektroner, der bevæger sig gennem et elektronisk eller magnetisk felt (eller begge!). 
+    Tyngdekraften og det elektroniske og det magnetiske felt kan
+    alle modelleres som <i>vektor felter</i>, der associerer hvert punkt _((x, y, z)_) med 
+    en bestemt kraft _(F_):
+    </p>
+    <img class='SpicXL' style='width:100%; margin-top:25px;' src='../../../Assets/Chapter4\MultiVarCalc\Vectorfields\MagneticField.png'> 
+    <p class="tt">
+    Vi forstår nu, hvorfor det er vigtigt.
+    Lad os derfra gå videre, 
+    og se hvordan vi konkret regner dette
+    arbejde, et vektor felt udfører en masse langs dens rute. 
+    </p>
+

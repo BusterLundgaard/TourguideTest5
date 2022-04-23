@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+    
+    <h2>Problem E: Noget "mellem" to tal.</h2>
+
+    <p class="t">
+    <i>Du skal bytte dine okser væk, fordi du personligt ikke kan bruge dem til noget.
+    Du vil gerne have får, og du skal nu vælge en pris: Hvor mange får er <p-m m=" 1"></p-m> okse værd?
+    Du tænker, at <p-m m=" 3"></p-m> er for billigt, men at <p-m m=" 4"></p-m> er for dyrt. 
+    Hvad gør du? </i>
+    </p>
+
+    <p class="t">
+    Problemet her er, at du ikke rigtig kan spørge om "halve" får. 
+    Det <i>er</i> muligt hvis du har et lige antal okser, f.eks. <p-m m=" 2"></p-m>. 
+    Sig at du sætter prisen til <p-m m=" 3"></p-m> og et halvt får. 
+    Dine okser er nu
+    </p>
+    <p class="cent">
+        <p-m m=" 2*3h=3h+3h = 6 + h + h = A1 2 + 1 = A1 3"></p-m>
+    </p>
+    <p class="t">
+    ... får værd. Du kan nu bare fortælle dine kunder: <p-m m=" 2"></p-m> okser
+    er <p-m m=" A1 3"></p-m> får værd. Perfekt! 
+    </p>
+    <p class="t">
+    Hvad hvis du vil sælge et ulige antal okser? Hvor mange får giver <p-m m=" A2 1"></p-m> okser? 
+    </p>
+    <p class="t">
+    Hvis <p-m m=" 2"></p-m> okser er <p-m m=" A1 3"></p-m> værd, skal vi vel spørge os
+    selv hvor mange "par" okser du har. <p-m m=" A2 1/2"></p-m> går ikke op, men  
+    <p-m m=" A2/2=A1"></p-m> gør. Du kan altså sige, at du har <p-m m=" A1"></p-m> par
+    okser og <p-m m=" 1"></p-m> resterende. De <p-m m=" A1"></p-m> par 
+    giver dig <br> <p-m m=" A1*A1 3 = B1 A3"></p-m> får, men hvad med den sidste okse? 
+    Den originale ide var at
+    <p-m m=" 1"></p-m> okse gav <p-m m=" 3"></p-m> og et halvt får, så du 
+    kan måske bare ignorere halvdelen ved den sidste okse, så du får 
+    <p-m m=" 3"></p-m> får og
+    </p>
+    <p class="cent">
+        <p-m m=" B1 A3 + 3 = B1 A3 3"></p-m>
+    </p>
+    <p class="t">
+    ... får i alt. Voila!
+    </p>
+    <p class="t">
+    ... eller? Kan vi virkelig sige "voila" i det her tilfælde? Det
+    var i min mening ikke en speciel elegant løsning. Det vil blive endnu mere 
+    forvirrende, hvis vi havde mere komplicerede priser, hvor vi f.eks. sagde
+    at "<p-m m=" 3"></p-m> okser var så og så meget værd". 
+    Det er lidt irriterende, at
+    vi skal til at se hvor mange "par" får vi har og <i>så</i> bagefter gange. 
+    Kunne det ikke være lidt dejligere bare at lave ét gange stykke?
+    Det er også lidt irriterende at vi har brug for <p-m m=" 2"></p-m> tal ("<p-m m=" 2"></p-m>"
+    okser giver "<p-m m=" 7"></p-m>" får), til noget der egentlig bare har effekten
+    af èt enkelt tal. Hvorfor ikke bare opfinde "<p-m m=" 3"></p-m> en halv", skrive
+    det som <p-m m=" 3h"></p-m>, sige at det er prisen og 
+    regne mængden af får <br> som <p-m m=" 3h*A2 1"></p-m>?  
+    </p>
+    <ul style="width:110%;">
+        <li><p-m m=" 3h*A2 1 = "></p-m></li>
+        <li><p-m m=" 3h+3h+3h+3h+3h+3h+3h+3h+3h = "></p-m></li>
+        <li><p-m m=" (3+3+3+3+3+3+3+3+3)+(h+h+h+h+h+h+h+h+h) = "></p-m></li>
+        <li><p-m m=" (B1 A2 3) + (A1 h) ="></p-m></li>
+        <li><p-m m=" B1 A3 3 h"></p-m></li>
+    </ul>
+    <p class="t">
+    Man kan ikke have halve får, så vi runder bare ned til <p-m m=" B1 A3 3"></p-m>.
+    Den her proces virker - i min mening - meget mere praktisk og intuitiv, trods
+    at "halve" får ikke giver nogen reel mening. Det kan godt være at mellemregningerne
+    virkede lidt komplicerede, men det er kun fordi vi ikke rigtig har arbejdet
+    med halve før. Senere hen vil det blive nemt. 
+    </p>
+
+    <p class="t">
+    Lad os undersøge et meget lignende problem med en lignende løsning. 
+    På sidste side skulle vi regne densiteten af to metaller:
+    </p>
+
+    <img class='Spic' style='width:40%' src='../../../Assets/Chapter1\Talsystemmer\Omskrivning\ToSten2.png'> 
+
+    <p class="t">
+    Sig vi havde præcist samme problem med nye tal. 
+    Denne gang vejer det mørke metal <p-m m=" A1 1"></p-m> kg og fylder
+    <p-m m=" A1"></p-m> liter, mens det lyse vejer <p-m m=" B1 A1 2"></p-m> og fylder
+    <p-m m=" B1"></p-m> liter. Hvilken type er lettest? 
+    Ligesom før skal vi se, hvilke af de to følgende divisionsstykker er mindst:
+    </p>
+
+    <p class="cent">
+        <p-m m=" A1 1 / A1"></p-m>, <p-m m=" B1 A1 2/B1"></p-m>
+    </p>
+
+    <p class="t">
+    Vi starter med <p-m m=" A1 1 / A1"></p-m>. Et gæt på <p-m m=" 1"></p-m> giver
+    <p-m m=" A1*1=a1"></p-m> og er for småt, mens et gæt på 
+    <p-m m=" 2"></p-m> giver <p-m m=" A1*2=A2"></p-m> og er for stort.
+    Gættet er <i>mellem</i> <p-m m=" 1"></p-m> og <p-m m=" 2"></p-m>. 
+    Vi oplever samme problem, hvis vi tester vores held ved <p-m m=" B1 A1 2 / B1"></p-m>,
+    hvor <p-m m=" B1*1=B1"></p-m> er for småt og <p-m m=" B1*2=B2"></p-m> for stort. 
+    Vi kan ikke sige, hvilken type metal er tungest, da begge er mellem <p-m m=" 1"></p-m> og <p-m m=" 2"></p-m>! 
+    Vi har brug for <i>et eller andet system</i>, der kan beskrive tal <i>mellem</i> to tal. 
+    </p>        
+    
+    <p class="t">
+    Der er andre mere lavpraktiske situationer, hvor vi også virkelig har brug for sådan et system.
+    Sig at du skulle måle en eller anden længde: 
+    </p>
+
+    <img class='SpicXL' style='width:80%' src='../../../Assets/Chapter1\Talsystemmer\Omskrivning\MeasuringMan.png'> 
+
+    <p class="tt">
+    Den her længde er hverken <p-m m=" 3"></p-m> eller <p-m m=" 4"></p-m> meter.
+    Du <i>kunne</i> vælge bare at runde op eller ned, men det bliver problematisk,
+    hvis resten af dine beregninger er baseret på dette upræcise mål og du, f.eks, bygger
+    et hus. Du kunne også bare bruge centimeter, men dinne tal ville hurtigt blive meget store.
+    Vi har brug for et eller
+    andet vi kan gøre, når vores valgte enhed er for stor, og vi ikke gider skifte. 
+    </p>
+
+    <p class="t">
+    Et andet problem har vi allerede snakket om før: Areal. Vi var meget heldige at
+    tæppet lige passede til de firkanter vi havde tegnet på gulvet. Hvad hvis vi i stedet havde:
+    </p>
+
+    <img class='SpicBXL' style='width:80%' src='../../../Assets/Chapter1\Talsystemmer\Omskrivning\areal og tæppe3 en halv.png'>  
+
+    <p class="tt">
+    Ja, vi kan se, at tæppet <i>i hvert fald</i> fylder <p-m m=" 3*A1 2= B1 2"></p-m> firkanter,
+    men udover det fylder det også nogle <i>halve</i> firkanter. <p-m m=" 2"></p-m>
+    af siderne på tæppet dækker kun halvt:
+    </p>
+
+    <img class='SpicBXL' style='width:80%' src='../../../Assets/Chapter1\Talsystemmer\Omskrivning\areal og tæppe3 en halv mark.png'> 
+
+    <p class="tt">
+    På den røde side er der <p-m m=" A1 2"></p-m> firkanter der kun er halvt dækket
+    og på den grønne <p-m m=" 3"></p-m>. 
+    Den røde side møder den grønne i hjørnet, og her kan man sige, at den røde "dækker halvdelen
+    af halvdelen", så kun kvartdelen er tilbage!  
+    </p>
+
+    <p class="t">
+    De halve dele giver tilsammen:
+    </p>
+
+    <ul>
+        <li><p-m m=" (6+3)*h="></p-m></li>
+        <li><p-m m=" 9*h="></p-m></li>
+        <li><p-m m=" 8*h+h="></p-m></li>
+        <li><p-m m=" 4+h="></p-m></li>
+        <li><p-m m=" 4h"></p-m></li>
+    </ul>
+
+    <p class="t">
+    Hvis vi viser den ène kvarte del som 
+    <img style='height:1em;' src='../../../Assets/Chapter1/Talsystemmer/Omskrivning/SmallNumbers/Side21/1.png'>
+    ... så har vi i alt:
+    </p>
+
+    <img class='Spic' style='width:25%' src='../../../Assets/Chapter1\Talsystemmer\Omskrivning\SmallNumbers\Side21\1 2.png'> 
+
+    <p class="t">
+    Det virker som en meget intuitiv og fair beskrivelse af arealet! Lad os bare
+    bruge halvdele og kvartdele fremover som vi har lyst, da det løser mange af
+    vores problemer, er nemt at forstå, og virker
+    relativt fint i det matematisk system. 
+    Lige én ting dog: Vi burde nok <i>tegne det</i> på en anden måde. Det er
+    irriterende at længden af ens streg er vigtig, da
+    det kan være svært både at tegne og vurdere. 
+    Lad os i stedet tegne det som:
+    </p>
+
+    <p class="cent">
+    <img style='height:1em;' src='../../../Assets/Chapter1/Talsystemmer/Omskrivning/SmallNumbers/Side21/3.png'>
+    </p>
+
+    <p class="t">
+    Vi tegner en lille kasse. Denne kasse har streger inde i, der beskriver antallet
+    af kvartdele. <p-m m=" 1"></p-m> streg <p-m m=" 1"></p-m> kvartdel,
+    <p-m m=" 2"></p-m> streger <p-m m=" 2"></p-m> kvartdele osv. 
+    Kassen ved vores tal har <p-m m=" 3"></p-m> streger indeni da
+    <img style='height:0.75em;' src='../../../Assets/Chapter1\Talsystemmer\Omskrivning\SmallNumbers\Side21\1 3.png'> 
+    på 
+    <img style='height:1em;' src='../../../Assets/Chapter1\Talsystemmer\Omskrivning\SmallNumbers\Side21\1 4.png'> 
+    ... jo svarer til <p-m m=" 3"></p-m> kvartdele. Et par andre eksempler kunne være:
+    </p>
+
+    <img class='Spic' style='width:25%' src='../../../Assets/Chapter1/Talsystemmer/Omskrivning/SmallNumbers/Side21/4.png'>
+
+    <p class="t">
+    Der kan ikke være <p-m m=" 4"></p-m> streger i kassen, da det svarer til bare <p-m m=" 1"></p-m>.
+    </p>
+
+    <p class="t">
+    Vi kan nu prøve at løse nogle af problemerne fra før med dette nye system:
+    </p>
+
+    <img class='SpicT' style='width:80%' src='../../../Assets/Chapter1\Talsystemmer\Omskrivning\MeasuringMan2ElectricBoogalo.png'> 
+
+    <p class="tt">
+    <img style='height:1em;' src='../../../Assets/Chapter1/Talsystemmer/Omskrivning/SmallNumbers/Side21/5.png'> 
+    vil virke som en fin approksimation. Ikke ligeså godt som at måle
+    det med centimeter, men langt nemmere at arbejde med. 
+    </p>
+
+    <p class="t">
+    Hvad med metallet og divisionsstykkerne der ikke gik op? 
+    Det første stykke var <p-m m=" A1 1 / A1"></p-m>, hvor svaret var højere end
+    <p-m m=" 1"></p-m> men lavere end <p-m m=" 2"></p-m>. Det mindste tal vi kan skrive
+    med denne egenskab er <img style='height:1em;' src='../../../Assets/Chapter1/Talsystemmer/Omskrivning/SmallNumbers/Side21/6.png'>,
+    så vi prøver: 
+    </p>
+
+    <p class="cent">
+        <img style='height:1em;' src='../../../Assets/Chapter1/Talsystemmer/Omskrivning/SmallNumbers/Side21/7.png'> <p-m m=" ="></p-m>
+        <img style='height:1em;' src='../../../Assets/Chapter1/Talsystemmer/Omskrivning/SmallNumbers/Side21/8.png'> <p-m m=" ="></p-m>
+        <img style='height:1em;' src='../../../Assets/Chapter1/Talsystemmer/Omskrivning/SmallNumbers/Side21/9.png'> <p-m m=" ?"></p-m>
+    </p>
+
+    <p class="t">
+    <img style='height:1em;' src='../../../Assets/Chapter1/Talsystemmer/Omskrivning/SmallNumbers/Side21/10.png'> svarer til at sige:
+    </p>
+
+    <p class="cent">
+        <img style='height:6em;' src='../../../Assets/Chapter1/Talsystemmer/Omskrivning/SmallNumbers/Side21/11.png'>
+    </p>
+
+    <p class="t">
+    Stykket bliver altså til:
+    </p>
+
+    <p class="cent">
+        <p-m m=" A1+1=A1 1"></p-m>
+    </p>
+
+    <p class="t">
+    Voila: Vi kan sige, at det ene stykke metal har en densitet
+    på 
+    <img style='height:1em;' src='../../../Assets/Chapter1/Talsystemmer/Omskrivning/SmallNumbers/Side21/6.png'>. 
+    Det andet stykke svarede til
+    <p-m m=" B1 A1 2 / B1"></p-m>. Lad os igen først
+    teste <img style='height:1em;' src='../../../Assets/Chapter1/Talsystemmer/Omskrivning/SmallNumbers/Side21/6.png'>: 
+    </p>
+
+    <p class="cent">
+        <img style='height:1em;' src='../../../Assets/Chapter1/Talsystemmer/Omskrivning/SmallNumbers/Side21/16.png'>
+        <img style='height:1em;' src='../../../Assets/Chapter1/Talsystemmer/Omskrivning/SmallNumbers/Side21/17.png'>
+    </p>
+
+    <p class="t">
+    Det er lidt for småt. Lad os prøve med 
+    <img style='height:1em;' src='../../../Assets/Chapter1/Talsystemmer/Omskrivning/SmallNumbers/Side21/18.png'>:
+    </p>
+
+    <p class="cent">
+        <img style='height:1em;' src='../../../Assets/Chapter1/Talsystemmer/Omskrivning/SmallNumbers/Side21/22.png'>
+    </p>
+
+    <p class="t">
+    Det er for stort! Vores svar er <i>mellem</i> 
+    <img style='height:1em;' src='../../../Assets/Chapter1/Talsystemmer/Omskrivning/SmallNumbers/Side21/6.png'>
+    og
+    <img style='height:1em;' src='../../../Assets/Chapter1/Talsystemmer/Omskrivning/SmallNumbers/Side21/18.png'>.
+    Lad os derfor bare udvide systemet, så vi kan 
+    lave <i>endnu</i> mindre tal. Sig vi laver en ny kasse:
+    </p>
+
+    <p class="cent">
+        <img style='height:1em;' src='../../../Assets/Chapter1/Talsystemmer/Omskrivning/SmallNumbers/Side21/23.png'>
+    </p>
+
+    <p class="t">
+    I den nye kasse tager vi kvartdele af kvartdele. 
+    Tallet jeg lige tegnede svarer altså til <p-m m=" 2"></p-m> kvartdele
+    og <p-m m=" 1"></p-m> kvartdel af en kvartdel. Tallet
+    <img style='height:1em;' src='../../../Assets/Chapter1/Talsystemmer/Omskrivning/SmallNumbers/Side21/24.png'>
+    svarer til <p-m m=" 1"></p-m> kvartdel og en halv kvartdel. 
+    Vi kan udvide systemet lige så meget som vi har lyst, ved bare at tage
+    kvartdele af kvartdele af kvartdele af kvartdele ... osv. Så mange kasser
+    vi føler vi har brug for!
+    </p>
+    <p class="t">
+    Lad os tjekke om 
+    <img style='height:1em;' src='../../../Assets/Chapter1/Talsystemmer/Omskrivning/SmallNumbers/Side21/25.png'> 
+    virker:
+    </p>
+
+    <p class="cent">
+        <img style='height:1em;' src='../../../Assets/Chapter1/Talsystemmer/Omskrivning/SmallNumbers/Side21/27.png'>
+    </p>
+
+    <p class="t">
+    <img style='height:1em;' src='../../../Assets/Chapter1/Talsystemmer/Omskrivning/SmallNumbers/Side21/29.png'>
+    svarer til: 
+    </p>
+
+    <p class="cent">
+        <img style='height:24em; margin-top:25px; margin-bottom: 20px;' src='../../../Assets/Chapter1/Talsystemmer/Omskrivning/SmallNumbers/Side21/30.png'>
+    </p>
+
+    <p class="t">
+    Altså:
+    </p>
+
+    <p class="cent">
+        <img style='height:1em;' src='../../../Assets/Chapter1/Talsystemmer/Omskrivning/SmallNumbers/Side21/34.png'>
+        <img style='height:1em;' src='../../../Assets/Chapter1/Talsystemmer/Omskrivning/SmallNumbers/Side21/35.png'>
+    </p>
+
+    <p class="t">
+    Det passer næsten! Vi er <p-m m=" 1"></p-m> fra, så vi skal
+    bare tilføje et ekstra 
+    <img style='height:1em;' src='../../../Assets/Chapter1/Talsystemmer/Omskrivning/SmallNumbers/Side21/32.png'>
+    til svaret for at det går op. Svaret er derfor
+    <img style='height:1em;' src='../../../Assets/Chapter1/Talsystemmer/Omskrivning/SmallNumbers/Side21/33.png'> 
+    ... og voila!
+    Denne type metal vejer mere end den den første!   
+    Vi har vores svar! 
+    </p>
+    
+
+
+
+

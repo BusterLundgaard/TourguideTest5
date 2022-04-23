@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+
+
+    <h4>Arbejde og konservative vektor felter</h4>
+    <p class="t">
+    Nogle bestemte vektor felter siger vi er <i>konservative</i>, og de er meget brugbare og vigtige hvad angår 
+    arbejde/linjeintegraler:
+    </p>
+
+    <div class="Definition">
+    <b> Definition: Konservativt vektor felt</b> <br>
+    Et vektor felt 
+    _($\vec F = \begin{pmatrix}  m(x,y) \\ n(x,y) \end{pmatrix}_) 
+    ... siges at være "konservativt", hvis det er lig gradienten af en funktion _(f(x,y)_). Med andre ord:
+    Feltet er konservativt, hvis der findes en funktion _(f(x,y)_) hvor:
+    _($\begin{eqnarray}
+    && f_x(x,y) = m(x,y) \\
+    && f_y(x,y) = n(x,y)
+    \end{eqnarray}_)
+    </div>
+
+    <p class="tt">
+    Sig eksempelvis at vores vektor felt var:
+    _($\vec F = \VeC[6xy - Sin(x) y, 3x^2 + Cos(x)]_)
+    Det er konservativt siden:
+    _($\begin{eqnarray}
+    && ¤x[3x^2y + Cos(x)y] = 6xy - Sin(x)y \\
+    && ¤y[3x^2y + Cos(x)y] = 3x^2 + Cos(x)\frac{}{}
+    \end{eqnarray}_)
+    Så _(\vec F_) er lig gradienten af _(3x^2y + Cos(x)y_). 
+    </p>
+
+    <p class="t">
+    Disse konservative felter har en meget praktisk egenskab.
+    Mængden af arbejde 
+    de gør til et objekt der bevæger sig fra punkt _(A_) til punkt _(B_), har <i>intet</i> at gøre med den rute 
+    massen tager:
+    </p>
+
+    <img class='SpicXL' style='width:80%' src='../../../Assets/Chapter4\MultiVarCalc\Vectorfields\ConservativeVectorField.png'> 
+
+    <p class="t">
+    Så: 
+    _($\int_{t_0}^{t_1} \vec F(\vec r_1(t))*\vec r_1'(t) \text{ }dt = \int_{t_2}^{t_3} \vec F(\vec r_2(t))*\vec r_2'(t) \text{ }dt _)
+    Eller med lidt flottere notation:
+    _($\int_{C_1} \vec F*ds = \int_{C_2} \vec F*ds_)
+    Du skal ikke tænke over hvorfor, _(\vec F_) bliver ganget med _(ds_) her. 
+    Det er bare en notation/forkortelse for _(\vec F(\vec r(t))*\vec r'(t)_). 
+    Integralet fortæller os, at vi skal beregne arbejdet af vektor feltet
+    langs ruten _(C_). 
+    </p>
+    <p class="t">
+    Det her virker uintuitivt, men giver faktisk super god mening. 
+    Integralet kan laves om til følgende, hvis _(\vec F_) er konservativt:
+    _($\begin{eqnarray}
+    && \int_{t_0}^{t_1} \VeC[f_x(\vec r(t)), f_y(\vec r(t))] * \VeC[x'(t),y'(t)] \text{ }dt = \\ \\
+    && \int_{t_0}^{t_1} f_x(\vec r(t))*x'(t) + f_y(\vec r(t))*y'(t) \text{ }dt =  \\ \\
+    && \int_{t_0}^{t_1} f_x(\vec r(t))*(x'(t)*dt) + \int_{t_0}^{t_1} f_y(\vec r(t))*(y'(t)*dt)
+    \end{eqnarray}_)
+    _(f_x(\vec r(t))_) er en hældning på _(f_) når _(x_) ændrer sig en smule. 
+    _(x'(t)*dt_) er hvor meget _(x_) ændrer sig, når _(t_) ændrer sig en smule. Derfor svarer 
+    _(f_x(\vec r(t))*(x'(t)*dt)_) til en lille forskel i _(f_). Samme <br> gælder _(f_y(\vec r(t))*(y'(t)*dt)_).
+    Du lægger alle de her forskelle sammen via et integral fra _(B_) til _(A_), og får
+    den samlede ændring i _(f_). Altså:
+    _($\int_C \vec F*ds = f(A) - f(B)_)
+    Ruten er ligegyldig, og arbejdet er super nemt at finde! 
+    </p>
+
+    <q-stion 1="22" 2="1" bigTop="true">
+    Dit vektor felt er 
+    _($\vec F = \VeC[6xy - Sin(x) y, 3x^2 + Cos(x)]_)
+    Og du tager følgende rute fra _((-2,6)_) til _((8,-5)_):
+    <img class='Spic' style='width:95%' src='../../../Assets/Chapter4\MultiVarCalc\Vectorfields\PathIndepence1.png'> 
+    <p class="t">
+    Find arbejdet. 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Ruten vi tager er fuldkommen ligegyldig. Vi kan derfor bruge følgende formel:
+    _($f(A)-f(B) = f(8,-5) - f(-2,6)_)
+    Vi ved, at _(f(x,y)=3x^2y+Cos(x)y_), så:
+    _($\begin{align}
+    & (3(8)^2(-5)+Cos(8)(-5)) - (3(-2)^2(6)+Cos(-2)(6)) = \\ \\
+    & -1028.775
+    \end{align}_)
+    Vektor feltet har altså gjort et negativt arbejde på _(1028.77_). 
+    <br><br></answer-box>
+
+    <q-stion 1="22" 2="2">
+    Dit vektor felt er: 
+    _($\vec F = \VeC[y*z,x*z,x*y]_)
+    _(\textbf{A}_): Vis at dette er et konservativt vektor felt. 
+    <p class="t">
+    _(\textbf{B}_): Hvor meget arbejde gør vektor feltet
+    på en masse, der bevæger sig fra _(A_) hele vejen rundt i følgende cyklus?
+    </p>
+    <img class='SpicXL' style='width:90%' src='../../../Assets/Chapter4\MultiVarCalc\Vectorfields\PathIndependence2.png'>  
+    <br><br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    I det her tilfælde kan man relativt nemt se, at vores vektor felt er gradienten af _(f(x,y,z)=x*y*z_), da:
+    _($\begin{eqnarray}
+    && ¤x[x*y*z] = yz \\
+    && ¤y[x*y*z] = xz \\
+    && ¤z[x*y*z] = xy \\
+    \end{eqnarray}_)
+    Så vektor feltet er konservativt. 
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Det totale arbejde i et konservativt vektor felt, når vi går rundt i et kredsløb og ender hvor vi starter, 
+    vil <i>altid</i> være _(0_).
+    Både startpositionen og slutpositionen er jo _(A_), så vi kan regne arbejdet som:
+    _($f(A)-f(A)=0_)
+    <br></answer-box>
+
+    <!--  -->
+
+    <p class="tt">
+    Hvordan vurderer vi helt generelt om et vektor felt er konservativt, og hvordan
+    finder vi dets "potentiale" _(f(x,y)_)?
+    </p>
+
+    <p class="pageSplitter">*</p>
+
+    <p class="t">
+    Det er meget nemt at tjekke om et felt er konservativt via Clairaut's theorem.
+    Antag at _(\vec F_) er konservativ:
+    _($\vec F = \begin{pmatrix} m(x,y) \\ n(x,y) \end{pmatrix} = \begin{pmatrix} f_x (x,y) \\ f_y(x,y) \end{pmatrix}_)  
+    Vi ved at _(f_{xy}=f_{yx}_), så vi skal bare tjekke:
+    _($m_{y}(x,y)=n_{x}(x,y)_)
+    Feltet er konservativt hvis og kun hvis denne lighed er sand. 
+    </p>
+
+    <q-stion 1="22" 2="3" bigTop="true">
+    Vurder om de følgende vektor felter er konservative eller ej:
+    <div style="margin-left:-52%; margin-top:25px; margin-bottom: -10px;">
+    _($\begin{eqnarray}
+        && \underline{\textbf{A}}: \, \, \, \, \, \, \VeC[\frac{1}{x}+y^2 e^x, 2y e^x] \\ \\  
+        && \underline{\textbf{B}}: \, \, \, \, \, \, \VeC[3x^2, 6xy] \\ \\  
+        && \underline{\textbf{C}}: \, \, \, \, \, \, \VeC[-Sin(x Sin(y)) Sin(y), -x Sin(x Sin(y)) Cos(y)] \\ \\  
+        && \underline{\textbf{D}}: \, \, \, \, \, \, \VeC[Sin(xy)*y^2,2*Tan(x)] 
+    \end{eqnarray}_)
+    </div>
+    <br><br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    Vi kan se at:
+    _($\begin{eqnarray}
+    && ¤y \left[\frac{1}{x}+y^2 e^x \right] = 2ye^x \\
+    && ¤x \left[2ye^x \right] = 2ye^x  
+    \end{eqnarray}_)
+    _(f_{xy}=f_{yx}_) og feltet er konservativt. 
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Vi ser:
+    _($\begin{eqnarray}
+    && ¤y[3x^2] = 0 \\
+    && ¤x[6xy] = 6x  
+    \end{eqnarray}_)
+    Feltet er derfor <i>ikke</i> konservativt. 
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{C}}_)#" tabColour="rgb(171,96,147)">
+    Feltet <i>er</i> konservativt. Vi kan med lidt arbejde vise, at både _(d/dy[-Sin(x Sin(y)) Sin(y)]_) og 
+    _(d/dx[-Sin(x Sin(y))*x*Cos(y)]_) er lig:
+    _($-xCos(x Sin(y)) Cos(y) Sin(y) - Cos(y) Sin(x Sin(y))_)
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{D}}_)#" tabColour="rgb(175,128,161)">
+    Dette felt er tydeligvis <i>ikke</i> konservativt. Det kan ses at:
+    _($\begin{eqnarray}
+    && ¤y[Sin(xy)*y^2] = xy^2 Cos(xy)+2ySin(xy) \\
+    && ¤x[2 Tan(x)] = 2Sec(x)^2
+    \end{eqnarray}_)
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="22" 2="4">
+    Er alle konstante vektor-felter konservative? 
+    <br><br></q-stion>
+    <answer-box>
+    <i>Ja</i>. x-komponentet differentieret med respekt til _(y_) og y-komponentet
+    differentieret med respekt til _(x_) giver begge _(0_), siden de er konstanter. 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="22" 2="5">
+    Find en lignende strategi til at tjekke, om 3D vektor-felter er konservative, og vurder om de
+    følgende felter er konservative eller ej: 
+    <div style="margin-left:-55.5%; margin-top:25px; margin-bottom: -10px;">
+    _($\begin{eqnarray}
+        && \underline{\textbf{A}}: \, \, \, \, \, \, \vec F = \VeC[2xzy^3, 3x^2 y^2 z, x^2 y^3] \\ \\ 
+        && \underline{\textbf{B}}: \, \, \, \, \, \, \vec F = \VeC[Cos(x)y + z^2, \frac{1}{2}x^2 + 2z, 4zx + y^2 Sin(x)] \\ \\ 
+        && \underline{\textbf{C}}: \, \, \, \, \, \, \vec F = \VeC[Cos(xy^2)y^2 z, 2Cos(xy^2)yxz, Sin(xy^2)] 
+    \end{eqnarray}_)
+    </div>
+    <br><br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    Antag at vores 3D vektor felt er konservativt:
+    _($\vec F = \begin{pmatrix} m(x,y,z) \\ n(x,y,z) \\ q(x,y,z) \end{pmatrix} = \VeC[f_x,f_y,f_z]_)
+    Vi ved fra Clairaut's theorem at 
+    _($f_{xyz} = f_{yxz} = f_{zxy}_)
+    Så et felt er konservativt hvis:
+    _($m_{yz} = n_{xz} = q_{xy}_)
+    Derfor regner vi: 
+    _($\begin{align}
+    m_y & = 6xzy^2 \\
+    n_x & = 6xzy^2 \\
+    q_x & = 2xy^3
+    \end{align}_)
+    Og vi regner videre:
+    _($\begin{align}
+    m_{yz} & = 6xy^2 \\
+    n_{xz} & = 6xy^2 \\ 
+    q_{xy} & = 6xy^2
+    \end{align}_)
+    De matcher alle og feltet <i>er</i> konservativt. 
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Vi gør præcist det samme som i sidste opgave og regner: 
+    _($\begin{align}
+    m_{yz} & = 0 \\ 
+    n_{xz} & = 0 \\
+    q_{xy} & = 2y Cos(x)
+    \end{align}_)
+    Feltet er <i>ikke</i> konservativt. 
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{C}}_)#" tabColour="rgb(171,96,147)">
+    Dette felt <i>er</i> konservativt, da vi kan regne og se, 
+    at både _(m_{yz}_), _(n_{xz}_) og _(q_{xy}_) alle er lig:
+    _($2y Cos(xy^2) - Sin(xy^2) 2xy*y^2_)
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="22" 2="6">
+    Vi ved, at størrelsen af tyngdekraften ét objekt _(m_) oplever, henad 
+    mod et andet objekt _(M_), kan regnes med formlen:
+    _($\frac{G*M*m}{r^2}_)
+    _(\underline{\textbf{A}}_): <br>
+    Antag at begge masser holdes konstante, og at _(M_) er ved _((a,b)_)  mens _(m_)'s 
+    position varierer som _((x,y)_). 
+    Beskriv tyngdekraften som et vektor felt.
+    <p class="t">
+    _(\underline{\textbf{B}}_): <br>
+    Er dette vektor felt konservativt? 
+    </p>
+    <br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    Lad os konstruere en retningsvektor der peger fra _((x,y)_) mod _((a,b)_) og gange længden
+    af denne retningsvektor med kraftens størrelse:
+    _($\left( \frac{1}{\sqrt{(a-x)^2+(b-y)^2}}*\VeC[a-x,b-y] \right) \frac{GMm}{(a-x)^2+(b-y)^2}  _)
+    Det kan simplificeres til:
+    _($\vec F = \frac{GM m}{\left((a-x)^2 + (b-y)^2 \right)^{3/2}} \VeC[a-x,b-y]_)    
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Svaret er ja. _(m_y_) kan regnes til:
+    _($-\frac{3}{2} \frac{2*(b-y)}{\left((a-x)^2 + (b-y)^2 \right)^{5/2}}*(a-x)_)
+    Og _(n_x_) giver:
+    _($-\frac{3}{2} \frac{2*(a-x)}{\left((a-x)^2 + (b-y)^2 \right)^{5/2}}*(b-y)_)
+    Boom!
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="22" 2="7">
+    Du er ude i rummet i dit _(2*10^4_) kg tunge rumskib, og  
+    et massivt objekt 
+    lidt væk fra dig vejer _(7.5*10^9kg_). Det er centreret på _((0, 0)_),
+    mens din position er
+    _((-14000,16000)_). Hvor meget arbejde gør tyngdekraften på dig, mens du 
+    bevæger dig til _((-3200,12000)_)? 
+    <p class="t">
+    Man kan ikke let finde et potentiale til tyngdekraftens vektor felt
+    (det er stort og kludret). 
+    Vi har ikke engang lært hvordan man finder potentialer endnu, så 
+    du får brug for en anden strategi. Hvordan kan du ellers udnytte,
+    at vejen fra _((-14000,16000)_) til _((-3200,12000)_) er fuldkommen
+    ligegyldig? 
+    </p>
+    <p class="t">
+    Den her opgave er måske lidt tricky!
+    </p>
+    <p class="t">
+    Venlig reminder: _(G=6.674*10^{-11}_). 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Vi ved, at tyngdekraftsfeltet er konservativt, så det er ligegyldigt <i>hvordan</i> 
+    vi rejser til _((-3200,12000)_). Lad os derfor vælge den nemmest mulige vej:
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter4\MultiVarCalc\Vectorfields\PathIndependenceSpace.png'> 
+    <p class="t">
+    Punktet vi starter ved har en radius på _(\sqrt{14000^2 + 16000^2} = _) _(21260_),  
+    og punktet vi skal hen til har en radius på _(\sqrt{3200^2+12000^2} = _) _(12419_). 
+    Vores punkt har en vinkel til _(y_)-aksen på _(Arctan(14000/16000) = 0.718_), og 
+    det punkt vi skal hen til en vinkel på _(Arctan(3200/12000) = 0.260_). Det er 
+    nemt at rejse langs _(r_), eftersom tyndekraften altid peger den retning, man bevæger sig. 
+    Det er især nemt at rejse langs _(\theta_), siden tyngdekraften altid er vinkelret på 
+    ens bevægelse og ikke har nogen indflydelse. Det eneste vi har brug for at regne er:
+    _($\begin{eqnarray}
+    && \int_{12419}^{21260} F(r) \text{ }dr = \\ \\
+    && \int_{12419}^{21260} \frac{G M m}{r^2} \text{ }dr = \\ \\
+    && -G M m \left(\frac{1}{21260} - \frac{1}{12419} \right) = \\ \\ 
+    && 6.674*10^{-11}*2*10^4*7.5*10^9*3.348*10^{-5} = \\ \\
+    && 0.335 
+    \end{eqnarray}_)
+    Tyngdekraften gør altså et meget lille arbejde i dette tilfælde. 
+    </p> 
+    <p class="pageSplitter">*</p>
+    <p class="t">
+    En nemmere og mere direkte strategi er, at finde vektor feltets potentiale.
+    Man kan lege lidt rundt og se, at _(\vec F_) er gradienten til
+    _($f(x,y) = -\frac{G M m}{\sqrt{x^2+y^2}}_)
+    Herfra kan man bare regne _(f(-3200,12000)-f(-14000,16000)_). 
+    </p>
+    <p class="t">
+    Jeg viser den mere indirekte strategi, fordi det nogle gange er umuligt eller
+    for upraktisk at finde vektor feltets potentiale. Det er jo integraler vi arbejder med!
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <p class="cent">*</p>
+    
+    <p class="t">
+    Vi skal nu se, hvordan vi finder potentialet, når vi ved, at en funktion er konservativ. 
+    Lad os se på:
+    _($\vec F = \VeC[6xy + Sec(x)^2, 3x^2 - Sin(y)]_)
+    Det kan relativt let tjekkes, at denne funktion er konservativ. 
+    Vi ved derfor, at der findes en _(f(x,y)_) hvor:
+    _($f_x(x,y)=6xy + Sec(x)^2 \text{ [1]}, \qquad f_y(x,y) = 3x^2 - Sin(y) \text{ [2]}_)
+    Integralet af _(6xy+Sec(x)^2_) med respekt til _(x_) er _(3yx^2+Tan(x)_), 
+    så vi ved nu fra ligning [1], at
+    _($f(x,y)=3yx^2 + Tan(x)+C(y) \text{ [3]}_)
+    Egentlig en meget straight-forward strategi vi bruger til at finde _(f(x,y)_), men 
+    vi er desværre ikke helt færdige endnu. 
+    Vi plusser nemlig med "_(C(y)_)", som er <i>en eller anden</i> funktion af kun _(y_). 
+    Det er vi nødt til, da ligning [1] er sand lige meget hvilken funktion _(C(y)_) tager,
+    præcis ligesom en normal integral er sand, 
+    lige meget hvilken konstant vi vælger. Vi er derfor nødt til at løse for _(C(y)_), 
+    før vi kan være sikre på, vi har 
+    fundet _(f(x,y)_). Her udnytter vi ligning [2]:
+    _($\begin{align}
+    ¤y[f(x,y)] &= 3x^2 - Sin(y) \to \\ \\
+    ¤y \left[3yx^2 + Tan(x)+C(y) \right] &= 3x^2 - Sin(y) \to \\ \\
+    3x^2 + 0 + C'(y) &= 3x^2 - Sin(y) \to \\ \\
+    C'(y) &= -Sin(y) \to \\ \\
+    C(y) &= \int -Sin(y) \text{ }dy = Cos(y) 
+    \end{align}_)
+    Vi kan nu substituere _(C(y)_) tilbage i ligning [3] og får endeligt:
+    _($f(x,y)=3yx^2 + Tan(x) + Cos(y)_)
+    Bemærk at _(Cos(y)_) fuldkommen forsvinder når vi differentierer med _(y_), og at _(Tan(x)_)
+    fuldkommen forsvinder når vi differentierer med _(x_).
+    </p>
+    <p class="t">
+    Der er intet der "fuldkommen forsvinder" i hverken _(f_x_) eller _(f_y_), hvis
+    alle led i potentialet _(f(x,y)_) indeholder både _(x_) og _(y_). I de
+    tilfælde behøver vi ikke bruge tid på at finde
+    _(C(y)_) eller _(C(x)_) efter vi har integreret èn gang. 
+    Processen jeg gennemgik virkede ret langt,
+    men er ofte en del kortere. Sig f.eks. vi skulle finde potentialet til følgende konservative vektor felt: 
+    _($\VeC[\frac{1}{x}+y^2 e^x, 2 y e^x]_)
+    Integralet af x-komponentet med respekt til _(x_) vil indeholde et led, der bare er lig _(Ln(x)_). 
+    Derfor vil det ikke være nok, bare at integrere _(2ye^x_) med _(y_), siden der tydeligvis er 
+    led <i>kun</i> med _(x_) i spil.  Vi vælger taktisk at integrere første komponent og får:
+    _($f(x,y)=Ln(x)+y^2 e^x_)
+    Differentierer vi dette med _(y_) får vi bare _(0+2ye^x_), hvilket passer med vektor-feltet.
+    Et andet eksempel kunne være:
+    _($\vec F = \VeC[2xe^y + y/x, x^2 e^y + Ln(x)]_)
+    Jeg tænker at det her er nemmest at integrere y-komponentet, hvilket giver
+    _(x^2 e^y + Ln(x) y_). Differentieres dette med respekt til _(x_) fås 
+    _(2xe^y+y/x_), hvilke matcher med x-komponentet. 
+    </p>
+    <p class="t">
+    Din tur!
+    </p>
+
+    <q-stion 1="22" 2="8" bigTop="true">
+    Find potentialet til de følgende konservative vektor felter:
+    <div style="margin-left:-40%; margin-top:25px; margin-bottom: -10px;">
+    _($\begin{eqnarray}
+        && \underline{\textbf{A}}: \, \, \, \, \, \, \VeC[y/x+y^2,Ln(x)+2yx] \\ \\
+        && \underline{\textbf{B}}: \, \, \, \, \, \, \VeC[Cos(xy)-Sin(xy)xy+Cos(x),-Sin(xy)x^2]
+    \end{eqnarray}_)
+    </div>
+    <br><br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    Jeg tænker nok det er nemmest at integrere x-komponentet, som giver 
+    _($y Ln(x)+y^2x_)
+    Dets hældning med respekt til _(y_) er _(Ln(x)+2yx_) så vi behøver ikke tilføje nogen _(C(y)_).
+    Potentialet er derfor lig: 
+    _($f(x,y)=Ln(x)y + xy^2_)
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Det er klart hurtigst at integrere _(y_)-komponentet, siden det er langt simplere. Det giver
+    _($Cos(xy)x_)
+    Dets hældning med respekt til _(x_) er
+    _(Cos(xy)-Sin(xy)xy_), hvilke passer perfekt til x-komponentet, udover
+    den manglende _(Cos(x)_). Vi tilføjer derfor en _(\int Cos(x) = Sin(x)_) til 
+    vores funktion og får:
+    _($f(x,y)=Cos(xy)x+Sin(x)_)
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="22" 2="9">
+    _(\underline{\textbf{A}}_): <br>
+     Vektor feltet er
+    _($\VeC[Ln(y) y^x, xy^{x-1} ]_)
+    Du bevæger dig fra _((0,0)_) til _((-2,3)_). Hvor meget arbejde gør vektor feltet på dig? 
+    <p class="t">
+    _(\underline{\textbf{B}}_): <br>
+     Vektor feltet er:
+    _($\VeC[y+6x^2,x-12y]_)
+    Du bevæger dig fra _((-1,3)_) til _((2,-2)_). Hvor meget arbejde gør vektor feltet?
+    </p>
+    <br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    Vi finder først potentialet. I denne kan det relativt let ses, at det er lig 
+    bare 
+    _($f(x,y)=y^x_)
+    Så arbejdet er: 
+    _($f(A)-f(B) = (3)^{-2} - 0^0 = -0.888_)
+    Bum!
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Integralet af y-komponentet er nok nemmest, og giver:
+    _($xy-6y^2_)
+    Dets hældning med respekt til _(x_) mangler èn ekstra _(6x^2_), så vi tilføjer lige
+    _(\int 6x^2 = 2x^3_), og får
+    _($f(x,y) = xy- 6y^2 + 2x^3_)
+    Arbejdet er:
+    _($((2)(-2)-6(-2)^2 + 2(2)^3) - ((-1)(3)-6(3)^2 + 2(-1)^3) = 47_)
+    <br></answer-box>
+
+    <!--  -->
+
+
+    <q-stion 1="22" 2="10">
+    Følgende eksempel blev tidligere nævnt i bogen: 
+    <img class='SpicXL' style='width:95%' src='../../../Assets/Chapter4\MultiVarCalc\Vectorfields\GravityVectorField.png'> 
+    <p class="t">
+    Tyndekraften èn masse _(m_) oplever, ved vi kan regnes som: 
+    _($F_t = \frac{G M m}{r^2} _)
+    Jorden vejer _(5.972*10^{24}kg_), og har en radius på omtrent _(6371*10^3_).
+    En masse _(h_) over jordens overflade oplever derfor en kraft på:
+    _($\frac{6.674*10^{-11}*5.972*10^{24}*m}{(6371*10^3+h)^2} = 
+    \frac{6.674*10^{-11}*5.972*10^{24}*m}{6371^2*10^6+2h*6371*10^3 + h^2}_)
+    _(2h*6371*10^3 + h^2_) er stort set ingenting i forhold til _(6371^2*10^6_). Formlen
+    bliver meget simplere, hvis vi bare ignorerer det:
+    _($\frac{6.674*10^{-11}*5.972*10^{24}*m}{6371^2*10^6} = 9.88m_)
+    Så medmindre man er exceptionelt højt over jorden, kan man 
+    med ret stor præcision sige, at man 
+    oplever en tyngdekraft på _(9.88*m_) overalt. 
+    </p>
+    <p class="cent">*</p>
+    <p class="t">
+    Sig at kuglen på billedet vejer _(2kg_), og har en starthastighed
+    _(5m/s_). Hvad er boldens hastighed for enden, hvis kurven har en samlet højde på _(8m_)?
+    Antag at intet energi bliver tilført til kurven 
+    i form af varme fra kollisioner. 
+    </p>
+    <p class="t">
+    Jeg minder dig lige om, at et objekts kinetiske energi kan regnes som:
+    _($\frac{1}{2}mv^2_)
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Vores vektor felt er:
+    _($\VeC[0,9.88*2] = \VeC[0,19.76]_)
+    Det er tydeligvis konservativt med et potentiale på _(19.76y_). 
+    Bolden starter ved _(y=h_1_) og slutter ved _(y=h_2_), så tyngdekraften
+    gør et arbejde på:
+    _($19.76h_2 - 19.76h_1 = 19.76*\triangle h = 19.76*8m = 158.08_) 
+    Bolden starter med en kinetisk energi på _(\frac{1}{2}*2*5^2 = _) _(25_). 
+    Den har til slut en kinetisk energi på _(158.08+25=_) _(183.08_), så:
+    _($\frac{1}{2}*2*v_2^2 = 183.08 \to v_2 = 12.572 m/s_)
+    Og det er svaret! 
+    <br><br></answer-box>
+

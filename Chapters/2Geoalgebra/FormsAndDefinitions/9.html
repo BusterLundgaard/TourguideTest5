@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+
+
+    <h3>Massecentre på lidt mere avancerede figurer</h3>
+
+    <p class="t">
+    Indtil videre har vi undersøgt forholdsvis "simple" former. 
+    Hvad hvis vi havde noget 
+    som en trekant? Hvordan præcis ville vi gå til at finde dens massemidtpunkt? 
+    </p>
+    <p class="t">Jeg vil nok opdele trekanten i uendelig mange rektangler som følgende:</p>
+    <img class="Spic" style="width:90%" src='../../../Assets/Chapter2\Section2\BilliardsAndProperties\CenterOfMassRightTriangle.png'> 
+    <p class="t"> 
+    Lad os nu beskrive arealet og positionen af hver masse. Hvis vi er _(x_) henne ad _(\Seg{AB}_), 
+    vil massecenteret på rektanglen ligge ved 
+    _($\left(x, \frac{1}{2} Tan(v)*x \right)_)
+    Jeg dividerer med _(2_), da det jo er centeret. 
+    Arealet af rektanglen vil være 
+    _($h*b=(Tan(v)*x)*dx_) 
+    ... hvor _(dx_) er den uendelig lille bredde, vi giver
+    vores rektangler: 
+    </p>
+    <img class='Spic' style='width:90%' src='../../../Assets/Chapter2\Section2\BilliardsAndProperties\CenterOfMassRightTriangle2.png'> 
+    <p class="t">
+    Hvis vi sigter efter massecenteret på x-aksen, bliver tælleren til:
+    _($ \begin{eqnarray} 
+        && (dx) \text{ } *\left(Tan(v)*(dx)*dx \right) & + \\
+        && (2dx)*\left(Tan(v)*(2dx)*dx \right) & + \\
+        && (3dx)*\left(Tan(v)*(3dx)*dx \right) & + \\
+        && \vdots & + \\
+        && (AB-dx)*\left(Tan(v)*(AB-dx)*dx \right) & + 
+    \end{eqnarray} _)
+    _($= Tan(v)*((dx)^2*dx+(2dx)^2*dx+(3dx)^2*dx+...(AB-dx)^2*dx) _)    
+    Nu bliver det lidt tricky: 
+    _($\left((dx)^2*dx+(2dx)^2*dx+(3dx)^2*dx+...(AB-dx)^2*dx\right)_) 
+    ... er jo faktisk det samme som arealet under _(x^2_) fra _(x=0_) til _(x=AB_): 
+    </p>
+    <img class='Spic' style='width:60%' src='../../../Assets/Chapter2\Section2\BilliardsAndProperties\Integration igen.png'> 
+    <p class="t">
+    Du kunne <i>umuligt</i> vide det her, men man kan bevise at arealet under
+    _(x^2_) fra _(x=0_) til _(x=A_) er 
+    _($\frac{1}{3}A^3_)
+    Det resultat beviser vi senere i bogen i fjerde kapitel. 
+    Det er overraskende let at bevise, og som vi senere
+    vil se, kan man relativt hurtigt finde formler for arealer til mange kurver. 
+    Lige nu må vi desværre tage det for gives, da vi ikke endnu har værktøjerne. 
+    </p>
+    <p class="t">
+    Anyways: Vi står med noget der svarer til arealet under _(x^2_) fra _(x=0_) til 
+    _(x=AB_), så vi kan omskrive til: 
+    _($(dx)^2*dx+(2dx)^2*dx+(3dx)^2*dx+...(AB-dx)^2*dx)=_)
+    _($\frac{1}{3}*AB^3=\frac{1}{3}*Cos(v)^3*c^3_)
+    Tælleren bliver derfor til 
+    _($Tan(v)*\frac{1}{3}*Cos(v)^3*c^3=\frac{1}{3}*Sin(v)*Cos(v)^2*c^3_) 
+    Det betyder at 
+    _($x_{\text{massecenter}}=\frac{\frac{1}{3}*Sin(v)*Cos(v)^2*c^3}{\text{areal af trekant}}_)
+    Arealet af trekanten kan regnes som _(\frac{1}{2}*c*Sin(v)*c*Cos(v)_), så:
+    _($\frac{\frac{1}{3}*Sin(v)*Cos(v)^2*c^3}{\frac{1}{2}*c^2*Sin(v)*Cos(v)}=\frac{2}{3}*(Cos(v)*c)_)
+    Boom! Vi kan gøre meget det samme ved _(y_)'s massecenter og få 
+    _($y_{\text{massecenter}}=\frac{1}{3}*(Sin(v)*c)_)
+    Punktet er altså i alt 
+    _($\left(\frac{2}{3}*Cos(v)*c, \frac{1}{3}*Sin(v)*c\right)_) 
+    ... eller bare:
+    _($\left(\frac{2}{3}*\text{bredde},\frac{1}{3}*\text{højde}\right)_)
+    Super elegant! 
+    </p>
+    
+    <q-stion 1="9" 2="1">
+    Find massecenteret på følgende vilkårlige trekant:
+    <img class='Spic' style='width:60%' src='../../../Assets/Chapter2\Section2\BilliardsAndProperties\CenterOfMassTriangleExercise0.png'> 
+    <br><br></q-stion>
+    <answer-box>
+    Vi opdeler bare trekanten i to som følgende:
+    <img class='Spic' style='width:60%' src='../../../Assets/Chapter2\Section2\BilliardsAndProperties\CenterOfMassTriangleExercise.png'> 
+    <p class="t">
+    Nu kan vi finde massecenteret på hver retvinklet trekant, 
+    finde arealet af hver retvinklet trekant, og bruge formlen til 
+    at finde det endelige massemidtpunkt. _(y_) er nem, da
+    begge retvinklede trekanter har samme værdi:
+    _($y_{m}=\frac{1}{3}*5*Sin(60)=1.44_)
+    Den venstre retvinklede trekant har en bredde på _(5*Cos(60)=2.5_).
+    Det vil sige, at den højre har en bredde på _(10-2.5=7.5_)
+    Højden på trekanten er _(5*Sin(60)=4.33_). Alt i alt får vi:
+    _($x_{m}=\frac{(\frac{2}{3}*2.5)*\frac{1}{2}*4.33*2.5+(\frac{2}{3}*7.5)*\frac{1}{2}*4.33*7.5}{\frac{1}{2}*10*4.33}=4.16_)
+    Så:
+    _($(4.16, 1.44)_)
+    Hvis man gennemgår samme process men en helt vilkårlig trekant
+    <img class='Spic' style='width:60%' src='../../../Assets/Chapter2\Section2\BilliardsAndProperties\CenterOfMassTriangle.png'> 
+    ... og simplificerer udtrykket man får 
+    en hulans masse (det er gigantisk og meget svært at overskue), ender man ud 
+    med den dejlige formel
+    _($x_m=\frac{Cos(A)*c+b}{3}_)
+    Som sagt er udledningen ikke svær, den er bare meget lang og <i>svær at overskue</i> uden 
+    at fejl. Jeg har ikke tænkt mig at gennemgå det her.
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="9" 2="2">
+    Find massecenteret på følgende figur:
+    <img class='Spic' style='width:40%' src='../../../Assets/Chapter2\Section2\BilliardsAndProperties\NewExercise3.png'> 
+    <br><br></q-stion>
+    <answer-box>
+    Til ingens overraskelse opdeler vi denne figur i tre som følgende:
+    <img class='Spic' style='width:40%' src='../../../Assets/Chapter2\Section2\BilliardsAndProperties\NewExercise3 2.png'> 
+    <p class="t">
+    Rektanglets massemidtpunkt kan nemt findes til _((1.5, 4.25)_). I følgende video
+    finder jeg massemidtpunkterne på de to trekanter:
+    </p>
+    <video class='SpicB' style="width:95%;" controls>
+        <source src='../../../Assets/Chapter2\Section2\BilliardsAndProperties\SecondTriangleExercise.mp4' type='video/mp4'>
+    </video>
+    <p class="t">
+    Jeg lavede en tastefejl på min lommeregner, og regnede
+    _(x_m_) på den øvre trekant til _(1.342_), selvom det faktisk er _(1.741_).
+    Selve processen og formlen er rigtig dog.
+    </p>
+    <p class="t">
+    Arealet på rektanglet er _(8.5*3=25.5_), og arealerne på de to trekanter kan let regnes til henholdsvis 
+    _(9.162_) og _(4.249_). Vi regner nu endeligt:
+    _($\begin{eqnarray}
+    && x_m & = \frac{1.5*25.5+1.741*9.162+3.333*4.249}{25.5+9.162+4.249} & = 1.757 \\
+    && y_m & = \frac{4.25*25.5+10.53*9.162+3.41*4.249}{25.5+9.162+4.249} & = 5.636 \\
+    \end{eqnarray}_)
+    Så svaret er:
+    _($(1.757,5.636)_)
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="9" 2="3"> 
+    Find massecenteret på følgende figur:
+    <img class="Spic" style="width:80%" src='../../../Assets/Chapter2\Section2\BilliardsAndProperties\CenterOfMassWeirdShape1B.png'> 
+    <p class="t">
+    Denne opgave er lidt lang! 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Vi har:
+    <img class="Spic" style="width:45%" src='../../../Assets/Chapter2\Section2\BilliardsAndProperties\CenterOfMassWeirdShape2B.png'> 
+    <p class="t">
+    Det svarer til en roteret version af:
+    </p>
+    <img class="Spic" style="width:65%" src='../../../Assets/Chapter2\Section2\BilliardsAndProperties\CenterOfMassWeirdShape3B.png'> 
+    <p class="t">
+    Ved hjælp af formlen for massemidtpunktet på en vilkårlig trekant kan vi finde _(x_1,y_1_) og 
+    _(x_2,y_2_). Formlen er:
+    _($m=\left(\frac{Cos(A)*c + b}{3},\frac{Sin(A)*c}{3} \right)_)
+    De fire tal kan så bruges sammen med nogle vinkler, til at 
+    finde de endelige koordinater på _(m_1,m_2_)
+    </p>
+    <p class="t">
+    Ved _(\triangle ABC_) er _(\angle CAB_) vores "_(A_)", _(AB_) vores
+    "_(c_)" og _(AC_) vores "_(b_)". 
+    _($AB=\sqrt{(4-(-4))^2 + (-3 - 2)^2} = 9.43_)
+    _($AC = \sqrt{(2-(-4))^2 + (-5 - 2)^2}=9.21_)
+    At finde _(\angle CAB_) er lidt mere tricky: Hvis vi får fat i den sidste side _(CB_)
+    _($CB=\sqrt{(4-2)^2 + (-3 - (-5))^2}=2.82_)
+    ... kan vi bruge cosinusloven:
+    _($2.82 = \sqrt{9.43^2 + 9.21^2 - 2*9.43*9.21*Cos(A)}_) 
+    Det her kan vi bruge omvendt (isolere _(A_)), og beregne at _(A=0.3_) radianer.
+    </p>
+    <p class="t">
+    Nu med alle tallene klar får vi: 
+    _($\left(\frac{Cos(0.3)*9.43+9.21}{3}, \frac{Sin(0.3)*9.43}{3}\right)=(6.07,0.94)_)
+    Fantastisk! Det skal nu bruges til at regne de aktuelle koordinater på _(m_1_).
+    </p>
+    <img class='Spic' style='width:55%' src='../../../Assets/Chapter2\Section2\BilliardsAndProperties\CenterOfMassWeirdShape4B.png'> 
+    <p class="t">
+    Vi har først og fremmest brug for vinklen _(\angle CAO_), så vi 
+    ved, hvor langt væk det er fra _(A_). Denne vinkel kan findes som:
+    _($0.3+\angle BAO = 0.3+Arctan \left(\frac{2-(-3)}{4-(-4)} \right)=0.862_)
+    Vi har også brug for endnu en vinkel:  
+    </p>
+    <img class='Spic' style='width:55%' src='../../../Assets/Chapter2\Section2\BilliardsAndProperties\CenterOfMassWeirdShape5B.png'> 
+    <p class="t">
+    Den kan vi let se er _(\pi/2 - 0.862=0.708_). Vi får nu, at _(m_1_) er
+    _($Cos(0.862)*6.07+Cos(0.708)*0.94=4.67_)
+    ... væk fra _(A_) på x-aksen. Den er:
+    _($-Sin(0.862)*6.07+Sin(0.708)*0.94=-4.00_)
+    ... væk fra _(A_) på y-aksen. Så:
+    _($m_1=(-4+4.67,2-4.00)=(0.67,-2)_)
+    Phew!
+    </p>
+    <br></answer-box>
+

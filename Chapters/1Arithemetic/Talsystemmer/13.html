@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <p class="t">
+    Før vi går videre til det næste problem, så vil jeg ligesom med gange gerne lige kigge
+    på nogle vigtige detaljer omkring det at dividere. Først nogle hurtige opgaver dog: 
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Regn de følgende divitionsstykker: 
+    <div style="text-align:center;">
+        <ul style="display: inline-block; text-align: left; padding-left:0%; list-style:none;">
+            <li> <b> A</b>: <p-m m=" D1 / A1"></p-m> </li>
+            <li> <b> B</b>: <p-m m=" B3 A3 3 / B1 A1 1"></p-m> </li>
+            <li> <b> C</b>: <p-m m=" B3 2 / A1 1"></p-m> </li>
+        </ul>
+    </div>
+    <p class="t">
+    De her er alle relativt lette, og er primært for at tjekke at du forstår
+    hvordan det virker at dividere. 
+    </p>
+    <br></q-stion>
+    <answer-box t="Answer A#" tabColour="rgb(171,96,147)">
+    Den her er super dejlig. Hvad skal vi gange <p-m m=" A1"></p-m> med for at vi får
+    <p-m m=" C1"></p-m>? Well, <p-m m=" D1"></p-m> er <p-m m=" 3"></p-m> symboler
+    længere fremme, så vi skal gange med <p-m m=" A1"></p-m> <p-m m=" 3"></p-m> gange. 
+    Svaret er altså <p-m m=" A1*A1*A1=C1"></p-m>.
+    </p>
+    </answer-box>
+    <answer-box t="Answer B#" tabColour="rgb(175,128,161)">
+    Vi kan let se at <p-m m=" B3 A3 3"></p-m> kan omskrives til bare <p-m m=" 3*B1 A1 1"></p-m>, så
+    svaret er <p-m m=" 3"></p-m>. 
+    <br><br></answer-box>
+    <answer-box t="Answer C#" tabColour="rgb(171,96,147)">
+    Ikke nogen bestemt strategi i den her: Vi prøver bare at gætte strategisk. <p-m m=" B3 A1 3"></p-m> er
+    en god del højere end <p-m m=" A1 1"></p-m>, så mit start-gæt er måske 
+    omkring <p-m m=" A2"></p-m>. Det giver <p-m m=" B2 A2"></p-m>. Det er for lavt.
+    Tænker vi prøver med en ekstra <p-m m=" A1"></p-m> for at få den sidste <p-m m=" B1"></p-m> ind,
+    så hvis vi ganger med <p-m m=" A3"></p-m> får vi: <p-m m=" B3 A3"></p-m>. Det er
+    for højt med <p-m m=" A3 - 2 = "></p-m> <p-m m=" A2 2"></p-m>, som svarer
+    til <p-m m=" A1 1 * 2"></p-m>. Vi skal altså gætte <p-m m=" 2"></p-m> lavere end
+    <p-m m=" A3"></p-m>, og svaret er derfor <p-m m=" A3 - 2 = "></p-m> <p-m m=" A2 2"></p-m>. 
+    <br><br></answer-box>
+
+    <p class="t">
+    <b> Parenteser: </b> Vi kiggede på parenteser da vi arbejdede med at gange, så lad os gøre det
+    samme nu da vi er i gang med at dividere. Vi ved at man kan "gange ind" i parenteser. Gælder
+    det samme med at dividere? Kan du f.eks. sige:
+    </p>
+
+    <p class="cent">
+        <p-m m=" (A2 2 + 3)/3 = A2 2 / 3 + 3/3"></p-m>
+    </p>
+
+    <p class="t">
+    Det kan man godt ja, da vi kan lave præcis samme argumentet med huset. Sig at der
+    er flere rum i huset, og i hver af dem er der nu <i>små</i> poser. Hver af de små poser 
+    svarer til en halv normal pose, så får at finde mængden af hvede skal vi 
+    dividere hver pose med <p-m m=" 2"></p-m>. Det kan vi både gøre ved at regne
+    det ved hvert individuelt rum, og så lægge det hele sammen, eller ved at finde det samlede
+    antal poser i huset, og så dividere med <p-m m=" 2"></p-m>. <i>Ja</i>, vi ville
+    begynde at få nogle ikke-hele tal, men det er heller ikke noget stort problem.
+    Hvis en hel pose er <p-m m=" 1"></p-m>, så kan vi vel godt tegne f.eks. en halv pose
+    som bare <p-m m=" h"></p-m>. 
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Regn de følgende stykker: 
+    <div style="text-align:center;">
+        <ul style="display: inline-block; text-align: left; padding-left:0%; list-style:none;">
+            <li> <b> D</b>: <p-m m=" E1 D1 C1 B1 A1 / 2"></p-m> </li>
+            <li> <b> A</b>: <p-m m=" B2 A1 1 / 2 + C1 1 / 2 "></p-m> </li>
+            <li> <b> B</b>: <p-m m=" C1 B2 A2 1 / B1 A1 1 "></p-m> </li>
+            <li> <b> B</b>: <p-m m=" B1 A1 1 / 3 "></p-m> </li>
+        </ul>
+    </div>
+    <br></q-stion>
+    <answer-box t="Answer A#" tabColour="rgb(171,96,147)">
+    Vi har <p-m m=" 1"></p-m> af hvert symbol. 
+    Hver af de her symboler kan vi omskrive til <p-m m=" 4*"></p-m> det 
+    tidligere symbol. <p-m m=" E1 D1 C1 B1 A1"></p-m> kan altså omskrives
+    til:
+    <p class="cent">
+        <p-m m=" E1 + D1 + C1 + B1 + A1 = "></p-m> <br>
+        <p-m m=" D4 + C4 + B4 + A4 + 4"></p-m> <br>
+    </p>
+    <p class="t">
+    Vi skal dividere det her med <p-m m=" 2"></p-m>, så:
+    </p>
+    <p class="cent">
+        <p-m m="(D4 + C4 + B4 + A4 + 4)/2 = "></p-m> <br>
+        <p-m m="D4/2 + C4/2 + B4/2 + A4/2 + 4/2 = "></p-m> <br>
+        <p-m m="D2 + C2 + B2 + A2 + 2 = "></p-m> <br>
+        <p-m m="D2 C2 B2 A2 2 "></p-m> <br>
+    </p>
+    <p class="t">
+    Bum!
+    </p>
+    <br></answer-box>
+    <answer-box t="Answer B#" tabColour="rgb(175,128,161)">
+    Det er umiddelbart relativt tricky at dividere enten <p-m m=" B2 A1 1"></p-m> eller
+    <p-m m=" C1 1"></p-m> med <p-m m=" 2"></p-m>. Hvis vi kombinerer dem med en parentes dog:
+    <p class="cent">
+        <p-m m="(B2 A1 1 + C1 1)/2 = "></p-m>
+        <p-m m="(C1 B2 A1 2)/2 = "></p-m>
+        <p-m m="(C1 A1+B2 2)/2 = "></p-m>
+        <p-m m="C1 A1 / 2 + B2 2 / 2 = "></p-m>
+        <p-m m="B2 2 + B1 1 = "></p-m>
+        <p-m m="B3 3"></p-m>
+    </p>
+    <p class="t">
+    Perfekt!
+    </p>
+    <br></answer-box>
+    <answer-box t="Answer C#" tabColour="rgb(171,96,147)">
+    Jeg lægger umiddelbart mærke til at man i <p-m m=" C1 B2 A2 1"></p-m> ret let
+    kan finde <p-m m=" B1 A1 1"></p-m>, så man står tilbage med <p-m m=" C1 B1 A1"></p-m>:
+    <p class="cent">
+        <p-m m="(B1 A1 1 + C1 B1 A1)/B1 A1 1 = "></p-m> <br>
+        <p-m m="B1 A1 1 / B1 A1 1 +  C1 B1 A1/B1 A1 1 = "></p-m> <br>
+        <p-m m="1 +  C1 B1 A1/B1 A1 1"></p-m> <br>
+    </p>
+    <p class="t">
+    Vi er heldige, da vi kan se at <p-m m=" C1 B1 A1"></p-m> bare
+    er <p-m m=" B1 A1 1"></p-m>, men hvor alle symboler er <p-m m=" 1"></p-m> længere fremme.
+    Ergo: Det er ganget med <p-m m=" A1"></p-m>, så:
+    </p>
+    <p class="cent">
+        <p-m m="1 + A1"></p-m> <br>
+        <p-m m="A1 1"></p-m> <br>
+    </p>
+    <p class="t">
+    Vi har altså vores svar!
+    </p>
+    <br></answer-box>
+    <answer-box t="Answer D#" tabColour="rgb(171,96,147)">
+    Èn måde vi hurtigt kan vide om et tal kan divideres med <p-m m=" 3"></p-m>, er
+    hvis vi har noget som <p-m m=" B3 A3 3"></p-m>: Altså, hvis vi har
+    <p-m m=" 3"></p-m> af hvert symbol. Der er selvfølgelig mange tal der kan divideres
+    med <p-m m=" 3"></p-m> der ikke følger dette mønster, men <i>hvis</i> noget følger
+    dette mønster, så er i vi i hvert fald sikre. Lad os derfor se om vi kan omskrive 
+    stykket på en måde så dette mønster kom i spil:
+    <p class="cent">
+        <p-m m="B1 A1 1 / 3 ="></p-m> <br>
+        <p-m m="A5 1 / 3 ="></p-m> <br>
+        <p-m m="A4 5 / 3 ="></p-m> <br>
+        <p-m m="(A3 3 + A1 2) / 3 ="></p-m> <br>
+        <p-m m="A3 3/3 + A1 2/3 ="></p-m> <br>
+        <p-m m="A1 1 + 2 ="></p-m> <br>
+        <p-m m="A1 3"></p-m> <br>
+    </p>
+    <p class="t">
+    Bum! Ved den her kunne man i alt ærlighed argumentere for at det nok var en bedre ide bare at gætte sig frem. 
+    </p>
+    <br></answer-box>
+
+
+</html>

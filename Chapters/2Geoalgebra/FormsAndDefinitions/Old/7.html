@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+
+    
+    <p class="t">Vi har nævnt det lidt her og der, men lad os prøve at kigge lidt mere i dybden på 
+    <i>symmetri</i>. Hvis jeg giver dig følgende form som et billede, så kan du nok relativt nemt se
+    at den er symmetrisk omkring x-aksen og y-aksen:</p>
+    <img class="Spic" style="width:15%" src='../../../Assets/Chapter2\Section2\Symmetri\RegPoly1.png'> 
+    <p class="t">Det ved du på grund af din intuition og på grund af at dine øjne
+    er ret gode til den her slags ting. Det er der intet galt med, men hvis
+    det skal analyseres så er vi nødt til at definere hvad vi mener lidt mere præcist.
+    Hvad hvis jeg i stedet bare havde givet dig bare nogle koordinater på punkter?</p>
+
+    <q-stion 1="2" 2="1" 3="5">
+    En figur består af følgende 6 punkter i følgende rækkefølgende: _([(6.5,5),(7.5,5),(8,5.87),(7.5,6.73),(6.5,6.73),(6,5.87)]_).
+    Er den symmetrisk omkring en _(x_) linje og en _(y_) linje? Altså, kan vi spejle den ene halvdel horisontalt eller vertikalt og så få den anden? 
+    <br><br></q-stion>
+    <answer-box>
+    Først af alt skal vi indse at jeg altså ikke mener x-<i>aksen</i> / y-aksen, men bare "en eller anden x- eller y linje". Alle
+    punkterne har positive _((x,y)_) koordinater, så figuren kan umuligt være sig selv når den ene halvdel bliver refleketeret gennem x-akse
+    linjen eller y-akse linjen der jo hver skære _((0,0)_). Vi skal bare her i dette tilfælde se om der findes en komplet horisontal
+    linje og komplet vertikal linje vores figur er symmetrisk omkring. Her er et hypotetisk scenario:
+    <img class="Spic" style="width:80%" src='../../../Assets/Chapter2\Section2\Symmetri\HypotetiskForklaring1.png'> 
+    <p class="t">Ligesom flere andre par så har _((12,10)_) den samme _(y_)-værdi som _((14,10)_). Hvis _((12,10)_) er 
+    resultatet af at reflektere _((14,10)_) omkring en eller anden x-akse, så ville den x-akse
+    være nødt til at lægge på _(13_), da det er midten mellem _(12_) og _(14_). </p>
+    <img class="Spic" style="width:80%" src='../../../Assets/Chapter2\Section2\Symmetri\HypotetiskForklaring2.png'> 
+    <p class="t"> Nu skal vi altså bare tjekke om andre par af punkter med samme _(y_)-koordinater også har denne midte! _(9.5+0.5*(16.5-9.5)=13_) så det gælder,
+    _(10+0.5*(16-10)=13_) check, _(11+0.5*(15-11)=13_) osv. Det samme skal vi altså gøre med vores koordinater!
+    </p>
+    <p class="t">Vi kan se at _((6.5,5)_) og _((7.5,5)_) er de eneste punkter med _(y_)-koordinatet _(5_). Vi kan altså bare
+    bruge deres midtpunkt _(6.5+0.5*(7.5-6.5)=7_). Med _(y=5.87_) har vi _(6+0.5*(8-6)=7_) og med _(y=6.73_) har
+    vi _(6.5+0.5*(7.5-6.5)=7_) og bam! Præcist det samme kan vi gøre med _(x_) koordinaterne
+    og deres _(y_)-midte for at se om vores figur også kan reflekteres omkring en _(y_)-linje! Det kan den, vil vi finde.
+    Det er ingen stor overraskelse når man tegner figuren:</p>
+    <img class="Spic" style="width:60%" src='../../../Assets/Chapter2\Section2\Symmetri\6RegPolyExercise.png'> 
+    <p class="t">Bare en regulær polygon! Vi fandt faktisk kun _(2_) af dens _(6_) reflektions-symmetrier:</p>
+    <img class="Spic" style="width:60%" src='../../../Assets/Chapter2\Section2\Symmetri\6RegPolyLineSymmetries.png'> 
+    <p class="t">Der er jo intet specielt omkring lige x-linjer og y-linjer. De er vel også bare en slags linjer ligesom alle andre! 
+    Symmetrisk omkring x og y er bare nemmere at se på grund af retningen billedet vender. 
+    Symmetri omkring en linje siger jo egentlig bare, at når du spejler alle punkterne i den linje,
+    så ender du ud med din originalle figur. Vi kunne også måske tænke over hvad der ville ske
+    hvis vi reflekterede omkring et punkt:</p>
+    <img class="Spic" style="width:60%" src='../../../Assets/Chapter2\Section2\Symmetri\6RegPolyPointSymmetry.png'> 
+    <p class="t">Det er lidt mindre intuitivt, men vi kan også let se her hvordan at figuren vil forblive sig selv
+    når vi rotere hvert punkt _(180_) grader omkring punktet i midten (som jo er det samme som at reflektere). 
+    Der er altså mange symmetrier i den her figur! </p>
+    <br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Generelt hvis et punkt _((p_x,p_y)_) bliver reflekteret i et andet punkt _((a,b)_), hvad er så 
+    dets nye koordinater?
+    <br><br></q-stion>
+    <answer-box>
+    Super simpelt:
+    <img class="Spic" style="width:90%" src='../../../Assets/Chapter2\Section2\Symmetri\PointSymmetryExplanation.png'> 
+    <p class="t">Det bliver altså bare _((a - (p_x-a),b-(p_y-b))=(2a-p_x,2b-p_y)_)</p>
+    <br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    En eller anden linje _(L_) har en vinkel til _(x_)-aksen på _(v_) grader, og går igennem punktet _((x_0,y_0)_). 
+    Hvor ender punktet _((p_x,p_y)_) ud når vi reflektere det omkring _(L_)?
+    <br><br></q-stion>
+    <answer-box customWidth="550">
+    Lad os prøve først at tegne situationen:
+    <img class="Spic" style="width:60%" src='../../../Assets/Chapter2\Section2\Symmetri\LineReflectionExplanation1.png'> 
+    <p class="t" style="text-align: left">
+    Vi leder altså efter punktet _((a,b)_). Når vi har fundet det så kan vi bare reflektere _((p_x,p_y)_) 
+    med formlen vi kom frem til i sidste opgave. Lad os kalde linjen fra _((p_x,p_y)_) til _((a,b)_) for
+    _(M_). Vi kan ret nemt se at _(M_) har en linje til x-aksen på _(v-90_). _(L_) går _(Tan(v)_) opad på
+    y hver gang den går _(1_) x fremad. _(M_) går _(Tan(v-90)=Sin(v-90)/Cos(v-90)=-Cos(v)/Sin(v)=-1/Tan(v)_) opad
+    på _(y_) hver gang den går _(1_) x fremad. Altså, på _(L_) gælder det at _(y=Tan(v)*x + noget_1_) og
+    på _(M_) gælder det at _(y=\frac{-1}{Tan(v)}*x+noget_2_). De er begge plusset med noget,
+    siden de ikke <i>nødvendigvis</i> går igennem _((0,0)_). For at _(L_) kan gå gennem _((x_0,y_0)_), så 
+    ved vi at _(y_0=Tan(v)*x_0+noget_1 \to noget_1=y_0-Tan(v)*x_0_) og lignende _(noget_2=p_y-\frac{-1}{Tan(v)}*p_x_).
+    Så på _(L_) der er _(y=Tan(v)*x + y_0-Tan(v)*x_0=Tan(v)*(x-x_0)+y_0_)_) og ved _(M_) der
+    er _(y=\frac{-1}{Tan(v)}*(x-p_x)+p_y_). Vi ved at der hvor _(M_) og _(L_) skære hinanden har de den
+    samme _(y_) værdi. Vi leder altså efter en _(x_) hvor _(\frac{-1}{Tan(v)}*(x-p_x)+p_y=Tan(v)*(x-x_0)+y_0_), så:
+    _($x/Tan(v)+x*Tan(v)=p_y+Tan(v)*x_0+p_x/tan(v)-y_0 \to_)
+    _($x=\frac{p_y+Tan(v)*x_0+p_x/tan(v)-y_0}{\frac{1}{Tan(v)}+Tan(v)}_)
+    Nu har vi altså vores _(a_). For at få _(b_) skal vi bare bruge
+    denne _(x_) værdi til at finde _(y_)-værdien hvor de skære:
+    _(b=Tan(v)*(a-x_0)+y_0=Tan(v)*(\frac{p_y+Tan(v)*x_0+p_x/tan(v)-y_0}{\frac{1}{Tan(v)}+Tan(v)} - x_0) + y_0_)
+    Det er ikke to specielt pæne udtryk, men vi kan desværre ikke simplificere dem særlig meget yderligere.
+    I hvert fald, med _((a,b)_) så er det nemt at finde reflektionspunktet:
+    _($reflektionspunkt=(2a-p_x,2b-p_y)=_)
+    _($ \left(\begin{matrix} 
+        2*\frac{p_y+Tan(v)*x_0+p_x/tan(v)-y_0}{\frac{1}{Tan(v)}+Tan(v)} - p_x \\
+        2*(Tan(v)*(\frac{p_y+Tan(v)*x_0+p_x/tan(v)-y_0}{\frac{1}{Tan(v)}+Tan(v)} - x_0) + y_0)-p_y
+    \end{matrix}\right) _) 
+    </p>
+    <p class="t">
+    Vi kunne selvfølgelig også have brugt geometri til at finde det, men det valgte jeg bare ikke lige at gøre her.
+    </p>
+    <br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Hvis du reflektere en linje gennem et punkt, bliver det så ved med at være en linje? 
+    <br><br></q-stion>
+    <answer-box>
+    Sig at min linje _(L_) har en hældning opad på _(k_). Altså: hver gang jeg går _(1_) fremad på _(x_) så går jeg _(k_) opad.
+    Sig også at _(L_) skærer punktet _((0,c)_) - altså, hvis punktet _((x,y)_) er på _(L_) så er _(y=kx+c_). 
+    Hvis det er sandt at den reflekterede version af _(L_) også er en linje, skal jeg kunne tage nogen som helst
+    to punkter _((x_0,kx_0+c), (x_1,kx_1+c)_) på _(L_), reflektere dem, tegne en ny linje, og altid få det samme resultat.
+    <p class="t">
+    Hvis vi reflektere gennem punktet _((p_x,p_y)_) så får jeg henholdsvis _(P_0=(2p_x-x_0,2p_y-kx_0-c)_) og _(P_1=(2p_x-x_1,2p_y-kx_1-c)_). 
+    Hældningen fra _(P_0_) til _(P_1_) er _(\frac{2p_y-kx_0-c-(2p_y-kx_1-c)}{2p_x-x_0-(2p_x-x_1)}=\frac{kx_0-kx_1}{x_0x_1}=k_).
+    Lige meget hvilke to punkter jeg vælger, så får jeg altid samme hældning _(k_). Det færdiggøre beviset. 
+    </p>
+    <br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Er en linje reflekteret gennem en anden linje stadig en linje? Hvis ja, hvad er hældningen/vinklen på den nye linje?
+    <br><br></q-stion>
+    <answer-box>
+    For at overbevise mig selv om at jeg ville få en linje som resultat, så ville jeg bare lave en hurtig tegning:
+    <img class="Spic" style="width:50%" src='../../../Assets/Chapter2\Section2\Symmetri\LinjeReflekteretLinje.png'> 
+   <p class="t"> Min linje _(L_1_) vil på et eller andet tidspunkt jo skære den linje jeg reflektere i _(L_2_) (medmindre de er parralele).
+    Den vil danne en eller anden vinkel _(v_) med _(L_2_), og via den vinkel kan jeg nemt 
+    reflektere et noget som helst punkt på _(L1_) gennem _(L_2_). Jeg ved at jeg ender ud med 
+    en linje, fordi jeg geometrisk nemt kan se på skitsen at _(P_) er _(d_) væk fra skæringspunktet,
+    så er den reflekterede version af _(P_) <i>også</i> _(d_) væk fra skæringspunktet - men altid med
+    samme vinkel og derfor hældning.</p>
+    <p class="t">
+    Hvis jeg nu faktisk skal finde den nye linje, så sig at _(L_1_) har vinkel _(v_1_) til x-aksen, _(L_2_) 
+    har vinkel _(v_2_) til x-aksen, og vores nye reflekterede linje har vinkel _(v_3_) til x-aksen.
+    Så kan man relativt nemt geometrisk se at _(v_1-v_0=v_3-v_1_), ergo _(v_3 = 2v_1-v_0 \to hældning=Tan(2v_1-v_0)_)
+    Hvis jeg gerne vil finde ud af hvor højt oppe min nye lnije starter, så skal jeg bare bruge det faktum at
+    den skærer samme punkt som _(L_1_) og _(L_2_). Det bliver lidt en rodet grim formel når vi gør det generelt,
+    og det er ikke specielt svært eller spændende, så jeg viser det ikke her.
+    </p>
+    <br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Er en cirkel reflekteret gennem et punkt stadig en cirkel?
+    <br><br></q-stion>
+    <answer-box>
+    Prøv at se skitsen her:
+    <img class="Spic" style="width:90%" src='../../../Assets/Chapter2\Section2\Symmetri\CirkelGennemPunkt.png'> 
+    <p class="t">Lad os kalde vores originale circle _(M_) og den reflekterede cirkel _(M'_). 
+    For at bevise at vi danner en ny - endda identisk - cirkel, så skal vi vise at når vi 
+    reflektere et noget som helst punkt på _(M_) så får vi et punkt der er _(r_) væk fra _(C_),
+    hvor _(r_) er radiusen. Det er nemt at se på billedet: _(AB=BC,R_1B=R_2B,\angle ABR_1 = \angle CBR_2_) så 
+    _(\triangle ABR_1_) er kongruent med _(\triangle CBR_2_). Bam. </p>
+    <br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Hvis du roterer _((p_x,p_y)_) rundt omkring origo _((0,0)_) med
+    _(\phi_) grader, hvor ender det så? Find en formel.
+    <br><br></q-stion>
+    <answer-box customWidth="650">
+    Hvis vi rotere et punkt _(P=(p_x,p_y)_) der har radiusen _(r_) og vinklen _(\theta_) til _((0,0)_) (_(\theta_) bruger man ofte til 
+    vinkler i stedet for _(v_)) med _(\phi_) grader, så får vi et nyt punkt 
+    _($P_2=(r*Cos(\theta + \phi),r*Sin(\theta + \phi))_)
+    Det kan vi omskrive til 
+    _($(r*(Cos(\theta)*Cos(\phi)-Sin(\theta)*Sin(\phi)), r*(Cos(\theta)*Sin(\phi)+Sin(\theta)*Cos(\phi)))=_)
+    _($(r*Cos(\theta)*Cos(\phi)-r*Sin(\theta)*Sin(\phi), r*Cos(\theta)*Sin(\phi)+r*Sin(\theta)*Cos(\phi))_)
+    _(r*Cos(\theta)_) er jo bare _(p_x_) og samme gælder _(r*Sin(\theta)_) og _(p_y_). Vi ender altså ud med punktet
+    _($(p_x*Cos(\phi)-p_y*Sin(\phi),p_x*Sin(\phi)+p_y*Cos(\phi))_)
+    Sådan her kan vi altså super nemt rotere punkter! 
+    <br><br></answer-box>
+    
+    <p class="t">
+    Som sagt så siger vi at en figur er symmetrisk omkring en linje, hvis den er ligmed sig selv når vi reflektere
+    alle dens punkter i den linje. Det her lægger lidt op til en mere generel definition end den vi kender 
+    fra "bare spejlvending". Reflektion omkring en linje og reflektion omkring et punkt er noget
+    vi kan <i>gøre</i> ved et punkt, en form, en kurve osv. Reflektioner er bare en form for <i>transformation</i> - 
+    et fancy ord der bare siger at man på en eller anden måde laver noget om til noget andet. Vi kan "transformere"
+    et tal ved at tage sinus af det, vi kan "transformere" en figur ved at rotere eller spejlvende den i et punkt, osv. 
+    Det er meget løst og meget abstrakt. Når man transformere noget så er der nogle ting der ændre sig, 
+    men også nogle ting der forbliver konstante. Positioner på punkterne i en form ændre sig ofte ved rotation, 
+    men vinklerne og sidelængderne i formen er præcis som før. Vi ville sige at "vinkler og sidelængder er <i>invariante</i> 
+    i rotations-transformationer". Hvor vi før sagde at en regulær polygon med 6 sider var symmetrisk omkring _(x_)-aksen,
+    så kan vi nu sige at regulære _(6_)-polygoner er invariante med reflektion omkring x-aksen gennem deres midte. 
+    I know, i know, mærkeligt, abstrakt, og tilsynneladende ubrugligt, men faktisk et effektivt sprog til at
+    beskrive mange ideer og komme frem til gode resultater. Lad os som eksempel analysere forskellige
+    ting der er invariante i alle mulige forskellige transformationer.
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Først, meget simpelt, vis at når man udsætter to punkter for nogen som helst form for linje-reflektions-transformation, 
+    så er længden invariant. Vis også at når man gør det samme ved 3 punkter _(ABC_) så er vinklen invariant. 
+    Vis også at det samme gælder for punkt-transformationer.
+    <br><br></q-stion>
+    <answer-box customWidth="540">
+    Lad os bare tegne situationen:
+    <img class="Spic" style="width:90%" src='../../../Assets/Chapter2\Section2\Symmetri\LengthAngleLineReflecInvariant.png'> 
+    <p class="t"> 
+    _($AB=\sqrt{M_AM_B^2+(M_BB-M_AA)^2}, A'B'=\sqrt{M_AM_B^2+(M_BB'-M_AA')^2}_)
+    _($M_BB=M_BB',M_AA=M_AA'_) 
+    ergo sidelængderne er de samme wholla.</p>
+    <p class="t">
+    Vinklen _(\angle ABC_) kan ses som _(\angle ABM_B + \angle M_BBC_) og _(\angle A'B'C'=\angle A'B'M_B + \angle M_BB'C'_). 
+    _(\angle ABM_B _) og _(\angle A'B'M_B_) er dannet af de samme sidelængder _(M_AM_B_) og _(M_BB-M_AA_) så de er identiske.
+    Samme argument kan vi lave med _(\angle M_BBC_) og _(\angle M_BB'C'_). Done.
+    </p>
+    <p class="t">
+    Hvad angår punkt-transformationer, der har vi faktisk allerede bevist det med cirklen. Vi viste jo at
+    hvis man tog et hvilket som helst punkt på cirklen, så ville det stadig være ligeså langt væk fra det
+    reflekterede center. Ergo, længder holder. Via kongruens viste vi også at vinklen fra reflektionspunktet til centeret
+    til punktet på cirklen, var det samme som vinklen fra reflektionspunktet til det reflekterede center, til det reflekterede 
+    punkt på cirklen. Vinklen mellem to forskellige punkter på cirklen forbliver altså konstant, fordi man bare tager en forskel
+    fra vinklen til reflektionspunktet. (Det her var lidt dårligt forklaret i know, men du kan nemt selv tjekke via
+    den tidligeres skitse med cirklen at det gælder).
+    </p>
+    <br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Hvor mange reflektions-transformationer gennem linjer findes der hvor en regulær _(n_)-polygon er invariant?  
+    <br><br></q-stion>
+    <answer-box>
+    Lad os dele problemet op i regulære polygoner med lige og ulige mængder af sider:
+    <img class="Spic" style="width:60%" src='../../../Assets/Chapter2\Section2\Symmetri\SymetrierIRegPolygon.png'> 
+    <p class="t">I ulige regulære polygoner er der jo _(2k+1_) sider. Hvis jeg vælger èn side, så er der _(2k_) sider tilbage,
+    hvilke betyder der er _(k_) sider til højre for den, og _(k_) sider til venstre. Alle de her siders vinkler
+    og længder er identiske, så der er ingen grund til at de skulle mødes længere over mod èn end den anden. De
+    mødes altså i midten, lige over _(M_). Det her kan vi gøre for hver af de _(2k+1_) sider, og der er altså derfor  
+    _(n_) linje-symmetrier i en regulær polygon med ulige mængde kanter.
+    <p class="t">
+    I en lige regulær polygon er der to måder der kommer symmetrier på. Først måde minder meget om den ved ulige:
+    vi vælger et eller andet punkt, og så er der ligeså mange sider til højre for det punkt som til venstre (eller over/under, you get the point).
+    Det kan vi gøre _(n/2_) gange, da linjen fra _(A_) til _(B_) jo er den samme som linjen fra _(B_) til _(A_).
+    Yderligere så kan vi også vælge en eller anden side. Vi ved at en side parralel med den vil vise
+    sig som den _(n/2_)'ne side. Når vi har valgt de her to modsatte par af sider, så er der _(n-2=2k-2=2*(k-1)_) sider tilbage.
+    Derfor er der nu ligeså mange til højre for som til venstre, og da har identiske vinkler og længder
+    så ser vi at der er en symmetri. Der kan vælges _(n/2_) modsatte sider. Alt i alt er der altså
+    _(n/2+n/2=n_) linje-reflektionssymmetrier. Perfekt! Formlen behøves ikke engang deles op i lige og ulige, 
+    fordi det er det samme ved dem begge.</p>
+    </p>
+    </answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Sig du har en trekant der består af punkterne 
+    _($(13.07,4.96),(-10.83,8.84),(-2.24,-13.79)_) 
+    Er den invarient over for en transformation der roterer hver punkt omrking _((0,0)_) med en vinkel på _(120_) grader?
+    <br><br></q-stion>
+    <answer-box customWidth="660">
+    _(120_) grader er et stort hint: det er en trekant og _(360/3=120_). 
+    Hvis der er _(120_) grader mellem hvert punkt, så vil det ène transformerede 
+    punkt bare tage den plads det tidligere punkt havde, og formen ville derfor være
+    invariant over for lige denne transformation! Trekanten er invariant hvis vi 
+    roterer f.eks, _((13.07,4.96)_) og så får enten _(-10.83,8.84)_) eller _((-2.24,-13.79)_). 
+    Så lad os prøve!
+    _($(p_x*Cos(\phi) - p_y*Sin(\phi), p_x*Sin(\phi)+p_y*Cos(\phi)) = _)
+    _($(13.07*Cos(120)-4.96*Sin(120), 13.07*Sin(120) + 4.96*Cos(120)) = _)
+    _($(-10.82,8.842)_)
+    Så det passer! Lad os nu prøve med punktet _((-10.83,8.84)_):
+    _($(-10.83*Cos(120)-8.84*Sin(120), -10.83*Sin(120) + 8.84*Cos(120)) = _)
+    _($(-2.24, -13.79)_)
+    Siden der er _(120_) grader fra det første punkt til det andet, og 
+    _(120_) grader fra det andet punkt til det tredje, så må der
+    også være _(360-120-120=120_) grader fra det tredje til det første.
+    Altså: Den er invariant! (med lige denne meget specifikke transformation)
+    </p> 
+    <br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Lad os sige at vi har en transformation _(f_{a,b,s}_) der laver et punkt _((x_1,y_1)_) om til _((a+s*(x_1-a),b+s*(y_1-b))_).
+    Svar nu på følgende:
+    <div style="text-align:center;">
+        <ul style="display: inline-block; text-align: left; list-style:none;">
+            <li><b> 1</b>: Er længder mellem punkter invariante under transformationen _(f_)?</li>
+            <li><b> 2</b>: Er vinkler invariente under transformationen _(f_)?</li>
+            <li><b> 3</b>: Hvis man gør det på alle punkter i en figur,
+                er arealet så invariant under transformationen _(f_)? Hvis ikke, er der så et bestemt forhold mellem det
+                tidligere areal og det nye? </li>
+        </ul>
+    </div>
+    <br></q-stion>
+    <answer-box>
+    <b> 1</b>: Lad os kigge på om længden mellem to punkter _((x_1,y_1),(x_2,y_2)_) ændre sig efter transformationen.
+    Før er den 
+    _($\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}_)
+    Efter transformationenen er den 
+    _($\sqrt{(a+s(x_2-a) - a - s(x_1-a))^2 +(b+s(y_2-b)- b - s(y_1-b))^2}_)
+    Det kan simplificeres til 
+    _($\sqrt{(sx_2-sx_1)^2+(sy_2-sy_1)^2}=_)
+    _($\sqrt{s^2*(x_2-x_1)^2+s^2*(y_2-y_1)^2}=_)
+    _($s*\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}_)
+    Længder er altså <i>ikke</i> invariante. Der er et meget bestemt forhold dog: længden er blevet _(s_) gange så lang. 
+    <p class="t">
+    <b> 2</b>: Hvis vi har tre punkter _(P_1=(x_1,y_1),O=(O_x,O_y),P_2=(x_2,y_2)_), så er vinklen _(\angle P_1OP_2_) 
+    imellem dem lig
+    _($|Arctan \left(\frac{y_2-O_y}{x_2-O_x} \right) - Arctan \left(\frac{y_1-O_y}{x_1-O_x} \right)|_)
+    Her betyder _(||_) tegnene "absoloute value". Det 
+    er bare kort for at tage det i anden og så tage kvadratroden - altså alle negative værdier bliver positive. Når vi transformere
+    så bliver _(y_2-O_y_) til _(s*(y_2-O_y)_) som vi så lige før. Meget det samme sker ved _(x_2-O_x,y_1-O_y,x_1-O_x_) så:
+    _($|Arctan \left(\frac{s*(y_2-O_y)}{s*(x_2-O_x)} \right) - Arctan \left(\frac{s*(y_1-O_y)}{s*(x_1-O_x)} \right)|=_)
+    _($|Arctan \left(\frac{y_2-O_y}{x_2-O_x}\right) - Arctan \left(\frac{y_1-O_y}{x_1-O_x} \right)|_)
+    Bam! Vinklerne ændre sig ikke. De er altså invariante. 
+    </p>
+    <p class="t"><b> 3</b>: Det tredje spørgsmål har jeg valgt at vise i en video her:</p>
+    <video class="SpicB" style="width:80%" controls>
+        <source src='../../../Assets/Chapter2\Section2\Symmetri\ScaleArea.mp4' type='video/mp4'>
+    </video>
+    <p class="t">
+    Man kan overall lidt tænke på den her transformation som en slags "udstrækningstransformation".
+    Den skalere punkter væk fra punktet _((a,b)_) med en faktor på _(s_). Du 
+    kan forestille dig at_((x_1,y_1)_) lå på en cirkel omkring _((a,b)_), og vi så forøgede radiusen af den cirkel med _(s_).</p>
+    <br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    En <i>shear</i> transformation er en generel transformation man kan bruge på former. Her et billede der 
+    <i>intuitivt</i> viser hvad en typisk shear transformation gør til forskellige former:
+    <img class="Spic" style="width:80%" src='../../../Assets/Chapter2\Section2\Symmetri\ShearIntuition.png'> 
+    Kan du prøve at beskrive denne transformation mere matematisk og præcist som jeg havde gjort før
+    med transformationen der skalerede omkring et punkt? Der er selvfølgelig ikke nogen måde du kan være 100% sikker på dit svar her,
+    men bare prøv.
+    <p class="t">
+    Hint: Eksempel _(2_) er faktisk en lidt anden transformation end de andre, men
+    det er samme <i>slags</i> transformation.
+    </p>
+    <br><br></q-stion>
+    <answer-box>
+    For at bedre forstå <i>hvad</i> der ændre sig på formerne her, så kan det være godt at kigge på hvad 
+    der <i>ikke</i> ændre sig: I eksempel 1 ender alle punkterne på figuren ud med at have samme _(y_)-værdi som før. Det
+    samme sker i eksempel 3 og 4, og det modsatte sker i eksempel 2 hvor det nu er _(x_)-værdierne der ikke ændre sig 
+    men i stedet y. Så transformationen flytter <i>enten</i> _(x_)-værdierne <i>eller</i> _(y_)-værdierne. Fint, men hvordan
+    præcist? Jo, i eksmpel 1 der ser vi at to punkter med samme _(y_)-værdi er blevet flyttet lige meget på _(x_)-aksen hver,
+    siden _(d_) er det samme som før. Punkternes _(x_)-koordinat har altså højest sandsyndlig ingen indflydelse
+    på hvor meget de bliver flyttet. Kun _(y_). I eksempel 4 ser vi at der er 3 punkter med samme _(x_) værdi, men stigende
+    _(y_). Det laveste punkt er det der er blevet rykket mindst, det midterste punkt er det der er blevet rykket anden længst,
+    og det højeste punkt er blevet rykket aller længst. Det her passer også godt sammen med eksempel 1 igen hvor
+    de to laveste punkter med _(y=0_) slet ikke er blevet flyttet, og de øverste punkter <i>er</i> blevet flyttet. 
+    <p class="t">
+    Så, måske kan vi sige at shear transformationen tager et punkt _((x_1,y_1)_) til _((x_1+k*y_1,y_1)_) hvor _(k_)
+    er en eller anden factor der siger hvor meget shear vi skal lave. Selvfølgelig som vi ser
+    i eksempel _(2_) så kan vi også lave shear transformationer som _((x_1,y_1) \to (x_1,y_1+k*x_1)_).
+    Dette er <i>indeed</i> den officielle definition på en shear transformation.
+    </p>
+    <br></answer-box>
+
+    <p class="t">Længder og vinkler mellem punkter er <i>ikke</i> invariant til shear transformationer.
+    Man kan bevise det på præcist samme måde som med de tidligere transformationer, og det er ikke 
+    specielt svært. </p>
+
+    <p class="t">
+    Lad os, for sjovs skyld, stille et spørgsmål: 
+    Er en ikke-roteret ellipse omkring _((0,0)_) stadig en ikke-roteret ellipse omkring _((0,0)_) når man bruger en shear transformation på den?
+    Det her var originalt et spørgsmål, men det var lidt på den svære side, så 
+    jeg har bare tænkt mig at vise svaret, siden jeg syntes at processen er 
+    vigtig og interessant. 
+    </p>
+    <p class="t">Først: Hvad præcist skal gælde for et punkt for at det er en del af en ellipse? 
+    Lad os sige at ellipsen er centreret på _((0,0)_) som følgende:</p>
+    <img class="Spic" style="width:60%" src='../../../Assets/Chapter2\Section2\Symmetri\EllipseOgCirkel.png'> 
+    <p class="t">Hvis et punkt _(P_1=(x_0,y_0)_) er på en simpel cirkel med en radius af _(1_), så ved vi 
+    at _(\sqrt{x_0^2+y_0^2}=1_). Distancen til centeret skal jo være _(1_) hele tiden. Hvis
+    sættet af _((x,y)_) par der opfylder _(x^2+y^2=1_) ligner en cirkel, hvad ligner sættet
+    af _((x,y)_) par der opfylder _((x/20)^2+y^2=1_) så? Well, _((x/20)^2+y^2=1 \to y^2=1-(x/20)^2 \to y=\pm \sqrt{1-(x/20)^2}_).
+    _(y_) kan jo godt være negativt, så vi husker at sige _(\pm_). Kurvens højeste _(y_) er lige nu _(1_) (og laveste _(-1_)) 
+    ved _(x=0_) siden _(\pm \sqrt{1-(0/20)^2}= \pm 1_). _(y_) er _(0_) når _(x=20_) eller _(x=-20_) som du også nemt kan se. 
+    Sammenligner vi med _(x^2+y^2=1 \to y=\pm \sqrt{1-x^2}_) så møder _(y_) altså alle de samme værdier i den samme 
+    rækkefølge. Ved _(\sqrt{1-(x/20)^2}_) går det bare <i>langsommere</i>, altså, kurven er blevet <i>udstrækt</i> med 
+    en faktor på _(20_) på x-aksen. Det præcis samme argument kunne vi lave hvis vi havde _(x^2+(y/b)^2_) hvor det
+    bare bliver udstrakt med _(b_) på _(y_)-aksen. Altså, generelt: Sættet af _((x,y)_) par der opfylder _((x/a)^2+(y/b)^2=1_)
+    ligner en ellipse med en længde på _(2*a_) og højde på _(2*b_). </p>
+    <p class="t">
+    Sig nu at _((x_1,y_1)_) er et punkt på en ellipse med længde _(2b_) og _(2a_), altså _((x_1/a)^2+(y_1/b)^2=1_).
+    Hvis vi laver en shear transformation på _((x_1,y_1)_) og får _((x_1+k*y_1,y_1)_), vil det så også opfylde et eller
+    andet form for ellipse-krav? Hvis vi sætter det reflekterede punkt ind i 
+    en generel ellipse  _((x/c)^2+(y/d)^2=1_) så får vi 
+    _($(\frac{x_1+ky_1}{c})^2+(y_1/d)^2=1 \to_) 
+    _($\frac{x_1^2}{c^2} + \frac{2*k*x_1*y_1}{c^2} + \frac{k^2*y_1^2}{c^2} + \frac{y_1^2}{d^2} = 1 \to_)
+    _($\frac{x_1^2}{c^2} + \frac{2*k*x_1*y_1}{c^2} + \left(\frac{k^2}{c^2} + d^2 \right)*y_1^2 = 1 \to_)
+    _($\frac{2*k*x_1*y_1}{c^2} + \frac{x_1^2}{c^2} + \frac{y_1^2}{\left(\frac{1}{\frac{k^2}{c^2} + d^2}\right)} = 1 \to_)
+    _($\frac{2*k*x_1*y_1}{c^2} + \frac{x_1^2}{c^2} + \frac{y_1^2}{\left(\sqrt{\frac{1}{\frac{k^2}{c^2} + d^2}}\right)^2} = 1 \to_)
+    Jeg ved at:
+    _($\frac{x_1^2}{a^2} + \frac{y_1^2}{b^2}=1_) 
+    Hvis bare jeg 
+    vælger de rigtige tal til _(c,d_), så kan jeg måske få 
+    omskrevet til
+    _(\frac{x_1^2}{a^2} + \frac{y_1^2}{b^2}_) som jeg så 
+    kan simplificere til bare _(1_). Det er tydeligt
+    at _(c_) skal være lig _(a_), så:
+    _($\frac{2*k*x_1*y_1}{a^2} + \frac{x_1^2}{a^2} + \frac{y_1^2}{\left(\sqrt{\frac{1}{\frac{k^2}{c^2} + d^2}}\right)^2} = 1 \to_)
+    Nu skal jeg bare vælge det rigtige _(d_) så 
+    _($\sqrt{\frac{1}{\frac{k^2}{c^2} + d^2}}=b_)
+    hvilket ville give mig:
+    _($\frac{2*k*x_1*y_1}{a^2} + \left(\frac{x_1^2}{a^2} + \frac{y_1^2}{b^2}\right) = 1 \to_)
+    Altså:
+    _($\sqrt{\frac{1}{\frac{k^2}{c^2}+d^2}} = b \to \sqrt{\frac{c^2}{k^2+c^2*d^2}} = b \to \frac{c^2}{k^2+c^2*d^2} = b^2 \to_)
+    _($c^2 - b^2*k^2 = b^2*c^2*d^2 \to d=\sqrt{\frac{c^2 - b^2*k^2}{b^2*c^2}}_)
+    Det er altså muligt at vælge et rigtigt _(d_). 
+    </p>
+    <p class="t">
+    I hvert fald, vi har nu:
+    _($\frac{2*k*x_1*y_1}{a^2} + \left(\frac{x_1^2}{a^2} + \frac{y_1^2}{b^2}\right) = 1 \to_)
+    _($\frac{2*k*x_1*y_1}{a^2} + 1 = 1 \to_)
+    _($\frac{2*k*x_1*y_1}{a^2} = 0 \to_)
+    _($2k*x_1*y_1 = 0 \to_)
+    _($x_1*y_1 = 0_)
+    Det her er ikke sandt! Hvis det var sandt, så ville
+    èn af enten _(x_1_) eller _(y_1_) hele tiden være nødt til at være
+    _(0_), hvilket jo tydeligvis ikke er tilfældet for ellipsen! 
+    </p>
+    <p class="t">
+    Når vi i næste afsnit har lidt bedre værktøjer, så vil vi vise at når vi bruger en shear transformation på en ellipse,
+    så får vi en <i>roteret</i> ellipse. Så ellipser forbliver ellipser under shear! De roteres bare.
+    </p>
+
+    <p class="cent">
+    *
+    </p>
+
+   <p class="t"> Lad os nu kigge på en transformation der er virkelig interesant. Indtil videre har vi brugt
+    transformationer på specifikt 2D former og punkter, men vi kan jo egentlig gøre det på hvad end vi har lyst til.
+    Det er bare et meget bredt ord! Lad os derfor prøve at lave en transformation der laver _(3D_) om til _(2D_):</p>
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter2\Section2\Symmetri\CentralProjection1.png'> 
+    <p class="t">Tænk over hvordan du ser verdenen rundt omkring dig (og, forsimplet set, hvordan du ser hvis du var en cyclops):
+    Lys reflektere på objekterne og fladerne rundt omkring dig, og skyder så lysbølger (som vi her godt bare kan se som linjer)
+    ind i dine øjne (det lyder meget brutalt!). Altså: for hvert punkt omkring dig tegner vi en linje direkte ind mod dit øje. Det sted den så rammer
+    retinaet er så der hvor det punkt vil vise sig på det billede din hjerne producere (meget forsimplet set selvfølgelig).
+    <p class="t">Vi siger at vi laver en <i>central projection</i> transformation. Vi tager et sæt _(3D_) punkter og laver
+    dem om til _(2D_) punkter på et plan. Nu kan vi også stille et interresant spørgsmål: er der
+    nogen som helst kvantitet - noget som helst egenskab på en eller anden måde - der er invarient gennem en central projection?
+    Hvis vi fandt nogle af de her invarient egenskaber, så kunne vi finde informationer omkring en 3D scene bare
+    ved at kigge på et 2D billede! Der er selvfølgelig tonsvis af information der går tabt på billedet, 
+    men måske kan vi alligevel godt måle nogle ting? </p>
+
+    <p class="t">Central projection har en dejlig invariant egenskab kaldt "the cross-ratio". Hvis du har fire punkter på en 
+    linje - enten i 2D eller 3D:</p>
+    <img class="SpicB" style="width:100%" src='../../../Assets/Chapter2\Section2\Symmetri\GadePunkter.png'> 
+    <p class="t"> Så er 
+    _($\frac{AC*BD}{AD*BC}_) 
+    hvad vi kalder "cross-ratioen". 
+    Dens værdi er det samme når vi bruger _(AC,BD,AD,BC_) som <i>de virkelige distancer</i> som når vi 
+    bare indsætter _(AC,BD,AD,BC_) som vi har målt dem 2-dimensionelt på billedet:</p>
+    <img class="SpicB" style="width:80%" src='../../../Assets/Chapter2\Section2\Symmetri\GadePunkterPixels.png'> 
+    <p class="t">Jeg ved fra rigtige virkelige mål at _(AB=9.9m_), _(BC=10.17m_), _(CD=1.09m_). 
+    Så _(AC=20.07m,BD=11.26m,AD=21.16m_).
+    Med pixels'ne ved jeg at _(AC=671.8px,BD=200.92px,AD=687.52px_). Cross-ratioen 
+    ved de rigtige mål er altså _(\frac{20.07*11.26}{10.17*21.16}=1.034_) og Cross-ratioen 
+    ved pixels-mål er _(\frac{671.8*200.92}{185.2*687.52}=1.06_). Næsten det samme! Det her 
+    er et mere empirisk eksempel, så det kommer selvfølgelig ikke lige til at passe helt perfekt, men 
+    stadig! Vi har altså nu en måde at relatere fire punkter på en linje i virkeligheden, med fire punkter
+    på en linje på et billede. Det kan vi bl.a. bruge til at måle distancer på billeder som i næste opgave.</p>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Se følgende gade:
+    <img class="SpicB" style="width:90%" src='../../../Assets/Chapter2\Section2\Symmetri\Gade2.png'> 
+    <p class="t"> Jeg vil gerne måle hvor bred gaden mellem _(B_) og _(C_) er. Via nogle internet søgninger omkring
+    den gennemsnitslige bredde af et skur (_(AB_)) og længde af en terrase (_(CD_)) har jeg kommet
+    frem til _(AB=3.8m, CD=3m_). Jeg har også målt pixels på fotografiet: mellem _(A,B_) er der _(94.9px_),
+    mellem _(B,C_) er der _(71.5px_), og mellem _(C,D_) er der _(36.9px_). </p>
+    <br></q-stion>
+    <answer-box>
+    Først måler jeg cross-ratioen på pixelsne: 
+    _($\frac{(94.9+71.5)*(71.5+36.9)}{71.5*(94.9+71.5+36.9)}=1.24_)
+    Det har ved jeg er ligmed cross-ratioen på de rigtige længder: 
+    _($\frac{(3.8+BC)*(BC+3)}{BC*(3.8+3+BC)} = 1.24_)
+    Lad mig for nemheden og forkortelsens skyld bare kalde _(BC_) for "_(x_)":
+    _($\frac{x^2+6.8x+11.4}{x^2+6.8x}=1.24 \to _)
+    _($x^2+6.8x+11.4=1.24*x^2+6.8*1.24*x \to _)
+    _($(-0.24)x^2+(-1.632)x+11.4=0 \to_)
+    Vi ved fra en del tid siden nu at når vi har noget i formen af _(ax^2 + bx + c=0_) så vil 
+    _(x=\frac{-b \pm \sqrt{b^2-4*a*c}}{2a}_). Det her er altså bare en genvej så vi ikke behøver at gøre alt det 
+    der med at finde et tal vi skal plusse og minuse med osv. _(\pm_) kommer som sagt fra at det jo
+    er en kvadratrod, som for hvert areal både kan give en positiv og negativ sidelængde (siden _(-1*-1=1_)).  
+    I hvert fald, når vi bruger det får vi:
+    _($x=\frac{-(-1.632) \pm \sqrt{(-1.632)^2 - 4*(-0.24)*11.4}}{2*(-0.24)}=_)
+    _($\frac{1.632 \pm 3.688}{-0.48} = _)
+    _($-3.4 \pm 7.683_)
+    Hvis vi minuser med _(-7.683_) så får vi en negativ læsning hvilke ikke giver nogen mening.
+    Hvis vi pluser med _(7.683_) så får vi _(x=BC=4.282m_). Bam!
+    <br><br></answer-box>
+
+
+    <p class="t">Så hvorfor præcist virker det her? Hvorfor er tallet _(\frac{AC*BD}{AD*BC}_) invariant med central projection?</p>
+    <img class="Spic" style="width:80%" src='../../../Assets/Chapter2\Section2\Symmetri\CentralProjection2.png'> 
+    <p class="t">Lad os sige vi har de her fire punkter _(A,B,C,D_) der ligger på en eller anden linje _(L_0_) i den
+    rigtige 3D virkelig verden. For at projektere dem til _(2D_) så tegner vi som altid en direkte linje hen til
+    vores kamera/synspunkt. Kald punkterne hvor de skærer planet for henholdsvis _(A',B',C',D'_).
+    <img class="Spic" style="width:80%" src='../../../Assets/Chapter2\Section2\Symmetri\CentralProjection3.png'> 
+    <p class="t"><i>Fordi</i> _(A,B,C,D_) ligger i en linje, så kan vi også tegne alle mulige linjer der går igennem
+    og skære både _(R_A,R_B,R_C,R_D_) (linjerne). Lad os kalde det sted _(L_1_) skære _(R_A_) for _(a_), 
+    det sted _(L_1_) skære _(R_B_) for _(b_) osv:</p>
+    <img class="Spic" style="width:65%" src='../../../Assets/Chapter2\Section2\Symmetri\CentralProjection4.png'> 
+    <p class="t">Èn af de her linjer vi kan lave er uendelig tæt på og parralel med planet. Det er
+    altså der hvor projektionerne af _(A,B,C,D_) ligger. _(A'B'_) er altså det vi ville måle
+    i pixels <i>på</i> fotografiet. Hvad jeg nu gerne vil vise er at cross-ratioet af 
+    _(a,b,c,d_) er lig cross-ratioet af _(A,B,C,D_), hvilke så også betyder at cross
+    ratioet af _(A,B,C,D_) er lig cross ratioet af _(A',B',C',D'_). Mere generelt:
+    Man kan kigge på _(A,B,C,D_) fra noget som helst plan, og den projekterede cross-ratio
+    man oplever er altid den samme.</p> 
+    <p class="t">
+    Vi skal vise at:
+    _($\frac{ac*bd}{bc*ad} = \frac{AC*BD}{BC*AD}_)
+    For at gøre det prøver vi lige at omskrive _(AC,BD,BC,AD_) i 
+    forhold til de andre længer, via følgende trick:
+    </p>
+    <p class="t">
+    Arealet af f.eks. _(\triangle ABV_) kan enten regnes som _(\frac{1}{2}*AB*h_) eller _(\frac{1}{2}*AV*BV*Sin(\angle AVB)_).
+    Med den her ide kan vi altså opsætte nogle krav:
+    _($\frac{1}{2}*AC*h=\frac{1}{2}*AV*CV*Sin(\angle AVC) \to AC=\frac{AV*CV*Sin(\angle AVC)}{h}_)
+    _($\frac{1}{2}*BD*h=\frac{1}{2}*BV*DV*Sin(\angle BVD) \to BD=\frac{BV*DV*Sin(\angle BVD)}{h}_)
+    _($\frac{1}{2}*BC*h=\frac{1}{2}*BV*CV*Sin(\angle BVC) \to BC=\frac{BV*CV*Sin(\angle BVC)}{h}_)
+    _($\frac{1}{2}*AD*h=\frac{1}{2}*AV*DV*Sin(\angle AVD) \to AD=\frac{AV*DV*Sin(\angle AVD)}{h}_)
+    _($\to_)
+    _($\frac{AC*BD}{BC*AD}=\frac{ \frac{AV*CV*Sin(\angle AVC)}{h}*\frac{BV*DV*Sin(\angle BVD)}{h}}
+                                { \frac{BV*CV*Sin(\angle BVC)}{h} * \frac{AV*DV*Sin(\angle AVD)}{h}} =_)
+    _($\frac{Sin(\angle AVC)*Sin(\angle BVD)}{Sin(\angle BVC)*Sin(\angle AVD)}_)
+    Lad os nu prøve at gøre det samme her med _(ac, bd, bc, ad_):
+    _($\frac{1}{2}*ac*h=\frac{1}{2}*av*cv*Sin(\angle aVc) \to ac=\frac{av*cv*Sin(\angle aVc)}{h}_)
+    _($\frac{1}{2}*bd*h=\frac{1}{2}*bv*dv*Sin(\angle bVd) \to bd=\frac{bv*cv*Sin(\angle bVd)}{h}_)
+    _($\frac{1}{2}*bc*h=\frac{1}{2}*bv*cv*Sin(\angle bVc) \to bc=\frac{bv*cv*Sin(\angle bVc)}{h}_)
+    _($\frac{1}{2}*ad*h=\frac{1}{2}*av*dv*Sin(\angle aVd) \to ad=\frac{av*dv*Sin(\angle aVd)}{h}_)
+    _($\to_)
+    _($\frac{ac*bd}{bc*ad} = \frac{Sin(\angle aVc)*Sin(\angle bVd)}{Sin(\angle bVc)*Sin(\angle aVd)}_)
+    Men vinkel _(\angle aVC _) er jo lig _(\angle AVC_) og samme gælder alle de andre! 
+    _($\frac{ac*bd}{bc*ad} = \frac{Sin(\angle AVC)*Sin(\angle BVD)}{Sin(\angle BVC)*Sin(\angle AVD)} = \frac{AC*BD}{BC*AD}_)
+    Bam! Done!
+    </p> 
+
+

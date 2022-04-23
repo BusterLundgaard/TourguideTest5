@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+
+
+    <h3>Spørgsmål _(\textbf{A}_) og Lagrange error bound</h3>
+    <p class="t">
+    Vi får brug for et såkaldt <i>error bound</i>, hvis vi
+    skal bevise, at en Taylor serie med uendelig mange led er en perfekt
+    approksimation af en bestemt funktion: Hvis der er _(n_) led, hvad er den størst mulige fejl / forskel på 
+    den rigtige funktion? Approksimationen er perfekt, hvis denne fejl nærmer sig _(0_) ved
+    _(n \to \infty_). 
+    </p>
+
+    <p class="t">
+    Kald Taylor-funktionen til _(f(x)_) med _(n_) led for _(T_n(x)_), og kald fejlen/forskellen for
+    _($E_n(x) = f(x) - T_n(x)_)
+    Vi skal forsøge at bounde _(|E_n(x)|_): Finde et udtryk, vi ved det altid er mindre end. 
+    Antag at _(f(x)_) kan 
+    differentieres så mange gange, vi har lyst. Det kan _(T_n(x)_) selvfølgelig også, siden det er en polynomial.
+    Ideen er, at vi fjerner _(T_n(x)_) ved at differentiere _(E_n(x)_) _(n+1_) gange. Den forsvinder
+    lige meget hvad dens koefficienter er, siden den har en grad på _(n_). Nu ved vi, at
+    _($E_n^{'n+1}(x) = f^{'n+1}(x)_)
+    Vi er interesseret i _(|E_n(x)|_), så vi tager den absolutte værdi af begge sider:
+    _($|E_n^{'n+1}(x)| = |f^{'n+1}(x)|_)
+    Vi leder efter et <i>error bound</i>. 
+    _(x_) er enten til højre eller venstre for den værdi _(a_) vores funktion er evalueret på.
+    Antag nu at der mellem _(x_) og _(a_) findes et least upper bound _(M \ne \infty_) til funktionen 
+    _(|f^{'n+1}(x)|_):
+    _($|f^{'n+1}(x)| \le M_)
+    ... hvilket giver:
+    _($|E_n^{'n+1}(x)| \lt M_)
+    Jeg siger <i>antag</i>, fordi vi senere skal regne grænsen ved _(n \to \infty_), hvor man
+    nemt kunne forestille sig, at den mindste værdi på intervallet ved nogle funktioner
+    _(|f^{'n+1}(x)|_) er _(\infty_). 
+    </p>
+    <p class="t">
+    Vi vil gerne bounde _(E_n(x)_) og ikke _(E_n^{'n+1}(x)_). Strategien er derfor
+    at integrere begge sider _(n+1_) gange:
+    _($\int |E_n^{'n+1}(x)| \le \int M_)
+    Vi udnytter nu følgende faktum:
+    _($|\int f(x) | \le \int |f(x)|_)
+    Det kan let verificeres og bevises. Det giver:
+    _($\begin{eqnarray}
+    && \left| \int E_n^{'n+1}(x) \right| \le \int M \\ \\
+    && |E_n^{'n}(x)| \le M*x+C
+    \end{eqnarray}_)
+    Vi er nødt til at finde _(C_), før vi går videre. 
+    Vores Taylor-polynomial er evalueret 
+    på _(x=a_), hvilket betyder, at den på _(a_) har samme
+    værdi, hældning, hældning-hældning osv. Fejlen mellem Taylor-polynomialen og funktionen er 
+    er _(0_), så længe vi har taget mindre end _(n+1_) hældninger. Ergo:
+    _($\begin{eqnarray}
+    && 0 \le M*a + C \to \\ \\
+    && C \ge -M*a
+    \end{eqnarray}_)
+    _(C_) skal bare være større end eller lig _(-M*a_), så vi vælger den mindst mulige værdi _(-M*a_). 
+    Alt i alt:
+    _($|E_n^{'n}(x)| \le M*(x-a)_)
+    Nu bruger vi samme trick med den absolutte værdi af integralet igen:
+    _($\begin{eqnarray}
+    && | \int E_n^{'n}(x) \text{ }dx| \le \int M*(x-a) \text{ }dx \to \\ \\
+    && | E_n^{'n-1}(x)| \le M*\frac{(x-a)^2}{2} + C \text{ }dx
+    \end{eqnarray}_)
+    Igen er fejlen _(0_) ved _(x=a_):
+    _($0 \le M*\frac{(a-a)^2}{2} + C \to C \gt 0_)
+    _(C_) skal være større end eller lig _(0_), så vi vælger bare _(0_):
+    _($| E_n^{'n-1}(x)| \le  M*\frac{(x-a)^2}{2}_)
+    Nu kan vi blive ved med at bruge samme trick igen og igen. 
+    _(C_) bliver ved med at blive til _(0_). 
+    Efter _(n-1_) gange får vi: 
+    _($|E_n(x)| \le M*\frac{(x-a)^{n+1}}{(n+1)!}_)
+    Nu tager vi endelig grænsen ved _(n \to \infty_):
+    _($\begin{align} 
+    |\lim_{n \to \infty} \left[E_n(x) \right]| & \le \lim_{n \to \infty} \left[M*\frac{(x-a)^{n+1}}{(n+1)!} \right] \\ \\
+    & = & \lim_{k \to \infty} \left[M \right]*\lim_{k \to \infty} \left[\frac{(x-a)^{n+1}}{(n+1)!} \right]
+     \end{align}_)
+    _((x-a)_) er i forhold til grænsen af _(n_) bare et tal. 
+    Den er opløftet i _(n+1_), hvilket svarer til en eksponentiel funktion. 
+    Den er divideret med fakultet-funktionen
+    _((n+1)!_), som dominerer eksponentiel vækst, og brøken nærmer sig derfor _(0_).  
+    </p>
+    <p class="t">
+    Nu er der tre muligheder:
+    </p>
+    <div style="text-align:center; margin-top:-10px; margin-bottom:-10px;">
+        <ul style="display: inline-block; list-style:disc;">
+            <li>Case _(\text{1}_): Grænsen af _(M_) nærmer sig 0</li>
+            <li>Case _(\text{2}_): Grænsen af _(M_) nærmer sig et helt tal _(C_)</li>
+            <li>Case _(\text{3}_): Grænsen af _(M_) nærmer sig uendelig</li>
+        </ul>
+    </div>
+    <p class="t">
+    Det er tydeligt, at grænsen af _(E_n(x)_) bliver _(0_), hvis vi er i case 1 eller case 2. Hvis vi er i case 3
+    bliver det mere tricky, og vi får brug for at se på hele grænsen. 
+    </p>
+
+    <div class="Theory">
+    <b> Teori: Taylor error bound</b> <br>
+    Den størst mulige fejl på en Taylor-approksimation af _(f(x)_) evalueret
+    ved _(a_) med _(n_) led er
+    _($M*\frac{(x-a)^{n+1}}{(n+1)!}_)
+    ... hvor _(M_) er den størst mulige værdi _(|f^{'n+1}|_) kan tage på intervallet mellem 
+    _(a_) og _(x_) (hvor _(x_) både kan være til venstre og højre for _(a_)). 
+    </div>
+
+    <div class="Corollary">
+    <b> Corollary: Test på om en funktion kan perfekt approksimeres.</b> <br>
+    _(f_) kan perfekt approksimeres af en Taylor funktion <i><u>ved</u></i> _(x_), hvis 
+    _($\lim_{n \to \infty} \left[M \right]_)
+    ... konvergerer. Den <i>kan</i> godt i visse tilfælde approksimeres, hvis _(M_) divergerer også. 
+    </div>
+
+    <p class="tt">
+    Testen bekræfter kun, at taylor-approksimationen
+    perfekt kan approksimeres <i>på en bestemt _(x_)</i>. Man kan ikke sige, 
+    at der for bestemte funktioner
+    findes "perfekte Taylor-approksimationer". Der findes perfekte approksimationer på <i>bestemte
+    intervaller</i>. Det var også hvad vi observerede, ved _(Ln(1-x)_), hvor det kun virkede på _([-1, 1]_). 
+    </p>
+
+    <p class="t">
+    _(M_) kan være ret svær at forstå, før man 
+    har set konkrete eksempler. 
+    Grænsen ved _(n \to \infty_)
+    betyder jo, at _(f^{'n+1}_) svarer til _(f_) differentieret <i>uendelig</i> mange gange. 
+    </p>
+    <p class="t">
+    Sig at vi tester:
+    _($f(x)=Sin(x)_)
+    Hældningerne af _(Sin(x)_) skifter mellem
+    _(Cos(x)_), _(-Sin(x)_), _(-Cos(x)_) og _(Sin(x)_). Sådan bliver det ved. Hver af disse funktioner har 
+    en min og maks på _(-1_) og _(1_). Deres maksimum absolutte værdi er derfor _(1_). 
+    </p>
+    <p class="t">
+    _(M_) er den højeste værdi mellem _(a_) og _(x_). Hvis vores Taylor-approksimation
+    er evalueret ved _(4_), og vi tester om funktionen kan approksimeres på _(x=23_),
+    er _(M_) lig _(f^{'n+1}_)'s højeste værdi på _([4, 23]_). <i>I vores tilfælde</i> er 
+    _(M_) lig _(1_) på et hvilket som helst interval, da _(Sin_) og _(Cos_) gentager
+    sig selv konstant. _(M_) er <i>også</i> _(1_), selv hvis vi arbejder med et interval
+    hvor _(Cos_) eller _(Sin_) aldrig er lig _(1_), siden vi kun har brug for et <i>bound</i>:
+    Ikke den aktuelle, rigtige maksimal-værdi. _(M=1_), så _(M_) konvergerer på et hvilket som
+    helst _(x_), og _(Sin(x)_) kan derfor approksimeres perfekt på <i>alle</i> _(x_). 
+    </p>
+
+    <p class="t">
+    Din tur!
+    </p>
+
+    <q-stion 1="14" 2="1" bigTop="true">
+    På hvilket _(x_) (hvis nogle) kan 
+    _($f(x)=e^x_) 
+    ... perfekt approksimeres af sin Taylor-serie evalueret ved _(0_)? 
+    <br><br></q-stion>
+    <answer-box>
+    Vi kan let se, at
+    _($f^{'n+1}(x)=e^x_)
+    ... siden du kan differentiere _(e^x_) uendelig mange gange og stadig få _(e^x_). Vi skal nu finde
+    _(e^x_)'s maksimalværdi på:
+    _($[0, x]_)
+    _(e^x_) stiger konstant, så funktionen er højest ved _(x=x_). Det giver:
+    _($M=e^x_)
+    _(e^x_) er bare <i>et eller andet tal</i>. Sure, på f.eks. _(x=20.1_) er 
+    _($M=e^{20.1}=536190464.4293891_)
+    ... ret stort, men det er ikke <i>uendeligt</i>. _(M_) konvergerer på et
+    hvilket som helst _(x \ne \infty_). Det er lig 
+    _(0_) ved _(x=-\infty_). 
+    <br><br></answer-box>
+
+    <!--  -->
+    
+    <p class="t">
+    Lad mig vise et markant mere tricky eksempel. På hvilket _(x_) kan 
+    _($f(x)=Ln(x)_)
+    ... evalueret ved _(x=1_) perfekt approksimeres? 
+    </p>
+    <p class="t">
+    Det kan (relativt) let ses, at
+    _($f^{'n+1}(x)=(-1)^{n}*\frac{n!}{x^{n+1}}_)
+    ... siden vi går _(1/x_), _(-1/x^2_), _(2/x^3_) osv. Hvad er den største værdi, det kan tage på
+    intervallet _([1,x]_)? Det kan vi kun svare på ved at opdele situationen i to tilfælde:
+    _($\begin{align}
+    \textbf{A: } & x \text{ er større eller lig } 1 \\ 
+    \textbf{B: } & x \text{ er mindre end } 1 \\ 
+    \end{align}_)
+    Funktionen er størst i tilfælde _(\textbf{A}_) hvis _(x=1_), hvor vi får:
+    _($(-1)^{n}*\frac{n!}{1^{n+1}} = (-1)^{n}*n!_)
+    Funktionen er størst i tilfælde _(\textbf{B}_) hvis _(x=x_). Her fås:
+    _($(-1)^{n}*\frac{n!}{x^{n+1}}_)
+    _(n!_) dominerer eksponentialfunktioner, så begge mulige værdier til _(M_) 
+    (hvad end _(x_) vi er på) diverger mod _(\infty_). Vi er derfor nødt til at finde hele
+    formlen, frem for at tjekke hvor _(Ln_) perfekt kan approksimeres:
+    _($\lim_{n \to \infty} \left[M*\frac{(x-a)^{n+1}}{(n+1)!} \right]_)
+    Vi har _(a=1_). Antag først at _(x \ge 1_):
+    _($\lim_{n \to \infty} \left[(-1)^{n}*n!*\frac{(x-1)^{n+1}}{(n+1)!} \right] = \lim_{n \to \infty} \left[(-1)^n*\frac{(x-1)^{n+1}}{n+1} \right]_)
+    _((-1)^n_) har ingen indflydelse på, om denne grænse nærmer sig _(0_) eller _(\infty_),
+    og det har _(n+1_) i nævneren heller ikke, siden eksponentialfunktioner dominerer lineære funktioner. 
+    Det eneste der har indflydelse, er om _(|x-1|_) er større eller mindre end _(1_), så 
+    _(x_) skal være mindre end _(2_) siden _(2-1=1_). 
+    </p>
+    <p class="t">
+    Vi ser nu på tilfældet hvor _(x \lt 1_). Her får vi:
+    _($\lim_{n \to \infty} \left[(-1)^{n}*\frac{n!}{x^{n+1}}*\frac{(x-1)^{n+1}}{(n+1)!} \right] = 
+    \lim_{n \to \infty} \left[\frac{(-1)^n}{n+1}*\left(1 - \frac{1}{x} \right)^{n+1} \right]
+    _)
+    Den går mod _(0_) hvis _(|1-1/x| \lt 1_), hvilket svarer til:
+    _($\frac{1}{2} \lt x \lt 1_)
+    Vi kombinerer de to tilfælde og får:
+    _($\frac{1}{2} \lt x \lt 2_)
+    Bum!
+    </p>
+
+    <p class="t">
+    Og nu bliver det lidt (mere) mærkeligt: Den her test <i>kan</i> 
+    fortælle os hvornår en
+    funktion perfekt kan approksimeres, men den kan 
+    ikke <i>nødvendigvis</i> fortælle os hvornår, 
+    en funktion <i>ikke</i> kan approksimeres.
+    Husk: Hele idéen er, at vi fandt den <i>størst mulige fejl</i> 
+    til Taylor serien. Vi fandt ikke
+    den <i>mindst</i> mulige, så man kunne let 
+    forestille sig, at fejlen var mindre! Det viser
+    sig, at _(Ln(x)_) omkring _(x=1_) <i>faktisk</i> 
+    kan approksimeres perfekt på:
+    _($0 \lt x \lt 2_)
+    Taylor error bound er vigtigt at pointere, men 
+    bliver sjælen brugt i realiteten. 
+    Som vi vil se på næste side, er det <i>markant</i> 
+    nemmere bare at vurdere, hvornår 
+    den uendelige sum konverger og divergerer. 
+    </p>
+
+    <p class="tt">
+    Der findes en tredje mulig test:
+    Forsøg at beskriv funktionen _(f_) i forhold til andre Taylor polynomier du kender. 
+    Vi ved eksempelvis fra den geometriske serie at:
+    _($\frac{1}{1-x} = \sum_{k=0}^{\infty} x^n, \qquad |x| \lt 1_)
+    _(Ln(1-x)_) er integralet af _(1/(1-x)_), så vi integrerer bare begge sider og får:
+    _($Ln(1-x) = \int \sum_{k=0}^{\infty} x^n = \sum_{k=1}^{\infty} \frac{x^{n+1}}{n+1}, \qquad |x| \lt 1_)
+    Vi ændrer startpunktet fra _(k=0_) til _(k=1_), og får nu:
+    _($Ln(1-x) = \sum_{k=1}^{\infty} \frac{x^{n}}{n}, \qquad |x| \lt 1_)
+    Super praktisk! Det gav os både mønstret <i>og</i> hvornår det gælder! 
+    Vi brugte samme strategi til at 
+    beskrive integralet af _(Sin(x^2)_). Her substituerede <i>og</i> integrerede vi. 
+    </p>
+
+    <!--  -->
+
+    <q-stion 1="14" 2="2" bigTop="true">
+    Vi ved at:
+    _($Sin(x) = \sum_{k=0}^{\infty} (-1)^k*\frac{x^{2k+1}}{(2k+1)!}_)
+    Find Taylor-udvidelsen til:
+     _($f(x)=Cos(x)_)
+    <br></q-stion>
+    <answer-box>
+    Vi ved, at _(Cos(x)_) er hældningen af _(Sin(x)_), så vi siger bare:
+    _($Cos(x) = ¤x \left[\sum_{k=0}^{\infty} (-1)^k*\frac{x^{2k+1}}{(2k+1)!} \right] = \sum_{k=0}^{\infty} (-1)^k*\frac{(2k+1)x^{2k}}{(2k+1)!}_)
+    Hvilket er lig:
+    _($\sum_{k=0}^{\infty} (-1)^k*\frac{x^{2k}}{(2k)!}_)
+    Det er altså svaret.
+    <br><br></answer-box>
+
+    <!--  -->
+    
+    <q-stion 1="14" 2="3">
+    Find Taylor-udvidelsen til 
+    _($f(x)=3^x_)
+    <br></q-stion>
+    <answer-box>
+    Vi ved, at _(3^x=e^{Ln(3)*x}_). Vi ved også at:
+    _($e^x = \sum_{k=0}^{\infty} \frac{x^k}{k!} _)
+    Vi substituerer nu _(x=Ln(3)*u_) og får:
+    _($e^{Ln(3)*u} =  \sum_{k=0}^{\infty} \frac{(Ln(3)*u)^k}{k!} \to_)
+    _($3^u = \sum_{k=0}^{\infty} Ln(3)^k \frac{u^k}{k!}_)
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="14" 2="4">
+    Find Taylor udvidelsen til 
+    _($f(x)=\frac{1}{x^2}_)
+    ... og beskriv hvor den er valid.
+    <br><br></q-stion>
+    <answer-box>
+    Vi ved at 
+    _($\frac{1}{1-x} = \sum_{k=0}^{\infty} x^k, \qquad |x| \lt 1_)
+    Nu kan vi substituere _(x=1-u^2_) og få:
+    _($\frac{1}{u^2} = \sum_{k=0}^{\infty} (1-u^2)^k_)
+    _(x_) er mellem _(-1_) og _(1_), så _(u_) er mellem:
+    _($[\sqrt{1-1}, \sqrt{1-(-1)}] = [0, \sqrt{2}]_)
+    Det er èn mulig strategi, men vi får et større validt interval,
+    hvis vi i stedet substituerer _(x=1-u_):
+    _($\frac{1}{u} = \sum_{k=0}^{\infty} (1-u)^k_)
+    ... og <i>differentiere</i> for at få _(-1/u^2_):
+    _($\frac{1}{u^2} = -\sum_{k=0}^{\infty} k*(1-u)^{k-1}*(-1)_)
+    Det er validt på _(u \in [0,2]_) i stedet for _([0, \sqrt{2}]_). 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="14" 2="5">
+    Find Taylor udvidelsen til:
+    _($f(x) = \frac{x^7}{e^x}_)
+    ... og beskriv hvor den er valid.
+    <br><br></q-stion>
+    <answer-box>
+    Jeg tænker, at vi kan omskrive dette til:
+    _($\begin{eqnarray}
+    && x^7*e^{-x} = \\ \\
+    && x^7*\sum_{k=0}^{\infty} \frac{(-x)^{k}}{k!} = \\ \\ 
+    && \sum_{k=0}^{\infty} \frac{(-1)^k*x^{k+7}}{k!} 
+    \end{eqnarray}_)
+    _(e^x_) er validt overalt, så det er denne serie også.
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="14" 2="6">
+    Find taylor udvidelsen til:
+    _($Cos(x)^2_)
+    ... og beskriv hvor den er valid.
+    <br><br></q-stion>
+    <answer-box>
+    Her burde vi nok omskrive _(Cos^2_) i forhold til _(Cos^1_) som:
+    _($\frac{Cos(2x) +  1}{2} = \frac{1}{2} + \frac{1}{2} Cos(2x)_)
+    Vi kan nu substituere _(2x_) ind i udvidelsen af _(Cos_):
+    _($\frac{1}{2} + \frac{1}{2} \sum_{k=0}^{\infty} (-1)^k*\frac{(2x)^{2k}}{(2k)!} _)
+    Hvilket kan simplificeres en smule til:
+    _($\frac{1}{2} + \sum_{k=0}^{\infty} (-1)^k*2^{2k-1}*\frac{x^{2k}}{(2k)!} _)
+    Boom! Det er også validt overalt, da det kun er baseret på Taylor-udvidelsen af _(Cos_)
+    <br><br></answer-box>
+
+    <!-- <q-stion 1="2" 2="1" 3="5">
+    Find Taylor-udvidelsen til:
+    _($\frac{x}{1+x^2}_)
+    <br></q-stion>
+    <answer-box>
+    Jeg tænker vi kan omskrive dette til:
+    _($x*\frac{1}{1+x^2}_)
+    Jeg ved at _(1/(1+x^2)_) er hældningen af _(Arctan(k)_), som vi kender Taylor-udvidelsen af:
+    _($Arctan(k) = \sum_{k=0}^{\infty} (-1)^k*\frac{x^{2k+1}}{2k+1}, \qquad |x| \lt 1_)
+    Hvis vi differentierer begge sider får vi:
+    _($\frac{1}{1+x^2} = \sum_{k=0}^{\infty} (-1)^k*x^{2k}_)
+    Nu ganger vi så begge sider med _(x_) og får:
+    _($\frac{x}{1+x^2} = \sum_{k=0}^{\infty} (-1)^k*x^{2k+1}_)
+    Hvilket så er svaret. 
+    <br><br></answer-box> -->
+
+
+
+
+
+
+
+

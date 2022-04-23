@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+
+
+    <!--24.1 -->
+
+    <p class="t">
+    Det selveste mest fundamentale grundprincip alt sandsynlighed er baseret på er simpelt og intuitivt:
+    Chancen for at noget sker, er lig med: 
+    _($\frac{\text{Antal måder det kan ske på}}{\text{Samlet antal af mulige ting der kan ske}}_)
+    Så hvis du arbejder med en 6-sidet terning hvor hver side har lige stor chance for
+    at lande, så er der 6 udfald i alt, og kun 1 udfald hvor du får 1, 2, 3, 4, osv.
+    _($\text{Chance for at den lander på 4: } \thinspace \frac{1}{6}_)
+    _($\text{Chance for at den lander på et lige tal: } \thinspace \frac{3}{6} = \frac{1}{2}_)
+    _($\text{Chance for at ikke lande på 4:} \thinspace \thinspace \thinspace \frac{6-1}{6} = \frac{5}{6}_)
+    Vi bruger ikke procent i sandsynlighed, men i stedet bare et tal mellem _(0_) og _(1._)
+    Det fortæller os jo præcist det samme, men er dejligere siden vi ikke behøver at gange
+    og dividere med _(100_) hele tiden. Det ville også bare være meget arbitrært.
+    </p>
+
+    <p class="t">Selvom de begge er baseret på denne samme hovedide, så er der lidt to <i>skoler</i> af sandsyndlighed:
+    Den <i>diskrete</i> og den <i>kontinuerlige</i>. Terningen kan <i>kun</i> have
+    6 værdier: _(1, 2, 3, 4, 5, 6_). Den kan ikke lande på "5.5" eller "4.023".
+    Det er i kontrast til et mål som f.eks regn. Det kan regne _(2mm_) på en
+    uge, men også _(2.0003mm_) eller _(3.4892mm_). Der er <i>uendelig mange udfald</i>, og
+    det er derfor ret anderledes at finde sandsynligheden for at
+    det regner, sig, _(3.6mm_). Chancen for at det regner <i>lige præcis</i> _(3.6mm_) er
+    praktisk talt uendelig lille, men chancen for at det regner <i>omkring</i> _(3.6mm_)
+    er straks meget højere. Det er i den kontinuerlige skole hvor du meget ser diagrammer som:</p>
+    <img class='Spic' style='width:95%' src='../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\Histogram.png'> 
+    <p class="t">Den kontinuerlige er super vigtig, men vi vil fokusere specifikt på den
+    <i>diskrete</i> i det her afsnit og kapitel. Vi vil kort kigge på den kontinuerlige i det sidste afsnit af denne bog.</p>
+
+    <q-stion 1="2" 2="1" 3="5">
+    En disk bliver sat i gang med et dreje rundt:
+    <img class='SpicB' style='width:65%' src='../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\SpinTheWheel.png'>
+        <!-- CROP DET HER BILLEDE: DER ER LIDT HVIDT ØVERST -->
+    <p class="t">Hvis der er lige stor chance for at lande på hver, hvor stor chance er der så for
+    at få en sort?</p>
+    <br></q-stion>
+    <answer-box>
+    Vi kan se ved at tælle at der er _(17_) pladser, og _(6_) sorte. Ergo:
+    _($\frac{6}{17}_)
+    Hvilke svarer til _(0.3529_), som er 
+    en chance på omtrent _(35%_)
+    <br><br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Du trækket et kort fra et standard dæk (uden jokere). Hvad der chancen for at det først og fremmest ikke er et spar,
+    heller ikke er et billedkort (hvor vi ikke tæller es som billedkort) <i>og</i> heller ikke er ruder _(7_)?
+    <br><br></q-stion>
+    <answer-box>
+    Det her er meget simpelt, da vi jo meget ligesom før bare skal <i>tælle</i> mængden af kort.
+    Den totale mængde kort er _(13*4=52_). Der er _(13_) spar kort der skal fjernes. 
+    Der er _(3*4=12_) billedkort, men _(3_) af dem er en del af de _(13_) spar, så
+    _(12-3=8_) billedkort skal fjernes. Ruder _(7_) er der kun èn af. Alt i alt:
+    _($\frac{52-13-12-1}{52}=\frac{26}{52}=\frac{1}{2}_)
+    Bare èn halv! 
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Du er til en eller anden form for lotto. Der er tre slags billetter: 
+    B er dyrere men giver dig dobbelt så stor chance som A, C er dyrest men giver dig triplet så god chance som A. Der
+    er _(23_) mennesker der har købt en _(A_) billet, _(17_) der har købt _(B_) billet, og _(15_) der har købt
+    _(C_) billet. Du har selv købt en _(B_) billet. Hvad er chancen for at du vinder en pris, hvis
+    der kun er èn vinder? 
+    <br><br></q-stion>
+    <answer-box>
+    Her er hvordan jeg tænker over det: Forestil dig at at alle dem der købte B billetterne faktisk købte _(2_)
+    _(A_) billetter, og alle dem der købte _(C_) billetter faktisk købte _(3_) _(A_) billetter. 
+    Sådan her har dem der købte B-billetter dobbelt så stor chance, og dem der købte C-billetter
+    triplet så god chance. Der er altså ikke _(23+17+15=55_) billetter i spil, men faktisk
+    på en måde _(23+17*2+15*3=102_) billetter. Du ejer _(2_) af de her billetter, så din
+    chance er:
+    _($\frac{2}{102}=0.01960_)
+    Hvilke cirka svarer til en _(2_)% chance. 
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <p class="t">
+    I alt ærlighed så er 
+    _($\frac{\text{Antal måder det kan ske på}}{\text{Samlet antal af mulige ting der kan ske}}_)
+    ... ikke altid en super god eller brugbar definition på sandsynlighed.
+    Ofte får vi brug for at tænke og regne med sandsynlighed på andre måder,
+    og der findes ikke ét simpelt universelt system.  
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Du har læst at der om tirsdagen er 4 gange så stor chance for at det regner som for at det ikke regner.
+    Hvor stor chance er der for at det regner?
+    <br><br></q-stion>
+    <answer-box>
+    Der er _(4_) udfald hvor det regner for hver udfald hvor det ikke regner. Den samlede mængde udfald
+    kan vi altså se som _(4+1=5_), og svaret er derfor
+    _($\frac{4}{5}_)
+    En anden måde du måske også kunne have gjort den her på, ville være 
+    at kalde chancen for at det regner _(p_a_) og chancen for at det ikke regner
+    _(p_b_). Det enten regner eller ikke-regner, så _(p_a+p_b=1_), og siden
+    _(p_b=\frac{1}{4}p_a_) så får du ligningen:
+    _($p_a+\frac{1}{4}p_b=1_)
+    Når du løser den får du, som forventet, at _(p_a=4/5_).
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Du kaster en vægtet mønt to gange. Mønten
+    har _(0.352_) chance for at ramme krone, 
+    _(1-0.352=0.648_) for plat. 
+    Hvad er sandsynligheden for at 
+    du får krone på første kast og plat på det andet? 
+    <br><br></q-stion>
+    <answer-box>
+    Chancen for at du får krone på det første kast 
+    er _(0.352_), chancen for at du får plat på
+    det andet er _(0.648_), men hvad med begge samtidig? 
+    <p class="t">
+    Her forestiller jeg mig en stor "kasse" fyldt med tidslinjer. 
+    Helt absurd mange tidslinjer. 
+    I hver tidslinje kaster jeg mønten to gange. 
+    <i>Ja</i>, der er kun fire mulige resultater, men
+    der vil stadig altid være små variationer på hvordan mønten kastes
+    og flyver gennem luften. Så mikroskopiske variationer. 
+    </p>
+    <p class="t">
+    De tidslinjer hvor jeg får krone på første kast fylder
+    _(35.2_)% af kassens samlede vægt. 
+    De er ligeligt fordelt i kassen. Et hvilket som helst
+    udsnit af kassens tidslinjer har altid en densitet
+    af disse slags tidslinjer med _(35.2_)%. 
+    </p>
+    <p class="t"> 
+    De her to typer tidslinjer er helt selvstændige og har ingen indflydelse på
+    hinanden. Det andet kast ændrer intet på hvordan jeg kaster
+    mønten i det første og vice versa. De er begge helt ligeligt
+    fordelt blandt de uendeligt mange tidslinjer i kassen. 
+    </p>
+    <p class="t">
+    Så <i>blandt</i> de _(35.2_)% af kassens tidslinjer hvor 
+    jeg får krone på første kast er der _(64.8_)% hvor jeg får plat på
+    det andet. De kasser hvor jeg får krone på det første kast
+    <i>og</i> plat på det andet fylder derfor _(64.8_)% <i>af</i>
+    _(35.2_)% af kassens vægt, så:
+    _($0.648*0.352=0.228096 \text{%}_)
+    af kassens vægt. Det er derfor den samlede sandsynlighed. Man ganger
+    bare sandsynligheden for begge begivenheder!
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Hvad er chancen for at du <i>over</i> _(6_) gange i streg
+    kaster en krone der lander på plat? 
+    <p class="t">
+    Den her er måske lidt tricky!
+    </p>
+    <br><br></q-stion>
+    <answer-box>
+    Hmmm. <i>Over</i> _(6_)? Så enten _(7_) plat i streg før man rammer
+    krone, _(8_) plat, _(9_) plat, _(10_) og ... det kan fortsætte i 
+    uendelighed. I denne situation er det svært at tænke
+    over
+    _($\frac{\text{Antal måder det kan ske på}}{\text{Samlet antal af mulige ting der kan ske}}_)
+    ... fordi "antal måder det kan ske på" er uendelig stor. 
+    Vi får derfor brug for en smart observation.
+    Lige meget hvad er der _(100_)% chance for at vi slår
+    plat <i>en eller anden mængde gange</i> i streg. 
+    Så chancen for at slå plat i streg over _(6_) gange svarer til:
+    _($1 - \text{Chancen for at slå plat under 7 gange i streg}_)
+    Chancen for at slå plat under _(7_) gange i streg er meget
+    nemmere at modellere, og svarer til:
+    _($\begin{eqnarray}
+    && \text{krone}
+    && \text{plat, krone}
+    && \text{plat, plat, krone}
+    && \text{plat, plat, plat, krone}
+    && \vdots
+    && \text{plat, plat, plat, plat, plat, plat, krone}
+    \end{eqnarray}_)
+    Vi skal lægge sandsynligheden for hver af disse situationer sammen.
+
+
+
+
+
+    Og _(\text{Chancen for at få noget under 7}_) kan vi nemt finde,
+    da vi nu bare kan finde chancen for 1, 2, 3, 4, 5 og 6, og så lægge
+    dem sammen! 
+    <p class="t">
+    Chancen for plat er lige så stor som krone, så
+    chancen for _(1_) rigtig
+    er _(0.5_). _(2_) rigtige svarer til, at efter vi har fået _(1_) rigtig,
+    så er der igen _(0.5_) chance for at vi får <i>endnu en</i> rigtig.
+    Det er altså _(0.5*0.5=_) _(0.5^2_). _(3_) rigtige er
+    bare _(0.5^2*0.5=_) _(0.5^3_) osv. Vi skal altså bare regne: 
+    _($0.5+0.5^2+0.5^3+0.5^4+0.5^5+0.5^6_)
+    Det her kunne man relativt nemt gøre bare ved at regne hvert led, men
+    vi kunne også være lidt hurtigere og bruge formlen:
+    _($r^1+r^2+r^3+...r^n = \frac{r*(1-r^n)}{1-r}_)
+    Hvilket giver os:
+    _($\frac{0.5*(1-0.5^6)}{1-0.5} = 0.98437_)
+    Chancen for at få over er altså:
+    _($1-0.98437=0.01563_)
+    Hvilke mere intuitivt svarer til cirka _(1.56_)%
+    </p> 
+    <br><br></answer-box>
+
+
+
+
+

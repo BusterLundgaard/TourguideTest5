@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+
+
+    <p class="t">
+    Vi har set hvordan vi kan simplificere et udtryk som:
+    _($\frac{12x^3 - 13x^2 - 15.5x + 15}{-2x^2+0.5x+3}_)
+    Her dividere vi polynomierne med hinanden, og det kan vi netop fordi 
+    tælleren (_(12x^3 - 13x^2 - 15.5x + 15_)) har en højere eller ligeså stor grad som nævneren
+    (_(-2x^2+0.5x+3_)). Ellers ville vi ikke kunne lave tricket med at sige f.eks.: "Hvad skal vi 
+    gange _(-2x^2_) med for at få _(12x^3_)". Hvad hvis vi i stedet stod med:
+    _($\frac{-2x^2+0.5x+3}{12x^3 - 13x^2 - 15.5x + 15}_)
+    Kan det på nogen måde simplificeres? Svaret er ja, på en måde. Vi kan i hvert fald omskrive det til
+    en form der i flere tilfælde er mere praktisk. 
+    </p>
+
+    <p class="t">
+    Sig at du har følgende udtryk:
+    _($\frac{3x^2+5}{x^3+7}+\frac{10}{6x+1}-\frac{7x}{2x^2-15}_)
+    Lad os sige du gerne vil lave det om til to polynomialer divideret med hinanden. 
+    Du kunne nu sige:
+    _($\frac{3x^2+5}{x^3+7}+\frac{10}{6x+1}-\frac{7x}{2x^2-15} =_)
+    _($\begin{eqnarray} 
+    && \frac{3x^2+5}{x^3+7} & *\frac{(6x+1)*(2x^2-15)}{(6x+1)*(2x^2-15)} & + \\
+    && \frac{10}{6x+1} & *\frac{(x^3+7)*(6x+1)}{(x^3+7)*(6x+1)} & - \\
+    && \frac{7x}{2x^2-15} & *\frac{(x^3+7)*(6x+1)}{(x^3+7)*(6x+1)} & =
+    \end{eqnarray}_)
+    </p>
+    <p class="t" style="margin-left:-10%;">
+        _($\frac{(3x^2+5)*(6x+1)*(2x^2-15)+10*(x^3+7)*(6x+1)-7x*(x^3+7)*(6x+1)}{(x^3+7)*(6x+1)*(2x^2-15)} =_)
+    </p>
+    <p class="t">
+        _($\frac{-6x^5+59x^4-200x^3-329x^2-79x-5}{12 x^6 + 2 x^5 - 90 x^4 + 69 x^3 + 14 x^2 - 630 x - 105}_)
+    Den strategi vi skal bruge til at omskrive hedder "partial fractions" og er præcis
+    det samme som vi gjorde her, bare <i>modsat</i>. Vi <i>starter</i> med to
+    <i>store</i> polynomialer divideret med hinanden, og <i>forestiller os</i> at det 
+    er resultatet af en sum af <i>simplere</i> polynomialer divideret med hinanden. 
+    </p>
+    <p class="t">
+    Sig at vi har:
+    _($\frac{3x^2+3x-18}{x^3+2.5x^2-34x-17.5}_)
+    Som kan omskrives til:
+    _($\frac{3*(x+3)*(x-2)}{(x-5)*(x+0.5)*(x+7)}_)
+    Der er altså ingen ureducerbare andengradspolynomier i nævneren. Strategien
+    er lidt anderledes hvis der er, så vi kigger på dette eksempel først. 
+    </p>
+    <p class="t">
+    Vi vil gerne forestille os at dette er resultatet af en sum af simplere polynomier 
+    divideret med hinanden. Hvor simple, præcis? Det simpleste vi kunne forestille
+    os ville være bare _(A/x_), men det ville <i>ikke</i> virke godt nok. 
+    Sig f.eks. at vi havde tre af sådanne led:
+    _($\frac{A_1}{x}+\frac{A_2}{x}+\frac{A_3}{x} = _)
+    _($\frac{A_1*x^2+A_2*x^2+A_3*x^2}{x}_)
+    For det første skaber det her altid en polynomial hvor man kun dividere med _(x_), og for
+    det andet bliver tælleren altid til en konstant gange _(x^2_). 
+    </p>
+    <p class="t">
+    Den næst-simpleste mulighed ville nok være _(A/(x+B)_). Det giver, eksempelvis:
+    _($\frac{A_1}{x+B_1}+\frac{A_2}{x+B_2}+\frac{A_3}{x+B_3}=_)
+    </p>
+    <p class="t" style="margin-left:-7%;">
+    _($\frac{A_1*(x+B_2)*(x+B_3)+A_2*(x+B_1)*(x+B_3)+A_3*(x+B_1)*(x+B_2)}{(x+B_1)*(x+B_2)*(x+B_3)}_)
+    </p>
+    <p class="t">
+    Nævneren lige nu kan nemt beskrive vores nævner hvis vi bare sætter _(B_1=-5_), _(B_2=0.5_), _(B_3=7_). 
+    Hvis vi udvider tælleren så får vi: 
+    _($\begin{eqnarray} 
+    && \left(A_1+A_2+A_3 \right)*x^2 & + \\
+    && \left((B_2+B_3)*A_1+(B_1+B_3)*A_2+(B_1+B_2)*A_3 \right)*x & + \\
+    && \left((B_2*B_3)*A_1 + (B_1*B_3)*A_2 + (B_1*B_2)*A_3 \right)
+    \end{eqnarray}_)
+    Når de forskellige værdier til _(B_) er valgt, så kan vi altså bare vælge de rigtige
+    værdier til _(A_), så vi frit kan bestemme hvilke koefficienter der skal være på henholdsvis
+    _(x^2_), _(x^1_) og _(x^0_). I vores tilfælde, hvor tælleren er _(3x^2+3x-18_):
+    _($\begin{eqnarray} 
+    && A_1+A_2+A_3 = 3 \\
+    && (0.5+7)*A_1+(-5+7)*A_2+(-5+0.5)*A_3 = 3 \\
+    && (0.5*7)*A_1+(-5*7)*A_2+(-5*0.5)*A_3 = -18
+    \end{eqnarray}_)
+    Det er tre ligninger og tre ubekendte. Hvis vi løser dette system får vi:
+    _($A_1 = 1.090, A_2=0.524, A_3=1.384_)
+    Så alt i alt har vi nu: 
+    _($\frac{3x^2+3x-18}{x^3+2.5x^2-34x-17.5} = \frac{1.090}{x-5}+\frac{0.524}{x+0.5}+\frac{1.384}{x+7}_)
+    Fantastisk! Det virkede altså med _(A/(x+B_1)_). 
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Simplificer / lav partial fractions på:
+    _($\frac{-4x+6}{3x^2 + 2.5x - 21}_)
+    <br></q-stion>
+    <answer-box>
+    Først omskriver lige nævneren ved at finde dens rødder:
+    _($3x^2+2.5x-21 = 0 \to x=2.26, x=-3.09_)
+    Altså:
+    _($\frac{-4x+6}{3*(x-2.26)*(x+3.09)}_)
+    Vi ved at vi kan omskrive til:
+    _($\frac{-4x+6}{3*(x-2.26)*(x+3.09)} = \frac{A_1}{3*(x-2.26)} + \frac{A_2}{x+3.09}_)
+    Her har vi altså bare sat _(B_1_) til _(-2.26_), og _(B_2_) til _(3.09_). 
+    Vi skal nu løse for _(A_1_) og _(A_2_). Vi lægger de to simple brøker sammen og får:
+    _($\frac{A_1*(x+3.09)+A_2*3*(x-2.26)}{3*(x-2.26)*(x+3.09)}_)
+    Vi kan nu lige udvide tælleren og få:
+    _($(A_1+3 A_2)*x^1+(3.09 A_1 - 6.78 A_2)*x^0_)
+    Så:
+    _($\begin{eqnarray} 
+    && A_1+3 A_2 = -4 \\
+    && 3.09 A_1 - 6.78 A_2 = 6
+    \end{eqnarray} \to_)
+    _($A_1 = -0.568, A_2 = -1.143_)
+    Vi kan altså endeligt omskrive til:
+    _($\frac{-4x+6}{3x^2 + 2.5x - 21} = \frac{-0.568}{3*(x-2.26)} - \frac{1.143}{x+3.09}_)
+    Bum! _(-0.568/3 = _) _(-0.189_), så vi kan også sige:
+    _($\frac{-0.189}{x-2.26} - \frac{1.143}{x+3.09}_)
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5" customWidth="540">
+    Simplificer / lav partial fractions på:
+    _($\frac{3.2}{x^3+10x^2-13x-22}_)
+    Fordi det er meget svært i hånden, så kan jeg lige sige
+    at nævneren kan omskrives til:
+    _($(x+1)(x-2)(x+11)_)
+    <br></q-stion>
+    <answer-box customWidth="540">
+    Vi sætter _(B_1 =1_), _(B_2=-2_) og _(B_3=11_), og omskriver som:
+    _($\frac{3}{(x+1)(x-2)(x+11)} = \frac{A_1}{x+1}+\frac{A_2}{x-2}+\frac{A_3}{x+11}_)
+    Vi gør det samme ved tælleren som før, og får:
+    _($A_1*(x-2)*(x+11) + A_2*(x+1)*(x+11) + A_3*(x+1)*(x-2) =_)
+    _($(A_1+A_2+A_3)*x^2 + (9 A_1 + 12 A_2 - A_3) x + (-22 A_1 + 11 A_2 - 2 A_3)*x^0_)
+    Tælleren i den originale polynomial-brøk er _(3.2_), som svarer til 
+    _(0*x^2 + 0*x + 3.2_). Ergo:
+    _($\begin{eqnarray} 
+    && A_1+A_2+A_3 = 0 \\
+    && 9 A_1 + 12 A_2 - A_3 = 0 \\
+    && -22 A_1 + 11 A_2 - 2 A_3 = 3.2
+    \end{eqnarray} \to_)
+    _($A_1 = -0.106, A_2 = 0.082, A_3 = 0.024_)
+    Altså: 
+    _($\frac{3.2}{x^3+10x^2-13x-22} = \frac{-0.106}{x+1}+\frac{0.082}{x-2}+\frac{0.024}{x+11}_)
+    <br></answer-box>
+
+    <!--  -->
+
+
+
+    
+
+

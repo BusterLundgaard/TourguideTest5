@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+
+
+    <p class="t">
+    Vi har kigget lidt på at skrive polynomialer som små parenteser _((x+A)_) ganget med hinanden.
+    F.eks:
+    _($x^4 + 36.64x^3 - 332.47x^2 - 3888.30 + 26088.50_)
+    _($=_)
+    _($(x+42)*(x+10.5)*(x-\pi^2)*(x-6)_)
+    Eller ... 
+    _($ $x^3 + 8x^2 - \frac{1}{8}*(278)*x + 65 - 343 _)
+    _($=_)
+    _($(\frac{1}{8}x + 1)*(8x^2 - 278)_)
+    Det her andet eksempel passer ikke helt formen, siden _(8x^2-278_) jo er en andengradspolynomial.
+    Vi kan dog observere at _(8x^2-278=0_) har løsningerne _(x=5.894_), _(-5.894_). 
+    En andengradspolynomial der også har disse samme løsninger er _((x-5.894)*(x+5.894)_). 
+    Når vi ganger parenteserne ind i hinanden får vi  _(x^2-34.73_). Koefficienten på 
+    _(x^2_) er tydeligvis for lille, men hvis vi ganger det hele med _(8_), så får vi:
+    _($8*(x-5.894)*(x+5.894)=8*(x^2-34.73)=8x^2-278_)
+    Det passer! 
+    </p>
+    <p class="t">Den anden parentes, _(((1/8)*x+1)_) passer heller ikke helt formen, men vi kan let omskrive
+    den til _((1/8)*(x+8)_). Alt i alt:
+    _($ x^3 + 8x^2 - \frac{1}{8}*(278)*x + 65 - 343 = _)
+    _($(1/8)*(x+8)*8*(x-5.894)*(x+5.894) =_)
+    _($(x+8)*(x-5.894)*(x+5.894)_)
+    Det er faktisk tilfældigt at _(8_) og _(1/8_) lige gik ud med hinanden her. Det er kun på
+    grund af at jeg som sagt valgte en tredjegradspolynomial med specielle egenskaber. Hvis vi i stedet havde
+    _($0.8x^3 + 8x^2 - 27.8x - 278 =_)
+    _($(\frac{1}{10}x + 1)*(8x^2 - 278)_)
+    Så ville vi få:
+    _($\frac{1}{10}*8*(x+10)*(x-5.894)*(x+5.894) =_)
+    _($0.8*(x+10)*(x-5.894)*(x+5.894)_)
+    Man kunne nu blive lidt nysgerrig: Er du muligt at omskrive <i>alle</i> polynomialer til den her form?
+    Kan en hvilken som helst polynomial 
+    _($a_0+a_1 x+a_2 x^2 + a_3 x^3 \text{ }  + \text{ } ... \text{ } a_n x^n_)
+    omskrives til
+    _($k*(x+A_0)*(x+A_1)*(x+A_2) \text{ }*\text{ }...\text{ }(x+A_n)_)
+    Det viser sig at svaret er <i>næsten</i>. Et åbenlyst modeksempel kunne være en andengradspolynomial
+    som _(3x^2+1.2_). Den rammer aldrig _(0_), fordi _(x^2_) aldrig bliver negativ, og _(1.2_) jo altid
+    er positiv. Hvis vi skrev den i formen _(k*(x+A_0)*(x+A_1)_), så ville den have to nulpunkter, 
+    hvilke ville være en selvmodsigelse. De her andengradspolynomialer uden løsninger 
+    kaldes for ureducerbare andengradspolynomialer. Svaret er <i>næsten</i>, fordi det viser
+    sig at en hvilket som helst polynomial kan omskrives til et produkt af 
+    små parenteser _((x+A_i)_) og ureducerbare andengradspolynomialer _((x^2+B_i*x+A_i)_). F.eks: 
+    </p>
+    <div style="margin-left:-7%">
+        <p class="t">_($k*(x+A_0)*(x+A_1)*(x^2+B_2*x+A_2)*(x+A_3)*(x^2+B_4*x+A_4) \text{ } * \text{ } ..._)</p>
+    </div>
+    <p class="t">
+    Så lad os bevise det.
+    </p>
+    <p class="t">
+    <b> Bevis</b>: Problemet er blevet markant sværere at arbejde med, nu da formen både
+    indeholder _((x+A_i)_) og _((x^2+B_i*x+A_i)_), og da det varierer hvor mange 
+    _((x+A_i)_) og hvor mange _((x^2+B_i*x+A_i)_) der faktisk er. En god ide ville
+    derfor være først at kigge på polynomialer med en <i>lige grad</i>. Her kan vi nemlig
+    omskrive til en simplere form:
+    _($k*(x^2+B_1*x+A_1)*(x^2+B_2*x+A_2)*(x^2+B_3*x+A_3) \text{ } * \text{ } ... _)
+    Det her er altså et produkt af andengradspolynomialer. Vi opnår denne form 
+    ved at vælge par af _((x+A_i)_) og gange dem ind i hinanden. Andengradspolynomialerne
+    er altså enten reducerbare (resultatet af to _((x+A_i)_)) eller ureducerbare. 
+    Sig at _(P_{n}(x)_) er en polynomial med grad _(n_). Lad os nu prøve at bevise
+    at en hvilket som helst _(P_{2*k}(x)_) kan omskrives til et produkt af de to 
+    polynomialer _(P_{2*(k-1)}(x)_) og _(P_{2}(x)_):
+    _($P_{2*k}(x) = k*P_{2*(k-1)}(x)*P_{2}(x)_)
+    Hvis vi beviser det, så kan vi nemlig bruge det gentagelige gange til at 
+    omskrive en polynomial som f.eks. _(P_{8}(x)_) til:
+    _($P_{8}(x)=k_0*P_{2}(x)*P_{6}(x) = k_0*k_1*P_{2}(x)*P_{2}(x)*P_{4}(x)=_)
+    _($k_0*k_1*k_2*P_{2}(x)*P_{2}(x)*P_{2}(x)*P_{2}(x)_)
+    Altså, vi ville kunne omskrive en hvilken som helst polynomial med en lige grad til
+    et produkt af andengradspolynomialer. Nogle af disse vil være reducerbare, og hvis vi omskrev
+    dem alle til et produkt at formerne _((x+A_i)_), så ville vi ende ud med dne form vi prøver at bevise. 
+    Beviset vil nu være færdigt for polynomialer med lige grader. Det vil også være nemt nu at bevise
+    det for polynomialer med ulige grader. Hvis bare vi viser at:
+    _($P_{2k+1}(x)=k*(x+A_1)*P_{2k}(x)_)
+    Så kan vi omskrive en ulige polynomial til formen _(k*(x+A_i)*\text{Rigtig form}_), siden 
+    vi jo ved at _(P_{2k}(x)_) kan omskrives. 
+    </p>
+    <p class="t">
+    Så lad os bevise _(P_{2*k}(x) = k*P_{2*(k-1)}(x)*P_{2}(x)_). Sig at
+    _(P_{2*(k-1)}(x)_) er lig _(a_0+a_1*x+...a_{2*(k-1)}*x^{2(k-1)}_) og at 
+    _(P_{2}(x)_) er lig _(x^2 + b_1*x + b_0_). Jeg skal nu bevise, at hvis jeg vælger
+    de rigtige _(a_1, ... a_{2k-1}, b_0, b_1, b_2, k_), så kan jeg skabe <i>alle</i> mulige
+    polynomialer _(c_0+c_1*x+...c_{2k}*x^{2k}_). 
+    </p>
+    <p class="t">
+    Først af alt ganger jeg _(k_) ind i _(P_{2}(x)_) og får _(k b_0 + k b_1 x + k x^2_). 
+    Koefficienterne _(k b_0_), _(k b_1_), og _(k_) kan være hvad end de har lyst til, siden
+    jeg frit kan vælge både _(b_0_), _(b_1_) og _(k_). Derfor omskriver jeg bare
+    til _(d_0+d_1 x + d_2 x^2_). Nu passer det lidt bedre til formen af den anden polynomial. 
+    </p>
+    <p class="t">
+    Ved bare at gange parenteserne ind i hinanden, og
+    samle alle de led der er ganget med henholdsvis _(x^0, x^1, x^2, ..._) får vi:
+    _($k*(a_0+a_1*x+...a_{2*(k-1)}*x^{2(k-1)})*(x^2 + b_1*x + b_0) =_)
+    _($\begin{eqnarray} 
+    && (d_0*a_0)*x^0 & + \\
+    && (d_0*a_1+d_1*a_0)*x^1 & + \\
+    && (d_0*a_2 + d_1*a_1 + d_2*a_0)*x^2 & + \\
+    && (d_0*a_3+d_1*a_2+d_2*a_1)*x^3 & + \\
+    && (d_0*a_4+d_1*a_3+d_2*a_2)*x^4 & + \\
+    && \vdots \\
+    && (d_0*a_{2(k-1)}+d_1*a_{2(k-1)-1}+d_2*a_{2*(k-2)})*x^{2(k-1)} & + \\
+    && (d_1*a_{2(k-1)} + d_2*a_{2*(k-2)})*x^{2(k-1)+1} & + \\
+    && (d_2*a_{2(k-1)})*x^{2k}
+    \end{eqnarray}_)
+    Koefficienten på _(x^0_) skal matche med _(c_0_), koefficienten på _(x^1_) matche med _(c_1_) osv. 
+    _(c_)-koefficienterne kan være alt mellem _(\infty_) og _(\infty_). De kan endda være _(0_), siden vi skal
+    kunne beskrive <i>alle</i> mulige polynomialer med graden _(2k_). Den aller sidste 
+    koefficient _(c_{2k}_) kan dog <i>ikke</i> være _(0_), siden det ville gøre det til en 
+    polynomial med grad _(2k-1_). Vi skal nu vælge de rigtige _(a_0, ... a_{2(k-1)}_) og
+    _(d_0,d_1,d_2_). Lad os starte fra bunden:
+    _($a_{2(k-1)}*d_2 = c_{2k}_)
+    Vi kan se at hverken _(a_{2(k-1)}_) eller _(d_2_) må være _(0_), siden det ville betyde 
+    at _(c_{2k}_) også var _(0_). I hvert fald så kan vi isolere og få:
+    _($a_{2(k-1)}=c_{2k}/d_2_)
+    Vi kan nu gå videre til den næste ligning og finde _(a_{2(k-1)-1}_):
+    _($d_1*a_{2(k-1)} + d_2*a_{2(k-1)-1} = c_{2k-1} \to_)
+    _($a_{2(k-1)-1} = \frac{c_{2k-1} - d_1*a_{2(k-1)}}{d_2}_)
+    Siden vi allerede har isoleret _(a_{2(k-1)}_), så ville vi nemt kunne indsætte
+    den i formlen og derved finde _(a_{2(k-1)-1}_). Det samme kan vi gøre
+    med _(a_{2(k-2)}_) i den næste ligning, og sådan kan vi fortsætte opad. 
+    Vi kan altså beskrive alle _(a_) fra _(a_{2(k-1)}_) til _(a_0_) i forhold til
+    _(d_0, d_1, d_2_) og de valgte _(c_) værdier.  Det kan vi blive ved med til og 
+    med ligningen:
+    _($d_0*a_2 + d_1*a_1 + d_2*a_0 = c_2 \to_)
+    _($a_0 = \frac{c_2 - d_0*a_2 + d_1*a_1}{d_2}_)
+    Det er nemlig den sidste ligning hvor vi introducerer et nyt _(a_) i form af _(a_0_). De
+    to første ligninger er nemlig:
+    _($\begin{eqnarray} 
+    && d_0*a_0 = c_0 & \to a_0 = c_0/d_0 \\
+    && d_0*a_1+d_1*a_0 = c_1 & \to a_1 = (c_1 - d_1*a_0)/d_0
+    \end{eqnarray}_)
+    De her to værdier til _(a_0_) og _(a_1_) skal matche med det vi finder hvis vi starter 
+    fra toppen og går nedad. Det kan vi nemt gøre dog, siden vi stadig ikke endnu har valgt
+    _(d_0,d_1,d_2_), men kun beskrevet løsningerne til _(a_)-værdierne <i>i forhold til</i>. 
+    Vi vælger altså nu bare de rigtige _(d_)-værdier der løser ligningerne, og så er vi færdige!
+    </p>
+    <p class="t">
+    Beviset for _(P_{2k+1}(x)=k*(x+A_1)*P_{2k}(x)_) minder meget om, så jeg har ikke tænkt mig at vise det. 
+    </p>
+    <p class="t">
+    Bevis færdigt _(\blacksquare_). 
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Simplificer følgende udtryk/brøk: 
+    _($\frac{7x^2 - 3.5x - 98}{-3x^2 + 7.5x + 63}_)
+    <br><br></q-stion>
+    <answer-box>
+    Vi vil gerne prøve at omskrive begge andengradspolynomialer til 
+    førstegradspolynomialer ganget med hinanden. Det er tydeligt at 
+    de ikke er ureducerbare, siden den første har to negative koefficienter, 
+    og den anden har en negativ koefficient på _(x^2_). Lad os derfor løse og se hvornår de 
+    er lig _(0_): 
+    _($7x^2 - 3.5x - 98 = 0 \to x=-3.5, x=4_)
+    _($-3x^2 + 7.5x + 63 = 0 \to x=-3.5, x=6_)
+    _((x+3.5)*(x-4)_) har samme _(0_)-punkter (også kaldt <i>rødder</i>) som første polynomial, 
+    men dens _(x^2_)-koefficient er kun _(1_). Den skal derfor ganges med _(7_). Samme
+    ide med den anden polynomial som skal ganges med _(-3_):
+    _($\frac{7*(x+3.5)*(x-4)}{-3*(x+3.5)*(x-6)} = _)
+    _($-2.33*\frac{x-6}{x-4}_)
+    Det er altså markant simplere at arbejde med.
+    <br><br></answer-box>
+
+    <p class="t">
+    Det her var en meget teoretisk side, og der er ikke rigtig andre opgaver jeg kan give til det. 
+    Det er dog god generel viden at have, siden det bliver brugt i mange sammenhænge, og siden
+    polynomialer er så vigtige. 
+    </p>
+
+
+

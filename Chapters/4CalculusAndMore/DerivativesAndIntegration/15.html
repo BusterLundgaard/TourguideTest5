@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+
+
+    <h3>Længde langs kurve</h3>
+    <p class="t">
+    Integraler er rigtig gode til at beskrive, beregne og måle mange størrelser i Geometri. 
+    Vi har allerede undersøgt arealer, men integraler er brugbare mere generelt, 
+    i situationer hvor "noget", der er svært at måle, kan opdeles i mange små dele, der 
+    er nemme at måle. 
+    Sig f.eks. vi skulle regne længden langs en kurve:
+    </p>
+
+    <img class='SpicXL' style='width:80%' src='../../../Assets/Chapter4\DerivativesAndIntegrals\Applications\OtherThingsToCount\ArcLength.png'> 
+
+    <p class="t">
+    Det virker meget svært. Èn mulig strategi er, at opdele parablen i en masse små linjer. Hvis man zoomer
+    rigtig meget ind på et punkt:
+    </p>
+
+    <img class='SpicXL' style='width:80%' src='../../../Assets/Chapter4\DerivativesAndIntegrals\Applications\OtherThingsToCount\ArcLength2.png'> 
+
+    <p class="t">
+    ... ligner parablen bare en linje omkring punktet! Linjer kan vi nemt måle længden af, så en kurves længde 
+    kan regnes som en uendelig sum af mange små linjer!
+    </p>
+
+    <q-stion 1="15" 2="1">
+    Regn på en eller anden måde længden af _(y=x^2_) fra _(x=-3.4_) til _(x=5_). 
+    Det er den, der er tegnet på billedet. 
+    <br><br></q-stion>
+    <answer-box>
+    Lad os sige vi zoomer rigtig tæt på _(x_), og går _(dx_) fremad. 
+    Kurven fra _(x_) til _(x+dx_) kan  
+    approximeres som en linje hvis _(dx_)
+    er meget lille. Dens længde kan derfor regnes som:
+    _($\sqrt{dx^2+dy^2}_)
+    Forskellen _(dy_) kan omskrives til bare _(f'(x)*dx_), som i vores tilfælde
+    er _(2x*dx_): Det er jo hele pointen med hældning! 
+    _($\sqrt{dx^2+(2x*dx)^2}_)
+    Hvad så nu? Det ligner umiddelbart ikke noget, der kan løses
+    af en integral. Vi har ikke en 
+    funktion ganget med en tykkelse _(dx_), men det <i>kan</i> vi godt omskrive det til: 
+    _($\begin{align}
+    \sqrt{dx^2+(2x*dx)^2} & = \sqrt{dx^2+dx^2*(2x)^2} \\ \\
+    & = \sqrt{dx^2*(1+(2x)^2)} \\ \\
+    & = \sqrt{1+(2x)^2}*dx
+    \end{align}_)
+    Fantastisk! Det her passer til formen. Nu skal vi bare regne integralet
+    _($\int_{-3.4}^{5} \sqrt{1+(2x)^2} dx = 38.21_)
+    ... og bum, vi har vores svar!
+    <p class="cent">
+        *
+    </p>
+    <p class="t">
+    Dette svar kan let generaliseres. For at finde længden langs _(y=f(x)_) fra 
+    _(x=a_) til _(x=b_) skal man regne integralet: 
+    _($\int_{a}^{b} \sqrt{1+f'(x)^2} dx_)
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="15" 2="2">
+    På følgende billede ser du en matematisk tegning/animation af rundetårnets trapper:
+    <div style="width:45%; margin-left:27.5%;">
+        <hover-video url="../../../Assets/Chapter4\DerivativesAndIntegrals\TheRoundTower.mp4" ></hover-video>
+    </div>
+    <p class="t">
+    Trapperne går rundt _(7.3_) omgange og har en højde på _(27.302_). 
+    </p>
+    <p class="t">
+    _(\underline{\textbf{A}}_): <br>
+    Beskriv både den inderste og yderste spiral parametrisk (i forhold til en eller anden variable _(t_)) 
+    </p>
+    <p class="t">
+    _(\underline{\textbf{B}}_): <br>
+    Hvor meget kortere er vejen op af trapperne, hvis man går aller tættest på midten? (I forhold
+    til, hvis man går aller længst ude)
+    </p>
+    <br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    Placer _((0,0,0)_) nederst i midten af rundetårnet. Den indre spiral har 
+    en radius på _(1.95_) overalt, så vi ved, at
+    _($\begin{eqnarray}
+    && x = 1.95 Cos(t) \\
+    && y = 1.95 Sin(t)
+    \end{eqnarray}_)
+    _(7.3_) omgange svarer til _(7.3*2\pi = 45.86_) radianer, så spiralen
+    stiger med en hastighed på _(27.302/45.86=_) _(0.595_) overalt. 
+    Alt i alt får vi:
+    _($\VeC[x,y,z] = \VeC[1.95 Cos(t), 1.95 Sin(t), 0.595 t]_)
+    Den ydre spiral har en radius væk fra centrum overalt på _(1.95+4.15=_) _(6.1_),
+    så den kan meget lignende beskrives som:
+    _($\VeC[x,y,z] = \VeC[6.1 Cos(t), 6.1 Sin(t), 0.595 t]_)
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Det fundamentale problem her er, at finde længden langs en <i>parametrisk</i> kurve. Logikken
+    er meget det samme som en normal kurve dog: Afstanden kan beskrives som en linje,
+    hvis vi zoomer rigtig tæt på en bestemt _(t_) og
+    går _(dt_) fremad: 
+    _($\sqrt{dx^2 + dy^2+dz^2}_)
+    Hvor meget ændrer _(x_), _(y_) og _(z_) sig, når _(t_) går fra _(t_) til _(t+dt_)? Well, både _(x_), _(y_)
+    og _(z_) har <i>hældninger</i> i forhold til _(t_):
+    _($\begin{eqnarray}
+    && x'(t) & = ¤t[1.95 Cos(t)] = -1.95 Sin(t) \\ \\
+    && y'(t) & = ¤t[1.95 Sin(t)] = 1.95 Cos(t) \\ \\
+    && z'(t) & = ¤t[0.595t] = 0.595
+    \end{eqnarray}_)
+    Så:
+    _($\begin{eqnarray}
+    && \sqrt{dx^2+dy^2+dz^2} = \\ \\
+    && \sqrt{dt^2*(-1.95 Sin(t))^2 + dt^2*(1.95 Cos(t))^2+dt^2*(0.595)^2} = \\ \\
+    && \sqrt{(-1.95 Sin(t))^2 + (1.95 Cos(t))^2+(0.595)^2}*dt = \\ \\
+    && \sqrt{1.95^2*(Sin(t)^2 + Cos(t)^2) + 0.354}*dt = \\ \\
+    && \sqrt{1.95^2 + 0.354}*dt = \\ \\
+    && 2.0387*dt
+    \end{eqnarray}_)
+    Bum! Nu skal vi bare regne integralet:
+    _($\int_{0}^{45.86} 2.0387 \text{ }dt = 93.494 \text{m}_)
+    Det er så den indre længde. Præcist det samme trick virker ved den ydre længde. Her regner vi:
+    _($\int_{0}^{45.86} \sqrt{6.1^2 + 0.595^2} \text{ }dt = 281.073 \text{m}_)
+    Den ene vej er altså
+    _($281.073-93.494 = 187.57 \text{m} _)
+    ... kortere end den anden. 
+    <p class="cent">*</p>
+    <p class="t">
+    Processen her kan let generaliseres. Afstanden langs en parametrisk kurve
+    _($\VeC[x,y,z] = \VeC[x(t), y(t), z(t)]_)
+    ... fra _(t=a_) til _(t=b_) kan regnes som:
+    _($\int_{a}^{b} \sqrt{x'(t)^2 + y'(t)^2 + z'(t)^2} \text{ }dt_)
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="15" 2="3">
+    Find omkredsen langs følgende figur fra sidste side: 
+    <img class='Spic' style='width:60%' src='../../../Assets/Chapter4\DerivativesAndIntegrals\Applications\OtherThingsToCount\SpiralShape.png'> 
+    <br><br></q-stion>
+    <answer-box>
+    Vi ved, at længden af et cirkeludsnit med vinklen _(v_) og radius _(r_) er:
+    _($r*v_)
+    Vores figur kan ses som en samling af uendelig mange uendelig små 
+    cirkeludsnit med vinkel _(d\theta_) og radius _(r(\theta)_). 
+    Omkredsen på hver af disse cirkeludsnit er:
+    _($(5+\theta)*d\theta_)
+    Derfor skal vi bare regne:
+    _($\int_{0}^{2\pi} (5+\theta) \, d\theta = 51.56_)
+    Voila!  
+    <br><br></answer-box>
+
+
+
+
+
+

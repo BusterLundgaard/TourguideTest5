@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+
+
+    <h2>Lad os finde hældninger <i>ordentligt</i></h2>
+
+    <p class="t">
+    Grænser opstod originalt, fordi konceptet bag hældning og derivative skulle
+    formaliseres og bevises rigorisk matematisk.
+    Lad os nu endelig forsøge at gøre netop dette.
+    </p>
+    <p class="t">
+    Originalt definerede vi hældningen ved _(x_) af en funktion _(f(x)_) som:
+    _($\frac{f(x+k)-f(x)}{k}, \qquad \text{Hvis } k \text{ er uendelig lille}_)
+    Det svarer til:
+    _($\lim_{k \to 0} \left[\frac{f(x+k)-f(x)}{k} \right] _)
+    Lad os nu bevise alle de vigtige regler omkring hældning èn gang til, 
+    nu bare helt rigorisk og ordentligt med denne definition. 
+    </p>
+
+    <q-stion 1="11" 2="1" bigTop="true">
+    Bevis at:
+    _($¤x[x^2] = 2x_)
+    <br></q-stion>
+    <answer-box>
+    Vi siger:
+    _($\begin{eqnarray}
+    && \lim_{k \to 0} \left[\frac{(x+k)^2 - x^2}{k} \right] = \\ \\
+    && \lim_{k \to 0} \left[\frac{x^2 + 2 x k  + k^2 - x^2}{k} \right] = \\ \\
+    && \lim_{k \to 0} \left[\frac{k*(2 x+k)}{k} \right] =  \\ \\
+    && \lim_{k \to 0} \left[2 x+k \right] = \\ \\
+    && 2 x + \lim_{k \to 0} \left[k \right] = \\ \\
+    && 2 x
+    \end{eqnarray}_)
+    _(\blacksquare_)
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="11" 2="2">
+    Bevis at:
+    _($¤x[x^n] = n x^{n-1}_)
+    <br></q-stion>
+    <answer-box>
+    Vi siger:
+    _($\begin{eqnarray}
+    && \lim_{k \to 0} \left[\frac{(x+k)^n - x^n}{k} \right] =  \\ \\
+    && \lim_{k \to 0} \left[\frac{\Vec[n,1]*x^{n-1}*k + \sum_{i=2}^{n} \Vec[n,i]*x^{n-i}*k^i}{k} \right] =  \\ \\
+    && \lim_{k \to 0} \left[n*x^{n-1} \right] + \lim_{k \to 0} \left[\sum_{i=2}^{n} \Vec[n,i]*x^{n-i}*k^{i-1} \right] = \\ \\
+    && n*x^{n-1} + \sum_{i=2}^{n} \lim_{k \to 0} \left[\Vec[n,i]*x^{n-i}*k^{i-1} \right] =  \\ \\
+    && n*x^{n-1} + \sum_{i=2}^{n} \Vec[n,i]*x^{n-i}*\lim_{k \to 0} \left[k^{i-1} \right] =  \\ \\
+    && n*x^{n-1} + \sum_{i=2}^{n} \Vec[n,i]*x^{n-i}*0 = \\ \\
+    && n*x^{n-1} \\ \\
+    \end{eqnarray}_)
+    _(\blacksquare_)
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="11" 2="3">
+    Bevis at:
+    _($¤x[f(x)+g(x)] = f'(x)+g'(x)_)
+    <br></q-stion>
+    <answer-box>
+    Vi siger:
+    _($\begin{eqnarray}
+    && \lim_{k \to 0} \left[\frac{f(x+k)+g(x+k)-f(x)-g(x)}{k} \right] =  \\ \\
+    && \lim_{k \to 0} \left[\frac{f(x+k)-f(x)}{k} \right] + \lim_{k \to 0} \left[\frac{g(x+k)-g(x)}{k} \right] = \\ \\
+    && f'(x)+g'(x)
+    \end{eqnarray}_)
+    _(\blacksquare_)
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <p class="tt">
+    Ved gange-egenskaben skal man lave et trick, så den viser jeg lige. 
+    Vi starter med:
+    _($\lim_{k \to 0} \left[\frac{f(x+k)g(x+k)-f(x)g(x)}{k} \right]_)
+    Idéen er, at vi nu både plusser og minusser med _(f(x+k)*g(x)_) lidt ud af det blå.
+    Det tillader os, at omskrive stykket i forhold til to grænser vi kender:
+    _($\begin{eqnarray}
+    && \lim_{k \to 0} \left[\frac{f(x+k)g(x+k)-f(x)g(x) + f(x+k)g(x) - f(x+k) g(x)}{k} \right] = \\ \\
+    && \lim_{k \to 0} \left[\frac{f(x+k)g(x+k)-f(x+k)g(x)+f(x+k)g(x)-f(x)g(x)}{k} \right]
+    \end{eqnarray}_)
+    Vi kan nu sige:
+    _($\lim_{k \to 0} \left[\frac{f(x+k)g(x+k)-f(x+k)g(x)}{k} \right] + \lim_{k \to 0} \left[\frac{f(x+k)g(x)-f(x)g(x)}{k} \right]_)
+    Det er en smule gemt, men jeg lægger mærke til _(g'(x)_) i første
+    grænse og _(f'(x)_) i den anden. Begge led er ganget med _(f(x+k)_) i den første
+    og _(g(x)_) i den anden, så dem hiver vi bare ud: 
+    _($ \lim_{k \to 0} \left[f(x+k) \right]*\lim_{k \to 0} \left[\frac{g(x+k)-g(x)}{k} \right] + g(x)*\lim_{k \to 0} \left[\frac{f(x+k)-f(x)}{k} \right]_)
+    Bum! Nu får vi:
+    _($ f(x)*g'(x) + g(x)*f'(x)_)
+    _(\blacksquare_)
+    </p>
+
+    <!--  -->
+
+    <q-stion 1="11" 2="4" bigTop="true">
+    Bevis at:
+    _($¤x[e^x] = e^x_)
+    Her skal du altså bruge <i>grænse definitionen</i> af _(e^x_). Hvordan hænger denne
+    grænse-definition sammen med den vigtige hældnings-egenskab? 
+    <p class="t">
+    Hvis denne opgave er tricky (og den <i>er</i> virkelig tricky), anbefaler 
+    jeg, at du ser tilbage til siden, hvor 
+    vi originalt fandt _(e^x_)'s hældning.
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Her kan du egentlig bare gentage det samme bevis, jeg lavede i sidste kapitel, nu med grænser.
+    <p class="t">
+    Vi starter med:
+    _($\lim_{k \to 0} \left[\frac{e^{x+k}-e^x}{k} \right] = e^x*\lim_{k \to 0} \left[\frac{e^k-1}{k} \right]_)
+    Vi skal nu bevise, at _(\lim_{k \to 0} \left[(e^k-1)/k \right]_) er præcis _(1_). 
+    Vi får brug for definitionen af _(e_), så vi <i>kunne</i> forsøge at beregne:
+    _($\lim_{k \to 0}\left[\frac{\lim_{n \to \infty}\left[(1+\frac{1}{n})^n \right]^k - 1}{k} \right] _)
+    Men det virker kludret og svært. Lad os i stedet forsøge at omskrive
+    grænsen _((e^k-1)/k_), så at vi på en eller anden vis "finder" _(e_). 
+    <p class="t">
+    I vores grænse nærmer variablen sig _(0_), hvor den i _(e_) nærmer sig _(\infty_). 
+    Hvis vi skal have en chance for at "finde" _(e_), burde begge variabler
+    nærme sig samme tal. Vi kan enten omskrive vores grænse i forhold til 
+    _(\infty_) eller omskrive _(e_) i forhold til _(0_). Jeg tænker, at vi vælger
+    _(e_), siden substitutionen _(u=1/k_) giver:
+    _($\lim_{u \to \infty}\left[u*\left(e^{1/u} - 1 \right) \right]_)
+    ... hvilket er upraktisk, siden det stadig <i>indeholder</i> _(e_). 
+    Vi skal helst have en form der <i>ikke</i> indeholder _(e_), så vi derefter
+    kan "finde" _(e_) som en grænse. 
+    </p>
+    <p class="t">
+    Vi omskriver _(e_) i forhold til _(0_) via _(u=1/n_) og får:
+    _($e=\lim_{u \to 0}\left[(1+u)^{1/u} \right] _)
+    Det er hvad vi leder efter i vores grænse. Som sagt skal vi have 
+    <i>fjernet </i> _(e_) for at kunne "finde det igen som en grænse", så jeg
+    tænker vi laver substitutionen _(e^k-1=u_). Det nærmer sig stadig _(0_), og giver:
+    _($\lim_{u \to 0}\left[\frac{u}{Ln(u+1)} \right] _)
+    Hmmm. Udover _(u+1_) er der intet, der minder om _(e_), så vidt jeg kan se. 
+    Vi skal have _((u+1)^{1/u}_), så lad os prøve at sige:
+    _($Ln(u+1)=Ln\left(  ((u+1)^{1/u})^u \right) = u*Ln \left((u+1)^{1/u} \right)_)
+    Bum! _(e_) fundet! Nu har vi:
+    _($\lim_{u \to 0} \left[\frac{u}{u*Ln \left((u+1)^{1/u} \right)} \right] = \frac{1}{Ln \left(\lim_{u \to 0}\left[(u+1)^{1/u} \right] \right)} = \frac{1}{Ln(e)}_)
+    _(Ln(e)=1_), så vi får _(1/1=1_). Det færdiggør beviset!  _(\blacksquare_)
+    </p>
+    <p class="pageSplitter">*</p>
+    <p class="t">
+    I den besvarelse, forsøgte jeg at bevise intuitionen og motivationen bag nogle
+    af argumenterne, men du skal virkelig ikke have det dårligt med dig selv, hvis
+    du ikke kunne komme frem til dette bevis. Der bliver brugt en del smarte
+    små "tricks"
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <p class="tt">
+    For at bevise
+    _($\begin{eqnarray} 
+    && ¤x[Sin(x)] & = & Cos(x) \\ \\
+    && ¤x[Cos(x)] & = & Sin(x) \\
+    \end{eqnarray}_)
+    ... får vi (bl.a) for brug for at regne grænsen:
+    _($\lim_{k \to 0} \left[\frac{Sin(k)}{k} \right]_)
+    Den har vi regnet før med L'Hopitals, men der <i>differentierede</i> vi _(Sin_), som
+    vi jo ikke kan gøre, før vi har bevist hvordan man ... differentiere _(Sin_). 
+    Vi er nødt til at udregne grænsen <i>på en anden måde</i> via et
+    tricky geometrisk argument. 
+    </p>
+    <p class="t">
+    Idéen: Vi beviser at _(Sin(x)/x_) er <i>mellem</i> to tal der begge nærmer sig _(1_). 
+    Det bliver "skrumpet sammen" af de to tal, og må også derfor <i>selv</i> nærme sig _(1_).
+    </p>
+
+    <video class='picB' style='margin-top:35px; margin-bottom: 35px;' controls>
+        <source src='../../../Assets/Chapter4\Limits\Sin x famous limit.mp4' type='video/mp4'>
+    </video>
+
+    <p class="t">
+    Det her form for argument, hvor vi viser at _(\lim_{k \to a} \left[f(k) \right] = A_)
+    ved at vise at:
+    _($A \lt \lim_{k \to 0} \left[f(k) \right] \lt A_)
+    ... kaldes <i>the squeeze theorem</i>. 
+    </p>
+
+    <div class="Theory">
+    [?] <b> Teori: The Squeeze Theorem.</b> <br>
+    Sig at _(g(x), f(x), m(x)_) er funktioner. Hvis:
+    _($g(x) \le f(x) \le m(x)_)
+    ... og 
+    _($\lim_{x \to a} \left[g(x) \right] = \lim_{x \to a} \left[m(x) \right] = L_)
+    ... så er:
+    _($ \lim_{x \to a} \left[f(x) \right] = L_)
+    </div>
+
+    <q-stion 1="11" 2="5" bigTop="true">
+    Bevis the squeeze theorem. Opstil et ordentligt bevis ved hjælp af grænse-definitionen.
+    <br><br></q-stion>
+    <answer-box>
+    Her:
+    <div class="Proof">
+    Det skal bevises at:
+    _($|x-a| \lt \delta, \qquad |f(x)-L| \lt \epsilon_)
+    Anden ulighed kan omskrives til:
+    _($L-\epsilon \lt f(x) \lt L+\epsilon_)
+    Det er altså <i>målet</i>. Vi ved at:
+    _($\begin{eqnarray}
+    && |x-a| \lt \delta_1, \qquad |g(x)-L| & \lt \epsilon_1 \\
+    && |x-a| \lt \delta_2, \qquad |m(x)-L| & \lt \epsilon_2
+    \end{eqnarray}_)
+    Hvilket svarer til:
+    _($\begin{eqnarray}
+    && L-\epsilon_1 & \lt g(x) & \lt L+\epsilon_1 \\ 
+    && L-\epsilon_2 & \lt m(x) & \lt L+\epsilon_2
+    \end{eqnarray}_)
+    Vi ved også at:
+    _($g(x) \lt f(x) \lt m(x)_)
+    Ulighederne kan sættes sammen, så vi får:
+    _($L-\epsilon_1 \lt g(x) \lt f(x) \lt m(x) \lt L+\epsilon_2_)
+    Ergo:
+    _($L-\epsilon_1 \lt f(x) \lt L+\epsilon_2_)
+    Nu vælger vi bare _(\epsilon_1=\epsilon_) og _(\epsilon_2=\epsilon_) _(\blacksquare_).
+    </div>
+    <br><br></answer-box>
+
+    <q-stion 1="11" 2="6">
+    Bevis at:
+    _($¤x[Sin(x)] = Cos(x)_)
+    Der er èn ekstra relativ tricky grænse udover _(Sin(x)/x_), men den vil jeg lade op til dig. 
+    Den involverer ikke noget geometrisk argument eller noget brug af squeeze theorem. 
+    <br><br></q-stion>
+    <answer-box>
+    Vi starter med:
+    _($\begin{eqnarray}
+    && \lim_{k \to 0} \left[\frac{Sin(x+k)-Sin(x)}{k} \right] = \\ \\
+    && \lim_{k \to 0} \left[\frac{Sin(x)Cos(k) + Sin(k)Cos(x)-Sin(x)}{k} \right] =  \\ \\
+    &&  Sin(x)*\lim_{k \to 0} \left[\frac{Cos(k)-1}{k} \right] + Cos(x)*\lim_{k \to 0} \left[\frac{Sin(k)}{k} \right]  
+    \end{eqnarray}_)
+    Vi kender _(Sin(k)/k_), når _(k \to 0_), men hvad med _((Cos(k)-1)/k_)? Her tænker
+    jeg vi eventuelt kan udnytte _(Cos(2x)=1-2Sin(x)^2_), for at få fjernet _(1_)-tallet,
+    og samtidig få omskrevet til _(Sin_), så det minder mere om _(Sin(k)/k_). Vi laver
+    derfor substitutionen _(k=2m_) og får:
+    _($\lim_{m \to 0} \left[\frac{Cos(2m)-1}{2m} \right] =  
+    \lim_{m \to 0} \left[\frac{-Sin(m)^2}{m} \right]_)
+    Vi kan opdele denne grænse i to grænser vi kender:
+    _($ -\lim_{m \to 0} \left[\frac{Sin(m)}{m}  \right]*\lim_{m \to 0} \left[Sin(m) \right] = -1*0 = 0_)
+    Bum! Vi får nu:
+    _($\begin{eqnarray}
+    &&  Sin(x)*\lim_{k \to 0} \left[\frac{Cos(k)-1}{k} \right] + Cos(x)*\lim_{k \to 0} \left[\frac{Sin(k)}{k} \right] =  \\ \\
+    && Sin(x)*0 + Cos(x)*1 = \\ \\
+    && Cos(x) 
+    \end{eqnarray}_)
+    _(\blacksquare_)
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <p class="tt">
+    Til sidst vil jeg kort gennemgå beviset for kædereglen. Vi starter med:
+    _($\lim_{k \to 0} \left[\frac{f(g(x+k))-f(g(x))}{k} \right]_)
+    Og omskriver til:
+    _($\begin{eqnarray}
+    && \lim_{k \to 0} \left[\frac{f(g(x+k))-f(g(x))}{k}*\frac{g(x+k)-g(x)}{g(x+k)-g(x)} \right] = \\ \\
+    && \lim_{k \to 0} \left[\frac{f(g(x+k))-f(g(x))}{g(x+k)-g(x)} \right]*\lim_{k \to 0} \left[\frac{g(x+k)-g(x)}{k} \right] 
+    \end{eqnarray}_)
+    Grænsen til højre er _(g'(x)_), men 
+    den til venstre er mere tricky. Kald
+    _(g(x)_) for _(A_), og forskellen mellem _(g(x+k)_) og _(g(x)_) for _(m_).
+    Når _(k_) går mod _(0_), går _(m_) også mod _(0_), så vi kan nu sige:
+    _($\lim_{m \to 0} \left[\frac{f(A+m)-f(A)}{m} \right] = f'(A) = f'(g(x))_)
+    Alt i alt får vi:
+    _($f'(g(x))*g'(x)_)
+    Perfekt _(\blacksquare_)! 
+    </p>
+
+    <p class="t">
+    Vi har nu bevist alle vigtige resultater inden for hældninger 
+    med rigorisk matematisk. Endelig kan vi sove tungt, uden den mindste
+    tvivl om, at det hele smuldrer sammen under tættere inspektion. 
+    </p>
+    
+
+
+
+
+

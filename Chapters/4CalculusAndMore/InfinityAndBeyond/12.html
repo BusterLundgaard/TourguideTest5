@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+
+
+    <h2>Lad os finde integraler <i>ordentligt</i></h2>
+
+    <p class="t">
+    Alright, vi har rigorisk bevist hældninger og hvordan vi finder dem. 
+    Tid til at se på arealer og integraler, hvor vi skal bevise to ting: 
+    </p>
+
+    <p class="t">
+    _(\underline{\textbf{A}}_): Vi finder lige nu arealet, ved at opdele det i en masse rektangler
+    vi lægger sammen. Hvordan ved vi, at grænsen af _(n \to \infty_), når vi har _(n_) rektangler,
+    er <i>lig</i> arealet? Hvordan ved vi, at det er så præcist som det kan blive?
+    </p>
+
+    <p class="t">
+    _(\underline{\textbf{B}}_): Vi viste <i>kind of</i> at arealet under _(f(x)_) fra _(a_) til _(b_) var lig en 
+    forskel i _(f_)'s anti-derivative _(F_), 
+    men ikke helt ordentligt. Rigorisk set burde vi bevise, at 
+    arealet under _(f_) fra _(0_) til _(x_) <i>differentieret</i> er lig 
+    _(f(x)_) igen. Med andre ord:
+    _($¤x \left[\int_{0}^{x} f(x) \text{ }dx \right] = f(x)_)
+    Vi skal altså bevise, at integration er <i>det modsatte</i> af differentiation. 
+    Ud fra det kan vi nemt få fat på:
+    _($ \int_{a}^{b} f(x) \text{ }dx = F(b)-F(a)_)
+    </p>
+
+    <p class="t">
+    Vi er nødt til at definere integraler på en ny måde for at løse disse problemer. 
+    </p>
+
+    <p class="cent">*</p>
+
+    <p class="t">
+    Da vi først definerede integraler, opdelte vi arealet i _(n_) rektangler, 
+    hver med samme længde _(\triangle x_):
+    </p>
+
+    <img class='Spic' style='width:72%' src='../../../Assets/Chapter4\Limits\Integral1.png'> 
+
+    <p class="t">
+    Vi gangede værdien ved starten af hver rektangel med bredden for at finde arealet. 
+    Det er mest præcist ved _(\infty_) mange rektangler, så èn mulig 
+    definition kunne være:    
+    _($\int_{a}^{b} f(x) \text{ }dx = \lim_{n \to \infty} \left[\sum_{i=0}^{n} f \left(a+\frac{a-b}{n} i \right)*\frac{a-b}{n} \right]_)
+    Man <i>kan</i> bevise at denne definition opfylder både egenskab _(\text{A}_) og egenskab <br> _(\text{B}_), 
+    men det er kludret og svært. Vi vil i stedet se på en mere generel definition,
+    der er lettere at arbejde med på det teoretiske plan.  
+    </p>
+
+    <p class="t">
+    Vi søger arealet under _(f(x)_) fra _(a_) til _(b_). 
+    Vi opdeler nu intervallet _([a,b]_) i en såkaldt
+    <i>partition</i>: Mindre intervaller _([p_k, p_{k+1}]_), hvor:
+    _($a \lt p_1 \lt p_2 \lt p_3 \, \lt \, \dots p_{n-1} \lt b_)
+    I hvert sub-interval vælger vi nu et punkt _(v_k \in [p_{k-1}, p_k]_), hvor
+    vi regner værdien. Arealet kan nu beskrives som:
+    _($\sum_{k=1}^{n} (p_{k}-p_{k-1})*f(v_k) _)
+    ... hvor _(p_0=a_) og _(p_n=b_). Sådan en opdeling kan eksempelvis se ud som:
+    </p>
+
+    <img class='Spic' style='width:72%' src='../../../Assets/Chapter4\Limits\IntegralPartition.png'> 
+
+    <p class="t">
+    Det er langt mere generelt en den tidligere definition: 
+    Før <i>skulle</i> intervallerne være lige store, og man <i>skulle</i> vælge
+    den første værdi i dem alle. 
+    </p>
+
+    <p class="t">
+    I den tidligere definition tog vi grænsen, da _(n \to \infty_), hvilket
+    ikke virker længere, da vi selv må vælge længden på hvert interval. 
+    I stedet definerer vi _(\lambda_) til at
+    være den <i>største</i> længde på noget interval, og skriver:
+    _($\int_{a}^{b} f(x) \text{ }dx = \lim_{\lambda \to 0} \left[\sum_{k=1}^{n} (p_{k}-p_{k-1})*f(v_k) \right]_)
+    Så en _(\lambda=0.25_) svarer til, at der er i det mindste ét interval _(p_{k}-p_{k-1}_)
+    med længden _(0.25_), og intet interval hvor længden er <i>større</i>. 
+    Som _(\lambda_) falder bliver 
+    intervallerne og deres respektive fejl mindre. 
+    </p>
+
+    <p class="cent">*</p>
+
+    <p class="t">
+    Vores første mål er at vise, at denne grænse faktisk nærmer sig det "rigtige" areal. Her gør
+    vi noget smart: Sig at du tager integralet af funktionen _(f_) på intervallet _([a,b]_), med 
+    en eller anden partition: 
+    </p>
+
+    <img class='Spic' style='width:72%' src='../../../Assets/Chapter4\Limits\DarbouxPartitions1.png'> 
+
+    <p class="t">
+    Vi er frie til selv at vælge værdierne _(v_k_), så vi vælger dem hvor _(f(v_k)_) er 
+    <i>mindst</i>: 
+    </p>
+
+    <img class='Spic' style='width:72%' src='../../../Assets/Chapter4\Limits\DarbouxPartitions2.png'> 
+
+    <p class="t">
+    Dette kaldes en <i>lower Darboux integral</i>, og den er tydeligvis aldrig større end
+    det rigtige areal. Modsat har man en <i>upper Darboux integral</i>, 
+    hvor man vælger de _(v_k_), hvor _(f(v_k)_) er <i>størst</i>: 
+    </p>
+
+    <img class='Spic' style='width:72%' src='../../../Assets/Chapter4\Limits\DarbouxPartitions3.png'> 
+
+    <p class="t">
+    Den er tydeligvis aldrig <i>mindre</i> end det rigtige areal. 
+    Kald den lower Darboux integral med største interval _(\lambda_) for
+    _(L_{\lambda}_) og den upper Darboux integral med største interval _(\lambda_) for 
+    _(U_{\lambda}_). Kald det rigtige sande areal for _(A_). Vi har nu:
+    _($L_{\lambda} \le A \le U_{\lambda}_)
+    Hvis vi kan bevise, at 
+    _($\lim_{\lambda \to 0} \left[L_{\lambda} \right] = \lim_{\lambda \to 0} \left[U_{\lambda} \right]_), 
+    ... kan vi med squeeze theorem se at:
+    _($A = \lim_{\lambda \to 0} \left[L_{\lambda} \right] = \lim_{\lambda \to 0} \left[U_{\lambda} \right]_)
+    Det vil bevise, at begge disse grænser er <i>lig</i> arealet. Det vil også
+    bevise, at en hvilket som helst anden partition _(X_{\lambda}_) er lig arealet, siden:
+    _($L_{\lambda} \le X_{\lambda} \le U_{\lambda}_)
+    Så vi skal bare bevise, at grænsen af en lower Darboux integral er lig 
+    grænsen af en higher Darboux integral
+    </p>
+
+    <p class="cent">
+        *
+    </p>
+
+    <p class="t">
+    Følgende billede forklarer hoved-ideen i vores bevis:
+    </p>
+
+    <img class='Spic' style='width:70%' src='../../../Assets/Chapter4\Limits\DarbouxPartitions4.png'> 
+
+    <p class="t">
+    Der sker noget dejligt hvis vores funktion kun stiger: 
+    Den største værdi på èt interval er lig den mindste værdi på det næste:
+    _($Max_{p_{k-1}}^{p_{k}} = Min_{p_{k}}^{p_{k+1}}_)
+    Lidt det samme sker, hvis funktionen kun falder
+    _($Min_{p_{k-1}}^{p_{k}} = Max_{p_{k}}^{p_{k+1}}_)
+    _(\lim_{\lambda \to 0} \left[L_{\lambda} \right] = \lim_{\lambda \to 0} \left[U_{\lambda} \right]_) 
+    svarer også til 
+    _($\lim_{\lambda \to 0} \left[L_{\lambda} \right] -  \lim_{\lambda \to 0} \left[U_{\lambda} \right] = 0_)
+    Så vi kan vælge at fokusere på <i>forskelle mellem max-værdier og min-værdier</i> (de blå arealer).
+    Det burde være lettere at arbejde med. 
+    </p>
+    <p class="t">
+    Vi begrænser os til en funktion, der stiger, men det er intet problem: 
+    Beviset er (stort set) identisk for en funktion der falder, og en hvilken som helst funktion,
+    der både falder og stiger mellem _([a,b]_) kan altid opdeles i en finit mængde
+    stigende og faldende intervaller. Hvis de blå arealer i hvert interval nærmer sig _(0_),
+    nærmer helheden sig også _(0_). 
+    </p>
+
+    <div class="Proof">
+    <b>Bevis: Grænsen af lower Darboux sum er lig grænsen af higher:</b> <br>
+    Der undersøges en funktion _(f_), der er monotont stigende på intervallet _([a,b]_). 
+    Den henholdsvis lower og upper Darboux integral er lig:
+    _($\begin{eqnarray}
+    && U & = \sum_{k=1}^n (p_k - p_{k-1})*Min_{p_{k-1}}^{p_k} \\ \\
+    && L & = \sum_{k=1}^n (p_k - p_{k-1})*Max_{p_{k-1}}^{p_k}
+    \end{eqnarray}_)
+    Vi leder efter den samlede forskel, så omskriv _(U-L_) til:
+    _($\sum_{k=1}^n (p_k - p_{k-1})*Max_{p_{k-1}}^{p_k} - \sum_{k=1}^n (p_k - p_{k-1})*Min_{p_{k-1}}^{p_k}_)
+    Man kan gange ind i parenteserne og få:
+    _($\begin{eqnarray} 
+    && \sum_{k=1}^n p_k*Max_{p_{k-1}}^{p_k} & -     \, \, \, \sum_{k=1}^n p_{k}*Min_{p_{k-1}}^{p_k} \, + \\ \\
+    && \sum_{k=1}^n p_{k-1}*Min_{p_{k-1}}^{p_k} & - \, \, \, \sum_{k=1}^n p_{k-1}*Max_{p_{k-1}}^{p_k}
+    \end{eqnarray}_)
+    Vi omskriver nu hver sum, ved at fjerne det sidste led fra sigma-tegnet.
+    Formålet er at få fat på _(p_n - p_{n-1}_) og _(p_1-p_0_), da de begge to kan beskrives som 
+    <i>intervallængder</i>. Det tillader os eventuelt at introducere grænsen _(\lim_{\lambda \to 0}_).
+    _($\begin{alignat}{3} 
+    \sum_{k=1}^{n} p_{k}*Min_{p_{k-1}}^{p_k}   & = \, \, & p_1&*Min_{p_0}^{p_1}          \, \, && + \, \, \, \sum_{k=1}^{n-1} p_{k+1}*Min_{p_k}^{p_{k+1}}, \\ \\
+    \sum_{k=1}^{n} p_{k-1}*Min_{p_{k-1}}^{p_k} & = \, \, & p_0&*Min_{p_0}^{p_1}          \, \, && + \, \, \, \sum_{k=1}^{n-1} p_k*Min_{p_k}^{p_{k+1}}, \\  \\ 
+    \sum_{k=1}^{n} p_{k}*Max_{p_{k-1}}^{p_k}   & = \, \, & p_n&*Max_{p_{n-1}}^{p_n}      \, \, && + \, \, \, \sum_{k=1}^{n-1} p_k*Max_{p_{k-1}}^{p_k}, \\ \\
+    \sum_{k=1}^{n} p_{k-1}*Max_{p_{k-1}}^{p_k} & = \, \, & p_{n-1}&*Max_{p_{n-1}}^{p_n}  \, \, && + \, \, \, \sum_{k=1}^{n-1} p_{k-1}*Max_{p_{k-1}}^{p_k}
+    \end{alignat}_)
+    Nu bliver _(U-L_) til:
+    _($\begin{eqnarray} 
+    && \sum_{k=1}^{n-1} p_k*Max_{p_{k-1}}^{p_k} - \sum_{k=1}^{n-1} p_{k+1}*Min_{p_k}^{p_{k+1}} \, + \\ \\
+    && \sum_{k=1}^{n-1} p_k*Min_{p_k}^{p_{k+1}} - \sum_{k=1}^{n-1} p_{k-1}*Max_{p_{k-1}}^{p_k} \, + \\ \\
+    && Max_{p_{n-1}}^{p_n}*(p_n - p_{n-1}) - Min_{p_0}^{p_1}*(p_1 - p_0) 
+    \end{eqnarray}_)
+    Det skal vises, at grænsen af dette nærmer sig _(0_) sammen med _(\lambda_). Der ses først på:
+    _($\begin{eqnarray}
+    && \lim_{\lambda \to 0} \left[Max_{p_{n-1}}^{p_n}*(p_n - p_{n-1}) - Min_{p_0}^{p_1}*(p_1 - p_0) \right] = \\ \\
+    && Max_{p_{n-1}}^{p_n}*\lim_{\lambda \to 0} \left[p_n - p_{n-1} \right] - Min_{p_0}^{p_1}*\lim_{\lambda \to 0} \left[p_1 - p_0 \right] =  \\ \\
+    && Max_{p_{n-1}}^{p_n}*0 - Min_{p_0}^{p_1}*0 =  \\ \\
+    && 0
+    \end{eqnarray}_)
+    _(Max_{p_{k-1}}^{p_k} = Min_{p_k}^{p_{k+1}}_) så de fire summe kan kombineres til:
+    _($\sum_{k=1}^{n-1} Max_{p_{k-1}}^{p_k}*\left((p_k - p_{k-1}) + (p_k - p_{k-1}) \right) _)
+    _(p_k - p_{k-1}_) er længden af det _(k_)'ne interval _(\triangle x_k_). 
+    Det negative af _(p_k-p_{k+1}_) er længden af det _(k+1_)'ne interval _(\triangle x_{k+1}_).
+    Derved fås:
+    _($-\sum_{k=1}^{n-1} Max_{p_{k-1}}^{p_k}*\left(\triangle x_{k+1} - \triangle x_{k} \right) _)
+    Ideen er, at vi nu beskriver den mest negative og mest positive værdi summen tager.
+    Hvis begge nærmer sig _(0_), kan det ses via the squeeze theorem, at 
+    summen <i>også</i> nærmer sig _(0_). 
+    <p class="t">
+    Kald længden på det korteste interval i integralets partition for _(r_). Se nu følgende
+    diagram: 
+    </p>
+    <img class='Spic' style='width:70%' src='../../../Assets/Chapter4\Limits\PartitionVisualised.png'> 
+    <p class="t">
+    Dette diagram viser et eksempel på èn mulig partition. Længden af de _(n_) intervaller
+    er vist. En vækst opad gør summen positiv (og derved det negative af summen negativ), og 
+    en vækst nedad gør summen negativ. Hver af disse positive eller negative
+    værdier er ganget med _(Max_{p_{k-1}}^{p_k}_). _(f_) vokser konstant, så
+    den højeste mulige værdi af summen er:
+    </p>
+    <img class='Spic' style='width:70%' src='../../../Assets/Chapter4\Limits\PartitionVisualised2.png'> 
+    <p class="t">
+    Og den mest negative værdi er:
+    </p>
+    <img class='Spic' style='width:70%' src='../../../Assets/Chapter4\Limits\PartitionVisualised3.png'> 
+    <p class="t">
+    Begge af disse er nemme at regne. Den henholdsvis højeste og mest negative er:
+    _($\begin{eqnarray}
+    &&   Max_{p_{n-1}}^{p_n}*(\lambda - r) \\ \\
+    &- & Max_{p_{n-1}}^{p_n}*(\lambda - r)
+    \end{eqnarray}_)
+    _(f_) vokser konstant, så:
+    _($Max_{p_{n-1}}^{p_n} = Max_{a}^{b}_)
+    Det er en konstant, der intet har at gøre med integralets partition.
+    Hvis summen kaldes _(s_{\lambda}_), kan det nu ses at:
+    _($-Max_{a}^{b}*(\lambda - r) \le s_{\lambda} \le Max_{a}^{b}*(\lambda-r)_)
+    Nu regnes grænsen: 
+    _($\lim_{\lambda \to 0} \left[Max_{a}^{b}*(\lambda-r) \right] = Max_{a}^{b}*(\lim_{\lambda \to 0} \left[\lambda \right] - \lim_{\lambda \to 0} \left[r \right])_) 
+    _(r_) går mod _(0_), når _(\lambda_) går mod _(0_), så dette er lig 
+    _($Max_{a}^{b}*(0-0)=0_)
+    Ergo:
+    _($0 \le \lim_{\lambda \to 0} \left[s_{\lambda} \right] \le 0_)
+    Hvilket med squeeze-theorem giver:
+    _($\lim_{\lambda \to 0} \left[s_{\lambda} \right] = 0_)
+    God motherfucking damn! _(\blacksquare_). 
+    </p>
+    </div>
+
+    <p class="cent">*</p>
+
+    <p class="t">
+    Vi har nu bevist _(\text{A}_). For at bevise _(\text{B}_), skal vi først bevise 
+    et par egenskaber af integraler. Det vil jeg primært lade dig gøre:
+    </p>
+
+    <q-stion 1="12" 2="1" bigTop="true">
+    _(\underline{\textbf{A}}_): <br>
+     Bevis at:
+    _($\int_{a}^{b} f(x)+g(x) \text{ } = \int_{a}^{b} f(x) + \int_{a}^{b} g(x) _)
+    _(\underline{\textbf{B}}_): <br>
+     Bevis at:
+    _($\int_{a}^{b} C*f(x) \text{ }dx = C*\int_{a}^{b} f(x) \text{ }dx _)
+    Du har bevist det før med den <i>gamle definition</i>, men du skal nu
+    bevise, at det også gælder med den <i>nye</i>. De her "integraler" er bare grænser,
+    og har intet at gøre med hældninger og differentiering. 
+    <br><br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    Venstre integral svarer til:
+    _($\lim_{\lambda \to 0} \left[\sum_{k=1}^{\infty} (p_k-p_{k-1})*\left(f(v_k)+g(v_k) \right)  \right]_)
+    Man kan let gange ind i parenteserne og få:
+    _($\lim_{\lambda \to 0} \left[\sum_{k=1}^{\infty} (p_k-p_{k-1})*f(v_k) \right] +
+    \lim_{\lambda \to 0} \left[\sum_{k=1}^{\infty} (p_k-p_{k-1})*g(v_k) \right]_)
+    Hvilket så er:
+    _($\int_{a}^{b} f(x) \text{ }dx + \int_{a}^{b} g(x) \text{ }dx  _)
+    _(\blacksquare_). 
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Venstre integral er:
+    _($\lim_{\lambda \to 0} \left[\sum_{k=1}^{n} (p_k-p_{k-1})*\left(C*f(x) \right) \right]_)
+    Man kan let trække konstanten ud, og få:
+    _($C*\lim_{\lambda \to 0} \left[\sum_{k=1}^{n} (p_k-p_{k-1})*f(x) \right] = C*\int_{a}^{b} f(x) \text{ }dx_)
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="12" 2="2">
+    Bevis at:
+    _($\int_{a}^{b} f(x) \text{ }dx = \int_{a}^{c} f(x) \text{ }dx + \int_{c}^{b} f(x) \text{ }dx _)
+    ... hvis _(c_) er mellem _(a_) og _(b_).
+    <p class="t">
+    Tænk først over hvorfor det her rent visuelt og intuitivt giver mening. 
+    Det vil hjælpe en del med beviset. 
+    </p>
+    <p class="t">
+    Og et vigtigt hint: Du behøver kun bevise det for én bestemt partition, siden alle
+    partitions nærmer sig samme areal. 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Rent intuitivt og visuelt giver det ret god mening, hvis man ser på højre side. Vi lægger
+    arealet fra _(a_) til _(c_) sammen med arealet fra _(c_) til _(b_), og får samlet arealet
+    fra _(a_) til _(b_)! 
+    <p class="t">
+    Arealet fra _(a_) til _(c_) består af partitions af _([a,c]_). Arealet fra
+    _(c_) til _(b_) består af partitions af _([c,b]_). Hvis du lægger de partitions op ad 
+    hinanden, vil du få en partition af _([a,b]_). Når _(\lambda \to 0_) ved 
+    _([a,c]_) og <br> _([c,b]_), vil den tydeligvis også nærme sig _(0_) ved _([a,b]_). Derfor er
+    det lig èn integral, og beviset er nu færdigt. 
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <p class="tt">
+    Hvad gør vi, hvis _(a \gt b_) på integralet:
+    _($\int_{a}^{b} f(x) \text{ }dx _)
+    Det er os, der har defineret integraler, så det må vi egentlig selv vælge,
+    så længe det hænger sammen med tidligere resultater. 
+    Vi siger derfor:
+    _($\int_{a}^{b} f(x) \text{ }dx = -\int_{b}^{a} f(x) \text{ }dx _)
+    Det her giver super god mening. Når vi går fra _(b_) til _(a_), kan integralet skrives som:
+    _($\lim_{\lambda \to 0} \left[\sum_{k=1}^n (p_k - p_{k-1})*f(v_k) \right] _)
+    Vi går pr. definition <i>fremad</i>, så vi ved, at _(p_k - p_{k-1}_) altid er positivt. 
+    Vi går i stedet <i>bagud</i>, hvis vi går fra
+    _(b_) til _(a_) hvor _(b \lt a_). 
+    I stedet for at gå fra _(p_{k-1}_) til _(p_{k}_), går vi nu fra 
+    _(p_{k}_) til _(p_{k-1}_). Derfor får vi:
+    _($\lim_{\lambda \to 0} \left[\sum_{k=1}^n (p_{k-1} - p_{k})*f(v_k) \right] _)
+    Hvilket bare er _(-1_) gange den tidligere grænse for _(\int_{b}^{a}_). 
+    </p>
+
+    <!--  -->
+
+    <q-stion 1="12" 2="3" bigTop="true">
+    Bevis, at hvis _(m_) og _(M_) er de henholdsvis mindste og største værdier på _(f_) i _([a,b]_), er
+    _($m (b-a) \le \int_{a}^{b} f(x) \text{ }dx \le M (b-a)_)
+    Jeg anbefaler igen, at du først tænker over hvorfor, det giver god visuel intuitiv mening. 
+    <br><br></q-stion>
+    <answer-box>
+    Først intuitionen: 
+    Integralet er arealet under _(f_) i _([a,b]_). Hvis vi ser på 
+    _(m*(b-a)_) som højden _(m_) gange bredden _((b-a)_), er det tydeligvis <i>lavere</i> 
+    end arealet under _(f_). Samme argument
+    kan fremstilles med _(M*(b-a)_) der er højere.
+    <p class="t">
+    Nu til selve beviset. Hvis
+    _($m \le f(v_k) \le M_)
+    ... så er:
+    _($\sum_{k=1}^n \triangle x_k*m \le \sum_{k=1}^n \triangle x_k*f(v_k) \le \sum_{k=1}^n \triangle x_k*M_)
+    _(M_) og _(m_) er konstanter, så det kan let omskrives til:
+    _($m \sum_{k=1}^n \triangle x_k \le \sum_{k=1}^n \triangle x_k*f(v_k) \le M \sum_{k=1}^n \triangle x_k_)
+    Summen af intervaller fra _(a_) til _(b_) er lig længden _(b-a_), så:
+    _($(b-a)m \le \sum_{k=1}^n \triangle x_k*f(v_k) \le (b-a)M_)
+    Det vil også være sandt, hvis _(\lambda \to 0_), siden _((b-a)m_) og _((b-a)M_) begge er konstanter:
+    _($(b-a)m \le \lim_{\lambda \to 0} \left[\sum_{k=1}^n \triangle x_k*f(v_k) \right] \le (b-a)M \to_)
+    Voila! _(\blacksquare_)
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="12" 2="4">
+    Bevis at der findes et _(d \in [a,b]_) hvor:
+    _($ \frac{\int_{a}^{b} f(x) \text{ }dx}{b-a} = f(d)_)
+    Man kan relativt let se (vi vil dog ikke gennemgå det her), at sådan et _(f(d)_) 
+    vil være <i>gennemsnittet</i> af 
+    funktionen _(f(x)_).
+    <p class="t">
+    Hint: Brug egenskaben fra sidste opgave.
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Vi starter med at bruge egenskaben fra
+    sidste opgave, da det hjælper os med at få fat
+    på noget, der ligner _(\int_{a}^{b}f(x) \, dx / (b-a) _):
+    _($\begin{eqnarray}
+    && (b-a)m \le \int_{a}^{b} f(x) \text{ }dx \le (b-a)M \to \\ \\
+    && m \le \frac{1}{b-a} \int_{a}^{b} f(x) \text{ }dx \le M 
+    \end{eqnarray}_)
+    Vi kan se, at det er mellem den mindste og største værdi _(f_) kan tage.
+    Dette udtryk tager ingen værdier _(f_) ikke <i>også</i> tager, så 
+    der må findes i hvert fald èt _(d_) hvor:
+    _($f(d) = \frac{\int_{a}^{b} f(x) \text{ }dx}{b-a}_)
+    <br></answer-box>
+
+    <!--  -->
+
+    <p class="tt">
+    Vi er nu endelig klar til faktisk at bevise:
+    _($¤x \left[\int_{0}^{x} f(x) \text{ }dx \right] = f(x)_)
+    </p>
+
+    <div class="Proof">
+    <b> Bevis: At differentiere er det modsatte af at integrere:</b> <br>
+    Definer _(\phi(x)_) til:
+    _($\phi(x)=\int_{a}^{x} f(x) \text{ }dx _)
+    Det skal nu bevises at:
+    _($¤x[\phi(x)]=f(x)_)
+    Hældningen regnes:
+    _($\lim_{i \to 0} \left[\frac{\phi(x+i)-\phi(x)}{i}\right]_)
+    Tælleren kan omskrives til:
+    _($\begin{eqnarray}
+    && \int_{a}^{x+i} f(x) - \int_{a}^{x} f(x) = \\ \\
+    && \int_{a}^{x} f(x) + \int_{x}^{x+i} f(x) - \int_{a}^{x} f(x) = \\ \\
+    && \int_{x}^{x+i} f(x)
+    \end{eqnarray}_)
+    Så:
+    _($\lim_{i \to 0} \left[\frac{\int_{x}^{x+i} f(x)}{i}\right]_)
+    For at fjerne den _(i_) vi dividerer med,
+    udnytter vi det faktum, at der findes et _(d_) hvor: 
+    _($\int_{x}^{x+i} f(x) = ((x+i)-x)*f(d) = i*f(d)_)
+    Nu fås:
+    _($\lim_{i \to 0} \left[\frac{i*f(d)}{i}\right] = \lim_{i \to 0} \left[f(d) \right]_)
+    _(d_) er på _([x, x+i]_), så det nærmer sig _(x_) når _(i \to 0_). 
+    Ergo:
+    _($\lim_{i \to 0} \left[f(d) \right] = \lim_{d \to x} \left[f(d) \right] = f(x)_)
+    _(\blacksquare_)
+    </div>
+
+    <p class="tt">
+    Til sidst vil vi gerne bevise, at
+    _($\int_{a}^{b} f(x) \text{ }dx = F(b)-F(a)_)
+    ... hvor _(F'(x)=f(x)_). Det her kommer relativt let fra det tidligere resultat:
+    </p>
+
+    <div class="Proof">
+    <b> Bevis: Integralet er forskellen i anti-derivative</b>: <br>
+    Fra tidligere teori vides det, at funktionen _(\phi(x)_) er en anti-derivative til _(f(x)_). 
+    Sig, at der findes en anden funktion _(F(x)_), der også er en anti-derivative. De kan
+    kun variere med en konstant, så:
+    _($F(x)=\phi(x) + C_)
+    Dette kan omskrives til:
+    _($F(x) + C = \int_{a}^{x} f(x) \text{ }dx _)
+    Bemærk at dette meget ligner ligningen vi prøver at bevise, bare
+    med _(x_) i stedet for _(b_) og 
+    _(C_) i stedet for _(-F(A)_). 
+    Det gælder for hver _(x_), så en værdi til
+    _(C_) kan nemt findes, hvis man substituere en tilfældig værdi 
+    af _(x_) som _(x=a_):
+    _($\begin{eqnarray}
+    && F(a)+C = \int_{a}^{a} f(x) \text{ }dx \to \\ \\
+    && F(a)+C=0 \to \\ \\
+    && C=-F(a)
+    \end{eqnarray}_)
+    Så:
+    _($F(x)-F(a) = \int_{a}^{x} f(x) \text{ }dx_)
+    Vælg nu _(x=b_), hvilket endeligt giver:
+    _($F(b)-F(a) = \int_{a}^{b} f(x) \text{ }dx_)
+    _(\blacksquare_)
+    </div>
+
+    <p class="t">
+    Færdig!
+    </p>
+
+
+
+
+

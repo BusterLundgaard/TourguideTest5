@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <p class="t">
+    Vi har kigget lidt på forskellige basesystemmer: _(10,2,12_) osv. Man kunne
+    ret fint argumentere at _(12_) nok var lidt bedre end _(10_), siden det er 
+    lidt mere praktisk at kunne dividere med _(3_) end det er at kunne dividere med _(5_). 
+    I base _(30_) kan man dividere med begge (og _(2_)), men det vil nok være svært
+    for vores hjerner effektivt at håndtere den mængde symboler et sådane system kræver.
+    Hvad med <i>negative</i> baser dog? Kunne de måske være en praktisk, genial
+    opfindelse vi slet ikke har tænkt over?  
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Omskriv _(792.56_) fra base _(-10_) til base _(10_). 
+    <br><br></q-stion>
+    <answer-box>
+    Base _(n_) betyder altså at vi ganger vores cifre med højere og højere / lavere og lavere 
+    exponenter af _(n_). Derfor så er _(792.56_) faktisk:
+    <p class="cent">
+        _(7*(-10)^2+9(-10)^1+2*(-10)^0+5*(-10)^{-1}+6*(-10)^{2}=_)
+        _(700-90+2-0.5+0.06=_)
+        _(611.56_)
+    </p>
+    <p class="t">
+    Altså, i det her system der skifter hvert cifre mellem at være positiv og negativ.
+    </p>
+    <br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Omskriv _(2093_) fra _(-10_) til base _(10_)
+    <br><br></q-stion>
+    <answer-box>
+    Vi udregner:
+    <p class="cent">
+        _(2*(-10)^3+9*(-10)^1+3*(-10)^0=-2000-90+3=-2087_)
+    </p>
+    Man kan altså repræsentere negative tal uden overhovedet at bruge _(-_) som fortegn! 
+    <br><br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Omskriv _(732_) fra normal base _(10_), til base _(-10_). Nu er du altså nødt til at 
+    gå den anden vej!
+    <br><br></q-stion>
+    <answer-box>
+    Vi ved at det første ciffer skal være positivt, så der kan jeg bare skrive _(2_). 
+    _(30_) er lidt sværre, da den anden plads med _(10_)'erne er negativ. Derfor er vi 
+    nødt til at lave _(1_) _(100_) (som er positiv), og så fjerne nok fra den til at vi 
+    får _(30_). Altså: _(30\text{ (base 10)} = 170 \text{ (base -10)}_). Svaret bliver: _(700+170+2=872_)
+    <br><br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Hvad gør vi nå vi skal plusse og minuse i base _(-10_)? F.eks _(23563+12232_)?
+    Vi <i>kunne</i> selvfølgelig bare lave hvert tal om til base _(10_), plusse,
+    og så derefter konvertere til _(-10_) igen. Men vi kunne også være 
+    mere effektive! Prøv at regn de følgende stykker <i>uden</i> først at lave dem om:
+    <div style="text-align:center;">
+        <ol style="display: inline-block; text-align: left; margin-bottom:0px;">
+            <li>_(23563+12232_)</li>
+            <li>_(179+286_)</li>
+            <li>_(1234565789+987654321_)</li>
+        </ol>
+    </div> 
+    <p class="t">
+    Som et hint så kan jeg sige at du i hvert fald burde prøve at stille det op ligesom du
+    normalt gør med større plusstykker. 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Svarene er:
+    <div style="text-align:center;">
+        <ul style="display: inline-block; text-align: left; list-style:none;">
+            <li><b> 1:</b> _(35795_)</li>
+            <li><b> 2:</b> _(245_)</li>
+            <li><b> 3:</b> _(19090909090_)</li>
+        </ul>
+    </div>
+    Du kan se en video hvor jeg gennnemgår hvordan man gør her:
+    <video class="picB" controls>
+        <source src="../../../Assets/Chapter1/Talteori/NegativBasePlus.mp4" type="video/mp4">
+    </video>
+    <br><br></answer-box>
+
+    <p class="t">At gange er meget muligt, det er bare meget svært for <i>os</i>, da det kræver
+    en del træning for hjernen at lære og gange så hurtigt den nu kan. Der
+    er en grund til at du skulle kigge og huske gangeskemaer som barn! 
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Du prøvede lige kort før at lave _(732_) tilbage til base _(10_). Kan du nu finde en 
+    <i>generel</i> måde at lave noget som helst tal i base _(-10_) om til et tal i base _(10_)?
+    Svar også på hvorvidt det overhovedet er muligt at præsentere hvert tal i base _(-10_). 
+    <br><br></q-stion>
+    <answer-box>
+    Du kan se mit svar på den her opgave her:
+    <video class="picB" controls>
+        <source src="../../../Assets/Chapter1/Talteori/KonverterNegativTilPositivBase.mp4" type="video/mp4">
+    </video>
+    <br><br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Når vi tilføjer et ekstra _(0_) i base _(10_), eller mere generelt flytter på punktummet, så har 
+    det samme effekt som at gange og dividere med _(10_). Hvad sker der her i base _(-10_)?
+    <br><br></q-stion>
+    <answer-box>
+    Lad os kigge på et eller andet tilfældigt tal _(378_) (base _(-10_)) som eksempel. 
+    I base _(10_) kan vi repræsentere det som _(300-70+8_). Sætter vi et ekstra nul på for vi 
+    _(3780_) (base _(-10_)) _(=-3000+700-80_) (base _(10_)). Nu kan vi nemt bare omskrive:
+    _(-3000+700-80=-10*(300-70+8)_) (base _(10_)) _(=10*378_) (base _(-10_)). Det er 
+    ikke en fejl at vi i base _(-10_) siger _(10*378_) i stedet for _(-10*378_) ligesom
+    i base _(10_). Her i base _(-10_) der er _(10_) lig _(-10_), og _(-10_) lig _(10_). 
+    I hvert fald kan man tydeligvis se at man sætter ekstra nuller på når man ganger med 
+    _(10_) (base _(-10_)) , præcist ligesom man også gør i base _(10_). Man kan lave 
+    et meget lignende argument for når man rykker punktummet/kommaet til højre. Det 
+    har logisk nok samme effekt som at <i>dividere</i> med _(10_) (base _(-10_)).
+    <br><br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Skriv _(\frac{1}{3}_) i base _(-10_).
+    <br><br></q-stion>
+    <answer-box customWidth="560">
+    Vi gør meget det samme som i de tidligere lignende opgaver:
+    <p class="cent">
+        _(\frac{1}{3}=-10^{-1}*\frac{9+1}{3}=-10^{-1}*(3+\frac{1}{3})=_)<br>
+        _(-10^{-1}*(3-10^{-1}*(3+\frac{1}{3}))=_)<br>
+        _(-10^{-1}*(3-10^{-1}*(3-10^{-1}*(3-\frac{1}{3})))=_)<br>
+        _(... _)  osv osv. <br>
+        _(=_)<br>
+        _(-10^{-1}*3+10^{-2}*(3-10^{-1}*(3-\frac{1}{3}))=_)<br>
+        _(-10^{-1}*3+10^{-2}*3-10^{-3}*3+10^{-4}*3 + ... =_)<br>
+        _(10^{-1}*(-3)+10^{-2}*3+10^{-3}*(-3)+10^{-4}*3+10^{-5}*(-3)+...=_)<br>
+        _(10^{-1}*(17)+10^{-2}*3+10^{-3}*(17)+10^{-4}*3+10^{-5}*(17)+...=_)<br>
+        _(1.7+0.03+0.017+0.0003+0.00017+0.000003+...=_)<br>
+        _(1+0.7+0.03+0.01+0.007+0.0003+0.0001+0.00007+0.000003+...=_)<br>
+        _(1.7373737373..._)<br>
+    </p>
+    <br></answer-box>
+
+
+</html>

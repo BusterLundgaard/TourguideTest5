@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+
+
+    <p class="t">
+    På den her sidste side skal vi kigge på en ide der i starten virker
+    som fuldkommen pointeløs, unødvendig terminologi, men som vi hurtigt vil se
+    faktisk kan hjælpe os en del i visse opgaver, og virkelig hjælpe os med at
+    beskrive bestemte situationer. Jeg snakker om "tilfældige variabler", eller
+    "stokastiske variabler" hvis man gerne vil lyde klog. 
+    </p>
+
+    <p class="t">
+    Et par af de sandsynlighedsopgaver vi allerede har lavet kan godt modelleres med 
+    "tilfældige variabler". Sig at vi kaster terninger og gerne vil finde
+    chancen for at få lige tal. Normalt ville vi argumentere: Der er _(6_) mulige udfald, 
+    alle med lige stor chance, og _(3_) opfylder vores krav. Ergo: _(p=_) _(3/6=_) _(0.5_).
+    Men hvad hvis alle udfald <i>ikke</i> havde lige stor chance? Sig f.eks. vi kastede
+    2 terninger og lagde deres øjne sammen: 
+    _($S =  
+    \begin{Bmatrix}
+    2 & 3 & 4 & 5 & 6 & 7 \\
+    3 & 4 & 5 & 6 & 7 & 8 \\
+    4 & 5 & 6 & 7 & 8 & 9 \\
+    5 & 6 & 7 & 8 & 9 & 10 \\
+    6 & 7 & 8 & 9 & 10 & 11 \\
+    7 & 8 & 9 & 10 & 11 & 12 \\
+    \end{Bmatrix} 
+    _)
+    Chancen for at du får lige tal er tydeligvis <i>ikke</i> bare _(6/11_) (der _(6_) lige værdier
+    øjne-summen kan tage, og 11 værdier i alt). Vi skal i stedet tælle alle
+    de måder man kan få _(2_) på, få _(4_) på, få _(6_) på, få _(8_) på, få _(10_)
+    på og få _(12_) på, og så dividere det med det samlede antal udfald _(6*6=_) _(36_).
+    Det her giver _(18/36=_) _(0.5_), og her fulgte vi lidt samme strategi som altid:
+    _(\text{Rigtige udfald}/_) _(\text{Alle udfald}_). Men man kunne også se på det på lidt
+    en anden måde. Chancen for at få en lige sum er:
+    _($P(2)+P(4)+P(6)+P(8)+P(10)+P(12)_)
+    Hvor f.eks. _(P(4)_) er chancen for at terningerne summer til _(4_), så _(3/36_). Det her er jo allerede praktisk talt 
+    hvad vi gør lige nu, men det er bare et lidt andet mindset: Vi stopper det her vi altid
+    plejer at gøre med _(\text{Rigtige udfald}/_) _(\text{Alle udfald}_), og tænker i stedet
+    over situationen som <i>forskellige værdier</i>, der har <i>forskellige chancer for at ske</i>. 
+    Vi siger at den "tilfældige variabel", som vi måske kalder _(X_), er "summen af øjnene på 
+    terningerne", og så er "chancen for at vi får et lige tal" det samme som 
+    "chancen for at _(X_) tager en lige værdi". Vi ved _(X_) kan tage _(11_) mulige
+    værdier, og at _(6_) af dem er lige, så vi skriver:
+    _($P(X=2)+P(X=4)+P(X=6)+P(X=8)+P(X=10)+P(X=12)_)
+    Præcis det samme som før, bare med ny terminologi. Jeg har ikke tænkt mig rigtigt at
+    give de stokastiske variabler navne eller sige _(P(X = \text{et eller andet})_) da jeg syntes
+    at det i simplere situationer er over-formelt og unødvendigt: Det er mindsettet der er
+    vigtigt lige nu, og du forstår godt hvad jeg siger ud fra kontekst. Lad os se på
+    nogle flere eksempler. 
+    </p>
+
+    <p class="t">
+    På første side sluttede vi af med at kigge på en person der prøvede at kaste 7 basketball-skud, men
+    kun ramte _(20_)% af tiden. Her er den "stokastiske variabel" lig "antal basketball skud der rammer".
+    Denne stokastiske variabel kan tage _(8_) værdier: _(0_), _(1_), _(2_), _(3_), _(4_), _(5_), _(6_) og _(7_).
+    Hvis man finder når man får over _(3_) points, så er chancen for at man vinder lig:
+    _($P(4)+P(5)+P(6)+P(7)_)
+    Vi kunne selvfølgelig også have sagt _(1-P(0)-P(1)-P(2)-P(3)_), men vi ville skulle
+    regne lige meget alligevel. 
+    </p>
+    <p class="t">
+    Vi kan visualisere den her stokastiske variabel ved meget simpelt bare at plotte dens forskellige
+    værdier mod chancen for at <i>få</i> de værdier:
+    </p>
+    <img class='SpicB' style='width:70%' src='../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\BinomialDistribution1.png'> 
+    <p class="t">
+    Vi kan se her intuitivt at der er størst chance for at få _(1_) point. Speaking of 
+    "største chance", så ved de fleste af os nok at der er størst chance for at få 
+    _(7_) hvis man slår to terninger:
+    </p>
+    <img class='SpicB' style='width:83%' src='../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\Stokastisk\To terninger.png'> 
+    <p class="t">
+    Man kan se at den påstand er rigtig. Man kan også se at chancen meget simpelt
+    går lineært opad og nedad hvis summen er bag ved eller foran _(7_). Et andet eksempel
+    vi også har set på allerede er: 
+    </p>
+    <img class='Spic' style='width:95%' src='../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\Histogram.png'> 
+    <p class="t">
+    Her kunne vi måske forestille os at vi arbejde med en skoleklasse (lidt urealistisk 
+    at der er flere der skulle vej over 200kg der, men you get the point), og så var
+    den stokastiske variabel lig "kropsvægt". Forskellige mulige kropsvægte ville så 
+    have forskellige sandsynligheder. Der ville nok være markant større chance for at man
+    vejede _(60kg_) end _(260kg_). Forskellen på det her eksempel og de tidligere er at
+    det nok er et man ville lave <i>kontinuert</i>. Det er ikke den del af sandsynlighed
+    vi fokuserer på i dette afsnit, men helt essentielt så kan vi sige at man 
+    ved <i>kontinuert</i> sandsynlighed fokuserer på <i>intervaller</i> i stedet for 
+    <i>individuelle, enkelte, specifikke værdier</i>. Det giver super meget mening når man
+    tænker over denne situation: Der er ikke super mange personer i klassen (måske 30), men
+    der er rigtig mange mulige værdier til den stokastiske variabel. Over _(250_), og 
+    endnu flere hvis vi tager decimaltal med (alle vejer jo ikke
+    en vægt i hele tal). Vores graf ville være fuldkommen ubrugelig: 
+    </p>
+    <img class='SpicB' style='width:160%; margin-left: -30%' src='../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\Stokastisk\Kropsvægt.png'> 
+    <p class="t">
+    Der er _(30_) elever, så hver værdi på den stokastiske variabel har enten en chance 
+    på _(1/30_) eller _(0_). Det er fordi at chancen for at to elever vejer <i>præcist</i> det samme
+    (og jeg har brugt to decimaltal her) er meget lille. Udover det, så er det rigtig mange
+    vægte/værdier som der bare ikke er nogen elever der vejer. De bliver til _(0_). Selv hvis vi begrænsede os selv
+    til kun hele tal så ville chancen stadig være lille, og grafen stadig ret ubrugelig. 
+    I alt ærlighed så er grafikken ikke <i>helt</i> ubruglig: Vi kan se at der er langt flere
+    _(1/30_) værdier <i>omkring</i> _(60kg_), og at chancen for de "slags" værdier derfor må være
+    ret stor. Men her bruger jeg ordet "slags": Jeg taler om flere værdier samtidig. Det vi gør
+    er derfor at kigge på <i>intervaller</i>. Hvad er chancen for at nogen vejer mellem _(0_) og _(10_) kg?
+    Mellem _(10_) og _(20_)? _(30_) og _(40_), _(40_) og _(50_), _(50_) og _(60_) osv. Det giver os
+    så dét blå diagram jeg præsenterede først. 
+    </p>
+    <p class="t">
+    "Værdierne" på vores stokastiske variabel kan også godt være lidt mere primitive. Sig at
+    vi er tilbage til vores "spin-the-wheel" ting:
+    </p>
+    <img class='SpicB' style='width:50%' src='../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\SpinTheWheel.png'> 
+    <p class="t">
+    Den kan have 3 "værdier": Hvid, grå, sort. Så hvis vores stokastiske variabel 
+    er "farven", så kan vi måske vælge at sige at en værdi på _(1_) svarer til "Hvid",
+    _(2_) er grå, og _(3=_) sort. Vi kunne nu lave en graf som:
+    </p>
+    <img class='SpicB' style='width:35%' src='../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\Stokastisk\SpinTheWheel.png'>  
+    <p class="t">
+    Alright. Alt det her vi har kigget på indtil videre er fint, men hvordan kan det her
+    mindset faktisk hjælpe os med at løse problemer? Welp, prøv at lav de følgende opgaver: 
+    </p>
+
+    <!-- MÅSKE FLYT DEN HER FØRSTE OPGAVE? -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Du spiller et racer-spil der handler om at få flest points.
+    Man kan vælge to veje: Den sikre vej, og den risky vej. Den sikre
+    vej giver dig <i>altid</i> _(3_) points. Den risky vej giver dig 
+    _(5_) points, men kun _(60_)% af tiden. Den resterende _(40_)% af tiden giver den dig 
+    _(0_) points. Hvis man kører _(10_) runder, er det så den bedste ide at tage den risky vej, 
+    eller den sikre? 
+    <br><br></q-stion>
+    <answer-box>
+    Antag at vi vælger den <i>risky</i> vej, og vores modspiller vælger den sikre. Vores modspiller 
+    vil <i>altid</i> få _(3*10=_)  _(30_) points. Vi skal altså finde ud af om chancen for 
+    at den risky vej får over _(30_) points er lavere eller højere end _(50_)%. Vi kan se på
+    den risky vej som en stokastisk variabel der er lig med "antal points". Denne stokastiske
+    variabel har _(11_) mulige værdier: _(0*5=0_), _(1*5=5_), _(2*5=10_), _(3*5=15_), ... _(10*5=50_). 
+    Vi skal altså beregne:
+    _($P(30)+P(35)+P(40)+P(45)+P(50)_)
+    Hvis den stokastiske variabel i stedet er antal gange den risky vej virker 
+    (hvilket er lidt mere tydeligt og dejligere at arbejde med), så
+    svarer det her til:
+    _($P(6)+P(7)+P(8)+P(9)+P(10)_)
+    Vi kan bruge samme strategi som vi brugte ved basketball til at beregne disse
+    værdier. F.eks. ved _(P(7)_) er der _(\Vec[10,7]_) måder at få _(7_) "rigtige"
+    risky ture ud af _(10_), og hver af de ture er der _(0.6^7*0.4^3_) chance for at sker.
+    Alt i alt _(\Vec[10,7]*0.6^7*0.4^3=_) _(0.21_). Hvis vi gør det her ved alle værdierne 
+    og lægger dem sammen, så får vi:
+    _($0.25 + 0.21 + 0.12 + 0.04 + 0.01 = 0.63_)
+    Det er større end _(0.5_), så det er altså bedst at tage den risky vej - Carpe diem, eller
+    et eller andet. 
+    <br><br></answer-box>
+
+    <!--  -->
+    
+    <q-stion 1="2" 2="1" 3="5">
+    På et træ hænger der _(7_) æbler. Sig at der hver dag kan falde _(1_) æble ned, og 
+    at chancen for at det sker er _(0.4_). Der er desværre også en irriterende fugl der nogle
+    gange kommer og spiser af æblerne. Sig at den kan spise _(1_) æble per dag, og 
+    at chancen for at den gør det er _(0.1_). Hvad er chancen for at alle æblerne
+    falder ned før fuglen har spist dem? 
+    <p class="t">
+    <i>Vigtigt</i>: Du er nødt til at <i>approximere</i> et svar til denne opgave, og 
+    du er nødt til at bruge Geogebra. Lidt en spoiler, men du får nok brug for _(Sum_)-funktionen.
+    Jeg minder dig også lige om at _(\Vec[n,k]_) i Geogebra er _(nCr(n,k)_). 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Lad os tænke på træet som en stokastisk variable der er lig mængden af dage det tager for alle
+    æbler at falde ned. Den her stokastiske variable kan teknisk set have uendelig mange værdier, da
+    der godt kan gå "uendelig" mange dage før æblerne falder ned: Chancen er bare ekstremt lille. 
+    Den mindste værdi er altså _(7_), og den største værdi _(\infty_). Chancen for at 
+    alle æbler falder før fuglen spiser nogen af dem, er <i>alle</i> de her værdier, ganget med
+    chancen for at fuglen ikke spiser <i>nogen</i> frugte i samme tidsperiode, alt lagt sammen. 
+    <p class="t">
+    Chancen for at det tager f.eks. _(9_) dage for alle æbler at falde ned er 
+    _(\Vec[9,7]*0.4^7*0.6^2_). Chancen for at fuglen ikke spiser nogen æbler i _(9_) dage
+    er meget simpelt bare _(0.9^9_). Vores sum ser altså cirka ud som:
+    _($0.4^7 * \Vec[7,7]*0.6^0*0.9^7 + 0.4^7*\Vec[8,7]*0.6^1*0.9^8 + 0.4^7*\Vec[9,7]*0.6^2*0.9^9 \text{ } + \text{ } ... \text{ } = _)
+    _($0.4^7 * \left(\Vec[7,7]*0.6^0*0.9^7 + \Vec[7+1,7]*0.6^1*0.9^{7+1} + \Vec[7+2,7]*0.6^2*0.9^{7+2} \text{ } + \text{ } ... \right) =_)
+    _($0.4^7 * \sum_{i=0}^{\infty} \Vec[7+i,7]*0.6^i*0.9^{7+i}_)
+    Det her er altså hvad vi skal regne i Geogebra. Vi kan selvfølgelig ikke faktisk regne
+    op til uendelig, så vi vælger bare noget meget meget stort som _(1000000_). I Geogebra
+    skriver vi:
+    _($Sum(nCr(7+i,i)*0.6^i*0.9^{7+i},i,0,1000000)_)
+    Og får:
+    _($p=0.39089_)
+    Wholla! 
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Du spiller et brætspil hvor du hver runde kaster en terning der skal 
+    bestemme hvor langt du rykker dig fremad. Hvis du starter på felt _(0_), hvad
+    er så chancen for at du lander på felt _(11_) før du kommer tilbage til start
+    igen?    
+    <br><br></q-stion>
+    <answer-box>
+    Det <i>kunne</i> tage dig kun _(2_) slag før du kom hen på felt _(11_), men det kunne
+    også tage dig _(11_) slag! Sig at vores stokastiske variabel er "antal slag før
+    du rammer felt _(13_) (hvis du rammer felt _(13_))". Så skal vi nu regne:
+    _($P(2)+P(3)+...P(11)_)
+    _(P(2)_) kan ske på _(2_) måder: _(6,5_) eller _(5,6_), begge hvilke har en chance på
+    _((1/6)^2_). Så _(P(2)=_) _(2*(1/6)^2_). _(P(11)_) kan ske på kun én måde: 
+    _(1,1,1,1,..._), så chancen er _(1*(1/6)^{11}_). 
+    Hvad med noget som _(P(5)_) dog? Hvor mange måder kan man gøre det på?
+    _($x_1+x_2+x_3+x_4+x_5 = 11, \text{  } 1 \le x_1,x_2,x_3,x_4,x_5 \le 6_)
+    Det her slags problem har vi løst før. Vi ved at vi nemt kan håndtere minimumskravet
+    ved bare at minusse _(11_) med _(1+1+1+1+1=_) _(5_), så _(6_), så vi nu har:
+    _($x_1+x_2+x_3+x_4+x_5 = 11, \text{  } x_1,x_2,x_3,x_4,x_5 \le 6_)
+    Antallet af løsninger til det (inklusiv de falske) er _(\Vec[6+5-1,5-1] =_)
+    _(210_). Vi kalder _(U_1_) for de løsninger hvor _(x_1 \ge 6_), _(U_2_) hvor  _(x_2_)
+    er større, osv. Nu leder vi så efter antallet af falske løsninger
+    _(|U_1 \cup U_2 \cup ... U_5|_). Når vi kun har to eller tre sæt som
+    i _(|U_1 \cup U_2|_) eller _(|U_1 \cup U_2 \cup U_3|_), så er det her relativt nemt at udvide. 
+    Med _(5_) vil det være lidt tricky, så hvad vi gør vi? Well, vi ved vi skal plusse
+    med alle _(|U_1|_), _(|U_2|_), ... _(|U_5|_) for sig selv, vi skal minusse
+    med alle skæringer af _(2_) forskellige _(U_), plusse med alle skæringer af 
+    _(3_) forskellige _(U_), minusse med skæringerne af fire forskellige _(U_), osv. 
+    Meget af det her behøver vi slet ikke bekymre os om. Lad os sige vi f.eks.
+    ville prøve at finde _(|U_1 \cap U_2|_). Svaret ville være _(0_), da der nu ville være
+    to variabler der skulle være lig _(6_) eller større, hvilke ville svare til:
+    _($(x_1+6)+(x_2+6)+x_3+x_4+x_5 = 6 \to _)
+    _($x_1+x_2+x_3+x_4+x_5 = -6_)
+    Hvilke ikke har nogen løsninger. Det ville være muligt hvis èn terning var større end _(6_), men
+    that's it. Det er det eneste vi behøver at bekymre os om. Chancen _(P(5)_) er altså:
+    _($\left(\Vec[(11-5)+5-1,5-1] - 5*\Vec[(11-5)-6+5-1,5-1] \right)*(1/6)^5 = 0.03_)
+    Alt i alt kan vi bare tage følgende sum sum i Geogebra:
+    _($Sum(\left(\Vec[(11-i)+i-1,i-1] - i*\Vec[(11-i)-6+i-1,i-1] \right)*(1/6)^i, i, 2, 11) = 0.29_)
+    Hvis du undrer dig over hvad der sker ved f.eks. _(P(9)_) hvor _(\Vec[(11-i)-6+i-1, i-1]_) bliver
+    til _(\Vec[5,8]_), hvor man jo skal vælge flere ting end der er at vælge imellem, så bare rolig:
+    Det er der jo åbenlyst _(0_) "måder" at gøre på, så Geogebra ved at at det er _(0_). 
+    I hvert fald så er der altså cirka _(30_)% chance for at du lander på felt _(11_). 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5" customWidth="600">
+    Sig at du spiller et eller andet form for lottospil. Der er _(1010_) købte billetter, og 
+    _(200_) af dem er dine. Der bliver udgivet _(5_) premier, og èn person kan godt vinde flere.
+    Du har købt en del god damn billetter. Hvad for et antal premier er der størst chance for at du får?
+    <p class="t">
+    For at den her opgave ikke bliver super kompleks, så er du måske nødt til at tænke over om
+    der er nogle steder du kan approximere noget for at gøre matematikken meget simplere. 
+    </p>
+    <br></q-stion>
+    <answer-box customWidth="600">
+    Her kan vi sige at vores stokastiske variabel er "antal af premier du får", og den har
+    _(6_) mulige værdier: _(0_), _(1_), _(2_), _(3_), _(4_) og _(5_). Det antal premier vi 
+    har størst chance for at få svarer til dèn værdi blandt disse med den største sandsynlighed. 
+    Lad os derfor bare regne sandsynligheden på hver af dem og se hvilke èn er størst.
+    (selvom det egentlig ikke er <i>helt</i> nødvendig. Vi kan nok regne os frem til
+    at sandsynligheden vil gå opad, nå et eller andet toppunkt, og så gå nedad derefter.
+    Sådan er langt de fleste tilfælde i hvert fald, når det kommer til sandsynlighed). 
+    <p class="t">
+    Vi starter med nok det nemmeste: Chancen for _(0_) premier. Det her er lig:
+    _($\frac{(1010-200)}{1010}*\frac{(1009-200)}{1009}*\frac{(1008-200)}{1008}*\frac{(1007-20)}{1007}*\frac{(1006-20)}{1006}_)
+    Det her (sammen med _(5_) premier) ved vi er det nemmeste af alle tilfælde, da det kun involverer
+    at tabe. Begge former for situationer er ikke med, og derfor behøver vi heller ikke
+    bekymre os omkring rækkefølge og alle de forskellige slags kombinationer på nogen måde. 
+    Det er et dårligt tegn hvis det allerede ser så avanceret ud som det gør lige nu, så vi er,
+    som sagt, nok nødt til at approximere lidt. Hvis bare vores approximation er lille, så er
+    det intet problem i dette tilfælde, da vi jo prøver at udvælge _(1_) af kun _(6_) mulige
+    værdier. I hvert fald så tænker jeg at vi kunne sige:
+    _($\frac{1010-200}{1010}*\frac{1010-200}{1010}*\frac{1010-200}{1010}*\frac{1010-200}{1010}*\frac{1010-200}{1010}_)
+    _($\frac{(1010-200)^5}{1010^5} = 0.331_)
+    Det her er ikke noget særlig stort problem: Siden _(150_) allerede er et ret stort tal, 
+    så gør det ikke meget forskel at den bliver _(1_) mindre _(5_) gange. Det svarer
+    til at den kun er blevet _(5/1010=_) _(0.4_)% mindre. Vi skal også tænke over at <i>både</i>
+    tæller og nævner bliver større af vores approximation, hvilke måske gør at 
+    de lidt modsætter hinandens effekter. Plus, hvis vi gør det her ved <i>alle</i>
+    vores sandsynligheder, så bliver de alle <i>omtrent</i> lige meget mindre. Vi er ligeglade
+    med nogle individuelle sandsynligheder, og bekymrer os kun om hvilke er højest. 
+    </p>
+    <p class="t">
+    Lad os som det næste eksempel se på 2 premier. Vi kan få _(2_) premier på 
+    _(\Vec[5,2]=_) _(10_) måder. Èn af dem kunne f.eks. være vind-tab-vind-tab-tab. 
+    Chancen for det ville være:
+    _($\frac{200}{1010}*\frac{(1009-199)}{1009}*\frac{199}{1008}*\frac{(1007-198)}{1007}*\frac{(1006-198)}{1006} \approx_)
+    _($ \frac{200^2*(1010-200)^3}{1010^5} = _)
+    Man kan se at når vi bruger denne approximation, så vil dette udtryk være det samme lige
+    meget hvilken rækkefølge jeg vælger. Derfor er chancen for _(2_) premier bare:
+    _($ \VeC[5,2]*\frac{200^2*(1010-200)^3}{1010^5} = 0.20226 _)
+    Og chancen for _(1_) premie:
+    _($ \VeC[5,1]*\frac{200^1*(1010-200)^4}{1010^5} = 0.4095_)
+    Og 3, 4, og 5:
+    _($ \VeC[5,3]*\frac{200^3*(1010-200)^2}{1010^5} = 0.04994_)
+    _($ \VeC[5,4]*\frac{200^4*(1010-200)^1}{1010^5} = 0.00617_)
+    _($ \VeC[5,5]*\frac{200^5*(1010-200)^0}{1010^5} = 0.0003_)
+    Vi kan se at vores approximation virkede ret godt, da summen af alle de her sandsynligheder
+    giver _(1_) inden for _(5_) decimaler. I hvert fald er der altså størst chance for at du får _(1_) premie,
+    og mindst chance for at du får _(5_). 
+    </p>
+    <br><br></answer-box>
+    
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Lad os sige at vi nu ikke længere
+    er en af dem der spiller lotto, men en arbejder for lotto-centeret hvis job netop er at tjekke at folk ikke
+    køber <i>alt</i> for mange billetter. Sig at man maks må købe _(250_) billetter, og at der er _(1000_)
+    billetter. _(250_) billetter er stadig fuldkommen absurd, men det er så højt for at vi lige kan gøre matematikken
+    og opgaven lidt mere interessant. I hvert fald så får du noget data, og skal du vurdere
+    om der er nogen personer i burde efterforske/undersøge yderligere. Du er altså første check,
+    og vurdere om der overhovedet er nogen grund til at være "suspicious" før i begynder
+    at bruge ressourcer på at kontakte folk.  
+    <p class="t">
+    Det første datasæt du får, er fra èt enkelt spil i marts: 
+    </p>
+    
+    <table style="border-collapse: collapse; border: 1px solid black; margin-left: 32%; margin-top:10px; background-color: rgb(209,233,230);" >
+        <tr>
+            <td> <b> Månede/Priser  </b> </td>
+            <td> <u> marts </u> </td>
+        </tr>
+        <tr>
+            <td> <u> Pris 1 </u></td>
+            <td> Peter </td>
+        </tr>
+        <tr>
+            <td> <u> Pris 2 </u></td>
+            <td> Jeb </td>
+        </tr>
+        <tr>
+            <td> <u> Pris 3 </u> </td>
+            <td> Peter </td>
+        </tr>
+        <tr>
+            <td> <u> Pris 4 </u> </td>
+            <td> Karen </td>
+        </tr>
+        <tr>
+            <td> <u> Pris 5 </u> </td>
+            <td> Alva </td>
+        </tr>
+    </table>
+
+    <p class="t">
+    Jeg har ikke tænkt mig at give dig en strikt matematisk "definition" på hvornår
+    noget er "suspicious". Det må du selv vurdere logisk. Du er fri til at bruge
+    Geogebra og lignende. Den her opgave er pænt lang og pænt svær! 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Okay, så Peter har tydeligvis gang i noget. Eller har han bare købt en del billetter, og været
+    ret heldig? Lad os prøve at se om vi kan svare på følgende: Hvis peter har fået _(2_) ud af 
+    _(5_) priser, hvad er så chancen for at han købte mindre end _(250_) billetter? Ligesom
+    du for hver antal købte billetter kan sige "hvad er chancen for at jeg får 2 ud af 5 priser", så kan du også
+    for et bestemt antal priser sige "hvad er chancen for at nogen fik den her pris ved hjælp
+    af et bestemt antal billetter?". Det er lidt en svær, subtil og mærkelig forskel at fatte/forstå, og
+    det kan hjælpe at tænke over matematiske begivenheder her. Sig f.eks. at vi definerede to 
+    begivenheder
+    _($\begin{eqnarray} 
+        && A: \text{Du får to priser} \\
+        && B: \text{Du køber 100 billetter}
+    \end{eqnarray}_)
+    <p class="t">
+    I sidste opgave arbejde vi med hvordan vi f.eks. kunne regne _(P(A|B)_), men nu skal vi 
+    jo regne _(P(B|A)_). Du kan tænke over forskellen sådan her: Ved _(P(A|B)_) ved du intet
+    om hvor mange priser du får, men du ved du har købt _(100_) billetter. Hvad er chancen for
+    at du får _(2_) priser? Ved _(P(B|A)_) ved du intet omkring hvor mange billetter personen købte,
+    men du ved du fik _(2_) priser. Han har nok købt mange, men der er jo også en chance for at han
+    bare var heldig. Chancen for at han købte under _(250_) billetter er lig chancen for
+    at han købte _(2_) plus chancen for han købte _(3_), plus chancen for _(4_) plus _(5_)
+    plus ... osv. 
+    </p>
+    <p class="t">
+    Alright, før vi begynder med at tage den her kæmpe sum skal vi nok lige starte med
+    et eksempel: Hvordan regner vi _(P(B|A)_) (altså _(100_) billetter)? 
+    Well, vi kender _(P(A|B)_), så jeg tænker vi kan udnytte det faktum at
+    _(P(A \cap B)_) kan omskrives på to måder. Både _(P(A)*P(B|A)_) og _(P(B)*P(A|B)_), ergo:
+    _($P(A)*P(B|A) = P(B)*P(A|B) \to P(B|A) = \frac{P(B)*P(A|B)}{P(A)}_)
+    Kender vi _(P(B)_) eller _(P(A)_)? Well _(P(B)_) er "chancen for at du køber
+    100 billetter", men hvordan præcis skal vi regne det? Well, det ville virke 
+    meget intuitivt og logisk hvis chancen for at du havde købt f.eks. _(400_) billetter var
+    mindre end chancen for at du havde købt _(3_), da den ene jo er
+    meget dyrere end den anden, og ret få personer nok ville have lyst til at købe
+    så ekstrem mange billetter. <i>Men</i>, nu <i>antager</i> du noget omkring personens psykologi,
+    og det kan du ikke nødvendigvis bare gøre. Du prøver at lære noget om statistisk hvordan Peter 
+    måske har købt billetter: Derfor kan du jo ikke bare <i>antage</i> noget omkring den måde han køber på!
+    Den eneste måde at gøre det på, er at være åben til alle muligheder, og sige at du ikke
+    ved noget som helst omkring antallet af billetter, og at der derfor er ligeså stor
+    chance for at han har købt _(3_) billetter som _(300_). Hvis hver chance skal være lige
+    stor, og man maks kan købe _(1000_) billetter, så er chancen for hver lig
+    _(1/1000_), altså _(P(B) = _) _(0.001_). Du kan bruge en lignende tankegang når du skal
+    regne _(P(A)_). Når du skal regne "chancen for at få to priser" helt generelt, så skal
+    du altså antage du heller ikke ved noget om hvor mange billetter du får. Så du skal forestille
+    dig at du først tilfældigt vælger et antal billetter, og så bagefter får pris(erne). 
+    Du skal altså regne en sum, hvor du ganger chancen for at få et bestemt antal billetter,
+    med chancen for at få _(2_) priser <i>med</i> det antal billetter:
+    _($Sum(0.001 * \left (\Vec[5,2]*\frac{i^2*(1000-i)^3}{1000^5} \right), i, 0, 1000) = 0.166_)
+    Alright, vi har endelig alt hvad vi har brug for. Chancen for at vi har købt _(n_) billetter 
+    når vi får to priser er:  
+    _($P(B|A) = \frac{P(B)*P(A|B)}{P(A)} = \frac{0.001*\left (\Vec[5,2] * \frac{n^2*(1000-n)^3}{1000^5} \right)  }{0.17}  _)
+    Vi regner altså følgende sum i Geogebra (fra _(249_) til _(0_) billetter. Alt under grænsen):
+    _($Sum \left(\frac{0.001*\left (nCr(5,2) * \frac{n^2*(1000-n)^3}{1000^5} \right)  }{0.166}, n, 0, 249 \right) = 0.168 _)
+    Der er altså cirka 16% chance for at han købte mindre end 250 billetter. Det vil jeg ikke
+    sige er grund til at være suspicious, da det ret godt nemt kan være held. 
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Samme opgave, men nu har du fået data fra alle spillene på èt år:
+    <div style="margin-top: 10px; margin-left: 7px;">
+        <iframe style="width: 460px; height: 200px;" src="../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\Stokastisk\LottoData.html"> </iframe>
+    </div>
+    <p class="t">
+    God damn Peter har sku måske gang i noget igen!
+    </p>
+    <p class="t">
+    Igen så er du fri til at bruge Geogebra som du vil i den her. 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Okay, så Peter har fået præcist 2 priser hver eneste månede/spil. Det virker meget usandsynligt. 
+    Den klart største chance for at det ville ske, <i>hver eneste gang</i>, er hvis Peter har
+    købt det antal billetter der giver ham størst chance for at få _(2_) priser. Lad os derfor se
+    om vi kan finde det her antal billetter, og så se om det er markant større end _(250_). 
+    Hvis det kun ligger lige på grænsen af _(250_), så kan det jo selvfølgelig også godt være han bare blev heldig. 
+    <p class="t">
+    Chancen for at du har købt _(n_) billetter hvis du får to priser er:
+    _($\frac{0.001}{0.17}*nCr(5,2)*\frac{n^2*(1000-n)^3}{1000^5}_)
+    Det kan forsimples markant til:
+    _($5.88235*10^{-17}*n^2*(1000-n)^3_)
+    Vi skal finde ud af hvornår den her graf er størst mellem _(0_) og _(1000_), så 
+    vi tegner en graf af den i Geogebra:
+    <img class='Spic' style='width:90%' src='../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\Stokastisk\LottoSnyderi.png'> 
+    Vi husker at justere på akserne så vi faktisk kan se og få en fornemmelse af grafen.
+    Nu bruger vi så _(Max(f(x),0,1000)_) til at få Geogebra til at regne hvor værdien
+    er størst. Den giver os _(400_), som også cirka er hvad det ligner på billedet.
+    Vi kan altså med <i>ret god sikkerhed</i> sige at Peter er ret suspicious i denne omgang, og at vi
+    burde undersøge / kontakte ham.
+    </p>
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Du slår med én _(6_)-sidet terning, din ven slår med to. Hvad er chancen for at
+    du får et større tal end ham (altså et større tal end den <i>sum</i> han får)?
+    <br><br></q-stion>
+    <answer-box>
+    Man ville tro at et spørgsmål der er så simpelt at stille også er simpelt at svare på, men
+    det er det ikke nødvendigvis her. _(2_) terninger kan have værdier fra _(2_) til _(12_). 
+    Hvis de her to terninger giver tal mellem _(6_) eller _(12_), så kan din terning umuligt være
+    større. Det er vel meget nemt. Men hvad hvis de er mellem _(2_) og _(5_)? Hvis det er
+    _(5_), så <i>kan</i> din terning godt være større, men det er også muligt at den ikke vil være større. 
+    Din terning er større end hans sum når:
+    _($\begin{eqnarray} 
+        && \text{Ham: } 5, & \text{Dig: } 6 \\
+        && \text{Ham: } 4, & \text{Dig: } 5,6 \\
+        && \text{Ham: } 3, & \text{Dig: } 4,5,6 \\
+        && \text{Ham: } 2, & \text{Dig: } 3,4,5,6 
+    \end{eqnarray}_)
+    Man kan egentlig sige at de vi gør er relativt simpelt og meget direkte brute-force: 
+    Vi kigger på alle mulige kombinationer af hans kast og dine kast, 
+    og ser på <i>alle</i> de kombinationer hvor dit er højere. Vi kan så
+    gange hver af de her kombinationer med deres chance for at ske, lægge dem
+    alle sammen, og wholla, vi har vores svar! Der er _(4/36_) chance for at han får _(5_),
+    _(3/36_) chance for han får _(4_), _(2/36_) ved _(3_) og _(1/36_) ved _(2_). Der 
+    er _(1/6_) chance for at du får både _(3,4,5_) og _(6_), så:
+    _($\frac{4}{36}*\frac{1}{6}*1+\frac{3}{36}*\frac{1}{6}*2+\frac{2}{36}*\frac{1}{6}*3+\frac{1}{36}*\frac{1}{6}*4 = 0.09_)
+    Der er altså meget lille chance for at du får et tal der er større end ham!
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    I er to skateboardere der kæmper om at få flest points. Hver runde prøver i at lave et
+    trick. Du kan lave et trick der giver _(5_) points med _(60_)% chance (så du fejler _(40_)% af tiden).
+    Din ven kan lave et trick med _(9_) points og _(35_)% chance. Svar nu på følgende tre spørgsmål:
+    <p class="t">
+    <b> 1</b>: Hvem har størst chance for at vinde hvis i kun har _(1_) runde?
+    </p>
+    <p class="t">
+    <b> 2</b>: Hvem har størst chance for at vinde hvis i har _(4_) runder?
+    </p>
+    <p class="t">
+    <b> 3</b>: Hvem har størst chance for at vinde hvis har _(7_) runder?
+    </p>
+    <p class="t">
+    <b> 4</b>: Hvem har størst chance for at vinde hvis i har _(1000_) runder? Den her 
+    er faktisk simplere end de andre. 
+    </p>
+    <br></q-stion>
+    <answer-box t="Answer 1#" tabColour="rgb(171,96,147)">
+    Du gør det samme du altid har gjort: Slavisk kigger på hver mulig kombination af
+    værdier på de stokastiske variabler, og finder chancen for at dinne værdier er højere end ham.
+    Det er ret let i det her tilfælde, da de stokastiske variabler kun har _(2_) værdier. 
+    Chancen for at du vinder, er chancen for at hans trick fejler, men dit ikke gør:
+    _($(1-0.35)*0.6 = 0.39_)
+    Du skal nu sammenligne, om chancen for at du vinder er større end chancen for at <i>han</i> vinder.
+    Du <i>kunne</i> godt direkte regne chancen for at han vandt ligesom du gjorde med dig selv,
+    men du kunne også bruge det faktum at:
+    _($P(\text{Han vinder}) = 1 - P(\text{Du vinder}) - P(\text{Lige})_)
+    Det er jo fordi du ved at der kun kan ske tre mulige ting lige meget hvad: Du vinder, i står lige,
+    han vinder. I hvert fald, så står i lige hvis i begge fejler, så:
+    _($1-0.39-(1-0.35)*(1-0.6) = 0.35_)
+    Altså, siden _(0.39_) er større end _(0.35_), så er der størst chance for at du vinder.
+    <br><br></answer-box>
+    <answer-box t="Answer 2#" tabColour="rgb(175,128,161)">
+    Det bliver lidt mere tricky når vi har _(4_) runder. Lad os sige at vi laver en stokastisk
+    variabel _(X_A_) der er lig "din samlede score efter _(4_) runder", og en stokastisk variabel
+    _(X_B_) lig "din vens samlede score efter _(4_) runder". De mulige værdier på din er
+    _(5*0,_) _(5*1_), _(5*2_), ... og lignende med din ven:
+    _($\begin{eqnarray} 
+        && X_A: & 0, & 5, & 10, & 15, & 20 \\
+        && X_B: & 0, & 8, & 16, & 24, & 32
+    \end{eqnarray}_)
+    At faktisk finde chancerne for de forskellige værdier på de to stokastiske variabler er
+    nemt, da det i dette tilfælde bare er lidt ligesom basketball: Enten 
+    gennemfører du eller fejler et trick, og der er ligeså stor chance hver gang (vi kalder
+    de her lignende "basketball"-agtige tilfælde for "bionomial distribution". Altså, situationer
+    hvor du har flere runder, og hver af dem enten er "ja" eller "nej", og hver runde
+    ikke har nogen indflydelse på hinanden: Præcis ligesom basketball). Så chancen for 
+    at du får f.eks. _(15_) points er bare _(\Vec[4,3]*0.6^3*(1-0.6)^{4-3}_). 
+    <p class="t">
+    I hvert fald, så er chancen for at du vinder lig:
+    _($\begin{eqnarray} 
+    && P(X_B = 0)*P(X_A \ge 5) & + \\
+    && P(X_B = 9)*P(X_A \ge 10) & + \\
+    && P(X_B = 18)*P(X_A \ge 20) \\
+    \end{eqnarray} _)
+    Det er altså alle de tilfælde hvor du vinder. Vi kan regne det her i Geogebra som:
+    _($\begin{eqnarray} 
+    && \Vec[4,0]*0.35^0*(1-0.35)^{4-0}*Sum(\Vec[4,i]*0.6^i*(1-0.6)^{4-i}, i, 1, 4) & + \\
+    && \Vec[4,1]*0.35^1*(1-0.35)^{4-1}*Sum(\Vec[4,i]*0.6^i*(1-0.6)^{4-i}, i, 2, 4) & + \\
+    && \Vec[4,2]*0.35^2*(1-0.35)^{4-2}*Sum(\Vec[4,i]*0.6^i*(1-0.6)^{4-i}, i, 4, 4)
+    \end{eqnarray} _)
+    _($ = 0.53_)
+    Det her er over _(0.5_), så du ved at du vinder. 
+    </p>
+    <br><br></answer-box>
+    <answer-box t="Answer 3#" tabColour="rgb(171,96,147)">
+    Vi gør præcis det samme igen: 
+    _($P(X_A \gt X_B) = _)
+    _($\begin{eqnarray} 
+    && P(X_B = 0)*P(X_A \ge 5) & + \\
+    && P(X_B = 9)*P(X_A \ge 10) & + \\
+    && P(X_B = 18)*P(X_A \ge 20) & + \\
+    && P(X_B = 27)*P(X_A \ge 30) &  \\
+    \end{eqnarray} = _)
+    _($\begin{eqnarray} 
+    && \Vec[7,0]*0.35^0*(1-0.35)^{7-0}*Sum(\Vec[7,i]*0.6^i*(1-0.6)^{7-i}, i, 1, 7) & + \\
+    && \Vec[7,1]*0.35^1*(1-0.35)^{7-1}*Sum(\Vec[7,i]*0.6^i*(1-0.6)^{7-i}, i, 2, 7) & + \\
+    && \Vec[7,2]*0.35^2*(1-0.35)^{7-2}*Sum(\Vec[7,i]*0.6^i*(1-0.6)^{7-i}, i, 4, 7) & + \\ 
+    && \Vec[7,3]*0.35^3*(1-0.35)^{7-3}*Sum(\Vec[7,i]*0.6^i*(1-0.6)^{7-i}, i, 6, 7) \\ 
+    \end{eqnarray} _)
+    _($ = 0.48_)
+    Det her er mindre end _(0.5_), så lad os tjekke chancen for at din ven vinder:
+    _($1 - 0.48 - (1-0.35)^7*(1-0.6)^7 = 0.52_)
+    Nu er det altså ham der har størst chance for at vinde! 
+    <br><br></answer-box>
+    <answer-box t="Answer 4#" tabColour="rgb(175,128,161)">
+    Den her er meget nemmere end de andre <i>hvis</i> vi tillader os selv
+    at lave en lille approximation. Tænk over det: Hvis der går _(4_) runder, så 
+    er der relativ lille chance for at du succesfuldt laver et trick i _(60_)% af dem,
+    altså _(4*0.6 = 2.4 \approx 2_) runder. Samme gælder din ven selvfølgelig. Hvis 
+    der går super mange runder dog, så vil dataen mere og mere begynde at passe til at
+    at du får lav et succesfuldt trick <i>omkring</i> _(60_)%, og lignende med din 
+    ven. Når der går så mange runder, så kan vi altså <i>med relativ sikkerhed</i> 
+    meget let approximere hvor mange points i får! Du får lavet et succesfuldt trick
+    i cirka _(1000*0.6 = _) _(600_) runder, hvilke giver dig _(600*5=_) _(3000_) points.
+    Din ven får lavet et trick _(1000*0.35 = _) _(350_) gange, hvilke giver ham
+    _(350*9 =_) _(3150_) points. Vi kan altså sige <i>med ret stor sikkerhed</i>, at
+    der er størst chance for at han vinder.
+    <p class="t">
+    Så lad os tænke over hvad der skete i denne opgave: Du startede med at vinde hvis der
+    var få runder, men din ven begyndte at vinde hvis der var _(7_) eller flere. Der her 
+    sidste check vi lavede svarede jo egentlig bare til at tjekke om _(0.6*5_) er større
+    eller lavere end _(0.35*9_), så hvis vi ved at der er "en god del runder", så er
+    det her en hurtig måde at vurdere hvem der har størst chance for at vinde. 
+    </p>
+    </answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Igen skateboarding. Det er nu lidt mere kompliceret (men denne opgave er relativ simpel, bare rolig):
+    _(20_)% af tiden får du _(0_) points, _(15_)% af tiden får du _(3_) points, _(20_)% _(7_) points, 
+    _(30_)% af tiden _(9_) points, og _(15_)% af tiden _(10_) points. Sig at du laver _(100_) runder.
+    <p class="t">
+    <b> 1</b>: Hvilket antal points vil du højest sandsynligt have flået flest gange i de _(100_) runder?
+    </p>
+    <p class="t">
+    <b> 2</b>: Ca. hvor mange points vil du have i alt efter _(100_) runder? 
+    </p>
+    <br><br></q-stion>
+    <answer-box>
+    <b> 1</b>: Super simpelt, _(9_) points, siden det er den med den største procent.
+    <p class="t">
+    <b> 2</b>: _(15_)% af tiden får du _(3_) points, hvilke svarer til cirka _(100*0.15*3=_) _(45_), osv. Det kan vi gøre 
+    ved alle:
+    _($100*0.20*0+100*0.15*3+100*0.2*7+100*0.3*9+100*0.15*10 =_)
+    _($100*(0.20*0+0.15*3+0.2*7+0.3*9+0.15*10) =_)
+    _($100*6.05 = _)
+    _($605_)
+    </p>
+    <br><br></answer-box>
+
+   
+
+

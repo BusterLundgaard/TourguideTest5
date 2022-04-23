@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+
+
+    <p class="t">
+    Er det ikke meget nemt finde et lokalt maksimum eller minimum på en funktion? 
+    Vi skal vel "bare" på en funktion _(f(x)_) se hvornår _(f'(x)=0_), og "bare"
+    på en funktion _(f(x,y)_) se hvornår både _(f_x(x,y)_) og _(f_y(x,y)_) er lig _(0_) ... right?
+    Well, der er desværre en lille detalje der gør det lidt mere kompliceret. Prøv at se følgende billede:
+    </p>
+
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter4\MultiVarCalc\CriticalPoints2D.png'> 
+
+    <p class="t">
+    Her har vi tre forskellige steder hvor _(f'(x)=0_). Ved _(x_1_) er det et lokalt maksimum, 
+    ved _(x_2_) er det et lokalt minimum, og ved _(x_3_) er det et såkaldt <i>inflection point</i> . 
+    Det er altså tre ret forskellige ting, og vi skal have en måde at differentiere mellem dem. I 
+    2D er det relativt simpelt: Det er et lokalt maksimum hvis accelerationen går nedad, et lokalt minimum
+    hvis accelerationen går opad, og et inflection point hvis accelerationen er lig _(0_). 
+    Men i 3D bliver det hurtigt mere kompliceret:
+    </p>
+    
+    <hover-video url="../../../Assets/Chapter4\MultiVarCalc\fixedPoints.mp4" ></hover-video>
+
+    <p class="t">
+    (hold musen over for at rotere billedet) Her kan vi se fire forskellige steder hvor både _(f_x_) og _(f_y_) er lig _(0_). Den ene er et lokalt maksimum, 
+    den anden et lokalt minimum, og de to sidste ... begge? De kaldes for "saddel-punkter", eftersom de lidt ligner
+    sadler, og som man kan se på billedet, så er de lokale minimums i èn retning, og lokale maksimums i en anden. 
+    Den test vi skal bruge for at finde ud af hvad der er hvad, er lidt mere avanceret. 
+    </p>
+
+    <div class="Definition">
+    <b> Definition: Kritisk punkt</b>. <br>
+    Et <i>kritisk punkt</i> _(P_) på funktionen _(f(x_1,x_2,...x_k)_), er sted hvor
+    det for alle variabler _(x_i_) gælder at _(f_{x_i}(P)=0_). 
+    </div>
+
+    <p class="t">
+    Kritiske punkter er altså bare det generelle begreb vi bruger for de steder der hvis hældning er _(0_). 
+    </p>
+
+    <div class="Theory">
+    <b> Teori: Second partial derivative test</b> <br>
+    Sig at _(P=(x_0,y_0)_) et et kritisk punkt på funktionen _(f(x,y)_). Definer nu:
+    _($h=f_{xx}(P)*f_{yy}(P) - f_{xy}(P)^2_)
+    Hvis både _(h \gt 0_) og _(f_{xx}(P) \gt 0_), så er det et lokalt minimum. Hvis
+    _(h \gt 0_) og _(f_{xx}(P) \lt 0_), så er det et lokalt maksimum. 
+    Hvis _(h \lt 0_), så er _(P_) et saddel-punkt. Hvis _(h=0_) så er testen inkonklusiv, og 
+    kan ikke sige noget. 
+    </div>
+
+    <p class="t">
+    Lad os lige lave nogle opgaver med den her før vi går i gang med at bevise den 
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Se følgende funktion:
+    _($f(x)=x^4 + y^2 - x^2_)
+    <b> 1</b>: Find de kritiske punkter. Brug at gør det uden at brug "Solve" I Geogebra. 
+    <p class="t">
+    <b> 2</b>: Vurder for hver af disse kritiske punkter om de er lokale minimums, lokale maksimums, eller saddelpunkter. 
+    </p>
+    <br><br></q-stion>
+    <answer-box t="Answer 1#" tabColour="rgb(171,96,147)">
+    Vi skal finde de punkter hvor både _(f_x_) og _(f_y_) er _(0_). Det svarer til systemet af ligninger hvor:
+    _($\begin{eqnarray} 
+    && 4x^3 - 2x = 0
+    && 2y = 0
+    \end{eqnarray}_)
+    På anden ligning kan vi se at _(y_) lige meget hvad er nødt til at være _(0_). Første
+    ligning kan vi omskrive til _(x*(4x^2 -2)=0_), så enten skal _(x_) være _(0_), eller
+    så skal _(4x^2-2=0_), hvilke sker når _(x=\sqrt{1/2}_) eller når _(x=-\sqrt{1/2}_). Vores
+    tre kritiske punkter altså:
+    _($(0,0), (\sqrt{1/2},0), (-\sqrt{1/2},0)_)
+    <br><br></answer-box>
+    <answer-box t="Answer 2#" tabColour="rgb(175,128,161)">
+    Vi har brug for både _(f_{xx}_), _(f_{yy}_), og _(f_{xy}_), så dem starter vi lige med at regne:
+    _($\begin{eqnarray}
+    && f_{xx} = 12x^2 - 2 \\
+    && f_{xy} = 0
+    && f_{yy} = 2
+    \end{eqnarray}
+    Den "_(h_)" vi skal regne for hvert punkt i testen er altså:
+    _($f_{xx}*f_{yy} - f_{xy}^2 = (12x^2 -2)*2 - 0^2 = 24x^2 - 4_)
+    Ved _((x,y)=(0,0)_) får vi _(24*0^2 - 4 = -4_). _(h_) er derfor mindre end _(0_), og 
+    vi kan sige at _((0,0)_) er et <i>saddelpunkt</i>. Hvis 
+    _((x,y)=(\sqrt{1/2},0)_) så får vi _(24*(\sqrt{1/2})^2 - 4 = 8_). Præcis det samme
+    sker ved _(x=-\sqrt{1/2}_). _(h_) er større end _(0_) ved disse punkter, så vi skal nu tjekke 
+    _(f_{xx}_) for at se om de er minimums eller maksimums-punkter.  _(f_{xx}_) er tydeligvis
+    også større end _(0_) ved _(x=\pm \sqrt{1/2}_), så de er begge <i>minimumspunkter</i>. 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Se følgende funktion:
+    _($f(x,y)=1.5y^3 + 4x^2y - 4.5x^2 - 5.5y^2 + 2_)
+    <b> 1</b>: Find de kritiske punkter.
+    <p class="t">
+    <b> 2</b>: Vurder for hver af disse kritiske punkter om de er lokale minimums, lokale maksimums, eller saddelpunkter. 
+    </p>
+    <br><br></q-stion>
+    <answer-box t="Answer 1#" tabColour="rgb(171,96,147)">
+    Vi kan se at:
+    _($\begin{eqnarray}
+    && f_x = 8yx-9x \\
+    && f_y = 4.5y^2 - 11y + 4x^2
+    \end{eqnarray}_)
+    Så vi har systemet:
+    _($\begin{eqnarray}
+    && x (8y-9) = 0
+    && 4.5y^2 - 11y + 4x^2 = 0
+    \end{eqnarray}_)
+    I første ligning skal det enten være sandt at _(x=0_) eller at _(8y-9=0 \to y=1.125_). 
+    Hvis den første mulighed er tilfældet, så bliver anden ligning til:
+    _($4.5y^2-11y + 4*0^2 = 0 \to y*(4.5y-11)_)
+    Dette er sandt enten når _(y=0_), eller når _(y=2.44_). Vi ved derfor nu at der i hvert fald
+    findes de to følgende kritiske punkter:
+    _($(0,0), (0, 2.44)_)
+    Hvis _(y=1.125_), så bliver den anden ligning til:
+    _($4.5*1.125^2 - 11*1.125 + 4x^2 = 0 \to x^2 = 1.669 \to x=\pm 1.292_)
+    De to sidste kritiske punkter er altså:
+    _($(-1.292, 1.125), (1.292,1.125)_)
+    <br><br></answer-box>
+    <answer-box t="Answer 2#" tabColour="rgb(175,128,161)">
+    Vi starter med at regne _(f_{xx}_), _(f_{yy}_) og _(f_{xy}_):
+    _($\begin{eqnarray}
+    && f_{xx} = 8y-9 \\
+    && f_{yy} = 9y - 11 \\
+    && f_{xy} = 8x \\
+    \end{eqnarray}_)
+    Ved _((0,0)_) får vi at _(h_) er lig:
+    _($(8*0-9)*(9*0-11) - (8*0)^2 = 99_)
+    _(f_{xx}_) ved _(8y-9_) er lig _(-9_), så dette er et lokalt <i>maksimum</i>. 
+    <p class="t">
+    Ved _((0, 2.44)_) er _(h_) lig.
+    _($(8*2.44 - 9)*(9*2.44 - 11) - (8*0)^2 = 115.29_)
+    Og _(f_{xx}_) er lig _(8*2.44-9=10.52_), så dette er et <i>minimum</i>. 
+    </p>
+    <p class="t">
+    Ved _((1.292,1.125)_) er _(h_) lig:
+    _($(8*1.125 - 9)*(9*1.125-11) - (8*1.292)^2 = -106.83_)
+    Så det er et saddelpunkt. _((-1.292,1.125)_) giver præcist det samme
+    da _(f_{xy}=8x_) bliver opløftet i anden potens, som fjerner det negative. Vi kan altså alt i alt sige at 
+    der er èt maksimum _((0,0)_), ét minimum _((0,2.44)_) og to saddelpunkter _((-1.292,1.125)_), _((1.292,1.125)_)
+    </p>
+    <p class="t">
+    Boom!
+    </p>
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Se følgende funktion:
+    _($(x-x^y)*(y^2-3y)_)
+    Find de kritiske punkter hvor _(x \gt 0_), _(y \gt 0_). Du behøver ikke bruge testen på denne, siden det alligevel
+    er ret straightforward og kan gøres af en computer. 
+    <br><br></q-stion>
+    <answer-box>
+    Vi differentierer og får følgende system af ligninger:
+    _($\begin{eqnarray}
+    && (1-yx^{y-1})*y*(y-3) = 0 \\
+    && (x-x^y)(2y-3) = 0  \\
+    \end{eqnarray}_)
+    Første ligning er sand enten når _(y=0_), _(y=3_) eller _(1-yx^{y-1}=0_). I det første 
+    af disse tilfælde der bliver den anden ligning til:
+    _($(x-x^y)(2*0-3) = 0 \to x*(1-x^{y-1}) = 0_)
+    Den anden ligning løses altså i dette tilfælde enten hvis _(x=0_), eller hvis 
+    _(1=x^{y-1}_). Det giver _(x=\sqrt[y-1]{1}_) hvilke ved ulige, hele _(y_) giver både _(-1_) og _(1_), men ved
+    andre _(y_) giver bare _(x=1_). Vi er alligevel kun interesseret i positive _(x_). 
+    Alt i alt ved vi med sikkerhed at de to følgende punkter findes:
+    _($(0,0), (1,0)_)
+    Hvis _(y=3_), så bliver den anden ligning til:
+    _($(x-x^3)(2*3-3) = 0 \to x-x^3_)
+    Dette er igen sandt enten når _(x=0_) eller _(x=1_), så vi får de følgende punkter:
+    _($(0,3), (1, 3)_)
+    Det tredje tilfælde er mere tricky: Her skal det være sandt at _(1-yx^{y-1}=0_). Denne ligning kan omskrives til 
+    _(x^y=x/y_), og hvis vi nu tager _(Ln_) af begge sider får vi:
+    _($Ln(x^y)=Ln(x/y) \to y Ln(x) = Ln(x) - Ln(y) \to x = y^{1/(1-y)}_)
+    Det betyder at den anden ligning nu bliver til:
+    _($(y^{1/(1-y)} - y^{y/(1-y)})*(2y-3) = 0_)
+    Vi ved at dette er sandt hvis _(2y-3=0 \to y=1.5_). Så er _(x_) lig 
+    _(1.5^{1/(1-1.5)} = 0.444_). Vi ved derfor nu også at
+    _($(0.444,1.5)_)
+    er et kritisk punkt. Nu skal vi så bare finde de _(y_) hvor:
+    _($(y^{1/(1-y)} - y^{y/(1-y)}) = 0_)
+    Det her passer formen _(A-A^y_), så vi ved at _(A_) enten skal være _(0_) eller _(1_). 
+    Hvis _(A=0_), så er:
+    _($y^{1/(1-y)} = 0 \to y = 0_)
+    Når _(y_) er _(0_), så er _(x=0^{1/(1-0)}=0_), så dette svarer bare til punktet _((0,0)_) vi allerede kender.
+    Hvis _(A=1_), så er:
+    _($y^{1/(1-y)} = 1 \to \frac{Ln(y)}{1-y} = Ln(1) \to \frac{Ln(y)}{1-y} = 0_)
+    Nu bliver det lidt tricky. Når _(y_) nærmer sig _(1_), så nærmer tælleren _(Ln(y)_) sig også _(0_), 
+    og det er <i>det eneste</i> tidspunkt den nærmer sig _(0_). 
+    Men nævneren _(1-y_) nærmer sig <i>også</i> _(0_). Den er altså udefineret ved _(y=1_), og vi kan derfor sige at 
+    _(A_) <i>aldrig</i> kommer til at være lig _(1_). 
+    <p class="t">
+    Alt i alt har vi følgende fem kritiske punkter:
+    _($(0,0), (1,0), (0,3), (1, 3), (0.444,1.5)_)
+    </p>
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Beskriv de lokale minimums og lokale maksimums på
+    _($f(x,y)=Sin(x*y)_)
+    på intervallet _(x \in [0, \pi]_), _(y \in [0, \pi/2]_). 
+    Jeg skal advare at der i modsætning til de tre sidste eksempler er <i>uendelig mange</i>. 
+    <p class="t">
+    <i> Hint/advarsel:</i> Kan testen overhovedet hjælpe os i dette tilfælde? Nogle andre måder vi kunne vurdere det på?
+    </p>
+    <br><br></q-stion>
+    <answer-box>
+    Differentierer vi får vi systemet:
+    _($\begin{eqnarray}
+    && y Cos(xy) = 0 \\
+    && x Cos(xy) = 0 \\
+    \end{eqnarray}_)
+    _((x,y)=(0,0)_) er altså èt muligt kritisk punkt. Ellers så kan vi godt ignorere
+    de _(y_) og _(x_) vi ganger med i de to ligninger. De har ikke nogen indflydelse på om udtrykket 
+    giver _(0_) medmindre de selve er lig _(0_), og de er nødt til <i>begge</i> at være _(0_) for at 
+    <i>begge</i> ligninger bliver løst. Hvis f.eks kun _(x=0_), så bliver den anden ligning til:
+    _($y*Cos(0*y)=y*1_)
+    Som jo ikke er korrekt. Vi behøver derfor kun at fokusere på:
+    _($Cos(x*y)=0_)
+    Kald _(x*y_) for _(z_). Den mindste værdi _(z_) kan tage er _(0_), og den højeste værdi er 
+    _(\pi*\frac{\pi}{2} = 4.9348_). _(Cos(z)_) er _(0_) når _(z=\frac{\pi}{2} + n*\pi_), hvor _(n_)
+    er en eller anden konstant. Man kan se at den højeste mulige _(n_) er _(1_), som giver
+    _(\pi/2 + 1\pi = 4.712_). Så _(z_) skal enten være lig _(\pi/2=1.570_), eller _(4.712_). 
+    Det betyder at
+    _($x*y=1.570 \to y=\frac{1.57}{x}_)
+    eller 
+    _($x*y=4.712 \to y=\frac{4.712}{x}_)
+    Så alle punkter på de her to kurver er kritiske punkter. Vi skal nu finde ud af om de er maksimale, minimale, 
+    eller sadler. Vi regner:
+    _($\begin{eqnarray}
+    && f_{xx} = -y^2 Sin(xy) \\
+    && f_{yy} = -x^2 Sin(xy) \\
+    && f_{xy} = -xy*Sin(xy)
+    \end{eqnarray}_)
+    Så helt generelt så er _(h_) lig:
+    _($(-y^2*Sin(xy))*(-x^2*Sin(xy)) - (-xy*Sin(xy))^2 = 0_)
+    Teste er altså inkonklusiv. Hvad gør vi? Well, her er vi heldige at vi arbejder med lige præcis 
+    _(Sin(x*y)_). Vi ved at denne funktion aldrig giver et tal højere end _(1_), eller mindre end _(-1_). Ved 
+    _(x*y=1.57_) fås _(Sin(1.57)=1_), så det må være et lokalt maksimum, siden intet omkring den kan være højere.
+    Ved _(x*y=4.712_) fås _(Sin(4.712)=-1_), hvilke må være et lokalt minimum, siden intet omkring den kan være lavere. 
+    <p class="t">
+    Vores endelige svar er altså at alle maksimumspunkterne kan beskrives af _(y=1.57/x_), og at
+    alle minimumspunkterne kan beskrives af _(y=4.712/x_). Når man kigger på grafen af _(Sin(x*y)_), så kan man 
+    se at dette mønster fortsætter i større intervaller for _(x_) og _(y_):
+    </p>
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter4\MultiVarCalc\Sin af x gange y.png'> 
+    <br><br></answer-box>
+
+
+
+

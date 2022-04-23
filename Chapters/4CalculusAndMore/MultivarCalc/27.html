@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+
+
+    <h3><i>Curl</i> og <i>divergence</i>: To lidt specielle koncepter</h3>
+
+    <!-- CURL OG DIVERGENCE -->
+    <p class="t">
+    Vi skal nu se på to nye koncepter: <i>Divergence</i> og <i>curl</i>. 
+    </p>
+    
+    <p class="t">
+    Divergence kan intuitivt forstås som "flux af et punkt" og curl som
+    "arbejde rundt omkring et punkt". Det er altså de mikroskopiske alternativer til
+    flux og arbejde, som normalt er defineret på <i>områder med areal</i>.
+    Et punkt har ikke rigtigt noget "areal", så vi beskriver idéen i forhold til grænser:
+    </p>
+
+    <div class="Definition">
+    <b> Definition: Divergence (2D)</b> <br>
+    Sig at _(\vec F_) er et vektor felt, og at _(R_) er et område, 
+    der lige meget hvad indeholder punktet _((a,b)_). Divergence af _(\vec F_) 
+    ved punktet _((a,b)_)
+    defineres nu som følgende grænse:
+    _($\lim_{|R| \to 0} \frac{\text{flux}_{\vec F}(R)}{|R|}_)
+    Man tager altså en grænse af fluxen omkring _(R_) divideret med
+    _(R_)'s areal, imens _(|R|_) nærmer sig _(0_) (men altid indeholder _((a,b)_)). 
+    Man regner på en måde "fluxdensiteten" omkring _((a,b)_)
+    </div>
+
+    <div class="Definition">
+    <b> Definition: Curl (2D)</b> <br>
+    Sig at _(\vec F_) er et vektor felt, og at _(R_) er et område,
+    der lige meget hvad indeholder punktet _((a,b)_). Curl af _(\vec F_) ved punktet _((a,b)_)
+    defineres nu til at være lig følgende grænse:
+    _($\lim_{|R| \to 0} \frac{\text{work}_{\vec F}(R)}{|R|}_)
+    Det er grænsen af arbejdet omkring _(R_) divideret med _(R_)'s areal,
+    imens det nærmer sig _(0_). En slags "arbejde-densitet" omkring _((a,b)_), hvilket
+    i alt ærlighed er lidt sværere at visualisere/forstå. 
+    </div>
+
+    <p class="tt">
+    Så ideen er, at vi gør et område omkring vores punkt meget meget lille og regner enten flux eller 
+    arbejde divideret med områdets areal. Flux og arbejde bliver begge naturligvis mindre som
+    arealet falder, så vi dividerer med arealet for at få en <i>relativ</i> ide omkring, hvor
+    meget flux eller cirkulation/arbejde, der er ved et punkt. Processen er vist her:
+    </p>
+
+    <img class='SpicXL' style='width:100%' src='../../../Assets/Chapter4\MultiVarCalc\Vectorfields\CurlAndDivergenceIdea.png'> 
+
+    <p class="t">
+    Lad os tage et konkret eksempel. Sig vi har vektor feltet
+    _($\VeC[-y,x]_)
+    ... og at vi gerne vil regne curl omkring _((0,0)_). Vi vælger nu en eller anden 
+    region _(R_) vi let kan arbejde med og gøre mindre: Sig en cirkel med radius _(r_) centreret på _((0,0)_): 
+    </p>
+
+    <img class='SpicXL' style='width:70%; margin-top: 25px;' src='../../../Assets/Chapter4\MultiVarCalc\Vectorfields\CalculatingCurlExample.png'> 
+
+    <p class="tt">
+    Vi ved, at _(x=rCos(t)_), _(y=rSin(t)_), så _(x'(t)=-rSin(t)_),  _(y'(t)=rCos(t)_). 
+    Work kan nu regnes som:
+    _($\begin{eqnarray}
+    && \int_{0}^{2\pi} \VeC[-rSin(t),rCos(t)]*\VeC[-rSin(t),rCos(t)] \text{ }dt = \\ \\
+    && r^2*\int_{0}^{2\pi} Sin(t)^2+Cos(t)^2 \text{ }dt = \\ \\
+    && 2\pi r^2 
+    \end{eqnarray}_)
+    Arealet er selvfølgelig bare _(\pi r^2_). Vi er nu klar til at regne grænsen:
+    _($\lim_{|R| \to 0} \frac{work_{\vec F}(R)}{|R|} = \lim_{r \to 0} \frac{2 \pi r^2}{\pi r^2} = 2_)
+    Så curl ved _((0,0)_) på dette vektor field er lig _(2_)! Boom!
+    </p>
+
+    <p class="t">
+    I de to definitioner laver vi en antagelse, der faktisk burde bevises: 
+    Denne grænse <i>findes</i>. Der er èn grænse 
+    uanset hvilken mærkelig region vi finder på.
+    Det er på ingen måde en åbenlyst at vi får det samme svar, når vi gør en firkant mindre som en cirkel:
+    </p>
+
+    <img class='SpicXL' style='width:120%; margin-left:-10%;' src='../../../Assets/Chapter4\MultiVarCalc\Vectorfields\DifferentCurlDivergenceRegions.png'> 
+
+    <p class="t">
+    Beviset for at grænsen eksisterer er lidt for kompliceret for os, så det må vi bare acceptere som sandhed <sup><a href="https://mathworld.wolfram.com/Curl.html" title="https://mathworld.wolfram.com/Curl.html" target="_blank">[F]</a></sup>. 
+    I mellemtiden kan vi være lettede over, at vi faktisk ikke behøver 
+    bekymre os om, hvilken region vi vælger at gøre lille:
+    </p>
+
+    <div class="Theory">
+    <b> Teori: En formel for divergence (2D)</b> <br>
+    Sig at vektor feltet _(\vec F_) er 
+    _($\vec F = \begin{pmatrix} m(x,y) \\ n(x,y) \end{pmatrix}_)
+    Divergence af _(\vec F_) ved punktet _((a,b)_) er lig 
+    _($m_x(a,b)+n_y(a,b)_)
+    </div>
+
+    <!--  -->
+
+    <div class="Theory">
+    <b> Teori: En formel for curl (2D)</b> <br>
+    Sig at vektor feltet _(\vec F_) er 
+    _($\vec F = \begin{pmatrix} m(x,y) \\ n(x,y) \end{pmatrix}_)
+    Curl af _(\vec F_) ved punktet _((a,b)_) er lig 
+    _($n_x(a,b)-m_y(a,b)_)
+    </div>
+
+    <p class="tt">
+    Super simpelt!
+    </p>
+
+    <p class="t">
+    Ideen bag begge disse formler er, at vi vælger et kvadrat i stedet for en cirkel.
+    Vi siger kvadratet er lille nok til, at 
+    forskellige værdier af _(\vec F_) omkring _((a,b)_) kan approksimeres 
+    ved hjælp af _(\vec F_)'s hældning ved 
+    _((a,b)_). Derfra er det relativt ligetil, så jeg tænker, at jeg vil lade dig give det et forsøg:
+    </p>
+
+    <q-stion 1="26" 2="1" bigTop="true">
+    Bevis formlen for divergence. 
+    <br><br></q-stion>
+    <answer-box>
+    Du kan se mit bevis her:
+    <div class="Proof">
+    Lav et kvadrat med sidelængde _(2h_) centreret på _((a,b)_) som følgende:
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter4\MultiVarCalc\Vectorfields\DivergenceProof1.png'> 
+    <p class="t">
+    Ved de to vertikale sider, skal der kun ses på det horisontale komponent af _(\vec F_).
+    Modsat ved de to horisontale sider. Med lidt arbejde ser man:
+    _($\begin{align}
+    \text{Højre vertikale side} & =  \int_{-h}^{h} m(x+h,y+\triangle y) \text{ }d\triangle y \\ \\
+    \text{Venstre vertikale side} & = - \int_{-h}^{h} m(x-h,y+\triangle y) \text{ }d\triangle y \\ \\
+    \text{Højre horisontale side} & =  \int_{-h}^{h} m(x+\triangle x,y+h) \text{ }d\triangle x \\ \\
+    \text{Venstre horisontale side} & = - \int_{-h}^{h} m(x+\triangle x,y-h) \text{ }d\triangle x 
+    \end{align}_)
+    Det antages, at _(h_) er så lille, at man tilnærmelsesvist kan sige:
+    _($\begin{align}
+    m(a+\triangle x,y + \triangle y) & = m(a,b)+\triangle x*m_x(a,b) + \triangle y*m_y(a,b) \\
+    n(a+\triangle x,y + \triangle y) & = n(a,b)+\triangle x*n_x(a,b) + \triangle y*n_y(a,b)
+    \end{align}_)
+    Nu kan det f.eks. ses at flux af den højre vertikale side bliver til:
+    _($\begin{align}
+    & \int_{-h}^{h} m(a,b)+m_x(a,b)h + m_y(a,b) \triangle y \text{ }d\triangle y = \\ \\
+    & (m(a,b)+m_x(a,b)h)\bigl(h-(-h) \bigr) + \frac{1}{2}m_y(a,b)* \bigl(h^2-(-h)^2 \bigr) = \\ \\
+    & \bigl(m(a,b)+m_x(a,b)h \bigr)*2h
+    \end{align}_)
+    Med samme process kan det ses at:
+    _($\begin{align}
+    \text{Venstre vertikale side} & = - (m(a,b)-m_x(a,b)h)*2h \\ \\
+    \text{Højre horisontale side} & =  (m(a,b)+m_y(a,b)h)*2h \\ \\
+    \text{Venstre horisontale side} & = - (m(a,b)-m_y(a,b)h)*2h
+    \end{align}_)
+    Den samlede flux bliver:
+    _($\begin{align}
+    & (m(a,b)+m_x(a,b)h)2h - (m(a,b)-m_x(a,b)h)2h \, + \\ \\
+    & (m(a,b)+m_y(a,b)h)2h - (m(a,b)-m_y(a,b)h)2h \, = \\ \\
+    & 4h^2*(m_x(a,b) + m_y(a,b))
+    \end{align}_)
+    Et udtryk for flux i forhold til _(h_) er nu fundet. Arealet er lig 
+    _((2h)*(2h)=4h^2_), så divergence kan regnes med følgende grænse:
+    _($\lim_{h \to 0} \frac{4h^2*(m_x(a,b) + m_y(a,b))}{4h^2} = m_x(a,b) + m_y(a,b)_)
+    Bada-boom-bada-bam! _(\blacksquare_)
+    </p>
+    </div>
+    <br></answer-box>
+
+    <p class="tt">
+    Beviset for curl er meget det samme, og vil ikke gennemgås her. 
+    </p>
+
+    <p class="pageSplitter">*</p>
+
+    <p class="t">
+    Divergence og curl findes også i 3D. Ved divergence er det 
+    en meget ligetil generalisering:
+    </p>
+
+    <div class="Definition">
+    <b> Definition: Divergence (3D)</b> <br>
+    Sig at _(\vec F_) er et vektor felt, og at _(R_) er et 3D område, 
+    der lige meget hvad indeholder punktet _((a,b,c)_). Divergence af _(F_) ved punktet _((a,b,c)_)
+    defineres nu som følgende grænse:
+    _($\lim_{|R| \to 0} \frac{\text{flux}_{\vec F}(R)}{|R|}_)
+    </div>
+
+    <div class="Theory">
+    <b> Teori: En formel for divergence (3D)</b> <br>
+    Sig at vektor feltet _(\vec F_) er 
+    _($\begin{pmatrix} m(x,y,z) \\ n(x,y,z) \\ q(x,y,z) \end{pmatrix}_)
+    Divergence af _(\vec F_) ved punktet _((a,b,c)_) er lig 
+    _($m_x(a,b,c)+n_y(a,b,c)+q_z(a,b,c)_)
+    </div>
+
+    <p class="tt">
+    Formlen i 3D kan udledes med præcis samme strategi som i 2D, nu bare med en kasse i stedet for et kvadrat. 
+    </p>
+
+    <p class="t">
+    Curl er lidt mere udfordrende at generalisere.
+    Flux er defineret for <i>områder</i> _(U_), hvor arbejde er defineret for
+    <i>veje</i> _(C_). Ved divergence er det bl.a. muligt at tænke over en 3D kugle
+    man gør mindre, imens man regner flux:
+    </p>
+
+    <img class='SpicXL' style='width:65%; margin-top:25px;' src='../../../Assets/Chapter4\MultiVarCalc\Vectorfields\Divergence3DIllustrated.png'> 
+
+    <p class="tt">
+    Men i tilfældet af curl kan vi ikke måle "arbejdet rundt omkring" en kugle. 
+    Det giver simpelthen ikke nogen mening. Arbejde går altid <i>langs en vej</i> _(\vec r(t)_), 
+    ikke en flade. Det naturlige næste trin er derfor at <i>begrænse os</i> til en bestemt 
+    vej omkring kuglen: 
+    </p>
+
+    <img class='SpicXL' style='width:60%; margin-top:25px;' src='../../../Assets/Chapter4\MultiVarCalc\Vectorfields\Curl3DIdea1.png'> 
+
+    <p class="tt">
+    For at gøre det nemmere begrænser vi os yderligere til veje 
+    der <i>er i et plan</i>. Vi kan vælge en hvilken som helst retningsvektor _(\vec n_), 
+    og arbejde med planet, der er vinkelret _(\vec n_):
+    </p>
+
+    <img class='SpicXL' style='width:85%; margin-top:25px;' src='../../../Assets/Chapter4\MultiVarCalc\Vectorfields\Curl3DIdea2.png'> 
+
+    <p class="tt">
+    Curl i 3D giver derfor kun mening, når vi har <i>specificeret</i> en retning _(\vec n_). 
+    Det kan intuitivt hjælpe at forstå curl som et mål af "rotationen" ved et punkt.
+    Hvor hurtigt vil _(\vec F_) få en vindmåler til rotere, hvis du satte den
+    ned i jorden ved _((a,b)_)? Vindmåleren roterer omkring en <i>akse</i>. 
+    I 2D antager vi aksen til vektoren _((0, 0, 1)_), men i 
+    3D skal det <i>specificeres</i> af _(\vec n_).
+    </p>
+
+    <div class="Definition">
+    <b> Definition: Curl (3D)</b> <br>
+    Curl af vektor feltet _(\vec F_) ved punktet _((a,b,c)_) langs retningen 
+    _(\vec n_) er lig:
+    _($\lim_{|R| \to 0} \frac{\text{work}_{\vec F}(R)}{|R|}_)
+    Hvor _(R_) er en region defineret af en vej _(\vec r(t)_), hvis punkter 
+    alle er på et plan, der indeholder _((a,b,c)_) og er vinkelret på _(\vec n_). 
+    </div>
+
+    <p class="tt">
+    Lad os udvikle en formel, siden dette langt fra
+    er den nemmeste definition i verden. 
+    Vi gør præcist det samme som i 2D, og ser på et et lille kvadrat omkring _((a,b,c)_), hvor
+    værdierne på _(\vec F_) kan approksimeres med hældninger. Se følgende illustration:
+    </p>
+    <img class='SpicXL' style='width:80%' src='../../../Assets/Chapter4\MultiVarCalc\Vectorfields\Curl3DProof.png'> 
+    <p class="t">
+    Sig at _(\vec a_) og _(\vec b_) er to vinkelrette enhedsvektorer, der også er vinkelrette til 
+    planets normalvektor _(\vec n_). Vi laver nu et kvadrat omkring _(\vec P = (a,b,c)_), hvis 
+    sider går langs _(\vec a_) og _(\vec b_). 
+    Vi regner arbejde, så _(\vec F_) skal 
+    prikkes med vektorerne der går langs siderne. Med lidt arbejde fås:
+    _($\begin{eqnarray}
+    && \text{Første side langs } \vec b \text{:} \, \, \, & & \int_{-h}^{h} \vec F(\vec P + h \vec a + B \vec b)*\vec b \text{ }dB  \\ \\
+    && \text{Anden side langs } \vec b \text{:} \, \, \, & -& \int_{-h}^{h} \vec F(\vec P - h \vec a + B \vec b)*\vec b \text{ }dB  \\ \\
+    && \text{Første side langs } \vec a \text{:} \, \, \, & & \int_{-h}^{h} \vec F(\vec P + A \vec a + h \vec b)*\vec a \text{ }dA  \\ \\
+    && \text{Anden side langs } \vec a \text{:} \, \, \, & -& \int_{-h}^{h} \vec F(\vec P + A \vec a - h \vec b)*\vec a \text{ }dA 
+    \end{eqnarray}_)
+    For at approximere _(\vec F_) omkring _(\vec P_) skal vi bruge directional derivatives. 
+    Sig at _(\vec F_) er lig:
+    _($\vec F = \begin{pmatrix} M(x,y,z) \\ N(x,y,z) \\ Q(x,y,z) \end{pmatrix}_)
+    Hældningen langs _(\vec a_) kan regnes som:
+    _($\VeC[M_{\vec a}, N_{\vec a}, Q_{\vec a}] = \VeC[M_x a_x + M_y a_y + M_z a_z, N_x a_x + N_y a_y + N_z a_z, Q_x a_x + Q_y a_y + Q_z a_z]_)
+    Meget det samme gælder _(\vec b_). 
+    Det ser stort og kludret ud, men det hele forsimples lidt senere. 
+    </p>
+    <p class="t">
+    Lad os som eksempel se på summen af arbejdet på de to sider langs _(\vec b_): 
+    _($\begin{eqnarray}
+    && \int_{-h}^{h} \left(\vec F(P) + h*\VeC[M_{\vec a}, N_{\vec a}, Q_{\vec a}] + B*\VeC[M_{\vec b}, N_{\vec b}, Q_{\vec b}] \right)*\vec b \text{ }dB \, - \\ \\ 
+    && \int_{-h}^{h} \left(\vec F(P) - h*\VeC[M_{\vec a}, N_{\vec a}, Q_{\vec a}] + B*\VeC[M_{\vec b}, N_{\vec b}, Q_{\vec b}] \right)*\vec b \text{ }dB \, = \\ \\
+    & 2 & \int_{-h}^{h} h*\VeC[M_{\vec a}, N_{\vec a}, Q_{\vec a}]*\vec b \text{ }dB = \\ \\
+    && 4h^2*\VeC[M_{\vec a}, N_{\vec a}, Q_{\vec a}]*\vec b 
+    \end{eqnarray}_)
+    Langs _(\vec a_) fås:
+    _($-4h^2*\VeC[M_{\vec b}, N_{\vec b}, Q_{\vec b}]*\vec a_)
+    Så alt i alt:
+    _($4h^2*\left(\VeC[M_{\vec a}, N_{\vec a}, Q_{\vec a}]*\vec b - \VeC[M_{\vec b}, N_{\vec b}, Q_{\vec b}]*\vec a \right)_)
+    Og <i>nu</i> bliver det rodet. Vi substituerer formlerne for
+    directional derivatives og regner prik-produkterne:
+    _($\begin{align}
+    b_x a_x M_x + b_x a_y M_y + b_x a_z M_z & - a_x b_x M_x - a_x b_y M_y - a_x b_z M_z & + \\ \\
+    b_y a_x N_x + b_y a_y N_y + b_y a_z N_z & - a_z b_x N_x - a_y b_y N_y - a_y b_y N_z & + \\ \\
+    b_z a_x Q_x + b_z a_y Q_y + b_z a_z Q_z & - a_z b_x Q_x - a_z b_y Q_y - a_z b_z Q_z &
+    \end{align}_)
+    Det kan omskrives til:
+    _($\begin{eqnarray}
+    && (b_x a_y - a_x b_y) M_y & + (b_x a_z - a_x b_z) M_z & \, + \\ \\
+    && (b_y a_x - a_y b_x) N_x & + (b_y a_z - a_y b_z) N_z & \, + \\ \\
+    && (b_z a_x - b_x a_z) Q_x & + (b_z a_y - a_z b_y) Q_y 
+    \end{eqnarray}_)
+    Vi ved at: 
+    _($\vec n = \vec a \times \vec b = \VeC[a_y b_z - a_z b_y, a_z b_x - a_x b_z, a_x b_y - a_y b_x] _)
+    Derfor kan vi omskrive til:
+    _($\begin{eqnarray}
+    &-& n_z M_y & + n_y M_z & \, + \\
+    && n_z N_x & - n_x N_z & \, + \\
+    &-& n_y Q_x & + n_x Q_y
+    \end{eqnarray}_)
+    Hvilket så endelig kan omskrives til: 
+    _($\VeC[Q_y - N_z, M_z - Q_x, N_x - M_y]*\VeC[n_x, n_y, n_z]_)
+    En exceptionel uelegant udledning, med et meget flot resultat! Det er især 
+    intuitivt, da det let kan ses at:
+    _($\begin{eqnarray}
+    && Q_y - N_z & = \text{Curl på YZ-planet (vinkelret på x-aksen)}  \\ 
+    && M_z - Q_x & = \text{Curl på XZ-planet (vinkelret på y-aksen)} \\
+    && N_x - M_y & = \text{Curl på XY-planet (vinkelret på z-aksen)}  \\
+    \end{eqnarray}_)
+    Så:
+    _($\text{Curl}_{\vec n} = \begin{pmatrix} \text{Curl}_{\vec x} \\ \text{Curl}_{\vec y} \\ \text{Curl}_{\vec z} \end{pmatrix}*\vec n_)
+    </p>
+
+    <div class="Theory">
+    <b> Teori: Formel for curl i 3D</b> <br>
+    Sig at _(\vec F_) er 
+    _($\vec F = \begin{pmatrix} M(x,y,z) \\ N(x,y,z) \\ Q(x,y,z) \end{pmatrix}_)
+    Curl af _(\vec F_) langs vektoren _(\vec n_) på punktet _(\vec P_) er lig:
+    _($\VeC[Q_y(P) - N_z(P), M_z(P) - Q_x(P), N_x(P) - M_y(P)]*\vec n_)
+    </div>
+
+    <p class="tt">
+    Den vektor, vi prikker _(\vec n_) med, bliver  
+    også nogle gange beskrevet som definitionen på curl i 3D. Ofte bruges der følgende 
+    notation: 
+    _($\text{curl}(\vec F) = \VeC[Q_y - N_z, M_z - Q_x, N_x - M_y]_)
+    Hvor at den specifikke curl, der går langs en retning _(\vec n_), skrives som: 
+    _($\text{curl}_{\vec n}(\vec F) = \VeC[Q_y - N_z, M_z - Q_x, N_x - M_y]*\vec n_)
+    Selve vektoren _(\text{curl}(\vec F)_) er relativt interessant og brugbar i sig selv:
+    Dens retning er retningen med den højeste curl, og dens længde
+    er størrelsen <i>af</i> denne højeste curl. Det giver meget god mening: 
+    Størrelsen af curl langs _(\vec n_) er:
+    _($\left|\text{curl}(\vec F)*\vec n \right| = 
+    |\text{curl}(\vec F)|*|\vec n|*Cos(\theta)_)
+    Dette er størst, hvis _(\theta=0_), hvor retningen _(\vec n_) er 
+    parallel med vektoren <br> _(\text{curl}(\vec F)_). 
+    Størrelsen er bare _(|\text{curl}(\vec F)_|_), siden _(|\vec n|_) og
+    _(Cos(0)_) begge er _(1_). 
+    </p>
+
+    <p class="t">
+    Vi skal nok se på anvendelser, men først et par hurtige opgaver, der
+    tjekker om du har forstået koncepterne:
+    </p>
+
+    <q-stion 1="26" 2="2" bigTop="true">
+    Find divergence af det følgende vektor felt ved det følgende punkt:
+    <div style="margin-left:-58%; margin-top:25px; margin-bottom: -10px;">
+    _($\begin{eqnarray}
+        && \underline{\textbf{A}}: \, \, \, \, \, \, \VeC[3x^2,5x], & \, \, \, (5,-6) \\ \\
+        && \underline{\textbf{B}}: \, \, \, \, \, \, \VeC[Tan(x)y, y^2 + Ln(x)], & \, \, \, (2,3)
+    \end{eqnarray}_)
+    </div>
+    <br><br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    Vi ved, at divergence kan regnes med følgende formel:
+    _($M_x(x,y)+N_y(x,y)_)
+    Så den generelle divergence af vores felt ved _((x,y)_) er:
+    _($¤x[3x^2] + ¤y[5x] = 6x+0_)
+    Derfor er curl ved _((5,-6)_) lig:
+    _($6*(5) = 30_)
+    Og det er så svaret. 
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Den generelle divergence af vores felt ved _((x,y)_) er:
+    _($¤x[Tan(x)y] + ¤y[y^2+Ln(x)] = y Sec(x)^2 + 2y_)
+    Så curl ved _((2,3)_) lig:
+    _($(3)*Sec((2))^2 + 2*(3) = 23.323_)
+    Hvilket så er svaret. 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="26" 2="3">
+    Find curl af det følgende vektor felt ved det følgende punkt:
+    <div style="margin-left:-60%; margin-top:25px; margin-bottom: -10px;">
+    _($\begin{eqnarray}
+        && \underline{\textbf{A}}: \, \, \, \, \, \, & \VeC[7y, 5x^2+3y], & \, \, \, (5,-6) \\ \\ 
+        && \underline{\textbf{B}}: \, \, \, \, \, \, & \VeC[-yx^2,xy^2],  & \, \, \,  (3,4) 
+    \end{eqnarray}_)
+    </div>
+    <br><br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    Vi ved at curl kan regnes med følgende formel:
+    _($N_x(x,y)-M_y(x,y)_)
+    Så den generelle curl af vores felt ved _((x,y)_) er:
+    _($¤x[5x^2+3y] - ¤y[7y] = 10x - 7_)
+    Derfor er curl ved _((5,-6)_) lig:
+    _($10*(5) - 7 = 43_)
+    Og det er så svaret. 
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Den generelle curl af vores felt ved _((x,y)_) er:
+    _($¤x[xy^2] - ¤y[-yx^2] = y^2 + x^2 _)
+    Derfor er curl ved _((3,4)_) lig:
+    _($3^2+4^2 = 25_)
+    Og det er så svaret. 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="26" 2="4">
+    Find divergence (nu i 3D!) af det følgende vektor felt, ved det følgende punkt:
+    <div style="margin-left:-62%; margin-top:25px; margin-bottom: -10px;">
+    _($\begin{eqnarray}
+        && \underline{\textbf{A}}: \, \, \, \, \, \, \VeC[y^2,y+5,y*z], & \, \, \, (2,1,-1) \\ \\ 
+        && \underline{\textbf{B}}: \, \, \, \, \, \, \VeC[Sin(x),Cos(y),Tan(z)], & \, \, \, (\pi, \pi, \pi)
+    \end{eqnarray}_)
+    </div>
+    <br><br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    Vi ved, at formlen for divergence i 3D er:
+    _($M_x(x,y,z)+N_y(x,y,z)+Q_z(x,y,z)_)
+    Så den generelle divergence af vores felt er:
+    _($¤x[y^2]+¤y[y+5]+¤z[y*z] = 0 + 1 + y_)
+    Derfor er divergence ved punktet _((2,1,-1)_) bare lig
+    _($1+(1)=2_)
+    Som så er svaret. 
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Den generelle divergence af vores felt er:
+    _($\begin{align}
+    & ¤x[Sin(x)]+¤y[Cos(y)]+¤z[Tan(z)] = \\ \\
+    & Cos(x) - Sin(y) + Sec(z)^2
+    \end{align}_)
+    Derfor er divergence ved punktet _((\pi, \pi, \pi)_) lig:
+    _($Cos(\pi) - Sin(\pi) + \frac{1}{Cos(\pi)^2} = -1 - 0 + \frac{1}{(-1)^2} = 0_)
+    Som så er svaret. 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="26" 2="5">
+    Find curl af det følgende vektor felt ved det følgende punkt langs den følgende akse _(\vec n_):
+    <div style="margin-left:-36%; margin-top:25px; margin-bottom: -10px;">
+    _($\begin{eqnarray}
+        && \underline{\textbf{A}}: \, \, \, \, \, \, \VeC[3x^2-5y^2,4x^2+y+z^2,7z^2], \, \, \, (1,4,-3), \, \, \, \vec n = \VeC[1,1,2]  \\ \\ 
+        && \underline{\textbf{B}}: \, \, \, \, \, \, \VeC[xyz,x^2y^2z^2,x^3y^3z^3], \, \, \, (1,1,1), \, \, \, \vec n = \VeC[1,0,1] 
+    \end{eqnarray}_)
+    </div>
+    <br><br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    Vi ved, at den generelle formel for 3D curl af feltet _(\vec F_) langs retningen _(\vec n_) er: 
+    _($\VeC[Q_y - N_z, M_z - Q_x, N_x - M_y]*\vec n_)
+    Så den generelle curl af vores felt langs vores retning er:
+    _($\begin{pmatrix} ¤y[7z^2] - ¤z[4x^2+y+z^2] \\ ¤z[3x^2-5y^2] - ¤x[7z^2] \\ ¤x[4x^2+y+z^2] - ¤y[3x^2-5y^2] \end{pmatrix}*\VeC[1, 1, 2]_)
+    Det kan simplificeres til:
+    _($\VeC[0-2z,0-0,8x+10y]*\VeC[1,1,2] = 16x+20y-2z_)
+    Så denne curl ved vores punkt _((1,4,-3)_) er: 
+    _($16*1 + 20*4 - 2*(-3) = 102_)
+    Bum! 
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Den generelle curl af vores felt langs vores retning er:
+    _($\begin{pmatrix} ¤y[x^3y^3z^3] -¤z[x^2y^2z^2] \\ ¤z[xyz] - ¤x[x^3y^3z^3] \\ ¤x[x^2y^2z^2] - ¤y[xyz] \end{pmatrix}*\VeC[1,0,1]_)
+    Det kan med lidt arbejde forsimples til:
+    _($(3x^3y^2z^3 - 2x^2y^2z) + (2xy^2z^2 - xz)_)
+    Så curl ved _((1,1,1)_) langs denne retning er:
+    _($(3*1^3*1^2*1^3 - 2*1^2*1^2*1) + (2*1*1^2*1^2 - 1*1) = 2_)
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="26" 2="6">
+    Sig du har følgende vektor felt:
+    _($\vec F = \VeC[Sin(x)-z^2,3x+5y-2z,Ln(yz)x]_)
+    Hvilken retning har den største curl på punktet _((1,-2,-4)_)?
+    <br><br></q-stion>
+    <answer-box>
+    Vi ved, at vektoren med denne egenskab er _(\vec{\text{cur}l}(F)_):
+    _($\VeC[Q_y - N_z, M_z - Q_x, N_x - M_y]_)
+    Det er i vores tilfælde:
+    _($\begin{pmatrix} ¤y[Ln(yz)x]-¤z[3x+5y-2z] \\ ¤z[Sin(x)-z^2]-¤x[Ln(yz)x] \\ ¤x[3x+5y-2z]-¤y[Sin(x)-z^2] \end{pmatrix}_)
+    Hvilket kan simplificeres til:
+    _($\VeC[\frac{x}{y} - (-2), -2z - Ln(yz), 3 - 0]_)
+    Så ved punktet _((1,-2,-4)_) er det en vektor, der går samme retning som:
+    _($\VeC[\frac{1}{-2} - (-2), -2*(-4) - Ln((-2)*(-4)), 3] = \VeC[1.5,5.92, 3]_)
+    Og curl langs denne retning er lig:
+    _($\sqrt{1.5^2+5.92^2 + 3^2} = 6.80_)
+    Boom! 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <p class="tt">
+    Vi har nu (endelig) styr på alt baggrundsarbejdet, så lad os 
+    se hvorfor de her ideer om curl og divergence faktisk kan være brugbare. 
+    </p>
+

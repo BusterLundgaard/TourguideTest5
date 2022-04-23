@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+
+
+    <h2>Hvordan løser vi integraler selv?</h2>
+    <p class="t">
+    Lad os lige hurtigt få et overblik af hvad vi allerede ved om integral-løsning.
+    </p>
+    <p class="t">
+    For det første kan vi let finde integralet af to funktioner plusset med hinanden:
+    _($\int f(x)+g(x) = \int f(x) + \int g(x)_)
+    Det er også let at løse integralet på en funktion ganget med en konstant:
+    _($\int k*f(x) = k*\int f(x)_)
+    Generelt vil vi gerne opdele et integral i mindre, simple dele, der er plusset
+    med hinanden og ganget med konstanter.
+    </p>
+
+    <p class="t">
+    At integrere er det modsatte af at differentiere, så vi opdagede hurtigt analogier
+    til de regler, vi lærte i differentiation: 
+    _($\begin{eqnarray}
+    && \int Cos(x) = Sin(x) \\ \\
+    && \int Sin(x) = -Cos(x) \\ \\
+    && \int 1/x = Ln(x) \\ \\
+    && \int x^n = \frac{x^{n+1}}{n+1} \\ \\
+    && \int A^x = \frac{A^x}{Ln(a)} 
+    \end{eqnarray}_)
+    </p>
+
+    <p class="t">
+    Lad os lave lidt opgaver og komme ind i rytmen igen. 
+    </p>
+
+    <q-stion 1="19" 2="1">
+    Integrer de følgende funktioner:
+    <div style="margin-left:-56%; margin-top:25px; margin-bottom: 0px;">
+    _($\begin{eqnarray}
+        && \underline{\textbf{A}}: \, \, \, \, \, \,  \frac{1}{Cos(x)^2} \\ \\ 
+        && \underline{\textbf{B}}: \, \, \, \, \, \,  \frac{Sin(x)^2}{Cos(x)^2} \\ \\ 
+        && \underline{\textbf{C}}: \, \, \, \, \, \,  Ln \left(\frac{2.3^x}{3.7^x} \right) \\ \\ 
+        && \underline{\textbf{D}}: \, \, \, \, \, \,  \left(5.2^x \right)^{4.7}  \\ \\ 
+        && \underline{\textbf{E}}: \, \, \, \, \, \,  (x+3.1)^{22} \\ \\ 
+        && \underline{\textbf{F}}: \, \, \, \, \, \,  -Cos(Cos(x))*Sin(x)  
+    \end{eqnarray}_)
+    </div>
+    <p class="t">
+    <i>Hint til _(\textbf{A}_): </i> Der er ikke rigtig nogen strategi til denne opgave. 
+    Jeg anbefaler bare, at du går tilbage til da vi differentierede, og leder efter en
+    funktion, hvis hældning er lig _(Cos(x)^2_)
+    </p>
+    <br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    Som sagt er det lidt en huske-opgave. Vi ved, at 
+    hældningen af _(Tan(x)_) er _(1/Cos(x)^2_). Ergo:
+    _($\int \frac{1}{Cos(x)^2} \text{ }dx = Tan(x)_)
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Her prøver jeg at omskrive lidt. Jeg ved, at _(Sin(x)^2=1-Cos(x)^2_).
+    Det kunne nok være praktisk, da _(Cos(x)^2_) i tæller og nævner vil gå ud med hinanden:
+    _($(1-Cos(x)^2)*\frac{1}{Cos(x)^2} = \frac{1}{Cos(x)^2}-1_)
+    Jeg skal nu bare integrere to simplere led hver for sig. Èn af dem kender jeg fra før:
+    _($\int \frac{1}{Cos(x)^2}-1 = \int \frac{1}{Cos(x)^2} - \int 1 = Tan(x) - x_)
+    Perfekt!
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{C}}_)#" tabColour="rgb(171,96,147)">
+    Jeg bruger først logaritmens evner til at omskrive:
+    _($Ln \left(\frac{2.3^x}{3.7^x} \right) = x*Ln(2.3) - x*Ln(3.7) = -0.475x _)
+    Integralet bliver nu:
+    _($\int -0.475x \text{ }dx = -0.475*\int x \text{ }dx = -0.475*\frac{x^2}{2} = -0.2375x^2_)
+    Voila!
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{D}}_)#" tabColour="rgb(175,128,161)">
+    Igen omskriver jeg til en form, vi kender bedre:
+    _($\left(5.2^x \right)^{4.7} = \left(5.2^{4.7} \right)^x = 2318.545^x_)
+    Vi ved, hvordan man integrerer _(A^x_), så:
+    _($\int 2318.545^x \text{ }dx = \frac{2318.545^x}{Ln(2318.545)} = 0.129*2318.545^x_)
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{E}}_)#" tabColour="rgb(171,96,147)">
+    Integralet af <i>bare</i> _(x^{22}_) ved vi er:
+    _($\frac{x^{23}}{23}_)
+    Situationen og logikken burde være stort identisk ved
+    _((x+3.1)^{22}_): Hældningen af _(x+3.1_) er jo _(1_), så kædereglen
+    har ingen crazy effekt. Vi gætter derfor:
+    _($\frac{(x+3.1)^{23}}{23}_)
+    Lad os bruge kædereglen og se, om det virker: 
+    _($\begin{align}
+    ¤x \left[\frac{(x+3.1)^{23}}{23} \right] & = \frac{1}{23}*23*(x+3.1)^{22}*¤x[x+3.1] \\ \\
+    & = (x+3.1)^{22}*1
+    \end{align}_)
+    Bum! Det virker!
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{F}}_)#" tabColour="rgb(175,128,161)">
+    Det ligner rent intuitivt, at denne funktion kommer fra en kæderegel: To ting
+    er ganget med hinanden, og èn af dem er _(Cos(Cos(x))_): Hvor
+    ellers ville du finde sådan en mærkelig "funktion inde i en funktion"? 
+    Vi kan også omskrive til:
+    _($Cos(Cos(x))*(-Sin(x))_)
+    Det passer nu, da hældningen af _(Cos(x)_) er _(-Sin(x)_). Det er nok den indre funktion.
+    Den ydre _(Cos_) i _(Cos(Cos(x))_) er nok hældningen af den ydre funktion, så
+    den gætter vi på er _(Sin(x)_). Alt i alt:
+    _($Sin(Cos(x))_)
+    Vi tester det med kædereglen:
+    _($\begin{eqnarray}
+    && $¤x[Sin(Cos(x))] = \\ \\
+    && ¤x[Sin(x)] \Bigg|_{Cos(x)} * ¤x[Cos(x)] = \\ \\
+    && Cos(Cos(x))*(-Sin(x))
+    \end{eqnarray}_)
+    Voila!
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="19" 2="2">
+    I algebra-kapitlet lærte vi en teknik kaldt "long division" til at dividere polynomier med hinanden.
+    Brug det til at integrere: 
+    _($\frac{10x^3+23x^2-18}{5x^2+4x-6}_)
+    <br></q-stion>
+    <answer-box>
+    Brøken virker svær til umulig at integrere, men
+    vi kan bruge long division og få:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter4\DerivativesAndIntegrals\LongDivision.mp4' type='video/mp4'>
+    </video>
+    <p class="t">
+    Så:
+    _($\int \frac{10x^3+23x^2-18}{5x^2+4x-6} \, dx = \int 2x + 3 \, dx = x^2 + 3x_)
+    Voila! 
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="19" 2="3">
+    Integrer:
+    _($\frac{x^6}{x+1}_)
+    <br></q-stion>
+    <answer-box>
+    Her kan vi også bruge long division! Vi har jo to polynomier divideret med hinanden,
+    og en tæller med højere grad end nævneren: 
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter4\DerivativesAndIntegrals\LongDivision2.mp4' type='video/mp4'>
+    </video>
+    <p class="t">
+    Svaret er:
+    _($\frac{x^6}{6} - \frac{x^5}{5} + \frac{x^4}{4} - \frac{x^3}{3} + \frac{x^2}{2} - x + Ln(x+1)_)
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="19" 2="4">
+    I algebra-kapitlet lærte vi også en teknik kaldt "partial fractions". Brug den 
+    sammen med long division til at integrere: 
+    _($\frac{2x^4 - 3.5x^3 - 34x^2 + 66.5x + 330}{x^2+7x+6}_)
+    Hvis ikke du kan huske det, er partial fractions den strategi, vi brugte 
+    til at omskrive f.eks.
+    _($\frac{x^2+27x+152}{x^3+6x^2-x-30}_)
+    ... til:
+    _($\frac{3}{x+5} + \frac{6}{x-2} - \frac{8}{x+3}_)
+    Hvorfor kan det være praktisk, når vi skal integrere?
+    <br><br></q-stion>
+    <answer-box>
+    Tælleren har en højere grad end nævneren, så vi starter med at bruge long division. Denne
+    gang går det <i>ikke</i> op:
+    _($2x^2 - 17.5x + 76.5 + \frac{-364x - 129}{x^2+7x+6}_)
+    Vi kan let integrere _(2x^2 - 17.5x+76.5_) og få:
+    _($0.666x^3 - 8.75x^2 + 76.5x_)
+    Men hvad med resten? Det kræver partial fractions. Idéen
+    er, at en form som f.eks.:
+    _($\frac{3}{x+5} + \frac{6}{x-2} - \frac{8}{x+3}_)
+    ... er meget let at integrere. Integralet kan findes som:
+    _($3*\int (x+5)^{-1} + 6 \int (x-2)^{-1} - 8 \int (x+3)^{-1}_)
+    De forskellige _((x+A)^{-1}_) er relativt lette at integrere som bare <br>
+    _(Ln(x+A)_), da:
+    _($¤x[Ln(x+a)] = ¤x[Ln(x)] \Bigg |_{x+a}*¤x[x+a] = \frac{1}{x+a}*1_)
+    Lad os gå igang med partial fractions på vores brøk!
+    Nævneren er _(x^2+7x+6_), så ved at løse en andengradsligning
+    kan brøken omskrives til:
+    _($\frac{-364x-129}{(x+1)(x+6)}_)
+    Det betyder, at vi skal finde de _(A_1_) og _(A_2_) hvor:
+    _($\frac{-364x-129}{(x+1)(x+6)} = \frac{A_1}{x+1} + \frac{A_2}{x+6}_)
+    Vi har gjort det før. Idéen er, at man omskriver ligningen til:
+    _($-364x-129 = A_1 (x+6) + A_2 (x+1)_)
+    Dette skal gælde for <i>alle</i> _(x_), så man kan substituere _(x=-6_) eller _(x=-1_),
+    for nemmere at isolere henholdsvis _(A_1_) og _(A_2_). Med lidt arbejde får man:
+    _($A_1 = 47, \, \, A_2 = -411_)
+    Så vi skal nu integrere:
+    _($\int \frac{47}{x+1} + \frac{-411}{x+6} = 47*Ln(x+1) - 411*Ln(x+6)_)
+    Alt i alt får vi:
+    _($0.666x^3 - 8.75x^2 + 76.5x + 47*Ln(x+1) - 411*Ln(x+6)_)
+    Smukt!
+    <br><br></answer-box>
+
+    <p class="t">
+    En vigtig note: <br>
+    Man ville tænke at integralet af en simpel funktion som _(Sec(x)_) burde være let, 
+    det er virkelig svært at udlede selv:
+    _($\int Sec(x) = Ln \left(Sec(x)+Tan(x) \right) _)
+    Du kan selv differentiere højre side og tjekke. 
+    Det her er bare én man er nødt til at huske. 
+    </p>
+
+
+
+
+
+

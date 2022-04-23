@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+
+
+    <h3>Kompositions-egenskaben</h3>
+
+    <p class="t">
+    Kompositionsreglen for grænser siger at: 
+    _($\lim_{x \to a}[f(g(x))] = f(\lim_{x \to a}[g(x)]) \text{ hvis } f \text{ er "kontinuerlig" på } \lim_{x \to a}[g(x)]_)
+    I matematik har vi en ide kaldt <i>kontinuerlighed</i>:
+    </p>
+
+    <div class="Definition">
+    <b> Definition:</b> <br>
+    En funktion _(f(x)_) er <i>kontinuerlig</i> på _(x=A_), hvis:
+    _($\lim_{x \to A}[f(x)] = f(A)_) 
+    En funktion _(f(x)_) siges at være kontinuerlig på et interval _([a,b]_), hvis _(f(x)_) er kontinuerlig
+    på <i>alle</i> (uendelig mange) punkter mellem _(a_) og _(b_).
+    <p class="t">
+    En funktion _(f(x)_) siges at være generelt "kontinuerlig", hvis den er kontinuerlig på 
+    alle punkter i dens domæne (alle accepterede x-værdier)
+    </p>
+    </div>
+
+    <p class="tt">
+    Langt de fleste funktioner, du arbejder med, er kontinuerlige. 
+    Det er primært mærkelig og meget "kunstige"
+    funktioner, der ikke er. Sig f.eks. du har _(y=|x|_):
+    </p>
+    <img class='Spic' style='width:55%' src='../../../Assets/Chapter4\Limits\Continuity1.png'> 
+    <p class="t">
+    _(|x|_) er fint kontinuerlig overalt, men hvad med dens hældning? Den er 
+    _(-1_) når _(x \lt 0_), og _(1_) hvis _(x \gt 0_):
+    </p>
+    <img class='Spic' style='width:55%' src='../../../Assets/Chapter4\Limits\Continuity2.png'> 
+    <p class="t">
+    Hældningen ved _(x=0_) er <i>udefineret</i>. Derfor kan vi heller ikke sige, at 
+    _(\lim_{x \to A}[f(x)]=f(0)_), fordi _(f(0)_) slet ikke findes!
+    </p>
+    <p class="t">
+    Vi <i>kunne</i> sige at _(f(0)_) var "udefineret", men vi kunne også sige,
+    at _(|x|_) havde to <i>forskellige</i> grænser ved _(x=0_):
+
+    <div class="Definition">
+    <b> Definition:</b> <br>
+    En venstre-siddet grænse, skrevet _(\lim_{x \to a^{-}}[f(x)]_), er en grænse hvor _(x_) stiger i 
+    værdi, når den nærmer sig _(a_). Hvis _(\lim_{x \to a^{-}}[f(x)] = L_), findes
+    der for hver værdi _(\epsilon \gt 0_), en værdi _(\delta \gt 0_) hvor:
+    _($0 \lt a-x \lt \delta, \implies |f(x)-L| \lt \epsilon _)
+    </div>
+
+    <div class="Definition">
+    <b> Definition:</b> <br>
+    En højre-siddet grænse, skrevet _(\lim_{x \to a^{+}}[f(x)]_), er en grænse hvor _(x_) falder i 
+    værdi, når den nærmer sig _(a_). Hvis _(\lim_{x \to a^{+}}[f(x)] = L_), findes
+    der for hver værdi _(\epsilon \gt 0_), en værdi _(\delta \gt 0_) hvor:
+    _($0 \lt x-a \lt \delta, \implies |f(x)-L| \lt \epsilon _)
+    </div>
+
+    <p class="tt">
+    Bemærk at _(||_) omkring _(x-a_) ikke længere er nødvendigt. 
+    </p>
+
+    <p class="t">
+    Man kan intuitivt se, at hældningen af _(|x|_) er _(-1_), når den nærmer sig _(x=0_) fra
+    venstre side, men _(1_) hvis den nærmer sig fra højre. To andre gode
+    eksempler kunne være _(1/(x-3)_) og _(1/(x-3)^2_): 
+    </p>
+
+    <img class='SpicXL' style='width:145%; margin-left: -22.5%;' src='../../../Assets/Chapter4\Limits\Discontinuites.png'> 
+
+    <p class="t">
+    Begge funktioner findes ikke på _(x=3_), siden man dividerer med
+    _(0_). På _(1/(x-3)_) har man:
+    _($\lim_{x \to 3^{-}} \left[\frac{1}{x-3} \right] = -\infty, \qquad \lim_{x \to 3^{+}} \left[\frac{1}{x-3} \right] = \infty _)
+    På _(1/(x-3)^2_) har man:
+    _($\lim_{x \to 3^{-}} \left[\frac{1}{(x-3)^2} \right] = \infty, \qquad \lim_{x \to 3^{+}} \left[\frac{1}{(x-3)^2} \right] = \infty_)
+    På begge findes selve funktionen ikke, men på èn af dem findes grænsen
+    <i>i det mindste</i>. 
+    </p>
+
+    <p class="t">
+    To andre lignende eksempler der måske illustrer pointen bedre
+    er _(Arctan(1/x)_) og _(Arctan(1/x^2)_). _(Arctan_) har et 
+    range på _([-\pi/2, \pi/2]_) og stiger konstant fra _(-\infty_) til _(\infty_).
+    Derfor ser de to funktioner ud som:
+    </p>
+
+    <img class='Spic' style='width:85%' src='../../../Assets/Chapter4\Limits\Discontinuites2.png'> 
+
+    <p class="t">
+    På den ene er begge grænser lig det samme ved _(x=0_), på den anden er 
+    den ene negativ og den anden positiv. 
+    På <i>begge</i> er _(x_) ikke defineret ved _(x=0_), 
+    selvom det visuelt intuitivt ligner, at den er
+    ved _(Arctan(1/x^2)_). Samme gælder en funktion som _(Sin(x)/x_):
+    </p>
+
+    <img class='Spic' style='width:125%; margin-left:-12.5%;' src='../../../Assets/Chapter4\Limits\Discontinuites3.png'> 
+
+    <p class="t">
+    Vi kan derfor kun bruge kompositions-reglen, når vi har bevist, at den ydre funktion er 
+    kontinuerlig - eller mere specifikt: <i>hvor</i> den er kontinuerlig. Det er relativt
+    tricky, fordi det svarer til at bevise en masse grænser. På de to sidste sider 
+    lavede du stort set intet andet end at bevise kontinuerlighed. Du viste, at grænsen
+    var lig præcis, hvad vi intuitivt forventede: Funktionens værdi! Du arbejdede
+    med èn bestemt _(x_)-værdi, men nu skal vi gøre det samme <i>på alle</i> _(x_)-værdier!
+    </p>
+
+    <q-stion 1="5" 2="1">
+    Vis at:
+    _($\frac{1}{x}_)
+    ... er kontinuerlig overalt undtagens _(x=0_). 
+    <br><br></q-stion>
+    <answer-box>
+    Vi skal altså bevise at:
+    _($\lim_{x \to c}\left[\frac{1}{x} \right] = \frac{1}{c} _)
+    Vi har allerede vist det ved _(c=3.74_).
+    Det svarede praktisk talt til en "vilkårlig værdi", så dette 
+    bevis burde være relativt nemt. 
+    Èn lille ting dog: I beviset begrænsede vi _(\delta_), så at _(x_) altid var positiv. 
+    Vi valgte ret arbitrært, at _(\delta \le 1_), siden _([3.74-1, 3.74+1]_) var et eksklusivt positivt
+    interval. Det valg ville <i>ikke</i> virke hvis vi skulle evaluere
+    på f.eks. _(x=0.000001_). Derfor siger vi bare 
+    _($\delta \le \frac{c}{2}_)
+    Så ved vi, at vi altid er på den sikre side, lige meget hvor lille _(c_) er. Vi kunne også have
+    divideret med alt muligt andet end _(2_), men vi valgte bare det simpleste. 
+    <p class="t">
+    Vores to uligheder er:
+    _(|x-c| \lt \delta, \qquad \left|\frac{1}{x} - \frac{1}{c} \right| \lt \epsilon_)
+    Vi gør præcis ligesom ved _(c=3.74_), og omskriver anden ulighed til:
+    _($\frac{|x-c|}{c*|x|}_)
+    Vi antager nu, at _(x_) er positiv. Vi kan nemt bevise
+    det for negative værdier, ved bare at evaluere _(-1/x_) på positive _(x_), så det er intet problem.
+    I hvert fald er _(|x|=x_), og den laveste _(x_) værdi er _(c-c/2=c/2_), så:
+    _($\frac{|x-c|}{c*|x|} \lt \frac{|x-c|}{c*c/2}_)
+    Fra første ulighed får vi nu:
+    _($\frac{|x-c|}{c*c/2} \lt \frac{\delta}{c*c/2}_)
+    Så vi vælger _(\delta=\epsilon*c^2 / 2_) og færdiggøre beviset. Voila! 
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <p class="tt">
+    Vi har nu (sådan ca.) forstået, hvad man mener med kontinuerlighed. Lad os bevise kompositions-egenskaben:
+    </p>
+
+    <div class="Proof">
+    <b> Bevis for komposition-egenskaben:</b> <br>
+    Sig at _(\lim_{x \to a}[g(x)]=M_), og at _(f(x)_) er kontinuerlig ved _(x=M_). Vi skal nu bevise at:
+    _($\lim_{x \to a}[f(g(x))] = f(M)_)
+    Det her svarer til de to uligheder:
+    _($0 \lt |x-a| \lt \delta, \qquad |f(g(x))-f(M)| \lt \epsilon_)
+    _(\lim_{x \to a}[g(x)]=M_) fortæller os at:
+    _($|g(x)-M| \lt \epsilon_1_)
+    ... hvor vi frit kan vælge _(\epsilon_1_). Kontinuerligheden af _(f(x)_) ved _(M_) fortæller os også, at
+    _(\lim_{x \to M}[f(x)]=f(M)_), ergo:
+    _($ 0 \lt |x-M| \lt \delta_2 \implies |f(x)-f(M)| \lt \epsilon_2_)
+    Nu kommer der et lidt tricky argument, hvor du skal holde tungen lige i munden:
+    Hvis _(|f(x)-f(M)| \lt \epsilon_2_) når _(|x-M| \lt \delta_2_), så er 
+    _(|f \left(g(x) \right) - f(M)| \lt \epsilon_2_) når _(|g(x)-M| \lt \delta_2_). 
+    På en måde har vi bare "erstattet" _(x_) med _(g(x)_).
+    <p class="t">
+    Vi ved, at _(|g(x)-M| \lt \epsilon_1_), så vi vælger _(\epsilon_1 = \delta_2_), hvilket giver:
+    _($|f \left(g(x) \right) - f(M)| \lt \epsilon_2_)
+    Vi kan frit vælge _(\epsilon_2_), så vi vælger bare _(\epsilon_2 = \epsilon_):
+    _($|f(g(x)) - f(M)| \lt \epsilon_)
+    Og bum! _(\blacksquare_)
+    </p>
+    </div>
+
+    <br>
+
+    <q-stion 1="5" 2="2">
+    Find følgende grænse:
+    _($\lim_{x \to \pi/2}\left[\frac{1}{3*Sin(x)+x^4} \right]_)
+    <br></q-stion>
+    <answer-box>
+    Her er vores ydre funktion lig _(x^{-1}_) og vores indre funktion
+    _(3*Sin(x)+x^4_). Vi finder først grænsen på vores indre funktion:
+    _($3*\lim_{x \to \pi/2}[Sin(x)]+\left(\lim_{x \to \pi/2}[x] \right)^4  _)
+    Vi kender grænsen for _(Sin_) ved _(\pi/2_), så vi ved, at dette giver:
+    _(3*1+(\pi/2)^4 = 9.088_)
+    Vi ved at _(x^{-1}_) er kontinuerlig på alt andet end _(x=0_), så den er i hvert fald
+    kontinuerlig på _(9.088_). Derfor kan vi regne grænsen som:
+    _($\frac{1}{9.0888} = 0.110025_)
+    Bum!
+    <br><br></answer-box>
+
+    <p class="tt">
+    Vi kunne løse sidste opgave <i>fordi</i> vi tidligere beviste, at _(1/x_) var kontinuerlig. 
+    Lad os nu bevise, at alle andre mulige ydre funktioner er kontinuerlige.
+    Efter det, bliver resten nemt. 
+    </p>
+    
+    <p class="t">
+    Vi skal bevise, at de følgende funktioner er kontinuerlige:
+    </p>
+    <div style="text-align:center; margin-top:-10px; margin-bottom:-10px;">
+        <ul style="display: inline-block; list-style:disc;" >
+            <li>_(Sin(x), Cos(x)_)</li>
+            <li>_(Tan(x)_)</li>
+            <li>_(Arccos(x), Arcsin(x)_)</li>
+            <li>_(Arctan(x)_)</li>
+            <li>_(x^A_)</li>
+            <li>_(A^x_)</li>        
+            <li>_(Log_{A}(x), Log_{x}(A) _)</li>
+        </ul>
+    </div>
+    <p class="t">
+    Det dækker over alle mulige <i>ydre</i> funktioner: En hvilken som helst
+    anden "ydre" funktion kan opdeles i gange, plus og komposition. 
+    </p>
+
+    <div class="Proof">
+    <b> Bevis: Sinus er kontinuerlig overalt:</b> <br>    
+    Vi skal bevise, at
+    _($\lim_{x \to c}[Sin(x)] = Sin(c)_)
+    Så:
+    _($|x-c| \lt \delta, \qquad |Sin(x)-Sin(c)| \lt \epsilon_)
+    Vi vil på en eller anden måde gerne "finde" _(|x-c|_) 
+    i _(|Sin(x)-Sin(c)|_), siden vi kan bruge det til at opsætte en ulighed,
+    hvor _(|Sin(x)-Sin(c)|_) står på den ene side, og en eller anden funktion af 
+    _(\delta_) står på den anden. Jeg tænker umiddelbart, at sum-til-produkt formlen er en mulighed.
+    Her får vi:
+    _($|2*Cos\left(\frac{x+c}{2} \right)*Sin\left(\frac{x-c}{2} \right)|_)
+    Det involverer _(x-c_), men <i>også</i> _(x+c_). Intet problem! Vi kan let
+    gøre udtrykket simplere, så længe det bliver <i>mindre</i>:
+    _($|2*Cos\left(\frac{x+c}{2} \right)*Sin\left(\frac{x-c}{2} \right)| \lt 2| Sin\left(\frac{x-c}{2} \right) |_)
+    Det kan bevises, at _(|Sin(x)| \le |x|_):
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter4\Limits\SinInequality.png'> 
+    <p class="t">
+    Så:
+    _($2| Sin\left(\frac{x-c}{2} \right) | \le 2*\left|\frac{x-c}{2} \right| = |x-c| \lt \delta_)
+    Nu vælger vi bare _(\delta=\epsilon_), og beviset er færdigt _(\blacksquare_)
+    </p>
+    </div>
+
+    <br>
+
+    <q-stion 1="5" 2="3">
+    _(\underline{\textbf{A}}_): <br>
+     Bevis at _(Cos_) er kontinuerligt overalt. 
+    <p class="t">
+    _(\underline{\textbf{B}}_): <br>
+     Bevis at _(Tan_) er kontinuerligt overalt. 
+    </p>
+    <p class="t">
+    Spoilers: Du har mulighed for at være smart, og behøver ikke opsætte et langt bevis ligesom for _(Sin_). 
+    </p>
+    <br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    _(Cos(x)_) kan omskrives i forhold til _(Sin_) som:
+    _($Sin\left(\frac{\pi}{2} - x \right)_)
+    Det her svarer til den ydre funktion _(Sin(x)_) og den indre funktion _(\pi/2-x_).
+    Vores ydre funktion er kontinuerlig overalt, og grænsen på vores indre funktion ved _(x=c_) er:
+    _($\lim_{x \to c} \left[\frac{\pi}{2} - x \right] = \frac{\pi}{2} - \lim_{x \to c}[x] = \frac{\pi}{2} - c_)
+    Så den endelige grænse kan vi finde via kompositions-reglen som:
+    _($Sin\left(\frac{\pi}{2} - c \right) = Cos(c)_)
+    Ergo:
+    _($\lim_{x \to c}[Cos(x)] = Cos(c) _)
+    Så _(Cos_) er kontinuerlig!
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    _(Tan_) kan vi omskrive som:
+    _($\lim_{x \to c}[Sin(x)]*\lim_{x \to c}\left[\frac{1}{Cos(x)} \right]  _)
+    Grænsen af _(Sin(x)_) ved _(c_) ved vi, er _(Sin(c)_). 
+    Grænsen af _(1/Cos(x)_) er _(1/Cos(c)_) siden
+    den ydre funktion _(1/x_) er kontinuerligt overalt, hvor _(x_) ikke er _(0_).
+    Alt i alt får vi:
+    _($\lim_{x \to c}[Tan(x)] = Sin(c)*\frac{1}{Cos(c)} = Tan(c)_)
+    Så _(Tan_) er kontinuerlig!
+    <br><br></answer-box>
+
+    <p class="t">
+    Man kan bevise, at en kontinuerlig funktions modsatte funktion også er kontinuerlig. 
+    Det vil hjælpe os en del med de modsatte trigonometriske funktioner samt logaritmer:
+    </p>
+
+    <div class="Proof">
+    <b> Bevis: Modsatte funktioners kontinuerlighed </b> <br>    
+    Sig at en funktion _(f_) har en modsat funktion _(g_) på 
+    intervallet _(I = [a, b]_). _(f_) <i>skal</i> være
+    monotont stigende eller faldende for at have en modsat funktion:
+    <img class='Spic' style='width:95%' src='../../../Assets/Chapter4\Limits\InverseContinuability.png'> 
+    <p class="t">
+    Pr. _(f_)'s kontinuerlighed ved vi, at det for et hvilket som helst punkt _(i \in I_) gælder, at
+    _($|x-i| \lt \delta_1, \qquad |f(x)-j| \lt \epsilon_1_)
+    ... hvor _(j=f(i)_) og _(i=g(j)_). Vi vil nu gerne bevise at:
+    _($|x - j| \lt \delta, \qquad |g(x)-i| \lt \epsilon_)
+    _(|x-i|_) og _(|g(x)-i|_) er identiske, så vi vælger bare
+    _(\delta_1 = \epsilon_), hvilke også svarer til at vælge
+    _(\delta=\epsilon_1_) _(\blacksquare_). 
+    </p>
+    </div>
+    
+    <p class="tt">
+    Fra denne lov kan det direkte ses, at _(Arccos_), _(Arcsin_) og _(Arctan_) er kontinuerlige på deres domæne. 
+    </p>
+
+    <p class="t">
+    Det næste trin er _(A^x_). Først bare _(e^{x}_) dog. Den er lidt tricky. 
+    </p>
+
+    <div class="Proof">
+    <b> Bevis: Den naturlige eksponentialfunktion er kontinuerlig overalt </b> <br>    
+    Vi har:
+    _($|x - c| \lt \delta, \qquad |e^x - e^{c}| \lt \epsilon_)
+    Kan vi på nogen måde "finde" _(|x-c|_) eller noget lignende i _(|e^x-e^c|_)? 
+    Èn åbenlys omskrivning, man kan teste, er:
+    _($e^c*|e^{x-c}-1|_)
+    Vi har _(x-c_), men ikke _(|x-c|_). Her kan vi bruge det faktum, at
+    _($|e^{A} - 1| \le e^{|A|} - 1_)
+    ... hvor _(A_) er et hvilket som helst tal. Det giver O.K mening:
+    _(e_) opløftet til en hvilket som helst positiv potens er større
+    end _(1_), så ved positive _(A_) er _(e^{A}-1_) også positiv, så:
+    _($|e^A-1|=e^A-1 = e^{|A|}-1_)
+    Ved negative _(A_) er _(e^{A}-1_) negativ, siden _(e_) opløftet
+    til en negativ potens er mindre end _(1_). Derfor er
+    det <i>mindre</i> end _(e^{|A|}-1_) som altid er positivt. Alt i alt
+    er det enten lig eller mindre, så:
+    _($e^c*|e^{x-c} - 1| \le e^c*(e^{|x-c|} - 1)_)
+    Vi har identificeret _(|x-c|_), så det er tid til at bruge første ulighed: 
+    _($\begin{eqnarray}
+    && |x-c| \lt \delta \to \\ \\
+    && e^c*(e^{|x-c|}-1) \lt e^c*(e^{\delta}-1) 
+    \end{eqnarray}_)
+    Nu vælger vi bare: 
+    _($\delta=Ln\left(\frac{\epsilon}{e^c}+1 \right)_)
+    ... og så er beviset færdig _(\blacksquare_)
+    </div>
+
+    <p class="t">
+    Det følger direkte, at _(Ln(x)_) også er kontinuerlig.
+    </p>
+
+    <q-stion 1="5" 2="4">
+    _(\underline{\textbf{A}}_): <br>
+     Bevis at _(A^x_) er kontinuerligt, hvis _(A \gt 0_)
+    <p class="t">
+    _(\underline{\textbf{B}}_): <br>
+     Bevis at _(Log_{x}(A)_) er kontinuerligt, hvis _(A \gt 0_)
+    </p>
+    <p class="t">
+    _(\underline{\textbf{C}}_): <br>
+     Bevis at _(x^A_) er kontinuerligt for en hvilket som helst _(A_)
+    </p>
+    <p class="t">
+    _(\underline{\textbf{D}}_): <br>
+     Bevis at _(f(x)^{g(x)}_) er kontinuerlig på intervallet _(I_) hvis
+    både _(f_) og _(g_) er kontinuerlige på _(I_), og hvis _(f_)
+    aldrig er negativ på _(I_). 
+    </p>
+    <br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    Vi omskriver til _(e^{Ln(A)*x}_). Den ydre funktion er _(e^x_), og den indre er _(Ln(A)*x_). 
+    Grænsen af _(Ln(A)*x_) ved _(c_) er bare _(Ln(A)*c_), og eftersom _(e^x_) er kontinuerlig
+    får vi:
+    _($\lim_{x \to c}\left[A^x \right] = e^{Ln(A)*c} = A^{c}_)
+    Bum! 
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Vi bruger change-of-base formlen og omskriver til:
+    _($\frac{Ln(A)}{Ln(x)} = Ln(A)*\frac{1}{Ln(x)}_)
+    Både _(1/x_) og _(Ln_) er kontinuerlig, så grænsen af _(1/Ln(x)_) ved
+    _(x=c_) er lig _(1/Ln(c)_). Vi får derfor:
+    _($\lim_{x \to c}\left[Log_x(A) \right] = \frac{Ln(A)}{Ln(c)} = Log_{c}(A)_)
+    Voila!
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{C}}_)#" tabColour="rgb(171,96,147)">
+    Her skal vi være lidt kreative. Det ville være rigtig dejligt at finde grænsen af
+    _(Ln(x^A)_), siden det kan omskrives til _(A*Ln(x)_). Derfor siger vi:
+    _($e^{A*Ln(x)}_)
+    Den ydre funktion er _(e^x_), og den indre er _(A*Ln(x)_). Begge er kontinuerlige, så 
+    det er den samlede funktion også. Bum! 
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{D}}_)#" tabColour="rgb(175,128,161)">
+    Igen ville det være langt nemmere, hvis vi stod med logaritmen, eftersom det kan omskrives til:
+    _($g(x)*Ln(f(x))_)
+    Så vi siger:
+    _($e^{g(x)*Ln(f(x))}_)
+    Den ydre funktion er _(e^x_), som vi ved er kontinuerlig. Grænsen af den indre funktion kan vi finde som:
+    _($\lim_{x \to c}[g(x)]*Ln(\lim_{x \to c}[f(x)]) = g(c)*Ln(f(c))_)
+    Så den er også kontinuerlig. Bevis færdig!
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <p class="t">
+    Nu har vi endelig bevist alle ydre funktioner! 
+    </p>
+
+    <q-stion 1="5" 2="5">
+    Find følgende grænse:
+    _($\lim_{x \to 4.789}\left[Arctan(x^2 - Sin(x))^{\sqrt{x}*Ln(x)^x}\right]_)
+    <br><br></q-stion>
+    <answer-box>
+    Det kan let ses, at _(x^2_), _(Sin(x)_), _(\sqrt{x}=x^{0.5}_) og _(Ln(x)^x_) alle er kontinuerlige.
+    _(x^2-Sin(x)_) og _(\sqrt{x}*Ln(x)^x_) er også kontinuerlige, da et sum eller en produkt
+    af kontinuerlige funktioner tydeligvis er kontinuerlig. Både base og potens er kontinuerlige, så
+    <i>hele</i> funktionen er kontinuerlig. Derfor kan grænsen ved _(x=4.789_) bare regnes som funktionens
+    værdi:
+    _($Arctan(4.789^2-Sin(4.789))^{\sqrt{4.789} - Ln(4.789)^{4.789}} = 2891.0782_)
+    Bum! 
+    <br><br></answer-box>
+
+    <p class="t">
+    Det er uhyrligt kedeligt at så meget arbejde skal gå på at komme frem til så åbenlyse konklusioner,
+    men vi prøver virkelig at være <i>grundige</i> i dette afsnit. Du kan 
+    se på alt det her som èt langt bevis, der tillader os, at 
+    arbejde med de mere interresant grænser senere. 
+    </p>
+
+
+
+
+
+
+
+
+
+<!-- 
+
+    <p class="t">
+    Du kan altså kun bruge kompositions-egenskaben hvis den ydre funktion
+    er kontinuerlig på den indre funktions grænse! 
+    </p>
+
+    <p class="t">
+    For at være helt ordentligt skal man egentlig også bevise det
+    hvis _(x_) eller grænsen nærmer sig _(\infty_), siden det
+    er distinkte definitioner. Det er lidt for repetitivt og kedeligt til 
+    at jeg gennemgår det her. Bare antag at det er rigtigt. 
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Regn følgende grænser:
+    _($\begin{eqnarray}
+    && \textbf{1:} \, \, \, \, & \lim_{x \to \infty}\left[\frac{x^2}{x^2+1} \right] \\ \\
+    && \textbf{2:} \, \, \, \, & \lim_{x \to \infty}\left[Log_{x}(3x) \right] \\ \\
+    && \textbf{3:} \, \, \, \, & \lim_{x \to \pi/2}\left[Sin \left(2x + Arctan \left(\frac{1}{Cos(x)} \right) \right) \right] \\ \\
+    && \textbf{4:} \, \, \, \, & \lim_{x \to \infty}\left[\frac{n^n}{(n+1)^n} \right] 
+    \end{eqnarray}_)
+    <br></q-stion>
+    <answer-box t="Answer 1#" tabColour="rgb(171,96,147)">
+    Jeg kunne meget nemmere forsimple det hvis bare jeg havde 
+    _((x^2+1)/x^2_) i stedet. Derfor omskriver jeg til:
+    _($\lim_{x \to \infty}\left[1/ \left(\frac{x^2+1}{x^2} \right) \right]_)
+    Det her svarer til _(\lim_{x \to \infty}[f(g(x))]_)
+    hvor _(f_) er _(1/x_) og _(g_) er _((x^2+1)/x^2_). 
+    Grænsen af _(g_) kan regnes som:
+    _($\lim_{x \to \infty} \left[\frac{x^2+1}{x^2} \right] = \lim_{x \to \infty} [1] + \lim_{x \to \infty} \left[\frac{1}{x} \right]_)
+    _(1/x_) er <i>højest sandsynligt</i> _(0_) når _(x_) nærmer sig _(\infty_). 
+    Lad os bevise det med sikkerhed:
+    _($x \gt \delta, \qquad \left|\frac{1}{x} - 0 \right| \lt \epsilon_)
+    _(|1/x-0|_) kan forsimples til bare _(1/x_) eftersom _(x_) er positiv. 
+    Første ulighed kan nu laves om til:
+    _($\frac{1}{x} \lt \frac{1}{\delta}_)
+    Vi vælger nu bare _(\delta=1/\epsilon_) og får et svar på <i>ja</i>. 
+    Grænsen på _(g_) er altså:
+    _($1+0=1_)
+    _(f_) <i>er</i> kontinuerlig på _(x=1_)
+
+    
+    så kunne jeg meget nemmere forsimple det. Lad os derfor sige:
+    _($ \lim_{x \to \infty}\left[\frac{x^2}{x^2+1} \right] = 
+        \lim_{x \to \infty}\left[1/ \left(\frac{x^2+1}{x^2} \right) \right] = 
+        1/ \left(\lim_{x \to \infty}\left[\frac{x^2+1}{x^2} \right] \right)_)
+    _((x^2+1)/x^2_) kan forsimples til _(1+1/x^2_). Så:
+    _($1/\left(1+\frac{1}{\lim_{x \to \infty}[x^2]} \right) = 1/\left(1+\frac{1}{\infty} \right) = 1/(1+0)=1_)
+    Det giver meget god intuitiv mening at _(x^2/(x^2+1)_) nærmer sig 1, eftersom den procentmæssige forskel mellem 
+    _(x^2_) og _(x^2+1_) bliver stort set ligegyldig når _(x^2_) er gigantisk. 
+    <br><br></answer-box>
+    <answer-box t="Answer 2#" tabColour="rgb(175,128,161)">
+    Der er lang tid siden nu, men da vi først kiggede på logaritmer kiggede vi også på en formel for at ændre base: 
+    _($Log_{a}(b) = \frac{Log_{c}(b)}{Log_{c}(a)}_)
+    Lad os anvende den så vi får:
+    _($\frac{Ln(3x)}{Ln(x)} = \frac{Ln(x)+Ln(3)}{Ln(x)} = 1 + \frac{1.098}{Ln(x)} _)
+    _(Ln(x)_) nærmer sig uendelig når _(x_) nærmer sig uendelig, så brøken forsvinder, og vi står
+    tilbage med bare _(1_). 
+    <br><br></answer-box>
+    <answer-box t="Answer 3#" tabColour="rgb(171,96,147)">
+    Du kan se mit svar her: 
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter4\Limits\BeforeHopitals1.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+    <answer-box t="Answer 4#" tabColour="rgb(175,128,161)">
+    Vi kan omskrive _(n^n/(n+1)^n_) til _((n/(n+1))^n_). Igen så vil vi hellere have
+    _((n+1)/n_) da det kan forsimples til _(1+1/n_), så vi siger:
+    _($\lim_{n \to \infty}\left[1/\left(1+\frac{1}{n} \right)^n \right]_)
+    Ha-hah! _((1+1/n)^n_) når _(n_) nærmer sig uendelig er jo lig _(e_)! Svaret bliver altså:
+    _($1/e = 0.367_)
+    Fantastisk. 
+    <br><br></answer-box>
+
+
+    <q-stion 1="2" 2="1" 3="5">
+    <b> 1</b>: Regn:
+    _($\lim_{x \to \infty} \left[\frac{7x^3+523x^2-17}{3x^3+170x^2+6x+15}  \right]_)
+    <b> 2</b>: Regn helt generelt:
+    _($\lim_{x \to \infty} \left[\frac{a_0 x^0+a_1 x^1 \text{ }+\text{ }...\text{ }a_n x^n}{b_0 x^0+b_1 x^1 \text{ }+\text{ }...\text{ }b_m x^m}  \right]_)
+    Du er nok nødt til at opdele dit svar i nogle cases i forhold til _(n_) og _(m_).
+    <br><br></q-stion>
+    <answer-box t="Answer 1#" tabColour="rgb(171,96,147)">
+    Ideen her er, at de største led (dem med den højeste tid) vil begynde at dominere over de andre når _(x_) bliver stor, 
+    lige meget hvor små deres koefficienter skulle være i forhold til de andre led. Det begynder
+    altså til sidst kun at være _(7x^3_) og _(3x^3_) der har indflydelse. Det her kan vi se på følgende måde:
+    _($\frac{7x^3+523x^2-17}{3x^3+170x^2+6x+15} = \frac{\frac{7x^3+523x^2-17}{x^3}}{\frac{3x^3+170x^2+6x+15}{x^3}} =_)
+    _($\frac{\frac{7x^3}{x^3} + \frac{523x^2}{x^3} - \frac{17}{x^3}}{\frac{3x^3}{x^3} + \frac{170x^2}{x^3} + \frac{6x}{x^3} + \frac{15}{x^3}} = 
+    \frac{7 + \frac{523}{x} - \frac{17}{x^3}}{3 + \frac{170}{x} + \frac{6}{x^2} + \frac{15}{x^3}}_)
+    Hvis _(x_) nærmer sig _(\infty_), så bliver alle de små brøker til _(0_), og vi får:
+    _($\frac{7+0-0}{3+0+0+0} = \frac{7}{3} = 2.333_)
+    Bum!
+    <br><br></answer-box>
+    <answer-box t="Answer 2#" tabColour="rgb(175,128,161)">
+    Hvis vi gør præcist det samme som i tidligere opgave, så kan vi (relativt let) se at grænsen giver:
+    _($\begin{eqnarray} 
+    && a_n/b_m & \text{Hvis } n=m \\
+    && \infty & \text{Hvis } n \gt m \\
+    && 0 & \text{Hvis } n \lt m \\
+    \end{eqnarray}_)
+    <br></answer-box> -->
+
+
+
+
+

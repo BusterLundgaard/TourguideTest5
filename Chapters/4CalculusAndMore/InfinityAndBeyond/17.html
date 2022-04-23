@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+
+
+    <h4>Sammenligninger</h4>
+    <p class="t">
+    Tredje step af processen var <i>sammenligning</i>. Her kan man enten opstille
+    en direkte "større end / mindre end"-relation, eller bruge <i>limit comparison test for serier</i>. 
+    Den er lidt udvidet sammenlignet med dens lillebror på grænser:
+    </p>
+
+    <div class="Theory">
+    <b>Teori: The limit comparison test for serier</b> <br>
+    Sig at _(f(k)_) og _(g(k)_) er to positive funktioner. Der er nu tre cases:
+    _($\begin{eqnarray} 
+    && \text{Case} \textbf{ 1:} & g(k) \text{ dominerer } f(k) \\ \\
+    && \text{Case} \textbf{ 2:} & \text{De er lige stærke} \\ \\
+    && \text{Case} \textbf{ 3:} & f(k) \text{ dominerer } g(k) \\
+    \end{eqnarray}_)
+    Det kan vises at:
+    <p class="t">
+    I case _(\textbf{1}_) vil serien af _(f(k)_) converge, hvis
+    serien af _(g(k)_) converger og vice versa. 
+    </p>
+    <p class="t">
+    I case _(\textbf{2}_) vil _(f(k)_) og _(g(k)_) enten begge divergere eller begge konvergere. 
+    </p>
+    <p class="t">
+    I case _(\textbf{3}_) vil serien af _(f(k)_) divergere, hvis 
+    _(g(k)_) divergerer og vice versa.
+    </p>
+    </div>
+
+    <p class="tt">
+    Case _(\textbf{1}_) kan kun fortælle os om _(f(k)_)'s convergence. Den siger
+    <i>ikke</i>, om serien af _(f(k)_) <i>divergerer</i>, hvis serien af _(g(k)_) gør.
+    Det modsatte sker i case _(\textbf{3}_), som ikke fortæller os, om serien
+    af _(f(k)_) <i>konvergerer</i> hvis _(g(k)_) gør. Case _(\textbf{2}_) er klart
+    den dejligste, og minder meget om limit comparison test for grænser. 
+    </p>
+
+    <p class="t">
+    Du kommer stort set aldrig til at bruge 
+    case _(\textbf{1}_) eller case _(\textbf{3}_). 
+    Jeg fandt få eksempler, og dem vil jeg hellere reservere til 
+    trænings-opgaverne - især fordi de svære. 
+    Lad os fokusere eksklusivt på den dejlige case 2.
+    </p>
+
+    <q-stion 1="17" 2="1" bigTop="true">
+    Konvergerer eller divergerer følgende serier?
+    <div style="margin-left:-71%; margin-top:25px; margin-bottom: -10px;">
+    _($\begin{eqnarray}
+        && \underline{\textbf{A}}: \, \, \, \, \, \, \sum_{k=1}^{\infty} \sqrt{\frac{k+5}{k^4-7}} \\ \\
+        && \underline{\textbf{B}}: \, \, \, \, \, \, \sum_{k=1}^{\infty} \sqrt{\frac{k+5}{2k-7}} 
+    \end{eqnarray}_)
+    </div>
+    <br><br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    Det er nok en god ide at sammenligne med
+    _($\sqrt{\frac{k}{k^4}}_)
+    ... hvilket vi nemt kan se konvergerer, siden det svarer til _(1/k^{1.5}_), som
+    er en p-serie med _(p \gt 1_). Dette gæt er vores "_(g(x)_)", og vi skal
+    nu tjekke vores case:
+    _($\lim_{k \to \infty} \left[\frac{\sqrt{\frac{k+5}{k^4-7}}}{\sqrt{\frac{k}{k^4}}} \right] =
+    \lim_{k \to \infty} \left[\sqrt{\frac{k+5}{k}}*\sqrt{\frac{k^4}{k^4-7}} \right] _)
+    Begge faktorer går til _(1_), så det gør hele grænsen også. Case 2 er derfor sand. 
+    Vores serie <i>konvergerer</i>.
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Her sammenligninger vi med
+    _($\sqrt{\frac{k}{2k}}_)
+    Hvilket ret tydeligvis <i>diverger</i>, siden det er en konstant. 
+    Vi tester:
+    _($\lim_{k \to \infty}\left[\frac{\sqrt{\frac{k+5}{2k-7}}}{\sqrt{\frac{k}{2k}}} \right]_)
+    ... hvilket man med lidt arbejde kan se giver _(1_). Vores serie <i>divergerer</i>.
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="17" 2="2">
+    Divergerer eller konvergerer følgende serier?
+    <div style="margin-left:-55%; margin-top:25px; margin-bottom: 0px;">
+    _($\begin{eqnarray}
+        && \underline{\textbf{A}}: \, \, \, \, \, \, \sum_{k=1}^{\infty} \frac{\sqrt{7+3^k+4k^{15}}}{Ln(15k+k^{20})}  \\ \\
+        && \underline{\textbf{B}}: \, \, \, \, \, \, \sum_{k=1}^{\infty} \frac{Ln(k!+k^2+13k)}{(k^k + Ln(k) + 15)^{0.6}} 
+    \end{eqnarray}_)
+    </div>
+    <p class="t">
+    Hvis det her virker meget svært, anbefaler jeg dig at se på side _(7_) igen. 
+    </p>
+    <br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    På en de tidligere sider så vi på grænser der tog formen:
+    _($\begin{eqnarray} 
+    && \frac{(\text{Sum af funktioner})^{p_1}}{(\text{Sum af funktioner})^{p_2}}, &
+    \frac{Ln(\text{Sum af funktioner})}{(\text{Sum af funktioner})^{p_2}} \\ \\
+    && \frac{(\text{Sum af funktioner})^{p_1}}{Ln(\text{Sum af funktioner})}, &
+    \frac{Ln(\text{Sum af funktioner})}{Ln(\text{Sum af funktioner})}
+    \end{eqnarray}_)
+    Vi brugte limit comparison test for grænser og opdagede, at man altid bare kunne se på
+    _($\begin{eqnarray} 
+    && \frac{(\text{Dominerende funktion})^{p_1}}{(\text{Dominerende funktion})^{p_2}}, &
+    \frac{Ln(\text{Dominerende funktion})}{(\text{Dominerende funktion})^{p_2}} \\ \\
+    && \frac{(\text{Dominerende funktion})^{p_1}}{Ln(\text{Dominerende funktion})}, &
+    \frac{Ln(\text{Dominerende funktion})}{Ln(\text{Dominerende funktion})}
+    \end{eqnarray}_)
+    ... i stedet. Det svarer i vores tilfælde til at se på:
+    _($\frac{\sqrt{3^k}}{Ln(k^{20})}_)
+    Tricket virker også ved <i>serier</i>, siden det er præcist den samme grænse,
+    vi skal regne for at bekræfte case _(\textbf{2}_). Vi skal derfor nu teste, om serien
+    _($\sum_{k=1}^{\infty} \frac{\sqrt{3^k}}{Ln(k^{20})} _)
+    ... divergerer eller konvergerer. Det er relativt let, siden vi nemt kan omskrive til:
+    _($\sum_{k=1}^{\infty} \frac{1.732^k}{20 Ln(k)}_)
+    Ratio testen nærmer sig tydeligvis _(\infty_), så vores serie divergerer. 
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Vi bruger samme trick som i sidste, og ser på:
+    _($\sum_{n=0}^{\infty} \frac{Ln(k!)}{(n^n)^0.6} _)
+    Lad os først tænke intuitivt: Serien <i>burde</i> 
+    konvergere, siden vi har _((k^k)^{0.6}_) i nævneren, hvilket er markant større
+    end _(Ln(k!)_). Hvis vi bruger ratio testen bliver nævneren
+    til _(e^{0.6}*(k+1)^{0.6}_) og tælleren til:
+    _($\lim_{k \to \infty}\left[\frac{Ln((k+1)!)}{Ln(k)!} \right] = \lim_{k \to \infty}\left[\frac{Ln(k+1)}{Ln(k!)} \right] + 1_)
+    <i>Højest</i> sandsynligt nærmer _(Ln(k+1)/Ln(k!)_) sig _(0_), men det
+    er svært at bekræfte med de redskaber vi har. Lad os i stedet gå èt skridt tilbage
+    og sammenligne med _(Ln(k^k)_) i tælleren i stedet for _(Ln(k!)_):
+    _($\sum_{n=0}^{\infty} \frac{Ln(k!)}{(n^n)^0.6} \lt \sum_{n=0}^{\infty} \frac{Ln(k^k)}{(n^n)^0.6} = \sum_{n=0}^{\infty} \frac{k Ln(k)}{(n^n)^0.6}_)
+    Det er et O.K logisk move at lave, siden summen (højest sandsynligt) stadig konvergerer
+    med _(Ln(k^k)_) i stedet for _(Ln(k!)_), og siden _(k^k_) er langt nemmere at arbejde med end fakultet.
+    Herfra kan ratio-testen let vise, at grænsen konvergerer. 
+    Det gør vores originale serie derfor også.
+    <br><br></answer-box>
+
+    <p class="tt">
+    Beviset for limit comparison test for serier, minder en del om det for grænser og er ikke specielt interessant.
+    <sup><a href="https://proofwiki.org/wiki/Limit_Comparison_Test" title="proofwiki (2021 august, 6). 'Limit Comparison Test'. https://proofwiki.org/wiki/Limit_Comparison_Test" target="_blank">[F]</a></sup>  
+    Det bliver ikke gennemgået i denne bog.
+    </p>
+
+    <p class="pageSplitter">*</p>
+
+    <p class="t">
+    Overordnet vil 
+    jeg sige, at limit comparison test primært bliver anvendt på to måder:
+    </p>
+
+    <p class="t"><b>A: </b> <br>
+    Det er praktisk at anvende, hvis du tænker, at en del af udtrykket har meget
+    lidt indflydelse, som _(k_) bliver stort. To eksempler kunne være:
+    _($\frac{\sqrt{k^k+2^k}}{5^k+k}, \qquad \frac{1}{k*k^{1/k}}_)
+    I første eksempel tænker jeg, at _(2^k_) og _(k_) nok ikke har særlig stor indflydelse.
+    Vi har allerede
+    bekræftet, at ratio testen rammer case _(\textbf{2}_), hvis vi sammenligner med en version hvor
+    de er fjernet. I det 
+    andet eksempel begynder _(k^{1/k}_) at nærme sig konstanten _(1_), som _(k_) bliver stor. Den
+    har derfor meget lidt indflydelse, så vi sammenligner med _(1/k_), som vi ved divergerer:
+    _($\lim_{k \to \infty} \left[\frac{\frac{1}{k*k^{1/k}}}{1/k} \right] = \lim_{k \to \infty} \left[\frac{1}{k^{1/k}} \right] = 1_)
+    Dette er også case _(\textbf{2}_), og vi ved derfor, at _(\sum_{k=1}^{\infty} 1/(k*k^{1/k})_) divergerer. 
+    Limit comparison test vil ofte ramme case 2 i dette tilfælde: Der er stor chance for,
+    at versionen med og uden den "ligegyldige del" nærmer sig hinanden, så deres
+    forhold ved _(k \to \infty_) bliver en konstant. 
+    </p>
+
+    <p class="t">
+    <b>B: </b> <br>
+    Den anden anvendelse er lidt et trick: Sammenlign med _(1/k_), hvis din
+    mavefornemmelse siger, at serien divergerer, og med 
+    _(1/k^2_) hvis den siger, at serien konvergerer. 
+    Du sammenligner med de her to, selv hvis funktionen ikke
+    har noget som helst med dem at gøre. Et godt eksempel kunne være: 
+    _($\sum_{k=1}^{\infty} \frac{\pi}{2} - Arctan(k) _)
+    Funktionen i summen _(\pi/2-Arctan(k)_) nærmer sig tydeligvis _(0_), men min mavefornemmelse
+    og tidligere erfaring fortæller mig ikke mere. Det er nok en god ide
+    at tegne en graf, hvor jeg sammenligner med _(1/k_) og _(1/k^2_):
+    </p>
+    <img class='Spic' style='width:80%' src='../../../Assets/Chapter4\Limits\Arctan divergence.png'> 
+    <p class="t">
+    Vores funktion 
+    ligner mere _(1/k_) end _(1/k^2_), så jeg har det på
+    fornemmeren, at den diverger. Jeg bruger nu limit comparison test: 
+    _($\lim_{k \to \infty} \left[\frac{\frac{\pi}{2} - Arctan(k)}{\frac{1}{k}} \right]_)
+    Det smarte er, at vi nu kan bruge L'Hopitals, da både tæller og nævner nærmer sig _(0_)! 
+    _($\lim_{k \to \infty} \left[\frac{¤k[\frac{\pi}{2} - Arctan(k)]}{-k^{-2}} \right] = 
+    -\lim_{k \to \infty} \left[k^2*¤k \left[\frac{\pi}{2} - Arctan(k) \right] \right] _)
+    Vi skal nu bare teste grænsen af _(k^2_) gange hældningen af vores funktion!
+    Teknikken kan være praktisk, hvis hældningen
+    af funktionen er lettere at arbejde med. Det gælder især vores tilfælde,
+    hvor _(\pi/2_) forsvinder og _(Arctan_) bliver mere algebraisk: 
+    _($\lim_{k \to \infty} \left[k^2*\frac{1}{1+k^2} \right] = \lim_{k \to \infty} \left[\frac{k^2}{1+k^2} \right] = 1_)
+    Pr. limit test er vi i case _(\textbf{2}_), så vores serie divergerer ligesom serien af _(1/k_). 
+    </p>
+
+
+
+
+
+

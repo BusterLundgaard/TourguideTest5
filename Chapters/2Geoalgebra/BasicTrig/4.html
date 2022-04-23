@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+
+
+    <h2>Vinkler: En bedre ide</h2>
+
+    <p class="t"> 
+    Det her var sådan, man i lang tid beskrev alle former 
+    for hældninger og retninger.
+    "Hvor meget ændrer én størrelse sig i forhold til en anden". 
+    Det virker godt i byggeri
+    og håndværk, hvor kvantiteter og mål er meget <i>statiske</i>. I
+    mere generelle situationer kan det dog blive problematisk.
+    Hvad hvis du skulle beskrive en lidt mere kompleks rute til nogen?
+    </p>
+    <img class="SpicBXL" style="width:80%" src="../../../Assets/Chapter2\Section1\ComplicatedPath.png">
+    <p class="tt">
+    Du kan ikke bare sige, 
+    at de skal dreje om sig selv
+    med uret en bestemt mængde, fordi sådan virker vores system 
+    fundamentalt ikke. Vi,
+    der fortæller, er nødt til at vide, hvad der er øst, vest, syd og
+    nord ved hvert punkt.
+    Man kan ikke <i>tilføje</i> eller <i>fjerne</i> en retning fra 
+    en anden.
+    Der findes slet ikke noget koncept om retningen som en <i>handling</i> 
+    - noget der sker:
+    At man <i>drejer</i> en bestemt mængde,
+    at solens og månens retning til os <i>ændrer</i> sig fra dag til nat.
+    </p>
+    <p class="t">
+    Nu da vi nævner det, blev problemerne virkelig klare i arbejdet 
+    med astronomi.
+    Man var nødt til at se på flere forskellige trekanter, baseret på 
+    hvor solen var henne:
+    </p>
+    <img class="SpicXL" style='width:130%; margin-left:-15%' src="../../../Assets/Chapter2\Section1\Astronomi.png">
+    <p class="tt">
+    Man havde ikke rigtig nogen god måde at forklare, hvor hurtigt månen
+    bevægede sig.
+    I "forholds/systemet" ville forholdet gå super meget opad, når månen
+    var lige over os. Det
+    er et forkert indtryk, da månen tydeligvis flyver rundt i samme hastighed. 
+    Alt i alt var man bare
+    nødt til at spørge sig selv hvorfor, man kun havde otte rigtige "retninger".
+    Kunne man ikke bare tilføje en masse flere, og beskrive det i meget 
+    højere detalje?
+    </p>
+    <video style="width: 130%; margin-left: -80px; margin-top:35px; margin-bottom:10px;" class="picB" controls>
+        <source src="../../../Assets/Chapter2\Section1\IntroducingVinkler.mp4" type="video/mp4">
+    </video>
+    <p class="tt">
+    Vinkler er super simple. Nu har man ét tal, der beskriver, hvor langt
+    rundt i cirklen man er gået. _(0_) svarer til, at man overhovedet 
+    ikke har drejet sig, _(360_) svarer til, at man har drejet hele vejen rundt.
+    Alt andet er bare imellem de to. 
+    </p>
+    <img class='SpicXL' style='width:95%' src='../../../Assets/Chapter2\Section1\AnglesExamples.png'> 
+    <p class="tt">
+    Man kan nemt lægge vinkler sammen, fordi det bare betyder,
+    at man vender sig mere rundt. Nu kan vi f.eks. beskrive, hvor 
+    hurtigt månen bevæger sig rundt
+    om jorden, som ca. "_(360/30_) grader pr. dag"
+    </p>
+    <img class='SpicXL' style='width:130%; margin-left:-15%' src='../../../Assets/Chapter2\Section1\Astronomi2.png'> 
+    <p class="tt">
+    Eller måske beskrive vinklen på et pendul:
+    </p>
+    <iframe scrolling="no" title="Pendulum" src="https://www.geogebra.org/material/iframe/id/thrdzjx8/width/700/height/500/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/true/sdz/false/ctl/true" width="350px" height="250px" style="border:solid; margin-left:15%; margin-top:35px; margin-bottom:10px;"> </iframe>
+    <p class="tt">
+    Ved den komplekse rute kan vi sige, at personen skal 
+    "dreje _(50.3_) vinkler med uret, gå _(15.6_) favn, dreje _(104.3_) 
+    vinkler med uret" osv: 
+    </p>
+    <img class='SpicBXL' style='width:120%; margin-left:-10%' src='../../../Assets/Chapter2\Section1\ComplicatedPath2.png'> 
+    <p class="tt">
+    Din tur! 
+    </p>
+
+    <q-stion 1="4" 2="1" bigTop="true">
+    Se følgende billede:
+    <img class='Spic' style='width:95%' src='../../../Assets/Chapter2\Section1\MarsNShit.png'> 
+    <p class="tt">
+    Sig at mars og jorden er _(80_) grader væk fra jorden i deres bane, 
+    som på billedet. 
+    Det tager jorden
+    _(365_) dage at flyve rundt om solen, og Mars _(687_) dage. 
+    Hvor lang tid går der, før Mars og jorden er så tæt på 
+    hinanden som muligt? 
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Sig at vores tidsenhed er dage. Jorden har en hastighed på
+    _($360/365=0.986_) 
+    ... grader pr. dag, mens Mars flyver langsommere med
+    _($360/687=0.524_)
+    Det vil sige at jorden hver dag "indhenter" Mars med 
+    _($0.986*1-0.524*1=0.4619_)
+    ... grader. Den mangler lige pt. _(360-80=280_) grader 
+    for at nå Mars, så det kommer til at tage:
+    _($280/0.4619=606.19 \approx 606 \, \text{dage}_)
+    Nice!
+    <br><br></answer-box>
+    
+    <!--  -->
+
+    <q-stion 1="4" 2="2">
+    Se følgende billede:
+    <img class='SpicBXL' style='width:80%' src='../../../Assets/Chapter2\Section1\WindBlower.png'> 
+    <p class="tt">
+    Oppe på et tag sidder der en gammeldags vindmåler. 
+    Ved at dreje rundt hjælper den os med at vurdere, hvor stærk vinden er. 
+    Vindhastigheden kan måles ud fra antallet af omdrejninger. 
+    Se følgende simulation:
+    </p>
+    <p class="cent">
+        <a href="https://www.geogebra.org/m/ysx5ebhf" target="_blank" >Link til Geogebra simulation</a>
+    </p>
+    <p class="t">
+    Her i denne simulation ser vi skiltet ovenfra. Hvis du trykker "start", 
+    går den i gang med at dreje rundt.
+    Du kan pause og starte igen ved at trykke på "pause". Hver gang du 
+    trykker på "tæl",
+    bliver der talt op. Timeren begynder ved første omdrejning du tæller
+    og slutter ved den
+    _(10_)'ne. Det er helt arbitrært at det lige er den _(10_)'ne. Jo 
+    flere omdrejninger vi tæller, jo mere præcist bliver det. 
+    </p>
+    <p class="t">
+    Det skal pointeres, at timeren med sekunder ikke helt passer til 
+    sekunderne i virkeligheden. 
+    Det er bare fordi Geogebra er lidt mærkeligt. Du behøver ikke
+    bekymre dig om det, og du kan lade som om, at timeren faktisk er rigtig. 
+    </p>
+    <p class="t">
+    Find vinkelhastigheden via simulationen
+    </p>
+    <br></q-stion>
+    <answer-box>
+    Du kan se mit svar her:
+    <video class='SpicB' style="width:90%;" controls>
+        <source src='../../../Assets/Chapter2\Section1\RotatingChickenExercise.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+

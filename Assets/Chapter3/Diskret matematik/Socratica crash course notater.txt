@@ -1,0 +1,17 @@
+< er brugt i stedet for det normale subset tegn ofte.
+
+cayley table: Lidt ligesom et multiplication table, men bare med gruppens aktion i stedet.
+Ingen column eller row har duplicate elementer, hvilket man nemt kan bevise.
+Med de her simple egenskaber kan man nemt se at der kun er èn gruppe af order 2 og kun èn gruppe af order 3.
+Vi kan også vise at der kun er fire grupper med order 4. Hvis du har fundet flere så må nogle af dem altså bare være isomorfiske! 
+To forskellige cayley-tables kan godt være isomorfiske dog.
+
+Et stort og vigtigt problem med subgroups er at et eller andet subset du tager
+ikke nødvendigvis er en subgroup også! 
+
+God tekst her omkring isomorfisme:
+http://users.monash.edu/~normd/documents/MATH-348-lecture-23.pdf
+Den første lecture er her:
+http://users.monash.edu/~normd/documents/MATH-348-lecture-11.pdf
+Den med group theory er forståelige nok, men de andre er også ret gode og giver en del inspiration!
+

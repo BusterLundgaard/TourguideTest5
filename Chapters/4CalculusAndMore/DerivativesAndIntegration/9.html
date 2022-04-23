@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+
+
+
+    <h4>Mere om det trick vi lige brugte: Implicit differentiation</h4>
+    <p class="t">
+    Den strategi vi brugte til at differentiere funktioner ved hjælp af deres modsætninger kan
+    bruges til mange andre ting. Hele ideen var bare, at vi skrev "funktionen" op som en ligning,
+    omskrev den ligning, differentierede begge sider, og isolerede den hældning vi søgte. 
+    Sig f.eks. vi søgte hældningen på _(x^x_). Jeg får ingen umiddelbare ideer
+    til, hvordan jeg kunne differentiere, så lad mig opskrive den som en ligning: 
+    _($y(x)=x^x_)
+    Kan jeg omskrive siderne på denne ligning, så de bliver nemmere at differentiere? 
+    Èn mulig ide er at tage logaritmen _(Ln_), 
+    da logaritmer bl.a. har dejlige potensegenskaber. 
+    Vi kan bruge 
+    _($Log(A^B)=B*Log(A)_) 
+    ... til at forsimple _(x^x_): 
+    _($\begin{eqnarray}
+    && Ln(y(x))=Ln(x^x) \to \\ \\
+    && Ln(y(x))=x*Ln(x)
+    \end{eqnarray}_)
+    Nu er begge sider nemme nok til at differentieres! 
+    Jeg bruger kædereglen
+    ved _(Ln(y(x))_), hvor _(Ln(x)_) er den ydre funktion med hældningen _(1/x_), og 
+    _(y(x)_) er den indre funktion med hældningen _(y'(x)_):
+    _($\begin{eqnarray}
+    && \frac{1}{y(x)}*y'(x)=x*\frac{1}{x}+1*Ln(x) \to \\ \\
+    && \frac{y'(x)}{y(x)} = 1+Ln(x) \to \\ \\
+    && y'(x)=y(x)*(1+Ln(x))
+    \end{eqnarray}_)
+    Vi ved, at _(y(x)=x^x_), så:
+    _($y'(x)=x^x*(1+Ln(x))_)
+    Bum! Det er vores svar. Nu kan vi f.eks. se, at hældningen ved _(x=5.4_) er
+    _($y'(5.4)=5.4^{5.4}*(1+Ln(5.4)) = 24215.68_)
+    ... meget høj! 
+    </p>
+
+    <p class="t">
+    Den her strategi kaldes <i>implicit differentiation</i>. 
+    </p>
+
+    <q-stion 1="9" 2="1">
+    Vi mangler stadig lige èt punkt på listen: Find en måde
+    at differentiere 
+    _($Log_x(A)_)
+    ... hvor _(A_) er positiv selvfølgelig. 
+    <br><br></q-stion>
+    <answer-box>
+    Kald _(Log_{x}(A)_) for _(y(x)_). Vi ved nu at:
+    _($x^{y(x)}=A_)
+    _(x^{y(x)}_) kan nok forsimples en del, hvis vi tager logaritmen på begge sider:
+    _($\begin{eqnarray}
+    && Ln\left(x^{y(x)} \right) = Ln(A) \to \\ \\
+    && y(x)*Ln(x) = Ln(A) 
+    \end{eqnarray}_)
+    Nu er vi klar til at differentiere begge sider. Den højre side _(Ln(A)_) er en konstant, så
+    den forsvinder væk til _(0_):
+    _($\begin{eqnarray}
+    && y'(x)*Ln(x) + \frac{y(x)}{x} = 0 \to \\ \\
+    && y'(x) = -\frac{y}{x*Ln(x)} 
+    \end{eqnarray}_)
+    Bum! Vi indsætter nu _(y=Log_{x}(A)_). For at gøre formlen ekstra simpel, 
+    bruger vi dog først lige change-of-base, og omskriver til:
+    _($\frac{Ln(A)}{Ln(x)}_)
+    Så:
+    _($y'(x) = -\frac{(Ln(A)/Ln(x))*L}{x*Ln(x)}_)
+    Ergo:
+    _($¤x \left[Log_{x}(A) \right] = -Ln(A)*\frac{1}{x Ln(x)^2} _)
+    Voila!
+    <br><br></answer-box>
+
+    <q-stion 1="9" 2="2">
+    Differentier 
+    _($Log_x(Sin(x))_)
+    <br></q-stion>
+    <answer-box>
+    Vi har nu lidt ligesom før ligningen:
+    _($x^{y(x)}=Sin(x)_)
+    Igen tager vi logaritmen på begge sider, og får:
+    _($y(x)*Ln(x) = Ln\left(Sin(x) \right)_)
+    Vi differentierer nu:
+    _($y'(x) Ln(x) + \frac{y(x)}{x} = \frac{Cos(x)}{Sin(x)}_)
+    Endeligt isolerer vi så _(y'(x)_) og indsætter
+    _(y=Log_{x}(Sin(x))_), hvilke giver:
+    _($¤x \left[Log_{x}(Sin(x)) \right] = \frac{1}{Ln(x)} \left(\frac{Cos(x)}{Sin(x)} - \frac{Log_{x}(Sin(x))}{x} \right)_)
+    Bum!
+    <br><br></answer-box>
+
+    <p class="t">
+    Vi kan også bruge implicit differentiation til at finde hældninger på kurver, 
+    der defineres som ligninger. Sig f.eks. vi har 
+    _($x^2+y^3=1_)
+    Vi kan plotte alle de _((x,y)_) punkter, hvor denne ligning er sand, og få:
+    </p>
+    
+    <img class='SpicXL' style='width:100%' src='../../../Assets/Chapter4\DerivativesAndIntegrals\ImplicitDiffCurve1.png'> 
+    
+    <p class="t">
+    Præcis ligesom en hvilken som helst anden kurve, har de forskellige punkter også hældninger.
+    F.eks. _((0.6,0.86)_):
+    </p>
+
+    <img class='SpicXL' style='width:100%' src='../../../Assets/Chapter4\DerivativesAndIntegrals\ImplicitDiffCurve1 2.png'> 
+
+    <q-stion 1="9" 2="3">
+    Find hældningen på _(x^2+y^3=1_) ved _((0.6,0.86)_). 
+    <br><br></q-stion>
+    <answer-box t="h">
+    Tricket er, at <i>antage</i> at _(y_) er en funktion af _(x_) som _(y(x)_). 
+    Og det <i>er</i> den jo også på en måde. Hvis _(x=2_), er _(y_) lig:
+    _($2^2 + y^3 = 1 \to y=(1-2^2)^{1/3} = -1.4422_)
+    Hvis _(x=3.3_), er _(y_) lig:
+    _($3.3^2 + y^3 = 1 \to y=(1-3.3^2)^{1/3} = -2.1465_)
+    _(y_) <i>afhænger</i> stadig af _(x_), det er bare beskrevet på meget implicit vis. 
+    <br><br></answer-box>
+    <answer-box>
+    Tricket er, at <i>antage</i> at _(y_) er en funktion af _(x_) som _(y(x)_). 
+    Og det <i>er</i> den jo også på en måde. Hvis _(x=2_), så er _(y_) lig:
+    _($2^2 + y^3 = 1 \to y=(1-2^2)^{1/3} = -1.4422_)
+    Hvis _(x=3.3_), så er _(y_) lig:
+    _($3.3^2 + y^3 = 1 \to y=(1-3.3^2)^{1/3} = -2.1465_)
+    _(y_) <i>afhænger</i> stadig af _(x_), det er bare beskrevet på en meget <i>implicit</i> vis. 
+    <p class="t">
+    Vi siger derfor:
+    _($x^2+y(x)^3=1_)
+    Nu kan vi differentiere begge sider præcis ligesom i tidligere opgaver.
+    Vi bruger kædereglen til at differentiere _(y(x)^3_):
+    _($2x + 3*y(x)^2*y'(x) = 0_)
+    Vi isolerer så _(y'(x)_) ligesom før:
+    _($y'(x) = -\frac{2x}{3*y(x)^2}_)
+    Vi ved at _(x=0.6_), _(y=0.86_), så: 
+    _($y'(x) = -\frac{2*0.6}{3*0.86^2} = -0.5408_)
+    Og vi har vores svar!
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="9" 2="4">
+    Find hældningen på 
+    _($x^y=y^x_) 
+    ved _((1.8, 4.808)_)
+    <img class='SpicXL' style='width:80%' src='../../../Assets/Chapter4\DerivativesAndIntegrals\ImplicitDiffCurve2.png'> 
+    <br><br></q-stion>
+    <answer-box>
+    Det er nok ret optimalt at tage _(Ln_) af begge sider, hvilket giver:
+    _($y Ln(x) = x Ln(y)_)
+    Nu differentierer vi og får:
+    _($\frac{y}{x} + y'(x)*Ln(x) = Ln(y) + \frac{x*y'(x)}{y}_)
+    Vi kan nu isolere _(y'(x)_) og få:
+    _($y'(x) = \frac{Ln(y)-y/x}{Ln(x)-x/y}_)
+    Nu indsætter vi så _(x=1.8_) og _(y=4.808_):
+    _($\frac{Ln(4.808) - 4.808/1.8}{Ln(1.8)-1.8/4.808} = -5.158_)
+    Så det er hældningen!
+    <br><br></answer-box>
+
+    <p class="t">
+    Vi kan også bruge implicit differentiation til at differentiere mere
+    <i>effektivt</i> og <i>elegant</i>. Sig f.eks. vi skulle differentiere følgende funktion:
+    _($y=\left(\frac{x+e^x}{Cos(x)} \right)^{x}_)
+    Hvis vi brugte kæde-reglen, ville vi skulle sige, at _(x^x_) var den ydre funktion, og at
+    _((x+e^x)/cos(x)_) var den indre, så vi fik:
+    _($\left(\frac{x+e^x}{Cos(x)} \right)^{\left(\frac{x+e^x}{cos(x)} \right)}*(1+Ln \left(\frac{x+e^x}{cos(x)} \right))*¤x \left[\frac{x+e^x}{cos(x)} \right]_)
+    Selv hvis hældningen af _((x+e^x)/cos(x)_) var dejlig 
+    (spoilers: det er den ikke), er det her et virkelig rodet og
+    grimt resultat. Alting ville blive meget nemmere, hvis vi brugte logaritmer og omskrev ligningen:
+    _($\begin{align}
+    Ln(y) &=Ln(\left(\frac{x+e^x}{Cos(x)} \right)^{x}) &\to \\ \\
+    Ln(y) &= x*(Ln(x+e^x)-Ln(Cos(x))) &\to \\ \\
+    ¤x[Ln(y)] &= ¤x[x*(Ln(x+e^x)-Ln(Cos(x)))] &\to \\ \\
+    \frac{y'}{y} &= Ln(x+e^x)-Ln(Cos(x)) + x*\left(\frac{1+e^x}{x+e^x} + \frac{Sin(x)}{Cos(x)} \right) &\to \\ \\
+    y' &= y*\left(Ln(x+e^x)-Ln(Cos(x)) + x*\left(\frac{1+e^x}{x+e^x} + \frac{Sin(x)}{Cos(x)} \right) \right)
+    \end{align}_)
+    Det er ikke ligefrem dejligt, men stadig (i min mening) langt nemmere at
+    arbejde med og udlede end det tidligere udtryk.
+    </p>
+
+    <q-stion 1="9" 2="5" CustomWidth="565">
+    Differentier følgende funktion:
+    _($\frac{x^{2.4}}{Sin(x)*\sqrt{1+e^x}}_)
+    <br></q-stion>
+    <answer-box CustomWidth="565">
+    At differentiere gangede og dividerede funktioner bliver hurtigt et rod. Vi har
+    også en kvadratrod, hvilket svarer til en potens på _(1/2_). 
+    Det er mere kæde-regel, og mere rod. Det er nok en god ide at 
+    bruge logaritmer i denne situation:
+    _($\begin{align}
+    Ln(y) &= Ln \left(\frac{x^{2.4}}{Sin(x)*\sqrt{1+e^x}} \right) &\to \\ \\
+    Ln(y) &= 2.4*Ln(x) - Ln(Sin(x)) - \frac{1}{2}*Ln(1+e^x) &\to \\ \\
+    ¤x[Ln(y)] &= ¤x[2.4*Ln(x) - Ln(Sin(x)) - \frac{1}{2}*Ln(1+e^x)] &\to \\ \\
+    y' &= y*\left(\frac{2.4}{x} - \frac{Cos(x)}{Sin(x)} - \frac{1}{2}*\frac{e^x}{1+e^x} \right)
+    \end{align}_)
+    Altså:
+    _($\begin{align}
+    & ¤x \left[\frac{x^{2.4}}{Sin(x)*\sqrt{1+e^x}} \right] = \\ \\ 
+    & \frac{x^{2.4}}{Sin(x)*\sqrt{1+e^x}}* \left(\frac{2.4}{x} - \frac{Cos(x)}{Sin(x)} - \frac{1}{2}*\frac{e^x}{1+e^x} \right)
+    \end{align}_)
+    Voila!
+    <br><br></answer-box>
+
+    <p class="t">
+    Det tænker jeg er nok differentiation for nu! 
+    </p>
+
+
+
+
+

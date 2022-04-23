@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+
+
+    <q-stion 1="2" 2="1" 3="5">
+    Vis/bevis at 
+    _($(a+b)^n = \sum_{i=0}^n \Vec[i,n]*a^i*b^{n-i}_)
+    Det her kaldes "the binomial formula". Med det bevis vi kom frem til i sidste
+    opgave, så er det her faktisk super nemt. Sigma/_(\text{Sum}_) tegnet får det bare til at se
+    lidt skræmmende ud. 
+    <br><br></q-stion>
+    <answer-box>
+    Med resultatet fra den tidligere opgave så er det her super nemt at se. 
+    Der er _(n_) parenteser, så det passer at _(a^i*b^{n-i}_) har _(n_) faktorer eftersom at _(i+(n-i)=n_).
+    Hvis _(a_) har en potens på _(i_), så ved vi fra sidste opgave at koefficienten er _(\Vec[i,n]_). 
+    <br><br></answer-box> 
+
+    <q-stion 1="2" 2="1" 3="5">
+    Du prøver at kaste en basketball op i net. Du er ikke specielt god, så chancen
+    for at du rammer et kast er _(20_) % (så _(0.2)_). Du kaster nu _(7_) gange:
+    Hvad er chancen for at du får præcis _(3_) bolde i?
+    <br><br></q-stion>
+    <answer-box>
+    Chancen for at jeg <i>ikke</i> rammer er _(1-0.2=0.8_). Forestil dig at jeg ramte
+    de tre første gange, og ikke ramte de sidste _(7-3=4_) gange. Chancen for det ville
+    være: 
+    _($0.2*0.2*0.2*0.8*0.8*0.8*0.8=0.0032768_) 
+    Men det her er kun èn af de mange måder jeg kan få _(3_) points på. 
+    Måske får jeg i stedet mine points på skud 2, 5, og 6. Måske
+    skud 1, 3 og 4. Der er
+    _($\VeC[7,3] = 35_)
+    måder at få _(3_) points. Hver af disse situationer har en sandsynlighed på 
+    _(0.0032768_), så den samlede sandsynlighed er:
+    _($35*0.0032768 = 0.1146_)
+    Så en chance på omkring _(11.46_) %. 
+    <p class="t">
+    En generel formel man kunne have brugt i denne situation, er:
+    _($\VeC[n,k]*p^k*(1-p)^{n-k}_)
+    Hvor _(n_) er mængden af gange man kaster, _(k_) er hvor mange points
+    man gerne vil have, og _(p_) er chancen for man rammer. Her svarer
+    _(1-p_) altså til _(0.8_), og _(n-k_) til _(4_). Med _(p^k*(1-p)^{n-k}_)
+    finder vi sandsynligheden i èt tilfælde, som vi så ganger med mængden af måder
+    _(\Vec[n,k]_) for at den få den samlede chance. 
+    </p>
+    <br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Mere basketball; samme situation som før. Du vinder en konkurrence hvis
+    du får <i>over</i> _(3_) points. Hvad er chancen for at du vinder?
+    <br><br></q-stion>
+    <answer-box>
+    Her skal vi finde chancen for at få enten _(4_) points, _(5_) points,
+    _(6_) points, eller _(7_) points. Alternativt så kunne vi lidt nemmere
+    finde chancen for at få _(3_) points, _(2_) points, _(1_) points og _(0_) points, hvilket
+    er hurtigere da vi allerede har svaret for _(3_). Så kan vi bare sige
+    _(1-\text{Chancen vi finder}_) og få svaret. 
+    <p class="t">
+    Chancen for _(2_) points er 
+    _($\VeC[7,2]*0.2^2*0.8^5=0.275_)
+    Chancen for _(1_) point er:
+    _($\VeC[7,3]*0.2*0.8^6=0.367_)
+    Chancen for ingen points er:
+    _($0.8^7=0.2097_)
+    Den samlede chance for at få under _(4_) points er altså 
+    _($0.1144+0.275+0.367+0.2097 = 0.9661_)
+    Så chancen for at få _(4_) points eller over er:
+    _($1-0.9661=0.0339_)
+    Bum!
+    </p>
+    <br></answer-box>
+
+    <p class="t">
+    Det er tydeligt at der er større chance for at få, f.eks. 2 points, end
+    for at få alle 7. Lad os tegne en graf der viser dette forhold:k
+    </p>
+    <img class='SpicB' style='width:70%' src='../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\BinomialDistribution1.png'> 
+    <p class="t">
+    Her har jeg altså bare evalueret _(\Vec[7,k]*0.2^k*0.8^{7-k}_) for alle
+    værdier _(k=0_) til _(7_). Man kan se at der er størst chance for at jeg kun scorer
+    èt enkelt mål. Lige nu er _(p=0.2_). Hvad sker der hvis jeg gør denne chance større? 
+    </p>
+    <video class='SpicB' style="width:70%" controls>
+        <source src='../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\BinomialAnimationCropped.mp4' type='video/mp4'>
+    </video>
+
+    <p class="t">
+    Det kunne være praktisk at vide: Givent at jeg kaster så mange gange,
+    og at sandsynligheden _(p_) er lig et eller andet, hvilken score er der
+    størst chance for at jeg får? 
+    </p>
+
+    <q-stion 1="2" 2="1" 3="5" customWidth="550">
+    Hvis du kaster _(n_) gange, og sandsynligheden for at du rammer er lig _(p_), hvilken
+    score er der størst chance for at du får? Vigtigt: Du kan ikke nødvendigvis komme
+    frem til en direkte <i>formel</i> for _(k_), men du kan finde to tal _(k_) er 
+    <i>imellem</i>. 
+    <p class="t">
+    Den her opgave er måske lidt tricky. Jeg anbefaler at du bliver inspireret af 
+    <i>grafen</i>: Hvad gælder på grafen der hvor værdien er størst? 
+    </p>
+    <br></q-stion>
+    <answer-box t="h" customWidth="550">
+    Kald chancen for at vi får _(k_) points for _(p(k)_). _(k_) er et helt tal, og
+    hvis _(p(k)_) er højest, så ved jeg at:
+    _($p(k-1) \lt p(k) \gt p(k+1)_)
+    Altså, værdien _(p(k)_) er både større end værdien bagved og værdien foran. 
+    <br><br></answer-box>
+    <answer-box customWidth="550">
+    Kald chancen for at vi får _(k_) points for _(p(k)_). Her er så ideèn:
+    Jeg kan se på grafen, at hvis  _(p(k)_) er højest, så er:
+    _($p(k-1) \lt p(k) \gt p(k+1)_)
+    Altså, værdien _(p(k)_) er både større end værdien bagved og værdien foran. Det
+    kan vi bruge til at opsætte to uligheder:
+    _($\VeC[n,k-1]*p^{k-1}*(1-p)^{n-(k-1)} \lt \VeC[n,k]*p^k*(1-p)^{n-k}_)
+    _($\VeC[n,k+1]*p^{k+1}*(1-p)^{n-(k+1)} \lt \VeC[n,k]*p^k*(1-p)^{n-k}_)
+    Lad os se om vi kan omskrive dem her til noget lidt simplere. Lad os 
+    starte med den første. Her kan vi dividere begge sider med _(p^k*(1-p)^{n-k}_) og få:
+    _($\VeC[n, k-1]*\frac{1-p}{p} \lt \VeC[n, i]_)
+    Vi udvider nu den fulde _(n_)-choose-_(k_) formel og får:
+    _($\frac{n!}{(k-1)! (n-k+1)!}*\frac{1-p}{p} \lt \frac{n!}{k! (n-k)!}_)
+    _(n!_) kan tydeligvis fjernes siden det er på begge sider. _(k! (n-k)!_) kan også
+    <i>næsten</i> fjernes siden det er tæt på at være på den højre side også. Hvis vi omskriver til:
+    _($\frac{k}{k!*(n-k+1)*(n-k)!}*\frac{1-p}{p} \lt \frac{1}{k! (n-k)!}_)
+    Så kan vi gange begge sider med _(k!*(n-k)!_) og få:
+    _($\frac{k}{n-k+1} \frac{1-p}{p} \lt 1_)
+    Vi vil gerne så godt som muligt isolere _(k_), så vi gange begge
+    sider med _(p*(n-k+1)_), hvilke giver:
+    _($k*(1-p) - p*(n-k+1) \lt 0_)
+    Hvilke let kan omskrives til:
+    _($k \lt p*(n+1)_)
+    Vi kan gennemgå præcis samme proces med den anden ulighed og få:
+    _($k \gt p*(n+1) - 1_)
+    Så alt i alt:
+    _($p*(n+1) - 1 \lt k \lt p*(n+1)_)
+    Så vi skal bare: Regne _(p*(n+1)_), regne _(p*(n+1)-1_), og så finde et <i>helt</i> tal imellem! 
+    De er kun _(1_) fra hinanden, så der er kun ét enkelt _(k_) der opfylder dette krav. 
+    Faktisk er denne ulighed bare en fancy måde at skrive:
+    _($k = \text{Floor} \left(p*(n+1) \right)_)
+    Hvor _(\text{Floor}_) runder ned. 
+    <br><br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Lad os så prøve at bruge det resultat vi fandt frem til i sidste opgave:
+    Hvilken score er der størst chance for at du får hvis du kaster _(827_) gange
+    og rammer med en sandsynlighed på _(p=0.65_)?
+    <br><br></q-stion>
+    <answer-box>
+    Vi regner:
+    _($\text{Floor}(0.65*(827+1)) = \text{Floor}(538.2) = 538_)
+    Voila!
+    <br><br></answer-box>
+
+
+
+
+
