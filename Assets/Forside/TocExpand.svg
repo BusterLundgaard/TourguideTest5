@@ -1,7 +1,8 @@
-<svg width="3.723mm" height="4.438mm" version="1.1" viewBox="0 0 3.723 4.438" xmlns="http://www.w3.org/2000/svg">
- <g transform="translate(64.34 -112.6)" fill="none" stroke="#000" stroke-linecap="round" stroke-width=".1574">
-  <path d="m-64.26 112.7h3.564l-0.02251 4.279"/>
-  <path d="m-61.25 114.8v-1.494l-2.342 2.09 2.342-2.09h-1.481" stroke-linejoin="bevel"/>
-  <path d="m-61.25 114.8v-1.494l-2.342 2.09 2.342-2.09h-1.481" stroke-linejoin="bevel"/>
+<svg width="3.93mm" height="3.93mm" version="1.1" viewBox="0 0 3.93 3.93" xmlns="http://www.w3.org/2000/svg">
+ <g transform="translate(-174.5 -44.68)">
+  <circle cx="176.4" cy="46.65" r="1.825" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="bevel" stroke-width=".28"/>
+  <g transform="matrix(.2678 0 0 .2209 216 12.05)" aria-label="i">
+   <path d="m-149.4 161.8v-0.75h1.109v-4.945q0-0.4453-0.1641-0.5312-0.1562-0.0937-0.8984-0.0937v-0.75l2.789-0.1328v6.453h0.9922v0.75q-1.727-0.0469-1.875-0.0469-0.4688 0-1.953 0.0469zm0.8594-8.992q-0.3594-0.3672-0.3594-0.875 0-0.5156 0.3594-0.8828 0.3594-0.3672 0.8906-0.3672 0.5156 0 0.8828 0.3672t0.3672 0.8828q0 0.5078-0.375 0.875-0.3672 0.3672-0.875 0.3672-0.5312 0-0.8906-0.3672z"/>
+  </g>
  </g>
 </svg>

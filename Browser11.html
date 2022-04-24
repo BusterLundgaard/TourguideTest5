@@ -13,7 +13,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/aaaakshat/cm-web-fonts@latest/fonts.css">
 
 </head>
-<body>
+<img>
 
     <div id="TocBackground">
         <div id="TocTitle">Indholdsfortegnelse</div>
@@ -48,6 +48,7 @@
     </div>
     <div id="scrollBar"></div>
 
+    <img id="backtoFront" src="Assets/Forside/ForsideBackarrow.svg"></img>
     <img id="leftButton" src="Assets/GUI/pageLeft.svg" alt="no pic"> </img>
     <img id="rightButton" src="Assets/GUI/pageRight.svg" alt="no pic"> </img>
 
@@ -64,12 +65,16 @@
 
         let isTouchDevice = false;
         if(('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0)) {
-            document.body.style.zoom=1.00;   
+            document.body.style.zoom=0.8;   
             isTouchDevice=true;
         }
         else{
             document.body.style.zoom=1.25;
         }
+
+        document.getElementById("backtoFront").addEventListener("click",(e)=>{
+            window.open("index.html?toToc", "_self");
+        });
 
         //Mathjax:
         window.MathJax = {
@@ -184,7 +189,6 @@
         async function startUp() {
 
             //Change the url param without reloading:
-            //window.history.pushState("", "", "?407");
             const queryString = window.location.search;
             chapNum = parseInt(queryString[1]);
             secNum = parseInt(queryString[2]);
@@ -662,6 +666,7 @@
             let selectedMouse = -1;
 
             if(intialSetup) {
+
             scrollSelector.addEventListener("mouseenter", (e)=>{
                 styleSelector(true);
             })
@@ -688,7 +693,6 @@
 
                         //Get and show the page under the selector:
                         let read = newPos*chapterIL/100.0;
-                        //let read = (1/1.25)*(e.clientX - scrollBarRect.x)*chapterIL/scrollBarRect.width - 1; 
 
                         let R = 0; let i = 0;
                         while(R < read) {
@@ -1046,7 +1050,7 @@
                             L-=7;
                             scrollBar.children[sec].children[i].style.outline = "1px solid black";
                         } else{
-                            scrollBar.children[sec].children[i].style.borderTop = "1px solid black";
+                            scrollBar.children[sec].children[i].style.borderTop = "0.5px solid black";
                         }
 
                         scrollBar.children[sec].children[i].style.backgroundColor =  "hsl(" + h.toString() + ", 100%," + L.toString() + "%)";
@@ -1119,24 +1123,24 @@
             }
 
             //Update when changing page:
-            if(!intialSetup) {
-                let newSec = 0;
-                while(newSec < secs.length && secs[newSec].p <= activePage+1)  {newSec++;}
-                newSec--;
+            let newSec = 0;
+            while(newSec < secs.length && secs[newSec].p <= activePage+1)  {newSec++;}
+            newSec--;
 
-                if(newSec != selectedSelector){
-                    visualizeSubsecs(selectedSelector, false);
-                    selectedSelector=newSec;
-                    visualizeSubsecs(newSec, true);
-                }
-
-                let R=0;
-                for(let i=0; i < activePage; i++) {
-                    R+=pagesIL[i];
-                }
-                scrollSelector.style.marginLeft=(100*R/chapterIL).toString() + "%";
-                scrollPage.style.marginLeft=scrollSelector.style.marginLeft;
+            if(newSec != selectedSelector){
+                visualizeSubsecs(selectedSelector, false);
+                selectedSelector=newSec;
+                visualizeSubsecs(newSec, true);
             }
+
+            scrollPage.innerText = (activePage+1).toString();
+
+            let R=0;
+            for(let i=0; i < activePage; i++) {
+                R+=pagesIL[i];
+            }
+            scrollSelector.style.marginLeft=(100*R/chapterIL).toString() + "%";
+            scrollPage.style.marginLeft=scrollSelector.style.marginLeft;
 
         }
 

@@ -14,7 +14,7 @@ body{
     left:0%;
     top:0%;
     width:105%;
-    height:100vh;
+    height:104vh;
     
     background: linear-gradient(90deg, rgb(0, 2, 8) 0%, rgb(4, 7, 22) 40.057%, rgb(240, 243, 255) 50%, rgb(4, 7, 22) 59.943%, rgb(0, 2, 8) 100%);
     border-bottom:solid;
@@ -34,11 +34,27 @@ body{
     opacity: 0;
 }
 #trailerVidIFrame{
+    border:solid;
     position:absolute;
     top:0;
     left:20%;
     width:60%;
     height:100%;
+}
+
+#quitLogo{
+    position:fixed;
+    bottom:7%;
+    height:4.0vw;
+    left:50%;
+    z-index:10;
+    opacity:0.5;
+    transition:opacity, 100ms;
+}
+#quitLogo:hover{
+    bottom:7.5%;
+    opacity:1;
+    cursor:pointer;
 }
 
 /* LOGO AND ANIMATION */
@@ -264,6 +280,8 @@ body{
 
 
 #toolbar{
+    display:none;
+
     position: absolute;
     top: calc(100vh + 2.5px);
     
