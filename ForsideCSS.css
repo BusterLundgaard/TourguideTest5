@@ -1158,7 +1158,7 @@ background: rgb(43, 43, 43);
     #TocResumeCover{
         width:100%;
         height:100%;
-        display:flex;
+        display:none;
         transition:opacity, 5000ms;
     }
     #TocResume{
