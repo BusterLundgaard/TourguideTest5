@@ -12,11 +12,12 @@ body{
     background-color: rgb(230, 255, 253); 
     line-height: 23px;
     overflow-x: hidden;
+    font-size:40px;
 }
 #master{
     position:relative;
     font-family:'Computer Modern Serif';
-    font-size: 15px;
+    font-size: 20px;
     width:500px;
     /* height:234px; */
     /* min-height: 934px; */
@@ -29,7 +30,7 @@ body{
 
 .t{
     font-family:'Computer Modern Serif';
-    font-size: 15px;
+    font-size: 20px;
     line-height: 23px;
 
     word-wrap: break-word;
@@ -38,7 +39,7 @@ body{
 }
 .tt{
     font-family:'Computer Modern Serif';
-    font-size: 15px;
+    font-size: 20px;
     line-height: 23px;
 
     word-wrap: break-word;
@@ -735,6 +736,41 @@ background: rgb(43, 43, 43);
     }
     #secSplitCont{
         display:none;
+    }
+
+    #leftButton{
+        position:fixed;
+        z-index:5;
+        height:20px;
+        right:calc(2.5% + 65px);
+        top:40px;
+        opacity:0.5;
+        transition:opacity,50ms;
+    }
+    #rightButton{
+        position:fixed;
+        z-index:5;
+        height:20px;
+        right:2.5%;
+        top:40px;
+        opacity:0.5;
+        transition:opacity,50ms;
+    }
+    
+    
+    /* Page displayer */
+    #pageDisplayer{
+        font-family:'Computer Modern Serif';    
+        font-size:20px;
+        position:fixed;
+        top:17px;
+        right:2.5%;
+        opacity:0.5;
+        z-index:5;
+        transition:opacity, 200ms;
+    }
+    #pageTotalDisplayer{
+        margin-left:-5px;
     }
 
 }

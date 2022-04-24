@@ -62,7 +62,14 @@
 
     <script>
 
-        document.body.style.zoom=1.25;
+        let isTouchDevice = false;
+        if(('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0)) {
+            document.body.style.zoom=1.00;   
+            isTouchDevice=true;
+        }
+        else{
+            document.body.style.zoom=1.25;
+        }
 
         //Mathjax:
         window.MathJax = {
@@ -443,6 +450,13 @@
 
             //Set cookie:
             document.cookie = "lastPage="+chapNum.toString() + secNum.toString() + (pageNum+1).toString();
+
+            //Some mobile stuff:
+            if(isTouchDevice){
+                document.body.style.zoom=1.00;   
+                window.scrollTo(0,0);
+            }
+
         }
 
 

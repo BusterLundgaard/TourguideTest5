@@ -38,7 +38,7 @@
     <div id="tagline"></div>
 
     <div id="trailerVid">
-        <iframe src="https://www.youtube.com/embed/-ApK_vO8tW4" id="trailerVidIFrame" frameborder="0" allow="fullscreen"></iframe>
+        <iframe src="https://www.youtube.com/embed/RtOL4L5m0no" id="trailerVidIFrame" frameborder="0" allow="fullscreen"></iframe>
     </div>
 
 
@@ -347,6 +347,8 @@
 
 
         //LOGO AND START ANIMATIONS
+        document.getElementById("TocResumeCover").style.display="none";
+
         function sleep(ms) {return new Promise(resolve => setTimeout(resolve, ms));}
         let logoAnimation = async function(){
 
@@ -598,14 +600,17 @@
 
             await sleep(1000);
 
-            document.getElementById("trailerVid").style.display="block";
+            if(atLogo){
+                console.log("Im at the logo?");
+                document.getElementById("trailerVid").style.display="block";
 
-            tagline.style.opacity=0;
+                tagline.style.opacity=0;
 
-            setTimeout(() => {
-                tagline.style.display="none";
-                document.getElementById("trailerVid").style.opacity="1";    
-            }, 500);
+                setTimeout(() => {
+                    tagline.style.display="none";
+                    document.getElementById("trailerVid").style.opacity="1";    
+                }, 500);
+            }
             
 
             }
@@ -668,22 +673,29 @@
             async function handleGesture() {
                 if (touchendY < touchstartY-50) {
                     
-                    document.getElementById("contentBackground").style.display="block";
-                    document.getElementById("contentBackground").style.top="60px";
-                    document.getElementById("toolbar").style.display="block";
-                    document.getElementById("toolbar").style.top="0px";
-                    document.getElementById("grad").style.display="none";
-                    document.getElementById("logo").style.display="none";
-                    document.getElementById("tagline").style.display="none";
+                        if(atLogo){
+                        document.getElementById("contentBackground").style.display="block";
+                        document.getElementById("contentBackground").style.top="60px";
+                        document.getElementById("toolbar").style.display="block";
+                        document.getElementById("toolbar").style.top="0px";
+                        document.getElementById("grad").style.display="none";
+                        document.getElementById("logo").style.display="none";
+                        document.getElementById("tagline").style.display="none";
+                        document.getElementById("trailerVid").style.display="none";
 
-                    document.body.style.zoom=0.45;
+                        document.body.style.zoom=0.45;
+                        atLogo=false;
 
-                    await sleep(100);
+                        await sleep(100);
 
-                    let introH1 = document.getElementById("introH1");
-                    introH1.style.opacity=1;
-                    introH1.style.marginLeft="-230px";
-                    
+                        let introH1 = document.getElementById("introH1");
+                        introH1.style.opacity=1;
+                        introH1.style.marginLeft="-230px";
+
+                        prepareChapters(); chaptersPrepared=true;        
+                        prepareToc(); TocPrepared=true;
+
+                    }
 
                 }
             }      
@@ -835,24 +847,6 @@
                     tocH1.style.opacity=1;
                     scrollStep++;
                } 
-
-               let Great = [newScroll > 540, newScroll > 850, newScroll > 1300, newScroll > 1571, newScroll > 1880, newScroll > 2318, newScroll > 2630];
-               let pGreat = [pScroll > 540, pScroll > 850, pScroll > 1300, pScroll > 1571, pScroll > 1880, pScroll > 2318, pScroll > 2630]
-
-               if(Great[0] && !pGreat[0]) {chap1Con.animating = true;}
-               if(!Great[0] && pGreat[0]) {chap1Con.animating = false;}
-               if(Great[1] && !pGreat[1]) {chap1Con.animating = false; chap2Con.animating = true;}
-               if(!Great[1] && pGreat[1]) {chap1Con.animating = true; chap2Con.animating = false;}
-               if(Great[2] && !pGreat[2]) {chap2Con.animating = false; chap25Con.animating = true;}
-               if(!Great[2] && pGreat[2]) {chap2Con.animating = true; chap25Con.animating = false;}
-               if(Great[3] && !pGreat[3]) {chap25Con.animating = false; chap3Con.animating = true;}
-               if(!Great[3] && pGreat[3]) {chap25Con.animating = true; chap3Con.animating = false;}
-               if(Great[4] && !pGreat[4]) {chap3Con.animating = false; chap4Con.animating = true;}
-               if(!Great[4] && pGreat[4]) {chap3Con.animating = true; chap4Con.animating = false;}
-               if(Great[5] && !pGreat[5]) {chap4Con.animating = false; chap5Con.animating = true; chap5Con.resumePausedAnimations();}
-               if(!Great[5] && pGreat[5]) {chap4Con.animating = true; chap5Con.animating = false; fabric.runningAnimations.cancelAll()}
-               if(Great[6] && !pGreat[6]) {chap5Con.animating = false; fabric.runningAnimations.cancelAll()}
-               if(!Great[6] && pGreat[6]) {chap5Con.animating = true; chap5Con.resumePausedAnimations();}
 
             }
 
@@ -2287,44 +2281,75 @@
             let chap4Con = new header4();
             let chap5Con = new header5();
 
-            document.getElementById("chap1").addEventListener("mouseenter", (e)=>{chap1Con.animating=true;})
-            document.getElementById("chap1").addEventListener("mouseleave", (e)=>{chap1Con.animating=false;})
+            document.getElementById("chap1").addEventListener("mouseenter", (e)=>{chap1Con.animating=true;});
+            document.getElementById("chap1").addEventListener("mouseleave", (e)=>{chap1Con.animating=false;});
 
-            document.getElementById("chap2").addEventListener("mouseenter", (e)=>{chap2Con.animating=true;})
-            document.getElementById("chap2").addEventListener("mouseleave", (e)=>{chap2Con.animating=false;})
+            document.getElementById("chap2").addEventListener("mouseenter", (e)=>{chap2Con.animating=true;});
+            document.getElementById("chap2").addEventListener("mouseleave", (e)=>{chap2Con.animating=false;});
 
-            document.getElementById("chap25").addEventListener("mouseenter", (e)=>{chap25Con.animating=true;})
-            document.getElementById("chap25").addEventListener("mouseleave", (e)=>{chap25Con.animating=false;})
+            document.getElementById("chap25").addEventListener("mouseenter", (e)=>{chap25Con.animating=true;});
+            document.getElementById("chap25").addEventListener("mouseleave", (e)=>{chap25Con.animating=false;});
 
-            document.getElementById("chap3").addEventListener("mouseenter", (e)=>{chap3Con.animating=true;})
-            document.getElementById("chap3").addEventListener("mouseleave", (e)=>{chap3Con.animating=false;})
+            document.getElementById("chap3").addEventListener("mouseenter", (e)=>{chap3Con.animating=true;});
+            document.getElementById("chap3").addEventListener("mouseleave", (e)=>{chap3Con.animating=false;});
 
-            document.getElementById("chap4").addEventListener("mouseenter", (e)=>{chap4Con.animating=true;})
-            document.getElementById("chap4").addEventListener("mouseleave", (e)=>{chap4Con.animating=false;})
+            document.getElementById("chap4").addEventListener("mouseenter", (e)=>{chap4Con.animating=true;});
+            document.getElementById("chap4").addEventListener("mouseleave", (e)=>{chap4Con.animating=false;});
 
             document.getElementById("chap5").addEventListener("mouseenter", (e)=>{
                 chap5Con.animating=true;
                 chap5Con.resumePausedAnimations();
-            })
+            });
             document.getElementById("chap5").addEventListener("mouseleave", (e)=>{
                 chap5Con.animating=false;
                 fabric.runningAnimations.cancelAll()
-            })
+            });
 
-            document.getElementById("chap1T").addEventListener("click", (e)=>{openBrowser("0","0","1");})
-            document.getElementById("chap2T").addEventListener("click", (e)=>{openBrowser("1","0","1");})
-            document.getElementById("chap25T").addEventListener("click", (e)=>{openBrowser("2","0","1");})
-            document.getElementById("chap3T").addEventListener("click", (e)=>{openBrowser("3","0","1");})
-            document.getElementById("chap4T").addEventListener("click", (e)=>{openBrowser("4","0","1");})
-            document.getElementById("chap5T").addEventListener("click", (e)=>{openBrowser("5","0","1");})
+            if(isTouchDevise){
+            let pmScroll = 0;
+            document.addEventListener("scroll", (e)=>{
 
-            document.getElementById("sec21").addEventListener("click", (e)=>{openBrowser("1","0","1");})
-            document.getElementById("sec22").addEventListener("click", (e)=>{openBrowser("1","1","1");})
-            document.getElementById("sec23").addEventListener("click", (e)=>{openBrowser("1","2","1");})
-            document.getElementById("sec24").addEventListener("click", (e)=>{openBrowser("1","3","1");})
+                let newScroll = window.scrollY;
 
-            document.getElementById("sec251").addEventListener("click", (e)=>{openBrowser("2","0","1");})
-            document.getElementById("sec252").addEventListener("click", (e)=>{openBrowser("2","1","1");})
+                let Great = [newScroll > 540, newScroll > 850, newScroll > 1300, newScroll > 1571, newScroll > 1880, newScroll > 2318, newScroll > 2630];
+                let pGreat = [pmScroll > 540, pmScroll > 850, pmScroll > 1300, pmScroll > 1571, pmScroll > 1880, pmScroll > 2318, pmScroll > 2630];
+
+                console.log(newScroll);
+
+                if(Great[0] && !pGreat[0]) {chap1Con.animating = true;}
+                if(!Great[0] && pGreat[0]) {chap1Con.animating = false;}
+                if(Great[1] && !pGreat[1]) {chap1Con.animating = false; chap2Con.animating = true;}
+                if(!Great[1] && pGreat[1]) {chap1Con.animating = true; chap2Con.animating = false;}
+                if(Great[2] && !pGreat[2]) {chap2Con.animating = false; chap25Con.animating = true;}
+                if(!Great[2] && pGreat[2]) {chap2Con.animating = true; chap25Con.animating = false;}
+                if(Great[3] && !pGreat[3]) {chap25Con.animating = false; chap3Con.animating = true;}
+                if(!Great[3] && pGreat[3]) {chap25Con.animating = true; chap3Con.animating = false;}
+                if(Great[4] && !pGreat[4]) {chap3Con.animating = false; chap4Con.animating = true;}
+                if(!Great[4] && pGreat[4]) {chap3Con.animating = true; chap4Con.animating = false;}
+                if(Great[5] && !pGreat[5]) {chap4Con.animating = false; chap5Con.animating = true; chap5Con.resumePausedAnimations();}
+                if(!Great[5] && pGreat[5]) {chap4Con.animating = true; chap5Con.animating = false; fabric.runningAnimations.cancelAll()}
+                if(Great[6] && !pGreat[6]) {chap5Con.animating = false; fabric.runningAnimations.cancelAll()}
+                if(!Great[6] && pGreat[6]) {chap5Con.animating = true; chap5Con.resumePausedAnimations();}
+
+                pmScroll=newScroll;
+
+            });}
+
+
+            document.getElementById("chap1T").addEventListener("click", (e)=>{openBrowser("0","0","1");});
+            document.getElementById("chap2T").addEventListener("click", (e)=>{openBrowser("1","0","1");});
+            document.getElementById("chap25T").addEventListener("click", (e)=>{openBrowser("2","0","1");});
+            document.getElementById("chap3T").addEventListener("click", (e)=>{openBrowser("3","0","1");});
+            document.getElementById("chap4T").addEventListener("click", (e)=>{openBrowser("4","0","1");});
+            document.getElementById("chap5T").addEventListener("click", (e)=>{openBrowser("5","0","1");});
+
+            document.getElementById("sec21").addEventListener("click", (e)=>{openBrowser("1","0","1");});
+            document.getElementById("sec22").addEventListener("click", (e)=>{openBrowser("1","1","1");});
+            document.getElementById("sec23").addEventListener("click", (e)=>{openBrowser("1","2","1");});
+            document.getElementById("sec24").addEventListener("click", (e)=>{openBrowser("1","3","1");});
+
+            document.getElementById("sec251").addEventListener("click", (e)=>{openBrowser("2","0","1");});
+            document.getElementById("sec252").addEventListener("click", (e)=>{openBrowser("2","1","1");});
 
             document.getElementById("sec41").addEventListener("click", (e)=>{openBrowser("4","0","1");});
             document.getElementById("sec42").addEventListener("click", (e)=>{openBrowser("4","1","1");});

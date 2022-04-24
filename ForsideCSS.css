@@ -904,6 +904,7 @@ h4{
     transition:opacity, 100ms;
 }
 #TocResume{
+    display:none;
     position:absolute;
     z-index: 6;
     width:650px;
@@ -1155,6 +1156,7 @@ background: rgb(43, 43, 43);
         font-size:40px;
     }
     #resumeText{
+        font-size:28px;
         padding-right:10px;
     }
     #contentBackground{
@@ -1174,6 +1176,18 @@ background: rgb(43, 43, 43);
         background: repeating-linear-gradient( 45deg, #dffcf9, #dffcf9 10px, #e6fffd 10px, #e6fffd 65px);    
         background-size: 110px 110px;
     }
+    #trailerVid{
+        margin-top:calc(240px - 20vw);
+    }
+    #trailerVidIFrame{
+        position:absolute;
+        top:0;
+        left:5%;
+        width:90%;
+        height:150%;
+        border:solid;
+    }
+
 
 }
 
