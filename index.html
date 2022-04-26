@@ -2916,7 +2916,7 @@
         
 
         //User has returned from browser:
-        if(window.location.search != ""){
+        if(window.location.search == "?toToc"){
             quitLogoScreen();
             presentationMode=false;
             let chaptersH1 = document.getElementById("chaptersH1");
