@@ -122,7 +122,7 @@
                 Måske er du faktisk ligeglad med alt det. 
                 Hvad er formålet med disse spørgsmål for en person, der
                 hverken er nørd, stræber eller interesseret i mærkeligt og unødvendigt
-                selvforbedrings-møi? Hvad får du ud af bogen fra
+                selvforbedrings-møj? Hvad får du ud af bogen fra
                 et mere materialistisk synspunkt? 
                 </p>
                 <p>
@@ -167,10 +167,18 @@
                 <h4>Mine præmisser til dig:</h4>
                 <p>
                 <i>1)</i> I en stor del af bogen (første kapitel og det meste af andet kapitel) tillader ieg <u>under absolut ingen omstændigheder
-                at du bruger <br> computerhiælp</u>.
+                at du bruger <br> computerhjælp</u>.
                 Ingen Maple. Ingen MathCad. Ingen WolframAlpha. Ingen Ti-Nspire. Intet. 
                 I meget af det første kapitel tillader jeg ikke engang lommeregnere! 
                 Det virker åndssvagt, men ieg kan virkelig ikke undervurdere, hvor vigtigt det her er! 
+                </p>
+                <p>
+                Dit vigtigste værktøj i denne bog er et alle har råd og rettighed til: Papir og blyant
+                </p>
+                <img style="width:500px; margin-left:100px; margin-top:5px;" src="Assets/Forside/PenAndPaper.jpg"></img>
+                <p>
+                Ufattelig meget kan opnås gennem små noter og mellemregninger. Store problemer kan løses i mindre trin, idéer kan skitseres og visualiseres, 
+                du kan få overblik over data, alt muligt! 
                 </p>
                 <p>
                 <i>2)</i> Der er en god del opgaver i denne bog, og jeg forventer at du laver alle. 
@@ -344,8 +352,9 @@
         }
         getFrameRate(0);
 
-        let openBrowser = (chap, sec, page)=>{
-            window.open("Browser11.html?" + chap + sec + page, "_self");
+        let openBrowser = (chap, sec, page, sepTab)=>{
+            if(sepTab == null){window.open("Browser11.html?" + chap + sec + page, "_self");}
+            else{window.open("Browser11.html?" + chap + sec + page, "_blank");}
         }
 
 
@@ -2444,6 +2453,11 @@
             let createToc = function(){
                 treeI = [-1, -1, -1, -1, -1];
                 createChildren(document.getElementById("TOC"));
+                
+                MathJax.typesetPromise([document.getElementById("TOC")]).then(()=>{
+                    MathJax.typesetPromise();
+                }).catch((err)=>{console.log(err.message);});
+
                 resolve();
             }
 
@@ -2557,8 +2571,8 @@
                         })
 
                         nodeText.addEventListener("click", (e)=>{
-                            if(treePath[1] != -1) {openBrowser(treePath[0], treePath[1], tempPage);}
-                            else{openBrowser(treePath[0], 0, tempPage);}
+                            if(treePath[1] != -1) {openBrowser(treePath[0], treePath[1], tempPage, true);}
+                            else{openBrowser(treePath[0], 0, tempPage, true);}
                         })
 
                     }

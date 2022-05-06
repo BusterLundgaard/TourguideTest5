@@ -58,6 +58,11 @@
         <span id="pageTotalDisplayer"></span> 
     </div>
 
+    <div id="linkWindow">
+        <div id="linkWindowText">Mere info på...</div>
+        <div id="linkWindowChapter"><b>Hældningen af en kurve</b> / Side 17</div>
+    </div>
+
     <br><br><br><br><br><br>
 
 
@@ -185,14 +190,22 @@
         var docContainer = document.getElementById("documentContainer"); //Just for practicality and performance
         var lowestVisiblePosition = 0;
 
+        var pageStartLocation = null;
+
         startUp();
         async function startUp() {
 
             //Change the url param without reloading:
+            //window.history.pushState("", "", "?502");
             const queryString = window.location.search;
             chapNum = parseInt(queryString[1]);
             secNum = parseInt(queryString[2]);
             
+            let optUrlParams = queryString.substring(3).split(",");
+            startingPage = parseInt(optUrlParams[0]);
+            pageStartLocation = optUrlParams[1];
+            if(pageStartLocation != undefined){pageStartLocation = parseFloat(pageStartLocation); }
+
             startingPage = parseInt(queryString.substring(3));
             chapter = chapters[chapNum][secNum];
 
@@ -335,6 +348,8 @@
 
         let rD = [];
         async function loadResumeData(){
+        return new Promise(async (resolve) => {
+
             let rs;
             await $.get("/Chapters/resumeData.txt", (data)=>{
                 rs = data;
@@ -395,6 +410,9 @@
                 }
 
             }
+        
+            resolve();
+        });
         }
 
         async function loadPage(pageNum, initialLoad) {
@@ -455,6 +473,9 @@
             //Set cookie:
             document.cookie = "lastPage="+chapNum.toString() + secNum.toString() + (pageNum+1).toString();
 
+            //Set url parameter:
+            window.history.pushState("", "", "?" + chapNum + secNum + (activePage+1).toString());
+
             //Some mobile stuff:
             if(isTouchDevice){
                 document.body.style.zoom=1.00;   
@@ -485,8 +506,12 @@
 
                 chunkSize++;
 
-                if(amountOfLoadedElements[activePage] < pageMeta[activePage].length &&
-                   (chunkSize < chunkMin || loadedDocHeight[activePage] < lowestVisiblePosition + extraHeight)) {loadOneEl();}
+                if(amountOfLoadedElements[activePage] < pageMeta[activePage].length && //Make sure not to load more elements than exist
+                   (loadedDocHeight[activePage] < lowestVisiblePosition + extraHeight || //Load 'till the screen is covered
+                    chunkSize < chunkMin || //Even if the screen is covered, keep loading 'till atleast 6 chunks are complete, for performance'
+                    pageStartLocation != undefined //Load entire page if a starting location on the page is specified
+                   )
+                  ) {loadOneEl();}
                     
             }
 
@@ -509,6 +534,8 @@
                     MathJax.typesetPromise(elsToTypeset).then(()=>{
                         MathJax.typesetPromise();
                     }).catch((err)=>{console.log(err.message);});
+
+                    if(pageStartLocation != undefined){window.scrollTo(0, pageStartLocation); pageStartLocation=undefined; }
 
             }
 
@@ -1649,9 +1676,83 @@
                 }
             }
         });
+        
+            //DEBUG thing for getting position on a page when setting the links:
+        document.addEventListener("keydown", function(event) {
+            if(event.keyCode == 80) { //Press "P" to get position on page
+                console.log(window.scrollY);
+            }
+        });
 
 
+        let someTestValue = 123;
 
+
+        class BookLink extends HTMLElement {
+            constructor(){
+                super();
+
+                var linkDest = this.getAttribute("lt");
+
+                //Add the info icon:
+                var infoIcon = document.createElement("img");
+                infoIcon.src="Assets/Forside/browserInfo.png"
+                this.appendChild(infoIcon);
+                infoIcon.style.height="1em";
+                infoIcon.style.opacity="0.8";
+                infoIcon.style.transition="opacity, 100ms";
+
+                //Show the window on hover and change text to link-style:
+                this.style.transition="opacity, 320ms";
+
+                this.addEventListener("mouseenter",async (e)=>{
+                    this.style.color="blue";
+                    this.style.textDecoration="underline";
+                    infoIcon.style.opacity="1";
+
+                    if(!resumeDataLoaded){await loadResumeData(); resumeDataLoaded=true;}
+
+                    //Fill out information according to link
+                    let chapTitle = rD[linkDest[0]][0][linkDest[1]][1];
+                    if(chapTitle == "" || chapTitle == " "){chapTitle = rD[linkDest[0]][1]; }
+                    document.getElementById("linkWindowChapter").innerHTML = "<b>" + chapTitle + "</b> / side " + linkDest.substring(2).split(",")[0];
+
+                    //Set positioning and opacity of window
+                    let infoWindow = document.getElementById("linkWindow");
+                    let infoRect = infoIcon.getBoundingClientRect();
+
+                    infoWindow.style.opacity=1;
+                    infoWindow.style.left = (infoRect.x - 140).toString() + "px";
+                    if(!isTouchDevice){infoWindow.style.top = (infoRect.top + document.documentElement.scrollTop/1.25 - infoWindow.getBoundingClientRect().height - 10).toString() + "px"; }
+                    else{infoWindow.style.top = (infoRect.top + document.documentElement.scrollTop).toString() + "px"; }
+                });
+
+                this.addEventListener("mouseleave",(e)=>{
+                    this.style.color="black";
+                    this.style.textDecoration="none";
+                    infoIcon.style.opacity="0.8";
+
+                    document.getElementById("linkWindow").style.opacity=0;
+
+                    hasClicked=false;
+                });
+                
+                //Click event:
+                let hasClicked = false;
+                this.addEventListener("click",(e)=>{
+                    if(!isTouchDevice){
+                        window.history.pushState("", "", "?" + chapNum + secNum + (activePage+1).toString() + "," + window.scrollY);
+                        window.open("Browser11.html?" + linkDest, "_self");
+                    }else{
+                        if(hasClicked){window.open("Browser11.html?" + linkDest, "_self");}
+                        else{hasClicked=true;}
+                    }
+                });
+
+
+            }
+        }
+        customElements.define("book-link",BookLink);
 
         //CUSTOM ELEMENTS:
         class QuestionStart extends HTMLElement {

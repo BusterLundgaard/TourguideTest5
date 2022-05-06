@@ -333,6 +333,11 @@ h4 {
 
 
 /* UI ELEMENTS */
+/* Links */
+book-link:hover{
+    cursor:pointer;
+}
+
 /* Arrow buttons */
 #leftButton{
     position:fixed;
@@ -385,6 +390,29 @@ h4 {
     width:2.2em;
 } */
 
+/* Link window */
+#linkWindow{
+    font-family:'Computer Modern Serif';
+    position:absolute;
+    z-index:3;
+    width:300px;
+    padding-top:7px;
+    padding-left:7px;
+    padding-bottom:10px;
+    background-color: rgb(145, 240, 232);
+    border:2px solid black;
+    left:0px;
+    top:0px;
+    opacity: 0;
+    pointer-events: none;
+    transition:opacity, 200ms;
+}
+#linkWindowText{
+    font-size:15px;
+}
+#linkWindowChapter{
+    font-size:17px;
+}
 
 /* Scroll bar */
 #scrollBar{
