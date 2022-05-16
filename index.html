@@ -81,6 +81,14 @@
                 <div id="resumeCurTitle">Dækket pensum fra dansk gymnasium</div>
                 <ul id="resumeCur">
                 </ul>
+                <div id="resumeImportantResultsTitle">Godt at huske</div>
+                <div id="resumeImportantResultsIntro">  
+                    Her ses et par af kapitlets vigtige <i>matematiske</i> resultater i afsnittet.
+                    Dette kan <i>ikke</i> anses som et deskriptivt resume
+                    af afsnittet i dets helhed, da der er mange vigtige resultater og 
+                    idéer, der ikke let kan beskrives via formler/ligninger/osv. 
+                </div>
+                <div id="resumeImportantResults"></div>
                 <!-- <div style="height:5px;"></div> -->
             </div>
         </div>
@@ -2698,7 +2706,7 @@
                     pagesIL=data.split(",");
                     let totalIL = 0;
                     for(let i = 0; i < pagesIL.length; i++){totalIL += parseFloat(pagesIL[i]);}
-                    document.getElementById("resumeSectionIL").innerHTML=Math.floor(totalIL/2400).toString() + "ns"; 
+                    document.getElementById("resumeSectionIL").innerHTML=Math.floor(totalIL/2400).toString() + " normalsider"; 
                 });
             }
             else{
@@ -2742,7 +2750,7 @@
                     for(let i = 0; i < secPageCount; i++) {
                         totalIL+=parseInt(pagesIL[latestElement[4]-1+i]);
                     }
-                    document.getElementById("resumeSectionIL").innerHTML=Math.floor(totalIL/2400).toString() + "ns"; 
+                    document.getElementById("resumeSectionIL").innerHTML=Math.floor(totalIL/2400).toString() + " normalsider"; 
                 });
             }
 
@@ -2782,6 +2790,65 @@
                     pensumEl.innerText = pensumList[i][0].toUpperCase() + pensumList[i].substring(1);
                 }
             } 
+
+            //Set important results (if any)
+            if(depth==2 || (depth==1 && latestElement[0].length == 1)){
+                document.getElementById("resumeImportantResultsTitle").style.display="block";
+                document.getElementById("resumeImportantResultsIntro").style.display="block";
+
+                let resultsData;
+                if(depth==1){resultsData = latestElement[0][0][6]; }
+                else{resultsData = latestElement[6];}
+
+                if(resultsData != undefined){
+                    resultsData = resultsData.split("@");
+
+                    document.getElementById("resumeImportantResultsIntro").innerHTML = "Her ses et par vigtige <i>matematiske</i> resultater i afsnittet, der kan være gode at huske. Dette beskriver langt fra alt indholdet i afsnittet, bare det, der er godt at huske.";
+                    
+                    let impResults = document.getElementById("resumeImportantResults");
+                    impResults.innerHTML=""; 
+
+                    for(let i = 0; i < resultsData.length/4; i++){
+
+                        //Fill out structure
+                        let resultBlock = document.createElement("div");
+                        impResults.appendChild(resultBlock);
+
+                        let resultTitle = document.createElement("div"); resultBlock.appendChild(resultTitle); resultTitle.style.fontStyle="italic";
+                        let resultMath = document.createElement("div"); resultBlock.appendChild(resultMath); 
+                        let resultDesc = document.createElement("div"); resultBlock.appendChild(resultDesc);
+                        let resultLink = document.createElement("div"); resultBlock.appendChild(resultLink);
+
+                        resultBlock.setAttribute("class", "resumeImportantResultsBlock");
+
+                        //Set contents
+                        resultTitle.innerHTML = resultsData[i*4 + 0];
+                        resultMath.innerHTML = resultsData[i*4 + 1];
+                        resultDesc.innerHTML = resultsData[i*4 + 2];
+                        
+                        if(resultsData[i*4+2] != "") {
+                            resultLink.innerHTML = "Mere info";
+                            resultLink.setAttribute("class", "resumeImportantResultsLink");
+                            resultLink.addEventListener("click", (e)=>{
+                                let browParam = "Browser11.html?" + resultsData[i*4+3].replace(/ /g, "").replace("£", ",");
+                                window.open(browParam, "_blank");
+                            });
+                        }
+
+                    }
+                
+                }
+                else{
+                    document.getElementById("resumeImportantResultsTitle").style.display="none";
+                    document.getElementById("resumeImportantResultsIntro").style.display="none";
+                    document.getElementById("resumeImportantResults").innerHTML="";
+                }
+            }
+            else{
+                document.getElementById("resumeImportantResultsTitle").style.display="none";
+                document.getElementById("resumeImportantResultsIntro").style.display="none";
+                document.getElementById("resumeImportantResults").innerHTML="";
+            }
 
             //Finally display it:
             MathJax.typesetPromise([document.getElementById("TocResume")]).then(()=>{

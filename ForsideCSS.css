@@ -1017,6 +1017,31 @@ h4{
     list-style:square;
     line-height: 2em;
 }
+#resumeImportantResultsTitle{
+    font-weight: bold;
+}
+#resumeImportantResultsIntro{
+    opacity:0.65;
+}
+.resumeImportantResultsBlock{
+    margin-left:10px;
+    margin-bottom:30px;
+    margin-top:20px;
+    border-left: solid 1.5px;
+    padding-left:5px;
+}
+.resumeImportantResultsLink{
+    text-decoration: underline;
+    margin-top:5px;
+    margin-left:0px;
+    color:black;
+    transition:opacity, 150ms;
+}
+.resumeImportantResultsLink:hover{
+    cursor:pointer;
+    margin-left:5px;
+    color:blue;
+}
 
 
 /* CONTACTS */
@@ -1176,6 +1201,12 @@ background: rgb(43, 43, 43);
     #resumeText{
         font-size:28px;
         padding-right:10px;
+    }
+    #resumeContent{
+        font-size:28px;
+    }
+    .resumeImportantResultsBlock{
+        padding-left:15px;
     }
     #contentBackground{
         border:0px;
