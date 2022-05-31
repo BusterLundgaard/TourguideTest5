@@ -41,6 +41,43 @@ body{
     width:60%;
     height:100%;
 }
+#introVid{
+    position:relative;
+    padding-top:33.75%;
+    top:30px;
+    z-index:3;
+}
+#introVidIFrame{
+    border:solid;
+    position:absolute;
+    top:0;
+    left:20%;
+    width:60%;
+    height:100%;
+}
+#tutorialTitle{
+    position:relative;
+    left: 20%;
+    top:35px;
+    font-style: italic; 
+    font-size:30px; 
+    margin-bottom:-5px;
+}
+#tutorialVid{
+    position:relative;
+    top:0px;
+    padding-top:33.75%;
+    top:65px;
+    z-index:3;
+}
+#tutorialVidIFrame{
+    border:solid;
+    position:absolute;
+    top:0;
+    left:20%;
+    width:60%;
+    height:100%;
+}
 
 #quitLogo{
     position:fixed;
@@ -617,7 +654,7 @@ h4{
 
 #TLDR{
     margin-left:50px;
-    margin-top:80px;
+    margin-top:120px;
     width:800px;
     word-wrap: break-word;
     text-align:justify;
@@ -687,7 +724,7 @@ h4{
     z-index:6;
     pointer-events: none;
     position:absolute;
-    top:1569px;
+    top:2371px;
 }
 
 .chapTitle{
@@ -1137,7 +1174,7 @@ background: rgb(43, 43, 43);
     }
 
     #chapterBorders{
-        top:1846px;
+        top:2647px;
     }
 
     .TocH0{
@@ -1236,6 +1273,7 @@ background: rgb(43, 43, 43);
         height:150%;
         border:solid;
     }
+    
 
 
 }

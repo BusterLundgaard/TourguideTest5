@@ -620,12 +620,15 @@ book-link:hover{
 }
 #TocBackground:hover{
     /* max-width: max(50%, 300px); */
-    width:max(55%, 620px);
+    width:max(35vw, 620px);
     height: 75%;
     top:12.5%;
 
     border-width: 2px;
     border-left-width: 0px;
+}
+#TocBackground:hover #Toc{
+    display:block;
 }
 
 #TocTitle{
@@ -653,12 +656,15 @@ book-link:hover{
 }
 
 #Toc{
+    display:none;
+
     padding-left: max(2vh, 10px);
     padding-right:max(1.4vh, 14px);
 
     padding-top: max(1.5vh, 7.5px);
 
-    width:calc(96% - 7px);
+    /* width:calc(96.5% + 1px); */
+    width:calc(max(35vw, 620px) - 27px);
     height:calc(100% - max(3vh, 15px) -  max(2.7vh, 18px) - max(2vh, 10px) - max(1.5vh, 7.5px) - 2px);
 
     font-size: max(1.9vh, 10.9px);

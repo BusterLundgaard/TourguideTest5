@@ -920,19 +920,13 @@
                             subTitle.innerHTML = secs[sec].secs[i].t;
                             if(subTitle.innerHTML == "") {subTitle.innerHTML = "Intro";}
 
-                            subTitle.style.left = 100*(edgeHandle.getBoundingClientRect().x/document.documentElement.clientWidth).toString() + "%";
+                            console.log(edgeHandle.getBoundingClientRect().x);
+                            subTitle.style.left = 125*(edgeHandle.getBoundingClientRect().x/document.documentElement.clientWidth).toString() + "%";
 
                             subTitle.style.opacity = 1;
 
-                            if(hoverEffect){
-                                edgeHandle.style.marginTop = "-1.2%";
-                                edgeHandle.style.height = "150%";
-                                subsecSpan.style.marginTop = "-0.9%";
-                            }
-                            else{
-                                edgeHandle.style.marginTop = "-1%";
-                                edgeHandle.style.height = "160%";
-                            }
+                            edgeHandle.style.marginTop = "-1%";
+                            edgeHandle.style.height = "160%";
 
                             MathJax.typeset([subTitle]);
 
@@ -941,10 +935,6 @@
 
                             edgeHandle.style.marginTop = "-0.1%";
                             edgeHandle.style.height = "100%";
-                            
-                            if(hoverEffect){
-                                subsecSpan.style.marginTop = "0%";
-                            }
                             
                             subTitle.style.opacity = 0;
                         })
@@ -988,7 +978,7 @@
                             subSubsecSpan.addEventListener("mouseenter", (e)=>{
                                 subSubTitle.innerHTML = secs[sec].secs[i].secs[j].t
                                 if(subSubTitle.innerHTML == "") {subSubTitle.innerHTML="Intro";}
-                                subSubTitle.style.left = 100*(subSubsecSpan.getBoundingClientRect().x/document.documentElement.clientWidth).toString() + "%";
+                                subSubTitle.style.left = 125*(subSubsecSpan.getBoundingClientRect().x/document.documentElement.clientWidth).toString() + "%";
 
                                 subSubTitle.style.opacity=1;
                                 subSubsecSpan.style.borderTop = "3px";
@@ -1009,9 +999,9 @@
 
                                     subTitle.style.opacity = 1;
 
-                                    edgeHandle.style.marginTop = "-1.2%";
-                                    edgeHandle.style.height = "150%";
-                                    subsecSpan.style.marginTop = "-0.9%";
+                                    //edgeHandle.style.marginTop = "-1.2%";
+                                    //edgeHandle.style.height = "150%";
+                                    //subsecSpan.style.marginTop = "-0.9%";
 
                                     MathJax.typeset([subTitle]);
                                 }
@@ -1021,9 +1011,9 @@
                             })
                             subSubsecSpan.addEventListener("mouseleave", (e)=> {
                                 if(hoverEffect){
-                                    edgeHandle.style.marginTop = "-0.1%";
-                                    subsecSpan.style.marginTop = "0%";
-                                    edgeHandle.style.height = "100%";
+                                    //edgeHandle.style.marginTop = "-0.1%";
+                                    //subsecSpan.style.marginTop = "0%";
+                                    //edgeHandle.style.height = "100%";
                                     subTitle.style.opacity = 0;
                                 }
                                 else{
@@ -1644,6 +1634,8 @@
         }
 
         let selectedToc;
+        console.log(secs);
+        console.log(Toc);
         let highlightActivePageToc = function() {
             
             let convertedPath = getTreePath(activePage);
@@ -1655,11 +1647,14 @@
             
             if(sec3==-1 && sec4==-1) {selectedToc=Toc.children[sec2].firstElementChild}
             else if(sec4==-1) {selectedToc=Toc.children[sec2].children[sec3+1].firstElementChild}
-            else if(secs[sec2].secs[i-1].p != secs[sec2].secs[i-1].secs[j-1].p){
+            else{
                 selectedToc=Toc.children[sec2].children[sec3+1].children[sec4+1]; 
-            } else{
-                selectedToc=Toc.children[sec2].children[sec3+1].firstElementChild
             }
+            // else if(secs[sec2].secs[sec3+1].p != secs[sec2].secs[sec3+1].secs[sec4].p){
+            //     selectedToc=Toc.children[sec2].children[sec3+1].children[sec4+1]; 
+            // } else{
+            //     selectedToc=Toc.children[sec2].children[sec3+1].firstElementChild
+            // }
             selectedToc.style.color="red";
 
         }

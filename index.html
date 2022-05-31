@@ -45,7 +45,6 @@
         <iframe src="https://www.youtube.com/embed/RtOL4L5m0no" id="trailerVidIFrame" frameborder="0" allow="fullscreen"></iframe>
     </div>
 
-
     <div id="grad"></div>
     <div id="toolbar">
         <span id="spaceLeft"></span>
@@ -219,11 +218,14 @@
             </div>
             <div id="introMask"></div> 
         </div>
+        <div id="introVid">
+            <iframe src="https://www.youtube.com/embed/tFDgn1XtiF4" id="introVidIFrame" frameborder="0" allow="fullscreen"></iframe>
+        </div>
 
         <div id="TLDR">
             <p id="TLDRTitle"><i>Tl-dr:</i></p>
             <p>
-                <i>Please læs introen før du læser bogen</i>. Den er lidt lang, men der er ret vigtigt information deri. 
+                <i>Please læs eller se introen før du læser bogen</i>. Den er lidt lang, men der er ret vigtigt information deri. 
                 Bl.a. at det ikke er tilladt at bruge lommeregner i første kapitel, og at det ikke er 
                 tilladt at bruge nogen form for computerhiælp / CAS-programmer gennem størstedelen af bogen. 
                 Der står også, at jeg forventer du forsøger at løse alle opgaver, og at bogen klart er bedst at 
@@ -232,7 +234,12 @@
             </p>
         </div>
 
-        <div style="height: 120px;"></div>
+        <div id="tutorialTitle"><i>Gennemgang af hjemmesidens funktioner:</i></div>
+        <div id="tutorialVid">
+            <iframe src="https://www.youtube.com/embed/ryGyRkcbYnY" id="tutorialVidIFrame" frameborder="0" allow="fullscreen"></iframe>
+        </div>
+
+        <div style="height: 240px;"></div>
 
         <h1 id="chaptersH1">Kapitler</h1>
 
@@ -250,12 +257,12 @@
             <canvas id="chap2Can" width="900" height="171.15"></canvas>
             <div id="chap2Body">
                 <img class="chapBodyImg" src="Assets/Forside/Chapters/Chapter2/body.svg">
-                <div class="chapTitle"><span id="chap2T">Geometri & algebra: <br> Couple goals</span> <img id="chap2E" class="chapterExpand" src="Assets/Forside/TocExpand.svg"></div>
+                <div class="chapTitle"><span id="chap2T">Geometri & algebra: <br> En ikonisk duo</span> <img id="chap2E" class="chapterExpand" src="Assets/Forside/TocExpand.svg"></div>
                 <div class="chapSections"> 
-                    <div class="chapSection"> <span id="sec21">Afsnit 1: <br> Trekanter, trekanter, og flere trekanter...</span>   <img id="sec21E" class="sectionExpand" src="Assets/Forside/TocExpand.svg"> </div>
-                    <div class="chapSection"> <span id="sec22">Afsnit 2: <br> En biksemad geometri</span>                          <img id="sec22E" class="sectionExpand" src="Assets/Forside/TocExpand.svg">  </div>
-                    <div class="chapSection"> <span id="sec23">Afsnit 3: <br> Det obligatoriske og kedelige algebra kapitel</span> <img id="sec23E" class="sectionExpand" src="Assets/Forside/TocExpand.svg">  </div>
-                    <div class="chapSection"> <span id="sec24">Afsnit 4: <br> Kunsten af at beskrive rum</span>                    <img id="sec24E" class="sectionExpand" src="Assets/Forside/TocExpand.svg">  </div>
+                    <div class="chapSection"> <span id="sec21">Kapitel 1: <br> Trekanter, trekanter, og flere trekanter...</span>   <img id="sec21E" class="sectionExpand" src="Assets/Forside/TocExpand.svg"> </div>
+                    <div class="chapSection"> <span id="sec22">Kapitel 2: <br> En biksemad geometri</span>                          <img id="sec22E" class="sectionExpand" src="Assets/Forside/TocExpand.svg">  </div>
+                    <div class="chapSection"> <span id="sec23">Kapitel 3: <br> Det obligatoriske og kedelige algebra kapitel</span> <img id="sec23E" class="sectionExpand" src="Assets/Forside/TocExpand.svg">  </div>
+                    <div class="chapSection"> <span id="sec24">Kapitel 4: <br> Kunsten af at beskrive rum</span>                    <img id="sec24E" class="sectionExpand" src="Assets/Forside/TocExpand.svg">  </div>
                 </div>
             </div>
         </div>
@@ -266,8 +273,8 @@
                 <img class="chapBodyImg" src="Assets/Forside/Chapters/Chapter2 5/body.svg">
                 <div class="chapTitle"><span id="chap25T">Teknisk pause</span> <img id="chap25E" class="chapterExpand" src="Assets/Forside/TocExpand.svg"> </div>
                 <div class="chapSections"> 
-                    <div class="chapSection"> <span id="sec251">Afsnit 1: <br> Geogebra og CAS-programmer</span> <img id="sec251E" class="sectionExpand" src="Assets/Forside/TocExpand.svg">  </div>
-                    <div class="chapSection"> <span id="sec252">Afsnit 2: <br> Regression</span> <img id="sec252E" class="sectionExpand" src="Assets/Forside/TocExpand.svg">  </div>
+                    <div class="chapSection"> <span id="sec251">Kapitel 1: <br> Geogebra og CAS-programmer</span> <img id="sec251E" class="sectionExpand" src="Assets/Forside/TocExpand.svg">  </div>
+                    <div class="chapSection"> <span id="sec252">Kapitel 2: <br> Regression</span> <img id="sec252E" class="sectionExpand" src="Assets/Forside/TocExpand.svg">  </div>
                 </div>
             </div>
         </div>
@@ -286,10 +293,10 @@
             <img class="chapBodyImg" src="Assets/Forside/Chapters/Chapter4/body.svg">
             <div class="chapTitle"><span id="chap4T">Calculus, studiet af forandring <br> (plus en masse andet)</span> <img id="chap4E" class="chapterExpand" src="Assets/Forside/TocExpand.svg"> </div>
             <div class="chapSections"> 
-                <div class="chapSection"><span id="sec41">Afsnit 1: <br> Hældningen på en kurve og dets vildt mange anvendelser</span>  <img id="sec41E" class="sectionExpand" src="Assets/Forside/TocExpand.svg">  </div>
-                <div class="chapSection"><span id="sec42">Afsnit 2: <br> Fra uendelig småt til uendelig stort</span>                    <img id="sec42E" class="sectionExpand" src="Assets/Forside/TocExpand.svg">  </div>
-                <div class="chapSection"><span id="sec43">Afsnit 3: <br> Multivariable calculus: Calculus (med flere variabler!)</span> <img id="sec43E" class="sectionExpand" src="Assets/Forside/TocExpand.svg">  </div>
-                <div class="chapSection"><span id="sec44">Afsnit 4: <br> Sandsynlighedsteori runde 2: Kontinuerlig</span>               <img id="sec44E" class="sectionExpand" src="Assets/Forside/TocExpand.svg">  </div>
+                <div class="chapSection"><span id="sec41">Kapitel 1: <br> Hældningen på en kurve og dets vildt mange anvendelser</span>  <img id="sec41E" class="sectionExpand" src="Assets/Forside/TocExpand.svg">  </div>
+                <div class="chapSection"><span id="sec42">Kapitel 2: <br> Fra uendelig småt til uendelig stort</span>                    <img id="sec42E" class="sectionExpand" src="Assets/Forside/TocExpand.svg">  </div>
+                <div class="chapSection"><span id="sec43">Kapitel 3: <br> Multivariable calculus: Calculus (med flere variabler!)</span> <img id="sec43E" class="sectionExpand" src="Assets/Forside/TocExpand.svg">  </div>
+                <div class="chapSection"><span id="sec44">Kapitel 4: <br> Sandsynlighedsteori runde 2: Kontinuerlig</span>               <img id="sec44E" class="sectionExpand" src="Assets/Forside/TocExpand.svg">  </div>
             </div>
         </div>
         </div>
@@ -670,6 +677,9 @@
 
         let presentationMode = true;
 
+        var chaptersPrepared = false;
+        var TocPrepared = false;
+
         let toolbar = document.getElementById("toolbar");
         let toolbarY = toolbar.offsetTop;
         let pScroll=0;
@@ -748,8 +758,9 @@
                 introH1.style.opacity=1;
                 introH1.style.marginLeft="-230px";
 
+                gradAnimRunning=false;
                 prepareChapters(); chaptersPrepared=true;        
-                prepareToc(); TocPrepared=true;
+                prepareToc(); TocPrepared=true; 
             }
         }
         let quitLogoScreen = function(){
@@ -763,7 +774,7 @@
 
             document.getElementById("grad").style.display="none";
             document.getElementById("logo").style.display="none";
-            document.getElementById("tagline").style.display="none";
+            document.getElementById("tagline").style.display=   "none";
             document.getElementById("trailerVid").style.display="none";
             document.getElementById("trailerVidIFrame").src="";
             document.getElementById("quitLogo").style.display="none";
@@ -856,9 +867,10 @@
                     if(window.scrollY > 50){scrollStep++;} 
                 }
                 else if(presentationMode && scrollStep==2){
-                    if(newScroll > 400){
+                    if(newScroll > 1302){
 
-                        if(!chaptersPrepared){prepareChapters(); chaptersPrepared=true; prepareToc(); TocPrepared=true;}
+                        if(!chaptersPrepared){prepareChapters(); chaptersPrepared=true;}
+                        if(!TocPrepared){prepareToc(); TocPrepared=true;}
                         
                         let chaptersH1 = document.getElementById("chaptersH1");
                         chaptersH1.style.marginLeft="365px";
@@ -868,7 +880,7 @@
                     } 
                 }
                 else if(scrollStep == 3){
-                    if(newScroll > 5350){
+                    if(newScroll > 6152){
                         if(!TocPrepared){prepareToc(); TocPrepared=true;}
                         let tocH1 = document.getElementById("tocH1");
                         tocH1.style.marginLeft="-230px";
@@ -879,13 +891,17 @@
 
             }
             else{
-               if(scrollStep == 0 && newScroll > 150){
+               if(scrollStep == 0 && newScroll > 604){
+                    if(!chaptersPrepared){prepareChapters(); chaptersPrepared=true;}
+                    if(!TocPrepared){prepareToc(); TocPrepared=true;}
                     let chaptersH1 = document.getElementById("chaptersH1");
                     chaptersH1.style.marginLeft="365px";
                     chaptersH1.style.opacity=1;
                     scrollStep++;
                } 
-               if(scrollStep == 1 && newScroll > 2500){
+               if(scrollStep == 1 && newScroll > 2554){
+                    if(!chaptersPrepared){prepareChapters(); chaptersPrepared=true;}
+                    if(!TocPrepared){prepareToc(); TocPrepared=true;}
                     let tocH1 = document.getElementById("tocH1");
                     tocH1.style.marginLeft="-230px";
                     tocH1.style.opacity=1;
@@ -1014,19 +1030,20 @@
             scrollStep=2;
         })
 
-        var chaptersPrepared = false;
         document.getElementById("toolbarChapters").addEventListener("click", (e)=>{
-            if(!chaptersPrepared){prepareChapters(); chaptersPrepared=true; prepareToc(); TocPrepared=true;}
+            
+            if(!chaptersPrepared){prepareChapters(); chaptersPrepared=true;}
+            if(!TocPrepared){prepareToc(); TocPrepared=true;}
+
             presentationMode=false;
             let chaptersH1 = document.getElementById("chaptersH1");
             chaptersH1.style.marginLeft="365px";
             chaptersH1.style.opacity=1;
-            if(isTouchDevise){window.scrollTo(0,630);}
-            else{window.scrollTo(0,1300);}
+            if(isTouchDevise){window.scrollTo(0,1018.6);}
+            else{window.scrollTo(0,2102);}
             scrollStep=3;
         })
 
-        var TocPrepared = false;
         document.getElementById("toolbarToc").addEventListener("click", (e)=>{
             presentationMode=false;
             let chaptersH1 = document.getElementById("chaptersH1");
@@ -1039,8 +1056,8 @@
             if(!chaptersPrepared){prepareChapters(); chaptersPrepared=true;}
             if(!TocPrepared){prepareToc(); TocPrepared=true;}
             
-            if(isTouchDevise){window.scrollTo(0, 2776);}
-            else{window.scrollTo(0,6050);}
+            if(isTouchDevise){window.scrollTo(0, 3164.6);}
+            else{window.scrollTo(0,6852);}
 
             scrollStep=4;
         })
@@ -2353,8 +2370,8 @@
 
                 let newScroll = window.scrollY;
 
-                let Great = [newScroll > 540, newScroll > 850, newScroll > 1300, newScroll > 1571, newScroll > 1880, newScroll > 2318, newScroll > 2630];
-                let pGreat = [pmScroll > 540, pmScroll > 850, pmScroll > 1300, pmScroll > 1571, pmScroll > 1880, pmScroll > 2318, pmScroll > 2630];
+                let Great = [newScroll > 905.4, newScroll > 1215.4, newScroll > 1665.4, newScroll > 1936.4, newScroll > 2245.4, newScroll > 2683.4, newScroll > 2995.4];
+                let pGreat = [pmScroll > 905.4, pmScroll > 1215.4, pmScroll > 1665.4, pmScroll > 1936.4, pmScroll > 2245.4, pmScroll > 2683.4, pmScroll > 2995.4];
 
                 if(Great[0] && !pGreat[0]) {chap1Con.animating = true;}
                 if(!Great[0] && pGreat[0]) {chap1Con.animating = false;}
@@ -2398,7 +2415,7 @@
 
             //Expanders:
             document.getElementById("chap1E").addEventListener("click", (e)=>{showResume([0,-1,-1,-1,-1]);});
-            document.getElementById("chap2E").addEventListener("click", (e)=>{showResume([1,-1,-1,-1,-1]);});
+            document.getElementById("chap2E").addEventListener("click", (e)=>{console.log("Woo! Called showResume!"); showResume([1,-1,-1,-1,-1]);});
             document.getElementById("chap25E").addEventListener("click", (e)=>{showResume([2,-1,-1,-1,-1]);});
             document.getElementById("chap3E").addEventListener("click", (e)=>{showResume([3,-1,-1,-1,-1]);});
             document.getElementById("chap4E").addEventListener("click", (e)=>{showResume([4,-1,-1,-1,-1]);});
@@ -3011,7 +3028,7 @@
             if(!TocPrepared){prepareToc(); TocPrepared=true;}
             
             setTimeout(() => {
-                if(!isTouchDevise){window.scrollTo(0,6050);}
+                if(!isTouchDevise){window.scrollTo(0,6850);}
                 else{
                     document.body.style.zoom=0.45;
                     window.scrollTo(0, 2776);

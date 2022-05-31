@@ -12,7 +12,7 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    sodipodi:docname="FysikExercises.svg"
-   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
+   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)"
    id="svg8"
    version="1.1"
    viewBox="0 0 297 210"
@@ -20,6 +20,48 @@
    width="297mm">
   <defs
      id="defs2">
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible;"
+       id="marker3147"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Send">
+      <path
+         transform="scale(0.2) rotate(180) translate(6,0)"
+         style="fill-rule:evenodd;stroke:#342edf;stroke-width:1pt;stroke-opacity:1;fill:#342edf;fill-opacity:1"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path3145" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Sstart"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="marker2801"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path2799"
+         style="fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round;stroke:#5fd548;stroke-opacity:1;fill:#5fd548;fill-opacity:1"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         transform="scale(0.3) translate(-2.3,0)" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker2173"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow2Sstart">
+      <path
+         transform="scale(0.3) translate(-2.3,0)"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         style="fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round;stroke:#5fd548;stroke-opacity:0.99494952;fill:#5fd548;fill-opacity:0.99494952"
+         id="path2171" />
+    </marker>
     <marker
        inkscape:isstock="true"
        style="overflow:visible"
@@ -135,7 +177,8 @@
        refX="0.0"
        refY="0.0"
        orient="auto"
-       inkscape:stockid="Arrow2Sstart">
+       inkscape:stockid="Arrow2Sstart"
+       inkscape:collect="always">
       <path
          transform="scale(0.3) translate(-2.3,0)"
          d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
@@ -227,7 +270,8 @@
        refX="0.0"
        id="marker1369"
        style="overflow:visible;"
-       inkscape:isstock="true">
+       inkscape:isstock="true"
+       inkscape:collect="always">
       <path
          id="path1053"
          d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
@@ -772,14 +816,14 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.979899"
-     inkscape:cx="1290.8282"
-     inkscape:cy="112.81461"
+     inkscape:zoom="0.9899495"
+     inkscape:cx="972.33486"
+     inkscape:cy="373.54722"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:window-width="1920"
-     inkscape:window-height="1017"
+     inkscape:window-height="1009"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
@@ -4950,5 +4994,163 @@
         </g>
       </g>
     </g>
+    <path
+       inkscape:export-ydpi="166.76976"
+       inkscape:export-xdpi="166.76976"
+       sodipodi:nodetypes="ccccc"
+       inkscape:connector-curvature="0"
+       id="path2083"
+       d="m 497.63866,60.057687 -3.54057,25.016437 h 9.89581 l -4.08514,-25.004199 z"
+       style="fill:#cbc3a3;fill-opacity:1;stroke:#644c00;stroke-width:0.6558727;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-filename="C:\Users\bbcoo\Desktop\Promovering af bogen\Cover\Jorden assets\New\Kunst5.png" />
+    <ellipse
+       inkscape:export-ydpi="166.76976"
+       inkscape:export-xdpi="166.76976"
+       ry="3.3873529"
+       rx="3.1251578"
+       cy="56.899563"
+       cx="498.8226"
+       id="ellipse2085"
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#575757;stroke-width:1.10099602;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.98342542"
+       inkscape:export-filename="C:\Users\bbcoo\Desktop\Promovering af bogen\Cover\Jorden assets\New\Kunst5.png" />
+    <path
+       inkscape:export-ydpi="166.76976"
+       inkscape:export-xdpi="166.76976"
+       inkscape:connector-curvature="0"
+       id="path2087"
+       d="m 442.62007,60.531979 81.38356,-4.677216"
+       style="fill:none;stroke:#000000;stroke-width:1.16499996;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-filename="C:\Users\bbcoo\Desktop\Promovering af bogen\Cover\Jorden assets\New\Kunst5.png" />
+    <circle
+       inkscape:export-ydpi="166.76976"
+       inkscape:export-xdpi="166.76976"
+       cy="56.777889"
+       cx="498.79742"
+       id="circle2089"
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#272222;stroke-width:1.92881274;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.98342542"
+       r="1.1200789"
+       inkscape:export-filename="C:\Users\bbcoo\Desktop\Promovering af bogen\Cover\Jorden assets\New\Kunst5.png" />
+    <path
+       inkscape:export-ydpi="166.76976"
+       inkscape:export-xdpi="166.76976"
+       inkscape:connector-curvature="0"
+       id="path2091"
+       d="M 523.59152,55.945683 V 52.82738 h -7.46504 14.93007"
+       style="fill:none;stroke:#000000;stroke-width:0.76499999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-filename="C:\Users\bbcoo\Desktop\Promovering af bogen\Cover\Jorden assets\New\Kunst5.png" />
+    <rect
+       inkscape:export-ydpi="166.76976"
+       inkscape:export-xdpi="166.76976"
+       y="40.409519"
+       x="518.39435"
+       height="11.528275"
+       width="10.866816"
+       id="rect2093"
+       style="opacity:1;fill:#dfd4ae;fill-opacity:1;stroke:#afa78c;stroke-width:1.16499996;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.98342542"
+       inkscape:export-filename="C:\Users\bbcoo\Desktop\Promovering af bogen\Cover\Jorden assets\New\Kunst5.png" />
+    <path
+       inkscape:export-ydpi="166.76976"
+       inkscape:export-xdpi="166.76976"
+       sodipodi:open="true"
+       d="m 495.10654,60.95066 a 5.355546,5.7711987 0 0 1 -1.68941,-5.070679 5.355546,5.7711987 0 0 1 2.93155,-4.36421"
+       sodipodi:end="4.2537834"
+       sodipodi:start="2.3112651"
+       sodipodi:ry="5.7711987"
+       sodipodi:rx="5.355546"
+       sodipodi:cy="56.690636"
+       sodipodi:cx="498.71957"
+       sodipodi:type="arc"
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#5fd548;stroke-width:0.94281;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.99494952;marker-start:url(#marker2173)"
+       id="path2095"
+       inkscape:export-filename="C:\Users\bbcoo\Desktop\Promovering af bogen\Cover\Jorden assets\New\Kunst5.png" />
+    <path
+       inkscape:export-ydpi="166.76976"
+       inkscape:export-xdpi="166.76976"
+       id="path2097"
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#5fd548;stroke-width:0.94281;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-start:url(#marker2801)"
+       sodipodi:type="arc"
+       sodipodi:cx="498.71957"
+       sodipodi:cy="56.690636"
+       sodipodi:rx="5.355546"
+       sodipodi:ry="5.7711987"
+       sodipodi:start="4.9581862"
+       sodipodi:end="0.73432334"
+       d="m 500.02274,51.092898 a 5.355546,5.7711987 0 0 1 3.82051,3.917955 5.355546,5.7711987 0 0 1 -1.14834,5.546977"
+       sodipodi:open="true"
+       inkscape:export-filename="C:\Users\bbcoo\Desktop\Promovering af bogen\Cover\Jorden assets\New\Kunst5.png" />
+    <path
+       inkscape:export-ydpi="166.76976"
+       inkscape:export-xdpi="166.76976"
+       sodipodi:nodetypes="cc"
+       style="opacity:0.119;fill:none;stroke:#000000;stroke-width:1.16499996;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 443.42188,65.075561 523.60273,53.449337"
+       id="path2099"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="C:\Users\bbcoo\Desktop\Promovering af bogen\Cover\Jorden assets\New\Kunst5.png" />
+    <circle
+       inkscape:export-ydpi="166.76976"
+       inkscape:export-xdpi="166.76976"
+       r="0.67652601"
+       cy="60.316036"
+       cx="443.31885"
+       id="circle2101"
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#272222;stroke-width:1.16499996;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.98342542"
+       inkscape:export-filename="C:\Users\bbcoo\Desktop\Promovering af bogen\Cover\Jorden assets\New\Kunst5.png" />
+    <path
+       inkscape:export-ydpi="166.76976"
+       inkscape:export-xdpi="166.76976"
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       id="path2103"
+       d="m 443.5722,66.161348 52.6521,-2.672696"
+       style="fill:none;stroke:#000000;stroke-width:0.965;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:2.895,0.965;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-filename="C:\Users\bbcoo\Desktop\Promovering af bogen\Cover\Jorden assets\New\Kunst5.png" />
+    <path
+       inkscape:export-ydpi="166.76976"
+       inkscape:export-xdpi="166.76976"
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       id="path2105"
+       d="m 502.10424,63.221378 21.91611,-1.069079"
+       style="fill:none;stroke:#000000;stroke-width:0.965;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:2.895,0.965;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-filename="C:\Users\bbcoo\Desktop\Promovering af bogen\Cover\Jorden assets\New\Kunst5.png" />
+    <path
+       inkscape:export-ydpi="166.76976"
+       inkscape:export-xdpi="166.76976"
+       inkscape:connector-curvature="0"
+       id="path2107"
+       d="M 443.30495,32.619024 V 55.336933"
+       style="fill:none;stroke:#342edf;stroke-width:1.66499996;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker3147)"
+       inkscape:export-filename="C:\Users\bbcoo\Desktop\Promovering af bogen\Cover\Jorden assets\New\Kunst5.png" />
+    <rect
+       inkscape:export-ydpi="166.76976"
+       inkscape:export-xdpi="166.76976"
+       y="33.928577"
+       x="441.66519"
+       height="51.971725"
+       width="89.391373"
+       id="rect2165"
+       style="opacity:0;fill:#dfd4ae;fill-opacity:1;stroke:#342edf;stroke-width:0.96499997;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-filename="C:\Users\bbcoo\Desktop\Promovering af bogen\Cover\Jorden assets\New\Kunst5.png" />
+    <rect
+       inkscape:export-ydpi="166.76976"
+       inkscape:export-xdpi="166.76976"
+       y="33.550602"
+       x="442.04315"
+       height="52.255211"
+       width="89.674843"
+       id="rect2167"
+       style="opacity:0;fill:none;fill-opacity:0.67403319;stroke:#ff0e03;stroke-width:0.56499994;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-filename="C:\Users\bbcoo\Desktop\Promovering af bogen\Cover\Jorden assets\New\Kunst5.png" />
+    <rect
+       inkscape:export-ydpi="166.76976"
+       inkscape:export-xdpi="166.76976"
+       y="31.817215"
+       x="440.89951"
+       height="53.988445"
+       width="90.470734"
+       id="rect2169"
+       style="opacity:0;fill:none;fill-opacity:0.67403319;stroke:#ff0e03;stroke-width:0.56499994;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-filename="C:\Users\bbcoo\Desktop\Promovering af bogen\Cover\Jorden assets\New\Kunst5.png" />
   </g>
 </svg>
