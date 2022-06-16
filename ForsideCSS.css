@@ -566,6 +566,13 @@ h4{
     margin-bottom:-9px;
 }
 
+#browserAnbefaling{
+    position:absolute;
+    top:70px;
+    left: 20px;
+    font-size:21px;
+}
+
 #startOff{
     position:absolute;
     top:82px;
@@ -1159,8 +1166,15 @@ background: rgb(43, 43, 43);
         margin-bottom: 20px;
     }
     #startOff{
-        left:650px;
+        left:670px;
+        top:25px;
     }
+    #browserAnbefaling{
+        position:absolute;
+        top:20px;
+        left: 20px;
+        font-size:25px;
+    }    
     #introContent{
         font-size:32px;
         line-height: 45px;

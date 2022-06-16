@@ -381,7 +381,7 @@
                         hn[i]=-1;
                     }
 
-                    i+=3;
+                    i+=2; //THIS IS NORMALLY 3!
                 }
                 else if(c == "#") { //Push parameters
                     num = parseInt(rs[i+1]);
@@ -393,7 +393,7 @@
                     listEl[hn[num]].push(param);
                     param="";
 
-                    i+=3;
+                    i+=2; //THIS IS NORMALLY 3!
                 }
                 else{
                     if(c=="\n" || c=="\r") {
@@ -1678,10 +1678,6 @@
                 console.log(window.scrollY);
             }
         });
-
-
-        let someTestValue = 123;
-
 
         class BookLink extends HTMLElement {
             constructor(){
