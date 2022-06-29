@@ -99,7 +99,9 @@
 
         const MathJaxFilter = function(s) {
 
-            s=s.replace(/(?<=\_\()(.|\n|\r)*?(?=\_\))/g, (str) => {
+            // Previous Regex matcher here: /(?<=\_\()(.|\n|\r)*?(?=\_\))/g
+            //:      /\_\([\s\S]*?\_\)/g
+            s=s.replace(/\_\([\s\S]*?\_\)/g, (str) => {
 
                 //Multiplication:
                 str=str.replace(/\*/g, " \\cdot ");
@@ -350,6 +352,8 @@
         async function loadResumeData(){
         return new Promise(async (resolve) => {
 
+            console.log("The resume data is being parsed! Yargh!");
+
             let rs;
             await $.get("/Chapters/resumeData.txt", (data)=>{
                 rs = data;
@@ -499,6 +503,13 @@
                 pageContainers[activePage].appendChild(el);
 
                 el.outerHTML = MathJaxFilter(pages[activePage].substring(elMeta.sI, elMeta.eI));
+
+                //Figure out: Is it using safari (pc), or is it an iphone? 
+                    //On iphone, it doesn't work either on safari or chrome, on pc, it works on chrome
+                    //The following test should cover the right cases: 
+                    //var isSafariOrIphone = /^((?!chrome|android).)*safari/i.test(navigator.userAgent); [Maybe doesn't work on Mobile, but works for Pc users using Safari].
+                //Replace el.outerHTML with new version where all \r\n line breaks are turned into just \r. 
+                    //someText = someText.replace(/\r\n/gm,"\r");
 
                 amountOfLoadedElements[activePage] += 1;
                 loadedDocHeight[activePage] = docContainer.clientHeight;
