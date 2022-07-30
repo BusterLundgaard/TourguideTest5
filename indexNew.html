@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0; maximum-scale=1; minimum-scale=0.9;">
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1; minimum-scale=0.9;">
     <title>Matematisk Tourguide</title>
 
     <link rel="stylesheet" type="text/css" href="ForsideCSS2.css" media="print" onload="this.media='all'">
@@ -255,7 +255,7 @@
         <div id="chap1" class="chap">
             <canvas id="chap1Can" width="900" height="300"></canvas>
             <div id="chap1Body">
-                <img loading="lazy" class="chapBodyImg" id="chapBodyImg1" src="Assets/Forside/Chapters/Chapter1/body.svg">
+                <img class="chapBodyImg" id="chapBodyImg1" src="Assets/Forside/Chapters/Chapter1/body.svg">
                 <div class="chapTitle"><span id="chap1T">Vi tæller får <br> og udvikler et matematisk <br> grundfundament</span> <img id="chap1E" class="chapterExpand" src="Assets/Forside/TocExpand.svg"> </div>
             </div>
         </div>
@@ -263,7 +263,7 @@
         <div id="chap2" class="chap">
             <canvas id="chap2Can" width="900" height="171.15"></canvas>
             <div id="chap2Body">
-                <img loading="lazy" class="chapBodyImg" id="chapBodyImg2" src="Assets/Forside/Chapters/Chapter2/body.svg">
+                <img class="chapBodyImg" id="chapBodyImg2" src="Assets/Forside/Chapters/Chapter2/body.svg">
                 <div class="chapTitle"><span id="chap2T">Geometri & algebra: <br> En ikonisk duo</span> <img id="chap2E" class="chapterExpand" src="Assets/Forside/TocExpand.svg"></div>
                 <div class="chapSections"> 
                     <div class="chapSection"> <span id="sec21">Kapitel 1: <br> Trekanter, trekanter, og flere trekanter...</span>   <img id="sec21E" class="sectionExpand" src="Assets/Forside/TocExpand.svg"> </div>
@@ -277,7 +277,7 @@
         <div id="chap25" class="chap">
             <canvas id="chap25Can" width="900" height="100.18"></canvas>
             <div id="chap25Body">
-                <img loading="lazy" class="chapBodyImg" id="chapBodyImg3" src="Assets/Forside/Chapters/Chapter2 5/body.svg">
+                <img class="chapBodyImg" id="chapBodyImg3" src="Assets/Forside/Chapters/Chapter2 5/body.svg">
                 <div class="chapTitle"><span id="chap25T">Teknisk pause</span> <img id="chap25E" class="chapterExpand" src="Assets/Forside/TocExpand.svg"> </div>
                 <div class="chapSections"> 
                     <div class="chapSection"> <span id="sec251">Kapitel 1: <br> Geogebra og CAS-programmer</span> <img id="sec251E" class="sectionExpand" src="Assets/Forside/TocExpand.svg">  </div>
@@ -289,7 +289,7 @@
         <div id="chap3" class="chap">
             <canvas id="chap3Can" width="900" height="165.74"></canvas>
             <div id="chap3Body">
-                <img loading="lazy" class="chapBodyImg" id="chapBodyImg4" src="Assets/Forside/Chapters/Chapter3/body.svg">
+                <img class="chapBodyImg" id="chapBodyImg4" src="Assets/Forside/Chapters/Chapter3/body.svg">
                 <div class="chapTitle"><span id="chap3T">Sandsynlighedsteori <br> runde 1: Diskret</span> <img id="chap3E" class="chapterExpand" src="Assets/Forside/TocExpand.svg"> </div>
             </div>
         </div>
@@ -297,7 +297,7 @@
         <div id="chap4" class="chap">
         <canvas id="chap4Can" width="900" height="186.16"></canvas>
         <div id="chap4Body">
-            <img loading="lazy" class="chapBodyImg" id="chapBodyImg5" src="Assets/Forside/Chapters/Chapter4/body.svg">
+            <img class="chapBodyImg" id="chapBodyImg5" src="Assets/Forside/Chapters/Chapter4/body.svg">
             <div class="chapTitle"><span id="chap4T">Calculus, studiet af forandring <br> (plus en masse andet)</span> <img id="chap4E" class="chapterExpand" src="Assets/Forside/TocExpand.svg"> </div>
             <div class="chapSections"> 
                 <div class="chapSection"><span id="sec41">Kapitel 1: <br> Hældningen på en kurve og dets vildt mange anvendelser</span>  <img id="sec41E" class="sectionExpand" src="Assets/Forside/TocExpand.svg">  </div>
@@ -311,7 +311,7 @@
         <div id="chap5" class="chap">
             <canvas id="chap5Can" width="900" height="174.26"></canvas>
             <div id="chap5Body">
-                <img loading="lazy" class="chapBodyImg" id="chapBodyImg6" src="Assets/Forside/Chapters/Chapter5/body.svg">
+                <img class="chapBodyImg" id="chapBodyImg6" src="Assets/Forside/Chapters/Chapter5/body.svg">
                 <div class="chapTitle"><span id="chap5T">Men hvad <i>er</i> komplekse tal?</span> <img id="chap5E" class="chapterExpand" src="Assets/Forside/TocExpand.svg"> </div>
             </div>
         </div>
@@ -398,7 +398,7 @@
                 }
             }, 50);
         } 
-        fastConnectionCheck();
+        //fastConnectionCheck();
         
         let incrementLogoEls = function(){
             loadedLogoEls++;
@@ -430,21 +430,26 @@
             }
         }
 
-        document.getElementById("piLogo").addEventListener("load", incrementLogoEls);
-        document.getElementById("piLogoM").addEventListener("load", incrementLogoEls);
-        document.getElementById("atematik").addEventListener("load", incrementLogoEls);
-        document.getElementById("TLogo").addEventListener("load", incrementLogoEls);
-        document.getElementById("t0Logo").addEventListener("load", incrementLogoEls);
-        document.getElementById("t1Logo").addEventListener("load", incrementLogoEls);
-        document.getElementById("t2Logo").addEventListener("load", incrementLogoEls);
-        document.getElementById("t3Logo").addEventListener("load", incrementLogoEls);
-        document.getElementById("t4Logo").addEventListener("load", incrementLogoEls);
-        document.getElementById("t5Logo").addEventListener("load", incrementLogoEls);
-        document.getElementById("t6Logo").addEventListener("load", incrementLogoEls);
-        document.getElementById("underlineLogo").addEventListener("load", incrementLogoEls);
-        document.getElementById("quitLogo").addEventListener("load", incrementLogoEls);
+        //document.getElementById("piLogo").addEventListener("load", incrementLogoEls);
+        //document.getElementById("piLogoM").addEventListener("load", incrementLogoEls);
+        //document.getElementById("atematik").addEventListener("load", incrementLogoEls);
+        //document.getElementById("TLogo").addEventListener("load", incrementLogoEls);
+        //document.getElementById("t0Logo").addEventListener("load", incrementLogoEls);
+        //document.getElementById("t1Logo").addEventListener("load", incrementLogoEls);
+        //document.getElementById("t2Logo").addEventListener("load", incrementLogoEls);
+        //document.getElementById("t3Logo").addEventListener("load", incrementLogoEls);
+        //document.getElementById("t4Logo").addEventListener("load", incrementLogoEls);
+        //document.getElementById("t5Logo").addEventListener("load", incrementLogoEls);
+        //document.getElementById("t6Logo").addEventListener("load", incrementLogoEls);
+        //document.getElementById("underlineLogo").addEventListener("load", incrementLogoEls);
+        //document.getElementById("quitLogo").addEventListener("load", incrementLogoEls);
 
         let startLogoScreen = async function(){
+
+            console.log("Uhm, hello?");
+
+            await sleep(40);
+
             logoAnimation();
             gradAnim();
             showTaglineAnim();
@@ -465,6 +470,7 @@
             document.getElementById("t5Logo").style.animationName = "t5Anim";
             document.getElementById("t6Logo").style.animationName = "t6Anim";
         }
+        startLogoScreen();
 
 
         //Setup the start and animate logo screen: 
@@ -886,10 +892,10 @@
             if(document.cookie != ""){document.getElementById("startOffImg").src = "Assets/Forside/SecThumbnails/Final/" + document.cookie.substring(9, 11) + ".png";
             } else {document.getElementById("startOff").style.display="none";}
 
+            document.body.style.zoom=0.45;
+
             loadImages();
 
-            document.body.style.zoom=0.45;
-            
             let introH1 = document.getElementById("introH1");
             introH1.style.opacity=1;
             introH1.style.marginLeft="-230px";

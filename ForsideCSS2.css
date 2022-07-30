@@ -691,7 +691,6 @@ h4{
             clip-path: polygon(0 18.23px, 100% 0, 100% 100%, 0 100%); }
 
 .chapBodyImg{
-    display:none;
     position:relative;
     width:110%;
     left:-5%;
@@ -1158,6 +1157,12 @@ background: rgb(43, 43, 43);
     #grad{
         height:110vh;
     }
+    #quitLogo{
+        left:48%;
+    }
+    #tagline{
+        left:10vw;
+    } 
     #toolbar{
         display:none;
     }
