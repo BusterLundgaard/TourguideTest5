@@ -386,19 +386,9 @@
         let startTime = new Date();
 
         let fastConnectionCheck = function(){
-            setTimeout(() => {
-                console.log("amount of loaded elements: " + loadedLogoEls);
-                if(loadedLogoEls == 0 && new Date() - startTime > 500){
-                    console.log("Hey! I'm here!");
-                    startLogoScreen();
-                }
-                else if(loadedLogoEls==0){
-                    console.log("Trying again...");
-                    fastConnectionCheck();
-                }
-            }, 50);
+            console.log(window.performance.timing.unloadEventEnd);
         } 
-        //fastConnectionCheck();
+        fastConnectionCheck();
         
         let incrementLogoEls = function(){
             loadedLogoEls++;
@@ -445,8 +435,6 @@
         //document.getElementById("quitLogo").addEventListener("load", incrementLogoEls);
 
         let startLogoScreen = async function(){
-
-            console.log("Uhm, hello?");
 
             await sleep(40);
 
