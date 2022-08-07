@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<body lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1; minimum-scale=0.9;">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0; maximum-scale=1; minimum-scale=0.9;">
     <title>Matematisk Tourguide</title>
 
-    <link rel="stylesheet" type="text/css" href="ForsideCSS2.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" type="text/css" href="ForsideCSS.css" media="print" onload="this.media='all'">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script id="MathJax-script" defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -14,38 +14,35 @@
 
     <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/dreampulse/computer-modern-web-font/master/fonts.css">
 
+    <!-- BOGEN ER 1034.8 NS LANG (VIDEOER INKLUDERET) -->
+    <!-- THIS FRONT PAGE IS STILL WIP. WE NEED TO GET THE ACTUAL LOADING SHIT TO WORK, SOMEHOW. -->
+
 </head>
-<body> 
-    <div id="loadOverlay" style="background-color:rgb(255, 255, 255); position:absolute; top:0px; left:0px; width:100%; height:100%; z-index:2000; text-align:center;">
-        <div style="position:relative; top:50%;">
-            Loader hjemmeside. Tak for tålmodigheden! 
-        </div> 
-    </div>
-    <!-- The purpose of this is to force the browser to load CSS first. It's super cheese, but seems to work. -->
+<img> 
 
     <div id="logo">
-        <img loading="lazy" id="piLogo"   src="Assets/Forside/Logo/pi.svg">
-        <img loading="lazy" id="piLogoM"  src="Assets/Forside/Logo/piM.svg">
-        <img loading="lazy" id="atematik" src="Assets/Forside/Logo/atematik.svg">
-        <img loading="lazy" id="TLogo"    src="Assets/Forside/Logo/T.svg">
-        <div loading="lazy" id="globe"></div>
-        <img loading="lazy" id="t0Logo"   src="Assets/Forside/Logo/t0.svg">
-        <img loading="lazy" id="t1Logo"   src="Assets/Forside/Logo/t1.svg">
-        <img loading="lazy" id="t2Logo"   src="Assets/Forside/Logo/t2.svg">
-        <img loading="lazy" id="t3Logo"   src="Assets/Forside/Logo/t3.svg">
-        <img loading="lazy" id="t4Logo"   src="Assets/Forside/Logo/t4.svg">
-        <img loading="lazy" id="t5Logo"   src="Assets/Forside/Logo/t5.svg">
-        <img loading="lazy" id="t6Logo"   src="Assets/Forside/Logo/t6.svg">
-        <img loading="lazy" id="underlineLogo" src="Assets/Forside/Logo/underline.svg">
+        <img id="piLogo"   src="Assets/Forside/Logo/pi.svg">
+        <img id="piLogoM"  src="Assets/Forside/Logo/piM.svg">
+        <img id="atematik" src="Assets/Forside/Logo/atematik.svg">
+        <img id="TLogo"    src="Assets/Forside/Logo/T.svg">
+        <div id="globe"></div>
+        <img id="t0Logo"   src="Assets/Forside/Logo/t0.svg">
+        <img id="t1Logo"   src="Assets/Forside/Logo/t1.svg">
+        <img id="t2Logo"   src="Assets/Forside/Logo/t2.svg">
+        <img id="t3Logo"   src="Assets/Forside/Logo/t3.svg">
+        <img id="t4Logo"   src="Assets/Forside/Logo/t4.svg">
+        <img id="t5Logo"   src="Assets/Forside/Logo/t5.svg">
+        <img id="t6Logo"   src="Assets/Forside/Logo/t6.svg">
+        <img id="underlineLogo" src="Assets/Forside/Logo/underline.svg">
     </div>
 
-    <img id="quitLogo" src="Assets/Forside/logoButton.svg"></body>
+    <img id="quitLogo" src="Assets/Forside/logoButton.svg"></img>
 
     <div id="tagline"></div>
 
-    <div id="trailerVid">
+    <!-- <div id="trailerVid">
         <iframe src="https://www.youtube.com/embed/RtOL4L5m0no" id="trailerVidIFrame" frameborder="0" allow="fullscreen"></iframe>
-    </div>
+    </div> -->
 
     <div id="grad"></div>
     <div id="toolbar">
@@ -57,7 +54,7 @@
         <span id="searchBarItem">
             <span id="searchText">Søg: </span>
             <input type="text" id="searchBar" name="fname"> 
-            <img id="searchRemove" loading="lazy" src="Assets/Forside/searchRemove.svg" style="display:none;" >
+            <img id="searchRemove" src="Assets/Forside/searchRemove.svg">
         </span>
         <span id="spaceRight"></span>
     </div>
@@ -101,14 +98,14 @@
 
         <div id="browserAnbefaling">
             Hjemmesiden fungerer bedst på <b>Chrome</b>
-            <img id="chromeLogo" loading="lazy" src="Assets/Forside/chromeLogo.svg" style="height:1.2em; display:none;">
+            <img src="Assets/Forside/chromeLogo.svg" style="height:1.2em;">
         </div>
 
         <div id="startOff">
             <div id="startOffTitle">Forsæt fra hvor du slap</div>
             <div id="startOffBorder"></div>
             <div id="startOffImgCase">
-                <img id="startOffImg" src="">
+                <img id="startOffImg" src="Assets/Forside/SecThumbnails/Final/00.png">
             </div>
         </div>
 
@@ -189,7 +186,7 @@
                 <p>
                 Dit vigtigste værktøj i denne bog er et alle har råd og rettighed til: Papir og blyant
                 </p>
-                <img id="penPaper" loading="lazy" style="width:500px; margin-left:100px; margin-top:5px; display:none;" src="Assets/Forside/PenAndPaper.jpg"></img>
+                <img style="width:500px; margin-left:100px; margin-top:5px;" src="Assets/Forside/PenAndPaper.jpg"></img>
                 <p>
                 Ufattelig meget kan opnås gennem små noter og mellemregninger. Store problemer kan løses i mindre trin, idéer kan skitseres og visualiseres, 
                 du kan få overblik over data, alt muligt! 
@@ -250,12 +247,12 @@
 
         <h1 id="chaptersH1">Kapitler</h1>
 
-        <img loading="lazy" style="display:none;" id="chapterBorders" src="Assets/Forside/Chapters/border.svg">
+        <img id="chapterBorders" src="Assets/Forside/Chapters/border.svg">
 
         <div id="chap1" class="chap">
             <canvas id="chap1Can" width="900" height="300"></canvas>
             <div id="chap1Body">
-                <img class="chapBodyImg" id="chapBodyImg1" src="Assets/Forside/Chapters/Chapter1/body.svg">
+                <img class="chapBodyImg" src="Assets/Forside/Chapters/Chapter1/body.svg">
                 <div class="chapTitle"><span id="chap1T">Vi tæller får <br> og udvikler et matematisk <br> grundfundament</span> <img id="chap1E" class="chapterExpand" src="Assets/Forside/TocExpand.svg"> </div>
             </div>
         </div>
@@ -263,7 +260,7 @@
         <div id="chap2" class="chap">
             <canvas id="chap2Can" width="900" height="171.15"></canvas>
             <div id="chap2Body">
-                <img class="chapBodyImg" id="chapBodyImg2" src="Assets/Forside/Chapters/Chapter2/body.svg">
+                <img class="chapBodyImg" src="Assets/Forside/Chapters/Chapter2/body.svg">
                 <div class="chapTitle"><span id="chap2T">Geometri & algebra: <br> En ikonisk duo</span> <img id="chap2E" class="chapterExpand" src="Assets/Forside/TocExpand.svg"></div>
                 <div class="chapSections"> 
                     <div class="chapSection"> <span id="sec21">Kapitel 1: <br> Trekanter, trekanter, og flere trekanter...</span>   <img id="sec21E" class="sectionExpand" src="Assets/Forside/TocExpand.svg"> </div>
@@ -277,7 +274,7 @@
         <div id="chap25" class="chap">
             <canvas id="chap25Can" width="900" height="100.18"></canvas>
             <div id="chap25Body">
-                <img class="chapBodyImg" id="chapBodyImg3" src="Assets/Forside/Chapters/Chapter2 5/body.svg">
+                <img class="chapBodyImg" src="Assets/Forside/Chapters/Chapter2 5/body.svg">
                 <div class="chapTitle"><span id="chap25T">Teknisk pause</span> <img id="chap25E" class="chapterExpand" src="Assets/Forside/TocExpand.svg"> </div>
                 <div class="chapSections"> 
                     <div class="chapSection"> <span id="sec251">Kapitel 1: <br> Geogebra og CAS-programmer</span> <img id="sec251E" class="sectionExpand" src="Assets/Forside/TocExpand.svg">  </div>
@@ -289,7 +286,7 @@
         <div id="chap3" class="chap">
             <canvas id="chap3Can" width="900" height="165.74"></canvas>
             <div id="chap3Body">
-                <img class="chapBodyImg" id="chapBodyImg4" src="Assets/Forside/Chapters/Chapter3/body.svg">
+                <img class="chapBodyImg" src="Assets/Forside/Chapters/Chapter3/body.svg">
                 <div class="chapTitle"><span id="chap3T">Sandsynlighedsteori <br> runde 1: Diskret</span> <img id="chap3E" class="chapterExpand" src="Assets/Forside/TocExpand.svg"> </div>
             </div>
         </div>
@@ -297,7 +294,7 @@
         <div id="chap4" class="chap">
         <canvas id="chap4Can" width="900" height="186.16"></canvas>
         <div id="chap4Body">
-            <img class="chapBodyImg" id="chapBodyImg5" src="Assets/Forside/Chapters/Chapter4/body.svg">
+            <img class="chapBodyImg" src="Assets/Forside/Chapters/Chapter4/body.svg">
             <div class="chapTitle"><span id="chap4T">Calculus, studiet af forandring <br> (plus en masse andet)</span> <img id="chap4E" class="chapterExpand" src="Assets/Forside/TocExpand.svg"> </div>
             <div class="chapSections"> 
                 <div class="chapSection"><span id="sec41">Kapitel 1: <br> Hældningen på en kurve og dets vildt mange anvendelser</span>  <img id="sec41E" class="sectionExpand" src="Assets/Forside/TocExpand.svg">  </div>
@@ -311,7 +308,7 @@
         <div id="chap5" class="chap">
             <canvas id="chap5Can" width="900" height="174.26"></canvas>
             <div id="chap5Body">
-                <img class="chapBodyImg" id="chapBodyImg6" src="Assets/Forside/Chapters/Chapter5/body.svg">
+                <img class="chapBodyImg" src="Assets/Forside/Chapters/Chapter5/body.svg">
                 <div class="chapTitle"><span id="chap5T">Men hvad <i>er</i> komplekse tal?</span> <img id="chap5E" class="chapterExpand" src="Assets/Forside/TocExpand.svg"> </div>
             </div>
         </div>
@@ -362,8 +359,6 @@
                 packages: {'[+]': ['ams']}
             }
         };
-
-        let slowInternet = false; 
         
         let frameLength; let lastTime; 
         let getFrameRate = (currentTime)=>{
@@ -381,87 +376,10 @@
             else{window.open("Browser11.html?" + chap + sec + page, "_blank");}
         }
 
-        //Loading first elements and checking internet speed:
-        let loadedLogoEls = 0; 
-        let startTime = new Date();
-
-        let fastConnectionCheck = function(){
-            console.log(window.performance.timing.unloadEventEnd);
-        } 
-        fastConnectionCheck();
-        
-        let incrementLogoEls = function(){
-            loadedLogoEls++;
-
-            if(loadedLogoEls == 3 && new Date() - startTime > 1250){ //Abort the logo menu. Connection is too slow for that. 
-
-                //Set the display of all logo elements to none. They have lazy loading enabled, so any unloaded elements won't need to load, which speeds up performance.
-                document.getElementById("piLogo").style.display="none";
-                document.getElementById("piLogoM").style.display="none";
-                document.getElementById("atematik").style.display="none";
-                document.getElementById("underlineLogo").style.display="none";
-                document.getElementById("TLogo").style.display="none";
-                document.getElementById("globe").style.display="none";
-                document.getElementById("t0Logo").style.display="none";
-                document.getElementById("t1Logo").style.display="none";
-                document.getElementById("t2Logo").style.display="none";
-                document.getElementById("t3Logo").style.display="none";
-                document.getElementById("t4Logo").style.display="none";
-                document.getElementById("t5Logo").style.display="none";
-                document.getElementById("t6Logo").style.display="none";
-
-                if(isTouchDevise){quitLogoMobile();}
-                else{quitLogoDesktop();}
-
-            }
-
-            if(loadedLogoEls == 13){
-                startLogoScreen();
-            }
-        }
-
-        //document.getElementById("piLogo").addEventListener("load", incrementLogoEls);
-        //document.getElementById("piLogoM").addEventListener("load", incrementLogoEls);
-        //document.getElementById("atematik").addEventListener("load", incrementLogoEls);
-        //document.getElementById("TLogo").addEventListener("load", incrementLogoEls);
-        //document.getElementById("t0Logo").addEventListener("load", incrementLogoEls);
-        //document.getElementById("t1Logo").addEventListener("load", incrementLogoEls);
-        //document.getElementById("t2Logo").addEventListener("load", incrementLogoEls);
-        //document.getElementById("t3Logo").addEventListener("load", incrementLogoEls);
-        //document.getElementById("t4Logo").addEventListener("load", incrementLogoEls);
-        //document.getElementById("t5Logo").addEventListener("load", incrementLogoEls);
-        //document.getElementById("t6Logo").addEventListener("load", incrementLogoEls);
-        //document.getElementById("underlineLogo").addEventListener("load", incrementLogoEls);
-        //document.getElementById("quitLogo").addEventListener("load", incrementLogoEls);
-
-        let startLogoScreen = async function(){
-
-            await sleep(40);
-
-            logoAnimation();
-            gradAnim();
-            showTaglineAnim();
-
-            await sleep(40);
-
-            document.getElementById("piLogo").style.animationName = "piAnim";
-            document.getElementById("piLogoM").style.animationName = "piMAnim";
-            document.getElementById("atematik").style.animationName = "atematikAnim";
-            document.getElementById("underlineLogo").style.animationName = "underlineAnim";
-            document.getElementById("TLogo").style.animationName = "TAnim";
-            document.getElementById("globe").style.animationName = "globeAnim";
-            document.getElementById("t0Logo").style.animationName = "t0Anim";
-            document.getElementById("t1Logo").style.animationName = "t1Anim";
-            document.getElementById("t2Logo").style.animationName = "t2Anim";
-            document.getElementById("t3Logo").style.animationName = "t3Anim";
-            document.getElementById("t4Logo").style.animationName = "t4Anim";
-            document.getElementById("t5Logo").style.animationName = "t5Anim";
-            document.getElementById("t6Logo").style.animationName = "t6Anim";
-        }
-        startLogoScreen();
+        console.log(window.performance.timing.unloadEventEnd);
 
 
-        //Setup the start and animate logo screen: 
+        //LOGO AND START ANIMATIONS
         document.getElementById("TocResumeCover").style.display="none";
 
         function sleep(ms) {return new Promise(resolve => setTimeout(resolve, ms));}
@@ -729,28 +647,29 @@
 
             }
 
-        // setTimeout(async () => {
-        //     logoAnimation();
-        //     gradAnim();
-        //     showTaglineAnim();
+        setTimeout(async () => {
+            logoAnimation();
+            gradAnim();
+            showTaglineAnim();
 
-        //     await sleep(40);
+            await sleep(40);
 
-        //     document.getElementById("piLogo").style.animationName = "piAnim";
-        //     document.getElementById("piLogoM").style.animationName = "piMAnim";
-        //     document.getElementById("atematik").style.animationName = "atematikAnim";
-        //     document.getElementById("underlineLogo").style.animationName = "underlineAnim";
-        //     document.getElementById("TLogo").style.animationName = "TAnim";
-        //     document.getElementById("globe").style.animationName = "globeAnim";
-        //     document.getElementById("t0Logo").style.animationName = "t0Anim";
-        //     document.getElementById("t1Logo").style.animationName = "t1Anim";
-        //     document.getElementById("t2Logo").style.animationName = "t2Anim";
-        //     document.getElementById("t3Logo").style.animationName = "t3Anim";
-        //     document.getElementById("t4Logo").style.animationName = "t4Anim";
-        //     document.getElementById("t5Logo").style.animationName = "t5Anim";
-        //     document.getElementById("t6Logo").style.animationName = "t6Anim";
+            document.getElementById("piLogo").style.animationName = "piAnim";
+            document.getElementById("piLogoM").style.animationName = "piMAnim";
+            document.getElementById("atematik").style.animationName = "atematikAnim";
+            document.getElementById("underlineLogo").style.animationName = "underlineAnim";
+            document.getElementById("TLogo").style.animationName = "TAnim";
+            document.getElementById("globe").style.animationName = "globeAnim";
+            document.getElementById("t0Logo").style.animationName = "t0Anim";
+            document.getElementById("t1Logo").style.animationName = "t1Anim";
+            document.getElementById("t2Logo").style.animationName = "t2Anim";
+            document.getElementById("t3Logo").style.animationName = "t3Anim";
+            document.getElementById("t4Logo").style.animationName = "t4Anim";
+            document.getElementById("t5Logo").style.animationName = "t5Anim";
+            document.getElementById("t6Logo").style.animationName = "t6Anim";
 
-        // }, 500);
+        }, 500);
+
 
         //SCROLLING
         $('document').ready(()=>{
@@ -762,7 +681,6 @@
             }, 500);
         });
 
-        let isTouchDevise = false;
         let presentationMode = true;
 
         var chaptersPrepared = false;
@@ -780,66 +698,86 @@
 
         let scrollBeforeSearch = 0;
 
-        //Quitting logo screen
-        //Shows the fancy animation for quitting the logo screen, then calls quitLogoDesktop();        
         let quitLogoAnim = function(){
+            if(!isTouchDevise){
+                atLogo=false;
+                let conBack = document.getElementById("contentBackground");
+                conBack.style.display = "block";
+                document.body.style.overflowY = "hidden";
+
+                document.getElementById("toolbar").style.display="block";
+
+                document.getElementById("grad").style.webkitFilter="blur(2px)";
+                document.getElementById("logo").style.opacity=0;
+                document.getElementById("tagline").style.opacity=0;
+                document.getElementById("trailerVid").style.opacity=0;
+                document.getElementById("quitLogo").style.opacity=0;
+
+                if(document.cookie != ""){document.getElementById("startOffImg").src = "Assets/Forside/SecThumbnails/Final/" + document.cookie.substring(9, 11) + ".png";
+                } else {document.getElementById("startOff").style.display="none";}
+
+                let t=0; 
+                let blurLevel = 0;
+                let blurLevelIncrease = true;
+                conBack.style.webkitFilter = "blur(2px)";
             
-            atLogo=false;
-            let conBack = document.getElementById("contentBackground");
-            conBack.style.display = "block";
-            document.body.style.overflowY = "hidden";
+                scrollDest = window.innerHeight+3;
 
-            document.getElementById("toolbar").style.display="block";
+                let step = function(){
 
-            document.getElementById("grad").style.webkitFilter="blur(2px)";
-            document.getElementById("logo").style.opacity=0;
-            document.getElementById("tagline").style.opacity=0;
-            document.getElementById("trailerVid").style.opacity=0;
-            document.getElementById("quitLogo").style.opacity=0;
+                    t+=0.020;
 
-            if(document.cookie != ""){document.getElementById("startOffImg").src = "Assets/Forside/SecThumbnails/Final/" + document.cookie.substring(9, 11) + ".png";
-            } else {document.getElementById("startOff").style.display="none";}
-
-            let t=0; 
-            let blurLevel = 0;
-            let blurLevelIncrease = true;
-            conBack.style.webkitFilter = "blur(2px)";
-        
-            scrollDest = window.innerHeight+3;
-
-            let step = function(){
-
-                t+=0.020;
-
-                if(t > 0.16 && blurLevelIncrease && blurLevel==0) {conBack.style.webkitFilter = "blur(3px)"; blurLevel++; }
-                if(t > 0.32 && blurLevelIncrease && blurLevel==1) {conBack.style.webkitFilter = "blur(4px)"; blurLevel++; 
-                    let introH1 = document.getElementById("introH1");
-                    introH1.style.opacity=1;
-                    introH1.style.marginLeft="-230px";
+                    if(t > 0.16 && blurLevelIncrease && blurLevel==0) {conBack.style.webkitFilter = "blur(3px)"; blurLevel++; }
+                    if(t > 0.32 && blurLevelIncrease && blurLevel==1) {conBack.style.webkitFilter = "blur(4px)"; blurLevel++; 
+                        let introH1 = document.getElementById("introH1");
+                        introH1.style.opacity=1;
+                        introH1.style.marginLeft="-230px";
+                    }
+                    if(t > 0.48 && blurLevelIncrease && blurLevel==2) {conBack.style.webkitFilter = "blur(3px)"; blurLevel++; blurLevelIncrease=false; }
+                    if(t > 0.64 && !blurLevelIncrease && blurLevel==3) {conBack.style.webkitFilter = "blur(2px)"; blurLevel--; }
+                    if(t > 0.80 && !blurLevelIncrease && blurLevel==2) {conBack.style.webkitFilter = "blur(1px)";}
+                    
+                    window.scrollTo(0, (t < 0.5 ? 8 * t * t * t * t : 1 - Math.pow(-2 * t + 2, 4) / 2)*scrollDest);
+                    if(t < 1) {window.requestAnimationFrame(step);}
+                    else{
+                        quitLogoScreen();
+                    }
                 }
-                if(t > 0.48 && blurLevelIncrease && blurLevel==2) {conBack.style.webkitFilter = "blur(3px)"; blurLevel++; blurLevelIncrease=false; }
-                if(t > 0.64 && !blurLevelIncrease && blurLevel==3) {conBack.style.webkitFilter = "blur(2px)"; blurLevel--; }
-                if(t > 0.80 && !blurLevelIncrease && blurLevel==2) {conBack.style.webkitFilter = "blur(1px)";}
-                
-                window.scrollTo(0, (t < 0.5 ? 8 * t * t * t * t : 1 - Math.pow(-2 * t + 2, 4) / 2)*scrollDest);
-                if(t < 1) {window.requestAnimationFrame(step);}
-                else{
-                    quitLogoDesktop();
-                }
+                step();
             }
-            step();
-              
-        }
-        
-            //These two do mostly the same, but theres a few small differences, and to prevent confusion, it's best to have them seperated. 
-        let quitLogoDesktop = function(){
-            atLogo=false;
+            else{
+                document.getElementById("contentBackground").style.display="block";
+                document.getElementById("contentBackground").style.top="60px";
+                document.getElementById("toolbar").style.display="block";
+                document.getElementById("toolbar").style.top="0px";
+                document.getElementById("grad").style.display="none";
+                document.getElementById("logo").style.display="none";
+                document.getElementById("tagline").style.display="none";
+                document.getElementById("trailerVid").style.display="none";
+                document.getElementById("trailerVidIFrame").src="";
+                document.getElementById("quitLogo").style.display="none";
 
+                document.body.style.zoom=0.45;
+                atLogo=false;
+
+                let introH1 = document.getElementById("introH1");
+                introH1.style.opacity=1;
+                introH1.style.marginLeft="-230px";
+
+                gradAnimRunning=false;
+                prepareChapters(); chaptersPrepared=true;        
+                prepareToc(); TocPrepared=true; 
+            }
+        }
+        let quitLogoScreen = function(){
+            atLogo=false;
+            prepareChapters(); chaptersPrepared=true;
             document.getElementById("contentBackground").style.display = "block";
-            document.getElementById("contentBackground").style.top="0px";
             document.getElementById("toolbar").style.display="block";
-            document.getElementById("toolbar").style.top="0px";
-            document.getElementById("toolbar").style.position="fixed";
+
+            toolbar.style.position="fixed";
+            toolbar.style.top="0px";
+
             document.getElementById("grad").style.display="none";
             document.getElementById("logo").style.display="none";
             document.getElementById("tagline").style.display=   "none";
@@ -847,111 +785,58 @@
             document.getElementById("trailerVidIFrame").src="";
             document.getElementById("quitLogo").style.display="none";
             
-            if(document.cookie != ""){document.getElementById("startOffImg").src = "Assets/Forside/SecThumbnails/Final/" + document.cookie.substring(9, 11) + ".png";
-            } else {document.getElementById("startOff").style.display="none";}
-
-            loadImages();
-            
-            gradAnimRunning=false;
-            prepareChapters(); chaptersPrepared=true;
-
+            document.getElementById("contentBackground").style.top="0px";
             window.scrollTo(0,0);
             document.body.style.overflowY = "auto";
             document.getElementById("contentBackground").style.webkitFilter="blur(0px)";
             document.getElementById("grad").style.webkitFilter="blur(0px)";
-            
-            scrollStep++;
-        }
-        let quitLogoMobile = function(){
-            atLogo=false;
-
-            document.getElementById("contentBackground").style.display="block";
-            document.getElementById("contentBackground").style.top="60px";
-            document.getElementById("toolbar").style.display="block";
-            document.getElementById("toolbar").style.top="0px";
-            document.getElementById("toolbar").style.position="fixed";
-            document.getElementById("grad").style.display="none";
-            document.getElementById("logo").style.display="none";
-            document.getElementById("tagline").style.display="none";
-            document.getElementById("trailerVid").style.display="none";
-            document.getElementById("trailerVidIFrame").src="";
-            document.getElementById("quitLogo").style.display="none";
-
-            if(document.cookie != ""){document.getElementById("startOffImg").src = "Assets/Forside/SecThumbnails/Final/" + document.cookie.substring(9, 11) + ".png";
-            } else {document.getElementById("startOff").style.display="none";}
-
-            document.body.style.zoom=0.45;
-
-            loadImages();
-
-            let introH1 = document.getElementById("introH1");
-            introH1.style.opacity=1;
-            introH1.style.marginLeft="-230px";
-
             gradAnimRunning=false;
-            prepareChapters(); chaptersPrepared=true;        
-            prepareToc(); TocPrepared=true; 
-        }
 
-        let loadImages = function(){
-            document.getElementById("penPaper").style.display="block";
-            document.getElementById("chromeLogo").style.display="block";
-            document.getElementById("chapterBorders").style.display="block";
-            document.getElementById("searchRemove").style.display="block";
-
-            document.getElementById("chapBodyImg1").style.display="block";
-            document.getElementById("chapBodyImg2").style.display="block";
-            document.getElementById("chapBodyImg3").style.display="block";
-            document.getElementById("chapBodyImg4").style.display="block";
-            document.getElementById("chapBodyImg5").style.display="block";
-            document.getElementById("chapBodyImg6").style.display="block";
+            scrollStep++;
         }
 
         document.getElementById("quitLogo").addEventListener("click", (e)=>{
-            if(!isTouchDevise){quitLogoAnim();}
-            else{quitLogoMobile();}
+            quitLogoAnim();
         });
 
-        //User has returned from browser:
-        if(window.location.search == "?toToc"){
-            setTimeout(() => { //We use a timeout here because it avoids a hosting problem (prepareChapters and prepareToc are lower down in the script), and because it just makes it less glitchy.
-                if(!isTouchDevise){quitLogoDesktop();}
-                else {quitLogoMobile();}
-                
-                presentationMode=false;
-                let chaptersH1 = document.getElementById("chaptersH1");
-                chaptersH1.style.marginLeft="365px";
-                chaptersH1.style.opacity=1;
-                let tocH1 = document.getElementById("tocH1");
-                tocH1.style.marginLeft="-230px";
-                tocH1.style.opacity=1;
-
-                if(!chaptersPrepared){prepareChapters(); chaptersPrepared=true;}
-                if(!TocPrepared){prepareToc(); TocPrepared=true;}
-                
-                setTimeout(() => {
-                    if(!isTouchDevise){window.scrollTo(0,6850);}
-                    else{
-                        document.body.style.zoom=0.45;
-                        window.scrollTo(0, 2776);
-                    }
-                }, 500);
-
-                scrollStep=4;
-            }, 50);
-        }
-
-        //Scrolling events
+        let isTouchDevise = false;
         if(('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0)) {
             isTouchDevise=true;
+            //let conBack = document.getElementById("contentBackground");
+            //conBack.style.display = "block";
 
             //Swipe down from logo
             let touchstartY = 0
             let touchendY = 0
 
             async function handleGesture() {
-                if (touchendY < touchstartY-50 && atLogo) {
-                    quitLogoMobile(); 
+                if (touchendY < touchstartY-50) {
+                    
+                    if(atLogo){
+                        document.getElementById("contentBackground").style.display="block";
+                        document.getElementById("contentBackground").style.top="60px";
+                        document.getElementById("toolbar").style.display="block";
+                        document.getElementById("toolbar").style.top="0px";
+                        document.getElementById("grad").style.display="none";
+                        document.getElementById("logo").style.display="none";
+                        document.getElementById("tagline").style.display="none";
+                        document.getElementById("trailerVid").style.display="none";
+                        document.getElementById("quitLogo").style.display="none";
+
+                        document.body.style.zoom=0.45;
+                        atLogo=false;
+
+                        await sleep(100);
+
+                        let introH1 = document.getElementById("introH1");
+                        introH1.style.opacity=1;
+                        introH1.style.marginLeft="-230px";
+
+                        prepareChapters(); chaptersPrepared=true;        
+                        prepareToc(); TocPrepared=true;
+
+                    }
+
                 }
             }      
 
@@ -963,6 +848,10 @@
             touchendY = e.changedTouches[0].screenY
             handleGesture()
             })
+
+
+
+            //document.body.style.zoom=1.25;
         }
 
         window.addEventListener("scroll", (e)=>{
@@ -1029,60 +918,8 @@
 
             pScroll=newScroll;
         });
-
+        
         //TOOLBAR
-        document.getElementById("toolbarIntro").addEventListener("click", (e)=>{
-            window.scrollTo(0,5);
-            scrollStep=2;
-        })
-
-        document.getElementById("toolbarChapters").addEventListener("click", (e)=>{
-            
-            if(!chaptersPrepared){prepareChapters(); chaptersPrepared=true;}
-            if(!TocPrepared){prepareToc(); TocPrepared=true;}
-
-            presentationMode=false;
-            let chaptersH1 = document.getElementById("chaptersH1");
-            chaptersH1.style.marginLeft="365px";
-            chaptersH1.style.opacity=1;
-            if(isTouchDevise){window.scrollTo(0,1018.6);}
-            else{window.scrollTo(0,2102);}
-            scrollStep=3;
-        })
-
-        document.getElementById("toolbarToc").addEventListener("click", (e)=>{
-            presentationMode=false;
-            let chaptersH1 = document.getElementById("chaptersH1");
-            chaptersH1.style.marginLeft="365px";
-            chaptersH1.style.opacity=1;
-            let tocH1 = document.getElementById("tocH1");
-            tocH1.style.marginLeft="-230px";
-            tocH1.style.opacity=1;
-
-            if(!chaptersPrepared){prepareChapters(); chaptersPrepared=true;}
-            if(!TocPrepared){prepareToc(); TocPrepared=true;}
-            
-            if(isTouchDevise){window.scrollTo(0, 3164.6);}
-            else{window.scrollTo(0,6852);}
-
-            scrollStep=4;
-        })
-        document.getElementById("toolbarContact").addEventListener("click", async (e)=>{
-            presentationMode=false;
-            let chaptersH1 = document.getElementById("chaptersH1");
-            chaptersH1.style.marginLeft="365px";
-            chaptersH1.style.opacity=1;
-            let tocH1 = document.getElementById("tocH1");
-            tocH1.style.marginLeft="-230px";
-            tocH1.style.opacity=1;
-
-            if(!chaptersPrepared){prepareChapters(); chaptersPrepared=true;}
-            if(!TocPrepared){await prepareToc(); TocPrepared=true;}
-
-            window.scrollTo(0,document.getElementById("contentBackground").clientHeight+500);
-        })
-
-        //Searching 
         let searchBar = document.getElementById("searchBar");
 
         document.getElementById("searchRemove").addEventListener("click",(e)=>{
@@ -1194,125 +1031,63 @@
             }
         })
 
-        let doSearch = function(inp) {
+        document.getElementById("toolbarIntro").addEventListener("click", (e)=>{
+            window.scrollTo(0,5);
+            scrollStep=2;
+        })
 
-            let searchMatches = [];
-            let searchIndex = [-1, -1, -1, -1, -1];
-
-            let iWords; let iWordsL = [];
-
-            let suffixes = ["e", "er", "et", "erne", "tion", "de", "ere", "st"];
-            let algorithmA = function(cWords){
-
-                let getCharDiffCount = function(a, b) {
-                    let bL = b.length;
-
-                    if(iWordL == bL) {
-                        let diffs = 0;
-                        for(let i=0; i < iWordL; i++) {
-                            if(a[i].toLowerCase()!=b[i].toLowerCase()) {diffs++;}
-                        }
-                        let allowedDifferences = Math.min(bL, 3);
-                        if(bL <= 5) {allowedDifferences = 2;}
-
-                        let score = allowedDifferences-diffs;
-                        if(score <= 0) {return 0;}
-                        else {return score; }
-                    }
-                    else{
-                        let s; let sL;
-                        let l; let lL;
-                        if(bL > iWordL) {s=a, sL=iWordL; l=b; lL = bL;}
-                        else{s=b; sL=bL; l=a; lL = iWordL;}
-
-                        let baseIndex=0;
-                        let diffs;
-                        while(sL + baseIndex < lL + 1) {
-                            diffs=0;
-                            for(let i = 0; i < sL; i++) {
-                                if(s[i].toLowerCase() != l[i+baseIndex].toLowerCase()) {diffs++;}
-                            }
-                            if(diffs < 3) {
-                                diffs += baseIndex; //Add prefix as difference
-                                if(!suffixes.includes(l.substring(sL + baseIndex))){diffs += lL - sL - baseIndex; } //Add suffix as difference *if* it isn't a common suffix
-
-                                let allowedDifferences = Math.min(sL, 3);
-                                if(sL <= 5) {allowedDifferences = 2;}
-
-                                let score = allowedDifferences-diffs;
-                                if(score <= 0) {return 0;}
-                                else {return score; }
-                            }
-                            baseIndex++;
-                        }
-                        return 0;
-                    }
-                }
-
-                let totalScore = 0;
-                let L = cWords.length;
-
-                let iWordL;
-                for(let i = 0; i<iWords.length; i++) {
-                    iWordL = iWordsL[i];
-                    for(let j = 0; j < L; j++) {
-                        totalScore += getCharDiffCount(iWords[i], cWords[j]);
-                    }
-                } 
-                return totalScore;
-            }
-
-            let findMatches = function(){
-                let depth = 0;
-                while(searchIndex[depth] != -1){depth++;}
-
-                let listChildren = rD;
-                for(let i = 0; i < depth; i++) {
-                    listChildren = listChildren[searchIndex[i]][0];
-                }    
-
-                let L = listChildren.length;
-                for(let i=0; i < L; i++) {
-
-                    searchIndex[depth] = i;
-                    for(let j = depth+1; j < 5; j++) {searchIndex[j]=-1;}
-
-                    let listEl = listChildren[i];
-
-                    let searchScore = 0;
-
-                    searchScore += algorithmA(listEl[1].split(" "))*1.5;
-                    searchScore += algorithmA(listEl[2].split(" "));
-                    //searchScore += algorithmB(listEl[2]);
-                    
-                    if(listEl[3] != "") { searchScore += algorithmA(listEl[3].split(", ")); }
-                    if(listEl[5] != null && listEl[5] != "") { searchScore += algorithmA(listEl[5].split(", "))*2; }
-                    
-                    if(searchScore > 1) {
-                        let indexClone = []; for(let i = 0; i < 5; i++) {indexClone.push(searchIndex[i]);}
-                        searchMatches.push({searchI: indexClone, score: searchScore});
-                    }
-
-                    if(listEl[0].length != 0) {
-                        findMatches();
-                    }
-
-                }
-            }
-
-            iWords = inp.split(" ");
-            for(let i=0; i<iWords.length; i++) {iWordsL[i] = iWords[i].length; } //Calculate lengths only once for performance;
-
-            findMatches();
+        document.getElementById("toolbarChapters").addEventListener("click", (e)=>{
             
-            return searchMatches.sort((a,b)=>{return b.score - a.score});
-        }
-        
+            if(!chaptersPrepared){prepareChapters(); chaptersPrepared=true;}
+            if(!TocPrepared){prepareToc(); TocPrepared=true;}
 
-        //START OFF:
+            presentationMode=false;
+            let chaptersH1 = document.getElementById("chaptersH1");
+            chaptersH1.style.marginLeft="365px";
+            chaptersH1.style.opacity=1;
+            if(isTouchDevise){window.scrollTo(0,1018.6);}
+            else{window.scrollTo(0,2102);}
+            scrollStep=3;
+        })
+
+        document.getElementById("toolbarToc").addEventListener("click", (e)=>{
+            presentationMode=false;
+            let chaptersH1 = document.getElementById("chaptersH1");
+            chaptersH1.style.marginLeft="365px";
+            chaptersH1.style.opacity=1;
+            let tocH1 = document.getElementById("tocH1");
+            tocH1.style.marginLeft="-230px";
+            tocH1.style.opacity=1;
+
+            if(!chaptersPrepared){prepareChapters(); chaptersPrepared=true;}
+            if(!TocPrepared){prepareToc(); TocPrepared=true;}
+            
+            if(isTouchDevise){window.scrollTo(0, 3164.6);}
+            else{window.scrollTo(0,6852);}
+
+            scrollStep=4;
+        })
+        document.getElementById("toolbarContact").addEventListener("click", async (e)=>{
+            presentationMode=false;
+            let chaptersH1 = document.getElementById("chaptersH1");
+            chaptersH1.style.marginLeft="365px";
+            chaptersH1.style.opacity=1;
+            let tocH1 = document.getElementById("tocH1");
+            tocH1.style.marginLeft="-230px";
+            tocH1.style.opacity=1;
+
+            if(!chaptersPrepared){prepareChapters(); chaptersPrepared=true;}
+            if(!TocPrepared){await prepareToc(); TocPrepared=true;}
+
+            window.scrollTo(0,document.getElementById("contentBackground").clientHeight+500);
+        })
+
+
+        //Start off:
         document.getElementById("startOffImg").addEventListener("click",(e)=>{
             openBrowser(document.cookie[9], document.cookie[10], document.cookie.substring(11));
         });
+
 
         //CHAPTERS
 
@@ -2668,7 +2443,7 @@
 
         }
 
-        //INDHOLDSFORTEGNELSE
+        //Indholdsfortegnelse:
         let rD = [];
         let treeI;
 
@@ -3128,6 +2903,146 @@
         }
 
 
+        //Søgning :
+        let doSearch = function(inp) {
+
+            let searchMatches = [];
+            let searchIndex = [-1, -1, -1, -1, -1];
+
+            let iWords; let iWordsL = [];
+
+            let suffixes = ["e", "er", "et", "erne", "tion", "de", "ere", "st"];
+            let algorithmA = function(cWords){
+
+                let getCharDiffCount = function(a, b) {
+                    let bL = b.length;
+
+                    if(iWordL == bL) {
+                        let diffs = 0;
+                        for(let i=0; i < iWordL; i++) {
+                            if(a[i].toLowerCase()!=b[i].toLowerCase()) {diffs++;}
+                        }
+                        let allowedDifferences = Math.min(bL, 3);
+                        if(bL <= 5) {allowedDifferences = 2;}
+
+                        let score = allowedDifferences-diffs;
+                        if(score <= 0) {return 0;}
+                        else {return score; }
+                    }
+                    else{
+                        let s; let sL;
+                        let l; let lL;
+                        if(bL > iWordL) {s=a, sL=iWordL; l=b; lL = bL;}
+                        else{s=b; sL=bL; l=a; lL = iWordL;}
+
+                        let baseIndex=0;
+                        let diffs;
+                        while(sL + baseIndex < lL + 1) {
+                            diffs=0;
+                            for(let i = 0; i < sL; i++) {
+                                if(s[i].toLowerCase() != l[i+baseIndex].toLowerCase()) {diffs++;}
+                            }
+                            if(diffs < 3) {
+                                diffs += baseIndex; //Add prefix as difference
+                                if(!suffixes.includes(l.substring(sL + baseIndex))){diffs += lL - sL - baseIndex; } //Add suffix as difference *if* it isn't a common suffix
+
+                                let allowedDifferences = Math.min(sL, 3);
+                                if(sL <= 5) {allowedDifferences = 2;}
+
+                                let score = allowedDifferences-diffs;
+                                if(score <= 0) {return 0;}
+                                else {return score; }
+                            }
+                            baseIndex++;
+                        }
+                        return 0;
+                    }
+                }
+
+                let totalScore = 0;
+                let L = cWords.length;
+
+                let iWordL;
+                for(let i = 0; i<iWords.length; i++) {
+                    iWordL = iWordsL[i];
+                    for(let j = 0; j < L; j++) {
+                        totalScore += getCharDiffCount(iWords[i], cWords[j]);
+                    }
+                } 
+                return totalScore;
+            }
+
+            let findMatches = function(){
+                let depth = 0;
+                while(searchIndex[depth] != -1){depth++;}
+
+                let listChildren = rD;
+                for(let i = 0; i < depth; i++) {
+                    listChildren = listChildren[searchIndex[i]][0];
+                }    
+
+                let L = listChildren.length;
+                for(let i=0; i < L; i++) {
+
+                    searchIndex[depth] = i;
+                    for(let j = depth+1; j < 5; j++) {searchIndex[j]=-1;}
+
+                    let listEl = listChildren[i];
+
+                    let searchScore = 0;
+
+                    searchScore += algorithmA(listEl[1].split(" "))*1.5;
+                    searchScore += algorithmA(listEl[2].split(" "));
+                    //searchScore += algorithmB(listEl[2]);
+                    
+                    if(listEl[3] != "") { searchScore += algorithmA(listEl[3].split(", ")); }
+                    if(listEl[5] != null && listEl[5] != "") { searchScore += algorithmA(listEl[5].split(", "))*2; }
+                    
+                    if(searchScore > 1) {
+                        let indexClone = []; for(let i = 0; i < 5; i++) {indexClone.push(searchIndex[i]);}
+                        searchMatches.push({searchI: indexClone, score: searchScore});
+                    }
+
+                    if(listEl[0].length != 0) {
+                        findMatches();
+                    }
+
+                }
+            }
+
+            iWords = inp.split(" ");
+            for(let i=0; i<iWords.length; i++) {iWordsL[i] = iWords[i].length; } //Calculate lengths only once for performance;
+
+            findMatches();
+            
+            return searchMatches.sort((a,b)=>{return b.score - a.score});
+        }
+        
+
+        //User has returned from browser:
+        if(window.location.search == "?toToc"){
+            quitLogoScreen();
+            presentationMode=false;
+            let chaptersH1 = document.getElementById("chaptersH1");
+            chaptersH1.style.marginLeft="365px";
+            chaptersH1.style.opacity=1;
+            let tocH1 = document.getElementById("tocH1");
+            tocH1.style.marginLeft="-230px";
+            tocH1.style.opacity=1;
+
+            if(!chaptersPrepared){prepareChapters(); chaptersPrepared=true;}
+            if(!TocPrepared){prepareToc(); TocPrepared=true;}
+            
+            setTimeout(() => {
+                if(!isTouchDevise){window.scrollTo(0,6850);}
+                else{
+                    document.body.style.zoom=0.45;
+                    window.scrollTo(0, 2776);
+                }
+            }, 500);
+
+            scrollStep=4;
+        }
 
         
     </script>
