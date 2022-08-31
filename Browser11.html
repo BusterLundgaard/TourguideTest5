@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<body lang="en">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -13,7 +13,12 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/aaaakshat/cm-web-fonts@latest/fonts.css">
 
 </head>
-<img>
+<body>
+    <div id="loadOverlay" style="background-color:rgb(255, 255, 255); position:absolute; top:0px; left:0px; width:100%; height:100%; z-index:2000; text-align:center;">
+        <div style="position:relative; top:50%;">
+            Loader hjemmeside. Tak for tålmodigheden! 
+        </div> 
+    </div>
 
     <div id="TocBackground">
         <div id="TocTitle">Indholdsfortegnelse</div>
@@ -67,6 +72,10 @@
 
 
     <script>
+
+        setTimeout(() => {
+            document.getElementById("loadOverlay").style.display="none";
+        }, 500);
 
         let isTouchDevice = false;
         if(('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0)) {
@@ -198,7 +207,7 @@
         async function startUp() {
 
             //Change the url param without reloading:
-            //window.history.pushState("", "", "?502");
+            window.history.pushState("", "", "?502");
             const queryString = window.location.search;
             chapNum = parseInt(queryString[1]);
             secNum = parseInt(queryString[2]);
