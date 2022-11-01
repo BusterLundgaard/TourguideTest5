@@ -2550,7 +2550,7 @@ function activateEventListeners() {
     document.getElementById("toolbarIntro").addEventListener("click", (e)=>{
         window.scrollTo(0,5);
         scrollStep=2;
-    })
+    });
 
     document.getElementById("toolbarChapters").addEventListener("click", (e)=>{
         
@@ -2564,7 +2564,7 @@ function activateEventListeners() {
         if(isTouchDevise){window.scrollTo(0,1018.6);}
         else{window.scrollTo(0,2102);}
         scrollStep=3;
-    })
+    });
 
     document.getElementById("toolbarToc").addEventListener("click", (e)=>{
         presentationMode=false;
@@ -2582,7 +2582,7 @@ function activateEventListeners() {
         else{window.scrollTo(0,6852);}
 
         scrollStep=4;
-    })
+    });
     document.getElementById("toolbarContact").addEventListener("click", async (e)=>{
         presentationMode=false;
         let chaptersH1 = document.getElementById("chaptersH1");
@@ -2596,7 +2596,26 @@ function activateEventListeners() {
         if(!TocPrepared){await prepareToc(); TocPrepared=true;}
 
         window.scrollTo(0,document.getElementById("contentBackground").clientHeight+500);
-    })
+    });
+
+    document.getElementById("toolbarProofread").addEventListener("click", (e)=>{
+        let resultsBackground = document.getElementById("korrekturGuide");
+        document.getElementById("contentBackground").style.display = "none";
+        resultsBackground.style.display="block";
+        resultsBackground.style.height="100vh";
+
+        let noResultsText = document.createElement("div");
+        noResultsText.setAttribute("id", "noResult");
+    });
+    document.getElementById("korrekturTilbage").addEventListener("click", (e)=>{
+        let korrekturGuide = document.getElementById("korrekturGuide");
+        korrekturGuide.style.opacity=0;
+        setTimeout(() => {korrekturGuide.style.display="none"; korrekturGuide.style.opacity=1;}, 500);
+
+        document.getElementById("contentBackground").style.display = "block";
+        
+        window.scrollTo(0, scrollBeforeSearch);
+    });
 
     //Searching 
     let searchBar = document.getElementById("searchBar");

@@ -498,6 +498,43 @@ body{
     opacity: 1;
 }
 
+#korrekturGuide{
+    display:none;
+
+    position:absolute;
+
+    top:60px;
+    left:max(50% - 450px, 0px);
+    
+    width:900px;
+
+    background-color: #e6fffd;
+    background: repeating-linear-gradient( 45deg, #dffcf9, #dffcf9 10px, #e6fffd 10px, #e6fffd 65px);
+
+    border-left: solid;
+    border-right: solid;
+    border-width: 2px;
+    border-color:rgb(202, 224, 223);
+
+    padding-bottom:200px;
+    padding-top:15px;
+    padding-left:30px;
+    padding-right:20px; 
+
+    font-size: 20px;
+
+    z-index:4;
+
+    transition:opacity,500ms;
+}
+#korrekturTilbage{
+    font-weight: bold;
+    transition:opacity, 50ms;
+}
+#korrekturTilbage:hover{
+    margin-left:5px;
+    cursor:pointer;
+}
 
 #contentBackground{
     display:none;
