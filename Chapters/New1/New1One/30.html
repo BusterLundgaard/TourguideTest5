@@ -374,18 +374,23 @@
 
     
     <p class="tt">
-        Der er uendelig mange primtal. Det er på ingen måde åbenlyst, og beviset er relativt avanceret <sup><a href="https://proofwiki.org/wiki/Number_of_Primes_is_Infinite" title="proofwiki (marts 2021, 27). 'Number of Primes is Infinite'. https://proofwiki.org/wiki/Number_of_Primes_is_Infinite" target="_blank">[F]</a></sup> .
-        Jeg er ikke vild med bare at smide "facts" mod dit ansigt sådan, men lige her må du stole på mig 
-        (stole på fodnoterne, rettere). 
+    Der er uendeligt mange primtal. Det er overraskende simpelt at se hvorfor. Forestil dig, at du har fundet _(7_) primtal. Er der flere? Er der nogen hurtig måde, hvorpå du kan finde et nyt? Tricket er at kigge på 
+    _($p_1*p_2*p_3*p_4*p_5*p_6*p_7+1_)
+    Så, gange alle dine primtal sammen og tilføj én. Hvis dette er et primtal, hurra! Du har fundet et nyt primtal. Hvis det ikke er et primtal, kan det skrives som andre primtal ganget sammen. Så ved du, at 
+    _($p_1*p_2*p_3*p_4*p_5*p_6*p_7+1=q_1*q_2*q_3*\dots_)
+    hvor _(q_1)_, _(q_2)_, _(q_3)_ osv. er de primtal, der udgør dit tal. Hvis én af disse _(q_)'er ikke er lig med et af _(p_)'erne, så hurra, du har fundet et nyt primtal! Hvis én af dem, lad os sige _(q_1_) <i>er</i> lig med et af _(p_)'erne, lad os sige _(p_1_), så gælder følgende:
+    _($\begin{align}
+    &(q_1*q_2*q_3*\dots) - p_1*p_2*p_3*p_4*p_5*p_6*p_7 = \\ \\
+    &p_1*((q_2*q_3*\dots) - p_2*p_3*p_4*p_5*p_6*p_7) \\ 
+    \end{align}_)
+    Så i dette tilfælde er forskellen mellem dine primtal ganget sammen og dine primtal ganget sammen med én tilføjet <i>ikke</i> et primtal. Men denne forskel er bare _(1_) Og _(1_) <i>er</i> et primtal. Så ingen af _(q_)'erne kan være lig med nogen af _(p_)'erne, og alle de _(q_)'er, vi har fundet, er nye primtal!
     </p>
     <p class="t">
-    Det kan tage lidt tid at finde ud af, hvorvidt et tal er primt. Selve strategien er 
-    nem, men det bliver langsomt, som tallet gror større. 
-    Der <i>er</i> visse bedre strategier, men de virker kun i 
-    få situationer til bestemte tal. Det handler i stor grad om viden og tidligere erfarning.
-    Computere er (praktisk talt) nødt til at bruge den langsomme metode hvor man tester alle mindre
-    primtal stadig idag. Så svært
-    er problemet! 
+    Her er så en simpel måde at finde nye primtal: Tag alle de primtal, du allerede kender, gange dem sammen og tilføj én, nedbryd tallet, du fik, i primtal, og alle disse primtal vil være nye originale primtal. Boom!
+    </p>
+    <p class="cent">*</p>
+    <p class="t">
+    Det kan tage noget tid at afgøre, om et tal er et primtal. Strategien i sig selv er nem, men den bliver langsommere, jo større tallet bliver. Der er visse bedre strategier, men de virker kun i nogle få situationer for specifikke tal. Det afhænger i høj grad af viden og tidligere erfaring. Der findes nogle ekstremt hurtige computeralgoritmer, men i forhold til den hastighed, som computere kan udføre andre ting med, er de stadig ret langsomme.
     </p>
     <p class="t">
     Primtal er - udover deres praktiske anvendelser - et perfekt eksempel på

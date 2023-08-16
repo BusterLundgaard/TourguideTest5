@@ -111,21 +111,40 @@
     </p>
 
     <q-stion 1="11" 2="1">
-    Vis, at hvis _(A,B,C_) er begivenheder, så er
+    Vis, at hvis _(A, B, C_) er begivenheder, så gælder det, at
     _($C \cap (A \cup B) = (C \cap A) \cup (C \cap B)_)
-    Lidt ligesom med parenteser og plus og gange!
-    Jeg anbefaler, at du 
-    ser på diagrammet fra tidligere der forklarede _(\cap_) og _(\cup_),
-    og det er tilladt hvis du bruger lidt intuition i dit bevis og din 
-    argumentation.
-    <br><br></q-stion>
+    Ligesom vi kan distribuere multiplikation over addition i parenteser! For at bevise at to sæt (S_1) og (S_2) er ens, skal du vise to ting:
+    <ul>
+    <li>
+    Hvis et vilkårligt element _(x_) er en del af _(S_1_), <i>så</i> er det også en del af (S_2)
+    </li>
+    <li>
+    Hvis et vilkårligt element _(x_) er en del af _(S_2_), <i>så</i> er det også en del af (S_1)
+    </li>
+    </ul>
+    <p class="t">
+    Vi siger her, at _(x_) er en del af _(S_1_) <i>hvis og kun hvis</i> det er en del af _(S_2_). Dette forkortes ofte som "iff": _(x_) er en del af _(S_1_) iff det er en del af _(S_2_).
+    </p>
+    <p class="t">
+    Hvis vi har bevist dette, ved vi, at alle elementer, der er i det ene sæt, også er i det andet, og derfor indeholder de de samme elementer, og derfor er de ens.
+    </p>
+    </q-stion>
     <answer-box>
-    Her er der _(6_) forskellige tegninger af forskellige _(A,B,C_) hvor _(C_) er gul, og _(A,B_) begge røde:
-    <img class='SpicXL' style='width:50%' src='../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\IntersectionDistribution.png'> 
-    <p class="t">På de her tegninger er der valgt forskellige _(A,B,C_) der skære eller slet ikke skære hinanden.
-    Trods hvor vidt forskellige de er, kan vi alligevel nemt se, at _(C \cap (A \cup B) = (C \cap A) \cup (C \cap B)_)
-    gælder for hver. _(a \cup b_) er jo bare to figurer sat sammen, og _(a \cap c_) er hvad de deler. </p>
-    <br></answer-box>
+    Hvis _(x_) er en del af
+    _($C \cap (A \cup B)_)_
+    så er der tre muligheder: Enten er det en del af _(C_) <i>og</i> _(A_) men ikke _(B_) eller en del af _(C_) og _(B_) men ikke _(A_), eller en del af _(C_) og _(A_) og _(B_) samtidig. I den første mulighed er det klart også en del af
+    _($(C \cap A) \cup (C \cap B)_)
+    på grund af _(C \cap A_). I den anden mulighed kan vi sige det samme, men med _(C \cap B_). Den tredje mulighed er triviel.
+    <p class="t">
+    For den anden retning, antag at _(x_) er en del af
+    _($(C \cap A) \cup (C \cap B)_)
+    Der er nu tre muligheder: _(x_) er en del af _(C_) <i>og</i> _(A_) men ikke _(B_) eller en del af _(C_) og _(B_) men ikke _(A_), eller en del af _(C_) og _(A_) og _(B_) samtidig. Det er tydeligt at se, at alle tre muligheder opfylder _(C_) og alle tre muligheder opfylder _(A \cup B_).
+    </p>
+    <p class="t">
+    Boom! Disse to sæt må indeholde de samme elementer og er derfor ens!
+    </p>
+    <br>
+    </answer-box>
 
 
 

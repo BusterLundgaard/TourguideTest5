@@ -470,78 +470,7 @@
     </p>
     <br></answer-box>
 
-    <!-- <q-stion 1="2" 2="1" 3="5" customWidth="540">
-    Du er ude at sejle et skib. Her via GPS kan det være effektivt at bruge nord-syd koordinater
-    i stedet for noget mere relativt som vinkler. Din position er lige nu _((4564,2093)_), og 
-    du skal over til _((4690, 1922)_). Motoren på skibet giver en kraft _(F_) på _(60_), skibet og
-    bemandingen vejer _(300kg_), og der er en vind på _(F_{vind}=\Vec[-20,30]_). Hvad skal 
-    din båds kraft-vektor være, for at i sejler direkte mod _((4690,1922)_)? 
-    <p class="t">
-    Den her opgave er relativ svær! Der er i hvert fald lidt tricky lignings-løsning involveret
-    (i hvert fald på den måde, jeg har løst den)
-    </p>
-    <br></q-stion>
-    <answer-box customWidth="540">
-    Sig at startpositionen er _(P_), målet er _(S_), motorens kraft
-    er _(\vec{F_m}_) og vindens kraft _(\vec{F_w}_). Lad os nu lige tegne situationen:
-    <img class='Spic' style='width:50%' src='../../../Assets/Chapter2\Section4\Vectore\GpsExercise2.png'> 
-    <p class="t">
-    Det fundamentale problem er, at vinden har en indflydelse på retningen af 
-    vores bevægelse. Bådens kraft plus vindens kraft burde gerne give en vektor
-    i retningen af _(\vec{PS}_), hvor _(P_) er startpositionen og _(S_) 
-    slutpositionen. Altså:
-    _($\vec{F_w}+\vec{F_m}=k*\vec{PS}_)
-    Jeg skriver _(k*\vec{PS}_), fordi det kun er <i>retningen</i> af _(\vec{PS}_) 
-    der er vigtig. Så behøver jeg heller ikke på noget tidspunkt normalisere _(\vec{PS}_).
-    Jeg kan bare sige:
-    _($\vec{PS} = \VeC[4690-4564,1922-2093] = \VeC[126,-171]_)
-    Jeg ved, at _(\vec{F_m}_) har en styrke på _(60_), men jeg kender ikke dens retning.
-    Derfor kan jeg skrive den som:
-    _($\vec{F_m}=\VeC[60 Cos(\theta), 60 Sin(\theta)]_)
-    Så vi får nu:
-    _($\VeC[-20,30]+\VeC[60 Cos(\theta), 60 Sin(\theta)]=\VeC[126k,-171k]_)
-    Det her er altså to ligninger med to ubekendte:
-    _($\begin{eqnarray}
-    & - & 20 & + 60*Cos(\theta) & =   & k*126 \\
-    &   & 30 & + 60*Sin(\theta) & = - & k*171
-    \end{eqnarray}_)
-    Hvordan går vi lige til at løse det, præcist? Vi er ret ligeglade med
-    _(k_), så lad os bare fokusere på at finde _(\theta_) først. Man kan relativt
-    nemt fjerne _(k_), ved at sige
-    _($k=\frac{-20+60*Cos(\theta)}{126}, \qquad k=\frac{30+60*Sin(\theta)}{-171} \to_)
-    ... og så
-    _($\begin{align}
-    \frac{-20+60*Cos(\theta)}{126} &= \frac{30+60*Sin(\theta)}{-171} & \to \\ \\
-    3420 + -10260*Cos(\theta) &= 3780 + 7560*Sin(\theta) & \to \\ \\
-    -Cos(\theta) &= 0.736*Sin(\theta) + 0.035
-    \end{align}_)
-    Nu er vi i en lidt tricky situation. Det ser umiddelbart ikke ud til, at
-    vi kan simplificere mere. Hvis bare alting var i forhold til _(Cos_) eller
-    _(Sin_), kunne vi måske opstille en andengradsligning. Her kan vi
-    udnytte, at _(Cos^2 = 1 - Sin^2_), så hvis vi opløfter begge
-    sider i anden potens, får vi:
-    _($\begin{align}
-    (-Cos(\theta))^2 & = (0.736*Sin(\theta) + 0.035)^2 &\to \\ \\
-    Cos(\theta)^2 & = 0.541*Sin(\theta)^2 + 0.05152*Sin(\theta) + 0.001225 &\to \\ \\
-    1-Sin(\theta)^2 & = 0.541*Sin(\theta)^2 + 0.05152*Sin(\theta) + 0.001225 &\to \\ \\
-    0 & = 1.541*Sin(\theta)^2 + 0.05152*Sin(\theta) - 1.001225 
-    \end{align}_)
-    Voila! Det passer til _(Ax^2+Bx+C=0_) med _(A=1.541_), _(B=0.5152_) og 
-    _(C=-1.00125_). Ligningen har to løsninger: _(Sin(v)=0.78_) og 
-    _(Sin(v)=-0.82_). Når man tegner situationen, som vi gjorde i starten, 
-    kan man se at y-komponentet <i>skal</i> gå nedad. Det er derfor nok _(-0.82_), der
-    er den rigtige løsning. Det giver _(\theta=Arcsin(-0.82)=-0.96_), så:
-    _($\vec{F_m}=\VeC[60*Cos(-0.96),60*Sin(-0.96)]=\VeC[32.41,-49.2]_)
-    Bum!
-    </p>
-    <br><br></answer-box> -->
-
-    <!-- <q-stion 1="2" 2="1" 3="5">
-    Fuck dig.
-    <br><br></q-stion>
-    <answer-box>
-    Ja.
-    <br><br></answer-box> -->
+    <!--  -->
 
     <p class="t">
     Jeg vil slutte denne side med en sjov og uvigtig
@@ -568,7 +497,7 @@
     <p class="t">
     Det var et meget simpelt problem vi fint kunne have løst uden vektorer. 
     I alt realiteten
-    bruger man sjælen denne strategi - 
+    bruger man sjælendt denne strategi - 
     bare en smart lille anvendelse, der måske inspirerer dig i fremtiden. 
     </p> 
 

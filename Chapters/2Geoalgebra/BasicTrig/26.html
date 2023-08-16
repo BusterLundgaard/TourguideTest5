@@ -149,12 +149,16 @@
     _($Sin(v) Cos(v) = 0.45_)
     Nu kan vi lave et smart trick. Vi ved at _(Sin(2v)=2 Sin(v) Cos(v)_). Det betyder også at:
     _($Sin(v) Cos(v) = \frac{1}{2} Sin(2v)_)
-    Så vi kan omskrive til:
-    _($\frac{1}{2} Sin(2v) = 0.45 to Sin(2v) = 0.9 \to _)
-    _($2v = Arccos(0.9) = 0.451_)
-    Så _(2v=0.451_), hvilket betyder, at _(v=0.451/2=_) _(0.2255_). Det
-    svarer til ca. _(12.92_) grader. På denne grad er kassen bredere end den er høj, men
-    det modsatte ved _(90-12.92=77.08^o_) ville også virke fint. 
+    Formålet er at lave en formel med både _(Sin_) og _(Cos_) om til en med kun _(Sin_). 
+    Sådan kan vi nemt isolere _(v_) med _(Arcsin_):
+    \begin{align*}
+    \frac{1}{2} Sin(2v) & = 0.45 \to \\ \\
+    Sin(2v) & = 0.9 \to  \\ \\
+    2v & = Arcsin(0.9) = 1.119 \to \\ \\
+    v & = 1.119/2 = 0.5595
+    \end{align*}
+    Dette svarer til en vinkel på _(32.08_) grader, en kasse der er bredere end den er høj. Den modsatte vinkel ved 
+    ved _(90-12.92=77.08^o_) ville også virke fint. 
     <br><br></answer-box>
 
     <!--  -->
@@ -203,7 +207,7 @@
     _($L = v_0*Cos(\theta)*\frac{2*v_0*Sin(\theta)}{a} = \frac{v_0^2}{a}*2*Cos(\theta)*Sin(\theta)_)
     På hvilken _(\theta_)  er dette størst? 
     Her kan formlen for _(Sin(2v)_) hjælpe os, da _(2*Cos(\theta)*Sin(\theta)_) jo kan omskrives:
-    _($\frac{v_0^2}{a}*2*Sin(2\theta)_)
+    _($\frac{v_0^2}{a}*Sin(2\theta)_)
     Nu skal vi bare vælge den _(\theta_) hvor _(Sin(2\theta)_) er størst,
     ergo når _(Sin_) er _(1_) og _(2\theta=\pi/2_), hvor:
     _($\theta=\pi/4_)

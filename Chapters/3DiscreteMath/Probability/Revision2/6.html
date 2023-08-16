@@ -20,13 +20,13 @@
     hvor der bliver rykket rundt på rækkefølgen af "noget" - på en eller
     anden måde. Sig f.eks man havde funktionen _(f_) 
     hvor
-    _($f(\{a,b,c,d,f\})=\{b,f,c,d,a\}_)
+    _($f([a,b,c,d,f])=[b,f,c,d,a]_)
     Den gør intet til værdierne, men flytter kun rundt på deres rækkefølge. 
     </p>
 
     <q-stion 1="6" 2="1">
     Evaluer 
-    _($f \left(f \left(f \left(f \left( \{ o, b, q, r, s \} \right) \right) \right) \right)_)
+    _($f \left(f \left(f \left(f \left( [ o, b, q, r, s ] \right) \right) \right) \right)_)
     <br></q-stion>
     <answer-box>
     Du kan se mit svar her:
@@ -43,22 +43,22 @@
     prøve forskellige aktiviteter _(a_1,...a_8_). Den måde man i de fleste 
     tilfælde nok ville fordele hold rundt på aktiviteter
     kan modelleres som:
-    _($f(\{h_1,h_2,h_3,h_4,h_5,h_6,h_7,h_8\} ) = \{ h_8,h_1,h_2,h_3,h_4,h_5,h_6,h_7 \}_)
+    _($f([h_1,h_2,h_3,h_4,h_5,h_6,h_7,h_8] ) = [ h_8,h_1,h_2,h_3,h_4,h_5,h_6,h_7 ]_)
     Gentaget brug af _(f_) vil sende folk rundt i en 
     cyklus/ring, hvor alle prøver alle aktiviteter
     så effektivt som muligt. En anden åbenlys mulighed er:
-    _($g( \{h_1,h_2,h_3,h_4,h_5,h_6,h_7,h_8 \} ) = \{h_2,h_3,h_4,h_5,h_6,h_7,h_8,h_1\}_)
+    _($g( [h_1,h_2,h_3,h_4,h_5,h_6,h_7,h_8 ] ) = [h_2,h_3,h_4,h_5,h_6,h_7,h_8,h_1]_)
     Det er bare den tidligere permutation, men baglæns. Så _(f(g(X))=X_) og modsat
     (hvor _(X_) er en liste med elementer i en rækkefølge). 
     </p>
 
     <q-stion 1="6" 2="2">
     Sender
-    _($f_1( \{h_1,h_2,h_3,h_4,h_5,h_6,h_7,h_8\} ) = \{h_7,h_8,h_1,h_2,h_3,h_4,h_5,h_6\} _)
+    _($f_1( [h_1,h_2,h_3,h_4,h_5,h_6,h_7,h_8] ) = [h_7,h_8,h_1,h_2,h_3,h_4,h_5,h_6] _)
     ... alle holdene rundt til alle aktiviteter uden 
     nogle gentagelser under vejs?  
     Svar også på samme spørgsmål med:
-    _($f_2( \{h_1,h_2,h_3,h_4,h_5,h_6,h_7,h_8)\} ) = \{h_6,h_7,h_8,h_1,h_2,h_3,h_4,h_5\} _)
+    _($f_2( [h_1,h_2,h_3,h_4,h_5,h_6,h_7,h_8]) = [h_6,h_7,h_8,h_1,h_2,h_3,h_4,h_5] _)
     <br></q-stion>
     <answer-box>
     Man kan se, hvis man kigger, at _(f_1_) flytter 
@@ -106,9 +106,9 @@
     Det eneste vigtige for os er, at der er _(3_) på vand,
     _(3_) på flyve, og _(2_) på skov. 
     Én mulig permutation er:
-    _($f( \{h_1,h_2,h_3,h_4,h_5,h_6,h_7,h_8 \} ) = f( \{h_3,h_1,h_2,h_6,h_4,h_5,h_8,h_7 \} )_)
+    _($f( [h_1,h_2,h_3,h_4,h_5,h_6,h_7,h_8 ] ) = f( [h_3,h_1,h_2,h_6,h_4,h_5,h_8,h_7 ] )_)
     En anden mulig permutation er:
-    _($f(\{ h_1,h_2,h_3,h_4,h_5,h_6,h_7,h_8 \}) = f( \{ h_7, h_8, h_6, h_1, h_2, h_3, h_4, h_5\} ) _)
+    _($f([ h_1,h_2,h_3,h_4,h_5,h_6,h_7,h_8 ]) = f( [ h_7, h_8, h_6, h_1, h_2, h_3, h_4, h_5] ) _)
     Ved den første er det ret åbenlyst, hvordan den 
     sender folk rundt i permutationer:
     _(h_1, h_2, h_3_) har èn cyklus, hvor de går _(1_) 
@@ -140,9 +140,9 @@
     nok til at jeg kan se dem. 
     <p class="t">
     Anvender vi _(f_) én gang mere får vi:
-    _($f(\{h_7, h_8, h_6, h_1, h_2, h_3, h_4, h_5 \}) = \{h_4,h_5,h_3,h_7,h_8,h_6,h_1,h_2\} _)
+    _($f([h_7, h_8, h_6, h_1, h_2, h_3, h_4, h_5 ]) = [h_4,h_5,h_3,h_7,h_8,h_6,h_1,h_2] _)
     Og èn gang til:
-    _($f(\{h_4,h_5,h_3,h_7,h_8,h_6,h_1,h_2 \}) = \{h_1,h_2,h_6,h_4,h_5,h_3,h_7,h_8\}_)
+    _($f([h_4,h_5,h_3,h_7,h_8,h_6,h_1,h_2 ]) = [h_1,h_2,h_6,h_4,h_5,h_3,h_7,h_8]_)
     Hmm. _(h_1_) blev til _(h_7_) og så _(h_4_), _(h_4_) blev til _(h_1_) og så _(h_7_), og 
     _(h_7_) blev til _(h_4_) og så _(h_1_). _(h_1, h_4, h_7 _) er altså i en cyklus 
     _(h_1 \to h_4 \to h_7_). Den resterende gruppe består 
@@ -252,9 +252,9 @@
     <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
     Okay: Vores mål er at beskrive èt Stirling tal i forhold 
     til nogle andre mindre Stirling tal. Sig
-    vi leder efter _(S(8,5)_). Det er mængden af 
+    vi leder efter _(S(8,3)_). Det er mængden af 
     permutationer af _(8_) objekter man kan lave, hvor 
-    der er _(5_) cykluser:
+    der er _(3_) cykluser:
     <img class='Spic' style='width:40%' src='../../../Assets/Chapter3\Sandsyndlighed og kombinatorik\StirlingRecursion.png'> 
     <p class="t">
     Lad os prøve at bruge lidt det samme trick som 
@@ -273,7 +273,7 @@
     _($(2 \to 8 \to 3), \, (5 \to 7), \, (6 \to 4) _)
     Her kan vi indsætte det første element _(3_) forskellige steder
     ved cyklus _(1_) (ingen forskel på om den er 
-    efter _(3_) eller før _(2_)), _(2_) forskellige steder ved cyklus _(2_), 
+    efter _(3_) eller før _(2_)), _(2_) forskellige steder ved cyklus _(2_), (2-1)!
     og _(2_) forskellige steder ved cyklus _(3_). Det er i alt 
     _(3+2+2=_) _(7_) steder. Så i situation _(\text{A}_) er der
     _($7*S(7, 3)_)  

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 
-
     <h3>Massecentre på lidt mere avancerede figurer</h3>
 
     <p class="t">
@@ -138,6 +137,38 @@
     </p>
     <br></q-stion>
     <answer-box>
+    Der er lidt to måder vi kunne gå til det her på. Èn måde er at se firkanten som en roteret version af  
+    <img class="Spic" style="width:65%" src='../../../Assets/Chapter2\Section2\BilliardsAndProperties\CenterOfMassWeirdShape3B.png'> 
+    <p class="t">
+    Ved hjælp af punkterne kan vi få alle de længder og vinkler vi har brug for, bruge formlen for massecenteret, og så til sidst "rotere tilbage" og få de massecenterets rigtige koordinater. 
+    Det her er egentlig ikke specielt svært i teorien, men det er noget bøvlet rod i praksis. Jeg gjorde det her i mit originale svar til opgaven, og det var ikke sjovt. 
+    </p>
+    <p class="t">
+    Den anden måde er ret smart: Vi bruger igen den her ide med "negative masser":
+    </p>
+    <img class="Spic" style="width:80%" src='../../../Assets/Chapter2\Section2\BilliardsAndProperties\NewCenterOfMassApproach1.png'> 
+    <p class="t">
+    Massecenteret på _(\triangle ABC_) kan ses som det kombinerede massecenter af _(\triangle AED_), _(\triangle AEC_) og _(\triangle BCD_), hvor _(\triangle AED_) har positivt areal og _(\triangle AEC_) og _(\triangle BCD_) har negative arealer. 
+    </p>
+    <p class="t">
+    _(?_) i billedet ovenpå er det _(x_)-koordinat hvor linjen _(AB_) har dens _(y_)-værdi lig _(-5_). _(AB_) har en hældning nedad på _(5/8=0.625_), så:
+    _($-3 - (x-4)*0.625 = -5_)
+    Hvis vi isolere _(x_) fås _(7.2_). Nu er vi klar til at finde massecenterene på _(\triangle AED_), _(\triangle AEC_) og _(\triangle BCD_): 
+    \begin{align*}
+    \triangle AED: \, \, & (7.2 - (2/3)*(7.2+4), -5+(1/3)*(5+2))=\\ & (-0.26, -2.66) \\ \\
+    \triangle AEC: \, \, & (2-(2/3)*(2+4), -2.66) = \\ & (-2, -2.66) \\ \\
+    \triangle BCD: \, \, & \bigl(2+(1/3)*(Cos(Arctan(2/2))*\sqrt{2^2+2^2}+(7.2-2)), \\ & -5+(1/3)*(2) \bigr) = \\
+    & (4.4, -4.33)
+    \end{align*}
+    Arealer er ret trivielle og finde, og giver henholdsvis _(39.2_), _(-21_) and _(-5.2_). Nu er vi endelige klar til at finde det rigtige massecenter:
+    \begin{align*}
+    x_m & = \frac{(-0.267)*39.2 + (-2)*(-21) + (4.4)*(-5.2)}{39.2-21-5.2} = 0.667 \\ \\ 
+    y_m & = \frac{(-2.667)*39.2 + (-2.667)*(-21) + (-4.33)*(-5.2)}{39.2-21-5.2} = -2
+    \end{align*}
+    Boom. Brilliant!
+    </p><br>
+    </answer-box>
+    <!-- <answer-box>
     Vi har:
     <img class="Spic" style="width:45%" src='../../../Assets/Chapter2\Section2\BilliardsAndProperties\CenterOfMassWeirdShape2B.png'> 
     <p class="t">
@@ -184,5 +215,5 @@
     _($m_1=(-4+4.67,2-4.00)=(0.67,-2)_)
     Phew!
     </p>
-    <br></answer-box>
+    <br></answer-box> -->
 

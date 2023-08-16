@@ -208,7 +208,7 @@
         async function startUp() {
 
             //Change the url param without reloading:
-            //window.history.pushState("", "", "?502");
+            window.history.pushState("", "", "?111");
             const queryString = window.location.search;
             chapNum = parseInt(queryString[1]);
             secNum = parseInt(queryString[2]);
@@ -294,10 +294,8 @@
                     elArray.push({sI:elInfo[j*3+0], eI:elInfo[j*3+1], t:elInfo[j*3+2]});
                 }
                 pageMeta.push(elArray);
-
             }
    
-
             //Section data: 
             let sD;
             await $.get(chapter+"secMeta.txt", (data)=>{
@@ -328,7 +326,7 @@
                         paramCounter++;
                     }
                     else{
-                        el.IL =sD.substring(pParam,i);
+                        el.IL=sD.substring(pParam,i);
                         paramCounter=0; 
                     }
 

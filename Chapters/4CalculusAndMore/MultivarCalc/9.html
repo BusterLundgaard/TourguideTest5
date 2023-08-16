@@ -152,7 +152,7 @@
     \end{eqnarray}_)
     Ved _((0,0)_) beregner vi, at _(h_) er lig:
     _($(8*0-9)*(9*0-11) - (8*0)^2 = 99_)
-    _(f_{xx}_) ved _(8y-9_) er lig _(-9_), så dette er et lokalt <i>maksimum</i>. 
+    _(f_{xx}_) ved _((0, 0)_) er lig _(-9_), så dette er et lokalt <i>maksimum</i>. 
     <p class="t">
     Ved _((0, 2.44)_) er _(h_) lig
     _($(8*2.44 - 9)*(9*2.44 - 11) - (8*0)^2 = 115.29_)
@@ -182,16 +182,10 @@
     yx^{y-1} - 1 & = 0 \\
     Ln(x) x^{y} & = 0 
     \end{align}_)
-    Anden ligning er tydeligvis sand, hvis _(x=1_). I det tilfælde
-    giver første ligning:
+    Anden ligning er tydeligvis sand, hvis _(x=1_), fordi _(Ln(1)=0_). Substitueres _(x=1_) i første ligning fås:
     _($y*1^{y-1} - 1 = 0 \to y=1_)
-    Er anden ligning sand på <i>nogle</i> andre _((x,y)_)-værdier?
-    _(Ln(x)_) er kun _(0_) ved _(x=1_), og _(x^y_) er _(0_) ved 
-    _(x=0_), <i>hvis</i> _(y_) er positiv men _(\infty_), hvis det er negativ. 
-    _(Ln_) nærmer sig _(-\infty_) ved _(x=0_), så ved positive _(y_) får vi
-    en værdi, der tager formen _(-\infty*0_). Det er vi nødt til at evaluere med L'Hopitals:
-    _($\lim_{x \to 0} \left[\frac{Ln(x)}{1/x^y} \right] = \lim_{x \to 0} \left[\frac{1/x}{-y/x^{y+1}} \right] = \lim_{x \to 0} \left[-\frac{1}{yx^{y}} \right] = -\infty_)
-    Så anden ligning er <i>kun</i> opfyldt ved _(x=1_). _(f_) har derfor èt kritisk punkt:
+    Er den anden ligning sand for <i>nogle</i> andre _((x,y)_)-værider?
+    Èn anden mulighed er at gøre _(x^y_) _(0_) ved at sætte _(x=0_) og så vælge en hvilket som helst positiv _(y_). Den kan vi bare ikke fordi _(Ln(0)_) er udefineret! Så _((1, 1)_) er den eneste løsning. _(f_) har derfor ét kritisk punkt:
     _($(1, 1)_)
     Vi beregner _(h_) ved først at finde:
     _($\begin{eqnarray}
@@ -202,6 +196,7 @@
     Nu får vi:
     _($\left(1*(1-1)*1^{1-2} \right)*\left(Ln(1)^2*1^1 \right) - \left(1^{1-1}*(1+1*Ln(1)) \right)^2 = -1_)
     Det er altså et <i>saddle point</i>. Du kan se en illustration af funktionen og dens kritiske punkt her:
+    </p>
     <br><br>
     <hover-video url="../../../Assets/Chapter4\MultivarCalc\NewMinMaxPoints2.mp4" ></hover-video>
     <br><br></answer-box>

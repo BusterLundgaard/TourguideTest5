@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 
-    <h2>Men hvad <i>er</i> en matrix?</h2>
+    <h2>Enter the matrix</h2>
     <p class="t">
     Til aller sidst i det her kapitel vil jeg snakke om lidt 
     notation / syntaks du ofte kommer til at støde på: Matrixer.
@@ -36,9 +36,18 @@
     kontekster. Det
     kunne være alt fra points i et spil, mængden af penge forskellige folk (rækker) havde på
     forskellige dage, osv. Det er altså forfatteren og konteksten der bestemmer,
-    hvad præcis matrixen betyder. <i>Med det sagt</i> findes der 
-    bestemte vigtige og hyppige betydninger, der er værd at se nærmere på. F.eks. bruger
-    man ofte matrixer til at beskrive lineære systemer af ligninger:
+    hvad præcis matrixen betyder. 
+    </p>
+    <p class="t">
+    <u><b> Med det sagt</b></u> er der én bestemt kontekst man meget hyppigt vil se matrixer i. 
+    Faktisk har vi også defineret bestemte <i>operationer</i> på matrixer som plus og gange, og de her operationer er defineret med henblik
+    på netop denne kontekst. Matrixer er <i>udviklet</i> til at man effektivt skal kunne arbejde med <i>linæert algebra</i>: Det vil altså sige <i>algebra</i> - det her med symboler og alt sådan noget vi har set en del på nu - i en linæer kontekst, så, ingen potenser, ingen trig-unktioner eller røder, bare simple linæere funktioner.  
+    </p>
+    <p class="t">
+    Du behøver ikke at forstå <i>præcis</i> hvad det betød, men over tid vil det begynde at give mening. Lad os i mellemtiden give to konkrette eksempler: Matrixer der hjælper os med <i>linæere systemer af ligninger</i>, og matrixer der hjælper os med at beskrive <i>linæere funktioner</i>. 
+    </p>
+    <p class="t">
+    Man bruger ofte matrixer til at beskrive lineære systemer af ligninger:
     _($\begin{eqnarray} 
     && 3x & + 5.9y & - \,  16z & + 2.3w & = 18 \\
     && 12x & - 14y & + \, 1z & - 1w & = 9 \\
@@ -356,14 +365,14 @@
     <img class='SpicXL' style='width:47%' src='../../../Assets/Chapter2\Section4\Matrixer\3DParralelogram.png'> 
     <p class="t">
     Det er på ingen måde åbenlyst, at den lange komplicerede formel jeg viste deroppe har disse
-    egenskaber, men vi vil ikke gennemgå det her<sup><a href="https://mathworld.wolfram.com/Determinant.html" title="Weisstein, Eric W. 'Determinant.' From MathWorld--A Wolfram Web Resource. https://mathworld.wolfram.com/Determinant.html" target="_blank">[FODNOTE NUMMER HER]</a></sup>. 
+    egenskaber, men vi vil ikke gennemgå det her<sup><a href="https://mathworld.wolfram.com/Determinant.html" title="Weisstein, Eric W. 'Determinant.' From MathWorld--A Wolfram Web Resource. https://mathworld.wolfram.com/Determinant.html" target="_blank">[F]</a></sup>. 
     </p>
     <p class="t">
     I flere tekster og kontekster bruger folk også bare determinanter til at gøre
     en eller anden formel eller ligning kompakt. 
     Determinanten er simpelthen <i>så grim og lang</i> at evaluere, at den kan
     gemme en helt masse information og kompleksitet væk. 
-    At omskrive et udtryk til determinanten af en matrix gør sjælen livet 
+    At omskrive et udtryk til determinanten af en matrix gør sjælendt livet 
     nemmere for os: Det <i>ser</i> bare
     pænere ud, og er måske nemmere at huske. Man møder til tider åndssvage
     eksempler på komplet unødvendige determinanter. F.eks var formlen for

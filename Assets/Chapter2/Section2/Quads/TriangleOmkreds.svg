@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
-
 <svg
    xmlns:ns1="http://www.iki.fi/pav/software/textext/"
    xmlns:dc="http://purl.org/dc/elements/1.1/"
@@ -15,7 +13,7 @@
    viewBox="0 0 210 297"
    version="1.1"
    id="svg8"
-   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
+   inkscape:version="1.0.2-2 (e86c870879, 2021-01-15)"
    sodipodi:docname="TriangleOmkreds.svg">
   <defs
      id="defs2" />
@@ -27,18 +25,19 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.98994949"
-     inkscape:cx="416.04704"
-     inkscape:cy="507.34483"
+     inkscape:cx="112.62692"
+     inkscape:cy="589.06737"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="1800"
-     inkscape:window-height="1001"
-     inkscape:window-x="99"
-     inkscape:window-y="0"
-     inkscape:window-maximized="0"
+     inkscape:window-width="1920"
+     inkscape:window-height="1009"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
      inkscape:snap-global="false"
-     showguides="false" />
+     showguides="false"
+     inkscape:document-rotation="0" />
   <metadata
      id="metadata5">
     <rdf:RDF>
@@ -47,7 +46,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -85,8 +84,8 @@
       </g>
     </g>
     <g
-       style="stroke-width:0.73109573"
-       transform="matrix(1.1973822,0,0,1.1973822,-277.20459,-13.516949)"
+       style="stroke-width:0.731096"
+       transform="matrix(1.1973822,0,0,1.1973822,-258.68364,-13.516949)"
        ns1:version="0.11.0"
        ns1:texconverter="pdflatex"
        ns1:pdfconverter="pdf2svg"
@@ -99,10 +98,10 @@
        inkscape:export-xdpi="211.81799"
        inkscape:export-ydpi="211.81799">
       <g
-         style="stroke-width:0.73109573"
+         style="stroke-width:0.731096"
          id="g848">
         <g
-           style="fill:#000000;fill-opacity:1;stroke-width:0.73109573"
+           style="fill:#000000;fill-opacity:1;stroke-width:0.731096"
            id="g846">
           <path
              inkscape:connector-curvature="0"
@@ -123,7 +122,7 @@
        ns1:pdfconverter="pdf2svg"
        ns1:texconverter="pdflatex"
        ns1:version="0.11.0"
-       transform="matrix(1.197382,0,0,1.197382,-249.25704,38.050286)"
+       transform="matrix(1.197382,0,0,1.197382,-239.20281,38.050286)"
        inkscape:export-xdpi="211.81799"
        inkscape:export-ydpi="211.81799">
       <g
@@ -148,13 +147,6 @@
        inkscape:export-xdpi="211.81799"
        inkscape:export-ydpi="211.81799" />
     <path
-       style="opacity:0.889;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.80000001;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:3.19999999, 3.19999998999999979;stroke-dashoffset:0;stroke-opacity:1"
-       d="M -99.9588,99.22054 H 45.97036"
-       id="path918"
-       inkscape:connector-curvature="0"
-       inkscape:export-xdpi="211.81799"
-       inkscape:export-ydpi="211.81799" />
-    <path
        inkscape:connector-curvature="0"
        id="path920"
        d="m -44.099462,202.25293 0,-103.566935"
@@ -164,8 +156,8 @@
        inkscape:export-ydpi="211.81799" />
     <path
        sodipodi:nodetypes="cc"
-       style="opacity:0.595;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.8;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:3.19999999, 6.39999997999999959;stroke-dashoffset:0;stroke-opacity:1"
-       d="m -89.802551,190.35944 v -90.3371"
+       style="opacity:0.595;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.8;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:3.2, 6.4;stroke-dashoffset:0;stroke-opacity:1"
+       d="m -71.281706,190.35944 v -90.3371"
        id="path922"
        inkscape:connector-curvature="0"
        inkscape:export-xdpi="211.81799"
@@ -173,15 +165,15 @@
     <path
        inkscape:connector-curvature="0"
        id="path924"
-       d="m -89.802551,190.35944 44.601191,0.56617"
-       style="opacity:0.595;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.80000001;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:3.19999999, 6.39999997999999959;stroke-dashoffset:0;stroke-opacity:1"
+       d="m -71.895493,190.35944 26.694133,0.56617"
+       style="opacity:0.595;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.8;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:3.2, 6.4;stroke-dashoffset:0;stroke-opacity:1"
        sodipodi:nodetypes="cc"
        inkscape:export-xdpi="211.81799"
        inkscape:export-ydpi="211.81799" />
     <circle
-       style="opacity:1;fill:#313131;fill-opacity:1;stroke:#000000;stroke-width:0.40000001;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       style="opacity:1;fill:#313131;fill-opacity:1;stroke:#000000;stroke-width:0.4;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        id="path926"
-       cx="-89.769142"
+       cx="-71.248291"
        cy="190.32603"
        r="1.637026"
        inkscape:export-xdpi="211.81799"
@@ -391,6 +383,14 @@
        id="path1043"
        d="M 218.8482,191.16665 156.48213,99.696413"
        style="opacity:0.88899997;fill:#313131;fill-opacity:1;stroke:#ed0000;stroke-width:0.80000001;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       sodipodi:nodetypes="cc"
+       inkscape:export-xdpi="211.81799"
+       inkscape:export-ydpi="211.81799" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path877"
+       d="M -78.967923,98.796707 H 44.510599"
+       style="opacity:0.889;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.8;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:3.2, 3.2;stroke-dashoffset:0;stroke-opacity:0.383838"
        sodipodi:nodetypes="cc"
        inkscape:export-xdpi="211.81799"
        inkscape:export-ydpi="211.81799" />

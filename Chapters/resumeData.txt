@@ -1287,7 +1287,7 @@ Komplekse tal #2
 
 
 ¤2
-Men hvad <i>er</i> en matrix #2
+Enter the matrix #2
 En matrix er bare et fancy matematisk ord for <i>skema med ting i</i>. Det har forskellige
 betydninger i forskellige kontekster, men et par betydninger er hyppigere end andre, og værd
 at se nærmere på #2
@@ -1483,7 +1483,7 @@ n-choose-k giver dig antallet af måder hvorpå man kan
 udvælge _(k_) objekter fra _(n_). Der er f.eks _(10_)-choose-_(6_) mulige scenarier, hvis der kun er
 _(6_) stole og i er _(10_) personer. n-choose-k skrives ofte som _(\begin{pmatrix} n \\ k \end{pmatrix}_),
 lidt som om det var en vektor. Det er nok fordi vektorer og 
-_(n_)-choose-_(k_) sjælen er brugt i samme kontekst@
+_(n_)-choose-_(k_) sjælendt er brugt i samme kontekst@
 303@
 n-choose-k hvis der er (uendelig mange) gentagende elementer@
 _($\begin{pmatrix} k+m-1 \\ m \end{pmatrix}_)@
@@ -2123,7 +2123,7 @@ Epsilon-delta definition på grænser #2
 ¤3
 Et par trænings-opgaver i grænser #3
 Det er ret teknisk og svært at bevise grænser, så vi skal lige øve
-os med et par opgaver. Vi ser heldigvis senere, at man sjælen for
+os med et par opgaver. Vi ser heldigvis senere, at man sjælendt for
 brug for denne lange, manuelle proces. #3
 bevis #3
 3 #3
