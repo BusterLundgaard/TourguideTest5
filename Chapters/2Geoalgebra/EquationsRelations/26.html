@@ -56,121 +56,93 @@
     Det er langt sværere, end at modbevise, da vi ikke længere
     kan finde bare èt modeksempel. 
     </p>
-    
+
     <p class="t">
-    Vi ved fra før, at _(a,b_) ikke <i>begge</i> kan være ulige. Nu med vores
-    nye krav kan vi yderligere sige, at de heller ikke <i>begge</i> kan være lige:
-    Hvis både _(a_) og _(b_) er lige, er _(c^2=a^2+b^2_) også lige. 
-    Hvis _(c^2_) er lige, er _(c_) også lige (det kan let tjekkes). 
-    Nu er alle _(3_) sider lige, så de deler en faktor på _(2_)! 
-    Det er ulovligt hvis _(GCD(a,b,c)=1_). Vi kan derfor med sikkerhed sige at præcis <i>1</i> af
-    _(a,b_) er lige: lad os gøre det _(a_). 
+    Vi får brug for at være ret komfortable med at bruge _(GCD_) og brug for nogle mindre resultater før vi går rigtig igang. 
     </p>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Vi ved fra tidligere arbejde at _(a_) og _(b_) i _(a^2+b^2=c^2_) ikke begge kan være ulige. Kan de begge være lige hvis _(GCD(a,b,c)=1_)?
+    <br><br></q-stion>
+    <answer-box>
+    Nope. Antag at de begge var lige, så at _(a=2*m_) og at _(b=2*n_). Nu er _(c_) lig:
+    _($\sqrt{b^2+a^2}=\sqrt{4m^2+4n^2}=2 \sqrt{m^2+n^2}_)
+    Men vent, nu indeholder både _(a_), _(b_) og _(c_) en faktor af to, så _(GCD(a,b,c) \ge 2_), hvilket ikke kan passe med en primitiv triple hvor _(GCD(a,b,c)=1_). Bum!   
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Er _(GCD(b,c)_) eller _(GCD(a,c)_) også lig _(1_) hvis _(GCD(a,b,c)=1_) og _(a^2+b^2=c^2_)? 
+    <br><br></q-stion>
+    <answer-box>
+    Yup! Antag først at _(GCD(b,c) = k_). Så er _(b=k*m_), _(c=k*n_) (med _(gcd(n,m)=1_)) og 
+    _($a = \sqrt{c^2 - b^2} = \sqrt{k^2 m^2 - k^2 n^2} = k \sqrt{m^2 - n^2}_)
+    Men nu indeholder både _(b,c_) og _(a_) en faktor af _(k_), så _(GCD(a,b,c) \ge k_), hvilket ikke stemmer overens med _(GCD(a,b,c)=1_). 
     <p class="t">
-    Hvis _(a_) er lige og _(b_) ulige, ved vi, at det er _(a_) vi gerne vil 
-    have til at følge formen _(2*m*n_). Det er nok det simpleste sted at starte:
-    Vise at et hvilket som helst _(a_) i denne kontekst, så længe det 
-    er lige, kan omskrives til _(2_) gange produktet af to hele tal. 
+    Et lignende og spejlvendt argument gælder for _(GCD(a,c)_). Så konklusionen er at 
+    _($GCD(a,b)=GCD(a,c)=GCD(b,c)=GCD(a,b,c)=1_)
     </p>
-    <p class="t">
-    _(a^2+b^2=c^2_), så vi kan kigge nærmere på _(a_) i forhold til _(a^2=c^2-b^2_). 
-    Hvis noget følger formen _(A^2-B^2_), kan det omskrives til _((A+B)(A-B)_).
-    Nu har vi introduceret to faktorer! _(a^2=(c+b)(c-b)_). Vi er dog stadig langt fra færdige, 
-    da vi ikke ved, om _(\sqrt{(c+b)}_) og 
-    _(\sqrt{c-b}_) er hele tal. Hvis _(a=2mn_), er vi også nød til at
-    vise, at i hvert fald èn af dem er lige. 
-    </p>
-    <p class="t">
-    Lige nu sidder vi lidt fast, så vi gør noget mærkeligt:
-    _($a^2=(c+b)(c-b) \to \frac{a}{c-b}=\frac{c+b}{a}_) 
-    Det er praktisk med brøker, da vi kan bruge dem til at introducere nye
-    konstanter via den "mest reducerede brøk". Sig:
-    _($\frac{c+b}{a}=\frac{m}{n}_)
-    _((c+b)/a_) er lig _(a/(c-b)_), så vi får nu også:
-    _($\frac{c-b}{a} = \frac{n}{m}_)
-    Alt i alt:
-    _($\begin{eqnarray}
-    && \frac{c}{a} + \frac{b}{a} = \frac{m}{n} \\ \\
-    && \frac{c}{a} - \frac{b}{a} = \frac{n}{m} 
-    \end{eqnarray}_)
-    Lad os lige zoome lidt ud, og overveje hvad vores mål overhovedet er til at 
-    begynde med. Vi vil gerne beskrive _(a_) og _(b_) i forhold til nogle nye konstanter.
-    Specifikt vil vi gerne beskrive dem som _(a=2*q*r_) og _(b=q^2-r^2_), hvor
-    _(q_) og _(r_) er hele tal. Vi har opstillet et system, der
-    indeholder to frie konstanter _(m_) og _(n_). Deres formål er, at tage _(q_) og 
-    _(r_)'s rolle. Det system indeholder både _(b_) og _(a_), så måske er det muligt
-    at isolere dem, og derved beskrive dem i forhold til _(n_) og _(m_). 
-    Så kan vi håbe på vi får noget der ca. passer formen. 
-    </p>
-    <p class="t">
-    For at løse systemet lidt nemmere, kalder vi _(c/a_) for _(A_), _(b/a_) for _(B_), og
-    _(n/m_) for _(C_). Vi har nu:
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="2" 2="1" 3="5">
+    Forklar hvorfor at hvis _(a*b=A^2_) hvor _(a,b,A_) er heltal, så er
+    \begin{align*}
+    a & = GCD(a,b)*n^2 \\
+    b & = GCD(a,b)*m^2
+    \end{align*}
+    hvor _(m,n_) er heltal med _(GCD(n,m)=1_). 
+    <br><br></q-stion>
+    <answer-box>
+    De første vi skal indse her er at et hvilket som helst par heltal _(a,b_) kan skrives som
     _($\begin{align}
-    A+B & = C \\
-    A-B & = 1/C
+    a & = GCD(a,b)*c \\
+    b & = GCD(a,b)*d 
     \end{align}_)
-    Man kan relativt let løse dette, og få:
-    _($A=\frac{C^2+1}{2C}, \qquad B=\frac{C^2-1}{2C}_)
-    Hvis vi lige kigger på _(B_), fortæller det os, at:
-    _($\frac{b}{a} = \frac{n^2/m^2-1}{2*n/m} = \frac{m^2-n^2}{2nm}_)
-    Hmmm. Tælleren er _(m^2-n^2_), hvilket er præcist hvad vi leder efter til _(b_).
-    Nævneren er _(2nm_) hvilket er præcist hvad vi leder efter til _(a_). Det her
-    <i>må</i> kunne bruges til et eller andet! Hvis bare vi kunne vise, at 
-    både _(b/a_) og _((m^2-n^2)/(2nm)_) var fuldt reducerede brøker, ville vi med
-    det samme få _(b=m^2-n^2_) og _(a=2nm_). Det ville færdiggøre beviset! 
+    hvor _(GCD(c,d)=1_). Det giver god mening: Vi kan skrive _(a_) som den del af _(a_) der er delt med _(b_) ganget med den del _(a_) ikke deler med _(b_). Det eneste spørgsmål er nu hvorfor specifikt vi kan sige at _(c,d_) er to <i>kvadratiske tal</i> _(n^2, m^2_). Lad os prøve at lade som om de <i>ikke</i> var og se om _(a*b_) er lig et kvadratisk tal _(A^2_):
+    _($a*b=GCD(a,b)*c*GCD(a,b)*d=GCD(a,b)^2*c*d_)
+    Det her kan umuligt være kvadratisk, da _(c,d_) ikke deler nogen faktorer. Hvis det er kvadratisk dog:
+    _($a*b=GCD(a,b)*n^2*GCD(a,b)*m^2=GCD(a,b)^2*n^2*m^2=(GCD(a,b)*n*m)^2_)
+    Så her er _(A=GCD(a,b)*n*m_). Bum! 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <p class="t">
+    Okay, nu til et ret elegant bevis (som jeg ikke selv fandt på snøft snøft). Vi kan antage at _(a^2+b^2=c^2_) og at _(GCD(a,b,c)=1_), og vi skal nu finde to tal _(m, n_) hvor _(a=2*m*n_) og _(b=m^2 - n^2_). Lad os starte med _(a_). Vi omskriver og får 
+    _($a^2 = c^2 - b^2 = (c+b)(c-b)_)
+    Så _(a=\sqrt{c+b}*\sqrt{c-b}_). Det er ret smart! Det er henad i retningen mod _(a=2*m*n_) siden _(a_) nu er lig to tal ganget med hinanden. Nu skal vi "bare" vise at <i>1</i>: _(b-c_) og _(b+c_) er (nogenlunde) kvadratiske tal så at kvadratrøderne bliver heltal og <i>2</i>: _(b-c_) og _(b+c_) deler i hvert fald én faktor af to.  
     </p>
     <p class="t">
-    Lad os starte først med _(b/a_), da det er simplest. 
-    Hvis _(GCM(a,b,c)=1_), er _(GCM(a,b)_) også lig _(1_). 
-    Andet ville være en selvmodsigelse:
-    Hvis _(a_) og _(b_) virkelig delte en faktor, ville man
-    kunne skrive dem som _(a=kA_) og _(b=kB_). Det ville medføre at:
-    _($c=\sqrt{(kA)^2+(kB)^2}=\sqrt{k^2*(A^2+B^2)}=k*\sqrt{A^2+B^2}_)
-    Men så deler _(a_), _(b_) og _(c_) faktoren _(k_), hvilket går imod antagelsen
-    _(GCM(a,b,c)=1_)!
+    _(c+b_) og _(c-b_) ganget med hinanden giver et kvadratisk tal, og vi vil gerne vise at de selv indeholder noget kvadratisk. Det lyder som en perfekt chance for at anvende resultatet fra sidste opgave! Vi får 
+    \begin{align*}
+    c+b=GCD(c+b,c-b)*n^2 \\
+    c-b=GCD(c+b, c-b)*m^2 
+    \end{align*}
+    med _(GCD(n,m)=1_). Det giver os nu:
+    _($a = \sqrt{GCD(c+b,c-b)*n^2}*\sqrt{GCD(c+b, c-b)*m^2} = GCD(c+b, c-b)*n*m_)
+    Det er næsten præcist hvad vi har brug for. Vi skal bare vise at _(GCD(c+b,c-b)_) indeholder en faktor af to! 
     </p>
     <p class="t">
-    Lad os nu kigge på _((m^2-n^2)/(2nm)_). Vi <i>definerede</i> at _(m/n_) var 
-    så reduceret som mulig. Derfor er _(GCD(m,n)=1_). 
-    Der er to muligheder: _(\textbf{A}_): Både _(m_) og _(n_) er ulige,
-    _(\textbf{B}_): Kun _(1_) af _(m_) og _(n_) er ulige. 
+    Vi har vist at _(a_) og _(b_) ikke begge kan være lige eller begge være ulige. Vælg _(a_) til lige og _(b_) til ulige. Vi ved at _(c_) også er ulige, fordi ellers ville _(GCD(a,c)=2_), hvilket modstrider _(GCD(a,c)=1_). Nu er både _(b_) og _(c_) ulige. Det fortæller os at _(b+c_) og _(b-c_) er lige, så _(GCD(b+c, b-c)_) indeholder en faktor af _(2_). Bum! 
     </p>
     <p class="t">
-    Lad os starte med _(\textbf{A}_). Her er _(m=2k_0+1_) og _(n=2k_1+1_), så:
-    _($\begin{eqnarray}
-    && \frac{(2k_0+1)^2-(2k_1+1)^2}{2*(2k_0+1)*(2k_1+1)} = \\ \\
-    && \frac{4k_0^2 + 4k_0 + 1 - (4k_1^2 + 4k_1 + 1)}{8 k_0 k_1 + 4 k_0 + 4 k_1 + 2} = \\ \\
-    && \frac{4(k_0^2+k_0+k_1^2+k_1)}{2*(2*(2k_0k_1+k_0+k_1)+1)} = \\ \\
-    && \frac{2*(k_0^2+k_0+k_1^2+k_1)}{2*(2k_0k_1+k_0+k_1)+1}
-    \end{eqnarray}_)
-    Ergo: 
-    _($\frac{b}{a}=\frac{2*(k_0^2+k_0+k_1^2+k_1)}{2*(2k_0k_1+k_0+k_1)+1} \to a=\frac{2*(2k_0k_1+k_0+k_1)+1}{2*(k_0^2+k_0+k_1^2+k_1)}*b_)
-    Lige nu er _(a_) lig _(\text{ulige}*\text{ulige}/\text{lige}_).
-    To ulige tal ganget med hinanden giver altid
-    et ulige tal. Et ulige tal divideret med et lige tal, giver også et ulige tal. 
-    _(a_) er derfor ulige,
-    hvilket vi har sagt den <i>ikke</i> må være. Derfor kan _(m, \, n_) ikke begge være ulige. 
+    Vi har nu _(a=2*m*n_). Hvordan får vi _(b=m^2-n^2_)? Well, vi har to ligninger 
+    \begin{align*}
+    c+b=GCD(c+b,c-b)*n^2 \\
+    c-b=GCD(c+b,c-b)*m^2 
+    \end{align*}
+    ... og to ubekendte _(c,b_). Hvis man indsætter _(GCD(c+b,c-b)=2*k_) og isolerer for _(b_) får man 
+    _($b=k*(n^2 - m^2)_)
+    Men _(k_) er nødt til at være _(1_), fordi lige nu er _(a=k*2*m*n_), så _(a_) og _(b_) deler faktoren _(k_), hvilket modstrider _(GCD(a,b)=1_). Done! 
     </p>
+
+    <p class="cent">*</p>
+
     <p class="t">
-    Lad os nu i stedet prøve hvor <i>en</i> af dem er ulige, sig _(m_). 
-    Her bliver tælleren _(m^2-n^2_) ulige, men nævneren _(2mn_) lige som altid. 
-    Sig nu vi skrev _(m^2-n^2_) som et produkt af 
-    primtal der <i>ikke</i> var _(2_):
-    _($\frac{p_0*p_1*p_2*...p_i}{2mn}_) 
-    Hvis vi vælger et hvilket som helst af de her primtal _(p_j_), 
-    er det <i>muligt</i> at det dividere _(n_), og <i>muligt</i>
-    at det dividere _(m_), men selvfølgelig <i>umuligt</i> at det dividere <i>både</i> _(m_) <i>og</i> _(n_) 
-    (siden det er et primtal). Det skaber dog en selvmodsigelse: 
-    Hvis _(p_j_) er en faktor af _(m^2-n^2_),
-    skal det kunne dividere _(m^2-n^2_) som _(\frac{m^2-n^2}{p_j}_). Det kan vi omskrive
-    til 
-    _($\frac{m^2}{p_j}-\frac{n^2}{p_j}_) 
-    Faktoren er <i>nødt til</i> at kunne dividere
-    <i>både</i> _(m_) <i>og</i> _(n_). Det her beviser, at _(\frac{m^2-n^2}{2mn}_) er reduceret. Man kan 
-    simpelt hen ikke udvælge nogen faktor der dividerer noget af nævneren. Bam. Færdig.  
-    </p>
-    <p class="t">
-    Puh. Det var virkelig svært. Der er mange problemer i matematik der 
+    Der er mange problemer i matematik der 
     <i>ser</i> nemme ud og er simple at forklare, men faktisk er utrolig
     svære at løse. 
     Man kunne måske få lyst til at generalisere sidste spørgsmål:
