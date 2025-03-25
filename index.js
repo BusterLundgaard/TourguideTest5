@@ -29,8 +29,8 @@ let slowInternet = null;
 function sleep(ms) {return new Promise(resolve => setTimeout(resolve, ms));}
 
 let openBrowser = (chap, sec, page, sepTab)=>{
-    if(sepTab == null){window.open("Browser11.html?" + chap + sec + page, "_self");}
-    else{window.open("Browser11.html?" + chap + sec + page, "_blank");}
+    if(sepTab == null){window.open("browser.html?" + chap + sec + page, "_self");}
+    else{window.open("browser.html?" + chap + sec + page, "_blank");}
 }
 
 let startLogoScreen = async function(){
@@ -2419,7 +2419,7 @@ let showResume = function(treePath) {
                     resultLink.innerHTML = "Mere info";
                     resultLink.setAttribute("class", "resumeImportantResultsLink");
                     resultLink.addEventListener("click", (e)=>{
-                        let browParam = "Browser11.html?" + resultsData[i*4+3].replace(/ /g, "").replace("£", ",");
+                        let browParam = "browser.html?" + resultsData[i*4+3].replace(/ /g, "").replace("£", ",");
                         window.open(browParam, "_blank");
                     });
                 }
